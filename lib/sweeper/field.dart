@@ -67,6 +67,11 @@ class Field {
     return _squares[i];
   }
 
+  int getAdjacent(int x, int y) {
+    final i = _getIndex(x, y);
+    return null;
+  }
+
   int _getIndex(int x, int y) {
     assert(x >= 0 && x < cols);
     assert(y >= 0 && y < cols);
