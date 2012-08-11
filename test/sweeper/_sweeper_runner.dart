@@ -4,7 +4,10 @@
 #import('../../lib/sweeper.dart');
 #import('../../../dartlib/lib/test.dart');
 
+#source('field_test.dart');
+
 runSweeperTests() {
   group('sweeper', (){
+    FieldTest.run();
   });
 }
