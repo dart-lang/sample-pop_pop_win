@@ -2,14 +2,14 @@ class Field {
   final int mineCount;
   final int cols;
   final int rows;
-  final List<bool> _mines;
+  final List<bool> _squares;
 
   int _toFindCount;
 
   Field([this.mineCount = 40, this.cols = 16, this.rows = 16]) :
-    _mines = new List() {
-    _mines.insertRange(0, rows * cols, false);
-    assert(mineCount < _mines.length);
+    _squares = new List() {
+    _squares.insertRange(0, rows * cols, false);
+    assert(mineCount < _squares.length);
     assert(mineCount > 0);
 
     final rnd = new math.Random();
@@ -21,15 +21,15 @@ class Field {
     for(int i = 0; i < mineCount; i++) {
       int index;
       do {
-        index = rnd.nextInt(_mines.length);
-      } while(_mines[index]);
-      _mines[index] = true;
+        index = rnd.nextInt(_squares.length);
+      } while(_squares[index]);
+      _squares[index] = true;
     }
   }
 
   bool isMine(int x, int y) {
     final i = _getIndex(x,y);
-    return _mines[i];
+    return _squares[i];
   }
 
   int _getIndex(int x, int y) {
