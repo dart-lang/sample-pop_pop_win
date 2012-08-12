@@ -5,8 +5,6 @@ class Field {
   final List<bool> _squares;
   final List<int> _adjacents;
 
-  int _toFindCount;
-
   factory Field([mineCount = 40, cols = 16, rows = 16]) {
     final squares = new List<bool>();
     squares.insertRange(0, rows * cols, false);
