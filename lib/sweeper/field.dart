@@ -3,6 +3,7 @@ class Field {
   final int cols;
   final int rows;
   final List<bool> _squares;
+  final List<int> _adjacents;
 
   int _toFindCount;
 
@@ -46,7 +47,8 @@ class Field {
     return new Field._internal(count, cols, rows, squares);
   }
 
-  Field._internal(this.mineCount, this.cols, this.rows, this._squares) {
+  Field._internal(this.mineCount, this.cols, this.rows, this._squares) :
+    this._adjacents = new List<int>() {
     assert(cols > 0);
     assert(rows > 0);
     assert(_squares.length == cols * rows);
@@ -60,6 +62,8 @@ class Field {
       }
     }
     assert(count == mineCount);
+
+    _adjacents.insertRange(0, _squares.length);
   }
 
   bool isMine(int x, int y) {
@@ -69,7 +73,25 @@ class Field {
 
   int getAdjacent(int x, int y) {
     final i = _getIndex(x, y);
-    return null;
+    if(_squares[i]) {
+      return null;
+    }
+
+    int val = _adjacents[i];
+
+    if(val == null) {
+      val = 0;
+      for(int j = math.max(0, x - 1); j < math.min(cols, (x + 2)); j++) {
+        for(int k = math.max(0, y - 1); k < math.min(rows, (y + 2)); k++) {
+          final ia = _getIndex(j, k);
+          if(_squares[ia]) {
+            val++;
+          }
+        }
+      }
+      _adjacents[i] = val;
+    }
+    return val;
   }
 
   int _getIndex(int x, int y) {
