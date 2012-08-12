@@ -4,16 +4,20 @@ class Game {
 
   GameState _gameState;
   int _minesLeft;
+  int _revealsLeft;
 
   Game(this.field) :
     _gameState = GameState.notStarted,
     _states = new List<SquareState>() {
     assert(field != null);
     _minesLeft = field.mineCount;
+    _revealsLeft = field.size - field.mineCount;
     _states.insertRange(0, field.size, SquareState.hidden);
   }
 
   int get minesLeft => _minesLeft;
+
+  int get revealsLeft => _revealsLeft;
 
   GameState get state => _gameState;
 
@@ -47,6 +51,12 @@ class Game {
     _states[i] = SquareState.revealed;
     if(field.isMine(x, y)) {
       _gameState = GameState.lost;
+    } else {
+      _revealsLeft--;
+      assert(_revealsLeft >= 0);
+      if(_revealsLeft == 0) {
+        _gameState = GameState.won;
+      }
     }
   }
 

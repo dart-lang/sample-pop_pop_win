@@ -6,6 +6,7 @@ class GameTest {
       test('cannot reveal flagged', _testCannotRevealFlagged);
       test('cannot flag revealed', _testCannotFlagRevealed);
       test('loss', _testLoss);
+      test('win', _testWin);
     });
   }
 
@@ -14,6 +15,7 @@ class GameTest {
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
+    expect(g.revealsLeft, equals(f.cols * f.rows - 13));
     expect(g.state, equals(GameState.notStarted));
 
     for(int x = 0; x < f.cols; x++) {
@@ -66,5 +68,30 @@ class GameTest {
   }
 
   static void _testWin() {
+    final f = FieldTest.getSampleField();
+    final g = new Game(f);
+
+    int minesLleft = f.mineCount;
+    expect(g.revealsLeft, equals(f.cols * f.rows - 13));
+    int revealsLeft = g.revealsLeft;
+    for(int x = 0; x < f.cols; x++) {
+      for(int y = 0; y < f.rows; y++) {
+        expect(g.getSquareState(x,y), equals(SquareState.hidden));
+
+        if(f.isMine(x,y)) {
+          g.setFlag(x, y, true);
+          minesLleft--;
+          expect(g.minesLeft, equals(minesLleft));
+        } else {
+          g.reveal(x, y);
+          revealsLeft--;
+          expect(g.revealsLeft, equals(revealsLeft));
+        }
+        expect(g.state, isNot(equals(GameState.notStarted)));
+        expect(g.state, isNot(equals(GameState.lost)));
+      }
+    }
+
+    expect(g.state, equals(GameState.won));
   }
 }
