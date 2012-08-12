@@ -21,10 +21,12 @@ class FieldTest {
   }
 
   static void run() {
-    test('defaults', _testDefaults);
-    test('mineCount', _testMineCount);
-    test('fromSquares', _testFromSquares);
-    test('adjacent', _testAdjacent);
+    group('Field', () {
+      test('defaults', _testDefaults);
+      test('mineCount', _testMineCount);
+      test('fromSquares', _testFromSquares);
+      test('adjacent', _testAdjacent);
+    });
   }
 
   static void _testDefaults() {
