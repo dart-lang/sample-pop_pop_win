@@ -1,4 +1,25 @@
 class FieldTest {
+  // This grid
+  // XXXXX2
+  // X7X8X3
+  // X5XXX2
+  // X32321
+  // 110000
+
+  static final sample = const
+      [null, null, null, null, null, 2,
+       null,    7, null,    8, null, 3,
+       null,    5, null, null, null, 2,
+       null,    3,    2,    3,    2, 1,
+          1,    1,    0,    0,    0, 0];
+
+
+  static Field getSampleField() {
+    final bools = new List<bool>.from(sample.map((x) => x == null));
+
+    return new Field.fromSquares(6, 5, bools);
+  }
+
   static void run() {
     test('defaults', _testDefaults);
     test('mineCount', _testMineCount);
@@ -36,22 +57,7 @@ class FieldTest {
   }
 
   static void _testAdjacent() {
-    // This grid
-    // XXXXX2
-    // X7X8X3
-    // X5XXX2
-    // X32321
-    // 110000
-
-    final source = [null, null, null, null, null, 2,
-                    null,    7, null,    8, null, 3,
-                    null,    5, null, null, null, 2,
-                    null,    3,    2,    3,    2, 1,
-                       1,    1,    0,    0,    0, 0];
-
-    final bools = new List<bool>.from(source.map((x) => x == null));
-
-    final f = new Field.fromSquares(6, 5, bools);
+    final f = getSampleField();
 
     expect(f.mineCount, equals(13));
 
@@ -59,7 +65,7 @@ class FieldTest {
       for(int y = 0; y < f.rows; y++) {
         final i = x + y * f.cols;
         final adj = f.getAdjacent(x, y);
-        expect(adj, equals(source[i]));
+        expect(adj, equals(sample[i]));
       }
     }
   }
