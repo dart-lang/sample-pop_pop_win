@@ -51,7 +51,7 @@ class Field {
     assert(rows > 0);
     assert(_squares.length == cols * rows);
     assert(mineCount > 0);
-    assert(mineCount < _squares.length);
+    assert(mineCount < size);
 
     int count = 0;
     for(final m in _squares) {
@@ -61,8 +61,10 @@ class Field {
     }
     assert(count == mineCount);
 
-    _adjacents.insertRange(0, _squares.length);
+    _adjacents.insertRange(0, size);
   }
+
+  int get size => cols * rows;
 
   bool isMine(int x, int y) {
     final i = _getIndex(x,y);
