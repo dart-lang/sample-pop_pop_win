@@ -6,4 +6,6 @@ class GameState {
   final String name;
 
   const GameState._internal(this.name);
+
+  String toString() => 'GameState: $name';
 }
