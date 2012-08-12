@@ -2,12 +2,13 @@
 
 #import('../../../dartlib/vendor/unittest/unittest.dart');
 #import('../../lib/sweeper.dart');
-#import('../../../dartlib/lib/test.dart');
 
 #source('field_test.dart');
+#source('game_test.dart');
 
 runSweeperTests() {
   group('sweeper', (){
     FieldTest.run();
+    GameTest.run();
   });
 }
