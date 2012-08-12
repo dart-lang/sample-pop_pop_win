@@ -29,11 +29,11 @@ class Game {
 
     final currentSS = _states[i];
     if(value) {
-      assert(currentSS == SquareState.hidden);
+      require(currentSS == SquareState.hidden);
       _states[i] = SquareState.flagged;
       _minesLeft--;
     } else {
-      assert(currentSS == SquareState.flagged);
+      require(currentSS == SquareState.flagged);
       _states[i] = SquareState.hidden;
       _minesLeft++;
     }
@@ -42,6 +42,12 @@ class Game {
   void reveal(int x, int y) {
     _ensureStarted();
     final i = field._getIndex(x, y);
+    final currentSS = _states[i];
+    require(currentSS == SquareState.hidden, 'Square state is not hidden');
+    _states[i] = SquareState.revealed;
+    if(field.isMine(x, y)) {
+      _gameState = GameState.lost;
+    }
   }
 
   void _ensureStarted() {

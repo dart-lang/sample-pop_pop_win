@@ -6,3 +6,9 @@
 #source('sweeper/game.dart');
 #source('sweeper/game_state.dart');
 #source('sweeper/square_state.dart');
+
+void require(bool truth, [String message = '']) {
+  if(!truth) {
+    throw new Exception(message);
+  }
+}
