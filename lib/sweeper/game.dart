@@ -79,7 +79,7 @@ class Game {
           final ia = field._getIndex(j, k);
           if(_states[ia] == SquareState.hidden) {
             revealCount += _doReveal(j, k);
-            assert(_state == GameState.started);
+            assert(_state == GameState.started || _state == GameState.won);
           }
         }
       }
