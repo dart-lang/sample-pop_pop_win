@@ -1,4 +1,4 @@
-class GameTest {
+class TestGame {
   static void run() {
     group('Game', () {
       test('initial values', _testInitial);
@@ -11,7 +11,7 @@ class GameTest {
   }
 
   static void _testInitial() {
-    final f = FieldTest.getSampleField();
+    final f = TestField.getSampleField();
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
@@ -26,7 +26,7 @@ class GameTest {
   }
 
   static void _testSetFlag() {
-    final g = new Game(FieldTest.getSampleField());
+    final g = new Game(TestField.getSampleField());
 
     expect(g.getSquareState(0,0), equals(SquareState.hidden));
     g.setFlag(0, 0, true);
@@ -36,7 +36,7 @@ class GameTest {
   }
 
   static void _testCannotRevealFlagged() {
-    final g = new Game(FieldTest.getSampleField());
+    final g = new Game(TestField.getSampleField());
 
     expect(g.getSquareState(0,0), equals(SquareState.hidden));
     g.setFlag(0, 0, true);
@@ -48,7 +48,7 @@ class GameTest {
   }
 
   static void _testCannotFlagRevealed() {
-    final g = new Game(FieldTest.getSampleField());
+    final g = new Game(TestField.getSampleField());
 
     expect(g.getSquareState(1,1), equals(SquareState.hidden));
     g.reveal(1, 1);
@@ -59,7 +59,7 @@ class GameTest {
   }
 
   static void _testLoss() {
-    final g = new Game(FieldTest.getSampleField());
+    final g = new Game(TestField.getSampleField());
 
     expect(g.getSquareState(0,0), equals(SquareState.hidden));
     g.reveal(0, 0);
@@ -68,7 +68,7 @@ class GameTest {
   }
 
   static void _testWin() {
-    final f = FieldTest.getSampleField();
+    final f = TestField.getSampleField();
     final g = new Game(f);
 
     int minesLleft = f.mineCount;

@@ -1,4 +1,4 @@
-class FieldTest {
+class TestField {
   // This grid
   // XXXXX2
   // X7X8X3
