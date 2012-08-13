@@ -1,3 +1,24 @@
 body {
   font-family: Helvetica;
 }
+
+table.game-table td.game-square {
+  width: 30px;
+  height: 30px;
+  background: lightgray;  
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+}
+
+table.game-table td.game-square.flagged {
+  background: yellow;
+}
+
+table.game-table td.game-square.revealed {
+  background: white;
+}
+
+table.game-table td.game-square.mine {
+  background: red;
+}
