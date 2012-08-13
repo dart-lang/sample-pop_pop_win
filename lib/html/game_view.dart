@@ -39,8 +39,13 @@ class GameView extends HtmlView {
     node.elements.add(table);
   }
 
+  bool get _canClick() {
+    return game.state == GameState.notStarted ||
+        game.state == GameState.started;
+  }
+
   void _cellClick(MouseEvent args) {
-    if(args.button == 0) {
+    if(args.button == 0 && _canClick) {
       final TableCellElement cell = args.toElement;
       final xStr = cell.dataAttributes[_xKey];
       final yStr = cell.dataAttributes[_yKey];
