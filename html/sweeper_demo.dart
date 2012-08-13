@@ -4,9 +4,11 @@
 #import('../lib/html.dart');
 
 main(){
-  final field = new Field();
-  final game = new Game(field);
-
   final TableElement sweeperTable = query('#sweeperTable');
-  final gameView = new GameView(game, sweeperTable);
+  final DivElement minesLeftDiv = query('#minesLeft');
+  final DivElement gameStateDiv = query('#gameState');
+  final gameView = new GameView(sweeperTable, minesLeftDiv, gameStateDiv);
+
+  final ButtonElement newGameButton = query('#newGame');
+  newGameButton.on.click.add((args) => gameView.newGame());
 }

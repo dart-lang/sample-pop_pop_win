@@ -2,15 +2,21 @@ class GameView {
   static final String _xKey = 'x';
   static final String _yKey = 'y';
 
-  final Game game;
   final TableElement _table;
+  final DivElement _leftCountDiv;
+  final DivElement _gameStateDiv;
 
-  GameView(this.game, this._table) {
-    game.updated.add(_gameUpdated);
-    updateElement();
+  Game game;
+  dartlib.GlobalId _updatedEventId;
+
+  GameView(this._table, this._leftCountDiv, this._gameStateDiv) {
+    newGame();
   }
 
   void updateElement() {
+    _gameStateDiv.innerHTML = game.state.name;
+    _leftCountDiv.innerHTML = game.minesLeft.toString();
+
     if(_table.elements.length == 0) {
 
       for(int r = 0; r < game.field.rows; r++) {
@@ -44,6 +50,18 @@ class GameView {
       }
     }
 
+  }
+
+  void newGame() {
+    if(_updatedEventId != null) {
+      assert(game != null);
+      game.updated.remove(_updatedEventId);
+    }
+    final f = new Field();
+    game = new Game(f);
+    _updatedEventId = game.updated.add(_gameUpdated);
+    _table.elements.clear();
+    updateElement();
   }
 
   bool get _canClick() {
@@ -80,7 +98,6 @@ class GameView {
   }
 
   void _gameUpdated(args) {
-    print(game.state);
     updateElement();
   }
 }
