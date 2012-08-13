@@ -48,10 +48,11 @@ class Game {
     final i = field._getIndex(x, y);
     final currentSS = _states[i];
     require(currentSS == SquareState.hidden, 'Square state is not hidden');
-    _states[i] = SquareState.revealed;
     if(field.isMine(x, y)) {
+      _states[i] = SquareState.mine;
       _setState(GameState.lost);
     } else {
+      _states[i] = SquareState.revealed;
       _revealsLeft--;
       assert(_revealsLeft >= 0);
       if(_revealsLeft == 0) {
