@@ -71,7 +71,7 @@ class Field {
     return _squares[i];
   }
 
-  int getAdjacent(int x, int y) {
+  int getAdjacentCount(int x, int y) {
     final i = _getIndex(x, y);
     if(_squares[i]) {
       return null;

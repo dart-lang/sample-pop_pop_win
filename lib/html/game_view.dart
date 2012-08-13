@@ -41,7 +41,7 @@ class GameView {
         final ss = game.getSquareState(c, r);
         cell.classes.add(ss.name);
         if(ss == SquareState.revealed) {
-          final adj = game.field.getAdjacent(c, r);
+          final adj = game.field.getAdjacentCount(c, r);
           assert(adj != null);
           if(adj > 0) {
             cell.innerHTML = adj.toString();

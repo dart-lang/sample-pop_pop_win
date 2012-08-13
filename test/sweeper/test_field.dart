@@ -66,7 +66,7 @@ class TestField {
     for(int x = 0; x < f.cols; x++) {
       for(int y = 0; y < f.rows; y++) {
         final i = x + y * f.cols;
-        final adj = f.getAdjacent(x, y);
+        final adj = f.getAdjacentCount(x, y);
         expect(adj, equals(sample[i]));
       }
     }
