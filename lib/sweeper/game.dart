@@ -55,8 +55,7 @@ class Game {
     require(currentSS == SquareState.hidden, 'Square state is not hidden');
     int reveals = 0;
     if(field.isMine(x, y)) {
-      _states[i] = SquareState.mine;
-      _setState(GameState.lost);
+      _setLost();
     } else {
       reveals = _doReveal(x, y);
     }
@@ -85,6 +84,19 @@ class Game {
       }
     }
     return revealCount;
+  }
+
+  void _setLost() {
+    assert(_state == GameState.started);
+    for(int x = 0; x < field.cols; x++) {
+      for(int y = 0; y < field.rows; y++) {
+        if(field.isMine(x, y)) {
+          final i = field._getIndex(x, y);
+          _states[i] = SquareState.mine;
+        }
+      }
+    }
+    _setState(GameState.lost);
   }
 
   void _update() => _updatedEvent.fireEvent(EventArgs.empty);
