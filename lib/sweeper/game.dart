@@ -2,12 +2,12 @@ class Game {
   final Field field;
   final List<SquareState> _states;
 
-  GameState _gameState;
+  GameState _state;
   int _minesLeft;
   int _revealsLeft;
 
   Game(this.field) :
-    _gameState = GameState.notStarted,
+    _state = GameState.notStarted,
     _states = new List<SquareState>() {
     assert(field != null);
     _minesLeft = field.mineCount;
@@ -19,7 +19,7 @@ class Game {
 
   int get revealsLeft => _revealsLeft;
 
-  GameState get state => _gameState;
+  GameState get state => _state;
 
   SquareState getSquareState(int x, int y) {
     final i = field._getIndex(x, y);
@@ -50,19 +50,25 @@ class Game {
     require(currentSS == SquareState.hidden, 'Square state is not hidden');
     _states[i] = SquareState.revealed;
     if(field.isMine(x, y)) {
-      _gameState = GameState.lost;
+      _setState(GameState.lost);
     } else {
       _revealsLeft--;
       assert(_revealsLeft >= 0);
       if(_revealsLeft == 0) {
-        _gameState = GameState.won;
+        _setState(GameState.won);
       }
+    }
+  }
+
+  void _setState(GameState value) {
+    if(_state != value) {
+      _state = value;
     }
   }
 
   void _ensureStarted() {
     if(state == GameState.notStarted) {
-      _gameState = GameState.started;
+      _setState(GameState.started);
     }
     assert(state == GameState.started);
   }
