@@ -48,23 +48,43 @@ class Game {
     _update();
   }
 
-  void reveal(int x, int y) {
+  int reveal(int x, int y) {
     _ensureStarted();
     final i = field._getIndex(x, y);
     final currentSS = _states[i];
     require(currentSS == SquareState.hidden, 'Square state is not hidden');
+    int reveals = 0;
     if(field.isMine(x, y)) {
       _states[i] = SquareState.mine;
       _setState(GameState.lost);
     } else {
-      _states[i] = SquareState.revealed;
-      _revealsLeft--;
-      assert(_revealsLeft >= 0);
-      if(_revealsLeft == 0) {
-        _setState(GameState.won);
-      }
+      reveals = _doReveal(x, y);
     }
     _update();
+    return reveals;
+  }
+
+  int _doReveal(int x, int y) {
+    final i = field._getIndex(x, y);
+    assert(_states[i] == SquareState.hidden);
+    _states[i] = SquareState.revealed;
+    _revealsLeft--;
+    assert(_revealsLeft >= 0);
+    int revealCount = 1;
+    if(_revealsLeft == 0) {
+      _setState(GameState.won);
+    } else if (field.getAdjacent(x, y) == 0){
+      for(int j = math.max(0, x - 1); j < math.min(field.cols, (x + 2)); j++) {
+        for(int k = math.max(0, y - 1); k < math.min(field.rows, (y + 2)); k++) {
+          final ia = field._getIndex(j, k);
+          if(_states[ia] == SquareState.hidden) {
+            revealCount += _doReveal(j, k);
+            assert(_state == GameState.started);
+          }
+        }
+      }
+    }
+    return revealCount;
   }
 
   void _update() => _updatedEvent.fireEvent(EventArgs.empty);
