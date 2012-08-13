@@ -72,14 +72,12 @@ class Game {
     int revealCount = 1;
     if(_revealsLeft == 0) {
       _setState(GameState.won);
-    } else if (field.getAdjacentCount(x, y) == 0){
-      for(int j = math.max(0, x - 1); j < math.min(field.cols, (x + 2)); j++) {
-        for(int k = math.max(0, y - 1); k < math.min(field.rows, (y + 2)); k++) {
-          final ia = field._getIndex(j, k);
-          if(_states[ia] == SquareState.hidden) {
-            revealCount += _doReveal(j, k);
-            assert(_state == GameState.started || _state == GameState.won);
-          }
+    } else if (field.getAdjacentCount(x, y) == 0) {
+      for(final c in field._getAdjacent(x, y)) {
+        final ia = field._getIndex(c.x, c.y);
+        if(_states[ia] == SquareState.hidden) {
+          revealCount += _doReveal(c.x, c.y);
+          assert(_state == GameState.started || _state == GameState.won);
         }
       }
     }

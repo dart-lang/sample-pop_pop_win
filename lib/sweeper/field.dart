@@ -81,12 +81,10 @@ class Field {
 
     if(val == null) {
       val = 0;
-      for(int j = math.max(0, x - 1); j < math.min(cols, (x + 2)); j++) {
-        for(int k = math.max(0, y - 1); k < math.min(rows, (y + 2)); k++) {
-          final ia = _getIndex(j, k);
-          if(_squares[ia]) {
-            val++;
-          }
+      for(final c in _getAdjacent(x,y)) {
+        final ia = _getIndex(c.x, c.y);
+        if(_squares[ia]) {
+          val++;
         }
       }
       _adjacents[i] = val;
@@ -100,4 +98,23 @@ class Field {
     return x + y * cols;
   }
 
+  List<_Coord> _getAdjacent(int x, int y) {
+    final List<_Coord> coords = new List<_Coord>();
+
+    for(int j = math.max(0, x - 1); j < math.min(cols, (x + 2)); j++) {
+      for(int k = math.max(0, y - 1); k < math.min(rows, (y + 2)); k++) {
+        if(j != x || k != y) {
+          coords.add(new _Coord(j, k));
+        }
+      }
+    }
+    return coords;
+  }
+}
+
+class _Coord {
+  final int x;
+  final int y;
+  const _Coord(this.x, this.y);
+  String toString() => '[$x, $y]';
 }
