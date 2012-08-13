@@ -2,6 +2,15 @@ body {
   font-family: Helvetica;
 }
 
+table.game-table {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 table.game-table td.game-square {
   width: 30px;
   height: 30px;
@@ -9,6 +18,7 @@ table.game-table td.game-square {
   text-align: center;
   border-style: solid;
   border-width: 1px;
+  cursor: pointer;
 }
 
 table.game-table td.game-square.flagged {
@@ -17,8 +27,10 @@ table.game-table td.game-square.flagged {
 
 table.game-table td.game-square.revealed {
   background: white;
+  cursor: default;
 }
 
 table.game-table td.game-square.mine {
   background: red;
+  cursor: default;
 }
