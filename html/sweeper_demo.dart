@@ -7,7 +7,6 @@ main(){
   final field = new Field();
   final game = new Game(field);
 
-  final DivElement sweeperDiv = query('#sweeper');
-  final gameView = new GameView(game, sweeperDiv);
-  gameView.draw();
+  final TableElement sweeperTable = query('#sweeperTable');
+  final gameView = new GameView(game, sweeperTable);
 }

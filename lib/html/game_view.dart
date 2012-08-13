@@ -1,21 +1,20 @@
-class GameView extends HtmlView {
+class GameView {
   static final String _xKey = 'x';
   static final String _yKey = 'y';
 
   final Game game;
+  final TableElement _table;
 
-  GameView(this.game, DivElement node) : super(node) {
+  GameView(this.game, this._table) {
     game.updated.add(_gameUpdated);
+    updateElement();
   }
 
   void updateElement() {
-    TableElement table;
-    if(node.elements.length == 0) {
-      table = new TableElement();
-      table.classes.add('game-table');
+    if(_table.elements.length == 0) {
 
       for(int r = 0; r < game.field.rows; r++) {
-        TableRowElement row = table.insertRow(-1);
+        TableRowElement row = _table.insertRow(-1);
 
         for(int c = 0; c < game.field.cols; c++) {
           TableCellElement cell = row.insertCell(-1);
@@ -24,15 +23,11 @@ class GameView extends HtmlView {
           cell.dataAttributes[_yKey] = r.toString();
         }
       }
-
-      node.elements.add(table);
-    } else {
-      table = node.elements[0];
     }
 
     for(int r = 0; r < game.field.rows; r++) {
       for(int c = 0; c < game.field.cols; c++) {
-        TableRowElement row = table.rows[r];
+        TableRowElement row = _table.rows[r];
         TableCellElement cell = row.cells[c];
 
         cell.classes.clear();
@@ -86,7 +81,6 @@ class GameView extends HtmlView {
 
   void _gameUpdated(args) {
     print(game.state);
-    markDirty();
-    draw();
+    updateElement();
   }
 }

@@ -11,7 +11,7 @@ table.game-table {
   user-select: none;
 }
 
-table.game-table td.game-square {
+#sweeperTable td.game-square {
   width: 30px;
   height: 30px;
   background: lightgray;  
@@ -21,16 +21,16 @@ table.game-table td.game-square {
   cursor: pointer;
 }
 
-table.game-table td.game-square.flagged {
+#sweeperTable td.game-square.flagged {
   background: yellow;
 }
 
-table.game-table td.game-square.revealed {
+#sweeperTable td.game-square.revealed {
   background: white;
   cursor: default;
 }
 
-table.game-table td.game-square.mine {
+#sweeperTable td.game-square.mine {
   background: red;
   cursor: default;
 }
