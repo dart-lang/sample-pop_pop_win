@@ -8,7 +8,32 @@ class TestGame {
       test('reveal zero', _testRevealZero);
       test('loss', _testLoss);
       test('win', _testWin);
+      test('random winner', _testRandomField);
     });
+  }
+
+  // Test 5 random fields five times
+  static void _testRandomField() {
+    final rnd = new Random();
+    for(int i = 0; i < 5; i++) {
+      final f = new Field();
+
+      for(int j = 0; j < 5; j++) {
+        final g = new Game(f);
+        while(g.revealsLeft > 0) {
+          final x = rnd.nextInt(f.cols);
+          final y = rnd.nextInt(f.rows);
+          if(g.getSquareState(x, y) == SquareState.hidden) {
+            if(f.isMine(x, y)) {
+              g.setFlag(x, y, true);
+            } else if(!f.isMine(x, y)) {
+              g.reveal(x, y);
+            }
+          }
+        }
+        expect(g.state == GameState.won);
+      }
+    }
   }
 
   static void _testRevealZero() {
