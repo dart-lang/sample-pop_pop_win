@@ -9,7 +9,73 @@ class TestGame {
       test('loss', _testLoss);
       test('win', _testWin);
       test('random winner', _testRandomField);
+      test('good chord', _testGoodChord);
+      test('bad chord', _testBadChord);
+      test('no-op chord', _testNoopChord);
     });
+  }
+
+  static void _testBadChord() {
+    final f = TestField.getSampleField();
+    final g = new Game(f);
+
+    expect(g.minesLeft, equals(13));
+    final startReveals = f.cols * f.rows - 13;
+    expect(g.revealsLeft, equals(startReveals));
+    expect(g.state, equals(GameState.notStarted));
+
+    g.reveal(2, 3);
+    g.setFlag(1, 2, true);
+    g.setFlag(3, 2, true);
+
+    expect(g.minesLeft, equals(11));
+    expect(g.revealsLeft, equals(startReveals - 1));
+
+    g.reveal(2, 3);
+    expect(g.state, equals(GameState.lost));
+  }
+
+  // Adjacent flag count != square count
+  // so nothing happens
+  static void _testNoopChord() {
+    final f = TestField.getSampleField();
+    final g = new Game(f);
+
+    expect(g.minesLeft, equals(13));
+    final startReveals = f.cols * f.rows - 13;
+    expect(g.revealsLeft, equals(startReveals));
+    expect(g.state, equals(GameState.notStarted));
+
+    g.reveal(2, 3);
+    g.setFlag(2, 2, true);
+
+    expect(g.minesLeft, equals(12));
+    expect(g.revealsLeft, equals(startReveals - 1));
+
+    g.reveal(2, 3);
+    expect(g.minesLeft, equals(12));
+    expect(g.revealsLeft, equals(startReveals - 1));
+  }
+
+  static void _testGoodChord() {
+    final f = TestField.getSampleField();
+    final g = new Game(f);
+
+    expect(g.minesLeft, equals(13));
+    final startReveals = f.cols * f.rows - 13;
+    expect(g.revealsLeft, equals(startReveals));
+    expect(g.state, equals(GameState.notStarted));
+
+    g.reveal(2, 3);
+    g.setFlag(2, 2, true);
+    g.setFlag(3, 2, true);
+
+    expect(g.minesLeft, equals(11));
+    expect(g.revealsLeft, equals(startReveals - 1));
+
+    g.reveal(2, 3);
+    expect(g.minesLeft, equals(11));
+    expect(g.revealsLeft, equals(startReveals - 11));
   }
 
   // Test 5 random fields five times

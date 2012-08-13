@@ -81,14 +81,16 @@ class GameView {
     }
   }
 
-  void _click(int x, int y, bool reveal) {
+  void _click(int x, int y, bool alt) {
     final ss = game.getSquareState(x, y);
 
-    if(reveal) {
+    if(alt) {
       if(ss == SquareState.hidden) {
         game.setFlag(x, y, true);
       } else if(ss == SquareState.flagged) {
         game.setFlag(x, y, false);
+      } else if(ss == SquareState.revealed) {
+        game.reveal(x, y);
       }
     } else {
       if(ss == SquareState.hidden) {

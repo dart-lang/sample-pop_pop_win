@@ -52,14 +52,69 @@ class Game {
     _ensureStarted();
     final i = field._getIndex(x, y);
     final currentSS = _states[i];
-    require(currentSS == SquareState.hidden, 'Square state is not hidden');
+    require(currentSS != SquareState.flagged, 'Cannot reveal a flagged square');
+
     int reveals = 0;
-    if(field.isMine(x, y)) {
-      _setLost();
-    } else {
-      reveals = _doReveal(x, y);
+
+    // normal reveal
+    if(currentSS == SquareState.hidden) {
+      if(field.isMine(x, y)) {
+        _setLost();
+      } else {
+        reveals = _doReveal(x, y);
+      }
+    } else if(currentSS == SquareState.revealed) {
+      // might be a 'chord' reveal
+      final adjFlags = _getAdjacentFlagCount(x, y);
+      final adjCount = field.getAdjacentCount(x, y);
+      if(adjFlags == adjCount) {
+        reveals = _doChord(x, y);
+      }
     }
     _update();
+    return reveals;
+  }
+
+  int _doChord(int x, int y) {
+    // this does not repeat a bunch of validations that have already happened
+    // be careful
+    final i = field._getIndex(x, y);
+    final currentSS = _states[i];
+    assert(currentSS == SquareState.revealed);
+
+    final flagged = new List<_Coord>();
+    final hidden = new List<_Coord>();
+    final adjCount = field.getAdjacentCount(x, y);
+
+    bool failed = false;
+
+    for(final c in field._getAdjacent(x, y)) {
+      final ia = field._getIndex(c.x, c.y);
+      if(_states[ia] == SquareState.hidden) {
+        hidden.add(c);
+        if(field.isMine(c.x, c.y)) {
+          failed = true;
+        }
+      } else if(_states[ia] == SquareState.flagged) {
+        flagged.add(c);
+      }
+    }
+
+    // for now we assume counts have been checked
+    assert(flagged.length == adjCount);
+
+    int reveals = 0;
+
+    // if any of the hidden are mines, we've failed
+    if(failed) {
+      // TODO: assert one of the flags must be wrong, right?
+      _setLost();
+    } else {
+      for(final c in hidden) {
+        reveals += reveal(c.x, c.y);
+      }
+    }
+
     return reveals;
   }
 
@@ -110,5 +165,19 @@ class Game {
       _setState(GameState.started);
     }
     assert(state == GameState.started);
+  }
+
+  int _getAdjacentFlagCount(int x, int y) {
+    final i = field._getIndex(x, y);
+    assert(_states[i] == SquareState.revealed);
+
+    int val = 0;
+    for(final c in field._getAdjacent(x, y)) {
+      final ia = field._getIndex(c.x, c.y);
+      if(_states[ia] == SquareState.flagged) {
+        val++;
+      }
+    }
+    return val;
   }
 }
