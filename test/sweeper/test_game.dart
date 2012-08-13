@@ -64,7 +64,7 @@ class TestGame {
     expect(g.getSquareState(0,0), equals(SquareState.hidden));
     g.reveal(0, 0);
     expect(g.state, equals(GameState.lost));
-    expect(g.getSquareState(0,0), equals(SquareState.revealed));
+    expect(g.getSquareState(0,0), equals(SquareState.mine));
   }
 
   static void _testWin() {
