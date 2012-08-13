@@ -5,13 +5,13 @@ class Field {
   final List<bool> _squares;
   final List<int> _adjacents;
 
-  factory Field([mineCount = 40, cols = 16, rows = 16]) {
+  factory Field([mineCount = 40, cols = 16, rows = 16, int seed = null]) {
     final squares = new List<bool>();
     squares.insertRange(0, rows * cols, false);
     assert(mineCount < squares.length);
     assert(mineCount > 0);
 
-    final rnd = new math.Random();
+    final rnd = new math.Random(seed);
 
     // This is the most simple code, but it'll get slow as
     // mineCount approaches the square count.
