@@ -9,21 +9,34 @@ class GameView extends HtmlView {
   }
 
   void updateElement() {
-    node.elements.clear();
+    TableElement table;
+    if(node.elements.length == 0) {
+      table = new TableElement();
+      table.classes.add('game-table');
 
-    var table = new TableElement();
-    table.classes.add('game-table');
+      for(int r = 0; r < game.field.rows; r++) {
+        TableRowElement row = table.insertRow(-1);
+
+        for(int c = 0; c < game.field.cols; c++) {
+          TableCellElement cell = row.insertCell(-1);
+          cell.on.mouseDown.add(_cellClick);
+          cell.dataAttributes[_xKey] = c.toString();
+          cell.dataAttributes[_yKey] = r.toString();
+        }
+      }
+
+      node.elements.add(table);
+    } else {
+      table = node.elements[0];
+    }
 
     for(int r = 0; r < game.field.rows; r++) {
-      TableRowElement row = table.insertRow(-1);
-
       for(int c = 0; c < game.field.cols; c++) {
-        TableCellElement cell = row.insertCell(-1);
-        cell.classes.add('game-square');
-        cell.on.mouseDown.add(_cellClick);
-        cell.dataAttributes[_xKey] = c.toString();
-        cell.dataAttributes[_yKey] = r.toString();
+        TableRowElement row = table.rows[r];
+        TableCellElement cell = row.cells[c];
 
+        cell.classes.clear();
+        cell.classes.add('game-square');
         final ss = game.getSquareState(c, r);
         cell.classes.add(ss.name);
         if(ss == SquareState.revealed) {
@@ -36,7 +49,6 @@ class GameView extends HtmlView {
       }
     }
 
-    node.elements.add(table);
   }
 
   bool get _canClick() {
