@@ -1,6 +1,7 @@
 class Game {
   final Field field;
   final List<SquareState> _states;
+  final EventHandle<EventArgs> _updatedEvent;
 
   GameState _state;
   int _minesLeft;
@@ -8,7 +9,8 @@ class Game {
 
   Game(this.field) :
     _state = GameState.notStarted,
-    _states = new List<SquareState>() {
+    _states = new List<SquareState>(),
+    _updatedEvent = new EventHandle<EventArgs>() {
     assert(field != null);
     _minesLeft = field.mineCount;
     _revealsLeft = field.size - field.mineCount;
@@ -20,6 +22,8 @@ class Game {
   int get revealsLeft => _revealsLeft;
 
   GameState get state => _state;
+
+  EventRoot get updated => _updatedEvent;
 
   SquareState getSquareState(int x, int y) {
     final i = field._getIndex(x, y);
@@ -41,6 +45,7 @@ class Game {
       _states[i] = SquareState.hidden;
       _minesLeft++;
     }
+    _update();
   }
 
   void reveal(int x, int y) {
@@ -59,7 +64,10 @@ class Game {
         _setState(GameState.won);
       }
     }
+    _update();
   }
+
+  void _update() => _updatedEvent.fireEvent(EventArgs.empty);
 
   void _setState(GameState value) {
     if(_state != value) {
