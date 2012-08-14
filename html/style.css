@@ -2,6 +2,18 @@ body {
   font-family: Helvetica;
 }
 
+.container {
+  margin: 0 auto;
+  width: 580px;
+}
+
+#gameState, #minesLeft, button {
+  font-size: 20px;
+  display: inline-block;
+  margin: 5px;
+  width: 120px;
+}
+
 #sweeperTable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
