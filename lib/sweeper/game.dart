@@ -134,11 +134,9 @@ class Game {
 
   void _setWon() {
     assert(_state == GameState.started);
-    for(int x = 0; x < field.width; x++) {
-      for(int y = 0; y < field.height; y++) {
-        if(field.get(x, y)) {
-          _states.set(x,y,SquareState.safe);
-        }
+    for(int i = 0; i < field.length; i++) {
+      if(field[i]) {
+        _states[i] = SquareState.safe;
       }
     }
     _state = GameState.won;
@@ -146,11 +144,9 @@ class Game {
 
   void _setLost() {
     assert(_state == GameState.started);
-    for(int x = 0; x < field.width; x++) {
-      for(int y = 0; y < field.height; y++) {
-        if(field.get(x, y)) {
-          _states.set(x,y,SquareState.mine);
-        }
+    for(int i = 0; i < field.length; i++) {
+      if(field[i]) {
+        _states[i] = SquareState.mine;
       }
     }
     _state = GameState.lost;
