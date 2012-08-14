@@ -1,9 +1,7 @@
 class Field {
   final int mineCount;
-  final int cols;
-  final int rows;
-  final List<bool> _squares;
-  final List<int> _adjacents;
+  final Array2d<bool> _squares;
+  final Array2d<int> _adjacents;
 
   factory Field([mineCount = 40, cols = 16, rows = 16, int seed = null]) {
     final squares = new List<bool>();
@@ -25,7 +23,7 @@ class Field {
       squares[index] = true;
     }
 
-    return new Field._internal(mineCount, cols, rows, squares);
+    return new Field._internal(mineCount, cols, squares);
   }
 
   factory Field.fromSquares(int cols, int rows, List<bool> squares) {
@@ -42,11 +40,12 @@ class Field {
     assert(count > 0);
     assert(count < squares.length);
 
-    return new Field._internal(count, cols, rows, squares);
+    return new Field._internal(count, cols, squares);
   }
 
-  Field._internal(this.mineCount, this.cols, this.rows, this._squares) :
-    this._adjacents = new List<int>() {
+  Field._internal(this.mineCount, int cols, List<bool> source) :
+    this._squares = new Array2d<bool>.readonlyFrom(cols, source),
+    this._adjacents = new Array2d<int>(cols, source.length ~/ cols) {
     assert(cols > 0);
     assert(rows > 0);
     assert(_squares.length == cols * rows);
@@ -60,42 +59,32 @@ class Field {
       }
     }
     assert(count == mineCount);
-
-    _adjacents.insertRange(0, size);
   }
 
-  int get size() => cols * rows;
+  int get cols() => _squares.width;
+  int get rows() => _squares.height;
 
-  bool isMine(int x, int y) {
-    final i = _getIndex(x,y);
-    return _squares[i];
-  }
+  int get size() => _squares.length;
+
+  bool isMine(int x, int y) => _squares.get(x,y);
 
   int getAdjacentCount(int x, int y) {
-    final i = _getIndex(x, y);
-    if(_squares[i]) {
+    if(_squares.get(x,y)) {
       return null;
     }
 
-    int val = _adjacents[i];
+    int val = _adjacents.get(x, y);
 
     if(val == null) {
       val = 0;
       for(final c in _getAdjacent(x,y)) {
-        final ia = _getIndex(c.x, c.y);
-        if(_squares[ia]) {
+        if(_squares.get(c.x, c.y)) {
           val++;
         }
       }
-      _adjacents[i] = val;
+      _adjacents.set(x, y, val);
     }
     return val;
-  }
-
-  int _getIndex(int x, int y) {
-    assert(x >= 0 && x < cols);
-    assert(y >= 0 && y < cols);
-    return x + y * cols;
   }
 
   List<_Coord> _getAdjacent(int x, int y) {

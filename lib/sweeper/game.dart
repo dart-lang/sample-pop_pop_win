@@ -1,20 +1,20 @@
 class Game {
   final Field field;
-  final List<SquareState> _states;
+  final Array2d<SquareState> _states;
   final EventHandle<EventArgs> _updatedEvent;
 
   GameState _state;
   int _minesLeft;
   int _revealsLeft;
 
-  Game(this.field) :
+  Game(Field field) :
+    this.field = field,
     _state = GameState.notStarted,
-    _states = new List<SquareState>(),
+    _states = new Array2d<SquareState>(field.cols, field.rows, SquareState.hidden),
     _updatedEvent = new EventHandle<EventArgs>() {
     assert(field != null);
     _minesLeft = field.mineCount;
     _revealsLeft = field.size - field.mineCount;
-    _states.insertRange(0, field.size, SquareState.hidden);
   }
 
   int get minesLeft() => _minesLeft;
@@ -25,24 +25,20 @@ class Game {
 
   EventRoot get updated() => _updatedEvent;
 
-  SquareState getSquareState(int x, int y) {
-    final i = field._getIndex(x, y);
-    return _states[i];
-  }
+  SquareState getSquareState(int x, int y) => _states.get(x,y);
 
   void setFlag(int x, int y, bool value) {
     _ensureStarted();
     assert(value != null);
-    final i = field._getIndex(x, y);
 
-    final currentSS = _states[i];
+    final currentSS = _states.get(x,y);
     if(value) {
       require(currentSS == SquareState.hidden);
-      _states[i] = SquareState.flagged;
+      _states.set(x,y,SquareState.flagged);
       _minesLeft--;
     } else {
       require(currentSS == SquareState.flagged);
-      _states[i] = SquareState.hidden;
+      _states.set(x,y,SquareState.hidden);
       _minesLeft++;
     }
     _update();
@@ -50,8 +46,7 @@ class Game {
 
   int reveal(int x, int y) {
     _ensureStarted();
-    final i = field._getIndex(x, y);
-    final currentSS = _states[i];
+    final currentSS = _states.get(x,y);
     require(currentSS != SquareState.flagged, 'Cannot reveal a flagged square');
 
     int reveals = 0;
@@ -78,8 +73,7 @@ class Game {
   int _doChord(int x, int y) {
     // this does not repeat a bunch of validations that have already happened
     // be careful
-    final i = field._getIndex(x, y);
-    final currentSS = _states[i];
+    final currentSS = _states.get(x,y);
     assert(currentSS == SquareState.revealed);
 
     final flagged = new List<_Coord>();
@@ -89,13 +83,12 @@ class Game {
     bool failed = false;
 
     for(final c in field._getAdjacent(x, y)) {
-      final ia = field._getIndex(c.x, c.y);
-      if(_states[ia] == SquareState.hidden) {
+      if(_states.get(c.x, c.y) == SquareState.hidden) {
         hidden.add(c);
         if(field.isMine(c.x, c.y)) {
           failed = true;
         }
-      } else if(_states[ia] == SquareState.flagged) {
+      } else if(_states.get(c.x, c.y) == SquareState.flagged) {
         flagged.add(c);
       }
     }
@@ -119,9 +112,8 @@ class Game {
   }
 
   int _doReveal(int x, int y) {
-    final i = field._getIndex(x, y);
-    assert(_states[i] == SquareState.hidden);
-    _states[i] = SquareState.revealed;
+    assert(_states.get(x,y) == SquareState.hidden);
+    _states.set(x,y,SquareState.revealed);
     _revealsLeft--;
     assert(_revealsLeft >= 0);
     int revealCount = 1;
@@ -129,8 +121,7 @@ class Game {
       _setState(GameState.won);
     } else if (field.getAdjacentCount(x, y) == 0) {
       for(final c in field._getAdjacent(x, y)) {
-        final ia = field._getIndex(c.x, c.y);
-        if(_states[ia] == SquareState.hidden) {
+        if(_states.get(c.x, c.y) == SquareState.hidden) {
           revealCount += _doReveal(c.x, c.y);
           assert(_state == GameState.started || _state == GameState.won);
         }
@@ -144,8 +135,7 @@ class Game {
     for(int x = 0; x < field.cols; x++) {
       for(int y = 0; y < field.rows; y++) {
         if(field.isMine(x, y)) {
-          final i = field._getIndex(x, y);
-          _states[i] = SquareState.mine;
+          _states.set(x,y,SquareState.mine);
         }
       }
     }
@@ -168,13 +158,11 @@ class Game {
   }
 
   int _getAdjacentFlagCount(int x, int y) {
-    final i = field._getIndex(x, y);
-    assert(_states[i] == SquareState.revealed);
+    assert(_states.get(x,y) == SquareState.revealed);
 
     int val = 0;
     for(final c in field._getAdjacent(x, y)) {
-      final ia = field._getIndex(c.x, c.y);
-      if(_states[ia] == SquareState.flagged) {
+      if(_states.get(c.x, c.y) == SquareState.flagged) {
         val++;
       }
     }
