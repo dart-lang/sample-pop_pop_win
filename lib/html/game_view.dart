@@ -71,7 +71,7 @@ class GameView {
 
   void _cellClick(MouseEvent args) {
     if(args.button == 0 && _canClick) {
-      final TableCellElement cell = args.toElement;
+      final TableCellElement cell = args.currentTarget;
       final xStr = cell.dataAttributes[_xKey];
       final yStr = cell.dataAttributes[_yKey];
 
