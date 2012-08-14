@@ -1,5 +1,5 @@
 body {
-  font-family: Helvetica;
+  font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
 }
 
 .container {
@@ -8,10 +8,12 @@ body {
 }
 
 #gameState, #minesLeft, button {
-  font-size: 20px;
+  font-size: 15px;
   display: inline-block;
   margin: 5px;
   width: 120px;
+  font-family: inherit;
+  font-weight: inherit;
 }
 
 #sweeperTable {
@@ -21,20 +23,23 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 #sweeperTable td.game-square {
   width: 30px;
   height: 30px;
-  background: lightgray;  
+  background: #6666CC;  
   text-align: center;
   border-style: solid;
   border-width: 1px;
+  border-color: rgba(153, 153, 153, 0.5);
   cursor: pointer;
 }
 
 #sweeperTable td.game-square.flagged {
-  background: yellow;
+  background: orange;
 }
 
 #sweeperTable td.game-square.revealed {
