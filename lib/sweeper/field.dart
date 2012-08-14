@@ -70,8 +70,8 @@ class Field extends Array2d<bool> {
 
     if(val == null) {
       val = 0;
-      for(final c in _getAdjacent(x,y)) {
-        if(get(c.x, c.y)) {
+      for(final i in getAdjacentIndices(x,y)) {
+        if(this[i]) {
           val++;
         }
       }
@@ -79,24 +79,4 @@ class Field extends Array2d<bool> {
     }
     return val;
   }
-
-  List<_Coord> _getAdjacent(int x, int y) {
-    final List<_Coord> coords = new List<_Coord>();
-
-    for(int j = math.max(0, x - 1); j < math.min(width, (x + 2)); j++) {
-      for(int k = math.max(0, y - 1); k < math.min(height, (y + 2)); k++) {
-        if(j != x || k != y) {
-          coords.add(new _Coord(j, k));
-        }
-      }
-    }
-    return coords;
-  }
-}
-
-class _Coord {
-  final int x;
-  final int y;
-  const _Coord(this.x, this.y);
-  String toString() => '[$x, $y]';
 }

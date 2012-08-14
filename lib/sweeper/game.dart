@@ -76,20 +76,20 @@ class Game {
     final currentSS = _states.get(x,y);
     assert(currentSS == SquareState.revealed);
 
-    final flagged = new List<_Coord>();
-    final hidden = new List<_Coord>();
+    final flagged = new List<int>();
+    final hidden = new List<int>();
     final adjCount = field.getAdjacentCount(x, y);
 
     bool failed = false;
 
-    for(final c in field._getAdjacent(x, y)) {
-      if(_states.get(c.x, c.y) == SquareState.hidden) {
-        hidden.add(c);
-        if(field.get(c.x, c.y)) {
+    for(final i in field.getAdjacentIndices(x, y)) {
+      if(_states[i] == SquareState.hidden) {
+        hidden.add(i);
+        if(field[i]) {
           failed = true;
         }
-      } else if(_states.get(c.x, c.y) == SquareState.flagged) {
-        flagged.add(c);
+      } else if(_states[i] == SquareState.flagged) {
+        flagged.add(i);
       }
     }
 
@@ -103,8 +103,9 @@ class Game {
       // TODO: assert one of the flags must be wrong, right?
       _setLost();
     } else {
-      for(final c in hidden) {
-        reveals += reveal(c.x, c.y);
+      for(final i in hidden) {
+        final c = _getCoordFromIndex(i);
+        reveals += reveal(c[0], c[1]);
       }
     }
 
@@ -120,9 +121,10 @@ class Game {
     if(_revealsLeft == 0) {
       _state = GameState.won;
     } else if (field.getAdjacentCount(x, y) == 0) {
-      for(final c in field._getAdjacent(x, y)) {
-        if(_states.get(c.x, c.y) == SquareState.hidden) {
-          revealCount += _doReveal(c.x, c.y);
+      for(final i in field.getAdjacentIndices(x, y)) {
+        if(_states[i] == SquareState.hidden) {
+          final c = _getCoordFromIndex(i);
+          revealCount += _doReveal(c[0], c[1]);
           assert(_state == GameState.started || _state == GameState.won);
         }
       }
@@ -155,11 +157,15 @@ class Game {
     assert(_states.get(x,y) == SquareState.revealed);
 
     int val = 0;
-    for(final c in field._getAdjacent(x, y)) {
-      if(_states.get(c.x, c.y) == SquareState.flagged) {
+    for(final i in field.getAdjacentIndices(x, y)) {
+      if(_states[i] == SquareState.flagged) {
         val++;
       }
     }
     return val;
+  }
+
+  List<int> _getCoordFromIndex(int i) {
+    return [i % field.width, i ~/ field.width];
   }
 }
