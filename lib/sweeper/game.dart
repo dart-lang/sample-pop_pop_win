@@ -17,13 +17,13 @@ class Game {
     _states.insertRange(0, field.size, SquareState.hidden);
   }
 
-  int get minesLeft => _minesLeft;
+  int get minesLeft() => _minesLeft;
 
-  int get revealsLeft => _revealsLeft;
+  int get revealsLeft() => _revealsLeft;
 
-  GameState get state => _state;
+  GameState get state() => _state;
 
-  EventRoot get updated => _updatedEvent;
+  EventRoot get updated() => _updatedEvent;
 
   SquareState getSquareState(int x, int y) {
     final i = field._getIndex(x, y);

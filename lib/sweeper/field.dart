@@ -64,7 +64,7 @@ class Field {
     _adjacents.insertRange(0, size);
   }
 
-  int get size => cols * rows;
+  int get size() => cols * rows;
 
   bool isMine(int x, int y) {
     final i = _getIndex(x,y);
