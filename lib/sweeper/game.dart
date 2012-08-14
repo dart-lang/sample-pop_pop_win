@@ -118,7 +118,7 @@ class Game {
     assert(_revealsLeft >= 0);
     int revealCount = 1;
     if(_revealsLeft == 0) {
-      _setState(GameState.won);
+      _state = GameState.won;
     } else if (field.getAdjacentCount(x, y) == 0) {
       for(final c in field._getAdjacent(x, y)) {
         if(_states.get(c.x, c.y) == SquareState.hidden) {
@@ -139,20 +139,14 @@ class Game {
         }
       }
     }
-    _setState(GameState.lost);
+    _state = GameState.lost;
   }
 
   void _update() => _updatedEvent.fireEvent(EventArgs.empty);
 
-  void _setState(GameState value) {
-    if(_state != value) {
-      _state = value;
-    }
-  }
-
   void _ensureStarted() {
     if(state == GameState.notStarted) {
-      _setState(GameState.started);
+      _state = GameState.started;
     }
     assert(state == GameState.started);
   }
