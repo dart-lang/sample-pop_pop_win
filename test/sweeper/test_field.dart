@@ -33,8 +33,8 @@ class TestField {
     final f = new Field();
 
     expect(f.mineCount, equals(40));
-    expect(f.rows, equals(16));
-    expect(f.cols, equals(16));
+    expect(f.height, equals(16));
+    expect(f.width, equals(16));
   }
 
   static void _testMineCount() {
@@ -43,7 +43,7 @@ class TestField {
     int mineCount = 0;
     for(int x = 0; x < 16; x++) {
       for(int y = 0; y < 16; y++) {
-        if(f.isMine(x, y)) {
+        if(f.get(x, y)) {
           mineCount++;
         }
       }
@@ -53,8 +53,8 @@ class TestField {
 
   static void _testFromSquares() {
     final f = new Field.fromSquares(2, 2, [true, true, true, false]);
-    expect(f.rows, equals(2));
-    expect(f.cols, equals(2));
+    expect(f.height, equals(2));
+    expect(f.width, equals(2));
     expect(f.mineCount, equals(3));
   }
 
@@ -63,9 +63,9 @@ class TestField {
 
     expect(f.mineCount, equals(13));
 
-    for(int x = 0; x < f.cols; x++) {
-      for(int y = 0; y < f.rows; y++) {
-        final i = x + y * f.cols;
+    for(int x = 0; x < f.width; x++) {
+      for(int y = 0; y < f.height; y++) {
+        final i = x + y * f.width;
         final adj = f.getAdjacentCount(x, y);
         expect(adj, equals(sample[i]));
       }

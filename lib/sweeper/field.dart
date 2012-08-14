@@ -1,6 +1,5 @@
-class Field {
+class Field extends Array2d<bool> {
   final int mineCount;
-  final Array2d<bool> _squares;
   final Array2d<int> _adjacents;
 
   factory Field([mineCount = 40, cols = 16, rows = 16, int seed = null]) {
@@ -23,7 +22,8 @@ class Field {
       squares[index] = true;
     }
 
-    return new Field._internal(mineCount, cols, squares);
+    return new Field._internal(mineCount, cols,
+        new ReadOnlyCollection<bool>(squares));
   }
 
   factory Field.fromSquares(int cols, int rows, List<bool> squares) {
@@ -40,20 +40,20 @@ class Field {
     assert(count > 0);
     assert(count < squares.length);
 
-    return new Field._internal(count, cols, squares);
+    return new Field._internal(count, cols,
+        new ReadOnlyCollection<bool>(squares));
   }
 
-  Field._internal(this.mineCount, int cols, List<bool> source) :
-    this._squares = new Array2d<bool>.readonlyFrom(cols, source),
-    this._adjacents = new Array2d<int>(cols, source.length ~/ cols) {
-    assert(cols > 0);
-    assert(rows > 0);
-    assert(_squares.length == cols * rows);
+  Field._internal(this.mineCount, int cols, ReadOnlyCollection<bool> source) :
+    this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
+    super.wrap(cols, source) {
+    assert(width > 0);
+    assert(height > 0);
     assert(mineCount > 0);
-    assert(mineCount < size);
+    assert(mineCount < length);
 
     int count = 0;
-    for(final m in _squares) {
+    for(final m in this) {
       if(m) {
         count++;
       }
@@ -61,15 +61,8 @@ class Field {
     assert(count == mineCount);
   }
 
-  int get cols() => _squares.width;
-  int get rows() => _squares.height;
-
-  int get size() => _squares.length;
-
-  bool isMine(int x, int y) => _squares.get(x,y);
-
   int getAdjacentCount(int x, int y) {
-    if(_squares.get(x,y)) {
+    if(get(x,y)) {
       return null;
     }
 
@@ -78,7 +71,7 @@ class Field {
     if(val == null) {
       val = 0;
       for(final c in _getAdjacent(x,y)) {
-        if(_squares.get(c.x, c.y)) {
+        if(get(c.x, c.y)) {
           val++;
         }
       }
@@ -90,8 +83,8 @@ class Field {
   List<_Coord> _getAdjacent(int x, int y) {
     final List<_Coord> coords = new List<_Coord>();
 
-    for(int j = math.max(0, x - 1); j < math.min(cols, (x + 2)); j++) {
-      for(int k = math.max(0, y - 1); k < math.min(rows, (y + 2)); k++) {
+    for(int j = math.max(0, x - 1); j < math.min(width, (x + 2)); j++) {
+      for(int k = math.max(0, y - 1); k < math.min(height, (y + 2)); k++) {
         if(j != x || k != y) {
           coords.add(new _Coord(j, k));
         }

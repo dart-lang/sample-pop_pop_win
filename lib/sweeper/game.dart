@@ -10,11 +10,11 @@ class Game {
   Game(Field field) :
     this.field = field,
     _state = GameState.notStarted,
-    _states = new Array2d<SquareState>(field.cols, field.rows, SquareState.hidden),
+    _states = new Array2d<SquareState>(field.width, field.height, SquareState.hidden),
     _updatedEvent = new EventHandle<EventArgs>() {
     assert(field != null);
     _minesLeft = field.mineCount;
-    _revealsLeft = field.size - field.mineCount;
+    _revealsLeft = field.length - field.mineCount;
   }
 
   int get minesLeft() => _minesLeft;
@@ -53,7 +53,7 @@ class Game {
 
     // normal reveal
     if(currentSS == SquareState.hidden) {
-      if(field.isMine(x, y)) {
+      if(field.get(x, y)) {
         _setLost();
       } else {
         reveals = _doReveal(x, y);
@@ -85,7 +85,7 @@ class Game {
     for(final c in field._getAdjacent(x, y)) {
       if(_states.get(c.x, c.y) == SquareState.hidden) {
         hidden.add(c);
-        if(field.isMine(c.x, c.y)) {
+        if(field.get(c.x, c.y)) {
           failed = true;
         }
       } else if(_states.get(c.x, c.y) == SquareState.flagged) {
@@ -132,9 +132,9 @@ class Game {
 
   void _setLost() {
     assert(_state == GameState.started);
-    for(int x = 0; x < field.cols; x++) {
-      for(int y = 0; y < field.rows; y++) {
-        if(field.isMine(x, y)) {
+    for(int x = 0; x < field.width; x++) {
+      for(int y = 0; y < field.height; y++) {
+        if(field.get(x, y)) {
           _states.set(x,y,SquareState.mine);
         }
       }

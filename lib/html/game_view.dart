@@ -19,10 +19,10 @@ class GameView {
 
     if(_table.elements.length == 0) {
 
-      for(int r = 0; r < game.field.rows; r++) {
+      for(int r = 0; r < game.field.height; r++) {
         TableRowElement row = _table.insertRow(-1);
 
-        for(int c = 0; c < game.field.cols; c++) {
+        for(int c = 0; c < game.field.width; c++) {
           TableCellElement cell = row.insertCell(-1);
           cell.on.mouseDown.add(_cellClick);
           cell.dataAttributes[_xKey] = c.toString();
@@ -31,8 +31,8 @@ class GameView {
       }
     }
 
-    for(int r = 0; r < game.field.rows; r++) {
-      for(int c = 0; c < game.field.cols; c++) {
+    for(int r = 0; r < game.field.height; r++) {
+      for(int c = 0; c < game.field.width; c++) {
         TableRowElement row = _table.rows[r];
         TableCellElement cell = row.cells[c];
 

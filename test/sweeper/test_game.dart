@@ -20,7 +20,7 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
-    final startReveals = f.cols * f.rows - 13;
+    final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
     expect(g.state, equals(GameState.notStarted));
 
@@ -42,7 +42,7 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
-    final startReveals = f.cols * f.rows - 13;
+    final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
     expect(g.state, equals(GameState.notStarted));
 
@@ -62,7 +62,7 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
-    final startReveals = f.cols * f.rows - 13;
+    final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
     expect(g.state, equals(GameState.notStarted));
 
@@ -87,12 +87,12 @@ class TestGame {
       for(int j = 0; j < 5; j++) {
         final g = new Game(f);
         while(g.revealsLeft > 0) {
-          final x = rnd.nextInt(f.cols);
-          final y = rnd.nextInt(f.rows);
+          final x = rnd.nextInt(f.width);
+          final y = rnd.nextInt(f.height);
           if(g.getSquareState(x, y) == SquareState.hidden) {
-            if(f.isMine(x, y)) {
+            if(f.get(x, y)) {
               g.setFlag(x, y, true);
-            } else if(!f.isMine(x, y)) {
+            } else if(!f.get(x, y)) {
               g.reveal(x, y);
             }
           }
@@ -107,7 +107,7 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
-    final startReveals = f.cols * f.rows - 13;
+    final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
     expect(g.state, equals(GameState.notStarted));
 
@@ -120,11 +120,11 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.minesLeft, equals(13));
-    expect(g.revealsLeft, equals(f.cols * f.rows - 13));
+    expect(g.revealsLeft, equals(f.length - 13));
     expect(g.state, equals(GameState.notStarted));
 
-    for(int x = 0; x < f.cols; x++) {
-      for(int y = 0; y < f.rows; y++) {
+    for(int x = 0; x < f.width; x++) {
+      for(int y = 0; y < f.height; y++) {
         expect(g.getSquareState(x,y), equals(SquareState.hidden));
       }
     }
@@ -177,11 +177,11 @@ class TestGame {
     final g = new Game(f);
 
     int minesLleft = f.mineCount;
-    expect(g.revealsLeft, equals(f.cols * f.rows - 13));
+    expect(g.revealsLeft, equals(f.length - 13));
     int revealsLeft = g.revealsLeft;
-    for(int x = 0; x < f.cols; x++) {
-      for(int y = 0; y < f.rows; y++) {
-        if(f.isMine(x,y)) {
+    for(int x = 0; x < f.width; x++) {
+      for(int y = 0; y < f.height; y++) {
+        if(f.get(x,y)) {
           g.setFlag(x, y, true);
           minesLleft--;
           expect(g.minesLeft, equals(minesLleft));
