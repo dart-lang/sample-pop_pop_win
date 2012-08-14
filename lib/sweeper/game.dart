@@ -119,7 +119,7 @@ class Game {
     assert(_revealsLeft >= 0);
     int revealCount = 1;
     if(_revealsLeft == 0) {
-      _state = GameState.won;
+      _setWon();
     } else if (field.getAdjacentCount(x, y) == 0) {
       for(final i in field.getAdjacentIndices(x, y)) {
         if(_states[i] == SquareState.hidden) {
@@ -130,6 +130,18 @@ class Game {
       }
     }
     return revealCount;
+  }
+
+  void _setWon() {
+    assert(_state == GameState.started);
+    for(int x = 0; x < field.width; x++) {
+      for(int y = 0; y < field.height; y++) {
+        if(field.get(x, y)) {
+          _states.set(x,y,SquareState.safe);
+        }
+      }
+    }
+    _state = GameState.won;
   }
 
   void _setLost() {

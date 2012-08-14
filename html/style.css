@@ -51,3 +51,8 @@ body {
   background: red;
   cursor: default;
 }
+
+#sweeperTable td.game-square.safe {
+  background: green;
+  cursor: default;
+}

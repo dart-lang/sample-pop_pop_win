@@ -3,6 +3,7 @@ class SquareState {
   static final SquareState revealed = const SquareState._internal("revealed");
   static final SquareState flagged = const SquareState._internal("flagged");
   static final SquareState mine = const SquareState._internal("mine");
+  static final SquareState safe = const SquareState._internal('safe');
   final String name;
 
   const SquareState._internal(this.name);
