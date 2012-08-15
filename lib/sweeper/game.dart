@@ -6,6 +6,8 @@ class Game {
   GameState _state;
   int _minesLeft;
   int _revealsLeft;
+  Date _startTime;
+  Date _endTime;
 
   Game(Field field) :
     this.field = field,
@@ -26,6 +28,17 @@ class Game {
   EventRoot get updated() => _updatedEvent;
 
   SquareState getSquareState(int x, int y) => _states.get(x,y);
+
+  Duration get duration() {
+    if(_startTime == null) {
+      assert(state == GameState.notStarted);
+      return null;
+    } else {
+      assert((state == GameState.started) == (_endTime == null));
+      final end = (_endTime == null) ? new Date.now() : _endTime;
+      return end.difference(_startTime);
+    }
+  }
 
   void setFlag(int x, int y, bool value) {
     _ensureStarted();
@@ -125,7 +138,7 @@ class Game {
         if(_states[i] == SquareState.hidden) {
           final c = _getCoordFromIndex(i);
           revealCount += _doReveal(c[0], c[1]);
-          assert(_state == GameState.started || _state == GameState.won);
+          assert(state == GameState.started || state == GameState.won);
         }
       }
     }
@@ -133,32 +146,46 @@ class Game {
   }
 
   void _setWon() {
-    assert(_state == GameState.started);
+    assert(state == GameState.started);
     for(int i = 0; i < field.length; i++) {
       if(field[i]) {
         _states[i] = SquareState.safe;
       }
     }
-    _state = GameState.won;
+    _setState(GameState.won);
   }
 
   void _setLost() {
-    assert(_state == GameState.started);
+    assert(state == GameState.started);
     for(int i = 0; i < field.length; i++) {
       if(field[i]) {
         _states[i] = SquareState.mine;
       }
     }
-    _state = GameState.lost;
+    _setState(GameState.lost);
   }
 
   void _update() => _updatedEvent.fireEvent(EventArgs.empty);
 
+  void _setState(GameState value) {
+    assert((_state == GameState.notStarted) == (_startTime == null));
+    if(_state != value) {
+      _state = value;
+      if(_state == GameState.started) {
+        _startTime = new Date.now();
+      } else if(_state == GameState.won || _state == GameState.lost) {
+        _endTime = new Date.now();
+      }
+    }
+  }
+
   void _ensureStarted() {
     if(state == GameState.notStarted) {
-      _state = GameState.started;
+      assert(_startTime == null);
+      _setState(GameState.started);
     }
     assert(state == GameState.started);
+    assert(_startTime != null);
   }
 
   int _getAdjacentFlagCount(int x, int y) {

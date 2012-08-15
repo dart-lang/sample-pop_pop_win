@@ -55,6 +55,7 @@ class TestGame {
     g.reveal(2, 3);
     expect(g.minesLeft, equals(12));
     expect(g.revealsLeft, equals(startReveals - 1));
+    expect(g.duration, isNot(isNull));
   }
 
   static void _testGoodChord() {
@@ -76,6 +77,7 @@ class TestGame {
     g.reveal(2, 3);
     expect(g.minesLeft, equals(11));
     expect(g.revealsLeft, equals(startReveals - 11));
+    expect(g.duration, isNot(isNull));
   }
 
   // Test 5 random fields five times
@@ -122,6 +124,7 @@ class TestGame {
     expect(g.minesLeft, equals(13));
     expect(g.revealsLeft, equals(f.length - 13));
     expect(g.state, equals(GameState.notStarted));
+    expect(g.duration, isNull);
 
     for(int x = 0; x < f.width; x++) {
       for(int y = 0; y < f.height; y++) {
