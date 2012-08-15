@@ -5,9 +5,9 @@
 
 main(){
   final TableElement sweeperTable = query('#sweeperTable');
-  final DivElement minesLeftDiv = query('#minesLeft');
-  final DivElement gameStateDiv = query('#gameState');
-  final DivElement clockDiv = query('#clock');
+  final Element minesLeftDiv = query('#minesLeft');
+  final Element gameStateDiv = query('#gameState');
+  final Element clockDiv = query('#clock');
   final gameView = new GameView(sweeperTable, minesLeftDiv,
       gameStateDiv, clockDiv);
 

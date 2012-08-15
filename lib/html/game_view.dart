@@ -3,9 +3,9 @@ class GameView {
   static final String _yKey = 'y';
 
   final TableElement _table;
-  final DivElement _leftCountDiv;
-  final DivElement _gameStateDiv;
-  final DivElement _clockDiv;
+  final Element _leftCountDiv;
+  final Element _gameStateDiv;
+  final Element _clockDiv;
 
   Game game;
   dartlib.GlobalId _updatedEventId;

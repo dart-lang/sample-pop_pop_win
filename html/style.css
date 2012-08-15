@@ -4,31 +4,37 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 580px;
+  width: 540px;
+  text-align: center;
 }
 
 .status {
   font-size: 15px;
-  display: inline-block;
   margin: 5px;
-  width: 120px;
   font-family: inherit;
   font-weight: inherit;
 }
 
-div.status {
+button.status {
+  width: 120px;
+}
+
+span.status {
   width: 80px;
+  display: inline-block;
+  text-align: left;
 }
 
 #sweeperTable {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 
 #sweeperTable td.game-square {
