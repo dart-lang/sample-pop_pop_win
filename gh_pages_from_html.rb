@@ -1,17 +1,11 @@
 #!/usr/bin/env ruby
 
 #
-# A *very* rough ruby shell script to turn a checked-in `docs` directory
-# into it's own branch named `gh-pages`. Perfect for github.
+# A ruby shell script to turn a checked-in directory
+# into it's own branch. Perfect for gh-pages on github.
 #
 # Note: This only works content that's already checked-in to git.
 #       You must create and commit `docs` before running.
-#
-# Note: When you run dartdoc, you might want to use
-#
-#   --omit-generation-time
-#
-# to minimize non-subsubstative churn to the output files.
 #
 
 TMP_MESSAGE_PATH = '/tmp/message'
