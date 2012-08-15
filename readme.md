@@ -1,8 +1,26 @@
-# sweeper.dart
+# Dartsweeper
+
+An implementation of [Minesweeper](http://en.wikipedia.org/wiki/Minesweeper_(video_game)) in [Dart](http://www.dartlang.org).
+
+## Play
+
+ * [sweeper.j832.com](http://sweeper.j832.com)
+ * This is a version compiled to Javascript and should work in any modern browser.
+ * This version does not work in Dartium (The custom Chromium version for Dart). The associated code files are not deployed.
+
+## Interaction
+
+ * Click on hidden squares to reveal them.
+ * Shift-click on squares to flag them.
+ * Shift-click on revealed numbers to go fast--but be careful. If you've flagged incorrectly, you'll hit a mine.
+
+## Authors
+ * [Kevin Moore](https://github.com/kevmoo) ([@kevmoo](http://twitter.com/kevmoo))
+ * _You? File bugs. Fix bugs. Add features._
 
 ## License
 
-    Copyright 2012 Kevin Moore
+    Copyright (c) 2012, Dartsweeper authors
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
