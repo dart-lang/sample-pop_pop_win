@@ -5,15 +5,18 @@ class GameView {
   final TableElement _table;
   final DivElement _leftCountDiv;
   final DivElement _gameStateDiv;
+  final DivElement _clockDiv;
 
   Game game;
   dartlib.GlobalId _updatedEventId;
 
-  GameView(this._table, this._leftCountDiv, this._gameStateDiv) {
+  GameView(this._table, this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
     newGame();
+    _requestFrame();
   }
 
   void updateElement() {
+    _updateClock();
     _gameStateDiv.innerHTML = game.state.name;
     _leftCountDiv.innerHTML = game.minesLeft.toString();
 
@@ -62,6 +65,23 @@ class GameView {
     _updatedEventId = game.updated.add(_gameUpdated);
     _table.elements.clear();
     updateElement();
+  }
+
+  void _requestFrame() {
+    window.requestAnimationFrame(_onFrame);
+  }
+
+  bool _onFrame(int time) {
+    _updateClock();
+    _requestFrame();
+  }
+
+  void _updateClock() {
+    if(game.duration == null) {
+      _clockDiv.innerHTML = '';
+    } else {
+      _clockDiv.innerHTML = game.duration.inSeconds.toString();
+    }
   }
 
   bool get _canClick() {

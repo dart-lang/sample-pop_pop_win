@@ -7,13 +7,17 @@ body {
   width: 580px;
 }
 
-#gameState, #minesLeft, button {
+.status {
   font-size: 15px;
   display: inline-block;
   margin: 5px;
   width: 120px;
   font-family: inherit;
   font-weight: inherit;
+}
+
+div.status {
+  width: 80px;
 }
 
 #sweeperTable {
