@@ -25,52 +25,7 @@ span.status {
   text-align: left;
 }
 
-#sweeperTable {
-  margin: 0 auto;
-  border-collapse: collapse;
-  border-spacing: 0;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-#sweeperTable td.game-square {
-  width: 30px;
-  height: 30px;
-  background: #6666CC;  
-  text-align: center;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(153, 153, 153, 0.5);
-  cursor: pointer;
-}
-
-#sweeperTable td.game-square.flagged {
-  background: orange;
-}
-
-#sweeperTable td.game-square.revealed {
-  background: white;
-  cursor: default;
-}
-
-#sweeperTable td.game-square.mine {
-  background: red;
-  cursor: default;
-}
-
-#sweeperTable td.game-square.safe {
-  background: green;
-  cursor: default;
-}
-
-.help {
-  text-align: left;
-}
-
-.author {
-  margin: 10px;
+#sweeperCanvas {
+  width: 540px;
+  height: 540px;
 }

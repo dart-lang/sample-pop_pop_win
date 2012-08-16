@@ -4,7 +4,7 @@
 #import('../lib/canvas.dart');
 
 main(){
-  final TableElement sweeperTable = query('#sweeperTable');
+  final CanvasElement sweeperTable = query('#sweeperCanvas');
   final Element minesLeftDiv = query('#minesLeft');
   final Element gameStateDiv = query('#gameState');
   final Element clockDiv = query('#clock');
