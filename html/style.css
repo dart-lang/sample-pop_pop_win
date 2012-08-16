@@ -66,3 +66,7 @@ span.status {
   background: green;
   cursor: default;
 }
+
+.help {
+  text-align: left;
+}
