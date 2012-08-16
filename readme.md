@@ -1,6 +1,6 @@
 # Dartsweeper
 
-An implementation of [Minesweeper](http://en.wikipedia.org/wiki/Minesweeper_(video_game)) in [Dart](http://www.dartlang.org).
+An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> in [Dart](http://www.dartlang.org).
 
 ## Play
 
