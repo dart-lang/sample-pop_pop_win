@@ -3,26 +3,32 @@ class GameRoot {
   static final String _yKey = 'y';
 
   final Stage _stage;
+  final GameElement _gameElement;
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
 
-  Game game;
   dartlib.GlobalId _updatedEventId;
 
   factory GameRoot(CanvasElement canvasElement,
       Element leftCountDiv, Element gameStateDiv, Element clockDiv) {
 
-    final rootElement = new Shape(20, 20, 'blue', ShapeType.ellipse);
+    final rootElement = new GameElement(540, 540);
     final stage = new Stage(canvasElement, rootElement);
 
-    return new GameRoot._internal(stage, leftCountDiv, gameStateDiv, clockDiv);
+    return new GameRoot._internal(stage, rootElement, leftCountDiv, gameStateDiv, clockDiv);
   }
 
-  GameRoot._internal(this._stage, this._leftCountDiv,
-      this._gameStateDiv, this._clockDiv) {
+  GameRoot._internal(this._stage, this._gameElement,
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
     newGame();
     _requestFrame();
+  }
+
+  Game get game() => _gameElement.game;
+
+  void set game(Game value) {
+    _gameElement.game = value;
   }
 
   void updateElement() {
