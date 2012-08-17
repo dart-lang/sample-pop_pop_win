@@ -1,4 +1,6 @@
 class GameElement extends ElementParentImpl {
+  static final int _squareSize = 33;
+
   Game _game;
   dartlib.Array2d<SquareElement> _elements;
 
@@ -38,14 +40,14 @@ class GameElement extends ElementParentImpl {
           _game.field.width, _game.field.height);
 
       for(int i=0;i<_elements.length;i++) {
-        final se = new SquareElement(30, 30);
+        final se = new SquareElement(_squareSize, _squareSize);
         se.registerParent(this);
 
         final x = i % _elements.width;
         final y = i ~/ _elements.width;
         final etx = se.addTransform();
 
-        etx.setToTranslation(x * 30, y * 30);
+        etx.setToTranslation(x * _squareSize, y * _squareSize);
 
         _elements[i] = se;
       }
