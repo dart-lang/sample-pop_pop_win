@@ -3,12 +3,14 @@ class GameRoot {
   static final String _yKey = 'y';
 
   final Stage _stage;
+  final CanvasElement _canvas;
   final GameElement _gameElement;
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
 
   dartlib.GlobalId _updatedEventId;
+  dartlib.Coordinate _mouseLocation;
 
   factory GameRoot(CanvasElement canvasElement,
       Element leftCountDiv, Element gameStateDiv, Element clockDiv) {
@@ -16,11 +18,13 @@ class GameRoot {
     final rootElement = new GameElement(540, 540);
     final stage = new Stage(canvasElement, rootElement);
 
-    return new GameRoot._internal(stage, rootElement, leftCountDiv, gameStateDiv, clockDiv);
+    return new GameRoot._internal(canvasElement, stage, rootElement, leftCountDiv, gameStateDiv, clockDiv);
   }
 
-  GameRoot._internal(this._stage, this._gameElement,
+  GameRoot._internal(this._canvas, this._stage, this._gameElement,
       this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
+    _canvas.on.mouseMove.add(_canvas_mouseMove);
+    _canvas.on.mouseOut.add(_canvas_mouseOut);
     newGame();
     _requestFrame();
   }
@@ -56,6 +60,10 @@ class GameRoot {
 
   bool _onFrame(int time) {
     _updateClock();
+    _stage.draw();
+    if(_mouseLocation != null){
+      RetainedDebug.borderHitTest(_stage, _mouseLocation);
+    }
     _requestFrame();
   }
 
@@ -92,5 +100,17 @@ class GameRoot {
 
   void _gameUpdated(args) {
     updateElement();
+  }
+
+  void requestFrame(){
+    window.webkitRequestAnimationFrame(_onFrame);
+  }
+
+  void _canvas_mouseMove(MouseEvent e){
+    _mouseLocation = new dartlib.Coordinate(e.offsetX, e.offsetY);
+  }
+
+  void _canvas_mouseOut(MouseEvent e){
+    _mouseLocation = null;
   }
 }
