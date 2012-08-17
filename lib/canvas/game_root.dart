@@ -1,8 +1,8 @@
-class GameElement {
+class GameRoot {
   static final String _xKey = 'x';
   static final String _yKey = 'y';
 
-  final CanvasElement _canvas;
+  final Stage _stage;
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
@@ -10,7 +10,17 @@ class GameElement {
   Game game;
   dartlib.GlobalId _updatedEventId;
 
-  GameElement(this._canvas, this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
+  factory GameRoot(CanvasElement canvasElement,
+      Element leftCountDiv, Element gameStateDiv, Element clockDiv) {
+
+    final rootElement = new Shape(20, 20, 'blue', ShapeType.ellipse);
+    final stage = new Stage(canvasElement, rootElement);
+
+    return new GameRoot._internal(stage, leftCountDiv, gameStateDiv, clockDiv);
+  }
+
+  GameRoot._internal(this._stage, this._leftCountDiv,
+      this._gameStateDiv, this._clockDiv) {
     newGame();
     _requestFrame();
   }
@@ -20,7 +30,7 @@ class GameElement {
     _gameStateDiv.innerHTML = game.state.name;
     _leftCountDiv.innerHTML = game.minesLeft.toString();
 
-
+    _stage.draw();
   }
 
   void newGame() {
@@ -31,7 +41,6 @@ class GameElement {
     final f = new Field();
     game = new Game(f);
     _updatedEventId = game.updated.add(_gameUpdated);
-    _canvas.elements.clear();
     updateElement();
   }
 
