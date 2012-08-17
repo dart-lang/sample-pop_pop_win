@@ -9,6 +9,7 @@ class GameRoot {
   final Element _gameStateDiv;
   final Element _clockDiv;
 
+  bool _frameRequested = false;
   dartlib.GlobalId _updatedEventId;
   dartlib.Coordinate _mouseLocation;
 
@@ -23,8 +24,12 @@ class GameRoot {
 
   GameRoot._internal(this._canvas, this._stage, this._gameElement,
       this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
+
+    _stage.invalidated.add(_stageInvalidated);
+
     _canvas.on.mouseMove.add(_canvas_mouseMove);
     _canvas.on.mouseOut.add(_canvas_mouseOut);
+
     newGame();
     _requestFrame();
   }
@@ -35,14 +40,6 @@ class GameRoot {
     _gameElement.game = value;
   }
 
-  void updateElement() {
-    _updateClock();
-    _gameStateDiv.innerHTML = game.state.name;
-    _leftCountDiv.innerHTML = game.minesLeft.toString();
-
-    _stage.draw();
-  }
-
   void newGame() {
     if(_updatedEventId != null) {
       assert(game != null);
@@ -51,20 +48,22 @@ class GameRoot {
     final f = new Field();
     game = new Game(f);
     _updatedEventId = game.updated.add(_gameUpdated);
-    updateElement();
+    _requestFrame();
   }
 
   void _requestFrame() {
-    window.requestAnimationFrame(_onFrame);
+    if(!_frameRequested) {
+      _frameRequested = true;
+      window.requestAnimationFrame(_onFrame);
+    }
   }
 
   bool _onFrame(int time) {
     _updateClock();
+    _gameStateDiv.innerHTML = game.state.name;
+    _leftCountDiv.innerHTML = game.minesLeft.toString();
     _stage.draw();
-    if(_mouseLocation != null){
-      RetainedDebug.borderHitTest(_stage, _mouseLocation);
-    }
-    _requestFrame();
+    _frameRequested = false;
   }
 
   void _updateClock() {
@@ -99,7 +98,7 @@ class GameRoot {
   }
 
   void _gameUpdated(args) {
-    updateElement();
+    _requestFrame();
   }
 
   void requestFrame(){
@@ -107,10 +106,19 @@ class GameRoot {
   }
 
   void _canvas_mouseMove(MouseEvent e){
-    _mouseLocation = new dartlib.Coordinate(e.offsetX, e.offsetY);
+    _updateMouse(new dartlib.Coordinate(e.offsetX, e.offsetY));
   }
 
   void _canvas_mouseOut(MouseEvent e){
-    _mouseLocation = null;
+    _updateMouse(null);
+  }
+
+  void _updateMouse(dartlib.Coordinate value) {
+    _mouseLocation = value;
+    final hits = Mouse.markMouseOver(_stage, value);
+  }
+
+  void _stageInvalidated(args) {
+    _requestFrame();
   }
 }
