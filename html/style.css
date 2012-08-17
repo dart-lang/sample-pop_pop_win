@@ -25,7 +25,10 @@ span.status {
   text-align: left;
 }
 
-#sweeperCanvas {
-  width: 540px;
-  height: 540px;
+.help {
+  text-align: left;
+}
+
+.author {
+  margin: 10px;
 }
