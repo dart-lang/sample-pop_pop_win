@@ -6,9 +6,7 @@ class GameElement extends ElementParentImpl {
 
   GameElement(int width, int height) : super(width, height);
 
-  Game get game() {
-    return _game;
-  }
+  Game get game() => _game;
 
   void set game(Game value) {
     _game = value;
@@ -40,16 +38,43 @@ class GameElement extends ElementParentImpl {
           _game.field.width, _game.field.height);
 
       for(int i=0;i<_elements.length;i++) {
-        final se = new SquareElement(_squareSize, _squareSize);
+        final coords = _elements.getCoordinate(i);
+        final se = new SquareElement(_squareSize, coords.Item1, coords.Item2);
         se.registerParent(this);
 
-        final x = i % _elements.width;
-        final y = i ~/ _elements.width;
-        final etx = se.addTransform();
+        ClickManager.addHandler(se, _squareClicked);
 
-        etx.setToTranslation(x * _squareSize, y * _squareSize);
+        // position the square
+        final etx = se.addTransform();
+        etx.setToTranslation(coords.Item1 * _squareSize, coords.Item2 * _squareSize);
 
         _elements[i] = se;
+      }
+    }
+  }
+
+  void _squareClicked(ElementMouseEventArgs args) {
+    if(!_game.gameEnded) {
+      final SquareElement se = args.element;
+      _click(se.x, se.y, args.shiftKey);
+    }
+  }
+
+  void _click(int x, int y, bool alt) {
+    assert(!game.gameEnded);
+    final ss = game.getSquareState(x, y);
+
+    if(alt) {
+      if(ss == SquareState.hidden) {
+        game.setFlag(x, y, true);
+      } else if(ss == SquareState.flagged) {
+        game.setFlag(x, y, false);
+      } else if(ss == SquareState.revealed) {
+        game.reveal(x, y);
+      }
+    } else {
+      if(ss == SquareState.hidden) {
+        game.reveal(x, y);
       }
     }
   }

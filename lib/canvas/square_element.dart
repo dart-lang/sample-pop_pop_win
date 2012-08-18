@@ -1,43 +1,52 @@
 class SquareElement extends PElement {
-  bool _revealed = false;
+  final int x, y;
 
-  SquareElement(int width, int height) : super(width, height) {
-    Mouse.isMouseDirectlyOverProperty.addHandler(this, _mouseOver);
+  SquareElement(int size, this.x, this.y) : super(size, size) {
     ClickManager.setClickable(this, true);
-    ClickManager.addHandler(this, _onClick);
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    if(_isMouseOver) {
-      ctx.fillStyle = 'yellow';
-      ctx.font = 'bold 15px Helvetica';
-    } else if(_revealed) {
-      ctx.fillStyle = 'orange';
-      ctx.font = 'italic 15px Helvetica';
-    } else {
-      ctx.fillStyle = 'white';
-      ctx.font = '15px Helvetica';
-    }
-
+    ctx.fillStyle = _fillStyle;
     ctx.fillRect(0, 0, width, height);
     ctx.strokeRect(0, 0, width, height, 1);
 
-    ctx.fillStyle = 'black';
-    ctx.textAlign = 'center';
+    if(_squareState == SquareState.revealed) {
+      final adjCount = _adjacentCount;
+      if(adjCount > 0) {
+        ctx.font = '15px Helvetica';
+        ctx.fillStyle = 'black';
+        ctx.textAlign = 'center';
+        ctx.fillText(adjCount.toString(), width / 2, 20, 30);
+      }
+    }
 
-    final String txt = _revealed ? 'RE' : 'SE';
-
-    ctx.fillText(txt, width / 2, 20, 30);
   }
 
-  bool get _isMouseOver() => Mouse.isMouseDirectlyOverProperty.get(this);
+  String toString() => 'Square at [$x, $y]';
 
-  void _mouseOver(dartlib.Property<bool> property) {
-    invalidateDraw();
+  SquareState get _squareState() => _game.getSquareState(x, y);
+
+  int get _adjacentCount() => _game.field.getAdjacentCount(x, y);
+
+  Game get _game() {
+    final GameElement p = this.parent;
+    return p.game;
   }
 
-  void _onClick(args) {
-    _revealed = !_revealed;
-    invalidateDraw();
+  Dynamic get _fillStyle() {
+    switch(_squareState) {
+      case SquareState.flagged:
+        return 'orange';
+      case SquareState.revealed:
+        return 'white';
+      case SquareState.mine:
+        return 'red';
+      case SquareState.safe:
+        return 'green';
+      case SquareState.hidden:
+        return '#6666CC';
+      default:
+        throw 'not supported';
+    }
   }
 }
