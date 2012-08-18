@@ -4598,6 +4598,7 @@ $$.SquareElement = {"":
  drawOverride$1: function(ctx) {
   ctx.set$fillStyle(this.get$_fillStyle());
   ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
+  ctx.set$strokeStyle('rgba(153, 153, 153, 0.5)');
   ctx.strokeRect$5(0, 0, this.get$width(), this.get$height(), 1);
   if ($.eqB(this.get$_squareState(), $.CTC14)) {
     var adjCount = this.get$_adjacentCount();
@@ -8351,7 +8352,7 @@ $.$defineNativeClass('HTMLCanvasElement', ["width=", "height="], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('CanvasRenderingContext2D', ["textAlign!", "globalAlpha!", "font!", "fillStyle!"], {
+$.$defineNativeClass('CanvasRenderingContext2D', ["textAlign!", "strokeStyle!", "globalAlpha!", "font!", "fillStyle!"], {
  transform$6: function(m11, m12, m21, m22, dx, dy) {
   return (this.transform(m11,m12,m21,m22,dx,dy));
 },
