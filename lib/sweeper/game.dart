@@ -117,8 +117,8 @@ class Game {
       _setLost();
     } else {
       for(final i in hidden) {
-        final c = _getCoordFromIndex(i);
-        reveals += reveal(c[0], c[1]);
+        final c = field.getCoordinate(i);
+        reveals += reveal(c.Item1, c.Item2);
       }
     }
 
@@ -136,8 +136,8 @@ class Game {
     } else if (field.getAdjacentCount(x, y) == 0) {
       for(final i in field.getAdjacentIndices(x, y)) {
         if(_states[i] == SquareState.hidden) {
-          final c = _getCoordFromIndex(i);
-          revealCount += _doReveal(c[0], c[1]);
+          final c = field.getCoordinate(i);
+          revealCount += _doReveal(c.Item1, c.Item2);
           assert(state == GameState.started || state == GameState.won);
         }
       }
@@ -198,9 +198,5 @@ class Game {
       }
     }
     return val;
-  }
-
-  List<int> _getCoordFromIndex(int i) {
-    return [i % field.width, i ~/ field.width];
   }
 }
