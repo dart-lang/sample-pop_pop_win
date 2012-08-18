@@ -5,6 +5,7 @@ class GameRoot {
   final Stage _stage;
   final CanvasElement _canvas;
   final GameElement _gameElement;
+  final ClickManager _clickMan;
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
@@ -18,11 +19,13 @@ class GameRoot {
 
     final rootElement = new GameElement(540, 540);
     final stage = new Stage(canvasElement, rootElement);
+    final clickMan = new ClickManager(stage);
 
-    return new GameRoot._internal(canvasElement, stage, rootElement, leftCountDiv, gameStateDiv, clockDiv);
+    return new GameRoot._internal(canvasElement, stage, rootElement, clickMan,
+        leftCountDiv, gameStateDiv, clockDiv);
   }
 
-  GameRoot._internal(this._canvas, this._stage, this._gameElement,
+  GameRoot._internal(this._canvas, this._stage, this._gameElement, this._clickMan,
       this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
 
     _stage.invalidated.add(_stageInvalidated);
