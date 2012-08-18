@@ -106,6 +106,9 @@ class GameRoot {
   }
 
   void _canvas_mouseMove(MouseEvent e){
+    // BUGBUG: broken in firefox
+    // Should be an easy work-around, though
+    // https://github.com/kevmoo/sweeper.dart/issues/14
     _updateMouse(new dartlib.Coordinate(e.offsetX, e.offsetY));
   }
 
