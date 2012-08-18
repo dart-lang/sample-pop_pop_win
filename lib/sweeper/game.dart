@@ -29,6 +29,8 @@ class Game {
 
   SquareState getSquareState(int x, int y) => _states.get(x,y);
 
+  bool get gameEnded() => _state == GameState.won || _state == GameState.lost;
+
   Duration get duration() {
     if(_startTime == null) {
       assert(state == GameState.notStarted);
@@ -173,7 +175,7 @@ class Game {
       _state = value;
       if(_state == GameState.started) {
         _startTime = new Date.now();
-      } else if(_state == GameState.won || _state == GameState.lost) {
+      } else if(gameEnded) {
         _endTime = new Date.now();
       }
     }
