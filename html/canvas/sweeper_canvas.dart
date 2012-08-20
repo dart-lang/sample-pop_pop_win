@@ -1,7 +1,7 @@
 #import('dart:html');
 
-#import('../lib/sweeper.dart');
-#import('../lib/canvas.dart');
+#import('../../lib/sweeper.dart');
+#import('../../lib/canvas.dart');
 
 main(){
   final CanvasElement sweeperTable = query('#sweeperCanvas');
