@@ -12,7 +12,6 @@ class GameRoot {
 
   bool _frameRequested = false;
   dartlib.GlobalId _updatedEventId;
-  dartlib.Coordinate _mouseLocation;
 
   factory GameRoot(CanvasElement canvasElement,
       Element leftCountDiv, Element gameStateDiv, Element clockDiv) {
@@ -29,9 +28,6 @@ class GameRoot {
       this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
 
     _stage.invalidated.add(_stageInvalidated);
-
-    _canvas.on.mouseMove.add(_canvas_mouseMove);
-    _canvas.on.mouseOut.add(_canvas_mouseOut);
 
     newGame();
     _requestFrame();
@@ -106,22 +102,6 @@ class GameRoot {
 
   void requestFrame(){
     window.webkitRequestAnimationFrame(_onFrame);
-  }
-
-  void _canvas_mouseMove(MouseEvent e){
-    // BUGBUG: broken in firefox
-    // Should be an easy work-around, though
-    // https://github.com/kevmoo/sweeper.dart/issues/14
-    _updateMouse(new dartlib.Coordinate(e.offsetX, e.offsetY));
-  }
-
-  void _canvas_mouseOut(MouseEvent e){
-    _updateMouse(null);
-  }
-
-  void _updateMouse(dartlib.Coordinate value) {
-    _mouseLocation = value;
-    final hits = Mouse.markMouseOver(_stage, value);
   }
 
   void _stageInvalidated(args) {

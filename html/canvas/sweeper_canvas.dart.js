@@ -4429,24 +4429,12 @@ $$._AttachableEventHelper = {"":
 };
 
 $$.GameRoot = {"":
- ["_mouseLocation", "_updatedEventId", "_frameRequested", "_clockDiv", "_gameStateDiv", "_leftCountDiv", "_clickMan", "_gameElement", "_lib1_canvas?", "_lib1_stage"],
+ ["_updatedEventId", "_frameRequested", "_clockDiv", "_gameStateDiv", "_leftCountDiv", "_clickMan", "_gameElement", "_lib1_canvas?", "_lib1_stage"],
  super: "Object",
  _stageInvalidated$1: function(args) {
   this._requestFrame$0();
 },
  get$_stageInvalidated: function() { return new $.BoundClosure0(this, '_stageInvalidated$1'); },
- _updateMouse$1: function(value) {
-  this._mouseLocation = value;
-  $.Mouse_markMouseOver(this._lib1_stage, value);
-},
- _canvas_mouseOut$1: function(e) {
-  this._updateMouse$1(null);
-},
- get$_canvas_mouseOut: function() { return new $.BoundClosure0(this, '_canvas_mouseOut$1'); },
- _canvas_mouseMove$1: function(e) {
-  this._updateMouse$1($.Coordinate$(e.get$offsetX(), e.get$offsetY()));
-},
- get$_canvas_mouseMove: function() { return new $.BoundClosure0(this, '_canvas_mouseMove$1'); },
  _gameUpdated$1: function(args) {
   this._requestFrame$0();
 },
@@ -4502,9 +4490,6 @@ $$.GameRoot = {"":
 },
  GameRoot$_internal$7: function(_canvas, _stage, _gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv) {
   $.add$1(this._lib1_stage.get$invalidated(), this.get$_stageInvalidated());
-  var t1 = this._lib1_canvas;
-  $.add$1(t1 .get$on().get$mouseMove(), this.get$_canvas_mouseMove());
-  $.add$1(t1 .get$on().get$mouseOut(), this.get$_canvas_mouseOut());
   this.newGame$0();
   this._requestFrame$0();
 }
@@ -7186,6 +7171,10 @@ $.Primitives_getMonth = function(receiver) {
   return receiver.isUtc === true ? (($.Primitives_lazyAsJsDate(receiver).getUTCMonth())) + 1 : (($.Primitives_lazyAsJsDate(receiver).getMonth())) + 1;
 };
 
+$._dynamicMetadata = function(table) {
+  $dynamicMetadata = table;
+};
+
 $.allMatchesInStringUnchecked = function(needle, haystack) {
   var result = $.ListFactory_List(null);
   $.setRuntimeTypeInfo(result, (({E: 'Match'})));
@@ -7209,20 +7198,16 @@ $._SpeechRecognitionEventsImpl$ = function(_ptr) {
   return new $._SpeechRecognitionEventsImpl(_ptr);
 };
 
-$._dynamicMetadata = function(table) {
-  $dynamicMetadata = table;
-};
-
-$.Primitives_getSeconds = function(receiver) {
-  return receiver.isUtc === true ? (($.Primitives_lazyAsJsDate(receiver).getUTCSeconds())) : (($.Primitives_lazyAsJsDate(receiver).getSeconds()));
-};
-
 $._dynamicMetadata0 = function() {
   if (((typeof($dynamicMetadata))) === 'undefined') {
     var t1 = [];
     $._dynamicMetadata(t1);
   }
   return ($dynamicMetadata);
+};
+
+$.Primitives_getSeconds = function(receiver) {
+  return receiver.isUtc === true ? (($.Primitives_lazyAsJsDate(receiver).getUTCSeconds())) : (($.Primitives_lazyAsJsDate(receiver).getSeconds()));
 };
 
 $.add$slow = function(a, b) {
@@ -7455,7 +7440,7 @@ $._MediaElementEventsImpl$ = function(_ptr) {
 };
 
 $.GameRoot$_internal = function(_canvas, _stage, _gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv) {
-  var t1 = new $.GameRoot(null, null, false, _clockDiv, _gameStateDiv, _leftCountDiv, _clickMan, _gameElement, _canvas, _stage);
+  var t1 = new $.GameRoot(null, false, _clockDiv, _gameStateDiv, _leftCountDiv, _clickMan, _gameElement, _canvas, _stage);
   t1 .GameRoot$_internal$7(_canvas, _stage, _gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv);
   return t1;
 };
@@ -9729,7 +9714,7 @@ $.$defineNativeClass('HTMLModElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('MouseEvent', ["y?", "x?", "shiftKey?", "offsetY?", "offsetX?", "clientY?", "clientX?"], {
+$.$defineNativeClass('MouseEvent', ["y?", "x?", "shiftKey?", "clientY?", "clientX?"], {
 });
 
 $.$defineNativeClass('NamedNodeMap', ["length?"], {
