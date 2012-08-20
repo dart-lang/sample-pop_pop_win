@@ -100,10 +100,6 @@ class GameRoot {
     _requestFrame();
   }
 
-  void requestFrame(){
-    window.webkitRequestAnimationFrame(_onFrame);
-  }
-
   void _stageInvalidated(args) {
     _requestFrame();
   }
