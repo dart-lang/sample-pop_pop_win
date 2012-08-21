@@ -10,11 +10,11 @@ class GameView {
 
   Game game;
   dartlib.GlobalId _updatedEventId;
+  int _setIntervalId;
 
   GameView(this._table, this._leftCountDiv, this._gameStateDiv, this._clockDiv):
     _gameStorage = new GameStorage() {
     newGame();
-    _requestFrame();
   }
 
   void updateElement() {
@@ -74,20 +74,18 @@ class GameView {
     _gameStorage.reset();
   }
 
-  void _requestFrame() {
-    window.requestAnimationFrame(_onFrame);
-  }
-
-  bool _onFrame(int time) {
-    _updateClock();
-    _requestFrame();
-  }
-
   void _updateClock() {
     if(game.duration == null) {
       _clockDiv.innerHTML = '';
     } else {
       _clockDiv.innerHTML = game.duration.inSeconds.toString();
+    }
+
+    if(_setIntervalId == null && game.state == GameState.started) {
+      _setIntervalId = window.setInterval(_updateClock, 1000);
+    } else if(_setIntervalId != null && game.state != GameState.started) {
+      window.clearInterval(_setIntervalId);
+      _setIntervalId = null;
     }
   }
 
