@@ -11,7 +11,7 @@ class Game {
 
   Game(Field field) :
     this.field = field,
-    _state = GameState.notStarted,
+    _state = GameState.reset,
     _states = new Array2d<SquareState>(field.width, field.height, SquareState.hidden),
     _updatedEvent = new EventHandle<EventArgs>() {
     assert(field != null);
@@ -33,7 +33,7 @@ class Game {
 
   Duration get duration() {
     if(_startTime == null) {
-      assert(state == GameState.notStarted);
+      assert(state == GameState.reset);
       return null;
     } else {
       assert((state == GameState.started) == (_endTime == null));
@@ -170,7 +170,7 @@ class Game {
   void _update() => _updatedEvent.fireEvent(EventArgs.empty);
 
   void _setState(GameState value) {
-    assert((_state == GameState.notStarted) == (_startTime == null));
+    assert((_state == GameState.reset) == (_startTime == null));
     if(_state != value) {
       _state = value;
       if(_state == GameState.started) {
@@ -182,7 +182,7 @@ class Game {
   }
 
   void _ensureStarted() {
-    if(state == GameState.notStarted) {
+    if(state == GameState.reset) {
       assert(_startTime == null);
       _setState(GameState.started);
     }

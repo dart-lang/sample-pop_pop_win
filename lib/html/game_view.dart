@@ -90,7 +90,7 @@ class GameView {
   }
 
   bool get _canClick() {
-    return game.state == GameState.notStarted ||
+    return game.state == GameState.reset ||
         game.state == GameState.started;
   }
 

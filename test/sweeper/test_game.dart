@@ -22,7 +22,7 @@ class TestGame {
     expect(g.minesLeft, equals(13));
     final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
-    expect(g.state, equals(GameState.notStarted));
+    expect(g.state, equals(GameState.reset));
 
     g.reveal(2, 3);
     g.setFlag(1, 2, true);
@@ -44,7 +44,7 @@ class TestGame {
     expect(g.minesLeft, equals(13));
     final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
-    expect(g.state, equals(GameState.notStarted));
+    expect(g.state, equals(GameState.reset));
 
     g.reveal(2, 3);
     g.setFlag(2, 2, true);
@@ -65,7 +65,7 @@ class TestGame {
     expect(g.minesLeft, equals(13));
     final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
-    expect(g.state, equals(GameState.notStarted));
+    expect(g.state, equals(GameState.reset));
 
     g.reveal(2, 3);
     g.setFlag(2, 2, true);
@@ -111,7 +111,7 @@ class TestGame {
     expect(g.minesLeft, equals(13));
     final startReveals = f.length - 13;
     expect(g.revealsLeft, equals(startReveals));
-    expect(g.state, equals(GameState.notStarted));
+    expect(g.state, equals(GameState.reset));
 
     g.reveal(5, 4);
     expect(g.revealsLeft, equals(startReveals - 10));
@@ -123,7 +123,7 @@ class TestGame {
 
     expect(g.minesLeft, equals(13));
     expect(g.revealsLeft, equals(f.length - 13));
-    expect(g.state, equals(GameState.notStarted));
+    expect(g.state, equals(GameState.reset));
     expect(g.duration, isNull);
 
     for(int x = 0; x < f.width; x++) {
@@ -194,7 +194,7 @@ class TestGame {
         } else {
           expect(g.getSquareState(x,y), equals(SquareState.revealed));
         }
-        expect(g.state, isNot(equals(GameState.notStarted)));
+        expect(g.state, isNot(equals(GameState.reset)));
         expect(g.state, isNot(equals(GameState.lost)));
       }
     }
