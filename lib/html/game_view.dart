@@ -6,11 +6,13 @@ class GameView {
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
+  final GameStorage _gameStorage;
 
   Game game;
   dartlib.GlobalId _updatedEventId;
 
-  GameView(this._table, this._leftCountDiv, this._gameStateDiv, this._clockDiv) {
+  GameView(this._table, this._leftCountDiv, this._gameStateDiv, this._clockDiv):
+    _gameStorage = new GameStorage() {
     newGame();
     _requestFrame();
   }
@@ -65,6 +67,11 @@ class GameView {
     _updatedEventId = game.updated.add(_gameUpdated);
     _table.elements.clear();
     updateElement();
+    _gameStorage.newGame();
+  }
+
+  void resetScores() {
+    _gameStorage.reset();
   }
 
   void _requestFrame() {

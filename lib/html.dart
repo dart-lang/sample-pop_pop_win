@@ -1,5 +1,6 @@
 #library('sweeper-html');
 
+#import('dart:coreimpl');
 #import('dart:html');
 #import('dart:math', prefix:'math');
 #import('../../dartlib/lib/dartlib.dart', prefix:'dartlib');
@@ -7,3 +8,4 @@
 #import('sweeper.dart');
 
 #source('html/game_view.dart');
+#source('html/game_storage.dart');
