@@ -12,6 +12,7 @@ class GameRoot {
 
   bool _frameRequested = false;
   dartlib.GlobalId _updatedEventId;
+  int _setIntervalId;
 
   factory GameRoot(CanvasElement canvasElement,
       Element leftCountDiv, Element gameStateDiv, Element clockDiv) {
@@ -66,10 +67,18 @@ class GameRoot {
   }
 
   void _updateClock() {
+    print('tick!');
     if(game.duration == null) {
       _clockDiv.innerHTML = '';
     } else {
       _clockDiv.innerHTML = game.duration.inSeconds.toString();
+    }
+
+    if(_setIntervalId == null && game.state == GameState.started) {
+      _setIntervalId = window.setInterval(_updateClock, 1000);
+    } else if(_setIntervalId != null && game.state != GameState.started) {
+      window.clearInterval(_setIntervalId);
+      _setIntervalId = null;
     }
   }
 
