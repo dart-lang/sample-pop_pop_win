@@ -1192,71 +1192,6 @@ $$._AllMatchesIterator = {"":
 }
 };
 
-$$.ListIterator = {"":
- ["list", "i"],
- super: "Object",
- next$0: function() {
-  if (this.hasNext$0() !== true)
-    throw $.captureStackTrace($.NoMoreElementsException$());
-  var value = this.list[this.i];
-  var t1 = this.i;
-  if (typeof t1 !== 'number')
-    return this.next$0$bailout(1, t1, value);
-  this.i = t1 + 1;
-  return value;
-},
- next$0$bailout: function(state, t1, value) {
-  this.i = $.add(t1, 1);
-  return value;
-},
- hasNext$0: function() {
-  var t1 = this.i;
-  if (typeof t1 !== 'number')
-    return this.hasNext$0$bailout(1, t1);
-  return t1 < this.list.length;
-},
- hasNext$0$bailout: function(state, t1) {
-  return $.lt(t1, this.list.length);
-}
-};
-
-$$.StackTrace = {"":
- ["stack"],
- super: "Object",
- toString$0: function() {
-  var t1 = this.stack;
-  return !(t1 == null) ? t1 : '';
-}
-};
-
-$$.Closure = {"":
- [],
- super: "Object",
- toString$0: function() {
-  return 'Closure';
-},
- is$Function: true
-};
-
-$$.MetaInfo = {"":
- ["set?", "tags", "tag?"],
- super: "Object",
- set$3: function(arg0, arg1, arg2) { return this.set.call$3(arg0, arg1, arg2); }
-};
-
-$$.StringMatch = {"":
- ["pattern?", "str", "_lib4_start"],
- super: "Object",
- group$1: function(group_) {
-  if (!$.eqB(group_, 0))
-    throw $.captureStackTrace($.IndexOutOfRangeException$(group_));
-  return this.pattern;
-},
- operator$index$1: function(g) {
-  return this.group$1(g);
-}
-};
-
 $$.Object = {"":
  [],
  super: "",
@@ -1467,6 +1402,71 @@ $$.FutureAlreadyCompleteException = {"":
   return 'Exception: future already completed';
 },
  is$Exception: true
+};
+
+$$.ListIterator = {"":
+ ["list", "i"],
+ super: "Object",
+ next$0: function() {
+  if (this.hasNext$0() !== true)
+    throw $.captureStackTrace($.NoMoreElementsException$());
+  var value = this.list[this.i];
+  var t1 = this.i;
+  if (typeof t1 !== 'number')
+    return this.next$0$bailout(1, t1, value);
+  this.i = t1 + 1;
+  return value;
+},
+ next$0$bailout: function(state, t1, value) {
+  this.i = $.add(t1, 1);
+  return value;
+},
+ hasNext$0: function() {
+  var t1 = this.i;
+  if (typeof t1 !== 'number')
+    return this.hasNext$0$bailout(1, t1);
+  return t1 < this.list.length;
+},
+ hasNext$0$bailout: function(state, t1) {
+  return $.lt(t1, this.list.length);
+}
+};
+
+$$.StackTrace = {"":
+ ["stack"],
+ super: "Object",
+ toString$0: function() {
+  var t1 = this.stack;
+  return !(t1 == null) ? t1 : '';
+}
+};
+
+$$.Closure = {"":
+ [],
+ super: "Object",
+ toString$0: function() {
+  return 'Closure';
+},
+ is$Function: true
+};
+
+$$.MetaInfo = {"":
+ ["set?", "tags", "tag?"],
+ super: "Object",
+ set$3: function(arg0, arg1, arg2) { return this.set.call$3(arg0, arg1, arg2); }
+};
+
+$$.StringMatch = {"":
+ ["pattern?", "str", "_lib4_start"],
+ super: "Object",
+ group$1: function(group_) {
+  if (!$.eqB(group_, 0))
+    throw $.captureStackTrace($.IndexOutOfRangeException$(group_));
+  return this.pattern;
+},
+ operator$index$1: function(g) {
+  return this.group$1(g);
+}
 };
 
 $$._AbstractWorkerEventsImpl = {"":
@@ -3184,13 +3184,13 @@ $$.Game = {"":
   return val;
 },
  _ensureStarted$0: function() {
-  if ($.eqB(this.get$state(), $.CTC27))
-    this._setState$1($.CTC30);
+  if ($.eqB(this.get$state(), $.CTC28))
+    this._setState$1($.CTC26);
 },
  _setState$1: function(value) {
   if (!$.eqB(this._state, value)) {
     this._state = value;
-    if ($.eqB(this._state, $.CTC30))
+    if ($.eqB(this._state, $.CTC26))
       this._startTime = $.DateImplementation$now();
     else if (this.get$gameEnded() === true)
       this._endTime = $.DateImplementation$now();
@@ -3217,7 +3217,7 @@ $$.Game = {"":
       t3[i] = $.CTC16;
     }
   }
-  this._setState$1($.CTC29);
+  this._setState$1($.CTC30);
 },
  _setLost$0$bailout: function(state, env0, env1) {
   switch (state) {
@@ -3241,7 +3241,7 @@ $$.Game = {"":
       for (; $.ltB(i, $.get$length(t1)); ++i)
         if ($.index(t1, i) === true)
           $.indexSet(t3, i, $.CTC16);
-      this._setState$1($.CTC29);
+      this._setState$1($.CTC30);
   }
 },
  _setWon$0: function() {
@@ -3262,7 +3262,7 @@ $$.Game = {"":
       t3[i] = $.CTC17;
     }
   }
-  this._setState$1($.CTC28);
+  this._setState$1($.CTC29);
 },
  _setWon$0$bailout: function(state, env0, env1) {
   switch (state) {
@@ -3286,7 +3286,7 @@ $$.Game = {"":
       for (; $.ltB(i, $.get$length(t1)); ++i)
         if ($.index(t1, i) === true)
           $.indexSet(t3, i, $.CTC17);
-      this._setState$1($.CTC28);
+      this._setState$1($.CTC29);
   }
 },
  _doReveal$2: function(x, y) {
@@ -3542,7 +3542,7 @@ $$.Game = {"":
   }
 },
  get$gameEnded: function() {
-  return $.eqB(this._state, $.CTC28) || $.eqB(this._state, $.CTC29);
+  return $.eqB(this._state, $.CTC29) || $.eqB(this._state, $.CTC30);
 },
  getSquareState$2: function(x, y) {
   return this._states.get$2(x, y);
@@ -4411,7 +4411,7 @@ $$._AttachableEventHelper = {"":
 };
 
 $$.GameRoot = {"":
- ["_updatedEventId", "_frameRequested", "_clockDiv", "_gameStateDiv", "_leftCountDiv", "_clickMan", "_gameElement", "_lib1_canvas?", "_lib1_stage"],
+ ["_setIntervalId", "_updatedEventId", "_frameRequested", "_clockDiv", "_gameStateDiv", "_leftCountDiv", "_clickMan", "_gameElement", "_lib1_canvas?", "_lib1_stage"],
  super: "Object",
  _stageInvalidated$1: function(args) {
   this._requestFrame$0();
@@ -4440,7 +4440,14 @@ $$.GameRoot = {"":
     t2.set$innerHTML('');
   else
     t2.set$innerHTML($.toString(this.get$game().get$duration().get$inSeconds()));
+  if (this._setIntervalId == null && $.eqB(this.get$game().get$state(), $.CTC26))
+    this._setIntervalId = $.window().setInterval$2(this.get$_updateClock(), 1000);
+  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC26)) {
+    $.window().clearInterval$1(this._setIntervalId);
+    this._setIntervalId = null;
+  }
 },
+ get$_updateClock: function() { return new $.BoundClosure(this, '_updateClock$0'); },
  _onFrame$1: function(time) {
   this._updateClock$0();
   var t1 = this.get$game().get$state().get$name();
@@ -6413,12 +6420,12 @@ $.require = function(truth, message) {
     throw $.captureStackTrace($.ExceptionImplementation$(message));
 };
 
-$._globalState0 = function(val) {
-$globalState = val;
-};
-
 $.window = function() {
 return window;
+};
+
+$._globalState0 = function(val) {
+$globalState = val;
 };
 
 $.HashMapImplementation$ = function() {
@@ -6927,14 +6934,14 @@ $._DoubleLinkedQueueIterator$ = function(_sentinel) {
 $._Lists_indexOf = function(a, element, startIndex, endIndex) {
   if (typeof a !== 'string' && (typeof a !== 'object' || a === null || a.constructor !== Array && !a.is$JavaScriptIndexingBehavior()))
     return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
+  if (typeof startIndex !== 'number')
+    return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
   if (typeof endIndex !== 'number')
     return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
-  if ($.geB(startIndex, a.length))
+  if (startIndex >= a.length)
     return -1;
-  if ($.ltB(startIndex, 0))
+  if (startIndex < 0)
     startIndex = 0;
-  if (typeof startIndex !== 'number')
-    return $._Lists_indexOf$bailout(2, a, element, startIndex, endIndex);
   for (var i = startIndex; i < endIndex; ++i) {
     if (i !== (i | 0))
       throw $.iae(i);
@@ -7107,7 +7114,7 @@ $.typeNameInSafari = function(obj) {
 };
 
 $.Random_Random = function(seed) {
-  return $.CTC26;
+  return $.CTC27;
 };
 
 $.regExpExec = function(regExp, str) {
@@ -7414,7 +7421,7 @@ $.Game$ = function(field) {
   $.setRuntimeTypeInfo(t1, {T: 'SquareState'});
   var t2 = $.EventHandle$();
   $.setRuntimeTypeInfo(t2, {T: 'EventArgs'});
-  t1 = new $.Game(null, null, null, null, $.CTC27, t2, t1, field);
+  t1 = new $.Game(null, null, null, null, $.CTC28, t2, t1, field);
   t1.Game$1(field);
   return t1;
 };
@@ -7424,7 +7431,7 @@ $._MediaElementEventsImpl$ = function(_ptr) {
 };
 
 $.GameRoot$_internal = function(_canvas, _stage, _gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv) {
-  var t1 = new $.GameRoot(null, false, _clockDiv, _gameStateDiv, _leftCountDiv, _clickMan, _gameElement, _canvas, _stage);
+  var t1 = new $.GameRoot(null, null, false, _clockDiv, _gameStateDiv, _leftCountDiv, _clickMan, _gameElement, _canvas, _stage);
   t1.GameRoot$_internal$7(_canvas, _stage, _gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv);
   return t1;
 };
@@ -7871,36 +7878,15 @@ $.DoubleLinkedQueueEntry$ = function(e) {
   return t1;
 };
 
-$._Lists_indexOf$bailout = function(state, env0, env1, env2, env3) {
-  switch (state) {
-    case 1:
-      var a = env0;
-      var element = env1;
-      var startIndex = env2;
-      var endIndex = env3;
-      break;
-    case 2:
-      a = env0;
-      element = env1;
-      startIndex = env2;
-      endIndex = env3;
-      break;
-  }
-  switch (state) {
-    case 0:
-    case 1:
-      state = 0;
-      if ($.geB(startIndex, $.get$length(a)))
-        return -1;
-      if ($.ltB(startIndex, 0))
-        startIndex = 0;
-    case 2:
-      state = 0;
-      for (var i = startIndex; $.ltB(i, endIndex); i = $.add(i, 1))
-        if ($.eqB($.index(a, i), element))
-          return i;
-      return -1;
-  }
+$._Lists_indexOf$bailout = function(state, a, element, startIndex, endIndex) {
+  if ($.geB(startIndex, $.get$length(a)))
+    return -1;
+  if ($.ltB(startIndex, 0))
+    startIndex = 0;
+  for (var i = startIndex; $.ltB(i, endIndex); i = $.add(i, 1))
+    if ($.eqB($.index(a, i), element))
+      return i;
+  return -1;
 };
 
 $.Arrays_indexOf$bailout = function(state, a, element, startIndex, endIndex) {
@@ -8117,40 +8103,40 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC0 = Isolate.makeConstantList([]);
-$.CTC2 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC9 = new Isolate.$isolateProperties.NotImplementedException(null);
 $.CTC3 = new Isolate.$isolateProperties.Property(null, '_stageMouseCacheProperty');
-$.CTC19 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC24 = new Isolate.$isolateProperties.UnsupportedOperationException('');
-$.CTC33 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC18 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
+$.CTC28 = new Isolate.$isolateProperties.GameState('Not Started');
 $.CTC12 = new Isolate.$isolateProperties.SquareState('hidden');
 $.CTC15 = new Isolate.$isolateProperties._DeletedKeySentinel();
 $.CTC = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
 $.CTC22 = new Isolate.$isolateProperties.EventArgs();
-$.CTC28 = new Isolate.$isolateProperties.GameState('Won');
+$.CTC29 = new Isolate.$isolateProperties.GameState('Won');
 $.CTC5 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC27 = new Isolate.$isolateProperties.GameState('Not Started');
 $.CTC23 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC29 = new Isolate.$isolateProperties.GameState('Lost');
+$.CTC30 = new Isolate.$isolateProperties.GameState('Lost');
 $.CTC6 = new Isolate.$isolateProperties._UndefinedValue();
+$.CTC32 = new Isolate.$isolateProperties.Object();
 $.CTC13 = new Isolate.$isolateProperties.SquareState('flagged');
 $.CTC7 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
 $.CTC20 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
 $.CTC21 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC0, Isolate.$isolateProperties.CTC20, Isolate.$isolateProperties.CTC20, Isolate.$isolateProperties.CTC20, Isolate.$isolateProperties.CTC20);
+$.CTC25 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
 $.CTC14 = new Isolate.$isolateProperties.SquareState('revealed');
 $.CTC8 = new Isolate.$isolateProperties.Property(false, 'isClickable');
 $.CTC11 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
-$.CTC26 = new Isolate.$isolateProperties._Random();
-$.CTC32 = new Isolate.$isolateProperties.Object();
+$.CTC27 = new Isolate.$isolateProperties._Random();
+$.CTC19 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC4 = new Isolate.$isolateProperties.Property(false, 'IsMouseDirectlyOver');
+$.CTC1 = new Isolate.$isolateProperties.NullPointerException(Isolate.$isolateProperties.CTC0, null);
 $.CTC31 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'Chrome|DumpRenderTree');
-$.CTC25 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC2 = new Isolate.$isolateProperties.NoMoreElementsException();
+$.CTC33 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC9 = new Isolate.$isolateProperties.NotImplementedException(null);
 $.CTC16 = new Isolate.$isolateProperties.SquareState('mine');
 $.CTC10 = new Isolate.$isolateProperties.AttachedEvent('clickEvent');
 $.CTC17 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC18 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC30 = new Isolate.$isolateProperties.GameState('Started');
-$.CTC1 = new Isolate.$isolateProperties.NullPointerException(Isolate.$isolateProperties.CTC0, null);
+$.CTC24 = new Isolate.$isolateProperties.UnsupportedOperationException('');
+$.CTC26 = new Isolate.$isolateProperties.GameState('Started');
 $.GlobalId__globalId = 0;
 $._ReceivePortImpl__nextFreeId = 1;
 $._getTypeNameOf = null;
@@ -8196,10 +8182,10 @@ $.$defineNativeClass = function(cls, fields, methods) {
   }
 })({
  is$Element: function() { return false; },
- is$List: function() { return false; },
- is$Map: function() { return false; },
  is$JavaScriptIndexingBehavior: function() { return false; },
+ is$Map: function() { return false; },
  is$Collection: function() { return false; },
+ is$List: function() { return false; },
  toString$0: function() { return $.toStringForNativeObject(this); }
 });
 
@@ -11069,6 +11055,9 @@ $.$defineNativeClass('DOMWindow', ["navigator?", "name?", "length?"], {
  close$0: function() {
   return this.close();
 },
+ clearInterval$1: function(handle) {
+  return this.clearInterval(handle);
+},
  $dom_addEventListener$3: function(type, listener, useCapture) {
   return this.addEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);
 },
@@ -11130,6 +11119,9 @@ $.$defineNativeClass('WorkerContext', ["navigator?"], {
 },
  close$0: function() {
   return this.close();
+},
+ clearInterval$1: function(handle) {
+  return this.clearInterval(handle);
 },
  $dom_addEventListener$3: function(type, listener, useCapture) {
   return this.addEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);

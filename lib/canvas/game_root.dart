@@ -67,7 +67,6 @@ class GameRoot {
   }
 
   void _updateClock() {
-    print('tick!');
     if(game.duration == null) {
       _clockDiv.innerHTML = '';
     } else {
