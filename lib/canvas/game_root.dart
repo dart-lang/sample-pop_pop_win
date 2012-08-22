@@ -27,6 +27,8 @@ class GameRoot extends GameManager {
 
   Game get game() => _gameElement.game;
 
+  // BUGBUG: http://code.google.com/p/dart/issues/detail?id=4656
+  //         I tried to set super.game here, but dart2js blew up
   void set game(Game value) {
     _gameElement.game = value;
   }
