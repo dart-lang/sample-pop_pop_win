@@ -9,8 +9,29 @@ class GameStorage {
 
   int get gameCount() => _getIntValue(_gameCountKey);
 
-  void newGame() {
-    _incrementIntValue(_gameCountKey);
+  void recordState(GameState state) {
+    assert(state != null);
+    _incrementIntValue(state.name);
+  }
+
+  bool updateHighScore(Game game) {
+    assert(game != null);
+    assert(game.state == GameState.won);
+
+    final w = game.field.width;
+    final h = game.field.height;
+    final m = game.field.mineCount;
+    final duration = game.duration.inMilliseconds;
+
+    final key = "w$w-h$h-m$m";
+
+    final currentScore = _getIntValue(key, null);
+    if(currentScore == null || currentScore > duration) {
+      _setIntValue(key, duration);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   void reset() {

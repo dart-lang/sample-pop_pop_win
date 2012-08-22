@@ -10,6 +10,7 @@ class GameView {
 
   Game game;
   dartlib.GlobalId _updatedEventId;
+  dartlib.GlobalId _gameStateChangedId;
   int _setIntervalId;
 
   GameView(this._table, this._leftCountDiv, this._gameStateDiv, this._clockDiv):
@@ -60,14 +61,17 @@ class GameView {
   void newGame() {
     if(_updatedEventId != null) {
       assert(game != null);
+      assert(_gameStateChangedId != null);
       game.updated.remove(_updatedEventId);
+      game.stateChanged.remove(_gameStateChangedId);
+      _gameStateChanged(GameState.reset);
     }
     final f = new Field();
     game = new Game(f);
     _updatedEventId = game.updated.add(_gameUpdated);
+    _gameStateChangedId = game.stateChanged.add(_gameStateChanged);
     _table.elements.clear();
     updateElement();
-    _gameStorage.newGame();
   }
 
   void resetScores() {
@@ -126,5 +130,12 @@ class GameView {
 
   void _gameUpdated(args) {
     updateElement();
+  }
+
+  void _gameStateChanged(GameState newState) {
+    _gameStorage.recordState(newState);
+    if(newState == GameState.won) {
+      final newHighScore = _gameStorage.updateHighScore(game);
+    }
   }
 }
