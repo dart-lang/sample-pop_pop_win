@@ -25,8 +25,10 @@ class GameRoot extends GameManager {
     _stage.invalidated.add(_stageInvalidated);
   }
 
+  Game get game() => _gameElement.game;
+
   void set game(Game value) {
-    super.game = _gameElement.game = value;
+    _gameElement.game = value;
   }
 
   void newGame() {
