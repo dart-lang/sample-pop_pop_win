@@ -1,7 +1,4 @@
 class GameRoot extends GameManager {
-  static final String _xKey = 'x';
-  static final String _yKey = 'y';
-
   final Stage _stage;
   final CanvasElement _canvas;
   final GameElement _gameElement;
