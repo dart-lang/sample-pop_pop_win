@@ -9,3 +9,4 @@
 
 #source('html/game_view.dart');
 #source('html/game_storage.dart');
+#source('html/game_manager.dart');
