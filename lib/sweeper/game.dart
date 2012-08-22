@@ -21,21 +21,21 @@ class Game {
     _revealsLeft = field.length - field.mineCount;
   }
 
-  int get minesLeft() => _minesLeft;
+  int get minesLeft => _minesLeft;
 
-  int get revealsLeft() => _revealsLeft;
+  int get revealsLeft => _revealsLeft;
 
-  GameState get state() => _state;
+  GameState get state => _state;
 
-  EventRoot get updated() => _updatedEvent;
+  EventRoot get updated => _updatedEvent;
 
-  EventRoot get stateChanged() => _gameStateEvent;
+  EventRoot get stateChanged => _gameStateEvent;
 
   SquareState getSquareState(int x, int y) => _states.get(x,y);
 
-  bool get gameEnded() => _state == GameState.won || _state == GameState.lost;
+  bool get gameEnded => _state == GameState.won || _state == GameState.lost;
 
-  Duration get duration() {
+  Duration get duration {
     if(_startTime == null) {
       assert(state == GameState.reset);
       return null;

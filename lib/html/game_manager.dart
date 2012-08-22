@@ -62,7 +62,7 @@ class GameManager {
     updateClock();
   }
 
-  bool get _canClick() {
+  bool get _canClick {
     return game.state == GameState.reset ||
         game.state == GameState.started;
   }

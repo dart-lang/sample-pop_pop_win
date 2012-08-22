@@ -6,14 +6,14 @@ class GameElement extends ElementParentImpl {
 
   GameElement(int width, int height) : super(width, height);
 
-  Game get game() => _game;
+  Game get game => _game;
 
   void set game(Game value) {
     _game = value;
     invalidateDraw();
   }
 
-  int get visualChildCount() {
+  int get visualChildCount {
     if(_elements == null) {
       return 0;
     } else {
@@ -79,7 +79,7 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  bool get _elementsNeedUpdate() {
+  bool get _elementsNeedUpdate {
     assert(_game != null);
     return _elements == null ||
         _elements.width != _game.field.width ||

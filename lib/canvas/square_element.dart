@@ -26,16 +26,16 @@ class SquareElement extends PElement {
 
   String toString() => 'Square at [$x, $y]';
 
-  SquareState get _squareState() => _game.getSquareState(x, y);
+  SquareState get _squareState => _game.getSquareState(x, y);
 
-  int get _adjacentCount() => _game.field.getAdjacentCount(x, y);
+  int get _adjacentCount => _game.field.getAdjacentCount(x, y);
 
-  Game get _game() {
+  Game get _game {
     final GameElement p = this.parent;
     return p.game;
   }
 
-  Dynamic get _fillStyle() {
+  Dynamic get _fillStyle {
     switch(_squareState) {
       case SquareState.flagged:
         return 'orange';

@@ -7,7 +7,7 @@ class GameStorage {
     _storage = window.localStorage {
   }
 
-  int get gameCount() => _getIntValue(_gameCountKey);
+  int get gameCount => _getIntValue(_gameCountKey);
 
   void recordState(GameState state) {
     assert(state != null);
