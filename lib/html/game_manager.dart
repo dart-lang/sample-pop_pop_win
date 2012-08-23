@@ -1,12 +1,14 @@
 class GameManager {
-  final GameStorage _gameStorage;
+  final int _width, _height, _mineCount;
+  final GameStorage gameStorage;
 
   Game game;
   dartlib.GlobalId _updatedEventId;
   dartlib.GlobalId _gameStateChangedId;
   int _setIntervalId;
 
-  GameManager() : _gameStorage = new GameStorage() {
+  GameManager(this._width, this._height, this._mineCount) :
+    gameStorage = new GameStorage() {
     newGame();
   }
 
@@ -18,7 +20,7 @@ class GameManager {
       game.stateChanged.remove(_gameStateChangedId);
       _gameStateChanged(GameState.reset);
     }
-    final f = new Field();
+    final f = new Field(_mineCount, _width, _height);
     game = new Game(f);
     _updatedEventId = game.updated.add(gameUpdated);
     _gameStateChangedId = game.stateChanged.add(_gameStateChanged);
@@ -27,7 +29,7 @@ class GameManager {
   abstract void gameUpdated(args);
 
   void resetScores() {
-    _gameStorage.reset();
+    gameStorage.reset();
   }
 
   void _click(int x, int y, bool alt) {
@@ -68,9 +70,9 @@ class GameManager {
   }
 
   void _gameStateChanged(GameState newState) {
-    _gameStorage.recordState(newState);
+    gameStorage.recordState(newState);
     if(newState == GameState.won) {
-      final newHighScore = _gameStorage.updateHighScore(game);
+      final newHighScore = gameStorage.updateHighScore(game);
     }
     updateClock();
   }

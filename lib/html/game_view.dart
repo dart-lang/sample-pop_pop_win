@@ -7,7 +7,9 @@ class GameView extends GameManager {
   final Element _gameStateDiv;
   final Element _clockDiv;
 
-  GameView(this._table, this._leftCountDiv, this._gameStateDiv, this._clockDiv);
+  GameView(int width, int height, int mineCount,
+      this._table, this._leftCountDiv, this._gameStateDiv,
+      this._clockDiv) : super(width, height, mineCount);
 
   void updateElement() {
     updateClock();

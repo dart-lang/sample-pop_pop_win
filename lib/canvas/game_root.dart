@@ -9,19 +9,23 @@ class GameRoot extends GameManager {
 
   bool _frameRequested = false;
 
-  factory GameRoot(CanvasElement canvasElement,
-      Element leftCountDiv, Element gameStateDiv, Element clockDiv) {
+  factory GameRoot(int width, int height, int mineCount,
+      CanvasElement canvasElement, Element leftCountDiv,
+      Element gameStateDiv, Element clockDiv) {
 
     final rootElement = new GameElement(540, 540);
     final stage = new Stage(canvasElement, rootElement);
     final clickMan = new ClickManager(stage);
 
-    return new GameRoot._internal(canvasElement, stage, rootElement, clickMan,
+    return new GameRoot._internal(width, height, mineCount,
+        canvasElement, stage, rootElement, clickMan,
         leftCountDiv, gameStateDiv, clockDiv);
   }
 
-  GameRoot._internal(this._canvas, this._stage, this._gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv) : super() {
+  GameRoot._internal(int width, int height, int mineCount,
+      this._canvas, this._stage, this._gameElement, this._clickMan,
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv)
+      : super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
   }
 
