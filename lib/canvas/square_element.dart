@@ -9,8 +9,8 @@ class SquareElement extends PElement {
     ctx.fillStyle = _fillStyle;
     ctx.fillRect(0, 0, width, height);
 
-    ctx.strokeStyle = 'rgba(153, 153, 153, 0.5)';
-    ctx.strokeRect(0, 0, width, height, 1);
+    ctx.strokeStyle = 'rgb(153, 153, 153)';
+    ctx.strokeRect(0.5, 0.5, width, height, 1);
 
     if(_squareState == SquareState.revealed) {
       final adjCount = _adjacentCount;

@@ -17,7 +17,7 @@
   text-align: center;
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(153, 153, 153, 0.5);
+  border-color: rgb(153, 153, 153);
   cursor: pointer;
 }
 
