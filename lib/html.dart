@@ -7,6 +7,7 @@
 #import('../../dartlib/lib/html.dart');
 #import('sweeper.dart');
 
+#source('html/high_score_view.dart');
 #source('html/game_view.dart');
 #source('html/game_storage.dart');
 #source('html/game_manager.dart');
