@@ -1,13 +1,16 @@
 class GameStorage {
   static final _gameCountKey = 'gameCount';
+  final dartlib.EventHandle _highScoreUpdated;
 
   final Storage _storage;
 
   GameStorage() :
-    _storage = window.localStorage {
-  }
+    _storage = window.localStorage,
+    _highScoreUpdated = new dartlib.EventHandle();
 
   int get gameCount => _getIntValue(_gameCountKey);
+
+  dartlib.EventRoot get highScoreUpdated => _highScoreUpdated;
 
   void recordState(GameState state) {
     assert(state != null);
@@ -23,15 +26,21 @@ class GameStorage {
     final m = game.field.mineCount;
     final duration = game.duration.inMilliseconds;
 
-    final key = "w$w-h$h-m$m";
+    final key = _getKey(w, h, m);
 
     final currentScore = _getIntValue(key, null);
     if(currentScore == null || currentScore > duration) {
       _setIntValue(key, duration);
+      _highScoreUpdated.fireEvent(null);
       return true;
     } else {
       return false;
     }
+  }
+
+  int getHighScore(int width, int height, int mineCount) {
+    final key = _getKey(width, height, mineCount);
+    return _getIntValue(key, null);
   }
 
   void reset() {
@@ -63,5 +72,7 @@ class GameStorage {
     final value = _getIntValue(key);
     _setIntValue(key, value + 1);
   }
+
+  static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";
 
 }
