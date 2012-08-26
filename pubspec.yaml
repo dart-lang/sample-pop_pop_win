@@ -1,3 +1,4 @@
+name: sweeper.dart
 dependencies:
   unittest:
     sdk: unittest
