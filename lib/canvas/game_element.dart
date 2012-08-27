@@ -57,6 +57,15 @@ class GameElement extends ElementParentImpl {
     if(!_game.gameEnded) {
       final SquareElement se = args.element;
       _click(se.x, se.y, args.shiftKey);
+
+  void _toggleFlag(int x, int y) {
+    assert(!game.gameEnded);
+    final ss = game.getSquareState(x, y);
+    if(ss == SquareState.hidden) {
+      game.setFlag(x, y, true);
+    } else {
+      assert(ss == SquareState.flagged);
+      game.setFlag(x, y, false);
     }
   }
 
@@ -65,10 +74,8 @@ class GameElement extends ElementParentImpl {
     final ss = game.getSquareState(x, y);
 
     if(alt) {
-      if(ss == SquareState.hidden) {
-        game.setFlag(x, y, true);
-      } else if(ss == SquareState.flagged) {
-        game.setFlag(x, y, false);
+      if(ss == SquareState.hidden || ss == SquareState.flagged) {
+        _toggleFlag(x, y);
       } else if(ss == SquareState.revealed) {
         game.reveal(x, y);
       }
