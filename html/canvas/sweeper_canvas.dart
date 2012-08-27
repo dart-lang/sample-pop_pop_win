@@ -4,7 +4,7 @@
 #import('../../lib/canvas.dart');
 
 main(){
-  final targetMode = false;
+  final targetMode = true;
   final int w = 16, h = 16, m = 40;
 
   final CanvasElement sweeperTable = query('#sweeperCanvas');

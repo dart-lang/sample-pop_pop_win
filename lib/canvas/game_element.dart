@@ -1,10 +1,13 @@
 class GameElement extends ElementParentImpl {
   static final int _squareSize = 33;
+  final bool _targetMode;
+
+  int _targetX, _targetY;
 
   Game _game;
   dartlib.Array2d<SquareElement> _elements;
 
-  GameElement(int width, int height) : super(width, height);
+  GameElement(int width, int height, this._targetMode) : super(width, height);
 
   Game get game => _game;
 
@@ -28,6 +31,21 @@ class GameElement extends ElementParentImpl {
   void drawOverride(CanvasRenderingContext2D ctx) {
     _updateElements();
     super.drawOverride(ctx);
+    _drawTarget(ctx);
+  }
+
+  void _drawTarget(CanvasRenderingContext2D ctx) {
+    assert((_targetX == null) == (_targetY == null));
+    if(_targetX != null) {
+      final halfSize = _squareSize * 0.5;
+      var targetLoc = new dartlib.Vector(_targetX, _targetY);
+      targetLoc = targetLoc.scale(_squareSize);
+
+      ctx.fillStyle = 'red';
+      CanvasUtil.centeredCircle(ctx,
+          targetLoc.x + halfSize, targetLoc.y + halfSize, halfSize);
+      ctx.fill();
+    }
   }
 
   void _updateElements() {
@@ -56,7 +74,19 @@ class GameElement extends ElementParentImpl {
   void _squareClicked(ElementMouseEventArgs args) {
     if(!_game.gameEnded) {
       final SquareElement se = args.element;
-      _click(se.x, se.y, args.shiftKey);
+      if(_targetMode) {
+        _target(se.x, se.y);
+      } else {
+        _click(se.x, se.y, args.shiftKey);
+      }
+    }
+  }
+
+  void _target(int x, int y) {
+    _targetX = x;
+    _targetY = y;
+    invalidateDraw();
+  }
 
   void _toggleFlag(int x, int y) {
     assert(!game.gameEnded);

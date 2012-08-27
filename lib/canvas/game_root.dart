@@ -6,7 +6,6 @@ class GameRoot extends GameManager {
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
-  final bool _targetMode;
 
   bool _frameRequested = false;
 
@@ -14,18 +13,20 @@ class GameRoot extends GameManager {
       CanvasElement canvasElement, Element leftCountDiv,
       Element gameStateDiv, Element clockDiv, bool targetMode) {
 
-    final rootElement = new GameElement(540, 540);
+    dartlib.requireArgumentNotNull(targetMode, 'targetMode');
+
+    final rootElement = new GameElement(540, 540, targetMode);
     final stage = new Stage(canvasElement, rootElement);
     final clickMan = new ClickManager(stage);
 
     return new GameRoot._internal(width, height, mineCount,
         canvasElement, stage, rootElement, clickMan,
-        leftCountDiv, gameStateDiv, clockDiv, targetMode);
+        leftCountDiv, gameStateDiv, clockDiv);
   }
 
   GameRoot._internal(int width, int height, int mineCount,
       this._canvas, this._stage, this._gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv, this._targetMode)
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv)
       : super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
   }
