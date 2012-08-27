@@ -15,4 +15,11 @@ main(){
 
   final ButtonElement newGameButton = query('#newGame');
   newGameButton.on.click.add((args) => gameRoot.newGame());
+
+  // disable touch events
+  window.on.touchMove.add(_onTouchMove);
+}
+
+void _onTouchMove(TouchEvent args) {
+  args.preventDefault();
 }
