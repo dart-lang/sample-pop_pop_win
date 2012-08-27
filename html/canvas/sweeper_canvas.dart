@@ -4,6 +4,7 @@
 #import('../../lib/canvas.dart');
 
 main(){
+  final targetMode = false;
   final int w = 16, h = 16, m = 40;
 
   final CanvasElement sweeperTable = query('#sweeperCanvas');
@@ -11,7 +12,7 @@ main(){
   final Element gameStateDiv = query('#gameState');
   final Element clockDiv = query('#clock');
   final gameRoot = new GameRoot(w, h, m,
-      sweeperTable, minesLeftDiv, gameStateDiv, clockDiv);
+      sweeperTable, minesLeftDiv, gameStateDiv, clockDiv, targetMode);
 
   final ButtonElement newGameButton = query('#newGame');
   newGameButton.on.click.add((args) => gameRoot.newGame());

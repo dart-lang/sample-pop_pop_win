@@ -6,12 +6,13 @@ class GameRoot extends GameManager {
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
+  final bool _targetMode;
 
   bool _frameRequested = false;
 
   factory GameRoot(int width, int height, int mineCount,
       CanvasElement canvasElement, Element leftCountDiv,
-      Element gameStateDiv, Element clockDiv) {
+      Element gameStateDiv, Element clockDiv, bool targetMode) {
 
     final rootElement = new GameElement(540, 540);
     final stage = new Stage(canvasElement, rootElement);
@@ -19,12 +20,12 @@ class GameRoot extends GameManager {
 
     return new GameRoot._internal(width, height, mineCount,
         canvasElement, stage, rootElement, clickMan,
-        leftCountDiv, gameStateDiv, clockDiv);
+        leftCountDiv, gameStateDiv, clockDiv, targetMode);
   }
 
   GameRoot._internal(int width, int height, int mineCount,
       this._canvas, this._stage, this._gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv)
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv, this._targetMode)
       : super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
   }
