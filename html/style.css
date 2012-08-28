@@ -33,3 +33,7 @@ span.status {
 .author {
   margin: 10px;
 }
+
+canvas#sweeperCanvas {
+  cursor: pointer;
+}
