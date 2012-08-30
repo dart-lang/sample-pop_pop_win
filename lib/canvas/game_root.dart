@@ -40,9 +40,14 @@ class GameRoot extends GameManager {
     _requestFrame();
   }
 
+  bool get canRevealTarget => _gameElement.canRevealTarget;
+
   void revealTarget() => _gameElement.revealTarget();
 
   void toggleTargetFlag() => _gameElement.toggleTargetFlag();
+
+  dartlib.EventRoot get targetChanged =>
+      _gameElement.targetChanged;
 
   void _requestFrame() {
     if(!_frameRequested) {

@@ -1,13 +1,16 @@
 class GameElement extends ElementParentImpl {
   static final int _squareSize = 33;
   final bool _targetMode;
+  final dartlib.EventHandle _targetChanged;
 
   int _targetX, _targetY;
 
   Game _game;
   dartlib.Array2d<SquareElement> _elements;
 
-  GameElement(int width, int height, this._targetMode) : super(width, height);
+  GameElement(int width, int height, this._targetMode) :
+    _targetChanged = new dartlib.EventHandle(),
+    super(width, height);
 
   Game get game => _game;
 
@@ -16,9 +19,8 @@ class GameElement extends ElementParentImpl {
     invalidateDraw();
   }
 
-  bool get canRevealTarget {
-    return _targetX != null && game.re
-  }
+  bool get canRevealTarget =>
+      _targetX != null && _game.canReveal(_targetX, _targetY);
 
   void revealTarget() {
     print('do reveal!');
@@ -37,6 +39,8 @@ class GameElement extends ElementParentImpl {
       }
     }
   }
+
+  dartlib.EventRoot get targetChanged => _targetChanged;
 
   int get visualChildCount {
     if(_elements == null) {
@@ -107,6 +111,7 @@ class GameElement extends ElementParentImpl {
   void _target(int x, int y) {
     _targetX = x;
     _targetY = y;
+    _targetChanged.fireEvent(null);
     invalidateDraw();
   }
 
