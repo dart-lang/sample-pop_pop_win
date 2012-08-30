@@ -121,7 +121,7 @@ class GameElement extends ElementParentImpl {
     if(ss == SquareState.hidden) {
       game.setFlag(x, y, true);
       return true;
-    } else {
+    } else if(ss == SquareState.flagged) {
       game.setFlag(x, y, false);
       return true;
     }
