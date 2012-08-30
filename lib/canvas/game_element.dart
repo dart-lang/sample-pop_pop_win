@@ -16,6 +16,28 @@ class GameElement extends ElementParentImpl {
     invalidateDraw();
   }
 
+  bool get canRevealTarget {
+    return _targetX != null && game.re
+  }
+
+  void revealTarget() {
+    print('do reveal!');
+    if(_targetX != null) {
+      game.reveal(_targetX, _targetY);
+      _target(null, null);
+    }
+  }
+
+  void toggleTargetFlag() {
+    print('do flag');
+    if(_targetX != null) {
+      final success = _toggleFlag(_targetX, _targetY);
+      if(success) {
+        _target(null, null);
+      }
+    }
+  }
+
   int get visualChildCount {
     if(_elements == null) {
       return 0;
@@ -41,7 +63,7 @@ class GameElement extends ElementParentImpl {
       var targetLoc = new dartlib.Vector(_targetX, _targetY);
       targetLoc = targetLoc.scale(_squareSize);
 
-      ctx.fillStyle = 'red';
+      ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
       CanvasUtil.centeredCircle(ctx,
           targetLoc.x + halfSize, targetLoc.y + halfSize, halfSize);
       ctx.fill();
@@ -88,15 +110,17 @@ class GameElement extends ElementParentImpl {
     invalidateDraw();
   }
 
-  void _toggleFlag(int x, int y) {
+  bool _toggleFlag(int x, int y) {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
     if(ss == SquareState.hidden) {
       game.setFlag(x, y, true);
+      return true;
     } else {
-      assert(ss == SquareState.flagged);
       game.setFlag(x, y, false);
+      return true;
     }
+    return false;
   }
 
   void _click(int x, int y, bool alt) {

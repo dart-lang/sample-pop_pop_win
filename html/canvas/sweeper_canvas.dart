@@ -17,6 +17,12 @@ main(){
   final ButtonElement newGameButton = query('#newGame');
   newGameButton.on.click.add((args) => gameRoot.newGame());
 
+  final ButtonElement flagButton = query('#flag');
+  flagButton.on.click.add((args) => gameRoot.toggleTargetFlag());
+
+  final ButtonElement revealButton = query('#reveal');
+  revealButton.on.click.add((args) => gameRoot.revealTarget());
+
   // disable touch events
   window.on.touchMove.add(_onTouchMove);
 }

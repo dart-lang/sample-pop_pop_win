@@ -63,10 +63,16 @@ class Game {
     _update();
   }
 
-  int reveal(int x, int y) {
+  bool canReveal(int x, int y) {
     _ensureStarted();
     final currentSS = _states.get(x,y);
-    require(currentSS != SquareState.flagged, 'Cannot reveal a flagged square');
+    return currentSS != SquareState.flagged;
+  }
+
+  int reveal(int x, int y) {
+    _ensureStarted();
+    require(canReveal(x, y), "Item cannot be revealed.");
+    final currentSS = _states.get(x,y);
 
     int reveals = 0;
 

@@ -40,6 +40,10 @@ class GameRoot extends GameManager {
     _requestFrame();
   }
 
+  void revealTarget() => _gameElement.revealTarget();
+
+  void toggleTargetFlag() => _gameElement.toggleTargetFlag();
+
   void _requestFrame() {
     if(!_frameRequested) {
       _frameRequested = true;
