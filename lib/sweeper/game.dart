@@ -46,6 +46,13 @@ class Game {
     }
   }
 
+  bool canToggleFlag(int x, int y) {
+    _ensureStarted();
+    final currentSS = _states.get(x,y);
+    return currentSS == SquareState.hidden ||
+        currentSS == SquareState.flagged;
+  }
+
   void setFlag(int x, int y, bool value) {
     _ensureStarted();
     assert(value != null);

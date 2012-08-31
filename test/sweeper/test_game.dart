@@ -13,7 +13,29 @@ class TestGame {
       test('bad chord', _testBadChord);
       test('no-op chord', _testNoopChord);
       test('canReveal', _testCanReveal);
+      test('canFlag', _testCanFlag);
     });
+  }
+
+  static void _testCanFlag() {
+    final f = TestField.getSampleField();
+    final g = new Game(f);
+
+    // XXXXX2
+    // X7X8X3
+    // X5XXX2
+    // X32321
+    // 110000
+
+    expect(g.canToggleFlag(0, 0), isTrue);
+    g.setFlag(0, 0, true);
+    expect(g.canToggleFlag(0, 0), isTrue);
+    g.setFlag(0, 0, false);
+    expect(g.canToggleFlag(0, 0), isTrue);
+
+    expect(g.canToggleFlag(5, 4), isTrue);
+    g.reveal(5, 4);
+    expect(g.canToggleFlag(5, 4), isFalse);
   }
 
   static void _testCanReveal() {
