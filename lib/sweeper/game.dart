@@ -66,7 +66,12 @@ class Game {
   bool canReveal(int x, int y) {
     _ensureStarted();
     final currentSS = _states.get(x,y);
-    return currentSS != SquareState.flagged;
+    if(currentSS == SquareState.hidden) {
+      return true;
+    } else if(_canChord(x, y)) {
+      return true;
+    }
+    return false;
   }
 
   int reveal(int x, int y) {
@@ -83,16 +88,26 @@ class Game {
       } else {
         reveals = _doReveal(x, y);
       }
-    } else if(currentSS == SquareState.revealed) {
-      // might be a 'chord' reveal
-      final adjFlags = _getAdjacentFlagCount(x, y);
-      final adjCount = field.getAdjacentCount(x, y);
-      if(adjFlags == adjCount) {
-        reveals = _doChord(x, y);
-      }
+    } else if(_canChord(x, y)) {
+      reveals = _doChord(x, y);
     }
     _update();
     return reveals;
+  }
+
+  bool _canChord(int x, int y) {
+    final currentSS = _states.get(x,y);
+    if(currentSS == SquareState.revealed) {
+      // might be a 'chord' reveal
+      final adjCount = field.getAdjacentCount(x, y);
+      if(adjCount > 0) {
+        final adjFlags = _getAdjacentFlagCount(x, y);
+        if(adjFlags == adjCount) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   int _doChord(int x, int y) {
@@ -104,6 +119,7 @@ class Game {
     final flagged = new List<int>();
     final hidden = new List<int>();
     final adjCount = field.getAdjacentCount(x, y);
+    assert(adjCount > 0);
 
     bool failed = false;
 
@@ -130,7 +146,9 @@ class Game {
     } else {
       for(final i in hidden) {
         final c = field.getCoordinate(i);
-        reveals += reveal(c.Item1, c.Item2);
+        if(canReveal(c.Item1, c.Item2)) {
+          reveals += reveal(c.Item1, c.Item2);
+        }
       }
     }
 

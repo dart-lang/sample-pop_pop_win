@@ -12,7 +12,38 @@ class TestGame {
       test('good chord', _testGoodChord);
       test('bad chord', _testBadChord);
       test('no-op chord', _testNoopChord);
+      test('canReveal', _testCanReveal);
     });
+  }
+
+  static void _testCanReveal() {
+    final f = TestField.getSampleField();
+    final g = new Game(f);
+
+    // XXXXX2
+    // X7X8X3
+    // X5XXX2
+    // X32321
+    // 110000
+
+    expect(g.canReveal(0, 0), isTrue);
+    g.setFlag(0, 0, true);
+    expect(g.canReveal(0, 0), isFalse);
+
+    expect(g.canReveal(5, 4), isTrue);
+    g.reveal(5, 4);
+    expect(g.canReveal(5, 4), isFalse);
+
+    g.setFlag(4, 2, true);
+    expect(g.canReveal(5, 3), isTrue);
+    expect(g.canReveal(4, 3), isFalse);
+    g.setFlag(3, 2, true);
+    expect(g.canReveal(4, 3), isTrue);
+
+    // now we'll over flag
+    expect(g.canReveal(5, 3), isTrue);
+    g.setFlag(5, 2, true);
+    expect(g.canReveal(5, 3), isFalse);
   }
 
   static void _testBadChord() {
@@ -52,10 +83,7 @@ class TestGame {
     expect(g.minesLeft, equals(12));
     expect(g.revealsLeft, equals(startReveals - 1));
 
-    g.reveal(2, 3);
-    expect(g.minesLeft, equals(12));
-    expect(g.revealsLeft, equals(startReveals - 1));
-    expect(g.duration, isNot(isNull));
+    expect(() => g.reveal(2, 3), throwsException);
   }
 
   static void _testGoodChord() {
