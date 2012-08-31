@@ -95,6 +95,55 @@ class Game {
     return reveals;
   }
 
+  String toBoardString() {
+    final buffer = new StringBuffer();
+    for(var y = -2; y < field.height; y++) {
+      if(y > -2) {
+        buffer.add('\n');
+      }
+      for(var x = -2; x < field.width; x++) {
+        var char = null;
+        if(y == -2) {
+          if(x == -2) {
+            char = ' ';
+          } else if(x == -1) {
+            char = '|';
+          } else {
+            char = (x % 10).toString();
+          }
+        } else if(y == -1) {
+          if(x == -1) {
+            char = '+';
+          } else {
+            char = '-';
+          }
+        } else {
+          if(x == -2) {
+            char = (y % 10).toString();
+          } else if(x == -1) {
+            char = '|';
+          } else {
+            switch(getSquareState(x, y)) {
+              case SquareState.flagged:
+                char = '\u2611';
+                break;
+              case SquareState.revealed:
+                var count = field.getAdjacentCount(x, y);
+                char = count.toString();
+                break;
+              case SquareState.hidden:
+                char = '?';
+                break;
+            }
+          }
+        }
+        assert(char != null);
+        buffer.add(char);
+      }
+    }
+    return buffer.toString();
+  }
+
   bool _canChord(int x, int y) {
     final currentSS = _states.get(x,y);
     if(currentSS == SquareState.revealed) {
