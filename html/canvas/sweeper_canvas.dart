@@ -26,13 +26,14 @@ main(){
   // disable touch events
   window.on.touchMove.add(_onTouchMove);
 
-  final updateRevealButton = (args) {
+  final updateButtons = (args) {
     revealButton.disabled = !gameRoot.canRevealTarget;
+    flagButton.disabled = !gameRoot.canFlagTarget;
   };
 
-  gameRoot.targetChanged.add(updateRevealButton);
+  gameRoot.targetChanged.add(updateButtons);
 
-  updateRevealButton(null);
+  updateButtons(null);
 }
 
 void _onTouchMove(TouchEvent args) {

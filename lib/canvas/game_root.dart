@@ -42,6 +42,8 @@ class GameRoot extends GameManager {
 
   bool get canRevealTarget => _gameElement.canRevealTarget;
 
+  bool get canFlagTarget => _gameElement.canFlagTarget;
+
   void revealTarget() => _gameElement.revealTarget();
 
   void toggleTargetFlag() => _gameElement.toggleTargetFlag();

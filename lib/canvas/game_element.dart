@@ -22,6 +22,9 @@ class GameElement extends ElementParentImpl {
   bool get canRevealTarget =>
       _targetX != null && _game.canReveal(_targetX, _targetY);
 
+  bool get canFlagTarget =>
+      _targetX != null && _game.canToggleFlag(_targetX, _targetY);
+
   void revealTarget() {
     print('do reveal!');
     if(_targetX != null) {
