@@ -137,7 +137,9 @@ class GameElement extends ElementParentImpl {
       if(ss == SquareState.hidden || ss == SquareState.flagged) {
         _toggleFlag(x, y);
       } else if(ss == SquareState.revealed) {
-        game.reveal(x, y);
+        if(game.canReveal(x, y)) {
+          game.reveal(x, y);
+        }
       }
     } else {
       if(ss == SquareState.hidden) {
