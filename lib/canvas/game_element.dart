@@ -26,7 +26,6 @@ class GameElement extends ElementParentImpl {
       _targetX != null && _game.canToggleFlag(_targetX, _targetY);
 
   void revealTarget() {
-    print('do reveal!');
     if(_targetX != null) {
       game.reveal(_targetX, _targetY);
       _target(null, null);
@@ -34,7 +33,6 @@ class GameElement extends ElementParentImpl {
   }
 
   void toggleTargetFlag() {
-    print('do flag');
     if(_targetX != null) {
       final success = _toggleFlag(_targetX, _targetY);
       if(success) {
