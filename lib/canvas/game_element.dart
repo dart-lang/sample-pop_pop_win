@@ -8,15 +8,20 @@ class GameElement extends ElementParentImpl {
   Game _game;
   dartlib.Array2d<SquareElement> _elements;
 
-  GameElement(int width, int height, this._targetMode) :
+  GameElement(this._targetMode) :
     _targetChanged = new dartlib.EventHandle(),
-    super(width, height);
+    super(100, 100);
 
   Game get game => _game;
 
   void set game(Game value) {
     _game = value;
-    invalidateDraw();
+    if(value == null) {
+      size = const dartlib.Size(100, 100);
+    } else {
+      size = new dartlib.Size(
+          _squareSize * value.field.width, _squareSize * value.field.height);
+    }
   }
 
   bool get canRevealTarget =>

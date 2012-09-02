@@ -6,6 +6,7 @@ class GameRoot extends GameManager {
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
+  final dartlib.AffineTransform _gameElementTx;
 
   bool _frameRequested = false;
 
@@ -15,7 +16,7 @@ class GameRoot extends GameManager {
 
     dartlib.requireArgumentNotNull(targetMode, 'targetMode');
 
-    final rootElement = new GameElement(540, 540, targetMode);
+    final rootElement = new GameElement(targetMode);
     final stage = new Stage(canvasElement, rootElement);
     final clickMan = new ClickManager(stage);
 
@@ -25,9 +26,11 @@ class GameRoot extends GameManager {
   }
 
   GameRoot._internal(int width, int height, int mineCount,
-      this._canvas, this._stage, this._gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv)
-      : super(width, height, mineCount) {
+      this._canvas, this._stage, GameElement gameElement, this._clickMan,
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv) :
+        this._gameElement = gameElement,
+        _gameElementTx = gameElement.addTransform(),
+        super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
   }
 
@@ -62,6 +65,21 @@ class GameRoot extends GameManager {
     updateClock();
     _gameStateDiv.innerHTML = game.state.name;
     _leftCountDiv.innerHTML = game.minesLeft.toString();
+
+    final xScale = _stage.size.width / _gameElement.width;
+    final yScale = _stage.size.height / _gameElement.height;
+
+    final theScale = math.min(xScale, yScale);
+
+    final logish = math.log(theScale) / math.LN2;
+    final exp = logish.floor().toInt();
+
+    // really weird that pow to an int returns an int and not double :-/
+    final prettyScale = math.pow(2.0, exp);
+
+    _gameElementTx.setToScale(prettyScale, prettyScale);
+    // TODO: center after scaling
+
     _stage.draw();
     _frameRequested = false;
   }
