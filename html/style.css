@@ -1,12 +1,11 @@
 body {
   font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
   overflow: hidden;
+  text-align: center;
 }
 
 .container {
-  margin: 0 auto;
-  width: 540px;
-  text-align: center;
+  display: inline-block;
 }
 
 .status {
@@ -27,7 +26,9 @@ span.status {
 }
 
 .help {
+  display: inline-block;
   text-align: left;
+  width: 540px;
 }
 
 .author {

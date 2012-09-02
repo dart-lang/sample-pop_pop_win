@@ -27,15 +27,19 @@
   </head>
   <body>
     <div class='container'>
-      <button id='newGame' class='status'>New Game</button>
-      <span id='gameState' class='status'></span>
-      <span>Mines left:</span>
-      <span id='minesLeft' class='status' ></span>
-      <span>Time:</span>
-      <span id='clock' class='status'></span>
+      <div class='status'>
+        <button id='newGame' class='status'>New Game</button>
+        <span id='gameState' class='status'></span>
+        <span>Mines left:</span>
+        <span id='minesLeft' class='status' ></span>
+        <span>Time:</span>
+        <span id='clock' class='status'></span>
+      </div>
       <canvas id='sweeperCanvas' width='540' height='540'></canvas>
-      <button id='reveal' class='status'>Reveal</button>
-      <button id='flag' class='status'>Flag</button>
+      <div class='buttons'>
+        <button id='reveal' class='status'>Reveal</button>
+        <button id='flag' class='status'>Flag</button>
+      </div>
       <ul class='help'>
         <li>Click on hidden squares to reveal them.</li>
         <li>Shift-click on squares to flag them.</li>
