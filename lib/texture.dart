@@ -7,8 +7,7 @@
 
 #source('texture/texture_input.dart');
 
-List<TextureInput> getTextures(String stringPath) {
-  final path = new Path(stringPath);
+List<TextureInput> getTextures(Path path) {
   final file = new File.fromPath(path);
   final docString = file.readAsTextSync();
 
