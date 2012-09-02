@@ -78,7 +78,14 @@ class GameRoot extends GameManager {
     final prettyScale = math.pow(2.0, exp);
 
     _gameElementTx.setToScale(prettyScale, prettyScale);
-    // TODO: center after scaling
+
+    final newDimensions = _gameElement.size * prettyScale;
+    assert(newDimensions.fitsInside(_stage.size));
+
+    final delta = new dartlib.Vector(_stage.size.width - newDimensions.width,
+        _stage.size.height - newDimensions.height).scale(0.5);
+
+    _gameElementTx.translate(delta.x, delta.y);
 
     _stage.draw();
     _frameRequested = false;
