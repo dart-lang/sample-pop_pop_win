@@ -3,7 +3,8 @@
 #import('package:dart-xml/xml.dart');
 #import('dart:io');
 #import('dart:math');
-#import('../../dartlib/lib/dartlib.dart');
+#import('dart:json');
+#import('../../dartlib/lib/dartlib.dart', prefix:'dartlib');
 
 #source('texture/texture_input.dart');
 
@@ -13,13 +14,17 @@ List<TextureInput> getTextures(Path path) {
 
   final doc = XML.parse(docString);
 
-  var rootDict = $(doc.children).first();
+  var rootDict = dartlib.$(doc.children).first();
   final hashMap = _parseDict(rootDict);
+
+  var json = JSON.stringify(hashMap['frames']);
+  print(json);
+
+  var roundTrip = JSON.parse(json);
 
   final frames = new List<TextureInput>();
 
-  Map<String, Dynamic> frameMaps = hashMap['frames'];
-  frameMaps.forEach((String key, Map<String, Dynamic> value) {
+  roundTrip.forEach((String key, Map<String, Dynamic> value) {
     final parsed = new TextureInput.fromHash(key, value);
     frames.add(parsed);
   });
@@ -31,7 +36,7 @@ HashMap<String, Dynamic> _parseDict(XmlElement element) {
   assert(element != null);
   assert(element.name == "dict");
 
-  final children = $(element.children).toList();
+  final children = dartlib.$(element.children).toList();
   assert(children.length %2 == 0);
 
   final map = <String,Dynamic>{};
