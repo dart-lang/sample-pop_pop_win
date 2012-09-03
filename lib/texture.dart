@@ -8,7 +8,7 @@
 
 #source('texture/texture_input.dart');
 
-List<TextureInput> getTextures(Path path) {
+Map<String, TextureInput> getTextures(Path path) {
   final file = new File.fromPath(path);
   final docString = file.readAsTextSync();
 
@@ -22,11 +22,11 @@ List<TextureInput> getTextures(Path path) {
 
   var roundTrip = JSON.parse(json);
 
-  final frames = new List<TextureInput>();
+  final frames = <String, TextureInput>{};
 
   roundTrip.forEach((String key, Map<String, Dynamic> value) {
     final parsed = new TextureInput.fromHash(key, value);
-    frames.add(parsed);
+    frames[key] = parsed;
   });
 
   return frames;
