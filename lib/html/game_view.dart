@@ -1,6 +1,6 @@
 class GameView extends GameManager {
-  static final String _xKey = 'x';
-  static final String _yKey = 'y';
+  static const String _xKey = 'x';
+  static const String _yKey = 'y';
 
   final TableElement _table;
   final Element _leftCountDiv;

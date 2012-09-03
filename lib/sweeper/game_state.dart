@@ -1,8 +1,8 @@
 class GameState {
-  static final GameState reset = const GameState._internal("reset");
-  static final GameState started = const GameState._internal("started");
-  static final GameState won = const GameState._internal("won");
-  static final GameState lost = const GameState._internal("lost");
+  static const GameState reset = const GameState._internal("reset");
+  static const GameState started = const GameState._internal("started");
+  static const GameState won = const GameState._internal("won");
+  static const GameState lost = const GameState._internal("lost");
   final String name;
 
   const GameState._internal(this.name);

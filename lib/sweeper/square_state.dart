@@ -1,9 +1,9 @@
 class SquareState {
-  static final SquareState hidden = const SquareState._internal("hidden");
-  static final SquareState revealed = const SquareState._internal("revealed");
-  static final SquareState flagged = const SquareState._internal("flagged");
-  static final SquareState mine = const SquareState._internal("mine");
-  static final SquareState safe = const SquareState._internal('safe');
+  static const SquareState hidden = const SquareState._internal("hidden");
+  static const SquareState revealed = const SquareState._internal("revealed");
+  static const SquareState flagged = const SquareState._internal("flagged");
+  static const SquareState mine = const SquareState._internal("mine");
+  static const SquareState safe = const SquareState._internal('safe');
   final String name;
 
   const SquareState._internal(this.name);

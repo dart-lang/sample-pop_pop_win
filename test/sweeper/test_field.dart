@@ -6,7 +6,7 @@ class TestField {
   // X32321
   // 110000
 
-  static final sample = const
+  static const sample = const
       [null, null, null, null, null, 2,
        null,    7, null,    8, null, 3,
        null,    5, null, null, null, 2,

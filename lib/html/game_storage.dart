@@ -1,5 +1,5 @@
 class GameStorage {
-  static final _gameCountKey = 'gameCount';
+  static const _gameCountKey = 'gameCount';
   final dartlib.EventHandle _highScoreUpdated;
 
   final Storage _storage;
