@@ -1,4 +1,6 @@
 class GameRoot extends GameManager {
+  final Map<String, TextureInput> _textureMap;
+  final ImageElement _textureImg;
   final Stage _stage;
   final CanvasElement _canvas;
   final GameElement _gameElement;
@@ -12,7 +14,8 @@ class GameRoot extends GameManager {
 
   factory GameRoot(int width, int height, int mineCount,
       CanvasElement canvasElement, Element leftCountDiv,
-      Element gameStateDiv, Element clockDiv, bool targetMode) {
+      Element gameStateDiv, Element clockDiv, bool targetMode,
+      Map<String, TextureInput> textureMap, ImageElement textureImg) {
 
     dartlib.requireArgumentNotNull(targetMode, 'targetMode');
 
@@ -22,16 +25,20 @@ class GameRoot extends GameManager {
 
     return new GameRoot._internal(width, height, mineCount,
         canvasElement, stage, rootElement, clickMan,
-        leftCountDiv, gameStateDiv, clockDiv);
+        leftCountDiv, gameStateDiv, clockDiv,
+        textureMap, textureImg);
   }
 
   GameRoot._internal(int width, int height, int mineCount,
       this._canvas, this._stage, GameElement gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv) :
-        this._gameElement = gameElement,
-        _gameElementTx = gameElement.addTransform(),
-        super(width, height, mineCount) {
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv,
+      this._textureMap, this._textureImg) :
+      this._gameElement = gameElement,
+      _gameElementTx = gameElement.addTransform(),
+      super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
+    assert(_textureImg.complete);
+    assert(_textureMap != null);
   }
 
   void set game(Game value) {
@@ -69,13 +76,13 @@ class GameRoot extends GameManager {
     final xScale = _stage.size.width / _gameElement.width;
     final yScale = _stage.size.height / _gameElement.height;
 
-    final theScale = math.min(xScale, yScale);
+    final theScale = min(xScale, yScale);
 
-    final logish = math.log(theScale) / math.LN2;
+    final logish = log(theScale) / LN2;
     final exp = logish.floor().toInt();
 
     // really weird that pow to an int returns an int and not double :-/
-    final prettyScale = math.pow(2.0, exp);
+    final prettyScale = pow(2.0, exp);
 
     //print("Fix scale at    $theScale");
     //print("Board scaled at $prettyScale");
