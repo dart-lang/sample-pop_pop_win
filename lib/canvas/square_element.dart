@@ -1,7 +1,8 @@
 class SquareElement extends PElement {
+  static const int _size = 80;
   final int x, y;
 
-  SquareElement(int size, this.x, this.y) : super(size, size) {
+  SquareElement(this.x, this.y) : super(_size, _size) {
     ClickManager.setClickable(this, true);
   }
 

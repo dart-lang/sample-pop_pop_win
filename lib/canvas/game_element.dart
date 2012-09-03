@@ -1,5 +1,4 @@
 class GameElement extends ElementParentImpl {
-  static final int _squareSize = 33;
   final bool _targetMode;
   final dartlib.EventHandle _targetChanged;
 
@@ -20,7 +19,7 @@ class GameElement extends ElementParentImpl {
       size = const dartlib.Size(100, 100);
     } else {
       size = new dartlib.Size(
-          _squareSize * value.field.width, _squareSize * value.field.height);
+          SquareElement._size * value.field.width, SquareElement._size * value.field.height);
     }
   }
 
@@ -69,9 +68,9 @@ class GameElement extends ElementParentImpl {
   void _drawTarget(CanvasRenderingContext2D ctx) {
     assert((_targetX == null) == (_targetY == null));
     if(_targetX != null) {
-      final halfSize = _squareSize * 0.5;
+      final halfSize = SquareElement._size * 0.5;
       var targetLoc = new dartlib.Vector(_targetX, _targetY);
-      targetLoc = targetLoc.scale(_squareSize);
+      targetLoc = targetLoc.scale(SquareElement._size);
 
       ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
       CanvasUtil.centeredCircle(ctx,
@@ -89,14 +88,14 @@ class GameElement extends ElementParentImpl {
 
       for(int i=0;i<_elements.length;i++) {
         final coords = _elements.getCoordinate(i);
-        final se = new SquareElement(_squareSize, coords.Item1, coords.Item2);
+        final se = new SquareElement(coords.Item1, coords.Item2);
         se.registerParent(this);
 
         ClickManager.addHandler(se, _squareClicked);
 
         // position the square
         final etx = se.addTransform();
-        etx.setToTranslation(coords.Item1 * _squareSize, coords.Item2 * _squareSize);
+        etx.setToTranslation(coords.Item1 * SquareElement._size, coords.Item2 * SquareElement._size);
 
         _elements[i] = se;
       }
