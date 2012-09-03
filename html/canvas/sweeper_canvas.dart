@@ -3,7 +3,18 @@
 #import('../../lib/sweeper.dart');
 #import('../../lib/canvas.dart');
 
-main(){
+ImageLoader _imageLoader;
+
+main() {
+  print('starting...');
+  _imageLoader = new ImageLoader(['art.png']);
+  _imageLoader.finished.add((args) => _doLoad());
+  _imageLoader.load();
+  print('load called...');
+}
+
+_doLoad() {
+  print('loaded!');
   final targetMode = false;
   final int w = 8, h = 8;
   final int m = (w * h * 0.15625).toInt();
