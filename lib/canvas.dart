@@ -11,3 +11,4 @@
 #source('canvas/game_root.dart');
 #source('canvas/game_element.dart');
 #source('canvas/square_element.dart');
+#source('canvas/image_loader.dart');
