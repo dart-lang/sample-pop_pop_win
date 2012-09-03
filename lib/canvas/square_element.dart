@@ -16,10 +16,12 @@ class SquareElement extends PElement {
     if(_squareState == SquareState.revealed) {
       final adjCount = _adjacentCount;
       if(adjCount > 0) {
-        ctx.font = '15px Helvetica';
+        final halfSize = _size ~/ 2;
+        ctx.textBaseline = 'middle';
+        ctx.font = '${halfSize}px Helvetica';
         ctx.fillStyle = 'black';
         ctx.textAlign = 'center';
-        ctx.fillText(adjCount.toString(), width / 2, 20, 30);
+        ctx.fillText(adjCount.toString(), halfSize, halfSize, _size);
       }
     }
 
