@@ -4,7 +4,7 @@
 #import('dart:io');
 #import('dart:math');
 #import('dart:json');
-#import('../../dartlib/lib/dartlib.dart', prefix:'dartlib');
+#import('package:dartlib/lib/dartlib.dart', prefix:'dartlib');
 
 #source('texture/texture_input.dart');
 

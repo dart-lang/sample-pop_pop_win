@@ -3,8 +3,8 @@
 #import('dart:coreimpl');
 #import('dart:html');
 #import('dart:math', prefix:'math');
-#import('../../dartlib/lib/dartlib.dart', prefix:'dartlib');
-#import('../../dartlib/lib/html.dart');
+#import('package:dartlib/lib/dartlib.dart', prefix:'dartlib');
+#import('package:dartlib/lib/html.dart');
 #import('sweeper.dart');
 
 #source('html/high_score_view.dart');
