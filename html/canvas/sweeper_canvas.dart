@@ -35,6 +35,9 @@ _doLoad() {
       sweeperTable, minesLeftDiv, gameStateDiv, clockDiv, targetMode,
       textures, textureImg);
 
+  // disable touch events
+  window.on.touchMove.add(_onTouchMove);
+
   final ButtonElement newGameButton = query('#newGame');
   newGameButton.on.click.add((args) => gameRoot.newGame());
 
@@ -43,9 +46,6 @@ _doLoad() {
 
   final ButtonElement revealButton = query('#reveal');
   revealButton.on.click.add((args) => gameRoot.revealTarget());
-
-  // disable touch events
-  window.on.touchMove.add(_onTouchMove);
 
   final updateButtons = (args) {
     revealButton.disabled = !gameRoot.canRevealTarget;
