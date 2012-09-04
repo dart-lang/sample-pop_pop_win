@@ -18,7 +18,7 @@ _doLoad() {
   final textures = _getTexturesFromJson(_artFramesJson);
 
   final targetMode = false;
-  final int w = 8, h = 8;
+  final int w = 16, h = 16;
   final int m = (w * h * 0.15625).toInt();
 
   final CanvasElement sweeperTable = query('#sweeperCanvas');
