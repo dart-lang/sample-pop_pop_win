@@ -41,6 +41,8 @@ _doLoad() {
   final ButtonElement newGameButton = query('#newGame');
   newGameButton.on.click.add((args) => gameRoot.newGame());
 
+  /*
+
   final ButtonElement flagButton = query('#flag');
   flagButton.on.click.add((args) => gameRoot.toggleTargetFlag());
 
@@ -55,6 +57,8 @@ _doLoad() {
   gameRoot.targetChanged.add(updateButtons);
 
   updateButtons(null);
+
+  */
 }
 
 void _onTouchMove(TouchEvent args) {
