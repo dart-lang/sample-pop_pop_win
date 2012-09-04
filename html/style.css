@@ -37,4 +37,5 @@ span.status {
 
 canvas#sweeperCanvas {
   cursor: pointer;
+  -webkit-user-select: none;
 }
