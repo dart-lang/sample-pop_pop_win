@@ -30,7 +30,9 @@ TextureInput getTexture(String key) {
 
 void drawTextureAt(CanvasRenderingContext2D ctx, String textureKey,
                    dartlib.Coordinate location, ImageElement imageElement) {
+  assert(textureKey != null);
   final texture = getTexture(textureKey);
+  assert(texture != null);
   _drawTextureAt(ctx, location, texture, imageElement);
 }
 
