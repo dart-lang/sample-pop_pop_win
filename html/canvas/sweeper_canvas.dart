@@ -31,9 +31,12 @@ _doLoad() {
 
   final textureImg = _imageLoader.images['art.png'];
 
+  // populate globals
+  populateTextures(textures);
+  populateTextureImage(textureImg);
+
   final gameRoot = new GameRoot(w, h, m,
-      sweeperTable, minesLeftDiv, gameStateDiv, clockDiv, targetMode,
-      textures, textureImg);
+      sweeperTable, minesLeftDiv, gameStateDiv, clockDiv, targetMode);
 
   // disable touch events
   window.on.touchMove.add(_onTouchMove);

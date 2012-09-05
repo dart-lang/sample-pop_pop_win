@@ -1,6 +1,4 @@
 class GameRoot extends GameManager {
-  final Map<String, TextureInput> _textureMap;
-  final ImageElement _textureImg;
   final Stage _stage;
   final CanvasElement _canvas;
   final GameElement _gameElement;
@@ -14,8 +12,7 @@ class GameRoot extends GameManager {
 
   factory GameRoot(int width, int height, int mineCount,
       CanvasElement canvasElement, Element leftCountDiv,
-      Element gameStateDiv, Element clockDiv, bool targetMode,
-      Map<String, TextureInput> textureMap, ImageElement textureImg) {
+      Element gameStateDiv, Element clockDiv, bool targetMode) {
 
     dartlib.requireArgumentNotNull(targetMode, 'targetMode');
 
@@ -25,20 +22,16 @@ class GameRoot extends GameManager {
 
     return new GameRoot._internal(width, height, mineCount,
         canvasElement, stage, rootElement, clickMan,
-        leftCountDiv, gameStateDiv, clockDiv,
-        textureMap, textureImg);
+        leftCountDiv, gameStateDiv, clockDiv);
   }
 
   GameRoot._internal(int width, int height, int mineCount,
       this._canvas, this._stage, GameElement gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv,
-      this._textureMap, this._textureImg) :
+      this._leftCountDiv, this._gameStateDiv, this._clockDiv) :
       this._gameElement = gameElement,
       _gameElementTx = gameElement.addTransform(),
       super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
-    assert(_textureImg.complete);
-    assert(_textureMap != null);
   }
 
   void set game(Game value) {

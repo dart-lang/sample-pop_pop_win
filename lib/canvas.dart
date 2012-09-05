@@ -16,11 +16,18 @@
 #source('texture/texture_input.dart');
 
 Map<String, TextureInput> _textures;
+ImageElement _textureImage;
 
 void populateTextures(Map<String, TextureInput> textures) {
   assert(_textures == null);
   assert(textures != null);
   _textures = textures;
+}
+
+void populateTextureImage(ImageElement imageElement) {
+  assert(imageElement != null);
+  assert(_textureImage == null);
+  _textureImage = imageElement;
 }
 
 TextureInput getTexture(String key) {
@@ -29,11 +36,12 @@ TextureInput getTexture(String key) {
 }
 
 void drawTextureAt(CanvasRenderingContext2D ctx, String textureKey,
-                   dartlib.Coordinate location, ImageElement imageElement) {
+                   dartlib.Coordinate location) {
+  assert(_textureImage != null);
   assert(textureKey != null);
   final texture = getTexture(textureKey);
   assert(texture != null);
-  _drawTextureAt(ctx, location, texture, imageElement);
+  _drawTextureAt(ctx, location, texture, _textureImage);
 }
 
 void _drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,

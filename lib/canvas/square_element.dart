@@ -1,5 +1,6 @@
 class SquareElement extends PElement {
   static const int _size = 80;
+  static const String _textureName = "balloon.png";
   final int x, y;
 
   SquareElement(this.x, this.y) : super(_size, _size) {
@@ -7,11 +8,17 @@ class SquareElement extends PElement {
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    ctx.fillStyle = _fillStyle;
-    ctx.fillRect(0, 0, width, height);
+    if(_squareState == SquareState.hidden) {
+      drawTextureAt(ctx, _textureName,
+          const dartlib.Coordinate(_size ~/ 2, _size ~/ 2));
 
-    ctx.strokeStyle = 'rgb(153, 153, 153)';
-    ctx.strokeRect(0.5, 0.5, width, height, 1);
+    } else {
+      ctx.fillStyle = _fillStyle;
+      ctx.fillRect(0, 0, width, height);
+
+      ctx.strokeStyle = 'rgb(153, 153, 153)';
+      ctx.strokeRect(0.5, 0.5, width, height, 1);
+    }
 
     if(_squareState == SquareState.revealed) {
       final adjCount = _adjacentCount;
