@@ -2,62 +2,10 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>background_bottom.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{0,96},{2048,96}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{2048,96}}</string>
-                <key>sourceSize</key>
-                <string>{2048,96}</string>
-            </dict>
-            <key>background_left.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{352,192},{352,1344}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{352,1344}}</string>
-                <key>sourceSize</key>
-                <string>{352,1344}</string>
-            </dict>
-            <key>background_right.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{0,192},{352,1344}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{352,1344}}</string>
-                <key>sourceSize</key>
-                <string>{352,1344}</string>
-            </dict>
-            <key>background_top.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{0,0},{2048,96}}</string>
-                <key>offset</key>
-                <string>{0,0}</string>
-                <key>rotated</key>
-                <false/>
-                <key>sourceColorRect</key>
-                <string>{{0,0},{2048,96}}</string>
-                <key>sourceSize</key>
-                <string>{2048,96}</string>
-            </dict>
             <key>balloon.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1949,908},{80,80}}</string>
+                <string>{{1294,386},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -67,725 +15,2168 @@
                 <key>sourceSize</key>
                 <string>{80,80}</string>
             </dict>
-            <key>dart_animation_0000.png</key>
+            <key>balloon_explode_0000.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1985,192},{39,63}}</string>
+                <string>{{1294,386},{80,80}}</string>
                 <key>offset</key>
-                <string>{516.5,-327.5}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{1521,1064},{39,63}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0001.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{704,192},{621,219}}</string>
-                <key>offset</key>
-                <string>{230.5,-259.5}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{944,918},{621,219}}</string>
+                <string>{{88,88},{80,80}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0002.png</key>
+            <key>balloon_explode_0001.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,192},{633,336}}</string>
+                <string>{{1196,534},{82,86}}</string>
                 <key>offset</key>
-                <string>{229.5,-217}</string>
+                <string>{0,-2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{87,87},{82,86}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{682,1316},{188,188}}</string>
+                <key>offset</key>
+                <string>{9,9}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{937,817},{633,336}}</string>
+                <string>{{43,25},{188,188}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0003.png</key>
+            <key>balloon_explode_0003.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{638,1536},{638,340}}</string>
+                <string>{{892,618},{216,222}}</string>
                 <key>offset</key>
-                <string>{192,-151}</string>
+                <string>{3,-2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{897,749},{638,340}}</string>
+                <string>{{23,19},{216,222}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0004.png</key>
+            <key>balloon_explode_0004.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{704,411},{554,306}}</string>
+                <string>{{464,1328},{226,216}}</string>
                 <key>offset</key>
-                <string>{152,-89}</string>
+                <string>{2,3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{17,17},{226,216}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{452,1568},{226,216}}</string>
+                <key>offset</key>
+                <string>{2,3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{17,17},{226,216}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{232,1824},{222,218}}</string>
+                <key>offset</key>
+                <string>{-1,4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{16,15},{222,218}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1076,310},{222,216}}</string>
+                <key>offset</key>
+                <string>{-1,4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{16,16},{222,216}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0008.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{772,850},{224,216}}</string>
+                <key>offset</key>
+                <string>{-1,4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{15,16},{224,216}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0009.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{652,1090},{224,216}}</string>
+                <key>offset</key>
+                <string>{-1,5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{15,15},{224,216}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,1568},{226,216}}</string>
+                <key>offset</key>
+                <string>{-2,5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{13,15},{226,216}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1054,2},{226,224}}</string>
+                <key>offset</key>
+                <string>{-1,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{14,14},{226,224}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1824},{228,222}}</string>
+                <key>offset</key>
+                <string>{-2,2}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{899,704},{554,306}}</string>
+                <string>{{12,15},{228,222}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0005.png</key>
+            <key>balloon_explode_0013.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{0,1536},{482,257}}</string>
+                <string>{{850,312},{228,224}}</string>
                 <key>offset</key>
-                <string>{123,-36.5}</string>
+                <string>{-2,3}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{906,676},{482,257}}</string>
+                <string>{{12,13},{228,224}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0006.png</key>
+            <key>balloon_explode_0014.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{257,1536},{421,205}}</string>
+                <string>{{664,620},{228,226}}</string>
                 <key>offset</key>
-                <string>{100.5,2.5}</string>
+                <string>{-2,2}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{914,663},{421,205}}</string>
+                <string>{{12,13},{228,226}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0007.png</key>
+            <key>balloon_explode_0015.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{462,1536},{369,176}}</string>
+                <string>{{422,1096},{230,228}}</string>
                 <key>offset</key>
-                <string>{83.5,36}</string>
+                <string>{-2,2}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{923,644},{369,176}}</string>
+                <string>{{11,12},{230,228}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0008.png</key>
+            <key>balloon_explode_0016.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{758,1876},{322,164}}</string>
+                <string>{{2,1592},{230,230}}</string>
                 <key>offset</key>
-                <string>{70,64}</string>
+                <string>{-2,1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{933,622},{322,164}}</string>
+                <string>{{11,12},{230,230}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0009.png</key>
+            <key>balloon_explode_0017.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1080,1876},{272,148}}</string>
+                <string>{{822,2},{230,230}}</string>
                 <key>offset</key>
-                <string>{63,82}</string>
+                <string>{-2,1}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{951,612},{272,148}}</string>
+                <string>{{11,12},{230,230}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0010.png</key>
+            <key>balloon_explode_0018.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,528},{245,133}}</string>
+                <string>{{190,1102},{232,230}}</string>
                 <key>offset</key>
-                <string>{49.5,91.5}</string>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,13},{232,230}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0019.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{618,316},{230,230}}</string>
+                <key>offset</key>
+                <string>{-1,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{951,610},{245,133}}</string>
+                <string>{{12,13},{230,230}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0011.png</key>
+            <key>balloon_explode_0020.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1597,528},{213,127}}</string>
+                <string>{{2,1358},{232,230}}</string>
                 <key>offset</key>
-                <string>{42.5,87.5}</string>
+                <string>{-1,0}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,13},{232,230}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0021.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{358,862},{232,226}}</string>
+                <key>offset</key>
+                <string>{-1,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,13},{232,226}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0022.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{590,2},{232,230}}</string>
+                <key>offset</key>
+                <string>{-1,1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,12},{232,230}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0023.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{234,1336},{230,228}}</string>
+                <key>offset</key>
+                <string>{0,1}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{13,13},{230,228}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_explode_0024.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{452,1796},{190,214}}</string>
+                <key>offset</key>
+                <string>{-10,4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{960,617},{213,127}}</string>
+                <string>{{23,17},{190,214}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0012.png</key>
+            <key>balloon_pop_0000.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1810,528},{182,133}}</string>
+                <string>{{1294,386},{80,80}}</string>
                 <key>offset</key>
-                <string>{38,69.5}</string>
+                <string>{0,0}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{971,632},{182,133}}</string>
+                <string>{{88,88},{80,80}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0013.png</key>
+            <key>balloon_pop_0001.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{481,1905},{152,138}}</string>
+                <string>{{1308,1904},{142,114}}</string>
                 <key>offset</key>
-                <string>{36,46}</string>
+                <string>{3,5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{60,66},{142,114}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{586,858},{230,184}}</string>
+                <key>offset</key>
+                <string>{3,5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{16,31},{230,184}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{476,624},{232,186}}</string>
+                <key>offset</key>
+                <string>{3,5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{15,30},{232,186}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,1120},{236,186}}</string>
+                <key>offset</key>
+                <string>{2,5}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{12,30},{236,186}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{402,2},{236,186}}</string>
+                <key>offset</key>
+                <string>{2,4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{12,31},{236,186}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{250,318},{236,186}}</string>
+                <key>offset</key>
+                <string>{2,4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{12,31},{236,186}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{108,624},{238,184}}</string>
+                <key>offset</key>
+                <string>{1,3}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{10,33},{238,184}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0008.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{174,864},{236,182}}</string>
+                <key>offset</key>
+                <string>{1,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,35},{236,182}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0009.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{294,624},{236,180}}</string>
+                <key>offset</key>
+                <string>{1,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,36},{236,180}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{438,318},{236,178}}</string>
+                <key>offset</key>
+                <string>{1,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{11,37},{236,178}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1242,918},{84,106}}</string>
+                <key>offset</key>
+                <string>{-2,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{84,79},{84,106}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1068,1664},{88,112}}</string>
+                <key>offset</key>
+                <string>{-3,-4}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{81,76},{88,112}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0013.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1296,1638},{94,118}}</string>
+                <key>offset</key>
+                <string>{-3,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{984,653},{152,138}}</string>
+                <string>{{78,73},{94,118}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0014.png</key>
+            <key>balloon_pop_0014.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
+                <string>{{1330,1344},{100,124}}</string>
                 <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0015.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0016.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0017.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0018.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0019.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0020.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0021.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0022.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0023.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0024.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0025.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0026.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0027.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0028.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0029.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0030.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0031.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0032.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0033.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0034.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0035.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0036.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0037.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0038.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0039.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0040.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{1597,655},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
-                <key>rotated</key>
-                <true/>
-                <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
-                <key>sourceSize</key>
-                <string>{2048,1536}</string>
-            </dict>
-            <key>dart_animation_0041.png</key>
-            <dict>
-                <key>frame</key>
-                <string>{{633,1905},{125,138}}</string>
-                <key>offset</key>
-                <string>{35.5,18}</string>
+                <string>{-4,-4}</string>
                 <key>rotated</key>
                 <false/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{125,138}}</string>
+                <string>{{74,70},{100,124}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0042.png</key>
+            <key>balloon_pop_0015.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1870,661},{124,135}}</string>
+                <string>{{1330,1068},{104,130}}</string>
                 <key>offset</key>
-                <string>{35,19.5}</string>
+                <string>{-4,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{72,67},{104,130}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0016.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1218,1362},{110,136}}</string>
+                <key>offset</key>
+                <string>{-5,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{68,64},{110,136}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0017.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1126,1220},{114,140}}</string>
+                <key>offset</key>
+                <string>{-5,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{66,62},{114,140}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0018.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1200,1758},{120,144}}</string>
+                <key>offset</key>
+                <string>{-6,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{62,60},{120,144}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0019.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{784,1922},{124,148}}</string>
+                <key>offset</key>
+                <string>{-6,-4}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{124,135}}</string>
+                <string>{{60,58},{124,148}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0043.png</key>
+            <key>balloon_pop_0020.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,909},{124,135}}</string>
+                <string>{{1154,1918},{128,152}}</string>
                 <key>offset</key>
-                <string>{35,19.5}</string>
+                <string>{-7,-4}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{124,135}}</string>
+                <string>{{57,56},{128,152}}</string>
                 <key>sourceSize</key>
-                <string>{2048,1536}</string>
+                <string>{256,256}</string>
             </dict>
-            <key>dart_animation_0044.png</key>
+            <key>balloon_pop_0021.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1567,780},{124,135}}</string>
+                <string>{{994,1260},{130,154}}</string>
                 <key>offset</key>
-                <string>{35,19.5}</string>
+                <string>{-7,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{56,55},{130,154}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0022.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1064,1758},{134,158}}</string>
+                <key>offset</key>
+                <string>{-8,-4}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{53,53},{134,158}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0023.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{926,1758},{136,160}}</string>
+                <key>offset</key>
+                <string>{-8,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{52,51},{136,160}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0024.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{990,842},{138,162}}</string>
+                <key>offset</key>
+                <string>{-8,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{51,50},{138,162}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0025.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{784,1760},{140,160}}</string>
+                <key>offset</key>
+                <string>{-9,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{49,51},{140,160}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0026.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1110,618},{140,160}}</string>
+                <key>offset</key>
+                <string>{-9,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{49,51},{140,160}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0027.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{970,1504},{142,158}}</string>
+                <key>offset</key>
+                <string>{-10,-3}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{47,52},{142,158}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>balloon_pop_0028.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1114,1504},{136,148}}</string>
+                <key>offset</key>
+                <string>{-11,-2}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{49,56},{136,148}}</string>
+                <key>sourceSize</key>
+                <string>{256,256}</string>
+            </dict>
+            <key>dart_fly_0000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,280},{36,56}}</string>
+                <key>offset</key>
+                <string>{514,-324}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{124,135}}</string>
+                <string>{{1520,1064},{36,56}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0045.png</key>
+            <key>dart_fly_0001.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1735,661},{124,135}}</string>
+                <string>{{644,1796},{138,214}}</string>
                 <key>offset</key>
-                <string>{35,19.5}</string>
+                <string>{468,-256}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{124,135}}</string>
+                <string>{{1423,917},{138,214}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0046.png</key>
+            <key>dart_fly_0002.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,785},{124,135}}</string>
+                <string>{{2,2},{218,332}}</string>
                 <key>offset</key>
-                <string>{35,19.5}</string>
+                <string>{432,-214}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{124,135}}</string>
+                <string>{{1347,816},{218,332}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0047.png</key>
+            <key>dart_fly_0003.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,661},{124,135}}</string>
+                <string>{{2,336},{246,286}}</string>
                 <key>offset</key>
-                <string>{35,19.5}</string>
+                <string>{388,-124}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{997,681},{124,135}}</string>
+                <string>{{1289,749},{246,286}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0048.png</key>
+            <key>dart_fly_0004.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1837,785},{123,135}}</string>
+                <string>{{1280,2},{210,220}}</string>
                 <key>offset</key>
-                <string>{35.5,19.5}</string>
+                <string>{324,-45}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{998,681},{123,135}}</string>
+                <string>{{1243,703},{210,220}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0049.png</key>
+            <key>dart_fly_0005.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,1033},{123,135}}</string>
+                <string>{{870,1076},{182,166}}</string>
                 <key>offset</key>
-                <string>{35.5,19.5}</string>
+                <string>{273,10}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{998,681},{123,135}}</string>
+                <string>{{1206,675},{182,166}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0050.png</key>
+            <key>dart_fly_0006.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1567,904},{123,135}}</string>
+                <string>{{872,1260},{160,120}}</string>
                 <key>offset</key>
-                <string>{35.5,19.5}</string>
+                <string>{231,45}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{998,681},{123,135}}</string>
+                <string>{{1175,663},{160,120}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0051.png</key>
+            <key>dart_fly_0007.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1702,785},{123,135}}</string>
+                <string>{{1038,1076},{142,98}}</string>
                 <key>offset</key>
-                <string>{35.5,19.5}</string>
+                <string>{197,76}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{998,681},{123,135}}</string>
+                <string>{{1150,643},{142,98}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0052.png</key>
+            <key>dart_fly_0008.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1702,908},{122,135}}</string>
+                <string>{{1060,1920},{126,92}}</string>
                 <key>offset</key>
-                <string>{36,19.5}</string>
+                <string>{168,101}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{999,681},{122,135}}</string>
+                <string>{{1129,621},{126,92}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0053.png</key>
+            <key>dart_fly_0009.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1567,1027},{121,135}}</string>
+                <string>{{1104,1416},{112,86}}</string>
                 <key>offset</key>
-                <string>{36.5,19.5}</string>
+                <string>{143,114}</string>
                 <key>rotated</key>
-                <true/>
+                <false/>
                 <key>sourceColorRect</key>
-                <string>{{1000,681},{121,135}}</string>
+                <string>{{1111,611},{112,86}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
-            <key>dart_animation_0054.png</key>
+            <key>dart_fly_0010.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1352,1156},{120,135}}</string>
+                <string>{{1350,838},{98,94}}</string>
                 <key>offset</key>
-                <string>{37,19.5}</string>
+                <string>{123,112}</string>
                 <key>rotated</key>
                 <true/>
                 <key>sourceColorRect</key>
-                <string>{{1001,681},{120,135}}</string>
+                <string>{{1098,609},{98,94}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1130,918},{86,110}}</string>
+                <key>offset</key>
+                <string>{106,96}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1087,617},{86,110}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{402,240},{76,124}}</string>
+                <key>offset</key>
+                <string>{91,75}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1077,631},{76,124}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0013.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{250,556},{66,134}}</string>
+                <key>offset</key>
+                <string>{79,48}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1070,653},{66,134}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0014.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0015.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0016.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0017.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0018.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0019.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0020.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0021.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0022.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0023.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0024.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0025.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0026.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0027.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0028.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0029.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0030.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0031.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0032.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0033.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0034.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0035.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0036.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0037.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0038.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0039.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0040.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1306,1206},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0041.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1266,1068},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0042.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1244,1004},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0043.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1194,780},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0044.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1130,780},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0045.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1242,1208},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0046.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1424,1896},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0047.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1386,1758},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0048.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1322,1758},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0049.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1316,1500},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0050.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1252,1500},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0051.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1202,1070},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0052.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1138,1070},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0053.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1106,1006},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0054.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{600,556},{62,136}}</string>
+                <key>offset</key>
+                <string>{66,20}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1059,680},{62,136}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_0055.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,318},{0,0}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{0,0}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0000.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,318},{0,0}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{0,0}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0001.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{828,1668},{88,142}}</string>
+                <key>offset</key>
+                <string>{-27,-274}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{953,971},{88,142}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0002.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,624},{104,250}}</string>
+                <key>offset</key>
+                <string>{-30,-231}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{942,874},{104,250}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0003.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,2},{178,276}}</string>
+                <key>offset</key>
+                <string>{-30,-175}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{905,805},{178,276}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0004.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{2,876},{170,242}}</string>
+                <key>offset</key>
+                <string>{-34,-110}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{905,757},{170,242}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0005.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{670,1556},{156,202}}</string>
+                <key>offset</key>
+                <string>{-37,-56}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{909,723},{156,202}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0006.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{828,1506},{140,160}}</string>
+                <key>offset</key>
+                <string>{-36,-14}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{918,702},{140,160}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0007.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{934,1920},{126,124}}</string>
+                <key>offset</key>
+                <string>{-33,13}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{928,693},{126,124}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0008.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1182,1654},{112,102}}</string>
+                <key>offset</key>
+                <string>{-30,39}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{938,678},{112,102}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0009.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1100,534},{82,94}}</string>
+                <key>offset</key>
+                <string>{-27,60}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{956,661},{82,94}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0010.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1382,938},{98,88}}</string>
+                <key>offset</key>
+                <string>{-22,72}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{953,652},{98,88}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0011.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{972,1664},{94,92}}</string>
+                <key>offset</key>
+                <string>{-16,70}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{961,652},{94,92}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0012.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1340,730},{88,106}}</string>
+                <key>offset</key>
+                <string>{-8,56}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{972,659},{88,106}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0013.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{872,1422},{80,116}}</string>
+                <key>offset</key>
+                <string>{1,36}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{985,674},{80,116}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0014.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0015.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0016.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0017.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0018.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0019.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0020.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0021.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0022.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0023.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0024.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0025.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0026.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0027.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0028.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0029.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0030.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0031.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0032.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0033.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0034.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0035.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0036.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0037.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0038.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0039.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0040.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{978,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0041.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{856,542},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0042.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1016,234},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0043.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{894,234},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0044.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{772,236},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0045.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{650,236},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0046.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{528,240},{74,120}}</string>
+                <key>offset</key>
+                <string>{10,12}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,696},{74,120}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0047.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1138,230},{74,118}}</string>
+                <key>offset</key>
+                <string>{10,11}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{997,698},{74,118}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0048.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1370,1200},{72,118}}</string>
+                <key>offset</key>
+                <string>{10,11}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{998,698},{72,118}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0049.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1258,230},{72,118}}</string>
+                <key>offset</key>
+                <string>{10,11}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{998,698},{72,118}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0050.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{1252,618},{72,116}}</string>
+                <key>offset</key>
+                <string>{10,10}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{998,700},{72,116}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0051.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{738,548},{70,116}}</string>
+                <key>offset</key>
+                <string>{11,10}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1000,700},{70,116}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0052.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{990,1006},{68,114}}</string>
+                <key>offset</key>
+                <string>{11,9}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1001,702},{68,114}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0053.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{386,556},{66,110}}</string>
+                <key>offset</key>
+                <string>{11,7}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1002,706},{66,110}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0054.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{498,556},{64,100}}</string>
+                <key>offset</key>
+                <string>{12,2}</string>
+                <key>rotated</key>
+                <true/>
+                <key>sourceColorRect</key>
+                <string>{{1004,716},{64,100}}</string>
+                <key>sourceSize</key>
+                <string>{2048,1536}</string>
+            </dict>
+            <key>dart_fly_shadow_0055.png</key>
+            <dict>
+                <key>frame</key>
+                <string>{{222,318},{0,0}}</string>
+                <key>offset</key>
+                <string>{0,0}</string>
+                <key>rotated</key>
+                <false/>
+                <key>sourceColorRect</key>
+                <string>{{0,0},{0,0}}</string>
                 <key>sourceSize</key>
                 <string>{2048,1536}</string>
             </dict>
             <key>game_board_center.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,1141},{80,80}}</string>
+                <string>{{1294,304},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -798,7 +2189,7 @@
             <key>game_board_corner_bottom_left.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1814,1132},{112,112}}</string>
+                <string>{{1494,1434},{112,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -811,7 +2202,7 @@
             <key>game_board_corner_bottom_right.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1702,1030},{112,112}}</string>
+                <string>{{1392,1584},{112,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -824,7 +2215,7 @@
             <key>game_board_corner_top_left.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1837,1020},{112,112}}</string>
+                <string>{{1432,1320},{112,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -837,7 +2228,7 @@
             <key>game_board_corner_top_right.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1837,908},{112,112}}</string>
+                <string>{{1380,1470},{112,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -850,7 +2241,7 @@
             <key>game_board_side_bottom.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1258,523},{80,112}}</string>
+                <string>{{1326,616},{80,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -863,7 +2254,7 @@
             <key>game_board_side_left.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{369,1957},{112,80}}</string>
+                <string>{{1284,534},{112,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -876,7 +2267,7 @@
             <key>game_board_side_right.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{257,1957},{112,80}}</string>
+                <string>{{990,1422},{112,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -889,7 +2280,7 @@
             <key>game_board_side_top.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1258,411},{80,112}}</string>
+                <string>{{1258,736},{80,112}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -902,7 +2293,7 @@
             <key>number_eight.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,1061},{80,80}}</string>
+                <string>{{1444,1202},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -915,7 +2306,7 @@
             <key>number_five.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,981},{80,80}}</string>
+                <string>{{1444,1120},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -928,7 +2319,7 @@
             <key>number_four.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,901},{80,80}}</string>
+                <string>{{1488,1944},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -941,7 +2332,7 @@
             <key>number_one.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,821},{80,80}}</string>
+                <string>{{1488,1862},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -954,7 +2345,7 @@
             <key>number_seven.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,741},{80,80}}</string>
+                <string>{{1506,1548},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -967,7 +2358,7 @@
             <key>number_six.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1487,661},{80,80}}</string>
+                <string>{{1450,1780},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -980,7 +2371,7 @@
             <key>number_three.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1258,715},{80,80}}</string>
+                <string>{{1450,1698},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -993,7 +2384,7 @@
             <key>number_two.png</key>
             <dict>
                 <key>frame</key>
-                <string>{{1258,635},{80,80}}</string>
+                <string>{{1436,1038},{80,80}}</string>
                 <key>offset</key>
                 <string>{0,0}</string>
                 <key>rotated</key>
@@ -1013,7 +2404,7 @@
             <key>size</key>
             <string>{2048,2048}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:d574ef6f05db9548a58de4b5dcaae623$</string>
+            <string>$TexturePacker:SmartUpdate:5811e80fcc08d08bc1762583e45563b4$</string>
             <key>textureFileName</key>
             <string>dart_art_01.png</string>
         </dict>
