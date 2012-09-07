@@ -8,5 +8,5 @@ const String _path = @"./html/canvas/art.plist";
 main(){
   final path = new Path(_path);
   final textures = getTextures(path);
-  print(textures);
+  //print(textures);
 }

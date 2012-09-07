@@ -466,13 +466,13 @@ $$.FilteredElementList = {"":
  first$0: function() { return this.get$first().call$0(); },
  forEach$1: function(f){$.forEach(this.get$_filtered(),f);},
  operator$indexSet$2: function(index,value){this.operator$index$1(index).replaceWith$1(value);},
- set$length: function(newLength){var len=$.get$length(this);if($.geB(newLength,len))return;else if($.ltB(newLength,0))throw $.$$throw($.CTC41);this.removeRange$2($.sub(newLength,1),$.sub(len,newLength));},
+ set$length: function(newLength){var len=$.get$length(this);if($.geB(newLength,len))return;else if($.ltB(newLength,0))throw $.$$throw($.CTC42);this.removeRange$2($.sub(newLength,1),$.sub(len,newLength));},
  add$1: function(value){$.add$1(this._childNodes,value);},
  get$add: function() { return new $.BoundClosure(this, 'add$1'); },
  addAll$1: function(collection){$.forEach(collection,this.get$add());},
  addLast$1: function(value){this.add$1(value);},
  removeRange$2: function(start,rangeLength){$.forEach($.getRange(this.get$_filtered(),start,rangeLength),new $.FilteredElementList_removeRange_anon());},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC22);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC23);},
  clear$0: function(){$.clear(this._childNodes);},
  removeLast$0: function(){var result=this.last$0();if(!(result==null))result.remove$0();return result;},
  filter$1: function(f){return $.filter(this.get$_filtered(),f);},
@@ -504,13 +504,13 @@ $$._ChildrenElementList = {"":
  get$length: function(){return $.get$length(this._childElements);},
  operator$index$1: function(index){return $.index(this._childElements,index);},
  operator$indexSet$2: function(index,value){this._lib_element.$dom_replaceChild$2(value,$.index(this._childElements,index));},
- set$length: function(newLength){throw $.$$throw($.CTC40);},
+ set$length: function(newLength){throw $.$$throw($.CTC41);},
  add$1: function(value){this._lib_element.$dom_appendChild$1(value);return value;},
  addLast$1: function(value){return this.add$1(value);},
  iterator$0: function(){return $.iterator(this._toList$0());},
  addAll$1: function(collection){for(var t1=$.iterator(collection),t2=this._lib_element;t1.hasNext$0()===true;)t2.$dom_appendChild$1(t1.next$0());},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC22);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC22);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC23);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC23);},
  getRange$2: function(start,rangeLength){return $._FrozenElementList$_wrap($._Lists_getRange(this,start,rangeLength,[]));},
  clear$0: function(){this._lib_element.set$text('');},
  removeLast$0: function(){var result=this.last$0();if(!(result==null))this._lib_element.$dom_removeChild$1(result);return result;},
@@ -529,17 +529,17 @@ $$._FrozenElementList = {"":
  isEmpty$0: function(){return $.isEmpty(this._nodeList);},
  get$length: function(){return $.get$length(this._nodeList);},
  operator$index$1: function(index){return $.index(this._nodeList,index);},
- operator$indexSet$2: function(index,value){throw $.$$throw($.CTC40);},
+ operator$indexSet$2: function(index,value){throw $.$$throw($.CTC41);},
  set$length: function(newLength){$.set$length(this._nodeList,newLength);},
- add$1: function(value){throw $.$$throw($.CTC40);},
- addLast$1: function(value){throw $.$$throw($.CTC40);},
+ add$1: function(value){throw $.$$throw($.CTC41);},
+ addLast$1: function(value){throw $.$$throw($.CTC41);},
  iterator$0: function(){return $._FrozenElementListIterator$(this);},
- addAll$1: function(collection){throw $.$$throw($.CTC40);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC40);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC40);},
+ addAll$1: function(collection){throw $.$$throw($.CTC41);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC41);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC41);},
  getRange$2: function(start,rangeLength){return $._FrozenElementList$_wrap($.getRange(this._nodeList,start,rangeLength));},
- clear$0: function(){throw $.$$throw($.CTC40);},
- removeLast$0: function(){throw $.$$throw($.CTC40);},
+ clear$0: function(){throw $.$$throw($.CTC41);},
+ removeLast$0: function(){throw $.$$throw($.CTC41);},
  last$0: function(){return $.last(this._nodeList);},
  is$List: function() { return true; },
  is$Collection: function() { return true; }
@@ -1134,25 +1134,25 @@ $$.Game = {"":
  get$updated: function(){return this._updatedEvent;},
  get$stateChanged: function(){return this._gameStateEvent;},
  getSquareState$2: function(x,y){return this._states.get$2(x,y);},
- get$gameEnded: function(){return $.eqB(this._state,$.CTC46)||$.eqB(this._state,$.CTC47);},
+ get$gameEnded: function(){return $.eqB(this._state,$.CTC47)||$.eqB(this._state,$.CTC48);},
  get$duration: function(){if(this._startTime==null)return;else{var end=this._endTime;if(end==null)end=$.DateImplementation$now();return end.difference$1(this._startTime);}},
- setFlag$3: function(x,y,value){this._ensureStarted$0();var t1=this._states;var currentSS=t1.get$2(x,y);if(value){$.require($.eq(currentSS,$.CTC24),'');t1.set$3(x,y,$.CTC25);this._minesLeft=$.sub(this._minesLeft,1);}else{$.require($.eq(currentSS,$.CTC25),'');t1.set$3(x,y,$.CTC24);this._minesLeft=$.add(this._minesLeft,1);}this._update$0();},
- canReveal$2: function(x,y){this._ensureStarted$0();if($.eqB(this._states.get$2(x,y),$.CTC24))return true;else if(this._canChord$2(x,y)===true)return true;return false;},
- reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC24))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=0;}else reveals=this._doReveal$2(x,y);else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):0;this._update$0();return reveals;},
- _canChord$2: function(x,y){if($.eqB(this._states.get$2(x,y),$.CTC26)){var adjCount=this.field.getAdjacentCount$2(x,y);if($.gtB(adjCount,0))if($.eqB(this._getAdjacentFlagCount$2(x,y),adjCount))return true;}return false;},
- _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,t1,t3,flagged,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC24)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC25))flagged.push(t4);}}if(failed){this._setLost$0();var reveals=0;}else for(t1=$.iterator(hidden),reveals=0;t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true){t2=this.reveal$2(c.get$Item1(),c.get$Item2());if(typeof t2!=='number')throw $.iae(t2);reveals+=t2;}}return reveals;},
- _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;flagged=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC24)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC25))flagged.push(t4);}if(failed){this._setLost$0();var reveals=0;}else for(t1=$.iterator(hidden),reveals=0;t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true){t2=this.reveal$2(c.get$Item1(),c.get$Item2());if(typeof t2!=='number')throw $.iae(t2);reveals+=t2;}}return reveals;}},
- _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,t1,y,0,0);t1.set$3(x,y,$.CTC26);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,t1,y,t3,0);this._revealsLeft=t3-1;var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,t1,y,t2,0);if(t2===0){this._setWon$0();var revealCount=1;}else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,t1,y,t3,t2);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y)),revealCount=1;t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC24)){var c=t2.getCoordinate$1(t4);t4=this._doReveal$2(c.get$Item1(),c.get$Item2());if(typeof t4!=='number')throw $.iae(t4);revealCount+=t4;}}else revealCount=1;}return revealCount;},
- _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:var x=env0;t1=env1;var y=env2;break;case 2:x=env0;t1=env1;y=env2;t3=env3;break;case 3:x=env0;t1=env1;y=env2;t2=env3;break;case 4:x=env0;t1=env1;y=env2;t3=env3;t2=env4;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC26);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0)){this._setWon$0();var revealCount=1;}else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y)),revealCount=1;t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC24)){var c=t2.getCoordinate$1(t4);t4=this._doReveal$2(c.get$Item1(),c.get$Item2());if(typeof t4!=='number')throw $.iae(t4);revealCount+=t4;}}else revealCount=1;}return revealCount;}},
- _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC33;}}this._setState$1($.CTC46);var t2;},
- _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC33);this._setState$1($.CTC46);}},
- _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC32;}}this._setState$1($.CTC47);var t2;},
- _setLost$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC32);this._setState$1($.CTC47);}},
+ setFlag$3: function(x,y,value){this._ensureStarted$0();var t1=this._states;var currentSS=t1.get$2(x,y);if(value){$.require($.eq(currentSS,$.CTC25),'');t1.set$3(x,y,$.CTC26);this._minesLeft=$.sub(this._minesLeft,1);}else{$.require($.eq(currentSS,$.CTC26),'');t1.set$3(x,y,$.CTC25);this._minesLeft=$.add(this._minesLeft,1);}this._update$0();},
+ canReveal$2: function(x,y){this._ensureStarted$0();if($.eqB(this._states.get$2(x,y),$.CTC25))return true;else if(this._canChord$2(x,y)===true)return true;return false;},
+ reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC25))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=0;}else reveals=this._doReveal$2(x,y);else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):0;this._update$0();return reveals;},
+ _canChord$2: function(x,y){if($.eqB(this._states.get$2(x,y),$.CTC27)){var adjCount=this.field.getAdjacentCount$2(x,y);if($.gtB(adjCount,0))if($.eqB(this._getAdjacentFlagCount$2(x,y),adjCount))return true;}return false;},
+ _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,t1,t3,flagged,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC25)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC26))flagged.push(t4);}}if(failed){this._setLost$0();var reveals=0;}else for(t1=$.iterator(hidden),reveals=0;t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true){t2=this.reveal$2(c.get$Item1(),c.get$Item2());if(typeof t2!=='number')throw $.iae(t2);reveals+=t2;}}return reveals;},
+ _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;flagged=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC25)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC26))flagged.push(t4);}if(failed){this._setLost$0();var reveals=0;}else for(t1=$.iterator(hidden),reveals=0;t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true){t2=this.reveal$2(c.get$Item1(),c.get$Item2());if(typeof t2!=='number')throw $.iae(t2);reveals+=t2;}}return reveals;}},
+ _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,t1,y,0,0);t1.set$3(x,y,$.CTC27);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,t1,y,t3,0);this._revealsLeft=t3-1;var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,t1,y,t2,0);if(t2===0){this._setWon$0();var revealCount=1;}else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,t1,y,t3,t2);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y)),revealCount=1;t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC25)){var c=t2.getCoordinate$1(t4);t4=this._doReveal$2(c.get$Item1(),c.get$Item2());if(typeof t4!=='number')throw $.iae(t4);revealCount+=t4;}}else revealCount=1;}return revealCount;},
+ _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:var x=env0;t1=env1;var y=env2;break;case 2:x=env0;t1=env1;y=env2;t3=env3;break;case 3:x=env0;t1=env1;y=env2;t2=env3;break;case 4:x=env0;t1=env1;y=env2;t3=env3;t2=env4;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC27);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0)){this._setWon$0();var revealCount=1;}else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y)),revealCount=1;t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC25)){var c=t2.getCoordinate$1(t4);t4=this._doReveal$2(c.get$Item1(),c.get$Item2());if(typeof t4!=='number')throw $.iae(t4);revealCount+=t4;}}else revealCount=1;}return revealCount;}},
+ _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC34;}}this._setState$1($.CTC47);var t2;},
+ _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC34);this._setState$1($.CTC47);}},
+ _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC33;}}this._setState$1($.CTC48);var t2;},
+ _setLost$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC33);this._setState$1($.CTC48);}},
  _update$0: function(){return this._updatedEvent.fireEvent$1($.CTC13);},
- _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC42))this._startTime=$.DateImplementation$now();else if(this.get$gameEnded()===true)this._endTime=$.DateImplementation$now();this._gameStateEvent.fireEvent$1(this._state);}},
- _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC43))this._setState$1($.CTC42);},
- _getAdjacentFlagCount$2: function(x,y){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentFlagCount$2$bailout(1,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],$.CTC25))++val;}return val;},
- _getAdjacentFlagCount$2$bailout: function(state,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),$.CTC25))++val;return val;},
+ _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC43))this._startTime=$.DateImplementation$now();else if(this.get$gameEnded()===true)this._endTime=$.DateImplementation$now();this._gameStateEvent.fireEvent$1(this._state);}},
+ _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC44))this._setState$1($.CTC43);},
+ _getAdjacentFlagCount$2: function(x,y){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentFlagCount$2$bailout(1,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],$.CTC26))++val;}return val;},
+ _getAdjacentFlagCount$2$bailout: function(state,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),$.CTC26))++val;return val;},
  Game$1: function(field){this._minesLeft=field.get$mineCount();this._revealsLeft=$.sub($.get$length(field),field.get$mineCount());}
 };
 
@@ -1208,13 +1208,13 @@ $$.DetailedIllegalArgumentException = {"":
 $$.Enumerable = {"":
  [],
  "super": "Object",
- iterator$0: function(){throw $.$$throw($.CTC22);},
+ iterator$0: function(){throw $.$$throw($.CTC23);},
  join$1: function(separator){var sb=$.StringBufferImpl$('');for(var t1=$.iterator(this);t1.hasNext$0()===true;){var t2=t1.next$0();if($.gtB($.get$length(sb),0))sb.add$1(separator);sb.add$1(t2);}return sb.toString$0();},
  join$0: function() {
   return this.join$1(', ')
 },
  select$1: function(f){$.requireArgumentNotNull(f,'f');return $._FuncEnumerable$(this,new $.Enumerable_select_anon(this,f));},
- first$1: function(f){if(f==null)f=new $.Enumerable_first_anon();var iter=$._WhereIterator$(this.iterator$0(),f,$.getRuntimeTypeInfo(this).T);if(iter.hasNext$0()!==true)throw $.$$throw($.CTC39);return iter.next$0();},
+ first$1: function(f){if(f==null)f=new $.Enumerable_first_anon();var iter=$._WhereIterator$(this.iterator$0(),f,$.getRuntimeTypeInfo(this).T);if(iter.hasNext$0()!==true)throw $.$$throw($.CTC40);return iter.next$0();},
  first$0: function() {
   return this.first$1(null)
 },
@@ -1223,7 +1223,7 @@ $$.Enumerable = {"":
  firstOrDefault$1: function(f) {
   return this.firstOrDefault$2(f,null)
 },
- single$1: function(f){if(f==null)f=new $.Enumerable_single_anon();var iter=$._WhereIterator$(this.iterator$0(),f,$.getRuntimeTypeInfo(this).T);if(iter.hasNext$0()!==true)throw $.$$throw($.CTC39);var value=iter.next$0();if(iter.hasNext$0()===true)throw $.$$throw($.CTC50);return value;},
+ single$1: function(f){if(f==null)f=new $.Enumerable_single_anon();var iter=$._WhereIterator$(this.iterator$0(),f,$.getRuntimeTypeInfo(this).T);if(iter.hasNext$0()!==true)throw $.$$throw($.CTC40);var value=iter.next$0();if(iter.hasNext$0()===true)throw $.$$throw($.CTC51);return value;},
  single$0: function() {
   return this.single$1(null)
 },
@@ -1280,19 +1280,19 @@ $$.ListBase = {"":
  forEach$1: function(f){for(var i=0;$.ltB(i,$.get$length(this));++i)f.call$1(this.operator$index$1(i));},
  filter$1: function(f){var list=$.ListImplementation_List(null,$.getRuntimeTypeInfo(this).T);for(var i=0;$.ltB(i,$.get$length(this));++i){var e=this.operator$index$1(i);if(f.call$1(e)===true)list.push(e);}return list;},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- get$length: function(){throw $.$$throw($.CTC34);},
- operator$index$1: function(index){throw $.$$throw($.CTC34);},
+ get$length: function(){throw $.$$throw($.CTC35);},
+ operator$index$1: function(index){throw $.$$throw($.CTC35);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  getRange$2: function(start,itemCount){if(typeof start!=='number')return this.getRange$2$bailout(1,start,itemCount);$.requireArgument($.ge(itemCount,0),'count',null);if(typeof itemCount!=='number')throw $.iae(itemCount);var lastIndex=start+itemCount-1;if(itemCount>0)if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));else if($.geB(lastIndex,$.get$length(this)))throw $.$$throw($.IndexOutOfRangeException$(lastIndex));var list=$.ListImplementation_List(null,$.getRuntimeTypeInfo(this).T);for(var i=start;i<=lastIndex;++i)list.push(this.operator$index$1(i));return list;},
  getRange$2$bailout: function(state,start,itemCount){$.requireArgument($.ge(itemCount,0),'count',null);var lastIndex=$.sub($.add(start,itemCount),1);if($.gtB(itemCount,0))if($.ltB(start,0))throw $.$$throw($.IndexOutOfRangeException$(start));else if($.geB(lastIndex,$.get$length(this)))throw $.$$throw($.IndexOutOfRangeException$(lastIndex));var list=$.ListImplementation_List(null,$.getRuntimeTypeInfo(this).T);for(var i=start;$.leB(i,lastIndex);i=$.add(i,1))list.push(this.operator$index$1(i));return list;},
- operator$indexSet$2: function(index,value){throw $.$$throw($.CTC35);},
- add$1: function(value){throw $.$$throw($.CTC35);},
- addLast$1: function(value){throw $.$$throw($.CTC35);},
- addAll$1: function(value){throw $.$$throw($.CTC35);},
- clear$0: function(){throw $.$$throw($.CTC35);},
- removeLast$0: function(){throw $.$$throw($.CTC35);},
- removeRange$2: function(start,length$){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,length$,initialValue){throw $.$$throw($.CTC35);},
+ operator$indexSet$2: function(index,value){throw $.$$throw($.CTC36);},
+ add$1: function(value){throw $.$$throw($.CTC36);},
+ addLast$1: function(value){throw $.$$throw($.CTC36);},
+ addAll$1: function(value){throw $.$$throw($.CTC36);},
+ clear$0: function(){throw $.$$throw($.CTC36);},
+ removeLast$0: function(){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,length$){throw $.$$throw($.CTC36);},
+ insertRange$3: function(start,length$,initialValue){throw $.$$throw($.CTC36);},
  is$List: function() { return true; },
  is$Collection: function() { return true; }
 };
@@ -1440,13 +1440,13 @@ $$.PropertyValues = {"":
  _isSet$1: function(key){return this._propertyValues.containsKey$1(key);},
  _remove$1: function(key){if(this._isSet$1(key)===true){this._propertyValues.remove$1(key);this._changeHandle.fireEvent$1(key);}},
  get$propertyChanged: function(){return this._changeHandle;},
- _getValueOrUndefined$3: function(key,obj,ifAbsent){if(this._isSet$1(key)===true)return $.index(this._propertyValues,key);else if(!(ifAbsent==null)){var value=ifAbsent.call$1(obj);this._set$2(key,value);return value;}else return $.CTC48;}
+ _getValueOrUndefined$3: function(key,obj,ifAbsent){if(this._isSet$1(key)===true)return $.index(this._propertyValues,key);else if(!(ifAbsent==null)){var value=ifAbsent.call$1(obj);this._set$2(key,value);return value;}else return $.CTC49;}
 };
 
 $$.Property = {"":
  ["defaultValue", "name"],
  "super": "Attachable",
- get$2: function(obj,ifAbsent){var coreValue=this.getCore$2(obj,ifAbsent);if(!(coreValue===$.CTC48))return coreValue;else return this.defaultValue;},
+ get$2: function(obj,ifAbsent){var coreValue=this.getCore$2(obj,ifAbsent);if(!(coreValue===$.CTC49))return coreValue;else return this.defaultValue;},
  get$1: function(obj) {
   return this.get$2(obj,null)
 },
@@ -1493,7 +1493,7 @@ $$.GameElement = {"":
  ["_targetMode", "_targetChanged", "_targetX", "_targetY", "_game?", "_elements", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "propertyValues", "_disposed"],
  "super": "ElementParentImpl",
  get$game: function(){return this._game;},
- set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC44);else{var t1=value.get$field().get$width();if(typeof t1!=='number')throw $.iae(t1);t1=80*t1;var t2=value.get$field().get$height();if(typeof t2!=='number')throw $.iae(t2);this.set$size($.Size$(t1,80*t2));}},
+ set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC45);else{var t1=value.get$field().get$width();if(typeof t1!=='number')throw $.iae(t1);t1=80*t1;var t2=value.get$field().get$height();if(typeof t2!=='number')throw $.iae(t2);this.set$size($.Size$(t1,80*t2));}},
  get$visualChildCount: function(){var t1=this._elements;if(t1==null)return 0;else return $.get$length(t1);},
  getVisualChild$1: function(index){var t1=this._elements;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this.getVisualChild$1$bailout(1,t1,index);if(index!==(index|0))throw $.iae(index);if(index<0||index>=t1.length)throw $.ioore(index);return t1[index];},
  getVisualChild$1$bailout: function(state,t1,index){return $.index(t1,index);},
@@ -1503,20 +1503,20 @@ $$.GameElement = {"":
  _squareClicked$1: function(args){if(this._game.get$gameEnded()!==true){var se=args.get$element();if(this._targetMode===true)this._target$2(se.get$x(),se.get$y());else this._click$3(se.get$x(),se.get$y(),args.get$shiftKey());}},
  get$_squareClicked: function() { return new $.BoundClosure(this, '_squareClicked$1'); },
  _target$2: function(x,y){this._targetX=x;this._targetY=y;this._targetChanged.fireEvent$1(null);this.invalidateDraw$0();},
- _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC24)){this.get$game().setFlag$3(x,y,true);return true;}else if($.eqB(ss,$.CTC25)){this.get$game().setFlag$3(x,y,false);return true;}return false;},
- _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC24)||$.eqB(ss,$.CTC25))this._toggleFlag$2(x,y);else if($.eqB(ss,$.CTC26))if(this.get$game().canReveal$2(x,y)===true)this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC24))this.get$game().reveal$2(x,y);},
+ _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC25)){this.get$game().setFlag$3(x,y,true);return true;}else if($.eqB(ss,$.CTC26)){this.get$game().setFlag$3(x,y,false);return true;}return false;},
+ _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC25)||$.eqB(ss,$.CTC26))this._toggleFlag$2(x,y);else if($.eqB(ss,$.CTC27))if(this.get$game().canReveal$2(x,y)===true)this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC25))this.get$game().reveal$2(x,y);},
  get$_elementsNeedUpdate: function(){var t1=this._elements;return t1==null||!$.eqB(t1.get$width(),this._game.get$field().get$width())||!$.eqB(this._elements.get$height(),this._game.get$field().get$height());}
 };
 
 $$.SquareElement = {"":
  ["x?", "y?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "propertyValues", "_disposed"],
  "super": "PElement",
- drawOverride$1: function(ctx){if($.eqB(this.get$_squareState(),$.CTC24))$.drawTextureAt(ctx,'balloon.png',$.CTC30);else if($.eqB(this.get$_squareState(),$.CTC26)){var adjCount=this.get$_adjacentCount();if(adjCount!==(adjCount|0))throw $.iae(adjCount);if(adjCount<0||adjCount>=9)throw $.ioore(adjCount);$.drawTextureAt(ctx,$.S($.CTC31[adjCount])+'.png',$.CTC30);}else{ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$strokeStyle('rgb(153, 153, 153)');ctx.strokeRect$5(0.5,0.5,this.get$width(),this.get$height(),1);}},
+ drawOverride$1: function(ctx){if($.eqB(this.get$_squareState(),$.CTC25))$.drawTextureAt(ctx,'balloon.png',$.CTC31);else if($.eqB(this.get$_squareState(),$.CTC27)){var adjCount=this.get$_adjacentCount();if(adjCount!==(adjCount|0))throw $.iae(adjCount);if(adjCount<0||adjCount>=9)throw $.ioore(adjCount);$.drawTextureAt(ctx,$.S($.CTC32[adjCount])+'.png',$.CTC31);}else{ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$strokeStyle('rgb(153, 153, 153)');ctx.strokeRect$5(0.5,0.5,this.get$width(),this.get$height(),1);}},
  toString$0: function(){return 'Square at ['+$.S(this.x)+', '+$.S(this.y)+']';},
  get$_squareState: function(){return this.get$_game().getSquareState$2(this.x,this.y);},
  get$_adjacentCount: function(){return this.get$_game().get$field().getAdjacentCount$2(this.x,this.y);},
  get$_game: function(){return this.get$parent().get$game();},
- get$_fillStyle: function(){switch(this.get$_squareState()){case $.CTC25:return 'orange';case $.CTC32:return 'red';case $.CTC33:return 'green';default:throw $.$$throw('not supported - '+$.S(this.get$_squareState()));}},
+ get$_fillStyle: function(){switch(this.get$_squareState()){case $.CTC26:return 'orange';case $.CTC33:return 'red';case $.CTC34:return 'green';default:throw $.$$throw('not supported - '+$.S(this.get$_squareState()));}},
  SquareElement$2: function(x,y){$.ClickManager_setClickable(this,true);}
 };
 
@@ -1598,7 +1598,7 @@ $$.ClickManager = {"":
  _mouseDown$1: function(e){this._mouseDownElement=$.$$(this._updateMouseLocation$1($.getMouseEventCoordinate(e))).firstOrDefault$1(new $.ClickManager__mouseDown_anon());},
  get$_mouseDown: function() { return new $.BoundClosure(this, '_mouseDown$1'); },
  _updateMouseLocation$1: function(value){return $.Mouse_markMouseOver(this._stage,value);},
- _doClick$2: function(element,e){$.CTC27.fireEvent$2(element,$.ElementMouseEventArgs_ElementMouseEventArgs(element,e));},
+ _doClick$2: function(element,e){$.CTC28.fireEvent$2(element,$.ElementMouseEventArgs_ElementMouseEventArgs(element,e));},
  ClickManager$1: function(_stage){var t1=this._stage;$.add$1(t1.get$_canvas().get$on().get$mouseMove(),this.get$_mouseMove());$.add$1(t1.get$_canvas().get$on().get$mouseOut(),this.get$_mouseOut());$.add$1(t1.get$_canvas().get$on().get$mouseUp(),this.get$_mouseUp());$.add$1(t1.get$_canvas().get$on().get$mouseDown(),this.get$_mouseDown());}
 };
 
@@ -1625,12 +1625,12 @@ $$.GameStorage = {"":
 $$.GameManager = {"":
  ["game="],
  "super": "Object",
- newGame$0: function(){if(!(this._updatedEventId==null)){this.get$game().get$updated().remove$1(this._updatedEventId);this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC43);}this.set$game($.Game$($.Field_Field(this._mineCount,this._lib4_width,this._lib4_height,null)));this._updatedEventId=$.add$1(this.get$game().get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this.get$game().get$stateChanged(),this.get$_gameStateChanged());},
- _lib4_click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC24))this.get$game().setFlag$3(x,y,true);else if($.eqB(ss,$.CTC25))this.get$game().setFlag$3(x,y,false);else if($.eqB(ss,$.CTC26))this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC24))this.get$game().reveal$2(x,y);},
- updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this.get$game().get$state(),$.CTC42))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this.get$game().get$state(),$.CTC42)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
+ newGame$0: function(){if(!(this._updatedEventId==null)){this.get$game().get$updated().remove$1(this._updatedEventId);this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC44);}this.set$game($.Game$($.Field_Field(this._mineCount,this._lib4_width,this._lib4_height,null)));this._updatedEventId=$.add$1(this.get$game().get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this.get$game().get$stateChanged(),this.get$_gameStateChanged());},
+ _lib4_click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC25))this.get$game().setFlag$3(x,y,true);else if($.eqB(ss,$.CTC26))this.get$game().setFlag$3(x,y,false);else if($.eqB(ss,$.CTC27))this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC25))this.get$game().reveal$2(x,y);},
+ updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this.get$game().get$state(),$.CTC43))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this.get$game().get$state(),$.CTC43)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
  _doClock$0: function(){this.updateClock$0();},
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
- _gameStateChanged$1: function(newState){var t1=this.gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC46))t1.updateHighScore$1(this.get$game());this.updateClock$0();},
+ _gameStateChanged$1: function(newState){var t1=this.gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC47))t1.updateHighScore$1(this.get$game());this.updateClock$0();},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width,_height,_mineCount){this.newGame$0();}
 };
@@ -1781,13 +1781,13 @@ $$.ClickManager__mouseDown_anon = {"":
 $$.Mouse_markMouseOver_anon = {"":
  [],
  "super": "Closure",
- call$1: function(e){$.CTC23.clear$1(e);$.CTC19.clear$1(e);}
+ call$1: function(e){$.CTC24.clear$1(e);$.CTC19.clear$1(e);}
 };
 
 $$.Mouse_markMouseOver_anon0 = {"":
  [],
  "super": "Closure",
- call$1: function(e){$.CTC23.set$2(e,true);}
+ call$1: function(e){$.CTC24.set$2(e,true);}
 };
 
 $$.AffineTransform_toString_anon = {"":
@@ -1841,7 +1841,7 @@ $$._maybeScheduleMeasurementFrame_anon = {"":
 $$._DocumentFragmentImpl_rect_anon = {"":
  [],
  "super": "Closure",
- call$0: function(){return $.CTC38;}
+ call$0: function(){return $.CTC39;}
 };
 
 $$.ElementParentImpl_update_anon = {"":
@@ -2141,7 +2141,7 @@ $.Size$ = function(width,height){return new $.Size(width,height);};
 
 $._IDBTransactionEventsImpl$ = function(_ptr){return new $._IDBTransactionEventsImpl(_ptr);};
 
-$.dynamicFunction = function(name$){var f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;var methods={};var dartMethod=Object.getPrototypeOf($.CTC51)[name$];if(!(dartMethod==null))$.propertySet(methods,'Object',dartMethod);var bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods;};
+$.dynamicFunction = function(name$){var f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;var methods={};var dartMethod=Object.getPrototypeOf($.CTC52)[name$];if(!(dartMethod==null))$.propertySet(methods,'Object',dartMethod);var bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods;};
 
 $.buildDynamicMetadata = function(inputTable){var result=[];for(var i=0;i<inputTable.length;++i){var tag=inputTable[i][0];var array=inputTable[i];var tags=array[1];var set={};var tagNames=tags.split('|');for(var j=0,index=1;j<tagNames.length;++j){$.propertySet(set,tagNames[j],true);index=j;array=tagNames;}result.push($.MetaInfo$(tag,tags,set));}return result;};
 
@@ -2242,8 +2242,6 @@ $._isJavaScriptSimpleObject = function(value){return Object.getPrototypeOf(value
 $.ioore = function(index){throw $.$$throw($.IndexOutOfRangeException$(index));};
 
 $._ChildNodeListLazy$ = function(_this){return new $._ChildNodeListLazy(_this);};
-
-$.getElementCoordinate = function(element){var cr=element.$dom_getBoundingClientRect$0();return $.Coordinate$($.toInt(cr.get$left()),$.toInt(cr.get$top()));};
 
 $._callInIsolate = function(isolate,function$){isolate.eval$1(function$);$._globalState().get$topEventLoop().run$0();};
 
@@ -2431,7 +2429,7 @@ $.div = function(a,b){return typeof a==='number'&&typeof b==='number'?a / b:$.di
 
 $._Elements_CanvasElement = function(width,height){var _e=$._document().$dom_createElement$1('canvas');if(!(width==null))_e.set$width(width);if(!(height==null))_e.set$height(height);return _e;};
 
-$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC24,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC43,null,null,null,null);t1.Game$1(field);return t1;};
+$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC25,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC44,null,null,null,null);t1.Game$1(field);return t1;};
 
 $.$$throw = function(ex){if(ex==null)ex=$.CTC1;var jsError=new Error();jsError.name = ex;jsError.description = ex;jsError.dartException = ex;jsError.toString = $.toStringWrapper.call$0;throw jsError;};
 
@@ -2512,7 +2510,7 @@ $.Coordinate_difference = function(a,b){return $.Vector$($.sub(a.x,b.get$x()),$.
 
 $.DoubleLinkedQueueEntry$ = function(e,E){var t1=new $.DoubleLinkedQueueEntry(null,null,null);$.setRuntimeTypeInfo(t1,{ 'E': E });t1.DoubleLinkedQueueEntry$1(e);return t1;};
 
-$.getMouseEventCoordinate = function(event$){var element=event$.get$currentTarget();return $.Coordinate$(event$.get$clientX(),event$.get$clientY()).operator$sub$1($.getElementCoordinate(element));};
+$.getMouseEventCoordinate = function(event$){return $.Coordinate$(event$.get$offsetX(),event$.get$offsetY());};
 
 $.startsWith = function(receiver,other){if(!(typeof receiver==='string'))return receiver.startsWith$1(other);$.checkString(other);var length$=other.length;if(length$>receiver.length)return false;return other == receiver.substring(0, length$);};
 
@@ -2587,7 +2585,7 @@ $.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(
 
 $.parseInt = function(str){$.checkString(str);if(!/^\s*[+-]?(?:0[xX][abcdefABCDEF0-9]+|\d+)\s*$/.test(str))throw $.$$throw($.FormatException$(str));var trimmed=$.trim(str);if($.gtB($.get$length(trimmed),2))var t1=$.eqB($.index(trimmed,1),'x')||$.eqB($.index(trimmed,1),'X');else t1=false;if(!t1)if($.gtB($.get$length(trimmed),3))t1=$.eqB($.index(trimmed,2),'x')||$.eqB($.index(trimmed,2),'X');else t1=false;else t1=true;var base=t1?16:10;var ret=parseInt(trimmed, base);if($.isNaN(ret)===true)throw $.$$throw($.FormatException$(str));return ret;};
 
-$.TextureInput__parseCoordinate = function(input){var match=$.$$($.CTC49.allMatches$1(input)).single$0();return $.Coordinate$($.parseDouble($.index(match,1)),$.parseDouble($.index(match,2)));};
+$.TextureInput__parseCoordinate = function(input){var match=$.$$($.CTC50.allMatches$1(input)).single$0();return $.Coordinate$($.parseDouble($.index(match,1)),$.parseDouble($.index(match,2)));};
 
 $._Timer$ = function(milliSeconds,callback){var t1=new $._Timer(true,null);t1._Timer$2(milliSeconds,callback);return t1;};
 
@@ -2687,7 +2685,7 @@ $.GameRoot_GameRoot = function(width,height,mineCount,canvasElement,leftCountDiv
 
 $._DOMApplicationCacheEventsImpl$ = function(_ptr){return new $._DOMApplicationCacheEventsImpl(_ptr);};
 
-$.TextureInput__parseRect = function(input){var matches=$.$$($.CTC49.allMatches$1(input)).toList$0();return $.Rect_Rect$fromCoordSize($.TextureInput__parseCoordinate($.index($.index(matches,0),0)),$.TextureInput__parseCoordinate($.index($.index(matches,1),0)).toSize$0());};
+$.TextureInput__parseRect = function(input){var matches=$.$$($.CTC50.allMatches$1(input)).toList$0();return $.Rect_Rect$fromCoordSize($.TextureInput__parseCoordinate($.index($.index(matches,0),0)),$.TextureInput__parseCoordinate($.index($.index(matches,1),0)).toSize$0());};
 
 $.StringImplementation__toJsStringArray = function(strings){if(typeof strings!=='object'||strings===null||(strings.constructor!==Array||!!strings.immutable$list)&&!strings.is$JavaScriptIndexingBehavior())return $.StringImplementation__toJsStringArray$bailout(1,strings);$.checkNull(strings);var length$=strings.length;if($.isJsArray(strings)){for(var i=0;i<length$;++i){if(i<0||i>=strings.length)throw $.ioore(i);var string=strings[i];$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));}var array=strings;}else{array=$.ListImplementation_List(length$);for(i=0;i<length$;++i){if(i<0||i>=strings.length)throw $.ioore(i);string=strings[i];$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));if(i<0||i>=array.length)throw $.ioore(i);array[i]=string;}}return array;};
 
@@ -2739,6 +2737,8 @@ $._SimpleClientRect$ = function(left,top$,width,height){return new $._SimpleClie
 
 $._ElementFactoryProvider_Element$tag = function(tag){return document.createElement(tag)};
 
+$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
+
 $.requireArgumentNotNull = function(argument,argName){if(argument==null)throw $.$$throw($.NullArgumentException$(argName));};
 
 $.Stage$ = function(_canvas,_element){var t1=new $.Stage(_canvas,_element,$.EventHandle$('EventArgs'),null,$.PropertyValues$(),false);t1.Stage$2(_canvas,_element);return t1;};
@@ -2749,7 +2749,7 @@ $.contains = function(userAgent,name$){return !(userAgent.indexOf(name$)===-1);}
 
 $._TextTrackCueEventsImpl$ = function(_ptr){return new $._TextTrackCueEventsImpl(_ptr);};
 
-$.Random_Random = function(seed){return $.CTC45;};
+$.Random_Random = function(seed){return $.CTC46;};
 
 $._AttachableEventHelper$ = function(_propertyChangeHandleId){return new $._AttachableEventHelper($.NoneHashMap$('Attachable','EventHandle'),_propertyChangeHandleId);};
 
@@ -2770,8 +2770,6 @@ $._HttpRequestUploadEventsImpl$ = function(_ptr){return new $._HttpRequestUpload
 $.Mouse_markMouseOver = function(stage,coordinate){$.requireArgumentNotNull(stage,'stage');var t1=!(coordinate==null);$.requireArgument(coordinate==null||coordinate.get$isValid()===true,'coordinate',null);var items=$.CTC18.get$1(stage);if(!(items==null)){$.forEach(items,new $.Mouse_markMouseOver_anon());$.CTC18.clear$1(stage);}if(t1){var hits=$.RetainedUtil_hitTest(stage,coordinate);$.CTC18.set$2(stage,hits);$.forEach(hits,new $.Mouse_markMouseOver_anon0());if($.gtB($.get$length(hits),0))$.CTC19.set$2($.index(hits,0),true);return hits;}return;};
 
 $.checkNull = function(object){if(object==null)throw $.$$throw($.NullPointerException$(null,$.CTC0));return object;};
-
-$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
 $._MeasurementRequest$ = function(computeValue,completer,T){var t1=new $._MeasurementRequest(computeValue,completer,null,false);$.setRuntimeTypeInfo(t1,{ 'T': T });return t1;};
 
@@ -2797,7 +2795,7 @@ $.AffineTransform_AffineTransform$fromRotate = function(theta,x,y){return $.Affi
 
 $._IDBOpenDBRequestEventsImpl$ = function(_ptr){return new $._IDBOpenDBRequestEventsImpl(_ptr);};
 
-$._AttachableEventHelper_fireEvent = function(obj,attachable,args){var helper=$.CTC28.get$1(obj);if(!(helper==null)){var handle=$.index(helper.get$_handlers(),attachable);if(!(handle==null))handle.fireEvent$1(args);}};
+$._AttachableEventHelper_fireEvent = function(obj,attachable,args){var helper=$.CTC29.get$1(obj);if(!(helper==null)){var handle=$.index(helper.get$_handlers(),attachable);if(!(handle==null))handle.fireEvent$1(args);}};
 
 $.sqrt = function(value){return Math.sqrt($.checkNum(value));};
 
@@ -2852,13 +2850,13 @@ $._Manager$ = function(){var t1=new $._Manager(0,0,1,null,null,null,null,null,nu
 
 $.regExpGetNative = function(regExp){var r=regExp._re;return r==null?regExp._re = $.regExpMakeNative(regExp,false):r;};
 
-$._doLoad = function(){var textures=$._getTexturesFromJson('{"balloon.png":{"frame":"{{1294,386},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_explode_0000.png":{"frame":"{{1294,386},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_explode_0001.png":{"frame":"{{1196,534},{82,86}}","offset":"{0,-2}","rotated":true,"sourceColorRect":"{{87,87},{82,86}}","sourceSize":"{256,256}"},"balloon_explode_0002.png":{"frame":"{{682,1316},{188,188}}","offset":"{9,9}","rotated":false,"sourceColorRect":"{{43,25},{188,188}}","sourceSize":"{256,256}"},"balloon_explode_0003.png":{"frame":"{{892,618},{216,222}}","offset":"{3,-2}","rotated":false,"sourceColorRect":"{{23,19},{216,222}}","sourceSize":"{256,256}"},"balloon_explode_0004.png":{"frame":"{{464,1328},{226,216}}","offset":"{2,3}","rotated":true,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0005.png":{"frame":"{{452,1568},{226,216}}","offset":"{2,3}","rotated":true,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0006.png":{"frame":"{{232,1824},{222,218}}","offset":"{-1,4}","rotated":true,"sourceColorRect":"{{16,15},{222,218}}","sourceSize":"{256,256}"},"balloon_explode_0007.png":{"frame":"{{1076,310},{222,216}}","offset":"{-1,4}","rotated":true,"sourceColorRect":"{{16,16},{222,216}}","sourceSize":"{256,256}"},"balloon_explode_0008.png":{"frame":"{{772,850},{224,216}}","offset":"{-1,4}","rotated":true,"sourceColorRect":"{{15,16},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0009.png":{"frame":"{{652,1090},{224,216}}","offset":"{-1,5}","rotated":true,"sourceColorRect":"{{15,15},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0010.png":{"frame":"{{234,1568},{226,216}}","offset":"{-2,5}","rotated":true,"sourceColorRect":"{{13,15},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0011.png":{"frame":"{{1054,2},{226,224}}","offset":"{-1,2}","rotated":true,"sourceColorRect":"{{14,14},{226,224}}","sourceSize":"{256,256}"},"balloon_explode_0012.png":{"frame":"{{2,1824},{228,222}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,15},{228,222}}","sourceSize":"{256,256}"},"balloon_explode_0013.png":{"frame":"{{850,312},{228,224}}","offset":"{-2,3}","rotated":true,"sourceColorRect":"{{12,13},{228,224}}","sourceSize":"{256,256}"},"balloon_explode_0014.png":{"frame":"{{664,620},{228,226}}","offset":"{-2,2}","rotated":true,"sourceColorRect":"{{12,13},{228,226}}","sourceSize":"{256,256}"},"balloon_explode_0015.png":{"frame":"{{422,1096},{230,228}}","offset":"{-2,2}","rotated":true,"sourceColorRect":"{{11,12},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0016.png":{"frame":"{{2,1592},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0017.png":{"frame":"{{822,2},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0018.png":{"frame":"{{190,1102},{232,230}}","offset":"{-1,0}","rotated":true,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0019.png":{"frame":"{{618,316},{230,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{12,13},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0020.png":{"frame":"{{2,1358},{232,230}}","offset":"{-1,0}","rotated":true,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0021.png":{"frame":"{{358,862},{232,226}}","offset":"{-1,2}","rotated":true,"sourceColorRect":"{{11,13},{232,226}}","sourceSize":"{256,256}"},"balloon_explode_0022.png":{"frame":"{{590,2},{232,230}}","offset":"{-1,1}","rotated":true,"sourceColorRect":"{{11,12},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0023.png":{"frame":"{{234,1336},{230,228}}","offset":"{0,1}","rotated":true,"sourceColorRect":"{{13,13},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0024.png":{"frame":"{{452,1796},{190,214}}","offset":"{-10,4}","rotated":false,"sourceColorRect":"{{23,17},{190,214}}","sourceSize":"{256,256}"},"balloon_pop_0000.png":{"frame":"{{1294,386},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_pop_0001.png":{"frame":"{{1308,1904},{142,114}}","offset":"{3,5}","rotated":true,"sourceColorRect":"{{60,66},{142,114}}","sourceSize":"{256,256}"},"balloon_pop_0002.png":{"frame":"{{586,858},{230,184}}","offset":"{3,5}","rotated":true,"sourceColorRect":"{{16,31},{230,184}}","sourceSize":"{256,256}"},"balloon_pop_0003.png":{"frame":"{{476,624},{232,186}}","offset":"{3,5}","rotated":true,"sourceColorRect":"{{15,30},{232,186}}","sourceSize":"{256,256}"},"balloon_pop_0004.png":{"frame":"{{2,1120},{236,186}}","offset":"{2,5}","rotated":true,"sourceColorRect":"{{12,30},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0005.png":{"frame":"{{402,2},{236,186}}","offset":"{2,4}","rotated":true,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0006.png":{"frame":"{{250,318},{236,186}}","offset":"{2,4}","rotated":true,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0007.png":{"frame":"{{108,624},{238,184}}","offset":"{1,3}","rotated":true,"sourceColorRect":"{{10,33},{238,184}}","sourceSize":"{256,256}"},"balloon_pop_0008.png":{"frame":"{{174,864},{236,182}}","offset":"{1,2}","rotated":true,"sourceColorRect":"{{11,35},{236,182}}","sourceSize":"{256,256}"},"balloon_pop_0009.png":{"frame":"{{294,624},{236,180}}","offset":"{1,2}","rotated":true,"sourceColorRect":"{{11,36},{236,180}}","sourceSize":"{256,256}"},"balloon_pop_0010.png":{"frame":"{{438,318},{236,178}}","offset":"{1,2}","rotated":true,"sourceColorRect":"{{11,37},{236,178}}","sourceSize":"{256,256}"},"balloon_pop_0011.png":{"frame":"{{1242,918},{84,106}}","offset":"{-2,-4}","rotated":true,"sourceColorRect":"{{84,79},{84,106}}","sourceSize":"{256,256}"},"balloon_pop_0012.png":{"frame":"{{1068,1664},{88,112}}","offset":"{-3,-4}","rotated":true,"sourceColorRect":"{{81,76},{88,112}}","sourceSize":"{256,256}"},"balloon_pop_0013.png":{"frame":"{{1296,1638},{94,118}}","offset":"{-3,-4}","rotated":false,"sourceColorRect":"{{78,73},{94,118}}","sourceSize":"{256,256}"},"balloon_pop_0014.png":{"frame":"{{1330,1344},{100,124}}","offset":"{-4,-4}","rotated":false,"sourceColorRect":"{{74,70},{100,124}}","sourceSize":"{256,256}"},"balloon_pop_0015.png":{"frame":"{{1330,1068},{104,130}}","offset":"{-4,-4}","rotated":false,"sourceColorRect":"{{72,67},{104,130}}","sourceSize":"{256,256}"},"balloon_pop_0016.png":{"frame":"{{1218,1362},{110,136}}","offset":"{-5,-4}","rotated":false,"sourceColorRect":"{{68,64},{110,136}}","sourceSize":"{256,256}"},"balloon_pop_0017.png":{"frame":"{{1126,1220},{114,140}}","offset":"{-5,-4}","rotated":false,"sourceColorRect":"{{66,62},{114,140}}","sourceSize":"{256,256}"},"balloon_pop_0018.png":{"frame":"{{1200,1758},{120,144}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{62,60},{120,144}}","sourceSize":"{256,256}"},"balloon_pop_0019.png":{"frame":"{{784,1922},{124,148}}","offset":"{-6,-4}","rotated":true,"sourceColorRect":"{{60,58},{124,148}}","sourceSize":"{256,256}"},"balloon_pop_0020.png":{"frame":"{{1154,1918},{128,152}}","offset":"{-7,-4}","rotated":true,"sourceColorRect":"{{57,56},{128,152}}","sourceSize":"{256,256}"},"balloon_pop_0021.png":{"frame":"{{994,1260},{130,154}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{56,55},{130,154}}","sourceSize":"{256,256}"},"balloon_pop_0022.png":{"frame":"{{1064,1758},{134,158}}","offset":"{-8,-4}","rotated":false,"sourceColorRect":"{{53,53},{134,158}}","sourceSize":"{256,256}"},"balloon_pop_0023.png":{"frame":"{{926,1758},{136,160}}","offset":"{-8,-3}","rotated":false,"sourceColorRect":"{{52,51},{136,160}}","sourceSize":"{256,256}"},"balloon_pop_0024.png":{"frame":"{{990,842},{138,162}}","offset":"{-8,-3}","rotated":false,"sourceColorRect":"{{51,50},{138,162}}","sourceSize":"{256,256}"},"balloon_pop_0025.png":{"frame":"{{784,1760},{140,160}}","offset":"{-9,-3}","rotated":false,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0026.png":{"frame":"{{1110,618},{140,160}}","offset":"{-9,-3}","rotated":false,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0027.png":{"frame":"{{970,1504},{142,158}}","offset":"{-10,-3}","rotated":false,"sourceColorRect":"{{47,52},{142,158}}","sourceSize":"{256,256}"},"balloon_pop_0028.png":{"frame":"{{1114,1504},{136,148}}","offset":"{-11,-2}","rotated":false,"sourceColorRect":"{{49,56},{136,148}}","sourceSize":"{256,256}"},"dart_fly_0000.png":{"frame":"{{222,280},{36,56}}","offset":"{514,-324}","rotated":true,"sourceColorRect":"{{1520,1064},{36,56}}","sourceSize":"{2048,1536}"},"dart_fly_0001.png":{"frame":"{{644,1796},{138,214}}","offset":"{468,-256}","rotated":false,"sourceColorRect":"{{1423,917},{138,214}}","sourceSize":"{2048,1536}"},"dart_fly_0002.png":{"frame":"{{2,2},{218,332}}","offset":"{432,-214}","rotated":false,"sourceColorRect":"{{1347,816},{218,332}}","sourceSize":"{2048,1536}"},"dart_fly_0003.png":{"frame":"{{2,336},{246,286}}","offset":"{388,-124}","rotated":false,"sourceColorRect":"{{1289,749},{246,286}}","sourceSize":"{2048,1536}"},"dart_fly_0004.png":{"frame":"{{1280,2},{210,220}}","offset":"{324,-45}","rotated":false,"sourceColorRect":"{{1243,703},{210,220}}","sourceSize":"{2048,1536}"},"dart_fly_0005.png":{"frame":"{{870,1076},{182,166}}","offset":"{273,10}","rotated":true,"sourceColorRect":"{{1206,675},{182,166}}","sourceSize":"{2048,1536}"},"dart_fly_0006.png":{"frame":"{{872,1260},{160,120}}","offset":"{231,45}","rotated":true,"sourceColorRect":"{{1175,663},{160,120}}","sourceSize":"{2048,1536}"},"dart_fly_0007.png":{"frame":"{{1038,1076},{142,98}}","offset":"{197,76}","rotated":true,"sourceColorRect":"{{1150,643},{142,98}}","sourceSize":"{2048,1536}"},"dart_fly_0008.png":{"frame":"{{1060,1920},{126,92}}","offset":"{168,101}","rotated":true,"sourceColorRect":"{{1129,621},{126,92}}","sourceSize":"{2048,1536}"},"dart_fly_0009.png":{"frame":"{{1104,1416},{112,86}}","offset":"{143,114}","rotated":false,"sourceColorRect":"{{1111,611},{112,86}}","sourceSize":"{2048,1536}"},"dart_fly_0010.png":{"frame":"{{1350,838},{98,94}}","offset":"{123,112}","rotated":true,"sourceColorRect":"{{1098,609},{98,94}}","sourceSize":"{2048,1536}"},"dart_fly_0011.png":{"frame":"{{1130,918},{86,110}}","offset":"{106,96}","rotated":true,"sourceColorRect":"{{1087,617},{86,110}}","sourceSize":"{2048,1536}"},"dart_fly_0012.png":{"frame":"{{402,240},{76,124}}","offset":"{91,75}","rotated":true,"sourceColorRect":"{{1077,631},{76,124}}","sourceSize":"{2048,1536}"},"dart_fly_0013.png":{"frame":"{{250,556},{66,134}}","offset":"{79,48}","rotated":true,"sourceColorRect":"{{1070,653},{66,134}}","sourceSize":"{2048,1536}"},"dart_fly_0014.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0015.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0016.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0017.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0018.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0019.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0020.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0021.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0022.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0023.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0024.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0025.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0026.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0027.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0028.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0029.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0030.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0031.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0032.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0033.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0034.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0035.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0036.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0037.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0038.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0039.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0040.png":{"frame":"{{1306,1206},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0041.png":{"frame":"{{1266,1068},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0042.png":{"frame":"{{1244,1004},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0043.png":{"frame":"{{1194,780},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0044.png":{"frame":"{{1130,780},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0045.png":{"frame":"{{1242,1208},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0046.png":{"frame":"{{1424,1896},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0047.png":{"frame":"{{1386,1758},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0048.png":{"frame":"{{1322,1758},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0049.png":{"frame":"{{1316,1500},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0050.png":{"frame":"{{1252,1500},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0051.png":{"frame":"{{1202,1070},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0052.png":{"frame":"{{1138,1070},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0053.png":{"frame":"{{1106,1006},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0054.png":{"frame":"{{600,556},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0055.png":{"frame":"{{222,318},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0000.png":{"frame":"{{222,318},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0001.png":{"frame":"{{828,1668},{88,142}}","offset":"{-27,-274}","rotated":true,"sourceColorRect":"{{953,971},{88,142}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0002.png":{"frame":"{{2,624},{104,250}}","offset":"{-30,-231}","rotated":false,"sourceColorRect":"{{942,874},{104,250}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0003.png":{"frame":"{{222,2},{178,276}}","offset":"{-30,-175}","rotated":false,"sourceColorRect":"{{905,805},{178,276}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0004.png":{"frame":"{{2,876},{170,242}}","offset":"{-34,-110}","rotated":false,"sourceColorRect":"{{905,757},{170,242}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0005.png":{"frame":"{{670,1556},{156,202}}","offset":"{-37,-56}","rotated":false,"sourceColorRect":"{{909,723},{156,202}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0006.png":{"frame":"{{828,1506},{140,160}}","offset":"{-36,-14}","rotated":false,"sourceColorRect":"{{918,702},{140,160}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0007.png":{"frame":"{{934,1920},{126,124}}","offset":"{-33,13}","rotated":true,"sourceColorRect":"{{928,693},{126,124}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0008.png":{"frame":"{{1182,1654},{112,102}}","offset":"{-30,39}","rotated":false,"sourceColorRect":"{{938,678},{112,102}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0009.png":{"frame":"{{1100,534},{82,94}}","offset":"{-27,60}","rotated":true,"sourceColorRect":"{{956,661},{82,94}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0010.png":{"frame":"{{1382,938},{98,88}}","offset":"{-22,72}","rotated":true,"sourceColorRect":"{{953,652},{98,88}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0011.png":{"frame":"{{972,1664},{94,92}}","offset":"{-16,70}","rotated":false,"sourceColorRect":"{{961,652},{94,92}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0012.png":{"frame":"{{1340,730},{88,106}}","offset":"{-8,56}","rotated":false,"sourceColorRect":"{{972,659},{88,106}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0013.png":{"frame":"{{872,1422},{80,116}}","offset":"{1,36}","rotated":true,"sourceColorRect":"{{985,674},{80,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0014.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0015.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0016.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0017.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0018.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0019.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0020.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0021.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0022.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0023.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0024.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0025.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0026.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0027.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0028.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0029.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0030.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0031.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0032.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0033.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0034.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0035.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0036.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0037.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0038.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0039.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0040.png":{"frame":"{{978,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0041.png":{"frame":"{{856,542},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0042.png":{"frame":"{{1016,234},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0043.png":{"frame":"{{894,234},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0044.png":{"frame":"{{772,236},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0045.png":{"frame":"{{650,236},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0046.png":{"frame":"{{528,240},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0047.png":{"frame":"{{1138,230},{74,118}}","offset":"{10,11}","rotated":true,"sourceColorRect":"{{997,698},{74,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0048.png":{"frame":"{{1370,1200},{72,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0049.png":{"frame":"{{1258,230},{72,118}}","offset":"{10,11}","rotated":true,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0050.png":{"frame":"{{1252,618},{72,116}}","offset":"{10,10}","rotated":false,"sourceColorRect":"{{998,700},{72,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0051.png":{"frame":"{{738,548},{70,116}}","offset":"{11,10}","rotated":true,"sourceColorRect":"{{1000,700},{70,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0052.png":{"frame":"{{990,1006},{68,114}}","offset":"{11,9}","rotated":true,"sourceColorRect":"{{1001,702},{68,114}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0053.png":{"frame":"{{386,556},{66,110}}","offset":"{11,7}","rotated":true,"sourceColorRect":"{{1002,706},{66,110}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0054.png":{"frame":"{{498,556},{64,100}}","offset":"{12,2}","rotated":true,"sourceColorRect":"{{1004,716},{64,100}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0055.png":{"frame":"{{222,318},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"game_board_center.png":{"frame":"{{1294,304},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"game_board_corner_bottom_left.png":{"frame":"{{1494,1434},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_bottom_right.png":{"frame":"{{1392,1584},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_left.png":{"frame":"{{1432,1320},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_right.png":{"frame":"{{1380,1470},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_side_bottom.png":{"frame":"{{1326,616},{80,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"game_board_side_left.png":{"frame":"{{1284,534},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_right.png":{"frame":"{{990,1422},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_top.png":{"frame":"{{1258,736},{80,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"number_eight.png":{"frame":"{{1444,1202},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_five.png":{"frame":"{{1444,1120},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_four.png":{"frame":"{{1488,1944},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_one.png":{"frame":"{{1488,1862},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_seven.png":{"frame":"{{1506,1548},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_six.png":{"frame":"{{1450,1780},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_three.png":{"frame":"{{1450,1698},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_two.png":{"frame":"{{1436,1038},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"}}');var m=$.toInt(40);var sweeperTable=$.query('#sweeperCanvas');var minesLeftDiv=$.query('#minesLeft');var gameStateDiv=$.query('#gameState');var clockDiv=$.query('#clock');var textureImg=$.index($._imageLoader.get$images(),'art.png');$.populateTextures(textures);$.populateTextureImage(textureImg);var gameRoot=$.GameRoot_GameRoot(16,16,m,sweeperTable,minesLeftDiv,gameStateDiv,clockDiv,false);$.add$1($.window().get$on().get$touchMove(),$._onTouchMove);$.add$1($.query('#newGame').get$on().get$click(),new $._doLoad_anon(gameRoot));};
+$._doLoad = function(){var textures=$._getTexturesFromJson('{"background_side_left.png":{"frame":"{{1028,2},{352,672}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{352,672}}","sourceSize":"{352,672}"},"background_top_left.png":{"frame":"{{2,2},{1024,96}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{1024,96}}","sourceSize":"{1024,96}"},"balloon.png":{"frame":"{{266,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_explode_0000.png":{"frame":"{{266,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_explode_0001.png":{"frame":"{{96,1746},{82,86}}","offset":"{0,-2}","rotated":false,"sourceColorRect":"{{87,87},{82,86}}","sourceSize":"{256,256}"},"balloon_explode_0002.png":{"frame":"{{458,1140},{188,188}}","offset":"{9,9}","rotated":false,"sourceColorRect":"{{43,25},{188,188}}","sourceSize":"{256,256}"},"balloon_explode_0003.png":{"frame":"{{1406,814},{216,222}}","offset":"{3,-2}","rotated":true,"sourceColorRect":"{{23,19},{216,222}}","sourceSize":"{256,256}"},"balloon_explode_0004.png":{"frame":"{{706,894},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0005.png":{"frame":"{{944,816},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0006.png":{"frame":"{{2,1104},{222,218}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,15},{222,218}}","sourceSize":"{256,256}"},"balloon_explode_0007.png":{"frame":"{{1636,696},{222,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,16},{222,216}}","sourceSize":"{256,256}"},"balloon_explode_0008.png":{"frame":"{{232,992},{224,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{15,16},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0009.png":{"frame":"{{468,922},{224,216}}","offset":"{-1,5}","rotated":false,"sourceColorRect":"{{15,15},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0010.png":{"frame":"{{1178,812},{226,216}}","offset":"{-2,5}","rotated":false,"sourceColorRect":"{{13,15},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0011.png":{"frame":"{{1408,588},{226,224}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{14,14},{226,224}}","sourceSize":"{256,256}"},"balloon_explode_0012.png":{"frame":"{{1178,588},{228,222}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,15},{228,222}}","sourceSize":"{256,256}"},"balloon_explode_0013.png":{"frame":"{{1694,470},{228,224}}","offset":"{-2,3}","rotated":false,"sourceColorRect":"{{12,13},{228,224}}","sourceSize":"{256,256}"},"balloon_explode_0014.png":{"frame":"{{2,876},{228,226}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,13},{228,226}}","sourceSize":"{256,256}"},"balloon_explode_0015.png":{"frame":"{{474,692},{230,228}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{11,12},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0016.png":{"frame":"{{946,584},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0017.png":{"frame":"{{1462,356},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0018.png":{"frame":"{{2,644},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0019.png":{"frame":"{{1230,356},{230,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{12,13},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0020.png":{"frame":"{{240,574},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0021.png":{"frame":"{{996,356},{232,226}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{11,13},{232,226}}","sourceSize":"{256,256}"},"balloon_explode_0022.png":{"frame":"{{478,460},{232,230}}","offset":"{-1,1}","rotated":false,"sourceColorRect":"{{11,12},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0023.png":{"frame":"{{712,664},{230,228}}","offset":"{0,1}","rotated":false,"sourceColorRect":"{{13,13},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0024.png":{"frame":"{{1172,1030},{190,214}}","offset":"{-10,4}","rotated":true,"sourceColorRect":"{{23,17},{190,214}}","sourceSize":"{256,256}"},"balloon_pop_0000.png":{"frame":"{{266,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_pop_0001.png":{"frame":"{{1626,1406},{142,114}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{60,66},{142,114}}","sourceSize":"{256,256}"},"balloon_pop_0002.png":{"frame":"{{236,806},{230,184}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{16,31},{230,184}}","sourceSize":"{256,256}"},"balloon_pop_0003.png":{"frame":"{{712,476},{232,186}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{15,30},{232,186}}","sourceSize":"{256,256}"},"balloon_pop_0004.png":{"frame":"{{758,288},{236,186}}","offset":"{2,5}","rotated":false,"sourceColorRect":"{{12,30},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0005.png":{"frame":"{{520,272},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0006.png":{"frame":"{{776,100},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0007.png":{"frame":"{{280,206},{238,184}}","offset":"{1,3}","rotated":false,"sourceColorRect":"{{10,33},{238,184}}","sourceSize":"{256,256}"},"balloon_pop_0008.png":{"frame":"{{2,280},{236,182}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,35},{236,182}}","sourceSize":"{256,256}"},"balloon_pop_0009.png":{"frame":"{{240,392},{236,180}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,36},{236,180}}","sourceSize":"{256,256}"},"balloon_pop_0010.png":{"frame":"{{2,464},{236,178}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,37},{236,178}}","sourceSize":"{256,256}"},"balloon_pop_0011.png":{"frame":"{{1858,1778},{84,106}}","offset":"{-2,-4}","rotated":true,"sourceColorRect":"{{84,79},{84,106}}","sourceSize":"{256,256}"},"balloon_pop_0012.png":{"frame":"{{1764,1680},{88,112}}","offset":"{-3,-4}","rotated":true,"sourceColorRect":"{{81,76},{88,112}}","sourceSize":"{256,256}"},"balloon_pop_0013.png":{"frame":"{{1308,1536},{94,118}}","offset":"{-3,-4}","rotated":true,"sourceColorRect":"{{78,73},{94,118}}","sourceSize":"{256,256}"},"balloon_pop_0014.png":{"frame":"{{1914,1530},{100,124}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{74,70},{100,124}}","sourceSize":"{256,256}"},"balloon_pop_0015.png":{"frame":"{{1788,1362},{104,130}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{72,67},{104,130}}","sourceSize":"{256,256}"},"balloon_pop_0016.png":{"frame":"{{1766,1568},{110,136}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{68,64},{110,136}}","sourceSize":"{256,256}"},"balloon_pop_0017.png":{"frame":"{{1550,1522},{114,140}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{66,62},{114,140}}","sourceSize":"{256,256}"},"balloon_pop_0018.png":{"frame":"{{1924,632},{120,144}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{62,60},{120,144}}","sourceSize":"{256,256}"},"balloon_pop_0019.png":{"frame":"{{1922,1158},{124,148}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{60,58},{124,148}}","sourceSize":"{256,256}"},"balloon_pop_0020.png":{"frame":"{{1332,1316},{128,152}}","offset":"{-7,-4}","rotated":true,"sourceColorRect":"{{57,56},{128,152}}","sourceSize":"{256,256}"},"balloon_pop_0021.png":{"frame":"{{1790,1206},{130,154}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{56,55},{130,154}}","sourceSize":"{256,256}"},"balloon_pop_0022.png":{"frame":"{{1172,1222},{134,158}}","offset":"{-8,-4}","rotated":true,"sourceColorRect":"{{53,53},{134,158}}","sourceSize":"{256,256}"},"balloon_pop_0023.png":{"frame":"{{1626,1268},{136,160}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{52,51},{136,160}}","sourceSize":"{256,256}"},"balloon_pop_0024.png":{"frame":"{{2,1324},{138,162}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{51,50},{138,162}}","sourceSize":"{256,256}"},"balloon_pop_0025.png":{"frame":"{{1628,1126},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0026.png":{"frame":"{{1388,1032},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0027.png":{"frame":"{{898,1174},{142,158}}","offset":"{-10,-3}","rotated":true,"sourceColorRect":"{{47,52},{142,158}}","sourceSize":"{256,256}"},"balloon_pop_0028.png":{"frame":"{{1172,1358},{136,148}}","offset":"{-11,-2}","rotated":true,"sourceColorRect":"{{49,56},{136,148}}","sourceSize":"{256,256}"},"dart_fly_0000.png":{"frame":"{{1990,222},{36,56}}","offset":"{514,-324}","rotated":true,"sourceColorRect":"{{1520,1064},{36,56}}","sourceSize":"{2048,1536}"},"dart_fly_0001.png":{"frame":"{{934,1034},{138,214}}","offset":"{468,-256}","rotated":true,"sourceColorRect":"{{1423,917},{138,214}}","sourceSize":"{2048,1536}"},"dart_fly_0002.png":{"frame":"{{1702,2},{218,332}}","offset":"{432,-214}","rotated":true,"sourceColorRect":"{{1347,816},{218,332}}","sourceSize":"{2048,1536}"},"dart_fly_0003.png":{"frame":"{{1702,222},{246,286}}","offset":"{388,-124}","rotated":true,"sourceColorRect":"{{1289,749},{246,286}}","sourceSize":"{2048,1536}"},"dart_fly_0004.png":{"frame":"{{1630,914},{210,220}}","offset":"{324,-45}","rotated":true,"sourceColorRect":"{{1243,703},{210,220}}","sourceSize":"{2048,1536}"},"dart_fly_0005.png":{"frame":"{{226,1210},{182,166}}","offset":"{273,10}","rotated":false,"sourceColorRect":"{{1206,675},{182,166}}","sourceSize":"{2048,1536}"},"dart_fly_0006.png":{"frame":"{{1924,470},{160,120}}","offset":"{231,45}","rotated":true,"sourceColorRect":"{{1175,663},{160,120}}","sourceSize":"{2048,1536}"},"dart_fly_0007.png":{"frame":"{{1770,1468},{142,98}}","offset":"{197,76}","rotated":false,"sourceColorRect":"{{1150,643},{142,98}}","sourceSize":"{2048,1536}"},"dart_fly_0008.png":{"frame":"{{1920,1436},{126,92}}","offset":"{168,101}","rotated":false,"sourceColorRect":"{{1129,621},{126,92}}","sourceSize":"{2048,1536}"},"dart_fly_0009.png":{"frame":"{{1402,1706},{112,86}}","offset":"{143,114}","rotated":false,"sourceColorRect":"{{1111,611},{112,86}}","sourceSize":"{2048,1536}"},"dart_fly_0010.png":{"frame":"{{548,1330},{98,94}}","offset":"{123,112}","rotated":false,"sourceColorRect":"{{1098,609},{98,94}}","sourceSize":"{2048,1536}"},"dart_fly_0011.png":{"frame":"{{786,1270},{86,110}}","offset":"{106,96}","rotated":true,"sourceColorRect":"{{1087,617},{86,110}}","sourceSize":"{2048,1536}"},"dart_fly_0012.png":{"frame":"{{1550,1032},{76,124}}","offset":"{91,75}","rotated":false,"sourceColorRect":"{{1077,631},{76,124}}","sourceSize":"{2048,1536}"},"dart_fly_0013.png":{"frame":"{{1036,1402},{66,134}}","offset":"{79,48}","rotated":true,"sourceColorRect":"{{1070,653},{66,134}}","sourceSize":"{2048,1536}"},"dart_fly_0014.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0015.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0016.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0017.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0018.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0019.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0020.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0021.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0022.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0023.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0024.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0025.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0026.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0027.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0028.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0029.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0030.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0031.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0032.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0033.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0034.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0035.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0036.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0037.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0038.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0039.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0040.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0041.png":{"frame":"{{1170,1496},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0042.png":{"frame":"{{894,1510},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0043.png":{"frame":"{{1032,1470},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0044.png":{"frame":"{{894,1446},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0045.png":{"frame":"{{898,1382},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0046.png":{"frame":"{{648,1398},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0047.png":{"frame":"{{648,1334},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0048.png":{"frame":"{{410,1330},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0049.png":{"frame":"{{898,1318},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0050.png":{"frame":"{{648,1270},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0051.png":{"frame":"{{1904,1632},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0052.png":{"frame":"{{1486,1316},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0053.png":{"frame":"{{1860,834},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0054.png":{"frame":"{{1860,696},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0055.png":{"frame":"{{2036,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0000.png":{"frame":"{{2036,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0001.png":{"frame":"{{1322,1446},{88,142}}","offset":"{-27,-274}","rotated":true,"sourceColorRect":"{{953,971},{88,142}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0002.png":{"frame":"{{280,100},{104,250}}","offset":"{-30,-231}","rotated":true,"sourceColorRect":"{{942,874},{104,250}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0003.png":{"frame":"{{2,100},{178,276}}","offset":"{-30,-175}","rotated":true,"sourceColorRect":"{{905,805},{178,276}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0004.png":{"frame":"{{532,100},{170,242}}","offset":"{-34,-110}","rotated":true,"sourceColorRect":"{{905,757},{170,242}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0005.png":{"frame":"{{694,1112},{156,202}}","offset":"{-37,-56}","rotated":true,"sourceColorRect":"{{909,723},{156,202}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0006.png":{"frame":"{{1388,1174},{140,160}}","offset":"{-36,-14}","rotated":true,"sourceColorRect":"{{918,702},{140,160}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0007.png":{"frame":"{{1922,1308},{126,124}}","offset":"{-33,13}","rotated":true,"sourceColorRect":"{{928,693},{126,124}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0008.png":{"frame":"{{1660,1642},{112,102}}","offset":"{-30,39}","rotated":true,"sourceColorRect":"{{938,678},{112,102}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0009.png":{"frame":"{{1466,1454},{82,94}}","offset":"{-27,60}","rotated":false,"sourceColorRect":"{{956,661},{82,94}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0010.png":{"frame":"{{2,1852},{98,88}}","offset":"{-22,72}","rotated":false,"sourceColorRect":"{{953,652},{98,88}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0011.png":{"frame":"{{2,1746},{94,92}}","offset":"{-16,70}","rotated":true,"sourceColorRect":"{{961,652},{94,92}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0012.png":{"frame":"{{786,1426},{88,106}}","offset":"{-8,56}","rotated":true,"sourceColorRect":"{{972,659},{88,106}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0013.png":{"frame":"{{1428,1624},{80,116}}","offset":"{1,36}","rotated":true,"sourceColorRect":"{{985,674},{80,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0014.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0015.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0016.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0017.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0018.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0019.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0020.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0021.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0022.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0023.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0024.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0025.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0026.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0027.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0028.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0029.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0030.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0031.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0032.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0033.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0034.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0035.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0036.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0037.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0038.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0039.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0040.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0041.png":{"frame":"{{1550,1158},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0042.png":{"frame":"{{1924,1082},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0043.png":{"frame":"{{1924,1006},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0044.png":{"frame":"{{1924,930},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0045.png":{"frame":"{{1924,854},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0046.png":{"frame":"{{1924,778},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0047.png":{"frame":"{{1550,1402},{74,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{997,698},{74,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0048.png":{"frame":"{{1428,1550},{72,118}}","offset":"{10,11}","rotated":true,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0049.png":{"frame":"{{1692,1522},{72,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0050.png":{"frame":"{{1170,1560},{72,116}}","offset":"{10,10}","rotated":true,"sourceColorRect":"{{998,700},{72,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0051.png":{"frame":"{{1852,972},{70,116}}","offset":"{11,10}","rotated":false,"sourceColorRect":"{{1000,700},{70,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0052.png":{"frame":"{{1852,1090},{68,114}}","offset":"{11,9}","rotated":false,"sourceColorRect":"{{1001,702},{68,114}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0053.png":{"frame":"{{786,1358},{66,110}}","offset":"{11,7}","rotated":true,"sourceColorRect":"{{1002,706},{66,110}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0054.png":{"frame":"{{2,1942},{64,100}}","offset":"{12,2}","rotated":false,"sourceColorRect":"{{1004,716},{64,100}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0055.png":{"frame":"{{2036,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"game_board_center.png":{"frame":"{{232,1942},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"game_board_corner_bottom_left.png":{"frame":"{{1546,1638},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_bottom_right.png":{"frame":"{{1288,1632},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_left.png":{"frame":"{{1058,1288},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_right.png":{"frame":"{{1058,1174},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_side_bottom.png":{"frame":"{{1744,1770},{80,112}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"game_board_side_left.png":{"frame":"{{1630,1756},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_right.png":{"frame":"{{1516,1752},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_top.png":{"frame":"{{1878,1696},{80,112}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"number_eight.png":{"frame":"{{262,1746},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_five.png":{"frame":"{{184,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_four.png":{"frame":"{{150,1942},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_one.png":{"frame":"{{180,1746},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_seven.png":{"frame":"{{102,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_six.png":{"frame":"{{68,1942},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_three.png":{"frame":"{{1966,1860},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_two.png":{"frame":"{{1966,1778},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"}}');var m=$.toInt(40);var sweeperTable=$.query('#sweeperCanvas');var minesLeftDiv=$.query('#minesLeft');var gameStateDiv=$.query('#gameState');var clockDiv=$.query('#clock');var textureImg=$.index($._imageLoader.get$images(),'art.png');$.populateTextures(textures);$.populateTextureImage(textureImg);var gameRoot=$.GameRoot_GameRoot(16,16,m,sweeperTable,minesLeftDiv,gameStateDiv,clockDiv,false);$.add$1($.window().get$on().get$touchMove(),$._onTouchMove);$.add$1($.query('#newGame').get$on().get$click(),new $._doLoad_anon(gameRoot));};
 
-$._AttachableEventHelper_addHandler = function(obj,property,watcher){return $.add$1($.CTC28.get$2(obj,$._AttachableEventHelper_createInstance).get$_handlers().putIfAbsent$2(property,new $._AttachableEventHelper_addHandler_anon()),watcher);};
+$._AttachableEventHelper_addHandler = function(obj,property,watcher){return $.add$1($.CTC29.get$2(obj,$._AttachableEventHelper_createInstance).get$_handlers().putIfAbsent$2(property,new $._AttachableEventHelper_addHandler_anon()),watcher);};
 
 $.sub = function(a,b){return typeof a==='number'&&typeof b==='number'?a - b:$.sub$slow(a,b);};
 
-$.ClickManager_addHandler = function(element,handler){return $.CTC27.addHandler$2(element,handler);};
+$.ClickManager_addHandler = function(element,handler){return $.CTC28.addHandler$2(element,handler);};
 
 $._Lists_getRange$bailout = function(state,a,start,length$,accumulator){if($.ltB(length$,0))throw $.$$throw($.IllegalArgumentException$('length'));if($.ltB(start,0))throw $.$$throw($.IndexOutOfRangeException$(start));var end=$.add(start,length$);if($.gtB(end,$.get$length(a)))throw $.$$throw($.IndexOutOfRangeException$(end));for(var i=start;$.ltB(i,end);i=$.add(i,1))accumulator.push($.index(a,i));return accumulator;};
 
@@ -2906,60 +2904,61 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC0 = Isolate.makeConstantList([]);
-$.CTC28 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
+$.CTC29 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
 $.CTC12 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
 $.CTC21 = new Isolate.$isolateProperties.Property(false, 'isClickable');
-$.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
+$.CTC36 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
-$.CTC23 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
+$.CTC24 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
 $.CTC14 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC46 = new Isolate.$isolateProperties.GameState('won');
-$.CTC47 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC47 = new Isolate.$isolateProperties.GameState('won');
+$.CTC48 = new Isolate.$isolateProperties.GameState('lost');
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
 $.CTC19 = new Isolate.$isolateProperties.Property(false, 'IsMouseDirectlyOver');
 $.CTC13 = new Isolate.$isolateProperties.EventArgs();
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC24 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC25 = new Isolate.$isolateProperties.SquareState('hidden');
 $.CTC20 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC30 = new Isolate.$isolateProperties.Coordinate(40, 40);
-$.CTC36 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC29 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC44 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC31 = new Isolate.$isolateProperties.Coordinate(40, 40);
+$.CTC37 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
+$.CTC30 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
+$.CTC45 = new Isolate.$isolateProperties.Size(100, 100);
 $.CTC16 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC39 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
+$.CTC40 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
 $.CTC18 = new Isolate.$isolateProperties.Property(null, '_stageMouseCacheProperty');
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC48 = new Isolate.$isolateProperties._UndefinedValue();
-$.CTC34 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC31 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
+$.CTC49 = new Isolate.$isolateProperties._UndefinedValue();
+$.CTC35 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
+$.CTC32 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC0);
 $.CTC2 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.CTC15 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC40 = new Isolate.$isolateProperties.UnsupportedOperationException('');
+$.CTC41 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.CTC17 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC22 = new Isolate.$isolateProperties.NotImplementedException(null);
-$.CTC25 = new Isolate.$isolateProperties.SquareState('flagged');
-$.CTC50 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC26 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC27 = new Isolate.$isolateProperties.AttachedEvent('clickEvent');
-$.CTC33 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC42 = new Isolate.$isolateProperties.GameState('started');
-$.CTC49 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '{([^,{]+),([^}]+)}');
-$.CTC51 = new Isolate.$isolateProperties.Object();
-$.CTC32 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC23 = new Isolate.$isolateProperties.NotImplementedException(null);
+$.CTC26 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC51 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
+$.CTC27 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC28 = new Isolate.$isolateProperties.AttachedEvent('clickEvent');
+$.CTC34 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC43 = new Isolate.$isolateProperties.GameState('started');
+$.CTC50 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '{([^,{]+),([^}]+)}');
+$.CTC52 = new Isolate.$isolateProperties.Object();
+$.CTC33 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC22 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
 $.CTC = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC45 = new Isolate.$isolateProperties._Random();
-$.CTC37 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC38 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC37, Isolate.$isolateProperties.CTC37, Isolate.$isolateProperties.CTC37, Isolate.$isolateProperties.CTC37, Isolate.$isolateProperties.CTC0);
-$.CTC41 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
-$.CTC43 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC46 = new Isolate.$isolateProperties._Random();
+$.CTC38 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC39 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC38, Isolate.$isolateProperties.CTC38, Isolate.$isolateProperties.CTC38, Isolate.$isolateProperties.CTC38, Isolate.$isolateProperties.CTC0);
+$.CTC42 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC44 = new Isolate.$isolateProperties.GameState('reset');
 $.CTC4 = new Isolate.$isolateProperties._Default();
 $._JsonParser_CHAR_CAPITAL_E = 69;
-$.TextureInput__pairExp = Isolate.$isolateProperties.CTC49;
+$.TextureInput__pairExp = Isolate.$isolateProperties.CTC50;
 $._JsonParser_TAB = 9;
 $.Duration_HOURS_PER_DAY = 24;
 $._JsonParser_FALSE_STRING = 'false';
@@ -2978,7 +2977,7 @@ $._JsonParser_COLON = 58;
 $._MEASUREMENT_MESSAGE = 'DART-MEASURE';
 $._textureImage = null;
 $._JsonParser_FALSE_LITERAL = 102;
-$.SquareState_flagged = Isolate.$isolateProperties.CTC25;
+$.SquareState_flagged = Isolate.$isolateProperties.CTC26;
 $._JsonParser_TRUE_LITERAL = 116;
 $.Duration_MINUTES_PER_HOUR = 60;
 $._JsonParser_SPACE = 32;
@@ -2995,11 +2994,11 @@ $._JsonParser_CHAR_1 = 49;
 $._JsonParser_RBRACKET = 93;
 $._JsonParser_CHAR_6 = 54;
 $._JsonParser_CHAR_5 = 53;
-$.SquareState_safe = Isolate.$isolateProperties.CTC33;
-$.GameState_started = Isolate.$isolateProperties.CTC42;
+$.SquareState_safe = Isolate.$isolateProperties.CTC34;
+$.GameState_started = Isolate.$isolateProperties.CTC43;
 $._getTypeNameOf = null;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
-$.SquareState_mine = Isolate.$isolateProperties.CTC32;
+$.SquareState_mine = Isolate.$isolateProperties.CTC33;
 $.SquareElement__textureName = 'balloon.png';
 $._JsonParser_CHAR_B = 98;
 $._pendingMeasurementFrameCallbacks = null;
@@ -3009,8 +3008,8 @@ $._JsonParser_CHAR_0 = 48;
 $._JsonParser_BACKSLASH = 92;
 $.LN2 = 0.6931471805599453;
 $._JsonParser_CHAR_8 = 56;
-$.GameState_won = Isolate.$isolateProperties.CTC46;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC24;
+$.GameState_won = Isolate.$isolateProperties.CTC47;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC25;
 $._JsonParser_CHAR_R = 114;
 $._JsonParser_SLASH = 47;
 $._JsonParser_CHAR_9 = 57;
@@ -3027,17 +3026,17 @@ $._cachedBrowserPrefix = null;
 $._JsonParser_CHAR_4 = 52;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
-$.GameState_lost = Isolate.$isolateProperties.CTC47;
+$.GameState_lost = Isolate.$isolateProperties.CTC48;
 $._JsonParser_LAST_ASCII = 125;
 $._JsonParser_CHAR_T = 116;
-$.SquareState_revealed = Isolate.$isolateProperties.CTC26;
-$.GameState_reset = Isolate.$isolateProperties.CTC43;
+$.SquareState_revealed = Isolate.$isolateProperties.CTC27;
+$.GameState_reset = Isolate.$isolateProperties.CTC44;
 $._JsonParser_NULL_STRING = 'null';
 $._JsonParser_CHAR_F = 102;
 $._JsonParser_LBRACKET = 91;
 $._JsonParser_RBRACE = 125;
 $._JsonParser_COMMA = 44;
-$.SquareElement__numberMap = Isolate.$isolateProperties.CTC31;
+$.SquareElement__numberMap = Isolate.$isolateProperties.CTC32;
 $._JsonParser_PLUS = 43;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
 $.Duration_MILLISECONDS_PER_HOUR = 3600000;
@@ -3317,8 +3316,8 @@ $.$defineNativeClass('DOMStringList', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3534,8 +3533,8 @@ $.$defineNativeClass('FileList', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$_FileListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -3571,8 +3570,8 @@ $.$defineNativeClass('Float32Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3592,8 +3591,8 @@ $.$defineNativeClass('Float64Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3644,8 +3643,8 @@ $.$defineNativeClass('HTMLCollection', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3796,8 +3795,8 @@ $.$defineNativeClass('Int16Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3817,8 +3816,8 @@ $.$defineNativeClass('Int32Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3838,8 +3837,8 @@ $.$defineNativeClass('Int8Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3920,8 +3919,8 @@ $.$defineNativeClass('MediaList', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3997,7 +3996,11 @@ $.$defineNativeClass('HTMLModElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('MouseEvent', ["clientX?", "clientY?", "shiftKey?", "x?", "y?"], {
+$.$defineNativeClass('MouseEvent', ["shiftKey?", "x?", "y?"], {
+ get$offsetX: function(){if(!!this.offsetX)return this.get$_offsetX();else{var target=this.target;if(!(typeof target==='object'&&target!==null&&target.is$Element()))throw $.$$throw($.CTC22);return $.sub(this.clientX,target.$dom_getBoundingClientRect$0().get$left());}},
+ get$offsetY: function(){if(!!this.offsetY)return this.get$_offsetY();else{var target=this.target;if(!(typeof target==='object'&&target!==null&&target.is$Element()))throw $.$$throw($.CTC22);return $.sub(this.clientY,target.$dom_getBoundingClientRect$0().get$top());}},
+ get$_offsetX: function(){return this.offsetX},
+ get$_offsetY: function(){return this.offsetY}
 });
 
 $.$defineNativeClass('NamedNodeMap', ["length?"], {
@@ -4012,8 +4015,8 @@ $.$defineNativeClass('NamedNodeMap', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4743,8 +4746,8 @@ $.$defineNativeClass('StyleSheetList', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4810,9 +4813,6 @@ $.$defineNativeClass('HTMLTitleElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('Touch', ["clientX?", "clientY?"], {
-});
-
 $.$defineNativeClass('TouchEvent', ["shiftKey?"], {
 });
 
@@ -4828,8 +4828,8 @@ $.$defineNativeClass('TouchList', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4860,8 +4860,8 @@ $.$defineNativeClass('Uint16Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4881,8 +4881,8 @@ $.$defineNativeClass('Uint32Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4902,8 +4902,8 @@ $.$defineNativeClass('Uint8Array', ["length?"], {
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC29);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC30);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC37);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -5023,8 +5023,8 @@ $.$defineNativeClass('DOMWindow', [], {
  setInterval$2: function(handler,timeout){return this.setInterval($.convertDartClosureToJS(handler,0),timeout);}
 });
 
-// 344 dynamic classes.
-// 389 classes
+// 343 dynamic classes.
+// 388 classes
 // 33 !leaf
 (function(){
   var v0/*class(_SVGTextPositioningElementImpl)*/ = 'SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement';
