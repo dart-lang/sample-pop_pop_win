@@ -41,10 +41,10 @@ void drawTextureKeyAt(CanvasRenderingContext2D ctx, String textureKey,
   assert(textureKey != null);
   final texture = getTexture(textureKey);
   assert(texture != null);
-  _drawTextureAt(ctx, location, texture, _textureImage);
+  drawTextureAt(ctx, location, texture, _textureImage);
 }
 
-void _drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,
+void drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,
                     TextureInput texture, ImageElement imageElement) {
   ctx.save();
   final tx = new dartlib.AffineTransform();

@@ -1511,7 +1511,7 @@ $$.GameElement = {"":
 $$.SquareElement = {"":
  ["x?", "y?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "propertyValues", "_disposed"],
  "super": "PElement",
- drawOverride$1: function(ctx){if($.eqB(this.get$_squareState(),$.CTC25))$.drawTextureAt(ctx,'balloon.png',$.CTC31);else if($.eqB(this.get$_squareState(),$.CTC27)){var adjCount=this.get$_adjacentCount();if(adjCount!==(adjCount|0))throw $.iae(adjCount);if(adjCount<0||adjCount>=9)throw $.ioore(adjCount);$.drawTextureAt(ctx,$.S($.CTC32[adjCount])+'.png',$.CTC31);}else{ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$strokeStyle('rgb(153, 153, 153)');ctx.strokeRect$5(0.5,0.5,this.get$width(),this.get$height(),1);}},
+ drawOverride$1: function(ctx){if($.eqB(this.get$_squareState(),$.CTC25))$.drawTextureKeyAt(ctx,'balloon.png',$.CTC31);else if($.eqB(this.get$_squareState(),$.CTC27)){var adjCount=this.get$_adjacentCount();if(adjCount!==(adjCount|0))throw $.iae(adjCount);if(adjCount<0||adjCount>=9)throw $.ioore(adjCount);$.drawTextureKeyAt(ctx,$.S($.CTC32[adjCount])+'.png',$.CTC31);}else{ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$strokeStyle('rgb(153, 153, 153)');ctx.strokeRect$5(0.5,0.5,this.get$width(),this.get$height(),1);}},
  toString$0: function(){return 'Square at ['+$.S(this.x)+', '+$.S(this.y)+']';},
  get$_squareState: function(){return this.get$_game().getSquareState$2(this.x,this.y);},
  get$_adjacentCount: function(){return this.get$_game().get$field().getAdjacentCount$2(this.x,this.y);},
@@ -2129,8 +2129,6 @@ $._fillStatics = function(context){  $globals = context.isolateStatics;
 
 $._getTexturesFromJson = function(json){var roundTrip=$.JSON_parse(json);var frames$=$.makeLiteralMap([]);$.forEach(roundTrip,new $._getTexturesFromJson_anon(frames$));return frames$;};
 
-$._drawTextureAt = function(ctx,location$,texture,imageElement){ctx.save$0();var tx=$.AffineTransform$(1,0,0,1,0,0);tx.translate$2(location$.x,location$.y);var theFrame=texture.get$frame();var offset=texture.get$offset();tx.translate$2(offset.get$x(),offset.get$y());if(texture.get$rotated()===true){tx.rotate$3(-1.5707963267948966,0,0);var theFrame0=$.Rect$(theFrame.get$left(),theFrame.get$top(),theFrame.get$height(),theFrame.get$width());theFrame=theFrame0;}var imgSize=theFrame.get$size().toVector$0().scale$1(-0.5);tx.translate$2(imgSize.get$x(),imgSize.get$y());$.CanvasUtil_transform(ctx,tx);$.CanvasUtil_drawImage(ctx,imageElement,theFrame,null);ctx.restore$0();};
-
 $.ListIterator$ = function(list,T){var t1=new $.ListIterator(0,list);$.setRuntimeTypeInfo(t1,{ 'T': T });return t1;};
 
 $._JavaScriptAudioNodeEventsImpl$ = function(_ptr){return new $._JavaScriptAudioNodeEventsImpl(_ptr);};
@@ -2293,7 +2291,7 @@ $._MainManagerStub$ = function(){return new $._MainManagerStub();};
 
 $.regExpTest = function(regExp,str){return $.regExpGetNative(regExp).test(str);};
 
-$.drawTextureAt = function(ctx,textureKey,location$){$._drawTextureAt(ctx,location$,$.index($._textures,textureKey),$._textureImage);};
+$.drawTextureAt = function(ctx,location$,texture,imageElement){ctx.save$0();var tx=$.AffineTransform$(1,0,0,1,0,0);tx.translate$2(location$.x,location$.y);var theFrame=texture.get$frame();var offset=texture.get$offset();tx.translate$2(offset.get$x(),offset.get$y());if(texture.get$rotated()===true){tx.rotate$3(-1.5707963267948966,0,0);var theFrame0=$.Rect$(theFrame.get$left(),theFrame.get$top(),theFrame.get$height(),theFrame.get$width());theFrame=theFrame0;}var imgSize=theFrame.get$size().toVector$0().scale$1(-0.5);tx.translate$2(imgSize.get$x(),imgSize.get$y());$.CanvasUtil_transform(ctx,tx);$.CanvasUtil_drawImage(ctx,imageElement,theFrame,null);ctx.restore$0();};
 
 $.Coordinate$ = function(x,y){return new $.Coordinate(x,y);};
 
@@ -2668,6 +2666,8 @@ $._FileReaderEventsImpl$ = function(_ptr){return new $._FileReaderEventsImpl(_pt
 $.DetailedIllegalArgumentException$ = function(arg,message){return new $.DetailedIllegalArgumentException(arg,message,'');};
 
 $.HashMapImplementation__nextProbe = function(currentProbe,numberOfProbes,length$){return $.and($.add(currentProbe,numberOfProbes),$.sub(length$,1));};
+
+$.drawTextureKeyAt = function(ctx,textureKey,location$){$.drawTextureAt(ctx,location$,$.index($._textures,textureKey),$._textureImage);};
 
 $.isInfinite = function(receiver){if(!(typeof receiver==='number'))return receiver.isInfinite$0();return receiver == Infinity||receiver == -Infinity;};
 
