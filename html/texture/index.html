@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>Dartsweeper - Canvas Render Preview</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <link type="image/png" href="../favicon.png" rel="icon">
+    <link rel='stylesheet' type='text/css' href='../style.css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:title" content="Dartsweeper - Canvas Render Preview" />
+    <meta property="og:description" content="Dartsweeper is an implementation of the game Minesweeper in the Dart programming language." />
+    <meta property="og:image" content="http://sweeper.j832.com/dart_logo.jpg" />
+    <meta property='og:url' content='http://sweeper.j832.com' />
+    <script type="application/dart" src="texture_fun.dart"></script>
+    <script src="../dart.js"></script>
+
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-3441863-6']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+  </head>
+  <body>
+    <div class='container'>
+      <div class='status'>
+        <button id='newGame' class='status'>New Game</button>
+        <span id='gameState' class='status'></span>
+        <span>Mines left:</span>
+        <span id='minesLeft' class='status' ></span>
+        <span>Time:</span>
+        <span id='clock' class='status'></span>
+      </div>
+      <canvas id='sweeperCanvas' width='700' height='700'></canvas>
+      <div class='buttons'>
+        <button id='reveal' class='status'>Reveal</button>
+        <button id='flag' class='status'>Flag</button>
+      </div>
+      <ul class='help'>
+        <li>Click on hidden squares to reveal them.</li>
+        <li>Shift-click on squares to flag them.</li>
+        <li>Shift-click on revealed numbers to go fast--but be careful. If you've flagged incorrectly, you'll hit a mine.</li>
+      </ul>
+      <div class='author'>By <a href="https://plus.google.com/110066012384188006594" rel='author'>Kevin Moore</a></div>
+      <iframe src="http://ghbtns.com/github-btn.html?user=kevmoo&repo=sweeper.dart&type=watch&count=true&size=large"
+  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+      <div class='author'>Go back to the <a href="../">HTML DOM version</a>.</div>
+    </div>
+  </body>
+</html>
