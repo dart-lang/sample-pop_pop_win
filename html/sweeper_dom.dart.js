@@ -1101,13 +1101,13 @@ $$.Game = {"":
  get$duration: function(){if(this._startTime==null)return;else{var end=this._endTime;if(end==null)end=$.DateImplementation$now();return end.difference$1(this._startTime);}},
  setFlag$3: function(x,y,value){this._ensureStarted$0();var t1=this._states;var currentSS=t1.get$2(x,y);if(value){$.require($.eq(currentSS,$.CTC23),'');t1.set$3(x,y,$.CTC24);this._minesLeft=$.sub(this._minesLeft,1);}else{$.require($.eq(currentSS,$.CTC24),'');t1.set$3(x,y,$.CTC23);this._minesLeft=$.add(this._minesLeft,1);}this._lib3_update$0();},
  canReveal$2: function(x,y){this._ensureStarted$0();if($.eqB(this._states.get$2(x,y),$.CTC23))return true;else if(this._canChord$2(x,y)===true)return true;return false;},
- reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC23))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=0;}else{reveals=this._doReveal$2(x,y);if(typeof reveals!=='number')return this.reveal$2$bailout(1,reveals);}else if(this._canChord$2(x,y)===true){reveals=this._doChord$2(x,y);if(typeof reveals!=='number')return this.reveal$2$bailout(2,reveals);}else reveals=0;this._lib3_update$0();return reveals;},
- reveal$2$bailout: function(state,env0){switch(state){case 1:reveals=env0;break;case 2:reveals=env0;break;}switch(state){case 0:this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');default:if(state===1||state===0&&$.eqB(this._states.get$2(x,y),$.CTC23))switch(state){case 0:case 1:if(state===0&&this.field.get$2(x,y)===true){this._setLost$0();var reveals=0;}else switch(state){case 0:reveals=this._doReveal$2(x,y);case 1:state=0;}}else switch(state){case 0:case 2:if(state===2||state===0&&this._canChord$2(x,y)===true)switch(state){case 0:reveals=this._doChord$2(x,y);case 2:state=0;}else reveals=0;}this._lib3_update$0();return reveals;}},
+ reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC23))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else{reveals=this._doReveal$2(x,y);if(typeof reveals!=='object'||reveals===null||reveals.constructor!==Array||!!reveals.fixed$length)return this.reveal$2$bailout(1,reveals);}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._lib3_update$0();if($.eqB(this._state,$.CTC35))return;else return reveals;},
+ reveal$2$bailout: function(state,env0){switch(state){case 1:reveals=env0;break;}switch(state){case 0:this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');case 1:if(state===1||state===0&&$.eqB(this._states.get$2(x,y),$.CTC23))switch(state){case 0:case 1:if(state===0&&this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else switch(state){case 0:reveals=this._doReveal$2(x,y);case 1:state=0;}}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._lib3_update$0();if($.eqB(this._state,$.CTC35))return;else return reveals;}},
  _canChord$2: function(x,y){if($.eqB(this._states.get$2(x,y),$.CTC17)){var adjCount=this.field.getAdjacentCount$2(x,y);if($.gtB(adjCount,0))if($.eqB(this._getAdjacentFlagCount$2(x,y),adjCount))return true;}return false;},
- _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,t1,t3,flagged,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC23)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC24))flagged.push(t4);}}if(failed){this._setLost$0();var reveals=0;}else for(t1=$.iterator(hidden),reveals=0;t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true){t2=this.reveal$2(c.get$Item1(),c.get$Item2());if(typeof t2!=='number')throw $.iae(t2);reveals+=t2;}}return reveals;},
- _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;flagged=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC23)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC24))flagged.push(t4);}if(failed){this._setLost$0();var reveals=0;}else for(t1=$.iterator(hidden),reveals=0;t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true){t2=this.reveal$2(c.get$Item1(),c.get$Item2());if(typeof t2!=='number')throw $.iae(t2);reveals+=t2;}}return reveals;}},
- _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,t1,y,0,0);t1.set$3(x,y,$.CTC17);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,t1,y,t3,0);this._revealsLeft=t3-1;var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,t1,y,t2,0);if(t2===0){this._setWon$0();var revealCount=1;}else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,t1,y,t3,t2);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y)),revealCount=1;t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC23)){var c=t2.getCoordinate$1(t4);t4=this._doReveal$2(c.get$Item1(),c.get$Item2());if(typeof t4!=='number')throw $.iae(t4);revealCount+=t4;}}else revealCount=1;}return revealCount;},
- _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:var x=env0;t1=env1;var y=env2;break;case 2:x=env0;t1=env1;y=env2;t3=env3;break;case 3:x=env0;t1=env1;y=env2;t2=env3;break;case 4:x=env0;t1=env1;y=env2;t3=env3;t2=env4;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC17);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0)){this._setWon$0();var revealCount=1;}else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y)),revealCount=1;t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC23)){var c=t2.getCoordinate$1(t4);t4=this._doReveal$2(c.get$Item1(),c.get$Item2());if(typeof t4!=='number')throw $.iae(t4);revealCount+=t4;}}else revealCount=1;}return revealCount;}},
+ _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,t1,t3,flagged,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC23)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC24))flagged.push(t4);}}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;},
+ _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;flagged=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC23)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC24))flagged.push(t4);}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;}},
+ _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,y,t1,0,0,0);t1.set$3(x,y,$.CTC17);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,y,t1,t3,0,0);this._revealsLeft=t3-1;var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,y,t1,t2,reveals,0);if(t2===0)this._setWon$0();else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,y,t1,t2,t3,reveals);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC23)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;},
+ _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;break;case 3:x=env0;y=env1;t1=env2;t2=env3;reveals=env4;break;case 4:x=env0;y=env1;t1=env2;t2=env3;t3=env4;reveals=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC17);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0))this._setWon$0();else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC23)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;}},
  _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC36;}}this._setState$1($.CTC34);var t2;},
  _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC36);this._setState$1($.CTC34);}},
  _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC37;}}this._setState$1($.CTC35);var t2;},
@@ -1265,6 +1265,24 @@ $$.EventHandle = {"":
 $$.EventArgs = {"":
  [],
  "super": "Object"
+};
+
+$$.Coordinate = {"":
+ ["x?", "y?"],
+ "super": "Object",
+ operator$sub$1: function(other){return $.Coordinate_difference(this,other);},
+ operator$add$1: function(other){return $.Coordinate$($.add(this.x,other.get$x()),$.add(this.y,other.get$y()));},
+ operator$eq$1: function(other){return !(other==null)&&$.eqB(this.x,other.get$x())&&$.eqB(this.y,other.get$y());},
+ toString$0: function(){return '{x:'+$.S(this.x)+', y:'+$.S(this.y)+'}';}
+};
+
+$$.Vector = {"":
+ ["x", "y"],
+ "super": "Coordinate",
+ get$length: function(){var t1=this.x;t1=$.mul(t1,t1);var t2=this.y;return $.sqrt($.add(t1,$.mul(t2,t2)));},
+ operator$add$1: function(other){return $.Vector$($.add(this.x,other.get$x()),$.add(this.y,other.get$y()));},
+ operator$mul$1: function(magnitude){return this.scale$1(magnitude);},
+ scale$1: function(magnitude){return $.Vector$($.mul(this.x,magnitude),$.mul(this.y,magnitude));}
 };
 
 $$.HighScoreView = {"":
@@ -1820,8 +1838,6 @@ $.FutureImpl_FutureImpl$immediate = function(value,T){var res=$.FutureImpl$();re
 
 $.mul$slow = function(a,b){if($.checkNumbers(a,b))return a * b;return a.operator$mul$1(b);};
 
-$._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$());t1._JsCopier$0();return t1;};
-
 $._waitForPendingPorts = function(message,callback){var finder=$._PendingSendPortFinder$();finder.traverse$1(message);$.Futures_wait(finder.ports).then$1(new $._waitForPendingPorts_anon(callback));};
 
 $.gt = function(a,b){return typeof a==='number'&&typeof b==='number'?a > b:$.gt$slow(a,b);};
@@ -1835,6 +1851,8 @@ $.GameStorage$ = function(){var t1=$.window().get$localStorage();return new $.Ga
 $.charCodeAt = function(receiver,index){if(typeof receiver==='string'){if(index<0)throw $.$$throw($.IndexOutOfRangeException$(index));if(index>=receiver.length)throw $.$$throw($.IndexOutOfRangeException$(index));return receiver.charCodeAt(index);}else return receiver.charCodeAt$1(index);};
 
 $.getTypeNameOf = function(obj){if($._getTypeNameOf==null)$._getTypeNameOf=$.getFunctionForTypeNameOf();return $._getTypeNameOf.call$1(obj);};
+
+$._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$());t1._JsCopier$0();return t1;};
 
 $.ListImplementation_List = function(length$,E){return $.Primitives_newList(length$);};
 
@@ -1986,13 +2004,15 @@ $._FixedSizeListIterator$ = function(array,T){var t1=new $._FixedSizeListIterato
 
 $._FileReaderEventsImpl$ = function(_ptr){return new $._FileReaderEventsImpl(_ptr);};
 
-$._MainManagerStub$ = function(){return new $._MainManagerStub();};
-
 $.DetailedIllegalArgumentException$ = function(arg,message){return new $.DetailedIllegalArgumentException(arg,message,'');};
+
+$._MainManagerStub$ = function(){return new $._MainManagerStub();};
 
 $.regExpTest = function(regExp,str){return $.regExpGetNative(regExp).test(str);};
 
 $.HashMapImplementation__nextProbe = function(currentProbe,numberOfProbes,length$){return $.and($.add(currentProbe,numberOfProbes),$.sub(length$,1));};
+
+$.Coordinate$ = function(x,y){return new $.Coordinate(x,y);};
 
 $.makeLiteralMap = function(keyValuePairs){var iterator=$.iterator(keyValuePairs);var result=$.LinkedHashMapImplementation$();for(;iterator.hasNext$0()===true;)result.operator$indexSet$2(iterator.next$0(),iterator.next$0());return result;};
 
@@ -2059,6 +2079,8 @@ $._ChildrenElementList$_wrap = function(element){return new $._ChildrenElementLi
 $.tdiv = function(a,b){if($.checkNumbers(a,b))return $.truncate(a / b);return a.operator$tdiv$1(b);};
 
 $.unwrapException = function(ex){if("dartException" in ex)return ex.dartException;var message=ex.message;if(ex instanceof TypeError){var type=ex.type;var name$=ex.arguments ? ex.arguments[0] : "";if($.eqB(type,'property_not_function')||$.eqB(type,'called_non_callable')||$.eqB(type,'non_object_property_call')||$.eqB(type,'non_object_property_load'))if(typeof name$==='string'&&$.startsWith(name$,'call$')===true)return $.ObjectNotClosureException$();else return $.NullPointerException$(null,$.CTC0);else if($.eqB(type,'undefined_method'))if(typeof name$==='string'&&$.startsWith(name$,'call$')===true)return $.ObjectNotClosureException$();else return $.NoSuchMethodException$('',name$,[],null);var ieErrorCode=ex.number & 0xffff;var ieFacilityNumber=ex.number>>16 & 0x1FFF;if(typeof message==='string')if($.endsWith(message,'is null')===true||$.endsWith(message,'is undefined')===true||$.endsWith(message,'is null or undefined')===true)return $.NullPointerException$(null,$.CTC0);else{if($.contains$1(message,' is not a function')!==true)var t1=ieErrorCode===438&&ieFacilityNumber===10;else t1=true;if(t1)return $.NoSuchMethodException$('','<unknown>',[],null);}return $.ExceptionImplementation$(typeof message==='string'?message:'');}if(ex instanceof RangeError){if(typeof message==='string'&&$.contains$1(message,'call stack')===true)return $.StackOverflowException$();return $.IllegalArgumentException$('');}if(typeof InternalError == 'function' && ex instanceof InternalError)if(typeof message==='string'&&message==='too much recursion')return $.StackOverflowException$();return ex;};
+
+$.Vector$ = function(x,y){return new $.Vector(x,y);};
 
 $.GlobalId_GlobalId = function(){var t1=$.GlobalId__globalId;$.GlobalId__globalId=$.add(t1,1);return $.GlobalId$_internal(t1);};
 
@@ -2222,6 +2244,8 @@ $._IDBOpenDBRequestEventsImpl$ = function(_ptr){return new $._IDBOpenDBRequestEv
 
 $.checkMutable = function(list,reason){if(!!(list.immutable$list))throw $.$$throw($.UnsupportedOperationException$(reason));};
 
+$.sqrt = function(value){return Math.sqrt($.checkNum(value));};
+
 $.checkGrowable = function(list,reason){if(!!(list.fixed$length))throw $.$$throw($.UnsupportedOperationException$(reason));};
 
 $.le = function(a,b){return typeof a==='number'&&typeof b==='number'?a <= b:$.le$slow(a,b);};
@@ -2302,6 +2326,8 @@ $._NotificationEventsImpl$ = function(_ptr){return new $._NotificationEventsImpl
 $.regExpGetNative = function(regExp){var r=regExp._re;return r==null?regExp._re = $.regExpMakeNative(regExp,false):r;};
 
 $._Manager$ = function(){var t1=new $._Manager(0,0,1,null,null,null,null,null,null,null,null,null);t1._Manager$0();return t1;};
+
+$.Coordinate_difference = function(a,b){return $.Vector$($.sub(a.x,b.get$x()),$.sub(a.y,b.get$y()));};
 
 $.sub = function(a,b){return typeof a==='number'&&typeof b==='number'?a - b:$.sub$slow(a,b);};
 
@@ -3082,7 +3108,7 @@ $.$defineNativeClass('ImageData', ["height?", "width?"], {
  is$ImageData: function() { return true; }
 });
 
-$.$defineNativeClass('HTMLImageElement', ["height?", "name?", "width?"], {
+$.$defineNativeClass('HTMLImageElement', ["height?", "name?", "width?", "x?", "y?"], {
  complete$1: function(arg0) { return this.complete.call$1(arg0); },
  is$Element: function() { return true; }
 });
@@ -3293,7 +3319,7 @@ $.$defineNativeClass('HTMLModElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('MouseEvent', ["button?", "shiftKey?"], {
+$.$defineNativeClass('MouseEvent', ["button?", "shiftKey?", "x?", "y?"], {
 });
 
 $.$defineNativeClass('NamedNodeMap', ["length?"], {
@@ -3405,6 +3431,9 @@ $.$defineNativeClass('PeerConnection00', [], {
  $dom_removeEventListener$3: function(type,listener,useCapture){return this.removeEventListener(type,$.convertDartClosureToJS(listener,1),useCapture);}
 });
 
+$.$defineNativeClass('WebKitPoint', ["x?", "y?"], {
+});
+
 $.$defineNativeClass('PopStateEvent', ["state?"], {
 });
 
@@ -3495,7 +3524,7 @@ $.$defineNativeClass('SVGComponentTransferFunctionElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGCursorElement', [], {
+$.$defineNativeClass('SVGCursorElement', ["x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3535,31 +3564,31 @@ $.$defineNativeClass('SVGException', ["name?"], {
  toString$0: function(){return this.toString();}
 });
 
-$.$defineNativeClass('SVGFEBlendElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEBlendElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEColorMatrixElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEColorMatrixElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEComponentTransferElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEComponentTransferElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFECompositeElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFECompositeElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEConvolveMatrixElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEConvolveMatrixElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEDiffuseLightingElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEDiffuseLightingElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEDisplacementMapElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEDisplacementMapElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3567,11 +3596,11 @@ $.$defineNativeClass('SVGFEDistantLightElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEDropShadowElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEDropShadowElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEFloodElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEFloodElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3591,15 +3620,15 @@ $.$defineNativeClass('SVGFEFuncRElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEGaussianBlurElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEGaussianBlurElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEImageElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEImageElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEMergeElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEMergeElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3607,35 +3636,35 @@ $.$defineNativeClass('SVGFEMergeNodeElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEMorphologyElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEMorphologyElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEOffsetElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFEOffsetElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFEPointLightElement', [], {
+$.$defineNativeClass('SVGFEPointLightElement', ["x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFESpecularLightingElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFESpecularLightingElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFESpotLightElement', [], {
+$.$defineNativeClass('SVGFESpotLightElement', ["x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFETileElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFETileElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFETurbulenceElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFETurbulenceElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGFilterElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGFilterElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3663,7 +3692,7 @@ $.$defineNativeClass('SVGFontFaceUriElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGForeignObjectElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGForeignObjectElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3675,7 +3704,7 @@ $.$defineNativeClass('SVGGlyphElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGGlyphRefElement', [], {
+$.$defineNativeClass('SVGGlyphRefElement', ["x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3687,7 +3716,7 @@ $.$defineNativeClass('SVGHKernElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGImageElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGImageElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3714,7 +3743,7 @@ $.$defineNativeClass('SVGMarkerElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGMaskElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGMaskElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3737,12 +3766,69 @@ $.$defineNativeClass('SVGPathElement', [], {
  is$Element: function() { return true; }
 });
 
+$.$defineNativeClass('SVGPathSegArcAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegArcRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoCubicAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoCubicRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoCubicSmoothAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoCubicSmoothRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoQuadraticAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoQuadraticRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoQuadraticSmoothAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegCurvetoQuadraticSmoothRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegLinetoAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegLinetoHorizontalAbs', ["x?"], {
+});
+
+$.$defineNativeClass('SVGPathSegLinetoHorizontalRel', ["x?"], {
+});
+
+$.$defineNativeClass('SVGPathSegLinetoRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegLinetoVerticalAbs', ["y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegLinetoVerticalRel', ["y?"], {
+});
+
 $.$defineNativeClass('SVGPathSegList', [], {
  clear$0: function(){return this.clear();}
 });
 
-$.$defineNativeClass('SVGPatternElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGPathSegMovetoAbs', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPathSegMovetoRel', ["x?", "y?"], {
+});
+
+$.$defineNativeClass('SVGPatternElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
+});
+
+$.$defineNativeClass('SVGPoint', ["x?", "y?"], {
 });
 
 $.$defineNativeClass('SVGPointList', [], {
@@ -3761,14 +3847,14 @@ $.$defineNativeClass('SVGRadialGradientElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGRect', ["height?", "width?"], {
+$.$defineNativeClass('SVGRect', ["height?", "width?", "x?", "y?"], {
 });
 
-$.$defineNativeClass('SVGRectElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGRectElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGSVGElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGSVGElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3820,7 +3906,7 @@ $.$defineNativeClass('SVGTextPathElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('SVGTextPositioningElement', [], {
+$.$defineNativeClass('SVGTextPositioningElement', ["x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -3832,7 +3918,7 @@ $.$defineNativeClass('SVGTransformList', [], {
  clear$0: function(){return this.clear();}
 });
 
-$.$defineNativeClass('SVGUseElement', ["height?", "width?"], {
+$.$defineNativeClass('SVGUseElement', ["height?", "width?", "x?", "y?"], {
  is$Element: function() { return true; }
 });
 
@@ -4189,8 +4275,8 @@ $.$defineNativeClass('DOMWindow', [], {
  setInterval$2: function(handler,timeout){return this.setInterval($.convertDartClosureToJS(handler,0),timeout);}
 });
 
-// 311 dynamic classes.
-// 359 classes
+// 331 dynamic classes.
+// 379 classes
 // 33 !leaf
 (function(){
   var v0/*class(_SVGTextPositioningElementImpl)*/ = 'SVGTextPositioningElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement|SVGTextElement|SVGTSpanElement|SVGTRefElement|SVGAltGlyphElement';
