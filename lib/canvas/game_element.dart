@@ -58,9 +58,7 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  PElement getVisualChild(int index) {
-    return _elements[index];
-  }
+  PElement getVisualChild(int index) => _elements[index];
 
   void drawOverride(CanvasRenderingContext2D ctx) {
     _updateElements();
