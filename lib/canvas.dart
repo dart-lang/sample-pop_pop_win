@@ -51,17 +51,14 @@ void drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,
   tx.translate(location.x, location.y);
 
   var theFrame = texture.frame;
-  var offset = texture.offset;
-  tx.translate(offset.x, offset.y);
+  var source = texture.sourceColorRect.topLeft;
+  tx.translate(source.x, source.y);
 
   if(texture.rotated) {
-    tx.rotate(-PI/2.0, 0, 0);
+    tx.rotate(-0.5 * PI, 0.5 * theFrame.height, 0.5 * theFrame.height);
     theFrame = new dartlib.Rect(theFrame.left, theFrame.top,
         theFrame.height, theFrame.width);
   }
-
-  final imgSize = theFrame.size.toVector().scale(-0.5);
-  tx.translate(imgSize.x, imgSize.y);
 
   CanvasUtil.transform(ctx, tx);
 
