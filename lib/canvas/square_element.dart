@@ -14,25 +14,22 @@ class SquareElement extends PElement {
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    if(_squareState == SquareState.hidden) {
-      drawTextureKeyAt(ctx, _textureName,
-          const dartlib.Coordinate(_size ~/ 2, _size ~/ 2));
-
-    } else if(_squareState == SquareState.revealed) {
-      final adjCount = _adjacentCount;
-      final textureName = _numberMap[adjCount];
-      drawTextureKeyAt(ctx, "$textureName.png",
-          const dartlib.Coordinate(_size ~/ 2, _size ~/ 2));
-    } else {
-      ctx.fillStyle = _fillStyle;
-      ctx.fillRect(0, 0, width, height);
-
-      ctx.strokeStyle = 'rgb(153, 153, 153)';
-      ctx.strokeRect(0.5, 0.5, width, height, 1);
+    switch(_squareState) {
+      case SquareState.hidden:
+        drawTextureKeyAt(ctx, _textureName, const dartlib.Coordinate());
+        break;
+      case SquareState.revealed:
+        final adjCount = _adjacentCount;
+        final textureName = _numberMap[adjCount];
+        drawTextureKeyAt(ctx, "$textureName.png", const dartlib.Coordinate());
+        break;
+      default:
+        ctx.fillStyle = _fillStyle;
+        ctx.fillRect(0, 0, width, height);
+        ctx.strokeStyle = 'rgb(153, 153, 153)';
+        ctx.strokeRect(0.5, 0.5, width, height, 1);
+        break;
     }
-
-
-
   }
 
   String toString() => 'Square at [$x, $y]';
