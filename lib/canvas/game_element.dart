@@ -210,12 +210,15 @@ class GameElement extends ElementParentImpl {
   }
 
   void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
+    assert(reveals.length > 0);
     const animationOffset = const dartlib.Vector(-88, -88);
     var distances = dartlib.$(reveals)
         .group((r) => (r - start).length.toInt());
 
     var indicies = new List<int>.from(distances.getKeys());
     indicies.sort((a,b) => a.compareTo(b));
+
+    int delayDelta = 60 ~/ indicies.length;
 
     int delay = 0;
     for(final i in indicies) {
@@ -227,7 +230,7 @@ class GameElement extends ElementParentImpl {
         // start a fake animation
         _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
       }
-      delay += 10;
+      delay += delayDelta;
     }
   }
 
