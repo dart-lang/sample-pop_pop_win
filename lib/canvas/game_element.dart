@@ -4,9 +4,11 @@ class GameElement extends ElementParentImpl {
   static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
   static const _boardOffset = const dartlib.Vector(352, 96);
 
+  final TextAniElement _animationLayer;
   final bool _targetMode;
   final dartlib.EventHandle _targetChanged;
 
+  dartlib.AffineTransform _animationLayerTx;
   int _targetX, _targetY;
   double _scale;
   dartlib.Vector _scaledBoardOffset;
@@ -15,8 +17,12 @@ class GameElement extends ElementParentImpl {
   dartlib.Array2d<SquareElement> _elements;
 
   GameElement(this._targetMode) :
+    _animationLayer = new TextAniElement(0, 0),
     _targetChanged = new dartlib.EventHandle(),
-    super(100, 100);
+    super(100, 100) {
+    _animationLayer.registerParent(this);
+    _animationLayerTx = _animationLayer.addTransform();
+  }
 
   Game get game => _game;
 
@@ -54,14 +60,24 @@ class GameElement extends ElementParentImpl {
   dartlib.EventRoot get targetChanged => _targetChanged;
 
   int get visualChildCount {
-    if(_elements == null) {
-      return 0;
-    } else {
-      return _elements.length;
+    var count = 1;
+    if(_elements != null) {
+      count +=_elements.length;
     }
+    return count;
   }
 
-  PElement getVisualChild(int index) => _elements[index];
+  PElement getVisualChild(int index) {
+    if(_elements != null) {
+      if(index < _elements.length) {
+        return _elements[index];
+      }
+      index -= _elements.length;
+    }
+
+    assert(index == 0);
+    return _animationLayer;
+  }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
     _updateElements();
@@ -187,7 +203,19 @@ class GameElement extends ElementParentImpl {
 
         _elements[i] = se;
       }
+
+      // update the animation layer
+      _animationLayerTx.setToTranslation(offset.x, offset.y);
     }
+  }
+
+  void _drawPop(int x, int y) {
+    const animationOffset = const dartlib.Vector(-88, -88);
+    final squareOffset = animationOffset +
+        new dartlib.Vector(SquareElement._size * x, SquareElement._size * y);
+
+    // start a fake animation
+    _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset));
   }
 
   void _squareClicked(ElementMouseEventArgs args) {
@@ -236,6 +264,7 @@ class GameElement extends ElementParentImpl {
     } else {
       if(ss == SquareState.hidden) {
         game.reveal(x, y);
+        _drawPop(x, y);
       }
     }
   }
