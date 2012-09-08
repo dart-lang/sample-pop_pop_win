@@ -12,7 +12,7 @@
 #source('canvas/game_element.dart');
 #source('canvas/square_element.dart');
 #source('canvas/image_loader.dart');
-#source('canvas/text_ani_element.dart');
+#source('canvas/texture_animation_element.dart');
 
 #source('texture/texture_input.dart');
 

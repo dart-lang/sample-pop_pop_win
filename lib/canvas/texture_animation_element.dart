@@ -1,7 +1,7 @@
-class TextAniElement extends PElement {
+class TextureAnimationElement extends PElement {
   final List<TextAniRequest> _requests;
 
-  TextAniElement(num width, num height) :
+  TextureAnimationElement(num width, num height) :
     _requests = new List<TextAniRequest>(),
     super(width, height);
 

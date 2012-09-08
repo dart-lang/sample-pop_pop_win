@@ -4,7 +4,7 @@ class GameElement extends ElementParentImpl {
   static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
   static const _boardOffset = const dartlib.Vector(352, 96);
 
-  final TextAniElement _animationLayer;
+  final TextureAnimationElement _animationLayer;
   final bool _targetMode;
   final dartlib.EventHandle _targetChanged;
 
@@ -17,7 +17,7 @@ class GameElement extends ElementParentImpl {
   dartlib.Array2d<SquareElement> _elements;
 
   GameElement(this._targetMode) :
-    _animationLayer = new TextAniElement(0, 0),
+    _animationLayer = new TextureAnimationElement(0, 0),
     _targetChanged = new dartlib.EventHandle(),
     super(100, 100) {
     _animationLayer.registerParent(this);
