@@ -212,12 +212,14 @@ class GameElement extends ElementParentImpl {
   void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
     const animationOffset = const dartlib.Vector(-88, -88);
 
+    int delay = 0;
     for(final c in reveals) {
       final squareOffset = animationOffset +
           new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
       // start a fake animation
-      _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset));
+      _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
+      delay += 2;
     }
   }
 

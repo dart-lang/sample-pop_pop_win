@@ -45,11 +45,15 @@ class TextAniRequest {
   final String _texturePrefix;
   final int _frameCount;
   final dartlib.Vector _offset;
+  final int _delay;
 
   bool _done = false;
   int _frame = null;
 
-  TextAniRequest(this._texturePrefix, this._frameCount, this._offset) {
+  TextAniRequest(this._texturePrefix, this._frameCount,
+      this._offset, [int delay = 0]) :
+      this._delay = delay {
+    assert(_delay >= 0);
     assert(_texturePrefix != null);
     assert(_frameCount > 0);
     assert(_offset.isValid);
@@ -60,7 +64,7 @@ class TextAniRequest {
 
   void update() {
     if(_frame == null) {
-      _frame = 0;
+      _frame = -_delay;
     } else if(_frame < (_frameCount - 1)){
       _frame++;
       assert(_frame < _frameCount);
@@ -70,7 +74,10 @@ class TextAniRequest {
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    var frameString = _frame.toString();
+    // if we're delayed (_frame < 0), then draw frame 0
+    final frame = (_frame < 0) ? 0 : _frame;
+
+    var frameString = frame.toString();
     while(frameString.length < 4) {
       frameString = "0$frameString";
     }
