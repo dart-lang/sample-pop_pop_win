@@ -209,13 +209,16 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _drawPop(int x, int y) {
+  void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
     const animationOffset = const dartlib.Vector(-88, -88);
-    final squareOffset = animationOffset +
-        new dartlib.Vector(SquareElement._size * x, SquareElement._size * y);
 
-    // start a fake animation
-    _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset));
+    for(final c in reveals) {
+      final squareOffset = animationOffset +
+          new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
+
+      // start a fake animation
+      _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset));
+    }
   }
 
   void _squareClicked(ElementMouseEventArgs args) {
@@ -253,19 +256,31 @@ class GameElement extends ElementParentImpl {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
+    List<dartlib.Coordinate> reveals = null;
+
     if(alt) {
       if(ss == SquareState.hidden || ss == SquareState.flagged) {
         _toggleFlag(x, y);
       } else if(ss == SquareState.revealed) {
         if(game.canReveal(x, y)) {
-          game.reveal(x, y);
+          reveals = game.reveal(x, y);
         }
       }
     } else {
       if(ss == SquareState.hidden) {
-        game.reveal(x, y);
-        _drawPop(x, y);
+        reveals = game.reveal(x, y);
       }
+    }
+
+    if(reveals != null) {
+      assert(reveals.length > 0);
+      if(!alt) {
+        // if it was a normal click, the first item should be the clicked item
+        var first = reveals[0];
+        assert(first.x == x);
+        assert(first.y == y);
+      }
+      _drawPop(new dartlib.Coordinate(x, y), reveals);
     }
   }
 
