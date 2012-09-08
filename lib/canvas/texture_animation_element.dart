@@ -77,7 +77,7 @@ class TextAniRequest {
     // if we're delayed (_frame < 0), then draw frame 0
     final frame = (_frame < 0) ? 0 : _frame;
 
-    var frameString = frame.toString();
+    var frameString = frame.toInt().toString();
     while(frameString.length < 4) {
       frameString = "0$frameString";
     }
