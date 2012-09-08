@@ -38,7 +38,7 @@ _doLoad() {
 
   _keys = new List<String>.from(_textures.getKeys());
 
-  _next();
+  _drawTexture();
 
   window.on.keyDown.add((KeyboardEvent args) {
     switch(args.keyIdentifier) {
@@ -54,27 +54,27 @@ _doLoad() {
 
 void _next() {
   _currentIndex++;
-  _currentIndex %= _keys.length;
-  _drawTexture(_currentIndex);
+  _drawTexture();
 }
 
 void _previous() {
   _currentIndex--;
-  _currentIndex %= _keys.length;
-  _drawTexture(_currentIndex);
+  _drawTexture();
 }
 
-void _drawTexture(int index) {
+void _drawTexture() {
+  _currentIndex %= _keys.length;
+
   __ctx.clearRect(0, 0, 700, 700);
 
   assert(_keys != null);
-  assert(index >= 0 && index < _keys.length);
 
   final key = _keys[_currentIndex];
-  print(key);
 
   final texture = _textures[key];
 
-  drawTextureAt(__ctx, new dartlib.Coordinate(350, 350), texture, __textureImg);
+  print([_currentIndex, key]);
+
+  drawTextureAt(__ctx, new dartlib.Coordinate(100, 100), texture, __textureImg);
 
 }
