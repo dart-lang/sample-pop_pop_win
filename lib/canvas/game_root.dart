@@ -90,8 +90,11 @@ class GameRoot extends GameManager {
 
     _gameElementTx.translate(delta.x, delta.y);
 
-    _stage.draw();
+    var updated = _stage.draw();
     _frameRequested = false;
+    if(updated) {
+      _requestFrame();
+    }
   }
 
   void updateClock() {
