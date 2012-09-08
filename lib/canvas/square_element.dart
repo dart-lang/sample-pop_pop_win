@@ -16,12 +16,12 @@ class SquareElement extends PElement {
   void drawOverride(CanvasRenderingContext2D ctx) {
     switch(_squareState) {
       case SquareState.hidden:
-        drawTextureKeyAt(ctx, _textureName, const dartlib.Coordinate());
+        drawTextureKeyAt(ctx, _textureName);
         break;
       case SquareState.revealed:
         final adjCount = _adjacentCount;
         final textureName = _numberMap[adjCount];
-        drawTextureKeyAt(ctx, "$textureName.png", const dartlib.Coordinate());
+        drawTextureKeyAt(ctx, "$textureName.png");
         break;
       default:
         ctx.fillStyle = _fillStyle;
