@@ -211,15 +211,23 @@ class GameElement extends ElementParentImpl {
 
   void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
     const animationOffset = const dartlib.Vector(-88, -88);
+    var distances = dartlib.$(reveals)
+        .group((r) => (r - start).length.toInt());
+
+    var indicies = new List<int>.from(distances.getKeys());
+    indicies.sort((a,b) => a.compareTo(b));
 
     int delay = 0;
-    for(final c in reveals) {
-      final squareOffset = animationOffset +
-          new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
+    for(final i in indicies) {
+      var group = distances[i];
+      for(final c in group) {
+        final squareOffset = animationOffset +
+            new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
-      // start a fake animation
-      _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
-      delay += 2;
+        // start a fake animation
+        _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
+      }
+      delay += 10;
     }
   }
 
