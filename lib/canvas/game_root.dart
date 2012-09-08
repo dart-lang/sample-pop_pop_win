@@ -74,7 +74,7 @@ class GameRoot extends GameManager {
     final logish = log(theScale) / LN2;
     final exp = logish.floor().toInt();
 
-    // really weird that pow to an int returns an int and not double :-/
+    // BUGBUG: really weird that pow to an int returns an int and not double :-/
     final prettyScale = pow(2.0, exp);
 
     //print("Fix scale at    $theScale");

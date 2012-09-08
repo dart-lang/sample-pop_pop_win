@@ -1,10 +1,15 @@
 class GameElement extends ElementParentImpl {
   static const _edgeOffset = 32;
+  static const _backgroundSize = const dartlib.Size(2048, 1536);
+  static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
+  static const _boardOffset = const dartlib.Vector(352, 96);
 
   final bool _targetMode;
   final dartlib.EventHandle _targetChanged;
 
   int _targetX, _targetY;
+  double _scale;
+  dartlib.Vector _scaledBoardOffset;
 
   Game _game;
   dartlib.Array2d<SquareElement> _elements;
@@ -20,9 +25,7 @@ class GameElement extends ElementParentImpl {
     if(value == null) {
       size = const dartlib.Size(100, 100);
     } else {
-      size = new dartlib.Size(
-          SquareElement._size * value.field.width + _edgeOffset * 2,
-          SquareElement._size * value.field.height + _edgeOffset * 2);
+      _updateSize(value.field.width, value.field.height);
     }
   }
 
@@ -70,12 +73,16 @@ class GameElement extends ElementParentImpl {
 
     // draw target element
     _drawTarget(ctx);
-  }
+
+ }
 
   // TODO: draw this on another layer? Cache?
   void _drawBackground(CanvasRenderingContext2D ctx) {
     final rightBgLoc = SquareElement._size * (_game.field.width -1) + _edgeOffset;
     final bottomBgLoc = SquareElement._size * (_game.field.height -1) + _edgeOffset;
+
+    ctx.save();
+    ctx.translate(_scaledBoardOffset.x, _scaledBoardOffset.y);
 
     drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
 
@@ -102,6 +109,44 @@ class GameElement extends ElementParentImpl {
       drawTextureKeyAt(ctx, 'game_board_side_right.png',
           new dartlib.Coordinate(rightBgLoc, yLoc));
     }
+
+    ctx.restore();
+
+    //
+    // start drawing corners
+    //
+
+    ctx.save();
+    // top left
+    ctx.transform(_scale, 0, 0, _scale, 0, 0);
+    _drawCorner(ctx);
+
+    // right flip
+    ctx.save();
+    ctx.transform(-1 , 0, 0, 1, _backgroundSize.width, 0);
+    _drawCorner(ctx);
+
+    // nested bottom, right flip
+    ctx.transform(1 , 0, 0, -1, 0, _backgroundSize.height);
+    _drawCorner(ctx);
+
+    ctx.restore();
+
+    // bottom left
+    ctx.transform(1 , 0, 0, -1, 0, _backgroundSize.height);
+    _drawCorner(ctx);
+
+    ctx.restore();
+
+    //
+    // end drawing corners
+    //
+  }
+
+  void _drawCorner(CanvasRenderingContext2D ctx) {
+    drawTextureKeyAt(ctx, 'background_top_left.png');
+    drawTextureKeyAt(ctx, 'background_side_left.png',
+        new dartlib.Coordinate(0, _boardOffset.y));
   }
 
   void _drawTarget(CanvasRenderingContext2D ctx) {
@@ -125,6 +170,8 @@ class GameElement extends ElementParentImpl {
       _elements = new dartlib.Array2d<SquareElement>(
           _game.field.width, _game.field.height);
 
+      final offset = _scaledBoardOffset + const dartlib.Coordinate(_edgeOffset, _edgeOffset);
+
       for(int i=0;i<_elements.length;i++) {
         final coords = _elements.getCoordinate(i);
         final se = new SquareElement(coords.Item1, coords.Item2);
@@ -135,8 +182,8 @@ class GameElement extends ElementParentImpl {
         // position the square
         final etx = se.addTransform();
         etx.setToTranslation(
-            _edgeOffset + coords.Item1 * SquareElement._size,
-            _edgeOffset + coords.Item2 * SquareElement._size);
+            offset.x + coords.Item1 * SquareElement._size,
+            offset.y + coords.Item2 * SquareElement._size);
 
         _elements[i] = se;
       }
@@ -200,4 +247,21 @@ class GameElement extends ElementParentImpl {
         _elements.height != _game.field.height;
   }
 
+  void _updateSize(int w, int h) {
+    final sizeX = _getScale(w, _backgroundSize.width, _backgroundHoleSize);
+    final sizeY = _getScale(h, _backgroundSize.height, _backgroundHoleSize);
+
+    size = new dartlib.Size(sizeX, sizeY);
+
+    // NOTE: width wins here. Need to do work to make left and right sides
+    //       scale nicely when not a square
+    _scale = sizeX / _backgroundSize.width;
+    _scaledBoardOffset = _boardOffset.scale(_scale);
+  }
+
+  static num _getScale(int count, num fullSize, num holeSize) {
+    final k = count * SquareElement._size + 2 * _edgeOffset;
+
+    return k * fullSize / holeSize;
+  }
 }

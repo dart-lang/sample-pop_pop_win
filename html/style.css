@@ -2,6 +2,7 @@ body {
   font-family: Helvetica,Arial,'DejaVu Sans','Liberation Sans',Freesans,sans-serif;
   // overflow: hidden;
   text-align: center;
+  background: rgb(180,173,127);	
 }
 
 .container {
