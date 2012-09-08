@@ -81,17 +81,18 @@ class Game {
     return false;
   }
 
-  int reveal(int x, int y) {
+  List<Coordinate> reveal(int x, int y) {
     _ensureStarted();
     require(canReveal(x, y), "Item cannot be revealed.");
     final currentSS = _states.get(x,y);
 
-    int reveals = 0;
+    List<Coordinate> reveals;
 
     // normal reveal
     if(currentSS == SquareState.hidden) {
       if(field.get(x, y)) {
         _setLost();
+        reveals = <Coordinate>[];
       } else {
         reveals = _doReveal(x, y);
       }
@@ -99,7 +100,12 @@ class Game {
       reveals = _doChord(x, y);
     }
     _update();
-    return reveals;
+
+    if(_state == GameState.lost) {
+      return null;
+    } else {
+      return reveals;
+    }
   }
 
   String toBoardString() {
@@ -166,7 +172,7 @@ class Game {
     return false;
   }
 
-  int _doChord(int x, int y) {
+  List<Coordinate> _doChord(int x, int y) {
     // this does not repeat a bunch of validations that have already happened
     // be careful
     final currentSS = _states.get(x,y);
@@ -193,7 +199,7 @@ class Game {
     // for now we assume counts have been checked
     assert(flagged.length == adjCount);
 
-    int reveals = 0;
+    var reveals = <Coordinate>[];
 
     // if any of the hidden are mines, we've failed
     if(failed) {
@@ -203,7 +209,7 @@ class Game {
       for(final i in hidden) {
         final c = field.getCoordinate(i);
         if(canReveal(c.Item1, c.Item2)) {
-          reveals += reveal(c.Item1, c.Item2);
+          reveals.addAll(reveal(c.Item1, c.Item2));
         }
       }
     }
@@ -211,24 +217,24 @@ class Game {
     return reveals;
   }
 
-  int _doReveal(int x, int y) {
+  List<Coordinate> _doReveal(int x, int y) {
     assert(_states.get(x,y) == SquareState.hidden);
     _states.set(x,y,SquareState.revealed);
     _revealsLeft--;
     assert(_revealsLeft >= 0);
-    int revealCount = 1;
+    var reveals = [new Coordinate(x, y)];
     if(_revealsLeft == 0) {
       _setWon();
     } else if (field.getAdjacentCount(x, y) == 0) {
       for(final i in field.getAdjacentIndices(x, y)) {
         if(_states[i] == SquareState.hidden) {
           final c = field.getCoordinate(i);
-          revealCount += _doReveal(c.Item1, c.Item2);
+          reveals.addAll(_doReveal(c.Item1, c.Item2));
           assert(state == GameState.started || state == GameState.won);
         }
       }
     }
-    return revealCount;
+    return reveals;
   }
 
   void _setWon() {

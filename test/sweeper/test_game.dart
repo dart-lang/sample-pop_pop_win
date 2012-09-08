@@ -21,12 +21,6 @@ class TestGame {
     final f = TestField.getSampleField();
     final g = new Game(f);
 
-    // XXXXX2
-    // X7X8X3
-    // X5XXX2
-    // X32321
-    // 110000
-
     expect(g.canToggleFlag(0, 0), isTrue);
     g.setFlag(0, 0, true);
     expect(g.canToggleFlag(0, 0), isTrue);
@@ -41,12 +35,6 @@ class TestGame {
   static void _testCanReveal() {
     final f = TestField.getSampleField();
     final g = new Game(f);
-
-    // XXXXX2
-    // X7X8X3
-    // X5XXX2
-    // X32321
-    // 110000
 
     expect(g.canReveal(0, 0), isTrue);
     g.setFlag(0, 0, true);
@@ -84,7 +72,8 @@ class TestGame {
     expect(g.minesLeft, equals(11));
     expect(g.revealsLeft, equals(startReveals - 1));
 
-    g.reveal(2, 3);
+    var revealed = g.reveal(2, 3);
+    expect(revealed, isNull);
     expect(g.state, equals(GameState.lost));
   }
 
@@ -99,7 +88,9 @@ class TestGame {
     expect(g.revealsLeft, equals(startReveals));
     expect(g.state, equals(GameState.reset));
 
-    g.reveal(2, 3);
+    var revealed = g.reveal(2, 3);
+    expect(revealed, unorderedEquals([const Coordinate(2, 3)]));
+
     g.setFlag(2, 2, true);
 
     expect(g.minesLeft, equals(12));
@@ -220,7 +211,8 @@ class TestGame {
     final g = new Game(TestField.getSampleField());
 
     expect(g.getSquareState(0,0), equals(SquareState.hidden));
-    g.reveal(0, 0);
+    var revealed = g.reveal(0, 0);
+    expect(revealed, isNull);
     expect(g.state, equals(GameState.lost));
     expect(g.getSquareState(0,0), equals(SquareState.mine));
   }
@@ -239,7 +231,7 @@ class TestGame {
           minesLleft--;
           expect(g.minesLeft, equals(minesLleft));
         } else if(g.getSquareState(x, y) == SquareState.hidden) {
-          revealsLeft -= g.reveal(x, y);
+          revealsLeft -= g.reveal(x, y).length;
           expect(revealsLeft, equals(g.revealsLeft));
         } else {
           expect(g.getSquareState(x,y), equals(SquareState.revealed));
