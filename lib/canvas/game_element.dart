@@ -1,4 +1,6 @@
 class GameElement extends ElementParentImpl {
+  static const _edgeOffset = 32;
+
   final bool _targetMode;
   final dartlib.EventHandle _targetChanged;
 
@@ -19,7 +21,8 @@ class GameElement extends ElementParentImpl {
       size = const dartlib.Size(100, 100);
     } else {
       size = new dartlib.Size(
-          SquareElement._size * value.field.width, SquareElement._size * value.field.height);
+          SquareElement._size * value.field.width + _edgeOffset * 2,
+          SquareElement._size * value.field.height + _edgeOffset * 2);
     }
   }
 
@@ -61,8 +64,46 @@ class GameElement extends ElementParentImpl {
 
   void drawOverride(CanvasRenderingContext2D ctx) {
     _updateElements();
+
+    _drawBackground(ctx);
+
+    // draw children via super
     super.drawOverride(ctx);
+
+    // draw target element
     _drawTarget(ctx);
+  }
+
+  // TODO: draw this on another layer? Cache?
+  void _drawBackground(CanvasRenderingContext2D ctx) {
+    final rightBgLoc = SquareElement._size * (_game.field.width -1) + _edgeOffset;
+    final bottomBgLoc = SquareElement._size * (_game.field.height -1) + _edgeOffset;
+
+    drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
+
+    drawTextureKeyAt(ctx, 'game_board_corner_top_right.png',
+        new dartlib.Coordinate(rightBgLoc, 0));
+
+    drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png',
+                     new dartlib.Coordinate(0, bottomBgLoc));
+    drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
+        new dartlib.Coordinate(rightBgLoc, bottomBgLoc));
+
+    for(var i = 1; i < _game.field.width - 1; i++) {
+      final xLoc = SquareElement._size * i + _edgeOffset;
+      drawTextureKeyAt(ctx, 'game_board_side_top.png',
+          new dartlib.Coordinate(xLoc, 0));
+      drawTextureKeyAt(ctx, 'game_board_side_bottom.png',
+          new dartlib.Coordinate(xLoc, bottomBgLoc));
+    }
+
+    for(var i = 1; i < _game.field.height - 1; i++) {
+      final yLoc = SquareElement._size * i + _edgeOffset;
+      drawTextureKeyAt(ctx, 'game_board_side_left.png',
+          new dartlib.Coordinate(0, yLoc));
+      drawTextureKeyAt(ctx, 'game_board_side_right.png',
+          new dartlib.Coordinate(rightBgLoc, yLoc));
+    }
   }
 
   void _drawTarget(CanvasRenderingContext2D ctx) {
@@ -95,7 +136,9 @@ class GameElement extends ElementParentImpl {
 
         // position the square
         final etx = se.addTransform();
-        etx.setToTranslation(coords.Item1 * SquareElement._size, coords.Item2 * SquareElement._size);
+        etx.setToTranslation(
+            _edgeOffset + coords.Item1 * SquareElement._size,
+            _edgeOffset + coords.Item2 * SquareElement._size);
 
         _elements[i] = se;
       }
