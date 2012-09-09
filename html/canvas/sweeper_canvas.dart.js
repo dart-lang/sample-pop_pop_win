@@ -96,8 +96,8 @@ $$.HashMapImplementation = {"":
  get$length: function(){return this._numberOfEntries;},
  forEach$1: function(f){var length$=$.get$length(this._keys);if(typeof length$!=='number')return this.forEach$1$bailout(1,f,length$);for(var i=0;i<length$;++i){var key=$.index(this._keys,i);if(!(key==null)&&!(key===$.CTC14))f.call$2(key,$.index(this._values,i));}},
  forEach$1$bailout: function(state,f,length$){for(var i=0;$.ltB(i,length$);++i){var key=$.index(this._keys,i);if(!(key==null)&&!(key===$.CTC14))f.call$2(key,$.index(this._values,i));}},
- getKeys$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).K);t1.i_1=0;this.forEach$1(new $.HashMapImplementation_getKeys__(list,t1));return list;},
- getValues$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).V);t1.i_10=0;this.forEach$1(new $.HashMapImplementation_getValues__(list,t1));return list;},
+ getKeys$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).K);t1.i_10=0;this.forEach$1(new $.HashMapImplementation_getKeys__(list,t1));return list;},
+ getValues$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).V);t1.i_1=0;this.forEach$1(new $.HashMapImplementation_getValues__(list,t1));return list;},
  containsKey$1: function(key){return !$.eqB(this._probeForLookup$1(key),-1);},
  toString$0: function(){return $.Maps_mapToString(this);},
  HashMapImplementation$0: function(){this._numberOfEntries=0;this._numberOfDeleted=0;this._loadLimit=$.HashMapImplementation__computeLoadLimit(8);this._keys=$.ListImplementation_List(8);this._values=$.ListImplementation_List(8,$.getRuntimeTypeInfo(this).V);},
@@ -151,8 +151,8 @@ $$.LinkedHashMapImplementation = {"":
  operator$index$1: function(key){var entry=$.index(this._map,key);if(entry==null)return;return entry.get$element().get$value();},
  remove$1: function(key){var entry=this._map.remove$1(key);if(entry==null)return;entry.remove$0();return entry.get$element().get$value();},
  putIfAbsent$2: function(key,ifAbsent){var value=this.operator$index$1(key);if(this.operator$index$1(key)==null&&this.containsKey$1(key)!==true){value=ifAbsent.call$0();this.operator$indexSet$2(key,value);}return value;},
- getKeys$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).K);t1.index_1=0;$.forEach(this._list,new $.LinkedHashMapImplementation_getKeys__(list,t1));return list;},
- getValues$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).V);t1.index_10=0;$.forEach(this._list,new $.LinkedHashMapImplementation_getValues__(list,t1));return list;},
+ getKeys$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).K);t1.index_10=0;$.forEach(this._list,new $.LinkedHashMapImplementation_getKeys__(list,t1));return list;},
+ getValues$0: function(){var t1={};var list=$.ListImplementation_List($.get$length(this),$.getRuntimeTypeInfo(this).V);t1.index_1=0;$.forEach(this._list,new $.LinkedHashMapImplementation_getValues__(list,t1));return list;},
  forEach$1: function(f){$.forEach(this._list,new $.LinkedHashMapImplementation_forEach__(f));},
  containsKey$1: function(key){return this._map.containsKey$1(key);},
  get$length: function(){return $.get$length(this._map);},
@@ -1241,7 +1241,6 @@ $$.Enumerable = {"":
  single$0: function() {
   return this.single$1(null)
 },
- group$1: function(keyFunc){return $.Grouping_Grouping(this,keyFunc);},
  forEach$1: function(f){for(var t1=$.iterator(this);t1.hasNext$0()===true;)f.call$1(t1.next$0());},
  toList$0: function(){return $.ListImplementation_List$from(this,$.getRuntimeTypeInfo(this).T);},
  toString$0: function(){return '['+$.S(this.join$0())+']';},
@@ -1319,19 +1318,6 @@ $$.ReadOnlyCollection = {"":
  "super": "ListBase",
  get$length: function(){return this._items.length;},
  operator$index$1: function(index){var t1=this._items;if(index!==(index|0))throw $.iae(index);if(index<0||index>=t1.length)throw $.ioore(index);return t1[index];}
-};
-
-$$.Grouping = {"":
- ["_lib3_values"],
- "super": "Object",
- containsKey$1: function(key){return this._lib3_values.containsKey$1(key);},
- operator$index$1: function(key){return $.index(this._lib3_values,key);},
- forEach$1: function(f){return $.forEach(this._lib3_values,f);},
- getKeys$0: function(){return this._lib3_values.getKeys$0();},
- get$length: function(){return $.get$length(this._lib3_values);},
- get$isEmpty: function(){return $.isEmpty(this._lib3_values);},
- isEmpty$0: function() { return this.get$isEmpty().call$0(); },
- toString$0: function(){return $.toString(this._lib3_values);}
 };
 
 $$.NoneHashMap = {"":
@@ -1535,8 +1521,8 @@ $$.GameElement = {"":
  _drawTarget$1: function(ctx){var t1=this._targetX;if(!(t1==null)){var targetLoc=$.Vector$(t1,this._targetY).scale$1(80);ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');$.CanvasUtil_centeredCircle(ctx,$.add(targetLoc.get$x(),40),$.add(targetLoc.get$y(),40),40);ctx.fill$0();}},
  _updateElements$0: function(){if(this._game==null)this._elements=null;else if(this.get$_elementsNeedUpdate()===true){this._elements=$.Array2d_Array2d(this._game.get$field().get$width(),this._game.get$field().get$height(),null,'SquareElement');var offset=$.add(this._scaledBoardOffset,$.CTC27);if(typeof offset!=='number')return this._updateElements$0$bailout(1,offset);for(var i=0;$.ltB(i,$.get$length(this._elements));++i){var coords=this._elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_squareClicked());se.addTransform$0().setToTranslation$2($.add(offset.get$x(),$.mul(coords.get$Item1(),80)),$.add(offset.get$y(),$.mul(coords.get$Item2(),80)));$.indexSet(this._elements,i,se);}this._animationLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());}},
  _updateElements$0$bailout: function(state,env0){switch(state){case 1:offset=env0;break;}switch(state){case 0:case 1:if(state===0&&this._game==null)this._elements=null;else switch(state){case 0:case 1:if(state===1||state===0&&this.get$_elementsNeedUpdate()===true)switch(state){case 0:this._elements=$.Array2d_Array2d(this._game.get$field().get$width(),this._game.get$field().get$height(),null,'SquareElement');var offset=$.add(this._scaledBoardOffset,$.CTC27);case 1:state=0;for(var i=0;$.ltB(i,$.get$length(this._elements));++i){var coords=this._elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_squareClicked());se.addTransform$0().setToTranslation$2($.add(offset.get$x(),$.mul(coords.get$Item1(),80)),$.add(offset.get$y(),$.mul(coords.get$Item2(),80)));$.indexSet(this._elements,i,se);}this._animationLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());}}}},
- _drawPop$2: function(start,reveals){var distances=$.$$(reveals).group$1(new $.GameElement__drawPop_anon0(start));if(typeof distances!=='string'&&(typeof distances!=='object'||distances===null||distances.constructor!==Array&&!distances.is$JavaScriptIndexingBehavior()))return this._drawPop$2$bailout(1,distances);var indicies=$.ListImplementation_List$from(distances.getKeys$0(),'int');$.sort(indicies,new $.GameElement__drawPop_anon());var delayDelta=$.tdiv(60,indicies.length);for(var t1=$.iterator(indicies),t2=this._animationLayer,delay=0;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=distances.length)throw $.ioore(t3);for(var t4=$.iterator(distances[t3]);t4.hasNext$0()===true;){t3=t4.next$0();var t5=t3.get$x();if(typeof t5!=='number')throw $.iae(t5);t5=80*t5;t3=t3.get$y();if(typeof t3!=='number')throw $.iae(t3);t2.add$1($.TextAniRequest$('balloon_pop',29,$.CTC37.operator$add$1($.Vector$(t5,80*t3)),delay));}delay+=delayDelta;}},
- _drawPop$2$bailout: function(state,distances){var indicies=$.ListImplementation_List$from(distances.getKeys$0(),'int');$.sort(indicies,new $.GameElement__drawPop_anon());var delayDelta=$.tdiv(60,indicies.length);for(var t1=$.iterator(indicies),t2=this._animationLayer,delay=0;t1.hasNext$0()===true;){for(var t3=$.iterator($.index(distances,t1.next$0()));t3.hasNext$0()===true;){var t4=t3.next$0();var t5=t4.get$x();if(typeof t5!=='number')throw $.iae(t5);t5=80*t5;t4=t4.get$y();if(typeof t4!=='number')throw $.iae(t4);$.add$1(t2,$.TextAniRequest$('balloon_pop',29,$.CTC37.operator$add$1($.Vector$(t5,80*t4)),delay));}delay+=delayDelta;}},
+ _drawPop$2: function(start,reveals){var distances=$.$$(reveals).select$1(new $.GameElement__drawPop_anon(start)).toList$0();$.sort(distances,new $.GameElement__drawPop_anon0());var closest=$.index(distances,0).get$Item1();if(typeof closest!=='number')return this._drawPop$2$bailout(1,closest,distances);var delta=$.sub($.index(distances,$.sub($.get$length(distances),1)).get$Item1(),closest);if(typeof delta!=='number')throw $.iae(delta);var frameScale=30/delta;if(frameScale===(1/0))frameScale=0;for(var t1=$.iterator(distances),t2=this._animationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var c=t3.get$Item2();var t4=c.get$x();if(typeof t4!=='number')throw $.iae(t4);t4=80*t4;var t5=c.get$y();if(typeof t5!=='number')throw $.iae(t5);t2.add$1($.TextAniRequest$('balloon_pop',29,$.CTC37.operator$add$1($.Vector$(t4,80*t5)),$.toInt($.mul($.sub(t3.get$Item1(),closest),frameScale))));}},
+ _drawPop$2$bailout: function(state,closest,distances){var delta=$.sub($.index(distances,$.sub($.get$length(distances),1)).get$Item1(),closest);if(typeof delta!=='number')throw $.iae(delta);var frameScale=30/delta;if(frameScale===(1/0))frameScale=0;for(var t1=$.iterator(distances),t2=this._animationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var c=t3.get$Item2();var t4=c.get$x();if(typeof t4!=='number')throw $.iae(t4);t4=80*t4;var t5=c.get$y();if(typeof t5!=='number')throw $.iae(t5);$.add$1(t2,$.TextAniRequest$('balloon_pop',29,$.CTC37.operator$add$1($.Vector$(t4,80*t5)),$.toInt($.mul($.sub(t3.get$Item1(),closest),frameScale))));}},
  _squareClicked$1: function(args){if(this._game.get$gameEnded()!==true){var se=args.get$element();if(this._targetMode===true)this._target$2(se.get$x(),se.get$y());else this._click$3(se.get$x(),se.get$y(),args.get$shiftKey());}},
  get$_squareClicked: function() { return new $.BoundClosure(this, '_squareClicked$1'); },
  _target$2: function(x,y){this._targetX=x;this._targetY=y;this._targetChanged.fireEvent$1(null);this.invalidateDraw$0();},
@@ -1884,52 +1870,16 @@ $$.ListBase_iterator_anon = {"":
  call$1: function(i){return $.index(this.this_0,i);}
 };
 
-$$.GameElement__drawPop_anon0 = {"":
+$$.GameElement__drawPop_anon = {"":
  ["start_0"],
  "super": "Closure",
- call$1: function(r){return $.toInt($.get$length($.sub(r,this.start_0)));}
+ call$1: function(r){return $.Tuple$($.get$length($.sub(this.start_0,r)),r,'num','Coordinate');}
 };
 
-$$.GameElement__drawPop_anon = {"":
+$$.GameElement__drawPop_anon0 = {"":
  [],
  "super": "Closure",
- call$2: function(a,b){return $.compareTo(a,b);}
-};
-
-$$.Grouping_Grouping_anon = {"":
- [],
- "super": "Closure",
- call$1: function(v){return v;}
-};
-
-$$.Grouping_Grouping_anon0 = {"":
- ["V_0"],
- "super": "Closure",
- call$0: function(){return $.ListImplementation_List(null,this.V_0);}
-};
-
-$$._StorageImpl_getKeys_anon = {"":
- ["keys_0"],
- "super": "Closure",
- call$2: function(k,v){return $.add$1(this.keys_0,k);}
-};
-
-$$.HashMapImplementation_getKeys__ = {"":
- ["list_2", "box_0"],
- "super": "Closure",
- call$2: function(key,value){var t1=this.list_2;var t2=this.box_0;var t3=t2.i_1;t2.i_1=$.add(t3,1);$.indexSet(t1,t3,key);}
-};
-
-$$.LinkedHashMapImplementation_getKeys__ = {"":
- ["list_2", "box_0"],
- "super": "Closure",
- call$1: function(entry){var t1=this.list_2;var t2=this.box_0;var t3=t2.index_1;t2.index_1=$.add(t3,1);$.indexSet(t1,t3,entry.get$key());}
-};
-
-$$.NoneHashMap_getKeys_anon = {"":
- [],
- "super": "Closure",
- call$1: function(t){return t.get$Item1();}
+ call$2: function(a,b){return $.compareTo(a.get$Item1(),b.get$Item1());}
 };
 
 $$._ElementImpl_rect_anon = {"":
@@ -2103,13 +2053,13 @@ $$._StorageImpl_getValues_anon = {"":
 $$.HashMapImplementation_getValues__ = {"":
  ["list_2", "box_0"],
  "super": "Closure",
- call$2: function(key,value){var t1=this.list_2;var t2=this.box_0;var t3=t2.i_10;t2.i_10=$.add(t3,1);$.indexSet(t1,t3,value);}
+ call$2: function(key,value){var t1=this.list_2;var t2=this.box_0;var t3=t2.i_1;t2.i_1=$.add(t3,1);$.indexSet(t1,t3,value);}
 };
 
 $$.LinkedHashMapImplementation_getValues__ = {"":
  ["list_2", "box_0"],
  "super": "Closure",
- call$1: function(entry){var t1=this.list_2;var t2=this.box_0;var t3=t2.index_10;t2.index_10=$.add(t3,1);$.indexSet(t1,t3,entry.get$value());}
+ call$1: function(entry){var t1=this.list_2;var t2=this.box_0;var t3=t2.index_1;t2.index_1=$.add(t3,1);$.indexSet(t1,t3,entry.get$value());}
 };
 
 $$.NoneHashMap_getValues_anon = {"":
@@ -2128,6 +2078,30 @@ $$._NativeJsSendPort_send_anon0 = {"":
  ["this_7", "box_0", "shouldSerialize_6"],
  "super": "Closure",
  call$0: function(){var t1=this.this_7;if(!(t1.get$_receivePort().get$_callback()==null)){if(this.shouldSerialize_6===true){var t2=this.box_0;t2.msg_1=$._deserializeMessage(t2.msg_1);t2.reply_2=$._deserializeMessage(t2.reply_2);}t1=t1.get$_receivePort();t2=this.box_0;t1._callback$2(t2.msg_1,t2.reply_2);}}
+};
+
+$$._StorageImpl_getKeys_anon = {"":
+ ["keys_0"],
+ "super": "Closure",
+ call$2: function(k,v){return $.add$1(this.keys_0,k);}
+};
+
+$$.HashMapImplementation_getKeys__ = {"":
+ ["list_2", "box_0"],
+ "super": "Closure",
+ call$2: function(key,value){var t1=this.list_2;var t2=this.box_0;var t3=t2.i_10;t2.i_10=$.add(t3,1);$.indexSet(t1,t3,key);}
+};
+
+$$.LinkedHashMapImplementation_getKeys__ = {"":
+ ["list_2", "box_0"],
+ "super": "Closure",
+ call$1: function(entry){var t1=this.list_2;var t2=this.box_0;var t3=t2.index_10;t2.index_10=$.add(t3,1);$.indexSet(t1,t3,entry.get$key());}
+};
+
+$$.NoneHashMap_getKeys_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(t){return t.get$Item1();}
 };
 
 $$._Copier_visitMap_anon = {"":
@@ -2371,17 +2345,15 @@ $.getRuntimeTypeInfo = function(target){if(target==null)return;var res=target.bu
 
 $._SVGElementInstanceEventsImpl$ = function(_ptr){return new $._SVGElementInstanceEventsImpl(_ptr);};
 
+$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
+
 $.Primitives_getDay = function(receiver){return receiver.isUtc===true?$.Primitives_lazyAsJsDate(receiver).getUTCDate():$.Primitives_lazyAsJsDate(receiver).getDate();};
 
 $.populateTextures = function(textures){$._textures=textures;};
 
 $._MainManagerStub$ = function(){return new $._MainManagerStub();};
 
-$.Grouping$_internal = function(_values,K,V){var t1=new $.Grouping(_values);$.setRuntimeTypeInfo(t1,{ 'K': K, 'V': V });return t1;};
-
 $.regExpTest = function(regExp,str){return $.regExpGetNative(regExp).test(str);};
-
-$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
 $.drawTextureAt = function(ctx,location$,texture,imageElement){ctx.save$0();var tx=$.AffineTransform$(1,0,0,1,0,0);tx.translate$2(location$.x,location$.y);var theFrame=texture.get$frame();var source=texture.get$sourceColorRect().get$topLeft();tx.translate$2(source.get$x(),source.get$y());if(texture.get$rotated()===true){var t1=theFrame.get$height();if(typeof t1!=='number')throw $.iae(t1);t1=0.5*t1;var t2=theFrame.get$height();if(typeof t2!=='number')throw $.iae(t2);tx.rotate$3(-1.5707963267948966,t1,0.5*t2);var theFrame0=$.Rect$(theFrame.get$left(),theFrame.get$top(),theFrame.get$height(),theFrame.get$width());theFrame=theFrame0;}$.CanvasUtil_transform(ctx,tx);$.CanvasUtil_drawImage(ctx,imageElement,theFrame,null);ctx.restore$0();};
 
@@ -2438,8 +2410,6 @@ $.pow = function(value,exponent){$.checkNum(value);$.checkNum(exponent);return M
 $.S = function(value){var res=$.toString(value);if(!(typeof res==='string'))throw $.$$throw($.IllegalArgumentException$(value));return res;};
 
 $._DoubleLinkedQueueIterator$ = function(_sentinel,E){var t1=new $._DoubleLinkedQueueIterator(_sentinel,null);$.setRuntimeTypeInfo(t1,{ 'E': E });t1._DoubleLinkedQueueIterator$1(_sentinel);return t1;};
-
-$.Grouping_Grouping = function(source,keyFunc,K,V){if(keyFunc==null)keyFunc=new $.Grouping_Grouping_anon();var map=$.NoneHashMap$(K,'List<V>');for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();$.add$1(map.putIfAbsent$2(keyFunc.call$1(t2),new $.Grouping_Grouping_anon0(V)),t2);}return $.Grouping$_internal(map);};
 
 $.$$ = function(source){if(typeof source==='object'&&source!==null&&!!source.is$Enumerable)return source;else return $.Enumerable_Enumerable(source);};
 
@@ -3151,6 +3121,7 @@ $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $.GameState_lost = Isolate.$isolateProperties.CTC53;
 $._JsonParser_LAST_ASCII = 125;
+$.double_INFINITY = (1/0);
 $._JsonParser_CHAR_T = 116;
 $.SquareState_revealed = Isolate.$isolateProperties.CTC36;
 $.GameState_reset = Isolate.$isolateProperties.CTC49;
@@ -3383,7 +3354,6 @@ $.$defineNativeClass('ClientRectList', ["length?"], {
 });
 
 _ConsoleImpl = (typeof console == 'undefined' ? {} : console);
-_ConsoleImpl.group$1 = function(arg){return this.group(arg);};
 $.$defineNativeClass('HTMLContentElement', [], {
  select$1: function(arg0) { return this.select.call$1(arg0); },
  is$Element: function() { return true; }

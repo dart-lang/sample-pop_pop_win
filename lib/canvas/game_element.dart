@@ -212,25 +212,31 @@ class GameElement extends ElementParentImpl {
   void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
     assert(reveals.length > 0);
     const animationOffset = const dartlib.Vector(-88, -88);
-    var distances = dartlib.$(reveals)
-        .group((r) => (r - start).length.toInt());
+    final distances = dartlib.$(reveals).select((r) =>
+        new dartlib.Tuple<num, dartlib.Coordinate>((start - r).length, r))
+        .toList();
 
-    var indicies = new List<int>.from(distances.getKeys());
-    indicies.sort((a,b) => a.compareTo(b));
+    distances.sort((a,b) => a.Item1.compareTo(b.Item1));
 
-    int delayDelta = 60 ~/ indicies.length;
+    final closest = distances[0].Item1;
+    final farthest = distances[distances.length-1].Item1;
 
-    int delay = 0;
-    for(final i in indicies) {
-      var group = distances[i];
-      for(final c in group) {
-        final squareOffset = animationOffset +
-            new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
+    final delta = farthest - closest;
 
-        // start a fake animation
-        _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
-      }
-      delay += delayDelta;
+    var frameScale = 30.0/delta;
+    if(frameScale == double.INFINITY) {
+      frameScale = 0;
+    }
+
+    for(final t in distances) {
+      final c = t.Item2;
+      final squareOffset = animationOffset +
+          new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
+
+      final delay = ((t.Item1 - closest) * frameScale).toInt();
+
+      // start a fake animation
+      _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
     }
   }
 
