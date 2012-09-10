@@ -5,6 +5,10 @@ class GameElement extends ElementParentImpl {
   static const _boardOffset = const dartlib.Vector(352, 96);
   static const _popExplodeAnimationOffset = const dartlib.Vector(-88, -88);
 
+  static const _dartAnimationOffset =
+      const dartlib.Vector(-1065 + SquareElement._size ~/ 2,
+          -815 + SquareElement._size ~/ 2);
+
 
   final TextureAnimationElement _animationLayer;
   final bool _targetMode;
@@ -91,7 +95,6 @@ class GameElement extends ElementParentImpl {
 
     // draw target element
     _drawTarget(ctx);
-
  }
 
   // TODO: draw this on another layer? Cache?
