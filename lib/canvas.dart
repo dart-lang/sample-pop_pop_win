@@ -66,3 +66,39 @@ void drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,
   CanvasUtil.drawImage(ctx, imageElement, theFrame);
   ctx.restore();
 }
+
+// TODO: move to dartlib
+dartlib.Enumerable<int> range(int start, int count) {
+  assert(start != null);
+  assert(count >= 0);
+  return dartlib.$(new _RangeIterable(start, count));
+}
+
+class _RangeIterable implements Iterable<int> {
+  final int _start;
+  final int _count;
+
+  const _RangeIterable(this._start, this._count);
+
+  Iterator<int> iterator() => new _RangeIterator(_start, _count);
+}
+
+class _RangeIterator implements Iterator<int> {
+  final int _start;
+  final int _count;
+
+  int _current = 0;
+
+  _RangeIterator(this._start, this._count);
+
+  bool hasNext() => _current < _count;
+
+  int next() {
+    assert(hasNext());
+    final val = _start + _current;
+    _current++;
+    return val;
+  }
+}
+
+

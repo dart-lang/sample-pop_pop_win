@@ -211,8 +211,19 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
-    assert(reveals != null);
+  void _drawPop(dartlib.Coordinate start, [Iterable<dartlib.Coordinate> reveals = null]) {
+    if(reveals == null) {
+      assert(game.state == GameState.lost);
+      reveals = range(0, game.field.length)
+          .select((i) {
+            final t = game.field.getCoordinate(i);
+            final c = new dartlib.Coordinate(t.Item1, t.Item2);
+            return new dartlib.Tuple(c, game.getSquareState(c.x, c.y));
+          })
+          .where((t2) => t2.Item2 == SquareState.mine)
+          .select((t2) => t2.Item1)
+          .toList();
+    }
 
     for(final c in reveals) {
       final squareOffset = _popExplodeAnimationOffset +
@@ -294,6 +305,7 @@ class GameElement extends ElementParentImpl {
     }
 
     if(reveals != null && reveals.length > 0) {
+      assert(game.state != GameState.lost);
       if(!alt) {
         // if it was a normal click, the first item should be the clicked item
         var first = reveals[0];
@@ -301,6 +313,8 @@ class GameElement extends ElementParentImpl {
         assert(first.y == y);
       }
       _drawPop(new dartlib.Coordinate(x, y), reveals);
+    } else if(game.state == GameState.lost) {
+      _drawPop(new dartlib.Coordinate(x, y));
     }
   }
 
