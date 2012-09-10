@@ -214,7 +214,7 @@ class GameElement extends ElementParentImpl {
   void _drawPop(dartlib.Coordinate start, [Iterable<dartlib.Coordinate> reveals = null]) {
     if(reveals == null) {
       assert(game.state == GameState.lost);
-      reveals = range(0, game.field.length)
+      reveals = new dartlib.NumberEnumerable.fromRange(0, game.field.length)
           .select((i) {
             final t = game.field.getCoordinate(i);
             final c = new dartlib.Coordinate(t.Item1, t.Item2);
