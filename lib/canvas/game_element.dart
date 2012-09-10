@@ -233,6 +233,7 @@ class GameElement extends ElementParentImpl {
         case SquareState.mine:
           texturePrefix = 'balloon_explode';
           frameCount = 25;
+          break;
         default:
           throw 'not supported';
       }
