@@ -4,17 +4,18 @@ class GameElement extends ElementParentImpl {
   static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
   static const _boardOffset = const dartlib.Vector(352, 96);
   static const _popExplodeAnimationOffset = const dartlib.Vector(-88, -88);
+  static const _popAnimationHitFrame = 12;
 
   static const _dartAnimationOffset =
       const dartlib.Vector(-1065 + SquareElement._size ~/ 2,
           -815 + SquareElement._size ~/ 2);
 
 
-  final TextureAnimationElement _animationLayer;
+  final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
   final bool _targetMode;
   final dartlib.EventHandle _targetChanged;
 
-  dartlib.AffineTransform _animationLayerTx;
+  dartlib.AffineTransform _popLayerTx, _dartLayerTx;
   int _targetX, _targetY;
   double _scale;
   dartlib.Vector _scaledBoardOffset;
@@ -23,11 +24,15 @@ class GameElement extends ElementParentImpl {
   dartlib.Array2d<SquareElement> _elements;
 
   GameElement(this._targetMode) :
-    _animationLayer = new TextureAnimationElement(0, 0),
+    _popAnimationLayer = new TextureAnimationElement(0, 0),
+    _dartAnimationLayer = new TextureAnimationElement(0, 0),
     _targetChanged = new dartlib.EventHandle(),
     super(100, 100) {
-    _animationLayer.registerParent(this);
-    _animationLayerTx = _animationLayer.addTransform();
+    _popAnimationLayer.registerParent(this);
+    _popLayerTx = _popAnimationLayer.addTransform();
+
+    _dartAnimationLayer.registerParent(this);
+    _dartLayerTx = _dartAnimationLayer.addTransform();
   }
 
   Game get game => _game;
@@ -66,7 +71,7 @@ class GameElement extends ElementParentImpl {
   dartlib.EventRoot get targetChanged => _targetChanged;
 
   int get visualChildCount {
-    var count = 1;
+    var count = 2;
     if(_elements != null) {
       count +=_elements.length;
     }
@@ -81,8 +86,14 @@ class GameElement extends ElementParentImpl {
       index -= _elements.length;
     }
 
-    assert(index == 0);
-    return _animationLayer;
+    switch(index) {
+      case 0:
+        return _popAnimationLayer;
+      case 1:
+        return _dartAnimationLayer;
+      default:
+        throw 'oops';
+    }
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
@@ -210,7 +221,8 @@ class GameElement extends ElementParentImpl {
       }
 
       // update the animation layer
-      _animationLayerTx.setToTranslation(offset.x, offset.y);
+      _popLayerTx.setToTranslation(offset.x, offset.y);
+      _dartLayerTx.setToTranslation(offset.x, offset.y);
     }
   }
 
@@ -232,7 +244,7 @@ class GameElement extends ElementParentImpl {
       final squareOffset = _popExplodeAnimationOffset +
           new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
-      final delay = ((c - start).length * 4).toInt();
+      final delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
 
       final ss = game.getSquareState(start.x, start.y);
 
@@ -252,8 +264,16 @@ class GameElement extends ElementParentImpl {
           throw 'not supported';
       }
 
-      _animationLayer.add(new TextAniRequest(texturePrefix, frameCount, squareOffset, delay));
+      _popAnimationLayer.add(new TextAniRequest(texturePrefix, frameCount, squareOffset, delay));
     }
+  }
+
+  void _addDartAnimation(dartlib.Coordinate point) {
+    final squareOffset = _dartAnimationOffset +
+        new dartlib.Vector(SquareElement._size * point.x, SquareElement._size * point.y);
+
+    _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 56, squareOffset));
+    _dartAnimationLayer.add(new TextAniRequest('dart_fly', 56, squareOffset));
   }
 
   void _squareClicked(ElementMouseEventArgs args) {
@@ -298,11 +318,13 @@ class GameElement extends ElementParentImpl {
         _toggleFlag(x, y);
       } else if(ss == SquareState.revealed) {
         if(game.canReveal(x, y)) {
+          _addDartAnimation(new dartlib.Coordinate(x, y));
           reveals = game.reveal(x, y);
         }
       }
     } else {
       if(ss == SquareState.hidden) {
+        _addDartAnimation(new dartlib.Coordinate(x, y));
         reveals = game.reveal(x, y);
       }
     }
