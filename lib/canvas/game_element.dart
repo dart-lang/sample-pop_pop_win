@@ -226,7 +226,7 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _drawPop(dartlib.Coordinate start, [Iterable<dartlib.Coordinate> reveals = null]) {
+  void _startPopAnimation(dartlib.Coordinate start, [Iterable<dartlib.Coordinate> reveals = null]) {
     if(reveals == null) {
       assert(game.state == GameState.lost);
       reveals = new dartlib.NumberEnumerable.fromRange(0, game.field.length)
@@ -268,12 +268,14 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _addDartAnimation(dartlib.Coordinate point) {
-    final squareOffset = _dartAnimationOffset +
-        new dartlib.Vector(SquareElement._size * point.x, SquareElement._size * point.y);
+  void _startDartAnimation(Iterable<dartlib.Coordinate> points) {
+    for(final point in points) {
+      final squareOffset = _dartAnimationOffset +
+          new dartlib.Vector(SquareElement._size * point.x, SquareElement._size * point.y);
 
-    _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 56, squareOffset));
-    _dartAnimationLayer.add(new TextAniRequest('dart_fly', 56, squareOffset));
+      _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 56, squareOffset));
+      _dartAnimationLayer.add(new TextAniRequest('dart_fly', 56, squareOffset));
+    }
   }
 
   void _squareClicked(ElementMouseEventArgs args) {
@@ -318,13 +320,24 @@ class GameElement extends ElementParentImpl {
         _toggleFlag(x, y);
       } else if(ss == SquareState.revealed) {
         if(game.canReveal(x, y)) {
-          _addDartAnimation(new dartlib.Coordinate(x, y));
+          // get adjacent ballons
+          final adjHidden = dartlib.$(game.field.getAdjacentIndices(x, y))
+              .select((i) {
+                final t = game.field.getCoordinate(i);
+                return new dartlib.Coordinate(t.Item1, t.Item2);
+              })
+              .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
+              .toList();
+
+          assert(adjHidden.length > 0);
+
+          _startDartAnimation(adjHidden);
           reveals = game.reveal(x, y);
         }
       }
     } else {
       if(ss == SquareState.hidden) {
-        _addDartAnimation(new dartlib.Coordinate(x, y));
+        _startDartAnimation([new dartlib.Coordinate(x, y)]);
         reveals = game.reveal(x, y);
       }
     }
@@ -337,9 +350,9 @@ class GameElement extends ElementParentImpl {
         assert(first.x == x);
         assert(first.y == y);
       }
-      _drawPop(new dartlib.Coordinate(x, y), reveals);
+      _startPopAnimation(new dartlib.Coordinate(x, y), reveals);
     } else if(game.state == GameState.lost) {
-      _drawPop(new dartlib.Coordinate(x, y));
+      _startPopAnimation(new dartlib.Coordinate(x, y));
     }
   }
 
