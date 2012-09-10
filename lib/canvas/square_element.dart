@@ -33,8 +33,6 @@ class SquareElement extends PElement {
     if(textureName == null) {
       ctx.fillStyle = _fillStyle;
       ctx.fillRect(0, 0, width, height);
-      ctx.strokeStyle = 'rgb(153, 153, 153)';
-      ctx.strokeRect(0.5, 0.5, width, height, 1);
     } else {
       drawTextureKeyAt(ctx, textureName);
     }
