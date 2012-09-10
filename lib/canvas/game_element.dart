@@ -212,29 +212,13 @@ class GameElement extends ElementParentImpl {
   }
 
   void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
-    assert(reveals.length > 0);
-    final distances = dartlib.$(reveals).select((r) =>
-        new dartlib.Tuple<num, dartlib.Coordinate>((start - r).length, r))
-        .toList();
+    assert(reveals != null);
 
-    distances.sort((a,b) => a.Item1.compareTo(b.Item1));
-
-    final closest = distances[0].Item1;
-    final farthest = distances[distances.length-1].Item1;
-
-    final delta = farthest - closest;
-
-    var frameScale = 30.0/delta;
-    if(frameScale == double.INFINITY) {
-      frameScale = 0;
-    }
-
-    for(final t in distances) {
-      final c = t.Item2;
+    for(final c in reveals) {
       final squareOffset = _popExplodeAnimationOffset +
           new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
-      final delay = ((t.Item1 - closest) * frameScale).toInt();
+      final delay = ((c - start).length * 4).toInt();
 
       final ss = game.getSquareState(start.x, start.y);
 
@@ -308,8 +292,7 @@ class GameElement extends ElementParentImpl {
       }
     }
 
-    if(reveals != null) {
-      assert(reveals.length > 0);
+    if(reveals != null && reveals.length > 0) {
       if(!alt) {
         // if it was a normal click, the first item should be the clicked item
         var first = reveals[0];
