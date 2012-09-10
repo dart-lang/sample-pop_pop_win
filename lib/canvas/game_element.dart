@@ -3,6 +3,8 @@ class GameElement extends ElementParentImpl {
   static const _backgroundSize = const dartlib.Size(2048, 1536);
   static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
   static const _boardOffset = const dartlib.Vector(352, 96);
+  static const _popExplodeAnimationOffset = const dartlib.Vector(-88, -88);
+
 
   final TextureAnimationElement _animationLayer;
   final bool _targetMode;
@@ -211,7 +213,6 @@ class GameElement extends ElementParentImpl {
 
   void _drawPop(dartlib.Coordinate start, List<dartlib.Coordinate> reveals) {
     assert(reveals.length > 0);
-    const animationOffset = const dartlib.Vector(-88, -88);
     final distances = dartlib.$(reveals).select((r) =>
         new dartlib.Tuple<num, dartlib.Coordinate>((start - r).length, r))
         .toList();
@@ -230,13 +231,29 @@ class GameElement extends ElementParentImpl {
 
     for(final t in distances) {
       final c = t.Item2;
-      final squareOffset = animationOffset +
+      final squareOffset = _popExplodeAnimationOffset +
           new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
       final delay = ((t.Item1 - closest) * frameScale).toInt();
 
-      // start a fake animation
-      _animationLayer.add(new TextAniRequest('balloon_pop', 29, squareOffset, delay));
+      final ss = game.getSquareState(start.x, start.y);
+
+      String texturePrefix;
+      int frameCount;
+
+      switch(ss) {
+        case SquareState.revealed:
+          texturePrefix = 'balloon_pop';
+          frameCount = 29;
+          break;
+        case SquareState.mine:
+          texturePrefix = 'balloon_explode';
+          frameCount = 25;
+        default:
+          throw 'not supported';
+      }
+
+      _animationLayer.add(new TextAniRequest(texturePrefix, frameCount, squareOffset, delay));
     }
   }
 
