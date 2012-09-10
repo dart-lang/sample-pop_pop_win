@@ -1,6 +1,7 @@
 class SquareElement extends PElement {
   static const int _size = 80;
   static const String _textureName = "balloon.png";
+  static const String _flagName = 'balloon_tagged_!.png';
   static const List<String> _numberMap = const["game_board_center",
                                                "number_one", "number_two",
                                                "number_three", "number_four",
@@ -17,6 +18,9 @@ class SquareElement extends PElement {
     switch(_squareState) {
       case SquareState.hidden:
         drawTextureKeyAt(ctx, _textureName);
+        break;
+      case SquareState.flagged:
+        drawTextureKeyAt(ctx, _flagName);
         break;
       case SquareState.revealed:
         final adjCount = _adjacentCount;
@@ -45,8 +49,6 @@ class SquareElement extends PElement {
 
   Dynamic get _fillStyle {
     switch(_squareState) {
-      case SquareState.flagged:
-        return 'orange';
       case SquareState.mine:
         return 'red';
       case SquareState.safe:
