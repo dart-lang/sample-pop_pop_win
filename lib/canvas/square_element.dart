@@ -53,8 +53,6 @@ class SquareElement extends PElement {
 
   Dynamic get _fillStyle {
     switch(_squareState) {
-      case SquareState.mine:
-        return 'red';
       case SquareState.safe:
         return 'green';
       default:
