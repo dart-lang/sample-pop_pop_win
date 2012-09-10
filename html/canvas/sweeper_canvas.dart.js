@@ -11,7 +11,6 @@ $$.DateImplementation = {"":
  operator$le$1: function(other){return $.le(this.millisecondsSinceEpoch,other.get$millisecondsSinceEpoch());},
  operator$gt$1: function(other){return $.gt(this.millisecondsSinceEpoch,other.get$millisecondsSinceEpoch());},
  operator$ge$1: function(other){return $.ge(this.millisecondsSinceEpoch,other.get$millisecondsSinceEpoch());},
- compareTo$1: function(other){return $.compareTo(this.millisecondsSinceEpoch,other.get$millisecondsSinceEpoch());},
  hashCode$0: function(){return this.millisecondsSinceEpoch;},
  toString$0: function(){var t1=new $.DateImplementation_toString_fourDigits();var t2=new $.DateImplementation_toString_threeDigits();var t3=new $.DateImplementation_toString_twoDigits();var y=t1.call$1(this.get$year());var m=t3.call$1(this.get$month());var d=t3.call$1(this.get$day());var h=t3.call$1(this.get$hour());var min=t3.call$1(this.get$minute());var sec=t3.call$1(this.get$second());var ms=t2.call$1(this.get$millisecond());if(this.isUtc===true)return $.S(y)+'-'+$.S(m)+'-'+$.S(d)+' '+$.S(h)+':'+$.S(min)+':'+$.S(sec)+'.'+$.S(ms)+'Z';else return $.S(y)+'-'+$.S(m)+'-'+$.S(d)+' '+$.S(h)+':'+$.S(min)+':'+$.S(sec)+'.'+$.S(ms);},
  add$1: function(duration){return $.DateImplementation$fromMillisecondsSinceEpoch($.add(this.millisecondsSinceEpoch,duration.get$inMilliseconds()),this.isUtc);},
@@ -36,7 +35,6 @@ $$.DurationImplementation = {"":
  get$inSeconds: function(){return $.tdiv(this.inMilliseconds,1000);},
  operator$eq$1: function(other){if(!(typeof other==='object'&&other!==null&&!!other.is$Duration))return false;return $.eq(this.inMilliseconds,other.get$inMilliseconds());},
  hashCode$0: function(){return $.hashCode(this.inMilliseconds);},
- compareTo$1: function(other){return $.compareTo(this.inMilliseconds,other.get$inMilliseconds());},
  toString$0: function(){var t1=new $.DurationImplementation_toString_threeDigits();var t2=new $.DurationImplementation_toString_twoDigits();var t3=this.inMilliseconds;if($.ltB(t3,0))return '-'+$.S($.DurationImplementation$(0,0,0,0,$.neg(t3)));var twoDigitMinutes=t2.call$1($.remainder(this.get$inMinutes(),60));var twoDigitSeconds=t2.call$1($.remainder(this.get$inSeconds(),60));var threeDigitMs=t1.call$1($.remainder(t3,1000));return $.S(this.get$inHours())+':'+$.S(twoDigitMinutes)+':'+$.S(twoDigitSeconds)+'.'+$.S(threeDigitMs);},
  is$Duration: true
 };
@@ -396,6 +394,12 @@ $$.Closure = {"":
  is$Function: true
 };
 
+$$.FallThroughErrorImplementation = {"":
+ [],
+ "super": "Object",
+ toString$0: function(){return 'Switch case fall-through.';}
+};
+
 $$.MetaInfo = {"":
  ["_tag?", "_tags", "_lib5_set?"],
  "super": "Object",
@@ -468,12 +472,11 @@ $$.FilteredElementList = {"":
  first$0: function() { return this.get$first().call$0(); },
  forEach$1: function(f){$.forEach(this.get$_filtered(),f);},
  operator$indexSet$2: function(index,value){this.operator$index$1(index).replaceWith$1(value);},
- set$length: function(newLength){var len=$.get$length(this);if($.geB(newLength,len))return;else if($.ltB(newLength,0))throw $.$$throw($.CTC45);this.removeRange$2($.sub(newLength,1),$.sub(len,newLength));},
+ set$length: function(newLength){var len=$.get$length(this);if($.geB(newLength,len))return;else if($.ltB(newLength,0))throw $.$$throw($.CTC44);this.removeRange$2($.sub(newLength,1),$.sub(len,newLength));},
  add$1: function(value){$.add$1(this._childNodes,value);},
  get$add: function() { return new $.BoundClosure(this, 'add$1'); },
  addAll$1: function(collection){$.forEach(collection,this.get$add());},
  addLast$1: function(value){this.add$1(value);},
- sort$1: function(compare){throw $.$$throw($.CTC44);},
  removeRange$2: function(start,rangeLength){$.forEach($.getRange(this.get$_filtered(),start,rangeLength),new $.FilteredElementList_removeRange_anon());},
  insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC21);},
  clear$0: function(){$.clear(this._childNodes);},
@@ -513,7 +516,6 @@ $$._ChildrenElementList = {"":
  addLast$1: function(value){return this.add$1(value);},
  iterator$0: function(){return $.iterator(this._toList$0());},
  addAll$1: function(collection){for(var t1=$.iterator(collection),t2=this._lib_element;t1.hasNext$0()===true;)t2.$dom_appendChild$1(t1.next$0());},
- sort$1: function(compare){throw $.$$throw($.CTC44);},
  removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC21);},
  insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC21);},
  getRange$2: function(start,rangeLength){return $._FrozenElementList$_wrap($._Lists_getRange(this,start,rangeLength,[]));},
@@ -541,7 +543,6 @@ $$._FrozenElementList = {"":
  addLast$1: function(value){throw $.$$throw($.CTC43);},
  iterator$0: function(){return $._FrozenElementListIterator$(this);},
  addAll$1: function(collection){throw $.$$throw($.CTC43);},
- sort$1: function(compare){throw $.$$throw($.CTC43);},
  removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC43);},
  insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC43);},
  getRange$2: function(start,rangeLength){return $._FrozenElementList$_wrap($.getRange(this._nodeList,start,rangeLength));},
@@ -740,7 +741,6 @@ $$._ChildNodeListLazy = {"":
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._NodeListWrapper$($._Collections_filter(this,[],f));},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.UnsupportedOperationException$('Cannot sort immutable List.'));},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  removeRange$2: function(start,rangeLength){throw $.$$throw($.UnsupportedOperationException$('Cannot removeRange on immutable List.'));},
  insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.UnsupportedOperationException$('Cannot insertRange on immutable List.'));},
@@ -765,7 +765,6 @@ $$._ListWrapper = {"":
  add$1: function(value){return $.add$1(this._lib_list,value);},
  addLast$1: function(value){return $.addLast(this._lib_list,value);},
  addAll$1: function(collection){return $.addAll(this._lib_list,collection);},
- sort$1: function(compare){return $.sort(this._lib_list,compare);},
  indexOf$2: function(element,start){return $.indexOf$2(this._lib_list,element,start);},
  clear$0: function(){return $.clear(this._lib_list);},
  removeLast$0: function(){return $.removeLast(this._lib_list);},
@@ -1146,24 +1145,24 @@ $$.Game = {"":
  get$updated: function(){return this._updatedEvent;},
  get$stateChanged: function(){return this._gameStateEvent;},
  getSquareState$2: function(x,y){return this._states.get$2(x,y);},
- get$gameEnded: function(){return $.eqB(this._state,$.CTC50)||$.eqB(this._state,$.CTC51);},
+ get$gameEnded: function(){return $.eqB(this._state,$.CTC49)||$.eqB(this._state,$.CTC50);},
  get$duration: function(){if(this._startTime==null)return;else{var end=this._endTime;if(end==null)end=$.DateImplementation$now();return end.difference$1(this._startTime);}},
  setFlag$3: function(x,y,value){this._ensureStarted$0();var t1=this._states;var currentSS=t1.get$2(x,y);if(value){$.require($.eq(currentSS,$.CTC33),'');t1.set$3(x,y,$.CTC34);this._minesLeft=$.sub(this._minesLeft,1);}else{$.require($.eq(currentSS,$.CTC34),'');t1.set$3(x,y,$.CTC33);this._minesLeft=$.add(this._minesLeft,1);}this._update$0();},
  canReveal$2: function(x,y){this._ensureStarted$0();if($.eqB(this._states.get$2(x,y),$.CTC33))return true;else if(this._canChord$2(x,y)===true)return true;return false;},
- reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC33))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else{reveals=this._doReveal$2(x,y);if(typeof reveals!=='object'||reveals===null||reveals.constructor!==Array||!!reveals.fixed$length)return this.reveal$2$bailout(1,reveals);}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC51))return;else return reveals;},
- reveal$2$bailout: function(state,env0){switch(state){case 1:reveals=env0;break;}switch(state){case 0:this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');case 1:if(state===1||state===0&&$.eqB(this._states.get$2(x,y),$.CTC33))switch(state){case 0:case 1:if(state===0&&this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else switch(state){case 0:reveals=this._doReveal$2(x,y);case 1:state=0;}}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC51))return;else return reveals;}},
+ reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC33))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else{reveals=this._doReveal$2(x,y);if(typeof reveals!=='object'||reveals===null||reveals.constructor!==Array||!!reveals.fixed$length)return this.reveal$2$bailout(1,reveals);}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC50))return;else return reveals;},
+ reveal$2$bailout: function(state,env0){switch(state){case 1:reveals=env0;break;}switch(state){case 0:this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');case 1:if(state===1||state===0&&$.eqB(this._states.get$2(x,y),$.CTC33))switch(state){case 0:case 1:if(state===0&&this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else switch(state){case 0:reveals=this._doReveal$2(x,y);case 1:state=0;}}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC50))return;else return reveals;}},
  _canChord$2: function(x,y){if($.eqB(this._states.get$2(x,y),$.CTC35)){var adjCount=this.field.getAdjacentCount$2(x,y);if($.gtB(adjCount,0))if($.eqB(this._getAdjacentFlagCount$2(x,y),adjCount))return true;}return false;},
  _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,t1,t3,flagged,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC33)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC34))flagged.push(t4);}}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;},
  _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;flagged=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');var hidden=$.ListImplementation_List(null,'int');var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC33)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC34))flagged.push(t4);}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;}},
  _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,y,t1,0,0,0);t1.set$3(x,y,$.CTC35);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,y,t1,t3,0,0);this._revealsLeft=t3-1;var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,y,t1,t2,reveals,0);if(t2===0)this._setWon$0();else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,y,t1,t2,t3,reveals);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC33)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;},
  _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;break;case 3:x=env0;y=env1;t1=env2;t2=env3;reveals=env4;break;case 4:x=env0;y=env1;t1=env2;t2=env3;t3=env4;reveals=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC35);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0))this._setWon$0();else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC33)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;}},
- _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC40;}}this._setState$1($.CTC50);var t2;},
- _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC40);this._setState$1($.CTC50);}},
- _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC39;}}this._setState$1($.CTC51);var t2;},
- _setLost$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC39);this._setState$1($.CTC51);}},
+ _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC40;}}this._setState$1($.CTC49);var t2;},
+ _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC40);this._setState$1($.CTC49);}},
+ _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC37;}}this._setState$1($.CTC50);var t2;},
+ _setLost$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC37);this._setState$1($.CTC50);}},
  _update$0: function(){return this._updatedEvent.fireEvent$1($.CTC13);},
- _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC46))this._startTime=$.DateImplementation$now();else if(this.get$gameEnded()===true)this._endTime=$.DateImplementation$now();this._gameStateEvent.fireEvent$1(this._state);}},
- _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC47))this._setState$1($.CTC46);},
+ _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC45))this._startTime=$.DateImplementation$now();else if(this.get$gameEnded()===true)this._endTime=$.DateImplementation$now();this._gameStateEvent.fireEvent$1(this._state);}},
+ _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC46))this._setState$1($.CTC45);},
  _getAdjacentFlagCount$2: function(x,y){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentFlagCount$2$bailout(1,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],$.CTC34))++val;}return val;},
  _getAdjacentFlagCount$2$bailout: function(state,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),$.CTC34))++val;return val;},
  Game$1: function(field){this._minesLeft=field.get$mineCount();this._revealsLeft=$.sub($.get$length(field),field.get$mineCount());}
@@ -1189,7 +1188,6 @@ $$.DisposableImpl = {"":
 $$.GlobalId = {"":
  ["id?", "_hashCode"],
  "super": "Object",
- compareTo$1: function(other){return $.compareTo(this.id,other.get$id());},
  hashCode$0: function(){return this._hashCode;},
  operator$eq$1: function(other){return !(other==null)&&$.eqB(other.get$id(),this.id);}
 };
@@ -1237,7 +1235,7 @@ $$.Enumerable = {"":
  firstOrDefault$1: function(f) {
   return this.firstOrDefault$2(f,null)
 },
- single$1: function(f){if(f==null)f=new $.Enumerable_single_anon();var iter=$._WhereIterator$(this.iterator$0(),f,$.getRuntimeTypeInfo(this).T);if(iter.hasNext$0()!==true)throw $.$$throw($.CTC42);var value=iter.next$0();if(iter.hasNext$0()===true)throw $.$$throw($.CTC54);return value;},
+ single$1: function(f){if(f==null)f=new $.Enumerable_single_anon();var iter=$._WhereIterator$(this.iterator$0(),f,$.getRuntimeTypeInfo(this).T);if(iter.hasNext$0()!==true)throw $.$$throw($.CTC42);var value=iter.next$0();if(iter.hasNext$0()===true)throw $.$$throw($.CTC53);return value;},
  single$0: function() {
   return this.single$1(null)
 },
@@ -1304,7 +1302,6 @@ $$.ListBase = {"":
  add$1: function(value){throw $.$$throw($.CTC31);},
  addLast$1: function(value){throw $.$$throw($.CTC31);},
  addAll$1: function(value){throw $.$$throw($.CTC31);},
- sort$1: function(comparer){throw $.$$throw($.CTC31);},
  clear$0: function(){throw $.$$throw($.CTC31);},
  removeLast$0: function(){throw $.$$throw($.CTC31);},
  removeRange$2: function(start,length$){throw $.$$throw($.CTC31);},
@@ -1457,13 +1454,13 @@ $$.PropertyValues = {"":
  _isSet$1: function(key){return this._propertyValues.containsKey$1(key);},
  _remove$1: function(key){if(this._isSet$1(key)===true){this._propertyValues.remove$1(key);this._changeHandle.fireEvent$1(key);}},
  get$propertyChanged: function(){return this._changeHandle;},
- _getValueOrUndefined$3: function(key,obj,ifAbsent){if(this._isSet$1(key)===true)return $.index(this._propertyValues,key);else if(!(ifAbsent==null)){var value=ifAbsent.call$1(obj);this._set$2(key,value);return value;}else return $.CTC52;}
+ _getValueOrUndefined$3: function(key,obj,ifAbsent){if(this._isSet$1(key)===true)return $.index(this._propertyValues,key);else if(!(ifAbsent==null)){var value=ifAbsent.call$1(obj);this._set$2(key,value);return value;}else return $.CTC51;}
 };
 
 $$.Property = {"":
  ["defaultValue", "name"],
  "super": "Attachable",
- get$2: function(obj,ifAbsent){var coreValue=this.getCore$2(obj,ifAbsent);if(!(coreValue===$.CTC52))return coreValue;else return this.defaultValue;},
+ get$2: function(obj,ifAbsent){var coreValue=this.getCore$2(obj,ifAbsent);if(!(coreValue===$.CTC51))return coreValue;else return this.defaultValue;},
  get$1: function(obj) {
   return this.get$2(obj,null)
 },
@@ -1510,7 +1507,7 @@ $$.GameElement = {"":
  ["_animationLayer", "_targetMode", "_targetChanged", "_animationLayerTx", "_targetX", "_targetY", "_scale", "_scaledBoardOffset", "_game?", "_elements", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "propertyValues", "_disposed"],
  "super": "ElementParentImpl",
  get$game: function(){return this._game;},
- set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC48);else this._updateSize$2(value.get$field().get$width(),value.get$field().get$height());},
+ set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC47);else this._updateSize$2(value.get$field().get$width(),value.get$field().get$height());},
  get$visualChildCount: function(){var t1=this._elements;if(!(t1==null)){t1=$.get$length(t1);if(typeof t1!=='number')throw $.iae(t1);var count=1+t1;}else count=1;return count;},
  getVisualChild$1: function(index){if(typeof index!=='number')return this.getVisualChild$1$bailout(1,index,0);var t1=this._elements;if(!(t1==null)){t1=$.get$length(t1);if(typeof t1!=='number')return this.getVisualChild$1$bailout(2,index,t1);if(index<t1){t1=this._elements;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this.getVisualChild$1$bailout(3,index,t1);if(index!==(index|0))throw $.iae(index);if(index<0||index>=t1.length)throw $.ioore(index);return t1[index];}t1=$.get$length(this._elements);if(typeof t1!=='number')return this.getVisualChild$1$bailout(4,index,t1);}return this._animationLayer;},
  getVisualChild$1$bailout: function(state,env0,env1){switch(state){case 1:var index=env0;break;case 2:index=env0;t1=env1;break;case 3:index=env0;t1=env1;break;case 4:index=env0;t1=env1;break;}switch(state){case 0:case 1:state=0;var t1=this._elements;default:if(state===4||state===3||state===2||state===0&&!(t1==null))switch(state){case 0:t1=$.get$length(t1);case 2:state=0;case 3:if(state===3||state===0&&$.ltB(index,t1))switch(state){case 0:t1=this._elements;case 3:state=0;return $.index(t1,index);}t1=$.get$length(this._elements);case 4:state=0;$.sub(index,t1);}return this._animationLayer;}},
@@ -1520,13 +1517,12 @@ $$.GameElement = {"":
  _drawTarget$1: function(ctx){var t1=this._targetX;if(!(t1==null)){var targetLoc=$.Vector$(t1,this._targetY).scale$1(80);ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');$.CanvasUtil_centeredCircle(ctx,$.add(targetLoc.get$x(),40),$.add(targetLoc.get$y(),40),40);ctx.fill$0();}},
  _updateElements$0: function(){if(this._game==null)this._elements=null;else if(this.get$_elementsNeedUpdate()===true){this._elements=$.Array2d_Array2d(this._game.get$field().get$width(),this._game.get$field().get$height(),null,'SquareElement');var offset=$.add(this._scaledBoardOffset,$.CTC26);if(typeof offset!=='number')return this._updateElements$0$bailout(1,offset);for(var i=0;$.ltB(i,$.get$length(this._elements));++i){var coords=this._elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_squareClicked());se.addTransform$0().setToTranslation$2($.add(offset.get$x(),$.mul(coords.get$Item1(),80)),$.add(offset.get$y(),$.mul(coords.get$Item2(),80)));$.indexSet(this._elements,i,se);}this._animationLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());}},
  _updateElements$0$bailout: function(state,env0){switch(state){case 1:offset=env0;break;}switch(state){case 0:case 1:if(state===0&&this._game==null)this._elements=null;else switch(state){case 0:case 1:if(state===1||state===0&&this.get$_elementsNeedUpdate()===true)switch(state){case 0:this._elements=$.Array2d_Array2d(this._game.get$field().get$width(),this._game.get$field().get$height(),null,'SquareElement');var offset=$.add(this._scaledBoardOffset,$.CTC26);case 1:state=0;for(var i=0;$.ltB(i,$.get$length(this._elements));++i){var coords=this._elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_squareClicked());se.addTransform$0().setToTranslation$2($.add(offset.get$x(),$.mul(coords.get$Item1(),80)),$.add(offset.get$y(),$.mul(coords.get$Item2(),80)));$.indexSet(this._elements,i,se);}this._animationLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());}}}},
- _drawPop$2: function(start,reveals){var distances=$.$$(reveals).select$1(new $.GameElement__drawPop_anon(start)).toList$0();$.sort(distances,new $.GameElement__drawPop_anon0());var closest=$.index(distances,0).get$Item1();if(typeof closest!=='number')return this._drawPop$2$bailout(1,closest,distances);var delta=$.sub($.index(distances,$.sub($.get$length(distances),1)).get$Item1(),closest);if(typeof delta!=='number')throw $.iae(delta);var frameScale=30/delta;if(frameScale===(1/0))frameScale=0;for(var t1=$.iterator(distances),t2=this._animationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var c=t3.get$Item2();var t4=c.get$x();if(typeof t4!=='number')throw $.iae(t4);t4=80*t4;var t5=c.get$y();if(typeof t5!=='number')throw $.iae(t5);t2.add$1($.TextAniRequest$('balloon_pop',29,$.CTC36.operator$add$1($.Vector$(t4,80*t5)),$.toInt($.mul($.sub(t3.get$Item1(),closest),frameScale))));}},
- _drawPop$2$bailout: function(state,closest,distances){var delta=$.sub($.index(distances,$.sub($.get$length(distances),1)).get$Item1(),closest);if(typeof delta!=='number')throw $.iae(delta);var frameScale=30/delta;if(frameScale===(1/0))frameScale=0;for(var t1=$.iterator(distances),t2=this._animationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var c=t3.get$Item2();var t4=c.get$x();if(typeof t4!=='number')throw $.iae(t4);t4=80*t4;var t5=c.get$y();if(typeof t5!=='number')throw $.iae(t5);$.add$1(t2,$.TextAniRequest$('balloon_pop',29,$.CTC36.operator$add$1($.Vector$(t4,80*t5)),$.toInt($.mul($.sub(t3.get$Item1(),closest),frameScale))));}},
+ _drawPop$2: function(start,reveals){for(var t1=$.iterator(reveals),t2=start.x,t3=start.y,t4=this._animationLayer;t1.hasNext$0()===true;){var t5=t1.next$0();var t6=t5.get$x();if(typeof t6!=='number')throw $.iae(t6);t6=80*t6;var t7=t5.get$y();if(typeof t7!=='number')throw $.iae(t7);var squareOffset=$.CTC36.operator$add$1($.Vector$(t6,80*t7));var delay=$.toInt($.mul($.get$length($.sub(t5,start)),4));switch(this.get$game().getSquareState$2(t2,t3)){case $.CTC35:break;case $.CTC37:throw $.$$throw($.getFallThroughError());default:throw $.$$throw('not supported');}$.add$1(t4,$.TextAniRequest$('balloon_pop',29,squareOffset,delay));}},
  _squareClicked$1: function(args){if(this._game.get$gameEnded()!==true){var se=args.get$element();if(this._targetMode===true)this._target$2(se.get$x(),se.get$y());else this._click$3(se.get$x(),se.get$y(),args.get$shiftKey());}},
  get$_squareClicked: function() { return new $.BoundClosure(this, '_squareClicked$1'); },
  _target$2: function(x,y){this._targetX=x;this._targetY=y;this._targetChanged.fireEvent$1(null);this.invalidateDraw$0();},
  _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC33)){this.get$game().setFlag$3(x,y,true);return true;}else if($.eqB(ss,$.CTC34)){this.get$game().setFlag$3(x,y,false);return true;}return false;},
- _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC33)||$.eqB(ss,$.CTC34)){this._toggleFlag$2(x,y);var reveals=null;}else reveals=$.eqB(ss,$.CTC35)?this.get$game().canReveal$2(x,y)===true?this.get$game().reveal$2(x,y):null:null;else reveals=$.eqB(ss,$.CTC33)?this.get$game().reveal$2(x,y):null;if(!(reveals==null)){if(!t1)$.index(reveals,0);this._drawPop$2($.Coordinate$(x,y),reveals);}},
+ _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC33)||$.eqB(ss,$.CTC34)){this._toggleFlag$2(x,y);var reveals=null;}else reveals=$.eqB(ss,$.CTC35)?this.get$game().canReveal$2(x,y)===true?this.get$game().reveal$2(x,y):null:null;else reveals=$.eqB(ss,$.CTC33)?this.get$game().reveal$2(x,y):null;if(!(reveals==null)&&$.gtB($.get$length(reveals),0)){if(!t1)$.index(reveals,0);this._drawPop$2($.Coordinate$(x,y),reveals);}},
  get$_elementsNeedUpdate: function(){var t1=this._elements;return t1==null||!$.eqB(t1.get$width(),this._game.get$field().get$width())||!$.eqB(this._elements.get$height(),this._game.get$field().get$height());},
  _updateSize$2: function(w,h){var t1=$.CTC24.width;var sizeX=$.GameElement__getScale(w,t1,1344);this.set$size($.Size$(sizeX,$.GameElement__getScale(h,$.CTC24.height,1344)));this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC25.scale$1(this._scale);},
  GameElement$1: function(_targetMode){var t1=this._animationLayer;t1.registerParent$1(this);this._animationLayerTx=t1.addTransform$0();}
@@ -1535,12 +1531,12 @@ $$.GameElement = {"":
 $$.SquareElement = {"":
  ["x?", "y?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "propertyValues", "_disposed"],
  "super": "PElement",
- drawOverride$1: function(ctx){switch(this.get$_squareState()){case $.CTC33:$.drawTextureKeyAt(ctx,'balloon.png',$.CTC23);break;case $.CTC35:var adjCount=this.get$_adjacentCount();if(adjCount!==(adjCount|0))throw $.iae(adjCount);if(adjCount<0||adjCount>=9)throw $.ioore(adjCount);$.drawTextureKeyAt(ctx,$.S($.CTC38[adjCount])+'.png',$.CTC23);break;default:ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$strokeStyle('rgb(153, 153, 153)');ctx.strokeRect$5(0.5,0.5,this.get$width(),this.get$height(),1);break;}},
+ drawOverride$1: function(ctx){var textureName=null;switch(this.get$_squareState()){case $.CTC33:textureName='balloon.png';break;case $.CTC34:textureName='balloon_tagged_!.png';break;case $.CTC35:var t1=this.get$_adjacentCount();if(t1!==(t1|0))throw $.iae(t1);if(t1<0||t1>=9)throw $.ioore(t1);textureName=$.S($.CTC39[t1])+'.png';break;case $.CTC37:textureName='balloon_tagged_bomb.png';break;}if(textureName==null){ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$strokeStyle('rgb(153, 153, 153)');ctx.strokeRect$5(0.5,0.5,this.get$width(),this.get$height(),1);}else $.drawTextureKeyAt(ctx,textureName,$.CTC23);},
  toString$0: function(){return 'Square at ['+$.S(this.x)+', '+$.S(this.y)+']';},
  get$_squareState: function(){return this.get$_game().getSquareState$2(this.x,this.y);},
  get$_adjacentCount: function(){return this.get$_game().get$field().getAdjacentCount$2(this.x,this.y);},
  get$_game: function(){return this.get$parent().get$game();},
- get$_fillStyle: function(){switch(this.get$_squareState()){case $.CTC34:return 'orange';case $.CTC39:return 'red';case $.CTC40:return 'green';default:throw $.$$throw('not supported - '+$.S(this.get$_squareState()));}},
+ get$_fillStyle: function(){switch(this.get$_squareState()){case $.CTC37:return 'red';case $.CTC40:return 'green';default:throw $.$$throw('not supported - '+$.S(this.get$_squareState()));}},
  SquareElement$2: function(x,y){$.ClickManager_setClickable(this,true);}
 };
 
@@ -1668,12 +1664,12 @@ $$.GameStorage = {"":
 $$.GameManager = {"":
  ["game="],
  "super": "Object",
- newGame$0: function(){if(!(this._updatedEventId==null)){this.get$game().get$updated().remove$1(this._updatedEventId);this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC47);}this.set$game($.Game$($.Field_Field(this._mineCount,this._lib4_width,this._lib4_height,null)));this._updatedEventId=$.add$1(this.get$game().get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this.get$game().get$stateChanged(),this.get$_gameStateChanged());},
+ newGame$0: function(){if(!(this._updatedEventId==null)){this.get$game().get$updated().remove$1(this._updatedEventId);this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC46);}this.set$game($.Game$($.Field_Field(this._mineCount,this._lib4_width,this._lib4_height,null)));this._updatedEventId=$.add$1(this.get$game().get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this.get$game().get$stateChanged(),this.get$_gameStateChanged());},
  _lib4_click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC33))this.get$game().setFlag$3(x,y,true);else if($.eqB(ss,$.CTC34))this.get$game().setFlag$3(x,y,false);else if($.eqB(ss,$.CTC35))this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC33))this.get$game().reveal$2(x,y);},
- updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this.get$game().get$state(),$.CTC46))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this.get$game().get$state(),$.CTC46)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
+ updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this.get$game().get$state(),$.CTC45))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this.get$game().get$state(),$.CTC45)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
  _doClock$0: function(){this.updateClock$0();},
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
- _gameStateChanged$1: function(newState){var t1=this.gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC50))t1.updateHighScore$1(this.get$game());this.updateClock$0();},
+ _gameStateChanged$1: function(newState){var t1=this.gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC49))t1.updateHighScore$1(this.get$game());this.updateClock$0();},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width,_height,_mineCount){this.newGame$0();}
 };
@@ -1867,18 +1863,6 @@ $$.ListBase_iterator_anon = {"":
  ["this_0"],
  "super": "Closure",
  call$1: function(i){return $.index(this.this_0,i);}
-};
-
-$$.GameElement__drawPop_anon = {"":
- ["start_0"],
- "super": "Closure",
- call$1: function(r){return $.Tuple$($.get$length($.sub(this.start_0,r)),r,'num','Coordinate');}
-};
-
-$$.GameElement__drawPop_anon0 = {"":
- [],
- "super": "Closure",
- call$2: function(a,b){return $.compareTo(a.get$Item1(),b.get$Item1());}
 };
 
 $$._ElementImpl_rect_anon = {"":
@@ -2194,9 +2178,7 @@ $.Size$ = function(width,height){return new $.Size(width,height);};
 
 $._IDBTransactionEventsImpl$ = function(_ptr){return new $._IDBTransactionEventsImpl(_ptr);};
 
-$.DualPivotQuicksort__dualPivotQuicksort = function(a,left,right,compare){if(typeof a!=='object'||a===null||(a.constructor!==Array||!!a.immutable$list)&&!a.is$JavaScriptIndexingBehavior())return $.DualPivotQuicksort__dualPivotQuicksort$bailout(1,a,left,right,compare,0,0,0,0,0,0,0,0,0,0);var sixth=$.tdiv($.add($.sub(right,left),1),6);if(typeof sixth!=='number')throw $.iae(sixth);var index1=left+sixth;var index5=$.sub(right,sixth);if(typeof right!=='number')throw $.iae(right);var index3=$.tdiv(left+right,2);var index2=index3-sixth;var index4=index3+sixth;if(index1!==(index1|0))throw $.iae(index1);var t1=a.length;if(index1<0||index1>=t1)throw $.ioore(index1);var el1=a[index1];if(index2!==(index2|0))throw $.iae(index2);if(index2<0||index2>=t1)throw $.ioore(index2);var el2=a[index2];if(index3!==(index3|0))throw $.iae(index3);if(index3<0||index3>=t1)throw $.ioore(index3);var el3=a[index3];if(index4!==(index4|0))throw $.iae(index4);if(index4<0||index4>=t1)throw $.ioore(index4);var el4=a[index4];if(index5!==(index5|0))throw $.iae(index5);if(index5<0||index5>=t1)throw $.ioore(index5);var el5=a[index5];if($.gtB(compare.call$2(el1,el2),0)){var t0=el1;el1=el2;el2=t0;}if($.gtB(compare.call$2(el4,el5),0)){t0=el5;el5=el4;el4=t0;}if($.gtB(compare.call$2(el1,el3),0)){t0=el3;el3=el1;el1=t0;}if($.gtB(compare.call$2(el2,el3),0)){t0=el3;el3=el2;el2=t0;}if($.gtB(compare.call$2(el1,el4),0)){t0=el1;el1=el4;el4=t0;}if($.gtB(compare.call$2(el3,el4),0)){t0=el3;el3=el4;el4=t0;}if($.gtB(compare.call$2(el2,el5),0)){t0=el5;el5=el2;el2=t0;}if($.gtB(compare.call$2(el2,el3),0)){t0=el3;el3=el2;el2=t0;}if($.gtB(compare.call$2(el4,el5),0)){t0=el5;el5=el4;el4=t0;}if(index1<0||index1>=a.length)throw $.ioore(index1);a[index1]=el1;if(index3<0||index3>=a.length)throw $.ioore(index3);a[index3]=el3;if(index5<0||index5>=a.length)throw $.ioore(index5);a[index5]=el5;if(left!==(left|0))throw $.iae(left);t1=a.length;if(left<0||left>=t1)throw $.ioore(left);var t2=a[left];if(index2<0||index2>=t1)throw $.ioore(index2);a[index2]=t2;if(right!==(right|0))throw $.iae(right);t2=a.length;if(right<0||right>=t2)throw $.ioore(right);var t3=a[right];if(index4<0||index4>=t2)throw $.ioore(index4);a[index4]=t3;var less=left+1;var great=right-1;var pivots_are_equal=$.eqB(compare.call$2(el2,el4),0);if(pivots_are_equal)for(var k=less;k<=great;++k){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);var ak=a[k];var comp=compare.call$2(ak,el2);if(typeof comp!=='number')return $.DualPivotQuicksort__dualPivotQuicksort$bailout(2,a,left,compare,less,k,index1,index5,el2,pivots_are_equal,right,ak,comp,el4,great);if(comp===0)continue;if(comp<0){if(!(k===less)){if(less!==(less|0))throw $.iae(less);t1=a.length;if(less<0||less>=t1)throw $.ioore(less);t2=a[less];if(k<0||k>=t1)throw $.ioore(k);a[k]=t2;if(less<0||less>=a.length)throw $.ioore(less);a[less]=ak;}++less;}else for(var less0=less+1;true;){if(great!==(great|0))throw $.iae(great);if(great<0||great>=a.length)throw $.ioore(great);comp=compare.call$2(a[great],el2);if($.gtB(comp,0)){--great;continue;}else{t1=$.ltB(comp,0);var great0=great-1;t2=a.length;if(t1){if(less!==(less|0))throw $.iae(less);if(less<0||less>=t2)throw $.ioore(less);t1=a[less];if(k<0||k>=t2)throw $.ioore(k);a[k]=t1;t1=a.length;if(great<0||great>=t1)throw $.ioore(great);t3=a[great];if(less<0||less>=t1)throw $.ioore(less);a[less]=t3;if(great<0||great>=a.length)throw $.ioore(great);a[great]=ak;great=great0;less=less0;break;}else{if(great<0||great>=t2)throw $.ioore(great);t1=a[great];if(k<0||k>=t2)throw $.ioore(k);a[k]=t1;if(great<0||great>=a.length)throw $.ioore(great);a[great]=ak;great=great0;break;}}}}else for(k=less;k<=great;++k){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);ak=a[k];if($.ltB(compare.call$2(ak,el2),0)){if(!(k===less)){if(less!==(less|0))throw $.iae(less);t1=a.length;if(less<0||less>=t1)throw $.ioore(less);t2=a[less];if(k<0||k>=t1)throw $.ioore(k);a[k]=t2;if(less<0||less>=a.length)throw $.ioore(less);a[less]=ak;}++less;}else if($.gtB(compare.call$2(ak,el4),0))for(less0=less+1;true;){if(great!==(great|0))throw $.iae(great);if(great<0||great>=a.length)throw $.ioore(great);if($.gtB(compare.call$2(a[great],el4),0)){--great;if(great<k)break;continue;}else{if(great<0||great>=a.length)throw $.ioore(great);t1=$.ltB(compare.call$2(a[great],el2),0);great0=great-1;t2=a.length;if(t1){if(less!==(less|0))throw $.iae(less);if(less<0||less>=t2)throw $.ioore(less);t1=a[less];if(k<0||k>=t2)throw $.ioore(k);a[k]=t1;t1=a.length;if(great<0||great>=t1)throw $.ioore(great);t3=a[great];if(less<0||less>=t1)throw $.ioore(less);a[less]=t3;if(great<0||great>=a.length)throw $.ioore(great);a[great]=ak;great=great0;less=less0;}else{if(great<0||great>=t2)throw $.ioore(great);t1=a[great];if(k<0||k>=t2)throw $.ioore(k);a[k]=t1;if(great<0||great>=a.length)throw $.ioore(great);a[great]=ak;great=great0;}break;}}}t1=less-1;if(t1!==(t1|0))throw $.iae(t1);t2=a.length;if(t1<0||t1>=t2)throw $.ioore(t1);t3=a[t1];if(left<0||left>=t2)throw $.ioore(left);a[left]=t3;if(t1<0||t1>=a.length)throw $.ioore(t1);a[t1]=el2;t1=great+1;if(t1!==(t1|0))throw $.iae(t1);t3=a.length;if(t1<0||t1>=t3)throw $.ioore(t1);var t4=a[t1];if(right<0||right>=t3)throw $.ioore(right);a[right]=t4;if(t1<0||t1>=a.length)throw $.ioore(t1);a[t1]=el4;$.DualPivotQuicksort__doSort(a,left,less-2,compare);$.DualPivotQuicksort__doSort(a,great+2,right,compare);if(pivots_are_equal)return;if(less<index1&&great>index5){while(true){if(less!==(less|0))throw $.iae(less);if(less<0||less>=a.length)throw $.ioore(less);if(!$.eqB(compare.call$2(a[less],el2),0))break;++less;}while(true){if(great!==(great|0))throw $.iae(great);if(great<0||great>=a.length)throw $.ioore(great);if(!$.eqB(compare.call$2(a[great],el4),0))break;--great;}for(k=less;k<=great;++k){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);ak=a[k];if($.eqB(compare.call$2(ak,el2),0)){if(!(k===less)){if(less!==(less|0))throw $.iae(less);t1=a.length;if(less<0||less>=t1)throw $.ioore(less);t2=a[less];if(k<0||k>=t1)throw $.ioore(k);a[k]=t2;if(less<0||less>=a.length)throw $.ioore(less);a[less]=ak;}++less;}else if($.eqB(compare.call$2(ak,el4),0))for(less0=less+1;true;){if(great!==(great|0))throw $.iae(great);if(great<0||great>=a.length)throw $.ioore(great);if($.eqB(compare.call$2(a[great],el4),0)){--great;if(great<k)break;continue;}else{if(great<0||great>=a.length)throw $.ioore(great);t1=$.ltB(compare.call$2(a[great],el2),0);great0=great-1;t2=a.length;if(t1){if(less!==(less|0))throw $.iae(less);if(less<0||less>=t2)throw $.ioore(less);t1=a[less];if(k<0||k>=t2)throw $.ioore(k);a[k]=t1;t1=a.length;if(great<0||great>=t1)throw $.ioore(great);t3=a[great];if(less<0||less>=t1)throw $.ioore(less);a[less]=t3;if(great<0||great>=a.length)throw $.ioore(great);a[great]=ak;great=great0;less=less0;}else{if(great<0||great>=t2)throw $.ioore(great);t1=a[great];if(k<0||k>=t2)throw $.ioore(k);a[k]=t1;if(great<0||great>=a.length)throw $.ioore(great);a[great]=ak;great=great0;}break;}}}$.DualPivotQuicksort__doSort(a,less,great,compare);}else $.DualPivotQuicksort__doSort(a,less,great,compare);};
-
-$.dynamicFunction = function(name$){var f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;var methods={};var dartMethod=Object.getPrototypeOf($.CTC55)[name$];if(!(dartMethod==null))$.propertySet(methods,'Object',dartMethod);var bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods;};
+$.dynamicFunction = function(name$){var f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;var methods={};var dartMethod=Object.getPrototypeOf($.CTC54)[name$];if(!(dartMethod==null))$.propertySet(methods,'Object',dartMethod);var bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods;};
 
 $.buildDynamicMetadata = function(inputTable){var result=[];for(var i=0;i<inputTable.length;++i){var tag=inputTable[i][0];var array=inputTable[i];var tags=array[1];var set={};var tagNames=tags.split('|');for(var j=0,index=1;j<tagNames.length;++j){$.propertySet(set,tagNames[j],true);index=j;array=tagNames;}result.push($.MetaInfo$(tag,tags,set));}return result;};
 
@@ -2304,8 +2286,6 @@ $.getElementCoordinate = function(element){var cr=element.$dom_getBoundingClient
 
 $._callInIsolate = function(isolate,function$){isolate.eval$1(function$);$._globalState().get$topEventLoop().run$0();};
 
-$.compareTo = function(a,b){if($.checkNumbers(a,b))if($.ltB(a,b))return -1;else if($.gtB(a,b))return 1;else if($.eqB(a,b)){if($.eqB(a,0)){var aIsNegative=$.isNegative(a);if($.eqB(aIsNegative,$.isNegative(b)))return 0;if(aIsNegative===true)return -1;return 1;}return 0;}else if($.isNaN(a)===true){if($.isNaN(b)===true)return 0;return 1;}else return -1;else if(typeof a==='string'){if(!(typeof b==='string'))throw $.$$throw($.IllegalArgumentException$(b));if(a == b)var t1=0;else t1=a < b?-1:1;return t1;}else return a.compareTo$1(b);};
-
 $._convertNativeToDart_IDBKey = function(nativeKey){if(new $._convertNativeToDart_IDBKey_containsDate().call$1(nativeKey)===true)throw $.$$throw($.CTC16);return nativeKey;};
 
 $.leB = function(a,b){return typeof a==='number'&&typeof b==='number'?a <= b:$.le$slow(a,b)===true;};
@@ -2340,8 +2320,6 @@ $._TextTrackEventsImpl$ = function(_ptr){return new $._TextTrackEventsImpl(_ptr)
 
 $.DoubleLinkedQueue$ = function(E){var t1=new $.DoubleLinkedQueue(null);$.setRuntimeTypeInfo(t1,{ 'E': E });t1.DoubleLinkedQueue$0();return t1;};
 
-$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
-
 $.StringBufferImpl$ = function(content$){var t1=new $.StringBufferImpl(null,null);t1.StringBufferImpl$1(content$);return t1;};
 
 $.getRuntimeTypeInfo = function(target){if(target==null)return;var res=target.builtin$typeInfo;return res==null?{}:res;};
@@ -2355,6 +2333,8 @@ $.populateTextures = function(textures){$._textures=textures;};
 $._MainManagerStub$ = function(){return new $._MainManagerStub();};
 
 $.regExpTest = function(regExp,str){return $.regExpGetNative(regExp).test(str);};
+
+$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
 $.drawTextureAt = function(ctx,location$,texture,imageElement){ctx.save$0();var tx=$.AffineTransform$(1,0,0,1,0,0);tx.translate$2(location$.x,location$.y);var theFrame=texture.get$frame();var source=texture.get$sourceColorRect().get$topLeft();tx.translate$2(source.get$x(),source.get$y());if(texture.get$rotated()===true){var t1=theFrame.get$height();if(typeof t1!=='number')throw $.iae(t1);t1=0.5*t1;var t2=theFrame.get$height();if(typeof t2!=='number')throw $.iae(t2);tx.rotate$3(-1.5707963267948966,t1,0.5*t2);var theFrame0=$.Rect$(theFrame.get$left(),theFrame.get$top(),theFrame.get$height(),theFrame.get$width());theFrame=theFrame0;}$.CanvasUtil_transform(ctx,tx);$.CanvasUtil_drawImage(ctx,imageElement,theFrame,null);ctx.restore$0();};
 
@@ -2418,10 +2398,6 @@ $._Device_isIE = function(){return $._Device_isOpera()!==true&&$.contains$2($._D
 
 $.EventHandle$ = function(T){var t1=new $.EventHandle(null,false);$.setRuntimeTypeInfo(t1,{ 'T': T });return t1;};
 
-$.sort = function(receiver,compare){if(!$.isJsArray(receiver))return receiver.sort$1(compare);$.checkMutable(receiver,'sort');$.DualPivotQuicksort_sort(receiver,compare);};
-
-$.DualPivotQuicksort_sort = function(a,compare){$.DualPivotQuicksort__doSort(a,0,$.sub($.get$length(a),1),compare);};
-
 $.startRootIsolate = function(entry){var t1=$._Manager$();$._globalState0(t1);if($._globalState().get$isWorker()===true)return;var rootContext=$._IsolateContext$();$._globalState().set$rootContext(rootContext);$._fillStatics(rootContext);$._globalState().set$currentContext(rootContext);if(!($._window()==null))rootContext.eval$1(new $.startRootIsolate_anon());rootContext.eval$1(entry);$._globalState().get$topEventLoop().run$0();};
 
 $.lt$slow = function(a,b){if($.checkNumbers(a,b))return a < b;return a.operator$lt$1(b);};
@@ -2464,7 +2440,7 @@ $._dynamicMetadata = function(table){$dynamicMetadata = table;};
 
 $._dynamicMetadata0 = function(){if(typeof($dynamicMetadata)==='undefined'){var t1=[];$._dynamicMetadata(t1);}return $dynamicMetadata;};
 
-$.isNegative = function(receiver){if(typeof receiver==='number')return receiver===0?1/receiver<0:receiver<0;else return receiver.isNegative$0();};
+$.isNegative = function(receiver){return receiver===0?1/receiver<0:receiver<0;};
 
 $.add$slow = function(a,b){if($.checkNumbers(a,b))return a + b;return a.operator$add$1(b);};
 
@@ -2496,7 +2472,7 @@ $.div = function(a,b){return typeof a==='number'&&typeof b==='number'?a / b:$.di
 
 $._Elements_CanvasElement = function(width,height){var _e=$._document().$dom_createElement$1('canvas');if(!(width==null))_e.set$width(width);if(!(height==null))_e.set$height(height);return _e;};
 
-$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC33,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC47,null,null,null,null);t1.Game$1(field);return t1;};
+$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC33,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC46,null,null,null,null);t1.Game$1(field);return t1;};
 
 $.$$throw = function(ex){if(ex==null)ex=$.CTC0;var jsError=new Error();jsError.name = ex;jsError.description = ex;jsError.dartException = ex;jsError.toString = $.toStringWrapper.call$0;throw jsError;};
 
@@ -2538,11 +2514,11 @@ $.TextureAnimationElement$ = function(width,height){return new $.TextureAnimatio
 
 $.DurationImplementation$ = function(days,hours,minutes,seconds,milliseconds){return new $.DurationImplementation($.add($.add($.add($.add($.mul(days,86400000),$.mul(hours,3600000)),$.mul(minutes,60000)),$.mul(seconds,1000)),milliseconds));};
 
+$.last = function(receiver){if(!$.isJsArray(receiver))return receiver.last$0();return $.index(receiver,$.sub($.get$length(receiver),1));};
+
 $.ClickManager$ = function(_stage){var t1=new $.ClickManager(_stage,null);t1.ClickManager$1(_stage);return t1;};
 
 $.eq = function(a,b){if(a == null)return b == null;if(b == null)return false;if(typeof a === "object")if(!!a.operator$eq$1)return a.operator$eq$1(b);return a === b;};
-
-$.last = function(receiver){if(!$.isJsArray(receiver))return receiver.last$0();return $.index(receiver,$.sub($.get$length(receiver),1));};
 
 $.NullPointerException$ = function(functionName,arguments$){return new $.NullPointerException(functionName,arguments$);};
 
@@ -2626,8 +2602,6 @@ $.max = function(a,b){if(typeof b==='number'){if(a>b)return a;if(a<b)return b;if
 
 $._FrozenElementList$_wrap = function(_nodeList){return new $._FrozenElementList(_nodeList);};
 
-$.DualPivotQuicksort_insertionSort_ = function(a,left,right,compare){if(typeof a!=='object'||a===null||(a.constructor!==Array||!!a.immutable$list)&&!a.is$JavaScriptIndexingBehavior())return $.DualPivotQuicksort_insertionSort_$bailout(1,a,left,right,compare);if(typeof right!=='number')return $.DualPivotQuicksort_insertionSort_$bailout(1,a,left,right,compare);for(var i=left+1;i<=right;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);var el=a[i];var j=i;while(true){if(j>left){var t1=j-1;if(t1!==(t1|0))throw $.iae(t1);if(t1<0||t1>=a.length)throw $.ioore(t1);var t2=$.gtB(compare.call$2(a[t1],el),0);t1=t2;}else t1=false;if(!t1)break;var j0=j-1;if(j0!==(j0|0))throw $.iae(j0);t1=a.length;if(j0<0||j0>=t1)throw $.ioore(j0);t2=a[j0];if(j!==(j|0))throw $.iae(j);if(j<0||j>=t1)throw $.ioore(j);a[j]=t2;j=j0;}if(j!==(j|0))throw $.iae(j);if(j<0||j>=a.length)throw $.ioore(j);a[j]=el;}};
-
 $.ge$slow = function(a,b){if($.checkNumbers(a,b))return a >= b;return a.operator$ge$1(b);};
 
 $.getFunctionForTypeNameOf = function(){if(!(typeof(navigator)==='object'))return $.typeNameInChrome;var userAgent=navigator.userAgent;if($.contains(userAgent,'Chrome')||$.contains(userAgent,'DumpRenderTree'))return $.typeNameInChrome;else if($.contains(userAgent,'Firefox'))return $.typeNameInFirefox;else if($.contains(userAgent,'MSIE'))return $.typeNameInIE;else if($.contains(userAgent,'Opera'))return $.typeNameInOpera;else if($.contains(userAgent,'Safari'))return $.typeNameInSafari;else return $.constructorNameFallback;};
@@ -2654,11 +2628,13 @@ $._BodyElementEventsImpl$ = function(_ptr){return new $._BodyElementEventsImpl(_
 
 $.parseInt = function(str){$.checkString(str);if(!/^\s*[+-]?(?:0[xX][abcdefABCDEF0-9]+|\d+)\s*$/.test(str))throw $.$$throw($.FormatException$(str));var trimmed=$.trim(str);if($.gtB($.get$length(trimmed),2))var t1=$.eqB($.index(trimmed,1),'x')||$.eqB($.index(trimmed,1),'X');else t1=false;if(!t1)if($.gtB($.get$length(trimmed),3))t1=$.eqB($.index(trimmed,2),'x')||$.eqB($.index(trimmed,2),'X');else t1=false;else t1=true;var base=t1?16:10;var ret=parseInt(trimmed, base);if($.isNaN(ret)===true)throw $.$$throw($.FormatException$(str));return ret;};
 
-$.TextureInput__parseCoordinate = function(input){var match=$.$$($.CTC53.allMatches$1(input)).single$0();return $.Coordinate$($.parseDouble($.index(match,1)),$.parseDouble($.index(match,2)));};
+$.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(receiver);return receiver.iterator$0();};
+
+$.TextureInput__parseCoordinate = function(input){var match=$.$$($.CTC52.allMatches$1(input)).single$0();return $.Coordinate$($.parseDouble($.index(match,1)),$.parseDouble($.index(match,2)));};
 
 $._Timer$ = function(milliSeconds,callback){var t1=new $._Timer(true,null);t1._Timer$2(milliSeconds,callback);return t1;};
 
-$.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(receiver);return receiver.iterator$0();};
+$.getFallThroughError = function(){return $.CTC38;};
 
 $.isNaN = function(receiver){if(typeof receiver==='number')return isNaN(receiver);else return receiver.isNaN$0();};
 
@@ -2760,7 +2736,7 @@ $.GameRoot_GameRoot = function(width,height,mineCount,canvasElement,leftCountDiv
 
 $._DOMApplicationCacheEventsImpl$ = function(_ptr){return new $._DOMApplicationCacheEventsImpl(_ptr);};
 
-$.TextureInput__parseRect = function(input){var matches=$.$$($.CTC53.allMatches$1(input)).toList$0();return $.Rect_Rect$fromCoordSize($.TextureInput__parseCoordinate($.index($.index(matches,0),0)),$.TextureInput__parseCoordinate($.index($.index(matches,1),0)).toSize$0());};
+$.TextureInput__parseRect = function(input){var matches=$.$$($.CTC52.allMatches$1(input)).toList$0();return $.Rect_Rect$fromCoordSize($.TextureInput__parseCoordinate($.index($.index(matches,0),0)),$.TextureInput__parseCoordinate($.index($.index(matches,1),0)).toSize$0());};
 
 $.StringImplementation__toJsStringArray = function(strings){if(typeof strings!=='object'||strings===null||(strings.constructor!==Array||!!strings.immutable$list)&&!strings.is$JavaScriptIndexingBehavior())return $.StringImplementation__toJsStringArray$bailout(1,strings);$.checkNull(strings);var length$=strings.length;if($.isJsArray(strings)){for(var i=0;i<length$;++i){if(i<0||i>=strings.length)throw $.ioore(i);var string=strings[i];$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));}var array=strings;}else{array=$.ListImplementation_List(length$);for(i=0;i<length$;++i){if(i<0||i>=strings.length)throw $.ioore(i);string=strings[i];$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));if(i<0||i>=array.length)throw $.ioore(i);array[i]=string;}}return array;};
 
@@ -2824,7 +2800,7 @@ $.contains = function(userAgent,name$){return !(userAgent.indexOf(name$)===-1);}
 
 $._TextTrackCueEventsImpl$ = function(_ptr){return new $._TextTrackCueEventsImpl(_ptr);};
 
-$.Random_Random = function(seed){return $.CTC49;};
+$.Random_Random = function(seed){return $.CTC48;};
 
 $._AttachableEventHelper$ = function(_propertyChangeHandleId){return new $._AttachableEventHelper($.NoneHashMap$('Attachable','EventHandle'),_propertyChangeHandleId);};
 
@@ -2843,8 +2819,6 @@ $.IllegalArgumentException$ = function(arg){return new $.IllegalArgumentExceptio
 $._HttpRequestUploadEventsImpl$ = function(_ptr){return new $._HttpRequestUploadEventsImpl(_ptr);};
 
 $.Mouse_markMouseOver = function(stage,coordinate){$.requireArgumentNotNull(stage,'stage');var t1=!(coordinate==null);$.requireArgument(coordinate==null||coordinate.get$isValid()===true,'coordinate',null);var items=$.CTC18.get$1(stage);if(!(items==null)){$.forEach(items,new $.Mouse_markMouseOver_anon());$.CTC18.clear$1(stage);}if(t1){var hits=$.RetainedUtil_hitTest(stage,coordinate);$.CTC18.set$2(stage,hits);$.forEach(hits,new $.Mouse_markMouseOver_anon0());if($.gtB($.get$length(hits),0))$.CTC19.set$2($.index(hits,0),true);return hits;}return;};
-
-$.DualPivotQuicksort__doSort = function(a,left,right,compare){if($.leB($.sub(right,left),32))$.DualPivotQuicksort_insertionSort_(a,left,right,compare);else $.DualPivotQuicksort__dualPivotQuicksort(a,left,right,compare);};
 
 $.checkNull = function(object){if(object==null)throw $.$$throw($.NullPointerException$(null,$.CTC1));return object;};
 
@@ -2927,7 +2901,7 @@ $.regExpGetNative = function(regExp){var r=regExp._re;return r==null?regExp._re 
 
 $._Manager$ = function(){var t1=new $._Manager(0,0,1,null,null,null,null,null,null,null,null,null);t1._Manager$0();return t1;};
 
-$._doLoad = function(){var textures=$._getTexturesFromJson('{"background_side_left.png":{"frame":"{{1028,2},{352,672}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{352,672}}","sourceSize":"{352,672}"},"background_top_left.png":{"frame":"{{2,2},{1024,96}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{1024,96}}","sourceSize":"{1024,96}"},"balloon.png":{"frame":"{{266,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_explode_0000.png":{"frame":"{{266,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_explode_0001.png":{"frame":"{{96,1746},{82,86}}","offset":"{0,-2}","rotated":false,"sourceColorRect":"{{87,87},{82,86}}","sourceSize":"{256,256}"},"balloon_explode_0002.png":{"frame":"{{458,1140},{188,188}}","offset":"{9,9}","rotated":false,"sourceColorRect":"{{43,25},{188,188}}","sourceSize":"{256,256}"},"balloon_explode_0003.png":{"frame":"{{1406,814},{216,222}}","offset":"{3,-2}","rotated":true,"sourceColorRect":"{{23,19},{216,222}}","sourceSize":"{256,256}"},"balloon_explode_0004.png":{"frame":"{{706,894},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0005.png":{"frame":"{{944,816},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0006.png":{"frame":"{{2,1104},{222,218}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,15},{222,218}}","sourceSize":"{256,256}"},"balloon_explode_0007.png":{"frame":"{{1636,696},{222,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,16},{222,216}}","sourceSize":"{256,256}"},"balloon_explode_0008.png":{"frame":"{{232,992},{224,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{15,16},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0009.png":{"frame":"{{468,922},{224,216}}","offset":"{-1,5}","rotated":false,"sourceColorRect":"{{15,15},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0010.png":{"frame":"{{1178,812},{226,216}}","offset":"{-2,5}","rotated":false,"sourceColorRect":"{{13,15},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0011.png":{"frame":"{{1408,588},{226,224}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{14,14},{226,224}}","sourceSize":"{256,256}"},"balloon_explode_0012.png":{"frame":"{{1178,588},{228,222}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,15},{228,222}}","sourceSize":"{256,256}"},"balloon_explode_0013.png":{"frame":"{{1694,470},{228,224}}","offset":"{-2,3}","rotated":false,"sourceColorRect":"{{12,13},{228,224}}","sourceSize":"{256,256}"},"balloon_explode_0014.png":{"frame":"{{2,876},{228,226}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,13},{228,226}}","sourceSize":"{256,256}"},"balloon_explode_0015.png":{"frame":"{{474,692},{230,228}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{11,12},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0016.png":{"frame":"{{946,584},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0017.png":{"frame":"{{1462,356},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0018.png":{"frame":"{{2,644},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0019.png":{"frame":"{{1230,356},{230,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{12,13},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0020.png":{"frame":"{{240,574},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0021.png":{"frame":"{{996,356},{232,226}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{11,13},{232,226}}","sourceSize":"{256,256}"},"balloon_explode_0022.png":{"frame":"{{478,460},{232,230}}","offset":"{-1,1}","rotated":false,"sourceColorRect":"{{11,12},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0023.png":{"frame":"{{712,664},{230,228}}","offset":"{0,1}","rotated":false,"sourceColorRect":"{{13,13},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0024.png":{"frame":"{{1172,1030},{190,214}}","offset":"{-10,4}","rotated":true,"sourceColorRect":"{{23,17},{190,214}}","sourceSize":"{256,256}"},"balloon_pop_0000.png":{"frame":"{{266,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_pop_0001.png":{"frame":"{{1626,1406},{142,114}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{60,66},{142,114}}","sourceSize":"{256,256}"},"balloon_pop_0002.png":{"frame":"{{236,806},{230,184}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{16,31},{230,184}}","sourceSize":"{256,256}"},"balloon_pop_0003.png":{"frame":"{{712,476},{232,186}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{15,30},{232,186}}","sourceSize":"{256,256}"},"balloon_pop_0004.png":{"frame":"{{758,288},{236,186}}","offset":"{2,5}","rotated":false,"sourceColorRect":"{{12,30},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0005.png":{"frame":"{{520,272},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0006.png":{"frame":"{{776,100},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0007.png":{"frame":"{{280,206},{238,184}}","offset":"{1,3}","rotated":false,"sourceColorRect":"{{10,33},{238,184}}","sourceSize":"{256,256}"},"balloon_pop_0008.png":{"frame":"{{2,280},{236,182}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,35},{236,182}}","sourceSize":"{256,256}"},"balloon_pop_0009.png":{"frame":"{{240,392},{236,180}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,36},{236,180}}","sourceSize":"{256,256}"},"balloon_pop_0010.png":{"frame":"{{2,464},{236,178}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,37},{236,178}}","sourceSize":"{256,256}"},"balloon_pop_0011.png":{"frame":"{{1858,1778},{84,106}}","offset":"{-2,-4}","rotated":true,"sourceColorRect":"{{84,79},{84,106}}","sourceSize":"{256,256}"},"balloon_pop_0012.png":{"frame":"{{1764,1680},{88,112}}","offset":"{-3,-4}","rotated":true,"sourceColorRect":"{{81,76},{88,112}}","sourceSize":"{256,256}"},"balloon_pop_0013.png":{"frame":"{{1308,1536},{94,118}}","offset":"{-3,-4}","rotated":true,"sourceColorRect":"{{78,73},{94,118}}","sourceSize":"{256,256}"},"balloon_pop_0014.png":{"frame":"{{1914,1530},{100,124}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{74,70},{100,124}}","sourceSize":"{256,256}"},"balloon_pop_0015.png":{"frame":"{{1788,1362},{104,130}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{72,67},{104,130}}","sourceSize":"{256,256}"},"balloon_pop_0016.png":{"frame":"{{1766,1568},{110,136}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{68,64},{110,136}}","sourceSize":"{256,256}"},"balloon_pop_0017.png":{"frame":"{{1550,1522},{114,140}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{66,62},{114,140}}","sourceSize":"{256,256}"},"balloon_pop_0018.png":{"frame":"{{1924,632},{120,144}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{62,60},{120,144}}","sourceSize":"{256,256}"},"balloon_pop_0019.png":{"frame":"{{1922,1158},{124,148}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{60,58},{124,148}}","sourceSize":"{256,256}"},"balloon_pop_0020.png":{"frame":"{{1332,1316},{128,152}}","offset":"{-7,-4}","rotated":true,"sourceColorRect":"{{57,56},{128,152}}","sourceSize":"{256,256}"},"balloon_pop_0021.png":{"frame":"{{1790,1206},{130,154}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{56,55},{130,154}}","sourceSize":"{256,256}"},"balloon_pop_0022.png":{"frame":"{{1172,1222},{134,158}}","offset":"{-8,-4}","rotated":true,"sourceColorRect":"{{53,53},{134,158}}","sourceSize":"{256,256}"},"balloon_pop_0023.png":{"frame":"{{1626,1268},{136,160}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{52,51},{136,160}}","sourceSize":"{256,256}"},"balloon_pop_0024.png":{"frame":"{{2,1324},{138,162}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{51,50},{138,162}}","sourceSize":"{256,256}"},"balloon_pop_0025.png":{"frame":"{{1628,1126},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0026.png":{"frame":"{{1388,1032},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0027.png":{"frame":"{{898,1174},{142,158}}","offset":"{-10,-3}","rotated":true,"sourceColorRect":"{{47,52},{142,158}}","sourceSize":"{256,256}"},"balloon_pop_0028.png":{"frame":"{{1172,1358},{136,148}}","offset":"{-11,-2}","rotated":true,"sourceColorRect":"{{49,56},{136,148}}","sourceSize":"{256,256}"},"dart_fly_0000.png":{"frame":"{{1990,222},{36,56}}","offset":"{514,-324}","rotated":true,"sourceColorRect":"{{1520,1064},{36,56}}","sourceSize":"{2048,1536}"},"dart_fly_0001.png":{"frame":"{{934,1034},{138,214}}","offset":"{468,-256}","rotated":true,"sourceColorRect":"{{1423,917},{138,214}}","sourceSize":"{2048,1536}"},"dart_fly_0002.png":{"frame":"{{1702,2},{218,332}}","offset":"{432,-214}","rotated":true,"sourceColorRect":"{{1347,816},{218,332}}","sourceSize":"{2048,1536}"},"dart_fly_0003.png":{"frame":"{{1702,222},{246,286}}","offset":"{388,-124}","rotated":true,"sourceColorRect":"{{1289,749},{246,286}}","sourceSize":"{2048,1536}"},"dart_fly_0004.png":{"frame":"{{1630,914},{210,220}}","offset":"{324,-45}","rotated":true,"sourceColorRect":"{{1243,703},{210,220}}","sourceSize":"{2048,1536}"},"dart_fly_0005.png":{"frame":"{{226,1210},{182,166}}","offset":"{273,10}","rotated":false,"sourceColorRect":"{{1206,675},{182,166}}","sourceSize":"{2048,1536}"},"dart_fly_0006.png":{"frame":"{{1924,470},{160,120}}","offset":"{231,45}","rotated":true,"sourceColorRect":"{{1175,663},{160,120}}","sourceSize":"{2048,1536}"},"dart_fly_0007.png":{"frame":"{{1770,1468},{142,98}}","offset":"{197,76}","rotated":false,"sourceColorRect":"{{1150,643},{142,98}}","sourceSize":"{2048,1536}"},"dart_fly_0008.png":{"frame":"{{1920,1436},{126,92}}","offset":"{168,101}","rotated":false,"sourceColorRect":"{{1129,621},{126,92}}","sourceSize":"{2048,1536}"},"dart_fly_0009.png":{"frame":"{{1402,1706},{112,86}}","offset":"{143,114}","rotated":false,"sourceColorRect":"{{1111,611},{112,86}}","sourceSize":"{2048,1536}"},"dart_fly_0010.png":{"frame":"{{548,1330},{98,94}}","offset":"{123,112}","rotated":false,"sourceColorRect":"{{1098,609},{98,94}}","sourceSize":"{2048,1536}"},"dart_fly_0011.png":{"frame":"{{786,1270},{86,110}}","offset":"{106,96}","rotated":true,"sourceColorRect":"{{1087,617},{86,110}}","sourceSize":"{2048,1536}"},"dart_fly_0012.png":{"frame":"{{1550,1032},{76,124}}","offset":"{91,75}","rotated":false,"sourceColorRect":"{{1077,631},{76,124}}","sourceSize":"{2048,1536}"},"dart_fly_0013.png":{"frame":"{{1036,1402},{66,134}}","offset":"{79,48}","rotated":true,"sourceColorRect":"{{1070,653},{66,134}}","sourceSize":"{2048,1536}"},"dart_fly_0014.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0015.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0016.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0017.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0018.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0019.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0020.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0021.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0022.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0023.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0024.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0025.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0026.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0027.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0028.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0029.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0030.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0031.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0032.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0033.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0034.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0035.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0036.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0037.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0038.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0039.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0040.png":{"frame":"{{1032,1534},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0041.png":{"frame":"{{1170,1496},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0042.png":{"frame":"{{894,1510},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0043.png":{"frame":"{{1032,1470},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0044.png":{"frame":"{{894,1446},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0045.png":{"frame":"{{898,1382},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0046.png":{"frame":"{{648,1398},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0047.png":{"frame":"{{648,1334},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0048.png":{"frame":"{{410,1330},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0049.png":{"frame":"{{898,1318},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0050.png":{"frame":"{{648,1270},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0051.png":{"frame":"{{1904,1632},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0052.png":{"frame":"{{1486,1316},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0053.png":{"frame":"{{1860,834},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0054.png":{"frame":"{{1860,696},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0055.png":{"frame":"{{2036,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0000.png":{"frame":"{{2036,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0001.png":{"frame":"{{1322,1446},{88,142}}","offset":"{-27,-274}","rotated":true,"sourceColorRect":"{{953,971},{88,142}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0002.png":{"frame":"{{280,100},{104,250}}","offset":"{-30,-231}","rotated":true,"sourceColorRect":"{{942,874},{104,250}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0003.png":{"frame":"{{2,100},{178,276}}","offset":"{-30,-175}","rotated":true,"sourceColorRect":"{{905,805},{178,276}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0004.png":{"frame":"{{532,100},{170,242}}","offset":"{-34,-110}","rotated":true,"sourceColorRect":"{{905,757},{170,242}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0005.png":{"frame":"{{694,1112},{156,202}}","offset":"{-37,-56}","rotated":true,"sourceColorRect":"{{909,723},{156,202}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0006.png":{"frame":"{{1388,1174},{140,160}}","offset":"{-36,-14}","rotated":true,"sourceColorRect":"{{918,702},{140,160}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0007.png":{"frame":"{{1922,1308},{126,124}}","offset":"{-33,13}","rotated":true,"sourceColorRect":"{{928,693},{126,124}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0008.png":{"frame":"{{1660,1642},{112,102}}","offset":"{-30,39}","rotated":true,"sourceColorRect":"{{938,678},{112,102}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0009.png":{"frame":"{{1466,1454},{82,94}}","offset":"{-27,60}","rotated":false,"sourceColorRect":"{{956,661},{82,94}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0010.png":{"frame":"{{2,1852},{98,88}}","offset":"{-22,72}","rotated":false,"sourceColorRect":"{{953,652},{98,88}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0011.png":{"frame":"{{2,1746},{94,92}}","offset":"{-16,70}","rotated":true,"sourceColorRect":"{{961,652},{94,92}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0012.png":{"frame":"{{786,1426},{88,106}}","offset":"{-8,56}","rotated":true,"sourceColorRect":"{{972,659},{88,106}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0013.png":{"frame":"{{1428,1624},{80,116}}","offset":"{1,36}","rotated":true,"sourceColorRect":"{{985,674},{80,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0014.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0015.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0016.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0017.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0018.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0019.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0020.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0021.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0022.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0023.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0024.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0025.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0026.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0027.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0028.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0029.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0030.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0031.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0032.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0033.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0034.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0035.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0036.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0037.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0038.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0039.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0040.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0041.png":{"frame":"{{1550,1158},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0042.png":{"frame":"{{1924,1082},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0043.png":{"frame":"{{1924,1006},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0044.png":{"frame":"{{1924,930},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0045.png":{"frame":"{{1924,854},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0046.png":{"frame":"{{1924,778},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0047.png":{"frame":"{{1550,1402},{74,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{997,698},{74,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0048.png":{"frame":"{{1428,1550},{72,118}}","offset":"{10,11}","rotated":true,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0049.png":{"frame":"{{1692,1522},{72,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0050.png":{"frame":"{{1170,1560},{72,116}}","offset":"{10,10}","rotated":true,"sourceColorRect":"{{998,700},{72,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0051.png":{"frame":"{{1852,972},{70,116}}","offset":"{11,10}","rotated":false,"sourceColorRect":"{{1000,700},{70,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0052.png":{"frame":"{{1852,1090},{68,114}}","offset":"{11,9}","rotated":false,"sourceColorRect":"{{1001,702},{68,114}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0053.png":{"frame":"{{786,1358},{66,110}}","offset":"{11,7}","rotated":true,"sourceColorRect":"{{1002,706},{66,110}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0054.png":{"frame":"{{2,1942},{64,100}}","offset":"{12,2}","rotated":false,"sourceColorRect":"{{1004,716},{64,100}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0055.png":{"frame":"{{2036,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"game_board_center.png":{"frame":"{{232,1942},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"game_board_corner_bottom_left.png":{"frame":"{{1546,1638},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_bottom_right.png":{"frame":"{{1288,1632},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_left.png":{"frame":"{{1058,1288},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_right.png":{"frame":"{{1058,1174},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_side_bottom.png":{"frame":"{{1744,1770},{80,112}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"game_board_side_left.png":{"frame":"{{1630,1756},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_right.png":{"frame":"{{1516,1752},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_top.png":{"frame":"{{1878,1696},{80,112}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"number_eight.png":{"frame":"{{262,1746},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_five.png":{"frame":"{{184,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_four.png":{"frame":"{{150,1942},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_one.png":{"frame":"{{180,1746},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_seven.png":{"frame":"{{102,1852},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_six.png":{"frame":"{{68,1942},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_three.png":{"frame":"{{1966,1860},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_two.png":{"frame":"{{1966,1778},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"}}');var m=$.toInt(40);var sweeperTable=$.query('#sweeperCanvas');var minesLeftDiv=$.query('#minesLeft');var gameStateDiv=$.query('#gameState');var clockDiv=$.query('#clock');var textureImg=$.index($._imageLoader.get$images(),'art.png');$.populateTextures(textures);$.populateTextureImage(textureImg);var gameRoot=$.GameRoot_GameRoot(16,16,m,sweeperTable,minesLeftDiv,gameStateDiv,clockDiv,false);$.add$1($.window().get$on().get$touchMove(),$._onTouchMove);$.add$1($.query('#newGame').get$on().get$click(),new $._doLoad_anon(gameRoot));};
+$._doLoad = function(){var textures=$._getTexturesFromJson('{"background_side_left.png":{"frame":"{{1028,2},{352,672}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{352,672}}","sourceSize":"{352,672}"},"background_top_left.png":{"frame":"{{2,2},{1024,96}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{1024,96}}","sourceSize":"{1024,96}"},"balloon.png":{"frame":"{{280,1668},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_explode_0000.png":{"frame":"{{280,1668},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_explode_0001.png":{"frame":"{{318,1502},{82,86}}","offset":"{0,-2}","rotated":true,"sourceColorRect":"{{87,87},{82,86}}","sourceSize":"{256,256}"},"balloon_explode_0002.png":{"frame":"{{694,1112},{188,188}}","offset":"{9,9}","rotated":false,"sourceColorRect":"{{43,25},{188,188}}","sourceSize":"{256,256}"},"balloon_explode_0003.png":{"frame":"{{1406,814},{216,222}}","offset":"{3,-2}","rotated":true,"sourceColorRect":"{{23,19},{216,222}}","sourceSize":"{256,256}"},"balloon_explode_0004.png":{"frame":"{{706,894},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0005.png":{"frame":"{{944,816},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0006.png":{"frame":"{{2,1104},{222,218}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,15},{222,218}}","sourceSize":"{256,256}"},"balloon_explode_0007.png":{"frame":"{{1636,664},{222,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,16},{222,216}}","sourceSize":"{256,256}"},"balloon_explode_0008.png":{"frame":"{{232,992},{224,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{15,16},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0009.png":{"frame":"{{468,922},{224,216}}","offset":"{-1,5}","rotated":false,"sourceColorRect":"{{15,15},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0010.png":{"frame":"{{1178,812},{226,216}}","offset":"{-2,5}","rotated":false,"sourceColorRect":"{{13,15},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0011.png":{"frame":"{{1408,588},{226,224}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{14,14},{226,224}}","sourceSize":"{256,256}"},"balloon_explode_0012.png":{"frame":"{{1178,588},{228,222}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,15},{228,222}}","sourceSize":"{256,256}"},"balloon_explode_0013.png":{"frame":"{{1694,438},{228,224}}","offset":"{-2,3}","rotated":false,"sourceColorRect":"{{12,13},{228,224}}","sourceSize":"{256,256}"},"balloon_explode_0014.png":{"frame":"{{2,876},{228,226}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,13},{228,226}}","sourceSize":"{256,256}"},"balloon_explode_0015.png":{"frame":"{{474,692},{230,228}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{11,12},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0016.png":{"frame":"{{946,584},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0017.png":{"frame":"{{1462,356},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0018.png":{"frame":"{{2,644},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0019.png":{"frame":"{{1230,356},{230,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{12,13},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0020.png":{"frame":"{{240,574},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0021.png":{"frame":"{{996,356},{232,226}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{11,13},{232,226}}","sourceSize":"{256,256}"},"balloon_explode_0022.png":{"frame":"{{478,460},{232,230}}","offset":"{-1,1}","rotated":false,"sourceColorRect":"{{11,12},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0023.png":{"frame":"{{712,664},{230,228}}","offset":"{0,1}","rotated":false,"sourceColorRect":"{{13,13},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0024.png":{"frame":"{{1172,1030},{190,214}}","offset":"{-10,4}","rotated":true,"sourceColorRect":"{{23,17},{190,214}}","sourceSize":"{256,256}"},"balloon_pop_0000.png":{"frame":"{{280,1668},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_pop_0001.png":{"frame":"{{1388,1314},{142,114}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{60,66},{142,114}}","sourceSize":"{256,256}"},"balloon_pop_0002.png":{"frame":"{{236,806},{230,184}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{16,31},{230,184}}","sourceSize":"{256,256}"},"balloon_pop_0003.png":{"frame":"{{712,476},{232,186}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{15,30},{232,186}}","sourceSize":"{256,256}"},"balloon_pop_0004.png":{"frame":"{{758,288},{236,186}}","offset":"{2,5}","rotated":false,"sourceColorRect":"{{12,30},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0005.png":{"frame":"{{520,272},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0006.png":{"frame":"{{776,100},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0007.png":{"frame":"{{280,206},{238,184}}","offset":"{1,3}","rotated":false,"sourceColorRect":"{{10,33},{238,184}}","sourceSize":"{256,256}"},"balloon_pop_0008.png":{"frame":"{{2,280},{236,182}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,35},{236,182}}","sourceSize":"{256,256}"},"balloon_pop_0009.png":{"frame":"{{240,392},{236,180}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,36},{236,180}}","sourceSize":"{256,256}"},"balloon_pop_0010.png":{"frame":"{{2,464},{236,178}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,37},{236,178}}","sourceSize":"{256,256}"},"balloon_pop_0011.png":{"frame":"{{694,1366},{84,106}}","offset":"{-2,-4}","rotated":false,"sourceColorRect":"{{84,79},{84,106}}","sourceSize":"{256,256}"},"balloon_pop_0012.png":{"frame":"{{1530,1642},{88,112}}","offset":"{-3,-4}","rotated":false,"sourceColorRect":"{{81,76},{88,112}}","sourceSize":"{256,256}"},"balloon_pop_0013.png":{"frame":"{{1044,1192},{94,118}}","offset":"{-3,-4}","rotated":true,"sourceColorRect":"{{78,73},{94,118}}","sourceSize":"{256,256}"},"balloon_pop_0014.png":{"frame":"{{1922,1404},{100,124}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{74,70},{100,124}}","sourceSize":"{256,256}"},"balloon_pop_0015.png":{"frame":"{{1788,1484},{104,130}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{72,67},{104,130}}","sourceSize":"{256,256}"},"balloon_pop_0016.png":{"frame":"{{1622,1516},{110,136}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{68,64},{110,136}}","sourceSize":"{256,256}"},"balloon_pop_0017.png":{"frame":"{{1388,1530},{114,140}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{66,62},{114,140}}","sourceSize":"{256,256}"},"balloon_pop_0018.png":{"frame":"{{1924,600},{120,144}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{62,60},{120,144}}","sourceSize":"{256,256}"},"balloon_pop_0019.png":{"frame":"{{1922,1126},{124,148}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{60,58},{124,148}}","sourceSize":"{256,256}"},"balloon_pop_0020.png":{"frame":"{{1792,1174},{128,152}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{57,56},{128,152}}","sourceSize":"{256,256}"},"balloon_pop_0021.png":{"frame":"{{1790,1328},{130,154}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{56,55},{130,154}}","sourceSize":"{256,256}"},"balloon_pop_0022.png":{"frame":"{{1164,1222},{134,158}}","offset":"{-8,-4}","rotated":true,"sourceColorRect":"{{53,53},{134,158}}","sourceSize":"{256,256}"},"balloon_pop_0023.png":{"frame":"{{1626,1378},{136,160}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{52,51},{136,160}}","sourceSize":"{256,256}"},"balloon_pop_0024.png":{"frame":"{{1388,1032},{138,162}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{51,50},{138,162}}","sourceSize":"{256,256}"},"balloon_pop_0025.png":{"frame":"{{1628,1236},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0026.png":{"frame":"{{1630,1094},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0027.png":{"frame":"{{884,1192},{142,158}}","offset":"{-10,-3}","rotated":true,"sourceColorRect":"{{47,52},{142,158}}","sourceSize":"{256,256}"},"balloon_pop_0028.png":{"frame":"{{1164,1358},{136,148}}","offset":"{-11,-2}","rotated":true,"sourceColorRect":"{{49,56},{136,148}}","sourceSize":"{256,256}"},"balloon_tagged_!.png":{"frame":"{{488,1528},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_bomb.png":{"frame":"{{406,1504},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_frozen.png":{"frame":"{{204,1516},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_question_mark.png":{"frame":"{{2,1570},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_x.png":{"frame":"{{116,1526},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"dart_fly_0000.png":{"frame":"{{1992,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_0001.png":{"frame":"{{226,1210},{108,164}}","offset":"{452,-231}","rotated":true,"sourceColorRect":"{{1422,917},{108,164}}","sourceSize":"{2048,1536}"},"dart_fly_0002.png":{"frame":"{{1702,2},{186,288}}","offset":"{416,-193}","rotated":true,"sourceColorRect":"{{1347,817},{186,288}}","sourceSize":"{2048,1536}"},"dart_fly_0003.png":{"frame":"{{1702,190},{246,286}}","offset":"{388,-124}","rotated":true,"sourceColorRect":"{{1289,749},{246,286}}","sourceSize":"{2048,1536}"},"dart_fly_0004.png":{"frame":"{{1630,882},{210,220}}","offset":"{324,-45}","rotated":true,"sourceColorRect":"{{1243,703},{210,220}}","sourceSize":"{2048,1536}"},"dart_fly_0005.png":{"frame":"{{458,1140},{182,166}}","offset":"{273,10}","rotated":false,"sourceColorRect":"{{1206,675},{182,166}}","sourceSize":"{2048,1536}"},"dart_fly_0006.png":{"frame":"{{1924,438},{160,120}}","offset":"{231,45}","rotated":true,"sourceColorRect":"{{1175,663},{160,120}}","sourceSize":"{2048,1536}"},"dart_fly_0007.png":{"frame":"{{1388,1430},{142,98}}","offset":"{197,76}","rotated":false,"sourceColorRect":"{{1150,643},{142,98}}","sourceSize":"{2048,1536}"},"dart_fly_0008.png":{"frame":"{{1920,1506},{126,92}}","offset":"{168,101}","rotated":false,"sourceColorRect":"{{1129,621},{126,92}}","sourceSize":"{2048,1536}"},"dart_fly_0009.png":{"frame":"{{568,1440},{112,86}}","offset":"{143,114}","rotated":false,"sourceColorRect":"{{1111,611},{112,86}}","sourceSize":"{2048,1536}"},"dart_fly_0010.png":{"frame":"{{780,1416},{98,94}}","offset":"{123,112}","rotated":false,"sourceColorRect":"{{1098,609},{98,94}}","sourceSize":"{2048,1536}"},"dart_fly_0011.png":{"frame":"{{116,1414},{86,110}}","offset":"{106,96}","rotated":false,"sourceColorRect":"{{1087,617},{86,110}}","sourceSize":"{2048,1536}"},"dart_fly_0012.png":{"frame":"{{1552,1032},{76,124}}","offset":"{91,75}","rotated":false,"sourceColorRect":"{{1077,631},{76,124}}","sourceSize":"{2048,1536}"},"dart_fly_0013.png":{"frame":"{{1022,1428},{66,134}}","offset":"{79,48}","rotated":true,"sourceColorRect":"{{1070,653},{66,134}}","sourceSize":"{2048,1536}"},"dart_fly_0014.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0015.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0016.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0017.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0018.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0019.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0020.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0021.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0022.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0023.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0024.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0025.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0026.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0027.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0028.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0029.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0030.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0031.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0032.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0033.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0034.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0035.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0036.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0037.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0038.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0039.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0040.png":{"frame":"{{884,1400},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0041.png":{"frame":"{{1022,1364},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0042.png":{"frame":"{{884,1336},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0043.png":{"frame":"{{642,1302},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0044.png":{"frame":"{{1896,1728},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0045.png":{"frame":"{{1758,1718},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0046.png":{"frame":"{{1898,1664},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0047.png":{"frame":"{{1620,1692},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0048.png":{"frame":"{{1760,1654},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0049.png":{"frame":"{{1898,1600},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0050.png":{"frame":"{{1622,1628},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0051.png":{"frame":"{{1760,1590},{62,136}}","offset":"{66,20}","rotated":true,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0052.png":{"frame":"{{1324,1222},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0053.png":{"frame":"{{1860,802},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0054.png":{"frame":"{{1860,664},{62,136}}","offset":"{66,20}","rotated":false,"sourceColorRect":"{{1059,680},{62,136}}","sourceSize":"{2048,1536}"},"dart_fly_0055.png":{"frame":"{{1992,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0000.png":{"frame":"{{1992,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0001.png":{"frame":"{{1532,1498},{88,142}}","offset":"{-27,-274}","rotated":false,"sourceColorRect":"{{953,971},{88,142}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0002.png":{"frame":"{{280,100},{104,250}}","offset":"{-30,-231}","rotated":true,"sourceColorRect":"{{942,874},{104,250}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0003.png":{"frame":"{{2,100},{178,276}}","offset":"{-30,-175}","rotated":true,"sourceColorRect":"{{905,805},{178,276}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0004.png":{"frame":"{{532,100},{170,242}}","offset":"{-34,-110}","rotated":true,"sourceColorRect":"{{905,757},{170,242}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0005.png":{"frame":"{{934,1034},{156,202}}","offset":"{-37,-56}","rotated":true,"sourceColorRect":"{{909,723},{156,202}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0006.png":{"frame":"{{1388,1172},{140,160}}","offset":"{-36,-14}","rotated":true,"sourceColorRect":"{{918,702},{140,160}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0007.png":{"frame":"{{1922,1276},{126,124}}","offset":"{-33,13}","rotated":true,"sourceColorRect":"{{928,693},{126,124}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0008.png":{"frame":"{{780,1302},{112,102}}","offset":"{-30,39}","rotated":true,"sourceColorRect":"{{938,678},{112,102}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0009.png":{"frame":"{{682,1474},{82,94}}","offset":"{-27,60}","rotated":true,"sourceColorRect":"{{956,661},{82,94}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0010.png":{"frame":"{{778,1512},{98,88}}","offset":"{-22,72}","rotated":false,"sourceColorRect":"{{953,652},{98,88}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0011.png":{"frame":"{{1532,1402},{94,92}}","offset":"{-16,70}","rotated":true,"sourceColorRect":"{{961,652},{94,92}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0012.png":{"frame":"{{116,1324},{88,106}}","offset":"{-8,56}","rotated":true,"sourceColorRect":"{{972,659},{88,106}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0013.png":{"frame":"{{458,1308},{80,116}}","offset":"{1,36}","rotated":true,"sourceColorRect":"{{985,674},{80,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0014.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0015.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0016.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0017.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0018.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0019.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0020.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0021.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0022.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0023.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0024.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0025.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0026.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0027.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0028.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0029.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0030.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0031.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0032.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0033.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0034.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0035.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0036.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0037.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0038.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0039.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0040.png":{"frame":"{{1550,1280},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0041.png":{"frame":"{{1552,1158},{74,120}}","offset":"{10,12}","rotated":false,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0042.png":{"frame":"{{1924,1050},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0043.png":{"frame":"{{1924,974},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0044.png":{"frame":"{{1924,898},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0045.png":{"frame":"{{1924,822},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0046.png":{"frame":"{{1924,746},{74,120}}","offset":"{10,12}","rotated":true,"sourceColorRect":"{{997,696},{74,120}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0047.png":{"frame":"{{1044,1288},{74,118}}","offset":"{10,11}","rotated":true,"sourceColorRect":"{{997,698},{74,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0048.png":{"frame":"{{1314,1480},{72,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0049.png":{"frame":"{{1314,1360},{72,118}}","offset":"{10,11}","rotated":false,"sourceColorRect":"{{998,698},{72,118}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0050.png":{"frame":"{{576,1366},{72,116}}","offset":"{10,10}","rotated":true,"sourceColorRect":"{{998,700},{72,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0051.png":{"frame":"{{1852,940},{70,116}}","offset":"{11,10}","rotated":false,"sourceColorRect":"{{1000,700},{70,116}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0052.png":{"frame":"{{1852,1058},{68,114}}","offset":"{11,9}","rotated":false,"sourceColorRect":"{{1001,702},{68,114}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0053.png":{"frame":"{{318,1434},{66,110}}","offset":"{11,7}","rotated":true,"sourceColorRect":"{{1002,706},{66,110}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0054.png":{"frame":"{{392,1210},{64,100}}","offset":"{12,2}","rotated":false,"sourceColorRect":"{{1004,716},{64,100}}","sourceSize":"{2048,1536}"},"dart_fly_shadow_0055.png":{"frame":"{{1992,2},{0,0}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{0,0}}","sourceSize":"{2048,1536}"},"game_board_center.png":{"frame":"{{532,1610},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"game_board_corner_bottom_left.png":{"frame":"{{454,1390},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_bottom_right.png":{"frame":"{{340,1320},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_left.png":{"frame":"{{226,1320},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_right.png":{"frame":"{{880,1464},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_side_bottom.png":{"frame":"{{204,1434},{80,112}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"game_board_side_left.png":{"frame":"{{2,1406},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_right.png":{"frame":"{{2,1324},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_top.png":{"frame":"{{2,1488},{80,112}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"number_eight.png":{"frame":"{{450,1610},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_five.png":{"frame":"{{368,1586},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_four.png":{"frame":"{{2,1652},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_one.png":{"frame":"{{84,1608},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_seven.png":{"frame":"{{198,1598},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_six.png":{"frame":"{{286,1586},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_three.png":{"frame":"{{652,1558},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_two.png":{"frame":"{{570,1528},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"}}');var m=$.toInt(40);var sweeperTable=$.query('#sweeperCanvas');var minesLeftDiv=$.query('#minesLeft');var gameStateDiv=$.query('#gameState');var clockDiv=$.query('#clock');var textureImg=$.index($._imageLoader.get$images(),'art.png');$.populateTextures(textures);$.populateTextureImage(textureImg);var gameRoot=$.GameRoot_GameRoot(16,16,m,sweeperTable,minesLeftDiv,gameStateDiv,clockDiv,false);$.add$1($.window().get$on().get$touchMove(),$._onTouchMove);$.add$1($.query('#newGame').get$on().get$click(),new $._doLoad_anon(gameRoot));};
 
 $._AttachableEventHelper_addHandler = function(obj,property,watcher){return $.add$1($.CTC28.get$2(obj,$._AttachableEventHelper_createInstance).get$_handlers().putIfAbsent$2(property,new $._AttachableEventHelper_addHandler_anon()),watcher);};
 
@@ -2941,8 +2915,6 @@ $._Lists_indexOf$bailout = function(state,a,element,startIndex,endIndex){if($.ge
 
 $._Lists_getRange$bailout = function(state,a,start,length$,accumulator){if($.ltB(length$,0))throw $.$$throw($.IllegalArgumentException$('length'));if($.ltB(start,0))throw $.$$throw($.IndexOutOfRangeException$(start));var end=$.add(start,length$);if($.gtB(end,$.get$length(a)))throw $.$$throw($.IndexOutOfRangeException$(end));for(var i=start;$.ltB(i,end);i=$.add(i,1))accumulator.push($.index(a,i));return accumulator;};
 
-$.DualPivotQuicksort__dualPivotQuicksort$bailout = function(state,env0,env1,env2,env3,env4,env5,env6,env7,env8,env9,env10,env11,env12,env13){switch(state){case 1:var a=env0;var left=env1;var right=env2;var compare=env3;break;case 2:a=env0;left=env1;compare=env2;less=env3;k=env4;index1=env5;index5=env6;el2=env7;pivots_are_equal=env8;right=env9;ak=env10;comp=env11;el4=env12;great=env13;break;}switch(state){case 0:case 1:state=0;var sixth=$.tdiv($.add($.sub(right,left),1),6);if(typeof sixth!=='number')throw $.iae(sixth);var index1=left+sixth;var index5=$.sub(right,sixth);if(typeof right!=='number')throw $.iae(right);var index3=$.tdiv(left+right,2);var index2=index3-sixth;var index4=index3+sixth;var el1=$.index(a,index1);var el2=$.index(a,index2);var el3=$.index(a,index3);var el4=$.index(a,index4);var el5=$.index(a,index5);if($.gtB(compare.call$2(el1,el2),0)){var t0=el1;el1=el2;el2=t0;}if($.gtB(compare.call$2(el4,el5),0)){t0=el5;el5=el4;el4=t0;}if($.gtB(compare.call$2(el1,el3),0)){t0=el3;el3=el1;el1=t0;}if($.gtB(compare.call$2(el2,el3),0)){t0=el3;el3=el2;el2=t0;}if($.gtB(compare.call$2(el1,el4),0)){t0=el1;el1=el4;el4=t0;}if($.gtB(compare.call$2(el3,el4),0)){t0=el3;el3=el4;el4=t0;}if($.gtB(compare.call$2(el2,el5),0)){t0=el5;el5=el2;el2=t0;}if($.gtB(compare.call$2(el2,el3),0)){t0=el3;el3=el2;el2=t0;}if($.gtB(compare.call$2(el4,el5),0)){t0=el5;el5=el4;el4=t0;}$.indexSet(a,index1,el1);$.indexSet(a,index3,el3);$.indexSet(a,index5,el5);$.indexSet(a,index2,$.index(a,left));$.indexSet(a,index4,$.index(a,right));var less=left+1;var great=right-1;var pivots_are_equal=$.eqB(compare.call$2(el2,el4),0);case 2:if(state===2||state===0&&pivots_are_equal)switch(state){case 0:var k=less;case 2:L0:while(true)switch(state){case 0:if(!(k<=great))break L0;case 2:c$0:{switch(state){case 0:var ak=$.index(a,k);var comp=compare.call$2(ak,el2);case 2:state=0;if($.eqB(comp,0))break c$0;if($.ltB(comp,0)){if(!(k===less)){$.indexSet(a,k,$.index(a,less));$.indexSet(a,less,ak);}++less;}else for(var less0=less+1;true;){comp=compare.call$2($.index(a,great),el2);if($.gtB(comp,0)){--great;continue;}else if($.ltB(comp,0)){$.indexSet(a,k,$.index(a,less));$.indexSet(a,less,$.index(a,great));var great0=great-1;$.indexSet(a,great,ak);great=great0;less=less0;break;}else{$.indexSet(a,k,$.index(a,great));great0=great-1;$.indexSet(a,great,ak);great=great0;break;}}}}++k;}}else for(k=less;k<=great;++k){ak=$.index(a,k);if($.ltB(compare.call$2(ak,el2),0)){if(!(k===less)){$.indexSet(a,k,$.index(a,less));$.indexSet(a,less,ak);}++less;}else if($.gtB(compare.call$2(ak,el4),0))for(less0=less+1;true;)if($.gtB(compare.call$2($.index(a,great),el4),0)){--great;if(great<k)break;continue;}else{if($.ltB(compare.call$2($.index(a,great),el2),0)){$.indexSet(a,k,$.index(a,less));$.indexSet(a,less,$.index(a,great));great0=great-1;$.indexSet(a,great,ak);great=great0;less=less0;}else{$.indexSet(a,k,$.index(a,great));great0=great-1;$.indexSet(a,great,ak);great=great0;}break;}}var t1=less-1;$.indexSet(a,left,$.index(a,t1));$.indexSet(a,t1,el2);$.indexSet(a,right,$.index(a,great+1));$.indexSet(a,great+1,el4);$.DualPivotQuicksort__doSort(a,left,less-2,compare);$.DualPivotQuicksort__doSort(a,great+2,right,compare);if(pivots_are_equal)return;if(less<index1&&$.gtB(great,index5)){for(;$.eqB(compare.call$2($.index(a,less),el2),0);)++less;for(;$.eqB(compare.call$2($.index(a,great),el4),0);)--great;for(k=less;k<=great;++k){ak=$.index(a,k);if($.eqB(compare.call$2(ak,el2),0)){if(!(k===less)){$.indexSet(a,k,$.index(a,less));$.indexSet(a,less,ak);}++less;}else if($.eqB(compare.call$2(ak,el4),0))for(less0=less+1;true;)if($.eqB(compare.call$2($.index(a,great),el4),0)){--great;if(great<k)break;continue;}else{if($.ltB(compare.call$2($.index(a,great),el2),0)){$.indexSet(a,k,$.index(a,less));$.indexSet(a,less,$.index(a,great));great0=great-1;$.indexSet(a,great,ak);great=great0;less=less0;}else{$.indexSet(a,k,$.index(a,great));great0=great-1;$.indexSet(a,great,ak);great=great0;}break;}}$.DualPivotQuicksort__doSort(a,less,great,compare);}else $.DualPivotQuicksort__doSort(a,less,great,compare);}};
-
 $.RetainedUtil__hitTest$bailout = function(state,env0,env1,env2,env3){switch(state){case 1:var element=env0;length$=env1;point=env2;hits=env3;break;}switch(state){case 0:var point=$.RetainedUtil_transformPointGlobalToLocal(element,point);var bounds=$.Rect$(0,0,element.get$width(),element.get$height());var hits=$.ListImplementation_List(null,'PElement');case 1:if(state===1||state===0&&bounds.contains$1(point)===true)switch(state){case 0:var length$=element.get$visualChildCount();case 1:state=0;for(var i=0;$.ltB(i,length$);++i){hits=$.RetainedUtil__hitTest(element.getVisualChild$1($.sub($.sub(length$,1),i)),point);if(hits.length>0)break;}hits.push(element);return hits;}else return [];}};
 
 $.Futures_wait$bailout = function(state,futures,t1){if($.isEmpty(futures)===true)return $.FutureImpl_FutureImpl$immediate($.CTC1,'List');var completer=$.CompleterImpl$('List');var result=completer.get$future();t1.remaining_1=$.get$length(futures);var values=$.ListImplementation_List($.get$length(futures));for(var i=0;$.ltB(i,$.get$length(futures));++i){var future=$.index(futures,i);future.then$1(new $.Futures_wait_anon(completer,i,t1,result,values));future.handleException$1(new $.Futures_wait_anon0(future,completer,result));}return result;};
@@ -2954,8 +2926,6 @@ $.Field_Field$bailout = function(state,mineCount,cols,rows,seed){var squares=$.L
 $.StringImplementation__toJsStringArray$bailout = function(state,strings){$.checkNull(strings);var length$=$.get$length(strings);if($.isJsArray(strings)){for(var i=0;$.ltB(i,length$);++i){var string=$.index(strings,i);$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));}var array=strings;}else{array=$.ListImplementation_List(length$);for(i=0;$.ltB(i,length$);++i){string=$.index(strings,i);$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));if(i<0||i>=array.length)throw $.ioore(i);array[i]=string;}}return array;};
 
 $.listInsertRange$bailout = function(state,receiver,start,length$,initialValue){if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.IllegalArgumentException$(length$));if(length$<0)throw $.$$throw($.IllegalArgumentException$(length$));var receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=receiverLength+length$;$.set$length(receiver,t1);var t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(var i=start;i<t2;++i)$.indexSet(receiver,i,initialValue);$.set$length(receiver,t1);};
-
-$.DualPivotQuicksort_insertionSort_$bailout = function(state,a,left,right,compare){for(var i=left+1;$.leB(i,right);++i){var el=$.index(a,i);var j=i;while(true){if(!(j>left&&$.gtB(compare.call$2($.index(a,j-1),el),0)))break;var j0=j-1;$.indexSet(a,j,$.index(a,j0));j=j0;}$.indexSet(a,j,el);}};
 
 $._onTouchMove.call$1 = $._onTouchMove;
 $._onTouchMove.$name = "_onTouchMove";
@@ -2989,122 +2959,119 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC1 = Isolate.makeConstantList([]);
-$.CTC56 = false;
-$.CTC57 = 'IsMouseDirectlyOver';
+$.CTC55 = false;
+$.CTC56 = 'IsMouseDirectlyOver';
 $.CTC19 = new Isolate.$isolateProperties.Property(false, 'IsMouseDirectlyOver');
-$.CTC58 = 'structured clone of other type';
+$.CTC57 = 'structured clone of other type';
 $.CTC12 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC59 = 'Mutation operations are not supported';
+$.CTC58 = 'Mutation operations are not supported';
 $.CTC31 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC60 = 'reset';
-$.CTC47 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC59 = 'reset';
+$.CTC46 = new Isolate.$isolateProperties.GameState('reset');
 $.CTC14 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC61 = 'IsMouseOver';
+$.CTC60 = 'IsMouseOver';
 $.CTC22 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
 $.CTC13 = new Isolate.$isolateProperties.EventArgs();
-$.CTC62 = 'structured clone of FileList';
+$.CTC61 = 'structured clone of FileList';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
-$.CTC63 = 'isClickable';
+$.CTC62 = 'isClickable';
 $.CTC20 = new Isolate.$isolateProperties.Property(false, 'isClickable');
-$.CTC64 = 0;
+$.CTC63 = 0;
 $.CTC23 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC65 = 'structured clone of RegExp';
+$.CTC64 = 'structured clone of RegExp';
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC66 = 2048;
-$.CTC67 = 1536;
+$.CTC65 = 2048;
+$.CTC66 = 1536;
 $.CTC24 = new Isolate.$isolateProperties.Size(2048, 1536);
-$.CTC68 = 32;
+$.CTC67 = 32;
 $.CTC26 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC69 = 352;
-$.CTC70 = 96;
+$.CTC68 = 352;
+$.CTC69 = 96;
 $.CTC25 = new Isolate.$isolateProperties.Vector(352, 96);
-$.CTC71 = 'structured clone of Blob';
+$.CTC70 = 'structured clone of Blob';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC72 = null;
-$.CTC73 = '_attachableEventHelperProperty';
+$.CTC71 = null;
+$.CTC72 = '_attachableEventHelperProperty';
 $.CTC28 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
-$.CTC74 = 'Cannot removeRange on immutable List.';
+$.CTC73 = 'Cannot removeRange on immutable List.';
 $.CTC29 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC75 = 'The input sequence is empty.';
+$.CTC74 = 'The input sequence is empty.';
 $.CTC42 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC76 = 'Cannot insertRange on immutable List.';
+$.CTC75 = 'Cannot insertRange on immutable List.';
 $.CTC32 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC77 = 'mine';
-$.CTC39 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC78 = 'started';
-$.CTC46 = new Isolate.$isolateProperties.GameState('started');
-$.CTC79 = 'IDBKey containing Date';
+$.CTC76 = 'mine';
+$.CTC37 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC77 = 'started';
+$.CTC45 = new Isolate.$isolateProperties.GameState('started');
+$.CTC78 = 'IDBKey containing Date';
 $.CTC16 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC80 = 'safe';
+$.CTC79 = 'safe';
 $.CTC40 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC81 = 'structured clone of Date';
+$.CTC80 = 'structured clone of Date';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
-$.CTC82 = -88;
+$.CTC81 = -88;
 $.CTC36 = new Isolate.$isolateProperties.Vector(-88, -88);
-$.CTC52 = new Isolate.$isolateProperties._UndefinedValue();
-$.CTC83 = '_stageMouseCacheProperty';
+$.CTC51 = new Isolate.$isolateProperties._UndefinedValue();
+$.CTC82 = '_stageMouseCacheProperty';
 $.CTC18 = new Isolate.$isolateProperties.Property(null, '_stageMouseCacheProperty');
-$.CTC84 = 'flagged';
+$.CTC83 = 'flagged';
 $.CTC34 = new Isolate.$isolateProperties.SquareState('flagged');
-$.CTC85 = 'Cannot sort immutable List.';
-$.CTC37 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot sort immutable List.');
-$.CTC86 = 'structured clone of ArrayBuffer';
+$.CTC84 = 'structured clone of ArrayBuffer';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC87 = 'must be implemented by subclass';
+$.CTC85 = 'must be implemented by subclass';
 $.CTC30 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC88 = 100;
-$.CTC48 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC89 = 'game_board_center';
-$.CTC90 = 'number_one';
-$.CTC91 = 'number_two';
-$.CTC92 = 'number_three';
-$.CTC93 = 'number_four';
-$.CTC94 = 'number_five';
-$.CTC95 = 'number_six';
-$.CTC96 = 'number_seven';
-$.CTC97 = 'number_eight';
-$.CTC38 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
-$.CTC98 = 'revealed';
+$.CTC86 = 100;
+$.CTC47 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC87 = 'game_board_center';
+$.CTC88 = 'number_one';
+$.CTC89 = 'number_two';
+$.CTC90 = 'number_three';
+$.CTC91 = 'number_four';
+$.CTC92 = 'number_five';
+$.CTC93 = 'number_six';
+$.CTC94 = 'number_seven';
+$.CTC95 = 'number_eight';
+$.CTC39 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
+$.CTC96 = 'revealed';
 $.CTC35 = new Isolate.$isolateProperties.SquareState('revealed');
 $.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
 $.CTC2 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC99 = 'Cannot removeLast on immutable List.';
+$.CTC97 = 'Cannot removeLast on immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.CTC15 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC21 = new Isolate.$isolateProperties.NotImplementedException(null);
-$.CTC100 = '^#[_a-zA-Z]\\w*$';
+$.CTC98 = '^#[_a-zA-Z]\\w*$';
 $.CTC17 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC101 = 'structured clone of File';
+$.CTC99 = 'structured clone of File';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC102 = '';
+$.CTC100 = '';
 $.CTC43 = new Isolate.$isolateProperties.UnsupportedOperationException('');
-$.CTC103 = 'The input sequence contains more than one element.';
-$.CTC54 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC104 = 'clickEvent';
+$.CTC101 = 'The input sequence contains more than one element.';
+$.CTC53 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
+$.CTC102 = 'clickEvent';
 $.CTC27 = new Isolate.$isolateProperties.AttachedEvent('clickEvent');
-$.CTC105 = '{([^,{]+),([^}]+)}';
-$.CTC53 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '{([^,{]+),([^}]+)}');
-$.CTC55 = new Isolate.$isolateProperties.Object();
-$.CTC106 = 'hidden';
+$.CTC103 = '{([^,{]+),([^}]+)}';
+$.CTC52 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '{([^,{]+),([^}]+)}');
+$.CTC54 = new Isolate.$isolateProperties.Object();
+$.CTC104 = 'hidden';
 $.CTC33 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC107 = 'Cannot add to immutable List.';
+$.CTC105 = 'Cannot add to immutable List.';
 $.CTC = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC49 = new Isolate.$isolateProperties._Random();
-$.CTC108 = 'TODO(jacobr): should we impl?';
-$.CTC44 = new Isolate.$isolateProperties.UnsupportedOperationException('TODO(jacobr): should we impl?');
-$.CTC109 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC41 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC109, Isolate.$isolateProperties.CTC109, Isolate.$isolateProperties.CTC109, Isolate.$isolateProperties.CTC109, Isolate.$isolateProperties.CTC1);
-$.CTC110 = 'Invalid list length';
-$.CTC45 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
-$.CTC111 = 'won';
-$.CTC50 = new Isolate.$isolateProperties.GameState('won');
-$.CTC112 = 'lost';
-$.CTC51 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC48 = new Isolate.$isolateProperties._Random();
+$.CTC106 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC41 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC106, Isolate.$isolateProperties.CTC106, Isolate.$isolateProperties.CTC106, Isolate.$isolateProperties.CTC106, Isolate.$isolateProperties.CTC1);
+$.CTC107 = 'Invalid list length';
+$.CTC44 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC38 = new Isolate.$isolateProperties.FallThroughErrorImplementation();
+$.CTC108 = 'won';
+$.CTC49 = new Isolate.$isolateProperties.GameState('won');
+$.CTC109 = 'lost';
+$.CTC50 = new Isolate.$isolateProperties.GameState('lost');
 $.CTC4 = new Isolate.$isolateProperties._Default();
-$.CTC113 = 'structured clone of ArrayBufferView';
+$.CTC110 = 'structured clone of ArrayBufferView';
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
 $._JsonParser_CHAR_CAPITAL_E = 69;
-$.TextureInput__pairExp = Isolate.$isolateProperties.CTC53;
+$.TextureInput__pairExp = Isolate.$isolateProperties.CTC52;
 $._JsonParser_TAB = 9;
 $.Duration_HOURS_PER_DAY = 24;
 $._JsonParser_FALSE_STRING = 'false';
@@ -3116,9 +3083,9 @@ $._JsonParser_QUOTE = 34;
 $._JsonParser_CHAR_E = 101;
 $._JsonParser_MINUS = 45;
 $._JsonParser_CHAR_2 = 50;
+$._JsonParser_CHAR_7 = 55;
 $._JsonParser_NULL_LITERAL = 110;
 $.GameElement__edgeOffset = 32;
-$._JsonParser_CHAR_7 = 55;
 $._JsonParser_CHAR_3 = 51;
 $._textureImage = null;
 $._JsonParser_COLON = 58;
@@ -3143,21 +3110,20 @@ $._JsonParser_RBRACKET = 93;
 $._JsonParser_CHAR_6 = 54;
 $._JsonParser_CHAR_5 = 53;
 $.SquareState_safe = Isolate.$isolateProperties.CTC40;
-$.GameState_started = Isolate.$isolateProperties.CTC46;
+$.GameState_started = Isolate.$isolateProperties.CTC45;
 $._getTypeNameOf = null;
+$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC36;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
-$.SquareState_mine = Isolate.$isolateProperties.CTC39;
-$.SquareElement__textureName = 'balloon.png';
+$.SquareState_mine = Isolate.$isolateProperties.CTC37;
 $._JsonParser_CHAR_B = 98;
 $._pendingMeasurementFrameCallbacks = null;
 $.PI = 3.141592653589793;
 $._JsonParser_CARRIAGE_RETURN = 13;
-$.DualPivotQuicksort__INSERTION_SORT_THRESHOLD = 32;
 $._JsonParser_CHAR_0 = 48;
 $._JsonParser_BACKSLASH = 92;
 $.LN2 = 0.6931471805599453;
 $._JsonParser_CHAR_8 = 56;
-$.GameState_won = Isolate.$isolateProperties.CTC50;
+$.GameState_won = Isolate.$isolateProperties.CTC49;
 $.SquareState_hidden = Isolate.$isolateProperties.CTC33;
 $._JsonParser_CHAR_R = 114;
 $._JsonParser_SLASH = 47;
@@ -3176,18 +3142,17 @@ $._cachedBrowserPrefix = null;
 $._JsonParser_CHAR_4 = 52;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
-$.GameState_lost = Isolate.$isolateProperties.CTC51;
+$.GameState_lost = Isolate.$isolateProperties.CTC50;
 $._JsonParser_LAST_ASCII = 125;
-$.double_INFINITY = (1/0);
 $._JsonParser_CHAR_T = 116;
 $.SquareState_revealed = Isolate.$isolateProperties.CTC35;
-$.GameState_reset = Isolate.$isolateProperties.CTC47;
+$.GameState_reset = Isolate.$isolateProperties.CTC46;
 $._JsonParser_NULL_STRING = 'null';
 $._JsonParser_CHAR_F = 102;
 $._JsonParser_LBRACKET = 91;
 $._JsonParser_RBRACE = 125;
 $._JsonParser_COMMA = 44;
-$.SquareElement__numberMap = Isolate.$isolateProperties.CTC38;
+$.SquareElement__numberMap = Isolate.$isolateProperties.CTC39;
 $.GameElement__backgroundHoleSize = 1344;
 $._JsonParser_PLUS = 43;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
@@ -3466,7 +3431,6 @@ $.$defineNativeClass('DOMStringList', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -3685,7 +3649,6 @@ $.$defineNativeClass('FileList', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -3724,7 +3687,6 @@ $.$defineNativeClass('Float32Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -3747,7 +3709,6 @@ $.$defineNativeClass('Float64Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -3801,7 +3762,6 @@ $.$defineNativeClass('HTMLCollection', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -3955,7 +3915,6 @@ $.$defineNativeClass('Int16Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -3978,7 +3937,6 @@ $.$defineNativeClass('Int32Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -4001,7 +3959,6 @@ $.$defineNativeClass('Int8Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -4085,7 +4042,6 @@ $.$defineNativeClass('MediaList', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -4179,7 +4135,6 @@ $.$defineNativeClass('NamedNodeMap', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -4227,7 +4182,6 @@ $.$defineNativeClass('NodeList', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._NodeListWrapper$($._Collections_filter(this,[],f));},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.UnsupportedOperationException$('Cannot sort immutable List.'));},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  get$first: function(){return this.operator$index$1(0);},
@@ -4912,7 +4866,6 @@ $.$defineNativeClass('StyleSheetList', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -4999,7 +4952,6 @@ $.$defineNativeClass('TouchList', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -5033,7 +4985,6 @@ $.$defineNativeClass('Uint16Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -5056,7 +5007,6 @@ $.$defineNativeClass('Uint32Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
@@ -5079,7 +5029,6 @@ $.$defineNativeClass('Uint8Array', ["length?"], {
  forEach$1: function(f){return $._Collections_forEach(this,f);},
  filter$1: function(f){return $._Collections_filter(this,[],f);},
  isEmpty$0: function(){return $.eq($.get$length(this),0);},
- sort$1: function(compare){throw $.$$throw($.CTC37);},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC3);},
