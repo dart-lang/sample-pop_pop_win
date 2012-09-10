@@ -1,7 +1,5 @@
 class SquareElement extends PElement {
   static const int _size = 80;
-  static const String _textureName = "balloon.png";
-  static const String _flagName = 'balloon_tagged_!.png';
   static const List<String> _numberMap = const["game_board_center",
                                                "number_one", "number_two",
                                                "number_three", "number_four",
@@ -15,24 +13,30 @@ class SquareElement extends PElement {
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
+    var textureName;
     switch(_squareState) {
       case SquareState.hidden:
-        drawTextureKeyAt(ctx, _textureName);
+        textureName = "balloon.png";
         break;
       case SquareState.flagged:
-        drawTextureKeyAt(ctx, _flagName);
+        textureName = 'balloon_tagged_!.png';
         break;
       case SquareState.revealed:
-        final adjCount = _adjacentCount;
-        final textureName = _numberMap[adjCount];
-        drawTextureKeyAt(ctx, "$textureName.png");
+        final prefix = _numberMap[_adjacentCount];
+        textureName = '$prefix.png';
         break;
-      default:
-        ctx.fillStyle = _fillStyle;
-        ctx.fillRect(0, 0, width, height);
-        ctx.strokeStyle = 'rgb(153, 153, 153)';
-        ctx.strokeRect(0.5, 0.5, width, height, 1);
+      case SquareState.mine:
+        textureName = 'balloon_tagged_bomb.png';
         break;
+    }
+
+    if(textureName == null) {
+      ctx.fillStyle = _fillStyle;
+      ctx.fillRect(0, 0, width, height);
+      ctx.strokeStyle = 'rgb(153, 153, 153)';
+      ctx.strokeRect(0.5, 0.5, width, height, 1);
+    } else {
+      drawTextureKeyAt(ctx, textureName);
     }
   }
 
