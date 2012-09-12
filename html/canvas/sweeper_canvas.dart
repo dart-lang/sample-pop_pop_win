@@ -15,6 +15,7 @@ main() {
 }
 
 _doLoad() {
+  _doAudio();
   final textures = _getTexturesFromJson(_artFramesJson);
 
   final targetMode = false;
@@ -66,4 +67,20 @@ _doLoad() {
 
 void _onTouchMove(TouchEvent args) {
   args.preventDefault();
+}
+
+void _doAudio() {
+  final context = new AudioContext();
+
+  final bufferLoader = new AudioLoader(context, ['../audio/Pop01.wav'], _finishedLoading);
+  bufferLoader.load();
+}
+
+void _finishedLoading(AudioContext context, Map<String, AudioBuffer> buffers) {
+  // Create two sources and play them both together.
+  var source = context.createBufferSource();
+
+  source.buffer = buffers['../audio/Pop01.wav'];
+  source.connect(context.destination, 0);
+  source.noteOn(0);
 }

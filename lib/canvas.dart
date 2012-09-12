@@ -13,6 +13,7 @@
 #source('canvas/square_element.dart');
 #source('canvas/image_loader.dart');
 #source('canvas/texture_animation_element.dart');
+#source('canvas/audio_loader.dart');
 
 #source('texture/texture_input.dart');
 
