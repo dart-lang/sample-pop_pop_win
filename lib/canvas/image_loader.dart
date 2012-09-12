@@ -26,9 +26,6 @@ class ImageLoader extends ResourceLoader<ImageElement> {
   void _loadHandler(String originalUrl, ImageElement img) {
     assert(!_loaded.contains(originalUrl));
     _loaded.add(originalUrl);
-
-    if(_loaded.length == _resources.length) {
-      _onLoaded();
-    }
+    _onLoaded(originalUrl);
   }
 }
