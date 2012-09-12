@@ -33,7 +33,7 @@ class AudioLoader extends ResourceLoader<AudioBuffer> {
     }
     _resources[url] = buffer;
     if (_resources.length == _urlList.length) {
-      _loadedEvent.fireEvent(EventArgs.empty);
+      _onLoaded();
     }
   }
 }

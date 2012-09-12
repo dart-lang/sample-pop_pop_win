@@ -28,7 +28,7 @@ class ImageLoader extends ResourceLoader<ImageElement> {
     _loaded.add(originalUrl);
 
     if(_loaded.length == _resources.length) {
-      _loadedEvent.fireEvent(EventArgs.empty);
+      _onLoaded();
     }
   }
 }
