@@ -1,20 +1,10 @@
-class AudioLoader {
-  final AudioContext _context;
-  final List<String> _urlList;
-  final _onLoad;
-  final Map<String, AudioBuffer> _bufferList;
+class AudioLoader extends ResourceLoader<AudioBuffer> {
+  final AudioContext context;
 
-  AudioLoader(this._context, List<String> urlList, this._onLoad) :
-    _urlList = urlList,
-    _bufferList = new Map<String, AudioBuffer>();
+  AudioLoader(this.context, List<String> urlList) :
+    super(urlList);
 
-  void load() {
-    for(final url in _urlList) {
-      _loadBuffer(url);
-    }
-  }
-
-  void _loadBuffer(String url) {
+  void _doLoad(String url) {
     // Load buffer asynchronously
     final HttpRequest request = new HttpRequest();
     request.open("GET", url, true);
@@ -22,21 +12,10 @@ class AudioLoader {
 
     request.on.load.add((args) {
       // Asynchronously decode the audio file data in request.response
-      _context.decodeAudioData(
-          request.response,
-          (buffer) {
-            if (buffer == null) {
-              print('error decoding file data: $url');
-              return;
-            }
-            _bufferList[url] = buffer;
-            if (_bufferList.length == _urlList.length) {
-              this._onLoad(_context, _bufferList);
-            }
-          },
-          (error) {
-            print(['error!',error]);
-          }
+      context.decodeAudioData(
+        request.response,
+        (buffer) => _saveBuffer(url, buffer),
+        (error) => print(['error!',error])
       );
     });
 
@@ -45,5 +24,16 @@ class AudioLoader {
     });
 
     request.send();
+  }
+
+  void _saveBuffer(String url, AudioBuffer buffer) {
+    if (buffer == null) {
+      print('error decoding file data: $url');
+      return;
+    }
+    _resources[url] = buffer;
+    if (_resources.length == _urlList.length) {
+      _loadedEvent.fireEvent(EventArgs.empty);
+    }
   }
 }

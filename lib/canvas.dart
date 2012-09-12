@@ -11,9 +11,10 @@
 #source('canvas/game_root.dart');
 #source('canvas/game_element.dart');
 #source('canvas/square_element.dart');
+#source('canvas/resource_loader.dart');
 #source('canvas/image_loader.dart');
-#source('canvas/texture_animation_element.dart');
 #source('canvas/audio_loader.dart');
+#source('canvas/texture_animation_element.dart');
 
 #source('texture/texture_input.dart');
 

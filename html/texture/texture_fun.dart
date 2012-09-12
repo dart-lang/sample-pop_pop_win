@@ -21,7 +21,7 @@ ImageElement __textureImg;
 
 main() {
   _imageLoader = new ImageLoader([_fileName]);
-  _imageLoader.finished.add((args) => _doLoad());
+  _imageLoader.loaded.add((args) => _doLoad());
   _imageLoader.load();
 }
 
@@ -33,8 +33,8 @@ _doLoad() {
   __ctx = canvasElement.context2d;
 
   assert(_imageLoader != null);
-  assert(_imageLoader.images.containsKey(_fileName));
-  __textureImg = _imageLoader.images[_fileName];
+  final __textureImg  = _imageLoader.getResource('art.png');
+  assert(__textureImg  != null);
 
   _keys = new List<String>.from(_textures.getKeys());
 

@@ -10,7 +10,7 @@ ImageLoader _imageLoader;
 
 main() {
   _imageLoader = new ImageLoader(['art.png']);
-  _imageLoader.finished.add((args) => _doLoad());
+  _imageLoader.loaded.add((args) => _doLoad());
   _imageLoader.load();
 }
 
@@ -28,9 +28,9 @@ _doLoad() {
   final Element clockDiv = query('#clock');
 
   assert(_imageLoader != null);
-  assert(_imageLoader.images.containsKey('art.png'));
 
-  final textureImg = _imageLoader.images['art.png'];
+  final textureImg = _imageLoader.getResource('art.png');
+  assert(textureImg != null);
 
   // populate globals
   populateTextures(textures);
@@ -71,18 +71,22 @@ void _onTouchMove(TouchEvent args) {
 
 const String _sample = '../audio/Pop01.webm';
 
+AudioLoader audioLoader;
+
 void _doAudio() {
   final context = new AudioContext();
 
-  final bufferLoader = new AudioLoader(context, [_sample], _finishedLoading);
-  bufferLoader.load();
+  audioLoader = new AudioLoader(context, [_sample]);
+  audioLoader.loaded.add(_finishedLoading);
+  audioLoader.load();
 }
 
-void _finishedLoading(AudioContext context, Map<String, AudioBuffer> buffers) {
+void _finishedLoading(args) {
+  final context = audioLoader.context;
   // Create two sources and play them both together.
   var source = context.createBufferSource();
 
-  source.buffer = buffers[_sample];
+  source.buffer = audioLoader.getResource(_sample);
   source.connect(context.destination, 0);
   source.noteOn(0);
 }
