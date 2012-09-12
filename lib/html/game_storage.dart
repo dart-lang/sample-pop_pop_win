@@ -1,16 +1,16 @@
 class GameStorage {
   static const _gameCountKey = 'gameCount';
-  final dartlib.EventHandle _highScoreUpdated;
+  final EventHandle _highScoreUpdated;
 
   final Storage _storage;
 
   GameStorage() :
     _storage = window.localStorage,
-    _highScoreUpdated = new dartlib.EventHandle();
+    _highScoreUpdated = new EventHandle();
 
   int get gameCount => _getIntValue(_gameCountKey);
 
-  dartlib.EventRoot get highScoreUpdated => _highScoreUpdated;
+  EventRoot get highScoreUpdated => _highScoreUpdated;
 
   void recordState(GameState state) {
     assert(state != null);

@@ -2,12 +2,12 @@ class ImageLoader {
   final List<String> _urls;
   final Map<String, ImageElement> images;
   final Set<String> _loaded;
-  final dartlib.EventHandle<dartlib.EventArgs> _finishedEvent;
+  final EventHandle<EventArgs> _finishedEvent;
 
   ImageLoader(this._urls) :
     images = <String, ImageElement>{},
     _loaded = new Set<String>(),
-    _finishedEvent = new dartlib.EventHandle<dartlib.EventArgs>();
+    _finishedEvent = new EventHandle<EventArgs>();
 
   void load() {
     assert(images.length == 0);
@@ -29,14 +29,14 @@ class ImageLoader {
     }
   }
 
-  dartlib.EventRoot get finished => _finishedEvent;
+  EventRoot get finished => _finishedEvent;
 
   void _loadHandler(String originalUrl, ImageElement img) {
     assert(!_loaded.contains(originalUrl));
     _loaded.add(originalUrl);
 
     if(_loaded.length == images.length) {
-      _finishedEvent.fireEvent(dartlib.EventArgs.empty);
+      _finishedEvent.fireEvent(EventArgs.empty);
     }
   }
 }

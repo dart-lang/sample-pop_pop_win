@@ -5,8 +5,8 @@
 #import('../../lib/sweeper.dart');
 #import('../../lib/canvas.dart');
 
-#import('package:dartlib/lib/dartlib.dart', prefix:'dartlib');
-#import('package:dartlib/lib/retained.dart');
+#import('package:dartlib/dartlib.dart');
+#import('package:dartlib/retained.dart');
 
 #source('../canvas/texture_data.dart');
 
@@ -75,6 +75,6 @@ void _drawTexture() {
 
   print([_currentIndex, key]);
 
-  drawTextureAt(__ctx, new dartlib.Coordinate(100, 100), texture, __textureImg);
+  drawTextureAt(__ctx, new Coordinate(100, 100), texture, __textureImg);
 
 }

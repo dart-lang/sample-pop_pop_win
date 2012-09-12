@@ -2,7 +2,7 @@
 
 #import('dart:math');
 #import('package:unittest/unittest.dart');
-#import('package:dartlib/lib/dartlib.dart');
+#import('package:dartlib/dartlib.dart');
 
 #import('../../lib/sweeper.dart');
 

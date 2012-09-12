@@ -2,9 +2,9 @@
 
 #import('dart:html');
 #import('dart:math');
-#import('package:dartlib/lib/dartlib.dart', prefix:'dartlib');
-#import('package:dartlib/lib/html.dart');
-#import('package:dartlib/lib/retained.dart');
+#import('package:dartlib/dartlib.dart');
+#import('package:dartlib/html.dart');
+#import('package:dartlib/retained.dart');
 #import('sweeper.dart');
 #import('html.dart');
 
@@ -38,7 +38,7 @@ TextureInput getTexture(String key) {
 }
 
 void drawTextureKeyAt(CanvasRenderingContext2D ctx, String textureKey,
-                   [dartlib.Coordinate location = const dartlib.Coordinate()]) {
+                   [Coordinate location = const Coordinate()]) {
   assert(_textureImage != null);
   assert(textureKey != null);
   final texture = getTexture(textureKey);
@@ -46,10 +46,10 @@ void drawTextureKeyAt(CanvasRenderingContext2D ctx, String textureKey,
   drawTextureAt(ctx, location, texture, _textureImage);
 }
 
-void drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,
+void drawTextureAt(CanvasRenderingContext2D ctx, Coordinate location,
                     TextureInput texture, ImageElement imageElement) {
   ctx.save();
-  final tx = new dartlib.AffineTransform();
+  final tx = new AffineTransform();
   tx.translate(location.x, location.y);
 
   var theFrame = texture.frame;
@@ -58,7 +58,7 @@ void drawTextureAt(CanvasRenderingContext2D ctx, dartlib.Coordinate location,
 
   if(texture.rotated) {
     tx.rotate(-0.5 * PI, 0.5 * theFrame.height, 0.5 * theFrame.height);
-    theFrame = new dartlib.Rect(theFrame.left, theFrame.top,
+    theFrame = new Box(theFrame.left, theFrame.top,
         theFrame.height, theFrame.width);
   }
 

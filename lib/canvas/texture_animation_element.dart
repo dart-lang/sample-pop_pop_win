@@ -44,7 +44,7 @@ class TextureAnimationElement extends PElement {
 class TextAniRequest {
   final String _texturePrefix;
   final int _frameCount;
-  final dartlib.Vector _offset;
+  final Vector _offset;
   final int _delay;
 
   bool _done = false;

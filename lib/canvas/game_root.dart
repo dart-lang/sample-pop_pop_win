@@ -6,7 +6,7 @@ class GameRoot extends GameManager {
   final Element _leftCountDiv;
   final Element _gameStateDiv;
   final Element _clockDiv;
-  final dartlib.AffineTransform _gameElementTx;
+  final AffineTransform _gameElementTx;
 
   bool _frameRequested = false;
 
@@ -14,7 +14,7 @@ class GameRoot extends GameManager {
       CanvasElement canvasElement, Element leftCountDiv,
       Element gameStateDiv, Element clockDiv, bool targetMode) {
 
-    dartlib.requireArgumentNotNull(targetMode, 'targetMode');
+    requireArgumentNotNull(targetMode, 'targetMode');
 
     final rootElement = new GameElement(targetMode);
     final stage = new Stage(canvasElement, rootElement);
@@ -51,7 +51,7 @@ class GameRoot extends GameManager {
 
   void toggleTargetFlag() => _gameElement.toggleTargetFlag();
 
-  dartlib.EventRoot get targetChanged =>
+  EventRoot get targetChanged =>
       _gameElement.targetChanged;
 
   void _requestFrame() {
@@ -85,7 +85,7 @@ class GameRoot extends GameManager {
     final newDimensions = _gameElement.size * prettyScale;
     assert(newDimensions.fitsInside(_stage.size));
 
-    final delta = new dartlib.Vector(_stage.size.width - newDimensions.width,
+    final delta = new Vector(_stage.size.width - newDimensions.width,
         _stage.size.height - newDimensions.height).scale(0.5);
 
     _gameElementTx.translate(delta.x, delta.y);

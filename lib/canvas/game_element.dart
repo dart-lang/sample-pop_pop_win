@@ -1,32 +1,32 @@
 class GameElement extends ElementParentImpl {
   static const _edgeOffset = 32;
-  static const _backgroundSize = const dartlib.Size(2048, 1536);
+  static const _backgroundSize = const Size(2048, 1536);
   static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
-  static const _boardOffset = const dartlib.Vector(352, 96);
-  static const _popExplodeAnimationOffset = const dartlib.Vector(-88, -88);
+  static const _boardOffset = const Vector(352, 96);
+  static const _popExplodeAnimationOffset = const Vector(-88, -88);
   static const _popAnimationHitFrame = 12;
 
   static const _dartAnimationOffset =
-      const dartlib.Vector(-1065 + SquareElement._size ~/ 2,
+      const Vector(-1065 + SquareElement._size ~/ 2,
           -815 + SquareElement._size ~/ 2);
 
 
   final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
   final bool _targetMode;
-  final dartlib.EventHandle _targetChanged;
+  final EventHandle _targetChanged;
 
-  dartlib.AffineTransform _popLayerTx, _dartLayerTx;
+  AffineTransform _popLayerTx, _dartLayerTx;
   int _targetX, _targetY;
   double _scale;
-  dartlib.Vector _scaledBoardOffset;
+  Vector _scaledBoardOffset;
 
   Game _game;
-  dartlib.Array2d<SquareElement> _elements;
+  Array2d<SquareElement> _elements;
 
   GameElement(this._targetMode) :
     _popAnimationLayer = new TextureAnimationElement(0, 0),
     _dartAnimationLayer = new TextureAnimationElement(0, 0),
-    _targetChanged = new dartlib.EventHandle(),
+    _targetChanged = new EventHandle(),
     super(100, 100) {
     _popAnimationLayer.registerParent(this);
     _popLayerTx = _popAnimationLayer.addTransform();
@@ -40,7 +40,7 @@ class GameElement extends ElementParentImpl {
   void set game(Game value) {
     _game = value;
     if(value == null) {
-      size = const dartlib.Size(100, 100);
+      size = const Size(100, 100);
     } else {
       _updateSize(value.field.width, value.field.height);
     }
@@ -68,7 +68,7 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  dartlib.EventRoot get targetChanged => _targetChanged;
+  EventRoot get targetChanged => _targetChanged;
 
   int get visualChildCount {
     var count = 2;
@@ -119,27 +119,27 @@ class GameElement extends ElementParentImpl {
     drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
 
     drawTextureKeyAt(ctx, 'game_board_corner_top_right.png',
-        new dartlib.Coordinate(rightBgLoc, 0));
+        new Coordinate(rightBgLoc, 0));
 
     drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png',
-                     new dartlib.Coordinate(0, bottomBgLoc));
+                     new Coordinate(0, bottomBgLoc));
     drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
-        new dartlib.Coordinate(rightBgLoc, bottomBgLoc));
+        new Coordinate(rightBgLoc, bottomBgLoc));
 
     for(var i = 1; i < _game.field.width - 1; i++) {
       final xLoc = SquareElement._size * i + _edgeOffset;
       drawTextureKeyAt(ctx, 'game_board_side_top.png',
-          new dartlib.Coordinate(xLoc, 0));
+          new Coordinate(xLoc, 0));
       drawTextureKeyAt(ctx, 'game_board_side_bottom.png',
-          new dartlib.Coordinate(xLoc, bottomBgLoc));
+          new Coordinate(xLoc, bottomBgLoc));
     }
 
     for(var i = 1; i < _game.field.height - 1; i++) {
       final yLoc = SquareElement._size * i + _edgeOffset;
       drawTextureKeyAt(ctx, 'game_board_side_left.png',
-          new dartlib.Coordinate(0, yLoc));
+          new Coordinate(0, yLoc));
       drawTextureKeyAt(ctx, 'game_board_side_right.png',
-          new dartlib.Coordinate(rightBgLoc, yLoc));
+          new Coordinate(rightBgLoc, yLoc));
     }
 
     ctx.restore();
@@ -178,14 +178,14 @@ class GameElement extends ElementParentImpl {
   void _drawCorner(CanvasRenderingContext2D ctx) {
     drawTextureKeyAt(ctx, 'background_top_left.png');
     drawTextureKeyAt(ctx, 'background_side_left.png',
-        new dartlib.Coordinate(0, _boardOffset.y));
+        new Coordinate(0, _boardOffset.y));
   }
 
   void _drawTarget(CanvasRenderingContext2D ctx) {
     assert((_targetX == null) == (_targetY == null));
     if(_targetX != null) {
       final halfSize = SquareElement._size * 0.5;
-      var targetLoc = new dartlib.Vector(_targetX, _targetY);
+      var targetLoc = new Vector(_targetX, _targetY);
       targetLoc = targetLoc.scale(SquareElement._size);
 
       ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
@@ -199,10 +199,10 @@ class GameElement extends ElementParentImpl {
     if(_game == null) {
       _elements = null;
     } else if(_elementsNeedUpdate) {
-      _elements = new dartlib.Array2d<SquareElement>(
+      _elements = new Array2d<SquareElement>(
           _game.field.width, _game.field.height);
 
-      final offset = _scaledBoardOffset + const dartlib.Coordinate(_edgeOffset, _edgeOffset);
+      final offset = _scaledBoardOffset + const Coordinate(_edgeOffset, _edgeOffset);
 
       for(int i=0;i<_elements.length;i++) {
         final coords = _elements.getCoordinate(i);
@@ -226,14 +226,14 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _startPopAnimation(dartlib.Coordinate start, [Iterable<dartlib.Coordinate> reveals = null]) {
+  void _startPopAnimation(Coordinate start, [Iterable<Coordinate> reveals = null]) {
     if(reveals == null) {
       assert(game.state == GameState.lost);
-      reveals = new dartlib.NumberEnumerable.fromRange(0, game.field.length)
+      reveals = new NumberEnumerable.fromRange(0, game.field.length)
           .select((i) {
             final t = game.field.getCoordinate(i);
-            final c = new dartlib.Coordinate(t.Item1, t.Item2);
-            return new dartlib.Tuple(c, game.getSquareState(c.x, c.y));
+            final c = new Coordinate(t.Item1, t.Item2);
+            return new Tuple(c, game.getSquareState(c.x, c.y));
           })
           .where((t2) => t2.Item2 == SquareState.mine)
           .select((t2) => t2.Item1)
@@ -242,7 +242,7 @@ class GameElement extends ElementParentImpl {
 
     for(final c in reveals) {
       final squareOffset = _popExplodeAnimationOffset +
-          new dartlib.Vector(SquareElement._size * c.x, SquareElement._size * c.y);
+          new Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
       final delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
 
@@ -268,10 +268,10 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _startDartAnimation(Iterable<dartlib.Coordinate> points) {
+  void _startDartAnimation(Iterable<Coordinate> points) {
     for(final point in points) {
       final squareOffset = _dartAnimationOffset +
-          new dartlib.Vector(SquareElement._size * point.x, SquareElement._size * point.y);
+          new Vector(SquareElement._size * point.x, SquareElement._size * point.y);
 
       _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 56, squareOffset));
       _dartAnimationLayer.add(new TextAniRequest('dart_fly', 56, squareOffset));
@@ -313,7 +313,7 @@ class GameElement extends ElementParentImpl {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
-    List<dartlib.Coordinate> reveals = null;
+    List<Coordinate> reveals = null;
 
     if(alt) {
       if(ss == SquareState.hidden || ss == SquareState.flagged) {
@@ -321,10 +321,10 @@ class GameElement extends ElementParentImpl {
       } else if(ss == SquareState.revealed) {
         if(game.canReveal(x, y)) {
           // get adjacent ballons
-          final adjHidden = dartlib.$(game.field.getAdjacentIndices(x, y))
+          final adjHidden = $(game.field.getAdjacentIndices(x, y))
               .select((i) {
                 final t = game.field.getCoordinate(i);
-                return new dartlib.Coordinate(t.Item1, t.Item2);
+                return new Coordinate(t.Item1, t.Item2);
               })
               .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
@@ -337,7 +337,7 @@ class GameElement extends ElementParentImpl {
       }
     } else {
       if(ss == SquareState.hidden) {
-        _startDartAnimation([new dartlib.Coordinate(x, y)]);
+        _startDartAnimation([new Coordinate(x, y)]);
         reveals = game.reveal(x, y);
       }
     }
@@ -350,9 +350,9 @@ class GameElement extends ElementParentImpl {
         assert(first.x == x);
         assert(first.y == y);
       }
-      _startPopAnimation(new dartlib.Coordinate(x, y), reveals);
+      _startPopAnimation(new Coordinate(x, y), reveals);
     } else if(game.state == GameState.lost) {
-      _startPopAnimation(new dartlib.Coordinate(x, y));
+      _startPopAnimation(new Coordinate(x, y));
     }
   }
 
@@ -367,7 +367,7 @@ class GameElement extends ElementParentImpl {
     final sizeX = _getScale(w, _backgroundSize.width, _backgroundHoleSize);
     final sizeY = _getScale(h, _backgroundSize.height, _backgroundHoleSize);
 
-    size = new dartlib.Size(sizeX, sizeY);
+    size = new Size(sizeX, sizeY);
 
     // NOTE: width wins here. Need to do work to make left and right sides
     //       scale nicely when not a square

@@ -2,11 +2,11 @@ class TextureInput {
   static const _pairExp = const RegExp(@"{([^,{]+),([^}]+)}");
 
   final String name;
-  final dartlib.Rect frame;
-  final dartlib.Vector offset;
+  final Box frame;
+  final Vector offset;
   final bool rotated;
-  final dartlib.Rect sourceColorRect;
-  final dartlib.Size sourceSize;
+  final Box sourceColorRect;
+  final Size sourceSize;
 
   TextureInput(this.name, this.frame, this.offset, this.rotated,
       this.sourceColorRect, this.sourceSize);
@@ -23,23 +23,23 @@ class TextureInput {
 
   String toString() => this.name;
 
-  static dartlib.Rect _parseRect(String input) {
-    final matches = dartlib.$(_pairExp.allMatches(input)).toList();
+  static Box _parseRect(String input) {
+    final matches = $(_pairExp.allMatches(input)).toList();
     assert(matches.length == 2);
 
     var coord = _parseCoordinate(matches[0][0]);
     var size = _parseCoordinate(matches[1][0]).toSize();
 
-    return new dartlib.Rect.fromCoordSize(coord, size);
+    return new Box.fromCoordSize(coord, size);
   }
 
-  static dartlib.Coordinate _parseCoordinate(String input) {
-    final match = dartlib.$(_pairExp.allMatches(input)).single();
+  static Coordinate _parseCoordinate(String input) {
+    final match = $(_pairExp.allMatches(input)).single();
     assert(match.groupCount() == 2);
 
     final x = parseDouble(match[1]);
     final y = parseDouble(match[2]);
 
-    return new dartlib.Coordinate(x, y);
+    return new Coordinate(x, y);
   }
 }

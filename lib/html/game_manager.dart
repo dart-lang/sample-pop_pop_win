@@ -3,8 +3,8 @@ class GameManager {
   final GameStorage gameStorage;
 
   Game game;
-  dartlib.GlobalId _updatedEventId;
-  dartlib.GlobalId _gameStateChangedId;
+  GlobalId _updatedEventId;
+  GlobalId _gameStateChangedId;
   int _setIntervalId;
 
   GameManager(this._width, this._height, this._mineCount) :
