@@ -7,6 +7,7 @@ class ResourceLoader<T> {
 
   final List<String> _urlList;
   final EventHandle<EventArgs> _loadedEvent;
+  final EventHandle<EventArgs> _progressEvent;
   final Map<String, T> _resources;
   final Set<String> _completed;
 
@@ -14,12 +15,17 @@ class ResourceLoader<T> {
 
   ResourceLoader(this._urlList) :
     _loadedEvent= new EventHandle<EventArgs>(),
+    _progressEvent = new EventHandle<EventArgs>(),
     _resources = new Map<String, T>(),
     _completed = new Set<String>();
+
+  int get completedCount => _completed.length;
 
   String get state => _state;
 
   EventRoot get loaded => _loadedEvent;
+
+  EventRoot get progress => _progressEvent;
 
   T getResource(String url) => _resources[url];
 
@@ -41,7 +47,10 @@ class ResourceLoader<T> {
     _completed.add(uri);
 
     if(_completed.length == _urlList.length) {
+      _state = StateLoaded;
       _loadedEvent.fireEvent(EventArgs.empty);
+    } else {
+      _progressEvent.fireEvent(EventArgs.empty);
     }
   }
 
