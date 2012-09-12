@@ -69,10 +69,12 @@ void _onTouchMove(TouchEvent args) {
   args.preventDefault();
 }
 
+const String _sample = '../audio/Pop01.webm';
+
 void _doAudio() {
   final context = new AudioContext();
 
-  final bufferLoader = new AudioLoader(context, ['../audio/Pop01.wav'], _finishedLoading);
+  final bufferLoader = new AudioLoader(context, [_sample], _finishedLoading);
   bufferLoader.load();
 }
 
@@ -80,7 +82,7 @@ void _finishedLoading(AudioContext context, Map<String, AudioBuffer> buffers) {
   // Create two sources and play them both together.
   var source = context.createBufferSource();
 
-  source.buffer = buffers['../audio/Pop01.wav'];
+  source.buffer = buffers[_sample];
   source.connect(context.destination, 0);
   source.noteOn(0);
 }
