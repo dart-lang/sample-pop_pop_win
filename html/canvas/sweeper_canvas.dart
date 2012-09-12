@@ -6,16 +6,35 @@
 
 #source('../canvas/texture_data.dart');
 
+const String _sampleAudio = '../audio/Pop01.webm';
+
 ImageLoader _imageLoader;
+AudioLoader _audioLoader;
 
 main() {
   _imageLoader = new ImageLoader(['art.png']);
-  _imageLoader.loaded.add((args) => _doLoad());
+  _imageLoader.loaded.add(_onLoaded);
+  _imageLoader.progress.add(_onLoaded);
   _imageLoader.load();
+
+  final audioContext = new AudioContext();
+
+  _audioLoader = new AudioLoader(audioContext, [_sampleAudio]);
+  _audioLoader.loaded.add(_onLoaded);
+  _audioLoader.progress.add(_onLoaded);
+  _audioLoader.load();
 }
 
-_doLoad() {
-  _doAudio();
+void _onLoaded(args) {
+  print(_imageLoader.completedCount + _audioLoader.completedCount);
+  if(_imageLoader.state == ResourceLoader.StateLoaded &&
+      _audioLoader.state == ResourceLoader.StateLoaded) {
+    _runSweeper();
+  }
+}
+
+void _runSweeper() {
+  _playSampleAudio();
   final textures = _getTexturesFromJson(_artFramesJson);
 
   final targetMode = false;
@@ -69,24 +88,13 @@ void _onTouchMove(TouchEvent args) {
   args.preventDefault();
 }
 
-const String _sample = '../audio/Pop01.webm';
 
-AudioLoader audioLoader;
-
-void _doAudio() {
-  final context = new AudioContext();
-
-  audioLoader = new AudioLoader(context, [_sample]);
-  audioLoader.loaded.add(_finishedLoading);
-  audioLoader.load();
-}
-
-void _finishedLoading(args) {
-  final context = audioLoader.context;
+void _playSampleAudio() {
+  final context = _audioLoader.context;
   // Create two sources and play them both together.
   var source = context.createBufferSource();
 
-  source.buffer = audioLoader.getResource(_sample);
+  source.buffer = _audioLoader.getResource(_sampleAudio);
   source.connect(context.destination, 0);
   source.noteOn(0);
 }
