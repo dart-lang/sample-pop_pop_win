@@ -15,6 +15,8 @@ class GameElement extends ElementParentImpl {
   final bool _targetMode;
   final EventHandle _targetChanged;
 
+  GameBackgroundElement _background;
+
   AffineTransform _popLayerTx, _dartLayerTx;
   int _targetX, _targetY;
   double _scale;
@@ -28,6 +30,9 @@ class GameElement extends ElementParentImpl {
     _dartAnimationLayer = new TextureAnimationElement(0, 0),
     _targetChanged = new EventHandle(),
     super(100, 100) {
+    _background = new GameBackgroundElement(this);
+    _background.registerParent(this);
+
     _popAnimationLayer.registerParent(this);
     _popLayerTx = _popAnimationLayer.addTransform();
 
@@ -71,7 +76,7 @@ class GameElement extends ElementParentImpl {
   EventRoot get targetChanged => _targetChanged;
 
   int get visualChildCount {
-    var count = 2;
+    var count = 3;
     if(_elements != null) {
       count +=_elements.length;
     }
@@ -79,6 +84,11 @@ class GameElement extends ElementParentImpl {
   }
 
   PElement getVisualChild(int index) {
+    if(index == 0) {
+      return _background;
+    }
+    index--;
+
     if(_elements != null) {
       if(index < _elements.length) {
         return _elements[index];
@@ -99,87 +109,12 @@ class GameElement extends ElementParentImpl {
   void drawOverride(CanvasRenderingContext2D ctx) {
     _updateElements();
 
-    _drawBackground(ctx);
-
     // draw children via super
     super.drawOverride(ctx);
 
     // draw target element
     _drawTarget(ctx);
  }
-
-  // TODO: draw this on another layer? Cache?
-  void _drawBackground(CanvasRenderingContext2D ctx) {
-    final rightBgLoc = SquareElement._size * (_game.field.width -1) + _edgeOffset;
-    final bottomBgLoc = SquareElement._size * (_game.field.height -1) + _edgeOffset;
-
-    ctx.save();
-    ctx.translate(_scaledBoardOffset.x, _scaledBoardOffset.y);
-
-    drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
-
-    drawTextureKeyAt(ctx, 'game_board_corner_top_right.png',
-        new Coordinate(rightBgLoc, 0));
-
-    drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png',
-                     new Coordinate(0, bottomBgLoc));
-    drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
-        new Coordinate(rightBgLoc, bottomBgLoc));
-
-    for(var i = 1; i < _game.field.width - 1; i++) {
-      final xLoc = SquareElement._size * i + _edgeOffset;
-      drawTextureKeyAt(ctx, 'game_board_side_top.png',
-          new Coordinate(xLoc, 0));
-      drawTextureKeyAt(ctx, 'game_board_side_bottom.png',
-          new Coordinate(xLoc, bottomBgLoc));
-    }
-
-    for(var i = 1; i < _game.field.height - 1; i++) {
-      final yLoc = SquareElement._size * i + _edgeOffset;
-      drawTextureKeyAt(ctx, 'game_board_side_left.png',
-          new Coordinate(0, yLoc));
-      drawTextureKeyAt(ctx, 'game_board_side_right.png',
-          new Coordinate(rightBgLoc, yLoc));
-    }
-
-    ctx.restore();
-
-    //
-    // start drawing corners
-    //
-
-    ctx.save();
-    // top left
-    ctx.transform(_scale, 0, 0, _scale, 0, 0);
-    _drawCorner(ctx);
-
-    // right flip
-    ctx.save();
-    ctx.transform(-1 , 0, 0, 1, _backgroundSize.width, 0);
-    _drawCorner(ctx);
-
-    // nested bottom, right flip
-    ctx.transform(1 , 0, 0, -1, 0, _backgroundSize.height);
-    _drawCorner(ctx);
-
-    ctx.restore();
-
-    // bottom left
-    ctx.transform(1 , 0, 0, -1, 0, _backgroundSize.height);
-    _drawCorner(ctx);
-
-    ctx.restore();
-
-    //
-    // end drawing corners
-    //
-  }
-
-  void _drawCorner(CanvasRenderingContext2D ctx) {
-    drawTextureKeyAt(ctx, 'background_top_left.png');
-    drawTextureKeyAt(ctx, 'background_side_left.png',
-        new Coordinate(0, _boardOffset.y));
-  }
 
   void _drawTarget(CanvasRenderingContext2D ctx) {
     assert((_targetX == null) == (_targetY == null));
