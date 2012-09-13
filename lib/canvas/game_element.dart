@@ -244,7 +244,8 @@ class GameElement extends ElementParentImpl {
       final squareOffset = _popExplodeAnimationOffset +
           new Vector(SquareElement._size * c.x, SquareElement._size * c.y);
 
-      final delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
+      var delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
+      delay += rnd.nextInt(10);
 
       final ss = game.getSquareState(start.x, start.y);
 
