@@ -46,13 +46,16 @@ class TextAniRequest {
   final int _frameCount;
   final Vector _offset;
   final int _delay;
+  final EventHandle<EventArgs> _startEventHandle;
 
   bool _done = false;
   int _frame = null;
 
   TextAniRequest(this._texturePrefix, this._frameCount,
       this._offset, [int delay = 0]) :
-      this._delay = delay {
+      this._delay = delay,
+      _startEventHandle = new EventHandle<EventArgs>()
+      {
     assert(_delay >= 0);
     assert(_texturePrefix != null);
     assert(_frameCount > 0);
@@ -62,6 +65,8 @@ class TextAniRequest {
   bool get fresh => _frame == null;
   bool get done => _done;
 
+  EventRoot<EventArgs> get started => _startEventHandle;
+
   void update() {
     if(_frame == null) {
       _frame = -_delay;
@@ -70,6 +75,10 @@ class TextAniRequest {
       assert(_frame < _frameCount);
     } else {
       _done = true;
+    }
+
+    if(_frame == 0 && !_done) {
+      _startEventHandle.fireEvent(EventArgs.empty);
     }
   }
 

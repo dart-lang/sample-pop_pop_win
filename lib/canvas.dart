@@ -21,15 +21,33 @@
 Map<String, TextureInput> _textures;
 ImageElement _textureImage;
 
-void populateTextures(Map<String, TextureInput> textures) {
-  assert(_textures == null);
-  assert(textures != null);
-  _textures = textures;
+Map<String, AudioBuffer> _buffers;
+AudioContext _audioContext;
+
+void populateAudio(AudioContext context, Map<String, AudioBuffer> buffers) {
+  assert(context != null);
+  assert(buffers != null);
+  assert(_audioContext == null);
+
+  _audioContext = context;
+  _buffers = buffers;
 }
 
-void populateTextureImage(ImageElement imageElement) {
+void playAudio(String name) {
+  final context = _audioContext;
+
+  var source = context.createBufferSource();
+  source.buffer = _buffers[name];
+  source.connect(context.destination, 0);
+  source.noteOn(0);
+}
+
+void populateTextures(ImageElement imageElement, Map<String, TextureInput> textures) {
+  assert(_textures == null);
+  assert(textures != null);
   assert(imageElement != null);
   assert(_textureImage == null);
+  _textures = textures;
   _textureImage = imageElement;
 }
 

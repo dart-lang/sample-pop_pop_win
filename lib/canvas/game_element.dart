@@ -265,8 +265,16 @@ class GameElement extends ElementParentImpl {
           throw 'not supported';
       }
 
-      _popAnimationLayer.add(new TextAniRequest(texturePrefix, frameCount, squareOffset, delay));
+      final request = new TextAniRequest(texturePrefix, frameCount, squareOffset, delay);
+      request.started.add((args) => _playPop());
+
+      _popAnimationLayer.add(request);
     }
+  }
+
+  void _playPop() {
+    var i = rnd.nextInt(8);
+    playAudio('Pop$i');
   }
 
   void _startDartAnimation(Iterable<Coordinate> points) {

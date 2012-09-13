@@ -5,7 +5,7 @@ class ResourceLoader<T> {
   static const String StateLoaded = 'loaded';
   static const String StateError = 'error';
 
-  final List<String> _urlList;
+  final ReadOnlyCollection<String> _urlList;
   final EventHandle<EventArgs> _loadedEvent;
   final EventHandle<EventArgs> _progressEvent;
   final Map<String, T> _resources;
@@ -13,7 +13,8 @@ class ResourceLoader<T> {
 
   String _state = StateUnloaded;
 
-  ResourceLoader(this._urlList) :
+  ResourceLoader(Iterable<String> urlList) :
+    _urlList = $(urlList).toReadOnlyCollection(),
     _loadedEvent= new EventHandle<EventArgs>(),
     _progressEvent = new EventHandle<EventArgs>(),
     _resources = new Map<String, T>(),

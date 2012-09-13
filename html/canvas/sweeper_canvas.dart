@@ -1,42 +1,64 @@
 #import('dart:html');
 #import('dart:json');
 
+#import('package:dartlib/dartlib.dart');
 #import('../../lib/sweeper.dart');
 #import('../../lib/canvas.dart');
 
 #source('../canvas/texture_data.dart');
 
-const String _sampleAudio = '../audio/Pop01.webm';
+const String _textuerName = 'art.png';
+const List<String> _audioNames = const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4',
+                                        'Pop5', 'Pop6', 'Pop7', 'Pop8'];
 
 ImageLoader _imageLoader;
 AudioLoader _audioLoader;
 
 main() {
-  _imageLoader = new ImageLoader(['art.png']);
+  _imageLoader = new ImageLoader([_textuerName]);
   _imageLoader.loaded.add(_onLoaded);
   _imageLoader.progress.add(_onLoaded);
   _imageLoader.load();
 
   final audioContext = new AudioContext();
 
-  _audioLoader = new AudioLoader(audioContext, [_sampleAudio]);
+  _audioLoader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
   _audioLoader.loaded.add(_onLoaded);
   _audioLoader.progress.add(_onLoaded);
   _audioLoader.load();
 }
 
 void _onLoaded(args) {
-  print(_imageLoader.completedCount + _audioLoader.completedCount);
   if(_imageLoader.state == ResourceLoader.StateLoaded &&
       _audioLoader.state == ResourceLoader.StateLoaded) {
+
+    //
+    // load textures
+    //
+    final textures = _getTexturesFromJson(_artFramesJson);
+    final textureImg = _imageLoader.getResource(_textuerName);
+    assert(textureImg != null);
+
+    populateTextures(textureImg, textures);
+
+
+    //
+    // load audio
+    //
+    var map = new Map<String, AudioBuffer>();
+    for(final name in _audioNames) {
+      final path = _getAudioPath(name);
+      map[name] = _audioLoader.getResource(path);
+    }
+
+    populateAudio(_audioLoader.context, map);
+
+    // run the app
     _runSweeper();
   }
 }
 
 void _runSweeper() {
-  _playSampleAudio();
-  final textures = _getTexturesFromJson(_artFramesJson);
-
   final targetMode = false;
   final int w = 7, h = 7;
   final int m = (w * h * 0.15625).toInt();
@@ -46,14 +68,6 @@ void _runSweeper() {
   final Element gameStateDiv = query('#gameState');
   final Element clockDiv = query('#clock');
 
-  assert(_imageLoader != null);
-
-  final textureImg = _imageLoader.getResource('art.png');
-  assert(textureImg != null);
-
-  // populate globals
-  populateTextures(textures);
-  populateTextureImage(textureImg);
 
   final gameRoot = new GameRoot(w, h, m,
       sweeperTable, minesLeftDiv, gameStateDiv, clockDiv, targetMode);
@@ -88,13 +102,8 @@ void _onTouchMove(TouchEvent args) {
   args.preventDefault();
 }
 
+String _getAudioPath(String name) => '../audio/$name.webm';
 
-void _playSampleAudio() {
-  final context = _audioLoader.context;
-  // Create two sources and play them both together.
-  var source = context.createBufferSource();
-
-  source.buffer = _audioLoader.getResource(_sampleAudio);
-  source.connect(context.destination, 0);
-  source.noteOn(0);
+Iterable<String> _getAudioPaths(Iterable<String> names) {
+  return $(names).select(_getAudioPath);
 }

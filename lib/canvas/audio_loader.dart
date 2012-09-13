@@ -1,7 +1,7 @@
 class AudioLoader extends ResourceLoader<AudioBuffer> {
   final AudioContext context;
 
-  AudioLoader(this.context, List<String> urlList) :
+  AudioLoader(this.context, Iterable<String> urlList) :
     super(urlList);
 
   void _doLoad(String url) {

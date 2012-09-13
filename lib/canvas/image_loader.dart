@@ -1,7 +1,7 @@
 class ImageLoader extends ResourceLoader<ImageElement> {
   final Set<String> _loaded;
 
-  ImageLoader(List<String> urls) :
+  ImageLoader(Iterable<String> urls) :
     _loaded = new Set<String>(),
     super(urls);
 
