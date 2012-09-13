@@ -2373,74 +2373,74 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC10 = Isolate.makeConstantList([]);
-$.CTC38 = 'revealed';
-$.CTC16 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC20 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC10);
+$.CTC38 = 'structured clone of ArrayBufferView';
+$.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
 $.CTC39 = 'Cannot removeLast on immutable List.';
 $.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC20 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC10);
-$.CTC18 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC40 = false;
 $.CTC41 = '^#[_a-zA-Z]\\w*$';
 $.CTC = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC42 = 'structured clone of File';
-$.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC43 = 'structured clone of other type';
-$.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC44 = 'flagged';
-$.CTC23 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC42 = 'structured clone of ArrayBuffer';
+$.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
+$.CTC43 = 'Mutation operations are not supported';
+$.CTC28 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC15 = new Isolate.$isolateProperties._DeletedKeySentinel();
+$.CTC44 = 'must be implemented by subclass';
+$.CTC31 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
 $.CTC45 = 'frozen class set cannot be modified';
 $.CTC17 = new Isolate.$isolateProperties.UnsupportedOperationException('frozen class set cannot be modified');
 $.CTC46 = 'reset';
 $.CTC24 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC47 = null;
+$.CTC47 = 'structured clone of Date';
+$.CTC2 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
+$.CTC48 = null;
 $.CTC27 = new Isolate.$isolateProperties.NotImplementedException(null);
-$.CTC48 = 'safe';
-$.CTC35 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC10);
+$.CTC37 = new Isolate.$isolateProperties.Object();
 $.CTC49 = 'Cannot add to immutable List.';
 $.CTC1 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC37 = new Isolate.$isolateProperties.Object();
-$.CTC50 = 'structured clone of FileList';
-$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
+$.CTC50 = 'IDBKey containing Date';
+$.CTC19 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
 $.CTC51 = 'Cannot insertRange on immutable List.';
 $.CTC26 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC52 = 'structured clone of RegExp';
-$.CTC3 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC53 = 'mine';
-$.CTC36 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC54 = 'structured clone of Blob';
+$.CTC52 = 'structured clone of Blob';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC55 = 'hidden';
+$.CTC53 = 'hidden';
 $.CTC22 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC54 = 'mine';
+$.CTC36 = new Isolate.$isolateProperties.SquareState('mine');
 $.CTC32 = new Isolate.$isolateProperties.EventArgs();
+$.CTC55 = 'structured clone of RegExp';
+$.CTC3 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
 $.CTC29 = new Isolate.$isolateProperties._Random();
-$.CTC56 = 'The input sequence is empty.';
+$.CTC56 = 'structured clone of FileList';
+$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
+$.CTC57 = 'The input sequence is empty.';
 $.CTC30 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC57 = 'IDBKey containing Date';
-$.CTC19 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC58 = 'started';
+$.CTC58 = 'safe';
+$.CTC35 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC59 = 'started';
 $.CTC25 = new Isolate.$isolateProperties.GameState('started');
-$.CTC59 = 'structured clone of Date';
-$.CTC2 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
+$.CTC21 = new Isolate.$isolateProperties.IllegalAccessException();
 $.CTC60 = 'won';
 $.CTC33 = new Isolate.$isolateProperties.GameState('won');
-$.CTC61 = 'lost';
+$.CTC61 = 'flagged';
+$.CTC23 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC62 = 'lost';
 $.CTC34 = new Isolate.$isolateProperties.GameState('lost');
-$.CTC21 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC62 = 'must be implemented by subclass';
-$.CTC31 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC63 = 'structured clone of ArrayBuffer';
-$.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC64 = 'Mutation operations are not supported';
-$.CTC28 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC65 = 'structured clone of ArrayBufferView';
-$.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
-$.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC66 = '';
-$.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('');
-$.CTC67 = 'Invalid list length';
+$.CTC63 = 'structured clone of File';
+$.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
+$.CTC64 = 'structured clone of other type';
+$.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
+$.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC10);
+$.CTC65 = 'Invalid list length';
 $.CTC14 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC18 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC66 = 'revealed';
+$.CTC16 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC67 = '';
+$.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
 $.SquareState_mine = Isolate.$isolateProperties.CTC36;
 $.Duration_HOURS_PER_DAY = 24;
@@ -2505,22 +2505,22 @@ $.$defineNativeClass = function(cls, fields, methods) {
 })({
  is$JavaScriptIndexingBehavior: function() { return false; },
  is$ArrayBufferView: function() { return false; },
- is$_BlobImpl: function() { return false; },
  is$_FileListImpl: function() { return false; },
  is$_ImageDataImpl: function() { return false; },
  is$_FileImpl: function() { return false; },
- is$_ArrayBufferViewImpl: function() { return false; },
+ is$_BlobImpl: function() { return false; },
+ is$ArrayBuffer: function() { return false; },
  toString$0: function() { return $.toStringForNativeObject(this); },
  is$Blob: function() { return false; },
- is$ArrayBuffer: function() { return false; },
  is$File: function() { return false; },
+ is$_ArrayBufferViewImpl: function() { return false; },
  is$Element: function() { return false; },
+ is$ImageData: function() { return false; },
  is$List: function() { return false; },
- is$Map: function() { return false; },
  is$FileList: function() { return false; },
- is$Collection: function() { return false; },
+ is$Map: function() { return false; },
  is$_ArrayBufferImpl: function() { return false; },
- is$ImageData: function() { return false; }
+ is$Collection: function() { return false; }
 });
 
 $.$defineNativeClass('AbstractWorker', [], {
@@ -4364,8 +4364,8 @@ $.dynamicSetMetadata(table);
 var $globalThis = $;
 var $globalState;
 var $globals;
-var $isWorker;
-var $supportsWorkers;
+var $isWorker = false;
+var $supportsWorkers = false;
 var $thisScriptUrl;
 function $static_init(){};
 

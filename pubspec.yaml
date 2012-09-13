@@ -3,6 +3,6 @@ dependencies:
   unittest:
     sdk: unittest
   dart-xml:
-    git: git://github.com/kevmoo/dart-xml.git
+    git: git://github.com/prujohn/dart-xml.git
   dartlib:
     git: git://github.com/kevmoo/dartlib.git
