@@ -2,10 +2,10 @@
 #import('dart:json');
 
 #import('package:dartlib/dartlib.dart');
-#import('../../lib/sweeper.dart');
-#import('../../lib/canvas.dart');
+#import('package:sweeper.dart/sweeper.dart');
+#import('package:sweeper.dart/canvas.dart');
 
-#source('../canvas/texture_data.dart');
+#source('texture_data.dart');
 
 const String _textuerName = 'art.png';
 const List<String> _audioNames = const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4',
@@ -102,7 +102,7 @@ void _onTouchMove(TouchEvent args) {
   args.preventDefault();
 }
 
-String _getAudioPath(String name) => '../audio/$name.webm';
+String _getAudioPath(String name) => 'audio/$name.webm';
 
 Iterable<String> _getAudioPaths(Iterable<String> names) {
   return $(names).select(_getAudioPath);

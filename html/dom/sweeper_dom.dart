@@ -1,7 +1,7 @@
 #import('dart:html');
 
-#import('../lib/sweeper.dart');
-#import('../lib/html.dart');
+#import('package:sweeper.dart/sweeper.dart');
+#import('package:sweeper.dart/html.dart');
 
 main(){
   final int w = 16, h = 16, m = 40;

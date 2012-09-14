@@ -17,5 +17,5 @@ function build {
   echo
 }
 
-build './html/sweeper_dom.dart'
-build './html/canvas/sweeper_canvas.dart'
+build './html/sweeper_canvas.dart'
+build './html/dom/sweeper_dom.dart'

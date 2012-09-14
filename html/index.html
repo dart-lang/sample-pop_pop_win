@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html prefix="og: http://ogp.me/ns#">
   <head>
-    <title>Dartsweeper</title>
+    <title>Dartsweeper - Canvas Render Preview</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel='stylesheet' type='text/css' href='style.css' />
-    <link rel='stylesheet' type='text/css' href='game_view.css' />
-    <meta property="og:title" content="Dartsweeper" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta property="og:title" content="Dartsweeper - Canvas Render Preview" />
     <meta property="og:description" content="Dartsweeper is an implementation of the game Minesweeper in the Dart programming language." />
     <meta property="og:image" content="http://sweeper.j832.com/icon_512.png" />
     <meta property='og:url' content='http://sweeper.j832.com' />
-    <script type="application/dart" src="sweeper_dom.dart"></script>
+    <script type="application/dart" src="sweeper_canvas.dart"></script>
     <script src="dart.js"></script>
 
 	<script type="text/javascript">
@@ -35,8 +35,13 @@
         <span>Time:</span>
         <span id='clock' class='status'></span>
       </div>
-      <table id='sweeperTable'></table>
-      <div id='highScore'></div>
+      <canvas id='sweeperCanvas' width='1024' height='768'></canvas>
+      <!--
+      <div class='buttons'>
+        <button id='reveal' class='status'>Reveal</button>
+        <button id='flag' class='status'>Flag</button>
+      </div>-->
+      <br/>
       <ul class='help'>
         <li>Click on hidden squares to reveal them.</li>
         <li>Shift-click on squares to flag them.</li>
@@ -45,7 +50,6 @@
       <div class='author'>By <a href="https://plus.google.com/110066012384188006594" rel='author'>Kevin Moore</a></div>
       <iframe src="http://ghbtns.com/github-btn.html?user=kevmoo&repo=sweeper.dart&type=watch&count=true&size=large"
   allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
-      <div class='author'>Preview the <a href="canvas">canvas-based version</a>.</div>
     </div>
   </body>
 </html>
