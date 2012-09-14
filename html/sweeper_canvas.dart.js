@@ -499,13 +499,13 @@ $$.FilteredElementList = {"":
  get$first: function(){for(var t1=$.iterator(this._childNodes);t1.hasNext$0()===true;){var t2=t1.next$0();if(typeof t2==='object'&&t2!==null&&t2.is$Element())return t2;}return;},
  forEach$1: function(f){$.forEach(this.get$_filtered(),f);},
  operator$indexSet$2: function(index,value){this.operator$index$1(index).replaceWith$1(value);},
- set$length: function(newLength){var len=$.get$length(this);if($.geB(newLength,len))return;else if($.ltB(newLength,0))throw $.$$throw($.CTC50);this.removeRange$2($.sub(newLength,1),$.sub(len,newLength));},
+ set$length: function(newLength){var len=$.get$length(this);if($.geB(newLength,len))return;else if($.ltB(newLength,0))throw $.$$throw($.CTC36);this.removeRange$2($.sub(newLength,1),$.sub(len,newLength));},
  add$1: function(value){$.add$1(this._childNodes,value);},
  get$add: function() { return new $.BoundClosure(this, 'add$1'); },
  addAll$1: function(collection){$.forEach(collection,this.get$add());},
  addLast$1: function(value){this.add$1(value);},
  removeRange$2: function(start,rangeLength){$.forEach($.getRange(this.get$_filtered(),start,rangeLength),new $.FilteredElementList_removeRange_anon());},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC49);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC43);},
  clear$0: function(){$.clear(this._childNodes);},
  removeLast$0: function(){var result=this.last$0();if(!(result==null))result.remove$0();return result;},
  filter$1: function(f){return $.filter(this.get$_filtered(),f);},
@@ -537,13 +537,13 @@ $$._ChildrenElementList = {"":
  get$length: function(){return $.get$length(this._childElements);},
  operator$index$1: function(index){return $.index(this._childElements,index);},
  operator$indexSet$2: function(index,value){this._lib_element.$dom_replaceChild$2(value,$.index(this._childElements,index));},
- set$length: function(newLength){throw $.$$throw($.CTC48);},
+ set$length: function(newLength){throw $.$$throw($.CTC35);},
  add$1: function(value){this._lib_element.$dom_appendChild$1(value);return value;},
  addLast$1: function(value){return this.add$1(value);},
  iterator$0: function(){return $.iterator(this._toList$0());},
  addAll$1: function(collection){for(var t1=$.iterator(collection),t2=this._lib_element;t1.hasNext$0()===true;)t2.$dom_appendChild$1(t1.next$0());},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC49);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC49);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC43);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC43);},
  getRange$2: function(start,rangeLength){return $._FrozenElementList$_wrap($._Lists_getRange(this,start,rangeLength,[]));},
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  clear$0: function(){this._lib_element.set$text('');},
@@ -562,18 +562,18 @@ $$._FrozenElementList = {"":
  isEmpty$0: function(){return $.isEmpty(this._nodeList);},
  get$length: function(){return $.get$length(this._nodeList);},
  operator$index$1: function(index){return $.index(this._nodeList,index);},
- operator$indexSet$2: function(index,value){throw $.$$throw($.CTC48);},
+ operator$indexSet$2: function(index,value){throw $.$$throw($.CTC35);},
  set$length: function(newLength){$.set$length(this._nodeList,newLength);},
- add$1: function(value){throw $.$$throw($.CTC48);},
- addLast$1: function(value){throw $.$$throw($.CTC48);},
+ add$1: function(value){throw $.$$throw($.CTC35);},
+ addLast$1: function(value){throw $.$$throw($.CTC35);},
  iterator$0: function(){return $._FrozenElementListIterator$(this);},
- addAll$1: function(collection){throw $.$$throw($.CTC48);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC48);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC48);},
+ addAll$1: function(collection){throw $.$$throw($.CTC35);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC35);},
  getRange$2: function(start,rangeLength){return $._FrozenElementList$_wrap($.getRange(this._nodeList,start,rangeLength));},
  indexOf$2: function(element,start){return $.indexOf$2(this._nodeList,element,start);},
- clear$0: function(){throw $.$$throw($.CTC48);},
- removeLast$0: function(){throw $.$$throw($.CTC48);},
+ clear$0: function(){throw $.$$throw($.CTC35);},
+ removeLast$0: function(){throw $.$$throw($.CTC35);},
  last$0: function(){return $.last(this._nodeList);},
  is$List: function() { return true; },
  is$Collection: function() { return true; }
@@ -1398,8 +1398,7 @@ $$.Array2d = {"":
  getAdjacentIndices$2$bailout: function(state,x,y){var adj=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(adj,{ 'E': 'int' });for(var k=$.max(0,$.sub(y,1)),t1=this.height,t2=this.width;k<$.min(t1,$.add(y,2));++k)for(var j=$.max(0,$.sub(x,1)),t3=!(k===y);j<$.min(t2,$.add(x,2));++j)if(!(j===x)||t3)adj.push(this._getIndex$2(j,k));return adj;},
  getCoordinate$1: function(index){if(typeof index!=='number')return this.getCoordinate$1$bailout(1,index,0);var t1=this.width;if(typeof t1!=='number')return this.getCoordinate$1$bailout(2,index,t1);return $.Tuple$($.mod(index,t1),$.tdiv(index,t1),'int','int');},
  getCoordinate$1$bailout: function(state,env0,env1){switch(state){case 1:var index=env0;break;case 2:index=env0;t1=env1;break;}switch(state){case 0:case 1:state=0;var t1=this.width;case 2:state=0;return $.Tuple$($.mod(index,t1),$.tdiv(index,t1),'int','int');}},
- _getIndex$2: function(x,y){if(typeof x!=='number')return this._getIndex$2$bailout(1,x,y,0);if(typeof y!=='number')return this._getIndex$2$bailout(1,x,y,0);var t1=this.width;if(typeof t1!=='number')return this._getIndex$2$bailout(2,x,y,t1);return x+y*t1;},
- _getIndex$2$bailout: function(state,env0,env1,env2){switch(state){case 1:var x=env0;var y=env1;break;case 2:x=env0;y=env1;t1=env2;break;}switch(state){case 0:case 1:state=0;var t1=this.width;case 2:state=0;return $.add(x,$.mul(y,t1));}},
+ _getIndex$2: function(x,y){return $.add(x,$.mul(y,this.width));},
  Array2d$wrap$2: function(width,source){$.requireArgumentNotNull(width,'width');$.requireArgumentNotNull(source,'source');$.requireArgument($.ge(width,0),'width','width must be non-zero');var t1=$.eqB(width,0);var t2=this._source;if(t1)$.requireArgument($.eq($.get$length(t2),0),'width','width must be greater than zero if the source is non-empty');else{$.requireArgument($.gt($.get$length(t2),0),'source','if width is non-zero, source must be non-empty');$.requireArgument($.eq($.mod($.get$length(t2),width),0),'width','width must evenly divide the source');}}
 };
 
@@ -1553,26 +1552,26 @@ $$.Game = {"":
  get$updated: function(){return this._updatedEvent;},
  get$stateChanged: function(){return this._gameStateEvent;},
  getSquareState$2: function(x,y){return this._states.get$2(x,y);},
- get$gameEnded: function(){return $.eqB(this._state,$.CTC56)||$.eqB(this._state,$.CTC40);},
+ get$gameEnded: function(){return $.eqB(this._state,$.CTC46)||$.eqB(this._state,$.CTC51);},
  get$duration: function(){if(this._startTime==null)return;else{var end=this._endTime;if(end==null)end=$.DateImplementation$now();return end.difference$1(this._startTime);}},
- setFlag$3: function(x,y,value){this._ensureStarted$0();var t1=this._states;var currentSS=t1.get$2(x,y);if(value){$.require($.eq(currentSS,$.CTC37),'');t1.set$3(x,y,$.CTC38);this._minesLeft=$.sub(this._minesLeft,1);}else{$.require($.eq(currentSS,$.CTC38),'');t1.set$3(x,y,$.CTC37);this._minesLeft=$.add(this._minesLeft,1);}this._update$0();},
- canReveal$2: function(x,y){this._ensureStarted$0();if($.eqB(this._states.get$2(x,y),$.CTC37))return true;else if(this._canChord$2(x,y)===true)return true;return false;},
- reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC37))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else{reveals=this._doReveal$2(x,y);if(typeof reveals!=='object'||reveals===null||reveals.constructor!==Array||!!reveals.fixed$length)return this.reveal$2$bailout(1,reveals);}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC40))return;else return reveals;},
- reveal$2$bailout: function(state,env0){switch(state){case 1:reveals=env0;break;}switch(state){case 0:this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');case 1:if(state===1||state===0&&$.eqB(this._states.get$2(x,y),$.CTC37))switch(state){case 0:case 1:if(state===0&&this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else switch(state){case 0:reveals=this._doReveal$2(x,y);case 1:state=0;}}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC40))return;else return reveals;}},
- _canChord$2: function(x,y){if($.eqB(this._states.get$2(x,y),$.CTC39)){var adjCount=this.field.getAdjacentCount$2(x,y);if($.gtB(adjCount,0))if($.eqB(this._getAdjacentFlagCount$2(x,y),adjCount))return true;}return false;},
- _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(flagged,{ 'E': 'int' });var hidden=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(hidden,{ 'E': 'int' });var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,flagged,t1,t3,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC37)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC38))flagged.push(t4);}}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;},
- _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;flagged=env2;t1=env3;t3=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(flagged,{ 'E': 'int' });var hidden=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(hidden,{ 'E': 'int' });var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC37)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC38))flagged.push(t4);}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;}},
- _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,y,t1,0,0,0);t1.set$3(x,y,$.CTC39);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,y,t1,t3,0,0);this._revealsLeft=t3-1;var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,y,t1,t2,reveals,0);if(t2===0)this._setWon$0();else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,y,t1,t2,t3,reveals);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC37)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;},
- _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;break;case 3:x=env0;y=env1;t1=env2;t2=env3;reveals=env4;break;case 4:x=env0;y=env1;t1=env2;t2=env3;t3=env4;reveals=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC39);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0))this._setWon$0();else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC37)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;}},
- _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC47;}}this._setState$1($.CTC56);var t2;},
- _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC47);this._setState$1($.CTC56);}},
- _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC42;}}this._setState$1($.CTC40);var t2;},
- _setLost$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC42);this._setState$1($.CTC40);}},
+ setFlag$3: function(x,y,value){this._ensureStarted$0();var t1=this._states;var currentSS=t1.get$2(x,y);if(value){$.require($.eq(currentSS,$.CTC45),'');t1.set$3(x,y,$.CTC49);this._minesLeft=$.sub(this._minesLeft,1);}else{$.require($.eq(currentSS,$.CTC49),'');t1.set$3(x,y,$.CTC45);this._minesLeft=$.add(this._minesLeft,1);}this._update$0();},
+ canReveal$2: function(x,y){this._ensureStarted$0();if($.eqB(this._states.get$2(x,y),$.CTC45))return true;else if(this._canChord$2(x,y)===true)return true;return false;},
+ reveal$2: function(x,y){this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');if($.eqB(this._states.get$2(x,y),$.CTC45))if(this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else{reveals=this._doReveal$2(x,y);if(typeof reveals!=='object'||reveals===null||reveals.constructor!==Array||!!reveals.fixed$length)return this.reveal$2$bailout(1,reveals);}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC51))return;else return reveals;},
+ reveal$2$bailout: function(state,env0){switch(state){case 1:reveals=env0;break;}switch(state){case 0:this._ensureStarted$0();$.require(this.canReveal$2(x,y),'Item cannot be revealed.');case 1:if(state===1||state===0&&$.eqB(this._states.get$2(x,y),$.CTC45))switch(state){case 0:case 1:if(state===0&&this.field.get$2(x,y)===true){this._setLost$0();var reveals=[];}else switch(state){case 0:reveals=this._doReveal$2(x,y);case 1:state=0;}}else reveals=this._canChord$2(x,y)===true?this._doChord$2(x,y):null;this._update$0();if($.eqB(this._state,$.CTC51))return;else return reveals;}},
+ _canChord$2: function(x,y){if($.eqB(this._states.get$2(x,y),$.CTC50)){var adjCount=this.field.getAdjacentCount$2(x,y);if($.gtB(adjCount,0))if($.eqB(this._getAdjacentFlagCount$2(x,y),adjCount))return true;}return false;},
+ _doChord$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(1,x,y,t1,0,0,0);t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(flagged,{ 'E': 'int' });var hidden=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(hidden,{ 'E': 'int' });var t3=this.field;if(typeof t3!=='string'&&(typeof t3!=='object'||t3===null||t3.constructor!==Array&&!t3.is$JavaScriptIndexingBehavior()))return this._doChord$2$bailout(2,x,y,flagged,t1,t3,hidden);t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC45)){hidden.push(t4);if(t4<0||t4>=t3.length)throw $.ioore(t4);if(t3[t4]===true)failed=true;}else{if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC49))flagged.push(t4);}}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;},
+ _doChord$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;flagged=env2;t1=env3;t3=env4;hidden=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.get$2(x,y);var flagged=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(flagged,{ 'E': 'int' });var hidden=$.ListImplementation_List(null,'int');$.setRuntimeTypeInfo(hidden,{ 'E': 'int' });var t3=this.field;case 2:state=0;t3.getAdjacentCount$2(x,y);for(var t2=$.iterator(t3.getAdjacentIndices$2(x,y)),failed=false;t2.hasNext$0()===true;){var t4=t2.next$0();if($.eqB($.index(t1,t4),$.CTC45)){hidden.push(t4);if($.index(t3,t4)===true)failed=true;}else if($.eqB($.index(t1,t4),$.CTC49))flagged.push(t4);}var reveals=[];if(failed)this._setLost$0();else for(t1=$.iterator(hidden);t1.hasNext$0()===true;){var c=t3.getCoordinate$1(t1.next$0());if(this.canReveal$2(c.get$Item1(),c.get$Item2())===true)$.addAll(reveals,this.reveal$2(c.get$Item1(),c.get$Item2()));}return reveals;}},
+ _doReveal$2: function(x,y){var t1=this._states;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._doReveal$2$bailout(1,x,y,t1,0,0,0);t1.set$3(x,y,$.CTC50);var t3=this._revealsLeft;if(typeof t3!=='number')return this._doReveal$2$bailout(2,x,y,t1,t3,0,0);this._revealsLeft=t3-1;var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;if(typeof t2!=='number')return this._doReveal$2$bailout(3,x,y,t1,t2,reveals,0);if(t2===0)this._setWon$0();else{t2=this.field;t3=t2.getAdjacentCount$2(x,y);if(typeof t3!=='number')return this._doReveal$2$bailout(4,x,y,t1,t2,t3,reveals);if(t3===0)for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if(t4!==(t4|0))throw $.iae(t4);if(t4<0||t4>=t1.length)throw $.ioore(t4);if($.eqB(t1[t4],$.CTC45)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;},
+ _doReveal$2$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var x=env0;var y=env1;t1=env2;break;case 2:x=env0;y=env1;t1=env2;t3=env3;break;case 3:x=env0;y=env1;t1=env2;t2=env3;reveals=env4;break;case 4:x=env0;y=env1;t1=env2;t2=env3;t3=env4;reveals=env5;break;}switch(state){case 0:var t1=this._states;case 1:state=0;t1.set$3(x,y,$.CTC50);var t3=this._revealsLeft;case 2:state=0;this._revealsLeft=$.sub(t3,1);var reveals=[$.Coordinate$(x,y)];var t2=this._revealsLeft;case 3:state=0;case 4:if(state===0&&$.eqB(t2,0))this._setWon$0();else switch(state){case 0:t2=this.field;t3=t2.getAdjacentCount$2(x,y);case 4:state=0;if($.eqB(t3,0))for(t3=$.iterator(t2.getAdjacentIndices$2(x,y));t3.hasNext$0()===true;){var t4=t3.next$0();if($.eqB($.index(t1,t4),$.CTC45)){var c=t2.getCoordinate$1(t4);$.addAll(reveals,this._doReveal$2(c.get$Item1(),c.get$Item2()));}}}return reveals;}},
+ _setWon$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setWon$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setWon$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC54;}}this._setState$1($.CTC46);var t2;},
+ _setWon$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC54);this._setState$1($.CTC46);}},
+ _setLost$0: function(){var t1=this.field;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this._setLost$0$bailout(1,t1,0);var t3=this._states;if(typeof t3!=='object'||t3===null||(t3.constructor!==Array||!!t3.immutable$list)&&!t3.is$JavaScriptIndexingBehavior())return this._setLost$0$bailout(2,t1,t3);var i=0;for(;t2=t1.length,i<t2;++i){if(i<0||i>=t2)throw $.ioore(i);if(t1[i]===true){if(i<0||i>=t3.length)throw $.ioore(i);t3[i]=$.CTC53;}}this._setState$1($.CTC51);var t2;},
+ _setLost$0$bailout: function(state,env0,env1){switch(state){case 1:t1=env0;break;case 2:t1=env0;t3=env1;break;}switch(state){case 0:var t1=this.field;case 1:state=0;var t3=this._states;case 2:state=0;var i=0;for(;$.ltB(i,$.get$length(t1));++i)if($.index(t1,i)===true)$.indexSet(t3,i,$.CTC53);this._setState$1($.CTC51);}},
  _update$0: function(){return this._updatedEvent.fireEvent$1($.CTC33);},
- _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC51))this._startTime=$.DateImplementation$now();else if(this.get$gameEnded()===true)this._endTime=$.DateImplementation$now();this._gameStateEvent.fireEvent$1(this._state);}},
- _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC52))this._setState$1($.CTC51);},
- _getAdjacentFlagCount$2: function(x,y){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentFlagCount$2$bailout(1,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],$.CTC38))++val;}return val;},
- _getAdjacentFlagCount$2$bailout: function(state,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),$.CTC38))++val;return val;},
+ _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC37))this._startTime=$.DateImplementation$now();else if(this.get$gameEnded()===true)this._endTime=$.DateImplementation$now();this._gameStateEvent.fireEvent$1(this._state);}},
+ _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC38))this._setState$1($.CTC37);},
+ _getAdjacentFlagCount$2: function(x,y){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentFlagCount$2$bailout(1,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],$.CTC49))++val;}return val;},
+ _getAdjacentFlagCount$2$bailout: function(state,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),$.CTC49))++val;return val;},
  Game$1: function(field){this._minesLeft=field.get$mineCount();this._revealsLeft=$.sub($.get$length(field),field.get$mineCount());}
 };
 
@@ -1605,52 +1604,64 @@ $$.GameRoot = {"":
 };
 
 $$.GameElement = {"":
- ["_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_background", "_popLayerTx", "_dartLayerTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_elements", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ ["_background", "_boardElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_popLayerTx", "_dartLayerTx", "_boardTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
  "super": "ElementParentImpl",
  get$game: function(){return this._game;},
- set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC53);else this._updateSize$2(value.get$field().get$width(),value.get$field().get$height());},
- get$visualChildCount: function(){var t1=this._elements;if(!(t1==null)){t1=$.get$length(t1);if(typeof t1!=='number')throw $.iae(t1);var count=3+t1;}else count=3;return count;},
- getVisualChild$1: function(index){if($.eqB(index,0))return this._background;index=$.sub(index,1);var t1=this._elements;if(!(t1==null)){if($.ltB(index,$.get$length(t1)))return $.index(this._elements,index);index=$.sub(index,$.get$length(this._elements));}switch(index){case 0:return this._popAnimationLayer;case 1:return this._dartAnimationLayer;default:throw $.$$throw('oops');}},
- update$0: function(){this._updateElements$0();$.ElementParentImpl.prototype.update$0.call(this);},
+ set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC39);else this._updateSize$2(value.get$field().get$width(),value.get$field().get$height());},
+ get$visualChildCount: function(){return 4;},
+ getVisualChild$1: function(index){switch(index){case 0:return this._background;case 1:return this._boardElement;case 2:return this._popAnimationLayer;case 3:return this._dartAnimationLayer;default:throw $.$$throw('bad index!');}},
+ update$0: function(){$.ElementParentImpl.prototype.update$0.call(this);var t1=this._scaledBoardOffset;if(typeof t1!=='number')return this.update$0$bailout(1,t1);if(typeof $.CTC34!=='number')throw $.iae($.CTC34);var offset=t1+$.CTC34;this._boardTx.setToTranslation$2(offset.get$x(),offset.get$y());this._popLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());this._dartLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());},
+ update$0$bailout: function(state,t1){var offset=$.add(t1,$.CTC34);this._boardTx.setToTranslation$2(offset.get$x(),offset.get$y());this._popLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());this._dartLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());},
  drawOverride$1: function(ctx){$.ElementParentImpl.prototype.drawOverride$1.call(this,ctx);this._drawTarget$1(ctx);},
  _drawTarget$1: function(ctx){var t1=this._targetX;if(!(t1==null)){var targetLoc=$.Vector$(t1,this._targetY).scale$1(80);ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');$.CanvasUtil_centeredCircle(ctx,$.add(targetLoc.get$x(),40),$.add(targetLoc.get$y(),40),40);ctx.fill$0();}},
- _updateElements$0: function(){if(this._game==null)this._elements=null;else if(this.get$_elementsNeedUpdate()===true){this._elements=$.Array2d_Array2d(this._game.get$field().get$width(),this._game.get$field().get$height(),null,'SquareElement');var offset=$.add(this._scaledBoardOffset,$.CTC34);if(typeof offset!=='number')return this._updateElements$0$bailout(1,offset);for(var i=0;$.ltB(i,$.get$length(this._elements));++i){var coords=this._elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_squareClicked());se.addTransform$0().setToTranslation$2($.add(offset.get$x(),$.mul(coords.get$Item1(),80)),$.add(offset.get$y(),$.mul(coords.get$Item2(),80)));$.indexSet(this._elements,i,se);}this._popLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());this._dartLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());}},
- _updateElements$0$bailout: function(state,env0){switch(state){case 1:offset=env0;break;}switch(state){case 0:case 1:if(state===0&&this._game==null)this._elements=null;else switch(state){case 0:case 1:if(state===1||state===0&&this.get$_elementsNeedUpdate()===true)switch(state){case 0:this._elements=$.Array2d_Array2d(this._game.get$field().get$width(),this._game.get$field().get$height(),null,'SquareElement');var offset=$.add(this._scaledBoardOffset,$.CTC34);case 1:state=0;for(var i=0;$.ltB(i,$.get$length(this._elements));++i){var coords=this._elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_squareClicked());se.addTransform$0().setToTranslation$2($.add(offset.get$x(),$.mul(coords.get$Item1(),80)),$.add(offset.get$y(),$.mul(coords.get$Item2(),80)));$.indexSet(this._elements,i,se);}this._popLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());this._dartLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());}}}},
- _startPopAnimation$2: function(start,reveals){if(reveals==null)reveals=$.NumberEnumerable_NumberEnumerable$fromRange(0,$.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0();for(var t1=$.iterator(reveals),t2=start.x,t3=start.y,t4=this._popAnimationLayer;t1.hasNext$0()===true;){var t5=t1.next$0();var t6=t5.get$x();if(typeof t6!=='number')throw $.iae(t6);t6=80*t6;var t7=t5.get$y();if(typeof t7!=='number')throw $.iae(t7);var squareOffset=$.CTC41.operator$add$1($.Vector$(t6,80*t7));var t8=$.toInt($.mul($.get$length($.sub(t5,start)),4));if(typeof t8!=='number')throw $.iae(t8);var delay=12+t8;t8=$.rnd().nextInt$1(10);if(typeof t8!=='number')throw $.iae(t8);delay+=t8;switch(this.get$game().getSquareState$2(t2,t3)){case $.CTC39:var frameCount=29;var texturePrefix='balloon_pop';break;case $.CTC42:frameCount=25;texturePrefix='balloon_explode';break;default:throw $.$$throw('not supported');}var request=$.TextAniRequest$(texturePrefix,frameCount,squareOffset,delay);$.add$1(request.get$started(),new $.GameElement__startPopAnimation_anon2(this));$.add$1(t4,request);}},
+ _startPopAnimation$2: function(start,reveals){if(reveals==null)reveals=$.NumberEnumerable_NumberEnumerable$fromRange(0,$.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0();for(var t1=$.iterator(reveals),t2=start.x,t3=start.y,t4=this._popAnimationLayer;t1.hasNext$0()===true;){var t5=t1.next$0();var t6=t5.get$x();if(typeof t6!=='number')throw $.iae(t6);t6=80*t6;var t7=t5.get$y();if(typeof t7!=='number')throw $.iae(t7);var squareOffset=$.CTC52.operator$add$1($.Vector$(t6,80*t7));var t8=$.toInt($.mul($.get$length($.sub(t5,start)),4));if(typeof t8!=='number')throw $.iae(t8);var delay=12+t8;t8=$.rnd().nextInt$1(10);if(typeof t8!=='number')throw $.iae(t8);delay+=t8;switch(this.get$game().getSquareState$2(t2,t3)){case $.CTC50:var frameCount=29;var texturePrefix='balloon_pop';break;case $.CTC53:frameCount=25;texturePrefix='balloon_explode';break;default:throw $.$$throw('not supported');}var request=$.TextAniRequest$(texturePrefix,frameCount,squareOffset,delay);$.add$1(request.get$started(),new $.GameElement__startPopAnimation_anon2(this));$.add$1(t4,request);}},
  _startPopAnimation$1: function(start) {
   return this._startPopAnimation$2(start,null)
 },
  _playPop$0: function(){$.playAudio('Pop'+$.S($.rnd().nextInt$1(8)));},
- _startDartAnimation$1: function(points){for(var t1=$.iterator(points),t2=this._dartAnimationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var t4=t3.get$x();if(typeof t4!=='number')throw $.iae(t4);t4=80*t4;t3=t3.get$y();if(typeof t3!=='number')throw $.iae(t3);var squareOffset=$.CTC44.operator$add$1($.Vector$(t4,80*t3));$.add$1(t2,$.TextAniRequest$('dart_fly_shadow',56,squareOffset,0));$.add$1(t2,$.TextAniRequest$('dart_fly',56,squareOffset,0));}},
+ _startDartAnimation$1: function(points){for(var t1=$.iterator(points),t2=this._dartAnimationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var t4=t3.get$x();if(typeof t4!=='number')throw $.iae(t4);t4=80*t4;t3=t3.get$y();if(typeof t3!=='number')throw $.iae(t3);var squareOffset=$.CTC55.operator$add$1($.Vector$(t4,80*t3));$.add$1(t2,$.TextAniRequest$('dart_fly_shadow',56,squareOffset,0));$.add$1(t2,$.TextAniRequest$('dart_fly',56,squareOffset,0));}},
  _squareClicked$1: function(args){if(this._game.get$gameEnded()!==true){var se=args.get$element();var t1=this._targetMode===true;var t2=se.get$x();var t3=se.get$y();if(t1)this._target$2(t2,t3);else this._click$3(t2,t3,args.get$shiftKey());}},
  get$_squareClicked: function() { return new $.BoundClosure(this, '_squareClicked$1'); },
  _target$2: function(x,y){this._targetX=x;this._targetY=y;this._targetChanged.fireEvent$1(null);this.invalidateDraw$0();},
- _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC37)){this.get$game().setFlag$3(x,y,true);return true;}else if($.eqB(ss,$.CTC38)){this.get$game().setFlag$3(x,y,false);return true;}return false;},
- _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC37)||$.eqB(ss,$.CTC38)){this._toggleFlag$2(x,y);var reveals=null;}else if($.eqB(ss,$.CTC39))if(this.get$game().canReveal$2(x,y)===true){this._startDartAnimation$1($.$$(this.get$game().get$field().getAdjacentIndices$2(x,y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0());reveals=this.get$game().reveal$2(x,y);}else reveals=null;else reveals=null;else if($.eqB(ss,$.CTC37)){this._startDartAnimation$1([$.Coordinate$(x,y)]);reveals=this.get$game().reveal$2(x,y);}else reveals=null;if(!(reveals==null)&&$.gtB($.get$length(reveals),0)){if(!t1)$.index(reveals,0);this._startPopAnimation$2($.Coordinate$(x,y),reveals);}else if($.eqB(this.get$game().get$state(),$.CTC40))this._startPopAnimation$1($.Coordinate$(x,y));},
- get$_elementsNeedUpdate: function(){var t1=this._elements;return t1==null||!$.eqB(t1.get$width(),this._game.get$field().get$width())||!$.eqB(this._elements.get$height(),this._game.get$field().get$height());},
- _updateSize$2: function(w,h){var t1=$.CTC54.width;var sizeX=$.GameElement__getScale(w,t1,1344);this.set$size($.Size$(sizeX,$.GameElement__getScale(h,$.CTC54.height,1344)));this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC55.scale$1(this._scale);},
- GameElement$1: function(_targetMode){this._background=$.GameBackgroundElement$(this);this._background.registerParent$1(this);var t1=this._popAnimationLayer;t1.registerParent$1(this);this._popLayerTx=t1.addTransform$0();var t2=this._dartAnimationLayer;t2.registerParent$1(this);this._dartLayerTx=t2.addTransform$0();}
+ _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC45)){this.get$game().setFlag$3(x,y,true);return true;}else if($.eqB(ss,$.CTC49)){this.get$game().setFlag$3(x,y,false);return true;}return false;},
+ _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC45)||$.eqB(ss,$.CTC49)){this._toggleFlag$2(x,y);var reveals=null;}else if($.eqB(ss,$.CTC50))if(this.get$game().canReveal$2(x,y)===true){this._startDartAnimation$1($.$$(this.get$game().get$field().getAdjacentIndices$2(x,y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0());reveals=this.get$game().reveal$2(x,y);}else reveals=null;else reveals=null;else if($.eqB(ss,$.CTC45)){this._startDartAnimation$1([$.Coordinate$(x,y)]);reveals=this.get$game().reveal$2(x,y);}else reveals=null;if(!(reveals==null)&&$.gtB($.get$length(reveals),0)){if(!t1)$.index(reveals,0);this._startPopAnimation$2($.Coordinate$(x,y),reveals);}else if($.eqB(this.get$game().get$state(),$.CTC51))this._startPopAnimation$1($.Coordinate$(x,y));},
+ _updateSize$2: function(w,h){var t1=$.CTC40.width;var sizeX=$.GameElement__getScale(w,t1,1344);this.set$size($.Size$(sizeX,$.GameElement__getScale(h,$.CTC40.height,1344)));this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC41.scale$1(this._scale);},
+ GameElement$1: function(_targetMode){var t1=this._boardElement;t1.registerParent$1(this);this._boardTx=t1.addTransform$0();this._background.registerParent$1(this);var t2=this._popAnimationLayer;t2.registerParent$1(this);this._popLayerTx=t2.addTransform$0();var t3=this._dartAnimationLayer;t3.registerParent$1(this);this._dartLayerTx=t3.addTransform$0();}
+};
+
+$$.BoardElement = {"":
+ ["_lib3_elements", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ "super": "ElementParentImpl",
+ get$visualChildCount: function(){var t1=this._lib3_elements;if(t1==null)return 0;else return $.get$length(t1);},
+ getVisualChild$1: function(index){var t1=this._lib3_elements;if(typeof t1!=='string'&&(typeof t1!=='object'||t1===null||t1.constructor!==Array&&!t1.is$JavaScriptIndexingBehavior()))return this.getVisualChild$1$bailout(1,t1,index);if(index!==(index|0))throw $.iae(index);if(index<0||index>=t1.length)throw $.ioore(index);return t1[index];},
+ getVisualChild$1$bailout: function(state,t1,index){return $.index(t1,index);},
+ update$0: function(){if(this.get$_game()==null)this._lib3_elements=null;else if(this.get$_elementsNeedUpdate()===true){this._lib3_elements=$.Array2d_Array2d(this.get$_game().get$field().get$width(),this.get$_game().get$field().get$height(),null,'SquareElement');var i=0;while(true){var t1=$.get$length(this._lib3_elements);if(typeof t1!=='number')return this.update$0$bailout(1,i,t1,0,0,0);if(!(i<t1))break;var coords=this._lib3_elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_lib3_parent().get$_squareClicked());var etx=se.addTransform$0();t1=coords.get$Item1();if(typeof t1!=='number')return this.update$0$bailout(2,coords,etx,t1,i,se);t1*=80;var t3=coords.get$Item2();if(typeof t3!=='number')return this.update$0$bailout(3,t3,etx,i,se,t1);etx.setToTranslation$2(t1,t3*80);t1=this._lib3_elements;if(typeof t1!=='object'||t1===null||(t1.constructor!==Array||!!t1.immutable$list)&&!t1.is$JavaScriptIndexingBehavior())return this.update$0$bailout(4,t1,i,se,0,0);if(i<0||i>=t1.length)throw $.ioore(i);t1[i]=se;++i;}t1=this.get$_game().get$field().get$width();if(typeof t1!=='number')return this.update$0$bailout(5,t1,0,0,0,0);t1*=80;t3=this.get$_game().get$field().get$height();if(typeof t3!=='number')return this.update$0$bailout(6,t1,t3,0,0,0);this.set$size($.Size$(t1,t3*80));}$.ElementParentImpl.prototype.update$0.call(this);},
+ update$0$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:i=env0;t1=env1;break;case 2:coords=env0;etx=env1;t1=env2;i=env3;se=env4;break;case 3:t3=env0;etx=env1;i=env2;se=env3;t1=env4;break;case 4:t1=env0;i=env1;se=env2;break;case 5:t1=env0;break;case 6:t1=env0;t3=env1;break;}switch(state){case 0:default:if(state===0&&this.get$_game()==null)this._lib3_elements=null;else switch(state){case 0:default:if(state===6||state===5||state===4||state===3||state===2||state===1||state===0&&this.get$_elementsNeedUpdate()===true)switch(state){case 0:this._lib3_elements=$.Array2d_Array2d(this.get$_game().get$field().get$width(),this.get$_game().get$field().get$height(),null,'SquareElement');var i=0;default:L0:while(true)switch(state){case 0:var t1=$.get$length(this._lib3_elements);case 1:state=0;if(!$.ltB(i,t1))break L0;var coords=this._lib3_elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_lib3_parent().get$_squareClicked());var etx=se.addTransform$0();t1=coords.get$Item1();case 2:state=0;t1=$.mul(t1,80);var t3=coords.get$Item2();case 3:state=0;etx.setToTranslation$2(t1,$.mul(t3,80));t1=this._lib3_elements;case 4:state=0;$.indexSet(t1,i,se);++i;}t1=this.get$_game().get$field().get$width();case 5:state=0;t1=$.mul(t1,80);t3=this.get$_game().get$field().get$height();case 6:state=0;this.set$size($.Size$(t1,$.mul(t3,80)));}}$.ElementParentImpl.prototype.update$0.call(this);}},
+ get$_game: function(){return this.get$parent().get$_game();},
+ get$_elementsNeedUpdate: function(){var t1=this._lib3_elements;return t1==null||!$.eqB(t1.get$width(),this.get$_game().get$field().get$width())||!$.eqB(this._lib3_elements.get$height(),this.get$_game().get$field().get$height());},
+ get$_lib3_parent: function(){return this.get$parent();}
 };
 
 $$.GameBackgroundElement = {"":
- ["_lib3_parent", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
  "super": "PElement",
- update$0: function(){var t1=this.get$size();var t2=this._lib3_parent;if(!$.eqB(t1,t2.get$size()))this.set$size(t2.get$size());},
- drawOverride$1: function(ctx){var t1=this._lib3_parent;var t2=t1._game.get$field().get$width();if(typeof t2!=='number')return this.drawOverride$1$bailout(1,ctx,t1,t2,0,0,0);var rightBgLoc=80*(t2-1)+32;var t4=t1._game.get$field().get$height();if(typeof t4!=='number')return this.drawOverride$1$bailout(2,ctx,t4,t1,rightBgLoc,0,0);var bottomBgLoc=80*(t4-1)+32;ctx.save$0();var t6=t1._scaledBoardOffset;ctx.translate$2(t6.get$x(),t6.get$y());$.drawTextureKeyAt(ctx,'game_board_corner_top_left.png',$.CTC46);$.drawTextureKeyAt(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));var i=1;while(true){t2=t1._game.get$field().get$width();if(typeof t2!=='number')return this.drawOverride$1$bailout(3,ctx,rightBgLoc,t1,bottomBgLoc,i,t2);if(!(i<t2-1))break;var xLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));$.drawTextureKeyAt(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));++i;}i=1;while(true){t2=t1._game.get$field().get$height();if(typeof t2!=='number')return this.drawOverride$1$bailout(4,ctx,i,t1,t2,rightBgLoc,0);if(!(i<t2-1))break;var yLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));$.drawTextureKeyAt(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));++i;}ctx.restore$0();ctx.save$0();t1=t1._scale;ctx.transform$6(t1,0,0,t1,0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC54.width,0);this._drawCorner$1(ctx);t1=$.CTC54.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();},
- drawOverride$1$bailout: function(state,env0,env1,env2,env3,env4,env5){switch(state){case 1:var ctx=env0;t1=env1;t2=env2;break;case 2:ctx=env0;t4=env1;t1=env2;rightBgLoc=env3;break;case 3:ctx=env0;rightBgLoc=env1;t1=env2;bottomBgLoc=env3;i=env4;t2=env5;break;case 4:ctx=env0;i=env1;t1=env2;t2=env3;rightBgLoc=env4;break;}switch(state){case 0:var t1=this._lib3_parent;var t2=t1.get$_game().get$field().get$width();case 1:state=0;t2=$.sub(t2,1);if(typeof t2!=='number')throw $.iae(t2);var rightBgLoc=80*t2+32;var t4=t1.get$_game().get$field().get$height();case 2:state=0;t4=$.sub(t4,1);if(typeof t4!=='number')throw $.iae(t4);var bottomBgLoc=80*t4+32;ctx.save$0();var t6=t1.get$_scaledBoardOffset();ctx.translate$2(t6.get$x(),t6.get$y());$.drawTextureKeyAt(ctx,'game_board_corner_top_left.png',$.CTC46);$.drawTextureKeyAt(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));var i=1;case 3:L0:while(true)switch(state){case 0:t2=t1.get$_game().get$field().get$width();case 3:state=0;if(!$.ltB(i,$.sub(t2,1)))break L0;var xLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));$.drawTextureKeyAt(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));++i;}i=1;case 4:L1:while(true)switch(state){case 0:t2=t1.get$_game().get$field().get$height();case 4:state=0;if(!$.ltB(i,$.sub(t2,1)))break L1;var yLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));$.drawTextureKeyAt(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));++i;}ctx.restore$0();ctx.save$0();t1=t1.get$_scale();ctx.transform$6(t1,0,0,t1,0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC54.width,0);this._drawCorner$1(ctx);t1=$.CTC54.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();}},
- _drawCorner$1: function(ctx){$.drawTextureKeyAt(ctx,'background_top_left.png',$.CTC46);$.drawTextureKeyAt(ctx,'background_side_left.png',$.Coordinate$(0,$.CTC55.y));}
+ update$0: function(){if(!$.eqB(this.get$size(),this.get$_lib3_parent().get$size()))this.set$size(this.get$_lib3_parent().get$size());},
+ drawOverride$1: function(ctx){var t1=this.get$_lib3_parent().get$_game().get$field().get$width();if(typeof t1!=='number')return this.drawOverride$1$bailout(1,ctx,t1,0,0,0);var rightBgLoc=80*(t1-1)+32;var t3=this.get$_lib3_parent().get$_game().get$field().get$height();if(typeof t3!=='number')return this.drawOverride$1$bailout(2,ctx,t3,rightBgLoc,0,0);var bottomBgLoc=80*(t3-1)+32;ctx.save$0();ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(),this.get$_lib3_parent().get$_scaledBoardOffset().get$y());$.drawTextureKeyAt(ctx,'game_board_corner_top_left.png',$.CTC48);$.drawTextureKeyAt(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));var i=1;while(true){t1=this.get$_lib3_parent().get$_game().get$field().get$width();if(typeof t1!=='number')return this.drawOverride$1$bailout(3,ctx,rightBgLoc,bottomBgLoc,i,t1);if(!(i<t1-1))break;var xLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));$.drawTextureKeyAt(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));++i;}i=1;while(true){t1=this.get$_lib3_parent().get$_game().get$field().get$height();if(typeof t1!=='number')return this.drawOverride$1$bailout(4,ctx,t1,i,rightBgLoc,0);if(!(i<t1-1))break;var yLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));$.drawTextureKeyAt(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));++i;}ctx.restore$0();ctx.save$0();ctx.transform$6(this.get$_lib3_parent().get$_scale(),0,0,this.get$_lib3_parent().get$_scale(),0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC40.width,0);this._drawCorner$1(ctx);t1=$.CTC40.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();},
+ drawOverride$1$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:var ctx=env0;t1=env1;break;case 2:ctx=env0;t3=env1;rightBgLoc=env2;break;case 3:ctx=env0;rightBgLoc=env1;bottomBgLoc=env2;i=env3;t1=env4;break;case 4:ctx=env0;t1=env1;i=env2;rightBgLoc=env3;break;}switch(state){case 0:var t1=this.get$_lib3_parent().get$_game().get$field().get$width();case 1:state=0;t1=$.sub(t1,1);if(typeof t1!=='number')throw $.iae(t1);var rightBgLoc=80*t1+32;var t3=this.get$_lib3_parent().get$_game().get$field().get$height();case 2:state=0;t3=$.sub(t3,1);if(typeof t3!=='number')throw $.iae(t3);var bottomBgLoc=80*t3+32;ctx.save$0();ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(),this.get$_lib3_parent().get$_scaledBoardOffset().get$y());$.drawTextureKeyAt(ctx,'game_board_corner_top_left.png',$.CTC48);$.drawTextureKeyAt(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));var i=1;case 3:L0:while(true)switch(state){case 0:t1=this.get$_lib3_parent().get$_game().get$field().get$width();case 3:state=0;if(!$.ltB(i,$.sub(t1,1)))break L0;var xLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));$.drawTextureKeyAt(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));++i;}i=1;case 4:L1:while(true)switch(state){case 0:t1=this.get$_lib3_parent().get$_game().get$field().get$height();case 4:state=0;if(!$.ltB(i,$.sub(t1,1)))break L1;var yLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));$.drawTextureKeyAt(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));++i;}ctx.restore$0();ctx.save$0();ctx.transform$6(this.get$_lib3_parent().get$_scale(),0,0,this.get$_lib3_parent().get$_scale(),0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC40.width,0);this._drawCorner$1(ctx);t1=$.CTC40.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();}},
+ _drawCorner$1: function(ctx){$.drawTextureKeyAt(ctx,'background_top_left.png',$.CTC48);$.drawTextureKeyAt(ctx,'background_side_left.png',$.Coordinate$(0,$.CTC41.y));},
+ get$_lib3_parent: function(){return this.get$parent();}
 };
 
 $$.SquareElement = {"":
  ["x?", "y?", "_lastDrawingState", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
  "super": "PElement",
  update$0: function(){if(!$.eqB(this._lastDrawingState,this.get$_squareState())){this._lastDrawingState=this.get$_squareState();this.invalidateDraw$0();}},
- drawOverride$1: function(ctx){var textureName=null;switch(this._lastDrawingState){case $.CTC37:textureName='balloon.png';break;case $.CTC38:textureName='balloon_tagged_!.png';break;case $.CTC39:var t1=this.get$_adjacentCount();if(t1!==(t1|0))throw $.iae(t1);if(t1<0||t1>=9)throw $.ioore(t1);textureName=$.S($.CTC45[t1])+'.png';break;case $.CTC42:textureName='balloon_tagged_bomb.png';break;}if(textureName==null){ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());}else $.drawTextureKeyAt(ctx,textureName,$.CTC46);},
+ drawOverride$1: function(ctx){var textureName=null;switch(this._lastDrawingState){case $.CTC45:textureName='balloon.png';break;case $.CTC49:textureName='balloon_tagged_!.png';break;case $.CTC50:var t1=this.get$_adjacentCount();if(t1!==(t1|0))throw $.iae(t1);if(t1<0||t1>=9)throw $.ioore(t1);textureName=$.S($.CTC56[t1])+'.png';break;case $.CTC53:textureName='balloon_tagged_bomb.png';break;}if(textureName==null){ctx.set$fillStyle(this.get$_fillStyle());ctx.fillRect$4(0,0,this.get$width(),this.get$height());}else $.drawTextureKeyAt(ctx,textureName,$.CTC48);},
  toString$0: function(){return 'Square at ['+$.S(this.x)+', '+$.S(this.y)+']';},
  get$_squareState: function(){return this.get$_game().getSquareState$2(this.x,this.y);},
  get$_adjacentCount: function(){return this.get$_game().get$field().getAdjacentCount$2(this.x,this.y);},
- get$_game: function(){return this.get$parent().get$game();},
- get$_fillStyle: function(){var t1=this._lastDrawingState;switch(t1){case $.CTC47:return 'green';default:throw $.$$throw('not supported - '+$.S(t1));}},
+ get$_game: function(){return this.get$parent().get$_game();},
+ get$_fillStyle: function(){var t1=this._lastDrawingState;switch(t1){case $.CTC54:return 'green';default:throw $.$$throw('not supported - '+$.S(t1));}},
  SquareElement$2: function(x,y){$.ClickManager_setClickable(this,true);}
 };
 
@@ -1695,8 +1706,8 @@ $$.TextAniRequest = {"":
  get$started: function(){return this._startEventHandle;},
  update$0: function(){var t1=this._frame;if(typeof t1!=='number')return this.update$0$bailout(1,t1);if(t1<this._frameCount-1)this._frame=t1+1;else this._lib3_done=true;t1=this._frame;if(typeof t1!=='number')return this.update$0$bailout(3,t1);if(t1===0&&!this._lib3_done)this._startEventHandle.fireEvent$1($.CTC33);},
  update$0$bailout: function(state,env0){switch(state){case 1:t1=env0;break;case 2:t1=env0;break;case 3:t1=env0;break;}switch(state){case 0:var t1=this._frame;case 1:state=0;case 2:if(state===0&&t1==null)this._frame=-this._delay;else switch(state){case 0:case 2:if(state===2||state===0&&$.ltB(t1,this._frameCount-1))switch(state){case 0:t1=this._frame;case 2:state=0;this._frame=$.add(t1,1);}else this._lib3_done=true;}t1=this._frame;case 3:state=0;if($.eqB(t1,0)&&this._lib3_done!==true)this._startEventHandle.fireEvent$1($.CTC33);}},
- drawOverride$1: function(ctx){var t1=this._frame;if(typeof t1!=='number')return this.drawOverride$1$bailout(1,ctx,t1);if(t1<0)var frame=0;else frame=t1;var frameString=$.toString($.toInt(frame));if(typeof frameString!=='string')return this.drawOverride$1$bailout(3,ctx,frameString);for(;frameString.length<4;)frameString='0'+frameString;var frameName=this._texturePrefix+'_'+frameString+'.png';ctx.save$0();t1=this._offset;ctx.translate$2(t1.get$x(),t1.get$y());$.drawTextureKeyAt(ctx,frameName,$.CTC46);ctx.restore$0();},
- drawOverride$1$bailout: function(state,env0,env1){switch(state){case 1:var ctx=env0;t1=env1;break;case 2:ctx=env0;t1=env1;break;case 3:ctx=env0;frameString=env1;break;}switch(state){case 0:var t1=this._frame;case 1:state=0;case 2:if(state===0&&$.ltB(t1,0))var frame=0;else switch(state){case 0:t1=this._frame;case 2:state=0;frame=t1;}var frameString=$.toString($.toInt(frame));case 3:state=0;for(;$.ltB($.get$length(frameString),4);)frameString='0'+$.S(frameString);var frameName=this._texturePrefix+'_'+$.S(frameString)+'.png';ctx.save$0();t1=this._offset;ctx.translate$2(t1.get$x(),t1.get$y());$.drawTextureKeyAt(ctx,frameName,$.CTC46);ctx.restore$0();}},
+ drawOverride$1: function(ctx){var t1=this._frame;if(typeof t1!=='number')return this.drawOverride$1$bailout(1,ctx,t1);if(t1<0)var frame=0;else frame=t1;var frameString=$.toString($.toInt(frame));if(typeof frameString!=='string')return this.drawOverride$1$bailout(3,ctx,frameString);for(;frameString.length<4;)frameString='0'+frameString;var frameName=this._texturePrefix+'_'+frameString+'.png';ctx.save$0();t1=this._offset;ctx.translate$2(t1.get$x(),t1.get$y());$.drawTextureKeyAt(ctx,frameName,$.CTC48);ctx.restore$0();},
+ drawOverride$1$bailout: function(state,env0,env1){switch(state){case 1:var ctx=env0;t1=env1;break;case 2:ctx=env0;t1=env1;break;case 3:ctx=env0;frameString=env1;break;}switch(state){case 0:var t1=this._frame;case 1:state=0;case 2:if(state===0&&$.ltB(t1,0))var frame=0;else switch(state){case 0:t1=this._frame;case 2:state=0;frame=t1;}var frameString=$.toString($.toInt(frame));case 3:state=0;for(;$.ltB($.get$length(frameString),4);)frameString='0'+$.S(frameString);var frameName=this._texturePrefix+'_'+$.S(frameString)+'.png';ctx.save$0();t1=this._offset;ctx.translate$2(t1.get$x(),t1.get$y());$.drawTextureKeyAt(ctx,frameName,$.CTC48);ctx.restore$0();}},
  TextAniRequest$4: function(_texturePrefix,_frameCount,_offset,delay){}
 };
 
@@ -1707,7 +1718,7 @@ $$.TextureInput = {"":
 };
 
 $$.PElement = {"":
- [],
+ ["_lib2_parent?"],
  "super": "AttachableObjectImpl",
  clip$0: function() { return this.clip.call$0(); },
  get$width: function(){return this._width;},
@@ -1795,12 +1806,12 @@ $$.GameStorage = {"":
 $$.GameManager = {"":
  ["game="],
  "super": "Object",
- newGame$0: function(){if(!(this._updatedEventId==null)){this.get$game().get$updated().remove$1(this._updatedEventId);this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC52);}this.set$game($.Game$($.Field_Field(this._mineCount,this._lib5_width,this._lib5_height,null)));this._updatedEventId=$.add$1(this.get$game().get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this.get$game().get$stateChanged(),this.get$_gameStateChanged());},
- _lib5_click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC37))this.get$game().setFlag$3(x,y,true);else if($.eqB(ss,$.CTC38))this.get$game().setFlag$3(x,y,false);else if($.eqB(ss,$.CTC39))this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC37))this.get$game().reveal$2(x,y);},
- updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this.get$game().get$state(),$.CTC51))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this.get$game().get$state(),$.CTC51)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
+ newGame$0: function(){if(!(this._updatedEventId==null)){this.get$game().get$updated().remove$1(this._updatedEventId);this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC38);}this.set$game($.Game$($.Field_Field(this._mineCount,this._lib5_width,this._lib5_height,null)));this._updatedEventId=$.add$1(this.get$game().get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this.get$game().get$stateChanged(),this.get$_gameStateChanged());},
+ _lib5_click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC45))this.get$game().setFlag$3(x,y,true);else if($.eqB(ss,$.CTC49))this.get$game().setFlag$3(x,y,false);else if($.eqB(ss,$.CTC50))this.get$game().reveal$2(x,y);}else if($.eqB(ss,$.CTC45))this.get$game().reveal$2(x,y);},
+ updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this.get$game().get$state(),$.CTC37))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this.get$game().get$state(),$.CTC37)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
  _doClock$0: function(){this.updateClock$0();},
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
- _gameStateChanged$1: function(newState){var t1=this.gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC56))t1.updateHighScore$1(this.get$game());this.updateClock$0();},
+ _gameStateChanged$1: function(newState){var t1=this.gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC46))t1.updateHighScore$1(this.get$game());this.updateClock$0();},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width,_height,_mineCount){this.newGame$0();}
 };
@@ -2024,60 +2035,6 @@ $$.ElementParentImpl_update_anon = {"":
  call$1: function(e){return e.update$0();}
 };
 
-$$._AttachableEventHelper_addHandler_anon = {"":
- [],
- "super": "Closure",
- call$0: function(){return $.EventHandle$();}
-};
-
-$$._AttachableEventHelper_createInstance_anon = {"":
- ["obj_0"],
- "super": "Closure",
- call$1: function(property){$._AttachableEventHelper_fireEvent(this.obj_0,property,property);}
-};
-
-$$.GameElement__click_anon = {"":
- ["this_0"],
- "super": "Closure",
- call$1: function(i){var t=this.this_0.get$game().get$field().getCoordinate$1(i);return $.Coordinate$(t.get$Item1(),t.get$Item2());}
-};
-
-$$.GameElement__click_anon0 = {"":
- ["this_1"],
- "super": "Closure",
- call$1: function(t){return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(),t.get$y()),$.CTC37);}
-};
-
-$$.GameElement__startPopAnimation_anon = {"":
- ["this_0"],
- "super": "Closure",
- call$1: function(i){var t1=this.this_0;var t=t1.get$game().get$field().getCoordinate$1(i);var c=$.Coordinate$(t.get$Item1(),t.get$Item2());return $.Tuple$(c,t1.get$game().getSquareState$2(c.x,c.y));}
-};
-
-$$.GameElement__startPopAnimation_anon0 = {"":
- [],
- "super": "Closure",
- call$1: function(t2){return $.eq(t2.get$Item2(),$.CTC42);}
-};
-
-$$.GameElement__startPopAnimation_anon1 = {"":
- [],
- "super": "Closure",
- call$1: function(t2){return t2.get$Item1();}
-};
-
-$$.GameElement__startPopAnimation_anon2 = {"":
- ["this_1"],
- "super": "Closure",
- call$1: function(args){return this.this_1._playPop$0();}
-};
-
-$$.Enumerable_where_anon = {"":
- ["this_1", "f_0"],
- "super": "Closure",
- call$1: function(s){return $._WhereIterator$(s,this.f_0,$.getRuntimeTypeInfo(this.this_1).T);}
-};
-
 $$.HashSetImplementation_addAll__ = {"":
  ["this_0"],
  "super": "Closure",
@@ -2142,6 +2099,60 @@ $$.DateImplementation_toString_twoDigits = {"":
  [],
  "super": "Closure",
  call$1: function(n){if($.geB(n,10))return $.S(n);return '0'+$.S(n);}
+};
+
+$$._AttachableEventHelper_addHandler_anon = {"":
+ [],
+ "super": "Closure",
+ call$0: function(){return $.EventHandle$();}
+};
+
+$$._AttachableEventHelper_createInstance_anon = {"":
+ ["obj_0"],
+ "super": "Closure",
+ call$1: function(property){$._AttachableEventHelper_fireEvent(this.obj_0,property,property);}
+};
+
+$$.GameElement__click_anon = {"":
+ ["this_0"],
+ "super": "Closure",
+ call$1: function(i){var t=this.this_0.get$game().get$field().getCoordinate$1(i);return $.Coordinate$(t.get$Item1(),t.get$Item2());}
+};
+
+$$.GameElement__click_anon0 = {"":
+ ["this_1"],
+ "super": "Closure",
+ call$1: function(t){return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(),t.get$y()),$.CTC45);}
+};
+
+$$.GameElement__startPopAnimation_anon = {"":
+ ["this_0"],
+ "super": "Closure",
+ call$1: function(i){var t1=this.this_0;var t=t1.get$game().get$field().getCoordinate$1(i);var c=$.Coordinate$(t.get$Item1(),t.get$Item2());return $.Tuple$(c,t1.get$game().getSquareState$2(c.x,c.y));}
+};
+
+$$.GameElement__startPopAnimation_anon0 = {"":
+ [],
+ "super": "Closure",
+ call$1: function(t2){return $.eq(t2.get$Item2(),$.CTC53);}
+};
+
+$$.GameElement__startPopAnimation_anon1 = {"":
+ [],
+ "super": "Closure",
+ call$1: function(t2){return t2.get$Item1();}
+};
+
+$$.GameElement__startPopAnimation_anon2 = {"":
+ ["this_1"],
+ "super": "Closure",
+ call$1: function(args){return this.this_1._playPop$0();}
+};
+
+$$.Enumerable_where_anon = {"":
+ ["this_1", "f_0"],
+ "super": "Closure",
+ call$1: function(s){return $._WhereIterator$(s,this.f_0,$.getRuntimeTypeInfo(this.this_1).T);}
 };
 
 $$.ImageLoader__doLoad_anon = {"":
@@ -2486,7 +2497,7 @@ $.invokeClosure = function(closure,isolate,numberOfArguments,arg1,arg2){if($.eqB
 
 $.MetaInfo$ = function(_tag,_tags,_set){return new $.MetaInfo(_tag,_tags,_set);};
 
-$.SquareElement$ = function(x,y){var t1=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t1,{ 'E': 'AffineTransform' });t1=new $.SquareElement(x,y,null,t1,true,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,80,80,null,null,false,null,$.PropertyValues$(),false);t1.SquareElement$2(x,y);return t1;};
+$.SquareElement$ = function(x,y){var t1=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t1,{ 'E': 'AffineTransform' });t1=new $.SquareElement(x,y,null,t1,false,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,80,80,null,null,false,null,$.PropertyValues$(),false);t1.SquareElement$2(x,y);return t1;};
 
 $.add = function(a,b){return typeof a==='number'&&typeof b==='number'?a + b:$.add$slow(a,b);};
 
@@ -2698,7 +2709,7 @@ $.div = function(a,b){return typeof a==='number'&&typeof b==='number'?a / b:$.di
 
 $._Elements_CanvasElement = function(width,height){var _e=$._document().$dom_createElement$1('canvas');if(!(width==null))_e.set$width(width);if(!(height==null))_e.set$height(height);return _e;};
 
-$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC37,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC52,null,null,null,null);t1.Game$1(field);return t1;};
+$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC45,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC38,null,null,null,null);t1.Game$1(field);return t1;};
 
 $.$$throw = function(ex){if(ex==null)ex=$.CTC1;var jsError=new Error();jsError.name = ex;jsError.description = ex;jsError.dartException = ex;jsError.toString = $.toStringWrapper.call$0;throw jsError;};
 
@@ -2746,9 +2757,9 @@ $.NullPointerException$ = function(functionName,arguments$){return new $.NullPoi
 
 $._DoubleLinkedQueueEntrySentinel$ = function(E){var t1=new $._DoubleLinkedQueueEntrySentinel(null,null,null);$.setRuntimeTypeInfo(t1,{ 'E': E });t1.DoubleLinkedQueueEntry$1(null);t1._DoubleLinkedQueueEntrySentinel$0();return t1;};
 
-$.toStringWrapper = function(){return $.toString(this.dartException);};
-
 $.last = function(receiver){if(!$.isJsArray(receiver))return receiver.last$0();return $.index(receiver,$.sub($.get$length(receiver),1));};
+
+$.toStringWrapper = function(){return $.toString(this.dartException);};
 
 $.TextureInput_TextureInput$fromHash = function(keyName,map){var frame=$.TextureInput__parseRect($.index(map,'frame'));var offset=$.TextureInput__parseCoordinate($.index(map,'offset')).toVector$0();var sourceColorRect=$.TextureInput__parseRect($.index(map,'sourceColorRect'));var sourceSize=$.TextureInput__parseCoordinate($.index(map,'sourceSize')).toSize$0();return $.TextureInput$(keyName,frame,offset,$.index(map,'rotated'),sourceColorRect,sourceSize);};
 
@@ -2822,7 +2833,7 @@ $.Collections_forEach = function(iterable,f){for(var t1=$.iterator(iterable);t1.
 
 $.isEmpty = function(receiver){if(typeof receiver==='string'||$.isJsArray(receiver))return receiver.length === 0;return receiver.isEmpty$0();};
 
-$.GameBackgroundElement$ = function(_parent){var t1=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t1,{ 'E': 'AffineTransform' });return new $.GameBackgroundElement(_parent,t1,true,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,0,0,null,null,false,null,$.PropertyValues$(),false);};
+$.GameBackgroundElement$ = function(){var t1=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t1,{ 'E': 'AffineTransform' });return new $.GameBackgroundElement(t1,true,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,0,0,null,null,false,null,$.PropertyValues$(),false);};
 
 $._convertNativeToDart_AcceptStructuredClone = function(object){var values=[];var copies=[];var t1=new $._convertNativeToDart_AcceptStructuredClone_findSlot(copies,values);var t2=new $._convertNativeToDart_AcceptStructuredClone_readSlot(copies);return new $._convertNativeToDart_AcceptStructuredClone_walk(new $._convertNativeToDart_AcceptStructuredClone_writeSlot(copies),t1,t2).call$1(object);};
 
@@ -2859,6 +2870,8 @@ $._BodyElementEventsImpl$ = function(_ptr){return new $._BodyElementEventsImpl(_
 $.parseInt = function(str){$.checkString(str);if(!/^\s*[+-]?(?:0[xX][abcdefABCDEF0-9]+|\d+)\s*$/.test(str))throw $.$$throw($.FormatException$(str));var trimmed=$.trim(str);if($.gtB($.get$length(trimmed),2))var t1=$.eqB($.index(trimmed,1),'x')||$.eqB($.index(trimmed,1),'X');else t1=false;if(!t1)if($.gtB($.get$length(trimmed),3))t1=$.eqB($.index(trimmed,2),'x')||$.eqB($.index(trimmed,2),'X');else t1=false;else t1=true;var base=t1?16:10;var ret=parseInt(trimmed, base);if($.isNaN(ret)===true)throw $.$$throw($.FormatException$(str));return ret;};
 
 $.TextureInput__parseCoordinate = function(input){var match=$.$$($.CTC16.allMatches$1(input)).single$0();return $.Coordinate$($.parseDouble($.index(match,1)),$.parseDouble($.index(match,2)));};
+
+$.BoardElement$ = function(){var t1=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t1,{ 'E': 'AffineTransform' });return new $.BoardElement(null,t1,true,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,0,0,null,null,false,null,$.PropertyValues$(),false);};
 
 $._Timer$ = function(milliSeconds,callback){var t1=new $._Timer(true,null);t1._Timer$2(milliSeconds,callback);return t1;};
 
@@ -2936,9 +2949,9 @@ $.window = function(){return window;};
 
 $.HashMapImplementation$ = function(K,V){var t1=new $.HashMapImplementation(null,null,null,null,null);$.setRuntimeTypeInfo(t1,{ 'K': K, 'V': V });t1.HashMapImplementation$0();return t1;};
 
-$.TextAniRequest$ = function(_texturePrefix,_frameCount,_offset,delay){var t1=new $.TextAniRequest(_texturePrefix,_frameCount,_offset,delay,$.EventHandle$('EventArgs'),false,null);t1.TextAniRequest$4(_texturePrefix,_frameCount,_offset,delay);return t1;};
-
 $.Primitives_getMinutes = function(receiver){return receiver.isUtc===true?$.Primitives_lazyAsJsDate(receiver).getUTCMinutes():$.Primitives_lazyAsJsDate(receiver).getMinutes();};
+
+$.TextAniRequest$ = function(_texturePrefix,_frameCount,_offset,delay){var t1=new $.TextAniRequest(_texturePrefix,_frameCount,_offset,delay,$.EventHandle$('EventArgs'),false,null);t1.TextAniRequest$4(_texturePrefix,_frameCount,_offset,delay);return t1;};
 
 $.Primitives_lazyAsJsDate = function(receiver){if(receiver.date === (void 0))receiver.date = new Date(receiver.millisecondsSinceEpoch);return receiver.date;};
 
@@ -2986,7 +2999,7 @@ $.constructorNameFallback = function(obj){var constructor$=obj.constructor;if(ty
 
 $.FormatException$ = function(message){return new $.FormatException(message);};
 
-$.GameElement$ = function(_targetMode){var t1=$.TextureAnimationElement$(0,0);var t2=$.TextureAnimationElement$(0,0);var t3=$.EventHandle$();var t4=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t4,{ 'E': 'AffineTransform' });t4=new $.GameElement(t1,t2,_targetMode,t3,null,null,null,null,null,null,null,null,null,t4,false,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,100,100,null,null,false,null,$.PropertyValues$(),false);t4.GameElement$1(_targetMode);return t4;};
+$.GameElement$ = function(_targetMode){var t1=$.GameBackgroundElement$();var t2=$.BoardElement$();var t3=$.TextureAnimationElement$(0,0);var t4=$.TextureAnimationElement$(0,0);var t5=$.EventHandle$();var t6=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t6,{ 'E': 'AffineTransform' });t6=new $.GameElement(t1,t2,t3,t4,_targetMode,t5,null,null,null,null,null,null,null,null,t6,false,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,100,100,null,null,false,null,$.PropertyValues$(),false);t6.GameElement$1(_targetMode);return t6;};
 
 $._ChildrenElementList$_wrap = function(element){return new $._ChildrenElementList(element,element.get$$$dom_children());};
 
@@ -2996,11 +3009,7 @@ $.Vector$ = function(x,y){return new $.Vector(x,y);};
 
 $.checkNumbers = function(a,b){if(typeof a==='number')if(typeof b==='number')return true;else{$.checkNull(b);throw $.$$throw($.IllegalArgumentException$(b));}return false;};
 
-$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
-
 $._ReceivePortImpl$ = function(){var t1=$._ReceivePortImpl__nextFreeId;$._ReceivePortImpl__nextFreeId=$.add(t1,1);t1=new $._ReceivePortImpl(t1,null);t1._ReceivePortImpl$0();return t1;};
-
-$.Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
 $._NodeListWrapper$ = function(list){return new $._NodeListWrapper(list);};
 
@@ -3008,9 +3017,11 @@ $.stringJoinUnchecked = function(array,separator){return array.join(separator);}
 
 $._WorkerSendPort$ = function(_workerId,isolateId,_receivePortId){return new $._WorkerSendPort(_workerId,_receivePortId,isolateId);};
 
+$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
+
 $.checkString = function(value){if(!(typeof value==='string')){$.checkNull(value);throw $.$$throw($.IllegalArgumentException$(value));}return value;};
 
-$._Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
+$.Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
 $._WhereIterator$ = function(_source,_func,T){var t1=new $._WhereIterator(_source,_func,null,null);$.setRuntimeTypeInfo(t1,{ 'T': T });return t1;};
 
@@ -3018,9 +3029,11 @@ $.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string
 
 $._Device_isOpera = function(){return $.contains$2($._Device_userAgent(),'Opera',0);};
 
+$._HttpRequestFactoryProvider_HttpRequest = function(){return new XMLHttpRequest();};
+
 $._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
-$._HttpRequestFactoryProvider_HttpRequest = function(){return new XMLHttpRequest();};
+$._Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
 $._SimpleClientRect$ = function(left,top$,width,height){return new $._SimpleClientRect(left,top$,width,height);};
 
@@ -3036,7 +3049,7 @@ $.contains = function(userAgent,name$){return !(userAgent.indexOf(name$)===-1);}
 
 $._TextTrackCueEventsImpl$ = function(_ptr){return new $._TextTrackCueEventsImpl(_ptr);};
 
-$.Random_Random = function(seed){return $.CTC43;};
+$.Random_Random = function(seed){return $.CTC44;};
 
 $.regExpExec = function(regExp,str){var result=$.regExpGetNative(regExp).exec(str);if(result === null)return;return result;};
 
@@ -3110,11 +3123,11 @@ $._MessageTraverserVisitedMap$ = function(){return new $._MessageTraverserVisite
 
 $.sin = function(value){return Math.sin($.checkNum(value));};
 
-$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
-
 $.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,arg);};
 
 $.FutureNotCompleteException$ = function(){return new $.FutureNotCompleteException();};
+
+$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
 $._JsSerializer$ = function(){var t1=new $._JsSerializer(0,$._MessageTraverserVisitedMap$());t1._JsSerializer$0();return t1;};
 
@@ -3218,15 +3231,15 @@ $.CTC67 = 'Pop6';
 $.CTC68 = 'Pop7';
 $.CTC69 = 'Pop8';
 $.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8']);
-$.CTC70 = 'hidden';
-$.CTC37 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC70 = 'IsMouseOver';
+$.CTC25 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
 $.CTC71 = 'Cannot add to immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC72 = 'IsMouseOver';
-$.CTC25 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
+$.CTC72 = 'hidden';
+$.CTC45 = new Isolate.$isolateProperties.SquareState('hidden');
 $.CTC73 = -1025;
 $.CTC74 = -775;
-$.CTC44 = new Isolate.$isolateProperties.Vector(-1025, -775);
+$.CTC55 = new Isolate.$isolateProperties.Vector(-1025, -775);
 $.CTC75 = 'isClickable';
 $.CTC26 = new Isolate.$isolateProperties.Property(false, 'isClickable');
 $.CTC33 = new Isolate.$isolateProperties.EventArgs();
@@ -3234,23 +3247,23 @@ $.CTC76 = null;
 $.CTC77 = '_attachableEventHelperProperty';
 $.CTC29 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
 $.CTC78 = 100;
-$.CTC53 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC39 = new Isolate.$isolateProperties.Size(100, 100);
 $.CTC79 = 0;
-$.CTC46 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC80 = -88;
-$.CTC41 = new Isolate.$isolateProperties.Vector(-88, -88);
+$.CTC48 = new Isolate.$isolateProperties.Coordinate(0, 0);
+$.CTC80 = 32;
+$.CTC34 = new Isolate.$isolateProperties.Coordinate(32, 32);
 $.CTC81 = 2048;
 $.CTC82 = 1536;
-$.CTC54 = new Isolate.$isolateProperties.Size(2048, 1536);
+$.CTC40 = new Isolate.$isolateProperties.Size(2048, 1536);
 $.CTC83 = 'offsetX is only supported on elements';
 $.CTC27 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
 $.CTC84 = 'The input sequence is empty.';
 $.CTC17 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC85 = 32;
-$.CTC34 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC86 = 352;
-$.CTC87 = 96;
-$.CTC55 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC85 = 352;
+$.CTC86 = 96;
+$.CTC41 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC87 = -88;
+$.CTC52 = new Isolate.$isolateProperties.Vector(-88, -88);
 $.CTC24 = new Isolate.$isolateProperties._UndefinedValue();
 $.CTC88 = '_stageMouseCacheProperty';
 $.CTC22 = new Isolate.$isolateProperties.Property(null, '_stageMouseCacheProperty');
@@ -3266,21 +3279,21 @@ $.CTC95 = 'number_five';
 $.CTC96 = 'number_six';
 $.CTC97 = 'number_seven';
 $.CTC98 = 'number_eight';
-$.CTC45 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
+$.CTC56 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC2);
-$.CTC99 = 'lost';
-$.CTC40 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC99 = '';
+$.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC12 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC100 = 'Cannot removeLast on immutable List.';
-$.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC101 = 'The input sequence contains more than one element.';
+$.CTC43 = new Isolate.$isolateProperties.NotImplementedException(null);
+$.CTC100 = 'The input sequence contains more than one element.';
 $.CTC18 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC102 = 'reset';
-$.CTC52 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC103 = '';
-$.CTC48 = new Isolate.$isolateProperties.UnsupportedOperationException('');
-$.CTC49 = new Isolate.$isolateProperties.NotImplementedException(null);
+$.CTC101 = 'reset';
+$.CTC38 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC102 = 'won';
+$.CTC46 = new Isolate.$isolateProperties.GameState('won');
+$.CTC103 = 'Cannot removeLast on immutable List.';
+$.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.CTC104 = '^#[_a-zA-Z]\\w*$';
 $.CTC21 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
 $.CTC105 = 'clickEvent';
@@ -3289,8 +3302,8 @@ $.CTC106 = 'structured clone of ArrayBuffer';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
 $.CTC107 = 'must be implemented by subclass';
 $.CTC19 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC108 = 'won';
-$.CTC56 = new Isolate.$isolateProperties.GameState('won');
+$.CTC108 = 'lost';
+$.CTC51 = new Isolate.$isolateProperties.GameState('lost');
 $.CTC109 = 'structured clone of Date';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
 $.CTC110 = '{([^,{]+),([^}]+)}';
@@ -3299,34 +3312,34 @@ $.CTC57 = new Isolate.$isolateProperties.Object();
 $.CTC111 = 'IDBKey containing Date';
 $.CTC15 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
 $.CTC112 = 'Cannot insertRange on immutable List.';
-$.CTC36 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
+$.CTC42 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
 $.CTC113 = 'Cannot removeRange on immutable List.';
-$.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
+$.CTC47 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
 $.CTC114 = 'structured clone of Blob';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
 $.CTC115 = 'started';
-$.CTC51 = new Isolate.$isolateProperties.GameState('started');
+$.CTC37 = new Isolate.$isolateProperties.GameState('started');
 $.CTC116 = 'structured clone of RegExp';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC43 = new Isolate.$isolateProperties._Random();
+$.CTC44 = new Isolate.$isolateProperties._Random();
 $.CTC117 = 'safe';
-$.CTC47 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC54 = new Isolate.$isolateProperties.SquareState('safe');
 $.CTC118 = 'structured clone of FileList';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
 $.CTC119 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
 $.CTC30 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC2);
 $.CTC120 = 'mine';
-$.CTC42 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC53 = new Isolate.$isolateProperties.SquareState('mine');
 $.CTC121 = 'revealed';
-$.CTC39 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC50 = new Isolate.$isolateProperties.SquareState('revealed');
 $.CTC122 = 'structured clone of other type';
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
 $.CTC123 = 'Mutation operations are not supported';
 $.CTC20 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC124 = 'Invalid list length';
-$.CTC50 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC36 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
 $.CTC125 = 'flagged';
-$.CTC38 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC49 = new Isolate.$isolateProperties.SquareState('flagged');
 $._JsonParser_CHAR_CAPITAL_E = 69;
 $.TextureInput__pairExp = Isolate.$isolateProperties.CTC16;
 $._JsonParser_TAB = 9;
@@ -3349,15 +3362,15 @@ $._textureImage = null;
 $._JsonParser_COLON = 58;
 $._MEASUREMENT_MESSAGE = 'DART-MEASURE';
 $._JsonParser_FALSE_LITERAL = 102;
-$.SquareState_flagged = Isolate.$isolateProperties.CTC38;
 $._JsonParser_TRUE_LITERAL = 116;
+$.SquareState_flagged = Isolate.$isolateProperties.CTC49;
 $.Duration_MINUTES_PER_HOUR = 60;
 $._JsonParser_SPACE = 32;
 $._textures = null;
 $.GlobalId__globalId = 0;
 $._JsonParser_CHAR_U = 117;
 $._imageLoader = null;
-$.GameElement__boardOffset = Isolate.$isolateProperties.CTC55;
+$.GameElement__boardOffset = Isolate.$isolateProperties.CTC41;
 $.SquareElement__size = 80;
 $._JsonParser_NUMBER_LITERAL = 45;
 $.ResourceLoader_StateLoaded = 'loaded';
@@ -3369,14 +3382,14 @@ $._JsonParser_CHAR_1 = 49;
 $._JsonParser_RBRACKET = 93;
 $._JsonParser_CHAR_6 = 54;
 $._JsonParser_CHAR_5 = 53;
-$.SquareState_safe = Isolate.$isolateProperties.CTC47;
-$.GameState_started = Isolate.$isolateProperties.CTC51;
+$.GameState_started = Isolate.$isolateProperties.CTC37;
+$.SquareState_safe = Isolate.$isolateProperties.CTC54;
 $._getTypeNameOf = null;
-$.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC44;
-$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC41;
+$.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC55;
+$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC52;
 $.GameElement__popAnimationHitFrame = 12;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
-$.SquareState_mine = Isolate.$isolateProperties.CTC42;
+$.SquareState_mine = Isolate.$isolateProperties.CTC53;
 $._JsonParser_CHAR_B = 98;
 $._dartlibHelperRandom = null;
 $._pendingMeasurementFrameCallbacks = null;
@@ -3387,8 +3400,8 @@ $._audioContext = null;
 $._JsonParser_BACKSLASH = 92;
 $.LN2 = 0.6931471805599453;
 $._JsonParser_CHAR_8 = 56;
-$.GameState_won = Isolate.$isolateProperties.CTC56;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC37;
+$.GameState_won = Isolate.$isolateProperties.CTC46;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC45;
 $._JsonParser_CHAR_R = 114;
 $._audioNames = Isolate.$isolateProperties.CTC;
 $._JsonParser_SLASH = 47;
@@ -3400,7 +3413,7 @@ $._JsonParser_LBRACE = 123;
 $._nextMeasurementFrameScheduled = false;
 $._pendingRequests = null;
 $._JsonParser_NEW_LINE = 10;
-$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC54;
+$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC40;
 $._buffers = null;
 $._JsonParser_WHITESPACE = 32;
 $._TimerFactory__factory = null;
@@ -3408,18 +3421,18 @@ $._cachedBrowserPrefix = null;
 $._JsonParser_CHAR_4 = 52;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
-$.GameState_lost = Isolate.$isolateProperties.CTC40;
+$.GameState_lost = Isolate.$isolateProperties.CTC51;
 $._JsonParser_LAST_ASCII = 125;
 $._JsonParser_CHAR_T = 116;
-$.SquareState_revealed = Isolate.$isolateProperties.CTC39;
-$.GameState_reset = Isolate.$isolateProperties.CTC52;
+$.SquareState_revealed = Isolate.$isolateProperties.CTC50;
+$.GameState_reset = Isolate.$isolateProperties.CTC38;
 $._JsonParser_NULL_STRING = 'null';
 $._JsonParser_CHAR_F = 102;
-$._JsonParser_COMMA = 44;
 $._JsonParser_RBRACE = 125;
+$._JsonParser_COMMA = 44;
 $._JsonParser_LBRACKET = 91;
 $._textuerName = 'art.png';
-$.SquareElement__numberMap = Isolate.$isolateProperties.CTC45;
+$.SquareElement__numberMap = Isolate.$isolateProperties.CTC56;
 $.GameElement__backgroundHoleSize = 1344;
 $._JsonParser_PLUS = 43;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
@@ -3719,8 +3732,8 @@ $.$defineNativeClass('DOMStringList', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -3780,7 +3793,7 @@ $.$defineNativeClass('HTMLDocument', [], {
 });
 
 $.$defineNativeClass('DocumentFragment', [], {
- get$elements: function(){if(this._lib_elements==null)this._lib_elements=$.FilteredElementList$(this);return this._lib_elements;},
+ get$elements: function(){if(this._elements==null)this._elements=$.FilteredElementList$(this);return this._elements;},
  query$1: function(selectors){return this.$dom_querySelector$1(selectors);},
  set$innerHTML: function(value){  if (Object.getPrototypeOf(this).hasOwnProperty('set$innerHTML')) {
   {$.clear(this.get$nodes());var e=$._ElementFactoryProvider_Element$tag('div');e.set$innerHTML(value);var nodes=$.ListImplementation_List$from(e.get$nodes());$.addAll(this.get$nodes(),nodes);}  } else {
@@ -3942,8 +3955,8 @@ $.$defineNativeClass('FileList', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$_FileListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -3980,8 +3993,8 @@ $.$defineNativeClass('Float32Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4002,8 +4015,8 @@ $.$defineNativeClass('Float64Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4055,8 +4068,8 @@ $.$defineNativeClass('HTMLCollection', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4216,8 +4229,8 @@ $.$defineNativeClass('Int16Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4238,8 +4251,8 @@ $.$defineNativeClass('Int32Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4260,8 +4273,8 @@ $.$defineNativeClass('Int8Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4343,8 +4356,8 @@ $.$defineNativeClass('MediaList', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4440,8 +4453,8 @@ $.$defineNativeClass('NamedNodeMap', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -4474,7 +4487,7 @@ $.$defineNativeClass('NodeIterator', [], {
  filter$1: function(arg0) { return this.filter.call$1(arg0); }
 });
 
-$.$defineNativeClass('NodeList', ["length?"], {
+$.$defineNativeClass('NodeList', ["_parent?", "length?"], {
  iterator$0: function(){return $._FixedSizeListIterator$(this,'Node');},
  add$1: function(value){this._parent.$dom_appendChild$1(value);},
  addLast$1: function(value){this._parent.$dom_appendChild$1(value);},
@@ -5180,8 +5193,8 @@ $.$defineNativeClass('StyleSheetList', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -5263,8 +5276,8 @@ $.$defineNativeClass('TouchList', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -5296,8 +5309,8 @@ $.$defineNativeClass('Uint16Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -5318,8 +5331,8 @@ $.$defineNativeClass('Uint32Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -5340,8 +5353,8 @@ $.$defineNativeClass('Uint8Array', ["length?"], {
  indexOf$2: function(element,start){return $._Lists_indexOf(this,element,start,$.get$length(this));},
  last$0: function(){return this.operator$index$1($.sub($.get$length(this),1));},
  removeLast$0: function(){throw $.$$throw($.CTC13);},
- removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC35);},
- insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC36);},
+ removeRange$2: function(start,rangeLength){throw $.$$throw($.CTC47);},
+ insertRange$3: function(start,rangeLength,initialValue){throw $.$$throw($.CTC42);},
  getRange$2: function(start,rangeLength){return $._Lists_getRange(this,start,rangeLength,[]);},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
