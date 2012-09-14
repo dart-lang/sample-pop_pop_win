@@ -106,9 +106,12 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void drawOverride(CanvasRenderingContext2D ctx) {
+  void update() {
     _updateElements();
+    super.update();
+  }
 
+  void drawOverride(CanvasRenderingContext2D ctx) {
     // draw children via super
     super.drawOverride(ctx);
 

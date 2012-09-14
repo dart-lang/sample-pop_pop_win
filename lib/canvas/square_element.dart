@@ -8,13 +8,22 @@ class SquareElement extends PElement {
 
   final int x, y;
 
-  SquareElement(this.x, this.y) : super(_size, _size) {
+  SquareState _lastDrawingState;
+
+  SquareElement(this.x, this.y) : super(_size, _size, true) {
     ClickManager.setClickable(this, true);
+  }
+
+  void update() {
+    if(_lastDrawingState != _squareState) {
+      _lastDrawingState = _squareState;
+      invalidateDraw();
+    }
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
     var textureName;
-    switch(_squareState) {
+    switch(_lastDrawingState) {
       case SquareState.hidden:
         textureName = "balloon.png";
         break;
@@ -50,11 +59,11 @@ class SquareElement extends PElement {
   }
 
   Dynamic get _fillStyle {
-    switch(_squareState) {
+    switch(_lastDrawingState) {
       case SquareState.safe:
         return 'green';
       default:
-        throw 'not supported - $_squareState';
+        throw 'not supported - $_lastDrawingState';
     }
   }
 }
