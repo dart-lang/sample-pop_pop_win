@@ -8,7 +8,7 @@
 #import('package:dartlib/dartlib.dart');
 #import('package:dartlib/retained.dart');
 
-#source('../canvas/texture_data.dart');
+#source('../texture_data.dart');
 
 const String _fileName = '../canvas/art.png';
 
