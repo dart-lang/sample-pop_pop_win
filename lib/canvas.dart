@@ -10,6 +10,7 @@
 
 #source('canvas/game_root.dart');
 #source('canvas/game_element.dart');
+#source('canvas/board_element.dart');
 #source('canvas/game_background_element.dart');
 #source('canvas/square_element.dart');
 #source('canvas/resource_loader.dart');

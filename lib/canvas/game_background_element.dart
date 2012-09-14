@@ -1,7 +1,5 @@
 class GameBackgroundElement extends PElement {
-  final GameElement _parent;
-
-  GameBackgroundElement(this._parent) : super(0, 0, true);
+  GameBackgroundElement() : super(0, 0, true);
 
   void update() {
     if(size != this._parent.size) {
@@ -82,4 +80,6 @@ class GameBackgroundElement extends PElement {
     drawTextureKeyAt(ctx, 'background_side_left.png',
         new Coordinate(0, GameElement._boardOffset.y));
   }
+
+  GameElement get _parent => parent;
 }

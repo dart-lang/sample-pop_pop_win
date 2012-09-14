@@ -10,7 +10,7 @@ class SquareElement extends PElement {
 
   SquareState _lastDrawingState;
 
-  SquareElement(this.x, this.y) : super(_size, _size, true) {
+  SquareElement(this.x, this.y) : super(_size, _size) {
     ClickManager.setClickable(this, true);
   }
 
@@ -54,8 +54,8 @@ class SquareElement extends PElement {
   int get _adjacentCount => _game.field.getAdjacentCount(x, y);
 
   Game get _game {
-    final GameElement p = this.parent;
-    return p.game;
+    final BoardElement p = this.parent;
+    return p._game;
   }
 
   Dynamic get _fillStyle {

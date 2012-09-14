@@ -11,26 +11,29 @@ class GameElement extends ElementParentImpl {
           -815 + SquareElement._size ~/ 2);
 
 
+  final GameBackgroundElement _background;
+  final BoardElement _boardElement;
   final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
   final bool _targetMode;
   final EventHandle _targetChanged;
 
-  GameBackgroundElement _background;
-
-  AffineTransform _popLayerTx, _dartLayerTx;
+  AffineTransform _popLayerTx, _dartLayerTx, _boardTx;
   int _targetX, _targetY;
   double _scale;
   Vector _scaledBoardOffset;
 
   Game _game;
-  Array2d<SquareElement> _elements;
 
   GameElement(this._targetMode) :
+    _background = new GameBackgroundElement(),
+    _boardElement = new BoardElement(),
     _popAnimationLayer = new TextureAnimationElement(0, 0),
     _dartAnimationLayer = new TextureAnimationElement(0, 0),
     _targetChanged = new EventHandle(),
     super(100, 100) {
-    _background = new GameBackgroundElement(this);
+    _boardElement.registerParent(this);
+    _boardTx = _boardElement.addTransform();
+
     _background.registerParent(this);
 
     _popAnimationLayer.registerParent(this);
@@ -75,40 +78,31 @@ class GameElement extends ElementParentImpl {
 
   EventRoot get targetChanged => _targetChanged;
 
-  int get visualChildCount {
-    var count = 3;
-    if(_elements != null) {
-      count +=_elements.length;
-    }
-    return count;
-  }
+  int get visualChildCount => 4;
 
   PElement getVisualChild(int index) {
-    if(index == 0) {
-      return _background;
-    }
-    index--;
-
-    if(_elements != null) {
-      if(index < _elements.length) {
-        return _elements[index];
-      }
-      index -= _elements.length;
-    }
-
-    switch(index) {
+    switch(index){
       case 0:
-        return _popAnimationLayer;
+        return _background;
       case 1:
+        return _boardElement;
+      case 2:
+        return _popAnimationLayer;
+      case 3:
         return _dartAnimationLayer;
       default:
-        throw 'oops';
+        throw "bad index!";
     }
   }
 
   void update() {
-    _updateElements();
     super.update();
+    final offset = _scaledBoardOffset +
+        const Coordinate(GameElement._edgeOffset, GameElement._edgeOffset);
+
+    _boardTx.setToTranslation(offset.x, offset.y);
+    _popLayerTx.setToTranslation(offset.x, offset.y);
+    _dartLayerTx.setToTranslation(offset.x, offset.y);
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
@@ -130,37 +124,6 @@ class GameElement extends ElementParentImpl {
       CanvasUtil.centeredCircle(ctx,
           targetLoc.x + halfSize, targetLoc.y + halfSize, halfSize);
       ctx.fill();
-    }
-  }
-
-  void _updateElements() {
-    if(_game == null) {
-      _elements = null;
-    } else if(_elementsNeedUpdate) {
-      _elements = new Array2d<SquareElement>(
-          _game.field.width, _game.field.height);
-
-      final offset = _scaledBoardOffset + const Coordinate(_edgeOffset, _edgeOffset);
-
-      for(int i=0;i<_elements.length;i++) {
-        final coords = _elements.getCoordinate(i);
-        final se = new SquareElement(coords.Item1, coords.Item2);
-        se.registerParent(this);
-
-        ClickManager.addHandler(se, _squareClicked);
-
-        // position the square
-        final etx = se.addTransform();
-        etx.setToTranslation(
-            offset.x + coords.Item1 * SquareElement._size,
-            offset.y + coords.Item2 * SquareElement._size);
-
-        _elements[i] = se;
-      }
-
-      // update the animation layer
-      _popLayerTx.setToTranslation(offset.x, offset.y);
-      _dartLayerTx.setToTranslation(offset.x, offset.y);
     }
   }
 
@@ -301,13 +264,6 @@ class GameElement extends ElementParentImpl {
     } else if(game.state == GameState.lost) {
       _startPopAnimation(new Coordinate(x, y));
     }
-  }
-
-  bool get _elementsNeedUpdate {
-    assert(_game != null);
-    return _elements == null ||
-        _elements.width != _game.field.width ||
-        _elements.height != _game.field.height;
   }
 
   void _updateSize(int w, int h) {
