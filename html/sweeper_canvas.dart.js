@@ -968,6 +968,7 @@ $$._MeasurementRequest = {"":
 $$._DOMWindowCrossFrameImpl = {"":
  ["_window"],
  "super": "Object",
+ get$parent: function(){return $._DOMWindowCrossFrameImpl__createSafe($._DOMWindowCrossFrameImpl__parent(this._window));},
  get$top: function(){return $._DOMWindowCrossFrameImpl__createSafe($._DOMWindowCrossFrameImpl__top(this._window));},
  close$0: function(){return $._DOMWindowCrossFrameImpl__close(this._window);},
  postMessage$3: function(message,targetOrigin,messagePorts){var t1=messagePorts==null;var t2=this._window;if(t1)$._DOMWindowCrossFrameImpl__postMessage2(t2,message,targetOrigin);else $._DOMWindowCrossFrameImpl__postMessage3(t2,message,targetOrigin,messagePorts);},
@@ -1604,14 +1605,14 @@ $$.GameRoot = {"":
 };
 
 $$.GameElement = {"":
- ["_background", "_boardElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_popLayerTx", "_dartLayerTx", "_boardTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ ["_lib3_canvas?", "_background", "_boardElement", "_scoreElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
  "super": "ElementParentImpl",
  get$game: function(){return this._game;},
  set$game: function(value){this._game=value;if(value==null)this.set$size($.CTC39);else this._updateSize$2(value.get$field().get$width(),value.get$field().get$height());},
- get$visualChildCount: function(){return 4;},
- getVisualChild$1: function(index){switch(index){case 0:return this._background;case 1:return this._boardElement;case 2:return this._popAnimationLayer;case 3:return this._dartAnimationLayer;default:throw $.$$throw('bad index!');}},
- update$0: function(){$.ElementParentImpl.prototype.update$0.call(this);var t1=this._scaledBoardOffset;if(typeof t1!=='number')return this.update$0$bailout(1,t1);if(typeof $.CTC34!=='number')throw $.iae($.CTC34);var offset=t1+$.CTC34;this._boardTx.setToTranslation$2(offset.get$x(),offset.get$y());this._popLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());this._dartLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());},
- update$0$bailout: function(state,t1){var offset=$.add(t1,$.CTC34);this._boardTx.setToTranslation$2(offset.get$x(),offset.get$y());this._popLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());this._dartLayerTx.setToTranslation$2(offset.get$x(),offset.get$y());},
+ get$visualChildCount: function(){return 1;},
+ getVisualChild$1: function(index){return this._lib3_canvas;},
+ update$0: function(){$.ElementParentImpl.prototype.update$0.call(this);var t1=this._scaledBoardOffset;if(typeof t1!=='number')return this.update$0$bailout(1,t1);if(typeof $.CTC34!=='number')throw $.iae($.CTC34);var offset=t1+$.CTC34;t1=this._lib3_canvas;t1.setTopLeft$2(this._boardElement,offset);t1.setTopLeft$2(this._popAnimationLayer,offset);t1.setTopLeft$2(this._dartAnimationLayer,offset);},
+ update$0$bailout: function(state,t1){var offset=$.add(t1,$.CTC34);t1=this._lib3_canvas;t1.setTopLeft$2(this._boardElement,offset);t1.setTopLeft$2(this._popAnimationLayer,offset);t1.setTopLeft$2(this._dartAnimationLayer,offset);},
  drawOverride$1: function(ctx){$.ElementParentImpl.prototype.drawOverride$1.call(this,ctx);this._drawTarget$1(ctx);},
  _drawTarget$1: function(ctx){var t1=this._targetX;if(!(t1==null)){var targetLoc=$.Vector$(t1,this._targetY).scale$1(80);ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');$.CanvasUtil_centeredCircle(ctx,$.add(targetLoc.get$x(),40),$.add(targetLoc.get$y(),40),40);ctx.fill$0();}},
  _startPopAnimation$2: function(start,reveals){if(reveals==null)reveals=$.NumberEnumerable_NumberEnumerable$fromRange(0,$.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0();for(var t1=$.iterator(reveals),t2=start.x,t3=start.y,t4=this._popAnimationLayer;t1.hasNext$0()===true;){var t5=t1.next$0();var t6=t5.get$x();if(typeof t6!=='number')throw $.iae(t6);t6=80*t6;var t7=t5.get$y();if(typeof t7!=='number')throw $.iae(t7);var squareOffset=$.CTC52.operator$add$1($.Vector$(t6,80*t7));var t8=$.toInt($.mul($.get$length($.sub(t5,start)),4));if(typeof t8!=='number')throw $.iae(t8);var delay=12+t8;t8=$.rnd().nextInt$1(10);if(typeof t8!=='number')throw $.iae(t8);delay+=t8;switch(this.get$game().getSquareState$2(t2,t3)){case $.CTC50:var frameCount=29;var texturePrefix='balloon_pop';break;case $.CTC53:frameCount=25;texturePrefix='balloon_explode';break;default:throw $.$$throw('not supported');}var request=$.TextAniRequest$(texturePrefix,frameCount,squareOffset,delay);$.add$1(request.get$started(),new $.GameElement__startPopAnimation_anon2(this));$.add$1(t4,request);}},
@@ -1625,8 +1626,8 @@ $$.GameElement = {"":
  _target$2: function(x,y){this._targetX=x;this._targetY=y;this._targetChanged.fireEvent$1(null);this.invalidateDraw$0();},
  _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC45)){this.get$game().setFlag$3(x,y,true);return true;}else if($.eqB(ss,$.CTC49)){this.get$game().setFlag$3(x,y,false);return true;}return false;},
  _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC45)||$.eqB(ss,$.CTC49)){this._toggleFlag$2(x,y);var reveals=null;}else if($.eqB(ss,$.CTC50))if(this.get$game().canReveal$2(x,y)===true){this._startDartAnimation$1($.$$(this.get$game().get$field().getAdjacentIndices$2(x,y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0());reveals=this.get$game().reveal$2(x,y);}else reveals=null;else reveals=null;else if($.eqB(ss,$.CTC45)){this._startDartAnimation$1([$.Coordinate$(x,y)]);reveals=this.get$game().reveal$2(x,y);}else reveals=null;if(!(reveals==null)&&$.gtB($.get$length(reveals),0)){if(!t1)$.index(reveals,0);this._startPopAnimation$2($.Coordinate$(x,y),reveals);}else if($.eqB(this.get$game().get$state(),$.CTC51))this._startPopAnimation$1($.Coordinate$(x,y));},
- _updateSize$2: function(w,h){var t1=$.CTC40.width;var sizeX=$.GameElement__getScale(w,t1,1344);this.set$size($.Size$(sizeX,$.GameElement__getScale(h,$.CTC40.height,1344)));this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC41.scale$1(this._scale);},
- GameElement$1: function(_targetMode){var t1=this._boardElement;t1.registerParent$1(this);this._boardTx=t1.addTransform$0();this._background.registerParent$1(this);var t2=this._popAnimationLayer;t2.registerParent$1(this);this._popLayerTx=t2.addTransform$0();var t3=this._dartAnimationLayer;t3.registerParent$1(this);this._dartLayerTx=t3.addTransform$0();}
+ _updateSize$2: function(w,h){var t1=$.CTC40.width;var sizeX=$.GameElement__getScale(w,t1,1344);var t2=$.Size$(sizeX,$.GameElement__getScale(h,$.CTC40.height,1344));this.set$size(t2);this._lib3_canvas.set$size(t2);this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC41.scale$1(this._scale);},
+ GameElement$1: function(_targetMode){var t1=this._lib3_canvas;t1.registerParent$1(this);t1.addElement$1(this._background);t1.addElement$1(this._boardElement);t1.addElement$1(this._scoreElement);t1.addElement$1(this._popAnimationLayer);t1.addElement$1(this._dartAnimationLayer);}
 };
 
 $$.BoardElement = {"":
@@ -1637,9 +1638,9 @@ $$.BoardElement = {"":
  getVisualChild$1$bailout: function(state,t1,index){return $.index(t1,index);},
  update$0: function(){if(this.get$_game()==null)this._lib3_elements=null;else if(this.get$_elementsNeedUpdate()===true){this._lib3_elements=$.Array2d_Array2d(this.get$_game().get$field().get$width(),this.get$_game().get$field().get$height(),null,'SquareElement');var i=0;while(true){var t1=$.get$length(this._lib3_elements);if(typeof t1!=='number')return this.update$0$bailout(1,i,t1,0,0,0);if(!(i<t1))break;var coords=this._lib3_elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_lib3_parent().get$_squareClicked());var etx=se.addTransform$0();t1=coords.get$Item1();if(typeof t1!=='number')return this.update$0$bailout(2,coords,etx,t1,i,se);t1*=80;var t3=coords.get$Item2();if(typeof t3!=='number')return this.update$0$bailout(3,t3,etx,i,se,t1);etx.setToTranslation$2(t1,t3*80);t1=this._lib3_elements;if(typeof t1!=='object'||t1===null||(t1.constructor!==Array||!!t1.immutable$list)&&!t1.is$JavaScriptIndexingBehavior())return this.update$0$bailout(4,t1,i,se,0,0);if(i<0||i>=t1.length)throw $.ioore(i);t1[i]=se;++i;}t1=this.get$_game().get$field().get$width();if(typeof t1!=='number')return this.update$0$bailout(5,t1,0,0,0,0);t1*=80;t3=this.get$_game().get$field().get$height();if(typeof t3!=='number')return this.update$0$bailout(6,t1,t3,0,0,0);this.set$size($.Size$(t1,t3*80));}$.ElementParentImpl.prototype.update$0.call(this);},
  update$0$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:i=env0;t1=env1;break;case 2:coords=env0;etx=env1;t1=env2;i=env3;se=env4;break;case 3:t3=env0;etx=env1;i=env2;se=env3;t1=env4;break;case 4:t1=env0;i=env1;se=env2;break;case 5:t1=env0;break;case 6:t1=env0;t3=env1;break;}switch(state){case 0:default:if(state===0&&this.get$_game()==null)this._lib3_elements=null;else switch(state){case 0:default:if(state===6||state===5||state===4||state===3||state===2||state===1||state===0&&this.get$_elementsNeedUpdate()===true)switch(state){case 0:this._lib3_elements=$.Array2d_Array2d(this.get$_game().get$field().get$width(),this.get$_game().get$field().get$height(),null,'SquareElement');var i=0;default:L0:while(true)switch(state){case 0:var t1=$.get$length(this._lib3_elements);case 1:state=0;if(!$.ltB(i,t1))break L0;var coords=this._lib3_elements.getCoordinate$1(i);var se=$.SquareElement$(coords.get$Item1(),coords.get$Item2());se.registerParent$1(this);$.ClickManager_addHandler(se,this.get$_lib3_parent().get$_squareClicked());var etx=se.addTransform$0();t1=coords.get$Item1();case 2:state=0;t1=$.mul(t1,80);var t3=coords.get$Item2();case 3:state=0;etx.setToTranslation$2(t1,$.mul(t3,80));t1=this._lib3_elements;case 4:state=0;$.indexSet(t1,i,se);++i;}t1=this.get$_game().get$field().get$width();case 5:state=0;t1=$.mul(t1,80);t3=this.get$_game().get$field().get$height();case 6:state=0;this.set$size($.Size$(t1,$.mul(t3,80)));}}$.ElementParentImpl.prototype.update$0.call(this);}},
- get$_game: function(){return this.get$parent().get$_game();},
+ get$_game: function(){return this.get$_lib3_parent().get$_game();},
  get$_elementsNeedUpdate: function(){var t1=this._lib3_elements;return t1==null||!$.eqB(t1.get$width(),this.get$_game().get$field().get$width())||!$.eqB(this._lib3_elements.get$height(),this.get$_game().get$field().get$height());},
- get$_lib3_parent: function(){return this.get$parent();}
+ get$_lib3_parent: function(){return this.get$parent().get$parent();}
 };
 
 $$.GameBackgroundElement = {"":
@@ -1649,7 +1650,7 @@ $$.GameBackgroundElement = {"":
  drawOverride$1: function(ctx){var t1=this.get$_lib3_parent().get$_game().get$field().get$width();if(typeof t1!=='number')return this.drawOverride$1$bailout(1,ctx,t1,0,0,0);var rightBgLoc=80*(t1-1)+32;var t3=this.get$_lib3_parent().get$_game().get$field().get$height();if(typeof t3!=='number')return this.drawOverride$1$bailout(2,ctx,t3,rightBgLoc,0,0);var bottomBgLoc=80*(t3-1)+32;ctx.save$0();ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(),this.get$_lib3_parent().get$_scaledBoardOffset().get$y());$.drawTextureKeyAt(ctx,'game_board_corner_top_left.png',$.CTC48);$.drawTextureKeyAt(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));var i=1;while(true){t1=this.get$_lib3_parent().get$_game().get$field().get$width();if(typeof t1!=='number')return this.drawOverride$1$bailout(3,ctx,rightBgLoc,bottomBgLoc,i,t1);if(!(i<t1-1))break;var xLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));$.drawTextureKeyAt(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));++i;}i=1;while(true){t1=this.get$_lib3_parent().get$_game().get$field().get$height();if(typeof t1!=='number')return this.drawOverride$1$bailout(4,ctx,t1,i,rightBgLoc,0);if(!(i<t1-1))break;var yLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));$.drawTextureKeyAt(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));++i;}ctx.restore$0();ctx.save$0();ctx.transform$6(this.get$_lib3_parent().get$_scale(),0,0,this.get$_lib3_parent().get$_scale(),0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC40.width,0);this._drawCorner$1(ctx);t1=$.CTC40.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();},
  drawOverride$1$bailout: function(state,env0,env1,env2,env3,env4){switch(state){case 1:var ctx=env0;t1=env1;break;case 2:ctx=env0;t3=env1;rightBgLoc=env2;break;case 3:ctx=env0;rightBgLoc=env1;bottomBgLoc=env2;i=env3;t1=env4;break;case 4:ctx=env0;t1=env1;i=env2;rightBgLoc=env3;break;}switch(state){case 0:var t1=this.get$_lib3_parent().get$_game().get$field().get$width();case 1:state=0;t1=$.sub(t1,1);if(typeof t1!=='number')throw $.iae(t1);var rightBgLoc=80*t1+32;var t3=this.get$_lib3_parent().get$_game().get$field().get$height();case 2:state=0;t3=$.sub(t3,1);if(typeof t3!=='number')throw $.iae(t3);var bottomBgLoc=80*t3+32;ctx.save$0();ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(),this.get$_lib3_parent().get$_scaledBoardOffset().get$y());$.drawTextureKeyAt(ctx,'game_board_corner_top_left.png',$.CTC48);$.drawTextureKeyAt(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));$.drawTextureKeyAt(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));var i=1;case 3:L0:while(true)switch(state){case 0:t1=this.get$_lib3_parent().get$_game().get$field().get$width();case 3:state=0;if(!$.ltB(i,$.sub(t1,1)))break L0;var xLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));$.drawTextureKeyAt(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));++i;}i=1;case 4:L1:while(true)switch(state){case 0:t1=this.get$_lib3_parent().get$_game().get$field().get$height();case 4:state=0;if(!$.ltB(i,$.sub(t1,1)))break L1;var yLoc=80*i+32;$.drawTextureKeyAt(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));$.drawTextureKeyAt(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));++i;}ctx.restore$0();ctx.save$0();ctx.transform$6(this.get$_lib3_parent().get$_scale(),0,0,this.get$_lib3_parent().get$_scale(),0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC40.width,0);this._drawCorner$1(ctx);t1=$.CTC40.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();}},
  _drawCorner$1: function(ctx){$.drawTextureKeyAt(ctx,'background_top_left.png',$.CTC48);$.drawTextureKeyAt(ctx,'background_side_left.png',$.Coordinate$(0,$.CTC41.y));},
- get$_lib3_parent: function(){return this.get$parent();}
+ get$_lib3_parent: function(){return this.get$parent().get$parent();}
 };
 
 $$.SquareElement = {"":
@@ -1711,6 +1712,12 @@ $$.TextAniRequest = {"":
  TextAniRequest$4: function(_texturePrefix,_frameCount,_offset,delay){}
 };
 
+$$.ScoreElement = {"":
+ ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ "super": "PElement",
+ drawOverride$1: function(ctx){ctx.set$fillStyle('red');ctx.fillRect$4(0,0,this.get$width(),this.get$height());ctx.set$textBaseline('top');ctx.set$fillStyle('black');ctx.set$font('20px Slackey');ctx.set$textAlign('right');ctx.fillText$3('MINES LEFT:',145,0);ctx.set$textAlign('left');ctx.fillText$3('1223',150,0);ctx.set$textAlign('right');ctx.fillText$3('TIME:',145,25);ctx.set$textAlign('left');ctx.fillText$3('12:12',150,25);}
+};
+
 $$.TextureInput = {"":
  ["name?", "frame?", "offset", "rotated?", "sourceColorRect?", "sourceSize"],
  "super": "Object",
@@ -1749,11 +1756,29 @@ $$.PElement = {"":
 $$.ElementParentImpl = {"":
  [],
  "super": "PElement",
+ onChildrenChanged$0: function(){this.invalidateDraw$0();},
  childInvalidated$1: function(child){this.invalidateDraw$0();},
  update$0: function(){this._forEach$1(new $.ElementParentImpl_update_anon());$.PElement.prototype.update$0.call(this);},
  drawOverride$1: function(ctx){this._forEach$1(new $.ElementParentImpl_drawOverride_anon(ctx));},
  _forEach$1: function(f){var length$=this.get$visualChildCount();if(typeof length$!=='number')return this._forEach$1$bailout(1,f,length$);for(var i=0;i<length$;++i)f.call$1(this.getVisualChild$1(i));},
  _forEach$1$bailout: function(state,f,length$){for(var i=0;$.ltB(i,length$);++i)f.call$1(this.getVisualChild$1(i));}
+};
+
+$$.Panel = {"":
+ [],
+ "super": "ElementParentImpl",
+ addElement$1: function(element){this.insertAt$2(element,this._children.length);},
+ insertAt$2: function(element,index){if(index==null)index=0;element.registerParent$1(this);$.insertRange$3(this._children,index,1,element);$.CTC57.set$2(element,element.addTransform$0());this.onChildrenChanged$0();},
+ getVisualChild$1: function(index){var t1=this._children;if(index!==(index|0))throw $.iae(index);if(index<0||index>=t1.length)throw $.ioore(index);return t1[index];},
+ get$visualChildCount: function(){return this._children.length;},
+ getChildTransform$1: function(child){return $.CTC57.get$1(child);},
+ drawOverride$1: function(ctx){var t1=this.background;if(!(t1==null)){ctx.set$fillStyle(t1);ctx.fillRect$4(0,0,this.get$width(),this.get$height());}$.ElementParentImpl.prototype.drawOverride$1.call(this,ctx);}
+};
+
+$$.PCanvas = {"":
+ ["_children", "background", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ "super": "Panel",
+ setTopLeft$2: function(element,value){this.getChildTransform$1(element).setToTranslation$2(value.get$x(),value.get$y());}
 };
 
 $$.Stage = {"":
@@ -2401,7 +2426,7 @@ $.NumberEnumerable_NumberEnumerable$fromRange = function(start,count,T){return $
 
 $._IDBTransactionEventsImpl$ = function(_ptr){return new $._IDBTransactionEventsImpl(_ptr);};
 
-$.dynamicFunction = function(name$){var f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;var methods={};var dartMethod=Object.getPrototypeOf($.CTC57)[name$];if(!(dartMethod==null))$.propertySet(methods,'Object',dartMethod);var bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods;};
+$.dynamicFunction = function(name$){var f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;var methods={};var dartMethod=Object.getPrototypeOf($.CTC58)[name$];if(!(dartMethod==null))$.propertySet(methods,'Object',dartMethod);var bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods;};
 
 $.buildDynamicMetadata = function(inputTable){var result=[];for(var i=0;i<inputTable.length;++i){var tag=inputTable[i][0];var array=inputTable[i];var tags=array[1];var set={};var tagNames=tags.split('|');for(var j=0,index=1;j<tagNames.length;++j){$.propertySet(set,tagNames[j],true);index=j;array=tagNames;}result.push($.MetaInfo$(tag,tags,set));}return result;};
 
@@ -2447,7 +2472,7 @@ $._waitForPendingPorts = function(message,callback){var finder=$._PendingSendPor
 
 $._SimpleEnumerable$ = function(_source,T){var t1=new $._SimpleEnumerable(_source);$.setRuntimeTypeInfo(t1,{ 'T': T });return t1;};
 
-$.GameStorage$ = function(){var t1=$.window().get$localStorage();return new $.GameStorage($.EventHandle$(),t1);};
+$.GameStorage$ = function(){return new $.GameStorage($.EventHandle$(),$.window().get$localStorage());};
 
 $.getTypeNameOf = function(obj){if($._getTypeNameOf==null)$._getTypeNameOf=$.getFunctionForTypeNameOf();return $._getTypeNameOf.call$1(obj);};
 
@@ -2493,6 +2518,8 @@ $.Maps_mapToString = function(m){var result=$.StringBufferImpl$('');$.Maps__emit
 
 $._onTouchMove = function(args){args.preventDefault$0();};
 
+$._DOMWindowCrossFrameImpl__parent = function(win){return win.parent;};
+
 $.invokeClosure = function(closure,isolate,numberOfArguments,arg1,arg2){if($.eqB(numberOfArguments,0))return $._callInIsolate(isolate,new $.invokeClosure_anon(closure));else if($.eqB(numberOfArguments,1))return $._callInIsolate(isolate,new $.invokeClosure_anon0(closure,arg1));else if($.eqB(numberOfArguments,2))return $._callInIsolate(isolate,new $.invokeClosure_anon1(closure,arg1,arg2));else throw $.$$throw($.ExceptionImplementation$('Unsupported number of arguments for wrapped closure'));};
 
 $.MetaInfo$ = function(_tag,_tags,_set){return new $.MetaInfo(_tag,_tags,_set);};
@@ -2529,7 +2556,7 @@ $.mod = function(a,b){if($.checkNumbers(a,b)){var result=a % b;if(result===0)ret
 
 $._IDBRequestEventsImpl$ = function(_ptr){return new $._IDBRequestEventsImpl(_ptr);};
 
-$.ImageLoader$ = function(urls){return new $.ImageLoader($.HashSetImplementation$('String'),$.$$(urls).toReadOnlyCollection$0(),$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),$.HashMapImplementation$('String',$.getRuntimeTypeInfo(this).T),$.HashSetImplementation$('String'),'unloaded');};
+$.ImageLoader$ = function(urls){var t1=$.HashSetImplementation$('String');var t2=$.EventHandle$('EventArgs');var t3=$.EventHandle$('EventArgs');var t4=$.HashMapImplementation$('String',$.getRuntimeTypeInfo(this).T);var t5=$.HashSetImplementation$('String');return new $.ImageLoader(t1,$.$$(urls).toReadOnlyCollection$0(),t2,t3,t4,t5,'unloaded');};
 
 $._DOMWindowCrossFrameImpl$ = function(_window){return new $._DOMWindowCrossFrameImpl(_window);};
 
@@ -2595,7 +2622,7 @@ $._FrameSetElementEventsImpl$ = function(_ptr){return new $._FrameSetElementEven
 
 $._getAudioPath = function(name$){return 'audio/'+$.S(name$)+'.webm';};
 
-$.listInsertRange = function(receiver,start,length$,initialValue){if(typeof receiver!=='object'||receiver===null||(receiver.constructor!==Array||!!receiver.immutable$list)&&!receiver.is$JavaScriptIndexingBehavior())return $.listInsertRange$bailout(1,receiver,start,length$,initialValue);if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.IllegalArgumentException$(length$));if(length$<0)throw $.$$throw($.IllegalArgumentException$(length$));var receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=receiverLength+length$;$.set$length(receiver,t1);var t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(var i=start;i<t2;++i){if(i<0||i>=receiver.length)throw $.ioore(i);receiver[i]=initialValue;}$.set$length(receiver,t1);};
+$.listInsertRange = function(receiver,start,length$,initialValue){if(typeof receiver!=='object'||receiver===null||(receiver.constructor!==Array||!!receiver.immutable$list)&&!receiver.is$JavaScriptIndexingBehavior())return $.listInsertRange$bailout(1,receiver,start,length$,initialValue);if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.IllegalArgumentException$(length$));if(length$<0)throw $.$$throw($.IllegalArgumentException$(length$));if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.IllegalArgumentException$(start));var receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=receiverLength+length$;$.set$length(receiver,t1);var t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(var i=start;i<t2;++i){if(i<0||i>=receiver.length)throw $.ioore(i);receiver[i]=initialValue;}$.set$length(receiver,t1);};
 
 $._IDBDatabaseEventsImpl$ = function(_ptr){return new $._IDBDatabaseEventsImpl(_ptr);};
 
@@ -2709,7 +2736,7 @@ $.div = function(a,b){return typeof a==='number'&&typeof b==='number'?a / b:$.di
 
 $._Elements_CanvasElement = function(width,height){var _e=$._document().$dom_createElement$1('canvas');if(!(width==null))_e.set$width(width);if(!(height==null))_e.set$height(height);return _e;};
 
-$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC45,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC38,null,null,null,null);t1.Game$1(field);return t1;};
+$.Game$ = function(field){var t1=$.EventHandle$('EventArgs');var t2=$.EventHandle$('GameState');t2=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC45,'SquareState'),t1,t2,$.CTC38,null,null,null,null);t2.Game$1(field);return t2;};
 
 $.$$throw = function(ex){if(ex==null)ex=$.CTC1;var jsError=new Error();jsError.name = ex;jsError.description = ex;jsError.dartException = ex;jsError.toString = $.toStringWrapper.call$0;throw jsError;};
 
@@ -2788,7 +2815,7 @@ $._NotificationEventsImpl$ = function(_ptr){return new $._NotificationEventsImpl
 
 $.Coordinate_difference = function(a,b){return $.Vector$($.sub(a.x,b.get$x()),$.sub(a.y,b.get$y()));};
 
-$.AudioLoader$ = function(context,urlList){return new $.AudioLoader(context,$.$$(urlList).toReadOnlyCollection$0(),$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),$.HashMapImplementation$('String',$.getRuntimeTypeInfo(this).T),$.HashSetImplementation$('String'),'unloaded');};
+$.AudioLoader$ = function(context,urlList){var t1=$.EventHandle$('EventArgs');var t2=$.EventHandle$('EventArgs');var t3=$.HashMapImplementation$('String',$.getRuntimeTypeInfo(this).T);var t4=$.HashSetImplementation$('String');return new $.AudioLoader(context,$.$$(urlList).toReadOnlyCollection$0(),t1,t2,t3,t4,'unloaded');};
 
 $.DoubleLinkedQueueEntry$ = function(e,E){var t1=new $.DoubleLinkedQueueEntry(null,null,null);$.setRuntimeTypeInfo(t1,{ 'E': E });t1.DoubleLinkedQueueEntry$1(e);return t1;};
 
@@ -2837,11 +2864,15 @@ $.GameBackgroundElement$ = function(){var t1=$.ListImplementation_List(null,'Aff
 
 $._convertNativeToDart_AcceptStructuredClone = function(object){var values=[];var copies=[];var t1=new $._convertNativeToDart_AcceptStructuredClone_findSlot(copies,values);var t2=new $._convertNativeToDart_AcceptStructuredClone_readSlot(copies);return new $._convertNativeToDart_AcceptStructuredClone_walk(new $._convertNativeToDart_AcceptStructuredClone_writeSlot(copies),t1,t2).call$1(object);};
 
+$.ScoreElement$ = function(){var t1=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t1,{ 'E': 'AffineTransform' });return new $.ScoreElement(t1,false,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,200,50,null,null,false,null,$.PropertyValues$(),false);};
+
 $.max = function(a,b){if(typeof b==='number'){if(a>b)return a;if(a<b)return b;if(typeof b==='number'){if(typeof a==='number')if(a===0)return a+b;if($.isNaN(b)===true)return b;return a;}if(b===0&&$.isNegative(a)===true)return b;return a;}throw $.$$throw($.IllegalArgumentException$(b));throw $.$$throw($.IllegalArgumentException$(a));};
 
 $._FrozenElementList$_wrap = function(_nodeList){return new $._FrozenElementList(_nodeList);};
 
 $._Collections_forEach = function(iterable,f){for(var t1=$.iterator(iterable);t1.hasNext$0()===true;)f.call$1(t1.next$0());};
+
+$.PCanvas$ = function(w,h,enableCache){var t1=$.ListImplementation_List(null,'PElement');$.setRuntimeTypeInfo(t1,{ 'E': 'PElement' });var t2=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t2,{ 'E': 'AffineTransform' });return new $.PCanvas(t1,null,t2,enableCache,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,w,h,null,null,false,null,$.PropertyValues$(),false);};
 
 $.ge$slow = function(a,b){if($.checkNumbers(a,b))return a >= b;return a.operator$ge$1(b);};
 
@@ -2999,7 +3030,7 @@ $.constructorNameFallback = function(obj){var constructor$=obj.constructor;if(ty
 
 $.FormatException$ = function(message){return new $.FormatException(message);};
 
-$.GameElement$ = function(_targetMode){var t1=$.GameBackgroundElement$();var t2=$.BoardElement$();var t3=$.TextureAnimationElement$(0,0);var t4=$.TextureAnimationElement$(0,0);var t5=$.EventHandle$();var t6=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t6,{ 'E': 'AffineTransform' });t6=new $.GameElement(t1,t2,t3,t4,_targetMode,t5,null,null,null,null,null,null,null,null,t6,false,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,100,100,null,null,false,null,$.PropertyValues$(),false);t6.GameElement$1(_targetMode);return t6;};
+$.GameElement$ = function(_targetMode){var t1=$.PCanvas$(0,0,false);var t2=$.GameBackgroundElement$();var t3=$.BoardElement$();var t4=$.ScoreElement$();var t5=$.TextureAnimationElement$(0,0);var t6=$.TextureAnimationElement$(0,0);var t7=$.EventHandle$();var t8=$.ListImplementation_List(null,'AffineTransform');$.setRuntimeTypeInfo(t8,{ 'E': 'AffineTransform' });t8=new $.GameElement(t1,t2,t3,t4,t5,t6,_targetMode,t7,null,null,null,null,null,t8,false,$.EventHandle$('EventArgs'),$.EventHandle$('EventArgs'),null,100,100,null,null,false,null,$.PropertyValues$(),false);t8.GameElement$1(_targetMode);return t8;};
 
 $._ChildrenElementList$_wrap = function(element){return new $._ChildrenElementList(element,element.get$$$dom_children());};
 
@@ -3123,11 +3154,11 @@ $._MessageTraverserVisitedMap$ = function(){return new $._MessageTraverserVisite
 
 $.sin = function(value){return Math.sin($.checkNum(value));};
 
+$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
+
 $.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,arg);};
 
 $.FutureNotCompleteException$ = function(){return new $.FutureNotCompleteException();};
-
-$.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
 $._JsSerializer$ = function(){var t1=new $._JsSerializer(0,$._MessageTraverserVisitedMap$());t1._JsSerializer$0();return t1;};
 
@@ -3174,7 +3205,7 @@ $.Field_Field$bailout = function(state,mineCount,cols,rows,seed){var squares=$.L
 
 $.StringImplementation__toJsStringArray$bailout = function(state,strings){$.checkNull(strings);var length$=$.get$length(strings);if($.isJsArray(strings)){for(var i=0;$.ltB(i,length$);++i){var string=$.index(strings,i);$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));}var array=strings;}else{array=$.ListImplementation_List(length$);for(i=0;$.ltB(i,length$);++i){string=$.index(strings,i);$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.IllegalArgumentException$(string));if(i<0||i>=array.length)throw $.ioore(i);array[i]=string;}}return array;};
 
-$.listInsertRange$bailout = function(state,receiver,start,length$,initialValue){if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.IllegalArgumentException$(length$));if(length$<0)throw $.$$throw($.IllegalArgumentException$(length$));var receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=receiverLength+length$;$.set$length(receiver,t1);var t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(var i=start;i<t2;++i)$.indexSet(receiver,i,initialValue);$.set$length(receiver,t1);};
+$.listInsertRange$bailout = function(state,receiver,start,length$,initialValue){if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.IllegalArgumentException$(length$));if(length$<0)throw $.$$throw($.IllegalArgumentException$(length$));if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.IllegalArgumentException$(start));var receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=receiverLength+length$;$.set$length(receiver,t1);var t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(var i=start;i<t2;++i)$.indexSet(receiver,i,initialValue);$.set$length(receiver,t1);};
 
 $.Futures_wait$bailout = function(state,futures,t1){if($.isEmpty(futures)===true)return $.FutureImpl_FutureImpl$immediate($.CTC2,'List');var completer=$.CompleterImpl$('List');var result=completer.get$future();t1.remaining_1=$.get$length(futures);var values=$.ListImplementation_List($.get$length(futures));for(var i=0;$.ltB(i,$.get$length(futures));++i){var future=$.index(futures,i);future.then$1(new $.Futures_wait_anon(completer,i,t1,result,values));future.handleException$1(new $.Futures_wait_anon0(future,completer,result));}return result;};
 
@@ -3215,130 +3246,132 @@ Isolate.makeConstantList = function(list) {
 };
 $.CTC2 = Isolate.makeConstantList([]);
 $.CTC31 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC2);
-$.CTC58 = 'structured clone of ArrayBufferView';
+$.CTC59 = 'structured clone of ArrayBufferView';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
-$.CTC59 = false;
-$.CTC60 = 'IsMouseDirectlyOver';
+$.CTC60 = false;
+$.CTC61 = 'IsMouseDirectlyOver';
 $.CTC23 = new Isolate.$isolateProperties.Property(false, 'IsMouseDirectlyOver');
 $.CTC0 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC61 = 'Pop0';
-$.CTC62 = 'Pop1';
-$.CTC63 = 'Pop2';
-$.CTC64 = 'Pop3';
-$.CTC65 = 'Pop4';
-$.CTC66 = 'Pop5';
-$.CTC67 = 'Pop6';
-$.CTC68 = 'Pop7';
-$.CTC69 = 'Pop8';
+$.CTC62 = 'Pop0';
+$.CTC63 = 'Pop1';
+$.CTC64 = 'Pop2';
+$.CTC65 = 'Pop3';
+$.CTC66 = 'Pop4';
+$.CTC67 = 'Pop5';
+$.CTC68 = 'Pop6';
+$.CTC69 = 'Pop7';
+$.CTC70 = 'Pop8';
 $.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8']);
-$.CTC70 = 'IsMouseOver';
+$.CTC71 = 'IsMouseOver';
 $.CTC25 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
-$.CTC71 = 'Cannot add to immutable List.';
+$.CTC72 = 'Cannot add to immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC72 = 'hidden';
+$.CTC73 = 'hidden';
 $.CTC45 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC73 = -1025;
-$.CTC74 = -775;
+$.CTC74 = -1025;
+$.CTC75 = -775;
 $.CTC55 = new Isolate.$isolateProperties.Vector(-1025, -775);
-$.CTC75 = 'isClickable';
+$.CTC76 = 'isClickable';
 $.CTC26 = new Isolate.$isolateProperties.Property(false, 'isClickable');
 $.CTC33 = new Isolate.$isolateProperties.EventArgs();
-$.CTC76 = null;
-$.CTC77 = '_attachableEventHelperProperty';
+$.CTC77 = null;
+$.CTC78 = '_attachableEventHelperProperty';
 $.CTC29 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
-$.CTC78 = 100;
+$.CTC79 = 100;
 $.CTC39 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC79 = 0;
+$.CTC80 = 0;
 $.CTC48 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC80 = 32;
+$.CTC81 = 32;
 $.CTC34 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC81 = 2048;
-$.CTC82 = 1536;
+$.CTC82 = 2048;
+$.CTC83 = 1536;
 $.CTC40 = new Isolate.$isolateProperties.Size(2048, 1536);
-$.CTC83 = 'offsetX is only supported on elements';
+$.CTC84 = 'offsetX is only supported on elements';
 $.CTC27 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC84 = 'The input sequence is empty.';
+$.CTC85 = 'The input sequence is empty.';
 $.CTC17 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC85 = 352;
-$.CTC86 = 96;
+$.CTC86 = 352;
+$.CTC87 = 96;
 $.CTC41 = new Isolate.$isolateProperties.Vector(352, 96);
-$.CTC87 = -88;
+$.CTC88 = -88;
 $.CTC52 = new Isolate.$isolateProperties.Vector(-88, -88);
 $.CTC24 = new Isolate.$isolateProperties._UndefinedValue();
-$.CTC88 = '_stageMouseCacheProperty';
+$.CTC89 = '_stageMouseCacheProperty';
 $.CTC22 = new Isolate.$isolateProperties.Property(null, '_stageMouseCacheProperty');
 $.CTC32 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC89 = 'structured clone of File';
+$.CTC90 = 'structured clone of File';
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC90 = 'game_board_center';
-$.CTC91 = 'number_one';
-$.CTC92 = 'number_two';
-$.CTC93 = 'number_three';
-$.CTC94 = 'number_four';
-$.CTC95 = 'number_five';
-$.CTC96 = 'number_six';
-$.CTC97 = 'number_seven';
-$.CTC98 = 'number_eight';
+$.CTC91 = 'game_board_center';
+$.CTC92 = 'number_one';
+$.CTC93 = 'number_two';
+$.CTC94 = 'number_three';
+$.CTC95 = 'number_four';
+$.CTC96 = 'number_five';
+$.CTC97 = 'number_six';
+$.CTC98 = 'number_seven';
+$.CTC99 = 'number_eight';
 $.CTC56 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC2);
-$.CTC99 = '';
+$.CTC100 = '';
 $.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC12 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC43 = new Isolate.$isolateProperties.NotImplementedException(null);
-$.CTC100 = 'The input sequence contains more than one element.';
+$.CTC101 = 'The input sequence contains more than one element.';
 $.CTC18 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC101 = 'reset';
+$.CTC102 = 'reset';
 $.CTC38 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC102 = 'won';
+$.CTC103 = 'won';
 $.CTC46 = new Isolate.$isolateProperties.GameState('won');
-$.CTC103 = 'Cannot removeLast on immutable List.';
+$.CTC104 = 'Cannot removeLast on immutable List.';
 $.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC104 = '^#[_a-zA-Z]\\w*$';
+$.CTC105 = '^#[_a-zA-Z]\\w*$';
 $.CTC21 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC105 = 'clickEvent';
+$.CTC106 = 'clickEvent';
 $.CTC28 = new Isolate.$isolateProperties.AttachedEvent('clickEvent');
-$.CTC106 = 'structured clone of ArrayBuffer';
+$.CTC107 = 'structured clone of ArrayBuffer';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC107 = 'must be implemented by subclass';
+$.CTC108 = 'must be implemented by subclass';
 $.CTC19 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC108 = 'lost';
+$.CTC109 = 'lost';
 $.CTC51 = new Isolate.$isolateProperties.GameState('lost');
-$.CTC109 = 'structured clone of Date';
+$.CTC110 = 'panelTransform';
+$.CTC57 = new Isolate.$isolateProperties.Property(null, 'panelTransform');
+$.CTC111 = 'structured clone of Date';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
-$.CTC110 = '{([^,{]+),([^}]+)}';
+$.CTC112 = '{([^,{]+),([^}]+)}';
 $.CTC16 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '{([^,{]+),([^}]+)}');
-$.CTC57 = new Isolate.$isolateProperties.Object();
-$.CTC111 = 'IDBKey containing Date';
+$.CTC58 = new Isolate.$isolateProperties.Object();
+$.CTC113 = 'IDBKey containing Date';
 $.CTC15 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC112 = 'Cannot insertRange on immutable List.';
+$.CTC114 = 'Cannot insertRange on immutable List.';
 $.CTC42 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC113 = 'Cannot removeRange on immutable List.';
+$.CTC115 = 'Cannot removeRange on immutable List.';
 $.CTC47 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC114 = 'structured clone of Blob';
+$.CTC116 = 'structured clone of Blob';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC115 = 'started';
+$.CTC117 = 'started';
 $.CTC37 = new Isolate.$isolateProperties.GameState('started');
-$.CTC116 = 'structured clone of RegExp';
+$.CTC118 = 'structured clone of RegExp';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
 $.CTC44 = new Isolate.$isolateProperties._Random();
-$.CTC117 = 'safe';
+$.CTC119 = 'safe';
 $.CTC54 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC118 = 'structured clone of FileList';
+$.CTC120 = 'structured clone of FileList';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
-$.CTC119 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC30 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC119, Isolate.$isolateProperties.CTC2);
-$.CTC120 = 'mine';
+$.CTC121 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC30 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC121, Isolate.$isolateProperties.CTC121, Isolate.$isolateProperties.CTC121, Isolate.$isolateProperties.CTC121, Isolate.$isolateProperties.CTC2);
+$.CTC122 = 'mine';
 $.CTC53 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC121 = 'revealed';
+$.CTC123 = 'revealed';
 $.CTC50 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC122 = 'structured clone of other type';
+$.CTC124 = 'structured clone of other type';
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC123 = 'Mutation operations are not supported';
+$.CTC125 = 'Mutation operations are not supported';
 $.CTC20 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC124 = 'Invalid list length';
+$.CTC126 = 'Invalid list length';
 $.CTC36 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
-$.CTC125 = 'flagged';
+$.CTC127 = 'flagged';
 $.CTC49 = new Isolate.$isolateProperties.SquareState('flagged');
 $._JsonParser_CHAR_CAPITAL_E = 69;
 $.TextureInput__pairExp = Isolate.$isolateProperties.CTC16;
@@ -3575,7 +3608,7 @@ $.$defineNativeClass('HTMLBaseElement', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('HTMLBaseFontElement', ["size?"], {
+$.$defineNativeClass('HTMLBaseFontElement', ["size="], {
  is$Element: function() { return true; }
 });
 
@@ -3618,11 +3651,14 @@ $.$defineNativeClass('CSSStyleDeclaration', ["length?"], {
  clip$0: function() { return this.get$clip().call$0(); },
  get$filter: function(){return this.getPropertyValue$1($.S($._browserPrefix())+'filter');},
  filter$1: function(arg0) { return this.get$filter().call$1(arg0); },
+ set$font: function(value){this.setProperty$3('font',value,'');},
  get$height: function(){return this.getPropertyValue$1('height');},
  set$height: function(value){this.setProperty$3('height',value,'');},
  get$left: function(){return this.getPropertyValue$1('left');},
  get$size: function(){return this.getPropertyValue$1('size');},
+ set$size: function(value){this.setProperty$3('size',value,'');},
  set$src: function(value){this.setProperty$3('src',value,'');},
+ set$textAlign: function(value){this.setProperty$3('text-align',value,'');},
  get$top: function(){return this.getPropertyValue$1('top');},
  get$transform: function(){return this.getPropertyValue$1($.S($._browserPrefix())+'transform');},
  transform$6: function(arg0, arg1, arg2, arg3, arg4, arg5) { return this.get$transform().call$6(arg0, arg1, arg2, arg3, arg4, arg5); },
@@ -3639,7 +3675,7 @@ $.$defineNativeClass('HTMLCanvasElement', ["height=", "width="], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('CanvasRenderingContext2D', ["fillStyle!", "globalAlpha!"], {
+$.$defineNativeClass('CanvasRenderingContext2D', ["fillStyle!", "font!", "globalAlpha!", "textAlign!", "textBaseline!"], {
  beginPath$0: function(){return this.beginPath();},
  bezierCurveTo$6: function(cp1x,cp1y,cp2x,cp2y,x,y){return this.bezierCurveTo(cp1x,cp1y,cp2x,cp2y,x,y);},
  clearRect$4: function(x,y,width,height){return this.clearRect(x,y,width,height);},
@@ -3651,6 +3687,10 @@ $.$defineNativeClass('CanvasRenderingContext2D', ["fillStyle!", "globalAlpha!"],
 },
  fill$0: function(){return this.fill();},
  fillRect$4: function(x,y,width,height){return this.fillRect(x,y,width,height);},
+ fillText$4: function(text,x,y,maxWidth){return this.fillText(text,x,y,maxWidth);},
+ fillText$3: function(text,x,y) {
+  return this.fillText(text,x,y);
+},
  moveTo$2: function(x,y){return this.moveTo(x,y);},
  rect$4: function(x,y,width,height){return this.rect(x,y,width,height);},
  restore$0: function(){return this.restore();},
@@ -4024,7 +4064,7 @@ $.$defineNativeClass('Float64Array', ["length?"], {
  is$ArrayBufferView: function() { return true; }
 });
 
-$.$defineNativeClass('HTMLFontElement', ["size?"], {
+$.$defineNativeClass('HTMLFontElement', ["size="], {
  is$Element: function() { return true; }
 });
 
@@ -4048,7 +4088,7 @@ $.$defineNativeClass('Gamepad', ["id?"], {
 $.$defineNativeClass('GamepadList', ["length?"], {
 });
 
-$.$defineNativeClass('HTMLHRElement', ["size?", "width="], {
+$.$defineNativeClass('HTMLHRElement', ["size=", "width="], {
  is$Element: function() { return true; }
 });
 
@@ -4211,7 +4251,7 @@ $.$defineNativeClass('HTMLImageElement', ["complete?", "height=", "name?", "src!
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('HTMLInputElement', ["height=", "name?", "pattern?", "size?", "src!", "value=", "width="], {
+$.$defineNativeClass('HTMLInputElement', ["height=", "name?", "pattern?", "size=", "src!", "value=", "width="], {
  get$on: function(){return $._InputElementEventsImpl$(this);},
  is$Element: function() { return true; }
 });
@@ -5099,7 +5139,7 @@ $.$defineNativeClass('HTMLScriptElement', ["src!"], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('HTMLSelectElement', ["length=", "name?", "size?", "value="], {
+$.$defineNativeClass('HTMLSelectElement', ["length=", "name?", "size=", "value="], {
  is$Element: function() { return true; }
 });
 
@@ -5238,7 +5278,7 @@ $.$defineNativeClass('TextTrack', [], {
  $dom_removeEventListener$3: function(type,listener,useCapture){return this.removeEventListener(type,$.convertDartClosureToJS(listener,1),useCapture);}
 });
 
-$.$defineNativeClass('TextTrackCue', ["id?", "size?", "text!"], {
+$.$defineNativeClass('TextTrackCue', ["id?", "size=", "text!"], {
  get$on: function(){return $._TextTrackCueEventsImpl$(this);},
  $dom_addEventListener$3: function(type,listener,useCapture){return this.addEventListener(type,$.convertDartClosureToJS(listener,1),useCapture);},
  $dom_removeEventListener$3: function(type,listener,useCapture){return this.removeEventListener(type,$.convertDartClosureToJS(listener,1),useCapture);}
@@ -5394,7 +5434,7 @@ $.$defineNativeClass('WebSocket', [], {
  $dom_removeEventListener$3: function(type,listener,useCapture){return this.removeEventListener(type,$.convertDartClosureToJS(listener,1),useCapture);}
 });
 
-$.$defineNativeClass('DOMWindow', ["length?", "localStorage?", "name?", "navigator?"], {
+$.$defineNativeClass('DOMWindow', ["length?", "localStorage?", "name?", "navigator?", "parent?"], {
  get$_top: function(){return this.top;},
  get$top: function(){return $._DOMWindowCrossFrameImpl__createSafe(this.get$_top());},
  _open3$3: function(url,name,options){return this.open(url, name, options);},

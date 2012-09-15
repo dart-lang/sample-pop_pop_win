@@ -1846,7 +1846,7 @@ $._IsolateContext$ = function(){var t1=new $._IsolateContext(null,null,null);t1.
 
 $.HighScoreView$ = function(_width,_height,_mineCount,_div,_storage){var t1=new $.HighScoreView(_width,_height,_mineCount,_div,_storage);t1.HighScoreView$5(_width,_height,_mineCount,_div,_storage);return t1;};
 
-$.GameStorage$ = function(){var t1=$.window().get$localStorage();return new $.GameStorage($.EventHandle$(),t1);};
+$.GameStorage$ = function(){return new $.GameStorage($.EventHandle$(),$.window().get$localStorage());};
 
 $.charCodeAt = function(receiver,index){if(typeof receiver==='string'){if(index<0)throw $.$$throw($.IndexOutOfRangeException$(index));if(index>=receiver.length)throw $.$$throw($.IndexOutOfRangeException$(index));return receiver.charCodeAt(index);}else return receiver.charCodeAt$1(index);};
 
@@ -2214,7 +2214,7 @@ $.index$slow = function(a,index){if(typeof a==='string'||$.isJsArray(a)){if(!(ty
 
 $.Collections__containsRef = function(c,ref){for(var t1=$.iterator(c);t1.hasNext$0()===true;){var t2=t1.next$0();if(t2==null?ref==null:t2===ref)return true;}return false;};
 
-$.Game$ = function(field){var t1=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC22,'SquareState'),$.EventHandle$('EventArgs'),$.EventHandle$('GameState'),$.CTC24,null,null,null,null);t1.Game$1(field);return t1;};
+$.Game$ = function(field){var t1=$.EventHandle$('EventArgs');var t2=$.EventHandle$('GameState');t2=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC22,'SquareState'),t1,t2,$.CTC24,null,null,null,null);t2.Game$1(field);return t2;};
 
 $._MediaElementEventsImpl$ = function(_ptr){return new $._MediaElementEventsImpl(_ptr);};
 
