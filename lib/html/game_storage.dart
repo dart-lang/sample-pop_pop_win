@@ -1,12 +1,8 @@
 class GameStorage {
   static const _gameCountKey = 'gameCount';
-  final EventHandle _highScoreUpdated;
+  final EventHandle _highScoreUpdated = new EventHandle();
 
-  final Storage _storage;
-
-  GameStorage() :
-    _storage = window.localStorage,
-    _highScoreUpdated = new EventHandle();
+  final Storage _storage = window.localStorage;
 
   int get gameCount => _getIntValue(_gameCountKey);
 

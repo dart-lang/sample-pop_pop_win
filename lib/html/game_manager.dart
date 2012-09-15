@@ -1,14 +1,13 @@
 class GameManager {
   final int _width, _height, _mineCount;
-  final GameStorage gameStorage;
+  final GameStorage gameStorage = new GameStorage();
 
   Game game;
   GlobalId _updatedEventId;
   GlobalId _gameStateChangedId;
   int _setIntervalId;
 
-  GameManager(this._width, this._height, this._mineCount) :
-    gameStorage = new GameStorage() {
+  GameManager(this._width, this._height, this._mineCount) {
     newGame();
   }
 
