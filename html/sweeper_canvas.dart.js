@@ -1605,7 +1605,7 @@ $$.FilteredElementList = {"":
   if ($.geB(newLength, len))
     return;
   else if ($.ltB(newLength, 0))
-    throw $.$$throw($.CTC36);
+    throw $.$$throw($.CTC38);
   this.removeRange$2($.sub(newLength, 1), $.sub(len, newLength));
 },
  add$1: function(value) {
@@ -1622,7 +1622,7 @@ $$.FilteredElementList = {"":
   $.forEach($.getRange(this.get$_filtered(), start, rangeLength), new $.FilteredElementList_removeRange_anon());
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC43);
+  throw $.$$throw($.CTC42);
 },
  clear$0: function() {
   $.clear(this._childNodes);
@@ -1719,7 +1719,7 @@ $$._ChildrenElementList = {"":
   this._lib_element.$dom_replaceChild$2(value, $.index(this._childElements, index));
 },
  set$length: function(newLength) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  add$1: function(value) {
   this._lib_element.$dom_appendChild$1(value);
@@ -1736,10 +1736,10 @@ $$._ChildrenElementList = {"":
     t2.$dom_appendChild$1(t1.next$0());
 },
  removeRange$2: function(start, rangeLength) {
-  throw $.$$throw($.CTC43);
+  throw $.$$throw($.CTC42);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC43);
+  throw $.$$throw($.CTC42);
 },
  getRange$2: function(start, rangeLength) {
   return $._FrozenElementList$_wrap($._Lists_getRange(this, start, rangeLength, []));
@@ -1792,28 +1792,28 @@ $$._FrozenElementList = {"":
   return $.index(this._nodeList, index);
 },
  operator$indexSet$2: function(index, value) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  set$length: function(newLength) {
   $.set$length(this._nodeList, newLength);
 },
  add$1: function(value) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  addLast$1: function(value) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  iterator$0: function() {
   return $._FrozenElementListIterator$(this);
 },
  addAll$1: function(collection) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  removeRange$2: function(start, rangeLength) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  getRange$2: function(start, rangeLength) {
   return $._FrozenElementList$_wrap($.getRange(this._nodeList, start, rangeLength));
@@ -1822,10 +1822,10 @@ $$._FrozenElementList = {"":
   return $.indexOf$2(this._nodeList, element, start);
 },
  clear$0: function() {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  removeLast$0: function() {
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC37);
 },
  last$0: function() {
   return $.last(this._nodeList);
@@ -4766,7 +4766,7 @@ $$.Game = {"":
   return this._states.get$2(x, y);
 },
  get$gameEnded: function() {
-  return $.eqB(this._state, $.CTC46) || $.eqB(this._state, $.CTC51);
+  return $.eqB(this._state, $.CTC45) || $.eqB(this._state, $.CTC51);
 },
  get$duration: function() {
   if (this._startTime == null)
@@ -4783,19 +4783,19 @@ $$.Game = {"":
   var t1 = this._states;
   var currentSS = t1.get$2(x, y);
   if (value) {
-    $.require($.eq(currentSS, $.CTC45), '');
+    $.require($.eq(currentSS, $.CTC44), '');
     t1.set$3(x, y, $.CTC49);
     this._minesLeft = $.sub(this._minesLeft, 1);
   } else {
     $.require($.eq(currentSS, $.CTC49), '');
-    t1.set$3(x, y, $.CTC45);
+    t1.set$3(x, y, $.CTC44);
     this._minesLeft = $.add(this._minesLeft, 1);
   }
   this._update$0();
 },
  canReveal$2: function(x, y) {
   this._ensureStarted$0();
-  if ($.eqB(this._states.get$2(x, y), $.CTC45))
+  if ($.eqB(this._states.get$2(x, y), $.CTC44))
     return true;
   else if (this._canChord$2(x, y) === true)
     return true;
@@ -4804,7 +4804,7 @@ $$.Game = {"":
  reveal$2: function(x, y) {
   this._ensureStarted$0();
   $.require(this.canReveal$2(x, y), 'Item cannot be revealed.');
-  if ($.eqB(this._states.get$2(x, y), $.CTC45))
+  if ($.eqB(this._states.get$2(x, y), $.CTC44))
     if (this.field.get$2(x, y) === true) {
       this._setLost$0();
       var reveals = [];
@@ -4832,7 +4832,7 @@ $$.Game = {"":
       this._ensureStarted$0();
       $.require(this.canReveal$2(x, y), 'Item cannot be revealed.');
     case 1:
-      if (state === 1 || state === 0 && $.eqB(this._states.get$2(x, y), $.CTC45))
+      if (state === 1 || state === 0 && $.eqB(this._states.get$2(x, y), $.CTC44))
         switch (state) {
           case 0:
           case 1:
@@ -4884,7 +4884,7 @@ $$.Game = {"":
       throw $.iae(t4);
     if (t4 < 0 || t4 >= t1.length)
       throw $.ioore(t4);
-    if ($.eqB(t1[t4], $.CTC45)) {
+    if ($.eqB(t1[t4], $.CTC44)) {
       hidden.push(t4);
       if (t4 < 0 || t4 >= t3.length)
         throw $.ioore(t4);
@@ -4940,7 +4940,7 @@ $$.Game = {"":
       t3.getAdjacentCount$2(x, y);
       for (var t2 = $.iterator(t3.getAdjacentIndices$2(x, y)), failed = false; t2.hasNext$0() === true;) {
         var t4 = t2.next$0();
-        if ($.eqB($.index(t1, t4), $.CTC45)) {
+        if ($.eqB($.index(t1, t4), $.CTC44)) {
           hidden.push(t4);
           if ($.index(t3, t4) === true)
             failed = true;
@@ -4986,7 +4986,7 @@ $$.Game = {"":
           throw $.iae(t4);
         if (t4 < 0 || t4 >= t1.length)
           throw $.ioore(t4);
-        if ($.eqB(t1[t4], $.CTC45)) {
+        if ($.eqB(t1[t4], $.CTC44)) {
           var c = t2.getCoordinate$1(t4);
           $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
         }
@@ -5050,7 +5050,7 @@ $$.Game = {"":
             if ($.eqB(t3, 0))
               for (t3 = $.iterator(t2.getAdjacentIndices$2(x, y)); t3.hasNext$0() === true;) {
                 var t4 = t3.next$0();
-                if ($.eqB($.index(t1, t4), $.CTC45)) {
+                if ($.eqB($.index(t1, t4), $.CTC44)) {
                   var c = t2.getCoordinate$1(t4);
                   $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
                 }
@@ -5076,7 +5076,7 @@ $$.Game = {"":
       t3[i] = $.CTC54;
     }
   }
-  this._setState$1($.CTC46);
+  this._setState$1($.CTC45);
   var t2;
 },
  _setWon$0$bailout: function(state, env0, env1) {
@@ -5101,7 +5101,7 @@ $$.Game = {"":
       for (; $.ltB(i, $.get$length(t1)); ++i)
         if ($.index(t1, i) === true)
           $.indexSet(t3, i, $.CTC54);
-      this._setState$1($.CTC46);
+      this._setState$1($.CTC45);
   }
 },
  _setLost$0: function() {
@@ -5155,7 +5155,7 @@ $$.Game = {"":
  _setState$1: function(value) {
   if (!$.eqB(this._state, value)) {
     this._state = value;
-    if ($.eqB(this._state, $.CTC37))
+    if ($.eqB(this._state, $.CTC46))
       this._startTime = $.DateImplementation$now();
     else if (this.get$gameEnded() === true)
       this._endTime = $.DateImplementation$now();
@@ -5163,8 +5163,8 @@ $$.Game = {"":
   }
 },
  _ensureStarted$0: function() {
-  if ($.eqB(this.get$state(), $.CTC38))
-    this._setState$1($.CTC37);
+  if ($.eqB(this.get$state(), $.CTC39))
+    this._setState$1($.CTC46);
 },
  _getAdjacentFlagCount$2: function(x, y) {
   var t1 = $.iterator(this.field.getAdjacentIndices$2(x, y));
@@ -5213,7 +5213,7 @@ $$.SquareState = {"":
 };
 
 $$.GameRoot = {"":
- ["_lib3_stage", "_lib3_canvas?", "_gameElement", "_clickMan", "_leftCountDiv", "_gameStateDiv", "_clockDiv", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
+ ["_lib3_stage", "_lib3_canvas?", "_gameElement", "_clickMan", "_gameStateDiv", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
  set$game: function(value) {
   var t1 = $.game;
@@ -5231,11 +5231,8 @@ $$.GameRoot = {"":
   }
 },
  _onFrame$1: function(time) {
-  this.updateClock$0();
   var t1 = this.get$game().get$state().get$name();
   this._gameStateDiv.set$innerHTML(t1);
-  t1 = $.toString(this.get$game().get$minesLeft());
-  this._leftCountDiv.set$innerHTML(t1);
   t1 = this._lib3_stage;
   var t2 = t1.get$size().get$width();
   var t3 = this._gameElement;
@@ -5252,12 +5249,7 @@ $$.GameRoot = {"":
 },
  get$_onFrame: function() { return new $.BoundClosure(this, '_onFrame$1'); },
  updateClock$0: function() {
-  var t1 = this.get$game().get$duration() == null;
-  var t2 = this._clockDiv;
-  if (t1)
-    t2.set$innerHTML('');
-  else
-    t2.set$innerHTML($.toString(this.get$game().get$duration().get$inSeconds()));
+  this._requestFrame$0();
   $.GameManager.prototype.updateClock$0.call(this);
 },
  gameUpdated$1: function(args) {
@@ -5268,13 +5260,13 @@ $$.GameRoot = {"":
   this._requestFrame$0();
 },
  get$_stageInvalidated: function() { return new $.BoundClosure(this, '_stageInvalidated$1'); },
- GameRoot$_internal$10: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv) {
+ GameRoot$_internal$8: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan, _gameStateDiv) {
   $.add$1(this._lib3_stage.get$invalidated(), this.get$_stageInvalidated());
 }
 };
 
 $$.GameElement = {"":
- ["_lib3_canvas?", "_background", "_boardElement", "_scoreElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ ["_lib3_canvas?", "_background", "_boardElement", "_scoreElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_scoreTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
  "super": "ElementParentImpl",
  get$game: function() {
   return this._game;
@@ -5282,7 +5274,7 @@ $$.GameElement = {"":
  set$game: function(value) {
   this._game = value;
   if (value == null)
-    this.set$size($.CTC39);
+    this.set$size($.CTC40);
   else
     this._updateSize$2(value.get$field().get$width(), value.get$field().get$height());
 },
@@ -5296,7 +5288,7 @@ $$.GameElement = {"":
   $.ElementParentImpl.prototype.update$0.call(this);
   var t1 = this._scaledBoardOffset;
   if (typeof t1 !== 'number')
-    return this.update$0$bailout(1, t1);
+    return this.update$0$bailout(1, t1, 0, 0, 0, 0);
   if (typeof $.CTC34 !== 'number')
     throw $.iae($.CTC34);
   var offset = t1 + $.CTC34;
@@ -5304,13 +5296,83 @@ $$.GameElement = {"":
   t1.setTopLeft$2(this._boardElement, offset);
   t1.setTopLeft$2(this._popAnimationLayer, offset);
   t1.setTopLeft$2(this._dartAnimationLayer, offset);
+  var t3 = this._scale;
+  if (typeof t3 !== 'number')
+    return this.update$0$bailout(2, t3, t1, 0, 0, 0);
+  var t5 = $.CTC35.width;
+  if (typeof t5 !== 'number')
+    return this.update$0$bailout(3, t3, t5, t1, 0, 0);
+  var t7 = $.CTC36.x;
+  if (typeof t7 !== 'number')
+    return this.update$0$bailout(4, t3, t5, t7, t1, 0);
+  t7 = t5 - t7;
+  t5 = this._scoreElement;
+  var t9 = t5.get$width();
+  if (typeof t9 !== 'number')
+    return this.update$0$bailout(5, t3, t9, t1, t5, t7);
+  t1.setTopLeft$2(t5, $.Vector$(t3 * (t7 - t9), 0));
+  t5 = this._scoreTx;
+  t1 = this._scale;
+  t5.setToScale$2(t1, t1);
 },
- update$0$bailout: function(state, t1) {
-  var offset = $.add(t1, $.CTC34);
-  t1 = this._lib3_canvas;
-  t1.setTopLeft$2(this._boardElement, offset);
-  t1.setTopLeft$2(this._popAnimationLayer, offset);
-  t1.setTopLeft$2(this._dartAnimationLayer, offset);
+ update$0$bailout: function(state, env0, env1, env2, env3, env4) {
+  switch (state) {
+    case 1:
+      t1 = env0;
+      break;
+    case 2:
+      t3 = env0;
+      t1 = env1;
+      break;
+    case 3:
+      t3 = env0;
+      t5 = env1;
+      t1 = env2;
+      break;
+    case 4:
+      t3 = env0;
+      t5 = env1;
+      t7 = env2;
+      t1 = env3;
+      break;
+    case 5:
+      t3 = env0;
+      t9 = env1;
+      t1 = env2;
+      t5 = env3;
+      t7 = env4;
+      break;
+  }
+  switch (state) {
+    case 0:
+      $.ElementParentImpl.prototype.update$0.call(this);
+      var t1 = this._scaledBoardOffset;
+    case 1:
+      state = 0;
+      var offset = $.add(t1, $.CTC34);
+      t1 = this._lib3_canvas;
+      t1.setTopLeft$2(this._boardElement, offset);
+      t1.setTopLeft$2(this._popAnimationLayer, offset);
+      t1.setTopLeft$2(this._dartAnimationLayer, offset);
+      var t3 = this._scale;
+    case 2:
+      state = 0;
+      var t5 = $.CTC35.width;
+    case 3:
+      state = 0;
+      var t7 = $.CTC36.x;
+    case 4:
+      state = 0;
+      t7 = $.sub(t5, t7);
+      t5 = this._scoreElement;
+      var t9 = t5.get$width();
+    case 5:
+      state = 0;
+      t1.setTopLeft$2(t5, $.Vector$($.mul(t3, $.sub(t7, t9)), 0));
+      t5 = this._scoreTx;
+      t1 = this._scale;
+      t5.setToScale$2(t1, t1);
+  }
 },
  drawOverride$1: function(ctx) {
   $.ElementParentImpl.prototype.drawOverride$1.call(this, ctx);
@@ -5405,7 +5467,7 @@ $$.GameElement = {"":
 },
  _toggleFlag$2: function(x, y) {
   var ss = this.get$game().getSquareState$2(x, y);
-  if ($.eqB(ss, $.CTC45)) {
+  if ($.eqB(ss, $.CTC44)) {
     this.get$game().setFlag$3(x, y, true);
     return true;
   } else if ($.eqB(ss, $.CTC49)) {
@@ -5418,7 +5480,7 @@ $$.GameElement = {"":
   var ss = this.get$game().getSquareState$2(x, y);
   var t1 = alt === true;
   if (t1)
-    if ($.eqB(ss, $.CTC45) || $.eqB(ss, $.CTC49)) {
+    if ($.eqB(ss, $.CTC44) || $.eqB(ss, $.CTC49)) {
       this._toggleFlag$2(x, y);
       var reveals = null;
     } else if ($.eqB(ss, $.CTC50))
@@ -5429,7 +5491,7 @@ $$.GameElement = {"":
         reveals = null;
     else
       reveals = null;
-  else if ($.eqB(ss, $.CTC45)) {
+  else if ($.eqB(ss, $.CTC44)) {
     this._startDartAnimation$1([$.Coordinate$(x, y)]);
     reveals = this.get$game().reveal$2(x, y);
   } else
@@ -5442,22 +5504,24 @@ $$.GameElement = {"":
     this._startPopAnimation$1($.Coordinate$(x, y));
 },
  _updateSize$2: function(w, h) {
-  var t1 = $.CTC40.width;
+  var t1 = $.CTC35.width;
   var sizeX = $.GameElement__getScale(w, t1, 1344);
-  var t2 = $.Size$(sizeX, $.GameElement__getScale(h, $.CTC40.height, 1344));
+  var t2 = $.Size$(sizeX, $.GameElement__getScale(h, $.CTC35.height, 1344));
   this.set$size(t2);
   this._lib3_canvas.set$size(t2);
   this._scale = $.div(sizeX, t1);
-  this._scaledBoardOffset = $.CTC41.scale$1(this._scale);
+  this._scaledBoardOffset = $.CTC36.scale$1(this._scale);
 },
  GameElement$1: function(_targetMode) {
   var t1 = this._lib3_canvas;
   t1.registerParent$1(this);
   t1.addElement$1(this._background);
   t1.addElement$1(this._boardElement);
-  t1.addElement$1(this._scoreElement);
+  var t2 = this._scoreElement;
+  t1.addElement$1(t2);
   t1.addElement$1(this._popAnimationLayer);
   t1.addElement$1(this._dartAnimationLayer);
+  this._scoreTx = t2.addTransform$0();
 }
 };
 
@@ -5617,15 +5681,15 @@ $$.BoardElement = {"":
       $.ElementParentImpl.prototype.update$0.call(this);
   }
 },
+ get$_lib3_parent: function() {
+  return this.get$parent().get$parent();
+},
  get$_game: function() {
   return this.get$_lib3_parent().get$_game();
 },
  get$_elementsNeedUpdate: function() {
   var t1 = this._lib3_elements;
   return t1 == null || !$.eqB(t1.get$width(), this.get$_game().get$field().get$width()) || !$.eqB(this._lib3_elements.get$height(), this.get$_game().get$field().get$height());
-},
- get$_lib3_parent: function() {
-  return this.get$parent().get$parent();
 }
 };
 
@@ -5680,9 +5744,9 @@ $$.GameBackgroundElement = {"":
   ctx.transform$6(this.get$_lib3_parent().get$_scale(), 0, 0, this.get$_lib3_parent().get$_scale(), 0, 0);
   this._drawCorner$1(ctx);
   ctx.save$0();
-  ctx.transform$6(-1, 0, 0, 1, $.CTC40.width, 0);
+  ctx.transform$6(-1, 0, 0, 1, $.CTC35.width, 0);
   this._drawCorner$1(ctx);
-  t1 = $.CTC40.height;
+  t1 = $.CTC35.height;
   ctx.transform$6(1, 0, 0, -1, 0, t1);
   this._drawCorner$1(ctx);
   ctx.restore$0();
@@ -5774,9 +5838,9 @@ $$.GameBackgroundElement = {"":
       ctx.transform$6(this.get$_lib3_parent().get$_scale(), 0, 0, this.get$_lib3_parent().get$_scale(), 0, 0);
       this._drawCorner$1(ctx);
       ctx.save$0();
-      ctx.transform$6(-1, 0, 0, 1, $.CTC40.width, 0);
+      ctx.transform$6(-1, 0, 0, 1, $.CTC35.width, 0);
       this._drawCorner$1(ctx);
-      t1 = $.CTC40.height;
+      t1 = $.CTC35.height;
       ctx.transform$6(1, 0, 0, -1, 0, t1);
       this._drawCorner$1(ctx);
       ctx.restore$0();
@@ -5787,7 +5851,7 @@ $$.GameBackgroundElement = {"":
 },
  _drawCorner$1: function(ctx) {
   $.drawTextureKeyAt(ctx, 'background_top_left.png', $.CTC48);
-  $.drawTextureKeyAt(ctx, 'background_side_left.png', $.Coordinate$(0, $.CTC41.y));
+  $.drawTextureKeyAt(ctx, 'background_side_left.png', $.Coordinate$(0, $.CTC36.y));
 },
  get$_lib3_parent: function() {
   return this.get$parent().get$parent();
@@ -5806,7 +5870,7 @@ $$.SquareElement = {"":
  drawOverride$1: function(ctx) {
   var textureName = null;
   switch (this._lastDrawingState) {
-    case $.CTC45:
+    case $.CTC44:
       textureName = 'balloon.png';
       break;
     case $.CTC49:
@@ -6087,22 +6151,68 @@ $$.TextAniRequest = {"":
 };
 
 $$.ScoreElement = {"":
- ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
+ ["_clockStr", "_minesStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "propertyValues", "_disposed"],
  "super": "PElement",
+ update$0: function() {
+  var newMineStr = $.toString(this.get$_game().get$minesLeft());
+  if (!$.eqB(newMineStr, this._minesStr)) {
+    this._minesStr = newMineStr;
+    this.invalidateDraw$0();
+  }
+  var newClockStr = !(this.get$_game().get$duration() == null) ? $.toString(this.get$_game().get$duration().get$inSeconds()) : '';
+  if (!$.eqB(newClockStr, this._clockStr)) {
+    this._clockStr = newClockStr;
+    this.invalidateDraw$0();
+  }
+  $.PElement.prototype.update$0.call(this);
+},
  drawOverride$1: function(ctx) {
-  ctx.set$fillStyle('red');
-  ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
-  ctx.set$textBaseline('top');
+  var t1 = this.get$height();
+  if (typeof t1 !== 'number')
+    throw $.iae(t1);
+  var rowHeight = 0.5 * t1;
+  ctx.set$font($.S($.toInt(rowHeight * 0.7)) + 'px Slackey');
+  ctx.set$textBaseline('middle');
+  var textSize = this._getTextSize$1(ctx);
+  if (typeof textSize !== 'number')
+    return this.drawOverride$1$bailout(1, ctx, textSize, rowHeight);
   ctx.set$fillStyle('black');
-  ctx.set$font('20px Slackey');
   ctx.set$textAlign('right');
-  ctx.fillText$3('MINES LEFT:', 145, 0);
+  var t2 = 0.5 * rowHeight;
+  ctx.fillText$3('MINES LEFT:', textSize, t2);
   ctx.set$textAlign('left');
-  ctx.fillText$3('1223', 150, 0);
+  var t3 = this._minesStr;
+  var t4 = textSize + 15;
+  ctx.fillText$3(t3, t4, t2);
   ctx.set$textAlign('right');
-  ctx.fillText$3('TIME:', 145, 25);
+  t2 = 1.5 * rowHeight;
+  ctx.fillText$3('TIME:', textSize, t2);
   ctx.set$textAlign('left');
-  ctx.fillText$3('12:12', 150, 25);
+  ctx.fillText$3(this._clockStr, t4, t2);
+},
+ drawOverride$1$bailout: function(state, ctx, textSize, rowHeight) {
+  ctx.set$fillStyle('black');
+  ctx.set$textAlign('right');
+  var t2 = 0.5 * rowHeight;
+  ctx.fillText$3('MINES LEFT:', textSize, t2);
+  ctx.set$textAlign('left');
+  ctx.fillText$3(this._minesStr, $.add(textSize, 15), t2);
+  ctx.set$textAlign('right');
+  t2 = 1.5 * rowHeight;
+  ctx.fillText$3('TIME:', textSize, t2);
+  ctx.set$textAlign('left');
+  ctx.fillText$3(this._clockStr, $.add(textSize, 15), t2);
+},
+ _getTextSize$1: function(ctx) {
+  if (this._textSize == null)
+    this._textSize = ctx.measureText$1('MINES LEFT:').get$width();
+  return this._textSize;
+},
+ get$_lib3_parent: function() {
+  return this.get$parent().get$parent();
+},
+ get$_game: function() {
+  return this.get$_lib3_parent().get$_game();
 }
 };
 
@@ -6442,7 +6552,7 @@ $$.GameManager = {"":
   if (!(this._updatedEventId == null)) {
     this.get$game().get$updated().remove$1(this._updatedEventId);
     this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);
-    this._gameStateChanged$1($.CTC38);
+    this._gameStateChanged$1($.CTC39);
   }
   this.set$game($.Game$($.Field_Field(this._mineCount, this._lib5_width, this._lib5_height, null)));
   this._updatedEventId = $.add$1(this.get$game().get$updated(), this.get$gameUpdated());
@@ -6451,19 +6561,19 @@ $$.GameManager = {"":
  _lib5_click$3: function(x, y, alt) {
   var ss = this.get$game().getSquareState$2(x, y);
   if (alt === true) {
-    if ($.eqB(ss, $.CTC45))
+    if ($.eqB(ss, $.CTC44))
       this.get$game().setFlag$3(x, y, true);
     else if ($.eqB(ss, $.CTC49))
       this.get$game().setFlag$3(x, y, false);
     else if ($.eqB(ss, $.CTC50))
       this.get$game().reveal$2(x, y);
-  } else if ($.eqB(ss, $.CTC45))
+  } else if ($.eqB(ss, $.CTC44))
     this.get$game().reveal$2(x, y);
 },
  updateClock$0: function() {
-  if (this._setIntervalId == null && $.eqB(this.get$game().get$state(), $.CTC37))
+  if (this._setIntervalId == null && $.eqB(this.get$game().get$state(), $.CTC46))
     this._setIntervalId = $.window().setInterval$2(this.get$_doClock(), 1000);
-  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC37)) {
+  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC46)) {
     $.window().clearInterval$1(this._setIntervalId);
     this._setIntervalId = null;
   }
@@ -6475,7 +6585,7 @@ $$.GameManager = {"":
  _gameStateChanged$1: function(newState) {
   var t1 = this.gameStorage;
   t1.recordState$1(newState);
-  if ($.eqB(newState, $.CTC46))
+  if ($.eqB(newState, $.CTC45))
     t1.updateHighScore$1(this.get$game());
   this.updateClock$0();
 },
@@ -7360,7 +7470,7 @@ $$.GameElement__click_anon0 = {"":
  ["this_1"],
  "super": "Closure",
  call$1: function(t) {
-  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC45);
+  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC44);
 }
 };
 
@@ -8298,7 +8408,7 @@ $._convertNativeToDart_IDBKey = function(nativeKey) {
 };
 
 $._runSweeper = function() {
-  var gameRoot = $.GameRoot_GameRoot(7, 7, $.toInt(7.65625), $.query('#sweeperCanvas'), $.query('#minesLeft'), $.query('#gameState'), $.query('#clock'), false);
+  var gameRoot = $.GameRoot_GameRoot(7, 7, $.toInt(7.65625), $.query('#sweeperCanvas'), $.query('#gameState'), false);
   $.add$1($.window().get$on().get$touchMove(), $._onTouchMove);
   $.add$1($.query('#newGame').get$on().get$click(), new $._runSweeper_anon(gameRoot));
 };
@@ -8988,7 +9098,7 @@ $._Elements_CanvasElement = function(width, height) {
 $.Game$ = function(field) {
   var t1 = $.EventHandle$('EventArgs');
   var t2 = $.EventHandle$('GameState');
-  t2 = new $.Game(field, $.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC45, 'SquareState'), t1, t2, $.CTC38, null, null, null, null);
+  t2 = new $.Game(field, $.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC44, 'SquareState'), t1, t2, $.CTC39, null, null, null, null);
   t2.Game$1(field);
   return t2;
 };
@@ -9004,10 +9114,10 @@ $.$$throw = function(ex) {
   throw jsError;
 };
 
-$.GameRoot$_internal = function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv) {
-  var t1 = new $.GameRoot(_stage, _canvas, gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv, gameElement.addTransform$0(), false, width, height, mineCount, $.GameStorage$(), null, null, null, null);
+$.GameRoot$_internal = function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan, _gameStateDiv) {
+  var t1 = new $.GameRoot(_stage, _canvas, gameElement, _clickMan, _gameStateDiv, gameElement.addTransform$0(), false, width, height, mineCount, $.GameStorage$(), null, null, null, null);
   t1.GameManager$3(width, height, mineCount);
-  t1.GameRoot$_internal$10(width, height, mineCount, _canvas, _stage, gameElement, _clickMan, _leftCountDiv, _gameStateDiv, _clockDiv);
+  t1.GameRoot$_internal$8(width, height, mineCount, _canvas, _stage, gameElement, _clickMan, _gameStateDiv);
   return t1;
 };
 
@@ -9474,7 +9584,7 @@ $._convertNativeToDart_AcceptStructuredClone = function(object) {
 $.ScoreElement$ = function() {
   var t1 = $.ListImplementation_List(null, 'AffineTransform');
   $.setRuntimeTypeInfo(t1, { 'E': 'AffineTransform' });
-  return new $.ScoreElement(t1, false, $.EventHandle$('EventArgs'), $.EventHandle$('EventArgs'), null, 200, 50, null, null, false, null, $.PropertyValues$(), false);
+  return new $.ScoreElement(null, null, null, t1, false, $.EventHandle$('EventArgs'), $.EventHandle$('EventArgs'), null, 400, 96, null, null, false, null, $.PropertyValues$(), false);
 };
 
 $.max = function(a, b) {
@@ -10027,11 +10137,11 @@ $.iae = function(argument) {
   throw $.$$throw($.IllegalArgumentException$(argument));
 };
 
-$.GameRoot_GameRoot = function(width, height, mineCount, canvasElement, leftCountDiv, gameStateDiv, clockDiv, targetMode) {
+$.GameRoot_GameRoot = function(width, height, mineCount, canvasElement, gameStateDiv, targetMode) {
   $.requireArgumentNotNull(targetMode, 'targetMode');
   var rootElement = $.GameElement$(targetMode);
   var stage = $.Stage$(canvasElement, rootElement);
-  return $.GameRoot$_internal(width, height, mineCount, canvasElement, stage, rootElement, $.ClickManager$(stage), leftCountDiv, gameStateDiv, clockDiv);
+  return $.GameRoot$_internal(width, height, mineCount, canvasElement, stage, rootElement, $.ClickManager$(stage), gameStateDiv);
 };
 
 $._DOMApplicationCacheEventsImpl$ = function(_ptr) {
@@ -10124,7 +10234,7 @@ $.GameElement$ = function(_targetMode) {
   var t7 = $.EventHandle$();
   var t8 = $.ListImplementation_List(null, 'AffineTransform');
   $.setRuntimeTypeInfo(t8, { 'E': 'AffineTransform' });
-  t8 = new $.GameElement(t1, t2, t3, t4, t5, t6, _targetMode, t7, null, null, null, null, null, t8, false, $.EventHandle$('EventArgs'), $.EventHandle$('EventArgs'), null, 100, 100, null, null, false, null, $.PropertyValues$(), false);
+  t8 = new $.GameElement(t1, t2, t3, t4, t5, t6, _targetMode, t7, null, null, null, null, null, null, t8, false, $.EventHandle$('EventArgs'), $.EventHandle$('EventArgs'), null, 100, 100, null, null, false, null, $.PropertyValues$(), false);
   t8.GameElement$1(_targetMode);
   return t8;
 };
@@ -10326,7 +10436,7 @@ $._TextTrackCueEventsImpl$ = function(_ptr) {
 };
 
 $.Random_Random = function(seed) {
-  return $.CTC44;
+  return $.CTC43;
 };
 
 $.regExpExec = function(regExp, str) {
@@ -10858,7 +10968,7 @@ $.CTC25 = new Isolate.$isolateProperties.Property(false, 'IsMouseOver');
 $.CTC72 = 'Cannot add to immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
 $.CTC73 = 'hidden';
-$.CTC45 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC44 = new Isolate.$isolateProperties.SquareState('hidden');
 $.CTC74 = -1025;
 $.CTC75 = -775;
 $.CTC55 = new Isolate.$isolateProperties.Vector(-1025, -775);
@@ -10868,22 +10978,22 @@ $.CTC33 = new Isolate.$isolateProperties.EventArgs();
 $.CTC77 = null;
 $.CTC78 = '_attachableEventHelperProperty';
 $.CTC29 = new Isolate.$isolateProperties.Property(null, '_attachableEventHelperProperty');
-$.CTC79 = 100;
-$.CTC39 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC80 = 0;
+$.CTC79 = 2048;
+$.CTC80 = 1536;
+$.CTC35 = new Isolate.$isolateProperties.Size(2048, 1536);
+$.CTC81 = 0;
 $.CTC48 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC81 = 32;
-$.CTC34 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC82 = 2048;
-$.CTC83 = 1536;
-$.CTC40 = new Isolate.$isolateProperties.Size(2048, 1536);
-$.CTC84 = 'offsetX is only supported on elements';
+$.CTC82 = 352;
+$.CTC83 = 96;
+$.CTC36 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC84 = 100;
+$.CTC40 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC85 = 'offsetX is only supported on elements';
 $.CTC27 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC85 = 'The input sequence is empty.';
+$.CTC86 = 'The input sequence is empty.';
 $.CTC17 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC86 = 352;
-$.CTC87 = 96;
-$.CTC41 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC87 = 32;
+$.CTC34 = new Isolate.$isolateProperties.Coordinate(32, 32);
 $.CTC88 = -88;
 $.CTC52 = new Isolate.$isolateProperties.Vector(-88, -88);
 $.CTC24 = new Isolate.$isolateProperties._UndefinedValue();
@@ -10904,16 +11014,16 @@ $.CTC99 = 'number_eight';
 $.CTC56 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC2);
 $.CTC100 = '';
-$.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('');
+$.CTC37 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC12 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC43 = new Isolate.$isolateProperties.NotImplementedException(null);
+$.CTC42 = new Isolate.$isolateProperties.NotImplementedException(null);
 $.CTC101 = 'The input sequence contains more than one element.';
 $.CTC18 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
 $.CTC102 = 'reset';
-$.CTC38 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC39 = new Isolate.$isolateProperties.GameState('reset');
 $.CTC103 = 'won';
-$.CTC46 = new Isolate.$isolateProperties.GameState('won');
+$.CTC45 = new Isolate.$isolateProperties.GameState('won');
 $.CTC104 = 'Cannot removeLast on immutable List.';
 $.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.CTC105 = '^#[_a-zA-Z]\\w*$';
@@ -10936,16 +11046,16 @@ $.CTC58 = new Isolate.$isolateProperties.Object();
 $.CTC113 = 'IDBKey containing Date';
 $.CTC15 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
 $.CTC114 = 'Cannot insertRange on immutable List.';
-$.CTC42 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
+$.CTC41 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
 $.CTC115 = 'Cannot removeRange on immutable List.';
 $.CTC47 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
 $.CTC116 = 'structured clone of Blob';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
 $.CTC117 = 'started';
-$.CTC37 = new Isolate.$isolateProperties.GameState('started');
+$.CTC46 = new Isolate.$isolateProperties.GameState('started');
 $.CTC118 = 'structured clone of RegExp';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC44 = new Isolate.$isolateProperties._Random();
+$.CTC43 = new Isolate.$isolateProperties._Random();
 $.CTC119 = 'safe';
 $.CTC54 = new Isolate.$isolateProperties.SquareState('safe');
 $.CTC120 = 'structured clone of FileList';
@@ -10961,7 +11071,7 @@ $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clo
 $.CTC125 = 'Mutation operations are not supported';
 $.CTC20 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC126 = 'Invalid list length';
-$.CTC36 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC38 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
 $.CTC127 = 'flagged';
 $.CTC49 = new Isolate.$isolateProperties.SquareState('flagged');
 $._JsonParser_CHAR_CAPITAL_E = 69;
@@ -10994,7 +11104,7 @@ $._textures = null;
 $.GlobalId__globalId = 0;
 $._JsonParser_CHAR_U = 117;
 $._imageLoader = null;
-$.GameElement__boardOffset = Isolate.$isolateProperties.CTC41;
+$.GameElement__boardOffset = Isolate.$isolateProperties.CTC36;
 $.SquareElement__size = 80;
 $._JsonParser_NUMBER_LITERAL = 45;
 $.ResourceLoader_StateLoaded = 'loaded';
@@ -11006,7 +11116,7 @@ $._JsonParser_CHAR_1 = 49;
 $._JsonParser_RBRACKET = 93;
 $._JsonParser_CHAR_6 = 54;
 $._JsonParser_CHAR_5 = 53;
-$.GameState_started = Isolate.$isolateProperties.CTC37;
+$.GameState_started = Isolate.$isolateProperties.CTC46;
 $.SquareState_safe = Isolate.$isolateProperties.CTC54;
 $._getTypeNameOf = null;
 $.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC55;
@@ -11014,6 +11124,7 @@ $.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC52;
 $.GameElement__popAnimationHitFrame = 12;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
 $.SquareState_mine = Isolate.$isolateProperties.CTC53;
+$.ScoreElement__minesLeftStr = 'MINES LEFT:';
 $._JsonParser_CHAR_B = 98;
 $._dartlibHelperRandom = null;
 $._pendingMeasurementFrameCallbacks = null;
@@ -11024,8 +11135,8 @@ $._audioContext = null;
 $._JsonParser_BACKSLASH = 92;
 $.LN2 = 0.6931471805599453;
 $._JsonParser_CHAR_8 = 56;
-$.GameState_won = Isolate.$isolateProperties.CTC46;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC45;
+$.GameState_won = Isolate.$isolateProperties.CTC45;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC44;
 $._JsonParser_CHAR_R = 114;
 $._audioNames = Isolate.$isolateProperties.CTC;
 $._JsonParser_SLASH = 47;
@@ -11037,7 +11148,7 @@ $._JsonParser_LBRACE = 123;
 $._nextMeasurementFrameScheduled = false;
 $._pendingRequests = null;
 $._JsonParser_NEW_LINE = 10;
-$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC40;
+$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC35;
 $._buffers = null;
 $._JsonParser_WHITESPACE = 32;
 $._TimerFactory__factory = null;
@@ -11049,7 +11160,7 @@ $.GameState_lost = Isolate.$isolateProperties.CTC51;
 $._JsonParser_LAST_ASCII = 125;
 $._JsonParser_CHAR_T = 116;
 $.SquareState_revealed = Isolate.$isolateProperties.CTC50;
-$.GameState_reset = Isolate.$isolateProperties.CTC38;
+$.GameState_reset = Isolate.$isolateProperties.CTC39;
 $._JsonParser_NULL_STRING = 'null';
 $._JsonParser_CHAR_F = 102;
 $._JsonParser_RBRACE = 125;
@@ -11058,6 +11169,7 @@ $._JsonParser_LBRACKET = 91;
 $._textuerName = 'art.png';
 $.SquareElement__numberMap = Isolate.$isolateProperties.CTC56;
 $.GameElement__backgroundHoleSize = 1344;
+$.ScoreElement__valueOffset = 15;
 $._JsonParser_PLUS = 43;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
 $.Duration_MILLISECONDS_PER_HOUR = 3600000;
@@ -11369,6 +11481,9 @@ $.$defineNativeClass('CanvasRenderingContext2D', ["fillStyle!", "font!", "global
  fillText$3: function(text,x,y) {
   return this.fillText(text,x,y);
 },
+ measureText$1: function(text) {
+  return this.measureText(text);
+},
  moveTo$2: function(x, y) {
   return this.moveTo(x,y);
 },
@@ -11504,7 +11619,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -11919,7 +12034,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -11999,7 +12114,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12051,7 +12166,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12138,7 +12253,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12419,7 +12534,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12471,7 +12586,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12523,7 +12638,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12656,7 +12771,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -12847,7 +12962,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -13810,7 +13925,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -13941,7 +14056,7 @@ return this[index];
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -14004,7 +14119,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -14056,7 +14171,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
@@ -14108,7 +14223,7 @@ this[index] = value
   throw $.$$throw($.CTC47);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC42);
+  throw $.$$throw($.CTC41);
 },
  getRange$2: function(start, rangeLength) {
   return $._Lists_getRange(this, start, rangeLength, []);
