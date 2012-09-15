@@ -21,6 +21,8 @@ class GameElement extends ElementParentImpl {
   final bool _targetMode;
   final EventHandle _targetChanged = new EventHandle();
 
+  AffineTransform _scoreTx;
+
   int _targetX, _targetY;
   double _scale;
   Vector _scaledBoardOffset;
@@ -34,6 +36,8 @@ class GameElement extends ElementParentImpl {
     _canvas.addElement(_scoreElement);
     _canvas.addElement(_popAnimationLayer);
     _canvas.addElement(_dartAnimationLayer);
+
+    _scoreTx = _scoreElement.addTransform();
   }
 
   Game get game => _game;
@@ -81,11 +85,18 @@ class GameElement extends ElementParentImpl {
   void update() {
     super.update();
     final offset = _scaledBoardOffset +
-        const Coordinate(GameElement._edgeOffset, GameElement._edgeOffset);
+        const Coordinate(_edgeOffset, _edgeOffset);
 
     _canvas.setTopLeft(_boardElement, offset);
     _canvas.setTopLeft(_popAnimationLayer, offset);
     _canvas.setTopLeft(_dartAnimationLayer, offset);
+
+    // score offset
+    // end of the board - score width
+    final x = _scale * (_backgroundSize.width - _boardOffset.x - _scoreElement.width);
+
+    _canvas.setTopLeft(_scoreElement, new Vector(x, 0));
+    _scoreTx.setToScale(_scale, _scale);
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
