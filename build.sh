@@ -6,7 +6,6 @@ core_cmd="dart
 $DART_SDK/$dart2js
 --colors
 --package-root=$PACK_DIR
---minify
 -v"
 
 function build {
