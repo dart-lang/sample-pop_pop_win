@@ -13,7 +13,9 @@ class GameElement extends ElementParentImpl {
 
   final GameBackgroundElement _background;
   final BoardElement _boardElement;
+  final ScoreElement _scoreElement = new ScoreElement();
   final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
+  final List<PElement> _elements = new List<PElement>();
   final bool _targetMode;
   final EventHandle _targetChanged;
 
@@ -36,11 +38,16 @@ class GameElement extends ElementParentImpl {
 
     _background.registerParent(this);
 
+    _scoreElement.registerParent(this);
+
     _popAnimationLayer.registerParent(this);
     _popLayerTx = _popAnimationLayer.addTransform();
 
     _dartAnimationLayer.registerParent(this);
     _dartLayerTx = _dartAnimationLayer.addTransform();
+
+    _elements.addAll([_background, _boardElement, _scoreElement,
+                      _popAnimationLayer, _dartAnimationLayer]);
   }
 
   Game get game => _game;
@@ -78,22 +85,9 @@ class GameElement extends ElementParentImpl {
 
   EventRoot get targetChanged => _targetChanged;
 
-  int get visualChildCount => 4;
+  int get visualChildCount => _elements.length;
 
-  PElement getVisualChild(int index) {
-    switch(index){
-      case 0:
-        return _background;
-      case 1:
-        return _boardElement;
-      case 2:
-        return _popAnimationLayer;
-      case 3:
-        return _dartAnimationLayer;
-      default:
-        throw "bad index!";
-    }
-  }
+  PElement getVisualChild(int index) => _elements[index];
 
   void update() {
     super.update();
