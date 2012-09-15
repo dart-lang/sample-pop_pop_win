@@ -81,5 +81,5 @@ class GameBackgroundElement extends PElement {
         new Coordinate(0, GameElement._boardOffset.y));
   }
 
-  GameElement get _parent => parent;
+  GameElement get _parent => parent.parent;
 }

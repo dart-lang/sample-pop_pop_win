@@ -11,15 +11,14 @@ class GameElement extends ElementParentImpl {
           -815 + SquareElement._size ~/ 2);
 
 
+  final PCanvas _canvas = new PCanvas(0, 0);
   final GameBackgroundElement _background;
   final BoardElement _boardElement;
   final ScoreElement _scoreElement = new ScoreElement();
   final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
-  final List<PElement> _elements = new List<PElement>();
   final bool _targetMode;
   final EventHandle _targetChanged;
 
-  AffineTransform _popLayerTx, _dartLayerTx, _boardTx;
   int _targetX, _targetY;
   double _scale;
   Vector _scaledBoardOffset;
@@ -33,21 +32,12 @@ class GameElement extends ElementParentImpl {
     _dartAnimationLayer = new TextureAnimationElement(0, 0),
     _targetChanged = new EventHandle(),
     super(100, 100) {
-    _boardElement.registerParent(this);
-    _boardTx = _boardElement.addTransform();
-
-    _background.registerParent(this);
-
-    _scoreElement.registerParent(this);
-
-    _popAnimationLayer.registerParent(this);
-    _popLayerTx = _popAnimationLayer.addTransform();
-
-    _dartAnimationLayer.registerParent(this);
-    _dartLayerTx = _dartAnimationLayer.addTransform();
-
-    _elements.addAll([_background, _boardElement, _scoreElement,
-                      _popAnimationLayer, _dartAnimationLayer]);
+    _canvas.registerParent(this);
+    _canvas.addElement(_background);
+    _canvas.addElement(_boardElement);
+    _canvas.addElement(_scoreElement);
+    _canvas.addElement(_popAnimationLayer);
+    _canvas.addElement(_dartAnimationLayer);
   }
 
   Game get game => _game;
@@ -85,18 +75,21 @@ class GameElement extends ElementParentImpl {
 
   EventRoot get targetChanged => _targetChanged;
 
-  int get visualChildCount => _elements.length;
+  int get visualChildCount => 1;
 
-  PElement getVisualChild(int index) => _elements[index];
+  PElement getVisualChild(int index) {
+    assert(index == 0);
+    return _canvas;
+  }
 
   void update() {
     super.update();
     final offset = _scaledBoardOffset +
         const Coordinate(GameElement._edgeOffset, GameElement._edgeOffset);
 
-    _boardTx.setToTranslation(offset.x, offset.y);
-    _popLayerTx.setToTranslation(offset.x, offset.y);
-    _dartLayerTx.setToTranslation(offset.x, offset.y);
+    _canvas.setTopLeft(_boardElement, offset);
+    _canvas.setTopLeft(_popAnimationLayer, offset);
+    _canvas.setTopLeft(_dartAnimationLayer, offset);
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
@@ -264,7 +257,7 @@ class GameElement extends ElementParentImpl {
     final sizeX = _getScale(w, _backgroundSize.width, _backgroundHoleSize);
     final sizeY = _getScale(h, _backgroundSize.height, _backgroundHoleSize);
 
-    size = new Size(sizeX, sizeY);
+    _canvas.size = size = new Size(sizeX, sizeY);
 
     // NOTE: width wins here. Need to do work to make left and right sides
     //       scale nicely when not a square
