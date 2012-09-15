@@ -43,6 +43,8 @@ class BoardElement extends ElementParentImpl {
     super.update();
   }
 
+  GameElement get _parent => parent.parent;
+
   Game get _game => _parent._game;
 
   bool get _elementsNeedUpdate {
@@ -52,5 +54,4 @@ class BoardElement extends ElementParentImpl {
         _elements.height != _game.field.height;
   }
 
-  GameElement get _parent => parent.parent;
 }

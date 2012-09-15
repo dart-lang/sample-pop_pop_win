@@ -64,13 +64,11 @@ void _runSweeper() {
   final int m = (w * h * 0.15625).toInt();
 
   final CanvasElement sweeperTable = query('#sweeperCanvas');
-  final Element minesLeftDiv = query('#minesLeft');
   final Element gameStateDiv = query('#gameState');
-  final Element clockDiv = query('#clock');
 
 
   final gameRoot = new GameRoot(w, h, m,
-      sweeperTable, minesLeftDiv, gameStateDiv, clockDiv, targetMode);
+      sweeperTable, gameStateDiv, targetMode);
 
   // disable touch events
   window.on.touchMove.add(_onTouchMove);

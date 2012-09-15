@@ -3,16 +3,13 @@ class GameRoot extends GameManager {
   final CanvasElement _canvas;
   final GameElement _gameElement;
   final ClickManager _clickMan;
-  final Element _leftCountDiv;
   final Element _gameStateDiv;
-  final Element _clockDiv;
   final AffineTransform _gameElementTx;
 
   bool _frameRequested = false;
 
   factory GameRoot(int width, int height, int mineCount,
-      CanvasElement canvasElement, Element leftCountDiv,
-      Element gameStateDiv, Element clockDiv, bool targetMode) {
+      CanvasElement canvasElement, Element gameStateDiv, bool targetMode) {
 
     requireArgumentNotNull(targetMode, 'targetMode');
 
@@ -21,13 +18,12 @@ class GameRoot extends GameManager {
     final clickMan = new ClickManager(stage);
 
     return new GameRoot._internal(width, height, mineCount,
-        canvasElement, stage, rootElement, clickMan,
-        leftCountDiv, gameStateDiv, clockDiv);
+        canvasElement, stage, rootElement, clickMan, gameStateDiv);
   }
 
   GameRoot._internal(int width, int height, int mineCount,
       this._canvas, this._stage, GameElement gameElement, this._clickMan,
-      this._leftCountDiv, this._gameStateDiv, this._clockDiv) :
+      this._gameStateDiv) :
       this._gameElement = gameElement,
       _gameElementTx = gameElement.addTransform(),
       super(width, height, mineCount) {
@@ -62,9 +58,7 @@ class GameRoot extends GameManager {
   }
 
   bool _onFrame(int time) {
-    updateClock();
     _gameStateDiv.innerHTML = game.state.name;
-    _leftCountDiv.innerHTML = game.minesLeft.toString();
 
     final xScale = _stage.size.width / _gameElement.width;
     final yScale = _stage.size.height / _gameElement.height;
@@ -98,12 +92,7 @@ class GameRoot extends GameManager {
   }
 
   void updateClock() {
-    if(game.duration == null) {
-      _clockDiv.innerHTML = '';
-    } else {
-      _clockDiv.innerHTML = game.duration.inSeconds.toString();
-    }
-
+    _requestFrame();
     super.updateClock();
   }
 
