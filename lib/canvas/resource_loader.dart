@@ -6,19 +6,15 @@ class ResourceLoader<T> {
   static const String StateError = 'error';
 
   final ReadOnlyCollection<String> _urlList;
-  final EventHandle<EventArgs> _loadedEvent;
-  final EventHandle<EventArgs> _progressEvent;
-  final Map<String, T> _resources;
-  final Set<String> _completed;
+  final EventHandle<EventArgs> _loadedEvent= new EventHandle<EventArgs>();
+  final EventHandle<EventArgs> _progressEvent = new EventHandle<EventArgs>();
+  final Map<String, T> _resources = new Map<String, T>();
+  final Set<String> _completed = new Set<String>();
 
   String _state = StateUnloaded;
 
   ResourceLoader(Iterable<String> urlList) :
-    _urlList = $(urlList).toReadOnlyCollection(),
-    _loadedEvent= new EventHandle<EventArgs>(),
-    _progressEvent = new EventHandle<EventArgs>(),
-    _resources = new Map<String, T>(),
-    _completed = new Set<String>();
+    _urlList = $(urlList).toReadOnlyCollection();
 
   int get completedCount => _completed.length;
 

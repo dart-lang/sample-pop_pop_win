@@ -12,12 +12,14 @@ class GameElement extends ElementParentImpl {
 
 
   final PCanvas _canvas = new PCanvas(0, 0);
-  final GameBackgroundElement _background;
-  final BoardElement _boardElement;
+  final GameBackgroundElement _background = new GameBackgroundElement();
+  final BoardElement _boardElement = new BoardElement();
   final ScoreElement _scoreElement = new ScoreElement();
-  final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
+  final TextureAnimationElement
+    _popAnimationLayer = new TextureAnimationElement(0, 0),
+    _dartAnimationLayer = new TextureAnimationElement(0, 0);
   final bool _targetMode;
-  final EventHandle _targetChanged;
+  final EventHandle _targetChanged = new EventHandle();
 
   int _targetX, _targetY;
   double _scale;
@@ -25,13 +27,7 @@ class GameElement extends ElementParentImpl {
 
   Game _game;
 
-  GameElement(this._targetMode) :
-    _background = new GameBackgroundElement(),
-    _boardElement = new BoardElement(),
-    _popAnimationLayer = new TextureAnimationElement(0, 0),
-    _dartAnimationLayer = new TextureAnimationElement(0, 0),
-    _targetChanged = new EventHandle(),
-    super(100, 100) {
+  GameElement(this._targetMode) : super(100, 100) {
     _canvas.registerParent(this);
     _canvas.addElement(_background);
     _canvas.addElement(_boardElement);

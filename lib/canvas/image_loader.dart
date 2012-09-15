@@ -1,9 +1,7 @@
 class ImageLoader extends ResourceLoader<ImageElement> {
-  final Set<String> _loaded;
+  final Set<String> _loaded = new Set<String>();
 
-  ImageLoader(Iterable<String> urls) :
-    _loaded = new Set<String>(),
-    super(urls);
+  ImageLoader(Iterable<String> urls) : super(urls);
 
   void _doLoad(String url) {
     assert(url != null);

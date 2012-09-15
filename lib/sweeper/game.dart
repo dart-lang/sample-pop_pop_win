@@ -1,8 +1,8 @@
 class Game {
   final Field field;
   final Array2d<SquareState> _states;
-  final EventHandle<EventArgs> _updatedEvent;
-  final EventHandle<GameState> _gameStateEvent;
+  final EventHandle<EventArgs> _updatedEvent = new EventHandle<EventArgs>();
+  final EventHandle<GameState> _gameStateEvent = new EventHandle<GameState>();
 
   GameState _state;
   int _minesLeft;
@@ -13,9 +13,7 @@ class Game {
   Game(Field field) :
     this.field = field,
     _state = GameState.reset,
-    _states = new Array2d<SquareState>(field.width, field.height, SquareState.hidden),
-    _updatedEvent = new EventHandle<EventArgs>(),
-    _gameStateEvent = new EventHandle<GameState>() {
+    _states = new Array2d<SquareState>(field.width, field.height, SquareState.hidden) {
     assert(field != null);
     _minesLeft = field.mineCount;
     _revealsLeft = field.length - field.mineCount;

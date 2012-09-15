@@ -1,8 +1,7 @@
 class TextureAnimationElement extends PElement {
-  final List<TextAniRequest> _requests;
+  final List<TextAniRequest> _requests = new List<TextAniRequest>();
 
   TextureAnimationElement(num width, num height) :
-    _requests = new List<TextAniRequest>(),
     super(width, height);
 
   void add(TextAniRequest request) {
