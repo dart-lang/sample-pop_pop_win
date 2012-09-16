@@ -10,7 +10,7 @@
 
 #source('../texture_data.dart');
 
-const String _fileName = '../canvas/art.png';
+const String _fileName = '../art.png';
 
 ImageLoader _imageLoader;
 List<String> _keys;
@@ -33,8 +33,8 @@ _doLoad() {
   __ctx = canvasElement.context2d;
 
   assert(_imageLoader != null);
-  final __textureImg  = _imageLoader.getResource('art.png');
-  assert(__textureImg  != null);
+  __textureImg  = _imageLoader.getResource(_fileName);
+  assert(__textureImg != null);
 
   _keys = new List<String>.from(_textures.getKeys());
 
