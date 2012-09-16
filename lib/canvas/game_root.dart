@@ -71,9 +71,6 @@ class GameRoot extends GameManager {
     // BUGBUG: really weird that pow to an int returns an int and not double :-/
     final prettyScale = pow(2.0, exp);
 
-    //print("Fix scale at    $theScale");
-    //print("Board scaled at $prettyScale");
-
     _gameElementTx.setToScale(prettyScale, prettyScale);
 
     final newDimensions = _gameElement.size * prettyScale;
