@@ -1,5 +1,11 @@
 class SquareElement extends PElement {
   static const int _size = 80;
+
+  static const List<String> _balloonBits = const['balloon_pieces_a.png',
+                                                 'balloon_pieces_b.png',
+                                                 'balloon_pieces_c.png',
+                                                 'balloon_pieces_d.png'];
+
   static const List<String> _numberMap = const["game_board_center",
                                                "number_one", "number_two",
                                                "number_three", "number_four",
@@ -25,10 +31,10 @@ class SquareElement extends PElement {
     var textureName;
     switch(_lastDrawingState) {
       case SquareState.hidden:
-        textureName = "balloon.png";
+        textureName = _getHiddenTexture();
         break;
       case SquareState.flagged:
-        textureName = 'balloon_tagged_!.png';
+        textureName = 'balloon_tagged_frozen.png';
         break;
       case SquareState.revealed:
         final prefix = _numberMap[_adjacentCount];
@@ -48,6 +54,16 @@ class SquareElement extends PElement {
   }
 
   String toString() => 'Square at [$x, $y]';
+
+  String _getHiddenTexture() {
+    assert(_lastDrawingState == SquareState.hidden);
+    if(_game.state == GameState.lost) {
+      final index = (x + y) % _balloonBits.length;
+      return _balloonBits[index];
+    } else {
+      return 'balloon.png';
+    }
+  }
 
   SquareState get _squareState => _game.getSquareState(x, y);
 

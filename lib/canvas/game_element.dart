@@ -129,7 +129,7 @@ class GameElement extends ElementParentImpl {
             final c = new Coordinate(t.Item1, t.Item2);
             return new Tuple(c, game.getSquareState(c.x, c.y));
           })
-          .where((t2) => t2.Item2 == SquareState.mine)
+          .where((t2) => t2.Item2 == SquareState.mine || t2.Item2 == SquareState.hidden)
           .select((t2) => t2.Item1)
           .toList();
     }
@@ -141,13 +141,14 @@ class GameElement extends ElementParentImpl {
       var delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
       delay += rnd.nextInt(10);
 
-      final ss = game.getSquareState(start.x, start.y);
+      final ss = game.getSquareState(c.x, c.y);
 
       String texturePrefix;
       int frameCount;
 
       switch(ss) {
         case SquareState.revealed:
+        case SquareState.hidden:
           texturePrefix = 'balloon_pop';
           frameCount = 29;
           break;
