@@ -7,9 +7,8 @@ class GameElement extends ElementParentImpl {
   static const _popAnimationHitFrame = 12;
 
   static const _dartAnimationOffset =
-      const Vector(-1065 + SquareElement._size ~/ 2,
-          -815 + SquareElement._size ~/ 2);
-
+      const Vector(-512 + 0.5 * SquareElement._size,
+          -388 + 0.5 * SquareElement._size);
 
   final PCanvas _canvas = new PCanvas(0, 0);
   final GameBackgroundElement _background = new GameBackgroundElement();
