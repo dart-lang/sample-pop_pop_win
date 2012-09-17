@@ -20,8 +20,12 @@ main() {
   _imageLoader.progress.add(_onLoaded);
   _imageLoader.load();
 
-  final audioContext = new AudioContext();
 
+  //
+  // This code might fail wonderfully on systems that don't support
+  // AudioContext
+  //
+  final audioContext = new AudioContext();
   _audioLoader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
   _audioLoader.loaded.add(_onLoaded);
   _audioLoader.progress.add(_onLoaded);
@@ -30,7 +34,7 @@ main() {
 
 void _onLoaded(args) {
   if(_imageLoader.state == ResourceLoader.StateLoaded &&
-      _audioLoader.state == ResourceLoader.StateLoaded) {
+      (_audioLoader == null || _audioLoader.state == ResourceLoader.StateLoaded)) {
 
     //
     // load textures
@@ -43,15 +47,17 @@ void _onLoaded(args) {
 
 
     //
-    // load audio
+    // load audio -- if we have a context
     //
-    var map = new Map<String, AudioBuffer>();
-    for(final name in _audioNames) {
-      final path = _getAudioPath(name);
-      map[name] = _audioLoader.getResource(path);
-    }
+    if(_audioLoader != null) {
+      var map = new Map<String, AudioBuffer>();
+      for(final name in _audioNames) {
+        final path = _getAudioPath(name);
+        map[name] = _audioLoader.getResource(path);
+      }
 
-    populateAudio(_audioLoader.context, map);
+      populateAudio(_audioLoader.context, map);
+    }
 
     // run the app
     _runSweeper();

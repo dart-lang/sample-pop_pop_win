@@ -38,12 +38,12 @@ void populateAudio(AudioContext context, Map<String, AudioBuffer> buffers) {
 }
 
 void playAudio(String name) {
-  final context = _audioContext;
-
-  var source = context.createBufferSource();
-  source.buffer = _buffers[name];
-  source.connect(context.destination, 0);
-  source.noteOn(0);
+  if(_audioContext != null) {
+    var source = _audioContext.createBufferSource();
+    source.buffer = _buffers[name];
+    source.connect(_audioContext.destination, 0);
+    source.noteOn(0);
+  }
 }
 
 void populateTextures(ImageElement imageElement, Map<String, TextureInput> textures) {
