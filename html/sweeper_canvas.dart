@@ -1,5 +1,4 @@
 #import('dart:html');
-#import('dart:json');
 
 #import('package:dartlib/dartlib.dart');
 #import('package:sweeper.dart/sweeper.dart');
@@ -39,7 +38,7 @@ void _onLoaded(args) {
     //
     // load textures
     //
-    final textures = _getTexturesFromJson(_artFramesJson);
+    final textures = _getTextures();
     final textureImg = _imageLoader.getResource(_textuerName);
     assert(textureImg != null);
 

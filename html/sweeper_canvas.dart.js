@@ -2871,366 +2871,6 @@ $$._Timer = {"":
 }
 };
 
-$$._JsonParser = {"":
- ["json", "length?", "position"],
- "super": "Object",
- parseToplevel$0: function() {
-  var result = this.parseValue$0();
-  if (!(this.token$0() == null))
-    this.error$1('Junk at the end of JSON input');
-  return result;
-},
- parseValue$0: function() {
-  var token = this.token$0();
-  if (token == null)
-    this.error$1('Nothing to parse');
-  switch (token) {
-    case 34:
-      return this.parseString$0();
-    case 45:
-      return this.parseNumber$0();
-    case 110:
-      return this.expectKeyword$2('null', null);
-    case 102:
-      return this.expectKeyword$2('false', false);
-    case 116:
-      return this.expectKeyword$2('true', true);
-    case 123:
-      return this.parseObject$0();
-    case 91:
-      return this.parseList$0();
-    default:
-      this.error$1('Unexpected token');
-  }
-},
- expectKeyword$2: function(word, value) {
-  for (var t1 = word.length, i = 0; i < t1; ++i) {
-    if (!$.eqB(this.char$0(), $.charCodeAt(word, i)))
-      this.error$1('Expected keyword \'' + word + '\'');
-    this.position = $.add(this.position, 1);
-  }
-  return value;
-},
- parseObject$0: function() {
-  var object = $.makeLiteralMap([]);
-  if (typeof object !== 'object' || object === null || (object.constructor !== Array || !!object.immutable$list) && !object.is$JavaScriptIndexingBehavior())
-    return this.parseObject$0$bailout(1, object);
-  this.position = $.add(this.position, 1);
-  if (this.isToken$1(125) !== true) {
-    for (; true;) {
-      var key = this.parseString$0();
-      if (this.isToken$1(58) !== true)
-        this.error$1('Expected \':\' when parsing object');
-      this.position = $.add(this.position, 1);
-      var t1 = this.parseValue$0();
-      if (key !== (key | 0))
-        throw $.iae(key);
-      if (key < 0 || key >= object.length)
-        throw $.ioore(key);
-      object[key] = t1;
-      if (this.isToken$1(44) !== true)
-        break;
-      this.position = $.add(this.position, 1);
-    }
-    if (this.isToken$1(125) !== true)
-      this.error$1('Expected \'}\' at end of object');
-  }
-  this.position = $.add(this.position, 1);
-  return object;
-},
- parseObject$0$bailout: function(state, object) {
-  this.position = $.add(this.position, 1);
-  if (this.isToken$1(125) !== true) {
-    for (; true;) {
-      var key = this.parseString$0();
-      if (this.isToken$1(58) !== true)
-        this.error$1('Expected \':\' when parsing object');
-      this.position = $.add(this.position, 1);
-      $.indexSet(object, key, this.parseValue$0());
-      if (this.isToken$1(44) !== true)
-        break;
-      this.position = $.add(this.position, 1);
-    }
-    if (this.isToken$1(125) !== true)
-      this.error$1('Expected \'}\' at end of object');
-  }
-  this.position = $.add(this.position, 1);
-  return object;
-},
- parseList$0: function() {
-  var list = [];
-  this.position = $.add(this.position, 1);
-  if (this.isToken$1(93) !== true) {
-    for (; true;) {
-      list.push(this.parseValue$0());
-      if (this.isToken$1(44) !== true)
-        break;
-      this.position = $.add(this.position, 1);
-    }
-    if (this.isToken$1(93) !== true)
-      this.error$1('Expected \']\' at end of list');
-  }
-  this.position = $.add(this.position, 1);
-  return list;
-},
- parseString$0: function() {
-  if (this.isToken$1(34) !== true)
-    this.error$1('Expected string literal');
-  this.position = $.add(this.position, 1);
-  var charCodes = $.ListImplementation_List(null, 'int');
-  $.setRuntimeTypeInfo(charCodes, { 'E': 'int' });
-  for (var t1 = this.json; true;) {
-    var c = this.char$0();
-    if ($.eqB(c, 34)) {
-      this.position = $.add(this.position, 1);
-      break;
-    }
-    if ($.eqB(c, 92)) {
-      this.position = $.add(this.position, 1);
-      if ($.eqB(this.position, $.get$length(this)))
-        this.error$1('\\ at the end of input');
-      switch (this.char$0()) {
-        case 34:
-          c = 34;
-          break;
-        case 92:
-          c = 92;
-          break;
-        case 47:
-          c = 47;
-          break;
-        case 98:
-          c = 8;
-          break;
-        case 110:
-          c = 10;
-          break;
-        case 114:
-          c = 13;
-          break;
-        case 102:
-          c = 12;
-          break;
-        case 116:
-          c = 9;
-          break;
-        case 117:
-          if ($.gtB($.add(this.position, 5), $.get$length(this)))
-            this.error$1('Invalid unicode esacape sequence');
-          var codeString = $.substring$2(t1, $.add(this.position, 1), $.add(this.position, 5));
-          try {
-            c = $.parseInt('0x' + $.S(codeString));
-          } catch (exception) {
-            $.unwrapException(exception);
-            this.error$1('Invalid unicode esacape sequence');
-          }
-
-          this.position = $.add(this.position, 4);
-          break;
-        default:
-          this.error$1('Invalid esacape sequence in string literal');
-      }
-    }
-    charCodes.push(c);
-    this.position = $.add(this.position, 1);
-  }
-  return $.StringImplementation_String$fromCharCodes(charCodes);
-},
- parseNumber$0: function() {
-  if (this.isToken$1(45) !== true)
-    this.error$1('Expected number literal');
-  var startPos = this.position;
-  var char$ = this.char$0();
-  if (char$ === 45)
-    char$ = this.nextChar$0();
-  if (char$ === 48)
-    char$ = this.nextChar$0();
-  else if (this.isDigit$1(char$) === true) {
-    char$ = this.nextChar$0();
-    for (; this.isDigit$1(char$) === true;)
-      char$ = this.nextChar$0();
-  } else
-    this.error$1('Expected digit when parsing number');
-  if (char$ === 46) {
-    char$ = this.nextChar$0();
-    if (this.isDigit$1(char$) === true) {
-      char$ = this.nextChar$0();
-      for (; this.isDigit$1(char$) === true;)
-        char$ = this.nextChar$0();
-      var isInt = false;
-    } else {
-      this.error$1('Expected digit following comma');
-      isInt = true;
-    }
-  } else
-    isInt = true;
-  if (char$ === 101 || char$ === 69) {
-    char$ = this.nextChar$0();
-    if (char$ === 45 || char$ === 43)
-      char$ = this.nextChar$0();
-    if (this.isDigit$1(char$) === true) {
-      char$ = this.nextChar$0();
-      for (; this.isDigit$1(char$) === true;)
-        char$ = this.nextChar$0();
-      isInt = false;
-    } else
-      this.error$1('Expected digit following \'e\' or \'E\'');
-  }
-  var number = $.substring$2(this.json, startPos, this.position);
-  if (isInt)
-    return $.parseInt(number);
-  else
-    return $.parseDouble(number);
-},
- isDigit$1: function(char$) {
-  if (typeof char$ !== 'number')
-    return this.isDigit$1$bailout(1, char$);
-  return char$ >= 48 && char$ <= 57;
-},
- isDigit$1$bailout: function(state, char$) {
-  return $.geB(char$, 48) && $.leB(char$, 57);
-},
- isToken$1: function(tokenKind) {
-  var t1 = this.token$0();
-  if (typeof t1 !== 'number')
-    return this.isToken$1$bailout(1, tokenKind, t1);
-  return t1 === tokenKind;
-},
- isToken$1$bailout: function(state, tokenKind, t1) {
-  return $.eq(t1, tokenKind);
-},
- char$0: function() {
-  var t1 = this.position;
-  if (typeof t1 !== 'number')
-    return this.char$0$bailout(1, t1, 0);
-  var t3 = $.get$length(this);
-  if (typeof t3 !== 'number')
-    return this.char$0$bailout(2, t1, t3);
-  if (t1 >= t3)
-    this.error$1('Unexpected end of JSON stream');
-  return $.charCodeAt(this.json, this.position);
-},
- char$0$bailout: function(state, env0, env1) {
-  switch (state) {
-    case 1:
-      t1 = env0;
-      break;
-    case 2:
-      t1 = env0;
-      t3 = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var t1 = this.position;
-    case 1:
-      state = 0;
-      var t3 = $.get$length(this);
-    case 2:
-      state = 0;
-      if ($.geB(t1, t3))
-        this.error$1('Unexpected end of JSON stream');
-      return $.charCodeAt(this.json, this.position);
-  }
-},
- nextChar$0: function() {
-  var t1 = this.position;
-  if (typeof t1 !== 'number')
-    return this.nextChar$0$bailout(1, t1, 0);
-  this.position = t1 + 1;
-  t1 = this.position;
-  if (typeof t1 !== 'number')
-    return this.nextChar$0$bailout(2, t1, 0);
-  var t3 = $.get$length(this);
-  if (typeof t3 !== 'number')
-    return this.nextChar$0$bailout(3, t1, t3);
-  if (t1 >= t3)
-    return 0;
-  return $.charCodeAt(this.json, this.position);
-},
- nextChar$0$bailout: function(state, env0, env1) {
-  switch (state) {
-    case 1:
-      t1 = env0;
-      break;
-    case 2:
-      t1 = env0;
-      break;
-    case 3:
-      t1 = env0;
-      t3 = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var t1 = this.position;
-    case 1:
-      state = 0;
-      this.position = $.add(t1, 1);
-      t1 = this.position;
-    case 2:
-      state = 0;
-      var t3 = $.get$length(this);
-    case 3:
-      state = 0;
-      if ($.geB(t1, t3))
-        return 0;
-      return $.charCodeAt(this.json, this.position);
-  }
-},
- token$0: function() {
-  for (var t1 = this.json; true;) {
-    if ($.geB(this.position, $.get$length(this)))
-      return;
-    var char$ = $.charCodeAt(t1, this.position);
-    var token = $.index($._JsonParser_tokens, char$);
-    if (token === 32) {
-      this.position = $.add(this.position, 1);
-      continue;
-    }
-    if (token == null)
-      return 0;
-    return token;
-  }
-},
- error$1: function(message) {
-  throw $.$$throw(message);
-},
- get$error: function() { return new $.BoundClosure(this, 'error$1'); },
- _JsonParser$1: function(json) {
-  if (!($._JsonParser_tokens == null))
-    return;
-  var t1 = $.ListImplementation_List(126, 'int');
-  $.setRuntimeTypeInfo(t1, { 'E': 'int' });
-  $._JsonParser_tokens = t1;
-  $.indexSet($._JsonParser_tokens, 9, 32);
-  $.indexSet($._JsonParser_tokens, 10, 32);
-  $.indexSet($._JsonParser_tokens, 13, 32);
-  $.indexSet($._JsonParser_tokens, 32, 32);
-  $.indexSet($._JsonParser_tokens, 48, 45);
-  $.indexSet($._JsonParser_tokens, 49, 45);
-  $.indexSet($._JsonParser_tokens, 50, 45);
-  $.indexSet($._JsonParser_tokens, 51, 45);
-  $.indexSet($._JsonParser_tokens, 52, 45);
-  $.indexSet($._JsonParser_tokens, 53, 45);
-  $.indexSet($._JsonParser_tokens, 54, 45);
-  $.indexSet($._JsonParser_tokens, 55, 45);
-  $.indexSet($._JsonParser_tokens, 56, 45);
-  $.indexSet($._JsonParser_tokens, 57, 45);
-  $.indexSet($._JsonParser_tokens, 45, 45);
-  $.indexSet($._JsonParser_tokens, 123, 123);
-  $.indexSet($._JsonParser_tokens, 125, 125);
-  $.indexSet($._JsonParser_tokens, 91, 91);
-  $.indexSet($._JsonParser_tokens, 93, 93);
-  $.indexSet($._JsonParser_tokens, 34, 34);
-  $.indexSet($._JsonParser_tokens, 58, 58);
-  $.indexSet($._JsonParser_tokens, 44, 44);
-  $.indexSet($._JsonParser_tokens, 110, 110);
-  $.indexSet($._JsonParser_tokens, 116, 116);
-  $.indexSet($._JsonParser_tokens, 102, 102);
-}
-};
-
 $$.DisposableImpl = {"":
  [],
  "super": "Object"
@@ -6454,7 +6094,7 @@ $$.Maps__emitMap_anon = {"":
 }
 };
 
-$$._getTexturesFromJson_anon = {"":
+$$._getTextures_anon = {"":
  ["frames_0"],
  "super": "Closure",
  call$2: function(key, value) {
@@ -7418,13 +7058,6 @@ $.populateAudio = function(context, buffers) {
   $._buffers = buffers;
 };
 
-$._getTexturesFromJson = function(json) {
-  var roundTrip = $.JSON_parse(json);
-  var frames$ = $.makeLiteralMap([]);
-  $.forEach(roundTrip, new $._getTexturesFromJson_anon(frames$));
-  return frames$;
-};
-
 $.ListIterator$ = function(list, T) {
   var t1 = new $.ListIterator(0, list);
   $.setRuntimeTypeInfo(t1, { 'T': T });
@@ -7433,12 +7066,6 @@ $.ListIterator$ = function(list, T) {
 
 $._JavaScriptAudioNodeEventsImpl$ = function(_ptr) {
   return new $._JavaScriptAudioNodeEventsImpl(_ptr);
-};
-
-$._JsonParser$ = function(json) {
-  var t1 = new $._JsonParser(json, json.length, 0);
-  t1._JsonParser$1(json);
-  return t1;
 };
 
 $.TextureInput$ = function(name$, frame, offset, rotated, sourceColorRect, sourceSize) {
@@ -7512,7 +7139,7 @@ $._onLoaded = function(args) {
   else
     t1 = false;
   if (t1) {
-    var textures = $._getTexturesFromJson('{"background_side_left.png":{"frame":"{{1026,1},{352,672}}","offset":"{0,0}","rotated":true,"sourceColorRect":"{{0,0},{352,672}}","sourceSize":"{352,672}"},"background_top_left.png":{"frame":"{{1,1},{1024,96}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{1024,96}}","sourceSize":"{1024,96}"},"balloon.png":{"frame":"{{1608,1500},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_explode_0000.png":{"frame":"{{1608,1500},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_explode_0001.png":{"frame":"{{378,1518},{82,86}}","offset":"{0,-2}","rotated":false,"sourceColorRect":"{{87,87},{82,86}}","sourceSize":"{256,256}"},"balloon_explode_0002.png":{"frame":"{{809,683},{188,188}}","offset":"{9,9}","rotated":false,"sourceColorRect":"{{43,25},{188,188}}","sourceSize":"{256,256}"},"balloon_explode_0003.png":{"frame":"{{1213,1192},{216,222}}","offset":"{3,-2}","rotated":true,"sourceColorRect":"{{23,19},{216,222}}","sourceSize":"{256,256}"},"balloon_explode_0004.png":{"frame":"{{1691,825},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0005.png":{"frame":"{{1235,810},{226,216}}","offset":"{2,3}","rotated":false,"sourceColorRect":"{{17,17},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0006.png":{"frame":"{{990,1029},{222,218}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,15},{222,218}}","sourceSize":"{256,256}"},"balloon_explode_0007.png":{"frame":"{{1448,1162},{222,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{16,16},{222,216}}","sourceSize":"{256,256}"},"balloon_explode_0008.png":{"frame":"{{998,812},{224,216}}","offset":"{-1,4}","rotated":false,"sourceColorRect":"{{15,16},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0009.png":{"frame":"{{1689,1042},{224,216}}","offset":"{-1,5}","rotated":false,"sourceColorRect":"{{15,15},{224,216}}","sourceSize":"{256,256}"},"balloon_explode_0010.png":{"frame":"{{1464,808},{226,216}}","offset":"{-2,5}","rotated":false,"sourceColorRect":"{{13,15},{226,216}}","sourceSize":"{256,256}"},"balloon_explode_0011.png":{"frame":"{{1693,600},{226,224}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{14,14},{226,224}}","sourceSize":"{256,256}"},"balloon_explode_0012.png":{"frame":"{{1464,585},{228,222}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,15},{228,222}}","sourceSize":"{256,256}"},"balloon_explode_0013.png":{"frame":"{{1235,585},{228,224}}","offset":"{-2,3}","rotated":false,"sourceColorRect":"{{12,13},{228,224}}","sourceSize":"{256,256}"},"balloon_explode_0014.png":{"frame":"{{1698,373},{228,226}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{12,13},{228,226}}","sourceSize":"{256,256}"},"balloon_explode_0015.png":{"frame":"{{234,942},{230,228}}","offset":"{-2,2}","rotated":false,"sourceColorRect":"{{11,12},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0016.png":{"frame":"{{576,842},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0017.png":{"frame":"{{1004,581},{230,230}}","offset":"{-2,1}","rotated":false,"sourceColorRect":"{{11,12},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0018.png":{"frame":"{{1,882},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0019.png":{"frame":"{{1238,354},{230,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{12,13},{230,230}}","sourceSize":"{256,256}"},"balloon_explode_0020.png":{"frame":"{{234,711},{232,230}}","offset":"{-1,0}","rotated":false,"sourceColorRect":"{{11,13},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0021.png":{"frame":"{{1005,354},{232,226}}","offset":"{-1,2}","rotated":false,"sourceColorRect":"{{11,13},{232,226}}","sourceSize":"{256,256}"},"balloon_explode_0022.png":{"frame":"{{1,651},{232,230}}","offset":"{-1,1}","rotated":false,"sourceColorRect":"{{11,12},{232,230}}","sourceSize":"{256,256}"},"balloon_explode_0023.png":{"frame":"{{1469,354},{230,228}}","offset":"{0,1}","rotated":true,"sourceColorRect":"{{13,13},{230,228}}","sourceSize":"{256,256}"},"balloon_explode_0024.png":{"frame":"{{814,319},{190,214}}","offset":"{-10,4}","rotated":false,"sourceColorRect":"{{23,17},{190,214}}","sourceSize":"{256,256}"},"balloon_pieces_a.png":{"frame":"{{1527,1468},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_pieces_b.png":{"frame":"{{1446,1442},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_pieces_c.png":{"frame":"{{1365,1442},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_pieces_d.png":{"frame":"{{244,1894},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_pop_0000.png":{"frame":"{{1608,1500},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{88,88},{80,80}}","sourceSize":"{256,256}"},"balloon_pop_0001.png":{"frame":"{{1,1673},{142,114}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{60,66},{142,114}}","sourceSize":"{256,256}"},"balloon_pop_0002.png":{"frame":"{{1,1113},{230,184}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{16,31},{230,184}}","sourceSize":"{256,256}"},"balloon_pop_0003.png":{"frame":"{{576,655},{232,186}}","offset":"{3,5}","rotated":false,"sourceColorRect":"{{15,30},{232,186}}","sourceSize":"{256,256}"},"balloon_pop_0004.png":{"frame":"{{240,345},{236,186}}","offset":"{2,5}","rotated":false,"sourceColorRect":"{{12,30},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0005.png":{"frame":"{{577,285},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0006.png":{"frame":"{{577,98},{236,186}}","offset":"{2,4}","rotated":false,"sourceColorRect":"{{12,31},{236,186}}","sourceSize":"{256,256}"},"balloon_pop_0007.png":{"frame":"{{1,285},{238,184}}","offset":"{1,3}","rotated":false,"sourceColorRect":"{{10,33},{238,184}}","sourceSize":"{256,256}"},"balloon_pop_0008.png":{"frame":"{{576,472},{236,182}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,35},{236,182}}","sourceSize":"{256,256}"},"balloon_pop_0009.png":{"frame":"{{1,470},{236,180}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,36},{236,180}}","sourceSize":"{256,256}"},"balloon_pop_0010.png":{"frame":"{{238,532},{236,178}}","offset":"{1,2}","rotated":false,"sourceColorRect":"{{11,37},{236,178}}","sourceSize":"{256,256}"},"balloon_pop_0011.png":{"frame":"{{467,885},{84,106}}","offset":"{-2,-4}","rotated":true,"sourceColorRect":"{{84,79},{84,106}}","sourceSize":"{256,256}"},"balloon_pop_0012.png":{"frame":"{{463,1415},{88,112}}","offset":"{-3,-4}","rotated":false,"sourceColorRect":"{{81,76},{88,112}}","sourceSize":"{256,256}"},"balloon_pop_0013.png":{"frame":"{{1808,1415},{94,118}}","offset":"{-3,-4}","rotated":false,"sourceColorRect":"{{78,73},{94,118}}","sourceSize":"{256,256}"},"balloon_pop_0014.png":{"frame":"{{475,595},{100,124}}","offset":"{-4,-4}","rotated":false,"sourceColorRect":"{{74,70},{100,124}}","sourceSize":"{256,256}"},"balloon_pop_0015.png":{"frame":"{{1914,1229},{104,130}}","offset":"{-4,-4}","rotated":true,"sourceColorRect":"{{72,67},{104,130}}","sourceSize":"{256,256}"},"balloon_pop_0016.png":{"frame":"{{465,970},{110,136}}","offset":"{-5,-4}","rotated":false,"sourceColorRect":"{{68,64},{110,136}}","sourceSize":"{256,256}"},"balloon_pop_0017.png":{"frame":"{{1671,1259},{114,140}}","offset":"{-5,-4}","rotated":true,"sourceColorRect":"{{66,62},{114,140}}","sourceSize":"{256,256}"},"balloon_pop_0018.png":{"frame":"{{1927,534},{120,144}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{62,60},{120,144}}","sourceSize":"{256,256}"},"balloon_pop_0019.png":{"frame":"{{1920,772},{124,148}}","offset":"{-6,-4}","rotated":false,"sourceColorRect":"{{60,58},{124,148}}","sourceSize":"{256,256}"},"balloon_pop_0020.png":{"frame":"{{1918,921},{128,152}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{57,56},{128,152}}","sourceSize":"{256,256}"},"balloon_pop_0021.png":{"frame":"{{1914,1074},{130,154}}","offset":"{-7,-4}","rotated":false,"sourceColorRect":"{{56,55},{130,154}}","sourceSize":"{256,256}"},"balloon_pop_0022.png":{"frame":"{{223,1312},{134,158}}","offset":"{-8,-4}","rotated":true,"sourceColorRect":"{{53,53},{134,158}}","sourceSize":"{256,256}"},"balloon_pop_0023.png":{"frame":"{{575,1234},{136,160}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{52,51},{136,160}}","sourceSize":"{256,256}"},"balloon_pop_0024.png":{"frame":"{{807,1039},{138,162}}","offset":"{-8,-3}","rotated":true,"sourceColorRect":"{{51,50},{138,162}}","sourceSize":"{256,256}"},"balloon_pop_0025.png":{"frame":"{{232,1171},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0026.png":{"frame":"{{806,1178},{140,160}}","offset":"{-9,-3}","rotated":true,"sourceColorRect":"{{49,51},{140,160}}","sourceSize":"{256,256}"},"balloon_pop_0027.png":{"frame":"{{1,1298},{142,158}}","offset":"{-10,-3}","rotated":true,"sourceColorRect":"{{47,52},{142,158}}","sourceSize":"{256,256}"},"balloon_pop_0028.png":{"frame":"{{1,1441},{136,148}}","offset":"{-11,-2}","rotated":true,"sourceColorRect":"{{49,56},{136,148}}","sourceSize":"{256,256}"},"balloon_tagged_!.png":{"frame":"{{1284,1409},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_bomb.png":{"frame":"{{244,1813},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_frozen.png":{"frame":"{{336,1759},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_question_mark.png":{"frame":"{{455,1754},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"balloon_tagged_x.png":{"frame":"{{542,1707},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"button_blank.png":{"frame":"{{1699,94},{294,92}}","offset":"{1,0}","rotated":false,"sourceColorRect":"{{2,2},{294,92}}","sourceSize":"{296,96}"},"button_blank_clicked.png":{"frame":"{{1699,280},{292,92}}","offset":"{2,-1}","rotated":false,"sourceColorRect":"{{4,3},{292,92}}","sourceSize":"{296,96}"},"button_new_game.png":{"frame":"{{1699,1},{294,92}}","offset":"{1,0}","rotated":false,"sourceColorRect":"{{2,2},{294,92}}","sourceSize":"{296,96}"},"button_new_game_clicked.png":{"frame":"{{1699,187},{292,92}}","offset":"{2,-1}","rotated":false,"sourceColorRect":"{{4,3},{292,92}}","sourceSize":"{296,96}"},"crater_a.png":{"frame":"{{576,1073},{160,160}}","offset":"{0,1}","rotated":false,"sourceColorRect":"{{48,47},{160,160}}","sourceSize":"{256,256}"},"dart_fly_0000.png":{"frame":"{{2002,1},{1,1}}","offset":"{-511.5,383.5}","rotated":false,"sourceColorRect":"{{0,0},{1,1}}","sourceSize":"{1024,768}"},"dart_fly_0001.png":{"frame":"{{467,720},{108,164}}","offset":"{411,-183}","rotated":false,"sourceColorRect":"{{869,485},{108,164}}","sourceSize":"{1024,768}"},"dart_fly_0002.png":{"frame":"{{1,98},{186,288}}","offset":"{375,-145}","rotated":true,"sourceColorRect":"{{794,385},{186,288}}","sourceSize":"{1024,768}"},"dart_fly_0003.png":{"frame":"{{290,98},{246,286}}","offset":"{347,-76}","rotated":true,"sourceColorRect":"{{736,317},{246,286}}","sourceSize":"{1024,768}"},"dart_fly_0004.png":{"frame":"{{814,98},{210,220}}","offset":"{283,3}","rotated":false,"sourceColorRect":"{{690,271},{210,220}}","sourceSize":"{1024,768}"},"dart_fly_0005.png":{"frame":"{{807,872},{182,166}}","offset":"{232,58}","rotated":false,"sourceColorRect":"{{653,243},{182,166}}","sourceSize":"{1024,768}"},"dart_fly_0006.png":{"frame":"{{1927,373},{160,120}}","offset":"{190,93}","rotated":true,"sourceColorRect":"{{622,231},{160,120}}","sourceSize":"{1024,768}"},"dart_fly_0007.png":{"frame":"{{477,345},{142,98}}","offset":"{156,124}","rotated":true,"sourceColorRect":"{{597,211},{142,98}}","sourceSize":"{1024,768}"},"dart_fly_0008.png":{"frame":"{{1920,679},{126,92}}","offset":"{127,149}","rotated":false,"sourceColorRect":"{{576,189},{126,92}}","sourceSize":"{1024,768}"},"dart_fly_0009.png":{"frame":"{{461,1528},{112,86}}","offset":"{102,162}","rotated":true,"sourceColorRect":"{{558,179},{112,86}}","sourceSize":"{1024,768}"},"dart_fly_0010.png":{"frame":"{{1812,1259},{98,94}}","offset":"{82,160}","rotated":false,"sourceColorRect":"{{545,177},{98,94}}","sourceSize":"{1024,768}"},"dart_fly_0011.png":{"frame":"{{465,1107},{86,110}}","offset":"{65,144}","rotated":true,"sourceColorRect":"{{534,185},{86,110}}","sourceSize":"{1024,768}"},"dart_fly_0012.png":{"frame":"{{1078,1406},{76,124}}","offset":"{50,123}","rotated":true,"sourceColorRect":"{{524,199},{76,124}}","sourceSize":"{1024,768}"},"dart_fly_0013.png":{"frame":"{{737,1188},{66,134}}","offset":"{38,96}","rotated":false,"sourceColorRect":"{{517,221},{66,134}}","sourceSize":"{1024,768}"},"dart_fly_0014.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0015.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0016.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0017.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0018.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0019.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0020.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0021.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0022.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0023.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0024.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0025.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0026.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0027.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0028.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0029.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0030.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0031.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0032.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0033.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0034.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0035.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0036.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0037.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0038.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0039.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0040.png":{"frame":"{{799,1382},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0041.png":{"frame":"{{941,1374},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0042.png":{"frame":"{{736,1323},{62,136}}","offset":"{25,68}","rotated":false,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0043.png":{"frame":"{{804,1319},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0044.png":{"frame":"{{967,1311},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0045.png":{"frame":"{{967,1248},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0046.png":{"frame":"{{1666,1437},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0047.png":{"frame":"{{1436,1379},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0048.png":{"frame":"{{1903,1523},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0049.png":{"frame":"{{1903,1460},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0050.png":{"frame":"{{1671,1374},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0051.png":{"frame":"{{1911,1397},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0052.png":{"frame":"{{1911,1334},{62,136}}","offset":"{25,68}","rotated":true,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0053.png":{"frame":"{{160,1435},{62,136}}","offset":"{25,68}","rotated":false,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0054.png":{"frame":"{{160,1298},{62,136}}","offset":"{25,68}","rotated":false,"sourceColorRect":"{{506,248},{62,136}}","sourceSize":"{1024,768}"},"dart_fly_0055.png":{"frame":"{{2000,1},{1,1}}","offset":"{-511.5,383.5}","rotated":false,"sourceColorRect":"{{0,0},{1,1}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0000.png":{"frame":"{{1998,1},{1,1}}","offset":"{-511.5,383.5}","rotated":false,"sourceColorRect":"{{0,0},{1,1}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0001.png":{"frame":"{{1996,1},{1,1}}","offset":"{-511.5,383.5}","rotated":false,"sourceColorRect":"{{0,0},{1,1}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0002.png":{"frame":"{{1,1578},{94,146}}","offset":"{-72,-140}","rotated":true,"sourceColorRect":"{{393,451},{94,146}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0003.png":{"frame":"{{1462,1025},{136,226}}","offset":"{-69,-111}","rotated":true,"sourceColorRect":"{{375,382},{136,226}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0004.png":{"frame":"{{1223,1027},{164,224}}","offset":"{-75,-58}","rotated":true,"sourceColorRect":"{{355,330},{164,224}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0005.png":{"frame":"{{813,534},{148,190}}","offset":"{-76,-7}","rotated":true,"sourceColorRect":"{{362,296},{148,190}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0006.png":{"frame":"{{223,1447},{136,154}}","offset":"{-75,34}","rotated":true,"sourceColorRect":"{{369,273},{136,154}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0007.png":{"frame":"{{936,1437},{120,118}}","offset":"{-74,64}","rotated":false,"sourceColorRect":"{{378,261},{120,118}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0008.png":{"frame":"{{477,488},{106,98}}","offset":"{-71,86}","rotated":true,"sourceColorRect":"{{388,249},{106,98}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0009.png":{"frame":"{{1104,1331},{74,90}}","offset":"{-65,107}","rotated":true,"sourceColorRect":"{{410,232},{74,90}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0010.png":{"frame":"{{1104,1248},{92,82}}","offset":"{-62,119}","rotated":false,"sourceColorRect":"{{404,224},{92,82}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0011.png":{"frame":"{{1573,1379},{92,88}}","offset":"{-56,117}","rotated":false,"sourceColorRect":"{{410,223},{92,88}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0012.png":{"frame":"{{464,1328},{86,102}}","offset":"{-49,102}","rotated":true,"sourceColorRect":"{{420,231},{86,102}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0013.png":{"frame":"{{144,1691},{78,114}}","offset":"{-40,83}","rotated":false,"sourceColorRect":"{{433,244},{78,114}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0014.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0015.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0016.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0017.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0018.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0019.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0020.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0021.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0022.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0023.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0024.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0025.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0026.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0027.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0028.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0029.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0030.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0031.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0032.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0033.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0034.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0035.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0036.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0037.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0038.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0039.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0040.png":{"frame":"{{552,1446},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0041.png":{"frame":"{{223,1584},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0042.png":{"frame":"{{567,1371},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0043.png":{"frame":"{{799,1445},{74,120}}","offset":"{-31,60}","rotated":true,"sourceColorRect":"{{444,264},{74,120}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0044.png":{"frame":"{{673,1460},{74,118}}","offset":"{-31,59}","rotated":true,"sourceColorRect":"{{444,266},{74,118}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0045.png":{"frame":"{{223,1659},{72,118}}","offset":"{-31,59}","rotated":true,"sourceColorRect":"{{445,266},{72,118}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0046.png":{"frame":"{{552,1521},{72,118}}","offset":"{-31,59}","rotated":true,"sourceColorRect":"{{445,266},{72,118}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0047.png":{"frame":"{{150,1572},{72,118}}","offset":"{-31,59}","rotated":false,"sourceColorRect":"{{445,266},{72,118}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0048.png":{"frame":"{{344,1605},{72,116}}","offset":"{-31,58}","rotated":true,"sourceColorRect":"{{445,268},{72,116}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0049.png":{"frame":"{{393,1288},{70,116}}","offset":"{-30,58}","rotated":false,"sourceColorRect":"{{447,268},{70,116}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0050.png":{"frame":"{{393,1171},{70,116}}","offset":"{-31,58}","rotated":false,"sourceColorRect":"{{446,268},{70,116}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0051.png":{"frame":"{{737,1073},{68,114}}","offset":"{-30,57}","rotated":false,"sourceColorRect":"{{448,270},{68,114}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0052.png":{"frame":"{{464,1194},{66,110}}","offset":"{-30,55}","rotated":true,"sourceColorRect":"{{449,274},{66,110}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0053.png":{"frame":"{{464,1261},{66,104}}","offset":"{-30,52}","rotated":true,"sourceColorRect":"{{449,280},{66,104}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0054.png":{"frame":"{{1812,1354},{60,98}}","offset":"{-28,49}","rotated":true,"sourceColorRect":"{{454,286},{60,98}}","sourceSize":"{1024,768}"},"dart_fly_shadow_0055.png":{"frame":"{{1994,1},{1,1}}","offset":"{-511.5,383.5}","rotated":false,"sourceColorRect":"{{0,0},{1,1}}","sourceSize":"{1024,768}"},"game_board_center.png":{"frame":"{{661,1648},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"game_board_corner_bottom_left.png":{"frame":"{{548,1594},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_bottom_right.png":{"frame":"{{671,1535},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_left.png":{"frame":"{{792,1520},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_corner_top_right.png":{"frame":"{{1,1788},{112,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,112}}","sourceSize":"{112,112}"},"game_board_side_bottom.png":{"frame":"{{461,1641},{80,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"game_board_side_left.png":{"frame":"{{223,1732},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_right.png":{"frame":"{{342,1678},{112,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{112,80}}","sourceSize":"{112,80}"},"game_board_side_top.png":{"frame":"{{382,1405},{80,112}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,112}}","sourceSize":"{80,112}"},"number_eight.png":{"frame":"{{784,1633},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_five.png":{"frame":"{{905,1556},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_four.png":{"frame":"{{1057,1483},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_one.png":{"frame":"{{1203,1409},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_seven.png":{"frame":"{{163,1887},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_six.png":{"frame":"{{82,1901},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_three.png":{"frame":"{{1,1901},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"},"number_two.png":{"frame":"{{114,1806},{80,80}}","offset":"{0,0}","rotated":false,"sourceColorRect":"{{0,0},{80,80}}","sourceSize":"{80,80}"}}');
+    var textures = $._getTextures();
     $.populateTextures($._imageLoader.getResource$1('art.png'), textures);
     if (!($._audioLoader == null)) {
       var map = $.HashMapImplementation$('String', 'AudioBuffer');
@@ -7747,10 +7374,6 @@ $.dynamicBind = function(obj, name$, methods, arguments$) {
   return method.apply(obj, arguments$);
 };
 
-$.JSON_parse = function(json) {
-  return $._JsonParser$(json).parseToplevel$0();
-};
-
 $.regExpMakeNative = function(regExp, global) {
   var pattern = regExp.get$pattern();
   var multiLine = regExp.get$multiLine();
@@ -7794,6 +7417,13 @@ $.Primitives_getYear = function(receiver) {
 
 $.Primitives_getHours = function(receiver) {
   return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCHours() : $.Primitives_lazyAsJsDate(receiver).getHours();
+};
+
+$._getTextures = function() {
+  var artFramesJson = $.makeLiteralMap(['background_side_left.png', $.makeLiteralMap(['frame', '{{1026,1},{352,672}}', 'offset', '{0,0}', 'rotated', true, 'sourceColorRect', '{{0,0},{352,672}}', 'sourceSize', '{352,672}']), 'background_top_left.png', $.makeLiteralMap(['frame', '{{1,1},{1024,96}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{1024,96}}', 'sourceSize', '{1024,96}']), 'balloon.png', $.makeLiteralMap(['frame', '{{1608,1500},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_explode_0000.png', $.makeLiteralMap(['frame', '{{1608,1500},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{88,88},{80,80}}', 'sourceSize', '{256,256}']), 'balloon_explode_0001.png', $.makeLiteralMap(['frame', '{{378,1518},{82,86}}', 'offset', '{0,-2}', 'rotated', false, 'sourceColorRect', '{{87,87},{82,86}}', 'sourceSize', '{256,256}']), 'balloon_explode_0002.png', $.makeLiteralMap(['frame', '{{809,683},{188,188}}', 'offset', '{9,9}', 'rotated', false, 'sourceColorRect', '{{43,25},{188,188}}', 'sourceSize', '{256,256}']), 'balloon_explode_0003.png', $.makeLiteralMap(['frame', '{{1213,1192},{216,222}}', 'offset', '{3,-2}', 'rotated', true, 'sourceColorRect', '{{23,19},{216,222}}', 'sourceSize', '{256,256}']), 'balloon_explode_0004.png', $.makeLiteralMap(['frame', '{{1691,825},{226,216}}', 'offset', '{2,3}', 'rotated', false, 'sourceColorRect', '{{17,17},{226,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0005.png', $.makeLiteralMap(['frame', '{{1235,810},{226,216}}', 'offset', '{2,3}', 'rotated', false, 'sourceColorRect', '{{17,17},{226,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0006.png', $.makeLiteralMap(['frame', '{{990,1029},{222,218}}', 'offset', '{-1,4}', 'rotated', false, 'sourceColorRect', '{{16,15},{222,218}}', 'sourceSize', '{256,256}']), 'balloon_explode_0007.png', $.makeLiteralMap(['frame', '{{1448,1162},{222,216}}', 'offset', '{-1,4}', 'rotated', false, 'sourceColorRect', '{{16,16},{222,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0008.png', $.makeLiteralMap(['frame', '{{998,812},{224,216}}', 'offset', '{-1,4}', 'rotated', false, 'sourceColorRect', '{{15,16},{224,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0009.png', $.makeLiteralMap(['frame', '{{1689,1042},{224,216}}', 'offset', '{-1,5}', 'rotated', false, 'sourceColorRect', '{{15,15},{224,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0010.png', $.makeLiteralMap(['frame', '{{1464,808},{226,216}}', 'offset', '{-2,5}', 'rotated', false, 'sourceColorRect', '{{13,15},{226,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0011.png', $.makeLiteralMap(['frame', '{{1693,600},{226,224}}', 'offset', '{-1,2}', 'rotated', false, 'sourceColorRect', '{{14,14},{226,224}}', 'sourceSize', '{256,256}']), 'balloon_explode_0012.png', $.makeLiteralMap(['frame', '{{1464,585},{228,222}}', 'offset', '{-2,2}', 'rotated', false, 'sourceColorRect', '{{12,15},{228,222}}', 'sourceSize', '{256,256}']), 'balloon_explode_0013.png', $.makeLiteralMap(['frame', '{{1235,585},{228,224}}', 'offset', '{-2,3}', 'rotated', false, 'sourceColorRect', '{{12,13},{228,224}}', 'sourceSize', '{256,256}']), 'balloon_explode_0014.png', $.makeLiteralMap(['frame', '{{1698,373},{228,226}}', 'offset', '{-2,2}', 'rotated', false, 'sourceColorRect', '{{12,13},{228,226}}', 'sourceSize', '{256,256}']), 'balloon_explode_0015.png', $.makeLiteralMap(['frame', '{{234,942},{230,228}}', 'offset', '{-2,2}', 'rotated', false, 'sourceColorRect', '{{11,12},{230,228}}', 'sourceSize', '{256,256}']), 'balloon_explode_0016.png', $.makeLiteralMap(['frame', '{{576,842},{230,230}}', 'offset', '{-2,1}', 'rotated', false, 'sourceColorRect', '{{11,12},{230,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0017.png', $.makeLiteralMap(['frame', '{{1004,581},{230,230}}', 'offset', '{-2,1}', 'rotated', false, 'sourceColorRect', '{{11,12},{230,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0018.png', $.makeLiteralMap(['frame', '{{1,882},{232,230}}', 'offset', '{-1,0}', 'rotated', false, 'sourceColorRect', '{{11,13},{232,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0019.png', $.makeLiteralMap(['frame', '{{1238,354},{230,230}}', 'offset', '{-1,0}', 'rotated', false, 'sourceColorRect', '{{12,13},{230,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0020.png', $.makeLiteralMap(['frame', '{{234,711},{232,230}}', 'offset', '{-1,0}', 'rotated', false, 'sourceColorRect', '{{11,13},{232,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0021.png', $.makeLiteralMap(['frame', '{{1005,354},{232,226}}', 'offset', '{-1,2}', 'rotated', false, 'sourceColorRect', '{{11,13},{232,226}}', 'sourceSize', '{256,256}']), 'balloon_explode_0022.png', $.makeLiteralMap(['frame', '{{1,651},{232,230}}', 'offset', '{-1,1}', 'rotated', false, 'sourceColorRect', '{{11,12},{232,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0023.png', $.makeLiteralMap(['frame', '{{1469,354},{230,228}}', 'offset', '{0,1}', 'rotated', true, 'sourceColorRect', '{{13,13},{230,228}}', 'sourceSize', '{256,256}']), 'balloon_explode_0024.png', $.makeLiteralMap(['frame', '{{814,319},{190,214}}', 'offset', '{-10,4}', 'rotated', false, 'sourceColorRect', '{{23,17},{190,214}}', 'sourceSize', '{256,256}']), 'balloon_pieces_a.png', $.makeLiteralMap(['frame', '{{1527,1468},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pieces_b.png', $.makeLiteralMap(['frame', '{{1446,1442},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pieces_c.png', $.makeLiteralMap(['frame', '{{1365,1442},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pieces_d.png', $.makeLiteralMap(['frame', '{{244,1894},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pop_0000.png', $.makeLiteralMap(['frame', '{{1608,1500},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{88,88},{80,80}}', 'sourceSize', '{256,256}']), 'balloon_pop_0001.png', $.makeLiteralMap(['frame', '{{1,1673},{142,114}}', 'offset', '{3,5}', 'rotated', false, 'sourceColorRect', '{{60,66},{142,114}}', 'sourceSize', '{256,256}']), 'balloon_pop_0002.png', $.makeLiteralMap(['frame', '{{1,1113},{230,184}}', 'offset', '{3,5}', 'rotated', false, 'sourceColorRect', '{{16,31},{230,184}}', 'sourceSize', '{256,256}']), 'balloon_pop_0003.png', $.makeLiteralMap(['frame', '{{576,655},{232,186}}', 'offset', '{3,5}', 'rotated', false, 'sourceColorRect', '{{15,30},{232,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0004.png', $.makeLiteralMap(['frame', '{{240,345},{236,186}}', 'offset', '{2,5}', 'rotated', false, 'sourceColorRect', '{{12,30},{236,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0005.png', $.makeLiteralMap(['frame', '{{577,285},{236,186}}', 'offset', '{2,4}', 'rotated', false, 'sourceColorRect', '{{12,31},{236,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0006.png', $.makeLiteralMap(['frame', '{{577,98},{236,186}}', 'offset', '{2,4}', 'rotated', false, 'sourceColorRect', '{{12,31},{236,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0007.png', $.makeLiteralMap(['frame', '{{1,285},{238,184}}', 'offset', '{1,3}', 'rotated', false, 'sourceColorRect', '{{10,33},{238,184}}', 'sourceSize', '{256,256}']), 'balloon_pop_0008.png', $.makeLiteralMap(['frame', '{{576,472},{236,182}}', 'offset', '{1,2}', 'rotated', false, 'sourceColorRect', '{{11,35},{236,182}}', 'sourceSize', '{256,256}']), 'balloon_pop_0009.png', $.makeLiteralMap(['frame', '{{1,470},{236,180}}', 'offset', '{1,2}', 'rotated', false, 'sourceColorRect', '{{11,36},{236,180}}', 'sourceSize', '{256,256}']), 'balloon_pop_0010.png', $.makeLiteralMap(['frame', '{{238,532},{236,178}}', 'offset', '{1,2}', 'rotated', false, 'sourceColorRect', '{{11,37},{236,178}}', 'sourceSize', '{256,256}']), 'balloon_pop_0011.png', $.makeLiteralMap(['frame', '{{467,885},{84,106}}', 'offset', '{-2,-4}', 'rotated', true, 'sourceColorRect', '{{84,79},{84,106}}', 'sourceSize', '{256,256}']), 'balloon_pop_0012.png', $.makeLiteralMap(['frame', '{{463,1415},{88,112}}', 'offset', '{-3,-4}', 'rotated', false, 'sourceColorRect', '{{81,76},{88,112}}', 'sourceSize', '{256,256}']), 'balloon_pop_0013.png', $.makeLiteralMap(['frame', '{{1808,1415},{94,118}}', 'offset', '{-3,-4}', 'rotated', false, 'sourceColorRect', '{{78,73},{94,118}}', 'sourceSize', '{256,256}']), 'balloon_pop_0014.png', $.makeLiteralMap(['frame', '{{475,595},{100,124}}', 'offset', '{-4,-4}', 'rotated', false, 'sourceColorRect', '{{74,70},{100,124}}', 'sourceSize', '{256,256}']), 'balloon_pop_0015.png', $.makeLiteralMap(['frame', '{{1914,1229},{104,130}}', 'offset', '{-4,-4}', 'rotated', true, 'sourceColorRect', '{{72,67},{104,130}}', 'sourceSize', '{256,256}']), 'balloon_pop_0016.png', $.makeLiteralMap(['frame', '{{465,970},{110,136}}', 'offset', '{-5,-4}', 'rotated', false, 'sourceColorRect', '{{68,64},{110,136}}', 'sourceSize', '{256,256}']), 'balloon_pop_0017.png', $.makeLiteralMap(['frame', '{{1671,1259},{114,140}}', 'offset', '{-5,-4}', 'rotated', true, 'sourceColorRect', '{{66,62},{114,140}}', 'sourceSize', '{256,256}']), 'balloon_pop_0018.png', $.makeLiteralMap(['frame', '{{1927,534},{120,144}}', 'offset', '{-6,-4}', 'rotated', false, 'sourceColorRect', '{{62,60},{120,144}}', 'sourceSize', '{256,256}']), 'balloon_pop_0019.png', $.makeLiteralMap(['frame', '{{1920,772},{124,148}}', 'offset', '{-6,-4}', 'rotated', false, 'sourceColorRect', '{{60,58},{124,148}}', 'sourceSize', '{256,256}']), 'balloon_pop_0020.png', $.makeLiteralMap(['frame', '{{1918,921},{128,152}}', 'offset', '{-7,-4}', 'rotated', false, 'sourceColorRect', '{{57,56},{128,152}}', 'sourceSize', '{256,256}']), 'balloon_pop_0021.png', $.makeLiteralMap(['frame', '{{1914,1074},{130,154}}', 'offset', '{-7,-4}', 'rotated', false, 'sourceColorRect', '{{56,55},{130,154}}', 'sourceSize', '{256,256}']), 'balloon_pop_0022.png', $.makeLiteralMap(['frame', '{{223,1312},{134,158}}', 'offset', '{-8,-4}', 'rotated', true, 'sourceColorRect', '{{53,53},{134,158}}', 'sourceSize', '{256,256}']), 'balloon_pop_0023.png', $.makeLiteralMap(['frame', '{{575,1234},{136,160}}', 'offset', '{-8,-3}', 'rotated', true, 'sourceColorRect', '{{52,51},{136,160}}', 'sourceSize', '{256,256}']), 'balloon_pop_0024.png', $.makeLiteralMap(['frame', '{{807,1039},{138,162}}', 'offset', '{-8,-3}', 'rotated', true, 'sourceColorRect', '{{51,50},{138,162}}', 'sourceSize', '{256,256}']), 'balloon_pop_0025.png', $.makeLiteralMap(['frame', '{{232,1171},{140,160}}', 'offset', '{-9,-3}', 'rotated', true, 'sourceColorRect', '{{49,51},{140,160}}', 'sourceSize', '{256,256}']), 'balloon_pop_0026.png', $.makeLiteralMap(['frame', '{{806,1178},{140,160}}', 'offset', '{-9,-3}', 'rotated', true, 'sourceColorRect', '{{49,51},{140,160}}', 'sourceSize', '{256,256}']), 'balloon_pop_0027.png', $.makeLiteralMap(['frame', '{{1,1298},{142,158}}', 'offset', '{-10,-3}', 'rotated', true, 'sourceColorRect', '{{47,52},{142,158}}', 'sourceSize', '{256,256}']), 'balloon_pop_0028.png', $.makeLiteralMap(['frame', '{{1,1441},{136,148}}', 'offset', '{-11,-2}', 'rotated', true, 'sourceColorRect', '{{49,56},{136,148}}', 'sourceSize', '{256,256}']), 'balloon_tagged_!.png', $.makeLiteralMap(['frame', '{{1284,1409},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_bomb.png', $.makeLiteralMap(['frame', '{{244,1813},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_frozen.png', $.makeLiteralMap(['frame', '{{336,1759},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_question_mark.png', $.makeLiteralMap(['frame', '{{455,1754},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_x.png', $.makeLiteralMap(['frame', '{{542,1707},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'button_blank.png', $.makeLiteralMap(['frame', '{{1699,94},{294,92}}', 'offset', '{1,0}', 'rotated', false, 'sourceColorRect', '{{2,2},{294,92}}', 'sourceSize', '{296,96}']), 'button_blank_clicked.png', $.makeLiteralMap(['frame', '{{1699,280},{292,92}}', 'offset', '{2,-1}', 'rotated', false, 'sourceColorRect', '{{4,3},{292,92}}', 'sourceSize', '{296,96}']), 'button_new_game.png', $.makeLiteralMap(['frame', '{{1699,1},{294,92}}', 'offset', '{1,0}', 'rotated', false, 'sourceColorRect', '{{2,2},{294,92}}', 'sourceSize', '{296,96}']), 'button_new_game_clicked.png', $.makeLiteralMap(['frame', '{{1699,187},{292,92}}', 'offset', '{2,-1}', 'rotated', false, 'sourceColorRect', '{{4,3},{292,92}}', 'sourceSize', '{296,96}']), 'crater_a.png', $.makeLiteralMap(['frame', '{{576,1073},{160,160}}', 'offset', '{0,1}', 'rotated', false, 'sourceColorRect', '{{48,47},{160,160}}', 'sourceSize', '{256,256}']), 'dart_fly_0000.png', $.makeLiteralMap(['frame', '{{2002,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_0001.png', $.makeLiteralMap(['frame', '{{467,720},{108,164}}', 'offset', '{411,-183}', 'rotated', false, 'sourceColorRect', '{{869,485},{108,164}}', 'sourceSize', '{1024,768}']), 'dart_fly_0002.png', $.makeLiteralMap(['frame', '{{1,98},{186,288}}', 'offset', '{375,-145}', 'rotated', true, 'sourceColorRect', '{{794,385},{186,288}}', 'sourceSize', '{1024,768}']), 'dart_fly_0003.png', $.makeLiteralMap(['frame', '{{290,98},{246,286}}', 'offset', '{347,-76}', 'rotated', true, 'sourceColorRect', '{{736,317},{246,286}}', 'sourceSize', '{1024,768}']), 'dart_fly_0004.png', $.makeLiteralMap(['frame', '{{814,98},{210,220}}', 'offset', '{283,3}', 'rotated', false, 'sourceColorRect', '{{690,271},{210,220}}', 'sourceSize', '{1024,768}']), 'dart_fly_0005.png', $.makeLiteralMap(['frame', '{{807,872},{182,166}}', 'offset', '{232,58}', 'rotated', false, 'sourceColorRect', '{{653,243},{182,166}}', 'sourceSize', '{1024,768}']), 'dart_fly_0006.png', $.makeLiteralMap(['frame', '{{1927,373},{160,120}}', 'offset', '{190,93}', 'rotated', true, 'sourceColorRect', '{{622,231},{160,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_0007.png', $.makeLiteralMap(['frame', '{{477,345},{142,98}}', 'offset', '{156,124}', 'rotated', true, 'sourceColorRect', '{{597,211},{142,98}}', 'sourceSize', '{1024,768}']), 'dart_fly_0008.png', $.makeLiteralMap(['frame', '{{1920,679},{126,92}}', 'offset', '{127,149}', 'rotated', false, 'sourceColorRect', '{{576,189},{126,92}}', 'sourceSize', '{1024,768}']), 'dart_fly_0009.png', $.makeLiteralMap(['frame', '{{461,1528},{112,86}}', 'offset', '{102,162}', 'rotated', true, 'sourceColorRect', '{{558,179},{112,86}}', 'sourceSize', '{1024,768}']), 'dart_fly_0010.png', $.makeLiteralMap(['frame', '{{1812,1259},{98,94}}', 'offset', '{82,160}', 'rotated', false, 'sourceColorRect', '{{545,177},{98,94}}', 'sourceSize', '{1024,768}']), 'dart_fly_0011.png', $.makeLiteralMap(['frame', '{{465,1107},{86,110}}', 'offset', '{65,144}', 'rotated', true, 'sourceColorRect', '{{534,185},{86,110}}', 'sourceSize', '{1024,768}']), 'dart_fly_0012.png', $.makeLiteralMap(['frame', '{{1078,1406},{76,124}}', 'offset', '{50,123}', 'rotated', true, 'sourceColorRect', '{{524,199},{76,124}}', 'sourceSize', '{1024,768}']), 'dart_fly_0013.png', $.makeLiteralMap(['frame', '{{737,1188},{66,134}}', 'offset', '{38,96}', 'rotated', false, 'sourceColorRect', '{{517,221},{66,134}}', 'sourceSize', '{1024,768}']), 'dart_fly_0014.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0015.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0016.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0017.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0018.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0019.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0020.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0021.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0022.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0023.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0024.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0025.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0026.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0027.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0028.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0029.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0030.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0031.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0032.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0033.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0034.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0035.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0036.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0037.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0038.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0039.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0040.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0041.png', $.makeLiteralMap(['frame', '{{941,1374},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0042.png', $.makeLiteralMap(['frame', '{{736,1323},{62,136}}', 'offset', '{25,68}', 'rotated', false, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0043.png', $.makeLiteralMap(['frame', '{{804,1319},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0044.png', $.makeLiteralMap(['frame', '{{967,1311},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0045.png', $.makeLiteralMap(['frame', '{{967,1248},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0046.png', $.makeLiteralMap(['frame', '{{1666,1437},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0047.png', $.makeLiteralMap(['frame', '{{1436,1379},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0048.png', $.makeLiteralMap(['frame', '{{1903,1523},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0049.png', $.makeLiteralMap(['frame', '{{1903,1460},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0050.png', $.makeLiteralMap(['frame', '{{1671,1374},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0051.png', $.makeLiteralMap(['frame', '{{1911,1397},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0052.png', $.makeLiteralMap(['frame', '{{1911,1334},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0053.png', $.makeLiteralMap(['frame', '{{160,1435},{62,136}}', 'offset', '{25,68}', 'rotated', false, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0054.png', $.makeLiteralMap(['frame', '{{160,1298},{62,136}}', 'offset', '{25,68}', 'rotated', false, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0055.png', $.makeLiteralMap(['frame', '{{2000,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0000.png', $.makeLiteralMap(['frame', '{{1998,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0001.png', $.makeLiteralMap(['frame', '{{1996,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0002.png', $.makeLiteralMap(['frame', '{{1,1578},{94,146}}', 'offset', '{-72,-140}', 'rotated', true, 'sourceColorRect', '{{393,451},{94,146}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0003.png', $.makeLiteralMap(['frame', '{{1462,1025},{136,226}}', 'offset', '{-69,-111}', 'rotated', true, 'sourceColorRect', '{{375,382},{136,226}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0004.png', $.makeLiteralMap(['frame', '{{1223,1027},{164,224}}', 'offset', '{-75,-58}', 'rotated', true, 'sourceColorRect', '{{355,330},{164,224}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0005.png', $.makeLiteralMap(['frame', '{{813,534},{148,190}}', 'offset', '{-76,-7}', 'rotated', true, 'sourceColorRect', '{{362,296},{148,190}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0006.png', $.makeLiteralMap(['frame', '{{223,1447},{136,154}}', 'offset', '{-75,34}', 'rotated', true, 'sourceColorRect', '{{369,273},{136,154}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0007.png', $.makeLiteralMap(['frame', '{{936,1437},{120,118}}', 'offset', '{-74,64}', 'rotated', false, 'sourceColorRect', '{{378,261},{120,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0008.png', $.makeLiteralMap(['frame', '{{477,488},{106,98}}', 'offset', '{-71,86}', 'rotated', true, 'sourceColorRect', '{{388,249},{106,98}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0009.png', $.makeLiteralMap(['frame', '{{1104,1331},{74,90}}', 'offset', '{-65,107}', 'rotated', true, 'sourceColorRect', '{{410,232},{74,90}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0010.png', $.makeLiteralMap(['frame', '{{1104,1248},{92,82}}', 'offset', '{-62,119}', 'rotated', false, 'sourceColorRect', '{{404,224},{92,82}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0011.png', $.makeLiteralMap(['frame', '{{1573,1379},{92,88}}', 'offset', '{-56,117}', 'rotated', false, 'sourceColorRect', '{{410,223},{92,88}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0012.png', $.makeLiteralMap(['frame', '{{464,1328},{86,102}}', 'offset', '{-49,102}', 'rotated', true, 'sourceColorRect', '{{420,231},{86,102}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0013.png', $.makeLiteralMap(['frame', '{{144,1691},{78,114}}', 'offset', '{-40,83}', 'rotated', false, 'sourceColorRect', '{{433,244},{78,114}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0014.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0015.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0016.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0017.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0018.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0019.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0020.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0021.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0022.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0023.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0024.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0025.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0026.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0027.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0028.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0029.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0030.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0031.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0032.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0033.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0034.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0035.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0036.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0037.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0038.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0039.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0040.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0041.png', $.makeLiteralMap(['frame', '{{223,1584},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0042.png', $.makeLiteralMap(['frame', '{{567,1371},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0043.png', $.makeLiteralMap(['frame', '{{799,1445},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0044.png', $.makeLiteralMap(['frame', '{{673,1460},{74,118}}', 'offset', '{-31,59}', 'rotated', true, 'sourceColorRect', '{{444,266},{74,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0045.png', $.makeLiteralMap(['frame', '{{223,1659},{72,118}}', 'offset', '{-31,59}', 'rotated', true, 'sourceColorRect', '{{445,266},{72,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0046.png', $.makeLiteralMap(['frame', '{{552,1521},{72,118}}', 'offset', '{-31,59}', 'rotated', true, 'sourceColorRect', '{{445,266},{72,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0047.png', $.makeLiteralMap(['frame', '{{150,1572},{72,118}}', 'offset', '{-31,59}', 'rotated', false, 'sourceColorRect', '{{445,266},{72,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0048.png', $.makeLiteralMap(['frame', '{{344,1605},{72,116}}', 'offset', '{-31,58}', 'rotated', true, 'sourceColorRect', '{{445,268},{72,116}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0049.png', $.makeLiteralMap(['frame', '{{393,1288},{70,116}}', 'offset', '{-30,58}', 'rotated', false, 'sourceColorRect', '{{447,268},{70,116}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0050.png', $.makeLiteralMap(['frame', '{{393,1171},{70,116}}', 'offset', '{-31,58}', 'rotated', false, 'sourceColorRect', '{{446,268},{70,116}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0051.png', $.makeLiteralMap(['frame', '{{737,1073},{68,114}}', 'offset', '{-30,57}', 'rotated', false, 'sourceColorRect', '{{448,270},{68,114}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0052.png', $.makeLiteralMap(['frame', '{{464,1194},{66,110}}', 'offset', '{-30,55}', 'rotated', true, 'sourceColorRect', '{{449,274},{66,110}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0053.png', $.makeLiteralMap(['frame', '{{464,1261},{66,104}}', 'offset', '{-30,52}', 'rotated', true, 'sourceColorRect', '{{449,280},{66,104}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0054.png', $.makeLiteralMap(['frame', '{{1812,1354},{60,98}}', 'offset', '{-28,49}', 'rotated', true, 'sourceColorRect', '{{454,286},{60,98}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0055.png', $.makeLiteralMap(['frame', '{{1994,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'game_board_center.png', $.makeLiteralMap(['frame', '{{661,1648},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'game_board_corner_bottom_left.png', $.makeLiteralMap(['frame', '{{548,1594},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_corner_bottom_right.png', $.makeLiteralMap(['frame', '{{671,1535},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_corner_top_left.png', $.makeLiteralMap(['frame', '{{792,1520},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_corner_top_right.png', $.makeLiteralMap(['frame', '{{1,1788},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_side_bottom.png', $.makeLiteralMap(['frame', '{{461,1641},{80,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,112}}', 'sourceSize', '{80,112}']), 'game_board_side_left.png', $.makeLiteralMap(['frame', '{{223,1732},{112,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,80}}', 'sourceSize', '{112,80}']), 'game_board_side_right.png', $.makeLiteralMap(['frame', '{{342,1678},{112,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,80}}', 'sourceSize', '{112,80}']), 'game_board_side_top.png', $.makeLiteralMap(['frame', '{{382,1405},{80,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,112}}', 'sourceSize', '{80,112}']), 'number_eight.png', $.makeLiteralMap(['frame', '{{784,1633},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_five.png', $.makeLiteralMap(['frame', '{{905,1556},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_four.png', $.makeLiteralMap(['frame', '{{1057,1483},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_one.png', $.makeLiteralMap(['frame', '{{1203,1409},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_seven.png', $.makeLiteralMap(['frame', '{{163,1887},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_six.png', $.makeLiteralMap(['frame', '{{82,1901},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_three.png', $.makeLiteralMap(['frame', '{{1,1901},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_two.png', $.makeLiteralMap(['frame', '{{114,1806},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}'])]);
+  var frames$ = $.makeLiteralMap([]);
+  $.forEach(artFramesJson, new $._getTextures_anon(frames$));
+  return frames$;
 };
 
 $.Maps_mapToString = function(m) {
@@ -8304,10 +7934,6 @@ $.truncate = function(receiver) {
   return receiver < 0 ? $.ceil(receiver) : $.floor(receiver);
 };
 
-$.StringImplementation_String$fromCharCodes = function(charCodes) {
-  return $.StringImplementation__fromCharCodes(charCodes);
-};
-
 $._EventLoop$ = function() {
   return new $._EventLoop($.DoubleLinkedQueue$('_IsolateEvent'));
 };
@@ -8323,15 +7949,6 @@ $.Field$_internal = function(mineCount, cols, source) {
 
 $.substringUnchecked = function(receiver, startIndex, endIndex) {
   return receiver.substring(startIndex, endIndex);
-};
-
-$.Primitives_stringFromCharCodes = function(charCodes) {
-  for (var t1 = $.iterator(charCodes); t1.hasNext$0() === true;) {
-    var t2 = t1.next$0();
-    if (!(typeof t2 === 'number' && Math.floor(t2) === t2))
-      throw $.$$throw($.IllegalArgumentException$(t2));
-  }
-  return String.fromCharCode.apply(null, charCodes);
 };
 
 $.rnd = function() {
@@ -9086,8 +8703,6 @@ $._IsolateContext$ = function() {
 
 $.charCodeAt = function(receiver, index) {
   if (typeof receiver === 'string') {
-    if (!(typeof index === 'number'))
-      throw $.$$throw($.IllegalArgumentException$(index));
     if (index < 0)
       throw $.$$throw($.IndexOutOfRangeException$(index));
     if (index >= receiver.length)
@@ -9095,13 +8710,6 @@ $.charCodeAt = function(receiver, index) {
     return receiver.charCodeAt(index);
   } else
     return receiver.charCodeAt$1(index);
-};
-
-$.StringImplementation__fromCharCodes = function(charCodes) {
-  $.checkNull(charCodes);
-  if (!$.isJsArray(charCodes))
-    charCodes = $.ListImplementation_List$from(charCodes);
-  return $.Primitives_stringFromCharCodes(charCodes);
 };
 
 $.removeRange = function(receiver, start, length$) {
@@ -9214,6 +8822,12 @@ $.PropertyValues$ = function() {
   return new $.PropertyValues($.NoneHashMap$('Property', 'Object'), $.EventHandle$('Property'), false);
 };
 
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver))
+    return $.ListIterator$(receiver);
+  return receiver.iterator$0();
+};
+
 $.GlobalId$_internal = function(value) {
   return new $.GlobalId(value, $.Util_getHashCode([value]));
 };
@@ -9234,12 +8848,6 @@ $.removeLast = function(receiver) {
     return receiver.pop();
   }
   return receiver.removeLast$0();
-};
-
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver))
-    return $.ListIterator$(receiver);
-  return receiver.iterator$0();
 };
 
 $.Field_Field = function(mineCount, cols, rows, seed) {
@@ -9450,14 +9058,12 @@ $globalState = val;
 };
 
 $.substring$2 = function(receiver, startIndex, endIndex) {
-  if (!(typeof receiver === 'string'))
-    return receiver.substring$2(startIndex, endIndex);
   $.checkNum(startIndex);
   var length$ = receiver.length;
   if (endIndex == null)
     endIndex = length$;
   $.checkNum(endIndex);
-  if ($.ltB(startIndex, 0))
+  if (startIndex < 0)
     throw $.$$throw($.IndexOutOfRangeException$(startIndex));
   if ($.gtB(startIndex, endIndex))
     throw $.$$throw($.IndexOutOfRangeException$(startIndex));
@@ -9651,6 +9257,10 @@ $.GameElement$ = function(_targetMode) {
   return t9;
 };
 
+$.Vector$ = function(x, y) {
+  return new $.Vector(x, y);
+};
+
 $.unwrapException = function(ex) {
   if ("dartException" in ex)
     return ex.dartException;
@@ -9692,10 +9302,6 @@ $.unwrapException = function(ex) {
     if (typeof message === 'string' && message === 'too much recursion')
       return $.StackOverflowException$();
   return ex;
-};
-
-$.Vector$ = function(x, y) {
-  return new $.Vector(x, y);
 };
 
 $.checkNumbers = function(a, b) {
@@ -10022,14 +9628,6 @@ $.sin = function(value) {
   return Math.sin($.checkNum(value));
 };
 
-$.NullArgumentException$ = function(arg) {
-  return new $.NullArgumentException(arg, arg);
-};
-
-$.FutureNotCompleteException$ = function() {
-  return new $.FutureNotCompleteException();
-};
-
 $.toString = function(value) {
   if (typeof value == "object" && value !== null)
     if ($.isJsArray(value))
@@ -10043,6 +9641,14 @@ $.toString = function(value) {
   if (typeof value == "function")
     return 'Closure';
   return String(value);
+};
+
+$.NullArgumentException$ = function(arg) {
+  return new $.NullArgumentException(arg, arg);
+};
+
+$.FutureNotCompleteException$ = function() {
+  return new $.FutureNotCompleteException();
 };
 
 $._JsSerializer$ = function() {
@@ -10233,6 +9839,21 @@ $.StringImplementation__toJsStringArray$bailout = function(state, strings) {
   return array;
 };
 
+$.Futures_wait$bailout = function(state, futures, t1) {
+  if ($.isEmpty(futures) === true)
+    return $.FutureImpl_FutureImpl$immediate($.CTC2, 'List');
+  var completer = $.CompleterImpl$('List');
+  var result = completer.get$future();
+  t1.remaining_1 = $.get$length(futures);
+  var values = $.ListImplementation_List($.get$length(futures));
+  for (var i = 0; $.ltB(i, $.get$length(futures)); ++i) {
+    var future = $.index(futures, i);
+    future.then$1(new $.Futures_wait_anon(completer, i, t1, result, values));
+    future.handleException$1(new $.Futures_wait_anon0(future, completer, result));
+  }
+  return result;
+};
+
 $.listInsertRange$bailout = function(state, receiver, start, length$, initialValue) {
   if (length$ === 0)
     return;
@@ -10255,21 +9876,6 @@ $.listInsertRange$bailout = function(state, receiver, start, length$, initialVal
     for (var i = start; i < t2; ++i)
       $.indexSet(receiver, i, initialValue);
   $.set$length(receiver, t1);
-};
-
-$.Futures_wait$bailout = function(state, futures, t1) {
-  if ($.isEmpty(futures) === true)
-    return $.FutureImpl_FutureImpl$immediate($.CTC2, 'List');
-  var completer = $.CompleterImpl$('List');
-  var result = completer.get$future();
-  t1.remaining_1 = $.get$length(futures);
-  var values = $.ListImplementation_List($.get$length(futures));
-  for (var i = 0; $.ltB(i, $.get$length(futures)); ++i) {
-    var future = $.index(futures, i);
-    future.then$1(new $.Futures_wait_anon(completer, i, t1, result, values));
-    future.handleException$1(new $.Futures_wait_anon0(future, completer, result));
-  }
-  return result;
 };
 
 $._getAudioPath.call$1 = $._getAudioPath;
@@ -10436,49 +10042,25 @@ $.CTC126 = 'Mutation operations are not supported';
 $.CTC20 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC127 = 'flagged';
 $.CTC45 = new Isolate.$isolateProperties.SquareState('flagged');
-$._JsonParser_CHAR_CAPITAL_E = 69;
 $.TextureInput__pairExp = Isolate.$isolateProperties.CTC16;
-$._JsonParser_TAB = 9;
 $.Duration_HOURS_PER_DAY = 24;
-$._JsonParser_FALSE_STRING = 'false';
 $.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC0;
 $.DateImplementation__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.ResourceLoader_StateUnloaded = 'unloaded';
-$._JsonParser_CHAR_N = 110;
-$._JsonParser_DOT = 46;
-$._JsonParser_QUOTE = 34;
-$._JsonParser_CHAR_E = 101;
-$._JsonParser_MINUS = 45;
 $.SquareElement__balloonBits = Isolate.$isolateProperties.CTC53;
-$._JsonParser_CHAR_2 = 50;
-$._JsonParser_CHAR_7 = 55;
-$._JsonParser_NULL_LITERAL = 110;
 $.GameElement__edgeOffset = 32;
-$._JsonParser_CHAR_3 = 51;
 $._textureImage = null;
-$._JsonParser_COLON = 58;
 $._MEASUREMENT_MESSAGE = 'DART-MEASURE';
-$._JsonParser_FALSE_LITERAL = 102;
 $.SquareState_flagged = Isolate.$isolateProperties.CTC45;
-$._JsonParser_TRUE_LITERAL = 116;
 $.Duration_MINUTES_PER_HOUR = 60;
-$._JsonParser_SPACE = 32;
 $._textures = null;
 $.GlobalId__globalId = 0;
-$._JsonParser_CHAR_U = 117;
 $._imageLoader = null;
 $.GameElement__boardOffset = Isolate.$isolateProperties.CTC35;
 $.SquareElement__size = 80;
-$._JsonParser_NUMBER_LITERAL = 45;
 $.ResourceLoader_StateLoaded = 'loaded';
 $._ReceivePortImpl__nextFreeId = 1;
-$._JsonParser_tokens = null;
-$._JsonParser_BACKSPACE = 8;
 $._audioLoader = null;
-$._JsonParser_CHAR_1 = 49;
-$._JsonParser_RBRACKET = 93;
-$._JsonParser_CHAR_6 = 54;
-$._JsonParser_CHAR_5 = 53;
 $.SquareState_safe = Isolate.$isolateProperties.CTC50;
 $.GameState_started = Isolate.$isolateProperties.CTC42;
 $._getTypeNameOf = null;
@@ -10488,58 +10070,35 @@ $.GameElement__popAnimationHitFrame = 12;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
 $.SquareState_mine = Isolate.$isolateProperties.CTC49;
 $.ScoreElement__minesLeftStr = 'MINES LEFT:';
-$._JsonParser_CHAR_B = 98;
 $._dartlibHelperRandom = null;
 $._pendingMeasurementFrameCallbacks = null;
 $.PI = 3.141592653589793;
-$._JsonParser_CARRIAGE_RETURN = 13;
-$._JsonParser_CHAR_0 = 48;
 $._audioContext = null;
-$._JsonParser_BACKSLASH = 92;
 $.LN2 = 0.6931471805599453;
-$._JsonParser_CHAR_8 = 56;
 $.GameState_won = Isolate.$isolateProperties.CTC41;
 $.SquareState_hidden = Isolate.$isolateProperties.CTC40;
-$._JsonParser_CHAR_R = 114;
 $._audioNames = Isolate.$isolateProperties.CTC;
-$._JsonParser_SLASH = 47;
-$._JsonParser_CHAR_9 = 57;
 $.HashMapImplementation__INITIAL_CAPACITY = 8;
-$._JsonParser_STRING_LITERAL = 34;
 $.Duration_SECONDS_PER_MINUTE = 60;
-$._JsonParser_LBRACE = 123;
 $._nextMeasurementFrameScheduled = false;
 $._pendingRequests = null;
-$._JsonParser_NEW_LINE = 10;
 $.GameElement__backgroundSize = Isolate.$isolateProperties.CTC34;
 $._buffers = null;
-$._JsonParser_WHITESPACE = 32;
 $._TimerFactory__factory = null;
 $._cachedBrowserPrefix = null;
-$._JsonParser_CHAR_4 = 52;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $.GameState_lost = Isolate.$isolateProperties.CTC47;
-$._JsonParser_LAST_ASCII = 125;
-$._JsonParser_CHAR_T = 116;
 $.SquareState_revealed = Isolate.$isolateProperties.CTC46;
 $.GameState_reset = Isolate.$isolateProperties.CTC36;
-$._JsonParser_NULL_STRING = 'null';
-$._JsonParser_CHAR_F = 102;
-$._JsonParser_RBRACE = 125;
-$._JsonParser_COMMA = 44;
-$._JsonParser_LBRACKET = 91;
 $._textuerName = 'art.png';
 $.SquareElement__numberMap = Isolate.$isolateProperties.CTC52;
 $.GameElement__backgroundHoleSize = 1344;
 $.ScoreElement__valueOffset = 15;
-$._JsonParser_PLUS = 43;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
 $.Duration_MILLISECONDS_PER_HOUR = 3600000;
 $.ResourceLoader_StateLoading = 'loading';
 $._firstMeasurementRequest = true;
-$._JsonParser_TRUE_STRING = 'true';
-$._JsonParser_FORM_FEED = 12;
 var $ = null;
 Isolate.$finishClasses($$);
 $$ = {};

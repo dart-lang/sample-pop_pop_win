@@ -1,5 +1,4 @@
 #import('dart:html');
-#import('dart:json');
 #import('dart:math');
 
 #import('../../lib/sweeper.dart');
@@ -26,7 +25,7 @@ main() {
 }
 
 _doLoad() {
-  _textures = _getTexturesFromJson(_artFramesJson);
+  _textures = _getTextures();
 
   CanvasElement canvasElement = query('#sweeperCanvas');
   canvasElement.on.click.add((args) => _next());
