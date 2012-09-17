@@ -161,9 +161,12 @@ class Game {
       // might be a 'chord' reveal
       final adjCount = field.getAdjacentCount(x, y);
       if(adjCount > 0) {
-        final adjFlags = _getAdjacentFlagCount(x, y);
-        if(adjFlags == adjCount) {
-          return true;
+        final adjHidden = _getAdjacentCount(x, y, SquareState.hidden);
+        if(adjHidden > 0) {
+          final adjFlags = _getAdjacentCount(x, y, SquareState.flagged);
+          if(adjFlags == adjCount) {
+            return true;
+          }
         }
       }
     }
@@ -281,12 +284,10 @@ class Game {
     assert(_startTime != null);
   }
 
-  int _getAdjacentFlagCount(int x, int y) {
-    assert(_states.get(x,y) == SquareState.revealed);
-
+  int _getAdjacentCount(int x, int y, SquareState state) {
     int val = 0;
     for(final i in field.getAdjacentIndices(x, y)) {
-      if(_states[i] == SquareState.flagged) {
+      if(_states[i] == state) {
         val++;
       }
     }

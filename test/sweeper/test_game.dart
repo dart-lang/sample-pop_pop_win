@@ -14,7 +14,23 @@ class TestGame {
       test('no-op chord', _testNoopChord);
       test('canReveal', _testCanReveal);
       test('canFlag', _testCanFlag);
+      test('cannot re-reveal', _testCannotReReveal);
     });
+  }
+
+  static void _testCannotReReveal() {
+    final f = TestField.getSampleField();
+    final g = new Game(f);
+
+    expect(g.canReveal(5, 3));
+    var r = g.reveal(5, 3);
+
+    g.setFlag(4, 2, true);
+
+    expect(g.canReveal(5, 3));
+    r = g.reveal(5, 3);
+
+    expect(g.canReveal(5, 3), isFalse);
   }
 
   static void _testCanFlag() {
