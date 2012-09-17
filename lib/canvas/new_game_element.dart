@@ -16,7 +16,7 @@ class NewGameElement extends PElement {
     drawTextureKeyAt(ctx, 'button_new_game.png');
   }
 
-  GameElement get _parent => parent.parent;
+  GameElement get _parent => (parent as PCanvas).parent;
 
   Game get _game => _parent._game;
 }
