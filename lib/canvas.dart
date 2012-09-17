@@ -18,6 +18,7 @@
 #source('canvas/audio_loader.dart');
 #source('canvas/texture_animation_element.dart');
 #source('canvas/score_element.dart');
+#source('canvas/new_game_element.dart');
 
 #source('texture/texture_input.dart');
 

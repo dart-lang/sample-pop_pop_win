@@ -3,13 +3,12 @@ class GameRoot extends GameManager {
   final CanvasElement _canvas;
   final GameElement _gameElement;
   final ClickManager _clickMan;
-  final Element _gameStateDiv;
   final AffineTransform _gameElementTx;
 
   bool _frameRequested = false;
 
   factory GameRoot(int width, int height, int mineCount,
-      CanvasElement canvasElement, Element gameStateDiv, bool targetMode) {
+      CanvasElement canvasElement, bool targetMode) {
 
     requireArgumentNotNull(targetMode, 'targetMode');
 
@@ -18,16 +17,20 @@ class GameRoot extends GameManager {
     final clickMan = new ClickManager(stage);
 
     return new GameRoot._internal(width, height, mineCount,
-        canvasElement, stage, rootElement, clickMan, gameStateDiv);
+        canvasElement, stage, rootElement, clickMan);
   }
 
   GameRoot._internal(int width, int height, int mineCount,
-      this._canvas, this._stage, GameElement gameElement, this._clickMan,
-      this._gameStateDiv) :
+      this._canvas, this._stage, GameElement gameElement, this._clickMan) :
       this._gameElement = gameElement,
       _gameElementTx = gameElement.addTransform(),
       super(width, height, mineCount) {
     _stage.invalidated.add(_stageInvalidated);
+
+    _gameElement.newGameClick.add((args) => newGame());
+
+    //_canvas.on.mouseMove.add(_canvas_mouseMove);
+    //_canvas.on.mouseOut.add(_canvas_mouseOut);
   }
 
   void set game(Game value) {
@@ -58,8 +61,6 @@ class GameRoot extends GameManager {
   }
 
   bool _onFrame(int time) {
-    _gameStateDiv.innerHTML = game.state.name;
-
     final xScale = _stage.size.width / _gameElement.width;
     final yScale = _stage.size.height / _gameElement.height;
 
@@ -99,5 +100,18 @@ class GameRoot extends GameManager {
 
   void _stageInvalidated(args) {
     _requestFrame();
+  }
+
+  void _canvas_mouseMove(MouseEvent e){
+    _setMouse(getMouseEventCoordinate(e));
+  }
+
+  void _canvas_mouseOut(MouseEvent e){
+    _setMouse(null);
+  }
+
+  void _setMouse(Coordinate value) {
+    final hits = Mouse.markMouseOver(_stage, value);
+    print(hits);
   }
 }

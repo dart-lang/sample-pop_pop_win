@@ -14,13 +14,14 @@ class GameElement extends ElementParentImpl {
   final GameBackgroundElement _background = new GameBackgroundElement();
   final BoardElement _boardElement = new BoardElement();
   final ScoreElement _scoreElement = new ScoreElement();
+  final NewGameElement _newGameElement = new NewGameElement();
   final TextureAnimationElement
     _popAnimationLayer = new TextureAnimationElement(0, 0),
     _dartAnimationLayer = new TextureAnimationElement(0, 0);
   final bool _targetMode;
   final EventHandle _targetChanged = new EventHandle();
 
-  AffineTransform _scoreTx;
+  AffineTransform _scoreTx, _newGameTx;
 
   int _targetX, _targetY;
   double _scale;
@@ -32,12 +33,16 @@ class GameElement extends ElementParentImpl {
     _canvas.registerParent(this);
     _canvas.addElement(_background);
     _canvas.addElement(_boardElement);
+    _canvas.addElement(_newGameElement);
     _canvas.addElement(_scoreElement);
     _canvas.addElement(_popAnimationLayer);
     _canvas.addElement(_dartAnimationLayer);
 
     _scoreTx = _scoreElement.addTransform();
+    _newGameTx = _newGameElement.addTransform();
   }
+
+  EventRoot<EventArgs> get newGameClick => _newGameElement.clicked;
 
   Game get game => _game;
 
@@ -96,6 +101,10 @@ class GameElement extends ElementParentImpl {
 
     _canvas.setTopLeft(_scoreElement, new Vector(x, 0));
     _scoreTx.setToScale(_scale, _scale);
+
+    _canvas.setTopLeft(_newGameElement,
+        new Vector((_boardOffset.x + _newGameElement.width * 0.2) * _scale,0));
+    _newGameTx.setToScale(_scale, _scale);
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {

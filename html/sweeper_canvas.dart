@@ -67,14 +67,10 @@ void _runSweeper() {
   final Element gameStateDiv = query('#gameState');
 
 
-  final gameRoot = new GameRoot(w, h, m,
-      sweeperTable, gameStateDiv, targetMode);
+  final gameRoot = new GameRoot(w, h, m, sweeperTable, targetMode);
 
   // disable touch events
   window.on.touchMove.add(_onTouchMove);
-
-  final ButtonElement newGameButton = query('#newGame');
-  newGameButton.on.click.add((args) => gameRoot.newGame());
 
   /*
 
