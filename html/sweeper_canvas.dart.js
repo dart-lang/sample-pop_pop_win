@@ -3942,8 +3942,9 @@ $$.Game = {"":
   if ($.eqB(this._states.get$2(x, y), $.CTC46)) {
     var adjCount = this.field.getAdjacentCount$2(x, y);
     if ($.gtB(adjCount, 0))
-      if ($.eqB(this._getAdjacentFlagCount$2(x, y), adjCount))
-        return true;
+      if ($.gtB(this._getAdjacentCount$3(x, y, $.CTC40), 0))
+        if ($.eqB(this._getAdjacentCount$3(x, y, $.CTC45), adjCount))
+          return true;
   }
   return false;
 },
@@ -4248,11 +4249,11 @@ $$.Game = {"":
   if ($.eqB(this.get$state(), $.CTC36))
     this._setState$1($.CTC42);
 },
- _getAdjacentFlagCount$2: function(x, y) {
+ _getAdjacentCount$3: function(x, y, state) {
   var t1 = $.iterator(this.field.getAdjacentIndices$2(x, y));
   var t2 = this._states;
   if (typeof t2 !== 'string' && (typeof t2 !== 'object' || t2 === null || t2.constructor !== Array && !t2.is$JavaScriptIndexingBehavior()))
-    return this._getAdjacentFlagCount$2$bailout(1, t1, t2);
+    return this._getAdjacentCount$3$bailout(1, state, t1, t2);
   var val = 0;
   for (; t1.hasNext$0() === true;) {
     var t3 = t1.next$0();
@@ -4260,15 +4261,15 @@ $$.Game = {"":
       throw $.iae(t3);
     if (t3 < 0 || t3 >= t2.length)
       throw $.ioore(t3);
-    if ($.eqB(t2[t3], $.CTC45))
+    if ($.eqB(t2[t3], state))
       ++val;
   }
   return val;
 },
- _getAdjacentFlagCount$2$bailout: function(state, t1, t2) {
+ _getAdjacentCount$3$bailout: function(state, state, t1, t2) {
   var val = 0;
   for (; t1.hasNext$0() === true;)
-    if ($.eqB($.index(t2, t1.next$0()), $.CTC45))
+    if ($.eqB($.index(t2, t1.next$0()), state))
       ++val;
   return val;
 },
