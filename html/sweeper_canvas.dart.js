@@ -647,9 +647,6 @@ $$.HashSetImplementation = {"":
   t1.remove$1(value);
   return true;
 },
- addAll$1: function(collection) {
-  $.forEach($.listSuperNativeTypeCheck(collection, 'is$Collection'), new $.HashSetImplementation_addAll__(this));
-},
  forEach$1: function(f) {
   $.functionTypeCheck(f, 'is$Function');
   $.forEach(this._backingMap, new $.HashSetImplementation_forEach__(f));
@@ -930,10 +927,6 @@ $$.DoubleLinkedQueue = {"":
  add$1: function(value) {
   this.addLast$1(value);
 },
- addAll$1: function(collection) {
-  for (var t1 = $.iterator($.listSuperNativeTypeCheck(collection, 'is$Collection')); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    this.add$1(t1.next$0());
-},
  removeLast$0: function() {
   return this._sentinel.get$_previous().remove$0();
 },
@@ -1115,11 +1108,6 @@ $$.StringBufferImpl = {"":
       this._length = $.intTypeCheck($.add(t1, t3), 'is$$int');
       return this;
   }
-},
- addAll$1: function(objects) {
-  for (var t1 = $.iterator($.listSuperNativeTypeCheck(objects, 'is$Collection')); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    this.add$1(t1.next$0());
-  return this;
 },
  clear$0: function() {
   var t1 = $.ListImplementation_List(null, 'String');
@@ -2219,87 +2207,6 @@ $$._MessagePortEventsImpl = {"":
  ["_ptr"],
  "super": "_EventsImpl",
  is$Events: true,
- is$Object: function() { return true; }
-};
-
-$$._ListWrapper = {"":
- [],
- "super": "Object",
- iterator$0: function() {
-  return $.iterator(this._lib_list);
-},
- forEach$1: function(f) {
-  $.functionTypeCheck(f, 'is$Function');
-  return $.forEach(this._lib_list, f);
-},
- some$1: function(f) {
-  $.functionTypeCheck(f, 'is$Function');
-  return $.some(this._lib_list, f);
-},
- isEmpty$0: function() {
-  return $.isEmpty(this._lib_list);
-},
- get$length: function() {
-  return $.get$length(this._lib_list);
-},
- operator$index$1: function(index) {
-  $.intTypeCheck(index, 'is$$int');
-  return $.index(this._lib_list, index);
-},
- operator$indexSet$2: function(index, value) {
-  $.intTypeCheck(index, 'is$$int');
-  $.indexSet(this._lib_list, index, value);
-},
- set$length: function(newLength) {
-  $.intTypeCheck(newLength, 'is$$int');
-  $.set$length(this._lib_list, newLength);
-},
- add$1: function(value) {
-  return $.add$1(this._lib_list, value);
-},
- addLast$1: function(value) {
-  return $.addLast(this._lib_list, value);
-},
- addAll$1: function(collection) {
-  $.listSuperNativeTypeCheck(collection, 'is$Collection');
-  return $.addAll(this._lib_list, collection);
-},
- indexOf$2: function(element, start) {
-  return $.indexOf$2(this._lib_list, element, start);
-},
- clear$0: function() {
-  return $.clear(this._lib_list);
-},
- removeLast$0: function() {
-  return $.removeLast(this._lib_list);
-},
- getRange$2: function(start, rangeLength) {
-  return $.getRange(this._lib_list, start, rangeLength);
-},
- removeRange$2: function(start, rangeLength) {
-  $.intTypeCheck(start, 'is$$int');
-  return $.removeRange(this._lib_list, start, rangeLength);
-},
- insertRange$3: function(start, rangeLength, initialValue) {
-  $.intTypeCheck(rangeLength, 'is$$int');
-  return $.insertRange$3(this._lib_list, start, rangeLength, initialValue);
-},
- is$List: function() { return true; },
- is$Collection: function() { return true; },
- is$Iterable: function() { return true; },
- is$Object: function() { return true; }
-};
-
-$$._NodeListWrapper = {"":
- ["_lib_list"],
- "super": "_ListWrapper",
- getRange$2: function(start, rangeLength) {
-  return $._NodeListWrapper$($.getRange(this._lib_list, start, rangeLength));
-},
- is$NodeList: function() { return true; },
- is$List: function() { return true; },
- is$Collection: function() { return true; },
- is$Iterable: function() { return true; },
  is$Object: function() { return true; }
 };
 
@@ -3670,20 +3577,6 @@ $$.ListBase = {"":
       return i;
   return -1;
 },
- getRange$2: function(start, itemCount) {
-  $.requireArgument(itemCount >= 0, 'count', null);
-  var lastIndex = start + itemCount - 1;
-  if (itemCount > 0)
-    if (start < 0)
-      throw $.$$throw($.IndexOutOfRangeException$(start));
-    else if ($.ge(lastIndex, $.get$length(this)))
-      throw $.$$throw($.IndexOutOfRangeException$(lastIndex));
-  var list = $.ListImplementation_List(null, $.getRuntimeTypeInfo(this).T);
-  $.setRuntimeTypeInfo(list, { 'E': $.getRuntimeTypeInfo(this).T });
-  for (var i = start; i <= lastIndex; ++i)
-    list.push(this.operator$index$1(i));
-  return list;
-},
  operator$indexSet$2: function(index, value) {
   $.intTypeCheck(index, 'is$$int');
   throw $.$$throw($.CTC19);
@@ -4844,21 +4737,21 @@ $$.GameRoot = {"":
   this._requestFrame$0();
 },
  get$_stageInvalidated: function() { return new $.BoundClosure(this, '_stageInvalidated$1'); },
- _mouseMoveHandler$1: function(elements) {
-  $.listTypeCheck(elements, 'is$List');
-  if (!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'))
-    if ($.boolConversionCheck($.gt($.get$length(elements), 0), 'is$bool')) {
-      var t1 = $.index(elements, 0);
-      t1 = typeof t1 === 'object' && t1 !== null && !!t1.is$SquareElement;
-    } else
-      t1 = false;
-  else
-    t1 = false;
-  if ($.boolConversionCheck(t1, 'is$bool')) {
-    var se = $.propertyTypeCheck($.index(elements, 0), 'is$SquareElement');
-    this._updateCursor$1(this.get$game().canReveal$2(se.get$x(), se.get$y()));
+ _mouseMoveHandler$1: function(args) {
+  $.propertyTypeCheck(args, 'is$ElementMouseEventArgs');
+  if (!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool')) {
+    var t1 = args.get$element();
+    t1 = typeof t1 === 'object' && t1 !== null && !!t1.is$SquareElement;
   } else
-    this._updateCursor$1(false);
+    t1 = false;
+  if (t1) {
+    var se = $.propertyTypeCheck(args.get$element(), 'is$SquareElement');
+    var showPointer = $.boolTypeCheck(this.get$game().canReveal$2(se.get$x(), se.get$y()), 'is$bool');
+  } else {
+    t1 = args.get$element();
+    showPointer = typeof t1 === 'object' && t1 !== null && !!t1.is$NewGameElement && true;
+  }
+  this._updateCursor$1(showPointer);
 },
  get$_mouseMoveHandler: function() { return new $.BoundClosure(this, '_mouseMoveHandler$1'); },
  _mouseOutHandler$1: function(args) {
@@ -4866,7 +4759,7 @@ $$.GameRoot = {"":
 },
  get$_mouseOutHandler: function() { return new $.BoundClosure(this, '_mouseOutHandler$1'); },
  _updateCursor$1: function(showFinger) {
-  var t1 = $.boolTypeCheck(showFinger, 'is$bool') ? 'pointer' : 'inherit';
+  var t1 = showFinger ? 'pointer' : 'inherit';
   this._lib3_canvas.get$style().set$cursor(t1);
 },
  GameRoot$_internal$7: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan) {
@@ -5996,7 +5889,8 @@ $$.NewGameElement = {"":
   return this._clickedEvent;
 },
  drawOverride$1: function(ctx) {
-  $.drawTextureKeyAt(ctx, 'button_new_game.png', $.CTC40);
+  var texture = $.boolConversionCheck($.Mouse_isMouseDirectlyOver(this), 'is$bool') ? 'button_new_game_clicked.png' : 'button_new_game.png';
+  $.drawTextureKeyAt(ctx, texture, $.CTC40);
 },
  get$_lib3_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
@@ -6004,9 +5898,14 @@ $$.NewGameElement = {"":
  get$_game: function() {
   return this.get$_lib3_parent().get$_game();
 },
+ _mouseDirectlyOver$1: function(args) {
+  this.invalidateDraw$0();
+},
+ get$_mouseDirectlyOver: function() { return new $.BoundClosure(this, '_mouseDirectlyOver$1'); },
  NewGameElement$0: function() {
   $.ClickManager_setClickable(this, true);
   $.ClickManager_addHandler(this, new $.anon0(this));
+  $.get$Mouse_isMouseDirectlyOverProperty().addHandler$2(this, this.get$_mouseDirectlyOver());
 },
  is$NewGameElement: true
 };
@@ -6289,19 +6188,10 @@ $$.ClickManager = {"":
  ["_stage", "_mouseDownElement"],
  "super": "Object",
  _mouseMove$1: function(e) {
-  var items = this._updateMouseLocation$1($.getMouseEventCoordinate($.callTypeCheck(e, 'is$MouseEvent')));
-  if (typeof items !== 'string' && (typeof items !== 'object' || items === null || items.constructor !== Array && !items.is$JavaScriptIndexingBehavior()))
-    return this._mouseMove$1$bailout(1, items);
-  for (var i = 0; i < items.length; ++i) {
-    var t1 = $.get$ClickManager__mouseMoveEvent();
-    if (i < 0 || i >= items.length)
-      throw $.ioore(i);
-    t1.fireEvent$2(items[i], $.getRange(items, 0, i));
-  }
-},
- _mouseMove$1$bailout: function(state, items) {
-  for (var i = 0; $.lt(i, $.get$length(items)); ++i)
-    $.get$ClickManager__mouseMoveEvent().fireEvent$2($.index(items, i), $.getRange(items, 0, i));
+  $.callTypeCheck(e, 'is$MouseEvent');
+  var items = this._updateMouseLocation$1($.getMouseEventCoordinate(e));
+  if ($.boolConversionCheck($.gt($.get$length(items), 0), 'is$bool'))
+    $.forEach(items, new $.ClickManager__mouseMove_anon($.ElementMouseEventArgs_ElementMouseEventArgs($.index(items, 0), e)));
 },
  get$_mouseMove: function() { return new $.BoundClosure(this, '_mouseMove$1'); },
  _mouseOut$1: function(e) {
@@ -7106,6 +6996,14 @@ $$.ClickManager__mouseUp_anon = {"":
 }
 };
 
+$$.ClickManager__mouseMove_anon = {"":
+ ["args_0"],
+ "super": "Closure",
+ call$1: function(e) {
+  return $.get$ClickManager__mouseMoveEvent().fireEvent$2(e, this.args_0);
+}
+};
+
 $$.anon = {"":
  ["this_0"],
  "super": "Closure",
@@ -7269,14 +7167,6 @@ $$.GameElement__startPopAnimation_anon2 = {"":
  "super": "Closure",
  call$1: function(args) {
   return this.this_1._playPop$0();
-}
-};
-
-$$.HashSetImplementation_addAll__ = {"":
- ["this_0"],
- "super": "Closure",
- call$1: function(value) {
-  this.this_0.add$1(value);
 }
 };
 
@@ -8468,7 +8358,7 @@ $.addAll = function(receiver, collection) {
     return receiver.addAll$1(collection);
   var iterator = $.iterator(collection);
   for (; $.boolConversionCheck(iterator.hasNext$0(), 'is$bool');)
-    $.add$1(receiver, iterator.next$0());
+    receiver.push(iterator.next$0());
 };
 
 $._Elements_ImageElement = function(src, width, height) {
@@ -9272,47 +9162,6 @@ $.startsWith = function(receiver, other) {
   return other == receiver.substring(0, length$);
 };
 
-$.getRange = function(receiver, start, length$) {
-  if (!$.isJsArray(receiver))
-    return receiver.getRange$2(start, length$);
-  if (0 === length$)
-    return [];
-  $.checkNull(start);
-  $.checkNull(length$);
-  var t1 = length$ < 0;
-  if (t1)
-    throw $.$$throw($.IllegalArgumentException$(length$));
-  if (start < 0)
-    throw $.$$throw($.IndexOutOfRangeException$(start));
-  var end = start + length$;
-  if ($.gt(end, $.get$length(receiver)))
-    throw $.$$throw($.IndexOutOfRangeException$(length$));
-  if (t1)
-    throw $.$$throw($.IllegalArgumentException$(length$));
-  return receiver.slice(start, end);
-};
-
-$._Lists_getRange = function(a, start, length$, accumulator) {
-  $.listTypeCheck(a, 'is$List');
-  if (typeof a !== 'object' || a === null || a.constructor !== Array && !a.is$JavaScriptIndexingBehavior())
-    return $._Lists_getRange$bailout(1, start, length$, accumulator, a);
-  if (length$ < 0)
-    throw $.$$throw($.IllegalArgumentException$('length'));
-  if (start < 0)
-    throw $.$$throw($.IndexOutOfRangeException$(start));
-  var end = start + length$;
-  if (end > a.length)
-    throw $.$$throw($.IndexOutOfRangeException$(end));
-  for (var i = start; $.boolConversionCheck($.lt(i, end), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int')) {
-    if (i !== (i | 0))
-      throw $.iae(i);
-    if (i < 0 || i >= a.length)
-      throw $.ioore(i);
-    accumulator.push(a[i]);
-  }
-  return accumulator;
-};
-
 $.FutureAlreadyCompleteException$ = function() {
   return new $.FutureAlreadyCompleteException();
 };
@@ -9419,6 +9268,13 @@ $.GameBackgroundElement$ = function() {
   return new $.GameBackgroundElement(t1, true, $.propertyTypeCheck(t2, 'is$EventHandle'), $.propertyTypeCheck(t3, 'is$EventHandle'), null, 0, 0, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t4, 'is$HashMap'), $.propertyTypeCheck(t5, 'is$HashMap'), false);
 };
 
+$._Collections_forEach = function(iterable, f) {
+  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    f.call$1(t1.next$0());
+};
+
 $._convertNativeToDart_AcceptStructuredClone = function(object) {
   var values = [];
   var copies = [];
@@ -9458,13 +9314,6 @@ $.ScoreElement$ = function() {
   var t4 = $.HashMapImplementation$('Property', 'Object');
   var t5 = $.HashMapImplementation$('Attachable', 'EventHandle');
   return new $.ScoreElement(null, null, null, t1, false, $.propertyTypeCheck(t2, 'is$EventHandle'), $.propertyTypeCheck(t3, 'is$EventHandle'), $.callTypeCheck(null, 'is$CanvasElement'), 400, 96, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t4, 'is$HashMap'), $.propertyTypeCheck(t5, 'is$HashMap'), false);
-};
-
-$._Collections_forEach = function(iterable, f) {
-  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
-  $.functionTypeCheck(f, 'is$Function');
-  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    f.call$1(t1.next$0());
 };
 
 $.PCanvas$ = function(w, h, enableCache) {
@@ -10199,10 +10048,6 @@ $._ReceivePortImpl$ = function() {
   return t2;
 };
 
-$._NodeListWrapper$ = function(list) {
-  return new $._NodeListWrapper($.listTypeCheck($.listTypeCheck(list, 'is$List'), 'is$List'));
-};
-
 $.stringJoinUnchecked = function(array, separator) {
   return array.join(separator);
 };
@@ -10585,6 +10430,11 @@ $._DocumentEventsImpl$ = function(_ptr) {
   return new $._DocumentEventsImpl(_ptr);
 };
 
+$.Mouse_isMouseDirectlyOver = function(element) {
+  $.propertyTypeCheck(element, 'is$PElement');
+  return $.get$Mouse_isMouseDirectlyOverProperty().get$1(element);
+};
+
 $._IDBVersionChangeRequestEventsImpl$ = function(_ptr) {
   return new $._IDBVersionChangeRequestEventsImpl(_ptr);
 };
@@ -10637,6 +10487,7 @@ $._DOMWindowCrossFrameImpl__createSafe = function(w) {
 };
 
 $.ElementMouseEventArgs_ElementMouseEventArgs = function(element, mouseEvent) {
+  $.propertyTypeCheck(element, 'is$PElement');
   $.assert(!(element == null));
   $.assert(!(mouseEvent == null));
   return $.ElementMouseEventArgs$_internal(element, mouseEvent.get$shiftKey());
@@ -10762,19 +10613,6 @@ $._Lists_indexOf$bailout = function(state, env0, env1, env2, env3) {
           return i;
       return -1;
   }
-};
-
-$._Lists_getRange$bailout = function(state, start, length$, accumulator, a) {
-  if (length$ < 0)
-    throw $.$$throw($.IllegalArgumentException$('length'));
-  if (start < 0)
-    throw $.$$throw($.IndexOutOfRangeException$(start));
-  var end = start + length$;
-  if ($.boolConversionCheck($.gt(end, $.get$length(a)), 'is$bool'))
-    throw $.$$throw($.IndexOutOfRangeException$(end));
-  for (var i = start; $.boolConversionCheck($.lt(i, end), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
-    accumulator.push($.index(a, i));
-  return accumulator;
 };
 
 $.RetainedUtil__hitTest$bailout = function(state, env0, env1, env2, env3) {
@@ -11139,7 +10977,7 @@ Isolate.$lazy($, '_containerTransformProperty', 'Panel__containerTransformProper
   return $.propertyTypeCheck($.Property$('panelTransform', null, 'AffineTransform'), 'is$Property');
 });
 Isolate.$lazy($, '_mouseMoveEvent', 'ClickManager__mouseMoveEvent', 'get$ClickManager__mouseMoveEvent', function() {
-  return $.propertyTypeCheck($.AttachedEvent$('mouseMove'), 'is$AttachedEvent');
+  return $.propertyTypeCheck($.AttachedEvent$('mouseMove', 'ElementMouseEventArgs'), 'is$AttachedEvent');
 });
 Isolate.$lazy($, '_isClickableProperty', 'ClickManager__isClickableProperty', 'get$ClickManager__isClickableProperty', function() {
   return $.propertyTypeCheck($.Property$('isClickable', false, 'bool'), 'is$Property');
@@ -12183,9 +12021,6 @@ return this[index];
   $.stringTypeCheck(initialValue, 'is$String');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  contains$1: function(string) {
   return this.contains(string);
 },
@@ -12642,9 +12477,6 @@ return this[index];
   $.callTypeCheck(initialValue, 'is$File');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$_FileListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -12739,9 +12571,6 @@ this[index] = value
   $.numTypeCheck(initialValue, 'is$num');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$_Float32ArrayImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -12800,9 +12629,6 @@ this[index] = value
   $.intTypeCheck(rangeLength, 'is$$int');
   $.numTypeCheck(initialValue, 'is$num');
   throw $.$$throw($.CTC31);
-},
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -12931,9 +12757,6 @@ return this[index];
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$Node');
   throw $.$$throw($.CTC31);
-},
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
 },
  is$_HTMLCollectionImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -13341,9 +13164,6 @@ this[index] = value
   $.intTypeCheck(initialValue, 'is$$int');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
  is$List: function() { return true; },
@@ -13401,9 +13221,6 @@ this[index] = value
   $.intTypeCheck(initialValue, 'is$$int');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
  is$List: function() { return true; },
@@ -13460,9 +13277,6 @@ this[index] = value
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
   throw $.$$throw($.CTC31);
-},
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -13665,9 +13479,6 @@ return this[index];
   $.intTypeCheck(rangeLength, 'is$$int');
   $.stringTypeCheck(initialValue, 'is$String');
   throw $.$$throw($.CTC31);
-},
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
 },
  is$_MediaListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -13948,9 +13759,6 @@ return this[index];
   $.callTypeCheck(initialValue, 'is$Node');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$_NamedNodeMapImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -14080,9 +13888,6 @@ $.$defineNativeClass('NodeList', ["_parent?", "length?"], {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$Node');
   throw $.$$throw($.UnsupportedOperationException$('Cannot insertRange on immutable List.'));
-},
- getRange$2: function(start, rangeLength) {
-  return $._NodeListWrapper$($._Lists_getRange(this, start, rangeLength, []));
 },
  operator$index$1: function(index) {
   $.intTypeCheck(index, 'is$$int');
@@ -15728,9 +15533,6 @@ return this[index];
   $.callTypeCheck(initialValue, 'is$StyleSheet');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$_StyleSheetListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -15937,9 +15739,6 @@ return this[index];
   $.callTypeCheck(initialValue, 'is$Touch');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$_TouchListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -16031,9 +15830,6 @@ this[index] = value
   $.intTypeCheck(initialValue, 'is$$int');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
  is$List: function() { return true; },
@@ -16091,9 +15887,6 @@ this[index] = value
   $.intTypeCheck(initialValue, 'is$$int');
   throw $.$$throw($.CTC31);
 },
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
-},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
  is$List: function() { return true; },
@@ -16150,9 +15943,6 @@ this[index] = value
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
   throw $.$$throw($.CTC31);
-},
- getRange$2: function(start, rangeLength) {
-  return $._Lists_getRange(this, start, rangeLength, []);
 },
  is$_Uint8ArrayImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
