@@ -2,7 +2,5 @@ name: sweeper.dart
 dependencies:
   unittest:
     sdk: unittest
-  dart-xml:
-    git: git://github.com/prujohn/dart-xml.git
   dartlib:
     git: git://github.com/kevmoo/dartlib.git
