@@ -102,14 +102,15 @@ class GameRoot extends GameManager {
     _requestFrame();
   }
 
-  void _mouseMoveHandler(List<PElement> elements) {
-    if(!game.gameEnded && elements.length > 0 && elements[0] is SquareElement) {
-      final SquareElement se = elements[0];
-      final canReveal = game.canReveal(se.x, se.y);
-      _updateCursor(canReveal);
-    } else {
-      _updateCursor(false);
+  void _mouseMoveHandler(ElementMouseEventArgs args) {
+    bool showPointer = false;
+    if(!game.gameEnded && args.element is SquareElement) {
+      final SquareElement se = args.element;
+      showPointer = game.canReveal(se.x, se.y);
+    } else if(args.element is NewGameElement) {
+      showPointer = true;
     }
+    _updateCursor(showPointer);
   }
 
   void _mouseOutHandler(args) {

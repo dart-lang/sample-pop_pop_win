@@ -6,17 +6,22 @@ class NewGameElement extends PElement {
     ClickManager.setClickable(this, true);
     ClickManager.addHandler(this, (args) =>
         _clickedEvent.fireEvent(EventArgs.empty));
+    Mouse.isMouseDirectlyOverProperty.addHandler(this, _mouseDirectlyOver);
   }
 
   EventRoot<EventArgs> get clicked => _clickedEvent;
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    // [68, button_new_game.png]
-    // [69, button_new_game_clicked.png]
-    drawTextureKeyAt(ctx, 'button_new_game.png');
+    final texture = Mouse.isMouseDirectlyOver(this) ?
+        'button_new_game_clicked.png' : 'button_new_game.png';
+    drawTextureKeyAt(ctx, texture);
   }
 
   GameElement get _parent => (parent as PCanvas).parent;
 
   Game get _game => _parent._game;
+
+  void _mouseDirectlyOver(args) {
+    invalidateDraw();
+  }
 }
