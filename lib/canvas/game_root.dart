@@ -29,8 +29,8 @@ class GameRoot extends GameManager {
 
     _gameElement.newGameClick.add((args) => newGame());
 
-    //_canvas.on.mouseMove.add(_canvas_mouseMove);
-    //_canvas.on.mouseOut.add(_canvas_mouseOut);
+    ClickManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
+    ClickManager.addMouseOutHandler(_stage, _mouseOutHandler);
   }
 
   void set game(Game value) {
@@ -102,16 +102,21 @@ class GameRoot extends GameManager {
     _requestFrame();
   }
 
-  void _canvas_mouseMove(MouseEvent e){
-    _setMouse(getMouseEventCoordinate(e));
+  void _mouseMoveHandler(List<PElement> elements) {
+    if(!game.gameEnded && elements.length > 0 && elements[0] is SquareElement) {
+      final SquareElement se = elements[0];
+      final canReveal = game.canReveal(se.x, se.y);
+      _updateCursor(canReveal);
+    } else {
+      _updateCursor(false);
+    }
   }
 
-  void _canvas_mouseOut(MouseEvent e){
-    _setMouse(null);
+  void _mouseOutHandler(args) {
+    _updateCursor(false);
   }
 
-  void _setMouse(Coordinate value) {
-    final hits = Mouse.markMouseOver(_stage, value);
-    print(hits);
+  void _updateCursor(bool showFinger) {
+    _canvas.style.cursor = showFinger ? 'pointer' : 'inherit';
   }
 }
