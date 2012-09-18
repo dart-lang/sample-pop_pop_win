@@ -149,7 +149,7 @@ $$.ExceptionImplementation = {"":
 };
 
 $$.FutureImpl = {"":
- ["_isComplete", "_lib0_value?", "_exception", "_stackTrace", "_exceptionHandled", "_successListeners", "_exceptionHandlers", "_completionListeners"],
+ ["_isComplete", "_lib5_value?", "_exception", "_stackTrace", "_exceptionHandled", "_successListeners", "_exceptionHandlers", "_completionListeners"],
  "super": "Object",
  get$value: function() {
   if (!$.boolConversionCheck(this.get$isComplete(), 'is$bool'))
@@ -157,7 +157,7 @@ $$.FutureImpl = {"":
   var t1 = this._exception;
   if (!(t1 == null))
     throw $.$$throw(t1);
-  return this._lib0_value;
+  return this._lib5_value;
 },
  get$stackTrace: function() {
   if (!$.boolConversionCheck(this.get$isComplete(), 'is$bool'))
@@ -270,7 +270,7 @@ $$.FutureImpl = {"":
  _setValue$1: function(value) {
   if ($.boolConversionCheck(this._isComplete, 'is$bool'))
     throw $.$$throw($.FutureAlreadyCompleteException$());
-  this._lib0_value = value;
+  this._lib5_value = value;
   this._complete$0();
 },
  _setException$2: function(exception, stackTrace) {
@@ -1024,29 +1024,13 @@ $$._DoubleLinkedQueueIterator = {"":
 };
 
 $$.JSSyntaxRegExp = {"":
- ["_ignoreCase", "_multiLine", "_lib0_pattern"],
+ ["_ignoreCase", "_multiLine", "_lib5_pattern"],
  "super": "Object",
- firstMatch$1: function(str) {
-  $.stringTypeCheck(str, 'is$String');
-  var m = $.listTypeCheck($.regExpExec(this, $.checkString(str)), 'is$List');
-  if (m == null)
-    return;
-  var matchStart = $.regExpMatchStart(m);
-  var t1 = $.get$length($.index(m, 0));
-  if (typeof t1 !== 'number')
-    throw $.iae(t1);
-  var matchEnd = matchStart + t1;
-  return $._MatchImplementation$(this.get$pattern(), str, matchStart, matchEnd, m);
-},
- allMatches$1: function(str) {
-  $.checkString(str);
-  return $._AllMatchesIterable$(this, str);
-},
  hasMatch$1: function(str) {
   return $.regExpTest(this, $.checkString($.stringTypeCheck(str, 'is$String')));
 },
  get$pattern: function() {
-  return this._lib0_pattern;
+  return this._lib5_pattern;
 },
  get$multiLine: function() {
   return this._multiLine;
@@ -1133,69 +1117,6 @@ $$.StringBufferImpl = {"":
   this.add$1(content$);
 },
  is$StringBuffer: true,
- is$Object: function() { return true; }
-};
-
-$$._MatchImplementation = {"":
- ["pattern", "str", "_lib0_start", "_end", "_groups"],
- "super": "Object",
- group$1: function(index) {
-  return $.index(this._groups, index);
-},
- operator$index$1: function(index) {
-  return this.group$1($.intTypeCheck(index, 'is$$int'));
-},
- groupCount$0: function() {
-  return $.sub($.get$length(this._groups), 1);
-},
- is$Match: true,
- is$Object: function() { return true; }
-};
-
-$$._AllMatchesIterable = {"":
- ["_re", "_str"],
- "super": "Object",
- iterator$0: function() {
-  return $._AllMatchesIterator$(this._re, this._str);
-},
- is$Iterable: function() { return true; },
- is$Object: function() { return true; }
-};
-
-$$._AllMatchesIterator = {"":
- ["_re", "_str", "_next?", "_done"],
- "super": "Object",
- set$_next: function(v) { this._next = $.propertyTypeCheck(v, 'is$Match'); },
- next$0: function() {
-  var t1 = $.boolConversionCheck(this.hasNext$0(), 'is$bool');
-  if (typeof t1 !== 'boolean')
-    return this.next$0$bailout(1, t1);
-  if (!t1)
-    throw $.$$throw($.CTC4);
-  var next = this._next;
-  this._next = null;
-  return next;
-},
- next$0$bailout: function(state, t1) {
-  if (!t1)
-    throw $.$$throw($.CTC4);
-  var next = this._next;
-  this._next = null;
-  return next;
-},
- hasNext$0: function() {
-  if ($.boolConversionCheck(this._done, 'is$bool'))
-    return false;
-  else if (!(this._next == null))
-    return true;
-  this._next = $.propertyTypeCheck(this._re.firstMatch$1(this._str), 'is$Match');
-  if (this._next == null) {
-    this._done = true;
-    return false;
-  } else
-    return true;
-},
- is$Iterator: true,
  is$Object: function() { return true; }
 };
 
@@ -1494,7 +1415,7 @@ $$.CastExceptionImplementation = {"":
 };
 
 $$.ConstantMap = {"":
- ["length?", "_jsObject", "_lib4_keys?"],
+ ["length?", "_jsObject", "_lib2_keys?"],
  "super": "Object",
  containsValue$1: function(needle) {
   return $.some(this.getValues$0(), new $.ConstantMap_containsValue_anon(needle));
@@ -1513,14 +1434,14 @@ $$.ConstantMap = {"":
 },
  forEach$1: function(f) {
   $.functionTypeCheck(f, 'is$Function');
-  $.forEach(this._lib4_keys, new $.ConstantMap_forEach_anon(this, f));
+  $.forEach(this._lib2_keys, new $.ConstantMap_forEach_anon(this, f));
 },
  getKeys$0: function() {
-  return this._lib4_keys;
+  return this._lib2_keys;
 },
  getValues$0: function() {
   var result = [];
-  $.forEach(this._lib4_keys, new $.ConstantMap_getValues_anon(this, result));
+  $.forEach(this._lib2_keys, new $.ConstantMap_getValues_anon(this, result));
   return result;
 },
  isEmpty$0: function() {
@@ -1530,7 +1451,7 @@ $$.ConstantMap = {"":
   return $.Maps_mapToString(this);
 },
  _throwImmutable$0: function() {
-  throw $.$$throw($.CTC25);
+  throw $.$$throw($.CTC18);
 },
  operator$indexSet$2: function(key, val) {
   $.stringTypeCheck(key, 'is$String');
@@ -1553,27 +1474,23 @@ $$.ConstantMap = {"":
 };
 
 $$.MetaInfo = {"":
- ["_tag?", "_tags", "_lib4_set?"],
+ ["_tag?", "_tags", "_lib2_set?"],
  "super": "Object",
- _lib4_set$2: function(arg0, arg1) { return this._lib4_set.call$2(arg0, arg1); },
+ _lib2_set$2: function(arg0, arg1) { return this._lib2_set.call$2(arg0, arg1); },
  is$MetaInfo: true
 };
 
 $$.StringMatch = {"":
- ["_lib4_start", "str", "pattern"],
+ ["_lib2_start", "str", "pattern"],
  "super": "Object",
  operator$index$1: function(g) {
   return this.group$1($.intTypeCheck(g, 'is$$int'));
-},
- groupCount$0: function() {
-  return 0;
 },
  group$1: function(group_) {
   if (!(group_ === 0))
     throw $.$$throw($.IndexOutOfRangeException$(group_));
   return this.pattern;
 },
- is$Match: true,
  is$Object: function() { return true; }
 };
 
@@ -3239,13 +3156,6 @@ $$.NullArgumentException = {"":
 }
 };
 
-$$.InvalidOperationException = {"":
- ["message"],
- "super": "Object",
- is$Exception: true,
- is$Object: function() { return true; }
-};
-
 $$.DetailedIllegalArgumentException = {"":
  ["argument", "message", "_arg"],
  "super": "IllegalArgumentException",
@@ -3312,20 +3222,6 @@ $$.Enumerable = {"":
  firstOrDefault$1: function(f) {
   return this.firstOrDefault$2(f,null)
 },
- single$1: function(f) {
-  if (f == null)
-    f = $.functionTypeCheck(new $.Enumerable_single_anon(), 'is$Func1');
-  var iter = $._WhereIterator$(this.iterator$0(), f, $.getRuntimeTypeInfo(this).T);
-  if (!$.boolConversionCheck(iter.hasNext$0(), 'is$bool'))
-    throw $.$$throw($.CTC16);
-  var value = iter.next$0();
-  if ($.boolConversionCheck(iter.hasNext$0(), 'is$bool'))
-    throw $.$$throw($.CTC17);
-  return value;
-},
- single$0: function() {
-  return this.single$1(null)
-},
  toReadOnlyCollection$0: function() {
   return $.ReadOnlyCollection$(this, $.getRuntimeTypeInfo(this).T);
 },
@@ -3379,22 +3275,22 @@ $$._SelectIterator = {"":
 };
 
 $$._WhereIterator = {"":
- ["_source", "_func", "_lib1_next?", "_current"],
+ ["_source", "_func", "_lib4_next?", "_current"],
  "super": "Object",
- set$_lib1_next: function(v) { this._lib1_next = $.boolTypeCheck(v, 'is$bool'); },
+ set$_lib4_next: function(v) { this._lib4_next = $.boolTypeCheck(v, 'is$bool'); },
  _func$1: function(arg0) { return this._func.call$1(arg0); },
  hasNext$0: function() {
-  if (this._lib1_next == null) {
-    this._lib1_next = false;
+  if (this._lib4_next == null) {
+    this._lib4_next = false;
     for (var t1 = this._source; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
       this._current = t1.next$0();
       if ($.boolConversionCheck(this._func$1(this._current), 'is$bool')) {
-        this._lib1_next = true;
+        this._lib4_next = true;
         break;
       }
     }
   }
-  return this._lib1_next;
+  return this._lib4_next;
 },
  next$0: function() {
   var t1 = $.boolConversionCheck(this.hasNext$0(), 'is$bool');
@@ -3403,14 +3299,14 @@ $$._WhereIterator = {"":
   if (!t1)
     throw $.$$throw($.CTC4);
   $.assert(this._func$1(this._current));
-  this._lib1_next = null;
+  this._lib4_next = null;
   return this._current;
 },
  next$0$bailout: function(state, t1) {
   if (!t1)
     throw $.$$throw($.CTC4);
   $.assert(this._func$1(this._current));
-  this._lib1_next = null;
+  this._lib4_next = null;
   return this._current;
 },
  is$Iterator: true,
@@ -3484,10 +3380,10 @@ $$._RangeIterator = {"":
 };
 
 $$.IndexIterator = {"":
- ["_indexer", "_lib1_length", "_lib1_pos"],
+ ["_indexer", "_lib4_length", "_lib4_pos"],
  "super": "Object",
  hasNext$0: function() {
-  return $.gt(this._lib1_length, this._lib1_pos);
+  return $.gt(this._lib4_length, this._lib4_pos);
 },
  next$0: function() {
   var t1 = $.boolConversionCheck(this.hasNext$0(), 'is$bool');
@@ -3495,10 +3391,10 @@ $$.IndexIterator = {"":
     return this.next$0$bailout(1, t1);
   if (!t1)
     throw $.$$throw($.CTC4);
-  t1 = this._lib1_pos;
+  t1 = this._lib4_pos;
   if (t1 !== (t1 | 0))
     return this.next$0$bailout(2, t1);
-  this._lib1_pos = t1 + 1;
+  this._lib4_pos = t1 + 1;
   return this._indexer$1(t1);
 },
  next$0$bailout: function(state, env0) {
@@ -3517,10 +3413,10 @@ $$.IndexIterator = {"":
       state = 0;
       if (!t1)
         throw $.$$throw($.CTC4);
-      t1 = this._lib1_pos;
+      t1 = this._lib4_pos;
     case 2:
       state = 0;
-      this._lib1_pos = $.intTypeCheck($.add(t1, 1), 'is$$int');
+      this._lib4_pos = $.intTypeCheck($.add(t1, 1), 'is$$int');
       return this._indexer$1(t1);
   }
 },
@@ -3529,7 +3425,7 @@ $$.IndexIterator = {"":
   $.intTypeCheck(length$, 'is$$int');
   $.functionTypeCheck(indexer, 'is$Func1');
   $.requireArgumentNotNull(this._indexer, '_indexer');
-  $.assert($.ge(this._lib1_length, 0));
+  $.assert($.ge(this._lib4_length, 0));
 },
  is$Iterator: true,
  is$Object: function() { return true; }
@@ -3557,11 +3453,11 @@ $$.ListBase = {"":
   return $.eq($.get$length(this), 0);
 },
  get$length: function() {
-  throw $.$$throw($.CTC18);
+  throw $.$$throw($.CTC28);
 },
  operator$index$1: function(index) {
   $.intTypeCheck(index, 'is$$int');
-  throw $.$$throw($.CTC18);
+  throw $.$$throw($.CTC28);
 },
  indexOf$2: function(element, start) {
   if (start !== (start | 0))
@@ -3579,31 +3475,31 @@ $$.ListBase = {"":
 },
  operator$indexSet$2: function(index, value) {
   $.intTypeCheck(index, 'is$$int');
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  add$1: function(value) {
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  addLast$1: function(value) {
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  addAll$1: function(value) {
   $.listSuperNativeTypeCheck(value, 'is$Collection');
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  clear$0: function() {
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  removeLast$0: function() {
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  removeRange$2: function(start, length$) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  insertRange$3: function(start, length$, initialValue) {
   $.intTypeCheck(length$, 'is$$int');
-  throw $.$$throw($.CTC19);
+  throw $.$$throw($.CTC26);
 },
  is$List: function() { return true; },
  is$Collection: function() { return true; },
@@ -3914,9 +3810,6 @@ $$.Size = {"":
  operator$mul$1: function(magnitude) {
   return this.scale$1($.numTypeCheck(magnitude, 'is$num'));
 },
- toVector$0: function() {
-  return $.Vector$(this.width, this.height);
-},
  toString$0: function() {
   return '(' + $.S(this.width) + ' x ' + $.S(this.height) + ')';
 },
@@ -3935,12 +3828,6 @@ $$.Coordinate = {"":
  operator$add$1: function(other) {
   $.propertyTypeCheck(other, 'is$Vector');
   return $.Coordinate$($.add(this.x, other.get$x()), $.add(this.y, other.get$y()));
-},
- toVector$0: function() {
-  return $.Vector$(this.x, this.y);
-},
- toSize$0: function() {
-  return $.Size$(this.x, this.y);
 },
  operator$eq$1: function(other) {
   $.propertyTypeCheck(other, 'is$Coordinate');
@@ -4248,7 +4135,7 @@ $$.AttachableObject = {"":
 },
  _set$2: function(key, value) {
   $.propertyTypeCheck(key, 'is$Property');
-  $.assert(!(value === $.CTC20));
+  $.assert(!(value === $.CTC15));
   $.indexSet(this._propertyValues, key, value);
   this._fireChange$1(key);
 },
@@ -4274,7 +4161,7 @@ $$.AttachableObject = {"":
     this._set$2(key, value);
     return value;
   } else
-    return $.CTC20;
+    return $.CTC15;
 },
  _fireChange$1: function(key) {
   $.propertyTypeCheck(key, 'is$Property');
@@ -4290,7 +4177,7 @@ $$.Property = {"":
  "super": "Attachable",
  get$2: function(obj, ifAbsent) {
   var coreValue = this.getCore$2($.propertyTypeCheck(obj, 'is$AttachableObject'), $.functionTypeCheck(ifAbsent, 'is$Func1'));
-  if (!(coreValue === $.CTC20))
+  if (!(coreValue === $.CTC15))
     return coreValue;
   else
     return this.defaultValue;
@@ -4393,14 +4280,14 @@ $$.Game = {"":
   return this._states.get$2(x, y);
 },
  get$gameEnded: function() {
-  return $.boolConversionCheck($.eq(this._state, $.CTC34), 'is$bool') || $.boolConversionCheck($.eq(this._state, $.CTC35), 'is$bool');
+  return $.boolConversionCheck($.eq(this._state, $.CTC30), 'is$bool') || $.boolConversionCheck($.eq(this._state, $.CTC31), 'is$bool');
 },
  get$duration: function() {
   if (this._startTime == null) {
-    $.assert($.eq(this.get$state(), $.CTC29));
+    $.assert($.eq(this.get$state(), $.CTC23));
     return;
   } else {
-    $.assert($.eq($.eq(this.get$state(), $.CTC38), this._endTime == null));
+    $.assert($.eq($.eq(this.get$state(), $.CTC34), this._endTime == null));
     var end = this._endTime;
     if (end == null)
       end = $.DateImplementation$now();
@@ -4413,12 +4300,12 @@ $$.Game = {"":
   var t1 = this._states;
   var currentSS = t1.get$2(x, y);
   if (value) {
-    $.require($.eq(currentSS, $.CTC33), '');
-    t1.set$3(x, y, $.CTC37);
+    $.require($.eq(currentSS, $.CTC29), '');
+    t1.set$3(x, y, $.CTC33);
     this._minesLeft = $.intTypeCheck($.sub(this._minesLeft, 1), 'is$$int');
   } else {
-    $.require($.eq(currentSS, $.CTC37), '');
-    t1.set$3(x, y, $.CTC33);
+    $.require($.eq(currentSS, $.CTC33), '');
+    t1.set$3(x, y, $.CTC29);
     this._minesLeft = $.intTypeCheck($.add(this._minesLeft, 1), 'is$$int');
   }
   this._update$0();
@@ -4427,7 +4314,7 @@ $$.Game = {"":
   $.intTypeCheck(x, 'is$$int');
   $.intTypeCheck(y, 'is$$int');
   this._ensureStarted$0();
-  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC33), 'is$bool'))
+  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC29), 'is$bool'))
     return true;
   else if ($.boolConversionCheck(this._canChord$2(x, y), 'is$bool'))
     return true;
@@ -4438,7 +4325,7 @@ $$.Game = {"":
   $.intTypeCheck(y, 'is$$int');
   this._ensureStarted$0();
   $.require(this.canReveal$2(x, y), 'Item cannot be revealed.');
-  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC33), 'is$bool'))
+  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC29), 'is$bool'))
     if ($.boolConversionCheck(this.field.get$2(x, y), 'is$bool')) {
       this._setLost$0();
       var reveals = [];
@@ -4447,24 +4334,24 @@ $$.Game = {"":
   else
     reveals = $.boolConversionCheck(this._canChord$2(x, y), 'is$bool') ? $.listTypeCheck(this._doChord$2(x, y), 'is$List') : null;
   this._update$0();
-  if ($.boolConversionCheck($.eq(this._state, $.CTC35), 'is$bool'))
+  if ($.boolConversionCheck($.eq(this._state, $.CTC31), 'is$bool'))
     return;
   else
     return reveals;
 },
  _canChord$2: function(x, y) {
-  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC36), 'is$bool')) {
+  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC32), 'is$bool')) {
     var adjCount = this.field.getAdjacentCount$2(x, y);
     if ($.boolConversionCheck($.gt(adjCount, 0), 'is$bool'))
-      if ($.boolConversionCheck($.gt(this._getAdjacentCount$3(x, y, $.CTC33), 0), 'is$bool'))
-        if ($.boolConversionCheck($.eq(this._getAdjacentCount$3(x, y, $.CTC37), adjCount), 'is$bool'))
+      if ($.boolConversionCheck($.gt(this._getAdjacentCount$3(x, y, $.CTC29), 0), 'is$bool'))
+        if ($.boolConversionCheck($.eq(this._getAdjacentCount$3(x, y, $.CTC33), adjCount), 'is$bool'))
           return true;
   }
   return false;
 },
  _doChord$2: function(x, y) {
   var t1 = this._states;
-  $.assert($.eq(t1.get$2(x, y), $.CTC36));
+  $.assert($.eq(t1.get$2(x, y), $.CTC32));
   var flagged = $.ListImplementation_List(null, 'int');
   $.setRuntimeTypeInfo(flagged, { 'E': 'int' });
   var hidden = $.ListImplementation_List(null, 'int');
@@ -4474,11 +4361,11 @@ $$.Game = {"":
   $.assert($.gt(adjCount, 0));
   for (var t3 = $.iterator(t2.getAdjacentIndices$2(x, y)), failed = false; $.boolConversionCheck(t3.hasNext$0(), 'is$bool');) {
     var t4 = t3.next$0();
-    if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC33), 'is$bool')) {
+    if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC29), 'is$bool')) {
       hidden.push(t4);
       if ($.boolConversionCheck($.index(t2, t4), 'is$bool'))
         failed = true;
-    } else if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC37), 'is$bool'))
+    } else if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC33), 'is$bool'))
       flagged.push(t4);
   }
   $.assert(flagged.length === adjCount);
@@ -4497,8 +4384,8 @@ $$.Game = {"":
   $.intTypeCheck(x, 'is$$int');
   $.intTypeCheck(y, 'is$$int');
   var t1 = this._states;
-  $.assert($.eq(t1.get$2(x, y), $.CTC33));
-  t1.set$3(x, y, $.CTC36);
+  $.assert($.eq(t1.get$2(x, y), $.CTC29));
+  t1.set$3(x, y, $.CTC32);
   var t2 = this._revealsLeft;
   if (t2 !== (t2 | 0))
     return this._doReveal$2$bailout(1, t2, x, y, t1, 0, 0);
@@ -4518,13 +4405,13 @@ $$.Game = {"":
     if (t3 === 0)
       for (t3 = $.iterator(t2.getAdjacentIndices$2(x, y)); $.boolConversionCheck(t3.hasNext$0(), 'is$bool');) {
         var t4 = t3.next$0();
-        if ($.boolConversionCheck($.eq(t1.operator$index$1(t4), $.CTC33), 'is$bool')) {
+        if ($.boolConversionCheck($.eq(t1.operator$index$1(t4), $.CTC29), 'is$bool')) {
           var c = t2.getCoordinate$1(t4);
           $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
-          t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC38), 'is$bool');
+          t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC34), 'is$bool');
           if (typeof t4 !== 'boolean')
             return this._doReveal$2$bailout(4, t3, t4, reveals, t2, t1, 0);
-          $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC34), 'is$bool'));
+          $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC30), 'is$bool'));
         }
       }
   }
@@ -4566,8 +4453,8 @@ $$.Game = {"":
       $.intTypeCheck(x, 'is$$int');
       $.intTypeCheck(y, 'is$$int');
       var t1 = this._states;
-      $.assert($.eq(t1.get$2(x, y), $.CTC33));
-      t1.set$3(x, y, $.CTC36);
+      $.assert($.eq(t1.get$2(x, y), $.CTC29));
+      t1.set$3(x, y, $.CTC32);
       var t2 = this._revealsLeft;
     case 1:
       state = 0;
@@ -4601,15 +4488,15 @@ $$.Game = {"":
                             break L0;
                           var t4 = t3.next$0();
                         case 4:
-                          if (state === 4 || state === 0 && $.boolConversionCheck($.eq($.index(t1, t4), $.CTC33), 'is$bool'))
+                          if (state === 4 || state === 0 && $.boolConversionCheck($.eq($.index(t1, t4), $.CTC29), 'is$bool'))
                             switch (state) {
                               case 0:
                                 var c = t2.getCoordinate$1(t4);
                                 $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
-                                t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC38), 'is$bool');
+                                t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC34), 'is$bool');
                               case 4:
                                 state = 0;
-                                $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC34), 'is$bool'));
+                                $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC30), 'is$bool'));
                             }
                       }
               }
@@ -4618,29 +4505,29 @@ $$.Game = {"":
   }
 },
  _setWon$0: function() {
-  $.assert($.eq(this.get$state(), $.CTC38));
+  $.assert($.eq(this.get$state(), $.CTC34));
   for (var t1 = this.field, t2 = this._states, i = 0; $.boolConversionCheck($.lt(i, $.get$length(t1)), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
     if ($.boolConversionCheck($.index(t1, i), 'is$bool'))
-      $.indexSet(t2, i, $.CTC43);
-  this._setState$1($.CTC34);
+      $.indexSet(t2, i, $.CTC39);
+  this._setState$1($.CTC30);
 },
  _setLost$0: function() {
-  $.assert($.eq(this.get$state(), $.CTC38));
+  $.assert($.eq(this.get$state(), $.CTC34));
   for (var t1 = this.field, t2 = this._states, i = 0; $.boolConversionCheck($.lt(i, $.get$length(t1)), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
     if ($.boolConversionCheck($.index(t1, i), 'is$bool'))
-      $.indexSet(t2, i, $.CTC42);
-  this._setState$1($.CTC35);
+      $.indexSet(t2, i, $.CTC38);
+  this._setState$1($.CTC31);
 },
  _update$0: function() {
-  return this._updatedEvent.fireEvent$1($.CTC23);
+  return this._updatedEvent.fireEvent$1($.CTC22);
 },
  _setState$1: function(value) {
   $.assert(true);
   $.assert(!(this._state === null));
-  $.assert($.eq($.eq(this._state, $.CTC29), this._startTime == null));
+  $.assert($.eq($.eq(this._state, $.CTC23), this._startTime == null));
   if (!$.eqB(this._state, value)) {
     this._state = value;
-    if ($.boolConversionCheck($.eq(this._state, $.CTC38), 'is$bool'))
+    if ($.boolConversionCheck($.eq(this._state, $.CTC34), 'is$bool'))
       this._startTime = $.propertyTypeCheck($.DateImplementation$now(), 'is$Date');
     else if ($.boolConversionCheck(this.get$gameEnded(), 'is$bool'))
       this._endTime = $.propertyTypeCheck($.DateImplementation$now(), 'is$Date');
@@ -4648,11 +4535,11 @@ $$.Game = {"":
   }
 },
  _ensureStarted$0: function() {
-  if ($.boolConversionCheck($.eq(this.get$state(), $.CTC29), 'is$bool')) {
+  if ($.boolConversionCheck($.eq(this.get$state(), $.CTC23), 'is$bool')) {
     $.assert(this._startTime == null);
-    this._setState$1($.CTC38);
+    this._setState$1($.CTC34);
   }
-  $.assert($.eq(this.get$state(), $.CTC38));
+  $.assert($.eq(this.get$state(), $.CTC34));
   $.assert(!(this._startTime == null));
 },
  _getAdjacentCount$3: function(x, y, state) {
@@ -4689,7 +4576,7 @@ $$.SquareState = {"":
 };
 
 $$.GameRoot = {"":
- ["_lib3_stage", "_lib3_canvas?", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
+ ["_lib1_stage", "_lib1_canvas?", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib3_width", "_lib3_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
  set$game: function(value) {
   $.propertyTypeCheck(value, 'is$Game');
@@ -4709,7 +4596,7 @@ $$.GameRoot = {"":
 },
  _onFrame$1: function(time) {
   $.intTypeCheck(time, 'is$$int');
-  var t1 = this._lib3_stage;
+  var t1 = this._lib1_stage;
   var t2 = t1.get$size().get$width();
   var t3 = this._gameElement;
   var prettyScale = $.pow(2, $.toInt($.floor($.log($.min($.div(t2, t3.get$width()), $.div(t1.get$size().get$height(), t3.get$height()))) / 0.6931471805599453)));
@@ -4760,14 +4647,14 @@ $$.GameRoot = {"":
  get$_mouseOutHandler: function() { return new $.BoundClosure(this, '_mouseOutHandler$1'); },
  _updateCursor$1: function(showFinger) {
   var t1 = showFinger ? 'pointer' : 'inherit';
-  this._lib3_canvas.get$style().set$cursor(t1);
+  this._lib1_canvas.get$style().set$cursor(t1);
 },
  GameRoot$_internal$7: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan) {
   $.intTypeCheck(width, 'is$$int');
   $.intTypeCheck(height, 'is$$int');
   $.intTypeCheck(mineCount, 'is$$int');
   $.propertyTypeCheck(gameElement, 'is$GameElement');
-  var t1 = this._lib3_stage;
+  var t1 = this._lib1_stage;
   $.add$1(t1.get$invalidated(), this.get$_stageInvalidated());
   var t2 = this._gameElement;
   $.add$1(t2.get$newGameClick(), new $.anon(this));
@@ -4777,7 +4664,7 @@ $$.GameRoot = {"":
 };
 
 $$.GameElement = {"":
- ["_lib3_canvas?", "_background", "_boardElement", "_scoreElement", "_newGameElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_scoreTx", "_newGameTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_lib1_canvas?", "_background", "_boardElement", "_scoreElement", "_newGameElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_scoreTx", "_newGameTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "ElementParentImpl",
  get$newGameClick: function() {
   return this._newGameElement.get$clicked();
@@ -4789,7 +4676,7 @@ $$.GameElement = {"":
   $.propertyTypeCheck(value, 'is$Game');
   this._game = value;
   if (value == null)
-    this.set$size($.CTC30);
+    this.set$size($.CTC24);
   else
     this._updateSize$2(value.get$field().get$width(), value.get$field().get$height());
 },
@@ -4798,22 +4685,22 @@ $$.GameElement = {"":
 },
  getVisualChild$1: function(index) {
   $.assert($.intTypeCheck(index, 'is$$int') === 0);
-  return this._lib3_canvas;
+  return this._lib1_canvas;
 },
  update$0: function() {
   $.ElementParentImpl.prototype.update$0.call(this);
-  var offset = this._scaledBoardOffset.operator$add$1($.CTC26);
-  var t1 = this._lib3_canvas;
+  var offset = this._scaledBoardOffset.operator$add$1($.CTC19);
+  var t1 = this._lib1_canvas;
   t1.setTopLeft$2(this._boardElement, offset);
   t1.setTopLeft$2(this._popAnimationLayer, offset);
   t1.setTopLeft$2(this._dartAnimationLayer, offset);
   var t2 = this._scale;
   if (typeof t2 !== 'number')
     return this.update$0$bailout(1, t2, t1, 0, 0, 0, 0);
-  var t4 = $.CTC27.width;
+  var t4 = $.CTC20.width;
   if (typeof t4 !== 'number')
     return this.update$0$bailout(2, t2, t4, t1, 0, 0, 0);
-  var t6 = $.CTC28.x;
+  var t6 = $.CTC21.x;
   if (typeof t6 !== 'number')
     return this.update$0$bailout(3, t1, t2, t4, t6, 0, 0);
   t4 -= t6;
@@ -4879,18 +4766,18 @@ $$.GameElement = {"":
   switch (state) {
     case 0:
       $.ElementParentImpl.prototype.update$0.call(this);
-      var offset = $.add(this._scaledBoardOffset, $.CTC26);
-      var t1 = this._lib3_canvas;
+      var offset = $.add(this._scaledBoardOffset, $.CTC19);
+      var t1 = this._lib1_canvas;
       t1.setTopLeft$2(this._boardElement, offset);
       t1.setTopLeft$2(this._popAnimationLayer, offset);
       t1.setTopLeft$2(this._dartAnimationLayer, offset);
       var t2 = this._scale;
     case 1:
       state = 0;
-      var t4 = $.CTC27.width;
+      var t4 = $.CTC20.width;
     case 2:
       state = 0;
-      var t6 = $.CTC28.x;
+      var t6 = $.CTC21.x;
     case 3:
       state = 0;
       t4 = $.sub(t4, t6);
@@ -4933,7 +4820,7 @@ $$.GameElement = {"":
  _startPopAnimation$2: function(start, reveals) {
   $.listSuperNativeTypeCheck(reveals, 'is$Iterable');
   if (reveals == null) {
-    $.assert($.eq(this.get$game().get$state(), $.CTC35));
+    $.assert($.eq(this.get$game().get$state(), $.CTC31));
     reveals = $.listSuperNativeTypeCheck($.NumberEnumerable_NumberEnumerable$fromRange(0, $.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0(), 'is$Iterable');
   }
   for (var t1 = $.iterator(reveals), t2 = this._popAnimationLayer; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
@@ -4945,29 +4832,30 @@ $$.GameElement = {"":
     var t5 = t3.get$y();
     if (typeof t5 !== 'number')
       throw $.iae(t5);
-    var squareOffset = $.CTC41.operator$add$1($.Vector$(t4, 80 * t5));
-    var t6 = $.toInt($.mul($.get$length($.sub(t3, start)), 4));
-    if (typeof t6 !== 'number')
-      throw $.iae(t6);
-    var delay = 12 + t6;
-    t6 = $.rnd().nextInt$1(10);
-    if (typeof t6 !== 'number')
-      throw $.iae(t6);
-    delay += t6;
+    var initialOffset = $.Vector$(t4, 80 * t5);
+    var squareOffset = $.CTC37.operator$add$1(initialOffset);
+    t4 = $.toInt($.mul($.get$length($.sub(t3, start)), 4));
+    if (typeof t4 !== 'number')
+      throw $.iae(t4);
+    var delay = 12 + t4;
+    t4 = $.rnd().nextInt$1(10);
+    if (typeof t4 !== 'number')
+      throw $.iae(t4);
+    delay += t4;
     switch (this.get$game().getSquareState$2(t3.get$x(), t3.get$y())) {
-      case $.CTC36:
-      case $.CTC33:
+      case $.CTC32:
+      case $.CTC29:
         var frameCount = 29;
         var texturePrefix = 'balloon_pop';
         break;
-      case $.CTC42:
+      case $.CTC38:
         frameCount = 25;
         texturePrefix = 'balloon_explode';
         break;
       default:
         throw $.$$throw('not supported');
     }
-    var request = $.TextAniRequest$(texturePrefix, frameCount, squareOffset, delay);
+    var request = $.TextAniRequest$(texturePrefix, frameCount, squareOffset, delay, 0, 'balloon.png', initialOffset);
     $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon2(this));
     $.add$1(t2, request);
   }
@@ -4988,9 +4876,9 @@ $$.GameElement = {"":
     t3 = t3.get$y();
     if (typeof t3 !== 'number')
       throw $.iae(t3);
-    var squareOffset = $.CTC44.operator$add$1($.Vector$(t4, 80 * t3));
-    $.add$1(t2, $.TextAniRequest$('dart_fly_shadow', 56, squareOffset, 0));
-    $.add$1(t2, $.TextAniRequest$('dart_fly', 56, squareOffset, 0));
+    var squareOffset = $.CTC40.operator$add$1($.Vector$(t4, 80 * t3));
+    $.add$1(t2, $.TextAniRequest$('dart_fly_shadow', 56, squareOffset, 0, 0, null, null));
+    $.add$1(t2, $.TextAniRequest$('dart_fly', 56, squareOffset, 0, 0, null, null));
   }
 },
  _squareClicked$1: function(args) {
@@ -5018,10 +4906,10 @@ $$.GameElement = {"":
  _toggleFlag$2: function(x, y) {
   $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
   var ss = this.get$game().getSquareState$2(x, y);
-  if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool')) {
+  if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
     this.get$game().setFlag$3(x, y, true);
     return true;
-  } else if ($.boolConversionCheck($.eq(ss, $.CTC37), 'is$bool')) {
+  } else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool')) {
     this.get$game().setFlag$3(x, y, false);
     return true;
   }
@@ -5034,10 +4922,10 @@ $$.GameElement = {"":
   $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
   var ss = this.get$game().getSquareState$2(x, y);
   if (alt)
-    if ($.boolConversionCheck($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool') || $.boolConversionCheck($.eq(ss, $.CTC37), 'is$bool'), 'is$bool')) {
+    if ($.boolConversionCheck($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool') || $.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'), 'is$bool')) {
       this._toggleFlag$2(x, y);
       var reveals = null;
-    } else if ($.boolConversionCheck($.eq(ss, $.CTC36), 'is$bool'))
+    } else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'))
       if ($.boolConversionCheck(this.get$game().canReveal$2(x, y), 'is$bool')) {
         var adjHidden = $.$$(this.get$game().get$field().getAdjacentIndices$2(x, y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0();
         $.assert($.gt($.get$length(adjHidden), 0));
@@ -5047,35 +4935,35 @@ $$.GameElement = {"":
         reveals = null;
     else
       reveals = null;
-  else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool')) {
+  else if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
     this._startDartAnimation$1([$.Coordinate$(x, y)]);
     reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
   } else
     reveals = null;
   if ($.boolConversionCheck(!(reveals == null) && $.boolConversionCheck($.gt($.get$length(reveals), 0), 'is$bool'), 'is$bool')) {
-    $.assert(!$.eqB(this.get$game().get$state(), $.CTC35));
+    $.assert(!$.eqB(this.get$game().get$state(), $.CTC31));
     if (!alt) {
       var first = $.index(reveals, 0);
       $.assert($.eq(first.get$x(), x));
       $.assert($.eq(first.get$y(), y));
     }
     this._startPopAnimation$2($.Coordinate$(x, y), reveals);
-  } else if ($.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC35), 'is$bool'))
+  } else if ($.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC31), 'is$bool'))
     this._startPopAnimation$1($.Coordinate$(x, y));
 },
  _updateSize$2: function(w, h) {
   $.intTypeCheck(w, 'is$$int');
   $.intTypeCheck(h, 'is$$int');
-  var t1 = $.CTC27.width;
+  var t1 = $.CTC20.width;
   var sizeX = $.GameElement__getScale(w, t1, 1344);
-  var t2 = $.Size$(sizeX, $.GameElement__getScale(h, $.CTC27.height, 1344));
+  var t2 = $.Size$(sizeX, $.GameElement__getScale(h, $.CTC20.height, 1344));
   this.set$size(t2);
-  this._lib3_canvas.set$size(t2);
+  this._lib1_canvas.set$size(t2);
   this._scale = $.doubleTypeCheck($.div(sizeX, t1), 'is$$double');
-  this._scaledBoardOffset = $.propertyTypeCheck($.CTC28.scale$1(this._scale), 'is$Vector');
+  this._scaledBoardOffset = $.propertyTypeCheck($.CTC21.scale$1(this._scale), 'is$Vector');
 },
  GameElement$1: function(_targetMode) {
-  var t1 = this._lib3_canvas;
+  var t1 = this._lib1_canvas;
   t1.registerParent$1(this);
   t1.addElement$1(this._background);
   t1.addElement$1(this._boardElement);
@@ -5092,7 +4980,7 @@ $$.GameElement = {"":
 };
 
 $$.BoardElement = {"":
- ["_elements", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_elements", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "ElementParentImpl",
  get$visualChildCount: function() {
   var t1 = this._elements;
@@ -5120,7 +5008,7 @@ $$.BoardElement = {"":
       var coords = this._elements.getCoordinate$1(i);
       var se = $.SquareElement$(coords.get$Item1(), coords.get$Item2());
       se.registerParent$1(this);
-      $.ClickManager_addHandler(se, this.get$_lib3_parent().get$_squareClicked());
+      $.ClickManager_addHandler(se, this.get$_lib1_parent().get$_squareClicked());
       var etx = se.addTransform$0();
       t1 = coords.get$Item1();
       if (typeof t1 !== 'number')
@@ -5202,7 +5090,7 @@ $$.BoardElement = {"":
                           var coords = this._elements.getCoordinate$1(i);
                           var se = $.SquareElement$(coords.get$Item1(), coords.get$Item2());
                           se.registerParent$1(this);
-                          $.ClickManager_addHandler(se, this.get$_lib3_parent().get$_squareClicked());
+                          $.ClickManager_addHandler(se, this.get$_lib1_parent().get$_squareClicked());
                           var etx = se.addTransform$0();
                           t1 = coords.get$Item1();
                         case 2:
@@ -5230,11 +5118,11 @@ $$.BoardElement = {"":
       $.ElementParentImpl.prototype.update$0.call(this);
   }
 },
- get$_lib3_parent: function() {
+ get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
 },
  get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+  return this.get$_lib1_parent().get$_game();
 },
  get$_elementsNeedUpdate: function() {
   $.assert(!(this.get$_game() == null));
@@ -5245,30 +5133,30 @@ $$.BoardElement = {"":
 };
 
 $$.GameBackgroundElement = {"":
- ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  update$0: function() {
-  if (!$.eqB(this.get$size(), this.get$_lib3_parent().get$size()))
-    this.set$size(this.get$_lib3_parent().get$size());
+  if (!$.eqB(this.get$size(), this.get$_lib1_parent().get$size()))
+    this.set$size(this.get$_lib1_parent().get$size());
 },
  drawOverride$1: function(ctx) {
-  var t1 = this.get$_lib3_parent().get$_game().get$field().get$width();
+  var t1 = this.get$_lib1_parent().get$_game().get$field().get$width();
   if (typeof t1 !== 'number')
     return this.drawOverride$1$bailout(1, ctx, t1, 0, 0, 0);
   var rightBgLoc = 80 * (t1 - 1) + 32;
-  var t3 = this.get$_lib3_parent().get$_game().get$field().get$height();
+  var t3 = this.get$_lib1_parent().get$_game().get$field().get$height();
   if (typeof t3 !== 'number')
     return this.drawOverride$1$bailout(2, ctx, rightBgLoc, t3, 0, 0);
   var bottomBgLoc = 80 * (t3 - 1) + 32;
   ctx.save$0();
-  ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(), this.get$_lib3_parent().get$_scaledBoardOffset().get$y());
-  $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC40);
+  ctx.translate$2(this.get$_lib1_parent().get$_scaledBoardOffset().get$x(), this.get$_lib1_parent().get$_scaledBoardOffset().get$y());
+  $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC36);
   $.drawTextureKeyAt(ctx, 'game_board_corner_top_right.png', $.Coordinate$(rightBgLoc, 0));
   $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png', $.Coordinate$(0, bottomBgLoc));
   $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png', $.Coordinate$(rightBgLoc, bottomBgLoc));
   var i = 1;
   while (true) {
-    t1 = this.get$_lib3_parent().get$_game().get$field().get$width();
+    t1 = this.get$_lib1_parent().get$_game().get$field().get$width();
     if (typeof t1 !== 'number')
       return this.drawOverride$1$bailout(3, ctx, rightBgLoc, t1, bottomBgLoc, i);
     if (!(i < t1 - 1))
@@ -5280,7 +5168,7 @@ $$.GameBackgroundElement = {"":
   }
   i = 1;
   while (true) {
-    t1 = this.get$_lib3_parent().get$_game().get$field().get$height();
+    t1 = this.get$_lib1_parent().get$_game().get$field().get$height();
     if (typeof t1 !== 'number')
       return this.drawOverride$1$bailout(4, ctx, rightBgLoc, t1, i, 0);
     if (!(i < t1 - 1))
@@ -5292,12 +5180,12 @@ $$.GameBackgroundElement = {"":
   }
   ctx.restore$0();
   ctx.save$0();
-  ctx.transform$6(this.get$_lib3_parent().get$_scale(), 0, 0, this.get$_lib3_parent().get$_scale(), 0, 0);
+  ctx.transform$6(this.get$_lib1_parent().get$_scale(), 0, 0, this.get$_lib1_parent().get$_scale(), 0, 0);
   this._drawCorner$1(ctx);
   ctx.save$0();
-  ctx.transform$6(-1, 0, 0, 1, $.CTC27.width, 0);
+  ctx.transform$6(-1, 0, 0, 1, $.CTC20.width, 0);
   this._drawCorner$1(ctx);
-  t1 = $.CTC27.height;
+  t1 = $.CTC20.height;
   ctx.transform$6(1, 0, 0, -1, 0, t1);
   this._drawCorner$1(ctx);
   ctx.restore$0();
@@ -5332,14 +5220,14 @@ $$.GameBackgroundElement = {"":
   }
   switch (state) {
     case 0:
-      var t1 = this.get$_lib3_parent().get$_game().get$field().get$width();
+      var t1 = this.get$_lib1_parent().get$_game().get$field().get$width();
     case 1:
       state = 0;
       t1 = $.sub(t1, 1);
       if (typeof t1 !== 'number')
         throw $.iae(t1);
       var rightBgLoc = 80 * t1 + 32;
-      var t3 = this.get$_lib3_parent().get$_game().get$field().get$height();
+      var t3 = this.get$_lib1_parent().get$_game().get$field().get$height();
     case 2:
       state = 0;
       t3 = $.sub(t3, 1);
@@ -5347,8 +5235,8 @@ $$.GameBackgroundElement = {"":
         throw $.iae(t3);
       var bottomBgLoc = 80 * t3 + 32;
       ctx.save$0();
-      ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(), this.get$_lib3_parent().get$_scaledBoardOffset().get$y());
-      $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC40);
+      ctx.translate$2(this.get$_lib1_parent().get$_scaledBoardOffset().get$x(), this.get$_lib1_parent().get$_scaledBoardOffset().get$y());
+      $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC36);
       $.drawTextureKeyAt(ctx, 'game_board_corner_top_right.png', $.Coordinate$(rightBgLoc, 0));
       $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png', $.Coordinate$(0, bottomBgLoc));
       $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png', $.Coordinate$(rightBgLoc, bottomBgLoc));
@@ -5358,7 +5246,7 @@ $$.GameBackgroundElement = {"":
         while (true)
           switch (state) {
             case 0:
-              t1 = this.get$_lib3_parent().get$_game().get$field().get$width();
+              t1 = this.get$_lib1_parent().get$_game().get$field().get$width();
             case 3:
               state = 0;
               if (!$.lt(i, $.sub(t1, 1)))
@@ -5374,7 +5262,7 @@ $$.GameBackgroundElement = {"":
         while (true)
           switch (state) {
             case 0:
-              t1 = this.get$_lib3_parent().get$_game().get$field().get$height();
+              t1 = this.get$_lib1_parent().get$_game().get$field().get$height();
             case 4:
               state = 0;
               if (!$.lt(i, $.sub(t1, 1)))
@@ -5386,12 +5274,12 @@ $$.GameBackgroundElement = {"":
           }
       ctx.restore$0();
       ctx.save$0();
-      ctx.transform$6(this.get$_lib3_parent().get$_scale(), 0, 0, this.get$_lib3_parent().get$_scale(), 0, 0);
+      ctx.transform$6(this.get$_lib1_parent().get$_scale(), 0, 0, this.get$_lib1_parent().get$_scale(), 0, 0);
       this._drawCorner$1(ctx);
       ctx.save$0();
-      ctx.transform$6(-1, 0, 0, 1, $.CTC27.width, 0);
+      ctx.transform$6(-1, 0, 0, 1, $.CTC20.width, 0);
       this._drawCorner$1(ctx);
-      t1 = $.CTC27.height;
+      t1 = $.CTC20.height;
       ctx.transform$6(1, 0, 0, -1, 0, t1);
       this._drawCorner$1(ctx);
       ctx.restore$0();
@@ -5401,17 +5289,17 @@ $$.GameBackgroundElement = {"":
   }
 },
  _drawCorner$1: function(ctx) {
-  $.drawTextureKeyAt(ctx, 'background_top_left.png', $.CTC40);
-  $.drawTextureKeyAt(ctx, 'background_side_left.png', $.Coordinate$(0, $.CTC28.y));
+  $.drawTextureKeyAt(ctx, 'background_top_left.png', $.CTC36);
+  $.drawTextureKeyAt(ctx, 'background_side_left.png', $.Coordinate$(0, $.CTC21.y));
 },
- get$_lib3_parent: function() {
+ get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
 },
  is$GameBackgroundElement: true
 };
 
 $$.SquareElement = {"":
- ["x?", "y?", "_lastDrawingState", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["x?", "y?", "_lastDrawingState", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  update$0: function() {
   if (!$.eqB(this._lastDrawingState, this.get$_squareState())) {
@@ -5422,42 +5310,42 @@ $$.SquareElement = {"":
  drawOverride$1: function(ctx) {
   var textureName = null;
   switch (this._lastDrawingState) {
-    case $.CTC33:
+    case $.CTC29:
       textureName = this._getHiddenTexture$0();
       break;
-    case $.CTC37:
+    case $.CTC33:
       textureName = 'balloon_tagged_frozen.png';
       break;
-    case $.CTC36:
+    case $.CTC32:
       var t1 = this.get$_adjacentCount();
       if (t1 !== (t1 | 0))
         throw $.iae(t1);
       if (t1 < 0 || t1 >= 9)
         throw $.ioore(t1);
-      textureName = $.S($.CTC45[t1]) + '.png';
+      textureName = $.S($.CTC41[t1]) + '.png';
       break;
-    case $.CTC42:
-      textureName = 'balloon_tagged_bomb.png';
+    case $.CTC38:
+      textureName = 'crater_b.png';
       break;
   }
   if (textureName == null) {
     ctx.set$fillStyle(this.get$_fillStyle());
     ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
   } else
-    $.drawTextureKeyAt(ctx, textureName, $.CTC40);
+    $.drawTextureKeyAt(ctx, textureName, $.CTC36);
 },
  toString$0: function() {
   return 'Square at [' + $.S(this.x) + ', ' + $.S(this.y) + ']';
 },
  _getHiddenTexture$0: function() {
-  $.assert($.eq(this._lastDrawingState, $.CTC33));
-  if ($.boolConversionCheck($.eq(this.get$_game().get$state(), $.CTC35), 'is$bool')) {
+  $.assert($.eq(this._lastDrawingState, $.CTC29));
+  if ($.boolConversionCheck($.eq(this.get$_game().get$state(), $.CTC31), 'is$bool')) {
     var index = $.mod($.add(this.x, this.y), 4);
     if (index !== (index | 0))
       throw $.iae(index);
     if (index < 0 || index >= 4)
       throw $.ioore(index);
-    return $.CTC46[index];
+    return $.CTC42[index];
   } else
     return 'balloon.png';
 },
@@ -5473,7 +5361,7 @@ $$.SquareElement = {"":
  get$_fillStyle: function() {
   var t1 = this._lastDrawingState;
   switch (t1) {
-    case $.CTC43:
+    case $.CTC39:
       return 'green';
     default:
       throw $.$$throw('not supported - ' + $.S(t1));
@@ -5489,7 +5377,7 @@ $$.ResourceLoader = {"":
  ["_resources?"],
  "super": "Object",
  get$state: function() {
-  return this._lib3_state;
+  return this._lib1_state;
 },
  get$loaded: function() {
   return this._loadedEvent;
@@ -5501,28 +5389,28 @@ $$.ResourceLoader = {"":
   return $.index(this._resources, url);
 },
  load$0: function() {
-  $.assert(this._lib3_state === 'unloaded');
-  this._lib3_state = 'loading';
+  $.assert(this._lib1_state === 'unloaded');
+  this._lib1_state = 'loading';
   for (var t1 = $.iterator(this._urlList); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
     this._doLoad$1(t1.next$0());
 },
  get$load: function() { return new $.BoundClosure0(this, 'load$0'); },
  _onLoaded$1: function(uri) {
-  $.assert(this._lib3_state === 'loading');
+  $.assert(this._lib1_state === 'loading');
   $.assert(this._resources.containsKey$1(uri));
   var t1 = this._completed;
   $.assert(!$.boolConversionCheck($.contains$1(t1, uri), 'is$bool'));
   $.add$1(t1, uri);
   if ($.boolConversionCheck($.eq($.get$length(t1), $.get$length(this._urlList)), 'is$bool')) {
-    this._lib3_state = 'loaded';
-    this._loadedEvent.fireEvent$1($.CTC23);
+    this._lib1_state = 'loaded';
+    this._loadedEvent.fireEvent$1($.CTC22);
   } else
-    this._progressEvent.fireEvent$1($.CTC23);
+    this._progressEvent.fireEvent$1($.CTC22);
 }
 };
 
 $$.ImageLoader = {"":
- ["_loaded", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib3_state"],
+ ["_loaded", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib1_state"],
  "super": "ResourceLoader",
  _doLoad$1: function(url) {
   $.stringTypeCheck(url, 'is$String');
@@ -5559,7 +5447,7 @@ $$.ImageLoader = {"":
 };
 
 $$.AudioLoader = {"":
- ["context?", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib3_state"],
+ ["context?", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib1_state"],
  "super": "ResourceLoader",
  _doLoad$1: function(url) {
   $.stringTypeCheck(url, 'is$String');
@@ -5583,7 +5471,7 @@ $$.AudioLoader = {"":
 };
 
 $$.TextureAnimationElement = {"":
- ["_requests", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_requests", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  add$1: function(request) {
   $.propertyTypeCheck(request, 'is$TextAniRequest');
@@ -5678,13 +5566,13 @@ $$.TextureAnimationElement = {"":
 };
 
 $$.TextAniRequest = {"":
- ["_texturePrefix", "_frameCount", "_offset", "_delay", "_startEventHandle", "_lib3_done", "_frame"],
+ ["_startEventHandle", "_texturePrefix", "_frameCount", "_offset", "_delay", "_initialFrame", "_initialFrameOffset", "_done", "_frame"],
  "super": "Object",
  get$fresh: function() {
   return this._frame == null;
 },
  get$done: function() {
-  return this._lib3_done;
+  return this._done;
 },
  get$started: function() {
   return this._startEventHandle;
@@ -5705,18 +5593,18 @@ $$.TextAniRequest = {"":
       this._frame = t1 + 1;
       $.assert($.lt(this._frame, t2));
     } else
-      this._lib3_done = true;
+      this._done = true;
   }
   t1 = this._frame;
   if (t1 !== (t1 | 0))
     return this.update$0$bailout(3, t1, 0);
   if (t1 === 0) {
-    t1 = this._lib3_done;
+    t1 = this._done;
     t1 = !t1;
   } else
     t1 = false;
   if (t1)
-    this._startEventHandle.fireEvent$1($.CTC23);
+    this._startEventHandle.fireEvent$1($.CTC22);
 },
  update$0$bailout: function(state, env0, env1) {
   switch (state) {
@@ -5761,7 +5649,7 @@ $$.TextAniRequest = {"":
                   $.assert($.lt(this._frame, t2));
               }
             else
-              this._lib3_done = true;
+              this._done = true;
         }
       t1 = this._frame;
     case 3:
@@ -5770,7 +5658,7 @@ $$.TextAniRequest = {"":
       if (state === 4 || state === 0 && $.boolConversionCheck(t1 === 0, 'is$bool'))
         switch (state) {
           case 0:
-            t1 = $.boolConversionCheck(this._lib3_done, 'is$bool');
+            t1 = $.boolConversionCheck(this._done, 'is$bool');
           case 4:
             state = 0;
             t1 = !t1;
@@ -5778,35 +5666,69 @@ $$.TextAniRequest = {"":
       else
         t1 = false;
       if (t1)
-        this._startEventHandle.fireEvent$1($.CTC23);
+        this._startEventHandle.fireEvent$1($.CTC22);
   }
 },
  drawOverride$1: function(ctx) {
-  var frame = $.boolConversionCheck($.lt(this._frame, 0), 'is$bool') ? 0 : this._frame;
-  var frameString = $.toString($.toInt(frame));
-  if (typeof frameString !== 'string')
-    return this.drawOverride$1$bailout(1, ctx, frameString);
-  for (; frameString.length < 4;)
-    frameString = '0' + frameString;
-  var frameName = this._texturePrefix + '_' + frameString + '.png';
+  var offset = this._offset;
+  if ($.boolConversionCheck($.lt(this._frame, 0), 'is$bool') && !(this._initialFrame == null)) {
+    var frameName = this._initialFrame;
+    var offset0 = this._initialFrameOffset;
+    if (!(offset0 == null))
+      offset = offset0;
+  } else {
+    var frame = $.boolConversionCheck($.lt(this._frame, 0), 'is$bool') ? 0 : this._frame;
+    var frameString = $.toString($.toInt(frame));
+    if (typeof frameString !== 'string')
+      return this.drawOverride$1$bailout(1, ctx, offset, frameString);
+    for (; frameString.length < 4;)
+      frameString = '0' + frameString;
+    frameName = this._texturePrefix + '_' + frameString + '.png';
+  }
   ctx.save$0();
-  var t1 = this._offset;
-  ctx.translate$2(t1.get$x(), t1.get$y());
-  $.drawTextureKeyAt(ctx, frameName, $.CTC40);
+  ctx.translate$2(offset.get$x(), offset.get$y());
+  $.drawTextureKeyAt(ctx, frameName, $.CTC36);
   ctx.restore$0();
 },
- drawOverride$1$bailout: function(state, ctx, frameString) {
-  for (; $.boolConversionCheck($.lt($.get$length(frameString), 4), 'is$bool');)
-    frameString = '0' + $.S(frameString);
-  var frameName = this._texturePrefix + '_' + $.S(frameString) + '.png';
-  ctx.save$0();
-  var t1 = this._offset;
-  ctx.translate$2(t1.get$x(), t1.get$y());
-  $.drawTextureKeyAt(ctx, frameName, $.CTC40);
-  ctx.restore$0();
+ drawOverride$1$bailout: function(state, env0, env1, env2) {
+  switch (state) {
+    case 1:
+      var ctx = env0;
+      offset = env1;
+      frameString = env2;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var offset = this._offset;
+    case 1:
+      if (state === 0 && $.boolConversionCheck($.lt(this._frame, 0), 'is$bool') && !(this._initialFrame == null)) {
+        var frameName = this._initialFrame;
+        var offset0 = this._initialFrameOffset;
+        if (!(offset0 == null))
+          offset = offset0;
+      } else
+        switch (state) {
+          case 0:
+            var frame = $.boolConversionCheck($.lt(this._frame, 0), 'is$bool') ? 0 : this._frame;
+            var frameString = $.toString($.toInt(frame));
+          case 1:
+            state = 0;
+            for (; $.boolConversionCheck($.lt($.get$length(frameString), 4), 'is$bool');)
+              frameString = '0' + $.S(frameString);
+            frameName = this._texturePrefix + '_' + $.S(frameString) + '.png';
+        }
+      ctx.save$0();
+      ctx.translate$2(offset.get$x(), offset.get$y());
+      $.drawTextureKeyAt(ctx, frameName, $.CTC36);
+      ctx.restore$0();
+  }
 },
- TextAniRequest$4: function(_texturePrefix, _frameCount, _offset, delay) {
+ TextAniRequest$7$delay$startFrame$initialFrame$initialFrameOffset: function(_texturePrefix, _frameCount, _offset, delay, startFrame, initialFrame, initialFrameOffset) {
   $.intTypeCheck(delay, 'is$$int');
+  $.intTypeCheck(startFrame, 'is$$int');
+  $.stringTypeCheck(initialFrame, 'is$String');
+  $.propertyTypeCheck(initialFrameOffset, 'is$Coordinate');
   $.assert($.ge(this._delay, 0));
   $.assert(!(this._texturePrefix === null));
   $.assert(this._frameCount > 0);
@@ -5816,7 +5738,7 @@ $$.TextAniRequest = {"":
 };
 
 $$.ScoreElement = {"":
- ["_clockStr", "_minesStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_clockStr", "_minesStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  update$0: function() {
   var newMineStr = $.toString(this.get$_game().get$minesLeft());
@@ -5873,30 +5795,30 @@ $$.ScoreElement = {"":
     this._textSize = $.numTypeCheck(ctx.measureText$1('MINES LEFT:').get$width(), 'is$num');
   return this._textSize;
 },
- get$_lib3_parent: function() {
+ get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
 },
  get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+  return this.get$_lib1_parent().get$_game();
 },
  is$ScoreElement: true
 };
 
 $$.NewGameElement = {"":
- ["_clickedEvent?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_clickedEvent?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  get$clicked: function() {
   return this._clickedEvent;
 },
  drawOverride$1: function(ctx) {
-  var texture = $.boolConversionCheck($.Mouse_isMouseDirectlyOver(this), 'is$bool') ? 'button_new_game_clicked.png' : 'button_new_game.png';
-  $.drawTextureKeyAt(ctx, texture, $.CTC40);
+  ctx.set$fillStyle('red');
+  ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
 },
- get$_lib3_parent: function() {
+ get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
 },
  get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+  return this.get$_lib1_parent().get$_game();
 },
  _mouseDirectlyOver$1: function(args) {
   this.invalidateDraw$0();
@@ -5911,7 +5833,7 @@ $$.NewGameElement = {"":
 };
 
 $$.TextureInput = {"":
- ["name?", "frame?", "offset", "rotated?", "sourceColorRect?", "sourceSize"],
+ ["name?", "frame?", "rotated?", "trimmed", "sourceColorRect?", "sourceSize", "image?"],
  "super": "Object",
  toString$0: function() {
   return this.name;
@@ -5920,7 +5842,7 @@ $$.TextureInput = {"":
 };
 
 $$.PElement = {"":
- ["_lib2_parent?"],
+ ["_lib0_parent?"],
  "super": "AttachableObject",
  get$width: function() {
   return this._width;
@@ -5942,7 +5864,7 @@ $$.PElement = {"":
   return 0;
 },
  get$parent: function() {
-  return this._lib2_parent;
+  return this._lib0_parent;
 },
  get$updated: function() {
   return this._updatedEventHandle;
@@ -5963,7 +5885,7 @@ $$.PElement = {"":
   return dirty;
 },
  update$0: function() {
-  this._updatedEventHandle.fireEvent$1($.CTC23);
+  this._updatedEventHandle.fireEvent$1($.CTC22);
 },
  drawCore$1: function(ctx) {
   $.callTypeCheck(ctx, 'is$CanvasRenderingContext2D');
@@ -6008,8 +5930,8 @@ $$.PElement = {"":
 },
  registerParent$1: function(parent$) {
   $.propertyTypeCheck(parent$, 'is$ElementParent');
-  $.assert(this._lib2_parent == null);
-  this._lib2_parent = parent$;
+  $.assert(this._lib0_parent == null);
+  this._lib0_parent = parent$;
 },
  _drawCached$1: function(ctx) {
   if (this._cacheCanvas == null)
@@ -6055,9 +5977,9 @@ $$.PElement = {"":
   return false;
 },
  _invalidateParent$0: function() {
-  $.assert(!(this._lib2_parent == null));
-  this._invalidatedEventHandle.fireEvent$1($.CTC23);
-  this._lib2_parent.childInvalidated$1(this);
+  $.assert(!(this._lib0_parent == null));
+  this._invalidatedEventHandle.fireEvent$1($.CTC22);
+  this._lib0_parent.childInvalidated$1(this);
 },
  is$PElement: true
 };
@@ -6139,7 +6061,7 @@ $$.Panel = {"":
 };
 
 $$.PCanvas = {"":
- ["_children", "background", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib2_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_children", "background", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "Panel",
  setTopLeft$2: function(element, value) {
   $.propertyTypeCheck(element, 'is$PElement');
@@ -6150,7 +6072,7 @@ $$.PCanvas = {"":
 };
 
 $$.Stage = {"":
- ["_invalidatedEventHandle", "_canvas?", "_lib2_element?", "_ctx", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_invalidatedEventHandle", "_canvas?", "_lib0_element?", "_ctx", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "AttachableObject",
  get$size: function() {
   var t1 = this._canvas;
@@ -6160,7 +6082,7 @@ $$.Stage = {"":
   return this._invalidatedEventHandle;
 },
  get$rootElement: function() {
-  return this._lib2_element;
+  return this._lib0_element;
 },
  draw$0: function() {
   var t1 = this._ctx;
@@ -6170,14 +6092,14 @@ $$.Stage = {"":
     this._ctx = $.callTypeCheck(t3.get$context2d(), 'is$CanvasRenderingContext2D');
   else
     t1.clearRect$4(0, 0, t3.get$width(), t3.get$height());
-  return this._lib2_element.draw$1(this._ctx);
+  return this._lib0_element.draw$1(this._ctx);
 },
  childInvalidated$1: function(child) {
-  $.assert($.eq(child, this._lib2_element));
-  this._invalidatedEventHandle.fireEvent$1($.CTC23);
+  $.assert($.eq(child, this._lib0_element));
+  this._invalidatedEventHandle.fireEvent$1($.CTC22);
 },
  Stage$2: function(_canvas, _element) {
-  this._lib2_element.registerParent$1(this);
+  this._lib0_element.registerParent$1(this);
 },
  is$Stage: true,
  is$ElementParent: true,
@@ -6197,7 +6119,7 @@ $$.ClickManager = {"":
  _mouseOut$1: function(e) {
   $.callTypeCheck(e, 'is$MouseEvent');
   this._updateMouseLocation$1(null);
-  $.get$ClickManager__mouseOutEvent().fireEvent$2(this._stage, $.CTC23);
+  $.get$ClickManager__mouseOutEvent().fireEvent$2(this._stage, $.CTC22);
 },
  get$_mouseOut: function() { return new $.BoundClosure(this, '_mouseOut$1'); },
  _mouseUp$1: function(e) {
@@ -6251,7 +6173,7 @@ $$.GameStorage = {"":
  updateHighScore$1: function(game) {
   $.propertyTypeCheck(game, 'is$Game');
   $.assert(!(game == null));
-  $.assert($.eq(game.get$state(), $.CTC34));
+  $.assert($.eq(game.get$state(), $.CTC30));
   var w = game.get$field().get$width();
   var h = game.get$field().get$height();
   var m = game.get$field().get$mineCount();
@@ -6312,31 +6234,31 @@ $$.GameManager = {"":
     $.assert(!(this._gameStateChangedId == null));
     this.get$game().get$updated().remove$1(this._updatedEventId);
     this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);
-    this._gameStateChanged$1($.CTC29);
+    this._gameStateChanged$1($.CTC23);
   }
-  this.set$game($.Game$($.Field_Field(this._mineCount, this._lib5_width, this._lib5_height, null)));
+  this.set$game($.Game$($.Field_Field(this._mineCount, this._lib3_width, this._lib3_height, null)));
   this._updatedEventId = $.propertyTypeCheck($.add$1(this.get$game().get$updated(), this.get$gameUpdated()), 'is$GlobalId');
   this._gameStateChangedId = $.propertyTypeCheck($.add$1(this.get$game().get$stateChanged(), this.get$_gameStateChanged()), 'is$GlobalId');
 },
- _lib5_click$3: function(x, y, alt) {
+ _lib3_click$3: function(x, y, alt) {
   $.intTypeCheck(x, 'is$$int');
   $.intTypeCheck(y, 'is$$int');
   $.boolTypeCheck(alt, 'is$bool');
   var ss = this.get$game().getSquareState$2(x, y);
   if (alt) {
-    if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'))
+    if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool'))
       this.get$game().setFlag$3(x, y, true);
-    else if ($.boolConversionCheck($.eq(ss, $.CTC37), 'is$bool'))
+    else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'))
       this.get$game().setFlag$3(x, y, false);
-    else if ($.boolConversionCheck($.eq(ss, $.CTC36), 'is$bool'))
+    else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'))
       this.get$game().reveal$2(x, y);
-  } else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'))
+  } else if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool'))
     this.get$game().reveal$2(x, y);
 },
  updateClock$0: function() {
-  if ($.boolConversionCheck(this._setIntervalId == null && $.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC38), 'is$bool'), 'is$bool'))
+  if ($.boolConversionCheck(this._setIntervalId == null && $.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC34), 'is$bool'), 'is$bool'))
     this._setIntervalId = $.intTypeCheck($.window().setInterval$2(this.get$_doClock(), 1000), 'is$$int');
-  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC38)) {
+  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC34)) {
     $.window().clearInterval$1(this._setIntervalId);
     this._setIntervalId = null;
   }
@@ -6348,7 +6270,7 @@ $$.GameManager = {"":
  _gameStateChanged$1: function(newState) {
   var t1 = this.gameStorage;
   t1.recordState$1(newState);
-  if ($.boolConversionCheck($.eq(newState, $.CTC34), 'is$bool'))
+  if ($.boolConversionCheck($.eq(newState, $.CTC30), 'is$bool'))
     t1.updateHighScore$1(this.get$game());
   this.updateClock$0();
 },
@@ -6676,12 +6598,22 @@ $$._convertDartToNative_PrepareForStructuredClone_walk_anon = {"":
 };
 
 $$._getTextures_anon = {"":
- ["frames_0"],
+ ["frames_1", "transparentElement_0"],
  "super": "Closure",
  call$2: function(key, value) {
   $.stringTypeCheck(key, 'is$String');
-  var parsed = $.TextureInput_TextureInput$fromHash(key, $.callTypeCheck(value, 'is$Map'));
-  $.indexSet(this.frames_0, key, parsed);
+  var parsed = $.TextureInput_TextureInput$fromHash(key, $.callTypeCheck(value, 'is$Map'), this.transparentElement_0);
+  $.indexSet(this.frames_1, key, parsed);
+}
+};
+
+$$._getTextures_anon0 = {"":
+ ["frames_3", "opaqueElement_2"],
+ "super": "Closure",
+ call$2: function(key, value) {
+  $.stringTypeCheck(key, 'is$String');
+  var parsed = $.TextureInput_TextureInput$fromHash(key, $.callTypeCheck(value, 'is$Map'), this.opaqueElement_2);
+  $.indexSet(this.frames_3, key, parsed);
 }
 };
 
@@ -6882,38 +6814,6 @@ $$.LinkedHashMapImplementation_forEach__ = {"":
 }
 };
 
-$$.HashSetImplementation_forEach__ = {"":
- ["f_0"],
- "super": "Closure",
- call$2: function(key, value) {
-  this.f_0.call$1(key);
-}
-};
-
-$$.Enumerable_select_anon = {"":
- ["this_1", "f_0"],
- "super": "Closure",
- call$1: function(s) {
-  return $._SelectIterator$(s, this.f_0, $.getRuntimeTypeInfo(this.this_1).T, 'Object');
-}
-};
-
-$$.Enumerable_single_anon = {"":
- [],
- "super": "Closure",
- call$1: function(e) {
-  return true;
-}
-};
-
-$$.ListBase_iterator_anon = {"":
- ["this_0"],
- "super": "Closure",
- call$1: function(i) {
-  return $.index(this.this_0, i);
-}
-};
-
 $$.invokeClosure_anon = {"":
  ["closure_0"],
  "super": "Closure",
@@ -6946,14 +6846,6 @@ $$.ClickManager__mouseDown_anon = {"":
 }
 };
 
-$$.Enumerable_firstOrDefault_anon = {"":
- [],
- "super": "Closure",
- call$1: function(e) {
-  return true;
-}
-};
-
 $$.Mouse_markMouseOver_anon = {"":
  [],
  "super": "Closure",
@@ -6971,6 +6863,22 @@ $$.Mouse_markMouseOver_anon0 = {"":
 }
 };
 
+$$.AffineTransform_toString_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(n) {
+  return $.toString(n);
+}
+};
+
+$$.HashSetImplementation_forEach__ = {"":
+ ["f_0"],
+ "super": "Closure",
+ call$2: function(key, value) {
+  this.f_0.call$1(key);
+}
+};
+
 $$.EventHandle_fireEvent_anon = {"":
  ["args_0"],
  "super": "Closure",
@@ -6980,27 +6888,11 @@ $$.EventHandle_fireEvent_anon = {"":
 }
 };
 
-$$.AffineTransform_toString_anon = {"":
- [],
+$$.Enumerable_select_anon = {"":
+ ["this_1", "f_0"],
  "super": "Closure",
- call$1: function(n) {
-  return $.toString(n);
-}
-};
-
-$$.ClickManager__mouseUp_anon = {"":
- [],
- "super": "Closure",
- call$1: function(e) {
-  return $.get$ClickManager__isClickableProperty().get$1(e);
-}
-};
-
-$$.ClickManager__mouseMove_anon = {"":
- ["args_0"],
- "super": "Closure",
- call$1: function(e) {
-  return $.get$ClickManager__mouseMoveEvent().fireEvent$2(e, this.args_0);
+ call$1: function(s) {
+  return $._SelectIterator$(s, this.f_0, $.getRuntimeTypeInfo(this.this_1).T, 'Object');
 }
 };
 
@@ -7042,6 +6934,14 @@ $$.ElementParentImpl_update_anon = {"":
  "super": "Closure",
  call$1: function(e) {
   return e.update$0();
+}
+};
+
+$$.ListBase_iterator_anon = {"":
+ ["this_0"],
+ "super": "Closure",
+ call$1: function(i) {
+  return $.index(this.this_0, i);
 }
 };
 
@@ -7114,7 +7014,7 @@ $$.anon0 = {"":
  ["this_0"],
  "super": "Closure",
  call$1: function(args) {
-  return this.this_0.get$_clickedEvent().fireEvent$1($.CTC23);
+  return this.this_0.get$_clickedEvent().fireEvent$1($.CTC22);
 }
 };
 
@@ -7131,7 +7031,7 @@ $$.GameElement__click_anon0 = {"":
  ["this_1"],
  "super": "Closure",
  call$1: function(t) {
-  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC33);
+  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC29);
 }
 };
 
@@ -7150,7 +7050,7 @@ $$.GameElement__startPopAnimation_anon0 = {"":
  [],
  "super": "Closure",
  call$1: function(t2) {
-  return $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC42), 'is$bool') || $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC33), 'is$bool');
+  return $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC38), 'is$bool') || $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC29), 'is$bool');
 }
 };
 
@@ -7175,6 +7075,30 @@ $$.Enumerable_where_anon = {"":
  "super": "Closure",
  call$1: function(s) {
   return $._WhereIterator$(s, this.f_0, $.getRuntimeTypeInfo(this.this_1).T);
+}
+};
+
+$$.Enumerable_firstOrDefault_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(e) {
+  return true;
+}
+};
+
+$$.ClickManager__mouseUp_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(e) {
+  return $.get$ClickManager__isClickableProperty().get$1(e);
+}
+};
+
+$$.ClickManager__mouseMove_anon = {"":
+ ["args_0"],
+ "super": "Closure",
+ call$1: function(e) {
+  return $.get$ClickManager__mouseMoveEvent().fireEvent$2(e, this.args_0);
 }
 };
 
@@ -7623,8 +7547,8 @@ $._JavaScriptAudioNodeEventsImpl$ = function(_ptr) {
   return new $._JavaScriptAudioNodeEventsImpl(_ptr);
 };
 
-$.TextureInput$ = function(name$, frame, offset, rotated, sourceColorRect, sourceSize) {
-  return new $.TextureInput(name$, $.propertyTypeCheck(frame, 'is$Box'), $.propertyTypeCheck(offset, 'is$Vector'), $.boolTypeCheck(rotated, 'is$bool'), $.propertyTypeCheck(sourceColorRect, 'is$Box'), $.propertyTypeCheck(sourceSize, 'is$Size'));
+$.TextureInput$ = function(name$, frame, rotated, trimmed, sourceColorRect, sourceSize, image) {
+  return new $.TextureInput(name$, $.propertyTypeCheck(frame, 'is$Box'), $.boolTypeCheck(rotated, 'is$bool'), $.boolTypeCheck(trimmed, 'is$bool'), $.propertyTypeCheck(sourceColorRect, 'is$Box'), $.propertyTypeCheck(sourceSize, 'is$Size'), image);
 };
 
 $.Size$ = function(width, height) {
@@ -7644,7 +7568,7 @@ $.dynamicFunction = function(name$) {
   if (!(f == null) && !!f.methods)
     return f.methods;
   var methods = {};
-  var dartMethod = Object.getPrototypeOf($.CTC48)[name$];
+  var dartMethod = Object.getPrototypeOf($.CTC45)[name$];
   if (!(dartMethod == null))
     $.propertySet(methods, 'Object', dartMethod);
   var bind = function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};
@@ -7703,10 +7627,8 @@ $._onLoaded = function(args) {
   else
     t1 = false;
   if ($.boolConversionCheck(t1, 'is$bool')) {
-    var textures = $._getTextures();
-    var textureImg = $._imageLoader.getResource$1('art.png');
-    $.assert(!(textureImg == null));
-    $.populateTextures(textureImg, textures);
+    var opaqueImage = $._imageLoader.getResource$1('dart_opaque_01.jpg');
+    $.populateTextures($._getTextures($._imageLoader.getResource$1('dart_transparent_01.png'), opaqueImage));
     if (!($._audioLoader == null)) {
       var map = $.HashMapImplementation$('String', 'AudioBuffer');
       for (t1 = $.iterator($.CTC); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
@@ -7719,20 +7641,6 @@ $._onLoaded = function(args) {
     }
     $._runSweeper();
   }
-};
-
-$.parseDouble = function(string) {
-  return $.double_parse($.stringTypeCheck(string, 'is$String'));
-};
-
-$.Primitives_parseDouble = function(string) {
-  $.checkString(string);
-  if (!/^\s*(?:NaN|[+-]?(?:Infinity|(?:\.\d+|\d+(?:\.\d+)?)(?:[eE][+-]?\d+)?))\s*$/.test(string))
-    throw $.$$throw($.FormatException$(string));
-  var result = parseFloat(string);
-  if ($.boolConversionCheck($.isNaN(result), 'is$bool') && !(string === 'NaN'))
-    throw $.$$throw($.FormatException$(string));
-  return result;
 };
 
 $.ClickManager_addMouseMoveHandler = function(obj, handler) {
@@ -7847,12 +7755,6 @@ $.mul$slow = function(a, b) {
   return a.operator$mul$1(b);
 };
 
-$._AllMatchesIterator$ = function(re, _str) {
-  $.propertyTypeCheck(re, 'is$JSSyntaxRegExp');
-  $.stringTypeCheck(_str, 'is$String');
-  return new $._AllMatchesIterator($.propertyTypeCheck($.JSSyntaxRegExp__globalVersionOf(re), 'is$RegExp'), _str, null, false);
-};
-
 $._waitForPendingPorts = function(message, callback) {
   $.functionTypeCheck(callback, 'is$Function');
   var finder = $._PendingSendPortFinder$();
@@ -7934,6 +7836,13 @@ $.add$1 = function(receiver, value) {
   return receiver.add$1(value);
 };
 
+$.some = function(receiver, f) {
+  if (!$.isJsArray(receiver))
+    return receiver.some$1(f);
+  else
+    return $.Collections_some(receiver, f);
+};
+
 $.get$length = function(receiver) {
   if (typeof receiver === 'string' || $.isJsArray(receiver))
     return receiver.length;
@@ -7941,11 +7850,13 @@ $.get$length = function(receiver) {
     return receiver.get$length();
 };
 
-$.some = function(receiver, f) {
-  if (!$.isJsArray(receiver))
-    return receiver.some$1(f);
-  else
-    return $.Collections_some(receiver, f);
+$.Collections_some = function(iterable, f) {
+  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
+      return true;
+  return false;
 };
 
 $.dynamicBind = function(obj, name$, methods, arguments$) {
@@ -7958,7 +7869,7 @@ $.dynamicBind = function(obj, name$, methods, arguments$) {
       var t1 = $._dynamicMetadata0();
       $.listTypeCheck(t1, 'is$List');
       var entry = $.propertyTypeCheck(t1[i], 'is$MetaInfo');
-      if (entry.get$_lib4_set()[tag]) {
+      if (entry.get$_lib2_set()[tag]) {
         t1 = entry.get$_tag();
         $.stringTypeCheck(t1, 'is$String');
         method = methods[t1];
@@ -7976,17 +7887,8 @@ $.dynamicBind = function(obj, name$, methods, arguments$) {
   return method.apply(obj, arguments$);
 };
 
-$.Collections_some = function(iterable, f) {
-  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
-  $.functionTypeCheck(f, 'is$Function');
-  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
-      return true;
-  return false;
-};
-
-$.double_parse = function(string) {
-  return $.Primitives_parseDouble(string);
+$.int_parse = function(string) {
+  return $.Primitives_parseInt(string);
 };
 
 $.regExpMakeNative = function(regExp, global) {
@@ -8011,12 +7913,17 @@ $.regExpMakeNative = function(regExp, global) {
 
 };
 
-$.int_parse = function(string) {
-  return $.Primitives_parseInt(string);
+$._Collections_some = function(iterable, f) {
+  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
+      return true;
+  return false;
 };
 
 $.main = function() {
-  $._imageLoader = $.ImageLoader$(['art.png']);
+  $._imageLoader = $.ImageLoader$(['dart_transparent_01.png', 'dart_opaque_01.jpg']);
   $.add$1($._imageLoader.get$loaded(), $._onLoaded);
   $.add$1($._imageLoader.get$progress(), $._onLoaded);
   $._imageLoader.load$0();
@@ -8036,15 +7943,6 @@ $.ClickManager_addMouseOutHandler = function(obj, handler) {
   return $.get$ClickManager__mouseOutEvent().addHandler$2(obj, handler);
 };
 
-$._Collections_some = function(iterable, f) {
-  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
-  $.functionTypeCheck(f, 'is$Function');
-  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
-      return true;
-  return false;
-};
-
 $.Primitives_getYear = function(receiver) {
   return $.boolConversionCheck(receiver.isUtc, 'is$bool') ? $.Primitives_lazyAsJsDate(receiver).getUTCFullYear() : $.Primitives_lazyAsJsDate(receiver).getFullYear();
 };
@@ -8061,10 +7959,12 @@ $.boolTypeCheck = function(value) {
   throw $.$$throw($.TypeErrorImplementation$($.S(value) + ' does not implement bool'));
 };
 
-$._getTextures = function() {
-  var artFramesJson = $.makeLiteralMap(['background_side_left.png', $.makeLiteralMap(['frame', '{{1026,1},{352,672}}', 'offset', '{0,0}', 'rotated', true, 'sourceColorRect', '{{0,0},{352,672}}', 'sourceSize', '{352,672}']), 'background_top_left.png', $.makeLiteralMap(['frame', '{{1,1},{1024,96}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{1024,96}}', 'sourceSize', '{1024,96}']), 'balloon.png', $.makeLiteralMap(['frame', '{{1608,1500},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_explode_0000.png', $.makeLiteralMap(['frame', '{{1608,1500},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{88,88},{80,80}}', 'sourceSize', '{256,256}']), 'balloon_explode_0001.png', $.makeLiteralMap(['frame', '{{378,1518},{82,86}}', 'offset', '{0,-2}', 'rotated', false, 'sourceColorRect', '{{87,87},{82,86}}', 'sourceSize', '{256,256}']), 'balloon_explode_0002.png', $.makeLiteralMap(['frame', '{{809,683},{188,188}}', 'offset', '{9,9}', 'rotated', false, 'sourceColorRect', '{{43,25},{188,188}}', 'sourceSize', '{256,256}']), 'balloon_explode_0003.png', $.makeLiteralMap(['frame', '{{1213,1192},{216,222}}', 'offset', '{3,-2}', 'rotated', true, 'sourceColorRect', '{{23,19},{216,222}}', 'sourceSize', '{256,256}']), 'balloon_explode_0004.png', $.makeLiteralMap(['frame', '{{1691,825},{226,216}}', 'offset', '{2,3}', 'rotated', false, 'sourceColorRect', '{{17,17},{226,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0005.png', $.makeLiteralMap(['frame', '{{1235,810},{226,216}}', 'offset', '{2,3}', 'rotated', false, 'sourceColorRect', '{{17,17},{226,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0006.png', $.makeLiteralMap(['frame', '{{990,1029},{222,218}}', 'offset', '{-1,4}', 'rotated', false, 'sourceColorRect', '{{16,15},{222,218}}', 'sourceSize', '{256,256}']), 'balloon_explode_0007.png', $.makeLiteralMap(['frame', '{{1448,1162},{222,216}}', 'offset', '{-1,4}', 'rotated', false, 'sourceColorRect', '{{16,16},{222,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0008.png', $.makeLiteralMap(['frame', '{{998,812},{224,216}}', 'offset', '{-1,4}', 'rotated', false, 'sourceColorRect', '{{15,16},{224,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0009.png', $.makeLiteralMap(['frame', '{{1689,1042},{224,216}}', 'offset', '{-1,5}', 'rotated', false, 'sourceColorRect', '{{15,15},{224,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0010.png', $.makeLiteralMap(['frame', '{{1464,808},{226,216}}', 'offset', '{-2,5}', 'rotated', false, 'sourceColorRect', '{{13,15},{226,216}}', 'sourceSize', '{256,256}']), 'balloon_explode_0011.png', $.makeLiteralMap(['frame', '{{1693,600},{226,224}}', 'offset', '{-1,2}', 'rotated', false, 'sourceColorRect', '{{14,14},{226,224}}', 'sourceSize', '{256,256}']), 'balloon_explode_0012.png', $.makeLiteralMap(['frame', '{{1464,585},{228,222}}', 'offset', '{-2,2}', 'rotated', false, 'sourceColorRect', '{{12,15},{228,222}}', 'sourceSize', '{256,256}']), 'balloon_explode_0013.png', $.makeLiteralMap(['frame', '{{1235,585},{228,224}}', 'offset', '{-2,3}', 'rotated', false, 'sourceColorRect', '{{12,13},{228,224}}', 'sourceSize', '{256,256}']), 'balloon_explode_0014.png', $.makeLiteralMap(['frame', '{{1698,373},{228,226}}', 'offset', '{-2,2}', 'rotated', false, 'sourceColorRect', '{{12,13},{228,226}}', 'sourceSize', '{256,256}']), 'balloon_explode_0015.png', $.makeLiteralMap(['frame', '{{234,942},{230,228}}', 'offset', '{-2,2}', 'rotated', false, 'sourceColorRect', '{{11,12},{230,228}}', 'sourceSize', '{256,256}']), 'balloon_explode_0016.png', $.makeLiteralMap(['frame', '{{576,842},{230,230}}', 'offset', '{-2,1}', 'rotated', false, 'sourceColorRect', '{{11,12},{230,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0017.png', $.makeLiteralMap(['frame', '{{1004,581},{230,230}}', 'offset', '{-2,1}', 'rotated', false, 'sourceColorRect', '{{11,12},{230,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0018.png', $.makeLiteralMap(['frame', '{{1,882},{232,230}}', 'offset', '{-1,0}', 'rotated', false, 'sourceColorRect', '{{11,13},{232,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0019.png', $.makeLiteralMap(['frame', '{{1238,354},{230,230}}', 'offset', '{-1,0}', 'rotated', false, 'sourceColorRect', '{{12,13},{230,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0020.png', $.makeLiteralMap(['frame', '{{234,711},{232,230}}', 'offset', '{-1,0}', 'rotated', false, 'sourceColorRect', '{{11,13},{232,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0021.png', $.makeLiteralMap(['frame', '{{1005,354},{232,226}}', 'offset', '{-1,2}', 'rotated', false, 'sourceColorRect', '{{11,13},{232,226}}', 'sourceSize', '{256,256}']), 'balloon_explode_0022.png', $.makeLiteralMap(['frame', '{{1,651},{232,230}}', 'offset', '{-1,1}', 'rotated', false, 'sourceColorRect', '{{11,12},{232,230}}', 'sourceSize', '{256,256}']), 'balloon_explode_0023.png', $.makeLiteralMap(['frame', '{{1469,354},{230,228}}', 'offset', '{0,1}', 'rotated', true, 'sourceColorRect', '{{13,13},{230,228}}', 'sourceSize', '{256,256}']), 'balloon_explode_0024.png', $.makeLiteralMap(['frame', '{{814,319},{190,214}}', 'offset', '{-10,4}', 'rotated', false, 'sourceColorRect', '{{23,17},{190,214}}', 'sourceSize', '{256,256}']), 'balloon_pieces_a.png', $.makeLiteralMap(['frame', '{{1527,1468},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pieces_b.png', $.makeLiteralMap(['frame', '{{1446,1442},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pieces_c.png', $.makeLiteralMap(['frame', '{{1365,1442},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pieces_d.png', $.makeLiteralMap(['frame', '{{244,1894},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_pop_0000.png', $.makeLiteralMap(['frame', '{{1608,1500},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{88,88},{80,80}}', 'sourceSize', '{256,256}']), 'balloon_pop_0001.png', $.makeLiteralMap(['frame', '{{1,1673},{142,114}}', 'offset', '{3,5}', 'rotated', false, 'sourceColorRect', '{{60,66},{142,114}}', 'sourceSize', '{256,256}']), 'balloon_pop_0002.png', $.makeLiteralMap(['frame', '{{1,1113},{230,184}}', 'offset', '{3,5}', 'rotated', false, 'sourceColorRect', '{{16,31},{230,184}}', 'sourceSize', '{256,256}']), 'balloon_pop_0003.png', $.makeLiteralMap(['frame', '{{576,655},{232,186}}', 'offset', '{3,5}', 'rotated', false, 'sourceColorRect', '{{15,30},{232,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0004.png', $.makeLiteralMap(['frame', '{{240,345},{236,186}}', 'offset', '{2,5}', 'rotated', false, 'sourceColorRect', '{{12,30},{236,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0005.png', $.makeLiteralMap(['frame', '{{577,285},{236,186}}', 'offset', '{2,4}', 'rotated', false, 'sourceColorRect', '{{12,31},{236,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0006.png', $.makeLiteralMap(['frame', '{{577,98},{236,186}}', 'offset', '{2,4}', 'rotated', false, 'sourceColorRect', '{{12,31},{236,186}}', 'sourceSize', '{256,256}']), 'balloon_pop_0007.png', $.makeLiteralMap(['frame', '{{1,285},{238,184}}', 'offset', '{1,3}', 'rotated', false, 'sourceColorRect', '{{10,33},{238,184}}', 'sourceSize', '{256,256}']), 'balloon_pop_0008.png', $.makeLiteralMap(['frame', '{{576,472},{236,182}}', 'offset', '{1,2}', 'rotated', false, 'sourceColorRect', '{{11,35},{236,182}}', 'sourceSize', '{256,256}']), 'balloon_pop_0009.png', $.makeLiteralMap(['frame', '{{1,470},{236,180}}', 'offset', '{1,2}', 'rotated', false, 'sourceColorRect', '{{11,36},{236,180}}', 'sourceSize', '{256,256}']), 'balloon_pop_0010.png', $.makeLiteralMap(['frame', '{{238,532},{236,178}}', 'offset', '{1,2}', 'rotated', false, 'sourceColorRect', '{{11,37},{236,178}}', 'sourceSize', '{256,256}']), 'balloon_pop_0011.png', $.makeLiteralMap(['frame', '{{467,885},{84,106}}', 'offset', '{-2,-4}', 'rotated', true, 'sourceColorRect', '{{84,79},{84,106}}', 'sourceSize', '{256,256}']), 'balloon_pop_0012.png', $.makeLiteralMap(['frame', '{{463,1415},{88,112}}', 'offset', '{-3,-4}', 'rotated', false, 'sourceColorRect', '{{81,76},{88,112}}', 'sourceSize', '{256,256}']), 'balloon_pop_0013.png', $.makeLiteralMap(['frame', '{{1808,1415},{94,118}}', 'offset', '{-3,-4}', 'rotated', false, 'sourceColorRect', '{{78,73},{94,118}}', 'sourceSize', '{256,256}']), 'balloon_pop_0014.png', $.makeLiteralMap(['frame', '{{475,595},{100,124}}', 'offset', '{-4,-4}', 'rotated', false, 'sourceColorRect', '{{74,70},{100,124}}', 'sourceSize', '{256,256}']), 'balloon_pop_0015.png', $.makeLiteralMap(['frame', '{{1914,1229},{104,130}}', 'offset', '{-4,-4}', 'rotated', true, 'sourceColorRect', '{{72,67},{104,130}}', 'sourceSize', '{256,256}']), 'balloon_pop_0016.png', $.makeLiteralMap(['frame', '{{465,970},{110,136}}', 'offset', '{-5,-4}', 'rotated', false, 'sourceColorRect', '{{68,64},{110,136}}', 'sourceSize', '{256,256}']), 'balloon_pop_0017.png', $.makeLiteralMap(['frame', '{{1671,1259},{114,140}}', 'offset', '{-5,-4}', 'rotated', true, 'sourceColorRect', '{{66,62},{114,140}}', 'sourceSize', '{256,256}']), 'balloon_pop_0018.png', $.makeLiteralMap(['frame', '{{1927,534},{120,144}}', 'offset', '{-6,-4}', 'rotated', false, 'sourceColorRect', '{{62,60},{120,144}}', 'sourceSize', '{256,256}']), 'balloon_pop_0019.png', $.makeLiteralMap(['frame', '{{1920,772},{124,148}}', 'offset', '{-6,-4}', 'rotated', false, 'sourceColorRect', '{{60,58},{124,148}}', 'sourceSize', '{256,256}']), 'balloon_pop_0020.png', $.makeLiteralMap(['frame', '{{1918,921},{128,152}}', 'offset', '{-7,-4}', 'rotated', false, 'sourceColorRect', '{{57,56},{128,152}}', 'sourceSize', '{256,256}']), 'balloon_pop_0021.png', $.makeLiteralMap(['frame', '{{1914,1074},{130,154}}', 'offset', '{-7,-4}', 'rotated', false, 'sourceColorRect', '{{56,55},{130,154}}', 'sourceSize', '{256,256}']), 'balloon_pop_0022.png', $.makeLiteralMap(['frame', '{{223,1312},{134,158}}', 'offset', '{-8,-4}', 'rotated', true, 'sourceColorRect', '{{53,53},{134,158}}', 'sourceSize', '{256,256}']), 'balloon_pop_0023.png', $.makeLiteralMap(['frame', '{{575,1234},{136,160}}', 'offset', '{-8,-3}', 'rotated', true, 'sourceColorRect', '{{52,51},{136,160}}', 'sourceSize', '{256,256}']), 'balloon_pop_0024.png', $.makeLiteralMap(['frame', '{{807,1039},{138,162}}', 'offset', '{-8,-3}', 'rotated', true, 'sourceColorRect', '{{51,50},{138,162}}', 'sourceSize', '{256,256}']), 'balloon_pop_0025.png', $.makeLiteralMap(['frame', '{{232,1171},{140,160}}', 'offset', '{-9,-3}', 'rotated', true, 'sourceColorRect', '{{49,51},{140,160}}', 'sourceSize', '{256,256}']), 'balloon_pop_0026.png', $.makeLiteralMap(['frame', '{{806,1178},{140,160}}', 'offset', '{-9,-3}', 'rotated', true, 'sourceColorRect', '{{49,51},{140,160}}', 'sourceSize', '{256,256}']), 'balloon_pop_0027.png', $.makeLiteralMap(['frame', '{{1,1298},{142,158}}', 'offset', '{-10,-3}', 'rotated', true, 'sourceColorRect', '{{47,52},{142,158}}', 'sourceSize', '{256,256}']), 'balloon_pop_0028.png', $.makeLiteralMap(['frame', '{{1,1441},{136,148}}', 'offset', '{-11,-2}', 'rotated', true, 'sourceColorRect', '{{49,56},{136,148}}', 'sourceSize', '{256,256}']), 'balloon_tagged_!.png', $.makeLiteralMap(['frame', '{{1284,1409},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_bomb.png', $.makeLiteralMap(['frame', '{{244,1813},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_frozen.png', $.makeLiteralMap(['frame', '{{336,1759},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_question_mark.png', $.makeLiteralMap(['frame', '{{455,1754},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'balloon_tagged_x.png', $.makeLiteralMap(['frame', '{{542,1707},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'button_blank.png', $.makeLiteralMap(['frame', '{{1699,94},{294,92}}', 'offset', '{1,0}', 'rotated', false, 'sourceColorRect', '{{2,2},{294,92}}', 'sourceSize', '{296,96}']), 'button_blank_clicked.png', $.makeLiteralMap(['frame', '{{1699,280},{292,92}}', 'offset', '{2,-1}', 'rotated', false, 'sourceColorRect', '{{4,3},{292,92}}', 'sourceSize', '{296,96}']), 'button_new_game.png', $.makeLiteralMap(['frame', '{{1699,1},{294,92}}', 'offset', '{1,0}', 'rotated', false, 'sourceColorRect', '{{2,2},{294,92}}', 'sourceSize', '{296,96}']), 'button_new_game_clicked.png', $.makeLiteralMap(['frame', '{{1699,187},{292,92}}', 'offset', '{2,-1}', 'rotated', false, 'sourceColorRect', '{{4,3},{292,92}}', 'sourceSize', '{296,96}']), 'crater_a.png', $.makeLiteralMap(['frame', '{{576,1073},{160,160}}', 'offset', '{0,1}', 'rotated', false, 'sourceColorRect', '{{48,47},{160,160}}', 'sourceSize', '{256,256}']), 'dart_fly_0000.png', $.makeLiteralMap(['frame', '{{2002,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_0001.png', $.makeLiteralMap(['frame', '{{467,720},{108,164}}', 'offset', '{411,-183}', 'rotated', false, 'sourceColorRect', '{{869,485},{108,164}}', 'sourceSize', '{1024,768}']), 'dart_fly_0002.png', $.makeLiteralMap(['frame', '{{1,98},{186,288}}', 'offset', '{375,-145}', 'rotated', true, 'sourceColorRect', '{{794,385},{186,288}}', 'sourceSize', '{1024,768}']), 'dart_fly_0003.png', $.makeLiteralMap(['frame', '{{290,98},{246,286}}', 'offset', '{347,-76}', 'rotated', true, 'sourceColorRect', '{{736,317},{246,286}}', 'sourceSize', '{1024,768}']), 'dart_fly_0004.png', $.makeLiteralMap(['frame', '{{814,98},{210,220}}', 'offset', '{283,3}', 'rotated', false, 'sourceColorRect', '{{690,271},{210,220}}', 'sourceSize', '{1024,768}']), 'dart_fly_0005.png', $.makeLiteralMap(['frame', '{{807,872},{182,166}}', 'offset', '{232,58}', 'rotated', false, 'sourceColorRect', '{{653,243},{182,166}}', 'sourceSize', '{1024,768}']), 'dart_fly_0006.png', $.makeLiteralMap(['frame', '{{1927,373},{160,120}}', 'offset', '{190,93}', 'rotated', true, 'sourceColorRect', '{{622,231},{160,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_0007.png', $.makeLiteralMap(['frame', '{{477,345},{142,98}}', 'offset', '{156,124}', 'rotated', true, 'sourceColorRect', '{{597,211},{142,98}}', 'sourceSize', '{1024,768}']), 'dart_fly_0008.png', $.makeLiteralMap(['frame', '{{1920,679},{126,92}}', 'offset', '{127,149}', 'rotated', false, 'sourceColorRect', '{{576,189},{126,92}}', 'sourceSize', '{1024,768}']), 'dart_fly_0009.png', $.makeLiteralMap(['frame', '{{461,1528},{112,86}}', 'offset', '{102,162}', 'rotated', true, 'sourceColorRect', '{{558,179},{112,86}}', 'sourceSize', '{1024,768}']), 'dart_fly_0010.png', $.makeLiteralMap(['frame', '{{1812,1259},{98,94}}', 'offset', '{82,160}', 'rotated', false, 'sourceColorRect', '{{545,177},{98,94}}', 'sourceSize', '{1024,768}']), 'dart_fly_0011.png', $.makeLiteralMap(['frame', '{{465,1107},{86,110}}', 'offset', '{65,144}', 'rotated', true, 'sourceColorRect', '{{534,185},{86,110}}', 'sourceSize', '{1024,768}']), 'dart_fly_0012.png', $.makeLiteralMap(['frame', '{{1078,1406},{76,124}}', 'offset', '{50,123}', 'rotated', true, 'sourceColorRect', '{{524,199},{76,124}}', 'sourceSize', '{1024,768}']), 'dart_fly_0013.png', $.makeLiteralMap(['frame', '{{737,1188},{66,134}}', 'offset', '{38,96}', 'rotated', false, 'sourceColorRect', '{{517,221},{66,134}}', 'sourceSize', '{1024,768}']), 'dart_fly_0014.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0015.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0016.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0017.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0018.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0019.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0020.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0021.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0022.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0023.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0024.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0025.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0026.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0027.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0028.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0029.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0030.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0031.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0032.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0033.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0034.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0035.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0036.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0037.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0038.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0039.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0040.png', $.makeLiteralMap(['frame', '{{799,1382},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0041.png', $.makeLiteralMap(['frame', '{{941,1374},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0042.png', $.makeLiteralMap(['frame', '{{736,1323},{62,136}}', 'offset', '{25,68}', 'rotated', false, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0043.png', $.makeLiteralMap(['frame', '{{804,1319},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0044.png', $.makeLiteralMap(['frame', '{{967,1311},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0045.png', $.makeLiteralMap(['frame', '{{967,1248},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0046.png', $.makeLiteralMap(['frame', '{{1666,1437},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0047.png', $.makeLiteralMap(['frame', '{{1436,1379},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0048.png', $.makeLiteralMap(['frame', '{{1903,1523},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0049.png', $.makeLiteralMap(['frame', '{{1903,1460},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0050.png', $.makeLiteralMap(['frame', '{{1671,1374},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0051.png', $.makeLiteralMap(['frame', '{{1911,1397},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0052.png', $.makeLiteralMap(['frame', '{{1911,1334},{62,136}}', 'offset', '{25,68}', 'rotated', true, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0053.png', $.makeLiteralMap(['frame', '{{160,1435},{62,136}}', 'offset', '{25,68}', 'rotated', false, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0054.png', $.makeLiteralMap(['frame', '{{160,1298},{62,136}}', 'offset', '{25,68}', 'rotated', false, 'sourceColorRect', '{{506,248},{62,136}}', 'sourceSize', '{1024,768}']), 'dart_fly_0055.png', $.makeLiteralMap(['frame', '{{2000,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0000.png', $.makeLiteralMap(['frame', '{{1998,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0001.png', $.makeLiteralMap(['frame', '{{1996,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0002.png', $.makeLiteralMap(['frame', '{{1,1578},{94,146}}', 'offset', '{-72,-140}', 'rotated', true, 'sourceColorRect', '{{393,451},{94,146}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0003.png', $.makeLiteralMap(['frame', '{{1462,1025},{136,226}}', 'offset', '{-69,-111}', 'rotated', true, 'sourceColorRect', '{{375,382},{136,226}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0004.png', $.makeLiteralMap(['frame', '{{1223,1027},{164,224}}', 'offset', '{-75,-58}', 'rotated', true, 'sourceColorRect', '{{355,330},{164,224}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0005.png', $.makeLiteralMap(['frame', '{{813,534},{148,190}}', 'offset', '{-76,-7}', 'rotated', true, 'sourceColorRect', '{{362,296},{148,190}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0006.png', $.makeLiteralMap(['frame', '{{223,1447},{136,154}}', 'offset', '{-75,34}', 'rotated', true, 'sourceColorRect', '{{369,273},{136,154}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0007.png', $.makeLiteralMap(['frame', '{{936,1437},{120,118}}', 'offset', '{-74,64}', 'rotated', false, 'sourceColorRect', '{{378,261},{120,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0008.png', $.makeLiteralMap(['frame', '{{477,488},{106,98}}', 'offset', '{-71,86}', 'rotated', true, 'sourceColorRect', '{{388,249},{106,98}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0009.png', $.makeLiteralMap(['frame', '{{1104,1331},{74,90}}', 'offset', '{-65,107}', 'rotated', true, 'sourceColorRect', '{{410,232},{74,90}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0010.png', $.makeLiteralMap(['frame', '{{1104,1248},{92,82}}', 'offset', '{-62,119}', 'rotated', false, 'sourceColorRect', '{{404,224},{92,82}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0011.png', $.makeLiteralMap(['frame', '{{1573,1379},{92,88}}', 'offset', '{-56,117}', 'rotated', false, 'sourceColorRect', '{{410,223},{92,88}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0012.png', $.makeLiteralMap(['frame', '{{464,1328},{86,102}}', 'offset', '{-49,102}', 'rotated', true, 'sourceColorRect', '{{420,231},{86,102}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0013.png', $.makeLiteralMap(['frame', '{{144,1691},{78,114}}', 'offset', '{-40,83}', 'rotated', false, 'sourceColorRect', '{{433,244},{78,114}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0014.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0015.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0016.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0017.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0018.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0019.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0020.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0021.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0022.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0023.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0024.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0025.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0026.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0027.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0028.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0029.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0030.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0031.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0032.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0033.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0034.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0035.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0036.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0037.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0038.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0039.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0040.png', $.makeLiteralMap(['frame', '{{552,1446},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0041.png', $.makeLiteralMap(['frame', '{{223,1584},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0042.png', $.makeLiteralMap(['frame', '{{567,1371},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0043.png', $.makeLiteralMap(['frame', '{{799,1445},{74,120}}', 'offset', '{-31,60}', 'rotated', true, 'sourceColorRect', '{{444,264},{74,120}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0044.png', $.makeLiteralMap(['frame', '{{673,1460},{74,118}}', 'offset', '{-31,59}', 'rotated', true, 'sourceColorRect', '{{444,266},{74,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0045.png', $.makeLiteralMap(['frame', '{{223,1659},{72,118}}', 'offset', '{-31,59}', 'rotated', true, 'sourceColorRect', '{{445,266},{72,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0046.png', $.makeLiteralMap(['frame', '{{552,1521},{72,118}}', 'offset', '{-31,59}', 'rotated', true, 'sourceColorRect', '{{445,266},{72,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0047.png', $.makeLiteralMap(['frame', '{{150,1572},{72,118}}', 'offset', '{-31,59}', 'rotated', false, 'sourceColorRect', '{{445,266},{72,118}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0048.png', $.makeLiteralMap(['frame', '{{344,1605},{72,116}}', 'offset', '{-31,58}', 'rotated', true, 'sourceColorRect', '{{445,268},{72,116}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0049.png', $.makeLiteralMap(['frame', '{{393,1288},{70,116}}', 'offset', '{-30,58}', 'rotated', false, 'sourceColorRect', '{{447,268},{70,116}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0050.png', $.makeLiteralMap(['frame', '{{393,1171},{70,116}}', 'offset', '{-31,58}', 'rotated', false, 'sourceColorRect', '{{446,268},{70,116}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0051.png', $.makeLiteralMap(['frame', '{{737,1073},{68,114}}', 'offset', '{-30,57}', 'rotated', false, 'sourceColorRect', '{{448,270},{68,114}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0052.png', $.makeLiteralMap(['frame', '{{464,1194},{66,110}}', 'offset', '{-30,55}', 'rotated', true, 'sourceColorRect', '{{449,274},{66,110}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0053.png', $.makeLiteralMap(['frame', '{{464,1261},{66,104}}', 'offset', '{-30,52}', 'rotated', true, 'sourceColorRect', '{{449,280},{66,104}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0054.png', $.makeLiteralMap(['frame', '{{1812,1354},{60,98}}', 'offset', '{-28,49}', 'rotated', true, 'sourceColorRect', '{{454,286},{60,98}}', 'sourceSize', '{1024,768}']), 'dart_fly_shadow_0055.png', $.makeLiteralMap(['frame', '{{1994,1},{1,1}}', 'offset', '{-511.5,383.5}', 'rotated', false, 'sourceColorRect', '{{0,0},{1,1}}', 'sourceSize', '{1024,768}']), 'game_board_center.png', $.makeLiteralMap(['frame', '{{661,1648},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'game_board_corner_bottom_left.png', $.makeLiteralMap(['frame', '{{548,1594},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_corner_bottom_right.png', $.makeLiteralMap(['frame', '{{671,1535},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_corner_top_left.png', $.makeLiteralMap(['frame', '{{792,1520},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_corner_top_right.png', $.makeLiteralMap(['frame', '{{1,1788},{112,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,112}}', 'sourceSize', '{112,112}']), 'game_board_side_bottom.png', $.makeLiteralMap(['frame', '{{461,1641},{80,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,112}}', 'sourceSize', '{80,112}']), 'game_board_side_left.png', $.makeLiteralMap(['frame', '{{223,1732},{112,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,80}}', 'sourceSize', '{112,80}']), 'game_board_side_right.png', $.makeLiteralMap(['frame', '{{342,1678},{112,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{112,80}}', 'sourceSize', '{112,80}']), 'game_board_side_top.png', $.makeLiteralMap(['frame', '{{382,1405},{80,112}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,112}}', 'sourceSize', '{80,112}']), 'number_eight.png', $.makeLiteralMap(['frame', '{{784,1633},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_five.png', $.makeLiteralMap(['frame', '{{905,1556},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_four.png', $.makeLiteralMap(['frame', '{{1057,1483},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_one.png', $.makeLiteralMap(['frame', '{{1203,1409},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_seven.png', $.makeLiteralMap(['frame', '{{163,1887},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_six.png', $.makeLiteralMap(['frame', '{{82,1901},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_three.png', $.makeLiteralMap(['frame', '{{1,1901},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}']), 'number_two.png', $.makeLiteralMap(['frame', '{{114,1806},{80,80}}', 'offset', '{0,0}', 'rotated', false, 'sourceColorRect', '{{0,0},{80,80}}', 'sourceSize', '{80,80}'])]);
+$._getTextures = function(transparentElement, opaqueElement) {
+  $.callTypeCheck(transparentElement, 'is$ImageElement');
+  $.callTypeCheck(opaqueElement, 'is$ImageElement');
   var frames$ = $.makeLiteralMap([]);
-  $.forEach(artFramesJson, new $._getTextures_anon(frames$));
+  $.forEach($._getTransparentItems(), new $._getTextures_anon(frames$, transparentElement));
+  $.forEach($._getOpaqueItems(), new $._getTextures_anon0(frames$, opaqueElement));
   return frames$;
 };
 
@@ -8108,6 +8008,10 @@ $.SquareElement$ = function(x, y) {
   return t1;
 };
 
+$.add = function(a, b) {
+  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
+};
+
 $._isJavaScriptSimpleObject = function(value) {
   return Object.getPrototypeOf(value) === Object.prototype;
 };
@@ -8115,10 +8019,6 @@ $._isJavaScriptSimpleObject = function(value) {
 $.GameElement__getScale = function(count, fullSize, holeSize) {
   $.numTypeCheck(fullSize, 'is$num');
   return $.div($.mul($.add($.mul(count, 80), 64), fullSize), holeSize);
-};
-
-$.add = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
 };
 
 $.StringMatch$ = function(_start, str, pattern) {
@@ -8149,10 +8049,6 @@ $._runSweeper = function() {
   $.callTypeCheck($.query('#gameState'), 'is$Element');
   $.GameRoot_GameRoot(7, 7, m, sweeperTable, false);
   $.add$1($.window().get$on().get$touchMove(), $._onTouchMove);
-};
-
-$.regExpAttachGlobalNative = function(regExp) {
-  regExp._re = $.regExpMakeNative(regExp, true);
 };
 
 $.DateImplementation$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoch, isUtc) {
@@ -8286,15 +8182,11 @@ $.Primitives_getDay = function(receiver) {
   return $.boolConversionCheck(receiver.isUtc, 'is$bool') ? $.Primitives_lazyAsJsDate(receiver).getUTCDate() : $.Primitives_lazyAsJsDate(receiver).getDate();
 };
 
-$.populateTextures = function(imageElement, textures) {
-  $.callTypeCheck(imageElement, 'is$ImageElement');
+$.populateTextures = function(textures) {
   $.callTypeCheck(textures, 'is$Map');
   $.assert($._textures == null);
   $.assert(!(textures == null));
-  $.assert(!(imageElement == null));
-  $.assert($._textureImage == null);
   $._textures = $.callTypeCheck(textures, 'is$Map');
-  $._textureImage = imageElement;
 };
 
 $._MainManagerStub$ = function() {
@@ -8305,9 +8197,8 @@ $.regExpTest = function(regExp, str) {
   return $.regExpGetNative(regExp).test(str);
 };
 
-$.drawTextureAt = function(ctx, location$, texture, imageElement) {
+$.drawTextureAt = function(ctx, location$, texture) {
   $.propertyTypeCheck(texture, 'is$TextureInput');
-  $.callTypeCheck(imageElement, 'is$ImageElement');
   ctx.save$0();
   var tx = $.AffineTransform$(1, 0, 0, 1, 0, 0);
   tx.translate$2(location$.x, location$.y);
@@ -8327,7 +8218,7 @@ $.drawTextureAt = function(ctx, location$, texture, imageElement) {
     theFrame = theFrame0;
   }
   $.CanvasUtil_transform(ctx, tx);
-  $.CanvasUtil_drawImage(ctx, imageElement, theFrame, null);
+  $.CanvasUtil_drawImage(ctx, texture.get$image(), theFrame, null);
   ctx.restore$0();
 };
 
@@ -8475,12 +8366,6 @@ $.Array2d_Array2d = function(width, height, initialValue, T) {
 
 $.TypeErrorImplementation$ = function(msg) {
   return new $.TypeErrorImplementation(msg);
-};
-
-$.JSSyntaxRegExp__globalVersionOf = function(other) {
-  var re = $.JSSyntaxRegExp$(other.get$pattern(), other.get$multiLine(), other.get$ignoreCase());
-  $.regExpAttachGlobalNative(re);
-  return re;
 };
 
 $.tdiv = function(a, b) {
@@ -8648,16 +8533,16 @@ $.contains$2 = function(receiver, other, startIndex) {
   return $.stringContainsUnchecked(receiver, other, startIndex);
 };
 
-$.regExpMatchStart = function(m) {
-  return m.index;
-};
-
 $._WorkerContextEventsImpl$ = function(_ptr) {
   return new $._WorkerContextEventsImpl(_ptr);
 };
 
 $._ElementEventsImpl$ = function(_ptr) {
   return new $._ElementEventsImpl(_ptr);
+};
+
+$._getOpaqueItems = function() {
+  return $.makeLiteralMap(['background_side_left.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 0, 'y', 96, 'w', 352, 'h', 672]), 'rotated', true, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 352, 'h', 672]), 'sourceSize', $.makeLiteralMap(['w', 352, 'h', 672])]), 'background_top_left.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1024, 'h', 96]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1024, 'h', 96]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 96])]), 'balloon.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1184, 'y', 352, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_pieces_a.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1104, 'y', 352, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_pieces_b.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1024, 'y', 352, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_pieces_c.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1216, 'y', 192, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_pieces_d.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1216, 'y', 112, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_tagged_!.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1184, 'y', 272, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_tagged_bomb.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1136, 'y', 192, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_tagged_frozen.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1136, 'y', 112, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_tagged_question_mark.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1104, 'y', 272, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'balloon_tagged_x.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 832, 'y', 368, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'crater_b.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 944, 'y', 304, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'game_board_center.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1024, 'y', 272, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'game_board_corner_bottom_left.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 784, 'y', 96, 'w', 112, 'h', 112]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 112, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 112, 'h', 112])]), 'game_board_corner_bottom_right.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 672, 'y', 96, 'w', 112, 'h', 112]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 112, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 112, 'h', 112])]), 'game_board_corner_top_left.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1136, 'y', 0, 'w', 112, 'h', 112]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 112, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 112, 'h', 112])]), 'game_board_corner_top_right.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1024, 'y', 0, 'w', 112, 'h', 112]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 112, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 112, 'h', 112])]), 'game_board_side_bottom.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 976, 'y', 112, 'w', 80, 'h', 112]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 112])]), 'game_board_side_left.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 784, 'y', 208, 'w', 112, 'h', 80]), 'rotated', true, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 112, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 112, 'h', 80])]), 'game_board_side_right.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 672, 'y', 208, 'w', 112, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 112, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 112, 'h', 80])]), 'game_board_side_top.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 896, 'y', 96, 'w', 80, 'h', 112]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 112])]), 'number_eight.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 672, 'y', 368, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_five.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 752, 'y', 320, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_four.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 864, 'y', 288, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_one.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 944, 'y', 224, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_seven.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1056, 'y', 192, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_six.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1056, 'y', 112, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_three.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 864, 'y', 208, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])]), 'number_two.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 672, 'y', 288, 'w', 80, 'h', 80]), 'rotated', false, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 80, 'h', 80]), 'sourceSize', $.makeLiteralMap(['w', 80, 'h', 80])])]);
 };
 
 $.Primitives_getMonth = function(receiver) {
@@ -8690,18 +8575,14 @@ $.jsHasOwnProperty = function(jsObject, property) {
   return jsObject.hasOwnProperty(property);
 };
 
-$.Enumerable_Enumerable$fromIterable = function(source, T) {
-  $.listSuperNativeTypeCheck(source, 'is$Iterable');
-  $.requireArgumentNotNull(source, 'source');
-  return $._SimpleEnumerable$(source, T);
-};
-
 $.RuntimeError$ = function(message) {
   return new $.RuntimeError(message);
 };
 
-$._AllMatchesIterable$ = function(_re, _str) {
-  return new $._AllMatchesIterable(_re, _str);
+$.Enumerable_Enumerable$fromIterable = function(source, T) {
+  $.listSuperNativeTypeCheck(source, 'is$Iterable');
+  $.requireArgumentNotNull(source, 'source');
+  return $._SimpleEnumerable$(source, T);
 };
 
 $.AttachedEvent$ = function(name$, T) {
@@ -8715,10 +8596,6 @@ $._PendingSendPortFinder$ = function() {
   t1 = new $._PendingSendPortFinder([], t1);
   t1._PendingSendPortFinder$0();
   return t1;
-};
-
-$._MatchImplementation$ = function(pattern, str, _start, _end, _groups) {
-  return new $._MatchImplementation($.stringTypeCheck(pattern, 'is$String'), str, $.intTypeCheck(_start, 'is$$int'), $.intTypeCheck(_end, 'is$$int'), $.listTypeCheck($.listTypeCheck(_groups, 'is$List'), 'is$List'));
 };
 
 $.Futures_wait = function(futures) {
@@ -8855,7 +8732,7 @@ $.Game$ = function(field) {
   $.propertyTypeCheck(field, 'is$Field');
   var t1 = $.EventHandle$('EventArgs');
   var t2 = $.EventHandle$('GameState');
-  var t3 = new $.Game(field, $.propertyTypeCheck($.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC33, 'SquareState'), 'is$Array2d'), $.propertyTypeCheck(t1, 'is$EventHandle'), $.propertyTypeCheck(t2, 'is$EventHandle'), $.CTC29, null, null, null, null);
+  var t3 = new $.Game(field, $.propertyTypeCheck($.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC29, 'SquareState'), 'is$Array2d'), $.propertyTypeCheck(t1, 'is$EventHandle'), $.propertyTypeCheck(t2, 'is$EventHandle'), $.CTC23, null, null, null, null);
   t3.Game$1(field);
   return t3;
 };
@@ -9053,13 +8930,13 @@ $.toStringWrapper = function() {
   return $.toString(this.dartException);
 };
 
-$.TextureInput_TextureInput$fromHash = function(keyName, map) {
+$.TextureInput_TextureInput$fromHash = function(keyName, map, image) {
   $.callTypeCheck(map, 'is$Map');
+  $.callTypeCheck(image, 'is$ImageElement');
   var frame = $.TextureInput__parseRect(map.operator$index$1('frame'));
-  var offset = $.TextureInput__parseCoordinate(map.operator$index$1('offset')).toVector$0();
-  var sourceColorRect = $.TextureInput__parseRect(map.operator$index$1('sourceColorRect'));
-  var sourceSize = $.TextureInput__parseCoordinate(map.operator$index$1('sourceSize')).toSize$0();
-  return $.TextureInput$(keyName, frame, offset, map.operator$index$1('rotated'), sourceColorRect, sourceSize);
+  var sourceColorRect = $.TextureInput__parseRect(map.operator$index$1('spriteSourceSize'));
+  var sourceSize = $.TextureInput__parseCoordinate(map.operator$index$1('sourceSize'));
+  return $.TextureInput$(keyName, frame, map.operator$index$1('rotated'), map.operator$index$1('trimmed'), sourceColorRect, sourceSize, image);
 };
 
 $.stringContainsUnchecked = function(receiver, other, startIndex) {
@@ -9258,6 +9135,13 @@ $._DOMWindowCrossFrameImpl__close = function(win) {
 win.close()
 };
 
+$._Collections_forEach = function(iterable, f) {
+  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    f.call$1(t1.next$0());
+};
+
 $.GameBackgroundElement$ = function() {
   var t1 = $.ListImplementation_List(null, 'AffineTransform');
   $.setRuntimeTypeInfo(t1, { 'E': 'AffineTransform' });
@@ -9266,13 +9150,6 @@ $.GameBackgroundElement$ = function() {
   var t4 = $.HashMapImplementation$('Property', 'Object');
   var t5 = $.HashMapImplementation$('Attachable', 'EventHandle');
   return new $.GameBackgroundElement(t1, true, $.propertyTypeCheck(t2, 'is$EventHandle'), $.propertyTypeCheck(t3, 'is$EventHandle'), null, 0, 0, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t4, 'is$HashMap'), $.propertyTypeCheck(t5, 'is$HashMap'), false);
-};
-
-$._Collections_forEach = function(iterable, f) {
-  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
-  $.functionTypeCheck(f, 'is$Function');
-  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    f.call$1(t1.next$0());
 };
 
 $._convertNativeToDart_AcceptStructuredClone = function(object) {
@@ -9435,6 +9312,11 @@ $.parseInt = function(string) {
   return $.int_parse($.stringTypeCheck(string, 'is$String'));
 };
 
+$.TextureInput__parseCoordinate = function(input) {
+  $.callTypeCheck(input, 'is$Map');
+  return $.Size$(input.operator$index$1('w'), input.operator$index$1('h'));
+};
+
 $.Primitives_parseInt = function(string) {
   $.checkString(string);
   var match = /^\s*[+-]?(?:0(x)[a-f0-9]+|\d+)\s*$/i.exec(string);
@@ -9445,12 +9327,6 @@ $.Primitives_parseInt = function(string) {
   if ($.boolConversionCheck($.isNaN(result), 'is$bool'))
     throw $.$$throw($.FormatException$(string));
   return result;
-};
-
-$.TextureInput__parseCoordinate = function(input) {
-  var match = $.$$($.CTC15.allMatches$1($.stringTypeCheck(input, 'is$String'))).single$0();
-  $.assert($.eq(match.groupCount$0(), 2));
-  return $.Coordinate$($.parseDouble($.index(match, 1)), $.parseDouble($.index(match, 2)));
 };
 
 $.BoardElement$ = function() {
@@ -9486,6 +9362,12 @@ $.toInt = function(receiver) {
     throw $.$$throw($.FormatException$('Infinity'));
   var truncated = $.truncate(receiver);
   return truncated == -0.0 ? 0 : truncated;
+};
+
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver))
+    return $.ListIterator$(receiver);
+  return receiver.iterator$0();
 };
 
 $.GlobalId$_internal = function(value) {
@@ -9543,12 +9425,6 @@ $.Box$ = function(left, top$, width, height) {
 
 $._HttpRequestEventsImpl$ = function(_ptr) {
   return new $._HttpRequestEventsImpl(_ptr);
-};
-
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver))
-    return $.ListIterator$(receiver);
-  return receiver.iterator$0();
 };
 
 $._SelectIterator$ = function(_source, _func, TSource, TOutput) {
@@ -9614,6 +9490,10 @@ $.Primitives_getMilliseconds = function(receiver) {
 $.dynamicSetMetadata = function(inputTable) {
   var t1 = $.buildDynamicMetadata($.listTypeCheck(inputTable, 'is$List'));
   $._dynamicMetadata(t1);
+};
+
+$._getTransparentItems = function() {
+  return $.makeLiteralMap(['balloon_explode_0000.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1659, 'y', 455, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0001.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 900, 'y', 458, 'w', 80, 'h', 84]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 89, 'y', 89, 'w', 80, 'h', 84]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0002.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 740, 'y', 904, 'w', 188, 'h', 188]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 43, 'y', 25, 'w', 188, 'h', 188]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0003.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1438, 'y', 234, 'w', 216, 'h', 222]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 23, 'y', 19, 'w', 216, 'h', 222]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0004.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1662, 'y', 452, 'w', 226, 'h', 216]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 17, 'y', 17, 'w', 226, 'h', 216]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0005.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1210, 'y', 234, 'w', 226, 'h', 216]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 17, 'y', 17, 'w', 226, 'h', 216]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0006.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1656, 'y', 232, 'w', 222, 'h', 218]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 16, 'y', 15, 'w', 222, 'h', 218]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0007.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 190, 'y', 1172, 'w', 222, 'h', 216]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 16, 'y', 16, 'w', 222, 'h', 216]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0008.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1436, 'y', 458, 'w', 224, 'h', 216]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 15, 'y', 16, 'w', 224, 'h', 216]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0009.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 518, 'y', 692, 'w', 224, 'h', 216]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 15, 'y', 15, 'w', 224, 'h', 216]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0010.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 982, 'y', 234, 'w', 226, 'h', 216]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 13, 'y', 15, 'w', 226, 'h', 216]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0011.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 520, 'y', 462, 'w', 226, 'h', 224]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 14, 'y', 14, 'w', 226, 'h', 224]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0012.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 752, 'y', 234, 'w', 228, 'h', 222]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 15, 'w', 228, 'h', 222]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0013.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 288, 'y', 692, 'w', 228, 'h', 224]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 13, 'w', 228, 'h', 224]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0014.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 522, 'y', 234, 'w', 228, 'h', 226]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 13, 'w', 228, 'h', 226]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0015.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 288, 'y', 462, 'w', 230, 'h', 228]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 12, 'w', 230, 'h', 228]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0016.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1416, 'y', 2, 'w', 230, 'h', 230]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 12, 'w', 230, 'h', 230]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0017.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1184, 'y', 2, 'w', 230, 'h', 230]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 12, 'w', 230, 'h', 230]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0018.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 718, 'y', 2, 'w', 232, 'h', 230]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 13, 'w', 232, 'h', 230]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0019.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 952, 'y', 2, 'w', 230, 'h', 230]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 13, 'w', 230, 'h', 230]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0020.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 484, 'y', 2, 'w', 232, 'h', 230]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 13, 'w', 232, 'h', 230]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0021.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 288, 'y', 234, 'w', 232, 'h', 226]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 13, 'w', 232, 'h', 226]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0022.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 250, 'y', 2, 'w', 232, 'h', 230]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 12, 'w', 232, 'h', 230]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0023.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1648, 'y', 2, 'w', 230, 'h', 228]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 13, 'y', 13, 'w', 230, 'h', 228]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_explode_0024.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 736, 'y', 688, 'w', 190, 'h', 214]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 23, 'y', 17, 'w', 190, 'h', 214]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0000.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1659, 'y', 452, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0001.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1072, 'y', 962, 'w', 142, 'h', 114]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 60, 'y', 66, 'w', 142, 'h', 114]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0002.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 982, 'y', 452, 'w', 230, 'h', 184]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 16, 'y', 31, 'w', 230, 'h', 184]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0003.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 590, 'y', 1156, 'w', 232, 'h', 186]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 15, 'y', 30, 'w', 232, 'h', 186]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0004.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 2, 'y', 1056, 'w', 236, 'h', 186]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 30, 'w', 236, 'h', 186]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0005.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 2, 'y', 818, 'w', 236, 'h', 186]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 31, 'w', 236, 'h', 186]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0006.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 2, 'y', 580, 'w', 236, 'h', 186]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 12, 'y', 31, 'w', 236, 'h', 186]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0007.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 190, 'y', 932, 'w', 238, 'h', 184]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 10, 'y', 33, 'w', 238, 'h', 184]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0008.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 376, 'y', 918, 'w', 236, 'h', 182]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 35, 'w', 236, 'h', 182]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0009.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 408, 'y', 1156, 'w', 236, 'h', 180]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 36, 'w', 236, 'h', 180]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0010.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 560, 'y', 918, 'w', 236, 'h', 178]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 11, 'y', 37, 'w', 236, 'h', 178]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0011.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1660, 'y', 1070, 'w', 84, 'h', 106]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 83, 'y', 79, 'w', 84, 'h', 106]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0012.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1312, 'y', 1152, 'w', 88, 'h', 112]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 81, 'y', 76, 'w', 88, 'h', 112]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0013.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1188, 'y', 1248, 'w', 94, 'h', 118]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 78, 'y', 73, 'w', 94, 'h', 118]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0014.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 2, 'y', 1294, 'w', 100, 'h', 124]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 74, 'y', 70, 'w', 100, 'h', 124]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0015.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1180, 'y', 1142, 'w', 104, 'h', 130]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 72, 'y', 67, 'w', 104, 'h', 130]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0016.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1818, 'y', 680, 'w', 110, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 68, 'y', 64, 'w', 110, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0017.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1372, 'y', 972, 'w', 114, 'h', 140]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 66, 'y', 62, 'w', 114, 'h', 140]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0018.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1514, 'y', 976, 'w', 120, 'h', 144]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 62, 'y', 60, 'w', 120, 'h', 144]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0019.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1536, 'y', 676, 'w', 124, 'h', 148]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 60, 'y', 58, 'w', 124, 'h', 148]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0020.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 928, 'y', 1126, 'w', 128, 'h', 152]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 57, 'y', 56, 'w', 128, 'h', 152]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0021.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1216, 'y', 946, 'w', 130, 'h', 154]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 56, 'y', 55, 'w', 130, 'h', 154]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0022.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1376, 'y', 676, 'w', 134, 'h', 158]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 53, 'y', 53, 'w', 134, 'h', 158]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0023.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1072, 'y', 800, 'w', 136, 'h', 160]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 52, 'y', 51, 'w', 136, 'h', 160]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0024.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1212, 'y', 664, 'w', 138, 'h', 162]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 51, 'y', 50, 'w', 138, 'h', 162]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0025.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1210, 'y', 804, 'w', 140, 'h', 160]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 49, 'y', 51, 'w', 140, 'h', 160]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0026.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 930, 'y', 900, 'w', 140, 'h', 160]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 49, 'y', 51, 'w', 140, 'h', 160]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0027.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1372, 'y', 812, 'w', 142, 'h', 158]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 47, 'y', 52, 'w', 142, 'h', 158]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'balloon_pop_0028.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1516, 'y', 826, 'w', 136, 'h', 148]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 49, 'y', 56, 'w', 136, 'h', 148]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'crater_a.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 928, 'y', 638, 'w', 160, 'h', 160]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 48, 'y', 47, 'w', 160, 'h', 160]), 'sourceSize', $.makeLiteralMap(['w', 256, 'h', 256])]), 'dart_fly_0000.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1656, 'y', 455, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0001.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 778, 'y', 1286, 'w', 108, 'h', 164]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 869, 'y', 485, 'w', 108, 'h', 164]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0002.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 2, 'y', 290, 'w', 186, 'h', 288]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 794, 'y', 385, 'w', 186, 'h', 288]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0003.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 2, 'y', 2, 'w', 246, 'h', 286]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 736, 'y', 317, 'w', 246, 'h', 286]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0004.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1214, 'y', 452, 'w', 210, 'h', 220]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 690, 'y', 271, 'w', 210, 'h', 220]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0005.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1880, 'y', 2, 'w', 182, 'h', 166]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 653, 'y', 243, 'w', 182, 'h', 166]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0006.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1090, 'y', 638, 'w', 160, 'h', 120]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 622, 'y', 231, 'w', 160, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0007.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 928, 'y', 800, 'w', 142, 'h', 98]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 597, 'y', 211, 'w', 142, 'h', 98]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0008.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1094, 'y', 1262, 'w', 126, 'h', 92]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 576, 'y', 189, 'w', 126, 'h', 92]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0009.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1654, 'y', 882, 'w', 112, 'h', 86]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 558, 'y', 179, 'w', 112, 'h', 86]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0010.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 748, 'y', 584, 'w', 98, 'h', 94]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 545, 'y', 177, 'w', 98, 'h', 94]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0011.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1960, 'y', 862, 'w', 86, 'h', 110]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 534, 'y', 185, 'w', 86, 'h', 110]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0012.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1284, 'y', 1248, 'w', 76, 'h', 124]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 524, 'y', 199, 'w', 76, 'h', 124]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0013.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1362, 'y', 1242, 'w', 66, 'h', 134]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 517, 'y', 221, 'w', 66, 'h', 134]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0014.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0015.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0016.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0017.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0018.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0019.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0020.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0021.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0022.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0023.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0024.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0025.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0026.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0027.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0028.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0029.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0030.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0031.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0032.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0033.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0034.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0035.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0036.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0037.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0038.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0039.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0040.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1430, 'y', 1226, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0041.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1426, 'y', 1162, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0042.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1906, 'y', 1142, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0043.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1906, 'y', 1078, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0044.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1768, 'y', 1096, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0045.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1896, 'y', 894, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0046.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1768, 'y', 1032, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0047.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1832, 'y', 894, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0048.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1768, 'y', 894, 'w', 62, 'h', 136]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0049.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1662, 'y', 818, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0050.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1482, 'y', 1098, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0051.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1344, 'y', 1088, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0052.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1206, 'y', 1078, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0053.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1068, 'y', 1078, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0054.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 930, 'y', 1062, 'w', 62, 'h', 136]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 506, 'y', 248, 'w', 62, 'h', 136]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_0055.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1656, 'y', 452, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0000.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 376, 'y', 1156, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0001.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 288, 'y', 918, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0002.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1930, 'y', 640, 'w', 94, 'h', 146]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 393, 'y', 451, 'w', 94, 'h', 146]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0003.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1880, 'y', 412, 'w', 136, 'h', 226]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 375, 'y', 382, 'w', 136, 'h', 226]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0004.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1880, 'y', 186, 'w', 164, 'h', 224]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 355, 'y', 330, 'w', 164, 'h', 224]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0005.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 778, 'y', 1094, 'w', 148, 'h', 190]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 362, 'y', 296, 'w', 148, 'h', 190]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0006.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1662, 'y', 680, 'w', 136, 'h', 154]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 369, 'y', 273, 'w', 136, 'h', 154]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0007.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1058, 'y', 1142, 'w', 120, 'h', 118]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 378, 'y', 261, 'w', 120, 'h', 118]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0008.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1660, 'y', 970, 'w', 106, 'h', 98]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 388, 'y', 249, 'w', 106, 'h', 98]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0009.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1570, 'y', 1282, 'w', 74, 'h', 90]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 410, 'y', 232, 'w', 74, 'h', 90]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0010.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 844, 'y', 580, 'w', 92, 'h', 82]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 404, 'y', 224, 'w', 92, 'h', 82]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0011.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1912, 'y', 1206, 'w', 92, 'h', 88]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 410, 'y', 223, 'w', 92, 'h', 88]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0012.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1960, 'y', 974, 'w', 86, 'h', 102]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 420, 'y', 231, 'w', 86, 'h', 102]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0013.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 944, 'y', 1280, 'w', 78, 'h', 114]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 433, 'y', 244, 'w', 78, 'h', 114]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0014.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0015.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0016.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0017.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0018.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0019.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0020.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0021.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0022.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0023.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0024.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0025.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0026.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0027.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0028.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0029.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0030.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0031.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0032.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0033.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0034.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0035.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0036.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0037.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0038.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0039.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0040.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 824, 'y', 458, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0041.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 748, 'y', 462, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0042.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1494, 'y', 1226, 'w', 74, 'h', 120]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0043.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1800, 'y', 818, 'w', 74, 'h', 120]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 264, 'w', 74, 'h', 120]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0044.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1570, 'y', 1162, 'w', 74, 'h', 118]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 444, 'y', 266, 'w', 74, 'h', 118]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0045.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1720, 'y', 1160, 'w', 72, 'h', 118]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 445, 'y', 266, 'w', 72, 'h', 118]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0046.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1646, 'y', 1276, 'w', 72, 'h', 118]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 445, 'y', 266, 'w', 72, 'h', 118]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0047.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1646, 'y', 1156, 'w', 72, 'h', 118]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 445, 'y', 266, 'w', 72, 'h', 118]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0048.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1930, 'y', 788, 'w', 72, 'h', 116]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 445, 'y', 268, 'w', 72, 'h', 116]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0049.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1788, 'y', 1300, 'w', 70, 'h', 116]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 447, 'y', 268, 'w', 70, 'h', 116]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0050.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1794, 'y', 1228, 'w', 70, 'h', 116]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 446, 'y', 268, 'w', 70, 'h', 116]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0051.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1024, 'y', 1280, 'w', 68, 'h', 114]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 448, 'y', 270, 'w', 68, 'h', 114]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0052.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1794, 'y', 1160, 'w', 66, 'h', 110]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 449, 'y', 274, 'w', 66, 'h', 110]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0053.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 1720, 'y', 1280, 'w', 66, 'h', 104]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 449, 'y', 280, 'w', 66, 'h', 104]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0054.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 128, 'y', 1294, 'w', 60, 'h', 98]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 454, 'y', 286, 'w', 60, 'h', 98]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'dart_fly_shadow_0055.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 250, 'y', 234, 'w', 1, 'h', 1]), 'rotated', false, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 1, 'h', 1]), 'sourceSize', $.makeLiteralMap(['w', 1024, 'h', 768])]), 'logo_boom.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 190, 'y', 290, 'w', 320, 'h', 96]), 'rotated', true, 'trimmed', false, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 320, 'h', 96]), 'sourceSize', $.makeLiteralMap(['w', 320, 'h', 96])]), 'logo_win.png', $.makeLiteralMap(['frame', $.makeLiteralMap(['x', 190, 'y', 612, 'w', 318, 'h', 96]), 'rotated', true, 'trimmed', true, 'spriteSourceSize', $.makeLiteralMap(['x', 0, 'y', 0, 'w', 318, 'h', 96]), 'sourceSize', $.makeLiteralMap(['w', 320, 'h', 96])])]);
 };
 
 $.typeNameInFirefox = function(obj) {
@@ -9762,12 +9642,12 @@ $.Primitives_getMinutes = function(receiver) {
   return $.boolConversionCheck(receiver.isUtc, 'is$bool') ? $.Primitives_lazyAsJsDate(receiver).getUTCMinutes() : $.Primitives_lazyAsJsDate(receiver).getMinutes();
 };
 
-$.TextAniRequest$ = function(_texturePrefix, _frameCount, _offset, delay) {
+$.TextAniRequest$ = function(_texturePrefix, _frameCount, _offset, delay, startFrame, initialFrame, initialFrameOffset) {
   $.intTypeCheck(delay, 'is$$int');
-  var t1 = $.EventHandle$('EventArgs');
-  var t2 = new $.TextAniRequest(_texturePrefix, _frameCount, $.propertyTypeCheck(_offset, 'is$Vector'), delay, $.propertyTypeCheck(t1, 'is$EventHandle'), false, null);
-  t2.TextAniRequest$4(_texturePrefix, _frameCount, _offset, delay);
-  return t2;
+  $.propertyTypeCheck(initialFrameOffset, 'is$Coordinate');
+  var t1 = new $.TextAniRequest($.propertyTypeCheck($.EventHandle$('EventArgs'), 'is$EventHandle'), _texturePrefix, _frameCount, $.propertyTypeCheck(_offset, 'is$Coordinate'), delay, initialFrame, initialFrameOffset, false, null);
+  t1.TextAniRequest$7$delay$startFrame$initialFrame$initialFrameOffset(_texturePrefix, _frameCount, _offset, delay, startFrame, initialFrame, initialFrameOffset);
+  return t1;
 };
 
 $.Primitives_lazyAsJsDate = function(receiver) {
@@ -9804,12 +9684,11 @@ $.HashMapImplementation__nextProbe = function(currentProbe, numberOfProbes, leng
 
 $.drawTextureKeyAt = function(ctx, textureKey, location$) {
   $.stringTypeCheck(textureKey, 'is$String');
-  $.assert(!($._textureImage == null));
   $.assert(!(textureKey == null));
   $.assert(!($._textures == null));
   var texture = $.index($._textures, textureKey);
   $.assert(!(texture == null));
-  $.drawTextureAt(ctx, location$, texture, $._textureImage);
+  $.drawTextureAt(ctx, location$, texture);
 };
 
 $.isInfinite = function(receiver) {
@@ -9852,9 +9731,8 @@ $._DOMApplicationCacheEventsImpl$ = function(_ptr) {
 };
 
 $.TextureInput__parseRect = function(input) {
-  var matches = $.$$($.CTC15.allMatches$1($.stringTypeCheck(input, 'is$String'))).toList$0();
-  $.assert($.eq($.get$length(matches), 2));
-  return $.Box_Box$fromCoordSize($.TextureInput__parseCoordinate($.index($.index(matches, 0), 0)), $.TextureInput__parseCoordinate($.index($.index(matches, 1), 0)).toSize$0());
+  $.callTypeCheck(input, 'is$Map');
+  return $.Box_Box$fromCoordSize($.Coordinate$(input.operator$index$1('x'), input.operator$index$1('y')), $.Size$(input.operator$index$1('w'), input.operator$index$1('h')));
 };
 
 $.StringImplementation__toJsStringArray = function(strings) {
@@ -10065,28 +9943,6 @@ $.checkString = function(value) {
   return value;
 };
 
-$.Arrays_indexOf = function(a, element, startIndex, endIndex) {
-  $.listTypeCheck(a, 'is$List');
-  if (typeof a !== 'object' || a === null || a.constructor !== Array && !a.is$JavaScriptIndexingBehavior())
-    return $.Arrays_indexOf$bailout(1, element, startIndex, endIndex, a);
-  $.intTypeCheck(endIndex, 'is$$int');
-  if (endIndex !== (endIndex | 0))
-    return $.Arrays_indexOf$bailout(2, element, startIndex, a, endIndex);
-  if (startIndex >= a.length)
-    return -1;
-  if (startIndex < 0)
-    startIndex = 0;
-  for (var i = startIndex; $.boolConversionCheck($.lt(i, endIndex), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int')) {
-    if (i !== (i | 0))
-      throw $.iae(i);
-    if (i < 0 || i >= a.length)
-      throw $.ioore(i);
-    if ($.boolConversionCheck($.eq(a[i], element), 'is$bool'))
-      return i;
-  }
-  return -1;
-};
-
 $._Lists_indexOf = function(a, element, startIndex, endIndex) {
   if (startIndex !== (startIndex | 0))
     return $._Lists_indexOf$bailout(1, a, element, startIndex, endIndex);
@@ -10117,10 +9973,6 @@ $._WhereIterator$ = function(_source, _func, T) {
   return t1;
 };
 
-$._HttpRequestFactoryProvider_HttpRequest = function() {
-return new XMLHttpRequest();
-};
-
 $.toString = function(value) {
   if (typeof value == "object" && value !== null)
     if ($.isJsArray(value))
@@ -10134,6 +9986,10 @@ $.toString = function(value) {
   if (typeof value == "function")
     return 'Closure';
   return String(value);
+};
+
+$._HttpRequestFactoryProvider_HttpRequest = function() {
+return new XMLHttpRequest();
 };
 
 $._ElementFactoryProvider_Element$tag = function(tag) {
@@ -10185,14 +10041,7 @@ $.contains = function(userAgent, name$) {
 };
 
 $.Random_Random = function(seed) {
-  return $.CTC32;
-};
-
-$.regExpExec = function(regExp, str) {
-  var result = $.regExpGetNative(regExp).exec(str);
-  if (result === null)
-    return;
-  return result;
+  return $.CTC27;
 };
 
 $.endsWith = function(receiver, other) {
@@ -10214,8 +10063,7 @@ $.assert = function(condition) {
 };
 
 $.Box_Box$fromCoordSize = function(topLeft, size) {
-  $.propertyTypeCheck(size, 'is$Size');
-  return $.Box$(topLeft.x, topLeft.y, size.get$width(), size.get$height());
+  return $.Box$(topLeft.x, topLeft.y, size.width, size.height);
 };
 
 $.allMatchesInStringUnchecked = function(needle, haystack) {
@@ -10272,6 +10120,28 @@ $.Util_getHashCode = function(source) {
 
 $.IllegalArgumentException$ = function(arg) {
   return new $.IllegalArgumentException(arg);
+};
+
+$.Arrays_indexOf = function(a, element, startIndex, endIndex) {
+  $.listTypeCheck(a, 'is$List');
+  if (typeof a !== 'object' || a === null || a.constructor !== Array && !a.is$JavaScriptIndexingBehavior())
+    return $.Arrays_indexOf$bailout(1, element, startIndex, endIndex, a);
+  $.intTypeCheck(endIndex, 'is$$int');
+  if (endIndex !== (endIndex | 0))
+    return $.Arrays_indexOf$bailout(2, element, startIndex, a, endIndex);
+  if (startIndex >= a.length)
+    return -1;
+  if (startIndex < 0)
+    startIndex = 0;
+  for (var i = startIndex; $.boolConversionCheck($.lt(i, endIndex), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int')) {
+    if (i !== (i | 0))
+      throw $.iae(i);
+    if (i < 0 || i >= a.length)
+      throw $.ioore(i);
+    if ($.boolConversionCheck($.eq(a[i], element), 'is$bool'))
+      return i;
+  }
+  return -1;
 };
 
 $.functionTypeCheck = function(value) {
@@ -10403,12 +10273,6 @@ $.le = function(a, b) {
   return typeof a === 'number' && typeof b === 'number' ? a <= b : $.le$slow(a, b);
 };
 
-$.JSSyntaxRegExp$ = function(pattern, multiLine, ignoreCase) {
-  $.stringTypeCheck(pattern, 'is$String');
-  $.boolTypeCheck(multiLine, 'is$bool');
-  return new $.JSSyntaxRegExp($.boolTypeCheck(ignoreCase, 'is$bool'), multiLine, pattern);
-};
-
 $._serializeMessage = function(message) {
   if ($.boolConversionCheck($._globalState().get$needSerialization(), 'is$bool'))
     return $._JsSerializer$().traverse$1(message);
@@ -10428,11 +10292,6 @@ $.KeyValuePair$ = function(key, value, K, V) {
 
 $._DocumentEventsImpl$ = function(_ptr) {
   return new $._DocumentEventsImpl(_ptr);
-};
-
-$.Mouse_isMouseDirectlyOver = function(element) {
-  $.propertyTypeCheck(element, 'is$PElement');
-  return $.get$Mouse_isMouseDirectlyOverProperty().get$1(element);
 };
 
 $._IDBVersionChangeRequestEventsImpl$ = function(_ptr) {
@@ -10499,6 +10358,7 @@ $.defineProperty = function(obj, property, value) {
 };
 
 $.CanvasUtil_drawImage = function(ctx, img, sourceBox, targetBox) {
+  $.callTypeCheck(img, 'is$ImageElement');
   $.propertyTypeCheck(sourceBox, 'is$Box');
   if (targetBox == null)
     targetBox = $.Box$(0, 0, sourceBox.get$width(), sourceBox.get$height());
@@ -10513,11 +10373,6 @@ $._FileWriterEventsImpl$ = function(_ptr) {
   return new $._FileWriterEventsImpl(_ptr);
 };
 
-$.regExpGetNative = function(regExp) {
-  var r = regExp._re;
-  return r == null ? regExp._re = $.regExpMakeNative(regExp, false) : r;
-};
-
 $.cos = function(value) {
   return Math.cos($.checkNum(value));
 };
@@ -10529,6 +10384,11 @@ $._Manager$ = function() {
   return t1;
 };
 
+$.regExpGetNative = function(regExp) {
+  var r = regExp._re;
+  return r == null ? regExp._re = $.regExpMakeNative(regExp, false) : r;
+};
+
 $.ClickManager_addHandler = function(element, handler) {
   $.propertyTypeCheck(element, 'is$PElement');
   $.functionTypeCheck(handler, 'is$Action1');
@@ -10537,40 +10397,6 @@ $.ClickManager_addHandler = function(element, handler) {
 
 $.sub = function(a, b) {
   return typeof a === 'number' && typeof b === 'number' ? a - b : $.sub$slow(a, b);
-};
-
-$.Arrays_indexOf$bailout = function(state, env0, env1, env2, env3) {
-  switch (state) {
-    case 1:
-      var element = env0;
-      var startIndex = env1;
-      var endIndex = env2;
-      var a = env3;
-      break;
-    case 2:
-      element = env0;
-      startIndex = env1;
-      a = env2;
-      endIndex = env3;
-      break;
-  }
-  switch (state) {
-    case 0:
-      $.listTypeCheck(a, 'is$List');
-    case 1:
-      state = 0;
-      $.intTypeCheck(endIndex, 'is$$int');
-    case 2:
-      state = 0;
-      if ($.ge(startIndex, $.get$length(a)))
-        return -1;
-      if (startIndex < 0)
-        startIndex = 0;
-      for (var i = startIndex; $.boolConversionCheck($.lt(i, endIndex), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
-        if ($.boolConversionCheck($.eq($.index(a, i), element), 'is$bool'))
-          return i;
-      return -1;
-  }
 };
 
 $._Lists_indexOf$bailout = function(state, env0, env1, env2, env3) {
@@ -10607,6 +10433,40 @@ $._Lists_indexOf$bailout = function(state, env0, env1, env2, env3) {
       if ($.boolConversionCheck($.ge(startIndex, $.get$length(a)), 'is$bool'))
         return -1;
       if ($.boolConversionCheck($.lt(startIndex, 0), 'is$bool'))
+        startIndex = 0;
+      for (var i = startIndex; $.boolConversionCheck($.lt(i, endIndex), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
+        if ($.boolConversionCheck($.eq($.index(a, i), element), 'is$bool'))
+          return i;
+      return -1;
+  }
+};
+
+$.Arrays_indexOf$bailout = function(state, env0, env1, env2, env3) {
+  switch (state) {
+    case 1:
+      var element = env0;
+      var startIndex = env1;
+      var endIndex = env2;
+      var a = env3;
+      break;
+    case 2:
+      element = env0;
+      startIndex = env1;
+      a = env2;
+      endIndex = env3;
+      break;
+  }
+  switch (state) {
+    case 0:
+      $.listTypeCheck(a, 'is$List');
+    case 1:
+      state = 0;
+      $.intTypeCheck(endIndex, 'is$$int');
+    case 2:
+      state = 0;
+      if ($.ge(startIndex, $.get$length(a)))
+        return -1;
+      if (startIndex < 0)
         startIndex = 0;
       for (var i = startIndex; $.boolConversionCheck($.lt(i, endIndex), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
         if ($.boolConversionCheck($.eq($.index(a, i), element), 'is$bool'))
@@ -10803,165 +10663,158 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC2 = Isolate.makeConstantList([]);
-$.CTC24 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC2);
-$.CTC49 = 'structured clone of ArrayBufferView';
+$.CTC17 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC2);
+$.CTC46 = 'structured clone of ArrayBufferView';
 $.CTC12 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
 $.CTC0 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC50 = 'hidden';
-$.CTC33 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC51 = 'Pop0';
-$.CTC52 = 'Pop1';
-$.CTC53 = 'Pop2';
-$.CTC54 = 'Pop3';
-$.CTC55 = 'Pop4';
-$.CTC56 = 'Pop5';
-$.CTC57 = 'Pop6';
-$.CTC58 = 'Pop7';
-$.CTC59 = 'Pop8';
+$.CTC47 = 'hidden';
+$.CTC29 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC48 = 'Pop0';
+$.CTC49 = 'Pop1';
+$.CTC50 = 'Pop2';
+$.CTC51 = 'Pop3';
+$.CTC52 = 'Pop4';
+$.CTC53 = 'Pop5';
+$.CTC54 = 'Pop6';
+$.CTC55 = 'Pop7';
+$.CTC56 = 'Pop8';
 $.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8']);
-$.CTC60 = 'Cannot add to immutable List.';
+$.CTC57 = 'Cannot add to immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC23 = new Isolate.$isolateProperties.EventArgs();
-$.CTC61 = 2048;
-$.CTC62 = 1536;
-$.CTC27 = new Isolate.$isolateProperties.Size(2048, 1536);
-$.CTC63 = 0;
-$.CTC40 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC64 = 'offsetX is only supported on elements';
-$.CTC22 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC65 = 100;
-$.CTC30 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC66 = 32;
-$.CTC26 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC67 = 'The input sequence is empty.';
-$.CTC16 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC68 = 352;
-$.CTC69 = 96;
-$.CTC28 = new Isolate.$isolateProperties.Vector(352, 96);
-$.CTC70 = -88;
-$.CTC41 = new Isolate.$isolateProperties.Vector(-88, -88);
-$.CTC71 = -472;
-$.CTC72 = -348;
-$.CTC44 = new Isolate.$isolateProperties.Vector(-472, -348);
-$.CTC20 = new Isolate.$isolateProperties._UndefinedValue();
-$.CTC25 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC73 = 'structured clone of File';
+$.CTC22 = new Isolate.$isolateProperties.EventArgs();
+$.CTC58 = 2048;
+$.CTC59 = 1536;
+$.CTC20 = new Isolate.$isolateProperties.Size(2048, 1536);
+$.CTC60 = 0;
+$.CTC36 = new Isolate.$isolateProperties.Coordinate(0, 0);
+$.CTC61 = 'offsetX is only supported on elements';
+$.CTC16 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
+$.CTC62 = 352;
+$.CTC63 = 96;
+$.CTC21 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC64 = 32;
+$.CTC19 = new Isolate.$isolateProperties.Coordinate(32, 32);
+$.CTC65 = -88;
+$.CTC37 = new Isolate.$isolateProperties.Vector(-88, -88);
+$.CTC66 = 100;
+$.CTC24 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC67 = -472;
+$.CTC68 = -348;
+$.CTC40 = new Isolate.$isolateProperties.Vector(-472, -348);
+$.CTC15 = new Isolate.$isolateProperties._UndefinedValue();
+$.CTC18 = new Isolate.$isolateProperties.IllegalAccessException();
+$.CTC69 = 'structured clone of File';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC74 = 'game_board_center';
-$.CTC75 = 'number_one';
-$.CTC76 = 'number_two';
-$.CTC77 = 'number_three';
-$.CTC78 = 'number_four';
-$.CTC79 = 'number_five';
-$.CTC80 = 'number_six';
-$.CTC81 = 'number_seven';
-$.CTC82 = 'number_eight';
-$.CTC45 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
-$.CTC83 = null;
+$.CTC70 = 'game_board_center';
+$.CTC71 = 'number_one';
+$.CTC72 = 'number_two';
+$.CTC73 = 'number_three';
+$.CTC74 = 'number_four';
+$.CTC75 = 'number_five';
+$.CTC76 = 'number_six';
+$.CTC77 = 'number_seven';
+$.CTC78 = 'number_eight';
+$.CTC41 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
+$.CTC79 = null;
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC2);
-$.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC80 = 'balloon_pieces_a.png';
+$.CTC81 = 'balloon_pieces_b.png';
+$.CTC82 = 'balloon_pieces_c.png';
+$.CTC83 = 'balloon_pieces_d.png';
+$.CTC42 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
 $.CTC84 = 'won';
-$.CTC34 = new Isolate.$isolateProperties.GameState('won');
+$.CTC30 = new Isolate.$isolateProperties.GameState('won');
 $.CTC85 = 'lost';
-$.CTC35 = new Isolate.$isolateProperties.GameState('lost');
-$.CTC86 = 'Cannot removeLast on immutable List.';
-$.CTC5 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC87 = 'reset';
-$.CTC29 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC31 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
+$.CTC86 = 'reset';
+$.CTC23 = new Isolate.$isolateProperties.GameState('reset');
 $.CTC4 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC88 = 'balloon_pieces_a.png';
-$.CTC89 = 'balloon_pieces_b.png';
-$.CTC90 = 'balloon_pieces_c.png';
-$.CTC91 = 'balloon_pieces_d.png';
-$.CTC46 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
-$.CTC92 = 'The input sequence contains more than one element.';
-$.CTC17 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC93 = false;
-$.CTC94 = '^#[_a-zA-Z]\\w*$';
-$.CTC47 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC95 = 'structured clone of ArrayBuffer';
+$.CTC87 = 'Cannot removeLast on immutable List.';
+$.CTC5 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
+$.CTC88 = false;
+$.CTC89 = '^#[_a-zA-Z]\\w*$';
+$.CTC44 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
+$.CTC90 = 'structured clone of ArrayBuffer';
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC96 = 'must be implemented by subclass';
-$.CTC18 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC97 = 'structured clone of Date';
+$.CTC91 = 'must be implemented by subclass';
+$.CTC28 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
+$.CTC92 = 'structured clone of Date';
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
-$.CTC98 = '{([^,{]+),([^}]+)}';
-$.CTC15 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '{([^,{]+),([^}]+)}');
-$.CTC48 = new Isolate.$isolateProperties.Object();
-$.CTC99 = 'Incorrect number or type of arguments';
-$.CTC21 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
-$.CTC100 = 'Cannot insertRange on immutable List.';
-$.CTC31 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC101 = 'Cannot removeRange on immutable List.';
-$.CTC39 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC102 = 'structured clone of Blob';
+$.CTC45 = new Isolate.$isolateProperties.Object();
+$.CTC93 = 'Cannot insertRange on immutable List.';
+$.CTC25 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
+$.CTC94 = 'Incorrect number or type of arguments';
+$.CTC43 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
+$.CTC95 = 'Cannot removeRange on immutable List.';
+$.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
+$.CTC96 = 'structured clone of Blob';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC103 = 'started';
-$.CTC38 = new Isolate.$isolateProperties.GameState('started');
-$.CTC104 = 'safe';
-$.CTC43 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC105 = 'structured clone of RegExp';
+$.CTC97 = 'started';
+$.CTC34 = new Isolate.$isolateProperties.GameState('started');
+$.CTC98 = 'structured clone of RegExp';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC106 = 'structured clone of FileList';
+$.CTC99 = 'safe';
+$.CTC39 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC100 = 'structured clone of FileList';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
-$.CTC32 = new Isolate.$isolateProperties._Random();
-$.CTC107 = 'mine';
-$.CTC42 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC108 = 'revealed';
-$.CTC36 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC109 = 'structured clone of other type';
+$.CTC27 = new Isolate.$isolateProperties._Random();
+$.CTC101 = 'mine';
+$.CTC38 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC102 = 'revealed';
+$.CTC32 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC103 = 'structured clone of other type';
 $.CTC13 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC110 = 'flagged';
-$.CTC37 = new Isolate.$isolateProperties.SquareState('flagged');
-$.CTC111 = 'Mutation operations are not supported';
-$.CTC19 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.TextureInput__pairExp = Isolate.$isolateProperties.CTC15;
-$.Property_Undefined = Isolate.$isolateProperties.CTC20;
+$.CTC104 = 'flagged';
+$.CTC33 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC105 = 'Mutation operations are not supported';
+$.CTC26 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
+$.Property_Undefined = Isolate.$isolateProperties.CTC15;
 $.Duration_HOURS_PER_DAY = 24;
 $.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC0;
 $.DateImplementation__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.ResourceLoader_StateUnloaded = 'unloaded';
-$.SquareElement__balloonBits = Isolate.$isolateProperties.CTC46;
+$.SquareElement__balloonBits = Isolate.$isolateProperties.CTC42;
 $.GameElement__edgeOffset = 32;
-$._textureImage = null;
-$.SquareState_flagged = Isolate.$isolateProperties.CTC37;
+$.SquareState_flagged = Isolate.$isolateProperties.CTC33;
 $.Duration_MINUTES_PER_HOUR = 60;
 $._textures = null;
 $.GlobalId__globalId = 0;
 $._imageLoader = null;
-$.GameElement__boardOffset = Isolate.$isolateProperties.CTC28;
+$.GameElement__boardOffset = Isolate.$isolateProperties.CTC21;
 $.SquareElement__size = 80;
 $.ResourceLoader_StateLoaded = 'loaded';
 $._ReceivePortImpl__nextFreeId = 1;
 $._audioLoader = null;
-$.SquareState_safe = Isolate.$isolateProperties.CTC43;
-$.GameState_started = Isolate.$isolateProperties.CTC38;
+$.SquareState_safe = Isolate.$isolateProperties.CTC39;
+$.GameState_started = Isolate.$isolateProperties.CTC34;
 $._getTypeNameOf = null;
-$.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC44;
-$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC41;
+$.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC40;
+$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC37;
 $.GameElement__popAnimationHitFrame = 12;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
-$.SquareState_mine = Isolate.$isolateProperties.CTC42;
+$.SquareState_mine = Isolate.$isolateProperties.CTC38;
 $.ScoreElement__minesLeftStr = 'MINES LEFT:';
 $._dartlibHelperRandom = null;
 $.PI = 3.141592653589793;
 $._audioContext = null;
 $.LN2 = 0.6931471805599453;
-$.GameState_won = Isolate.$isolateProperties.CTC34;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC33;
+$._opaqueTextureName = 'dart_opaque_01.jpg';
+$.GameState_won = Isolate.$isolateProperties.CTC30;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC29;
 $._audioNames = Isolate.$isolateProperties.CTC;
 $.HashMapImplementation__INITIAL_CAPACITY = 8;
 $.Duration_SECONDS_PER_MINUTE = 60;
-$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC27;
+$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC20;
 $._buffers = null;
+$._transparentTextureName = 'dart_transparent_01.png';
 $._TimerFactory__factory = null;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
-$.GameState_lost = Isolate.$isolateProperties.CTC35;
-$.SquareState_revealed = Isolate.$isolateProperties.CTC36;
-$.GameState_reset = Isolate.$isolateProperties.CTC29;
-$._textuerName = 'art.png';
-$.SquareElement__numberMap = Isolate.$isolateProperties.CTC45;
+$.GameState_lost = Isolate.$isolateProperties.CTC31;
+$.SquareState_revealed = Isolate.$isolateProperties.CTC32;
+$.GameState_reset = Isolate.$isolateProperties.CTC23;
+$.SquareElement__numberMap = Isolate.$isolateProperties.CTC41;
 $.GameElement__backgroundHoleSize = 1344;
 $.ScoreElement__valueOffset = 15;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
@@ -12020,12 +11873,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.stringTypeCheck(initialValue, 'is$String');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  contains$1: function(string) {
   return this.contains(string);
@@ -12181,7 +12034,7 @@ $.$defineNativeClass('DocumentFragment', [], {
   return;
 },
  get$attributes: function() {
-  return $.CTC24;
+  return $.CTC17;
 },
  get$style: function() {
   return $._ElementFactoryProvider_Element$tag('div').get$style();
@@ -12212,7 +12065,7 @@ $.$defineNativeClass('HTMLDocument', [], {
   return this.querySelector(selectors);
 },
  query$1: function(selectors) {
-  if ($.boolConversionCheck($.CTC47.hasMatch$1(selectors), 'is$bool'))
+  if ($.boolConversionCheck($.CTC44.hasMatch$1(selectors), 'is$bool'))
     return this.$dom_getElementById$1($.substring$1(selectors, 1));
   return this.$dom_querySelector$1(selectors);
 },
@@ -12476,12 +12329,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$File');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_FileListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -12570,12 +12423,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.numTypeCheck(initialValue, 'is$num');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_Float32ArrayImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -12629,12 +12482,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.numTypeCheck(initialValue, 'is$num');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -12757,12 +12610,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$Node');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_HTMLCollectionImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -12943,7 +12796,7 @@ $.$defineNativeClass('IDBIndex', ["name?"], {
     return this._get_1$1(key);
   if (t1)
     return this._get_2$1(key);
-  throw $.$$throw($.CTC21);
+  throw $.$$throw($.CTC43);
 },
  _get_1$1: function(key) {
   return this.get($.callTypeCheck(key, 'is$_IDBKeyRangeImpl'));
@@ -13163,12 +13016,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -13220,12 +13073,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -13277,12 +13130,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -13479,12 +13332,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.stringTypeCheck(initialValue, 'is$String');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_MediaListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -13678,7 +13531,7 @@ $.$defineNativeClass('MouseEvent', ["shiftKey?", "x?", "y?"], {
   else {
     var target = this.target;
     if (!(typeof target === 'object' && target !== null && target.is$Element()))
-      throw $.$$throw($.CTC22);
+      throw $.$$throw($.CTC16);
     return $.sub(this.clientX, target.$dom_getBoundingClientRect$0().get$left());
   }
 },
@@ -13688,7 +13541,7 @@ $.$defineNativeClass('MouseEvent', ["shiftKey?", "x?", "y?"], {
   else {
     var target = this.target;
     if (!(typeof target === 'object' && target !== null && target.is$Element()))
-      throw $.$$throw($.CTC22);
+      throw $.$$throw($.CTC16);
     return $.sub(this.clientY, target.$dom_getBoundingClientRect$0().get$top());
   }
 },
@@ -13758,12 +13611,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$Node');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_NamedNodeMapImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -15532,12 +15385,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$StyleSheet');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_StyleSheetListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -15738,12 +15591,12 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.callTypeCheck(initialValue, 'is$Touch');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_TouchListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -15829,12 +15682,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -15886,12 +15739,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$Object: function() { return true; },
@@ -15943,12 +15796,12 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC39);
+  throw $.$$throw($.CTC35);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
   $.intTypeCheck(initialValue, 'is$$int');
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC25);
 },
  is$_Uint8ArrayImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
