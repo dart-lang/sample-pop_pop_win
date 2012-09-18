@@ -23,7 +23,6 @@
 #source('texture/texture_input.dart');
 
 Map<String, TextureInput> _textures;
-ImageElement _textureImage;
 
 Map<String, AudioBuffer> _buffers;
 AudioContext _audioContext;
@@ -46,13 +45,10 @@ void playAudio(String name) {
   }
 }
 
-void populateTextures(ImageElement imageElement, Map<String, TextureInput> textures) {
+void populateTextures(Map<String, TextureInput> textures) {
   assert(_textures == null);
   assert(textures != null);
-  assert(imageElement != null);
-  assert(_textureImage == null);
   _textures = textures;
-  _textureImage = imageElement;
 }
 
 TextureInput getTexture(String key) {
@@ -62,15 +58,14 @@ TextureInput getTexture(String key) {
 
 void drawTextureKeyAt(CanvasRenderingContext2D ctx, String textureKey,
                    [Coordinate location = const Coordinate()]) {
-  assert(_textureImage != null);
   assert(textureKey != null);
   final texture = getTexture(textureKey);
   assert(texture != null);
-  drawTextureAt(ctx, location, texture, _textureImage);
+  drawTextureAt(ctx, location, texture);
 }
 
 void drawTextureAt(CanvasRenderingContext2D ctx, Coordinate location,
-                    TextureInput texture, ImageElement imageElement) {
+                    TextureInput texture) {
   ctx.save();
   final tx = new AffineTransform();
   tx.translate(location.x, location.y);
@@ -87,6 +82,6 @@ void drawTextureAt(CanvasRenderingContext2D ctx, Coordinate location,
 
   CanvasUtil.transform(ctx, tx);
 
-  CanvasUtil.drawImage(ctx, imageElement, theFrame);
+  CanvasUtil.drawImage(ctx, texture.image, theFrame);
   ctx.restore();
 }

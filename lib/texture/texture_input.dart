@@ -1,45 +1,35 @@
 class TextureInput {
-  static const _pairExp = const RegExp(@"{([^,{]+),([^}]+)}");
-
   final String name;
   final Box frame;
-  final Vector offset;
   final bool rotated;
+  final bool trimmed;
   final Box sourceColorRect;
   final Size sourceSize;
+  final ImageElement image;
 
-  TextureInput(this.name, this.frame, this.offset, this.rotated,
-      this.sourceColorRect, this.sourceSize);
+  TextureInput(this.name, this.frame, this.rotated, this.trimmed,
+      this.sourceColorRect, this.sourceSize, this.image);
 
-  factory TextureInput.fromHash(String keyName, Map<String, Dynamic> map) {
+  factory TextureInput.fromHash(String keyName, Map<String, Dynamic> map,
+      ImageElement image) {
     final frame = _parseRect(map['frame']);
-    final offset = _parseCoordinate(map['offset']).toVector();
-    final sourceColorRect = _parseRect(map['sourceColorRect']);
-    final sourceSize = _parseCoordinate(map['sourceSize']).toSize();
+    final sourceColorRect = _parseRect(map['spriteSourceSize']);
+    final sourceSize = _parseCoordinate(map['sourceSize']);
 
-    return new TextureInput(keyName, frame, offset, map['rotated'],
-        sourceColorRect, sourceSize);
+    return new TextureInput(keyName, frame, map['rotated'], map['trimmed'],
+        sourceColorRect, sourceSize, image);
   }
 
   String toString() => this.name;
 
-  static Box _parseRect(String input) {
-    final matches = $(_pairExp.allMatches(input)).toList();
-    assert(matches.length == 2);
-
-    var coord = _parseCoordinate(matches[0][0]);
-    var size = _parseCoordinate(matches[1][0]).toSize();
+  static Box _parseRect(Map<String, Dynamic> input) {
+    var coord = new Coordinate(input['x'], input['y']);
+    var size = new Size(input['w'], input['h']);
 
     return new Box.fromCoordSize(coord, size);
   }
 
-  static Coordinate _parseCoordinate(String input) {
-    final match = $(_pairExp.allMatches(input)).single();
-    assert(match.groupCount() == 2);
-
-    final x = parseDouble(match[1]);
-    final y = parseDouble(match[2]);
-
-    return new Coordinate(x, y);
+  static Size _parseCoordinate(Map<String, Dynamic> input) {
+    return new Size(input['w'], input['h']);
   }
 }

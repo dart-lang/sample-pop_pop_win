@@ -41,7 +41,7 @@ class SquareElement extends PElement {
         textureName = '$prefix.png';
         break;
       case SquareState.mine:
-        textureName = 'balloon_tagged_bomb.png';
+        textureName = 'crater_b.png';
         break;
     }
 

@@ -144,8 +144,9 @@ class GameElement extends ElementParentImpl {
     }
 
     for(final c in reveals) {
-      final squareOffset = _popExplodeAnimationOffset +
-          new Vector(SquareElement._size * c.x, SquareElement._size * c.y);
+      final initialOffset = new Vector(SquareElement._size * c.x,
+          SquareElement._size * c.y);
+      final squareOffset = _popExplodeAnimationOffset + initialOffset;
 
       var delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
       delay += rnd.nextInt(10);
@@ -169,7 +170,8 @@ class GameElement extends ElementParentImpl {
           throw 'not supported';
       }
 
-      final request = new TextAniRequest(texturePrefix, frameCount, squareOffset, delay);
+      final request = new TextAniRequest(texturePrefix, frameCount, squareOffset,
+          delay: delay, initialFrame: 'balloon.png', initialFrameOffset: initialOffset);
       request.started.add((args) => _playPop());
 
       _popAnimationLayer.add(request);

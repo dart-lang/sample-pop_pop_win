@@ -9,31 +9,30 @@
 
 #source('../texture_data.dart');
 
-const String _fileName = '../art.png';
+const String _transparentTextureName = '../dart_transparent_01.png';
+const String _opaqueTextureName = '../dart_opaque_01.jpg';
 
 ImageLoader _imageLoader;
 List<String> _keys;
 int _currentIndex = 0;
 CanvasRenderingContext2D __ctx;
 Map<String, TextureInput> _textures;
-ImageElement __textureImg;
 
 main() {
-  _imageLoader = new ImageLoader([_fileName]);
+  _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName]);
   _imageLoader.loaded.add((args) => _doLoad());
   _imageLoader.load();
 }
 
 _doLoad() {
-  _textures = _getTextures();
+  final opaqueImage = _imageLoader.getResource(_opaqueTextureName);
+  final transparentImage = _imageLoader.getResource(_transparentTextureName);
+
+  _textures = _getTextures(transparentImage, opaqueImage);
 
   CanvasElement canvasElement = query('#sweeperCanvas');
   canvasElement.on.click.add((args) => _next());
   __ctx = canvasElement.context2d;
-
-  assert(_imageLoader != null);
-  __textureImg  = _imageLoader.getResource(_fileName);
-  assert(__textureImg != null);
 
   _keys = new List<String>.from(_textures.getKeys());
 
@@ -74,6 +73,6 @@ void _drawTexture() {
 
   print([_currentIndex, key]);
 
-  drawTextureAt(__ctx, new Coordinate(100, 100), texture, __textureImg);
+  drawTextureAt(__ctx, new Coordinate(100, 100), texture);
 
 }

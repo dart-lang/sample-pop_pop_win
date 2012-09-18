@@ -41,20 +41,23 @@ class TextureAnimationElement extends PElement {
 }
 
 class TextAniRequest {
+  final EventHandle<EventArgs> _startEventHandle = new EventHandle<EventArgs>();
   final String _texturePrefix;
   final int _frameCount;
-  final Vector _offset;
+  final Coordinate _offset;
   final int _delay;
-  final EventHandle<EventArgs> _startEventHandle;
+  final String _initialFrame;
+  final Coordinate _initialFrameOffset;
 
   bool _done = false;
   int _frame = null;
 
   TextAniRequest(this._texturePrefix, this._frameCount,
-      this._offset, [int delay = 0]) :
+      this._offset, {int delay: 0, int startFrame: 0,
+    String initialFrame: null, Coordinate initialFrameOffset: null}) :
       this._delay = delay,
-      _startEventHandle = new EventHandle<EventArgs>()
-      {
+      this._initialFrame = initialFrame,
+      this._initialFrameOffset = initialFrameOffset {
     assert(_delay >= 0);
     assert(_texturePrefix != null);
     assert(_frameCount > 0);
@@ -82,18 +85,28 @@ class TextAniRequest {
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    // if we're delayed (_frame < 0), then draw frame 0
-    final frame = (_frame < 0) ? 0 : _frame;
+    var frameName;
+    var offset = _offset;
+    if(_frame < 0 && _initialFrame != null) {
+      frameName = _initialFrame;
+      if(_initialFrameOffset != null) {
+        offset = _initialFrameOffset;
+      }
+    } else {
 
-    var frameString = frame.toInt().toString();
-    while(frameString.length < 4) {
-      frameString = "0$frameString";
+      // if we're delayed (_frame < 0), then draw frame 0
+      final frame = (_frame < 0) ? 0 : _frame;
+
+      var frameString = frame.toInt().toString();
+      while(frameString.length < 4) {
+        frameString = "0$frameString";
+      }
+
+      frameName = "${_texturePrefix}_$frameString.png";
     }
 
-    final frameName = "${_texturePrefix}_$frameString.png";
-
     ctx.save();
-    ctx.translate(_offset.x, _offset.y);
+    ctx.translate(offset.x, offset.y);
     drawTextureKeyAt(ctx, frameName);
     ctx.restore();
   }
