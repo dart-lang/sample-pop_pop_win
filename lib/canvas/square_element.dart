@@ -43,14 +43,11 @@ class SquareElement extends PElement {
       case SquareState.mine:
         textureName = 'crater_b.png';
         break;
+      case SquareState.safe:
+        textureName = 'balloon_tagged_bomb.png';
     }
 
-    if(textureName == null) {
-      ctx.fillStyle = _fillStyle;
-      ctx.fillRect(0, 0, width, height);
-    } else {
-      drawTextureKeyAt(ctx, textureName);
-    }
+    drawTextureKeyAt(ctx, textureName);
   }
 
   String toString() => 'Square at [$x, $y]';
@@ -72,14 +69,5 @@ class SquareElement extends PElement {
   Game get _game {
     final BoardElement p = this.parent;
     return p._game;
-  }
-
-  Dynamic get _fillStyle {
-    switch(_lastDrawingState) {
-      case SquareState.safe:
-        return 'green';
-      default:
-        throw 'not supported - $_lastDrawingState';
-    }
   }
 }
