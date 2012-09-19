@@ -4007,6 +4007,15 @@ $$.AffineTransform = {"":
  get$determinant: function() {
   return $.sub($.mul(this._m00, this._m11), $.mul(this._m01, this._m10));
 },
+ scale$2: function(sx, sy) {
+  $.numTypeCheck(sx, 'is$num');
+  $.numTypeCheck(sy, 'is$num');
+  this._m00 = $.numTypeCheck($.mul(this._m00, sx), 'is$num');
+  this._m10 = $.numTypeCheck($.mul(this._m10, sx), 'is$num');
+  this._m01 = $.numTypeCheck($.mul(this._m01, sy), 'is$num');
+  this._m11 = $.numTypeCheck($.mul(this._m11, sy), 'is$num');
+  return this;
+},
  concatenate$1: function(tx) {
   var m0 = this._m00;
   var m1 = this._m01;
@@ -4575,408 +4584,28 @@ $$.SquareState = {"":
  is$SquareState: true
 };
 
-$$.GameRoot = {"":
- ["_lib1_stage", "_lib1_canvas?", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib3_width", "_lib3_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
- "super": "GameManager",
- set$game: function(value) {
-  $.propertyTypeCheck(value, 'is$Game');
-  var t1 = $.game;
-  this._gameElement.set$game(value);
-  this.game = value;
+$$.AudioLoader = {"":
+ ["context?", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib1_state"],
+ "super": "ResourceLoader",
+ _doLoad$1: function(url) {
+  $.stringTypeCheck(url, 'is$String');
+  var request = $.callTypeCheck($._HttpRequestFactoryProvider_HttpRequest(), 'is$HttpRequest');
+  request.open$3('GET', url, true);
+  request.set$responseType('arraybuffer');
+  $.add$1(request.get$on().get$load(), new $.AudioLoader__doLoad_anon(request, url, this));
+  $.add$1(request.get$on().get$error(), new $.AudioLoader__doLoad_anon0());
+  request.send$0();
 },
- newGame$0: function() {
-  $.GameManager.prototype.newGame$0.call(this);
-  this._requestFrame$0();
-},
- _requestFrame$0: function() {
-  if (!$.boolConversionCheck(this._frameRequested, 'is$bool')) {
-    this._frameRequested = true;
-    $.window().requestAnimationFrame$1(this.get$_onFrame());
+ _saveBuffer$2: function(url, buffer) {
+  $.stringTypeCheck(url, 'is$String');
+  $.callTypeCheck(buffer, 'is$AudioBuffer');
+  if (buffer == null) {
+    $.print('error decoding file data: ' + $.S(url));
+    return;
   }
-},
- _onFrame$1: function(time) {
-  $.intTypeCheck(time, 'is$$int');
-  var t1 = this._lib1_stage;
-  var t2 = t1.get$size().get$width();
-  var t3 = this._gameElement;
-  var prettyScale = $.pow(2, $.toInt($.floor($.log($.min($.div(t2, t3.get$width()), $.div(t1.get$size().get$height(), t3.get$height()))) / 0.6931471805599453)));
-  var t4 = this._gameElementTx;
-  t4.setToScale$2(prettyScale, prettyScale);
-  var newDimensions = $.mul(t3.get$size(), prettyScale);
-  $.assert(newDimensions.fitsInside$1(t1.get$size()));
-  var delta = $.Vector$($.sub(t1.get$size().get$width(), newDimensions.get$width()), $.sub(t1.get$size().get$height(), newDimensions.get$height())).scale$1(0.5);
-  t4.translate$2(delta.get$x(), delta.get$y());
-  var updated = t1.draw$0();
-  this._frameRequested = false;
-  if ($.boolConversionCheck(updated, 'is$bool'))
-    this._requestFrame$0();
-},
- get$_onFrame: function() { return new $.BoundClosure(this, '_onFrame$1'); },
- updateClock$0: function() {
-  this._requestFrame$0();
-  $.GameManager.prototype.updateClock$0.call(this);
-},
- gameUpdated$1: function(args) {
-  this._requestFrame$0();
-},
- get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
- _stageInvalidated$1: function(args) {
-  this._requestFrame$0();
-},
- get$_stageInvalidated: function() { return new $.BoundClosure(this, '_stageInvalidated$1'); },
- _mouseMoveHandler$1: function(args) {
-  $.propertyTypeCheck(args, 'is$ElementMouseEventArgs');
-  if (!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool')) {
-    var t1 = args.get$element();
-    t1 = typeof t1 === 'object' && t1 !== null && !!t1.is$SquareElement;
-  } else
-    t1 = false;
-  if (t1) {
-    var se = $.propertyTypeCheck(args.get$element(), 'is$SquareElement');
-    var showPointer = $.boolTypeCheck(this.get$game().canReveal$2(se.get$x(), se.get$y()), 'is$bool');
-  } else {
-    t1 = args.get$element();
-    showPointer = typeof t1 === 'object' && t1 !== null && !!t1.is$NewGameElement && true;
-  }
-  this._updateCursor$1(showPointer);
-},
- get$_mouseMoveHandler: function() { return new $.BoundClosure(this, '_mouseMoveHandler$1'); },
- _mouseOutHandler$1: function(args) {
-  this._updateCursor$1(false);
-},
- get$_mouseOutHandler: function() { return new $.BoundClosure(this, '_mouseOutHandler$1'); },
- _updateCursor$1: function(showFinger) {
-  var t1 = showFinger ? 'pointer' : 'inherit';
-  this._lib1_canvas.get$style().set$cursor(t1);
-},
- GameRoot$_internal$7: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan) {
-  $.intTypeCheck(width, 'is$$int');
-  $.intTypeCheck(height, 'is$$int');
-  $.intTypeCheck(mineCount, 'is$$int');
-  $.propertyTypeCheck(gameElement, 'is$GameElement');
-  var t1 = this._lib1_stage;
-  $.add$1(t1.get$invalidated(), this.get$_stageInvalidated());
-  var t2 = this._gameElement;
-  $.add$1(t2.get$newGameClick(), new $.anon(this));
-  $.ClickManager_addMouseMoveHandler(t2, this.get$_mouseMoveHandler());
-  $.ClickManager_addMouseOutHandler(t1, this.get$_mouseOutHandler());
+  $.indexSet(this._resources, url, buffer);
+  this._onLoaded$1(url);
 }
-};
-
-$$.GameElement = {"":
- ["_lib1_canvas?", "_background", "_boardElement", "_scoreElement", "_newGameElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_scoreTx", "_newGameTx", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
- "super": "ElementParentImpl",
- get$newGameClick: function() {
-  return this._newGameElement.get$clicked();
-},
- get$game: function() {
-  return this._game;
-},
- set$game: function(value) {
-  $.propertyTypeCheck(value, 'is$Game');
-  this._game = value;
-  if (value == null)
-    this.set$size($.CTC24);
-  else
-    this._updateSize$2(value.get$field().get$width(), value.get$field().get$height());
-},
- get$visualChildCount: function() {
-  return 1;
-},
- getVisualChild$1: function(index) {
-  $.assert($.intTypeCheck(index, 'is$$int') === 0);
-  return this._lib1_canvas;
-},
- update$0: function() {
-  $.ElementParentImpl.prototype.update$0.call(this);
-  var offset = this._scaledBoardOffset.operator$add$1($.CTC19);
-  var t1 = this._lib1_canvas;
-  t1.setTopLeft$2(this._boardElement, offset);
-  t1.setTopLeft$2(this._popAnimationLayer, offset);
-  t1.setTopLeft$2(this._dartAnimationLayer, offset);
-  var t2 = this._scale;
-  if (typeof t2 !== 'number')
-    return this.update$0$bailout(1, t2, t1, 0, 0, 0, 0);
-  var t4 = $.CTC20.width;
-  if (typeof t4 !== 'number')
-    return this.update$0$bailout(2, t2, t4, t1, 0, 0, 0);
-  var t6 = $.CTC21.x;
-  if (typeof t6 !== 'number')
-    return this.update$0$bailout(3, t1, t2, t4, t6, 0, 0);
-  t4 -= t6;
-  var t8 = this._scoreElement;
-  var t9 = t8.get$width();
-  if (typeof t9 !== 'number')
-    return this.update$0$bailout(4, t2, t6, t8, t9, t4, t1);
-  t1.setTopLeft$2(t8, $.Vector$(t2 * (t4 - t9), 0));
-  t8 = this._scoreTx;
-  var t11 = this._scale;
-  t8.setToScale$2(t11, t11);
-  t11 = this._newGameElement;
-  t8 = t11.get$width();
-  if (typeof t8 !== 'number')
-    return this.update$0$bailout(5, t6, t1, t8, t11, 0, 0);
-  t6 += t8 * 0.2;
-  var t13 = this._scale;
-  if (typeof t13 !== 'number')
-    return this.update$0$bailout(6, t11, t6, t13, t1, 0, 0);
-  t1.setTopLeft$2(t11, $.Vector$(t6 * t13, 0));
-  t11 = this._newGameTx;
-  t1 = this._scale;
-  t11.setToScale$2(t1, t1);
-},
- update$0$bailout: function(state, env0, env1, env2, env3, env4, env5) {
-  switch (state) {
-    case 1:
-      t2 = env0;
-      t1 = env1;
-      break;
-    case 2:
-      t2 = env0;
-      t4 = env1;
-      t1 = env2;
-      break;
-    case 3:
-      t1 = env0;
-      t2 = env1;
-      t4 = env2;
-      t6 = env3;
-      break;
-    case 4:
-      t2 = env0;
-      t6 = env1;
-      t8 = env2;
-      t9 = env3;
-      t4 = env4;
-      t1 = env5;
-      break;
-    case 5:
-      t6 = env0;
-      t1 = env1;
-      t8 = env2;
-      t11 = env3;
-      break;
-    case 6:
-      t11 = env0;
-      t6 = env1;
-      t13 = env2;
-      t1 = env3;
-      break;
-  }
-  switch (state) {
-    case 0:
-      $.ElementParentImpl.prototype.update$0.call(this);
-      var offset = $.add(this._scaledBoardOffset, $.CTC19);
-      var t1 = this._lib1_canvas;
-      t1.setTopLeft$2(this._boardElement, offset);
-      t1.setTopLeft$2(this._popAnimationLayer, offset);
-      t1.setTopLeft$2(this._dartAnimationLayer, offset);
-      var t2 = this._scale;
-    case 1:
-      state = 0;
-      var t4 = $.CTC20.width;
-    case 2:
-      state = 0;
-      var t6 = $.CTC21.x;
-    case 3:
-      state = 0;
-      t4 = $.sub(t4, t6);
-      var t8 = this._scoreElement;
-      var t9 = t8.get$width();
-    case 4:
-      state = 0;
-      t1.setTopLeft$2(t8, $.Vector$($.mul(t2, $.sub(t4, t9)), 0));
-      t8 = this._scoreTx;
-      var t11 = this._scale;
-      t8.setToScale$2(t11, t11);
-      t11 = this._newGameElement;
-      t8 = t11.get$width();
-    case 5:
-      state = 0;
-      t6 = $.add(t6, $.mul(t8, 0.2));
-      var t13 = this._scale;
-    case 6:
-      state = 0;
-      t1.setTopLeft$2(t11, $.Vector$($.mul(t6, t13), 0));
-      t11 = this._newGameTx;
-      t1 = this._scale;
-      t11.setToScale$2(t1, t1);
-  }
-},
- drawOverride$1: function(ctx) {
-  $.ElementParentImpl.prototype.drawOverride$1.call(this, ctx);
-  this._drawTarget$1(ctx);
-},
- _drawTarget$1: function(ctx) {
-  $.assert(this._targetX == null === (this._targetY == null));
-  var t1 = this._targetX;
-  if (!(t1 == null)) {
-    var targetLoc = $.Vector$(t1, this._targetY).scale$1(80);
-    ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');
-    $.CanvasUtil_centeredCircle(ctx, $.add(targetLoc.get$x(), 40), $.add(targetLoc.get$y(), 40), 40);
-    ctx.fill$0();
-  }
-},
- _startPopAnimation$2: function(start, reveals) {
-  $.listSuperNativeTypeCheck(reveals, 'is$Iterable');
-  if (reveals == null) {
-    $.assert($.eq(this.get$game().get$state(), $.CTC31));
-    reveals = $.listSuperNativeTypeCheck($.NumberEnumerable_NumberEnumerable$fromRange(0, $.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0(), 'is$Iterable');
-  }
-  for (var t1 = $.iterator(reveals), t2 = this._popAnimationLayer; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
-    var t3 = t1.next$0();
-    var t4 = t3.get$x();
-    if (typeof t4 !== 'number')
-      throw $.iae(t4);
-    t4 = 80 * t4;
-    var t5 = t3.get$y();
-    if (typeof t5 !== 'number')
-      throw $.iae(t5);
-    var initialOffset = $.Vector$(t4, 80 * t5);
-    var squareOffset = $.CTC37.operator$add$1(initialOffset);
-    t4 = $.toInt($.mul($.get$length($.sub(t3, start)), 4));
-    if (typeof t4 !== 'number')
-      throw $.iae(t4);
-    var delay = 12 + t4;
-    t4 = $.rnd().nextInt$1(10);
-    if (typeof t4 !== 'number')
-      throw $.iae(t4);
-    delay += t4;
-    switch (this.get$game().getSquareState$2(t3.get$x(), t3.get$y())) {
-      case $.CTC32:
-      case $.CTC29:
-        var frameCount = 29;
-        var texturePrefix = 'balloon_pop';
-        break;
-      case $.CTC38:
-        frameCount = 25;
-        texturePrefix = 'balloon_explode';
-        break;
-      default:
-        throw $.$$throw('not supported');
-    }
-    var request = $.TextAniRequest$(texturePrefix, frameCount, squareOffset, delay, 0, 'balloon.png', initialOffset);
-    $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon2(this));
-    $.add$1(t2, request);
-  }
-},
- _startPopAnimation$1: function(start) {
-  return this._startPopAnimation$2(start,null)
-},
- _playPop$0: function() {
-  $.playAudio('Pop' + $.S($.rnd().nextInt$1(8)));
-},
- _startDartAnimation$1: function(points) {
-  for (var t1 = $.iterator($.listSuperNativeTypeCheck(points, 'is$Iterable')), t2 = this._dartAnimationLayer; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
-    var t3 = t1.next$0();
-    var t4 = t3.get$x();
-    if (typeof t4 !== 'number')
-      throw $.iae(t4);
-    t4 = 80 * t4;
-    t3 = t3.get$y();
-    if (typeof t3 !== 'number')
-      throw $.iae(t3);
-    var squareOffset = $.CTC40.operator$add$1($.Vector$(t4, 80 * t3));
-    $.add$1(t2, $.TextAniRequest$('dart_fly_shadow', 56, squareOffset, 0, 0, null, null));
-    $.add$1(t2, $.TextAniRequest$('dart_fly', 56, squareOffset, 0, 0, null, null));
-  }
-},
- _squareClicked$1: function(args) {
-  $.propertyTypeCheck(args, 'is$ElementMouseEventArgs');
-  if (!$.boolConversionCheck(this._game.get$gameEnded(), 'is$bool')) {
-    var se = $.propertyTypeCheck(args.get$element(), 'is$SquareElement');
-    var t1 = $.boolConversionCheck(this._targetMode, 'is$bool');
-    var t2 = se.get$x();
-    var t3 = se.get$y();
-    if (t1)
-      this._target$2(t2, t3);
-    else
-      this._click$3(t2, t3, args.get$shiftKey());
-  }
-},
- get$_squareClicked: function() { return new $.BoundClosure(this, '_squareClicked$1'); },
- _target$2: function(x, y) {
-  $.intTypeCheck(x, 'is$$int');
-  $.intTypeCheck(y, 'is$$int');
-  this._targetX = x;
-  this._targetY = y;
-  this._targetChanged.fireEvent$1(null);
-  this.invalidateDraw$0();
-},
- _toggleFlag$2: function(x, y) {
-  $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
-  var ss = this.get$game().getSquareState$2(x, y);
-  if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
-    this.get$game().setFlag$3(x, y, true);
-    return true;
-  } else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool')) {
-    this.get$game().setFlag$3(x, y, false);
-    return true;
-  }
-  return false;
-},
- _click$3: function(x, y, alt) {
-  $.intTypeCheck(x, 'is$$int');
-  $.intTypeCheck(y, 'is$$int');
-  $.boolTypeCheck(alt, 'is$bool');
-  $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
-  var ss = this.get$game().getSquareState$2(x, y);
-  if (alt)
-    if ($.boolConversionCheck($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool') || $.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'), 'is$bool')) {
-      this._toggleFlag$2(x, y);
-      var reveals = null;
-    } else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'))
-      if ($.boolConversionCheck(this.get$game().canReveal$2(x, y), 'is$bool')) {
-        var adjHidden = $.$$(this.get$game().get$field().getAdjacentIndices$2(x, y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0();
-        $.assert($.gt($.get$length(adjHidden), 0));
-        this._startDartAnimation$1(adjHidden);
-        reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
-      } else
-        reveals = null;
-    else
-      reveals = null;
-  else if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
-    this._startDartAnimation$1([$.Coordinate$(x, y)]);
-    reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
-  } else
-    reveals = null;
-  if ($.boolConversionCheck(!(reveals == null) && $.boolConversionCheck($.gt($.get$length(reveals), 0), 'is$bool'), 'is$bool')) {
-    $.assert(!$.eqB(this.get$game().get$state(), $.CTC31));
-    if (!alt) {
-      var first = $.index(reveals, 0);
-      $.assert($.eq(first.get$x(), x));
-      $.assert($.eq(first.get$y(), y));
-    }
-    this._startPopAnimation$2($.Coordinate$(x, y), reveals);
-  } else if ($.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC31), 'is$bool'))
-    this._startPopAnimation$1($.Coordinate$(x, y));
-},
- _updateSize$2: function(w, h) {
-  $.intTypeCheck(w, 'is$$int');
-  $.intTypeCheck(h, 'is$$int');
-  var t1 = $.CTC20.width;
-  var sizeX = $.GameElement__getScale(w, t1, 1344);
-  var t2 = $.Size$(sizeX, $.GameElement__getScale(h, $.CTC20.height, 1344));
-  this.set$size(t2);
-  this._lib1_canvas.set$size(t2);
-  this._scale = $.doubleTypeCheck($.div(sizeX, t1), 'is$$double');
-  this._scaledBoardOffset = $.propertyTypeCheck($.CTC21.scale$1(this._scale), 'is$Vector');
-},
- GameElement$1: function(_targetMode) {
-  var t1 = this._lib1_canvas;
-  t1.registerParent$1(this);
-  t1.addElement$1(this._background);
-  t1.addElement$1(this._boardElement);
-  var t2 = this._newGameElement;
-  t1.addElement$1(t2);
-  var t3 = this._scoreElement;
-  t1.addElement$1(t3);
-  t1.addElement$1(this._popAnimationLayer);
-  t1.addElement$1(this._dartAnimationLayer);
-  this._scoreTx = $.propertyTypeCheck(t3.addTransform$0(), 'is$AffineTransform');
-  this._newGameTx = $.propertyTypeCheck(t2.addTransform$0(), 'is$AffineTransform');
-},
- is$GameElement: true
 };
 
 $$.BoardElement = {"":
@@ -5298,6 +4927,631 @@ $$.GameBackgroundElement = {"":
  is$GameBackgroundElement: true
 };
 
+$$.GameElement = {"":
+ ["_lib1_canvas?", "_background", "_boardElement", "_scoreElement", "_newGameElement", "_titleElement", "_popAnimationLayer", "_dartAnimationLayer", "_targetMode", "_targetChanged", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ "super": "ElementParentImpl",
+ get$newGameClick: function() {
+  return this._newGameElement.get$clicked();
+},
+ get$game: function() {
+  return this._game;
+},
+ set$game: function(value) {
+  $.propertyTypeCheck(value, 'is$Game');
+  this._game = value;
+  if (value == null)
+    this.set$size($.CTC24);
+  else
+    this._updateSize$2(value.get$field().get$width(), value.get$field().get$height());
+},
+ get$visualChildCount: function() {
+  return 1;
+},
+ getVisualChild$1: function(index) {
+  $.assert($.intTypeCheck(index, 'is$$int') === 0);
+  return this._lib1_canvas;
+},
+ update$0: function() {
+  $.ElementParentImpl.prototype.update$0.call(this);
+  var offset = this._scaledBoardOffset.operator$add$1($.CTC19);
+  var t1 = this._lib1_canvas;
+  t1.setTopLeft$2(this._boardElement, offset);
+  t1.setTopLeft$2(this._popAnimationLayer, offset);
+  t1.setTopLeft$2(this._dartAnimationLayer, offset);
+  var t2 = this._scale;
+  if (typeof t2 !== 'number')
+    return this.update$0$bailout(1, t1, t2, 0, 0, 0, 0, 0);
+  var t4 = $.CTC20.width;
+  if (typeof t4 !== 'number')
+    return this.update$0$bailout(2, t1, t2, t4, 0, 0, 0, 0);
+  var t6 = $.CTC21.x;
+  if (typeof t6 !== 'number')
+    return this.update$0$bailout(3, t1, t6, t2, t4, 0, 0, 0);
+  var t8 = t4 - t6;
+  var t9 = this._scoreElement;
+  var t10 = t9.get$width();
+  if (typeof t10 !== 'number')
+    return this.update$0$bailout(4, t1, t2, t4, t6, t9, t8, t10);
+  t1.setTopLeft$2(t9, $.Coordinate$(t2 * (t8 - t10), 0));
+  t9 = t1.getChildTransform$1(t9);
+  var t12 = this._scale;
+  t9.scale$2(t12, t12);
+  t12 = this._newGameElement;
+  t9 = t12.get$width();
+  if (typeof t9 !== 'number')
+    return this.update$0$bailout(5, t1, t12, t6, t9, t4, 0, 0);
+  t6 += t9 * 0.2;
+  var t14 = this._scale;
+  if (typeof t14 !== 'number')
+    return this.update$0$bailout(6, t1, t12, t6, t14, t4, 0, 0);
+  t1.setTopLeft$2(t12, $.Coordinate$(t6 * t14, 0));
+  t12 = t1.getChildTransform$1(t12);
+  var t16 = this._scale;
+  t12.scale$2(t16, t16);
+  t16 = this._scale;
+  if (typeof t16 !== 'number')
+    return this.update$0$bailout(7, t1, t16, t4, 0, 0, 0, 0);
+  t16 *= 0.5;
+  var t17 = this._titleElement;
+  var t18 = t17.get$width();
+  if (typeof t18 !== 'number')
+    return this.update$0$bailout(8, t1, t18, t17, t16, t4, 0, 0);
+  t1.setTopLeft$2(t17, $.Coordinate$(t16 * (t4 - t18 * 1.7), 0));
+  t17 = t1.getChildTransform$1(t17);
+  t1 = this._scale;
+  if (typeof t1 !== 'number')
+    throw $.iae(t1);
+  t1 = 1.7 * t1;
+  t17.scale$2(t1, t1);
+},
+ update$0$bailout: function(state, env0, env1, env2, env3, env4, env5, env6) {
+  switch (state) {
+    case 1:
+      t1 = env0;
+      t2 = env1;
+      break;
+    case 2:
+      t1 = env0;
+      t2 = env1;
+      t4 = env2;
+      break;
+    case 3:
+      t1 = env0;
+      t6 = env1;
+      t2 = env2;
+      t4 = env3;
+      break;
+    case 4:
+      t1 = env0;
+      t2 = env1;
+      t4 = env2;
+      t6 = env3;
+      t9 = env4;
+      t8 = env5;
+      t10 = env6;
+      break;
+    case 5:
+      t1 = env0;
+      t12 = env1;
+      t6 = env2;
+      t9 = env3;
+      t4 = env4;
+      break;
+    case 6:
+      t1 = env0;
+      t12 = env1;
+      t6 = env2;
+      t14 = env3;
+      t4 = env4;
+      break;
+    case 7:
+      t1 = env0;
+      t16 = env1;
+      t4 = env2;
+      break;
+    case 8:
+      t1 = env0;
+      t18 = env1;
+      t17 = env2;
+      t16 = env3;
+      t4 = env4;
+      break;
+  }
+  switch (state) {
+    case 0:
+      $.ElementParentImpl.prototype.update$0.call(this);
+      var offset = $.add(this._scaledBoardOffset, $.CTC19);
+      var t1 = this._lib1_canvas;
+      t1.setTopLeft$2(this._boardElement, offset);
+      t1.setTopLeft$2(this._popAnimationLayer, offset);
+      t1.setTopLeft$2(this._dartAnimationLayer, offset);
+      var t2 = this._scale;
+    case 1:
+      state = 0;
+      var t4 = $.CTC20.width;
+    case 2:
+      state = 0;
+      var t6 = $.CTC21.x;
+    case 3:
+      state = 0;
+      var t8 = $.sub(t4, t6);
+      var t9 = this._scoreElement;
+      var t10 = t9.get$width();
+    case 4:
+      state = 0;
+      t1.setTopLeft$2(t9, $.Coordinate$($.mul(t2, $.sub(t8, t10)), 0));
+      t9 = t1.getChildTransform$1(t9);
+      var t12 = this._scale;
+      t9.scale$2(t12, t12);
+      t12 = this._newGameElement;
+      t9 = t12.get$width();
+    case 5:
+      state = 0;
+      t6 = $.add(t6, $.mul(t9, 0.2));
+      var t14 = this._scale;
+    case 6:
+      state = 0;
+      t1.setTopLeft$2(t12, $.Coordinate$($.mul(t6, t14), 0));
+      t12 = t1.getChildTransform$1(t12);
+      var t16 = this._scale;
+      t12.scale$2(t16, t16);
+      t16 = this._scale;
+    case 7:
+      state = 0;
+      t16 = $.mul(t16, 0.5);
+      var t17 = this._titleElement;
+      var t18 = t17.get$width();
+    case 8:
+      state = 0;
+      t1.setTopLeft$2(t17, $.Coordinate$($.mul(t16, $.sub(t4, $.mul(t18, 1.7))), 0));
+      t17 = t1.getChildTransform$1(t17);
+      t1 = this._scale;
+      if (typeof t1 !== 'number')
+        throw $.iae(t1);
+      t17.scale$2(1.7 * t1, 1.7 * t1);
+  }
+},
+ drawOverride$1: function(ctx) {
+  $.ElementParentImpl.prototype.drawOverride$1.call(this, ctx);
+  this._drawTarget$1(ctx);
+},
+ _drawTarget$1: function(ctx) {
+  $.assert(this._targetX == null === (this._targetY == null));
+  var t1 = this._targetX;
+  if (!(t1 == null)) {
+    var targetLoc = $.Vector$(t1, this._targetY).scale$1(80);
+    ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');
+    $.CanvasUtil_centeredCircle(ctx, $.add(targetLoc.get$x(), 40), $.add(targetLoc.get$y(), 40), 40);
+    ctx.fill$0();
+  }
+},
+ _startPopAnimation$2: function(start, reveals) {
+  $.listSuperNativeTypeCheck(reveals, 'is$Iterable');
+  if (reveals == null) {
+    $.assert($.eq(this.get$game().get$state(), $.CTC31));
+    reveals = $.listSuperNativeTypeCheck($.NumberEnumerable_NumberEnumerable$fromRange(0, $.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0(), 'is$Iterable');
+  }
+  for (var t1 = $.iterator(reveals), t2 = this._popAnimationLayer; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
+    var t3 = t1.next$0();
+    var t4 = t3.get$x();
+    if (typeof t4 !== 'number')
+      throw $.iae(t4);
+    t4 = 80 * t4;
+    var t5 = t3.get$y();
+    if (typeof t5 !== 'number')
+      throw $.iae(t5);
+    var initialOffset = $.Vector$(t4, 80 * t5);
+    var squareOffset = $.CTC37.operator$add$1(initialOffset);
+    t4 = $.toInt($.mul($.get$length($.sub(t3, start)), 4));
+    if (typeof t4 !== 'number')
+      throw $.iae(t4);
+    var delay = 12 + t4;
+    t4 = $.rnd().nextInt$1(10);
+    if (typeof t4 !== 'number')
+      throw $.iae(t4);
+    delay += t4;
+    var ss = this.get$game().getSquareState$2(t3.get$x(), t3.get$y());
+    switch (ss) {
+      case $.CTC32:
+      case $.CTC29:
+        var frameCount = 29;
+        var texturePrefix = 'balloon_pop';
+        break;
+      case $.CTC38:
+        frameCount = 25;
+        texturePrefix = 'balloon_explode';
+        break;
+      default:
+        throw $.$$throw('not supported');
+    }
+    var request = $.TextAniRequest$(texturePrefix, frameCount, squareOffset, delay, 0, 'balloon.png', initialOffset);
+    switch (ss) {
+      case $.CTC32:
+      case $.CTC29:
+        $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon2(this));
+        break;
+      case $.CTC38:
+        $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon3(this));
+        break;
+    }
+    $.add$1(t2, request);
+  }
+},
+ _startPopAnimation$1: function(start) {
+  return this._startPopAnimation$2(start,null)
+},
+ _playPop$0: function() {
+  $.playAudio('Pop' + $.S($.rnd().nextInt$1(8)));
+},
+ _playBoom$0: function() {
+  $.playAudio('Bomb' + $.S($.add($.rnd().nextInt$1(4), 1)));
+},
+ _startDartAnimation$1: function(points) {
+  for (var t1 = $.iterator($.listSuperNativeTypeCheck(points, 'is$Iterable')), t2 = this._dartAnimationLayer; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
+    var t3 = t1.next$0();
+    var t4 = t3.get$x();
+    if (typeof t4 !== 'number')
+      throw $.iae(t4);
+    t4 = 80 * t4;
+    t3 = t3.get$y();
+    if (typeof t3 !== 'number')
+      throw $.iae(t3);
+    var squareOffset = $.CTC40.operator$add$1($.Vector$(t4, 80 * t3));
+    $.add$1(t2, $.TextAniRequest$('dart_fly_shadow', 56, squareOffset, 0, 0, null, null));
+    $.add$1(t2, $.TextAniRequest$('dart_fly', 56, squareOffset, 0, 0, null, null));
+  }
+},
+ _squareClicked$1: function(args) {
+  $.propertyTypeCheck(args, 'is$ElementMouseEventArgs');
+  if (!$.boolConversionCheck(this._game.get$gameEnded(), 'is$bool')) {
+    var se = $.propertyTypeCheck(args.get$element(), 'is$SquareElement');
+    var t1 = $.boolConversionCheck(this._targetMode, 'is$bool');
+    var t2 = se.get$x();
+    var t3 = se.get$y();
+    if (t1)
+      this._target$2(t2, t3);
+    else
+      this._click$3(t2, t3, args.get$shiftKey());
+  }
+},
+ get$_squareClicked: function() { return new $.BoundClosure(this, '_squareClicked$1'); },
+ _target$2: function(x, y) {
+  $.intTypeCheck(x, 'is$$int');
+  $.intTypeCheck(y, 'is$$int');
+  this._targetX = x;
+  this._targetY = y;
+  this._targetChanged.fireEvent$1(null);
+  this.invalidateDraw$0();
+},
+ _toggleFlag$2: function(x, y) {
+  $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
+  var ss = this.get$game().getSquareState$2(x, y);
+  if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
+    this.get$game().setFlag$3(x, y, true);
+    return true;
+  } else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool')) {
+    this.get$game().setFlag$3(x, y, false);
+    return true;
+  }
+  return false;
+},
+ _click$3: function(x, y, alt) {
+  $.intTypeCheck(x, 'is$$int');
+  $.intTypeCheck(y, 'is$$int');
+  $.boolTypeCheck(alt, 'is$bool');
+  $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
+  var ss = this.get$game().getSquareState$2(x, y);
+  if (alt)
+    if ($.boolConversionCheck($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool') || $.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'), 'is$bool')) {
+      this._toggleFlag$2(x, y);
+      var reveals = null;
+    } else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'))
+      if ($.boolConversionCheck(this.get$game().canReveal$2(x, y), 'is$bool')) {
+        var adjHidden = $.$$(this.get$game().get$field().getAdjacentIndices$2(x, y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0();
+        $.assert($.gt($.get$length(adjHidden), 0));
+        this._startDartAnimation$1(adjHidden);
+        reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
+      } else
+        reveals = null;
+    else
+      reveals = null;
+  else if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
+    this._startDartAnimation$1([$.Coordinate$(x, y)]);
+    reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
+  } else
+    reveals = null;
+  if ($.boolConversionCheck(!(reveals == null) && $.boolConversionCheck($.gt($.get$length(reveals), 0), 'is$bool'), 'is$bool')) {
+    $.assert(!$.eqB(this.get$game().get$state(), $.CTC31));
+    if (!alt) {
+      var first = $.index(reveals, 0);
+      $.assert($.eq(first.get$x(), x));
+      $.assert($.eq(first.get$y(), y));
+    }
+    this._startPopAnimation$2($.Coordinate$(x, y), reveals);
+  } else if ($.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC31), 'is$bool'))
+    this._startPopAnimation$1($.Coordinate$(x, y));
+},
+ _updateSize$2: function(w, h) {
+  $.intTypeCheck(w, 'is$$int');
+  $.intTypeCheck(h, 'is$$int');
+  var t1 = $.CTC20.width;
+  var sizeX = $.GameElement__getScale(w, t1, 1344);
+  var t2 = $.Size$(sizeX, $.GameElement__getScale(h, $.CTC20.height, 1344));
+  this.set$size(t2);
+  this._lib1_canvas.set$size(t2);
+  this._scale = $.doubleTypeCheck($.div(sizeX, t1), 'is$$double');
+  this._scaledBoardOffset = $.propertyTypeCheck($.CTC21.scale$1(this._scale), 'is$Vector');
+},
+ GameElement$1: function(_targetMode) {
+  var t1 = this._lib1_canvas;
+  t1.registerParent$1(this);
+  t1.addElement$1(this._background);
+  t1.addElement$1(this._boardElement);
+  t1.addElement$1(this._titleElement);
+  t1.addElement$1(this._newGameElement);
+  t1.addElement$1(this._scoreElement);
+  t1.addElement$1(this._popAnimationLayer);
+  t1.addElement$1(this._dartAnimationLayer);
+},
+ is$GameElement: true
+};
+
+$$.GameRoot = {"":
+ ["_lib1_stage", "_lib1_canvas?", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib3_width", "_lib3_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
+ "super": "GameManager",
+ set$game: function(value) {
+  $.propertyTypeCheck(value, 'is$Game');
+  var t1 = $.game;
+  this._gameElement.set$game(value);
+  this.game = value;
+},
+ newGame$0: function() {
+  $.GameManager.prototype.newGame$0.call(this);
+  this._requestFrame$0();
+},
+ _requestFrame$0: function() {
+  if (!$.boolConversionCheck(this._frameRequested, 'is$bool')) {
+    this._frameRequested = true;
+    $.window().requestAnimationFrame$1(this.get$_onFrame());
+  }
+},
+ _onFrame$1: function(time) {
+  $.intTypeCheck(time, 'is$$int');
+  var t1 = this._lib1_stage;
+  var t2 = t1.get$size().get$width();
+  var t3 = this._gameElement;
+  var prettyScale = $.pow(2, $.toInt($.floor($.log($.min($.div(t2, t3.get$width()), $.div(t1.get$size().get$height(), t3.get$height()))) / 0.6931471805599453)));
+  var t4 = this._gameElementTx;
+  t4.setToScale$2(prettyScale, prettyScale);
+  var newDimensions = $.mul(t3.get$size(), prettyScale);
+  $.assert(newDimensions.fitsInside$1(t1.get$size()));
+  var delta = $.Vector$($.sub(t1.get$size().get$width(), newDimensions.get$width()), $.sub(t1.get$size().get$height(), newDimensions.get$height())).scale$1(0.5);
+  t4.translate$2(delta.get$x(), delta.get$y());
+  var updated = t1.draw$0();
+  this._frameRequested = false;
+  if ($.boolConversionCheck(updated, 'is$bool'))
+    this._requestFrame$0();
+},
+ get$_onFrame: function() { return new $.BoundClosure(this, '_onFrame$1'); },
+ updateClock$0: function() {
+  this._requestFrame$0();
+  $.GameManager.prototype.updateClock$0.call(this);
+},
+ gameUpdated$1: function(args) {
+  this._requestFrame$0();
+},
+ get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
+ _stageInvalidated$1: function(args) {
+  this._requestFrame$0();
+},
+ get$_stageInvalidated: function() { return new $.BoundClosure(this, '_stageInvalidated$1'); },
+ _mouseMoveHandler$1: function(args) {
+  $.propertyTypeCheck(args, 'is$ElementMouseEventArgs');
+  if (!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool')) {
+    var t1 = args.get$element();
+    t1 = typeof t1 === 'object' && t1 !== null && !!t1.is$SquareElement;
+  } else
+    t1 = false;
+  if (t1) {
+    var se = $.propertyTypeCheck(args.get$element(), 'is$SquareElement');
+    var showPointer = $.boolTypeCheck(this.get$game().canReveal$2(se.get$x(), se.get$y()), 'is$bool');
+  } else {
+    t1 = args.get$element();
+    showPointer = typeof t1 === 'object' && t1 !== null && !!t1.is$NewGameElement && true;
+  }
+  this._updateCursor$1(showPointer);
+},
+ get$_mouseMoveHandler: function() { return new $.BoundClosure(this, '_mouseMoveHandler$1'); },
+ _mouseOutHandler$1: function(args) {
+  this._updateCursor$1(false);
+},
+ get$_mouseOutHandler: function() { return new $.BoundClosure(this, '_mouseOutHandler$1'); },
+ _updateCursor$1: function(showFinger) {
+  var t1 = showFinger ? 'pointer' : 'inherit';
+  this._lib1_canvas.get$style().set$cursor(t1);
+},
+ GameRoot$_internal$7: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan) {
+  $.intTypeCheck(width, 'is$$int');
+  $.intTypeCheck(height, 'is$$int');
+  $.intTypeCheck(mineCount, 'is$$int');
+  $.propertyTypeCheck(gameElement, 'is$GameElement');
+  var t1 = this._lib1_stage;
+  $.add$1(t1.get$invalidated(), this.get$_stageInvalidated());
+  var t2 = this._gameElement;
+  $.add$1(t2.get$newGameClick(), new $.anon(this));
+  $.ClickManager_addMouseMoveHandler(t2, this.get$_mouseMoveHandler());
+  $.ClickManager_addMouseOutHandler(t1, this.get$_mouseOutHandler());
+}
+};
+
+$$.ImageLoader = {"":
+ ["_loaded", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib1_state"],
+ "super": "ResourceLoader",
+ _doLoad$1: function(url) {
+  $.stringTypeCheck(url, 'is$String');
+  $.assert(!(url == null));
+  var t1 = this._resources;
+  var t2 = $.boolConversionCheck(t1.containsKey$1(url), 'is$bool');
+  if (typeof t2 !== 'boolean')
+    return this._doLoad$1$bailout(1, url, t1, t2);
+  $.assert(!t2);
+  var img = $._Elements_ImageElement(url, null, null);
+  t1.operator$indexSet$2(url, img);
+  if ($.boolConversionCheck(img.get$complete(), 'is$bool'))
+    this._loadHandler$2(url, img);
+  else
+    $.add$1(img.get$on().get$load(), new $.ImageLoader__doLoad_anon(this, url));
+},
+ _doLoad$1$bailout: function(state, url, t1, t2) {
+  $.assert(!t2);
+  var img = $._Elements_ImageElement(url, null, null);
+  $.indexSet(t1, url, img);
+  if ($.boolConversionCheck(img.get$complete(), 'is$bool'))
+    this._loadHandler$2(url, img);
+  else
+    $.add$1(img.get$on().get$load(), new $.ImageLoader__doLoad_anon(this, url));
+},
+ _loadHandler$2: function(originalUrl, img) {
+  $.stringTypeCheck(originalUrl, 'is$String');
+  $.callTypeCheck(img, 'is$ImageElement');
+  var t1 = this._loaded;
+  $.assert(!$.boolConversionCheck($.contains$1(t1, originalUrl), 'is$bool'));
+  $.add$1(t1, originalUrl);
+  this._onLoaded$1(originalUrl);
+}
+};
+
+$$.NewGameElement = {"":
+ ["_clickedEvent?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ "super": "PElement",
+ get$clicked: function() {
+  return this._clickedEvent;
+},
+ drawOverride$1: function(ctx) {
+  ctx.set$fillStyle('red');
+  ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
+},
+ get$_lib1_parent: function() {
+  return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
+},
+ get$_game: function() {
+  return this.get$_lib1_parent().get$_game();
+},
+ _mouseDirectlyOver$1: function(args) {
+  this.invalidateDraw$0();
+},
+ get$_mouseDirectlyOver: function() { return new $.BoundClosure(this, '_mouseDirectlyOver$1'); },
+ NewGameElement$0: function() {
+  $.ClickManager_setClickable(this, true);
+  $.ClickManager_addHandler(this, new $.anon0(this));
+  $.get$Mouse_isMouseDirectlyOverProperty().addHandler$2(this, this.get$_mouseDirectlyOver());
+},
+ is$NewGameElement: true
+};
+
+$$.ResourceLoader = {"":
+ ["_resources?"],
+ "super": "Object",
+ get$state: function() {
+  return this._lib1_state;
+},
+ get$loaded: function() {
+  return this._loadedEvent;
+},
+ get$progress: function() {
+  return this._progressEvent;
+},
+ getResource$1: function(url) {
+  return $.index(this._resources, url);
+},
+ load$0: function() {
+  $.assert(this._lib1_state === 'unloaded');
+  this._lib1_state = 'loading';
+  for (var t1 = $.iterator(this._urlList); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    this._doLoad$1(t1.next$0());
+},
+ get$load: function() { return new $.BoundClosure0(this, 'load$0'); },
+ _onLoaded$1: function(uri) {
+  $.assert(this._lib1_state === 'loading');
+  $.assert(this._resources.containsKey$1(uri));
+  var t1 = this._completed;
+  $.assert(!$.boolConversionCheck($.contains$1(t1, uri), 'is$bool'));
+  $.add$1(t1, uri);
+  if ($.boolConversionCheck($.eq($.get$length(t1), $.get$length(this._urlList)), 'is$bool')) {
+    this._lib1_state = 'loaded';
+    this._loadedEvent.fireEvent$1($.CTC22);
+  } else
+    this._progressEvent.fireEvent$1($.CTC22);
+}
+};
+
+$$.ScoreElement = {"":
+ ["_clockStr", "_minesStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ "super": "PElement",
+ update$0: function() {
+  var newMineStr = $.toString(this.get$_game().get$minesLeft());
+  if (!$.eqB(newMineStr, this._minesStr)) {
+    this._minesStr = $.stringTypeCheck(newMineStr, 'is$String');
+    this.invalidateDraw$0();
+  }
+  var newClockStr = !(this.get$_game().get$duration() == null) ? $.toString(this.get$_game().get$duration().get$inSeconds()) : '';
+  if (!$.eqB(newClockStr, this._clockStr)) {
+    this._clockStr = $.stringTypeCheck(newClockStr, 'is$String');
+    this.invalidateDraw$0();
+  }
+  $.PElement.prototype.update$0.call(this);
+},
+ drawOverride$1: function(ctx) {
+  var t1 = this.get$height();
+  if (typeof t1 !== 'number')
+    throw $.iae(t1);
+  var rowHeight = 0.5 * t1;
+  ctx.set$font($.S($.toInt(rowHeight * 0.7)) + 'px Slackey');
+  ctx.set$textBaseline('middle');
+  var textSize = this._getTextSize$1(ctx);
+  if (typeof textSize !== 'number')
+    return this.drawOverride$1$bailout(1, ctx, textSize, rowHeight);
+  ctx.set$fillStyle('black');
+  ctx.set$textAlign('right');
+  var t2 = 0.5 * rowHeight;
+  ctx.fillText$3('MINES LEFT:', textSize, t2);
+  ctx.set$textAlign('left');
+  var t3 = this._minesStr;
+  var t4 = textSize + 15;
+  ctx.fillText$3(t3, t4, t2);
+  ctx.set$textAlign('right');
+  t2 = 1.5 * rowHeight;
+  ctx.fillText$3('TIME:', textSize, t2);
+  ctx.set$textAlign('left');
+  ctx.fillText$3(this._clockStr, t4, t2);
+},
+ drawOverride$1$bailout: function(state, ctx, textSize, rowHeight) {
+  ctx.set$fillStyle('black');
+  ctx.set$textAlign('right');
+  var t2 = 0.5 * rowHeight;
+  ctx.fillText$3('MINES LEFT:', textSize, t2);
+  ctx.set$textAlign('left');
+  ctx.fillText$3(this._minesStr, $.add(textSize, 15), t2);
+  ctx.set$textAlign('right');
+  t2 = 1.5 * rowHeight;
+  ctx.fillText$3('TIME:', textSize, t2);
+  ctx.set$textAlign('left');
+  ctx.fillText$3(this._clockStr, $.add(textSize, 15), t2);
+},
+ _getTextSize$1: function(ctx) {
+  if (this._textSize == null)
+    this._textSize = $.numTypeCheck(ctx.measureText$1('MINES LEFT:').get$width(), 'is$num');
+  return this._textSize;
+},
+ get$_lib1_parent: function() {
+  return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
+},
+ get$_game: function() {
+  return this.get$_lib1_parent().get$_game();
+},
+ is$ScoreElement: true
+};
+
 $$.SquareElement = {"":
  ["x?", "y?", "_lastDrawingState", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
@@ -5371,103 +5625,6 @@ $$.SquareElement = {"":
   $.ClickManager_setClickable(this, true);
 },
  is$SquareElement: true
-};
-
-$$.ResourceLoader = {"":
- ["_resources?"],
- "super": "Object",
- get$state: function() {
-  return this._lib1_state;
-},
- get$loaded: function() {
-  return this._loadedEvent;
-},
- get$progress: function() {
-  return this._progressEvent;
-},
- getResource$1: function(url) {
-  return $.index(this._resources, url);
-},
- load$0: function() {
-  $.assert(this._lib1_state === 'unloaded');
-  this._lib1_state = 'loading';
-  for (var t1 = $.iterator(this._urlList); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    this._doLoad$1(t1.next$0());
-},
- get$load: function() { return new $.BoundClosure0(this, 'load$0'); },
- _onLoaded$1: function(uri) {
-  $.assert(this._lib1_state === 'loading');
-  $.assert(this._resources.containsKey$1(uri));
-  var t1 = this._completed;
-  $.assert(!$.boolConversionCheck($.contains$1(t1, uri), 'is$bool'));
-  $.add$1(t1, uri);
-  if ($.boolConversionCheck($.eq($.get$length(t1), $.get$length(this._urlList)), 'is$bool')) {
-    this._lib1_state = 'loaded';
-    this._loadedEvent.fireEvent$1($.CTC22);
-  } else
-    this._progressEvent.fireEvent$1($.CTC22);
-}
-};
-
-$$.ImageLoader = {"":
- ["_loaded", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib1_state"],
- "super": "ResourceLoader",
- _doLoad$1: function(url) {
-  $.stringTypeCheck(url, 'is$String');
-  $.assert(!(url == null));
-  var t1 = this._resources;
-  var t2 = $.boolConversionCheck(t1.containsKey$1(url), 'is$bool');
-  if (typeof t2 !== 'boolean')
-    return this._doLoad$1$bailout(1, url, t1, t2);
-  $.assert(!t2);
-  var img = $._Elements_ImageElement(url, null, null);
-  t1.operator$indexSet$2(url, img);
-  if ($.boolConversionCheck(img.get$complete(), 'is$bool'))
-    this._loadHandler$2(url, img);
-  else
-    $.add$1(img.get$on().get$load(), new $.ImageLoader__doLoad_anon(this, url));
-},
- _doLoad$1$bailout: function(state, url, t1, t2) {
-  $.assert(!t2);
-  var img = $._Elements_ImageElement(url, null, null);
-  $.indexSet(t1, url, img);
-  if ($.boolConversionCheck(img.get$complete(), 'is$bool'))
-    this._loadHandler$2(url, img);
-  else
-    $.add$1(img.get$on().get$load(), new $.ImageLoader__doLoad_anon(this, url));
-},
- _loadHandler$2: function(originalUrl, img) {
-  $.stringTypeCheck(originalUrl, 'is$String');
-  $.callTypeCheck(img, 'is$ImageElement');
-  var t1 = this._loaded;
-  $.assert(!$.boolConversionCheck($.contains$1(t1, originalUrl), 'is$bool'));
-  $.add$1(t1, originalUrl);
-  this._onLoaded$1(originalUrl);
-}
-};
-
-$$.AudioLoader = {"":
- ["context?", "_urlList", "_loadedEvent", "_progressEvent", "_resources", "_completed", "_lib1_state"],
- "super": "ResourceLoader",
- _doLoad$1: function(url) {
-  $.stringTypeCheck(url, 'is$String');
-  var request = $.callTypeCheck($._HttpRequestFactoryProvider_HttpRequest(), 'is$HttpRequest');
-  request.open$3('GET', url, true);
-  request.set$responseType('arraybuffer');
-  $.add$1(request.get$on().get$load(), new $.AudioLoader__doLoad_anon(request, url, this));
-  $.add$1(request.get$on().get$error(), new $.AudioLoader__doLoad_anon0());
-  request.send$0();
-},
- _saveBuffer$2: function(url, buffer) {
-  $.stringTypeCheck(url, 'is$String');
-  $.callTypeCheck(buffer, 'is$AudioBuffer');
-  if (buffer == null) {
-    $.print('error decoding file data: ' + $.S(url));
-    return;
-  }
-  $.indexSet(this._resources, url, buffer);
-  this._onLoaded$1(url);
-}
 };
 
 $$.TextureAnimationElement = {"":
@@ -5737,82 +5894,20 @@ $$.TextAniRequest = {"":
  is$TextAniRequest: true
 };
 
-$$.ScoreElement = {"":
- ["_clockStr", "_minesStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
- "super": "PElement",
- update$0: function() {
-  var newMineStr = $.toString(this.get$_game().get$minesLeft());
-  if (!$.eqB(newMineStr, this._minesStr)) {
-    this._minesStr = $.stringTypeCheck(newMineStr, 'is$String');
-    this.invalidateDraw$0();
-  }
-  var newClockStr = !(this.get$_game().get$duration() == null) ? $.toString(this.get$_game().get$duration().get$inSeconds()) : '';
-  if (!$.eqB(newClockStr, this._clockStr)) {
-    this._clockStr = $.stringTypeCheck(newClockStr, 'is$String');
-    this.invalidateDraw$0();
-  }
-  $.PElement.prototype.update$0.call(this);
+$$.TextureInput = {"":
+ ["name?", "frame?", "rotated?", "trimmed", "sourceColorRect?", "sourceSize", "image?"],
+ "super": "Object",
+ toString$0: function() {
+  return this.name;
 },
- drawOverride$1: function(ctx) {
-  var t1 = this.get$height();
-  if (typeof t1 !== 'number')
-    throw $.iae(t1);
-  var rowHeight = 0.5 * t1;
-  ctx.set$font($.S($.toInt(rowHeight * 0.7)) + 'px Slackey');
-  ctx.set$textBaseline('middle');
-  var textSize = this._getTextSize$1(ctx);
-  if (typeof textSize !== 'number')
-    return this.drawOverride$1$bailout(1, ctx, textSize, rowHeight);
-  ctx.set$fillStyle('black');
-  ctx.set$textAlign('right');
-  var t2 = 0.5 * rowHeight;
-  ctx.fillText$3('MINES LEFT:', textSize, t2);
-  ctx.set$textAlign('left');
-  var t3 = this._minesStr;
-  var t4 = textSize + 15;
-  ctx.fillText$3(t3, t4, t2);
-  ctx.set$textAlign('right');
-  t2 = 1.5 * rowHeight;
-  ctx.fillText$3('TIME:', textSize, t2);
-  ctx.set$textAlign('left');
-  ctx.fillText$3(this._clockStr, t4, t2);
-},
- drawOverride$1$bailout: function(state, ctx, textSize, rowHeight) {
-  ctx.set$fillStyle('black');
-  ctx.set$textAlign('right');
-  var t2 = 0.5 * rowHeight;
-  ctx.fillText$3('MINES LEFT:', textSize, t2);
-  ctx.set$textAlign('left');
-  ctx.fillText$3(this._minesStr, $.add(textSize, 15), t2);
-  ctx.set$textAlign('right');
-  t2 = 1.5 * rowHeight;
-  ctx.fillText$3('TIME:', textSize, t2);
-  ctx.set$textAlign('left');
-  ctx.fillText$3(this._clockStr, $.add(textSize, 15), t2);
-},
- _getTextSize$1: function(ctx) {
-  if (this._textSize == null)
-    this._textSize = $.numTypeCheck(ctx.measureText$1('MINES LEFT:').get$width(), 'is$num');
-  return this._textSize;
-},
- get$_lib1_parent: function() {
-  return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
-},
- get$_game: function() {
-  return this.get$_lib1_parent().get$_game();
-},
- is$ScoreElement: true
+ is$TextureInput: true
 };
 
-$$.NewGameElement = {"":
- ["_clickedEvent?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+$$.GameTitleElement = {"":
+ ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
- get$clicked: function() {
-  return this._clickedEvent;
-},
  drawOverride$1: function(ctx) {
-  ctx.set$fillStyle('red');
-  ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
+  $.drawTextureKeyAt(ctx, 'logo_win.png', $.CTC36);
 },
  get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
@@ -5824,21 +5919,7 @@ $$.NewGameElement = {"":
   this.invalidateDraw$0();
 },
  get$_mouseDirectlyOver: function() { return new $.BoundClosure(this, '_mouseDirectlyOver$1'); },
- NewGameElement$0: function() {
-  $.ClickManager_setClickable(this, true);
-  $.ClickManager_addHandler(this, new $.anon0(this));
-  $.get$Mouse_isMouseDirectlyOverProperty().addHandler$2(this, this.get$_mouseDirectlyOver());
-},
- is$NewGameElement: true
-};
-
-$$.TextureInput = {"":
- ["name?", "frame?", "rotated?", "trimmed", "sourceColorRect?", "sourceSize", "image?"],
- "super": "Object",
- toString$0: function() {
-  return this.name;
-},
- is$TextureInput: true
+ is$GameTitleElement: true
 };
 
 $$.PElement = {"":
@@ -5906,6 +5987,7 @@ $$.PElement = {"":
   }
 },
  hasVisualChild$1: function(element) {
+  $.propertyTypeCheck(element, 'is$PElement');
   var length$ = this.get$visualChildCount();
   if (typeof length$ !== 'number')
     return this.hasVisualChild$1$bailout(1, element, length$);
@@ -7070,6 +7152,14 @@ $$.GameElement__startPopAnimation_anon2 = {"":
 }
 };
 
+$$.GameElement__startPopAnimation_anon3 = {"":
+ ["this_2"],
+ "super": "Closure",
+ call$1: function(args) {
+  return this.this_2._playBoom$0();
+}
+};
+
 $$.Enumerable_where_anon = {"":
  ["this_1", "f_0"],
  "super": "Closure",
@@ -7836,13 +7926,6 @@ $.add$1 = function(receiver, value) {
   return receiver.add$1(value);
 };
 
-$.some = function(receiver, f) {
-  if (!$.isJsArray(receiver))
-    return receiver.some$1(f);
-  else
-    return $.Collections_some(receiver, f);
-};
-
 $.get$length = function(receiver) {
   if (typeof receiver === 'string' || $.isJsArray(receiver))
     return receiver.length;
@@ -7850,13 +7933,11 @@ $.get$length = function(receiver) {
     return receiver.get$length();
 };
 
-$.Collections_some = function(iterable, f) {
-  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
-  $.functionTypeCheck(f, 'is$Function');
-  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
-      return true;
-  return false;
+$.some = function(receiver, f) {
+  if (!$.isJsArray(receiver))
+    return receiver.some$1(f);
+  else
+    return $.Collections_some(receiver, f);
 };
 
 $.dynamicBind = function(obj, name$, methods, arguments$) {
@@ -7887,6 +7968,15 @@ $.dynamicBind = function(obj, name$, methods, arguments$) {
   return method.apply(obj, arguments$);
 };
 
+$.Collections_some = function(iterable, f) {
+  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
+      return true;
+  return false;
+};
+
 $.int_parse = function(string) {
   return $.Primitives_parseInt(string);
 };
@@ -7913,15 +8003,6 @@ $.regExpMakeNative = function(regExp, global) {
 
 };
 
-$._Collections_some = function(iterable, f) {
-  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
-  $.functionTypeCheck(f, 'is$Function');
-  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
-    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
-      return true;
-  return false;
-};
-
 $.main = function() {
   $._imageLoader = $.ImageLoader$(['dart_transparent_01.png', 'dart_opaque_01.jpg']);
   $.add$1($._imageLoader.get$loaded(), $._onLoaded);
@@ -7941,6 +8022,15 @@ $.ClickManager_addMouseOutHandler = function(obj, handler) {
   $.propertyTypeCheck(obj, 'is$Stage');
   $.functionTypeCheck(handler, 'is$Action1');
   return $.get$ClickManager__mouseOutEvent().addHandler$2(obj, handler);
+};
+
+$._Collections_some = function(iterable, f) {
+  $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
+      return true;
+  return false;
 };
 
 $.Primitives_getYear = function(receiver) {
@@ -9193,6 +9283,16 @@ $.ScoreElement$ = function() {
   return new $.ScoreElement(null, null, null, t1, false, $.propertyTypeCheck(t2, 'is$EventHandle'), $.propertyTypeCheck(t3, 'is$EventHandle'), $.callTypeCheck(null, 'is$CanvasElement'), 400, 96, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t4, 'is$HashMap'), $.propertyTypeCheck(t5, 'is$HashMap'), false);
 };
 
+$.GameTitleElement$ = function() {
+  var t1 = $.ListImplementation_List(null, 'AffineTransform');
+  $.setRuntimeTypeInfo(t1, { 'E': 'AffineTransform' });
+  var t2 = $.EventHandle$('EventArgs');
+  var t3 = $.EventHandle$('EventArgs');
+  var t4 = $.HashMapImplementation$('Property', 'Object');
+  var t5 = $.HashMapImplementation$('Attachable', 'EventHandle');
+  return new $.GameTitleElement(t1, false, $.propertyTypeCheck(t2, 'is$EventHandle'), $.propertyTypeCheck(t3, 'is$EventHandle'), null, 318, 96, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t4, 'is$HashMap'), $.propertyTypeCheck(t5, 'is$HashMap'), false);
+};
+
 $.PCanvas$ = function(w, h, enableCache) {
   var t1 = $.ListImplementation_List(null, 'PElement');
   $.setRuntimeTypeInfo(t1, { 'E': 'PElement' });
@@ -9829,18 +9929,19 @@ $.GameElement$ = function(_targetMode) {
   var t3 = $.BoardElement$();
   var t4 = $.ScoreElement$();
   var t5 = $.NewGameElement$();
-  var t6 = $.TextureAnimationElement$(0, 0);
+  var t6 = $.GameTitleElement$();
   var t7 = $.TextureAnimationElement$(0, 0);
-  var t8 = $.EventHandle$();
-  var t9 = $.ListImplementation_List(null, 'AffineTransform');
-  $.setRuntimeTypeInfo(t9, { 'E': 'AffineTransform' });
-  var t10 = $.EventHandle$('EventArgs');
+  var t8 = $.TextureAnimationElement$(0, 0);
+  var t9 = $.EventHandle$();
+  var t10 = $.ListImplementation_List(null, 'AffineTransform');
+  $.setRuntimeTypeInfo(t10, { 'E': 'AffineTransform' });
   var t11 = $.EventHandle$('EventArgs');
-  var t12 = $.HashMapImplementation$('Property', 'Object');
-  var t13 = $.HashMapImplementation$('Attachable', 'EventHandle');
-  t9 = new $.GameElement(t1, t2, t3, t4, t5, t6, t7, _targetMode, $.propertyTypeCheck(t8, 'is$EventHandle'), null, null, null, null, $.doubleTypeCheck(null, 'is$$double'), $.propertyTypeCheck(null, 'is$Vector'), $.propertyTypeCheck(null, 'is$Game'), t9, false, $.propertyTypeCheck(t10, 'is$EventHandle'), $.propertyTypeCheck(t11, 'is$EventHandle'), $.callTypeCheck(null, 'is$CanvasElement'), 100, 100, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t12, 'is$HashMap'), $.propertyTypeCheck(t13, 'is$HashMap'), false);
-  t9.GameElement$1(_targetMode);
-  return t9;
+  var t12 = $.EventHandle$('EventArgs');
+  var t13 = $.HashMapImplementation$('Property', 'Object');
+  var t14 = $.HashMapImplementation$('Attachable', 'EventHandle');
+  t10 = new $.GameElement(t1, t2, t3, t4, t5, t6, t7, t8, _targetMode, $.propertyTypeCheck(t9, 'is$EventHandle'), null, null, null, $.propertyTypeCheck(null, 'is$Vector'), $.propertyTypeCheck(null, 'is$Game'), t10, false, $.propertyTypeCheck(t11, 'is$EventHandle'), $.propertyTypeCheck(t12, 'is$EventHandle'), $.callTypeCheck(null, 'is$CanvasElement'), 100, 100, null, $.propertyTypeCheck(null, 'is$Size'), false, $.propertyTypeCheck(null, 'is$ElementParent'), $.propertyTypeCheck(t13, 'is$HashMap'), $.propertyTypeCheck(t14, 'is$HashMap'), false);
+  t10.GameElement$1(_targetMode);
+  return t10;
 };
 
 $.throwCyclicInit = function(staticName) {
@@ -10669,105 +10770,110 @@ $.CTC12 = new Isolate.$isolateProperties.NotImplementedException('structured clo
 $.CTC0 = new Isolate.$isolateProperties._DeletedKeySentinel();
 $.CTC47 = 'hidden';
 $.CTC29 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC48 = 'Pop0';
-$.CTC49 = 'Pop1';
-$.CTC50 = 'Pop2';
-$.CTC51 = 'Pop3';
-$.CTC52 = 'Pop4';
-$.CTC53 = 'Pop5';
-$.CTC54 = 'Pop6';
-$.CTC55 = 'Pop7';
-$.CTC56 = 'Pop8';
-$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8']);
-$.CTC57 = 'Cannot add to immutable List.';
+$.CTC48 = 'Cannot add to immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
 $.CTC22 = new Isolate.$isolateProperties.EventArgs();
-$.CTC58 = 2048;
-$.CTC59 = 1536;
+$.CTC49 = 2048;
+$.CTC50 = 1536;
 $.CTC20 = new Isolate.$isolateProperties.Size(2048, 1536);
-$.CTC60 = 0;
+$.CTC51 = 0;
 $.CTC36 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC61 = 'offsetX is only supported on elements';
+$.CTC52 = 'offsetX is only supported on elements';
 $.CTC16 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC62 = 352;
-$.CTC63 = 96;
+$.CTC53 = 352;
+$.CTC54 = 96;
 $.CTC21 = new Isolate.$isolateProperties.Vector(352, 96);
-$.CTC64 = 32;
+$.CTC55 = 32;
 $.CTC19 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC65 = -88;
+$.CTC56 = -88;
 $.CTC37 = new Isolate.$isolateProperties.Vector(-88, -88);
-$.CTC66 = 100;
+$.CTC57 = 100;
 $.CTC24 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC67 = -472;
-$.CTC68 = -348;
+$.CTC58 = -472;
+$.CTC59 = -348;
 $.CTC40 = new Isolate.$isolateProperties.Vector(-472, -348);
 $.CTC15 = new Isolate.$isolateProperties._UndefinedValue();
 $.CTC18 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC69 = 'structured clone of File';
+$.CTC60 = 'structured clone of File';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC70 = 'game_board_center';
-$.CTC71 = 'number_one';
-$.CTC72 = 'number_two';
-$.CTC73 = 'number_three';
-$.CTC74 = 'number_four';
-$.CTC75 = 'number_five';
-$.CTC76 = 'number_six';
-$.CTC77 = 'number_seven';
-$.CTC78 = 'number_eight';
+$.CTC61 = 'game_board_center';
+$.CTC62 = 'number_one';
+$.CTC63 = 'number_two';
+$.CTC64 = 'number_three';
+$.CTC65 = 'number_four';
+$.CTC66 = 'number_five';
+$.CTC67 = 'number_six';
+$.CTC68 = 'number_seven';
+$.CTC69 = 'number_eight';
 $.CTC41 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
-$.CTC79 = null;
+$.CTC70 = null;
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC2);
-$.CTC80 = 'balloon_pieces_a.png';
-$.CTC81 = 'balloon_pieces_b.png';
-$.CTC82 = 'balloon_pieces_c.png';
-$.CTC83 = 'balloon_pieces_d.png';
+$.CTC71 = 'balloon_pieces_a.png';
+$.CTC72 = 'balloon_pieces_b.png';
+$.CTC73 = 'balloon_pieces_c.png';
+$.CTC74 = 'balloon_pieces_d.png';
 $.CTC42 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
-$.CTC84 = 'won';
+$.CTC75 = 'won';
 $.CTC30 = new Isolate.$isolateProperties.GameState('won');
-$.CTC85 = 'lost';
+$.CTC76 = 'lost';
 $.CTC31 = new Isolate.$isolateProperties.GameState('lost');
 $.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC86 = 'reset';
+$.CTC77 = 'reset';
 $.CTC23 = new Isolate.$isolateProperties.GameState('reset');
 $.CTC4 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC87 = 'Cannot removeLast on immutable List.';
+$.CTC78 = 'Pop0';
+$.CTC79 = 'Pop1';
+$.CTC80 = 'Pop2';
+$.CTC81 = 'Pop3';
+$.CTC82 = 'Pop4';
+$.CTC83 = 'Pop5';
+$.CTC84 = 'Pop6';
+$.CTC85 = 'Pop7';
+$.CTC86 = 'Pop8';
+$.CTC87 = 'Bomb1';
+$.CTC88 = 'Bomb2';
+$.CTC89 = 'Bomb3';
+$.CTC90 = 'Bomb4';
+$.CTC91 = 'Bomb5';
+$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5']);
+$.CTC92 = 'Cannot removeLast on immutable List.';
 $.CTC5 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC88 = false;
-$.CTC89 = '^#[_a-zA-Z]\\w*$';
+$.CTC93 = false;
+$.CTC94 = '^#[_a-zA-Z]\\w*$';
 $.CTC44 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC90 = 'structured clone of ArrayBuffer';
+$.CTC95 = 'structured clone of ArrayBuffer';
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC91 = 'must be implemented by subclass';
+$.CTC96 = 'must be implemented by subclass';
 $.CTC28 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC92 = 'structured clone of Date';
+$.CTC97 = 'structured clone of Date';
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
 $.CTC45 = new Isolate.$isolateProperties.Object();
-$.CTC93 = 'Cannot insertRange on immutable List.';
+$.CTC98 = 'Cannot insertRange on immutable List.';
 $.CTC25 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC94 = 'Incorrect number or type of arguments';
+$.CTC99 = 'Incorrect number or type of arguments';
 $.CTC43 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
-$.CTC95 = 'Cannot removeRange on immutable List.';
+$.CTC100 = 'Cannot removeRange on immutable List.';
 $.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC96 = 'structured clone of Blob';
+$.CTC101 = 'structured clone of Blob';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC97 = 'started';
+$.CTC102 = 'started';
 $.CTC34 = new Isolate.$isolateProperties.GameState('started');
-$.CTC98 = 'structured clone of RegExp';
-$.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC99 = 'safe';
+$.CTC103 = 'safe';
 $.CTC39 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC100 = 'structured clone of FileList';
+$.CTC104 = 'structured clone of RegExp';
+$.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
+$.CTC105 = 'structured clone of FileList';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
 $.CTC27 = new Isolate.$isolateProperties._Random();
-$.CTC101 = 'mine';
+$.CTC106 = 'mine';
 $.CTC38 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC102 = 'revealed';
+$.CTC107 = 'revealed';
 $.CTC32 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC103 = 'structured clone of other type';
+$.CTC108 = 'structured clone of other type';
 $.CTC13 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC104 = 'flagged';
+$.CTC109 = 'flagged';
 $.CTC33 = new Isolate.$isolateProperties.SquareState('flagged');
-$.CTC105 = 'Mutation operations are not supported';
+$.CTC110 = 'Mutation operations are not supported';
 $.CTC26 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.Property_Undefined = Isolate.$isolateProperties.CTC15;
 $.Duration_HOURS_PER_DAY = 24;
@@ -11646,6 +11752,9 @@ $.$defineNativeClass('CanvasRenderingContext2D', ["fillStyle!", "font", "globalA
 },
  save$0: function() {
   return this.save();
+},
+ scale$2: function(sx, sy) {
+  return this.scale($.numTypeCheck(sx, 'is$num'),$.numTypeCheck(sy, 'is$num'));
 },
  transform$6: function(m11, m12, m21, m22, dx, dy) {
   return this.transform($.numTypeCheck(m11, 'is$num'),$.numTypeCheck(m12, 'is$num'),$.numTypeCheck(m21, 'is$num'),$.numTypeCheck(m22, 'is$num'),$.numTypeCheck(dx, 'is$num'),$.numTypeCheck(dy, 'is$num'));
@@ -14364,6 +14473,7 @@ $.$defineNativeClass('SVGFEDiffuseLightingElement', ["height?", "width?", "x?", 
 });
 
 $.$defineNativeClass('SVGFEDisplacementMapElement', ["height?", "width?", "x?", "y?"], {
+ scale$2: function(arg0, arg1) { return this.scale.call$2(arg0, arg1); },
  is$Object: function() { return true; },
  is$SVGElement: function() { return true; },
  is$Element: function() { return true; },
