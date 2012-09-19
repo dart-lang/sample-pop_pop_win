@@ -26,7 +26,7 @@
 },
 "balloon_pieces_a.png":
 {
-	"frame": {"x":1104,"y":352,"w":80,"h":80},
+	"frame": {"x":1184,"y":272,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -34,7 +34,7 @@
 },
 "balloon_pieces_b.png":
 {
-	"frame": {"x":1024,"y":352,"w":80,"h":80},
+	"frame": {"x":1184,"y":192,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -42,7 +42,7 @@
 },
 "balloon_pieces_c.png":
 {
-	"frame": {"x":1216,"y":192,"w":80,"h":80},
+	"frame": {"x":1104,"y":352,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -50,7 +50,7 @@
 },
 "balloon_pieces_d.png":
 {
-	"frame": {"x":1216,"y":112,"w":80,"h":80},
+	"frame": {"x":1024,"y":304,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -58,7 +58,7 @@
 },
 "balloon_tagged_!.png":
 {
-	"frame": {"x":1184,"y":272,"w":80,"h":80},
+	"frame": {"x":832,"y":368,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -66,7 +66,7 @@
 },
 "balloon_tagged_bomb.png":
 {
-	"frame": {"x":1136,"y":192,"w":80,"h":80},
+	"frame": {"x":944,"y":304,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -74,23 +74,7 @@
 },
 "balloon_tagged_frozen.png":
 {
-	"frame": {"x":1136,"y":112,"w":80,"h":80},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
-	"sourceSize": {"w":80,"h":80}
-},
-"balloon_tagged_question_mark.png":
-{
 	"frame": {"x":1104,"y":272,"w":80,"h":80},
-	"rotated": false,
-	"trimmed": false,
-	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
-	"sourceSize": {"w":80,"h":80}
-},
-"balloon_tagged_x.png":
-{
-	"frame": {"x":832,"y":368,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -98,7 +82,7 @@
 },
 "crater_b.png":
 {
-	"frame": {"x":944,"y":304,"w":80,"h":80},
+	"frame": {"x":1136,"y":112,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -106,7 +90,7 @@
 },
 "game_board_center.png":
 {
-	"frame": {"x":1024,"y":272,"w":80,"h":80},
+	"frame": {"x":1104,"y":192,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -178,7 +162,7 @@
 },
 "number_eight.png":
 {
-	"frame": {"x":672,"y":368,"w":80,"h":80},
+	"frame": {"x":1056,"y":112,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -186,7 +170,7 @@
 },
 "number_five.png":
 {
-	"frame": {"x":752,"y":320,"w":80,"h":80},
+	"frame": {"x":1024,"y":224,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -194,7 +178,7 @@
 },
 "number_four.png":
 {
-	"frame": {"x":864,"y":288,"w":80,"h":80},
+	"frame": {"x":672,"y":368,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -202,7 +186,7 @@
 },
 "number_one.png":
 {
-	"frame": {"x":944,"y":224,"w":80,"h":80},
+	"frame": {"x":752,"y":320,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -210,7 +194,7 @@
 },
 "number_seven.png":
 {
-	"frame": {"x":1056,"y":192,"w":80,"h":80},
+	"frame": {"x":864,"y":288,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -218,7 +202,7 @@
 },
 "number_six.png":
 {
-	"frame": {"x":1056,"y":112,"w":80,"h":80},
+	"frame": {"x":944,"y":224,"w":80,"h":80},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":80,"h":80},
@@ -245,8 +229,8 @@
 	"version": "1.0",
 	"image": "dart_opaque_01.jpg",
 	"format": "RGBA8888",
-	"size": {"w":1296,"h":448},
+	"size": {"w":1264,"h":448},
 	"scale": "1",
-	"smartupdate": "$TexturePacker:SmartUpdate:56da78db66dce7f3b1f72247c77454f6$"
+	"smartupdate": "$TexturePacker:SmartUpdate:fc67e8eca04ce8c92761824dc0294297$"
 }
 }

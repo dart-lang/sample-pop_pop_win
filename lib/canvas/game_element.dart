@@ -165,11 +165,11 @@ class GameElement extends ElementParentImpl {
         case SquareState.revealed:
         case SquareState.hidden:
           texturePrefix = 'balloon_pop';
-          frameCount = 29;
+          frameCount = 28;
           break;
         case SquareState.mine:
           texturePrefix = 'balloon_explode';
-          frameCount = 25;
+          frameCount = 24;
           break;
         default:
           throw 'not supported';
@@ -207,8 +207,8 @@ class GameElement extends ElementParentImpl {
       final squareOffset = _dartAnimationOffset +
           new Vector(SquareElement._size * point.x, SquareElement._size * point.y);
 
-      _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 56, squareOffset));
-      _dartAnimationLayer.add(new TextAniRequest('dart_fly', 56, squareOffset));
+      _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 54, squareOffset));
+      _dartAnimationLayer.add(new TextAniRequest('dart_fly', 54, squareOffset));
     }
   }
 
