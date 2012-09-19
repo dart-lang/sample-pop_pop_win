@@ -15,13 +15,12 @@ class GameElement extends ElementParentImpl {
   final BoardElement _boardElement = new BoardElement();
   final ScoreElement _scoreElement = new ScoreElement();
   final NewGameElement _newGameElement = new NewGameElement();
+  final GameTitleElement _titleElement = new GameTitleElement();
   final TextureAnimationElement
     _popAnimationLayer = new TextureAnimationElement(0, 0),
     _dartAnimationLayer = new TextureAnimationElement(0, 0);
   final bool _targetMode;
   final EventHandle _targetChanged = new EventHandle();
-
-  AffineTransform _scoreTx, _newGameTx;
 
   int _targetX, _targetY;
   double _scale;
@@ -33,13 +32,11 @@ class GameElement extends ElementParentImpl {
     _canvas.registerParent(this);
     _canvas.addElement(_background);
     _canvas.addElement(_boardElement);
+    _canvas.addElement(_titleElement);
     _canvas.addElement(_newGameElement);
     _canvas.addElement(_scoreElement);
     _canvas.addElement(_popAnimationLayer);
     _canvas.addElement(_dartAnimationLayer);
-
-    _scoreTx = _scoreElement.addTransform();
-    _newGameTx = _newGameElement.addTransform();
   }
 
   EventRoot<EventArgs> get newGameClick => _newGameElement.clicked;
@@ -99,12 +96,20 @@ class GameElement extends ElementParentImpl {
     // end of the board - score width
     final x = _scale * (_backgroundSize.width - _boardOffset.x - _scoreElement.width);
 
-    _canvas.setTopLeft(_scoreElement, new Vector(x, 0));
-    _scoreTx.setToScale(_scale, _scale);
+    _canvas.setTopLeft(_scoreElement, new Coordinate(x, 0));
+    _canvas.getChildTransform(_scoreElement).scale(_scale, _scale);
 
-    _canvas.setTopLeft(_newGameElement,
-        new Vector((_boardOffset.x + _newGameElement.width * 0.2) * _scale,0));
-    _newGameTx.setToScale(_scale, _scale);
+    final newGameTopLeft = new Coordinate(
+        (_boardOffset.x + _newGameElement.width * 0.2) * _scale, 0);
+    _canvas.setTopLeft(_newGameElement, newGameTopLeft);
+    _canvas.getChildTransform(_newGameElement).scale(_scale, _scale);
+
+    final titleMultiplier = 1.7;
+    final titleTopLeft = new Coordinate(_scale * 0.5 * (_backgroundSize.width -
+        _titleElement.width * titleMultiplier), 0);
+    _canvas.setTopLeft(_titleElement, titleTopLeft);
+    _canvas.getChildTransform(_titleElement)
+      .scale(titleMultiplier * _scale, titleMultiplier * _scale);
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
