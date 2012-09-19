@@ -5581,12 +5581,10 @@ $$.SquareElement = {"":
     case $.CTC38:
       textureName = 'crater_b.png';
       break;
+    case $.CTC39:
+      textureName = 'balloon_tagged_bomb.png';
   }
-  if (textureName == null) {
-    ctx.set$fillStyle(this.get$_fillStyle());
-    ctx.fillRect$4(0, 0, this.get$width(), this.get$height());
-  } else
-    $.drawTextureKeyAt(ctx, textureName, $.CTC36);
+  $.drawTextureKeyAt(ctx, textureName, $.CTC36);
 },
  toString$0: function() {
   return 'Square at [' + $.S(this.x) + ', ' + $.S(this.y) + ']';
@@ -5611,15 +5609,6 @@ $$.SquareElement = {"":
 },
  get$_game: function() {
   return $.propertyTypeCheck(this.get$parent(), 'is$BoardElement').get$_game();
-},
- get$_fillStyle: function() {
-  var t1 = this._lastDrawingState;
-  switch (t1) {
-    case $.CTC39:
-      return 'green';
-    default:
-      throw $.$$throw('not supported - ' + $.S(t1));
-  }
 },
  SquareElement$2: function(x, y) {
   $.ClickManager_setClickable(this, true);
