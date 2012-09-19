@@ -177,7 +177,16 @@ class GameElement extends ElementParentImpl {
 
       final request = new TextAniRequest(texturePrefix, frameCount, squareOffset,
           delay: delay, initialFrame: 'balloon.png', initialFrameOffset: initialOffset);
-      request.started.add((args) => _playPop());
+
+      switch(ss) {
+        case SquareState.revealed:
+        case SquareState.hidden:
+          request.started.add((args) => _playPop());
+          break;
+        case SquareState.mine:
+          request.started.add((args) => _playBoom());
+          break;
+      }
 
       _popAnimationLayer.add(request);
     }
@@ -186,6 +195,11 @@ class GameElement extends ElementParentImpl {
   void _playPop() {
     var i = rnd.nextInt(8);
     playAudio('Pop$i');
+  }
+
+  void _playBoom() {
+    var i = rnd.nextInt(4) + 1;
+    playAudio('Bomb$i');
   }
 
   void _startDartAnimation(Iterable<Coordinate> points) {
