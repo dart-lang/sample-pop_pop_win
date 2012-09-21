@@ -45,6 +45,7 @@ class SquareElement extends PElement {
         break;
       case SquareState.safe:
         textureName = 'balloon_tagged_bomb.png';
+        break;
     }
 
     drawTextureKeyAt(ctx, textureName);
