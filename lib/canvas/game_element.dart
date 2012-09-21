@@ -138,13 +138,13 @@ class GameElement extends ElementParentImpl {
     if(reveals == null) {
       assert(game.state == GameState.lost);
       reveals = new NumberEnumerable.fromRange(0, game.field.length)
-          .select((i) {
+          .map((i) {
             final t = game.field.getCoordinate(i);
             final c = new Coordinate(t.Item1, t.Item2);
             return new Tuple(c, game.getSquareState(c.x, c.y));
           })
-          .where((t2) => t2.Item2 == SquareState.mine || t2.Item2 == SquareState.hidden)
-          .select((t2) => t2.Item1)
+          .filter((t2) => t2.Item2 == SquareState.mine || t2.Item2 == SquareState.hidden)
+          .map((t2) => t2.Item1)
           .toList();
     }
 
@@ -256,11 +256,11 @@ class GameElement extends ElementParentImpl {
         if(game.canReveal(x, y)) {
           // get adjacent ballons
           final adjHidden = $(game.field.getAdjacentIndices(x, y))
-              .select((i) {
+              .map((i) {
                 final t = game.field.getCoordinate(i);
                 return new Coordinate(t.Item1, t.Item2);
               })
-              .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
+              .filter((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
           assert(adjHidden.length > 0);

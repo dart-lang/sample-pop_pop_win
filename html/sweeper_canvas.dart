@@ -107,5 +107,5 @@ void _onTouchMove(TouchEvent args) {
 String _getAudioPath(String name) => 'audio/$name.webm';
 
 Iterable<String> _getAudioPaths(Iterable<String> names) {
-  return $(names).select(_getAudioPath);
+  return $(names).map(_getAudioPath);
 }
