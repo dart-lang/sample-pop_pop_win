@@ -607,9 +607,24 @@ $$.HashSetImplementation = {"":
   t1.remove$1(value);
   return true;
 },
+ addAll$1: function(collection) {
+  $.forEach($.listSuperNativeTypeCheck(collection, 'is$Collection'), new $.HashSetImplementation_addAll__(this));
+},
  forEach$1: function(f) {
   $.functionTypeCheck(f, 'is$Function');
   $.forEach(this._backingMap, new $.HashSetImplementation_forEach__(f));
+},
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  var result = $.propertyTypeCheck($.Set_Set(), 'is$Set');
+  $.forEach(this._backingMap, new $.HashSetImplementation_map__(f, result));
+  return result;
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  var result = $.propertyTypeCheck($.Set_Set($.getRuntimeTypeInfo(this).E), 'is$Set');
+  $.forEach(this._backingMap, new $.HashSetImplementation_filter__(f, result));
+  return result;
 },
  some$1: function(f) {
   $.functionTypeCheck(f, 'is$Function');
@@ -887,6 +902,10 @@ $$.DoubleLinkedQueue = {"":
  add$1: function(value) {
   this.addLast$1(value);
 },
+ addAll$1: function(collection) {
+  for (var t1 = $.iterator($.listSuperNativeTypeCheck(collection, 'is$Collection')); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    this.add$1(t1.next$0());
+},
  removeLast$0: function() {
   return this._sentinel.get$_previous().remove$0();
 },
@@ -935,6 +954,33 @@ $$.DoubleLinkedQueue = {"":
     entry = nextEntry;
   }
   return false;
+},
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  var other = $.propertyTypeCheck($.Queue_Queue(), 'is$Queue');
+  var t1 = this._sentinel;
+  var entry = $.propertyTypeCheck(t1.get$_next(), 'is$DoubleLinkedQueueEntry');
+  for (; !(entry == null ? t1 == null : entry === t1);) {
+    var nextEntry = $.propertyTypeCheck(entry.get$_next(), 'is$DoubleLinkedQueueEntry');
+    $.addLast(other, f.call$1(entry.get$_element()));
+    $.propertyTypeCheck(nextEntry, 'is$DoubleLinkedQueueEntry');
+    entry = nextEntry;
+  }
+  return other;
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  var other = $.propertyTypeCheck($.Queue_Queue($.getRuntimeTypeInfo(this).E), 'is$Queue');
+  var t1 = this._sentinel;
+  var entry = $.propertyTypeCheck(t1.get$_next(), 'is$DoubleLinkedQueueEntry');
+  for (; !(entry == null ? t1 == null : entry === t1);) {
+    var nextEntry = $.propertyTypeCheck(entry.get$_next(), 'is$DoubleLinkedQueueEntry');
+    if ($.boolConversionCheck(f.call$1(entry.get$_element()), 'is$bool'))
+      $.addLast(other, entry.get$_element());
+    $.propertyTypeCheck(nextEntry, 'is$DoubleLinkedQueueEntry');
+    entry = nextEntry;
+  }
+  return other;
 },
  iterator$0: function() {
   return $._DoubleLinkedQueueIterator$(this._sentinel, $.getRuntimeTypeInfo(this).E);
@@ -1018,6 +1064,11 @@ $$.StringBufferImpl = {"":
     return this;
   $.add$1(this._buffer, str);
   this._length = $.intTypeCheck($.add(this._length, $.get$length(str)), 'is$$int');
+  return this;
+},
+ addAll$1: function(objects) {
+  for (var t1 = $.iterator($.listSuperNativeTypeCheck(objects, 'is$Collection')); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    this.add$1(t1.next$0());
   return this;
 },
  clear$0: function() {
@@ -1540,10 +1591,6 @@ $$._DocumentEventsImpl = {"":
   return this.operator$index$1('reset');
 },
  reset$0: function() { return this.get$reset().call$0(); },
- get$select: function() {
-  return this.operator$index$1('select');
-},
- select$1: function(arg0) { return this.get$select().call$1(arg0); },
  get$touchMove: function() {
   return this.operator$index$1('touchmove');
 },
@@ -1848,10 +1895,6 @@ $$._ElementEventsImpl = {"":
   return this.operator$index$1('reset');
 },
  reset$0: function() { return this.get$reset().call$0(); },
- get$select: function() {
-  return this.operator$index$1('select');
-},
- select$1: function(arg0) { return this.get$select().call$1(arg0); },
  get$touchMove: function() {
   return this.operator$index$1('touchmove');
 },
@@ -2064,6 +2107,92 @@ $$._MessagePortEventsImpl = {"":
  is$Object: function() { return true; }
 };
 
+$$._ListWrapper = {"":
+ [],
+ "super": "Object",
+ iterator$0: function() {
+  return $.iterator(this._lib_list);
+},
+ forEach$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $.forEach(this._lib_list, f);
+},
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $.map(this._lib_list, f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $.filter(this._lib_list, f);
+},
+ some$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $.some(this._lib_list, f);
+},
+ isEmpty$0: function() {
+  return $.isEmpty(this._lib_list);
+},
+ get$length: function() {
+  return $.get$length(this._lib_list);
+},
+ operator$index$1: function(index) {
+  $.intTypeCheck(index, 'is$$int');
+  return $.index(this._lib_list, index);
+},
+ operator$indexSet$2: function(index, value) {
+  $.intTypeCheck(index, 'is$$int');
+  $.indexSet(this._lib_list, index, value);
+},
+ set$length: function(newLength) {
+  $.intTypeCheck(newLength, 'is$$int');
+  $.set$length(this._lib_list, newLength);
+},
+ add$1: function(value) {
+  return $.add$1(this._lib_list, value);
+},
+ addLast$1: function(value) {
+  return $.addLast(this._lib_list, value);
+},
+ addAll$1: function(collection) {
+  $.listSuperNativeTypeCheck(collection, 'is$Collection');
+  return $.addAll(this._lib_list, collection);
+},
+ indexOf$2: function(element, start) {
+  return $.indexOf$2(this._lib_list, element, start);
+},
+ clear$0: function() {
+  return $.clear(this._lib_list);
+},
+ removeLast$0: function() {
+  return $.removeLast(this._lib_list);
+},
+ removeRange$2: function(start, rangeLength) {
+  $.intTypeCheck(start, 'is$$int');
+  return $.removeRange(this._lib_list, start, rangeLength);
+},
+ insertRange$3: function(start, rangeLength, initialValue) {
+  $.intTypeCheck(rangeLength, 'is$$int');
+  return $.insertRange$3(this._lib_list, start, rangeLength, initialValue);
+},
+ is$List: function() { return true; },
+ is$Collection: function() { return true; },
+ is$Iterable: function() { return true; },
+ is$Object: function() { return true; }
+};
+
+$$._NodeListWrapper = {"":
+ ["_lib_list"],
+ "super": "_ListWrapper",
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._NodeListWrapper$($.filter(this._lib_list, f));
+},
+ is$List: function() { return true; },
+ is$Collection: function() { return true; },
+ is$Iterable: function() { return true; },
+ is$Object: function() { return true; }
+};
+
 $$._NotificationEventsImpl = {"":
  ["_ptr"],
  "super": "_EventsImpl",
@@ -2115,10 +2244,6 @@ $$._SVGElementInstanceEventsImpl = {"":
   return this.operator$index$1('reset');
 },
  reset$0: function() { return this.get$reset().call$0(); },
- get$select: function() {
-  return this.operator$index$1('select');
-},
- select$1: function(arg0) { return this.get$select().call$1(arg0); },
  is$Object: function() { return true; }
 };
 
@@ -2201,10 +2326,6 @@ $$._WindowEventsImpl = {"":
   return this.operator$index$1('reset');
 },
  reset$0: function() { return this.get$reset().call$0(); },
- get$select: function() {
-  return this.operator$index$1('select');
-},
- select$1: function(arg0) { return this.get$select().call$1(arg0); },
  get$touchMove: function() {
   return this.operator$index$1('touchmove');
 },
@@ -3101,6 +3222,9 @@ $$.Enumerable = {"":
       return true;
   return false;
 },
+ isEmpty$0: function() {
+  return !$.boolConversionCheck(this.some$1(new $.Enumerable_isEmpty_anon()), 'is$bool');
+},
  some$1: function(f) {
   $.functionTypeCheck(f, 'is$Func1');
   $.requireArgumentNotNull(f, 'f');
@@ -3108,6 +3232,20 @@ $$.Enumerable = {"":
     if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
       return true;
   return false;
+},
+ get$length: function() {
+  return this.count$0();
+},
+ count$1: function(f) {
+  if (f == null)
+    f = $.functionTypeCheck(new $.Enumerable_count_anon(), 'is$Func1');
+  for (var t1 = $.iterator(this), c = 0; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    if ($.boolConversionCheck(f.call$1(t1.next$0()), 'is$bool'))
+      c = $.intTypeCheck($.add(c, 1), 'is$$int');
+  return c;
+},
+ count$0: function() {
+  return this.count$1(null)
 },
  join$1: function(separator) {
   var sb = $.propertyTypeCheck($.StringBuffer_StringBuffer(''), 'is$StringBuffer');
@@ -3122,15 +3260,15 @@ $$.Enumerable = {"":
  join$0: function() {
   return this.join$1(', ')
 },
- select$1: function(f) {
+ map$1: function(f) {
   $.functionTypeCheck(f, 'is$Func1');
   $.requireArgumentNotNull(f, 'f');
-  return $._FuncEnumerable$(this, new $.Enumerable_select_anon(this, f));
+  return $._FuncEnumerable$(this, new $.Enumerable_map_anon(this, f));
 },
- where$1: function(f) {
+ filter$1: function(f) {
   $.functionTypeCheck(f, 'is$Func1');
   $.requireArgumentNotNull(f, 'f');
-  return $._FuncEnumerable$(this, new $.Enumerable_where_anon(this, f));
+  return $._FuncEnumerable$(this, new $.Enumerable_filter_anon(this, f));
 },
  firstOrDefault$2: function(f, defaultValue) {
   $.functionTypeCheck(f, 'is$Func1');
@@ -3161,6 +3299,7 @@ $$.Enumerable = {"":
   return '[' + $.S(this.join$0()) + ']';
 },
  is$Enumerable: true,
+ is$Collection: function() { return true; },
  is$Iterable: function() { return true; },
  is$Object: function() { return true; }
 };
@@ -3374,13 +3513,6 @@ $$.ListBase = {"":
  isEmpty$0: function() {
   return $.eq($.get$length(this), 0);
 },
- get$length: function() {
-  throw $.$$throw($.CTC28);
-},
- operator$index$1: function(index) {
-  $.intTypeCheck(index, 'is$$int');
-  throw $.$$throw($.CTC28);
-},
  indexOf$2: function(element, start) {
   if (start !== (start | 0))
     return this.indexOf$2$bailout(1, element, start);
@@ -3394,6 +3526,10 @@ $$.ListBase = {"":
     if ($.boolConversionCheck($.eq(this.operator$index$1(i), element), 'is$bool'))
       return i;
   return -1;
+},
+ set$length: function(newLength) {
+  $.intTypeCheck(newLength, 'is$$int');
+  throw $.$$throw($.CTC26);
 },
  operator$indexSet$2: function(index, value) {
   $.intTypeCheck(index, 'is$$int');
@@ -4034,7 +4170,7 @@ $$.AffineTransform = {"":
   return t1;
 },
  toString$0: function() {
-  return $.Strings_join($.$$([this.get$translateX(), this.get$translateY(), this.get$scaleX(), this.get$scaleY(), this.get$shearX(), this.get$shearY()]).select$1(new $.AffineTransform_toString_anon()).toList$0(), ', ');
+  return $.Strings_join($.map($.$$([this.get$translateX(), this.get$translateY(), this.get$scaleX(), this.get$scaleY(), this.get$shearX(), this.get$shearY()]), new $.AffineTransform_toString_anon()).toList$0(), ', ');
 },
  is$AffineTransform: true,
  is$Object: function() { return true; }
@@ -4211,14 +4347,14 @@ $$.Game = {"":
   return this._states.get$2(x, y);
 },
  get$gameEnded: function() {
-  return $.boolConversionCheck($.eq(this._state, $.CTC30), 'is$bool') || $.boolConversionCheck($.eq(this._state, $.CTC31), 'is$bool');
+  return $.boolConversionCheck($.eq(this._state, $.CTC29), 'is$bool') || $.boolConversionCheck($.eq(this._state, $.CTC30), 'is$bool');
 },
  get$duration: function() {
   if (this._startTime == null) {
     $.assert($.eq(this.get$state(), $.CTC23));
     return;
   } else {
-    $.assert($.eq($.eq(this.get$state(), $.CTC34), this._endTime == null));
+    $.assert($.eq($.eq(this.get$state(), $.CTC33), this._endTime == null));
     var end = this._endTime;
     if (end == null)
       end = $.Date_Date$now();
@@ -4231,12 +4367,12 @@ $$.Game = {"":
   var t1 = this._states;
   var currentSS = t1.get$2(x, y);
   if (value) {
-    $.require($.eq(currentSS, $.CTC29), '');
-    t1.set$3(x, y, $.CTC33);
+    $.require($.eq(currentSS, $.CTC28), '');
+    t1.set$3(x, y, $.CTC32);
     this._minesLeft = $.intTypeCheck($.sub(this._minesLeft, 1), 'is$$int');
   } else {
-    $.require($.eq(currentSS, $.CTC33), '');
-    t1.set$3(x, y, $.CTC29);
+    $.require($.eq(currentSS, $.CTC32), '');
+    t1.set$3(x, y, $.CTC28);
     this._minesLeft = $.intTypeCheck($.add(this._minesLeft, 1), 'is$$int');
   }
   this._update$0();
@@ -4245,7 +4381,7 @@ $$.Game = {"":
   $.intTypeCheck(x, 'is$$int');
   $.intTypeCheck(y, 'is$$int');
   this._ensureStarted$0();
-  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC29), 'is$bool'))
+  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC28), 'is$bool'))
     return true;
   else if ($.boolConversionCheck(this._canChord$2(x, y), 'is$bool'))
     return true;
@@ -4256,7 +4392,7 @@ $$.Game = {"":
   $.intTypeCheck(y, 'is$$int');
   this._ensureStarted$0();
   $.require(this.canReveal$2(x, y), 'Item cannot be revealed.');
-  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC29), 'is$bool'))
+  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC28), 'is$bool'))
     if ($.boolConversionCheck(this.field.get$2(x, y), 'is$bool')) {
       this._setLost$0();
       var reveals = [];
@@ -4265,24 +4401,24 @@ $$.Game = {"":
   else
     reveals = $.boolConversionCheck(this._canChord$2(x, y), 'is$bool') ? $.listTypeCheck(this._doChord$2(x, y), 'is$List') : null;
   this._update$0();
-  if ($.boolConversionCheck($.eq(this._state, $.CTC31), 'is$bool'))
+  if ($.boolConversionCheck($.eq(this._state, $.CTC30), 'is$bool'))
     return;
   else
     return reveals;
 },
  _canChord$2: function(x, y) {
-  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC32), 'is$bool')) {
+  if ($.boolConversionCheck($.eq(this._states.get$2(x, y), $.CTC31), 'is$bool')) {
     var adjCount = this.field.getAdjacentCount$2(x, y);
     if ($.boolConversionCheck($.gt(adjCount, 0), 'is$bool'))
-      if ($.boolConversionCheck($.gt(this._getAdjacentCount$3(x, y, $.CTC29), 0), 'is$bool'))
-        if ($.boolConversionCheck($.eq(this._getAdjacentCount$3(x, y, $.CTC33), adjCount), 'is$bool'))
+      if ($.boolConversionCheck($.gt(this._getAdjacentCount$3(x, y, $.CTC28), 0), 'is$bool'))
+        if ($.boolConversionCheck($.eq(this._getAdjacentCount$3(x, y, $.CTC32), adjCount), 'is$bool'))
           return true;
   }
   return false;
 },
  _doChord$2: function(x, y) {
   var t1 = this._states;
-  $.assert($.eq(t1.get$2(x, y), $.CTC32));
+  $.assert($.eq(t1.get$2(x, y), $.CTC31));
   var flagged = $.ListImplementation_List(null, 'int');
   $.setRuntimeTypeInfo(flagged, {'E': 'int'});
   var hidden = $.ListImplementation_List(null, 'int');
@@ -4292,11 +4428,11 @@ $$.Game = {"":
   $.assert($.gt(adjCount, 0));
   for (var t3 = $.iterator(t2.getAdjacentIndices$2(x, y)), failed = false; $.boolConversionCheck(t3.hasNext$0(), 'is$bool');) {
     var t4 = t3.next$0();
-    if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC29), 'is$bool')) {
+    if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC28), 'is$bool')) {
       hidden.push(t4);
       if ($.boolConversionCheck($.index(t2, t4), 'is$bool'))
         failed = true;
-    } else if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC33), 'is$bool'))
+    } else if ($.boolConversionCheck($.eq($.index(t1, t4), $.CTC32), 'is$bool'))
       flagged.push(t4);
   }
   $.assert(flagged.length === adjCount);
@@ -4315,8 +4451,8 @@ $$.Game = {"":
   $.intTypeCheck(x, 'is$$int');
   $.intTypeCheck(y, 'is$$int');
   var t1 = this._states;
-  $.assert($.eq(t1.get$2(x, y), $.CTC29));
-  t1.set$3(x, y, $.CTC32);
+  $.assert($.eq(t1.get$2(x, y), $.CTC28));
+  t1.set$3(x, y, $.CTC31);
   var t2 = this._revealsLeft;
   if (t2 !== (t2 | 0))
     return this._doReveal$2$bailout(1, t2, x, y, t1, 0, 0);
@@ -4336,13 +4472,13 @@ $$.Game = {"":
     if (t3 === 0)
       for (t3 = $.iterator(t2.getAdjacentIndices$2(x, y)); $.boolConversionCheck(t3.hasNext$0(), 'is$bool');) {
         var t4 = t3.next$0();
-        if ($.boolConversionCheck($.eq(t1.operator$index$1(t4), $.CTC29), 'is$bool')) {
+        if ($.boolConversionCheck($.eq(t1.operator$index$1(t4), $.CTC28), 'is$bool')) {
           var c = t2.getCoordinate$1(t4);
           $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
-          t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC34), 'is$bool');
+          t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC33), 'is$bool');
           if (typeof t4 !== 'boolean')
             return this._doReveal$2$bailout(4, t3, t4, reveals, t2, t1, 0);
-          $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC30), 'is$bool'));
+          $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC29), 'is$bool'));
         }
       }
   }
@@ -4384,8 +4520,8 @@ $$.Game = {"":
       $.intTypeCheck(x, 'is$$int');
       $.intTypeCheck(y, 'is$$int');
       var t1 = this._states;
-      $.assert($.eq(t1.get$2(x, y), $.CTC29));
-      t1.set$3(x, y, $.CTC32);
+      $.assert($.eq(t1.get$2(x, y), $.CTC28));
+      t1.set$3(x, y, $.CTC31);
       var t2 = this._revealsLeft;
     case 1:
       state = 0;
@@ -4419,15 +4555,15 @@ $$.Game = {"":
                             break L0;
                           var t4 = t3.next$0();
                         case 4:
-                          if (state === 4 || state === 0 && $.boolConversionCheck($.eq($.index(t1, t4), $.CTC29), 'is$bool'))
+                          if (state === 4 || state === 0 && $.boolConversionCheck($.eq($.index(t1, t4), $.CTC28), 'is$bool'))
                             switch (state) {
                               case 0:
                                 var c = t2.getCoordinate$1(t4);
                                 $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
-                                t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC34), 'is$bool');
+                                t4 = $.boolConversionCheck($.eq(this.get$state(), $.CTC33), 'is$bool');
                               case 4:
                                 state = 0;
-                                $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC30), 'is$bool'));
+                                $.assert(t4 || $.boolConversionCheck($.eq(this.get$state(), $.CTC29), 'is$bool'));
                             }
                       }
               }
@@ -4436,18 +4572,18 @@ $$.Game = {"":
   }
 },
  _setWon$0: function() {
-  $.assert($.eq(this.get$state(), $.CTC34));
-  for (var t1 = this.field, t2 = this._states, i = 0; $.boolConversionCheck($.lt(i, $.get$length(t1)), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
-    if ($.boolConversionCheck($.index(t1, i), 'is$bool'))
-      $.indexSet(t2, i, $.CTC39);
-  this._setState$1($.CTC30);
-},
- _setLost$0: function() {
-  $.assert($.eq(this.get$state(), $.CTC34));
+  $.assert($.eq(this.get$state(), $.CTC33));
   for (var t1 = this.field, t2 = this._states, i = 0; $.boolConversionCheck($.lt(i, $.get$length(t1)), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
     if ($.boolConversionCheck($.index(t1, i), 'is$bool'))
       $.indexSet(t2, i, $.CTC38);
-  this._setState$1($.CTC31);
+  this._setState$1($.CTC29);
+},
+ _setLost$0: function() {
+  $.assert($.eq(this.get$state(), $.CTC33));
+  for (var t1 = this.field, t2 = this._states, i = 0; $.boolConversionCheck($.lt(i, $.get$length(t1)), 'is$bool'); i = $.intTypeCheck($.add(i, 1), 'is$$int'))
+    if ($.boolConversionCheck($.index(t1, i), 'is$bool'))
+      $.indexSet(t2, i, $.CTC37);
+  this._setState$1($.CTC30);
 },
  _update$0: function() {
   return this._updatedEvent.fireEvent$1($.CTC22);
@@ -4458,7 +4594,7 @@ $$.Game = {"":
   $.assert($.eq($.eq(this._state, $.CTC23), this._startTime == null));
   if (!$.eqB(this._state, value)) {
     this._state = value;
-    if ($.boolConversionCheck($.eq(this._state, $.CTC34), 'is$bool'))
+    if ($.boolConversionCheck($.eq(this._state, $.CTC33), 'is$bool'))
       this._startTime = $.propertyTypeCheck($.Date_Date$now(), 'is$Date');
     else if ($.boolConversionCheck(this.get$gameEnded(), 'is$bool'))
       this._endTime = $.propertyTypeCheck($.Date_Date$now(), 'is$Date');
@@ -4468,9 +4604,9 @@ $$.Game = {"":
  _ensureStarted$0: function() {
   if ($.boolConversionCheck($.eq(this.get$state(), $.CTC23), 'is$bool')) {
     $.assert(this._startTime == null);
-    this._setState$1($.CTC34);
+    this._setState$1($.CTC33);
   }
-  $.assert($.eq(this.get$state(), $.CTC34));
+  $.assert($.eq(this.get$state(), $.CTC33));
   $.assert(!(this._startTime == null));
 },
  _getAdjacentCount$3: function(x, y, state) {
@@ -4701,7 +4837,7 @@ $$.GameBackgroundElement = {"":
   var bottomBgLoc = 80 * (t3 - 1) + 32;
   ctx.save$0();
   ctx.translate$2(this.get$_lib1_parent().get$_scaledBoardOffset().get$x(), this.get$_lib1_parent().get$_scaledBoardOffset().get$y());
-  $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC36);
+  $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC35);
   $.drawTextureKeyAt(ctx, 'game_board_corner_top_right.png', $.Coordinate$(rightBgLoc, 0));
   $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png', $.Coordinate$(0, bottomBgLoc));
   $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png', $.Coordinate$(rightBgLoc, bottomBgLoc));
@@ -4787,7 +4923,7 @@ $$.GameBackgroundElement = {"":
       var bottomBgLoc = 80 * t3 + 32;
       ctx.save$0();
       ctx.translate$2(this.get$_lib1_parent().get$_scaledBoardOffset().get$x(), this.get$_lib1_parent().get$_scaledBoardOffset().get$y());
-      $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC36);
+      $.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png', $.CTC35);
       $.drawTextureKeyAt(ctx, 'game_board_corner_top_right.png', $.Coordinate$(rightBgLoc, 0));
       $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png', $.Coordinate$(0, bottomBgLoc));
       $.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png', $.Coordinate$(rightBgLoc, bottomBgLoc));
@@ -4840,7 +4976,7 @@ $$.GameBackgroundElement = {"":
   }
 },
  _drawCorner$1: function(ctx) {
-  $.drawTextureKeyAt(ctx, 'background_top_left.png', $.CTC36);
+  $.drawTextureKeyAt(ctx, 'background_top_left.png', $.CTC35);
   $.drawTextureKeyAt(ctx, 'background_side_left.png', $.Coordinate$(0, $.CTC21.y));
 },
  get$_lib1_parent: function() {
@@ -5050,8 +5186,8 @@ $$.GameElement = {"":
  _startPopAnimation$2: function(start, reveals) {
   $.listSuperNativeTypeCheck(reveals, 'is$Iterable');
   if (reveals == null) {
-    $.assert($.eq(this.get$game().get$state(), $.CTC31));
-    reveals = $.listSuperNativeTypeCheck($.NumberEnumerable_NumberEnumerable$fromRange(0, $.get$length(this.get$game().get$field())).select$1(new $.GameElement__startPopAnimation_anon(this)).where$1(new $.GameElement__startPopAnimation_anon0()).select$1(new $.GameElement__startPopAnimation_anon1()).toList$0(), 'is$Iterable');
+    $.assert($.eq(this.get$game().get$state(), $.CTC30));
+    reveals = $.listSuperNativeTypeCheck($.map($.filter($.map($.NumberEnumerable_NumberEnumerable$fromRange(0, $.get$length(this.get$game().get$field())), new $.GameElement__startPopAnimation_anon(this)), new $.GameElement__startPopAnimation_anon0()), new $.GameElement__startPopAnimation_anon1()).toList$0(), 'is$Iterable');
   }
   for (var t1 = $.iterator(reveals), t2 = this._popAnimationLayer; $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
     var t3 = t1.next$0();
@@ -5063,7 +5199,7 @@ $$.GameElement = {"":
     if (typeof t5 !== 'number')
       throw $.iae(t5);
     var initialOffset = $.Vector$(t4, 80 * t5);
-    var squareOffset = $.CTC37.operator$add$1(initialOffset);
+    var squareOffset = $.CTC36.operator$add$1(initialOffset);
     t4 = $.toInt($.mul($.get$length($.sub(t3, start)), 4));
     if (typeof t4 !== 'number')
       throw $.iae(t4);
@@ -5074,12 +5210,12 @@ $$.GameElement = {"":
     delay += t4;
     var ss = this.get$game().getSquareState$2(t3.get$x(), t3.get$y());
     switch (ss) {
-      case $.CTC32:
-      case $.CTC29:
+      case $.CTC31:
+      case $.CTC28:
         var frameCount = 28;
         var texturePrefix = 'balloon_pop';
         break;
-      case $.CTC38:
+      case $.CTC37:
         frameCount = 24;
         texturePrefix = 'balloon_explode';
         break;
@@ -5088,11 +5224,11 @@ $$.GameElement = {"":
     }
     var request = $.TextAniRequest$(texturePrefix, frameCount, squareOffset, delay, 0, 'balloon.png', initialOffset);
     switch (ss) {
-      case $.CTC32:
-      case $.CTC29:
+      case $.CTC31:
+      case $.CTC28:
         $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon2(this));
         break;
-      case $.CTC38:
+      case $.CTC37:
         $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon3(this));
         break;
     }
@@ -5118,7 +5254,7 @@ $$.GameElement = {"":
     t3 = t3.get$y();
     if (typeof t3 !== 'number')
       throw $.iae(t3);
-    var squareOffset = $.CTC40.operator$add$1($.Vector$(t4, 80 * t3));
+    var squareOffset = $.CTC39.operator$add$1($.Vector$(t4, 80 * t3));
     $.add$1(t2, $.TextAniRequest$('dart_fly_shadow', 54, squareOffset, 0, 0, null, null));
     $.add$1(t2, $.TextAniRequest$('dart_fly', 54, squareOffset, 0, 0, null, null));
   }
@@ -5145,10 +5281,10 @@ $$.GameElement = {"":
  _toggleFlag$2: function(x, y) {
   $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
   var ss = this.get$game().getSquareState$2(x, y);
-  if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
+  if ($.boolConversionCheck($.eq(ss, $.CTC28), 'is$bool')) {
     this.get$game().setFlag$3(x, y, true);
     return true;
-  } else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool')) {
+  } else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool')) {
     this.get$game().setFlag$3(x, y, false);
     return true;
   }
@@ -5161,12 +5297,12 @@ $$.GameElement = {"":
   $.assert(!$.boolConversionCheck(this.get$game().get$gameEnded(), 'is$bool'));
   var ss = this.get$game().getSquareState$2(x, y);
   if (alt)
-    if ($.boolConversionCheck($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool') || $.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'), 'is$bool')) {
+    if ($.boolConversionCheck($.boolConversionCheck($.eq(ss, $.CTC28), 'is$bool') || $.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'), 'is$bool')) {
       this._toggleFlag$2(x, y);
       var reveals = null;
-    } else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'))
+    } else if ($.boolConversionCheck($.eq(ss, $.CTC31), 'is$bool'))
       if ($.boolConversionCheck(this.get$game().canReveal$2(x, y), 'is$bool')) {
-        var adjHidden = $.$$(this.get$game().get$field().getAdjacentIndices$2(x, y)).select$1(new $.GameElement__click_anon(this)).where$1(new $.GameElement__click_anon0(this)).toList$0();
+        var adjHidden = $.filter($.map($.$$(this.get$game().get$field().getAdjacentIndices$2(x, y)), new $.GameElement__click_anon(this)), new $.GameElement__click_anon0(this)).toList$0();
         $.assert($.gt($.get$length(adjHidden), 0));
         this._startDartAnimation$1(adjHidden);
         reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
@@ -5174,20 +5310,20 @@ $$.GameElement = {"":
         reveals = null;
     else
       reveals = null;
-  else if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool')) {
+  else if ($.boolConversionCheck($.eq(ss, $.CTC28), 'is$bool')) {
     this._startDartAnimation$1([$.Coordinate$(x, y)]);
     reveals = $.listTypeCheck(this.get$game().reveal$2(x, y), 'is$List');
   } else
     reveals = null;
   if ($.boolConversionCheck(!(reveals == null) && $.boolConversionCheck($.gt($.get$length(reveals), 0), 'is$bool'), 'is$bool')) {
-    $.assert(!$.eqB(this.get$game().get$state(), $.CTC31));
+    $.assert(!$.eqB(this.get$game().get$state(), $.CTC30));
     if (!alt) {
       var first = $.index(reveals, 0);
       $.assert($.eq(first.get$x(), x));
       $.assert($.eq(first.get$y(), y));
     }
     this._startPopAnimation$2($.Coordinate$(x, y), reveals);
-  } else if ($.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC31), 'is$bool'))
+  } else if ($.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC30), 'is$bool'))
     this._startPopAnimation$1($.Coordinate$(x, y));
 },
  _updateSize$2: function(w, h) {
@@ -5348,7 +5484,7 @@ $$.NewGameElement = {"":
 },
  drawOverride$1: function(ctx) {
   var texture = $.boolConversionCheck($.Mouse_isMouseDirectlyOver(this), 'is$bool') ? 'button_new_game_clicked.png' : 'button_new_game.png';
-  $.drawTextureKeyAt(ctx, texture, $.CTC36);
+  $.drawTextureKeyAt(ctx, texture, $.CTC35);
 },
  get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
@@ -5483,40 +5619,41 @@ $$.SquareElement = {"":
  drawOverride$1: function(ctx) {
   var textureName = null;
   switch (this._lastDrawingState) {
-    case $.CTC29:
+    case $.CTC28:
       textureName = this._getHiddenTexture$0();
       break;
-    case $.CTC33:
+    case $.CTC32:
       textureName = 'balloon_tagged_frozen.png';
       break;
-    case $.CTC32:
+    case $.CTC31:
       var t1 = this.get$_adjacentCount();
       if (t1 !== (t1 | 0))
         throw $.iae(t1);
       if (t1 < 0 || t1 >= 9)
         throw $.ioore(t1);
-      textureName = $.S($.CTC41[t1]) + '.png';
+      textureName = $.S($.CTC40[t1]) + '.png';
       break;
-    case $.CTC38:
+    case $.CTC37:
       textureName = 'crater_b.png';
       break;
-    case $.CTC39:
+    case $.CTC38:
       textureName = 'balloon_tagged_bomb.png';
+      break;
   }
-  $.drawTextureKeyAt(ctx, textureName, $.CTC36);
+  $.drawTextureKeyAt(ctx, textureName, $.CTC35);
 },
  toString$0: function() {
   return 'Square at [' + $.S(this.x) + ', ' + $.S(this.y) + ']';
 },
  _getHiddenTexture$0: function() {
-  $.assert($.eq(this._lastDrawingState, $.CTC29));
-  if ($.boolConversionCheck($.eq(this.get$_game().get$state(), $.CTC31), 'is$bool')) {
+  $.assert($.eq(this._lastDrawingState, $.CTC28));
+  if ($.boolConversionCheck($.eq(this.get$_game().get$state(), $.CTC30), 'is$bool')) {
     var index = $.mod($.add(this.x, this.y), 4);
     if (index !== (index | 0))
       throw $.iae(index);
     if (index < 0 || index >= 4)
       throw $.ioore(index);
-    return $.CTC42[index];
+    return $.CTC41[index];
   } else
     return 'balloon.png';
 },
@@ -5752,7 +5889,7 @@ $$.TextAniRequest = {"":
   }
   ctx.save$0();
   ctx.translate$2(offset.get$x(), offset.get$y());
-  $.drawTextureKeyAt(ctx, frameName, $.CTC36);
+  $.drawTextureKeyAt(ctx, frameName, $.CTC35);
   ctx.restore$0();
 },
  drawOverride$1$bailout: function(state, env0, env1, env2) {
@@ -5785,7 +5922,7 @@ $$.TextAniRequest = {"":
         }
       ctx.save$0();
       ctx.translate$2(offset.get$x(), offset.get$y());
-      $.drawTextureKeyAt(ctx, frameName, $.CTC36);
+      $.drawTextureKeyAt(ctx, frameName, $.CTC35);
       ctx.restore$0();
   }
 },
@@ -5815,7 +5952,7 @@ $$.GameTitleElement = {"":
  ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib0_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  drawOverride$1: function(ctx) {
-  $.drawTextureKeyAt(ctx, 'logo_win.png', $.CTC36);
+  $.drawTextureKeyAt(ctx, 'logo_win.png', $.CTC35);
 },
  get$_lib1_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
@@ -6163,7 +6300,7 @@ $$.GameStorage = {"":
  updateHighScore$1: function(game) {
   $.propertyTypeCheck(game, 'is$Game');
   $.assert(!(game == null));
-  $.assert($.eq(game.get$state(), $.CTC30));
+  $.assert($.eq(game.get$state(), $.CTC29));
   var w = game.get$field().get$width();
   var h = game.get$field().get$height();
   var m = game.get$field().get$mineCount();
@@ -6236,19 +6373,19 @@ $$.GameManager = {"":
   $.boolTypeCheck(alt, 'is$bool');
   var ss = this.get$game().getSquareState$2(x, y);
   if (alt) {
-    if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool'))
+    if ($.boolConversionCheck($.eq(ss, $.CTC28), 'is$bool'))
       this.get$game().setFlag$3(x, y, true);
-    else if ($.boolConversionCheck($.eq(ss, $.CTC33), 'is$bool'))
-      this.get$game().setFlag$3(x, y, false);
     else if ($.boolConversionCheck($.eq(ss, $.CTC32), 'is$bool'))
+      this.get$game().setFlag$3(x, y, false);
+    else if ($.boolConversionCheck($.eq(ss, $.CTC31), 'is$bool'))
       this.get$game().reveal$2(x, y);
-  } else if ($.boolConversionCheck($.eq(ss, $.CTC29), 'is$bool'))
+  } else if ($.boolConversionCheck($.eq(ss, $.CTC28), 'is$bool'))
     this.get$game().reveal$2(x, y);
 },
  updateClock$0: function() {
-  if ($.boolConversionCheck(this._setIntervalId == null && $.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC34), 'is$bool'), 'is$bool'))
+  if ($.boolConversionCheck(this._setIntervalId == null && $.boolConversionCheck($.eq(this.get$game().get$state(), $.CTC33), 'is$bool'), 'is$bool'))
     this._setIntervalId = $.intTypeCheck($.window().setInterval$2(this.get$_doClock(), 1000), 'is$$int');
-  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC34)) {
+  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC33)) {
     $.window().clearInterval$1(this._setIntervalId);
     this._setIntervalId = null;
   }
@@ -6260,7 +6397,7 @@ $$.GameManager = {"":
  _gameStateChanged$1: function(newState) {
   var t1 = this.gameStorage;
   t1.recordState$1(newState);
-  if ($.boolConversionCheck($.eq(newState, $.CTC30), 'is$bool'))
+  if ($.boolConversionCheck($.eq(newState, $.CTC29), 'is$bool'))
     t1.updateHighScore$1(this.get$game());
   this.updateClock$0();
 },
@@ -6869,6 +7006,14 @@ $$.HashSetImplementation_forEach__ = {"":
 }
 };
 
+$$.HashSetImplementation_map__ = {"":
+ ["f_1", "result_0"],
+ "super": "Closure",
+ call$2: function(key, value) {
+  $.add$1(this.result_0, this.f_1.call$1(key));
+}
+};
+
 $$.EventHandle_fireEvent_anon = {"":
  ["args_0"],
  "super": "Closure",
@@ -6878,7 +7023,15 @@ $$.EventHandle_fireEvent_anon = {"":
 }
 };
 
-$$.Enumerable_select_anon = {"":
+$$.Enumerable_count_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(a) {
+  return true;
+}
+};
+
+$$.Enumerable_map_anon = {"":
  ["this_1", "f_0"],
  "super": "Closure",
  call$1: function(s) {
@@ -7021,7 +7174,7 @@ $$.GameElement__click_anon0 = {"":
  ["this_1"],
  "super": "Closure",
  call$1: function(t) {
-  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC29);
+  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC28);
 }
 };
 
@@ -7040,7 +7193,7 @@ $$.GameElement__startPopAnimation_anon0 = {"":
  [],
  "super": "Closure",
  call$1: function(t2) {
-  return $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC38), 'is$bool') || $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC29), 'is$bool');
+  return $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC37), 'is$bool') || $.boolConversionCheck($.eq(t2.get$Item2(), $.CTC28), 'is$bool');
 }
 };
 
@@ -7068,11 +7221,28 @@ $$.GameElement__startPopAnimation_anon3 = {"":
 }
 };
 
-$$.Enumerable_where_anon = {"":
+$$.HashSetImplementation_filter__ = {"":
+ ["f_1", "result_0"],
+ "super": "Closure",
+ call$2: function(key, value) {
+  if ($.boolConversionCheck(this.f_1.call$1(key), 'is$bool'))
+    $.add$1(this.result_0, key);
+}
+};
+
+$$.Enumerable_filter_anon = {"":
  ["this_1", "f_0"],
  "super": "Closure",
  call$1: function(s) {
   return $._WhereIterator$(s, this.f_0, $.getRuntimeTypeInfo(this.this_1).T);
+}
+};
+
+$$.HashSetImplementation_addAll__ = {"":
+ ["this_0"],
+ "super": "Closure",
+ call$1: function(value) {
+  this.this_0.add$1(value);
 }
 };
 
@@ -7303,6 +7473,14 @@ $$.Futures_wait_anon0 = {"":
 }
 };
 
+$$.Enumerable_isEmpty_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(e) {
+  return true;
+}
+};
+
 $$._PendingSendPortFinder_visitList_anon = {"":
  ["this_0"],
  "super": "Closure",
@@ -7487,6 +7665,10 @@ $.set$length = function(receiver, newLength) {
   return newLength;
 };
 
+$._Device_userAgent = function() {
+  return $.window().get$navigator().get$userAgent();
+};
+
 $.checkNum = function(value) {
   if (!(typeof value === 'number')) {
     $.checkNull(value);
@@ -7590,7 +7772,7 @@ $.dynamicFunction = function(name$) {
   if (!(f == null) && !!f.methods)
     return f.methods;
   var methods = {};
-  var dartMethod = Object.getPrototypeOf($.CTC46)[name$];
+  var dartMethod = Object.getPrototypeOf($.CTC45)[name$];
   if (!(dartMethod == null))
     $.propertySet(methods, 'Object', dartMethod);
   var bind = function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};
@@ -7772,6 +7954,14 @@ $.getTypeNameOf = function(obj) {
   return $._getTypeNameOf.call$1(obj);
 };
 
+$._Collections_map = function(source, destination, f) {
+  $.listSuperNativeTypeCheck(source, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(source); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    destination.push(f.call$1(t1.next$0()));
+  return destination;
+};
+
 $.contains$1 = function(receiver, other) {
   if (!(typeof receiver === 'string'))
     return receiver.contains$1(other);
@@ -7924,7 +8114,7 @@ $.main = function() {
   $.add$1($._imageLoader.get$loaded(), $._onLoaded);
   $.add$1($._imageLoader.get$progress(), $._onLoaded);
   $._imageLoader.load$0();
-  $._audioLoader = $.AudioLoader$($.AudioContext_AudioContext(), $.$$($.CTC).select$1($._getAudioPath));
+  $._audioLoader = $.AudioLoader$($.AudioContext_AudioContext(), $.map($.$$($.CTC), $._getAudioPath));
   $.add$1($._audioLoader.get$loaded(), $._onLoaded);
   $.add$1($._audioLoader.get$progress(), $._onLoaded);
   $._audioLoader.load$0();
@@ -8028,6 +8218,11 @@ $.StringMatch$ = function(_start, str, pattern) {
   return new $.StringMatch(_start, str, pattern);
 };
 
+$._callInIsolate = function(isolate, function$) {
+  $.propertyTypeCheck(isolate, 'is$_IsolateContext').eval$1($.functionTypeCheck(function$, 'is$Function'));
+  $._globalState().get$topEventLoop().run$0();
+};
+
 $.playAudio = function(name$) {
   if (!($._audioContext == null)) {
     var source = $._audioContext.createBufferSource$0();
@@ -8035,11 +8230,6 @@ $.playAudio = function(name$) {
     source.connect$2($._audioContext.get$destination(), 0);
     source.noteOn$1(0);
   }
-};
-
-$._callInIsolate = function(isolate, function$) {
-  $.propertyTypeCheck(isolate, 'is$_IsolateContext').eval$1($.functionTypeCheck(function$, 'is$Function'));
-  $._globalState().get$topEventLoop().run$0();
 };
 
 $._runSweeper = function() {
@@ -8260,7 +8450,7 @@ $.addAll = function(receiver, collection) {
     return receiver.addAll$1(collection);
   var iterator = $.iterator(collection);
   for (; $.boolConversionCheck(iterator.hasNext$0(), 'is$bool');)
-    receiver.push(iterator.next$0());
+    $.add$1(receiver, iterator.next$0());
 };
 
 $.gt$slow = function(a, b) {
@@ -8427,6 +8617,10 @@ $.pow = function(x, exponent) {
   return Math.pow(x, exponent);
 };
 
+$.add = function(a, b) {
+  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
+};
+
 $.S = function(value) {
   var res = $.toString(value);
   if (!(typeof res === 'string'))
@@ -8448,6 +8642,10 @@ $.$$ = function(source) {
     return source;
   else
     return $.Enumerable_Enumerable$fromIterable(source);
+};
+
+$._Device_isIE = function() {
+  return !$.boolConversionCheck($._Device_isOpera(), 'is$bool') && $.boolConversionCheck($.contains$2($._Device_userAgent(), 'MSIE', 0), 'is$bool');
 };
 
 $.Arrays_indexOf = function(a, element, startIndex, endIndex) {
@@ -8491,10 +8689,6 @@ $.startRootIsolate = function(entry) {
     rootContext.eval$1(new $.startRootIsolate_anon());
   rootContext.eval$1(entry);
   $._globalState().get$topEventLoop().run$0();
-};
-
-$.add = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
 };
 
 $.lt$slow = function(a, b) {
@@ -8555,18 +8749,25 @@ $.listTypeCheck = function(value) {
   throw $.$$throw($.TypeErrorImplementation$(value, 'List'));
 };
 
+$._convertNativeToDart_IDBAny = function(object) {
+  return $._convertNativeToDart_AcceptStructuredClone(object);
+};
+
 $.rnd = function() {
   if ($._dartlibHelperRandom == null)
     $._dartlibHelperRandom = $.propertyTypeCheck($.Random_Random(null), 'is$Random');
   return $._dartlibHelperRandom;
 };
 
-$._convertNativeToDart_IDBAny = function(object) {
-  return $._convertNativeToDart_AcceptStructuredClone(object);
-};
-
 $._AudioContextEventsImpl$ = function(_ptr) {
   return new $._AudioContextEventsImpl(_ptr);
+};
+
+$.map = function(receiver, f) {
+  if (!$.isJsArray(receiver))
+    return receiver.map$1(f);
+  else
+    return $.Collections_map(receiver, [], f);
 };
 
 $.typeNameInSafari = function(obj) {
@@ -8587,6 +8788,8 @@ $._ElementAttributeMap$ = function(_element) {
 };
 
 $.contains$2 = function(receiver, other, startIndex) {
+  if (!(typeof receiver === 'string'))
+    return receiver.contains$2(other, startIndex);
   $.checkNull(other);
   return $.stringContainsUnchecked(receiver, other, startIndex);
 };
@@ -8801,7 +9004,7 @@ $.Game$ = function(field) {
   $.propertyTypeCheck(field, 'is$Field');
   var t1 = $.EventHandle$('EventArgs');
   var t2 = $.EventHandle$('GameState');
-  var t3 = new $.Game(field, $.propertyTypeCheck($.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC29, 'SquareState'), 'is$Array2d'), $.propertyTypeCheck(t1, 'is$EventHandle'), $.propertyTypeCheck(t2, 'is$EventHandle'), $.CTC23, null, null, null, null);
+  var t3 = new $.Game(field, $.propertyTypeCheck($.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC28, 'SquareState'), 'is$Array2d'), $.propertyTypeCheck(t1, 'is$EventHandle'), $.propertyTypeCheck(t2, 'is$EventHandle'), $.CTC23, null, null, null, null);
   t3.Game$1(field);
   return t3;
 };
@@ -8853,7 +9056,7 @@ $.stringReplaceAllUnchecked = function(receiver, from, to) {
       return $.toString(result);
     }
   else
-    return $.stringReplaceJS(receiver, $.regExpMakeNative($.propertyTypeCheck($.JSSyntaxRegExp$(from.replace($.regExpMakeNative($.propertyTypeCheck($.CTC45, 'is$RegExp'), true), "\\$&"), false, false), 'is$RegExp'), true), to);
+    return $.stringReplaceJS(receiver, $.regExpMakeNative($.propertyTypeCheck($.JSSyntaxRegExp$(from.replace($.regExpMakeNative($.propertyTypeCheck($.CTC44, 'is$RegExp'), true), "\\$&"), false, false), 'is$RegExp'), true), to);
 };
 
 $.ReadOnlyCollection$ = function(source, T) {
@@ -8862,6 +9065,10 @@ $.ReadOnlyCollection$ = function(source, T) {
   t1 = new $.ReadOnlyCollection(t1);
   $.setRuntimeTypeInfo(t1, {'T': T});
   return t1;
+};
+
+$._Device_isFirefox = function() {
+  return $.contains$2($._Device_userAgent(), 'Firefox', 0);
 };
 
 $.min = function(a, b) {
@@ -9199,10 +9406,6 @@ $.HashSetIterator$ = function(set_, E) {
   return t1;
 };
 
-$.stringReplaceJS = function(receiver, replacer, to) {
-  return receiver.replace(replacer, to.replace('$', '$$$$'));
-};
-
 $.print = function(obj) {
   if (typeof obj === 'string')
     $.Primitives_printString(obj);
@@ -9216,6 +9419,10 @@ $.isEmpty = function(receiver) {
   return receiver.isEmpty$0();
 };
 
+$.stringReplaceJS = function(receiver, replacer, to) {
+  return receiver.replace(replacer, to.replace('$', '$$$$'));
+};
+
 $.forEach = function(receiver, f) {
   if (!$.isJsArray(receiver))
     return receiver.forEach$1(f);
@@ -9223,15 +9430,15 @@ $.forEach = function(receiver, f) {
     return $.Collections_forEach(receiver, f);
 };
 
-$.StackOverflowException$ = function() {
-  return new $.StackOverflowException();
-};
-
 $.Collections_forEach = function(iterable, f) {
   $.listSuperNativeTypeCheck(iterable, 'is$Iterable');
   $.functionTypeCheck(f, 'is$Function');
   for (var t1 = $.iterator(iterable); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
     f.call$1(t1.next$0());
+};
+
+$.StackOverflowException$ = function() {
+  return new $.StackOverflowException();
 };
 
 $._DOMWindowCrossFrameImpl__close = function(win) {
@@ -9419,6 +9626,19 @@ $.ListImplementation_List = function(length$, E) {
 
 $.mul = function(a, b) {
   return typeof a === 'number' && typeof b === 'number' ? a * b : $.mul$slow(a, b);
+};
+
+$._browserPrefix = function() {
+  if ($._cachedBrowserPrefix == null)
+    if ($.boolConversionCheck($._Device_isFirefox(), 'is$bool'))
+      $._cachedBrowserPrefix = '-moz-';
+    else if ($.boolConversionCheck($._Device_isIE(), 'is$bool'))
+      $._cachedBrowserPrefix = '-ms-';
+    else if ($.boolConversionCheck($._Device_isOpera(), 'is$bool'))
+      $._cachedBrowserPrefix = '-o-';
+    else
+      $._cachedBrowserPrefix = '-webkit-';
+  return $._cachedBrowserPrefix;
 };
 
 $._BodyElementEventsImpl$ = function(_ptr) {
@@ -9763,10 +9983,6 @@ $.HashMapImplementation$ = function(K, V) {
   return t1;
 };
 
-$.Primitives_getMinutes = function(receiver) {
-  return $.boolConversionCheck(receiver.isUtc, 'is$bool') ? $.Primitives_lazyAsJsDate(receiver).getUTCMinutes() : $.Primitives_lazyAsJsDate(receiver).getMinutes();
-};
-
 $.TextAniRequest$ = function(_texturePrefix, _frameCount, _offset, delay, startFrame, initialFrame, initialFrameOffset) {
   $.intTypeCheck(delay, 'is$$int');
   $.propertyTypeCheck(initialFrameOffset, 'is$Coordinate');
@@ -9779,6 +9995,10 @@ $.Primitives_lazyAsJsDate = function(receiver) {
   if (receiver.date === (void 0))
     receiver.date = new Date(receiver.millisecondsSinceEpoch);
   return receiver.date;
+};
+
+$.Primitives_getMinutes = function(receiver) {
+  return $.boolConversionCheck(receiver.isUtc, 'is$bool') ? $.Primitives_lazyAsJsDate(receiver).getUTCMinutes() : $.Primitives_lazyAsJsDate(receiver).getMinutes();
 };
 
 $._FixedSizeListIterator$ = function(array, T) {
@@ -9983,6 +10203,24 @@ $.throwCyclicInit = function(staticName) {
   throw $.$$throw($.RuntimeError$('Cyclic initialization for static ' + $.S($.stringTypeCheck(staticName, 'is$String'))));
 };
 
+$.filter = function(receiver, predicate) {
+  if (!$.isJsArray(receiver))
+    return receiver.filter$1(predicate);
+  else
+    return $.Collections_filter(receiver, [], predicate);
+};
+
+$.Collections_filter = function(source, destination, f) {
+  $.listSuperNativeTypeCheck(source, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(source); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
+    var t2 = t1.next$0();
+    if ($.boolConversionCheck(f.call$1(t2), 'is$bool'))
+      destination.push(t2);
+  }
+  return destination;
+};
+
 $.Vector$ = function(x, y) {
   return new $.Vector($.numTypeCheck(x, 'is$num'), $.numTypeCheck(y, 'is$num'));
 };
@@ -10043,6 +10281,17 @@ $.unwrapException = function(ex) {
   return ex;
 };
 
+$._Collections_filter = function(source, destination, f) {
+  $.listSuperNativeTypeCheck(source, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(source); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');) {
+    var t2 = t1.next$0();
+    if ($.boolConversionCheck(f.call$1(t2), 'is$bool'))
+      destination.push(t2);
+  }
+  return destination;
+};
+
 $.checkNumbers = function(a, b) {
   if (typeof a === 'number')
     if (typeof b === 'number')
@@ -10060,6 +10309,10 @@ $._ReceivePortImpl$ = function() {
   var t2 = new $._ReceivePortImpl($.intTypeCheck(t1, 'is$$int'), null);
   t2._ReceivePortImpl$0();
   return t2;
+};
+
+$._NodeListWrapper$ = function(list) {
+  return new $._NodeListWrapper($.listTypeCheck($.listTypeCheck(list, 'is$List'), 'is$List'));
 };
 
 $.stringJoinUnchecked = function(array, separator) {
@@ -10116,12 +10369,16 @@ $._WhereIterator$ = function(_source, _func, T) {
   return t1;
 };
 
-$._HttpRequestFactoryProvider_createHttpRequest = function() {
-return new XMLHttpRequest();
+$._Device_isOpera = function() {
+  return $.contains$2($._Device_userAgent(), 'Opera', 0);
 };
 
 $.HttpRequest_HttpRequest = function() {
   return $._HttpRequestFactoryProvider_createHttpRequest();
+};
+
+$._HttpRequestFactoryProvider_createHttpRequest = function() {
+return new XMLHttpRequest();
 };
 
 $.toString = function(value) {
@@ -10325,12 +10582,16 @@ $._MediaElementEventsImpl$ = function(_ptr) {
   return new $._MediaElementEventsImpl(_ptr);
 };
 
-$.getTraceFromException = function(exception) {
-  return $.StackTrace$(exception.stack);
+$.Collections_map = function(source, destination, f) {
+  $.listSuperNativeTypeCheck(source, 'is$Iterable');
+  $.functionTypeCheck(f, 'is$Function');
+  for (var t1 = $.iterator(source); $.boolConversionCheck(t1.hasNext$0(), 'is$bool');)
+    destination.push(f.call$1(t1.next$0()));
+  return destination;
 };
 
-$.contains = function(userAgent, name$) {
-  return !(userAgent.indexOf(name$) === -1);
+$.getTraceFromException = function(exception) {
+  return $.StackTrace$(exception.stack);
 };
 
 $.Maps__emitMap = function(m, result, visiting) {
@@ -10400,6 +10661,10 @@ $.le = function(a, b) {
 
 $.JSSyntaxRegExp$ = function(pattern, multiLine, ignoreCase) {
   return new $.JSSyntaxRegExp(ignoreCase, multiLine, pattern);
+};
+
+$.contains = function(userAgent, name$) {
+  return !(userAgent.indexOf(name$) === -1);
 };
 
 $._serializeMessage = function(message) {
@@ -10805,127 +11070,125 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC2 = Isolate.makeConstantList([]);
-$.CTC47 = 'structured clone of ArrayBufferView';
+$.CTC46 = 'structured clone of ArrayBufferView';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
 $.CTC17 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC2);
 $.CTC0 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC48 = 'hidden';
-$.CTC29 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC49 = 'Cannot add to immutable List.';
+$.CTC47 = 'hidden';
+$.CTC28 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC48 = 'Cannot add to immutable List.';
 $.CTC3 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC50 = false;
-$.CTC51 = '[-[\\]{}()*+?.,\\\\^$|#\\s]';
-$.CTC45 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '[-[\\]{}()*+?.,\\\\^$|#\\s]');
+$.CTC49 = false;
+$.CTC50 = '[-[\\]{}()*+?.,\\\\^$|#\\s]';
+$.CTC44 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '[-[\\]{}()*+?.,\\\\^$|#\\s]');
 $.CTC22 = new Isolate.$isolateProperties.EventArgs();
-$.CTC52 = 'offsetX is only supported on elements';
+$.CTC51 = 'offsetX is only supported on elements';
 $.CTC16 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC53 = 2048;
-$.CTC54 = 1536;
+$.CTC52 = 2048;
+$.CTC53 = 1536;
 $.CTC20 = new Isolate.$isolateProperties.Size(2048, 1536);
-$.CTC55 = 0;
-$.CTC36 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC56 = 352;
-$.CTC57 = 96;
+$.CTC54 = 0;
+$.CTC35 = new Isolate.$isolateProperties.Coordinate(0, 0);
+$.CTC55 = 352;
+$.CTC56 = 96;
 $.CTC21 = new Isolate.$isolateProperties.Vector(352, 96);
-$.CTC58 = 100;
+$.CTC57 = 100;
 $.CTC24 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC59 = 32;
+$.CTC58 = 32;
 $.CTC19 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC60 = -88;
-$.CTC37 = new Isolate.$isolateProperties.Vector(-88, -88);
-$.CTC61 = -472;
-$.CTC62 = -348;
-$.CTC40 = new Isolate.$isolateProperties.Vector(-472, -348);
+$.CTC59 = -88;
+$.CTC36 = new Isolate.$isolateProperties.Vector(-88, -88);
+$.CTC60 = -472;
+$.CTC61 = -348;
+$.CTC39 = new Isolate.$isolateProperties.Vector(-472, -348);
 $.CTC15 = new Isolate.$isolateProperties._UndefinedValue();
 $.CTC18 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC63 = null;
+$.CTC62 = null;
 $.CTC1 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC2);
-$.CTC64 = 'game_board_center';
-$.CTC65 = 'number_one';
-$.CTC66 = 'number_two';
-$.CTC67 = 'number_three';
-$.CTC68 = 'number_four';
-$.CTC69 = 'number_five';
-$.CTC70 = 'number_six';
-$.CTC71 = 'number_seven';
-$.CTC72 = 'number_eight';
-$.CTC41 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
+$.CTC63 = 'game_board_center';
+$.CTC64 = 'number_one';
+$.CTC65 = 'number_two';
+$.CTC66 = 'number_three';
+$.CTC67 = 'number_four';
+$.CTC68 = 'number_five';
+$.CTC69 = 'number_six';
+$.CTC70 = 'number_seven';
+$.CTC71 = 'number_eight';
+$.CTC40 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
 $.CTC12 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC73 = 'lost';
-$.CTC31 = new Isolate.$isolateProperties.GameState('lost');
-$.CTC74 = 'balloon_pieces_a.png';
-$.CTC75 = 'balloon_pieces_b.png';
-$.CTC76 = 'balloon_pieces_c.png';
-$.CTC77 = 'balloon_pieces_d.png';
-$.CTC42 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
-$.CTC78 = 'structured clone of File';
+$.CTC72 = 'lost';
+$.CTC30 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC73 = 'balloon_pieces_a.png';
+$.CTC74 = 'balloon_pieces_b.png';
+$.CTC75 = 'balloon_pieces_c.png';
+$.CTC76 = 'balloon_pieces_d.png';
+$.CTC41 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
+$.CTC77 = 'structured clone of File';
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC79 = 'Pop0';
-$.CTC80 = 'Pop1';
-$.CTC81 = 'Pop2';
-$.CTC82 = 'Pop3';
-$.CTC83 = 'Pop4';
-$.CTC84 = 'Pop5';
-$.CTC85 = 'Pop6';
-$.CTC86 = 'Pop7';
-$.CTC87 = 'Pop8';
-$.CTC88 = 'Bomb1';
-$.CTC89 = 'Bomb2';
-$.CTC90 = 'Bomb3';
-$.CTC91 = 'Bomb4';
-$.CTC92 = 'Bomb5';
+$.CTC78 = 'Pop0';
+$.CTC79 = 'Pop1';
+$.CTC80 = 'Pop2';
+$.CTC81 = 'Pop3';
+$.CTC82 = 'Pop4';
+$.CTC83 = 'Pop5';
+$.CTC84 = 'Pop6';
+$.CTC85 = 'Pop7';
+$.CTC86 = 'Pop8';
+$.CTC87 = 'Bomb1';
+$.CTC88 = 'Bomb2';
+$.CTC89 = 'Bomb3';
+$.CTC90 = 'Bomb4';
+$.CTC91 = 'Bomb5';
 $.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5']);
-$.CTC93 = 'Cannot removeLast on immutable List.';
+$.CTC92 = 'Cannot removeLast on immutable List.';
 $.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.CTC14 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC94 = 'won';
-$.CTC30 = new Isolate.$isolateProperties.GameState('won');
-$.CTC95 = 'reset';
+$.CTC93 = 'won';
+$.CTC29 = new Isolate.$isolateProperties.GameState('won');
+$.CTC94 = 'reset';
 $.CTC23 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC96 = '^#[_a-zA-Z]\\w*$';
-$.CTC44 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC97 = 'must be implemented by subclass';
-$.CTC28 = new Isolate.$isolateProperties.NotImplementedException('must be implemented by subclass');
-$.CTC98 = 'structured clone of ArrayBuffer';
+$.CTC95 = '^#[_a-zA-Z]\\w*$';
+$.CTC43 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
+$.CTC96 = 'structured clone of ArrayBuffer';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC99 = 'structured clone of Date';
+$.CTC97 = 'structured clone of Date';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
-$.CTC46 = new Isolate.$isolateProperties.Object();
-$.CTC100 = 'Cannot insertRange on immutable List.';
+$.CTC45 = new Isolate.$isolateProperties.Object();
+$.CTC98 = 'Cannot insertRange on immutable List.';
 $.CTC25 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC101 = 'structured clone of Blob';
+$.CTC99 = 'structured clone of Blob';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC102 = 'Incorrect number or type of arguments';
-$.CTC43 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
-$.CTC103 = 'Cannot removeRange on immutable List.';
-$.CTC35 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC104 = 'structured clone of RegExp';
+$.CTC100 = 'Incorrect number or type of arguments';
+$.CTC42 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
+$.CTC101 = 'Cannot removeRange on immutable List.';
+$.CTC34 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
+$.CTC102 = 'structured clone of RegExp';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC105 = 'structured clone of FileList';
+$.CTC103 = 'structured clone of FileList';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
-$.CTC106 = 'started';
-$.CTC34 = new Isolate.$isolateProperties.GameState('started');
-$.CTC107 = 'safe';
-$.CTC39 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC104 = 'started';
+$.CTC33 = new Isolate.$isolateProperties.GameState('started');
+$.CTC105 = 'safe';
+$.CTC38 = new Isolate.$isolateProperties.SquareState('safe');
 $.CTC27 = new Isolate.$isolateProperties._Random();
-$.CTC108 = 'mine';
-$.CTC38 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC109 = 'revealed';
-$.CTC32 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC110 = 'Mutation operations are not supported';
+$.CTC106 = 'mine';
+$.CTC37 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC107 = 'revealed';
+$.CTC31 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC108 = 'Mutation operations are not supported';
 $.CTC26 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC111 = 'structured clone of other type';
+$.CTC109 = 'structured clone of other type';
 $.CTC11 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC112 = 'flagged';
-$.CTC33 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC110 = 'flagged';
+$.CTC32 = new Isolate.$isolateProperties.SquareState('flagged');
 $.Property_Undefined = Isolate.$isolateProperties.CTC15;
 $.Duration_HOURS_PER_DAY = 24;
 $.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC0;
 $.DateImplementation__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.ResourceLoader_StateUnloaded = 'unloaded';
-$.SquareElement__balloonBits = Isolate.$isolateProperties.CTC42;
+$.SquareElement__balloonBits = Isolate.$isolateProperties.CTC41;
 $.GameElement__edgeOffset = 32;
-$.SquareState_flagged = Isolate.$isolateProperties.CTC33;
+$.SquareState_flagged = Isolate.$isolateProperties.CTC32;
 $.Duration_MINUTES_PER_HOUR = 60;
 $._textures = null;
 $.GlobalId__globalId = 0;
@@ -10935,35 +11198,36 @@ $.SquareElement__size = 80;
 $.ResourceLoader_StateLoaded = 'loaded';
 $._ReceivePortImpl__nextFreeId = 1;
 $._audioLoader = null;
-$.GameState_started = Isolate.$isolateProperties.CTC34;
-$.SquareState_safe = Isolate.$isolateProperties.CTC39;
+$.GameState_started = Isolate.$isolateProperties.CTC33;
+$.SquareState_safe = Isolate.$isolateProperties.CTC38;
 $._getTypeNameOf = null;
-$.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC40;
-$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC37;
+$.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC39;
+$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC36;
 $.GameElement__popAnimationHitFrame = 12;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
-$.SquareState_mine = Isolate.$isolateProperties.CTC38;
+$.SquareState_mine = Isolate.$isolateProperties.CTC37;
 $.ScoreElement__minesLeftStr = 'MINES LEFT:';
 $._dartlibHelperRandom = null;
 $.PI = 3.141592653589793;
 $._audioContext = null;
 $.LN2 = 0.6931471805599453;
 $._opaqueTextureName = 'dart_opaque_01.jpg';
-$.GameState_won = Isolate.$isolateProperties.CTC30;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC29;
+$.GameState_won = Isolate.$isolateProperties.CTC29;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC28;
 $._audioNames = Isolate.$isolateProperties.CTC;
 $.HashMapImplementation__INITIAL_CAPACITY = 8;
 $.Duration_SECONDS_PER_MINUTE = 60;
 $.GameElement__backgroundSize = Isolate.$isolateProperties.CTC20;
 $._buffers = null;
 $._transparentTextureName = 'dart_transparent_01.png';
+$._cachedBrowserPrefix = null;
 $._TimerFactory__factory = null;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
-$.GameState_lost = Isolate.$isolateProperties.CTC31;
-$.SquareState_revealed = Isolate.$isolateProperties.CTC32;
+$.GameState_lost = Isolate.$isolateProperties.CTC30;
+$.SquareState_revealed = Isolate.$isolateProperties.CTC31;
 $.GameState_reset = Isolate.$isolateProperties.CTC23;
-$.SquareElement__numberMap = Isolate.$isolateProperties.CTC41;
+$.SquareElement__numberMap = Isolate.$isolateProperties.CTC40;
 $.GameElement__backgroundHoleSize = 1344;
 $.ScoreElement__valueOffset = 15;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
@@ -11563,6 +11827,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -11577,7 +11849,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -11613,6 +11885,10 @@ $.$defineNativeClass('CSSStyleDeclaration', ["length?"], {
  set$cursor: function(value) {
   this.setProperty$3('cursor', value, '');
 },
+ get$filter: function() {
+  return this.getPropertyValue$1($.S($._browserPrefix()) + 'filter');
+},
+ filter$1: function(arg0) { return this.get$filter().call$1(arg0); },
  get$height: function() {
   return this.getPropertyValue$1('height');
 },
@@ -11693,6 +11969,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -11707,7 +11991,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -11855,6 +12139,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -11869,7 +12161,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -11907,7 +12199,6 @@ _ConsoleImpl.error$1 = function(arg) {
 };
 _ConsoleImpl.get$error = function() { return new $.BoundClosure(this, 'error$1'); };
 $.$defineNativeClass('HTMLContentElement', [], {
- select$1: function(arg0) { return this.select.call$1(arg0); },
  is$Element: function() { return true; },
  is$Object: function() { return true; },
  is$Node: function() { return true; }
@@ -12013,6 +12304,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12027,7 +12326,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12080,6 +12379,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12094,7 +12401,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12157,6 +12464,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12171,7 +12486,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12353,7 +12668,7 @@ $.$defineNativeClass('HTMLDocument', [], {
   return this.querySelector(selectors);
 },
  query$1: function(selectors) {
-  if ($.boolConversionCheck($.CTC44.hasMatch$1(selectors), 'is$bool'))
+  if ($.boolConversionCheck($.CTC43.hasMatch$1(selectors), 'is$bool'))
     return this.$dom_getElementById$1($.substring$1(selectors, 1));
   return this.$dom_querySelector$1(selectors);
 },
@@ -12462,6 +12777,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12476,7 +12799,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12519,6 +12842,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12533,7 +12864,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12699,6 +13030,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12713,7 +13052,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12791,6 +13130,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12805,7 +13152,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12850,6 +13197,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12864,7 +13219,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -12949,6 +13304,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -12963,7 +13326,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13021,6 +13384,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13035,7 +13406,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13077,6 +13448,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13091,7 +13470,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13261,7 +13640,7 @@ $.$defineNativeClass('IDBIndex', ["name?"], {
     return this._get_1$1(key);
   if (t1)
     return this._get_2$1(key);
-  throw $.$$throw($.CTC43);
+  throw $.$$throw($.CTC42);
 },
  _get_1$1: function(key) {
   return this.get($.callTypeCheck(key, 'is$_IDBKeyRangeImpl'));
@@ -13456,6 +13835,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13470,7 +13857,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13513,6 +13900,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13527,7 +13922,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13570,6 +13965,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13584,7 +13987,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13755,6 +14158,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13769,7 +14180,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -13863,6 +14274,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -13877,7 +14296,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -14067,6 +14486,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -14081,7 +14508,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -14096,7 +14523,7 @@ return this[index];
  is$Iterable: function() { return true; }
 });
 
-$.$defineNativeClass('Navigator', [], {
+$.$defineNativeClass('Navigator', ["userAgent?"], {
  is$_NavigatorImpl: function() { return true; },
  is$Object: function() { return true; }
 });
@@ -14157,6 +14584,7 @@ this.textContent = value;
 });
 
 $.$defineNativeClass('NodeIterator', [], {
+ filter$1: function(arg0) { return this.filter.call$1(arg0); },
  is$Object: function() { return true; }
 });
 
@@ -14239,6 +14667,28 @@ $.$defineNativeClass('NodeList', ["_parent?", "length?"], {
 }
   } else {
     return Object.prototype.forEach$1.call(this, f);
+  }
+
+},
+ map$1: function(f) {
+  if (Object.getPrototypeOf(this).hasOwnProperty('map$1')) {
+  {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+}
+  } else {
+    return Object.prototype.map$1.call(this, f);
+  }
+
+},
+ filter$1: function(f) {
+  if (Object.getPrototypeOf(this).hasOwnProperty('filter$1')) {
+  {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._NodeListWrapper$($._Collections_filter(this, [], f));
+}
+  } else {
+    return Object.prototype.filter$1.call(this, f);
   }
 
 },
@@ -14566,6 +15016,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -14583,7 +15041,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -14754,6 +15212,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -14768,7 +15234,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -14817,6 +15283,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -14831,7 +15305,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -14889,6 +15363,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -14903,7 +15385,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -15018,6 +15500,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -15032,7 +15522,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -15330,6 +15820,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -15344,7 +15842,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -15447,6 +15945,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -15461,7 +15967,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -15609,6 +16115,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -15623,7 +16137,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -15761,6 +16275,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -15775,7 +16297,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -15887,6 +16409,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -15901,7 +16431,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16042,6 +16572,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16056,7 +16594,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16123,6 +16661,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16137,7 +16683,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16191,6 +16737,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16205,7 +16759,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16279,6 +16833,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16293,7 +16855,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16441,6 +17003,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16455,7 +17025,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16575,6 +17145,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16589,7 +17167,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16650,6 +17228,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16664,7 +17250,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16735,6 +17321,14 @@ return this[index];
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16749,7 +17343,7 @@ return this[index];
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16779,6 +17373,7 @@ $.$defineNativeClass('WebKitTransitionEvent', [], {
 });
 
 $.$defineNativeClass('TreeWalker', [], {
+ filter$1: function(arg0) { return this.filter.call$1(arg0); },
  is$Object: function() { return true; }
 });
 
@@ -16820,6 +17415,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16834,7 +17437,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16877,6 +17480,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16891,7 +17502,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -16934,6 +17545,14 @@ this[index] = value
  forEach$1: function(f) {
   return $._Collections_forEach(this, $.functionTypeCheck(f, 'is$Function'));
 },
+ map$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_map(this, [], f);
+},
+ filter$1: function(f) {
+  $.functionTypeCheck(f, 'is$Function');
+  return $._Collections_filter(this, [], f);
+},
  some$1: function(f) {
   return $._Collections_some(this, $.functionTypeCheck(f, 'is$Function'));
 },
@@ -16948,7 +17567,7 @@ this[index] = value
 },
  removeRange$2: function(start, rangeLength) {
   $.intTypeCheck(start, 'is$$int');
-  throw $.$$throw($.CTC35);
+  throw $.$$throw($.CTC34);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
   $.intTypeCheck(rangeLength, 'is$$int');
@@ -17115,7 +17734,7 @@ $.$defineNativeClass('WheelEvent', [], {
  is$Object: function() { return true; }
 });
 
-$.$defineNativeClass('DOMWindow', ["length?", "localStorage?", "name?"], {
+$.$defineNativeClass('DOMWindow', ["length?", "localStorage?", "name?", "navigator?"], {
  get$_top: function() {
 return this.top;
 },
@@ -17171,7 +17790,7 @@ return this.top;
  is$Object: function() { return true; }
 });
 
-$.$defineNativeClass('WorkerContext', [], {
+$.$defineNativeClass('WorkerContext', ["navigator?"], {
  get$on: function() {
   if (Object.getPrototypeOf(this).hasOwnProperty('get$on')) {
   {
@@ -17225,7 +17844,7 @@ $.$defineNativeClass('WorkerLocation', [], {
  is$Object: function() { return true; }
 });
 
-$.$defineNativeClass('WorkerNavigator', [], {
+$.$defineNativeClass('WorkerNavigator', ["userAgent?"], {
  is$_WorkerNavigatorImpl: function() { return true; },
  is$Object: function() { return true; }
 });
