@@ -1,6 +1,6 @@
 #import('dart:html');
 
-#import('package:dartlib/dartlib.dart');
+#import('package:bot/bot.dart');
 #import('package:sweeper.dart/sweeper.dart');
 #import('package:sweeper.dart/canvas.dart');
 

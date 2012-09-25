@@ -140,11 +140,11 @@ class GameElement extends ElementParentImpl {
       reveals = new NumberEnumerable.fromRange(0, game.field.length)
           .map((i) {
             final t = game.field.getCoordinate(i);
-            final c = new Coordinate(t.Item1, t.Item2);
+            final c = new Coordinate(t.item1, t.item2);
             return new Tuple(c, game.getSquareState(c.x, c.y));
           })
-          .filter((t2) => t2.Item2 == SquareState.mine || t2.Item2 == SquareState.hidden)
-          .map((t2) => t2.Item1)
+          .filter((t2) => t2.item2 == SquareState.mine || t2.item2 == SquareState.hidden)
+          .map((t2) => t2.item1)
           .toList();
     }
 
@@ -258,7 +258,7 @@ class GameElement extends ElementParentImpl {
           final adjHidden = $(game.field.getAdjacentIndices(x, y))
               .map((i) {
                 final t = game.field.getCoordinate(i);
-                return new Coordinate(t.Item1, t.Item2);
+                return new Coordinate(t.item1, t.item2);
               })
               .filter((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();

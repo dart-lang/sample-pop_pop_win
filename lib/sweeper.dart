@@ -1,7 +1,7 @@
 #library('sweeper');
 
 #import('dart:math', prefix:'math');
-#import('package:dartlib/dartlib.dart');
+#import('package:bot/bot.dart');
 
 #source('sweeper/field.dart');
 #source('sweeper/game.dart');

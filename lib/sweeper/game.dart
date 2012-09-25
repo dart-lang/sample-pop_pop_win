@@ -209,8 +209,8 @@ class Game {
     } else {
       for(final i in hidden) {
         final c = field.getCoordinate(i);
-        if(canReveal(c.Item1, c.Item2)) {
-          reveals.addAll(reveal(c.Item1, c.Item2));
+        if(canReveal(c.item1, c.item2)) {
+          reveals.addAll(reveal(c.item1, c.item2));
         }
       }
     }
@@ -230,7 +230,7 @@ class Game {
       for(final i in field.getAdjacentIndices(x, y)) {
         if(_states[i] == SquareState.hidden) {
           final c = field.getCoordinate(i);
-          reveals.addAll(_doReveal(c.Item1, c.Item2));
+          reveals.addAll(_doReveal(c.item1, c.item2));
           assert(state == GameState.started || state == GameState.won);
         }
       }

@@ -2,9 +2,9 @@
 
 #import('dart:html');
 #import('dart:math');
-#import('package:dartlib/dartlib.dart');
-#import('package:dartlib/html.dart');
-#import('package:dartlib/retained.dart');
+#import('package:bot/bot.dart');
+#import('package:bot/html.dart');
+#import('package:bot/retained.dart');
 #import('sweeper.dart');
 #import('html.dart');
 

@@ -2,5 +2,5 @@ name: sweeper.dart
 dependencies:
   unittest:
     sdk: unittest
-  dartlib:
-    git: git://github.com/kevmoo/dartlib.git
+  bot:
+    git: git://github.com/kevmoo/bot.dart.git

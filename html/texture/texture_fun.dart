@@ -4,8 +4,8 @@
 #import('../../lib/sweeper.dart');
 #import('../../lib/canvas.dart');
 
-#import('package:dartlib/dartlib.dart');
-#import('package:dartlib/retained.dart');
+#import('package:bot/bot.dart');
+#import('package:bot/retained.dart');
 
 #source('../texture_data.dart');
 

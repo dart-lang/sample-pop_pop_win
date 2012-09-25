@@ -24,15 +24,15 @@ class BoardElement extends ElementParentImpl {
 
       for(int i=0;i<_elements.length;i++) {
         final coords = _elements.getCoordinate(i);
-        final se = new SquareElement(coords.Item1, coords.Item2);
+        final se = new SquareElement(coords.item1, coords.item2);
         se.registerParent(this);
 
         ClickManager.addHandler(se, _parent._squareClicked);
 
         // position the square
         final etx = se.addTransform();
-        etx.setToTranslation(coords.Item1 * SquareElement._size,
-            coords.Item2 * SquareElement._size);
+        etx.setToTranslation(coords.item1 * SquareElement._size,
+            coords.item2 * SquareElement._size);
 
         _elements[i] = se;
       }
