@@ -1,5 +1,3 @@
-
-
 // TODO: error events?
 class ResourceLoader<T> {
   static const String StateUnloaded = 'unloaded';
