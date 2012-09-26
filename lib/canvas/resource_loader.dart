@@ -1,9 +1,36 @@
-String _getBlobUrl(Blob blob) {
-  return window.createObjectUrl(blob);
-}
+class _ResourceEntry<T> {
+  final String url;
+  T _resource;
+  String _blobUrl;
 
-void revokeBlobUrl(String blobUrl) {
-  window.revokeObjectUrl(blobUrl);
+  _ResourceEntry(this.url);
+
+  void setResource(T resource) {
+    assert(resource != null);
+    assert(_resource == null);
+    _resource = resource;
+  }
+
+  bool get completed => _resource != null;
+
+  T get resource => _resource;
+
+  bool matchesBlobUrl(String blobUrl) {
+    assert(blobUrl != null);
+    return blobUrl == _blobUrl;
+  }
+
+  String getBlobUrl(Blob blob) {
+    assert(blob != null);
+    assert(_blobUrl == null);
+    _blobUrl = window.createObjectUrl(blob);
+    return _blobUrl;
+  }
+
+  void revokeBlobUrl() {
+    assert(_blobUrl != null);
+    window.revokeObjectUrl(_blobUrl);
+  }
 }
 
 // TODO: error events?
@@ -13,20 +40,18 @@ class ResourceLoader<T> {
   static const String StateLoaded = 'loaded';
   static const String StateError = 'error';
 
-  final ReadOnlyCollection<String> _urlList;
+  final ReadOnlyCollection<_ResourceEntry<T>> _entries;
   final EventHandle<EventArgs> _loadedEvent= new EventHandle<EventArgs>();
   final EventHandle<EventArgs> _progressEvent = new EventHandle<EventArgs>();
-  final Map<String, T> _resources;
-  final Map<String, String> _blobUrlMap = new Map<String, String>();
 
   String _state = StateUnloaded;
 
   ResourceLoader(Iterable<String> urlList) :
-    _urlList = $(urlList).toReadOnlyCollection(),
-    // DARTBUG: http://code.google.com/p/dart/issues/detail?id=5350
-    _resources = new Map<String, T>();
+    _entries = $(urlList)
+    .map((url) => new _ResourceEntry(url))
+    .toReadOnlyCollection();
 
-  int get completedCount => _resources.length;
+  int get completedCount => _entries.count((e) => e.completed);
 
   String get state => _state;
 
@@ -34,13 +59,13 @@ class ResourceLoader<T> {
 
   EventRoot get progress => _progressEvent;
 
-  T getResource(String url) => _resources[url];
+  T getResource(String url) => _getByUrl(url).resource;
 
   void load() {
     assert(_state == StateUnloaded);
     _state = StateLoading;
-    for(final url in _urlList) {
-      _httpLoad(url);
+    for(final e in _entries) {
+      _httpLoad(e.url);
     }
   }
 
@@ -50,7 +75,8 @@ class ResourceLoader<T> {
   // protected
   void _saveResourceFailed(String blobUrl) {
     // TODO: report error some how?
-    _revokeBlobUrl(blobUrl);
+    final e = _getByBlobUrl(blobUrl);
+    e.revokeBlobUrl();
   }
 
   // protected
@@ -58,20 +84,27 @@ class ResourceLoader<T> {
     assert(_state == StateLoading);
     assert(resource != null);
 
-    final url = _blobUrlMap[blobUrl];
-    _revokeBlobUrl(blobUrl);
+    final entry = _getByBlobUrl(blobUrl);
+    entry.revokeBlobUrl();
 
-    assert(url != null);
-    assert(!_resources.containsKey(url));
+    entry.setResource(resource);
 
-    _resources[url] = resource;
-
-    if(_resources.length == _urlList.length) {
+    if(_entries.every((e) => e.completed)) {
       _state = StateLoaded;
       _loadedEvent.fireEvent(EventArgs.empty);
     } else {
       _progressEvent.fireEvent(EventArgs.empty);
     }
+  }
+
+  _ResourceEntry<T> _getByUrl(String url) {
+    assert(url != null);
+    return _entries.single((e) => e.url == url);
+  }
+
+  _ResourceEntry<T> _getByBlobUrl(String blobUrl) {
+    assert(blobUrl != null);
+    return _entries.single((e) => e.matchesBlobUrl(blobUrl));
   }
 
   void _httpLoad(String url) {
@@ -100,9 +133,8 @@ class ResourceLoader<T> {
     final HttpRequest request = args.currentTarget;
     assert(request.readyState == HttpRequest.DONE);
     if(request.status == 200) {
-      assert(!_blobUrlMap.containsValue(url));
-      final blobUrl = _getBlobUrl(request.response);
-      _blobUrlMap[blobUrl] = url;
+      final e = _getByUrl(url);
+      final blobUrl = e.getBlobUrl(request.response);
       _doLoad(blobUrl);
     } else {
       _onError(url, args);
@@ -139,11 +171,5 @@ class ResourceLoader<T> {
 
   void _updateProgress(String url, int loaded, int total) {
     print(['progress', url, loaded, total]);
-  }
-
-  void _revokeBlobUrl(String blobUrl) {
-    assert(_blobUrlMap.containsKey(blobUrl));
-    revokeBlobUrl(blobUrl);
-    _blobUrlMap.remove(blobUrl);
   }
 }
