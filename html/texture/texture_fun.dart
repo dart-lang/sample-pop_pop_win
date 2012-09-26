@@ -1,8 +1,9 @@
 #import('dart:html');
 #import('dart:math');
 
-#import('../../lib/sweeper.dart');
-#import('../../lib/canvas.dart');
+#import('package:sweeper.dart/sweeper.dart');
+#import('package:sweeper.dart/canvas.dart');
+#import('package:sweeper.dart/resources.dart');
 
 #import('package:bot/bot.dart');
 #import('package:bot/retained.dart');

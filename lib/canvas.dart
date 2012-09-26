@@ -8,14 +8,11 @@
 #import('sweeper.dart');
 #import('html.dart');
 
-#source('canvas/audio_loader.dart');
 #source('canvas/board_element.dart');
 #source('canvas/game_background_element.dart');
 #source('canvas/game_element.dart');
 #source('canvas/game_root.dart');
-#source('canvas/image_loader.dart');
 #source('canvas/new_game_element.dart');
-#source('canvas/resource_loader.dart');
 #source('canvas/score_element.dart');
 #source('canvas/square_element.dart');
 #source('canvas/texture_animation_element.dart');

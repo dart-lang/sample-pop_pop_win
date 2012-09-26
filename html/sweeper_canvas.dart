@@ -3,6 +3,7 @@
 #import('package:bot/bot.dart');
 #import('package:sweeper.dart/sweeper.dart');
 #import('package:sweeper.dart/canvas.dart');
+#import('package:sweeper.dart/resources.dart');
 
 #source('texture_data.dart');
 
