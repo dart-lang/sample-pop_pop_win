@@ -54,7 +54,7 @@ $$.DateImplementation = {"":
   return $.Date_Date$fromMillisecondsSinceEpoch($.add(this.millisecondsSinceEpoch, duration.get$inMilliseconds()), this.isUtc);
 },
  difference$1: function(other) {
-  return $.Duration$(0, 0, 0, 0, $.sub(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch()));
+  return $.Duration$(0, 0, $.sub(this.millisecondsSinceEpoch, other.get$millisecondsSinceEpoch()), 0, 0);
 },
  get$year: function() {
   return $.Primitives_getYear(this);
@@ -1061,7 +1061,7 @@ $$.Duration = {"":
   var t2 = new $.Duration_toString_twoDigits();
   var t3 = this.inMilliseconds;
   if (t3 < 0)
-    return '-' + $.S($.Duration$(0, 0, 0, 0, -t3));
+    return '-' + $.S($.Duration$(0, 0, -t3, 0, 0));
   var twoDigitMinutes = t2.call$1($.remainder(this.get$inMinutes(), 60));
   var twoDigitSeconds = t2.call$1($.remainder(this.get$inSeconds(), 60));
   var threeDigitMs = t1.call$1($.remainder(t3, 1000));
@@ -4067,7 +4067,7 @@ $$.HighScoreView = {"":
   var t1 = !(milliseconds == null);
   var t2 = this._div;
   if (t1)
-    t2.set$innerHTML($.Duration$(0, 0, 0, $.tdiv(milliseconds, 1000), 0).toString$0());
+    t2.set$innerHTML($.Duration$(0, 0, 0, 0, $.tdiv(milliseconds, 1000)).toString$0());
   else
     t2.set$innerHTML('');
 },
@@ -7449,7 +7449,7 @@ $.le = function(a, b) {
   return typeof a === 'number' && typeof b === 'number' ? a <= b : $.le$slow(a, b);
 };
 
-$.JSSyntaxRegExp$ = function(pattern, multiLine, ignoreCase) {
+$.JSSyntaxRegExp$ = function(pattern, ignoreCase, multiLine) {
   return new $.JSSyntaxRegExp(ignoreCase, multiLine, pattern);
 };
 
@@ -7528,7 +7528,7 @@ $.regExpGetNative = function(regExp) {
   return r == null ? regExp._re = $.regExpMakeNative(regExp, false) : r;
 };
 
-$.Duration$ = function(days, hours, minutes, seconds, milliseconds) {
+$.Duration$ = function(days, hours, milliseconds, minutes, seconds) {
   var t1 = days * 86400000 + hours * 3600000 + minutes * 60000;
   var t2 = $.mul(seconds, 1000);
   if (typeof t2 !== 'number')
