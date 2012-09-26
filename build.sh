@@ -6,7 +6,6 @@ core_cmd="dart
 $DART_SDK/$dart2js
 --package-root=$PACK_DIR
 --throw-on-error
---checked
 -v"
 
 function build {
