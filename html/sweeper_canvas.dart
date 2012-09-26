@@ -19,7 +19,7 @@ AudioLoader _audioLoader;
 main() {
   _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName]);
   _imageLoader.loaded.add(_onLoaded);
-  _imageLoader.progress.add(_onLoaded);
+  _imageLoader.progress.add(_onProgress);
   _imageLoader.load();
 
 
@@ -30,8 +30,22 @@ main() {
   final audioContext = new AudioContext();
   _audioLoader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
   _audioLoader.loaded.add(_onLoaded);
-  _audioLoader.progress.add(_onLoaded);
+  _audioLoader.progress.add(_onProgress);
   _audioLoader.load();
+}
+
+void _onProgress(args) {
+  int completedBytes = _imageLoader.completedBytes;
+  int totalBytes = _imageLoader.totalBytes;
+
+  if(_audioLoader != null) {
+    completedBytes += _audioLoader.completedBytes;
+    totalBytes += _audioLoader.totalBytes;
+  }
+
+  final percent = completedBytes / totalBytes;
+  final percentClean = (percent * 1000).floor() / 10;
+  print([percentClean, completedBytes, totalBytes]);
 }
 
 void _onLoaded(args) {

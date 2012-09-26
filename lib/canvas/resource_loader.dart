@@ -2,13 +2,37 @@ class _ResourceEntry<T> {
   final String url;
   T _resource;
   String _blobUrl;
+  int _total = null, _completed = 0;
 
   _ResourceEntry(this.url);
+
+  int get totalBytes => _total;
+
+  int get completedBytes => _completed;
 
   void setResource(T resource) {
     assert(resource != null);
     assert(_resource == null);
     _resource = resource;
+  }
+
+  bool updateProgress(int completed, int total) {
+    assert(completed != null);
+    assert(total != null);
+    assert(completed <= total);
+    assert(_total == null || _total == total);
+
+    var changed = false;
+    if(_completed != completed) {
+      _completed = completed;
+      changed = true;
+    }
+
+    if(_total != total) {
+      _total = total;
+      changed = true;
+    }
+    return changed;
   }
 
   bool get completed => _resource != null;
@@ -40,6 +64,8 @@ class ResourceLoader<T> {
   static const String StateLoaded = 'loaded';
   static const String StateError = 'error';
 
+  static const int _defaultSize = 2000;
+
   final ReadOnlyCollection<_ResourceEntry<T>> _entries;
   final EventHandle<EventArgs> _loadedEvent= new EventHandle<EventArgs>();
   final EventHandle<EventArgs> _progressEvent = new EventHandle<EventArgs>();
@@ -60,6 +86,20 @@ class ResourceLoader<T> {
   EventRoot get progress => _progressEvent;
 
   T getResource(String url) => _getByUrl(url).resource;
+
+  int get completedBytes {
+    return _entries.selectNumbers((e) => e.completedBytes).sum();
+  }
+
+  int get totalBytes {
+    return _entries.selectNumbers((e) {
+      if(e.totalBytes == null) {
+        return _defaultSize;
+      } else {
+        return e.totalBytes;
+      }
+    }).sum();
+  }
 
   void load() {
     assert(_state == StateUnloaded);
@@ -92,8 +132,6 @@ class ResourceLoader<T> {
     if(_entries.every((e) => e.completed)) {
       _state = StateLoaded;
       _loadedEvent.fireEvent(EventArgs.empty);
-    } else {
-      _progressEvent.fireEvent(EventArgs.empty);
     }
   }
 
@@ -109,19 +147,20 @@ class ResourceLoader<T> {
 
   void _httpLoad(String url) {
     final request = new HttpRequest();
-
     request.responseType = 'blob';
 
-    request.on.abort.add((args) => _onHttpEvent(url, args));
-    request.on.error.add((args) => _onHttpEvent(url, args));
+    final e = _getByUrl(url);
+
+    request.on.abort.add((args) => _onError(e, args));
+    request.on.error.add((args) => _onError(e, args));
 
     // use loadEnd instead
     //request.on.load.add(_onHttpEvent);
-    request.on.loadEnd.add((args) => _onLoadEnd(url, args));
+    request.on.loadEnd.add((args) => _onLoadEnd(e, args));
 
     // loadStart is not that interesting
     //request.on.loadStart.add(_onHttpEvent);
-    request.on.progress.add((args) => _onHttpEvent(url, args));
+    request.on.progress.add((args) => _onProgress(e, args));
 
     // doesn't seem to add anything over other methods
     // request.on.readyStateChange.add(_onHttpEvent);
@@ -129,36 +168,23 @@ class ResourceLoader<T> {
     request.send();
   }
 
-  void _onLoadEnd(String url, HttpRequestProgressEvent args) {
+  void _onLoadEnd(_ResourceEntry<T> entry, HttpRequestProgressEvent args) {
     final HttpRequest request = args.currentTarget;
     assert(request.readyState == HttpRequest.DONE);
     if(request.status == 200) {
-      final e = _getByUrl(url);
-      final blobUrl = e.getBlobUrl(request.response);
+      final blobUrl = entry.getBlobUrl(request.response);
       _doLoad(blobUrl);
     } else {
-      _onError(url, args);
+      _onError(entry, args);
     }
   }
 
-  void _onHttpEvent(String url, HttpRequestProgressEvent args) {
-    final HttpRequest request = args.currentTarget;
-    assert(url != null);
-
-    if(args.type == 'progress') {
-      _onProgress(url, args);
-      // let's do progress!
-    } else {
-      _onError(url, args);
-    }
-  }
-
-  void _onError(String url, HttpRequestProgressEvent args) {
+  void _onError(_ResourceEntry<T> entry, HttpRequestProgressEvent args) {
     // some error thingy here...
     throw 'wtf?';
   }
 
-  void _onProgress(String url, HttpRequestProgressEvent args) {
+  void _onProgress(_ResourceEntry<T> entry, HttpRequestProgressEvent args) {
     assert(args.type == 'progress');
     assert(args.lengthComputable);
 
@@ -166,10 +192,8 @@ class ResourceLoader<T> {
     assert(args.totalSize == args.total);
     assert(args.position == args.loaded);
 
-    _updateProgress(url, args.loaded, args.totalSize);
-  }
-
-  void _updateProgress(String url, int loaded, int total) {
-    print(['progress', url, loaded, total]);
+    if(entry.updateProgress(args.loaded, args.totalSize)) {
+      _progressEvent.fireEvent(EventArgs.empty);
+    }
   }
 }
