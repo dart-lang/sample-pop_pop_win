@@ -80,10 +80,10 @@ $$.DateImplementation = {"":
  DateImplementation$fromMillisecondsSinceEpoch$2: function(millisecondsSinceEpoch, isUtc) {
   var t1 = this.millisecondsSinceEpoch;
   if ($.gtB($.abs(t1), 8640000000000000))
-    throw $.$$throw($.IllegalArgumentException$(t1));
+    throw $.$$throw($.ArgumentError$(t1));
   t1 = this.isUtc;
   if (t1 == null)
-    throw $.$$throw($.IllegalArgumentException$(t1));
+    throw $.$$throw($.ArgumentError$(t1));
 },
  DateImplementation$now$0: function() {
   $.Primitives_lazyAsJsDate(this);
@@ -179,7 +179,7 @@ $$.FutureImpl = {"":
 },
  _setException$2: function(exception, stackTrace) {
   if (exception == null)
-    throw $.$$throw($.IllegalArgumentException$(null));
+    throw $.$$throw($.ArgumentError$(null));
   if (this._isComplete === true)
     throw $.$$throw($.FutureAlreadyCompleteException$());
   this._exception = exception;
@@ -1070,6 +1070,22 @@ $$.Duration = {"":
  is$Duration: true
 };
 
+$$.ArgumentError = {"":
+ ["message"],
+ "super": "Object",
+ toString$0: function() {
+  var t1 = this.message;
+  if (!(t1 == null))
+    return 'Illegal argument(s): ' + $.S(t1);
+  return 'Illegal argument(s)';
+}
+};
+
+$$.IllegalArgumentException = {"":
+ ["message"],
+ "super": "ArgumentError"
+};
+
 $$.NoSuchMethodError = {"":
  ["_receiver", "_functionName", "_arguments", "_existingArgumentNames"],
  "super": "Object",
@@ -1123,15 +1139,6 @@ $$.ObjectNotClosureException = {"":
  "super": "Object",
  toString$0: function() {
   return 'Object is not closure';
-},
- is$Exception: true
-};
-
-$$.IllegalArgumentException = {"":
- ["_arg"],
- "super": "Object",
- toString$0: function() {
-  return 'Illegal argument(s): ' + $.S(this._arg);
 },
  is$Exception: true
 };
@@ -1239,6 +1246,9 @@ $$.Object = {"":
  "super": "",
  operator$eq$1: function(other) {
   return this === other;
+},
+ hashCode$0: function() {
+  return $.Primitives_objectHashCode(this);
 },
  toString$0: function() {
   return $.Primitives_objectToString(this);
@@ -3060,7 +3070,7 @@ $$._Random = {"":
  "super": "Object",
  nextInt$1: function(max) {
   if (max < 0)
-    throw $.$$throw($.IllegalArgumentException$('negative max: ' + $.S(max)));
+    throw $.$$throw($.ArgumentError$('negative max: ' + $.S(max)));
   if (max > 4294967295)
     max = 4294967295;
   return (Math.random() * max) >>> 0;
@@ -3250,8 +3260,8 @@ $$.Game = {"":
   else
     for (t1 = $.iterator(hidden); t1.hasNext$0() === true;) {
       var c = t3.getCoordinate$1(t1.next$0());
-      if (this.canReveal$2(c.get$Item1(), c.get$Item2()) === true)
-        $.addAll(reveals, this.reveal$2(c.get$Item1(), c.get$Item2()));
+      if (this.canReveal$2(c.get$item1(), c.get$item2()) === true)
+        $.addAll(reveals, this.reveal$2(c.get$item1(), c.get$item2()));
     }
   return reveals;
 },
@@ -3298,8 +3308,8 @@ $$.Game = {"":
       else
         for (t1 = $.iterator(hidden); t1.hasNext$0() === true;) {
           var c = t3.getCoordinate$1(t1.next$0());
-          if (this.canReveal$2(c.get$Item1(), c.get$Item2()) === true)
-            $.addAll(reveals, this.reveal$2(c.get$Item1(), c.get$Item2()));
+          if (this.canReveal$2(c.get$item1(), c.get$item2()) === true)
+            $.addAll(reveals, this.reveal$2(c.get$item1(), c.get$item2()));
         }
       return reveals;
   }
@@ -3333,7 +3343,7 @@ $$.Game = {"":
           throw $.ioore(t4);
         if ($.eqB(t1[t4], $.CTC23)) {
           var c = t2.getCoordinate$1(t4);
-          $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
+          $.addAll(reveals, this._doReveal$2(c.get$item1(), c.get$item2()));
         }
       }
   }
@@ -3397,7 +3407,7 @@ $$.Game = {"":
                 var t4 = t3.next$0();
                 if ($.eqB($.index(t1, t4), $.CTC23)) {
                   var c = t2.getCoordinate$1(t4);
-                  $.addAll(reveals, this._doReveal$2(c.get$Item1(), c.get$Item2()));
+                  $.addAll(reveals, this._doReveal$2(c.get$item1(), c.get$item2()));
                 }
               }
         }
@@ -3574,18 +3584,21 @@ $$.GlobalId = {"":
 };
 
 $$.Tuple = {"":
- ["Item1?", "Item2?"],
+ ["item1?", "item2?"],
  "super": "Object",
  operator$eq$1: function(other) {
-  return !(other == null) && $.eqB(this.Item1, other.get$Item1()) && $.eqB(this.Item2, other.get$Item2());
+  return !(other == null) && $.eqB(this.item1, other.get$item1()) && $.eqB(this.item2, other.get$item2());
 },
  toString$0: function() {
-  return 'Tuple: Item1: ' + $.S(this.Item1) + ', Item2: ' + $.S(this.Item2);
+  return '{item1: ' + $.S(this.item1) + ', item2: ' + $.S(this.item2) + '}';
+},
+ hashCode$0: function() {
+  return $.Util_getHashCode([this.item1, this.item2]);
 }
 };
 
 $$.NullArgumentException = {"":
- ["theArg", "_arg"],
+ ["theArg", "message"],
  "super": "IllegalArgumentException",
  toString$0: function() {
   return 'Null argument(s): ' + this.theArg;
@@ -3599,8 +3612,8 @@ $$.InvalidOperationException = {"":
 };
 
 $$.DetailedIllegalArgumentException = {"":
- ["argument", "message", "_arg"],
- "super": "IllegalArgumentException",
+ ["argument", "message"],
+ "super": "ArgumentError",
  toString$0: function() {
   var t1 = this.message;
   var t2 = t1 == null || $.eqB($.get$length(t1), 0);
@@ -3624,9 +3637,6 @@ $$.Enumerable = {"":
     if (f.call$1(t1.next$0()) === true)
       return true;
   return false;
-},
- get$length: function() {
-  return this.count$0();
 },
  count$1: function(f) {
   if (f == null)
@@ -3681,6 +3691,9 @@ $$._FuncEnumerable = {"":
  _func$1: function(arg0) { return this._func.call$1(arg0); },
  iterator$0: function() {
   return this._func$1($.iterator(this._source));
+},
+ get$length: function() {
+  return this.count$0();
 }
 };
 
@@ -4965,19 +4978,19 @@ $$.Enumerable_isEmpty_anon = {"":
 }
 };
 
-$$.Enumerable_count_anon = {"":
- [],
- "super": "Closure",
- call$1: function(a) {
-  return true;
-}
-};
-
 $$.Enumerable_filter_anon = {"":
  ["f_0"],
  "super": "Closure",
  call$1: function(s) {
   return $._WhereIterator$(s, this.f_0);
+}
+};
+
+$$.Enumerable_count_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(a) {
+  return true;
 }
 };
 
@@ -5351,7 +5364,7 @@ $.set$length = function(receiver, newLength) {
   if ($.isJsArray(receiver)) {
     $.checkNull(newLength);
     if (!(typeof newLength === 'number' && Math.floor(newLength) === newLength))
-      throw $.$$throw($.IllegalArgumentException$(newLength));
+      throw $.$$throw($.ArgumentError$(newLength));
     if (newLength < 0)
       throw $.$$throw($.IndexOutOfRangeException$(newLength));
     $.checkGrowable(receiver, 'set length');
@@ -5368,7 +5381,7 @@ $._Device_userAgent = function() {
 $.checkNum = function(value) {
   if (!(typeof value === 'number')) {
     $.checkNull(value);
-    throw $.$$throw($.IllegalArgumentException$(value));
+    throw $.$$throw($.ArgumentError$(value));
   }
   return value;
 };
@@ -5483,7 +5496,7 @@ $._WebSocketEventsImpl$ = function(_ptr) {
 $.shr = function(a, b) {
   if ($.checkNumbers(a, b)) {
     if (b < 0)
-      throw $.$$throw($.IllegalArgumentException$(b));
+      throw $.$$throw($.ArgumentError$(b));
     if (a > 0) {
       if (b > 31)
         return 0;
@@ -5859,8 +5872,8 @@ $.makeLiteralMap = function(keyValuePairs) {
   return result;
 };
 
-$.Tuple$ = function(Item1, Item2) {
-  return new $.Tuple(Item1, Item2);
+$.Tuple$ = function(item1, item2) {
+  return new $.Tuple(item1, item2);
 };
 
 $.NoMoreElementsException$ = function() {
@@ -5921,9 +5934,9 @@ $.listInsertRange = function(receiver, start, length$, initialValue) {
   $.checkNull(start);
   $.checkNull(length$);
   if (!(typeof length$ === 'number' && Math.floor(length$) === length$))
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   if (length$ < 0)
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   var receiverLength = receiver.length;
   if (start < 0 || start > receiverLength)
     throw $.$$throw($.IndexOutOfRangeException$(start));
@@ -5989,7 +6002,7 @@ $._MediaStreamTrackListEventsImpl$ = function(_ptr) {
 $.S = function(value) {
   var res = $.toString(value);
   if (!(typeof res === 'string'))
-    throw $.$$throw($.IllegalArgumentException$(value));
+    throw $.$$throw($.ArgumentError$(value));
   return res;
 };
 
@@ -6097,10 +6110,6 @@ $.typeNameInSafari = function(obj) {
   return name$;
 };
 
-$.add = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
-};
-
 $._ElementAttributeMap$ = function(_element) {
   return new $._ElementAttributeMap(_element);
 };
@@ -6148,6 +6157,10 @@ $.add$slow = function(a, b) {
 
 $.jsHasOwnProperty = function(jsObject, property) {
   return jsObject.hasOwnProperty(property);
+};
+
+$.ArgumentError$ = function(message) {
+  return new $.ArgumentError(message);
 };
 
 $._PendingSendPortFinder$ = function() {
@@ -6236,9 +6249,9 @@ $.index$slow = function(a, index) {
   if (typeof a === 'string' || $.isJsArray(a)) {
     if (!(typeof index === 'number' && Math.floor(index) === index)) {
       if (!(typeof index === 'number'))
-        throw $.$$throw($.IllegalArgumentException$(index));
+        throw $.$$throw($.ArgumentError$(index));
       if (!($.truncate(index) === index))
-        throw $.$$throw($.IllegalArgumentException$(index));
+        throw $.$$throw($.ArgumentError$(index));
     }
     if ($.ltB(index, 0) || $.geB(index, $.get$length(a)))
       throw $.$$throw($.IndexOutOfRangeException$(index));
@@ -6298,6 +6311,10 @@ $.stringReplaceAllUnchecked = function(receiver, from, to) {
     return $.stringReplaceJS(receiver, $.regExpMakeNative($.JSSyntaxRegExp$(from.replace($.regExpMakeNative($.CTC13, true), "\\$&"), false, false), true), to);
 };
 
+$.add = function(a, b) {
+  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
+};
+
 $.ReadOnlyCollection$ = function(source) {
   return new $.ReadOnlyCollection($.ListImplementation_List$from(source));
 };
@@ -6323,9 +6340,9 @@ $.min = function(a, b) {
       }
       return a;
     }
-    throw $.$$throw($.IllegalArgumentException$(b));
+    throw $.$$throw($.ArgumentError$(b));
   }
-  throw $.$$throw($.IllegalArgumentException$(a));
+  throw $.$$throw($.ArgumentError$(a));
 };
 
 $.checkMutable = function(list, reason) {
@@ -6361,6 +6378,10 @@ $.xor = function(a, b) {
   if ($.checkNumbers(a, b))
     return (a ^ b) >>> 0;
   return a.operator$xor$1(b);
+};
+
+$.hashCodeForNativeObject = function(object) {
+  return $.Primitives_objectHashCode(object);
 };
 
 $._window = function() {
@@ -6422,7 +6443,7 @@ $.stringContainsUnchecked = function(receiver, other, startIndex) {
 $.shl = function(a, b) {
   if ($.checkNumbers(a, b)) {
     if (b < 0)
-      throw $.$$throw($.IllegalArgumentException$(b));
+      throw $.$$throw($.ArgumentError$(b));
     if (b > 31)
       return 0;
     return (a << b) >>> 0;
@@ -6488,19 +6509,19 @@ $.getRange = function(receiver, start, length$) {
   $.checkNull(start);
   $.checkNull(length$);
   if (!(typeof start === 'number' && Math.floor(start) === start))
-    throw $.$$throw($.IllegalArgumentException$(start));
+    throw $.$$throw($.ArgumentError$(start));
   if (!(typeof length$ === 'number' && Math.floor(length$) === length$))
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   var t1 = length$ < 0;
   if (t1)
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   if (start < 0)
     throw $.$$throw($.IndexOutOfRangeException$(start));
   var end = start + length$;
   if ($.gtB(end, $.get$length(receiver)))
     throw $.$$throw($.IndexOutOfRangeException$(length$));
   if (t1)
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   return receiver.slice(start, end);
 };
 
@@ -6510,7 +6531,7 @@ $._Lists_getRange = function(a, start, length$, accumulator) {
   if (typeof start !== 'number')
     return $._Lists_getRange$bailout(1, a, start, length$, accumulator);
   if ($.ltB(length$, 0))
-    throw $.$$throw($.IllegalArgumentException$('length'));
+    throw $.$$throw($.ArgumentError$('length'));
   if (start < 0)
     throw $.$$throw($.IndexOutOfRangeException$(start));
   if (typeof length$ !== 'number')
@@ -6639,8 +6660,8 @@ $.max = function(a, b) {
       return b;
     return a;
   }
-  throw $.$$throw($.IllegalArgumentException$(b));
-  throw $.$$throw($.IllegalArgumentException$(a));
+  throw $.$$throw($.ArgumentError$(b));
+  throw $.$$throw($.ArgumentError$(a));
 };
 
 $._FrozenElementList$_wrap = function(_nodeList) {
@@ -6682,7 +6703,7 @@ $.getFunctionForTypeNameOf = function() {
 $.indexSet$slow = function(a, index, value) {
   if ($.isJsArray(a)) {
     if (!(typeof index === 'number' && Math.floor(index) === index))
-      throw $.$$throw($.IllegalArgumentException$(index));
+      throw $.$$throw($.ArgumentError$(index));
     if (index < 0 || $.geB(index, $.get$length(a)))
       throw $.$$throw($.IndexOutOfRangeException$(index));
     $.checkMutable(a, 'indexed set');
@@ -6690,6 +6711,16 @@ $.indexSet$slow = function(a, index, value) {
     return;
   }
   a.operator$indexSet$2(index, value);
+};
+
+$.Primitives_objectHashCode = function(object) {
+  var hash = object.$identityHash;
+  if (hash == null) {
+    hash = $.add($.Primitives_hashCodeSeed, 1);
+    $.Primitives_hashCodeSeed = hash;
+    object.$identityHash = hash;
+  }
+  return hash;
 };
 
 $.gt = function(a, b) {
@@ -6832,12 +6863,6 @@ $.abs = function(receiver) {
   return Math.abs(receiver);
 };
 
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver))
-    return $.ListIterator$(receiver);
-  return receiver.iterator$0();
-};
-
 $.Primitives_getMilliseconds = function(receiver) {
   return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCMilliseconds() : $.Primitives_lazyAsJsDate(receiver).getMilliseconds();
 };
@@ -6845,6 +6870,12 @@ $.Primitives_getMilliseconds = function(receiver) {
 $.dynamicSetMetadata = function(inputTable) {
   var t1 = $.buildDynamicMetadata(inputTable);
   $._dynamicMetadata(t1);
+};
+
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver))
+    return $.ListIterator$(receiver);
+  return receiver.iterator$0();
 };
 
 $.typeNameInFirefox = function(obj) {
@@ -6922,7 +6953,7 @@ $.Primitives_newList = function(length$) {
   if (length$ == null)
     return new Array();
   if (!(typeof length$ === 'number' && Math.floor(length$) === length$) || length$ < 0)
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   var result = new Array(length$);
   result.fixed$length = true;
   return result;
@@ -6989,7 +7020,7 @@ $._FileReaderEventsImpl$ = function(_ptr) {
 };
 
 $.DetailedIllegalArgumentException$ = function(arg, message) {
-  return new $.DetailedIllegalArgumentException(arg, message, '');
+  return new $.DetailedIllegalArgumentException(arg, message);
 };
 
 $.HashMapImplementation__nextProbe = function(currentProbe, numberOfProbes, length$) {
@@ -7023,7 +7054,7 @@ $._EventListenerListImpl$ = function(_ptr, _type) {
 };
 
 $.iae = function(argument) {
-  throw $.$$throw($.IllegalArgumentException$(argument));
+  throw $.$$throw($.ArgumentError$(argument));
 };
 
 $._DOMApplicationCacheEventsImpl$ = function(_ptr) {
@@ -7042,7 +7073,7 @@ $.StringImplementation__toJsStringArray = function(strings) {
       var string = strings[i];
       $.checkNull(string);
       if (!(typeof string === 'string'))
-        throw $.$$throw($.IllegalArgumentException$(string));
+        throw $.$$throw($.ArgumentError$(string));
     }
     var array = strings;
   } else {
@@ -7053,7 +7084,7 @@ $.StringImplementation__toJsStringArray = function(strings) {
       string = strings[i];
       $.checkNull(string);
       if (!(typeof string === 'string'))
-        throw $.$$throw($.IllegalArgumentException$(string));
+        throw $.$$throw($.ArgumentError$(string));
       if (i < 0 || i >= array.length)
         throw $.ioore(i);
       array[i] = string;
@@ -7145,7 +7176,7 @@ $.unwrapException = function(ex) {
   if (ex instanceof RangeError) {
     if (typeof message === 'string' && $.contains$1(message, 'call stack') === true)
       return $.StackOverflowException$();
-    return $.IllegalArgumentException$('');
+    return $.ArgumentError$('');
   }
   if (typeof InternalError == 'function' && ex instanceof InternalError)
     if (typeof message === 'string' && message === 'too much recursion')
@@ -7163,7 +7194,7 @@ $.checkNumbers = function(a, b) {
       return true;
     else {
       $.checkNull(b);
-      throw $.$$throw($.IllegalArgumentException$(b));
+      throw $.$$throw($.ArgumentError$(b));
     }
   return false;
 };
@@ -7191,7 +7222,7 @@ $._WorkerSendPort$ = function(_workerId, isolateId, _receivePortId) {
 $.checkString = function(value) {
   if (!(typeof value === 'string')) {
     $.checkNull(value);
-    throw $.$$throw($.IllegalArgumentException$(value));
+    throw $.$$throw($.ArgumentError$(value));
   }
   return value;
 };
@@ -7301,14 +7332,6 @@ $.GameView$ = function(width, height, mineCount, _table, _leftCountDiv, _gameSta
   return t1;
 };
 
-$._SpeechRecognitionEventsImpl$ = function(_ptr) {
-  return new $._SpeechRecognitionEventsImpl(_ptr);
-};
-
-$.Primitives_getSeconds = function(receiver) {
-  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCSeconds() : $.Primitives_lazyAsJsDate(receiver).getSeconds();
-};
-
 $._Collections_filter = function(source, destination, f) {
   for (var t1 = $.iterator(source); t1.hasNext$0() === true;) {
     var t2 = t1.next$0();
@@ -7316,6 +7339,14 @@ $._Collections_filter = function(source, destination, f) {
       destination.push(t2);
   }
   return destination;
+};
+
+$._SpeechRecognitionEventsImpl$ = function(_ptr) {
+  return new $._SpeechRecognitionEventsImpl(_ptr);
+};
+
+$.Primitives_getSeconds = function(receiver) {
+  return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCSeconds() : $.Primitives_lazyAsJsDate(receiver).getSeconds();
 };
 
 $.Util_getHashCode = function(source) {
@@ -7334,8 +7365,8 @@ $.Util_getHashCode = function(source) {
   return 536870911 & hash0 + ((16383 & hash0) << 15 >>> 0);
 };
 
-$.IllegalArgumentException$ = function(arg) {
-  return new $.IllegalArgumentException(arg);
+$.IllegalArgumentException$ = function(argument) {
+  return new $.IllegalArgumentException(argument);
 };
 
 $._HttpRequestUploadEventsImpl$ = function(_ptr) {
@@ -7514,7 +7545,7 @@ $.sub = function(a, b) {
 
 $._Lists_getRange$bailout = function(state, a, start, length$, accumulator) {
   if ($.ltB(length$, 0))
-    throw $.$$throw($.IllegalArgumentException$('length'));
+    throw $.$$throw($.ArgumentError$('length'));
   if ($.ltB(start, 0))
     throw $.$$throw($.IndexOutOfRangeException$(start));
   var end = $.add(start, length$);
@@ -7575,7 +7606,7 @@ $.StringImplementation__toJsStringArray$bailout = function(state, strings) {
       var string = $.index(strings, i);
       $.checkNull(string);
       if (!(typeof string === 'string'))
-        throw $.$$throw($.IllegalArgumentException$(string));
+        throw $.$$throw($.ArgumentError$(string));
     }
     var array = strings;
   } else {
@@ -7584,7 +7615,7 @@ $.StringImplementation__toJsStringArray$bailout = function(state, strings) {
       string = $.index(strings, i);
       $.checkNull(string);
       if (!(typeof string === 'string'))
-        throw $.$$throw($.IllegalArgumentException$(string));
+        throw $.$$throw($.ArgumentError$(string));
       if (i < 0 || i >= array.length)
         throw $.ioore(i);
       array[i] = string;
@@ -7599,9 +7630,9 @@ $.listInsertRange$bailout = function(state, receiver, start, length$, initialVal
   $.checkNull(start);
   $.checkNull(length$);
   if (!(typeof length$ === 'number' && Math.floor(length$) === length$))
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   if (length$ < 0)
-    throw $.$$throw($.IllegalArgumentException$(length$));
+    throw $.$$throw($.ArgumentError$(length$));
   var receiverLength = receiver.length;
   if (start < 0 || start > receiverLength)
     throw $.$$throw($.IndexOutOfRangeException$(start));
@@ -7643,72 +7674,72 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC1 = Isolate.makeConstantList([]);
+$.CTC21 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC1);
 $.CTC38 = 'structured clone of ArrayBufferView';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
-$.CTC39 = 'revealed';
-$.CTC17 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC21 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC1);
-$.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
-$.CTC40 = null;
+$.CTC39 = null;
 $.CTC28 = new Isolate.$isolateProperties.NotImplementedException(null);
+$.CTC40 = 'revealed';
+$.CTC17 = new Isolate.$isolateProperties.SquareState('revealed');
 $.CTC41 = false;
 $.CTC42 = '^#[_a-zA-Z]\\w*$';
 $.CTC = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC43 = 'flagged';
-$.CTC24 = new Isolate.$isolateProperties.SquareState('flagged');
-$.CTC44 = 'Mutation operations are not supported';
-$.CTC29 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC45 = 'structured clone of ArrayBuffer';
+$.CTC43 = 'structured clone of ArrayBuffer';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
 $.CTC16 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC46 = 'won';
+$.CTC44 = 'won';
 $.CTC33 = new Isolate.$isolateProperties.GameState('won');
+$.CTC45 = 'flagged';
+$.CTC24 = new Isolate.$isolateProperties.SquareState('flagged');
+$.CTC46 = 'lost';
+$.CTC34 = new Isolate.$isolateProperties.GameState('lost');
 $.CTC47 = 'frozen class set cannot be modified';
 $.CTC18 = new Isolate.$isolateProperties.UnsupportedOperationException('frozen class set cannot be modified');
-$.CTC48 = 'lost';
-$.CTC34 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC48 = 'Mutation operations are not supported';
+$.CTC29 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.CTC49 = 'structured clone of Date';
 $.CTC3 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
-$.CTC50 = 'started';
-$.CTC26 = new Isolate.$isolateProperties.GameState('started');
+$.CTC37 = new Isolate.$isolateProperties.Object();
+$.CTC50 = 'Cannot add to immutable List.';
+$.CTC2 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
 $.CTC51 = 'IDBKey containing Date';
 $.CTC20 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC52 = 'safe';
-$.CTC35 = new Isolate.$isolateProperties.SquareState('safe');
-$.CTC37 = new Isolate.$isolateProperties.Object();
-$.CTC53 = 'Cannot add to immutable List.';
-$.CTC2 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
-$.CTC54 = '[-[\\]{}()*+?.,\\\\^$|#\\s]';
+$.CTC52 = 'started';
+$.CTC26 = new Isolate.$isolateProperties.GameState('started');
+$.CTC53 = '[-[\\]{}()*+?.,\\\\^$|#\\s]';
 $.CTC13 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '[-[\\]{}()*+?.,\\\\^$|#\\s]');
-$.CTC55 = 'Cannot insertRange on immutable List.';
+$.CTC54 = 'Cannot insertRange on immutable List.';
 $.CTC27 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC56 = 'structured clone of Blob';
-$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC57 = 'mine';
+$.CTC55 = 'mine';
 $.CTC36 = new Isolate.$isolateProperties.SquareState('mine');
+$.CTC56 = 'safe';
+$.CTC35 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC57 = 'structured clone of Blob';
+$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
 $.CTC58 = 'structured clone of RegExp';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC59 = 'hidden';
-$.CTC23 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC32 = new Isolate.$isolateProperties.EventArgs();
+$.CTC59 = 'Invalid list length';
+$.CTC15 = new Isolate.$isolateProperties.ArgumentError('Invalid list length');
 $.CTC60 = 'structured clone of FileList';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of FileList');
-$.CTC61 = 'The input sequence is empty.';
+$.CTC61 = 'hidden';
+$.CTC23 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC32 = new Isolate.$isolateProperties.EventArgs();
+$.CTC62 = 'The input sequence is empty.';
 $.CTC31 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
 $.CTC30 = new Isolate.$isolateProperties._Random();
 $.CTC22 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC62 = 'reset';
+$.CTC63 = 'reset';
 $.CTC25 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
-$.CTC63 = 'structured clone of other type';
-$.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC19 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC64 = 'structured clone of File';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC65 = 'Invalid list length';
-$.CTC15 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
+$.CTC65 = 'structured clone of other type';
+$.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
+$.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
+$.CTC19 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC66 = '';
 $.CTC14 = new Isolate.$isolateProperties.UnsupportedOperationException('');
+$.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC67 = 'Cannot removeLast on immutable List.';
 $.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.Duration_HOURS_PER_DAY = 24;
@@ -7725,6 +7756,7 @@ $.GameState_started = Isolate.$isolateProperties.CTC26;
 $._getTypeNameOf = null;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
 $.SquareState_mine = Isolate.$isolateProperties.CTC36;
+$.Primitives_hashCodeSeed = 0;
 $.GameState_won = Isolate.$isolateProperties.CTC33;
 $.SquareState_hidden = Isolate.$isolateProperties.CTC23;
 $.HashMapImplementation__INITIAL_CAPACITY = 8;
@@ -7790,7 +7822,8 @@ $.$defineNativeClass = function(cls, fields, methods) {
  is$_ArrayBufferImpl: function() { return false; },
  is$Map: function() { return false; },
  is$FileList: function() { return false; },
- is$ImageData: function() { return false; }
+ is$ImageData: function() { return false; },
+ hashCode$0: function() { return $.hashCodeForNativeObject(this); }
 });
 
 $.$defineNativeClass('AbstractWorker', [], {
@@ -11921,8 +11954,9 @@ if (tmp.__proto__) {
 }
 Isolate.$pendingClasses = {};
 Isolate.$finishClasses = function(collectedClasses) {
+  var hasOwnProperty = Object.prototype.hasOwnProperty;
   for (var cls in collectedClasses) {
-    if (Object.prototype.hasOwnProperty.call(collectedClasses, cls)) {
+    if (hasOwnProperty.call(collectedClasses, cls)) {
       var desc = collectedClasses[cls];
       Isolate.$isolateProperties[cls] = Isolate.$defineClass(cls, desc[''], desc);
       if (desc['super'] !== "") Isolate.$pendingClasses[cls] = desc['super'];
@@ -11932,7 +11966,8 @@ Isolate.$finishClasses = function(collectedClasses) {
   Isolate.$pendingClasses = {};
   var finishedClasses = {};
   function finishClass(cls) {
-    if (finishedClasses[cls]) return;
+    var hasOwnProperty = Object.prototype.hasOwnProperty;
+    if (hasOwnProperty.call(finishedClasses, cls)) return;
     finishedClasses[cls] = true;
     var superclass = pendingClasses[cls];
     if (!superclass) return;
@@ -11949,7 +11984,6 @@ Isolate.$finishClasses = function(collectedClasses) {
       var newPrototype = new tmp();
       constructor.prototype = newPrototype;
       newPrototype.constructor = constructor;
-      var hasOwnProperty = Object.prototype.hasOwnProperty;
       for (var member in prototype) {
         if (member == '' || member == 'super') continue;
         if (hasOwnProperty.call(prototype, member)) {
