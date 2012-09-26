@@ -4,34 +4,36 @@ class AudioLoader extends ResourceLoader<AudioBuffer> {
   AudioLoader(this.context, Iterable<String> urlList) :
     super(urlList);
 
-  void _doLoad(String url) {
+  void _doLoad(String blobUrl) {
     // Load buffer asynchronously
-    final HttpRequest request = new HttpRequest();
-    request.open("GET", url, true);
-    request.responseType = "arraybuffer";
+    final HttpRequest arrayBufferRequest = new HttpRequest();
+    arrayBufferRequest.open("GET", blobUrl, true);
+    arrayBufferRequest.responseType = "arraybuffer";
 
-    request.on.load.add((args) {
+    arrayBufferRequest.on.load.add((args) {
       // Asynchronously decode the audio file data in request.response
       context.decodeAudioData(
-        request.response,
-        (buffer) => _saveBuffer(url, buffer),
-        (error) => print(['error!',error])
-      );
+        arrayBufferRequest.response,
+        (buffer) => _saveBuffer(blobUrl, buffer),
+        (error) => _onAudioLoadError(blobUrl, 'decode error', error));
     });
 
-    request.on.error.add((args) {
-      print('BufferLoader: XHR error');
+    arrayBufferRequest.on.error.add((args) {
+      _onAudioLoadError(blobUrl, 'BufferLoader: XHR error', args);
     });
 
-    request.send();
+    arrayBufferRequest.send();
   }
 
-  void _saveBuffer(String url, AudioBuffer buffer) {
+  void _onAudioLoadError(String blobUrl, String description, error) {
+    print(['Erro!', description, error]);
+    _saveResourceFailed(blobUrl);
+  }
+
+  void _saveBuffer(String blobUrl, AudioBuffer buffer) {
     if (buffer == null) {
-      print('error decoding file data: $url');
-      return;
+      _onAudioLoadError(blobUrl, 'null buffer', '');
     }
-    _resources[url] = buffer;
-    _onLoaded(url);
+    _saveResourceSucceed(blobUrl, buffer);
   }
 }
