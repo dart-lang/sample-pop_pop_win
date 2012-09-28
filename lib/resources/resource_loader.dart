@@ -15,7 +15,7 @@ abstract class ResourceLoader<T> {
 
   // DARTBUG: dart2js
   // Closures inside initializers not implemented
-  // v12911
+  // http://code.google.com/p/dart/issues/detail?id=3905
   static _buildRORE(Iterable<String> urlList) {
     return $(urlList).map((url) => new _ResourceEntry(url))
         .toReadOnlyCollection();
