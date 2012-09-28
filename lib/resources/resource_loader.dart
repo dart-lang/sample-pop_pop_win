@@ -1,5 +1,5 @@
 // TODO: error events?
-class ResourceLoader<T> {
+abstract class ResourceLoader<T> {
   static const String StateUnloaded = 'unloaded';
   static const String StateLoading = 'loading';
   static const String StateLoaded = 'loaded';
@@ -57,7 +57,7 @@ class ResourceLoader<T> {
   }
 
   // protected
-  abstract void _doLoad(String blobUrl);
+  void _doLoad(String blobUrl);
 
   // protected
   void _saveResourceFailed(String blobUrl) {

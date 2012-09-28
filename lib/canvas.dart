@@ -38,7 +38,7 @@ void playAudio(String name) {
     var source = _audioContext.createBufferSource();
     source.buffer = _buffers[name];
     source.connect(_audioContext.destination, 0);
-    source.noteOn(0);
+    source.start(0);
   }
 }
 

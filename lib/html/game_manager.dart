@@ -1,4 +1,4 @@
-class GameManager {
+abstract class GameManager {
   final int _width, _height, _mineCount;
   final GameStorage gameStorage = new GameStorage();
 
@@ -25,7 +25,7 @@ class GameManager {
     _gameStateChangedId = game.stateChanged.add(_gameStateChanged);
   }
 
-  abstract void gameUpdated(args);
+  void gameUpdated(args);
 
   void resetScores() {
     gameStorage.reset();
