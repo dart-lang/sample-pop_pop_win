@@ -73,8 +73,8 @@ class GameView extends GameManager {
       final xStr = cell.dataAttributes[_xKey];
       final yStr = cell.dataAttributes[_yKey];
 
-      final x = math.parseInt(xStr);
-      final y = math.parseInt(yStr);
+      final x = int.parse(xStr);
+      final y = int.parse(yStr);
       _click(x, y, args.shiftKey);
     }
   }

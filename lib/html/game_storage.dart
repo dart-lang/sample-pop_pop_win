@@ -51,7 +51,7 @@ class GameStorage {
     if(strValue == null) {
       return defaultValue;
     } else {
-      return math.parseInt(strValue);
+      return int.parse(strValue);
     }
   }
 
