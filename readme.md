@@ -4,21 +4,7 @@ An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_ga
 
 ## Getting the code
 
-Dartsweeper uses my [Dartlib](https://github.com/kevmoo/dartlib) library. I haven't quite migrated Dartlib to pub. If you want to play with the code, make sure you download (or git clone) both the code for Dartsweeper and Dartlib and put them in adjacent directories.
-
-* source_code
-    * sweeper.dart
-        * lib
-        * html
-        * readme.md (for sweeper)
-        * ...
-    * dartlib
-        * bin
-        * docs
-        * readme.md (for dartlib)
-        * ...
-
-If you're using Dart Editor, which I recommend, open both directories to see all of the code.
+Dartsweeper uses my [Dartlib](https://github.com/kevmoo/dartlib) library. Make sure you run `pub update` before you try to run tests, build, etc.
 
 ## Play
 
