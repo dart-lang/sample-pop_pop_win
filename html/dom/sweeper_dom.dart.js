@@ -2782,7 +2782,6 @@ $$.Game = {"":
   this._lib3_update$0();
 },
  canReveal$2: function(x, y) {
-  this._ensureStarted$0();
   if ($.eqB(this._states.get$2(x, y), $.CTC23))
     return true;
   else if (this._canChord$2(x, y) === true)
