@@ -26,7 +26,7 @@ class AudioLoader extends ResourceLoader<AudioBuffer> {
   }
 
   void _onAudioLoadError(String blobUrl, String description, error) {
-    print(['Erro!', description, error]);
+    print(['Error!', description, error]);
     _saveResourceFailed(blobUrl);
   }
 

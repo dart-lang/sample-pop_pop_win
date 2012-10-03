@@ -61,6 +61,7 @@ abstract class ResourceLoader<T> {
 
   // protected
   void _saveResourceFailed(String blobUrl) {
+    print(["failled to save resources with blobUrl", blobUrl]);
     // TODO: report error some how?
     final e = _getByBlobUrl(blobUrl);
     e.revokeBlobUrl();
