@@ -5404,6 +5404,8 @@ $$._ResourceEntry = {"":
 },
  getBlobUrl$1: function(blob) {
   this._blobUrl = $.window().createObjectUrl$1(blob);
+  if (this._blobUrl == null)
+    this._blobUrl = this.url;
   return this._blobUrl;
 },
  revokeBlobUrl$0: function() {

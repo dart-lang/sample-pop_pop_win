@@ -48,6 +48,9 @@ class _ResourceEntry<T> {
     assert(blob != null);
     assert(_blobUrl == null);
     _blobUrl = window.createObjectUrl(blob);
+    if(_blobUrl == null) {
+      _blobUrl = url;
+    }
     return _blobUrl;
   }
 
