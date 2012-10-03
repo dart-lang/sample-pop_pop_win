@@ -95,7 +95,6 @@ abstract class ResourceLoader<T> {
 
   void _httpLoad(String url) {
     final request = new HttpRequest();
-    request.responseType = 'blob';
 
     final e = _getByUrl(url);
 
@@ -113,6 +112,7 @@ abstract class ResourceLoader<T> {
     // doesn't seem to add anything over other methods
     // request.on.readyStateChange.add(_onHttpEvent);
     request.open('GET', url);
+    request.responseType = 'blob';
     request.send();
   }
 
