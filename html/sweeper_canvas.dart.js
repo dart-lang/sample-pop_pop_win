@@ -5477,6 +5477,7 @@ $$.ResourceLoader = {"":
  _doLoad$1: function(blobUrl) {
 },
  _saveResourceFailed$1: function(blobUrl) {
+  $.print(['failled to save resources with blobUrl', blobUrl]);
   this._getByBlobUrl$1(blobUrl).revokeBlobUrl$0();
 },
  _saveResourceSucceed$2: function(blobUrl, resource) {
@@ -5542,7 +5543,7 @@ $$.AudioLoader = {"":
   arrayBufferRequest.send$0();
 },
  _onAudioLoadError$3: function(blobUrl, description, error) {
-  $.print(['Erro!', description, error]);
+  $.print(['Error!', description, error]);
   this._saveResourceFailed$1(blobUrl);
 },
  _saveBuffer$2: function(blobUrl, buffer) {
