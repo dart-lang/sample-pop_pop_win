@@ -37,6 +37,8 @@ class GameElement extends ElementParentImpl {
     _canvas.addElement(_scoreElement);
     _canvas.addElement(_popAnimationLayer);
     _canvas.addElement(_dartAnimationLayer);
+
+    _newGameElement.clicked.add((args) => playAudio('Click1'));
   }
 
   EventRoot<EventArgs> get newGameClick => _newGameElement.clicked;
