@@ -2663,10 +2663,10 @@ $$._Timer = {"":
  ["_once", "_handle"],
  "super": "Object",
  _Timer$repeating$2: function(milliSeconds, callback) {
-  this._handle = $._window().setInterval$2(new $.anon2(this, callback), milliSeconds);
+  this._handle = $._window().setInterval$2(new $.anon3(this, callback), milliSeconds);
 },
  _Timer$2: function(milliSeconds, callback) {
-  this._handle = $._window().setTimeout$2(new $.anon1(this, callback), milliSeconds);
+  this._handle = $._window().setTimeout$2(new $.anon2(this, callback), milliSeconds);
 }
 };
 
@@ -4522,10 +4522,12 @@ $$.GameElement = {"":
   t1.addElement$1(this._background);
   t1.addElement$1(this._boardElement);
   t1.addElement$1(this._titleElement);
-  t1.addElement$1(this._newGameElement);
+  var t2 = this._newGameElement;
+  t1.addElement$1(t2);
   t1.addElement$1(this._scoreElement);
   t1.addElement$1(this._popAnimationLayer);
   t1.addElement$1(this._dartAnimationLayer);
+  $.add$1(t2.get$clicked(), new $.anon1());
 }
 };
 
@@ -6331,6 +6333,14 @@ $$.Duration_toString_twoDigits = {"":
 }
 };
 
+$$.anon1 = {"":
+ [],
+ "super": "Closure",
+ call$1: function(args) {
+  return $.playAudio('Click1');
+}
+};
+
 $$.anon0 = {"":
  ["this_0"],
  "super": "Closure",
@@ -6816,7 +6826,7 @@ $$._EventLoop__runHelper_next = {"":
 }
 };
 
-$$.anon1 = {"":
+$$.anon2 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function() {
@@ -6824,7 +6834,7 @@ $$.anon1 = {"":
 }
 };
 
-$$.anon2 = {"":
+$$.anon3 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function() {
@@ -10704,78 +10714,77 @@ $.CTC74 = -348;
 $.CTC44 = new Isolate.$isolateProperties.Vector(-472, -348);
 $.CTC75 = 'offsetX is only supported on elements';
 $.CTC18 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC76 = 'Pop0';
-$.CTC77 = 'Pop1';
-$.CTC78 = 'Pop2';
-$.CTC79 = 'Pop3';
-$.CTC80 = 'Pop4';
-$.CTC81 = 'Pop5';
-$.CTC82 = 'Pop6';
-$.CTC83 = 'Pop7';
-$.CTC84 = 'Pop8';
-$.CTC85 = 'Bomb1';
-$.CTC86 = 'Bomb2';
-$.CTC87 = 'Bomb3';
-$.CTC88 = 'Bomb4';
-$.CTC89 = 'Bomb5';
-$.CTC90 = 'DartThrow3';
-$.CTC91 = 'Flag2';
-$.CTC92 = 'Unflag2';
-$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5', 'DartThrow3', 'Flag2', 'Unflag2']);
-$.CTC93 = 'won';
+$.CTC76 = 'won';
 $.CTC33 = new Isolate.$isolateProperties.GameState('won');
 $.CTC17 = new Isolate.$isolateProperties._UndefinedValue();
-$.CTC94 = 'lost';
+$.CTC77 = 'lost';
 $.CTC34 = new Isolate.$isolateProperties.GameState('lost');
 $.CTC20 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC95 = 'structured clone of File';
+$.CTC78 = 'structured clone of File';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC96 = 'game_board_center';
-$.CTC97 = 'number_one';
-$.CTC98 = 'number_two';
-$.CTC99 = 'number_three';
-$.CTC100 = 'number_four';
-$.CTC101 = 'number_five';
-$.CTC102 = 'number_six';
-$.CTC103 = 'number_seven';
-$.CTC104 = 'number_eight';
+$.CTC79 = 'game_board_center';
+$.CTC80 = 'number_one';
+$.CTC81 = 'number_two';
+$.CTC82 = 'number_three';
+$.CTC83 = 'number_four';
+$.CTC84 = 'number_five';
+$.CTC85 = 'number_six';
+$.CTC86 = 'number_seven';
+$.CTC87 = 'number_eight';
 $.CTC45 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
-$.CTC105 = 'structured clone of ImageData';
+$.CTC88 = 'structured clone of ImageData';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ImageData');
-$.CTC106 = null;
+$.CTC89 = null;
 $.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
 $.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC15 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC107 = 'Cannot removeLast on immutable List.';
+$.CTC90 = 'Cannot removeLast on immutable List.';
 $.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC108 = 'balloon_pieces_a.png';
-$.CTC109 = 'balloon_pieces_b.png';
-$.CTC110 = 'balloon_pieces_c.png';
-$.CTC111 = 'balloon_pieces_d.png';
+$.CTC91 = 'balloon_pieces_a.png';
+$.CTC92 = 'balloon_pieces_b.png';
+$.CTC93 = 'balloon_pieces_c.png';
+$.CTC94 = 'balloon_pieces_d.png';
 $.CTC46 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
-$.CTC112 = 'The input sequence contains more than one element.';
+$.CTC95 = 'The input sequence contains more than one element.';
 $.CTC50 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC113 = '^#[_a-zA-Z]\\w*$';
+$.CTC96 = '^#[_a-zA-Z]\\w*$';
 $.CTC48 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
-$.CTC114 = 'structured clone of ArrayBuffer';
+$.CTC97 = 'structured clone of ArrayBuffer';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC115 = 'Cannot sort immutable List.';
+$.CTC98 = 'Cannot sort immutable List.';
 $.CTC41 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot sort immutable List.');
-$.CTC116 = 'structured clone of Date';
+$.CTC99 = 'structured clone of Date';
 $.CTC3 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
 $.CTC51 = new Isolate.$isolateProperties.Object();
-$.CTC117 = 'IDBKey containing Date';
+$.CTC100 = 'IDBKey containing Date';
 $.CTC16 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC118 = 'reset';
+$.CTC101 = 'reset';
 $.CTC27 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC119 = 'Cannot insertRange on immutable List.';
+$.CTC102 = 'Cannot insertRange on immutable List.';
 $.CTC28 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC120 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC21 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC120, Isolate.$isolateProperties.CTC120, Isolate.$isolateProperties.CTC120, Isolate.$isolateProperties.CTC120, Isolate.$isolateProperties.CTC1);
-$.CTC121 = 'Incorrect number or type of arguments';
+$.CTC103 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC21 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC1);
+$.CTC104 = 'Incorrect number or type of arguments';
 $.CTC47 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
-$.CTC122 = 'Cannot removeRange on immutable List.';
-$.CTC38 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
+$.CTC105 = 'Pop0';
+$.CTC106 = 'Pop1';
+$.CTC107 = 'Pop2';
+$.CTC108 = 'Pop3';
+$.CTC109 = 'Pop4';
+$.CTC110 = 'Pop5';
+$.CTC111 = 'Pop6';
+$.CTC112 = 'Pop7';
+$.CTC113 = 'Pop8';
+$.CTC114 = 'Bomb1';
+$.CTC115 = 'Bomb2';
+$.CTC116 = 'Bomb3';
+$.CTC117 = 'Bomb4';
+$.CTC118 = 'Bomb5';
+$.CTC119 = 'DartThrow3';
+$.CTC120 = 'Flag2';
+$.CTC121 = 'Unflag2';
+$.CTC122 = 'Click1';
+$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5', 'DartThrow3', 'Flag2', 'Unflag2', 'Click1']);
 $.CTC123 = 'structured clone of Blob';
 $.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
 $.CTC124 = 'The input sequence is empty.';
@@ -10785,17 +10794,19 @@ $.CTC36 = new Isolate.$isolateProperties.SquareState('flagged');
 $.CTC30 = new Isolate.$isolateProperties._Random();
 $.CTC126 = 'structured clone of RegExp';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC127 = 'revealed';
+$.CTC127 = 'Cannot removeRange on immutable List.';
+$.CTC38 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
+$.CTC128 = 'revealed';
 $.CTC35 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC128 = 'mine';
+$.CTC129 = 'mine';
 $.CTC40 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC129 = 'started';
+$.CTC130 = 'started';
 $.CTC37 = new Isolate.$isolateProperties.GameState('started');
-$.CTC130 = 'structured clone of other type';
+$.CTC131 = 'structured clone of other type';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC131 = 'Mutation operations are not supported';
+$.CTC132 = 'Mutation operations are not supported';
 $.CTC29 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC132 = 'safe';
+$.CTC133 = 'safe';
 $.CTC43 = new Isolate.$isolateProperties.SquareState('safe');
 $.Property_Undefined = Isolate.$isolateProperties.CTC17;
 $.Duration_HOURS_PER_DAY = 24;
