@@ -58,7 +58,7 @@ abstract class GameManager {
     }
   }
 
-  // work around for http://code.google.com/p/dart/issues/detail?id=3197
+  // DARTBUG: work around for http://code.google.com/p/dart/issues/detail?id=3197
   void _doClock() {
     updateClock();
   }
