@@ -38,7 +38,9 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.canToggleFlag(0, 0), isTrue);
+    expect(g.state, GameState.reset);
     g.setFlag(0, 0, true);
+    expect(g.state, GameState.started);
     expect(g.canToggleFlag(0, 0), isTrue);
     g.setFlag(0, 0, false);
     expect(g.canToggleFlag(0, 0), isTrue);
@@ -53,7 +55,9 @@ class TestGame {
     final g = new Game(f);
 
     expect(g.canReveal(0, 0), isTrue);
+    expect(g.state, GameState.reset);
     g.setFlag(0, 0, true);
+    expect(g.state, GameState.started);
     expect(g.canReveal(0, 0), isFalse);
 
     expect(g.canReveal(5, 4), isTrue);

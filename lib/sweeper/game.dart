@@ -45,7 +45,6 @@ class Game {
   }
 
   bool canToggleFlag(int x, int y) {
-    _ensureStarted();
     final currentSS = _states.get(x,y);
     return currentSS == SquareState.hidden ||
         currentSS == SquareState.flagged;
@@ -69,7 +68,6 @@ class Game {
   }
 
   bool canReveal(int x, int y) {
-    _ensureStarted();
     final currentSS = _states.get(x,y);
     if(currentSS == SquareState.hidden) {
       return true;
