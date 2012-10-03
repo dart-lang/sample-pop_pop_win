@@ -217,7 +217,9 @@ class GameElement extends ElementParentImpl {
     playAudio('Bomb$i');
   }
 
-  void _startDartAnimation(Iterable<Coordinate> points) {
+  void _startDartAnimation(List<Coordinate> points) {
+    assert(points.length >= 1);
+    playAudio('DartThrow3');
     for(final point in points) {
       final squareOffset = _dartAnimationOffset +
           new Vector(SquareElement._size * point.x, SquareElement._size * point.y);
@@ -250,9 +252,11 @@ class GameElement extends ElementParentImpl {
     final ss = game.getSquareState(x, y);
     if(ss == SquareState.hidden) {
       game.setFlag(x, y, true);
+      playAudio('Flag2');
       return true;
     } else if(ss == SquareState.flagged) {
       game.setFlag(x, y, false);
+      playAudio('Unflag2');
       return true;
     }
     return false;
