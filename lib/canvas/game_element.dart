@@ -148,13 +148,28 @@ class GameElement extends ElementParentImpl {
           .toList();
     }
 
-    for(final c in reveals) {
+    final values = $(reveals).map((c) {
       final initialOffset = new Vector(SquareElement._size * c.x,
           SquareElement._size * c.y);
       final squareOffset = _popExplodeAnimationOffset + initialOffset;
 
       var delay = _popAnimationHitFrame + ((c - start).length * 4).toInt();
       delay += rnd.nextInt(10);
+
+      return [c, initialOffset, squareOffset, delay];
+    }).toList();
+
+    values.sort((a, b) {
+      final int da = a[3];
+      final int db = b[3];
+      return da.compareTo(db);
+    });
+
+    for(final v in values) {
+      final Coordinate c = v[0];
+      final Vector initialOffset = v[1];
+      final Vector squareOffset = v[2];
+      final int delay = v[3];
 
       final ss = game.getSquareState(c.x, c.y);
 
