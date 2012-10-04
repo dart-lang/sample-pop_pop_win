@@ -61,9 +61,9 @@ abstract class ResourceLoader<T> {
 
   // protected
   void _loadResourceFailed(String blobUrl) {
-    print(["failled to load resources with blobUrl", blobUrl]);
     // TODO: report error some how?
     final e = _getByBlobUrl(blobUrl);
+    print(["failled to load resources with blobUrl", e.url]);
     e.revokeBlobUrl();
   }
 
