@@ -6,7 +6,7 @@ class ImageLoader extends ResourceLoader<ImageElement> {
     assert(!img.complete);
     img.on.load.add((args) {
       assert(args.type == 'load');
-      _saveResourceSucceed(blobUrl, img);
+      _loadResourceSucceed(blobUrl, img);
     });
   }
 }

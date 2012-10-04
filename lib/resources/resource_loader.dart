@@ -60,15 +60,15 @@ abstract class ResourceLoader<T> {
   void _doLoad(String blobUrl);
 
   // protected
-  void _saveResourceFailed(String blobUrl) {
-    print(["failled to save resources with blobUrl", blobUrl]);
+  void _loadResourceFailed(String blobUrl) {
+    print(["failled to load resources with blobUrl", blobUrl]);
     // TODO: report error some how?
     final e = _getByBlobUrl(blobUrl);
     e.revokeBlobUrl();
   }
 
   // protected
-  void _saveResourceSucceed(String blobUrl, T resource) {
+  void _loadResourceSucceed(String blobUrl, T resource) {
     assert(_state == StateLoading);
     assert(resource != null);
 

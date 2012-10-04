@@ -15,7 +15,7 @@ class AudioLoader extends ResourceLoader<AudioBuffer> {
       context.decodeAudioData(
         arrayBufferRequest.response,
         (buffer) => _saveBuffer(blobUrl, buffer),
-        (error) => _onAudioLoadError(blobUrl, 'decode error', error));
+        (buffer) => _onAudioLoadError(blobUrl, 'decode error', buffer));
     });
 
     arrayBufferRequest.on.error.add((args) {
@@ -27,13 +27,13 @@ class AudioLoader extends ResourceLoader<AudioBuffer> {
 
   void _onAudioLoadError(String blobUrl, String description, error) {
     print(['Error!', description, error]);
-    _saveResourceFailed(blobUrl);
+    _loadResourceFailed(blobUrl);
   }
 
   void _saveBuffer(String blobUrl, AudioBuffer buffer) {
     if (buffer == null) {
       _onAudioLoadError(blobUrl, 'null buffer', '');
     }
-    _saveResourceSucceed(blobUrl, buffer);
+    _loadResourceSucceed(blobUrl, buffer);
   }
 }
