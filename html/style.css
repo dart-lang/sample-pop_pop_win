@@ -9,6 +9,45 @@ body {
   display: inline-block;
 }
 
+#loading {
+  position: relative;
+  left: 260px;
+  top: 340px;
+}
+
+.sprite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-image:url(images/loading.png);
+}
+
+.loading_background {
+  width:504px;
+  height:88px;
+  background-position: -2px -2px;
+}
+
+.loading_bar {
+  display: none;
+  left: 51px;
+  top: 8px;
+  width:398px;
+  height:56px;
+  background-position: -2px -92px;
+}
+
+.loading_text {
+  left: 141px;
+  top: 10px;
+  width:218px;
+  height:56px;
+  background-position: -2px -150px;
+}
+
 .status {
   font-size: 15px;
   margin: 5px;

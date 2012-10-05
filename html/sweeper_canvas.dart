@@ -15,15 +15,21 @@ const List<String> _audioNames =
          'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5',
          'DartThrow3', 'Flag2', 'Unflag2', 'Click1'];
 
+const int _loadingBarPxWidth = 398;
+
+DivElement _loadingBar;
 ImageLoader _imageLoader;
 AudioLoader _audioLoader;
 
 main() {
+  _loadingBar = query('.sprite.loading_bar');
+  _loadingBar.style.display = 'block';
+  _loadingBar.style.width = '0';
+
   _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName]);
   _imageLoader.loaded.add(_onLoaded);
   _imageLoader.progress.add(_onProgress);
   _imageLoader.load();
-
 
   //
   // This code might fail wonderfully on systems that don't support
@@ -48,6 +54,9 @@ void _onProgress(args) {
   final percent = completedBytes / totalBytes;
   final percentClean = (percent * 1000).floor() / 10;
   print([percentClean, completedBytes, totalBytes]);
+
+  final barWidth = percent * _loadingBarPxWidth;
+  _loadingBar.style.width = '${barWidth.toInt()}px';
 }
 
 void _onLoaded(args) {
@@ -78,6 +87,7 @@ void _onLoaded(args) {
     }
 
     // run the app
+    query('#loading').style.display = 'none';
     _runSweeper();
   }
 }
