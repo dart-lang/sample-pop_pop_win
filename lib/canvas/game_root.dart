@@ -60,7 +60,7 @@ class GameRoot extends GameManager {
     }
   }
 
-  bool _onFrame(int time) {
+  void _onFrame(int time) {
     final xScale = _stage.size.width / _gameElement.width;
     final yScale = _stage.size.height / _gameElement.height;
 
