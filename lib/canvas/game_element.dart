@@ -1,6 +1,7 @@
 class GameElement extends ElementParentImpl {
   static const _edgeOffset = 32;
   static const _backgroundSize = const Size(2048, 1536);
+  static const _backgroundEdgeOffset = 256;
   static const _backgroundHoleSize = 16 * SquareElement._size + 2 * _edgeOffset;
   static const _boardOffset = const Vector(352, 96);
   static const _popExplodeAnimationOffset = const Vector(-88, -88);
@@ -25,6 +26,7 @@ class GameElement extends ElementParentImpl {
   int _targetX, _targetY;
   double _scale;
   Vector _scaledBoardOffset;
+  Box _scaledInnerBox;
 
   Game _game;
 
@@ -321,6 +323,9 @@ class GameElement extends ElementParentImpl {
     //       scale nicely when not a square
     _scale = sizeX / _backgroundSize.width;
     _scaledBoardOffset = _boardOffset.scale(_scale);
+    
+    _scaledInnerBox = new Box(_backgroundEdgeOffset * _scale, 0, 
+        sizeX - 2 * _backgroundEdgeOffset * _scale, sizeY);
   }
 
   static num _getScale(int count, num fullSize, num holeSize) {

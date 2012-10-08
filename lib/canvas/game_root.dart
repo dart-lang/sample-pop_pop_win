@@ -74,8 +74,9 @@ class GameRoot extends GameManager {
   }
 
   void _onFrame(int time) {
-    final xScale = _stage.size.width / _gameElement.width;
-    final yScale = _stage.size.height / _gameElement.height;
+    final boardInnerBox = _gameElement._scaledInnerBox;
+    final xScale = _stage.size.width / boardInnerBox.width;
+    final yScale = _stage.size.height / boardInnerBox.height;
 
     final prettyScale = min(1, min(xScale, yScale));
 
