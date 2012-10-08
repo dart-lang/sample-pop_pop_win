@@ -35,11 +35,18 @@ main() {
   // This code might fail wonderfully on systems that don't support
   // AudioContext
   //
-  final audioContext = new AudioContext();
-  _audioLoader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
-  _audioLoader.loaded.add(_onLoaded);
-  _audioLoader.progress.add(_onProgress);
-  _audioLoader.load();
+  if(supportsAudio) {
+    final audioContext = new AudioContext();
+    _audioLoader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
+    _audioLoader.loaded.add(_onLoaded);
+    _audioLoader.progress.add(_onProgress);
+    _audioLoader.load();
+  }
+}
+
+bool get supportsAudio() {
+  final isChrome = window.clientInformation.userAgent.contains("Chrome");
+  return isChrome;
 }
 
 void _onProgress(args) {
