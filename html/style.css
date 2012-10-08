@@ -11,15 +11,14 @@ body {
 }
 
 #loading {
-  position: absolute;
-  left: 260px;
-  top: 340px;
+  position: relative;
+  margin: 150px auto;
+  width: 504px;
+  height: 88px;
 }
 
 .sprite {
   position: absolute;
-  left: 0;
-  top: 0;
   display: block;
   overflow: hidden;
   background-repeat: no-repeat;
