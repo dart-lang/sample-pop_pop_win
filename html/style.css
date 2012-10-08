@@ -3,6 +3,7 @@ body {
   // overflow: hidden;
   text-align: center;
   background: rgb(180,173,127);	
+  margin: 0;
 }
 
 .container {
@@ -10,7 +11,7 @@ body {
 }
 
 #loading {
-  position: relative;
+  position: absolute;
   left: 260px;
   top: 340px;
 }

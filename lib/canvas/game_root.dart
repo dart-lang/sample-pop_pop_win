@@ -31,6 +31,9 @@ class GameRoot extends GameManager {
 
     ClickManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
     ClickManager.addMouseOutHandler(_stage, _mouseOutHandler);
+
+    window.on.resize.add((args) => _updateCanvasSize());
+    _updateCanvasSize();
   }
 
   void set game(Game value) {
@@ -53,6 +56,16 @@ class GameRoot extends GameManager {
   EventRoot get targetChanged =>
       _gameElement.targetChanged;
 
+  void _updateCanvasSize() {
+    _updateCanvasSizeCore(new Size(window.innerWidth, window.innerHeight));
+  }
+
+  void _updateCanvasSizeCore(Size windowSize) {
+    _canvas.attributes['width'] = windowSize.width;
+    _canvas.attributes['height'] = windowSize.height;
+    _requestFrame();
+  }
+
   void _requestFrame() {
     if(!_frameRequested) {
       _frameRequested = true;
@@ -64,22 +77,22 @@ class GameRoot extends GameManager {
     final xScale = _stage.size.width / _gameElement.width;
     final yScale = _stage.size.height / _gameElement.height;
 
-    final theScale = min(xScale, yScale);
+    final prettyScale = min(1, min(xScale, yScale));
 
-    final logish = log(theScale) / LN2;
-    final exp = logish.floor().toInt();
+    //final logish = log(theScale) / LN2;
+    //final exp = logish.floor().toInt();
 
     // DARTBUG: really weird that pow to an int returns an int and not double :-/
-    final prettyScale = pow(2.0, exp);
+    //final prettyScale = pow(2.0, exp);
 
-    _gameElementTx.setToScale(prettyScale, prettyScale);
 
     final newDimensions = _gameElement.size * prettyScale;
-    assert(newDimensions.fitsInside(_stage.size));
+    //assert(newDimensions.fitsInside(_stage.size));
 
     final delta = new Vector(_stage.size.width - newDimensions.width,
-        _stage.size.height - newDimensions.height).scale(0.5);
+        _stage.size.height - newDimensions.height).scale(0.5).scale(1/prettyScale);
 
+    _gameElementTx.setToScale(prettyScale, prettyScale);
     _gameElementTx.translate(delta.x, delta.y);
 
     var updated = _stage.draw();
