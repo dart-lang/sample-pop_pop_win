@@ -53,7 +53,6 @@ void _onProgress(args) {
 
   final percent = completedBytes / totalBytes;
   final percentClean = (percent * 1000).floor() / 10;
-  print([percentClean, completedBytes, totalBytes]);
 
   final barWidth = percent * _loadingBarPxWidth;
   _loadingBar.style.width = '${barWidth.toInt()}px';
