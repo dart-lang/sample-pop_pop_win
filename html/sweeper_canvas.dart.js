@@ -2765,6 +2765,12 @@ $$.Enumerable = {"":
       return false;
   return true;
 },
+ contains$1: function(item) {
+  for (var t1 = $.iterator(this); t1.hasNext$0() === true;)
+    if ($.eqB(t1.next$0(), item))
+      return true;
+  return false;
+},
  isEmpty$0: function() {
   return this.some$1(new $.Enumerable_isEmpty_anon()) !== true;
 },
@@ -6965,16 +6971,16 @@ $.set$length = function(receiver, newLength) {
   return newLength;
 };
 
-$._Device_userAgent = function() {
-  return $.window().get$navigator().get$userAgent();
-};
-
 $.checkNum = function(value) {
   if (!(typeof value === 'number')) {
     $.checkNull(value);
     throw $.$$throw($.ArgumentError$(value));
   }
   return value;
+};
+
+$._Device_userAgent = function() {
+  return $.window().get$navigator().get$userAgent();
 };
 
 $._TextTrackListEventsImpl$ = function(_ptr) {
@@ -7589,6 +7595,8 @@ $.getTypeNameOf = function(obj) {
 };
 
 $.contains$1 = function(receiver, other) {
+  if (!(typeof receiver === 'string'))
+    return receiver.contains$1(other);
   return $.contains$2(receiver, other, 0);
 };
 
@@ -7700,10 +7708,12 @@ $.main = function() {
   $.add$1($._imageLoader.get$loaded(), $._onLoaded);
   $.add$1($._imageLoader.get$progress(), $._onProgress);
   $._imageLoader.load$0();
-  $._audioLoader = $.AudioLoader$($.AudioContext_AudioContext(), $.map($.$$($.CTC), $._getAudioPath));
-  $.add$1($._audioLoader.get$loaded(), $._onLoaded);
-  $.add$1($._audioLoader.get$progress(), $._onProgress);
-  $._audioLoader.load$0();
+  if ($.supportsAudio() === true) {
+    $._audioLoader = $.AudioLoader$($.AudioContext_AudioContext(), $.map($.$$($.CTC), $._getAudioPath));
+    $.add$1($._audioLoader.get$loaded(), $._onLoaded);
+    $.add$1($._audioLoader.get$progress(), $._onProgress);
+    $._audioLoader.load$0();
+  }
 };
 
 $._JsCopier$ = function() {
@@ -8398,10 +8408,6 @@ $.Primitives_getMonth = function(receiver) {
   return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCMonth() + 1 : $.Primitives_lazyAsJsDate(receiver).getMonth() + 1;
 };
 
-$._dynamicMetadata = function(table) {
-  $dynamicMetadata = table;
-};
-
 $._Collections_every = function(iterable, f) {
   for (var t1 = $.iterator(iterable); t1.hasNext$0() === true;)
     if (f.call$1(t1.next$0()) !== true)
@@ -8409,12 +8415,8 @@ $._Collections_every = function(iterable, f) {
   return true;
 };
 
-$._dynamicMetadata0 = function() {
-  if (typeof($dynamicMetadata) === 'undefined') {
-    var t1 = [];
-    $._dynamicMetadata(t1);
-  }
-  return $dynamicMetadata;
+$._dynamicMetadata = function(table) {
+  $dynamicMetadata = table;
 };
 
 $.isNegative = function(receiver) {
@@ -8428,6 +8430,14 @@ $.add$slow = function(a, b) {
   if ($.checkNumbers(a, b))
     return a + b;
   return a.operator$add$1(b);
+};
+
+$._dynamicMetadata0 = function() {
+  if (typeof($dynamicMetadata) === 'undefined') {
+    var t1 = [];
+    $._dynamicMetadata(t1);
+  }
+  return $dynamicMetadata;
 };
 
 $.jsHasOwnProperty = function(jsObject, property) {
@@ -9685,6 +9695,10 @@ $.TextureInput__parseRect = function(input) {
   return $.Box_Box$fromCoordSize($.Coordinate$($.index(input, 'x'), $.index(input, 'y')), $.Size$($.index(input, 'w'), $.index(input, 'h')));
 };
 
+$.supportsAudio = function() {
+  return $.contains$1($.window().get$clientInformation().get$userAgent(), 'Chrome');
+};
+
 $.StringImplementation__toJsStringArray = function(strings) {
   if (typeof strings !== 'object' || strings === null || (strings.constructor !== Array || !!strings.immutable$list) && !strings.is$JavaScriptIndexingBehavior())
     return $.StringImplementation__toJsStringArray$bailout(1, strings);
@@ -9972,10 +9986,6 @@ $._FuncEnumerable$ = function(_source, _func) {
   return new $._FuncEnumerable(_source, _func);
 };
 
-$.contains = function(userAgent, name$) {
-  return userAgent.indexOf(name$) !== -1;
-};
-
 $._TextTrackCueEventsImpl$ = function(_ptr) {
   return new $._TextTrackCueEventsImpl(_ptr);
 };
@@ -9999,6 +10009,10 @@ $.Box_Box$fromCoordSize = function(topLeft, size) {
 
 $._SpeechRecognitionEventsImpl$ = function(_ptr) {
   return new $._SpeechRecognitionEventsImpl(_ptr);
+};
+
+$.contains = function(userAgent, name$) {
+  return userAgent.indexOf(name$) !== -1;
 };
 
 $.Primitives_getSeconds = function(receiver) {
@@ -11675,6 +11689,9 @@ return this[index];
  insertRange$3: function(start, rangeLength, initialValue) {
   throw $.$$throw($.CTC30);
 },
+ contains$1: function(string) {
+  return this.contains(string);
+},
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
  is$Collection: function() { return true; }
@@ -11683,6 +11700,9 @@ return this[index];
 $.$defineNativeClass('DOMTokenList', ["length?"], {
  add$1: function(token) {
   return this.add(token);
+},
+ contains$1: function(token) {
+  return this.contains(token);
 },
  remove$1: function(token) {
   return this.remove(token);
@@ -12966,7 +12986,7 @@ $.$defineNativeClass('LocalMediaStream', [], {
 }
 });
 
-$.$defineNativeClass('DOMWindow', ["innerHeight?", "innerWidth?", "localStorage?", "name?", "navigator?", "status?"], {
+$.$defineNativeClass('DOMWindow', ["clientInformation?", "innerHeight?", "innerWidth?", "localStorage?", "name?", "navigator?", "status?"], {
  _open2$2: function(url, name) {
 return this.open(url, name);
 },
@@ -13434,6 +13454,9 @@ this.textContent = value;
 },
  $dom_appendChild$1: function(newChild) {
   return this.appendChild(newChild);
+},
+ contains$1: function(other) {
+  return this.contains(other);
 },
  $dom_removeChild$1: function(oldChild) {
   return this.removeChild(oldChild);
