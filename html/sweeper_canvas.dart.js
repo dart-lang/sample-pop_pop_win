@@ -3530,6 +3530,157 @@ $$.AttachedEvent = {"":
 }
 };
 
+$$._ResourceEntry = {"":
+ ["url?", "_resource", "_blobUrl", "_total", "_completed"],
+ "super": "Object",
+ get$totalBytes: function() {
+  return this._total;
+},
+ get$completedBytes: function() {
+  return this._completed;
+},
+ setResource$1: function(resource) {
+  this._resource = resource;
+},
+ updateProgress$2: function(completed, total) {
+  if (!$.eqB(this._completed, completed)) {
+    this._completed = completed;
+    var changed = true;
+  } else
+    changed = false;
+  if (!$.eqB(this._total, total)) {
+    this._total = total;
+    changed = true;
+  }
+  return changed;
+},
+ get$completed: function() {
+  return !(this._resource == null);
+},
+ get$resource: function() {
+  return this._resource;
+},
+ matchesBlobUrl$1: function(blobUrl) {
+  return $.eq(blobUrl, this._blobUrl);
+},
+ getBlobUrl$1: function(blob) {
+  this._blobUrl = $.window().createObjectUrl$1(blob);
+  if (this._blobUrl == null)
+    this._blobUrl = this.url;
+  return this._blobUrl;
+},
+ revokeBlobUrl$0: function() {
+  $.window().revokeObjectUrl$1(this._blobUrl);
+}
+};
+
+$$.ResourceLoader = {"":
+ [],
+ "super": "Object",
+ get$state: function() {
+  return this._lib6_state;
+},
+ get$loaded: function() {
+  return this._loadedEvent;
+},
+ get$progress: function() {
+  return this._progressEvent;
+},
+ getResource$1: function(url) {
+  return this._getByUrl$1(url).get$resource();
+},
+ get$completedBytes: function() {
+  return this._entries.selectNumbers$1(new $.ResourceLoader_completedBytes_anon()).sum$0();
+},
+ get$totalBytes: function() {
+  return this._entries.selectNumbers$1(new $.ResourceLoader_totalBytes_anon()).sum$0();
+},
+ load$0: function() {
+  this._lib6_state = 'loading';
+  for (var t1 = $.iterator(this._entries); t1.hasNext$0() === true;)
+    this._httpLoad$1(t1.next$0().get$url());
+},
+ get$load: function() { return new $.BoundClosure0(this, 'load$0'); },
+ _doLoad$1: function(blobUrl) {
+},
+ _loadResourceFailed$1: function(blobUrl) {
+  var e = this._getByBlobUrl$1(blobUrl);
+  $.print(['failled to load resources with blobUrl', e.get$url()]);
+  e.revokeBlobUrl$0();
+},
+ _loadResourceSucceed$2: function(blobUrl, resource) {
+  var entry = this._getByBlobUrl$1(blobUrl);
+  entry.revokeBlobUrl$0();
+  entry.setResource$1(resource);
+  if ($.every(this._entries, new $.ResourceLoader__loadResourceSucceed_anon()) === true) {
+    this._lib6_state = 'loaded';
+    this._loadedEvent.fireEvent$1($.CTC20);
+  }
+},
+ _getByUrl$1: function(url) {
+  return this._entries.single$1(new $.ResourceLoader__getByUrl_anon(url));
+},
+ _getByBlobUrl$1: function(blobUrl) {
+  return this._entries.single$1(new $.ResourceLoader__getByBlobUrl_anon(blobUrl));
+},
+ _httpLoad$1: function(url) {
+  var request = $.HttpRequest_HttpRequest();
+  var e = this._getByUrl$1(url);
+  $.add$1(request.get$on().get$abort(), new $.ResourceLoader__httpLoad_anon(this, e));
+  $.add$1(request.get$on().get$error(), new $.ResourceLoader__httpLoad_anon0(this, e));
+  $.add$1(request.get$on().get$loadEnd(), new $.ResourceLoader__httpLoad_anon1(this, e));
+  $.add$1(request.get$on().get$progress(), new $.ResourceLoader__httpLoad_anon2(this, e));
+  request.open$2('GET', url);
+  request.set$responseType('blob');
+  request.send$0();
+},
+ _onLoadEnd$2: function(entry, args) {
+  var request = args.get$currentTarget();
+  if ($.eqB(request.get$status(), 200))
+    this._doLoad$1(entry.getBlobUrl$1(request.get$response()));
+  else
+    this._onError$2(entry, args);
+},
+ _onError$2: function(entry, args) {
+  throw $.$$throw('wtf?');
+},
+ _onProgress$2: function(entry, args) {
+  if (entry.updateProgress$2(args.get$loaded(), args.get$totalSize()) === true)
+    this._progressEvent.fireEvent$1($.CTC20);
+}
+};
+
+$$.ImageLoader = {"":
+ ["_entries", "_loadedEvent", "_progressEvent", "_lib6_state"],
+ "super": "ResourceLoader",
+ _doLoad$1: function(blobUrl) {
+  var img = $.ImageElement_ImageElement(blobUrl, $, $);
+  $.add$1(img.get$on().get$load(), new $.ImageLoader__doLoad_anon(this, img, blobUrl));
+}
+};
+
+$$.AudioLoader = {"":
+ ["context?", "_entries", "_loadedEvent", "_progressEvent", "_lib6_state"],
+ "super": "ResourceLoader",
+ _doLoad$1: function(blobUrl) {
+  var arrayBufferRequest = $.HttpRequest_HttpRequest();
+  arrayBufferRequest.open$3('GET', blobUrl, true);
+  arrayBufferRequest.set$responseType('arraybuffer');
+  $.add$1(arrayBufferRequest.get$on().get$load(), new $.AudioLoader__doLoad_anon(arrayBufferRequest, blobUrl, this));
+  $.add$1(arrayBufferRequest.get$on().get$error(), new $.AudioLoader__doLoad_anon0(this, blobUrl));
+  arrayBufferRequest.send$0();
+},
+ _onAudioLoadError$3: function(blobUrl, description, error) {
+  $.print(['Error!', description, error]);
+  this._loadResourceFailed$1(blobUrl);
+},
+ _saveBuffer$2: function(blobUrl, buffer) {
+  if (buffer == null)
+    this._onAudioLoadError$3(blobUrl, 'null buffer', '');
+  this._loadResourceSucceed$2(blobUrl, buffer);
+}
+};
+
 $$.Field = {"":
  ["mineCount?", "_adjacents", "width", "height", "_source"],
  "super": "Array2d",
@@ -5227,7 +5378,8 @@ $$.Stage = {"":
  ["_invalidatedEventHandle", "_canvas", "_lib1_element?", "_ctx", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "AttachableObject",
  get$size: function() {
-  return $.CanvasUtil_getCanvasSize(this._canvas);
+  var t1 = this._canvas;
+  return $.Size$(t1.get$width(), t1.get$height());
 },
  get$invalidated: function() {
   return this._invalidatedEventHandle;
@@ -5402,157 +5554,6 @@ $$.GameManager = {"":
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width, _height, _mineCount) {
   this.newGame$0();
-}
-};
-
-$$._ResourceEntry = {"":
- ["url?", "_resource", "_blobUrl", "_total", "_completed"],
- "super": "Object",
- get$totalBytes: function() {
-  return this._total;
-},
- get$completedBytes: function() {
-  return this._completed;
-},
- setResource$1: function(resource) {
-  this._resource = resource;
-},
- updateProgress$2: function(completed, total) {
-  if (!$.eqB(this._completed, completed)) {
-    this._completed = completed;
-    var changed = true;
-  } else
-    changed = false;
-  if (!$.eqB(this._total, total)) {
-    this._total = total;
-    changed = true;
-  }
-  return changed;
-},
- get$completed: function() {
-  return !(this._resource == null);
-},
- get$resource: function() {
-  return this._resource;
-},
- matchesBlobUrl$1: function(blobUrl) {
-  return $.eq(blobUrl, this._blobUrl);
-},
- getBlobUrl$1: function(blob) {
-  this._blobUrl = $.window().createObjectUrl$1(blob);
-  if (this._blobUrl == null)
-    this._blobUrl = this.url;
-  return this._blobUrl;
-},
- revokeBlobUrl$0: function() {
-  $.window().revokeObjectUrl$1(this._blobUrl);
-}
-};
-
-$$.ResourceLoader = {"":
- [],
- "super": "Object",
- get$state: function() {
-  return this._lib6_state;
-},
- get$loaded: function() {
-  return this._loadedEvent;
-},
- get$progress: function() {
-  return this._progressEvent;
-},
- getResource$1: function(url) {
-  return this._getByUrl$1(url).get$resource();
-},
- get$completedBytes: function() {
-  return this._entries.selectNumbers$1(new $.ResourceLoader_completedBytes_anon()).sum$0();
-},
- get$totalBytes: function() {
-  return this._entries.selectNumbers$1(new $.ResourceLoader_totalBytes_anon()).sum$0();
-},
- load$0: function() {
-  this._lib6_state = 'loading';
-  for (var t1 = $.iterator(this._entries); t1.hasNext$0() === true;)
-    this._httpLoad$1(t1.next$0().get$url());
-},
- get$load: function() { return new $.BoundClosure0(this, 'load$0'); },
- _doLoad$1: function(blobUrl) {
-},
- _loadResourceFailed$1: function(blobUrl) {
-  var e = this._getByBlobUrl$1(blobUrl);
-  $.print(['failled to load resources with blobUrl', e.get$url()]);
-  e.revokeBlobUrl$0();
-},
- _loadResourceSucceed$2: function(blobUrl, resource) {
-  var entry = this._getByBlobUrl$1(blobUrl);
-  entry.revokeBlobUrl$0();
-  entry.setResource$1(resource);
-  if ($.every(this._entries, new $.ResourceLoader__loadResourceSucceed_anon()) === true) {
-    this._lib6_state = 'loaded';
-    this._loadedEvent.fireEvent$1($.CTC20);
-  }
-},
- _getByUrl$1: function(url) {
-  return this._entries.single$1(new $.ResourceLoader__getByUrl_anon(url));
-},
- _getByBlobUrl$1: function(blobUrl) {
-  return this._entries.single$1(new $.ResourceLoader__getByBlobUrl_anon(blobUrl));
-},
- _httpLoad$1: function(url) {
-  var request = $.HttpRequest_HttpRequest();
-  var e = this._getByUrl$1(url);
-  $.add$1(request.get$on().get$abort(), new $.ResourceLoader__httpLoad_anon(this, e));
-  $.add$1(request.get$on().get$error(), new $.ResourceLoader__httpLoad_anon0(this, e));
-  $.add$1(request.get$on().get$loadEnd(), new $.ResourceLoader__httpLoad_anon1(this, e));
-  $.add$1(request.get$on().get$progress(), new $.ResourceLoader__httpLoad_anon2(this, e));
-  request.open$2('GET', url);
-  request.set$responseType('blob');
-  request.send$0();
-},
- _onLoadEnd$2: function(entry, args) {
-  var request = args.get$currentTarget();
-  if ($.eqB(request.get$status(), 200))
-    this._doLoad$1(entry.getBlobUrl$1(request.get$response()));
-  else
-    this._onError$2(entry, args);
-},
- _onError$2: function(entry, args) {
-  throw $.$$throw('wtf?');
-},
- _onProgress$2: function(entry, args) {
-  if (entry.updateProgress$2(args.get$loaded(), args.get$totalSize()) === true)
-    this._progressEvent.fireEvent$1($.CTC20);
-}
-};
-
-$$.ImageLoader = {"":
- ["_entries", "_loadedEvent", "_progressEvent", "_lib6_state"],
- "super": "ResourceLoader",
- _doLoad$1: function(blobUrl) {
-  var img = $.ImageElement_ImageElement(blobUrl, $, $);
-  $.add$1(img.get$on().get$load(), new $.ImageLoader__doLoad_anon(this, img, blobUrl));
-}
-};
-
-$$.AudioLoader = {"":
- ["context?", "_entries", "_loadedEvent", "_progressEvent", "_lib6_state"],
- "super": "ResourceLoader",
- _doLoad$1: function(blobUrl) {
-  var arrayBufferRequest = $.HttpRequest_HttpRequest();
-  arrayBufferRequest.open$3('GET', blobUrl, true);
-  arrayBufferRequest.set$responseType('arraybuffer');
-  $.add$1(arrayBufferRequest.get$on().get$load(), new $.AudioLoader__doLoad_anon(arrayBufferRequest, blobUrl, this));
-  $.add$1(arrayBufferRequest.get$on().get$error(), new $.AudioLoader__doLoad_anon0(this, blobUrl));
-  arrayBufferRequest.send$0();
-},
- _onAudioLoadError$3: function(blobUrl, description, error) {
-  $.print(['Error!', description, error]);
-  this._loadResourceFailed$1(blobUrl);
-},
- _saveBuffer$2: function(blobUrl, buffer) {
-  if (buffer == null)
-    this._onAudioLoadError$3(blobUrl, 'null buffer', '');
-  this._loadResourceSucceed$2(blobUrl, buffer);
 }
 };
 
@@ -10727,13 +10728,13 @@ $.CTC60 = 'structured clone of ArrayBufferView';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
 $.CTC28 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC1);
 $.CTC15 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC61 = 'hidden';
-$.CTC33 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC62 = -472;
-$.CTC63 = -348;
+$.CTC61 = -472;
+$.CTC62 = -348;
 $.CTC46 = new Isolate.$isolateProperties.Vector(-472, -348);
-$.CTC64 = 'Cannot add to immutable List.';
+$.CTC63 = 'Cannot add to immutable List.';
 $.CTC2 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot add to immutable List.');
+$.CTC64 = 'hidden';
+$.CTC33 = new Isolate.$isolateProperties.SquareState('hidden');
 $.CTC65 = '[-[\\]{}()*+?.,\\\\^$|#\\s]';
 $.CTC66 = false;
 $.CTC14 = new Isolate.$isolateProperties.JSSyntaxRegExp('[-[\\]{}()*+?.,\\\\^$|#\\s]', false, false);
@@ -10748,87 +10749,87 @@ $.CTC71 = 96;
 $.CTC27 = new Isolate.$isolateProperties.Vector(352, 96);
 $.CTC72 = 100;
 $.CTC34 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC73 = 'won';
-$.CTC37 = new Isolate.$isolateProperties.GameState('won');
+$.CTC73 = 0;
+$.CTC40 = new Isolate.$isolateProperties.Coordinate(0, 0);
 $.CTC74 = 'offsetX is only supported on elements';
 $.CTC19 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
 $.CTC75 = 'The input sequence is empty.';
 $.CTC49 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC76 = 'lost';
-$.CTC38 = new Isolate.$isolateProperties.GameState('lost');
-$.CTC77 = -88;
+$.CTC76 = -88;
 $.CTC44 = new Isolate.$isolateProperties.Vector(-88, -88);
-$.CTC78 = 0;
-$.CTC40 = new Isolate.$isolateProperties.Coordinate(0, 0);
 $.CTC18 = new Isolate.$isolateProperties._UndefinedValue();
 $.CTC22 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC79 = 'structured clone of File';
+$.CTC77 = 'structured clone of File';
 $.CTC5 = new Isolate.$isolateProperties.NotImplementedException('structured clone of File');
-$.CTC80 = 'game_board_center';
-$.CTC81 = 'number_one';
-$.CTC82 = 'number_two';
-$.CTC83 = 'number_three';
-$.CTC84 = 'number_four';
-$.CTC85 = 'number_five';
-$.CTC86 = 'number_six';
-$.CTC87 = 'number_seven';
-$.CTC88 = 'number_eight';
+$.CTC78 = 'game_board_center';
+$.CTC79 = 'number_one';
+$.CTC80 = 'number_two';
+$.CTC81 = 'number_three';
+$.CTC82 = 'number_four';
+$.CTC83 = 'number_five';
+$.CTC84 = 'number_six';
+$.CTC85 = 'number_seven';
+$.CTC86 = 'number_eight';
 $.CTC47 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
-$.CTC89 = 'structured clone of ImageData';
-$.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ImageData');
-$.CTC90 = null;
+$.CTC87 = 'won';
+$.CTC37 = new Isolate.$isolateProperties.GameState('won');
+$.CTC88 = 'lost';
+$.CTC38 = new Isolate.$isolateProperties.GameState('lost');
+$.CTC89 = null;
 $.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
+$.CTC90 = 'structured clone of ImageData';
+$.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ImageData');
 $.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC16 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC91 = 'Cannot removeLast on immutable List.';
-$.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
-$.CTC92 = 'balloon_pieces_a.png';
-$.CTC93 = 'balloon_pieces_b.png';
-$.CTC94 = 'balloon_pieces_c.png';
-$.CTC95 = 'balloon_pieces_d.png';
-$.CTC48 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
-$.CTC96 = 'The input sequence contains more than one element.';
+$.CTC91 = 'The input sequence contains more than one element.';
 $.CTC50 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
+$.CTC92 = 'Cannot removeLast on immutable List.';
+$.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
+$.CTC93 = 'balloon_pieces_a.png';
+$.CTC94 = 'balloon_pieces_b.png';
+$.CTC95 = 'balloon_pieces_c.png';
+$.CTC96 = 'balloon_pieces_d.png';
+$.CTC48 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
 $.CTC97 = '^#[_a-zA-Z]\\w*$';
 $.CTC13 = new Isolate.$isolateProperties.JSSyntaxRegExp('^#[_a-zA-Z]\\w*$', false, false);
-$.CTC98 = 'structured clone of ArrayBuffer';
+$.CTC98 = 'reset';
+$.CTC29 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC99 = 'structured clone of ArrayBuffer';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC99 = 'Cannot sort immutable List.';
+$.CTC100 = 'Cannot sort immutable List.';
 $.CTC43 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot sort immutable List.');
-$.CTC100 = 'structured clone of Date';
+$.CTC101 = 'structured clone of Date';
 $.CTC3 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
 $.CTC51 = new Isolate.$isolateProperties.Object();
-$.CTC101 = 'IDBKey containing Date';
+$.CTC102 = 'IDBKey containing Date';
 $.CTC17 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC102 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC24 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC102, Isolate.$isolateProperties.CTC102, Isolate.$isolateProperties.CTC102, Isolate.$isolateProperties.CTC102, Isolate.$isolateProperties.CTC1);
-$.CTC103 = 'Incorrect number or type of arguments';
+$.CTC103 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC24 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC103, Isolate.$isolateProperties.CTC1);
+$.CTC104 = 'Incorrect number or type of arguments';
 $.CTC23 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
-$.CTC104 = 'reset';
-$.CTC29 = new Isolate.$isolateProperties.GameState('reset');
-$.CTC105 = 'Pop0';
-$.CTC106 = 'Pop1';
-$.CTC107 = 'Pop2';
-$.CTC108 = 'Pop3';
-$.CTC109 = 'Pop4';
-$.CTC110 = 'Pop5';
-$.CTC111 = 'Pop6';
-$.CTC112 = 'Pop7';
-$.CTC113 = 'Pop8';
-$.CTC114 = 'Bomb1';
-$.CTC115 = 'Bomb2';
-$.CTC116 = 'Bomb3';
-$.CTC117 = 'Bomb4';
-$.CTC118 = 'Bomb5';
-$.CTC119 = 'DartThrow3';
-$.CTC120 = 'Flag2';
-$.CTC121 = 'Unflag2';
-$.CTC122 = 'Click1';
-$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5', 'DartThrow3', 'Flag2', 'Unflag2', 'Click1']);
-$.CTC123 = 'structured clone of Blob';
-$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
-$.CTC124 = 'Cannot insertRange on immutable List.';
+$.CTC105 = 'Cannot insertRange on immutable List.';
 $.CTC30 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
+$.CTC106 = 'Pop0';
+$.CTC107 = 'Pop1';
+$.CTC108 = 'Pop2';
+$.CTC109 = 'Pop3';
+$.CTC110 = 'Pop4';
+$.CTC111 = 'Pop5';
+$.CTC112 = 'Pop6';
+$.CTC113 = 'Pop7';
+$.CTC114 = 'Pop8';
+$.CTC115 = 'Bomb1';
+$.CTC116 = 'Bomb2';
+$.CTC117 = 'Bomb3';
+$.CTC118 = 'Bomb4';
+$.CTC119 = 'Bomb5';
+$.CTC120 = 'DartThrow3';
+$.CTC121 = 'Flag2';
+$.CTC122 = 'Unflag2';
+$.CTC123 = 'Click1';
+$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5', 'DartThrow3', 'Flag2', 'Unflag2', 'Click1']);
+$.CTC124 = 'structured clone of Blob';
+$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
 $.CTC125 = 'Cannot removeRange on immutable List.';
 $.CTC41 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
 $.CTC126 = 'structured clone of RegExp';
@@ -10836,18 +10837,18 @@ $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clon
 $.CTC127 = 'safe';
 $.CTC45 = new Isolate.$isolateProperties.SquareState('safe');
 $.CTC32 = new Isolate.$isolateProperties._Random();
-$.CTC128 = 'mine';
+$.CTC128 = 'started';
+$.CTC39 = new Isolate.$isolateProperties.GameState('started');
+$.CTC129 = 'mine';
 $.CTC42 = new Isolate.$isolateProperties.SquareState('mine');
-$.CTC129 = 'revealed';
+$.CTC130 = 'revealed';
 $.CTC35 = new Isolate.$isolateProperties.SquareState('revealed');
-$.CTC130 = 'structured clone of other type';
+$.CTC131 = 'structured clone of other type';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC131 = 'flagged';
-$.CTC36 = new Isolate.$isolateProperties.SquareState('flagged');
 $.CTC132 = 'Mutation operations are not supported';
 $.CTC31 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
-$.CTC133 = 'started';
-$.CTC39 = new Isolate.$isolateProperties.GameState('started');
+$.CTC133 = 'flagged';
+$.CTC36 = new Isolate.$isolateProperties.SquareState('flagged');
 $.Property_Undefined = Isolate.$isolateProperties.CTC18;
 $.Duration_HOURS_PER_DAY = 24;
 $.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC15;
@@ -10983,8 +10984,8 @@ $.$defineNativeClass = function(cls, fields, methods) {
  is$ImageData: function() { return false; },
  is$_ArrayBufferImpl: function() { return false; },
  hashCode$0: function() { return $.hashCodeForNativeObject(this); },
- is$Map: function() { return false; },
  is$List: function() { return false; },
+ is$Map: function() { return false; },
  is$Collection: function() { return false; }
 });
 
