@@ -1,9 +1,10 @@
 #library('sweeper');
 
 #import('dart:math', prefix:'math');
+
 #import('package:bot/bot.dart');
 
-#source('sweeper/field.dart');
-#source('sweeper/game.dart');
-#source('sweeper/game_state.dart');
-#source('sweeper/square_state.dart');
+#source('src/sweeper/field.dart');
+#source('src/sweeper/game.dart');
+#source('src/sweeper/game_state.dart');
+#source('src/sweeper/square_state.dart');
