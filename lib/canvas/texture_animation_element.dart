@@ -1,8 +1,7 @@
 class TextureAnimationElement extends PElement {
   final List<TextureAnimationRequest> _requests = new List<TextureAnimationRequest>();
 
-  TextureAnimationElement(num width, num height) :
-    super(width, height);
+  TextureAnimationElement(num width, num height) : super(width, height);
 
   void add(TextureAnimationRequest request) {
     assert(request != null);
@@ -35,7 +34,14 @@ class TextureAnimationElement extends PElement {
 
   void drawOverride(CanvasRenderingContext2D ctx) {
     for(final r in _requests) {
-      r.drawOverride(ctx);
+      final data = r._getFrameDetails();
+      final offset = data.item1;
+      final frameName = data.item2;
+
+      ctx.save();
+      ctx.translate(offset.x, offset.y);
+      drawTextureKeyAt(ctx, frameName);
+      ctx.restore();
     }
   }
 }
@@ -84,7 +90,7 @@ class TextureAnimationRequest {
     }
   }
 
-  void drawOverride(CanvasRenderingContext2D ctx) {
+  Tuple<Coordinate, String> _getFrameDetails() {
     var frameName;
     var offset = _offset;
     if(_frame < 0 && _initialFrame != null) {
@@ -105,9 +111,6 @@ class TextureAnimationRequest {
       frameName = "${_texturePrefix}_$frameString.png";
     }
 
-    ctx.save();
-    ctx.translate(offset.x, offset.y);
-    drawTextureKeyAt(ctx, frameName);
-    ctx.restore();
+    return new Tuple(offset, frameName);
   }
 }
