@@ -2,7 +2,7 @@ body {
   font-family: 'Slackey', cursive;
   // overflow: hidden;
   text-align: center;
-  background: rgb(180,173,127);	
+  background: rgb(180,173,127);
   margin: 0;
 }
 
@@ -76,6 +76,6 @@ span.status {
   margin: 10px;
 }
 
-canvas#sweeperCanvas {
+canvas#gameCanvas {
   -webkit-user-select: none;
 }

@@ -7,7 +7,7 @@
 #import('package:bot/bot.dart');
 #import('package:bot/html.dart');
 
-#import('ppw.dart');
+#import('poppopwin.dart');
 
 #source('src/html/high_score_view.dart');
 #source('src/html/game_view.dart');

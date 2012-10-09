@@ -1,4 +1,4 @@
-#sweeperTable {
+#gameTable {
   margin: 0 auto;
   border-collapse: collapse;
   border-spacing: 0;
@@ -10,10 +10,10 @@
   user-select: none;
 }
 
-#sweeperTable td.game-square {
+#gameTable td.game-square {
   width: 30px;
   height: 30px;
-  background: #6666CC;  
+  background: #6666CC;
   text-align: center;
   border-style: solid;
   border-width: 1px;
@@ -21,21 +21,21 @@
   cursor: pointer;
 }
 
-#sweeperTable td.game-square.flagged {
+#gameTable td.game-square.flagged {
   background: orange;
 }
 
-#sweeperTable td.game-square.revealed {
+#gameTable td.game-square.revealed {
   background: white;
   cursor: default;
 }
 
-#sweeperTable td.game-square.mine {
+#gameTable td.game-square.mine {
   background: red;
   cursor: default;
 }
 
-#sweeperTable td.game-square.safe {
+#gameTable td.game-square.safe {
   background: green;
   cursor: default;
 }

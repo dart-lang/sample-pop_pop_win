@@ -4,7 +4,7 @@
 #import('package:unittest/unittest.dart');
 #import('package:bot/bot.dart');
 
-#import('package:poppopwin/ppw.dart');
+#import('package:poppopwin/poppopwin.dart');
 
 #source('test_field.dart');
 #source('test_game.dart');

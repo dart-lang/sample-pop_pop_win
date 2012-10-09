@@ -5274,7 +5274,7 @@ $.regExpMakeNative = function(regExp, global) {
 };
 
 $.main = function() {
-  var gameView = $.GameView$(16, 16, 40, $.query('#sweeperTable'), $.query('#minesLeft'), $.query('#gameState'), $.query('#clock'));
+  var gameView = $.GameView$(16, 16, 40, $.query('#gameTable'), $.query('#minesLeft'), $.query('#gameState'), $.query('#clock'));
   $.HighScoreView$(gameView, $.query('#highScore'));
   $.add$1($.query('#newGame').get$on().get$click(), new $.main_anon(gameView));
 };
@@ -11565,4 +11565,4 @@ Isolate.$finishIsolateConstructor = function(oldIsolate) {
 };
 }
 
-//@ sourceMappingURL=sweeper_dom.dart.js.map
+//@ sourceMappingURL=game_dom.dart.js.map

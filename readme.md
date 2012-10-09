@@ -25,7 +25,7 @@ _Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.da
 
 ## License
 
-    Copyright (c) 2012, Dartsweeper authors
+    Copyright (c) 2012, Pop, Pop, Win! authors
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

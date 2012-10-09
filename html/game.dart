@@ -3,7 +3,7 @@
 #import('package:bot/bot.dart');
 #import('package:bot/html.dart');
 #import('package:bot/texture.dart');
-#import('package:poppopwin/ppw.dart');
+#import('package:poppopwin/poppopwin.dart');
 #import('package:poppopwin/canvas.dart');
 
 #source('texture_data.dart');
@@ -103,11 +103,8 @@ void _runppw(TextureData textureData) {
   final int w = 7, h = 7;
   final int m = (w * h * 0.15625).toInt();
 
-  final CanvasElement sweeperTable = query('#sweeperCanvas');
-  final Element gameStateDiv = query('#gameState');
-
-
-  final gameRoot = new GameRoot(w, h, m, sweeperTable, textureData);
+  final CanvasElement poppopwinTable = query('#gameCanvas');
+  final gameRoot = new GameRoot(w, h, m, poppopwinTable, textureData);
 
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());

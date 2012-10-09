@@ -5879,7 +5879,7 @@ $$.ResourceLoader_completedBytes_anon = {"":
 }
 };
 
-$$._runSweeper_anon = {"":
+$$._runppw_anon = {"":
  [],
  "super": "Closure",
  call$1: function(args) {
@@ -7445,7 +7445,7 @@ $._onLoaded = function(args) {
       $.populateAudio($._audioLoader.get$context(), map);
     }
     $.query('#loading').get$style().set$display('none');
-    $._runSweeper(textureData);
+    $._runppw(textureData);
   }
 };
 
@@ -7793,14 +7793,6 @@ $._convertNativeToDart_IDBKey = function(nativeKey) {
   return nativeKey;
 };
 
-$._runSweeper = function(textureData) {
-  var m = $.toInt(7.65625);
-  var sweeperTable = $.query('#sweeperCanvas');
-  $.query('#gameState');
-  $.GameRoot_GameRoot(7, 7, m, sweeperTable, textureData);
-  $.add$1($.window().get$on().get$touchMove(), new $._runSweeper_anon());
-};
-
 $.compareTo = function(a, b) {
   if ($.checkNumbers(a, b))
     if ($.ltB(a, b))
@@ -8021,6 +8013,11 @@ $.ImageElement_ImageElement = function(src, width, height) {
   if (t3)
     return $._Elements_createImageElement(src, width, null);
   return $._Elements_createImageElement(src, width, height);
+};
+
+$._runppw = function(textureData) {
+  $.GameRoot_GameRoot(7, 7, $.toInt(7.65625), $.query('#gameCanvas'), textureData);
+  $.add$1($.window().get$on().get$touchMove(), new $._runppw_anon());
 };
 
 $.Collections__emitCollection = function(c, result, visiting) {
@@ -9554,6 +9551,13 @@ $._FixedSizeListIterator$ = function(array) {
   return new $._FixedSizeListIterator($.get$length(array), array, 0);
 };
 
+$.addLast = function(receiver, value) {
+  if (!$.isJsArray(receiver))
+    return receiver.addLast$1(value);
+  $.checkGrowable(receiver, 'addLast');
+  receiver.push(value);
+};
+
 $.propertyTypeCast = function(value, property) {
   if (value == null || !!value[property])
     return value;
@@ -9566,13 +9570,6 @@ $._FileReaderEventsImpl$ = function(_ptr) {
 
 $.DetailedIllegalArgumentException$ = function(arg, message) {
   return new $.DetailedIllegalArgumentException(arg, message);
-};
-
-$.addLast = function(receiver, value) {
-  if (!$.isJsArray(receiver))
-    return receiver.addLast$1(value);
-  $.checkGrowable(receiver, 'addLast');
-  receiver.push(value);
 };
 
 $.MutationObserver_MutationObserver = function(callback) {
@@ -15926,4 +15923,4 @@ Isolate.$finishIsolateConstructor = function(oldIsolate) {
 };
 }
 
-//@ sourceMappingURL=sweeper_canvas.dart.js.map
+//@ sourceMappingURL=game.dart.js.map
