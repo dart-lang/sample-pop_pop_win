@@ -226,7 +226,7 @@ $$.HashMapImplementation = {"":
       return insertionIndex;
     } else if ($.eqB(existingKey, key))
       return hash;
-    else if (insertionIndex < 0 && $.CTC17 === existingKey)
+    else if (insertionIndex < 0 && $.CTC16 === existingKey)
       insertionIndex = hash;
     var numberOfProbes0 = numberOfProbes + 1;
     hash = $.HashMapImplementation__nextProbe(hash, numberOfProbes, this._keys.length);
@@ -248,7 +248,7 @@ $$.HashMapImplementation = {"":
       return insertionIndex;
     } else if ($.eqB(existingKey, key))
       return hash;
-    else if (insertionIndex < 0 && $.CTC17 === existingKey)
+    else if (insertionIndex < 0 && $.CTC16 === existingKey)
       insertionIndex = hash;
     var numberOfProbes0 = numberOfProbes + 1;
     hash = $.HashMapImplementation__nextProbe(hash, numberOfProbes, this._keys.length);
@@ -315,7 +315,7 @@ $$.HashMapImplementation = {"":
     if (i >= t1)
       throw $.ioore(i);
     var key = oldKeys[i];
-    if (key == null || key === $.CTC17)
+    if (key == null || key === $.CTC16)
       continue;
     if (i >= t2)
       throw $.ioore(i);
@@ -355,7 +355,7 @@ $$.HashMapImplementation = {"":
   if (index < 0 || index >= t1.length)
     throw $.ioore(index);
   t1 = t1[index];
-  if (t1 == null || t1 === $.CTC17)
+  if (t1 == null || t1 === $.CTC16)
     this._numberOfEntries = this._numberOfEntries + 1;
   t1 = this._keys;
   if (index >= t1.length)
@@ -391,7 +391,7 @@ $$.HashMapImplementation = {"":
     t1 = this._keys;
     if (index >= t1.length)
       throw $.ioore(index);
-    t1[index] = $.CTC17;
+    t1[index] = $.CTC16;
     this._numberOfDeleted = this._numberOfDeleted + 1;
     return value;
   }
@@ -410,7 +410,7 @@ $$.HashMapImplementation = {"":
     if (i >= t1.length)
       throw $.ioore(i);
     var key = t1[i];
-    if (!(key == null) && !(key === $.CTC17)) {
+    if (!(key == null) && !(key === $.CTC16)) {
       t1 = this._values;
       if (i >= t1.length)
         throw $.ioore(i);
@@ -503,7 +503,7 @@ $$.HashSetIterator = {"":
     return false;
   if (t1 < 0)
     throw $.ioore(t1);
-  if (t2[t1] === $.CTC17)
+  if (t2[t1] === $.CTC16)
     this._advance$0();
   return this._nextValidIndex < t3;
 },
@@ -531,7 +531,7 @@ $$.HashSetIterator = {"":
     if (t2 < 0 || t2 >= length$)
       throw $.ioore(t2);
     entry = t1[t2];
-  } while (entry == null || entry === $.CTC17);
+  } while (entry == null || entry === $.CTC16);
 },
  HashSetIterator$1: function(set_) {
   this._advance$0();
@@ -2847,7 +2847,7 @@ $$.Game = {"":
   }
 },
  _canChord$2: function(x, y) {
-  if ($.eqB(this._states.get$2(x, y), $.CTC16)) {
+  if ($.eqB(this._states.get$2(x, y), $.CTC17)) {
     var adjCount = this.field.getAdjacentCount$2(x, y);
     if ($.gtB(adjCount, 0))
       if ($.gtB(this._getAdjacentCount$3(x, y, $.CTC23), 0))
@@ -2950,7 +2950,7 @@ $$.Game = {"":
   var t1 = this._states;
   if (typeof t1 !== 'string' && (typeof t1 !== 'object' || t1 === null || t1.constructor !== Array && !t1.is$JavaScriptIndexingBehavior()))
     return this._doReveal$2$bailout(1, x, y, t1, 0, 0, 0);
-  t1.set$3(x, y, $.CTC16);
+  t1.set$3(x, y, $.CTC17);
   var t3 = this._revealsLeft;
   if (typeof t3 !== 'number')
     return this._doReveal$2$bailout(2, x, y, t1, t3, 0, 0);
@@ -3015,7 +3015,7 @@ $$.Game = {"":
       var t1 = this._states;
     case 1:
       state = 0;
-      t1.set$3(x, y, $.CTC16);
+      t1.set$3(x, y, $.CTC17);
       var t3 = this._revealsLeft;
     case 2:
       state = 0;
@@ -3646,10 +3646,10 @@ $$.Vector = {"":
 };
 
 $$.HighScoreView = {"":
- ["_width", "_height", "_mineCount", "_div", "_storage"],
+ ["_div", "_manager"],
  "super": "Object",
  _update$0: function() {
-  var milliseconds = this._storage.getHighScore$3(this._width, this._height, this._mineCount);
+  var milliseconds = this._manager.get$highScore();
   var t1 = !(milliseconds == null);
   var t2 = this._div;
   if (t1)
@@ -3657,41 +3657,41 @@ $$.HighScoreView = {"":
   else
     t2.set$innerHTML('');
 },
- HighScoreView$5: function(_width, _height, _mineCount, _div, _storage) {
-  $.add$1(this._storage.get$highScoreUpdated(), new $.anon(this));
+ HighScoreView$2: function(_manager, _div) {
+  $.add$1(this._manager.get$highScoreUpdated(), new $.anon(this));
   this._update$0();
 }
 };
 
 $$.GameView = {"":
- ["_table", "_leftCountDiv", "_gameStateDiv", "_clockDiv", "_width", "_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
+ ["_table", "_leftCountDiv", "_gameStateDiv", "_clockDiv", "_width", "_height", "_mineCount", "_gameStorage", "_game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
  updateElement$0: function() {
   this.updateClock$0();
-  var t1 = this.game.get$state().get$name();
+  var t1 = this.get$game().get$state().get$name();
   this._gameStateDiv.set$innerHTML(t1);
-  t1 = $.toString(this.game.get$minesLeft());
+  t1 = $.toString(this.get$game().get$minesLeft());
   this._leftCountDiv.set$innerHTML(t1);
   t1 = this._table;
   if ($.eqB($.get$length(t1.get$elements()), 0))
-    for (var r = 0; $.ltB(r, this.game.get$field().get$height()); ++r) {
+    for (var r = 0; $.ltB(r, this.get$game().get$field().get$height()); ++r) {
       var row = t1.insertRow$1(-1);
-      for (var c = 0; $.ltB(c, this.game.get$field().get$width()); ++c) {
+      for (var c = 0; $.ltB(c, this.get$game().get$field().get$width()); ++c) {
         var cell = row.insertCell$1(-1);
         $.add$1(cell.get$on().get$mouseDown(), this.get$_cellClick());
         $.indexSet(cell.get$dataAttributes(), 'x', $.toString(c));
         $.indexSet(cell.get$dataAttributes(), 'y', $.toString(r));
       }
     }
-  for (r = 0; $.ltB(r, this.game.get$field().get$height()); ++r)
-    for (c = 0; $.ltB(c, this.game.get$field().get$width()); ++c) {
+  for (r = 0; $.ltB(r, this.get$game().get$field().get$height()); ++r)
+    for (c = 0; $.ltB(c, this.get$game().get$field().get$width()); ++c) {
       cell = $.index($.index(t1.get$rows(), r).get$cells(), c);
       $.clear(cell.get$classes());
       $.add$1(cell.get$classes(), 'game-square');
-      var ss = this.game.getSquareState$2(c, r);
+      var ss = this.get$game().getSquareState$2(c, r);
       $.add$1(cell.get$classes(), ss.get$name());
-      if ($.eqB(ss, $.CTC16)) {
-        var adj = this.game.get$field().getAdjacentCount$2(c, r);
+      if ($.eqB(ss, $.CTC17)) {
+        var adj = this.get$game().get$field().getAdjacentCount$2(c, r);
         if ($.gtB(adj, 0))
           cell.set$innerHTML($.toString(adj));
       }
@@ -3703,12 +3703,12 @@ $$.GameView = {"":
   this.updateElement$0();
 },
  updateClock$0: function() {
-  var t1 = this.game.get$duration() == null;
+  var t1 = this.get$game().get$duration() == null;
   var t2 = this._clockDiv;
   if (t1)
     t2.set$innerHTML('');
   else
-    t2.set$innerHTML($.toString(this.game.get$duration().get$inSeconds()));
+    t2.set$innerHTML($.toString(this.get$game().get$duration().get$inSeconds()));
   $.GameManager.prototype.updateClock$0.call(this);
 },
  _cellClick$1: function(args) {
@@ -3784,35 +3784,44 @@ $$.GameStorage = {"":
 $$.GameManager = {"":
  [],
  "super": "Object",
+ get$game: function() {
+  return this._game;
+},
+ get$highScoreUpdated: function() {
+  return this._gameStorage.get$highScoreUpdated();
+},
+ get$highScore: function() {
+  return this._gameStorage.getHighScore$3(this._width, this._height, this._mineCount);
+},
  newGame$0: function() {
   if (!(this._updatedEventId == null)) {
-    this.game.get$updated().remove$1(this._updatedEventId);
-    this.game.get$stateChanged().remove$1(this._gameStateChangedId);
+    this._game.get$updated().remove$1(this._updatedEventId);
+    this._game.get$stateChanged().remove$1(this._gameStateChangedId);
     this._gameStateChanged$1($.CTC25);
   }
-  this.game = $.Game$($.Field_Field(this._mineCount, this._width, this._height, null));
-  this._updatedEventId = $.add$1(this.game.get$updated(), this.get$gameUpdated());
-  this._gameStateChangedId = $.add$1(this.game.get$stateChanged(), this.get$_gameStateChanged());
+  this._game = $.Game$($.Field_Field(this._mineCount, this._width, this._height, null));
+  this._updatedEventId = $.add$1(this._game.get$updated(), this.get$gameUpdated());
+  this._gameStateChangedId = $.add$1(this._game.get$stateChanged(), this.get$_gameStateChanged());
 },
  gameUpdated$1: function(args) {
 },
  get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
  _click$3: function(x, y, alt) {
-  var ss = this.game.getSquareState$2(x, y);
+  var ss = this._game.getSquareState$2(x, y);
   if (alt === true) {
     if ($.eqB(ss, $.CTC23))
-      this.game.setFlag$3(x, y, true);
+      this._game.setFlag$3(x, y, true);
     else if ($.eqB(ss, $.CTC24))
-      this.game.setFlag$3(x, y, false);
-    else if ($.eqB(ss, $.CTC16))
-      this.game.reveal$2(x, y);
+      this._game.setFlag$3(x, y, false);
+    else if ($.eqB(ss, $.CTC17))
+      this._game.reveal$2(x, y);
   } else if ($.eqB(ss, $.CTC23))
-    this.game.reveal$2(x, y);
+    this._game.reveal$2(x, y);
 },
  updateClock$0: function() {
-  if (this._setIntervalId == null && $.eqB(this.game.get$state(), $.CTC26))
+  if (this._setIntervalId == null && $.eqB(this._game.get$state(), $.CTC26))
     this._setIntervalId = $.window().setInterval$2(this.get$_doClock(), 1000);
-  else if (!(this._setIntervalId == null) && !$.eqB(this.game.get$state(), $.CTC26)) {
+  else if (!(this._setIntervalId == null) && !$.eqB(this._game.get$state(), $.CTC26)) {
     $.window().clearInterval$1(this._setIntervalId);
     this._setIntervalId = null;
   }
@@ -3822,13 +3831,13 @@ $$.GameManager = {"":
 },
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
  get$_canClick: function() {
-  return $.eqB(this.game.get$state(), $.CTC25) || $.eqB(this.game.get$state(), $.CTC26);
+  return $.eqB(this._game.get$state(), $.CTC25) || $.eqB(this._game.get$state(), $.CTC26);
 },
  _gameStateChanged$1: function(newState) {
-  var t1 = this.gameStorage;
+  var t1 = this._gameStorage;
   t1.recordState$1(newState);
   if ($.eqB(newState, $.CTC34))
-    t1.updateHighScore$1(this.game);
+    t1.updateHighScore$1(this._game);
   this.updateClock$0();
 },
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
@@ -5142,9 +5151,9 @@ $._waitForPendingPorts = function(message, callback) {
   $.Futures_wait(finder.ports).then$1(new $._waitForPendingPorts_anon(callback));
 };
 
-$.HighScoreView$ = function(_width, _height, _mineCount, _div, _storage) {
-  var t1 = new $.HighScoreView(_width, _height, _mineCount, _div, _storage);
-  t1.HighScoreView$5(_width, _height, _mineCount, _div, _storage);
+$.HighScoreView$ = function(_manager, _div) {
+  var t1 = new $.HighScoreView(_div, _manager);
+  t1.HighScoreView$2(_manager, _div);
   return t1;
 };
 
@@ -5266,7 +5275,7 @@ $.regExpMakeNative = function(regExp, global) {
 
 $.main = function() {
   var gameView = $.GameView$(16, 16, 40, $.query('#sweeperTable'), $.query('#minesLeft'), $.query('#gameState'), $.query('#clock'));
-  $.HighScoreView$(16, 16, 40, $.query('#highScore'), gameView.gameStorage);
+  $.HighScoreView$(gameView, $.query('#highScore'));
   $.add$1($.query('#newGame').get$on().get$click(), new $.main_anon(gameView));
 };
 
@@ -5289,12 +5298,6 @@ $._FrozenElementListIterator$ = function(_list) {
   return new $._FrozenElementListIterator(_list, 0);
 };
 
-$._JsCopier$ = function() {
-  var t1 = new $._JsCopier($._MessageTraverserVisitedMap$());
-  t1._JsCopier$0();
-  return t1;
-};
-
 $.Primitives_getHours = function(receiver) {
   return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCHours() : $.Primitives_lazyAsJsDate(receiver).getHours();
 };
@@ -5314,6 +5317,12 @@ $.invokeClosure = function(closure, isolate, numberOfArguments, arg1, arg2) {
     return $._callInIsolate(isolate, new $.invokeClosure_anon1(closure, arg1, arg2));
   else
     throw $.$$throw($.ExceptionImplementation$('Unsupported number of arguments for wrapped closure'));
+};
+
+$._JsCopier$ = function() {
+  var t1 = new $._JsCopier($._MessageTraverserVisitedMap$());
+  t1._JsCopier$0();
+  return t1;
 };
 
 $.MetaInfo$ = function(_tag, _tags, _set) {
@@ -5602,21 +5611,6 @@ $._DoubleLinkedQueueIterator$ = function(_sentinel) {
   return t1;
 };
 
-$.toString = function(value) {
-  if (typeof value == "object" && value !== null)
-    if ($.isJsArray(value))
-      return $.Collections_collectionToString(value);
-    else
-      return value.toString$0();
-  if (value === 0 && (1 / value) < 0)
-    return '-0.0';
-  if (value == null)
-    return 'null';
-  if (typeof value == "function")
-    return 'Closure';
-  return String(value);
-};
-
 $._Device_isIE = function() {
   return $._Device_isOpera() !== true && $.contains$2($._Device_userAgent(), 'MSIE', 0) === true;
 };
@@ -5764,6 +5758,21 @@ $.add$slow = function(a, b) {
 
 $.jsHasOwnProperty = function(jsObject, property) {
   return jsObject.hasOwnProperty(property);
+};
+
+$.toString = function(value) {
+  if (typeof value == "object" && value !== null)
+    if ($.isJsArray(value))
+      return $.Collections_collectionToString(value);
+    else
+      return value.toString$0();
+  if (value === 0 && (1 / value) < 0)
+    return '-0.0';
+  if (value == null)
+    return 'null';
+  if (typeof value == "function")
+    return 'Closure';
+  return String(value);
 };
 
 $.ArgumentError$ = function(message) {
@@ -5957,10 +5966,6 @@ $.index = function(a, index) {
   return $.index$slow(a, index);
 };
 
-$.add = function(a, b) {
-  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
-};
-
 $.le$slow = function(a, b) {
   if ($.checkNumbers(a, b))
     return a <= b;
@@ -5996,6 +6001,10 @@ $.substring$1 = function(receiver, startIndex) {
 
 $._ElementFactoryProvider_createElement_tag = function(tag) {
 return document.createElement(tag)
+};
+
+$.add = function(a, b) {
+  return typeof a === 'number' && typeof b === 'number' ? a + b : $.add$slow(a, b);
 };
 
 $.Primitives_dateNow = function() {
@@ -6430,6 +6439,13 @@ $._HttpRequestEventsImpl$ = function(_ptr) {
   return new $._HttpRequestEventsImpl(_ptr);
 };
 
+$.addLast = function(receiver, value) {
+  if (!$.isJsArray(receiver))
+    return receiver.addLast$1(value);
+  $.checkGrowable(receiver, 'addLast');
+  receiver.push(value);
+};
+
 $._JsDeserializer$ = function() {
   return new $._JsDeserializer(null);
 };
@@ -6445,13 +6461,6 @@ $.Array2d$wrap = function(width, source) {
   t1 = new $.Array2d(width, t1, source);
   t1.Array2d$wrap$2(width, source);
   return t1;
-};
-
-$.addLast = function(receiver, value) {
-  if (!$.isJsArray(receiver))
-    return receiver.addLast$1(value);
-  $.checkGrowable(receiver, 'addLast');
-  receiver.push(value);
 };
 
 $.abs = function(receiver) {
@@ -6490,6 +6499,12 @@ $.typeNameInFirefox = function(obj) {
   return name$;
 };
 
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver))
+    return $.ListIterator$(receiver);
+  return receiver.iterator$0();
+};
+
 $._WorkerEventsImpl$ = function(_ptr) {
   return new $._WorkerEventsImpl(_ptr);
 };
@@ -6502,12 +6517,6 @@ $.sub$slow = function(a, b) {
   if ($.checkNumbers(a, b))
     return a - b;
   return a.operator$sub$1(b);
-};
-
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver))
-    return $.ListIterator$(receiver);
-  return receiver.iterator$0();
 };
 
 $.Queue_Queue = function() {
@@ -7255,7 +7264,7 @@ $.CTC39 = false;
 $.CTC = new Isolate.$isolateProperties.JSSyntaxRegExp('^#[_a-zA-Z]\\w*$', false, false);
 $.CTC40 = 'structured clone of ArrayBuffer';
 $.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC17 = new Isolate.$isolateProperties._DeletedKeySentinel();
+$.CTC16 = new Isolate.$isolateProperties._DeletedKeySentinel();
 $.CTC41 = 'frozen class set cannot be modified';
 $.CTC18 = new Isolate.$isolateProperties.UnsupportedOperationException('frozen class set cannot be modified');
 $.CTC42 = 'reset';
@@ -7309,11 +7318,11 @@ $.CTC19 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC63 = '';
 $.CTC14 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.CTC64 = 'revealed';
-$.CTC16 = new Isolate.$isolateProperties.SquareState('revealed');
+$.CTC17 = new Isolate.$isolateProperties.SquareState('revealed');
 $.CTC65 = 'Cannot removeLast on immutable List.';
 $.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
 $.Duration_HOURS_PER_DAY = 24;
-$.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC17;
+$.HashMapImplementation__DELETED_KEY = Isolate.$isolateProperties.CTC16;
 $.DateImplementation__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.GameView__yKey = 'y';
 $.GameView__xKey = 'x';
@@ -7336,7 +7345,7 @@ $._cachedBrowserPrefix = null;
 $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $.GameState_lost = Isolate.$isolateProperties.CTC32;
-$.SquareState_revealed = Isolate.$isolateProperties.CTC16;
+$.SquareState_revealed = Isolate.$isolateProperties.CTC17;
 $.GameState_reset = Isolate.$isolateProperties.CTC25;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
 $.Duration_MILLISECONDS_PER_HOUR = 3600000;

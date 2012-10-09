@@ -4254,18 +4254,18 @@ $$.Game = {"":
   var t1 = this._states;
   var currentSS = t1.get$2(x, y);
   if (value) {
-    $.require($.eq(currentSS, $.CTC33), '');
+    $.require($.eq(currentSS, $.CTC34), '');
     t1.set$3(x, y, $.CTC36);
     this._minesLeft = $.sub(this._minesLeft, 1);
   } else {
     $.require($.eq(currentSS, $.CTC36), '');
-    t1.set$3(x, y, $.CTC33);
+    t1.set$3(x, y, $.CTC34);
     this._minesLeft = $.add(this._minesLeft, 1);
   }
   this._update$0();
 },
  canReveal$2: function(x, y) {
-  if ($.eqB(this._states.get$2(x, y), $.CTC33))
+  if ($.eqB(this._states.get$2(x, y), $.CTC34))
     return true;
   else if (this._canChord$2(x, y) === true)
     return true;
@@ -4274,7 +4274,7 @@ $$.Game = {"":
  reveal$2: function(x, y) {
   this._ensureStarted$0();
   $.require(this.canReveal$2(x, y), 'Item cannot be revealed.');
-  if ($.eqB(this._states.get$2(x, y), $.CTC33))
+  if ($.eqB(this._states.get$2(x, y), $.CTC34))
     if (this.field.get$2(x, y) === true) {
       this._setLost$0();
       var reveals = [];
@@ -4302,7 +4302,7 @@ $$.Game = {"":
       this._ensureStarted$0();
       $.require(this.canReveal$2(x, y), 'Item cannot be revealed.');
     case 1:
-      if (state === 1 || state === 0 && $.eqB(this._states.get$2(x, y), $.CTC33))
+      if (state === 1 || state === 0 && $.eqB(this._states.get$2(x, y), $.CTC34))
         switch (state) {
           case 0:
           case 1:
@@ -4330,7 +4330,7 @@ $$.Game = {"":
   if ($.eqB(this._states.get$2(x, y), $.CTC35)) {
     var adjCount = this.field.getAdjacentCount$2(x, y);
     if ($.gtB(adjCount, 0))
-      if ($.gtB(this._getAdjacentCount$3(x, y, $.CTC33), 0))
+      if ($.gtB(this._getAdjacentCount$3(x, y, $.CTC34), 0))
         if ($.eqB(this._getAdjacentCount$3(x, y, $.CTC36), adjCount))
           return true;
   }
@@ -4353,7 +4353,7 @@ $$.Game = {"":
       throw $.iae(t4);
     if (t4 < 0 || t4 >= t1.length)
       throw $.ioore(t4);
-    if ($.eqB(t1[t4], $.CTC33)) {
+    if ($.eqB(t1[t4], $.CTC34)) {
       hidden.push(t4);
       if (t4 >= t3.length)
         throw $.ioore(t4);
@@ -4407,7 +4407,7 @@ $$.Game = {"":
       t3.getAdjacentCount$2(x, y);
       for (var t2 = $.iterator(t3.getAdjacentIndices$2(x, y)), failed = false; t2.hasNext$0() === true;) {
         var t4 = t2.next$0();
-        if ($.eqB($.index(t1, t4), $.CTC33)) {
+        if ($.eqB($.index(t1, t4), $.CTC34)) {
           hidden.push(t4);
           if ($.index(t3, t4) === true)
             failed = true;
@@ -4453,7 +4453,7 @@ $$.Game = {"":
           throw $.iae(t4);
         if (t4 < 0 || t4 >= t1.length)
           throw $.ioore(t4);
-        if ($.eqB(t1[t4], $.CTC33)) {
+        if ($.eqB(t1[t4], $.CTC34)) {
           var c = t2.getCoordinate$1(t4);
           $.addAll(reveals, this._doReveal$2(c.get$item1(), c.get$item2()));
         }
@@ -4517,7 +4517,7 @@ $$.Game = {"":
             if ($.eqB(t3, 0))
               for (t3 = $.iterator(t2.getAdjacentIndices$2(x, y)); t3.hasNext$0() === true;) {
                 var t4 = t3.next$0();
-                if ($.eqB($.index(t1, t4), $.CTC33)) {
+                if ($.eqB($.index(t1, t4), $.CTC34)) {
                   var c = t2.getCoordinate$1(t4);
                   $.addAll(reveals, this._doReveal$2(c.get$item1(), c.get$item2()));
                 }
@@ -4626,7 +4626,7 @@ $$.Game = {"":
   }
 },
  _ensureStarted$0: function() {
-  if ($.eqB(this.get$state(), $.CTC30))
+  if ($.eqB(this.get$state(), $.CTC31))
     this._setState$1($.CTC39);
 },
  _getAdjacentCount$3: function(x, y, state) {
@@ -4699,10 +4699,10 @@ $$.BoardElement = {"":
   return $.index(t1, index);
 },
  update$0: function() {
-  if (this.get$_game() == null)
+  if (this.get$_lib3_game() == null)
     this._elements = null;
   else if (this.get$_elementsNeedUpdate() === true) {
-    this._elements = $.Array2d_Array2d(this.get$_game().get$field().get$width(), this.get$_game().get$field().get$height(), null);
+    this._elements = $.Array2d_Array2d(this.get$_lib3_game().get$field().get$width(), this.get$_lib3_game().get$field().get$height(), null);
     var i = 0;
     while (true) {
       var t1 = $.get$length(this._elements);
@@ -4731,11 +4731,11 @@ $$.BoardElement = {"":
       t1[i] = se;
       ++i;
     }
-    t1 = this.get$_game().get$field().get$width();
+    t1 = this.get$_lib3_game().get$field().get$width();
     if (typeof t1 !== 'number')
       return this.update$0$bailout(5, t1, 0, 0, 0, 0);
     t1 *= 80;
-    t3 = this.get$_game().get$field().get$height();
+    t3 = this.get$_lib3_game().get$field().get$height();
     if (typeof t3 !== 'number')
       return this.update$0$bailout(6, t1, t3, 0, 0, 0);
     this.set$size($.Size$(t1, t3 * 80));
@@ -4778,7 +4778,7 @@ $$.BoardElement = {"":
   switch (state) {
     case 0:
     default:
-      if (state === 0 && this.get$_game() == null)
+      if (state === 0 && this.get$_lib3_game() == null)
         this._elements = null;
       else
         switch (state) {
@@ -4787,7 +4787,7 @@ $$.BoardElement = {"":
             if (state === 6 || state === 5 || state === 4 || state === 3 || state === 2 || state === 1 || state === 0 && this.get$_elementsNeedUpdate() === true)
               switch (state) {
                 case 0:
-                  this._elements = $.Array2d_Array2d(this.get$_game().get$field().get$width(), this.get$_game().get$field().get$height(), null);
+                  this._elements = $.Array2d_Array2d(this.get$_lib3_game().get$field().get$width(), this.get$_lib3_game().get$field().get$height(), null);
                   var i = 0;
                 default:
                   L0:
@@ -4818,11 +4818,11 @@ $$.BoardElement = {"":
                           $.indexSet(t1, i, se);
                           ++i;
                       }
-                  t1 = this.get$_game().get$field().get$width();
+                  t1 = this.get$_lib3_game().get$field().get$width();
                 case 5:
                   state = 0;
                   t1 = $.mul(t1, 80);
-                  t3 = this.get$_game().get$field().get$height();
+                  t3 = this.get$_lib3_game().get$field().get$height();
                 case 6:
                   state = 0;
                   this.set$size($.Size$(t1, $.mul(t3, 80)));
@@ -4834,12 +4834,12 @@ $$.BoardElement = {"":
  get$_lib3_parent: function() {
   return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
 },
- get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+ get$_lib3_game: function() {
+  return this.get$_lib3_parent().get$_lib3_game();
 },
  get$_elementsNeedUpdate: function() {
   var t1 = this._elements;
-  return t1 == null || !$.eqB(t1.get$width(), this.get$_game().get$field().get$width()) || !$.eqB(this._elements.get$height(), this.get$_game().get$field().get$height());
+  return t1 == null || !$.eqB(t1.get$width(), this.get$_lib3_game().get$field().get$width()) || !$.eqB(this._elements.get$height(), this.get$_lib3_game().get$field().get$height());
 },
  get$_lib3_textureData: function() {
   return this.get$_lib3_parent().get$_lib3_textureData();
@@ -4854,11 +4854,11 @@ $$.GameBackgroundElement = {"":
     this.set$size(this.get$_lib3_parent().get$size());
 },
  drawOverride$1: function(ctx) {
-  var t1 = $.sub(this.get$_lib3_parent().get$_game().get$field().get$width(), 1);
+  var t1 = $.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$width(), 1);
   if (typeof t1 !== 'number')
     throw $.iae(t1);
   var rightBgLoc = 80 * t1 + 32;
-  var t2 = $.sub(this.get$_lib3_parent().get$_game().get$field().get$height(), 1);
+  var t2 = $.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$height(), 1);
   if (typeof t2 !== 'number')
     throw $.iae(t2);
   var bottomBgLoc = 80 * t2 + 32;
@@ -4868,12 +4868,12 @@ $$.GameBackgroundElement = {"":
   this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_corner_top_right.png', $.Coordinate$(rightBgLoc, 0));
   this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_corner_bottom_left.png', $.Coordinate$(0, bottomBgLoc));
   this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_corner_bottom_right.png', $.Coordinate$(rightBgLoc, bottomBgLoc));
-  for (var i = 1; $.ltB(i, $.sub(this.get$_lib3_parent().get$_game().get$field().get$width(), 1)); ++i) {
+  for (var i = 1; $.ltB(i, $.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$width(), 1)); ++i) {
     var xLoc = 80 * i + 32;
     this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_side_top.png', $.Coordinate$(xLoc, 0));
     this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_side_bottom.png', $.Coordinate$(xLoc, bottomBgLoc));
   }
-  for (i = 1; $.ltB(i, $.sub(this.get$_lib3_parent().get$_game().get$field().get$height(), 1)); ++i) {
+  for (i = 1; $.ltB(i, $.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$height(), 1)); ++i) {
     var yLoc = 80 * i + 32;
     this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_side_left.png', $.Coordinate$(0, yLoc));
     this.get$_lib3_textureData().drawTextureKeyAt$3(ctx, 'game_board_side_right.png', $.Coordinate$(rightBgLoc, yLoc));
@@ -4906,20 +4906,23 @@ $$.GameBackgroundElement = {"":
 };
 
 $$.GameElement = {"":
- ["_lib3_canvas", "_background", "_boardElement", "_scoreElement", "_newGameElement", "_titleElement", "_popAnimationLayer", "_dartAnimationLayer", "_lib3_textureData?", "_targetChanged", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_scaledInnerBox", "_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_lib3_canvas", "_background", "_boardElement", "_scoreElement", "_newGameElement", "_titleElement", "_popAnimationLayer", "_dartAnimationLayer", "_lib3_textureData?", "_targetChanged", "_targetX", "_targetY", "_scale?", "_scaledBoardOffset?", "_scaledInnerBox", "_lib3_game?", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "ElementParentImpl",
  get$newGameClick: function() {
   return this._newGameElement.get$clicked();
 },
  get$game: function() {
-  return this._game;
+  return this._lib3_game;
 },
  set$game: function(value) {
-  this._game = value;
+  this._lib3_game = value;
   if (value == null)
-    this.set$size($.CTC34);
+    this.set$size($.CTC30);
   else
     this._updateSize$2(value.get$field().get$width(), value.get$field().get$height());
+},
+ setGameManager$1: function(manager) {
+  this._scoreElement.setGameManager$1(manager);
 },
  get$visualChildCount: function() {
   return 1;
@@ -4936,26 +4939,44 @@ $$.GameElement = {"":
   t1.setTopLeft$2(this._dartAnimationLayer, offset);
   var t2 = this._scale;
   var t3 = $.CTC27.width;
-  var t4 = $.CTC28.x;
-  var t5 = $.sub(t3, t4);
+  if (typeof t3 !== 'number')
+    throw $.iae(t3);
+  var t4 = 40 + t3;
+  var t5 = $.CTC28.x;
+  if (typeof t5 !== 'number')
+    throw $.iae(t5);
+  t4 -= t5;
   var t6 = this._scoreElement;
-  t1.setTopLeft$2(t6, $.Coordinate$($.mul(t2, $.sub(t5, t6.get$width())), 0));
+  var t7 = t6.get$width();
+  if (typeof t7 !== 'number')
+    throw $.iae(t7);
+  t1.setTopLeft$2(t6, $.Coordinate$($.mul(t2, t4 - t7), 0));
   t6 = t1.getChildTransform$1(t6);
-  var t7 = this._scale;
-  t6.scale$2(t7, t7);
-  t7 = this._newGameElement;
-  t1.setTopLeft$2(t7, $.Coordinate$($.mul($.add(t4, $.mul(t7.get$width(), 0.2)), this._scale), 0));
-  t7 = t1.getChildTransform$1(t7);
-  t6 = this._scale;
-  t7.scale$2(t6, t6);
-  t6 = $.mul(this._scale, 0.5);
-  t7 = this._titleElement;
-  t1.setTopLeft$2(t7, $.Coordinate$($.mul(t6, $.sub(t3, $.mul(t7.get$width(), 1.7))), 0));
-  t7 = t1.getChildTransform$1(t7);
+  var t8 = this._scale;
+  t6.scale$2(t8, t8);
+  t8 = this._newGameElement;
+  t6 = $.mul(t8.get$width(), 0.2);
+  if (typeof t6 !== 'number')
+    throw $.iae(t6);
+  t6 = t5 + t6;
+  t5 = this._scale;
+  if (typeof t5 !== 'number')
+    throw $.iae(t5);
+  t1.setTopLeft$2(t8, $.Coordinate$(t6 * t5, 0));
+  t8 = t1.getChildTransform$1(t8);
+  var t9 = this._scale;
+  t8.scale$2(t9, t9);
+  t9 = $.mul(this._scale, 0.5);
+  t8 = this._titleElement;
+  var t10 = $.mul(t8.get$width(), 1.7);
+  if (typeof t10 !== 'number')
+    throw $.iae(t10);
+  t1.setTopLeft$2(t8, $.Coordinate$($.mul(t9, t3 - t10), 0));
+  t8 = t1.getChildTransform$1(t8);
   t1 = this._scale;
   if (typeof t1 !== 'number')
     throw $.iae(t1);
-  t7.scale$2(1.7 * t1, 1.7 * t1);
+  t8.scale$2(1.7 * t1, 1.7 * t1);
 },
  drawOverride$1: function(ctx) {
   $.ElementParentImpl.prototype.drawOverride$1.call(this, ctx);
@@ -4984,7 +5005,7 @@ $$.GameElement = {"":
     var ss = this.get$game().getSquareState$2(c.get$x(), c.get$y());
     switch (ss) {
       case $.CTC35:
-      case $.CTC33:
+      case $.CTC34:
         var frameCount = 28;
         var texturePrefix = 'balloon_pop';
         break;
@@ -4998,7 +5019,7 @@ $$.GameElement = {"":
     var request = $.TextureAnimationRequest$(texturePrefix, frameCount, squareOffset, delay, 'balloon.png', initialOffset, 0);
     switch (ss) {
       case $.CTC35:
-      case $.CTC33:
+      case $.CTC34:
         $.add$1(request.get$started(), new $.GameElement__startPopAnimation_anon4(this));
         break;
       case $.CTC41:
@@ -5034,7 +5055,7 @@ $$.GameElement = {"":
   }
 },
  _squareClicked$1: function(args) {
-  if (this._game.get$gameEnded() !== true) {
+  if (this._lib3_game.get$gameEnded() !== true) {
     var se = args.get$element();
     this._click$3(se.get$x(), se.get$y(), args.get$shiftKey());
   }
@@ -5049,7 +5070,7 @@ $$.GameElement = {"":
  get$_lib3_target: function() { return new $.BoundClosure1(this, '_lib3_target$2'); },
  _toggleFlag$2: function(x, y) {
   var ss = this.get$game().getSquareState$2(x, y);
-  if ($.eqB(ss, $.CTC33)) {
+  if ($.eqB(ss, $.CTC34)) {
     this.get$game().setFlag$3(x, y, true);
     $.playAudio('Flag2');
     return true;
@@ -5064,7 +5085,7 @@ $$.GameElement = {"":
   var ss = this.get$game().getSquareState$2(x, y);
   var t1 = alt === true;
   if (t1)
-    if ($.eqB(ss, $.CTC33) || $.eqB(ss, $.CTC36)) {
+    if ($.eqB(ss, $.CTC34) || $.eqB(ss, $.CTC36)) {
       this._toggleFlag$2(x, y);
       var reveals = null;
     } else if ($.eqB(ss, $.CTC35))
@@ -5075,7 +5096,7 @@ $$.GameElement = {"":
         reveals = null;
     else
       reveals = null;
-  else if ($.eqB(ss, $.CTC33)) {
+  else if ($.eqB(ss, $.CTC34)) {
     this._startDartAnimation$1([$.Coordinate$(x, y)]);
     reveals = this.get$game().reveal$2(x, y);
   } else
@@ -5117,15 +5138,12 @@ $$.GameElement = {"":
 };
 
 $$.GameRoot = {"":
- ["_lib3_stage", "_lib3_canvas", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "gameStorage", "game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
+ ["_lib3_stage", "_lib3_canvas", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "_gameStorage", "_game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
- set$game: function(value) {
-  var t1 = $.game;
-  this._gameElement.set$game(value);
-  this.game = value;
-},
  newGame$0: function() {
   $.GameManager.prototype.newGame$0.call(this);
+  var t1 = $.GameManager.prototype.get$game.call(this);
+  this._gameElement.set$game(t1);
   this._requestFrame$0();
 },
  _updateCanvasSize$0: function() {
@@ -5196,12 +5214,13 @@ $$.GameRoot = {"":
   this._lib3_canvas.get$style().set$cursor(t1);
 },
  GameRoot$_internal$7: function(width, height, mineCount, _canvas, _stage, gameElement, _clickMan) {
-  var t1 = this._lib3_stage;
-  $.add$1(t1.get$invalidated(), this.get$_stageInvalidated());
-  var t2 = this._gameElement;
-  $.add$1(t2.get$newGameClick(), new $.anon(this));
-  $.ClickManager_addMouseMoveHandler(t2, this.get$_mouseMoveHandler());
-  $.ClickManager_addMouseOutHandler(t1, this.get$_mouseOutHandler());
+  var t1 = this._gameElement;
+  t1.setGameManager$1(this);
+  var t2 = this._lib3_stage;
+  $.add$1(t2.get$invalidated(), this.get$_stageInvalidated());
+  $.add$1(t1.get$newGameClick(), new $.anon(this));
+  $.ClickManager_addMouseMoveHandler(t1, this.get$_mouseMoveHandler());
+  $.ClickManager_addMouseOutHandler(t2, this.get$_mouseOutHandler());
   $.add$1($.window().get$on().get$resize(), new $.anon0(this));
   this._updateCanvasSize$0();
 }
@@ -5223,8 +5242,8 @@ $$.NewGameElement = {"":
  get$_lib3_textureData: function() {
   return this.get$_lib3_parent().get$_lib3_textureData();
 },
- get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+ get$_lib3_game: function() {
+  return this.get$_lib3_parent().get$_lib3_game();
 },
  _mouseDirectlyOver$1: function(args) {
   this.invalidateDraw$0();
@@ -5239,17 +5258,26 @@ $$.NewGameElement = {"":
 };
 
 $$.ScoreElement = {"":
- ["_clockStr", "_minesStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_gameManager", "_clockStr", "_minesStr", "_highScoreStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
+ setGameManager$1: function(manager) {
+  this._gameManager = manager;
+  this.invalidateDraw$0();
+},
  update$0: function() {
-  var newMineStr = $.toString(this.get$_game().get$minesLeft());
+  var newMineStr = $.toString(this.get$_lib3_game().get$minesLeft());
   if (!$.eqB(newMineStr, this._minesStr)) {
     this._minesStr = newMineStr;
     this.invalidateDraw$0();
   }
-  var newClockStr = !(this.get$_game().get$duration() == null) ? $.toString(this.get$_game().get$duration().get$inSeconds()) : '';
+  var newClockStr = !(this.get$_lib3_game().get$duration() == null) ? $.toString(this.get$_lib3_game().get$duration().get$inSeconds()) : '';
   if (!$.eqB(newClockStr, this._clockStr)) {
     this._clockStr = newClockStr;
+    this.invalidateDraw$0();
+  }
+  var highScoreStr = !(this._gameManager.get$highScore() == null) ? $.toString($.mul($.toInt($.mul($.mul(this._gameManager.get$highScore(), 0.001), 10)), 0.1)) : null;
+  if (!$.eqB(this._highScoreStr, highScoreStr)) {
+    this._highScoreStr = highScoreStr;
     this.invalidateDraw$0();
   }
   $.PElement.prototype.update$0.call(this);
@@ -5258,8 +5286,8 @@ $$.ScoreElement = {"":
   var t1 = this.get$height();
   if (typeof t1 !== 'number')
     throw $.iae(t1);
-  var rowHeight = 0.5 * t1;
-  ctx.set$font($.S($.toInt(rowHeight * 0.7)) + 'px Slackey');
+  var rowHeight = 0.33 * t1;
+  ctx.set$font($.S($.toInt(rowHeight * 0.9)) + 'px Slackey');
   ctx.set$textBaseline('middle');
   var textSize = this._getTextSize$1(ctx);
   ctx.set$fillStyle('black');
@@ -5273,17 +5301,21 @@ $$.ScoreElement = {"":
   ctx.fillText$3('TIME:', textSize, t1);
   ctx.set$textAlign('left');
   ctx.fillText$3(this._clockStr, $.add(textSize, 15), t1);
+  if (!(this._highScoreStr == null)) {
+    ctx.set$textAlign('right');
+    t1 = 2.5 * rowHeight;
+    ctx.fillText$3('RECORD:', textSize, t1);
+    ctx.set$textAlign('left');
+    ctx.fillText$3(this._highScoreStr, $.add(textSize, 15), t1);
+  }
 },
  _getTextSize$1: function(ctx) {
   if (this._textSize == null)
     this._textSize = ctx.measureText$1('MINES LEFT:').get$width();
   return this._textSize;
 },
- get$_lib3_parent: function() {
-  return $.propertyTypeCast(this.get$parent(), 'is$PCanvas').get$parent();
-},
- get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+ get$_lib3_game: function() {
+  return this._gameManager.get$game();
 }
 };
 
@@ -5299,7 +5331,7 @@ $$.SquareElement = {"":
  drawOverride$1: function(ctx) {
   var textureName = null;
   switch (this._lastDrawingState) {
-    case $.CTC33:
+    case $.CTC34:
       textureName = this._getHiddenTexture$0();
       break;
     case $.CTC36:
@@ -5326,7 +5358,7 @@ $$.SquareElement = {"":
   return 'Square at [' + $.S(this.x) + ', ' + $.S(this.y) + ']';
 },
  _getHiddenTexture$0: function() {
-  if ($.eqB(this.get$_game().get$state(), $.CTC38)) {
+  if ($.eqB(this.get$_lib3_game().get$state(), $.CTC38)) {
     var index = $.mod($.add(this.x, this.y), 4);
     if (index !== (index | 0))
       throw $.iae(index);
@@ -5337,10 +5369,10 @@ $$.SquareElement = {"":
     return 'balloon.png';
 },
  get$_squareState: function() {
-  return this.get$_game().getSquareState$2(this.x, this.y);
+  return this.get$_lib3_game().getSquareState$2(this.x, this.y);
 },
  get$_adjacentCount: function() {
-  return this.get$_game().get$field().getAdjacentCount$2(this.x, this.y);
+  return this.get$_lib3_game().get$field().getAdjacentCount$2(this.x, this.y);
 },
  get$_board: function() {
   return this.get$parent();
@@ -5348,8 +5380,8 @@ $$.SquareElement = {"":
  get$_lib3_textureData: function() {
   return this.get$_board().get$_lib3_textureData();
 },
- get$_game: function() {
-  return this.get$_board().get$_game();
+ get$_lib3_game: function() {
+  return this.get$_board().get$_lib3_game();
 },
  SquareElement$2: function(x, y) {
   $.ClickManager_setClickable(this, true);
@@ -5369,8 +5401,8 @@ $$.GameTitleElement = {"":
  get$_lib3_textureData: function() {
   return this.get$_lib3_parent().get$_lib3_textureData();
 },
- get$_game: function() {
-  return this.get$_lib3_parent().get$_game();
+ get$_lib3_game: function() {
+  return this.get$_lib3_parent().get$_lib3_game();
 },
  _mouseDirectlyOver$1: function(args) {
   this.invalidateDraw$0();
@@ -5397,6 +5429,9 @@ $$.GameStorage = {"":
     return true;
   } else
     return false;
+},
+ getHighScore$3: function(width, height, mineCount) {
+  return this._getIntValue$2('w' + $.S(width) + '-h' + $.S(height) + '-m' + $.S(mineCount), null);
 },
  reset$0: function() {
   $.clear(this._storage);
@@ -5428,37 +5463,43 @@ $$.GameStorage = {"":
 };
 
 $$.GameManager = {"":
- ["game="],
+ ["_game?"],
  "super": "Object",
+ get$game: function() {
+  return this._game;
+},
+ get$highScore: function() {
+  return this._gameStorage.getHighScore$3(this._lib5_width, this._lib5_height, this._mineCount);
+},
  newGame$0: function() {
   if (!(this._updatedEventId == null)) {
-    this.get$game().get$updated().remove$1(this._updatedEventId);
-    this.get$game().get$stateChanged().remove$1(this._gameStateChangedId);
-    this._gameStateChanged$1($.CTC30);
+    this._game.get$updated().remove$1(this._updatedEventId);
+    this._game.get$stateChanged().remove$1(this._gameStateChangedId);
+    this._gameStateChanged$1($.CTC31);
   }
-  this.set$game($.Game$($.Field_Field(this._mineCount, this._lib5_width, this._lib5_height, null)));
-  this._updatedEventId = $.add$1(this.get$game().get$updated(), this.get$gameUpdated());
-  this._gameStateChangedId = $.add$1(this.get$game().get$stateChanged(), this.get$_gameStateChanged());
+  this._game = $.Game$($.Field_Field(this._mineCount, this._lib5_width, this._lib5_height, null));
+  this._updatedEventId = $.add$1(this._game.get$updated(), this.get$gameUpdated());
+  this._gameStateChangedId = $.add$1(this._game.get$stateChanged(), this.get$_gameStateChanged());
 },
  gameUpdated$1: function(args) {
 },
  get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
  _lib5_click$3: function(x, y, alt) {
-  var ss = this.get$game().getSquareState$2(x, y);
+  var ss = this._game.getSquareState$2(x, y);
   if (alt === true) {
-    if ($.eqB(ss, $.CTC33))
-      this.get$game().setFlag$3(x, y, true);
+    if ($.eqB(ss, $.CTC34))
+      this._game.setFlag$3(x, y, true);
     else if ($.eqB(ss, $.CTC36))
-      this.get$game().setFlag$3(x, y, false);
+      this._game.setFlag$3(x, y, false);
     else if ($.eqB(ss, $.CTC35))
-      this.get$game().reveal$2(x, y);
-  } else if ($.eqB(ss, $.CTC33))
-    this.get$game().reveal$2(x, y);
+      this._game.reveal$2(x, y);
+  } else if ($.eqB(ss, $.CTC34))
+    this._game.reveal$2(x, y);
 },
  updateClock$0: function() {
-  if (this._setIntervalId == null && $.eqB(this.get$game().get$state(), $.CTC39))
+  if (this._setIntervalId == null && $.eqB(this._game.get$state(), $.CTC39))
     this._setIntervalId = $.window().setInterval$2(this.get$_doClock(), 1000);
-  else if (!(this._setIntervalId == null) && !$.eqB(this.get$game().get$state(), $.CTC39)) {
+  else if (!(this._setIntervalId == null) && !$.eqB(this._game.get$state(), $.CTC39)) {
     $.window().clearInterval$1(this._setIntervalId);
     this._setIntervalId = null;
   }
@@ -5468,10 +5509,10 @@ $$.GameManager = {"":
 },
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
  _gameStateChanged$1: function(newState) {
-  var t1 = this.gameStorage;
+  var t1 = this._gameStorage;
   t1.recordState$1(newState);
   if ($.eqB(newState, $.CTC37))
-    t1.updateHighScore$1(this.get$game());
+    t1.updateHighScore$1(this._game);
   this.updateClock$0();
 },
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
@@ -6407,7 +6448,7 @@ $$.GameElement__click_anon0 = {"":
  ["this_1"],
  "super": "Closure",
  call$1: function(t) {
-  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC33);
+  return $.eq(this.this_1.get$game().getSquareState$2(t.get$x(), t.get$y()), $.CTC34);
 }
 };
 
@@ -6426,7 +6467,7 @@ $$.GameElement__startPopAnimation_anon0 = {"":
  [],
  "super": "Closure",
  call$1: function(t2) {
-  return $.eqB(t2.get$item2(), $.CTC41) || $.eqB(t2.get$item2(), $.CTC33);
+  return $.eqB(t2.get$item2(), $.CTC41) || $.eqB(t2.get$item2(), $.CTC34);
 }
 };
 
@@ -8504,7 +8545,7 @@ $.Future_Future$immediate = function(value) {
 $.Game$ = function(field) {
   var t1 = $.EventHandle$();
   var t2 = $.EventHandle$();
-  t2 = new $.Game(field, $.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC33), t1, t2, $.CTC30, null, null, null, null);
+  t2 = new $.Game(field, $.Array2d_Array2d(field.get$width(), field.get$height(), $.CTC34), t1, t2, $.CTC31, null, null, null, null);
   t2.Game$1(field);
   return t2;
 };
@@ -8982,7 +9023,7 @@ $.max = function(a, b) {
 };
 
 $.ScoreElement$ = function() {
-  return new $.ScoreElement(null, null, null, $.ListImplementation_List(null), false, $.EventHandle$(), $.EventHandle$(), null, 400, 96, null, null, false, null, $.HashMapImplementation$(), $.HashMapImplementation$(), false);
+  return new $.ScoreElement(null, null, null, null, null, $.ListImplementation_List(null), false, $.EventHandle$(), $.EventHandle$(), null, 400, 96, null, null, false, null, $.HashMapImplementation$(), $.HashMapImplementation$(), false);
 };
 
 $.GameTitleElement$ = function() {
@@ -9665,13 +9706,14 @@ $.GameElement$ = function(textureData) {
   var t1 = $.PCanvas$(0, 0, false);
   var t2 = $.GameBackgroundElement$();
   var t3 = $.BoardElement$();
-  var t4 = $.ScoreElement$();
-  var t5 = $.NewGameElement$();
-  var t6 = $.GameTitleElement$();
-  var t7 = $.EventHandle$();
-  t7 = new $.GameElement(t1, t2, t3, t4, t5, t6, $.TextureAnimationElement$(0, 0, textureData), $.TextureAnimationElement$(0, 0, textureData), textureData, t7, null, null, null, null, null, null, $.ListImplementation_List(null), false, $.EventHandle$(), $.EventHandle$(), null, 100, 100, null, null, false, null, $.HashMapImplementation$(), $.HashMapImplementation$(), false);
-  t7.GameElement$1(textureData);
-  return t7;
+  var t4 = $.NewGameElement$();
+  var t5 = $.GameTitleElement$();
+  var t6 = $.EventHandle$();
+  var t7 = $.TextureAnimationElement$(0, 0, textureData);
+  var t8 = $.TextureAnimationElement$(0, 0, textureData);
+  t6 = new $.GameElement(t1, t2, t3, $.ScoreElement$(), t4, t5, t7, t8, textureData, t6, null, null, null, null, null, null, $.ListImplementation_List(null), false, $.EventHandle$(), $.EventHandle$(), null, 100, 100, null, null, false, null, $.HashMapImplementation$(), $.HashMapImplementation$(), false);
+  t6.GameElement$1(textureData);
+  return t6;
 };
 
 $.throwCyclicInit = function(staticName) {
@@ -9902,7 +9944,7 @@ $.endsWith = function(receiver, other) {
 };
 
 $.Random_Random = function(seed) {
-  return $.CTC32;
+  return $.CTC33;
 };
 
 $.Box_Box$fromCoordSize = function(topLeft, size) {
@@ -10657,7 +10699,7 @@ $.CTC73 = 352;
 $.CTC74 = 96;
 $.CTC28 = new Isolate.$isolateProperties.Vector(352, 96);
 $.CTC75 = 100;
-$.CTC34 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC30 = new Isolate.$isolateProperties.Size(100, 100);
 $.CTC76 = 32;
 $.CTC26 = new Isolate.$isolateProperties.Coordinate(32, 32);
 $.CTC77 = 'offsetX is only supported on elements';
@@ -10686,7 +10728,7 @@ $.CTC91 = 'structured clone of ImageData';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ImageData');
 $.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC92 = 'reset';
-$.CTC30 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC31 = new Isolate.$isolateProperties.GameState('reset');
 $.CTC16 = new Isolate.$isolateProperties.EmptyQueueException();
 $.CTC93 = null;
 $.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
@@ -10719,7 +10761,7 @@ $.CTC25 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProper
 $.CTC108 = 'Incorrect number or type of arguments';
 $.CTC22 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
 $.CTC109 = 'Cannot insertRange on immutable List.';
-$.CTC31 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
+$.CTC32 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
 $.CTC110 = 'Pop0';
 $.CTC111 = 'Pop1';
 $.CTC112 = 'Pop2';
@@ -10745,9 +10787,9 @@ $.CTC129 = 'Cannot removeRange on immutable List.';
 $.CTC40 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
 $.CTC130 = 'structured clone of RegExp';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC32 = new Isolate.$isolateProperties._Random();
+$.CTC33 = new Isolate.$isolateProperties._Random();
 $.CTC131 = 'hidden';
-$.CTC33 = new Isolate.$isolateProperties.SquareState('hidden');
+$.CTC34 = new Isolate.$isolateProperties.SquareState('hidden');
 $.CTC132 = 'structured clone of other type';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
 $.CTC133 = 'Mutation operations are not supported';
@@ -10786,7 +10828,7 @@ $.Primitives_hashCodeSeed = 0;
 $._audioContext = null;
 $._opaqueTextureName = 'dart_opaque_01.jpg';
 $.GameState_won = Isolate.$isolateProperties.CTC37;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC33;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC34;
 $._audioNames = Isolate.$isolateProperties.CTC;
 $.HashMapImplementation__INITIAL_CAPACITY = 8;
 $.Duration_SECONDS_PER_MINUTE = 60;
@@ -10802,7 +10844,7 @@ $.Primitives_DOLLAR_CHAR_VALUE = 36;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $.GameState_lost = Isolate.$isolateProperties.CTC38;
 $.SquareState_revealed = Isolate.$isolateProperties.CTC35;
-$.GameState_reset = Isolate.$isolateProperties.CTC30;
+$.GameState_reset = Isolate.$isolateProperties.CTC31;
 $.SquareElement__numberMap = Isolate.$isolateProperties.CTC46;
 $.GameElement__backgroundHoleSize = 1344;
 $.ScoreElement__valueOffset = 15;
@@ -11094,7 +11136,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -11233,7 +11275,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -11366,7 +11408,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -11470,7 +11512,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -11524,7 +11566,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -11590,7 +11632,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  contains$1: function(string) {
   return this.contains(string);
@@ -11838,7 +11880,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -11892,7 +11934,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12062,7 +12104,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$_FileListImpl: function() { return true; },
  is$JavaScriptIndexingBehavior: function() { return true; },
@@ -12152,7 +12194,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12207,7 +12249,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12287,7 +12329,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12345,7 +12387,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12399,7 +12441,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12717,7 +12759,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12772,7 +12814,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -12827,7 +12869,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13119,7 +13161,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13313,7 +13355,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13624,7 +13666,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13714,7 +13756,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13768,7 +13810,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13822,7 +13864,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -13924,7 +13966,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -14153,7 +14195,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  clear$0: function() {
   return this.clear();
@@ -14251,7 +14293,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  clear$0: function() {
   return this.clear();
@@ -14361,7 +14403,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  clear$0: function() {
   return this.clear();
@@ -14475,7 +14517,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  clear$0: function() {
   return this.clear();
@@ -14574,7 +14616,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  clear$0: function() {
   return this.clear();
@@ -14683,7 +14725,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  $dom_addEventListener$3: function(type, listener, useCapture) {
   return this.addEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);
@@ -14754,7 +14796,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -14808,7 +14850,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -14884,7 +14926,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15013,7 +15055,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15110,7 +15152,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15179,7 +15221,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  $dom_addEventListener$3: function(type, listener, useCapture) {
   return this.addEventListener(type,$.convertDartClosureToJS(listener, 1),useCapture);
@@ -15258,7 +15300,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15324,7 +15366,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15379,7 +15421,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15434,7 +15476,7 @@ this[index] = value
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
@@ -15512,7 +15554,7 @@ return this[index];
   throw $.$$throw($.CTC40);
 },
  insertRange$3: function(start, rangeLength, initialValue) {
-  throw $.$$throw($.CTC31);
+  throw $.$$throw($.CTC32);
 },
  is$JavaScriptIndexingBehavior: function() { return true; },
  is$List: function() { return true; },
