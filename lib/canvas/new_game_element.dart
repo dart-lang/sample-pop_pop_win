@@ -14,10 +14,12 @@ class NewGameElement extends PElement {
   void drawOverride(CanvasRenderingContext2D ctx) {
     final texture = Mouse.isMouseDirectlyOver(this) ?
         'button_new_game_clicked.png' : 'button_new_game.png';
-    drawTextureKeyAt(ctx, texture);
+    _textureData.drawTextureKeyAt(ctx, texture);
   }
 
   GameElement get _parent => (parent as PCanvas).parent;
+
+  TextureData get _textureData => _parent._textureData;
 
   Game get _game => _parent._game;
 

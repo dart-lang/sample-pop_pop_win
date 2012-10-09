@@ -17,9 +17,8 @@ class GameElement extends ElementParentImpl {
   final ScoreElement _scoreElement = new ScoreElement();
   final NewGameElement _newGameElement = new NewGameElement();
   final GameTitleElement _titleElement = new GameTitleElement();
-  final TextureAnimationElement
-    _popAnimationLayer = new TextureAnimationElement(0, 0),
-    _dartAnimationLayer = new TextureAnimationElement(0, 0);
+  final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
+  final TextureData _textureData;
   final bool _targetMode;
   final EventHandle _targetChanged = new EventHandle();
 
@@ -30,7 +29,11 @@ class GameElement extends ElementParentImpl {
 
   Game _game;
 
-  GameElement(this._targetMode) : super(100, 100) {
+  GameElement(this._targetMode, TextureData textureData) :
+    _textureData = textureData,
+    _popAnimationLayer = new TextureAnimationElement(0, 0, textureData),
+    _dartAnimationLayer = new TextureAnimationElement(0, 0, textureData),
+    super(100, 100) {
     _canvas.registerParent(this);
     _canvas.addElement(_background);
     _canvas.addElement(_boardElement);
@@ -323,8 +326,8 @@ class GameElement extends ElementParentImpl {
     //       scale nicely when not a square
     _scale = sizeX / _backgroundSize.width;
     _scaledBoardOffset = _boardOffset.scale(_scale);
-    
-    _scaledInnerBox = new Box(_backgroundEdgeOffset * _scale, 0, 
+
+    _scaledInnerBox = new Box(_backgroundEdgeOffset * _scale, 0,
         sizeX - 2 * _backgroundEdgeOffset * _scale, sizeY);
   }
 

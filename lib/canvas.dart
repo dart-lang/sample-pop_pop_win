@@ -15,11 +15,10 @@
 #source('canvas/new_game_element.dart');
 #source('canvas/score_element.dart');
 #source('canvas/square_element.dart');
+#source('canvas/title_element.dart');
 #source('canvas/texture_animation_element.dart');
 #source('canvas/texture_input.dart');
-#source('canvas/title_element.dart');
-
-Map<String, TextureInput> _textures;
+#source('canvas/texture_data.dart');
 
 Map<String, AudioBuffer> _buffers;
 AudioContext _audioContext;
@@ -40,45 +39,4 @@ void playAudio(String name) {
     source.connect(_audioContext.destination, 0);
     source.start(0);
   }
-}
-
-void populateTextures(Map<String, TextureInput> textures) {
-  assert(_textures == null);
-  assert(textures != null);
-  _textures = textures;
-}
-
-TextureInput getTexture(String key) {
-  assert(_textures != null);
-  return _textures[key];
-}
-
-void drawTextureKeyAt(CanvasRenderingContext2D ctx, String textureKey,
-                   [Coordinate location = const Coordinate()]) {
-  assert(textureKey != null);
-  final texture = getTexture(textureKey);
-  assert(texture != null);
-  drawTextureAt(ctx, location, texture);
-}
-
-void drawTextureAt(CanvasRenderingContext2D ctx, Coordinate location,
-                    TextureInput texture) {
-  ctx.save();
-  final tx = new AffineTransform();
-  tx.translate(location.x, location.y);
-
-  var theFrame = texture.frame;
-  var source = texture.sourceColorRect.topLeft;
-  tx.translate(source.x, source.y);
-
-  if(texture.rotated) {
-    tx.rotate(-0.5 * PI, 0.5 * theFrame.height, 0.5 * theFrame.height);
-    theFrame = new Box(theFrame.left, theFrame.top,
-        theFrame.height, theFrame.width);
-  }
-
-  CanvasUtil.transform(ctx, tx);
-
-  CanvasUtil.drawImage(ctx, texture.image, theFrame);
-  ctx.restore();
 }

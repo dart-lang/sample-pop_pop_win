@@ -16,7 +16,7 @@ ImageLoader _imageLoader;
 List<String> _keys;
 int _currentIndex = 0;
 CanvasRenderingContext2D __ctx;
-Map<String, TextureInput> _textures;
+TextureData _textureData;
 
 main() {
   _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName]);
@@ -28,13 +28,14 @@ _doLoad() {
   final opaqueImage = _imageLoader.getResource(_opaqueTextureName);
   final transparentImage = _imageLoader.getResource(_transparentTextureName);
 
-  _textures = _getTextures(transparentImage, opaqueImage);
+  final textures = _getTextures(transparentImage, opaqueImage);
+  _textureData = new TextureData(textures);
 
   CanvasElement canvasElement = query('#sweeperCanvas');
   canvasElement.on.click.add((args) => _next());
   __ctx = canvasElement.context2d;
 
-  _keys = new List<String>.from(_textures.getKeys());
+  _keys = new List<String>.from(textures.getKeys());
 
   _drawTexture();
 
@@ -69,10 +70,10 @@ void _drawTexture() {
 
   final key = _keys[_currentIndex];
 
-  final texture = _textures[key];
+  final texture = _textureData.getTexture(key);
 
   print([_currentIndex, key]);
 
-  drawTextureAt(__ctx, new Coordinate(100, 100), texture);
+  _textureData.drawTextureAt(__ctx, new Coordinate(100, 100), texture);
 
 }

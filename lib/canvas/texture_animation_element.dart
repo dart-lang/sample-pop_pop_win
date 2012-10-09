@@ -1,7 +1,9 @@
 class TextureAnimationElement extends PElement {
+  final TextureData _textureData;
   final List<TextureAnimationRequest> _requests = new List<TextureAnimationRequest>();
 
-  TextureAnimationElement(num width, num height) : super(width, height);
+  TextureAnimationElement(num width, num height, this._textureData) :
+    super(width, height);
 
   void add(TextureAnimationRequest request) {
     assert(request != null);
@@ -40,7 +42,7 @@ class TextureAnimationElement extends PElement {
 
       ctx.save();
       ctx.translate(offset.x, offset.y);
-      drawTextureKeyAt(ctx, frameName);
+      _textureData.drawTextureKeyAt(ctx, frameName);
       ctx.restore();
     }
   }

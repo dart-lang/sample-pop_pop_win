@@ -16,29 +16,29 @@ class GameBackgroundElement extends PElement {
     ctx.save();
     ctx.translate(_parent._scaledBoardOffset.x, _parent._scaledBoardOffset.y);
 
-    drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
+    _textureData.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
 
-    drawTextureKeyAt(ctx, 'game_board_corner_top_right.png',
+    _textureData.drawTextureKeyAt(ctx, 'game_board_corner_top_right.png',
         new Coordinate(rightBgLoc, 0));
 
-    drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png',
+    _textureData.drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png',
                      new Coordinate(0, bottomBgLoc));
-    drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
+    _textureData.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
         new Coordinate(rightBgLoc, bottomBgLoc));
 
     for(var i = 1; i < _parent._game.field.width - 1; i++) {
       final xLoc = SquareElement._size * i + GameElement._edgeOffset;
-      drawTextureKeyAt(ctx, 'game_board_side_top.png',
+      _textureData.drawTextureKeyAt(ctx, 'game_board_side_top.png',
           new Coordinate(xLoc, 0));
-      drawTextureKeyAt(ctx, 'game_board_side_bottom.png',
+      _textureData.drawTextureKeyAt(ctx, 'game_board_side_bottom.png',
           new Coordinate(xLoc, bottomBgLoc));
     }
 
     for(var i = 1; i < _parent._game.field.height - 1; i++) {
       final yLoc = SquareElement._size * i + GameElement._edgeOffset;
-      drawTextureKeyAt(ctx, 'game_board_side_left.png',
+      _textureData.drawTextureKeyAt(ctx, 'game_board_side_left.png',
           new Coordinate(0, yLoc));
-      drawTextureKeyAt(ctx, 'game_board_side_right.png',
+      _textureData.drawTextureKeyAt(ctx, 'game_board_side_right.png',
           new Coordinate(rightBgLoc, yLoc));
     }
 
@@ -76,10 +76,12 @@ class GameBackgroundElement extends PElement {
   }
 
   void _drawCorner(CanvasRenderingContext2D ctx) {
-    drawTextureKeyAt(ctx, 'background_top_left.png');
-    drawTextureKeyAt(ctx, 'background_side_left.png',
+    _textureData.drawTextureKeyAt(ctx, 'background_top_left.png');
+    _textureData.drawTextureKeyAt(ctx, 'background_side_left.png',
         new Coordinate(0, GameElement._boardOffset.y));
   }
 
   GameElement get _parent => (parent as PCanvas).parent;
+
+  TextureData get _textureData => _parent._textureData;
 }

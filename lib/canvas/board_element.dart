@@ -54,4 +54,6 @@ class BoardElement extends ElementParentImpl {
         _elements.height != _game.field.height;
   }
 
+  TextureData get _textureData => _parent._textureData;
+
 }

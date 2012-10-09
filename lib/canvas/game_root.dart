@@ -8,11 +8,11 @@ class GameRoot extends GameManager {
   bool _frameRequested = false;
 
   factory GameRoot(int width, int height, int mineCount,
-      CanvasElement canvasElement, bool targetMode) {
+      CanvasElement canvasElement, bool targetMode, TextureData textureData) {
 
     requireArgumentNotNull(targetMode, 'targetMode');
 
-    final rootElement = new GameElement(targetMode);
+    final rootElement = new GameElement(targetMode, textureData);
     final stage = new Stage(canvasElement, rootElement);
     final clickMan = new ClickManager(stage);
 

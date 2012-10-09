@@ -48,7 +48,7 @@ class SquareElement extends PElement {
         break;
     }
 
-    drawTextureKeyAt(ctx, textureName);
+    _textureData.drawTextureKeyAt(ctx, textureName);
   }
 
   String toString() => 'Square at [$x, $y]';
@@ -67,8 +67,12 @@ class SquareElement extends PElement {
 
   int get _adjacentCount => _game.field.getAdjacentCount(x, y);
 
-  Game get _game {
+  BoardElement get _board {
     final BoardElement p = this.parent;
-    return p._game;
+    return p;
   }
+
+  TextureData get _textureData => _board._textureData;
+
+  Game get _game => _board._game;
 }

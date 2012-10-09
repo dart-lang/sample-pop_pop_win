@@ -77,7 +77,7 @@ void _onLoaded(args) {
 
     final textures = _getTextures(transparentImage, opaqueImage);
 
-    populateTextures(textures);
+    final textureData = new TextureData(textures);
 
     //
     // load audio -- if we have a context
@@ -94,11 +94,11 @@ void _onLoaded(args) {
 
     // run the app
     query('#loading').style.display = 'none';
-    _runSweeper();
+    _runSweeper(textureData);
   }
 }
 
-void _runSweeper() {
+void _runSweeper(TextureData textureData) {
   final targetMode = false;
   final int w = 7, h = 7;
   final int m = (w * h * 0.15625).toInt();
@@ -107,7 +107,7 @@ void _runSweeper() {
   final Element gameStateDiv = query('#gameState');
 
 
-  final gameRoot = new GameRoot(w, h, m, sweeperTable, targetMode);
+  final gameRoot = new GameRoot(w, h, m, sweeperTable, targetMode, textureData);
 
   // disable touch events
   window.on.touchMove.add(_onTouchMove);
