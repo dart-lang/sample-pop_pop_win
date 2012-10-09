@@ -99,7 +99,6 @@ void _onLoaded(args) {
 }
 
 void _runSweeper(TextureData textureData) {
-  final targetMode = false;
   final int w = 7, h = 7;
   final int m = (w * h * 0.15625).toInt();
 
@@ -107,33 +106,10 @@ void _runSweeper(TextureData textureData) {
   final Element gameStateDiv = query('#gameState');
 
 
-  final gameRoot = new GameRoot(w, h, m, sweeperTable, targetMode, textureData);
+  final gameRoot = new GameRoot(w, h, m, sweeperTable, textureData);
 
   // disable touch events
-  window.on.touchMove.add(_onTouchMove);
-
-  /*
-
-  final ButtonElement flagButton = query('#flag');
-  flagButton.on.click.add((args) => gameRoot.toggleTargetFlag());
-
-  final ButtonElement revealButton = query('#reveal');
-  revealButton.on.click.add((args) => gameRoot.revealTarget());
-
-  final updateButtons = (args) {
-    revealButton.disabled = !gameRoot.canRevealTarget;
-    flagButton.disabled = !gameRoot.canFlagTarget;
-  };
-
-  gameRoot.targetChanged.add(updateButtons);
-
-  updateButtons(null);
-
-  */
-}
-
-void _onTouchMove(TouchEvent args) {
-  args.preventDefault();
+  window.on.touchMove.add((args) => args.preventDefault());
 }
 
 String _getAudioPath(String name) => 'audio/$name.webm';

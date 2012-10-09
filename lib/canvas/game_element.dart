@@ -19,7 +19,6 @@ class GameElement extends ElementParentImpl {
   final GameTitleElement _titleElement = new GameTitleElement();
   final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
   final TextureData _textureData;
-  final bool _targetMode;
   final EventHandle _targetChanged = new EventHandle();
 
   int _targetX, _targetY;
@@ -29,7 +28,7 @@ class GameElement extends ElementParentImpl {
 
   Game _game;
 
-  GameElement(this._targetMode, TextureData textureData) :
+  GameElement(TextureData textureData) :
     _textureData = textureData,
     _popAnimationLayer = new TextureAnimationElement(0, 0, textureData),
     _dartAnimationLayer = new TextureAnimationElement(0, 0, textureData),
@@ -239,11 +238,7 @@ class GameElement extends ElementParentImpl {
   void _squareClicked(ElementMouseEventArgs args) {
     if(!_game.gameEnded) {
       final SquareElement se = args.element;
-      if(_targetMode) {
-        _target(se.x, se.y);
-      } else {
-        _click(se.x, se.y, args.shiftKey);
-      }
+      _click(se.x, se.y, args.shiftKey);
     }
   }
 
