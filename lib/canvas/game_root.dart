@@ -34,12 +34,9 @@ class GameRoot extends GameManager {
     _updateCanvasSize();
   }
 
-  void set game(Game value) {
-    super.game = _gameElement.game = value;
-  }
-
   void newGame() {
     super.newGame();
+    _gameElement.game = super.game;
     _requestFrame();
   }
 
