@@ -14,8 +14,7 @@ main(){
       sweeperTable, minesLeftDiv, gameStateDiv, clockDiv);
 
   final DivElement highScoreDiv = query('#highScore');
-  final highScoreView = new HighScoreView(w, h, m,
-      highScoreDiv, gameView.gameStorage);
+  final highScoreView = new HighScoreView(gameView, highScoreDiv);
 
   final ButtonElement newGameButton = query('#newGame');
   newGameButton.on.click.add((args) => gameView.newGame());

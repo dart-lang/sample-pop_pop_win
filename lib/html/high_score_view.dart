@@ -1,20 +1,18 @@
 class HighScoreView {
-  final int _width, _height, _mineCount;
   final DivElement _div;
-  final GameStorage _storage;
+  final GameManager _manager;
 
-  HighScoreView(this._width, this._height, this._mineCount,
-      this._div, this._storage) {
+  HighScoreView(this._manager, this._div) {
     assert(_div != null);
-    assert(_storage != null);
+    assert(_manager != null);
 
-    _storage.highScoreUpdated.add((args) => _update());
+    _manager.highScoreUpdated.add((args) => _update());
 
     _update();
   }
 
   void _update() {
-    final milliseconds = _storage.getHighScore(_width, _height, _mineCount);
+    final milliseconds = _manager.highScore;
     if(milliseconds != null) {
       final duration = new Duration(seconds: milliseconds ~/ 1000);
       _div.innerHTML = duration.toString();

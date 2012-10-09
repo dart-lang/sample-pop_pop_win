@@ -1,6 +1,6 @@
 abstract class GameManager {
   final int _width, _height, _mineCount;
-  final GameStorage gameStorage = new GameStorage();
+  final GameStorage _gameStorage = new GameStorage();
 
   Game _game;
   GlobalId _updatedEventId;
@@ -12,6 +12,10 @@ abstract class GameManager {
   }
 
   Game get game => _game;
+
+  EventRoot<EventArgs> get highScoreUpdated => _gameStorage.highScoreUpdated;
+
+  int get highScore => _gameStorage.getHighScore(_width, _height, _mineCount);
 
   void newGame() {
     if(_updatedEventId != null) {
@@ -30,7 +34,7 @@ abstract class GameManager {
   void gameUpdated(args);
 
   void resetScores() {
-    gameStorage.reset();
+    _gameStorage.reset();
   }
 
   void _click(int x, int y, bool alt) {
@@ -71,9 +75,9 @@ abstract class GameManager {
   }
 
   void _gameStateChanged(GameState newState) {
-    gameStorage.recordState(newState);
+    _gameStorage.recordState(newState);
     if(newState == GameState.won) {
-      final newHighScore = gameStorage.updateHighScore(_game);
+      final newHighScore = _gameStorage.updateHighScore(_game);
     }
     updateClock();
   }
