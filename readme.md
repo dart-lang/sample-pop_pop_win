@@ -1,3 +1,4 @@
+![Pop, Pop, Win!](https://raw.github.com/dart-lang/pop-pop-win/master/html/icon_200.png)
 # Pop, Pop, Win!
 
 An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> in [Dart](http://www.dartlang.org).
