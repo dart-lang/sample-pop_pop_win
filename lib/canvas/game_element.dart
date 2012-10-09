@@ -14,7 +14,7 @@ class GameElement extends ElementParentImpl {
   final PCanvas _canvas = new PCanvas(0, 0);
   final GameBackgroundElement _background = new GameBackgroundElement();
   final BoardElement _boardElement = new BoardElement();
-  final ScoreElement _scoreElement = new ScoreElement();
+  final ScoreElement _scoreElement;
   final NewGameElement _newGameElement = new NewGameElement();
   final GameTitleElement _titleElement = new GameTitleElement();
   final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
@@ -32,6 +32,7 @@ class GameElement extends ElementParentImpl {
     _textureData = textureData,
     _popAnimationLayer = new TextureAnimationElement(0, 0, textureData),
     _dartAnimationLayer = new TextureAnimationElement(0, 0, textureData),
+    _scoreElement = new ScoreElement(),
     super(100, 100) {
     _canvas.registerParent(this);
     _canvas.addElement(_background);
@@ -63,6 +64,10 @@ class GameElement extends ElementParentImpl {
 
   bool get canFlagTarget =>
       _targetX != null && _game.canToggleFlag(_targetX, _targetY);
+
+  void setGameManager(GameManager manager) {
+    _scoreElement.setGameManager(manager);
+  }
 
   void revealTarget() {
     if(_targetX != null) {

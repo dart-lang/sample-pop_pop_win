@@ -23,6 +23,8 @@ class GameRoot extends GameManager {
       this._gameElement = gameElement,
       _gameElementTx = gameElement.addTransform(),
       super(width, height, mineCount) {
+
+    _gameElement.setGameManager(this);
     _stage.invalidated.add(_stageInvalidated);
 
     _gameElement.newGameClick.add((args) => newGame());
