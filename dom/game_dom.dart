@@ -1,17 +1,17 @@
 #import('dart:html');
 
-#import('package:sweeper.dart/sweeper.dart');
-#import('package:sweeper.dart/html.dart');
+#import('package:poppopwin/poppopwin.dart');
+#import('package:poppopwin/html.dart');
 
 main(){
   final int w = 16, h = 16, m = 40;
 
-  final TableElement sweeperTable = query('#sweeperTable');
+  final TableElement poppopwinTable = query('#gameTable');
   final Element minesLeftDiv = query('#minesLeft');
   final Element gameStateDiv = query('#gameState');
   final Element clockDiv = query('#clock');
   final gameView = new GameView(w, h, m,
-      sweeperTable, minesLeftDiv, gameStateDiv, clockDiv);
+      poppopwinTable, minesLeftDiv, gameStateDiv, clockDiv);
 
   final DivElement highScoreDiv = query('#highScore');
   final highScoreView = new HighScoreView(gameView, highScoreDiv);

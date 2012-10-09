@@ -2,23 +2,23 @@
 <html prefix="og: http://ogp.me/ns#">
   <head>
     <title>Pop, Pop, Win!</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel='stylesheet' type='text/css' href='style.css' />
-  <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta property="og:title" content="Pop, Pop, Win!" />
-    <meta property="og:description" content="Pop, Pop, Win! is an implementation of the game Minesweeper in the Dart programming language." />
+    <meta property="og:description" content="Pop, Pop, Win! is an implementation of the game Minepoppopwin in the Dart programming language." />
     <meta property="og:image" content="http://sweeper.j832.com/icon_200.png" />
     <meta property='og:url' content='http://sweeper.j832.com' />
-    <script type="application/dart" src="sweeper_canvas.dart"></script>
+    <script type="application/dart" src="game.dart"></script>
     <script src="dart.js"></script>
 
   <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-3441863-6']);
     _gaq.push(['_trackPageview']);
-  
+
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -32,6 +32,6 @@
       <div class='sprite loading_bar'> </div>
       <div class='sprite loading_text'> </div>
     </div>
-    <canvas id='sweeperCanvas' width='1024' height='768'></canvas>
+    <canvas id='gameCanvas' width='1024' height='768'></canvas>
   </body>
 </html>

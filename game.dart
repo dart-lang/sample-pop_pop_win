@@ -3,8 +3,8 @@
 #import('package:bot/bot.dart');
 #import('package:bot/html.dart');
 #import('package:bot/texture.dart');
-#import('package:sweeper.dart/sweeper.dart');
-#import('package:sweeper.dart/canvas.dart');
+#import('package:poppopwin/poppopwin.dart');
+#import('package:poppopwin/canvas.dart');
 
 #source('texture_data.dart');
 
@@ -95,19 +95,16 @@ void _onLoaded(args) {
 
     // run the app
     query('#loading').style.display = 'none';
-    _runSweeper(textureData);
+    _runppw(textureData);
   }
 }
 
-void _runSweeper(TextureData textureData) {
+void _runppw(TextureData textureData) {
   final int w = 7, h = 7;
   final int m = (w * h * 0.15625).toInt();
 
-  final CanvasElement sweeperTable = query('#sweeperCanvas');
-  final Element gameStateDiv = query('#gameState');
-
-
-  final gameRoot = new GameRoot(w, h, m, sweeperTable, textureData);
+  final CanvasElement poppopwinTable = query('#gameCanvas');
+  final gameRoot = new GameRoot(w, h, m, poppopwinTable, textureData);
 
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());

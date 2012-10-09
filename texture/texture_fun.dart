@@ -6,8 +6,8 @@
 #import('package:bot/retained.dart');
 #import('package:bot/texture.dart');
 
-#import('package:sweeper.dart/sweeper.dart');
-#import('package:sweeper.dart/canvas.dart');
+#import('package:poppopwin/poppopwin.dart');
+#import('package:poppopwin/canvas.dart');
 
 #source('../texture_data.dart');
 
@@ -33,7 +33,7 @@ _doLoad() {
   final textures = _getTextures(transparentImage, opaqueImage);
   _textureData = new TextureData(textures);
 
-  CanvasElement canvasElement = query('#sweeperCanvas');
+  CanvasElement canvasElement = query('#textureCanvas');
   canvasElement.on.click.add((args) => _next());
   __ctx = canvasElement.context2d;
 
