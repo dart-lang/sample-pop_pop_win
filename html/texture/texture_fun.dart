@@ -1,12 +1,11 @@
 #import('dart:html');
 #import('dart:math');
 
+#import('package:bot/bot.dart');
+#import('package:bot/html.dart');
+#import('package:bot/retained.dart');
 #import('package:sweeper.dart/sweeper.dart');
 #import('package:sweeper.dart/canvas.dart');
-#import('package:sweeper.dart/resources.dart');
-
-#import('package:bot/bot.dart');
-#import('package:bot/retained.dart');
 
 #source('../texture_data.dart');
 
