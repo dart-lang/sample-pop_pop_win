@@ -1,10 +1,10 @@
 class TextureAnimationElement extends PElement {
-  final List<TextAniRequest> _requests = new List<TextAniRequest>();
+  final List<TextureAnimationRequest> _requests = new List<TextureAnimationRequest>();
 
   TextureAnimationElement(num width, num height) :
     super(width, height);
 
-  void add(TextAniRequest request) {
+  void add(TextureAnimationRequest request) {
     assert(request != null);
     assert(request.fresh);
     _requests.add(request);
@@ -13,7 +13,7 @@ class TextureAnimationElement extends PElement {
 
   void update() {
 
-    var toRemove = new List<TextAniRequest>();
+    var toRemove = new List<TextureAnimationRequest>();
     for(final r in _requests) {
       r.update();
       assert(!r.fresh);
@@ -40,7 +40,7 @@ class TextureAnimationElement extends PElement {
   }
 }
 
-class TextAniRequest {
+class TextureAnimationRequest {
   final EventHandle<EventArgs> _startEventHandle = new EventHandle<EventArgs>();
   final String _texturePrefix;
   final int _frameCount;
@@ -52,7 +52,7 @@ class TextAniRequest {
   bool _done = false;
   int _frame = null;
 
-  TextAniRequest(this._texturePrefix, this._frameCount,
+  TextureAnimationRequest(this._texturePrefix, this._frameCount,
       this._offset, {int delay: 0, int startFrame: 0,
     String initialFrame: null, Coordinate initialFrameOffset: null}) :
       this._delay = delay,

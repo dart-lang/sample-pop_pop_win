@@ -194,7 +194,7 @@ class GameElement extends ElementParentImpl {
           throw 'not supported';
       }
 
-      final request = new TextAniRequest(texturePrefix, frameCount, squareOffset,
+      final request = new TextureAnimationRequest(texturePrefix, frameCount, squareOffset,
           delay: delay, initialFrame: 'balloon.png', initialFrameOffset: initialOffset);
 
       switch(ss) {
@@ -228,8 +228,8 @@ class GameElement extends ElementParentImpl {
       final squareOffset = _dartAnimationOffset +
           new Vector(SquareElement._size * point.x, SquareElement._size * point.y);
 
-      _dartAnimationLayer.add(new TextAniRequest('dart_fly_shadow', 54, squareOffset));
-      _dartAnimationLayer.add(new TextAniRequest('dart_fly', 54, squareOffset));
+      _dartAnimationLayer.add(new TextureAnimationRequest('dart_fly_shadow', 54, squareOffset));
+      _dartAnimationLayer.add(new TextureAnimationRequest('dart_fly', 54, squareOffset));
     }
   }
 
