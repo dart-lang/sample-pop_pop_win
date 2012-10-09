@@ -1,14 +1,14 @@
-# Dartsweeper
+# Pop, Pop, Win!
 
 An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> in [Dart](http://www.dartlang.org).
 
 ## Getting the code
 
-Dartsweeper uses my [Dartlib](https://github.com/kevmoo/dartlib) library. Make sure you run `pub update` before you try to run tests, build, etc.
+_Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run `pub update` before you try to run tests, build, etc.
 
 ## Play
 
- * [sweeper.j832.com](http://sweeper.j832.com)
+ * [dart-lang.github.com/pop-pop-win](http://dart-lang.github.com/pop-pop-win/)
  * This is a version compiled to Javascript and should work in any modern browser.
  * This version does not work in Dartium (The custom Chromium version for Dart). The associated code files are not deployed.
 
