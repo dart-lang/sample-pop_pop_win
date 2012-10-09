@@ -1,4 +1,4 @@
-name: sweeper.dart
+name: poppopwin
 dependencies:
   unittest:
     sdk: unittest

@@ -1,4 +1,4 @@
-#library('sweeper-canvas');
+#library('ppw-canvas');
 
 #import('dart:html');
 #import('dart:math');
@@ -8,7 +8,7 @@
 #import('package:bot/retained.dart');
 #import('package:bot/texture.dart');
 
-#import('sweeper.dart');
+#import('ppw.dart');
 #import('html.dart');
 
 #source('src/canvas/board_element.dart');

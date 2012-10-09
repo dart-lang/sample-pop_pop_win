@@ -1,4 +1,4 @@
-#library('sweeper-html');
+#library('ppw-html');
 
 #import('dart:coreimpl');
 #import('dart:html');
@@ -7,7 +7,7 @@
 #import('package:bot/bot.dart');
 #import('package:bot/html.dart');
 
-#import('sweeper.dart');
+#import('ppw.dart');
 
 #source('src/html/high_score_view.dart');
 #source('src/html/game_view.dart');
