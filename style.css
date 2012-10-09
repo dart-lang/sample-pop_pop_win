@@ -1,0 +1,81 @@
+body {
+  font-family: 'Slackey', cursive;
+  // overflow: hidden;
+  text-align: center;
+  background: rgb(180,173,127);	
+  margin: 0;
+}
+
+.container {
+  display: inline-block;
+}
+
+#loading {
+  position: relative;
+  margin: 150px auto;
+  width: 504px;
+  height: 88px;
+}
+
+.sprite {
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-image:url(images/loading.png);
+}
+
+.loading_background {
+  width:504px;
+  height:88px;
+  background-position: -2px -2px;
+}
+
+.loading_bar {
+  display: none;
+  left: 51px;
+  top: 8px;
+  width:398px;
+  height:56px;
+  background-position: -2px -92px;
+}
+
+.loading_text {
+  left: 141px;
+  top: 10px;
+  width:218px;
+  height:56px;
+  background-position: -2px -150px;
+}
+
+.status {
+  font-size: 15px;
+  margin: 5px;
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+button.status {
+  width: 120px;
+}
+
+span.status {
+  width: 80px;
+  display: inline-block;
+  text-align: left;
+}
+
+.help {
+  margin: 0;
+  display: inline-block;
+  text-align: left;
+  width: 540px;
+}
+
+.author {
+  margin: 10px;
+}
+
+canvas#sweeperCanvas {
+  -webkit-user-select: none;
+}
