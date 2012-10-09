@@ -100,7 +100,7 @@ class GameElement extends ElementParentImpl {
 
     // score offset
     // end of the board - score width
-    final x = _scale * (_backgroundSize.width - _boardOffset.x - _scoreElement.width);
+    final x = _scale * (40 + _backgroundSize.width - _boardOffset.x - _scoreElement.width);
 
     _canvas.setTopLeft(_scoreElement, new Coordinate(x, 0));
     _canvas.getChildTransform(_scoreElement).scale(_scale, _scale);
