@@ -45,7 +45,7 @@ main() {
   }
 }
 
-bool get supportsAudio() {
+bool get supportsAudio {
   final isChrome = window.clientInformation.userAgent.contains("Chrome");
   return isChrome;
 }
