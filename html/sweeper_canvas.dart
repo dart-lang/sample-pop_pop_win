@@ -2,6 +2,7 @@
 
 #import('package:bot/bot.dart');
 #import('package:bot/html.dart');
+#import('package:bot/texture.dart');
 #import('package:sweeper.dart/sweeper.dart');
 #import('package:sweeper.dart/canvas.dart');
 

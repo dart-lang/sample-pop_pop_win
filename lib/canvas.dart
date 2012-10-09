@@ -5,6 +5,7 @@
 #import('package:bot/bot.dart');
 #import('package:bot/html.dart');
 #import('package:bot/retained.dart');
+#import('package:bot/texture.dart');
 #import('sweeper.dart');
 #import('html.dart');
 
@@ -16,9 +17,6 @@
 #source('canvas/score_element.dart');
 #source('canvas/square_element.dart');
 #source('canvas/title_element.dart');
-#source('canvas/texture_animation_element.dart');
-#source('canvas/texture_input.dart');
-#source('canvas/texture_data.dart');
 
 Map<String, AudioBuffer> _buffers;
 AudioContext _audioContext;
