@@ -9,7 +9,7 @@ _Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.da
 
 ## Play
 
- * [dart-lang.github.com/pop-pop-win](http://dart-lang.github.com/pop-pop-win/)
+ * [sweeper.j832.com](http://sweeper.j832.com)
  * This is a version compiled to Javascript and should work in any modern browser.
  * This version does not work in Dartium (The custom Chromium version for Dart). The associated code files are not deployed.
 
