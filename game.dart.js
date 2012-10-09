@@ -2673,10 +2673,10 @@ $$._Timer = {"":
  ["_once", "_handle"],
  "super": "Object",
  _Timer$repeating$2: function(milliSeconds, callback) {
-  this._handle = $._window().setInterval$2(new $.anon4(this, callback), milliSeconds);
+  this._handle = $._window().setInterval$2(new $.anon5(this, callback), milliSeconds);
 },
  _Timer$2: function(milliSeconds, callback) {
-  this._handle = $._window().setTimeout$2(new $.anon3(this, callback), milliSeconds);
+  this._handle = $._window().setTimeout$2(new $.anon4(this, callback), milliSeconds);
 }
 };
 
@@ -5127,13 +5127,16 @@ $$.GameElement = {"":
   t1.registerParent$1(this);
   t1.addElement$1(this._background);
   t1.addElement$1(this._boardElement);
-  t1.addElement$1(this._titleElement);
-  var t2 = this._newGameElement;
+  var t2 = this._titleElement;
   t1.addElement$1(t2);
+  var t3 = this._newGameElement;
+  t1.addElement$1(t3);
   t1.addElement$1(this._scoreElement);
   t1.addElement$1(this._popAnimationLayer);
   t1.addElement$1(this._dartAnimationLayer);
-  $.add$1(t2.get$clicked(), new $.anon2());
+  $.add$1(t3.get$clicked(), new $.anon2());
+  $.ClickManager_setClickable(t2, true);
+  $.ClickManager_addHandler(t2, new $.anon3());
 }
 };
 
@@ -5200,7 +5203,12 @@ $$.GameRoot = {"":
     var showPointer = this.get$game().canReveal$2(se.get$x(), se.get$y());
   } else {
     t1 = args.get$element();
-    showPointer = typeof t1 === 'object' && t1 !== null && !!t1.is$NewGameElement && true;
+    if (typeof t1 === 'object' && t1 !== null && !!t1.is$NewGameElement)
+      showPointer = true;
+    else {
+      t1 = args.get$element();
+      showPointer = typeof t1 === 'object' && t1 !== null && !!t1.is$GameTitleElement && true;
+    }
   }
   this._updateCursor$1(showPointer);
 },
@@ -5407,7 +5415,8 @@ $$.GameTitleElement = {"":
  _mouseDirectlyOver$1: function(args) {
   this.invalidateDraw$0();
 },
- get$_mouseDirectlyOver: function() { return new $.BoundClosure(this, '_mouseDirectlyOver$1'); }
+ get$_mouseDirectlyOver: function() { return new $.BoundClosure(this, '_mouseDirectlyOver$1'); },
+ is$GameTitleElement: true
 };
 
 $$.GameStorage = {"":
@@ -6427,6 +6436,14 @@ $$.anon2 = {"":
 }
 };
 
+$$.anon3 = {"":
+ [],
+ "super": "Closure",
+ call$1: function(args) {
+  $.window().open$2('https://github.com/dart-lang/pop-pop-win', '_blank');
+}
+};
+
 $$.anon1 = {"":
  ["this_0"],
  "super": "Closure",
@@ -6866,7 +6883,7 @@ $$._EventLoop__runHelper_next = {"":
 }
 };
 
-$$.anon3 = {"":
+$$.anon4 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function() {
@@ -6874,7 +6891,7 @@ $$.anon3 = {"":
 }
 };
 
-$$.anon4 = {"":
+$$.anon5 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function() {
