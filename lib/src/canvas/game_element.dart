@@ -44,6 +44,11 @@ class GameElement extends ElementParentImpl {
     _canvas.addElement(_dartAnimationLayer);
 
     _newGameElement.clicked.add((args) => playAudio('Click1'));
+
+    ClickManager.setClickable(_titleElement, true);
+    ClickManager.addHandler(_titleElement, (args) {
+      window.open('https://github.com/dart-lang/pop-pop-win', '_blank');
+    });
   }
 
   EventRoot<EventArgs> get newGameClick => _newGameElement.clicked;

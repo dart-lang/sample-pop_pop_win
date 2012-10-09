@@ -120,6 +120,8 @@ class GameRoot extends GameManager {
       showPointer = game.canReveal(se.x, se.y);
     } else if(args.element is NewGameElement) {
       showPointer = true;
+    } else if(args.element is GameTitleElement) {
+      showPointer = true;
     }
     _updateCursor(showPointer);
   }
