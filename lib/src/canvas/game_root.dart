@@ -37,14 +37,13 @@ class GameRoot extends GameManager {
 
     window.on.resize.add((args) => _updateCanvasSize());
     _updateCanvasSize();
-
-    game.stateChanged.add((args) => trackAnalyticsEvent('game', game.state.name));
   }
 
   void newGame() {
     super.newGame();
     _gameElement.game = super.game;
     _requestFrame();
+    game.stateChanged.add((args) => trackAnalyticsEvent('game', game.state.name));
   }
 
   bool get canRevealTarget => _gameElement.canRevealTarget;
