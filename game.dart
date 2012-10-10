@@ -100,16 +100,15 @@ void _onLoaded(args) {
 }
 
 void _runppw(TextureData textureData) {
-  final int w = 7, h = 7;
-  final int m = (w * h * 0.15625).toInt();
+  final size = _processUrlHash() ? 16 : 7;
+  final int m = (size * size * 0.15625).toInt();
 
   final CanvasElement poppopwinTable = query('#gameCanvas');
-  final gameRoot = new GameRoot(w, h, m, poppopwinTable, textureData);
+  final gameRoot = new GameRoot(size, size, m, poppopwinTable, textureData);
 
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());
   window.on.popState.add((args) => _processUrlHash());
-  _processUrlHash();
 }
 
 String _getAudioPath(String name) => 'audio/$name.webm';
@@ -118,19 +117,22 @@ Iterable<String> _getAudioPaths(Iterable<String> names) {
   return $(names).map(_getAudioPath);
 }
 
-void _processUrlHash() {
+bool _processUrlHash() {
   final LocalLocation loc = window.location;
   final hash = loc.hash;
+  final href = loc.href;
 
   final LocalHistory history = window.history;
   if(hash == "#reset") {
-    final href = loc.href;
     assert(href.endsWith(hash));
     var newLoc = href.substring(0, href.length - hash.length);
 
     window.localStorage.clear();
 
     loc.replace(newLoc);
+  } else if(hash == '#big') {
+    return true;
   }
 
+  return false;
 }

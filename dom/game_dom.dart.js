@@ -1067,6 +1067,7 @@ $$.Field = {"":
  "super": "Array2d",
  getAdjacentCount$2: function(x,y){if(this.get$2(x,y)===true)return;var t1=this._adjacents;var val=t1.get$2(x,y);if(typeof val!=='number')return this.getAdjacentCount$2$bailout(1,x,y,t1,val);return val;},
  getAdjacentCount$2$bailout: function(state,x,y,t1,val){if(val==null){for(var t2=$.iterator(this.getAdjacentIndices$2(x,y)),val=0;t2.hasNext$0()===true;)if(this.operator$index$1(t2.next$0())===true)++val;t1.set$3(x,y,val);}return val;},
+ toString$0: function(){return 'w'+$.S(this.width)+'h'+$.S(this.height)+'m'+$.S(this.mineCount);},
  Field$_internal$3: function(mineCount,cols,source){for(var t1=$.iterator(this),count=0;t1.hasNext$0()===true;)if(t1.next$0()===true)++count;}
 };
 
