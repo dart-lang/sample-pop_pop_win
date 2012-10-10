@@ -1353,9 +1353,6 @@ $$.Object = {"":
  get$history: function() {
   return this.noSuchMethod$2("get:history", []);
  },
- get$inSeconds: function() {
-  return this.noSuchMethod$2("get:inSeconds", []);
- },
  get$left: function() {
   return this.noSuchMethod$2("get:left", []);
  },
@@ -1421,6 +1418,9 @@ $$.Object = {"":
  },
  get$clientTop: function() {
   return this.noSuchMethod$2("get:clientTop", []);
+ },
+ get$bestTimeMilliseconds: function() {
+  return this.noSuchMethod$2("get:bestTimeMilliseconds", []);
  },
  get$progress: function() {
   return this.noSuchMethod$2("get:progress", []);
@@ -1661,9 +1661,6 @@ $$.Object = {"":
  },
  get$innerHeight: function() {
   return this.noSuchMethod$2("get:innerHeight", []);
- },
- get$highScore: function() {
-  return this.noSuchMethod$2("get:highScore", []);
  },
  get$loadEnd: function() {
   return this.noSuchMethod$2("get:loadEnd", []);
@@ -3529,7 +3526,7 @@ $$.GameRoot = {"":
  "super": "GameManager",
  newGame$0: function(){$.GameManager.prototype.newGame$0.call(this);var t1=$.GameManager.prototype.get$game.call(this);this._gameElement.set$game(t1);this._requestFrame$0();},
  onGameStateChanged$1: function(newState){switch(newState){case $.CTC37:$.playAudio('ppw_win');break;}$.trackAnalyticsEvent('game',newState.name,$.toString(this.get$game().get$field()),null);},
- onNewHighScore$1: function(value){$.trackAnalyticsEvent('game','record',$.toString(this.get$game().get$field()),value);},
+ onNewBestTime$1: function(value){$.trackAnalyticsEvent('game','record',$.toString(this.get$game().get$field()),value);},
  _updateCanvasSize$0: function(){this._updateCanvasSizeCore$1($.Size$($.window().get$innerWidth(),$.window().get$innerHeight()));},
  _updateCanvasSizeCore$1: function(windowSize){var t1=this._lib3_canvas;$.indexSet(t1.get$attributes(),'width',windowSize.width);$.indexSet(t1.get$attributes(),'height',windowSize.height);this._requestFrame$0();},
  _requestFrame$0: function(){if(!this._frameRequested){this._frameRequested=true;$.window().requestAnimationFrame$1(this.get$_onFrame());}},
@@ -3563,11 +3560,11 @@ $$.NewGameElement = {"":
 };
 
 $$.ScoreElement = {"":
- ["_gameManager", "_clockStr", "_minesStr", "_highScoreStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
+ ["_gameManager", "_clockStr", "_minesStr", "_bestTimeStr", "_textSize", "_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  setGameManager$1: function(manager){this._gameManager=manager;this.invalidateDraw$0();},
- update$0: function(){var newMineStr=$.toString(this.get$_lib3_game().get$minesLeft());if(!$.eqB(newMineStr,this._minesStr)){this._minesStr=newMineStr;this.invalidateDraw$0();}var newClockStr=!(this.get$_lib3_game().get$duration()==null)?$.toString(this.get$_lib3_game().get$duration().get$inSeconds()):'';if(!$.eqB(newClockStr,this._clockStr)){this._clockStr=newClockStr;this.invalidateDraw$0();}var highScoreStr=!(this._gameManager.get$highScore()==null)?$.toStringAsFixed($.mul(this._gameManager.get$highScore(),0.001),1):null;if(!$.eqB(this._highScoreStr,highScoreStr)){this._highScoreStr=highScoreStr;this.invalidateDraw$0();}$.PElement.prototype.update$0.call(this);},
- drawOverride$1: function(ctx){var t1=this.get$height();if(typeof t1!=='number')throw $.iae(t1);var rowHeight=0.33*t1;ctx.set$font($.S($.toInt(rowHeight*0.9))+'px Slackey');ctx.set$textBaseline('middle');var textSize=this._getTextSize$1(ctx);ctx.set$fillStyle('black');ctx.set$textAlign('right');t1=0.5*rowHeight;ctx.fillText$3('MINES LEFT:',textSize,t1);ctx.set$textAlign('left');ctx.fillText$3(this._minesStr,$.add(textSize,15),t1);ctx.set$textAlign('right');t1=1.5*rowHeight;ctx.fillText$3('TIME:',textSize,t1);ctx.set$textAlign('left');ctx.fillText$3(this._clockStr,$.add(textSize,15),t1);if(!(this._highScoreStr==null)){ctx.set$textAlign('right');t1=2.5*rowHeight;ctx.fillText$3('RECORD:',textSize,t1);ctx.set$textAlign('left');ctx.fillText$3(this._highScoreStr,$.add(textSize,15),t1);}},
+ update$0: function(){var newMineStr=$.toString(this.get$_lib3_game().get$minesLeft());if(!$.eqB(newMineStr,this._minesStr)){this._minesStr=newMineStr;this.invalidateDraw$0();}var newClockStr=!(this.get$_lib3_game().get$duration()==null)?$.ScoreElement_toRecordString(this.get$_lib3_game().get$duration().get$inMilliseconds()):'';if(!$.eqB(newClockStr,this._clockStr)){this._clockStr=newClockStr;this.invalidateDraw$0();}var bestTimeStr=!(this._gameManager.get$bestTimeMilliseconds()==null)?$.ScoreElement_toRecordString(this._gameManager.get$bestTimeMilliseconds()):null;if(!$.eqB(this._bestTimeStr,bestTimeStr)){this._bestTimeStr=bestTimeStr;this.invalidateDraw$0();}$.PElement.prototype.update$0.call(this);},
+ drawOverride$1: function(ctx){var t1=this.get$height();if(typeof t1!=='number')throw $.iae(t1);var rowHeight=0.33*t1;ctx.set$font($.S($.toInt(rowHeight*0.9))+'px Slackey');ctx.set$textBaseline('middle');var textSize=this._getTextSize$1(ctx);ctx.set$fillStyle('black');ctx.set$textAlign('right');t1=0.5*rowHeight;ctx.fillText$3('MINES LEFT:',textSize,t1);ctx.set$textAlign('left');ctx.fillText$3(this._minesStr,$.add(textSize,15),t1);ctx.set$textAlign('right');t1=1.5*rowHeight;ctx.fillText$3('TIME:',textSize,t1);ctx.set$textAlign('left');ctx.fillText$3(this._clockStr,$.add(textSize,15),t1);if(!(this._bestTimeStr==null)){ctx.set$textAlign('right');t1=2.5*rowHeight;ctx.fillText$3('RECORD:',textSize,t1);ctx.set$textAlign('left');ctx.fillText$3(this._bestTimeStr,$.add(textSize,15),t1);}},
  _getTextSize$1: function(ctx){if(this._textSize==null)this._textSize=ctx.measureText$1('MINES LEFT:').get$width();return this._textSize;},
  get$_lib3_game: function(){return this._gameManager.get$game();}
 };
@@ -3601,11 +3598,11 @@ $$.GameTitleElement = {"":
 };
 
 $$.GameStorage = {"":
- ["_highScoreUpdated", "_storage"],
+ ["_bestTimeUpdated", "_storage"],
  "super": "Object",
  recordState$1: function(state){this._incrementIntValue$1(state.name);},
- updateHighScore$1: function(game){var w=game.get$field().get$width();var h=game.get$field().get$height();var m=game.get$field().get$mineCount();var duration=game.get$duration().get$inMilliseconds();var key='w'+$.S(w)+'-h'+$.S(h)+'-m'+$.S(m);var currentScore=this._getIntValue$2(key,null);if(currentScore==null||$.gtB(currentScore,duration)){this._setIntValue$2(key,duration);this._highScoreUpdated.fireEvent$1(null);return true;}else return false;},
- getHighScore$3: function(width,height,mineCount){return this._getIntValue$2('w'+$.S(width)+'-h'+$.S(height)+'-m'+$.S(mineCount),null);},
+ updateBestTime$1: function(game){var w=game.get$field().get$width();var h=game.get$field().get$height();var m=game.get$field().get$mineCount();var duration=game.get$duration().get$inMilliseconds();var key='w'+$.S(w)+'-h'+$.S(h)+'-m'+$.S(m);var currentScore=this._getIntValue$2(key,null);if(currentScore==null||$.gtB(currentScore,duration)){this._setIntValue$2(key,duration);this._bestTimeUpdated.fireEvent$1(null);return true;}else return false;},
+ getBestTimeMilliseconds$3: function(width,height,mineCount){return this._getIntValue$2('w'+$.S(width)+'-h'+$.S(height)+'-m'+$.S(mineCount),null);},
  reset$0: function(){$.clear(this._storage);},
  toString$0: function(){return $.Maps_mapToString(this._storage);},
  _getIntValue$2: function(key,defaultValue){var strValue=$.index(this._storage,key);if(strValue==null)return defaultValue;else return $.int_parse(strValue);},
@@ -3620,17 +3617,17 @@ $$.GameManager = {"":
  ["_game?"],
  "super": "Object",
  get$game: function(){return this._game;},
- get$highScore: function(){return this._gameStorage.getHighScore$3(this._lib5_width,this._lib5_height,this._mineCount);},
+ get$bestTimeMilliseconds: function(){return this._gameStorage.getBestTimeMilliseconds$3(this._lib5_width,this._lib5_height,this._mineCount);},
  newGame$0: function(){if(!(this._updatedEventId==null)){this._game.get$updated().remove$1(this._updatedEventId);this._game.get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC31);}this._game=$.Game$($.Field_Field(this._mineCount,this._lib5_width,this._lib5_height,null));this._updatedEventId=$.add$1(this._game.get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this._game.get$stateChanged(),this.get$_gameStateChanged());},
  gameUpdated$1: function(args){},
  get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
  _lib5_click$3: function(x,y,alt){var ss=this._game.getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC34))this._game.setFlag$3(x,y,true);else if($.eqB(ss,$.CTC36))this._game.setFlag$3(x,y,false);else if($.eqB(ss,$.CTC35))this._game.reveal$2(x,y);}else if($.eqB(ss,$.CTC34))this._game.reveal$2(x,y);},
  updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this._game.get$state(),$.CTC45))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this._game.get$state(),$.CTC45)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
- onNewHighScore$1: function(value){},
+ onNewBestTime$1: function(value){},
  onGameStateChanged$1: function(value){},
  _doClock$0: function(){this.updateClock$0();},
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
- _gameStateChanged$1: function(newState){var t1=this._gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC37))if(t1.updateHighScore$1(this._game)===true)this.onNewHighScore$1(this.get$highScore());this.updateClock$0();this.onGameStateChanged$1(newState);},
+ _gameStateChanged$1: function(newState){var t1=this._gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC37))if(t1.updateBestTime$1(this._game)===true)this.onNewBestTime$1(this.get$bestTimeMilliseconds());this.updateClock$0();this.onGameStateChanged$1(newState);},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width,_height,_mineCount){this.newGame$0();}
 };
@@ -4937,13 +4934,13 @@ $._HttpRequestFactoryProvider_createHttpRequest = function(){return new XMLHttpR
 
 $.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
-$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
-
 $.requireArgumentNotNull = function(argument,argName){if(argument==null)throw $.$$throw($.NullArgumentException$(argName));};
 
 $.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(receiver);return receiver.iterator$0();};
 
 $._FuncEnumerable$ = function(_source,_func){return new $._FuncEnumerable(_source,_func);};
+
+$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
 $._TextTrackCueEventsImpl$ = function(_ptr){return new $._TextTrackCueEventsImpl(_ptr);};
 
@@ -5102,6 +5099,8 @@ $.DateImplementation$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoc
 $.mod = function(a,b){if($.checkNumbers(a,b)){var result=a % b;if(result===0)return 0;if(result>0)return result;if(b<0)return result-b;else return result+b;}return a.operator$mod$1(b);};
 
 $._CustomEventFactoryProvider_createCustomEvent = function(type,canBubble,cancelable,detail){var e=$._document().$dom_createEvent$1('CustomEvent');e.$dom_initCustomEvent$4(type,canBubble,cancelable,detail);return e;};
+
+$.ScoreElement_toRecordString = function(milliseconds){return $.toStringAsFixed($.mul(milliseconds,0.001),1);};
 
 $.compareTo = function(a,b){if($.checkNumbers(a,b))if($.ltB(a,b))return -1;else if($.gtB(a,b))return 1;else if($.eqB(a,b)){if($.eqB(a,0)){var aIsNegative=$.isNegative(a);if($.eqB(aIsNegative,$.isNegative(b)))return 0;if(aIsNegative===true)return -1;return 1;}return 0;}else if($.isNaN(a)===true){if($.isNaN(b)===true)return 0;return 1;}else return -1;else if(typeof a==='string'){if(!(typeof b==='string'))throw $.$$throw($.ArgumentError$(b));if(a == b)var t1=0;else t1=a < b?-1:1;return t1;}else return a.compareTo$1(b);};
 

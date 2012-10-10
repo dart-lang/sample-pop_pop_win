@@ -1272,8 +1272,8 @@ $$.Vector = {"":
 $$.HighScoreView = {"":
  ["_div", "_manager"],
  "super": "Object",
- _update$0: function(){var milliseconds=this._manager.get$highScore();var t1=!(milliseconds==null);var t2=this._div;if(t1)t2.set$innerHTML($.Duration$(0,0,0,0,$.tdiv(milliseconds,1000)).toString$0());else t2.set$innerHTML('');},
- HighScoreView$2: function(_manager,_div){$.add$1(this._manager.get$highScoreUpdated(),new $.anon(this));this._update$0();}
+ _update$0: function(){var milliseconds=this._manager.get$bestTimeMilliseconds();var t1=!(milliseconds==null);var t2=this._div;if(t1)t2.set$innerHTML($.Duration$(0,0,0,0,$.tdiv(milliseconds,1000)).toString$0());else t2.set$innerHTML('');},
+ HighScoreView$2: function(_manager,_div){$.add$1(this._manager.get$bestTimeUpdated(),new $.anon(this));this._update$0();}
 };
 
 $$.GameView = {"":
@@ -1289,12 +1289,12 @@ $$.GameView = {"":
 };
 
 $$.GameStorage = {"":
- ["_highScoreUpdated", "_storage"],
+ ["_bestTimeUpdated", "_storage"],
  "super": "Object",
- get$highScoreUpdated: function(){return this._highScoreUpdated;},
+ get$bestTimeUpdated: function(){return this._bestTimeUpdated;},
  recordState$1: function(state){this._incrementIntValue$1(state.name);},
- updateHighScore$1: function(game){var w=game.get$field().get$width();var h=game.get$field().get$height();var m=game.get$field().get$mineCount();var duration=game.get$duration().get$inMilliseconds();var key='w'+$.S(w)+'-h'+$.S(h)+'-m'+$.S(m);var currentScore=this._getIntValue$2(key,null);if(currentScore==null||$.gtB(currentScore,duration)){this._setIntValue$2(key,duration);this._highScoreUpdated.fireEvent$1(null);return true;}else return false;},
- getHighScore$3: function(width,height,mineCount){return this._getIntValue$2('w'+$.S(width)+'-h'+$.S(height)+'-m'+$.S(mineCount),null);},
+ updateBestTime$1: function(game){var w=game.get$field().get$width();var h=game.get$field().get$height();var m=game.get$field().get$mineCount();var duration=game.get$duration().get$inMilliseconds();var key='w'+$.S(w)+'-h'+$.S(h)+'-m'+$.S(m);var currentScore=this._getIntValue$2(key,null);if(currentScore==null||$.gtB(currentScore,duration)){this._setIntValue$2(key,duration);this._bestTimeUpdated.fireEvent$1(null);return true;}else return false;},
+ getBestTimeMilliseconds$3: function(width,height,mineCount){return this._getIntValue$2('w'+$.S(width)+'-h'+$.S(height)+'-m'+$.S(mineCount),null);},
  reset$0: function(){$.clear(this._storage);},
  toString$0: function(){return $.Maps_mapToString(this._storage);},
  _getIntValue$2: function(key,defaultValue){var strValue=$.index(this._storage,key);if(strValue==null)return defaultValue;else return $.int_parse(strValue);},
@@ -1309,19 +1309,19 @@ $$.GameManager = {"":
  [],
  "super": "Object",
  get$game: function(){return this._game;},
- get$highScoreUpdated: function(){return this._gameStorage.get$highScoreUpdated();},
- get$highScore: function(){return this._gameStorage.getHighScore$3(this._width,this._height,this._mineCount);},
+ get$bestTimeUpdated: function(){return this._gameStorage.get$bestTimeUpdated();},
+ get$bestTimeMilliseconds: function(){return this._gameStorage.getBestTimeMilliseconds$3(this._width,this._height,this._mineCount);},
  newGame$0: function(){if(!(this._updatedEventId==null)){this._game.get$updated().remove$1(this._updatedEventId);this._game.get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC25);}this._game=$.Game$($.Field_Field(this._mineCount,this._width,this._height,null));this._updatedEventId=$.add$1(this._game.get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this._game.get$stateChanged(),this.get$_gameStateChanged());},
  gameUpdated$1: function(args){},
  get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
  _click$3: function(x,y,alt){var ss=this._game.getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC23))this._game.setFlag$3(x,y,true);else if($.eqB(ss,$.CTC24))this._game.setFlag$3(x,y,false);else if($.eqB(ss,$.CTC17))this._game.reveal$2(x,y);}else if($.eqB(ss,$.CTC23))this._game.reveal$2(x,y);},
  updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this._game.get$state(),$.CTC26))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this._game.get$state(),$.CTC26)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
- onNewHighScore$1: function(value){},
+ onNewBestTime$1: function(value){},
  onGameStateChanged$1: function(value){},
  _doClock$0: function(){this.updateClock$0();},
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
  get$_canClick: function(){return $.eqB(this._game.get$state(),$.CTC25)||$.eqB(this._game.get$state(),$.CTC26);},
- _gameStateChanged$1: function(newState){var t1=this._gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC34))if(t1.updateHighScore$1(this._game)===true)this.onNewHighScore$1(this.get$highScore());this.updateClock$0();this.onGameStateChanged$1(newState);},
+ _gameStateChanged$1: function(newState){var t1=this._gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC34))if(t1.updateBestTime$1(this._game)===true)this.onNewBestTime$1(this.get$bestTimeMilliseconds());this.updateClock$0();this.onGameStateChanged$1(newState);},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width,_height,_mineCount){this.newGame$0();}
 };
@@ -1835,13 +1835,13 @@ $.Primitives_getYear = function(receiver){return receiver.isUtc===true?$.Primiti
 
 $._FrozenElementListIterator$ = function(_list){return new $._FrozenElementListIterator(_list,0);};
 
+$._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$());t1._JsCopier$0();return t1;};
+
 $.Primitives_getHours = function(receiver){return receiver.isUtc===true?$.Primitives_lazyAsJsDate(receiver).getUTCHours():$.Primitives_lazyAsJsDate(receiver).getHours();};
 
 $.Maps_mapToString = function(m){var result=$.StringBuffer_StringBuffer('');$.Maps__emitMap(m,result,$.ListImplementation_List(null));return $.toString(result);};
 
 $.invokeClosure = function(closure,isolate,numberOfArguments,arg1,arg2){if($.eqB(numberOfArguments,0))return $._callInIsolate(isolate,new $.invokeClosure_anon(closure));else if($.eqB(numberOfArguments,1))return $._callInIsolate(isolate,new $.invokeClosure_anon0(closure,arg1));else if($.eqB(numberOfArguments,2))return $._callInIsolate(isolate,new $.invokeClosure_anon1(closure,arg1,arg2));else throw $.$$throw($.ExceptionImplementation$('Unsupported number of arguments for wrapped closure'));};
-
-$._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$());t1._JsCopier$0();return t1;};
 
 $.MetaInfo$ = function(_tag,_tags,_set){return new $.MetaInfo(_tag,_tags,_set);};
 
