@@ -28,8 +28,8 @@ class GameRoot extends GameManager {
     _stage.invalidated.add(_stageInvalidated);
 
     _gameElement.newGameClick.add((args) {
-      trackAnalyticsEvent('game', 'reset');
       newGame();
+      trackAnalyticsEvent('game', 'reset');
     });
 
     ClickManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
@@ -37,6 +37,8 @@ class GameRoot extends GameManager {
 
     window.on.resize.add((args) => _updateCanvasSize());
     _updateCanvasSize();
+
+    game.stateChanged.add((args) => trackAnalyticsEvent('game', game.state.name));
   }
 
   void newGame() {
@@ -109,7 +111,6 @@ class GameRoot extends GameManager {
   }
 
   void gameUpdated(args) {
-    trackAnalyticsEvent('game', game.state.name);
     _requestFrame();
   }
 
