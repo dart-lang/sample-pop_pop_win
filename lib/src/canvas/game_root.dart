@@ -54,6 +54,11 @@ class GameRoot extends GameManager {
       _gameElement.targetChanged;
 
   void onGameStateChanged(GameState newState) {
+    switch(newState) {
+      case GameState.won:
+        playAudio('ppw_win');
+        break;
+    }
     trackAnalyticsEvent('game', newState.name);
   }
 

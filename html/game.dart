@@ -14,7 +14,7 @@ const String _opaqueTextureName = 'dart_opaque_01.jpg';
 const List<String> _audioNames =
   const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8',
          'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5',
-         'DartThrow3', 'Flag2', 'Unflag2', 'Click1'];
+         'DartThrow3', 'Flag2', 'Unflag2', 'Click1', 'ppw_win'];
 
 const int _loadingBarPxWidth = 398;
 
