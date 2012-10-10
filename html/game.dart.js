@@ -2820,8 +2820,8 @@ $$._Deserializer0 = {"":
 $$._Timer = {"":
  ["_once", "_handle"],
  "super": "Object",
- _Timer$repeating$2: function(milliSeconds,callback){this._handle=$._window().setInterval$2(new $.anon14(this,callback),milliSeconds);},
- _Timer$2: function(milliSeconds,callback){this._handle=$._window().setTimeout$2(new $.anon13(this,callback),milliSeconds);}
+ _Timer$repeating$2: function(milliSeconds,callback){this._handle=$._window().setInterval$2(new $.anon13(this,callback),milliSeconds);},
+ _Timer$2: function(milliSeconds,callback){this._handle=$._window().setTimeout$2(new $.anon12(this,callback),milliSeconds);}
 };
 
 $$._Random = {"":
@@ -3466,13 +3466,13 @@ $$.GameElement = {"":
  _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC40)){this.get$game().setFlag$3(x,y,true);$.playAudio('Flag2');return true;}else if($.eqB(ss,$.CTC42)){this.get$game().setFlag$3(x,y,false);$.playAudio('Unflag2');return true;}return false;},
  _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC40)||$.eqB(ss,$.CTC42)){this._toggleFlag$2(x,y);var reveals=null;}else if($.eqB(ss,$.CTC41))if(this.get$game().canReveal$2(x,y)===true){this._startDartAnimation$1($.filter($.map($.$$(this.get$game().get$field().getAdjacentIndices$2(x,y)),new $.GameElement__click_anon(this)),new $.GameElement__click_anon0(this)).toList$0());reveals=this.get$game().reveal$2(x,y);}else reveals=null;else reveals=null;else if($.eqB(ss,$.CTC40)){this._startDartAnimation$1([$.Coordinate$(x,y)]);reveals=this.get$game().reveal$2(x,y);}else reveals=null;if(!(reveals==null)&&$.gtB($.get$length(reveals),0)){if(!t1)$.index(reveals,0);this._startPopAnimation$2($.Coordinate$(x,y),reveals);}else if($.eqB(this.get$game().get$state(),$.CTC44))this._startPopAnimation$1($.Coordinate$(x,y));},
  _updateSize$2: function(w,h){var t1=$.CTC27.width;var sizeX=$.GameElement__getScale(w,t1,1344);var sizeY=$.GameElement__getScale(h,$.CTC27.height,1344);var t2=$.Size$(sizeX,sizeY);this.set$size(t2);this._lib3_canvas.set$size(t2);this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC28.scale$1(this._scale);t2=this._scale;if(typeof t2!=='number')throw $.iae(t2);this._scaledInnerBox=$.Box$(256*t2,0,$.sub(sizeX,512*t2),sizeY);},
- GameElement$1: function(textureData){var t1=this._lib3_canvas;t1.registerParent$1(this);t1.addElement$1(this._background);t1.addElement$1(this._boardElement);var t2=this._titleElement;t1.addElement$1(t2);var t3=this._newGameElement;t1.addElement$1(t3);t1.addElement$1(this._scoreElement);t1.addElement$1(this._popAnimationLayer);t1.addElement$1(this._dartAnimationLayer);$.add$1(t3.get$clicked(),new $.anon11());$.ClickManager_setClickable(t2,true);$.ClickManager_addHandler(t2,new $.anon12());}
+ GameElement$1: function(textureData){var t1=this._lib3_canvas;t1.registerParent$1(this);t1.addElement$1(this._background);t1.addElement$1(this._boardElement);var t2=this._titleElement;t1.addElement$1(t2);var t3=this._newGameElement;t1.addElement$1(t3);t1.addElement$1(this._scoreElement);t1.addElement$1(this._popAnimationLayer);t1.addElement$1(this._dartAnimationLayer);$.add$1(t3.get$clicked(),new $.anon10());$.ClickManager_setClickable(t2,true);$.ClickManager_addHandler(t2,new $.anon11());}
 };
 
 $$.GameRoot = {"":
  ["_lib3_stage", "_lib3_canvas", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib6_width", "_lib6_height", "_mineCount", "_gameStorage", "_game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
- newGame$0: function(){$.GameManager.prototype.newGame$0.call(this);var t1=$.GameManager.prototype.get$game.call(this);this._gameElement.set$game(t1);this._requestFrame$0();},
+ newGame$0: function(){$.GameManager.prototype.newGame$0.call(this);var t1=$.GameManager.prototype.get$game.call(this);this._gameElement.set$game(t1);this._requestFrame$0();$.add$1(this.get$game().get$stateChanged(),new $.GameRoot_newGame_anon(this));},
  _updateCanvasSize$0: function(){this._updateCanvasSizeCore$1($.Size$($.window().get$innerWidth(),$.window().get$innerHeight()));},
  _updateCanvasSizeCore$1: function(windowSize){var t1=this._lib3_canvas;$.indexSet(t1.get$attributes(),'width',windowSize.width);$.indexSet(t1.get$attributes(),'height',windowSize.height);this._requestFrame$0();},
  _requestFrame$0: function(){if(!this._frameRequested){this._frameRequested=true;$.window().requestAnimationFrame$1(this.get$_onFrame());}},
@@ -3488,7 +3488,7 @@ $$.GameRoot = {"":
  _mouseOutHandler$1: function(args){this._updateCursor$1(false);},
  get$_mouseOutHandler: function() { return new $.BoundClosure(this, '_mouseOutHandler$1'); },
  _updateCursor$1: function(showFinger){var t1=showFinger===true?'pointer':'inherit';this._lib3_canvas.get$style().set$cursor(t1);},
- GameRoot$_internal$7: function(width,height,mineCount,_canvas,_stage,gameElement,_clickMan){var t1=this._gameElement;t1.setGameManager$1(this);var t2=this._lib3_stage;$.add$1(t2.get$invalidated(),this.get$_stageInvalidated());$.add$1(t1.get$newGameClick(),new $.anon(this));$.ClickManager_addMouseMoveHandler(t1,this.get$_mouseMoveHandler());$.ClickManager_addMouseOutHandler(t2,this.get$_mouseOutHandler());$.add$1($.window().get$on().get$resize(),new $.anon0(this));this._updateCanvasSize$0();$.add$1(this.get$game().get$stateChanged(),new $.anon1(this));}
+ GameRoot$_internal$7: function(width,height,mineCount,_canvas,_stage,gameElement,_clickMan){var t1=this._gameElement;t1.setGameManager$1(this);var t2=this._lib3_stage;$.add$1(t2.get$invalidated(),this.get$_stageInvalidated());$.add$1(t1.get$newGameClick(),new $.anon(this));$.ClickManager_addMouseMoveHandler(t1,this.get$_mouseMoveHandler());$.ClickManager_addMouseOutHandler(t2,this.get$_mouseOutHandler());$.add$1($.window().get$on().get$resize(),new $.anon0(this));this._updateCanvasSize$0();}
 };
 
 $$.NewGameElement = {"":
@@ -3501,7 +3501,7 @@ $$.NewGameElement = {"":
  get$_lib3_game: function(){return this.get$_lib3_parent().get$_lib3_game();},
  _mouseDirectlyOver$1: function(args){this.invalidateDraw$0();},
  get$_mouseDirectlyOver: function() { return new $.BoundClosure(this, '_mouseDirectlyOver$1'); },
- NewGameElement$0: function(){$.ClickManager_setClickable(this,true);$.ClickManager_addHandler(this,new $.anon10(this));$.get$Mouse_isMouseDirectlyOverProperty().addHandler$2(this,this.get$_mouseDirectlyOver());},
+ NewGameElement$0: function(){$.ClickManager_setClickable(this,true);$.ClickManager_addHandler(this,new $.anon9(this));$.get$Mouse_isMouseDirectlyOverProperty().addHandler$2(this,this.get$_mouseDirectlyOver());},
  is$NewGameElement: true
 };
 
@@ -3584,7 +3584,7 @@ $$.Callback = {"":
  _lib5_callback$2: function(arg0, arg1) { return this._lib5_callback.call$2(arg0, arg1); },
  get$_serialized: function(){return ['funcref',this._lib5_id,$._proxiedFunctionTable().get$sendPort()];},
  _initialize$2: function(f,manualDispose){this._manualDispose=manualDispose;this._lib5_id=$.add$1($._proxiedFunctionTable(),f);$._proxiedFunctionTable().globalize$1(this._lib5_id);$._proxiedFunctionTable()._replace$2(this._lib5_id,this._lib5_callback);$._deserializedFunctionTable().add$2(this._lib5_callback,this.get$_serialized());},
- Callback$many$1: function(f){this._lib5_callback=new $.anon4(f);this._initialize$2(f,false);},
+ Callback$many$1: function(f){this._lib5_callback=new $.anon3(f);this._initialize$2(f,false);},
  is$Callback: true
 };
 
@@ -3614,13 +3614,13 @@ $$._ProxiedReferenceTable = {"":
 $$._ProxiedFunctionTable = {"":
  ["_name", "_nextId", "_deletedCount", "_registry", "_port", "_globalIds", "_handleStack", "_scopeIndices"],
  "super": "_ProxiedReferenceTable",
- _ProxiedFunctionTable$0: function(){this._port.receive$1(new $.anon3(this));}
+ _ProxiedFunctionTable$0: function(){this._port.receive$1(new $.anon2(this));}
 };
 
 $$._ProxiedObjectTable = {"":
  ["_name", "_nextId", "_deletedCount", "_registry", "_port", "_globalIds", "_handleStack", "_scopeIndices"],
  "super": "_ProxiedReferenceTable",
- _ProxiedObjectTable$0: function(){this._port.receive$1(new $.anon2());}
+ _ProxiedObjectTable$0: function(){this._port.receive$1(new $.anon1());}
 };
 
 $$._DeserializedFunctionTable = {"":
@@ -3865,12 +3865,6 @@ $$.anon0 = {"":
  call$1: function(args){return this.this_1._updateCanvasSize$0();}
 };
 
-$$.anon1 = {"":
- ["this_2"],
- "super": "Closure",
- call$1: function(args){return $.trackAnalyticsEvent('game',this.this_2.get$game().get$state().get$name());}
-};
-
 $$.ElementParentImpl_drawOverride_anon = {"":
  ["ctx_0"],
  "super": "Closure",
@@ -3925,7 +3919,7 @@ $$.trackAnalyticsEvent_anon = {"":
  call$0: function(){$.context().pushAnalytics$1($.array(['_trackEvent',this.category_0,this.action_1]));}
 };
 
-$$.anon2 = {"":
+$$.anon1 = {"":
  [],
  "super": "Closure",
  call$1: function(msg){throw $.$$throw('Invocation unsupported on Dart proxies');}
@@ -4003,7 +3997,7 @@ $$._JsonStringifier_stringifyJsonValue_anon = {"":
  call$2: function(key,value){var t1=this.box_0;var t2=t1.first_10!==true;var t3=this.this_2;if(t2)$.add$1(t3.get$sb(),',"');else $.add$1(t3.get$sb(),'"');t2=this.this_2;$._JsonStringifier_escape(t2.get$sb(),key);$.add$1(t2.get$sb(),'":');t2.stringifyValue$1(value);t1.first_10=false;}
 };
 
-$$.anon3 = {"":
+$$.anon2 = {"":
  ["this_0"],
  "super": "Closure",
  call$1: function(msg){var id=$.index(msg,0);var args=$.map($.index(msg,1),$._deserialize);var f=$.index(this.this_0.get$_registry(),id);switch($.get$length(args)){case 0:return $._serialize(f.call$0());case 1:return $._serialize(f.call$1($.index(args,0)));case 2:return $._serialize(f.call$2($.index(args,0),$.index(args,1)));case 3:return $._serialize(f.call$3($.index(args,0),$.index(args,1),$.index(args,2)));case 4:return $._serialize(f.call$4($.index(args,0),$.index(args,1),$.index(args,2),$.index(args,3)));default:throw $.$$throw('Unsupported number of arguments.');}}
@@ -4081,10 +4075,10 @@ $$._initialize_anon = {"":
  call$0: function(){var t1=$.Callback$many($.proxyDebug);$.context().set$dartProxyDebug(t1);}
 };
 
-$$.anon4 = {"":
+$$.anon3 = {"":
  ["f_0"],
  "super": "Closure",
- call$4: function(arg1,arg2,arg3,arg4){var t1=$===arg1;if(t1)arg1=null;var t2=$===arg2;if(t2)arg2=null;var t3=$===arg3;if(t3)arg3=null;var t4=$===arg4;if(t4)arg4=null;if(t1)return $.scoped(new $.anon5(this.f_0));else if(t2)return $.scoped(new $.anon6(this.f_0,arg1));else if(t3)return $.scoped(new $.anon7(this.f_0,arg1,arg2));else{t1=this.f_0;if(t4)return $.scoped(new $.anon8(t1,arg3,arg1,arg2));else return $.scoped(new $.anon9(t1,arg3,arg4,arg1,arg2));}},
+ call$4: function(arg1,arg2,arg3,arg4){var t1=$===arg1;if(t1)arg1=null;var t2=$===arg2;if(t2)arg2=null;var t3=$===arg3;if(t3)arg3=null;var t4=$===arg4;if(t4)arg4=null;if(t1)return $.scoped(new $.anon4(this.f_0));else if(t2)return $.scoped(new $.anon5(this.f_0,arg1));else if(t3)return $.scoped(new $.anon6(this.f_0,arg1,arg2));else{t1=this.f_0;if(t4)return $.scoped(new $.anon7(t1,arg3,arg1,arg2));else return $.scoped(new $.anon8(t1,arg3,arg4,arg1,arg2));}},
  call$0: function() {
   return this.call$4($,$,$,$)
 },
@@ -4099,31 +4093,31 @@ $$.anon4 = {"":
 }
 };
 
-$$.anon5 = {"":
+$$.anon4 = {"":
  ["f_1"],
  "super": "Closure",
  call$0: function(){return this.f_1.call$0();}
 };
 
-$$.anon6 = {"":
+$$.anon5 = {"":
  ["f_3", "arg1_2"],
  "super": "Closure",
  call$0: function(){return this.f_3.call$1(this.arg1_2);}
 };
 
-$$.anon7 = {"":
+$$.anon6 = {"":
  ["f_6", "arg1_5", "arg2_4"],
  "super": "Closure",
  call$0: function(){return this.f_6.call$2(this.arg1_5,this.arg2_4);}
 };
 
-$$.anon8 = {"":
+$$.anon7 = {"":
  ["f_10", "arg3_9", "arg1_8", "arg2_7"],
  "super": "Closure",
  call$0: function(){return this.f_10.call$3(this.arg1_8,this.arg2_7,this.arg3_9);}
 };
 
-$$.anon9 = {"":
+$$.anon8 = {"":
  ["f_15", "arg3_14", "arg4_13", "arg1_12", "arg2_11"],
  "super": "Closure",
  call$0: function(){return this.f_15.call$4(this.arg1_12,this.arg2_11,this.arg3_14,this.arg4_13);}
@@ -4133,6 +4127,12 @@ $$.HashSetImplementation_addAll__ = {"":
  ["this_0"],
  "super": "Closure",
  call$1: function(value){this.this_0.add$1(value);}
+};
+
+$$.GameRoot_newGame_anon = {"":
+ ["this_0"],
+ "super": "Closure",
+ call$1: function(args){return $.trackAnalyticsEvent('game',this.this_0.get$game().get$state().get$name());}
 };
 
 $$.Duration_toString_threeDigits = {"":
@@ -4165,19 +4165,19 @@ $$.DateImplementation_toString_twoDigits = {"":
  call$1: function(n){if($.geB(n,10))return $.S(n);return '0'+$.S(n);}
 };
 
-$$.anon11 = {"":
+$$.anon10 = {"":
  [],
  "super": "Closure",
  call$1: function(args){return $.playAudio('Click1');}
 };
 
-$$.anon12 = {"":
+$$.anon11 = {"":
  [],
  "super": "Closure",
  call$1: function(args){$.window().open$2('https://github.com/dart-lang/pop-pop-win','_blank');}
 };
 
-$$.anon10 = {"":
+$$.anon9 = {"":
  ["this_0"],
  "super": "Closure",
  call$1: function(args){return this.this_0.get$_clickedEvent().fireEvent$1($.CTC20);}
@@ -4387,13 +4387,13 @@ $$._EventLoop__runHelper_next = {"":
  call$0: function(){if(this.this_0.runIteration$0()!==true)return;$._window().setTimeout$2(this,0);}
 };
 
-$$.anon13 = {"":
+$$.anon12 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function(){return this.callback_0.call$1(this.this_1);}
 };
 
-$$.anon14 = {"":
+$$.anon13 = {"":
  ["this_1", "callback_0"],
  "super": "Closure",
  call$0: function(){return this.callback_0.call$1(this.this_1);}
@@ -4571,8 +4571,6 @@ $.regExpTest = function(regExp,str){return $.regExpGetNative(regExp).test(str);}
 
 $.StringImplementation_concatAll = function(strings){return $.stringJoinUnchecked($.StringImplementation__toJsStringArray(strings),'');};
 
-$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
-
 $.NoMoreElementsException$ = function(){return new $.NoMoreElementsException();};
 
 $.ImageElement_ImageElement = function(src,width,height){var t1=$===src;if(t1)src=null;var t2=$===width;if(t2)width=null;var t3=$===height;if(t3)height=null;if(t1)return $._Elements_createImageElement(null,null,null);if(t2)return $._Elements_createImageElement(src,null,null);if(t3)return $._Elements_createImageElement(src,width,null);return $._Elements_createImageElement(src,width,height);};
@@ -4585,7 +4583,7 @@ $._MutationObserverFactoryProvider_createMutationObserver = function(callback){c
     return new constructor(callback);
   };
 
-$.Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
+$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
 
 $._getAudioPath = function(name$){return 'audio/'+$.S(name$)+'.webm';};
 
@@ -4874,9 +4872,9 @@ $.toString = function(value){if(typeof value == "object" && value !== null)if($.
 
 $.requireArgumentNotNull = function(argument,argName){if(argument==null)throw $.$$throw($.NullArgumentException$(argName));};
 
-$._FuncEnumerable$ = function(_source,_func){return new $._FuncEnumerable(_source,_func);};
-
 $.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(receiver);return receiver.iterator$0();};
+
+$._FuncEnumerable$ = function(_source,_func){return new $._FuncEnumerable(_source,_func);};
 
 $._TextTrackCueEventsImpl$ = function(_ptr){return new $._TextTrackCueEventsImpl(_ptr);};
 
@@ -4886,6 +4884,8 @@ $.Random_Random = function(seed){return $.CTC39;};
 
 $.Box_Box$fromCoordSize = function(topLeft,size){return $.Box$(topLeft.x,topLeft.y,size.width,size.height);};
 
+$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
+
 $.removeLast = function(receiver){if($.isJsArray(receiver)){$.checkGrowable(receiver,'removeLast');if($.get$length(receiver)===0)throw $.$$throw($.IndexOutOfRangeException$(-1));return receiver.pop();}return receiver.removeLast$0();};
 
 $.allMatchesInStringUnchecked = function(needle,haystack){var result=$.ListImplementation_List(null);var length$=$.get$length(haystack);var patternLength=needle.length;for(var startIndex=0;true;){var position=$.indexOf$2(haystack,needle,startIndex);if($.eqB(position,-1))break;result.push($.StringMatch$(position,haystack,needle));var endIndex=$.add(position,patternLength);if($.eqB(endIndex,length$))break;else startIndex=$.eqB(position,endIndex)?$.add(startIndex,1):endIndex;}return result;};
@@ -4893,8 +4893,6 @@ $.allMatchesInStringUnchecked = function(needle,haystack){var result=$.ListImple
 $._SpeechRecognitionEventsImpl$ = function(_ptr){return new $._SpeechRecognitionEventsImpl(_ptr);};
 
 $.ReceivePortSync__lookup = function(isolateId,portId){if($.eqB(isolateId,$.ReceivePortSync__isolateId()))return $.index($.ReceivePortSync__portMap,portId).toSendPort$0();else return $._RemoteSendPortSync$(isolateId,portId);};
-
-$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
 $._MeasurementRequest$ = function(computeValue,completer){return new $._MeasurementRequest(computeValue,completer,null,false);};
 
@@ -5353,6 +5351,8 @@ $.FormatException$ = function(message){return new $.FormatException(message);};
 $.GameElement$ = function(textureData){var t1=$.PCanvas$(0,0,false);var t2=$.GameBackgroundElement$();var t3=$.BoardElement$();var t4=$.NewGameElement$();var t5=$.GameTitleElement$();var t6=$.EventHandle$();var t7=$.TextureAnimationElement$(0,0,textureData);var t8=$.TextureAnimationElement$(0,0,textureData);t6=new $.GameElement(t1,t2,t3,$.ScoreElement$(),t4,t5,t7,t8,textureData,t6,null,null,null,null,null,null,$.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,100,100,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);t6.GameElement$1(textureData);return t6;};
 
 $._LocalWindowEventsImpl$ = function(_ptr){return new $._LocalWindowEventsImpl(_ptr);};
+
+$.Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
 $._Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
