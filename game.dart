@@ -108,10 +108,29 @@ void _runppw(TextureData textureData) {
 
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());
+  window.on.popState.add((args) => _processUrlHash());
+  _processUrlHash();
 }
 
 String _getAudioPath(String name) => 'audio/$name.webm';
 
 Iterable<String> _getAudioPaths(Iterable<String> names) {
   return $(names).map(_getAudioPath);
+}
+
+void _processUrlHash() {
+  final LocalLocation loc = window.location;
+  final hash = loc.hash;
+
+  final LocalHistory history = window.history;
+  if(hash == "#reset") {
+    final href = loc.href;
+    assert(href.endsWith(hash));
+    var newLoc = href.substring(0, href.length - hash.length);
+
+    window.localStorage.clear();
+
+    loc.replace(newLoc);
+  }
+
 }
