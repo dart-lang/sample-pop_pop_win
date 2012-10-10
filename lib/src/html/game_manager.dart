@@ -13,9 +13,10 @@ abstract class GameManager {
 
   Game get game => _game;
 
-  EventRoot<EventArgs> get highScoreUpdated => _gameStorage.highScoreUpdated;
+  EventRoot<EventArgs> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
-  int get highScore => _gameStorage.getHighScore(_width, _height, _mineCount);
+  int get bestTimeMilliseconds =>
+      _gameStorage.getBestTimeMilliseconds(_width, _height, _mineCount);
 
   void newGame() {
     if(_updatedEventId != null) {
@@ -64,7 +65,7 @@ abstract class GameManager {
     }
   }
 
-  void onNewHighScore(int value){}
+  void onNewBestTime(int value){}
 
   void onGameStateChanged(GameState value){}
 
@@ -81,9 +82,9 @@ abstract class GameManager {
   void _gameStateChanged(GameState newState) {
     _gameStorage.recordState(newState);
     if(newState == GameState.won) {
-      final newHighScore = _gameStorage.updateHighScore(_game);
-      if(newHighScore) {
-        onNewHighScore(highScore);
+      final newBestTime = _gameStorage.updateBestTime(_game);
+      if(newBestTime) {
+        onNewBestTime(bestTimeMilliseconds);
       }
     }
     updateClock();

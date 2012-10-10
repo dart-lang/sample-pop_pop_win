@@ -62,7 +62,7 @@ class GameRoot extends GameManager {
     trackAnalyticsEvent('game', newState.name, game.field.toString());
   }
 
-  void onNewHighScore(int value) {
+  void onNewBestTime(int value) {
     trackAnalyticsEvent('game', 'record', game.field.toString(), value);
   }
 

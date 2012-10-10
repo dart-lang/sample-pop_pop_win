@@ -1,19 +1,19 @@
 class GameStorage {
   static const _gameCountKey = 'gameCount';
-  final EventHandle _highScoreUpdated = new EventHandle();
+  final EventHandle _bestTimeUpdated = new EventHandle();
 
   final Storage _storage = window.localStorage;
 
   int get gameCount => _getIntValue(_gameCountKey);
 
-  EventRoot get highScoreUpdated => _highScoreUpdated;
+  EventRoot get bestTimeUpdated => _bestTimeUpdated;
 
   void recordState(GameState state) {
     assert(state != null);
     _incrementIntValue(state.name);
   }
 
-  bool updateHighScore(Game game) {
+  bool updateBestTime(Game game) {
     assert(game != null);
     assert(game.state == GameState.won);
 
@@ -27,14 +27,14 @@ class GameStorage {
     final currentScore = _getIntValue(key, null);
     if(currentScore == null || currentScore > duration) {
       _setIntValue(key, duration);
-      _highScoreUpdated.fireEvent(null);
+      _bestTimeUpdated.fireEvent(null);
       return true;
     } else {
       return false;
     }
   }
 
-  int getHighScore(int width, int height, int mineCount) {
+  int getBestTimeMilliseconds(int width, int height, int mineCount) {
     final key = _getKey(width, height, mineCount);
     return _getIntValue(key, null);
   }

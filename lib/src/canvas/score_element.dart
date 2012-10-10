@@ -6,7 +6,7 @@ class ScoreElement extends PElement {
 
   GameManager _gameManager;
 
-  String _clockStr, _minesStr, _highScoreStr;
+  String _clockStr, _minesStr, _bestTimeStr;
   num _textSize;
 
   ScoreElement() : super(400, 96);
@@ -34,12 +34,12 @@ class ScoreElement extends PElement {
       invalidateDraw();
     }
 
-    var highScoreStr = null;
-    if(_gameManager.highScore != null) {
-      highScoreStr = toRecordString(_gameManager.highScore);
+    var bestTimeStr = null;
+    if(_gameManager.bestTimeMilliseconds != null) {
+      bestTimeStr = toRecordString(_gameManager.bestTimeMilliseconds);
     }
-    if(_highScoreStr != highScoreStr) {
-      _highScoreStr = highScoreStr;
+    if(_bestTimeStr != bestTimeStr) {
+      _bestTimeStr = bestTimeStr;
       invalidateDraw();
     }
 
@@ -65,11 +65,11 @@ class ScoreElement extends PElement {
     ctx.textAlign = 'left';
     ctx.fillText(_clockStr, textSize + _valueOffset, 1.5 * rowHeight);
 
-    if(_highScoreStr != null) {
+    if(_bestTimeStr != null) {
       ctx.textAlign = 'right';
       ctx.fillText('RECORD:', textSize, 2.5 * rowHeight);
       ctx.textAlign = 'left';
-      ctx.fillText(_highScoreStr, textSize + _valueOffset, 2.5 * rowHeight);
+      ctx.fillText(_bestTimeStr, textSize + _valueOffset, 2.5 * rowHeight);
     }
   }
 
