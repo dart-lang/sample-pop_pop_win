@@ -618,14 +618,11 @@ $$.Object = {"":
  exitScope$0: function() {
   return this.noSuchMethod$2("exitScope", []);
  },
+ $dom_removeEventListener$3: function($0, $1, $2) {
+  return this.noSuchMethod$2("$dom_removeEventListener", [$0, $1, $2]);
+ },
  getClientRects$0: function() {
   return this.noSuchMethod$2("getClientRects", []);
- },
- _getIntValue$1: function($0) {
-  return this.noSuchMethod$2("_getIntValue", [$0]);
- },
- _getIntValue$2: function($0, $1) {
-  return this.noSuchMethod$2("_getIntValue", [$0, $1]);
  },
  _initialize$2: function($0, $1) {
   return this.noSuchMethod$2("_initialize", [$0, $1]);
@@ -633,14 +630,17 @@ $$.Object = {"":
  compareTo$1: function($0) {
   return this.noSuchMethod$2("compareTo", [$0]);
  },
+ _getIntValue$1: function($0) {
+  return this.noSuchMethod$2("_getIntValue", [$0]);
+ },
+ _getIntValue$2: function($0, $1) {
+  return this.noSuchMethod$2("_getIntValue", [$0, $1]);
+ },
  _fireChange$1: function($0) {
   return this.noSuchMethod$2("_fireChange", [$0]);
  },
  _invalidateParent$0: function() {
   return this.noSuchMethod$2("_invalidateParent", []);
- },
- $dom_removeEventListener$3: function($0, $1, $2) {
-  return this.noSuchMethod$2("$dom_removeEventListener", [$0, $1, $2]);
  },
  insertRange$3: function($0, $1, $2) {
   return this.noSuchMethod$2("insertRange", [$0, $1, $2]);
@@ -720,17 +720,17 @@ $$.Object = {"":
  getTransform$0: function() {
   return this.noSuchMethod$2("getTransform", []);
  },
- replace$1: function($0) {
-  return this.noSuchMethod$2("replace", [$0]);
+ _click$3: function($0, $1, $2) {
+  return this.noSuchMethod$2("_click", [$0, $1, $2]);
  },
  pushAnalytics$1: function($0) {
   return this.noSuchMethod$2("pushAnalytics", [$0]);
  },
+ replace$1: function($0) {
+  return this.noSuchMethod$2("replace", [$0]);
+ },
  _onAudioLoadError$3: function($0, $1, $2) {
   return this.noSuchMethod$2("_onAudioLoadError", [$0, $1, $2]);
- },
- _click$3: function($0, $1, $2) {
-  return this.noSuchMethod$2("_click", [$0, $1, $2]);
  },
  call$0: function() {
   return this.noSuchMethod$2("call", []);
@@ -1260,6 +1260,9 @@ $$.Object = {"":
  difference$1: function($0) {
   return this.noSuchMethod$2("difference", [$0]);
  },
+ $dom_addEventListener$3: function($0, $1, $2) {
+  return this.noSuchMethod$2("$dom_addEventListener", [$0, $1, $2]);
+ },
  addHandler$2: function($0, $1) {
   return this.noSuchMethod$2("addHandler", [$0, $1]);
  },
@@ -1268,9 +1271,6 @@ $$.Object = {"":
  },
  _httpLoad$1: function($0) {
   return this.noSuchMethod$2("_httpLoad", [$0]);
- },
- $dom_addEventListener$3: function($0, $1, $2) {
-  return this.noSuchMethod$2("$dom_addEventListener", [$0, $1, $2]);
  },
  isNegative$0: function() {
   return this.noSuchMethod$2("isNegative", []);
@@ -3421,6 +3421,7 @@ $$.Field = {"":
  ["mineCount?", "_adjacents", "width", "height", "_source"],
  "super": "Array2d",
  getAdjacentCount$2: function(x,y){if(this.get$2(x,y)===true)return;var t1=this._adjacents;var val=t1.get$2(x,y);if(val==null){for(var t2=$.iterator(this.getAdjacentIndices$2(x,y)),val=0;t2.hasNext$0()===true;)if(this.operator$index$1(t2.next$0())===true)++val;t1.set$3(x,y,val);}return val;},
+ toString$0: function(){return 'w'+$.S(this.width)+'h'+$.S(this.height)+'m'+$.S(this.mineCount);},
  Field$_internal$3: function(mineCount,cols,source){for(var t1=$.iterator(this),count=0;t1.hasNext$0()===true;)if(t1.next$0()===true)++count;}
 };
 
@@ -3524,8 +3525,8 @@ $$.GameRoot = {"":
  ["_lib3_stage", "_lib3_canvas", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "_gameStorage", "_game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
  newGame$0: function(){$.GameManager.prototype.newGame$0.call(this);var t1=$.GameManager.prototype.get$game.call(this);this._gameElement.set$game(t1);this._requestFrame$0();},
- onGameStateChanged$1: function(newState){switch(newState){case $.CTC37:$.playAudio('ppw_win');break;}$.trackAnalyticsEvent('game',newState.name,null,null);},
- onNewHighScore$1: function(value){$.trackAnalyticsEvent('game','record milliseconds',null,value);},
+ onGameStateChanged$1: function(newState){switch(newState){case $.CTC37:$.playAudio('ppw_win');break;}$.trackAnalyticsEvent('game',newState.name,$.toString(this.get$game().get$field()),null);},
+ onNewHighScore$1: function(value){$.trackAnalyticsEvent('game','record',$.toString(this.get$game().get$field()),value);},
  _updateCanvasSize$0: function(){this._updateCanvasSizeCore$1($.Size$($.window().get$innerWidth(),$.window().get$innerHeight()));},
  _updateCanvasSizeCore$1: function(windowSize){var t1=this._lib3_canvas;$.indexSet(t1.get$attributes(),'width',windowSize.width);$.indexSet(t1.get$attributes(),'height',windowSize.height);this._requestFrame$0();},
  _requestFrame$0: function(){if(!this._frameRequested){this._frameRequested=true;$.window().requestAnimationFrame$1(this.get$_onFrame());}},
@@ -3812,24 +3813,6 @@ $$._convertNativeToDart_IDBKey_containsDate = {"":
  call$1$bailout: function(state,env0){switch(state){case 1:var object=env0;break;}switch(state){case 0:if(object instanceof Date)return true;case 1:if(state===1||state===0&&typeof object==='object'&&object!==null&&(object.constructor===Array||object.is$List()))switch(state){case 0:case 1:state=0;for(var i=0;$.ltB(i,$.get$length(object));++i)if(this.call$1($.index(object,i))===true)return true;}return false;}}
 };
 
-$$.ClickManager__mouseDown_anon = {"":
- [],
- "super": "Closure",
- call$1: function(e){return $.get$ClickManager__isClickableProperty().get$1(e);}
-};
-
-$$.Mouse_markMouseOver_anon = {"":
- [],
- "super": "Closure",
- call$1: function(e){$.get$Mouse_isMouseOverProperty().clear$1(e);$.get$Mouse_isMouseDirectlyOverProperty().clear$1(e);}
-};
-
-$$.Mouse_markMouseOver_anon0 = {"":
- [],
- "super": "Closure",
- call$1: function(e){$.get$Mouse_isMouseOverProperty().set$2(e,true);}
-};
-
 $$.invokeClosure_anon = {"":
  ["closure_0"],
  "super": "Closure",
@@ -3846,6 +3829,24 @@ $$.invokeClosure_anon1 = {"":
  ["closure_5", "arg1_4", "arg2_3"],
  "super": "Closure",
  call$0: function(){return this.closure_5.call$2(this.arg1_4,this.arg2_3);}
+};
+
+$$.ClickManager__mouseDown_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(e){return $.get$ClickManager__isClickableProperty().get$1(e);}
+};
+
+$$.Mouse_markMouseOver_anon = {"":
+ [],
+ "super": "Closure",
+ call$1: function(e){$.get$Mouse_isMouseOverProperty().clear$1(e);$.get$Mouse_isMouseDirectlyOverProperty().clear$1(e);}
+};
+
+$$.Mouse_markMouseOver_anon0 = {"":
+ [],
+ "super": "Closure",
+ call$1: function(e){$.get$Mouse_isMouseOverProperty().set$2(e,true);}
 };
 
 $$.AffineTransform_toString_anon = {"":
@@ -4524,8 +4525,6 @@ $._ProxiedObjectTable$ = function(){var t1=$.makeLiteralMap([]);var t2=$.Receive
 
 $.ReceivePortSync__getListenerName = function(isolateId,portId){return 'dart-port-'+$.S(isolateId)+'-'+$.S(portId);};
 
-$.Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
-
 $.NumberEnumerable_NumberEnumerable$fromRange = function(start,count){return $._RangeEnumerable$(start,count);};
 
 $._IDBTransactionEventsImpl$ = function(_ptr){return new $._IDBTransactionEventsImpl(_ptr);};
@@ -4574,8 +4573,6 @@ $.Callback$many = function(f){var t1=new $.Callback(null,null,null);t1.Callback$
 
 $._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$0());t1._JsCopier$0();return t1;};
 
-$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
-
 $.regExpMakeNative = function(regExp,global){var pattern=regExp.get$pattern();var multiLine=regExp.get$multiLine();var ignoreCase=regExp.get$ignoreCase();$.checkString(pattern);var sb=$.StringBuffer_StringBuffer('');if(multiLine===true)$.add$1(sb,'m');if(ignoreCase===true)$.add$1(sb,'i');if(global)$.add$1(sb,'g');try{return new RegExp(pattern, $.toString(sb));}catch(exception){var t1=$.unwrapException(exception);var e=t1;throw $.$$throw($.IllegalJSRegExpException$(pattern,String(e)));}};
 
 $.JSON_parse = function(json){return $._JsonParser$(json).parseToplevel$0();};
@@ -4593,8 +4590,6 @@ $._FrozenElementListIterator$ = function(_list){return new $._FrozenElementListI
 $._getTextures = function(transparentElement,opaqueElement){var frames$=$.makeLiteralMap([]);$.forEach($._getTransparentItems(),new $._getTextures_anon(frames$,transparentElement));$.forEach($._getOpaqueItems(),new $._getTextures_anon0(frames$,opaqueElement));return frames$;};
 
 $.ReceivePortSync$ = function(){var t1=new $.ReceivePortSync(null,null,null);t1.ReceivePortSync$0();return t1;};
-
-$.Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
 $._dispatchEvent = function(receiver,message){var event$=$.CustomEvent_CustomEvent(receiver,false,false,$.JSON_stringify(message));$.window().$dom_dispatchEvent$1(event$);};
 
@@ -4630,8 +4625,6 @@ $._SVGElementInstanceEventsImpl$ = function(_ptr){return new $._SVGElementInstan
 
 $._Elements_createDivElement = function(){return $._document().$dom_createElement$1('div');};
 
-$._Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
-
 $.regExpTest = function(regExp,str){return $.regExpGetNative(regExp).test(str);};
 
 $.StringImplementation_concatAll = function(strings){return $.stringJoinUnchecked($.StringImplementation__toJsStringArray(strings),'');};
@@ -4642,13 +4635,13 @@ $.ImageElement_ImageElement = function(src,width,height){var t1=$===src;if(t1)sr
 
 $.gt$slow = function(a,b){if($.checkNumbers(a,b))return a > b;return a.operator$gt$1(b);};
 
+$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
+
 $._MutationObserverFactoryProvider_createMutationObserver = function(callback){callback = $.convertDartClosureToJS(callback,2);    var constructor =
         window.MutationObserver || window.WebKitMutationObserver ||
         window.MozMutationObserver;
     return new constructor(callback);
   };
-
-$._Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
 
 $._getAudioPath = function(name$){return 'audio/'+$.S(name$)+'.webm';};
 
@@ -4686,13 +4679,13 @@ $.startRootIsolate = function(entry){var t1=$._Manager$();$._globalState0(t1);if
 
 $.truncate = function(receiver){return receiver<0?$.ceil(receiver):$.floor(receiver);};
 
-$.Field$_internal = function(mineCount,cols,source){var t1=$.Array2d_Array2d(cols,$.tdiv($.get$length(source),cols),null);var t2=cols>0&&true?$.tdiv($.get$length(source),cols):0;t2=new $.Field(mineCount,t1,cols,t2,source);t2.Array2d$wrap$2(cols,source);t2.Field$_internal$3(mineCount,cols,source);return t2;};
-
 $.sort = function(receiver,compare){if(!$.isJsArray(receiver))return receiver.sort$1(compare);$.checkMutable(receiver,'sort');$.DualPivotQuicksort_sort(receiver,compare);};
 
-$._convertNativeToDart_Window = function(win){return $._DOMWindowCrossFrameImpl__createSafe(win);};
+$.Field$_internal = function(mineCount,cols,source){var t1=$.Array2d_Array2d(cols,$.tdiv($.get$length(source),cols),null);var t2=cols>0&&true?$.tdiv($.get$length(source),cols):0;t2=new $.Field(mineCount,t1,cols,t2,source);t2.Array2d$wrap$2(cols,source);t2.Field$_internal$3(mineCount,cols,source);return t2;};
 
 $.DualPivotQuicksort_sort = function(a,compare){$.DualPivotQuicksort__doSort(a,0,$.sub($.get$length(a),1),compare);};
+
+$._convertNativeToDart_Window = function(win){return $._DOMWindowCrossFrameImpl__createSafe(win);};
 
 $._PostMessageScheduler$ = function(callback){var t1=new $._PostMessageScheduler('DART-MEASURE',false,callback);t1._PostMessageScheduler$1(callback);return t1;};
 
@@ -4772,6 +4765,8 @@ $._onProgress = function(args){var completedBytes=$._imageLoader.get$completedBy
 
 $.gtB = function(a,b){return typeof a==='number'&&typeof b==='number'?a > b:$.gt$slow(a,b)===true;};
 
+$.last = function(receiver){if(!$.isJsArray(receiver))return receiver.last$0();return $.index(receiver,$.sub($.get$length(receiver),1));};
+
 $.stringContainsUnchecked = function(receiver,other,startIndex){if(typeof other==='string')return !($.indexOf$2(receiver,other,startIndex)===-1);else if(typeof other==='object'&&other!==null&&!!other.is$JSSyntaxRegExp)return other.hasMatch$1($.substring$1(receiver,startIndex));else return $.iterator($.allMatches(other,$.substring$1(receiver,startIndex))).hasNext$0();};
 
 $.shl = function(a,b){if($.checkNumbers(a,b)){if(b<0)throw $.$$throw($.ArgumentError$(b));if(b > 31)return 0;return (a << b) >>> 0;}return a.operator$shl$1(b);};
@@ -4784,8 +4779,6 @@ $._completeMeasurementFutures = function(){var t1=$._pendingRequests;if(!(t1==nu
 
 $.NewGameElement$ = function(){var t1=new $.NewGameElement($.EventHandle$(),$.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,294,92,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);t1.NewGameElement$0();return t1;};
 
-$.last = function(receiver){if(!$.isJsArray(receiver))return receiver.last$0();return $.index(receiver,$.sub($.get$length(receiver),1));};
-
 $.Coordinate_difference = function(a,b){return $.Vector$($.sub(a.x,b.get$x()),$.sub(a.y,b.get$y()));};
 
 $.getMouseEventCoordinate = function(event$){return $.Coordinate$(event$.get$offsetX(),event$.get$offsetY());};
@@ -4794,9 +4787,9 @@ $.startsWith = function(receiver,other){$.checkString(other);var length$=other.l
 
 $.FutureAlreadyCompleteException$ = function(){return new $.FutureAlreadyCompleteException();};
 
-$.clear = function(receiver){if(!$.isJsArray(receiver))return receiver.clear$0();$.set$length(receiver,0);};
-
 $.HashSetIterator$ = function(set_){var t1=new $.HashSetIterator(set_._backingMap._keys,-1);t1.HashSetIterator$1(set_);return t1;};
+
+$.clear = function(receiver){if(!$.isJsArray(receiver))return receiver.clear$0();$.set$length(receiver,0);};
 
 $.print = function(object){if(typeof object==='string')$.Primitives_printString(object);else $.Primitives_printString($.toString(object));};
 
@@ -4804,15 +4797,17 @@ $.StackOverflowException$ = function(){return new $.StackOverflowException();};
 
 $._MeasurementScheduler__MeasurementScheduler$best = function(callback){if($._isMutationObserverSupported()===true)return $._MutationObserverScheduler$(callback);return $._PostMessageScheduler$(callback);};
 
+$.getRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.getRange$2(start,length$);if(0===length$)return [];$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));var t1=length$<0;if(t1)throw $.$$throw($.ArgumentError$(length$));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));var end=start+length$;if($.gtB(end,$.get$length(receiver)))throw $.$$throw($.IndexOutOfRangeException$(length$));if(t1)throw $.$$throw($.ArgumentError$(length$));return receiver.slice(start, end);};
+
 $.identical = function(a,b){return a===b;};
 
 $._convertNativeToDart_EventTarget = function(e){if("setInterval" in e)return $._DOMWindowCrossFrameImpl__createSafe($.throwNoSuchMethod('','get event',[]));else return e;};
 
-$.getRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.getRange$2(start,length$);if(0===length$)return [];$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));var t1=length$<0;if(t1)throw $.$$throw($.ArgumentError$(length$));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));var end=start+length$;if($.gtB(end,$.get$length(receiver)))throw $.$$throw($.IndexOutOfRangeException$(length$));if(t1)throw $.$$throw($.ArgumentError$(length$));return receiver.slice(start, end);};
-
 $.max = function(a,b){if(typeof b==='number'){if(a>b)return a;if(a<b)return b;if(typeof b==='number'){if(typeof a==='number')if(a===0)return a+b;if($.isNaN(b)===true)return b;return a;}if(b===0&&$.isNegative(a)===true)return b;return a;}throw $.$$throw($.ArgumentError$(b));throw $.$$throw($.ArgumentError$(a));};
 
 $.ScoreElement$ = function(){return new $.ScoreElement(null,null,null,null,null,$.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,400,96,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);};
+
+$._Lists_getRange = function(a,start,length$,accumulator){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if(typeof start!=='number')return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if($.ltB(length$,0))throw $.$$throw($.ArgumentError$('length'));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));if(typeof length$!=='number')throw $.iae(length$);var end=start+length$;if(end>a.length)throw $.$$throw($.IndexOutOfRangeException$(end));for(var i=start;i<end;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);accumulator.push(a[i]);}return accumulator;};
 
 $.GameTitleElement$ = function(){return new $.GameTitleElement($.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,318,96,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);};
 
@@ -4822,13 +4817,13 @@ $.DualPivotQuicksort_insertionSort_ = function(a,left,right,compare){if(typeof a
 
 $.ge$slow = function(a,b){if($.checkNumbers(a,b))return a >= b;return a.operator$ge$1(b);};
 
-$._Lists_getRange = function(a,start,length$,accumulator){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if(typeof start!=='number')return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if($.ltB(length$,0))throw $.$$throw($.ArgumentError$('length'));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));if(typeof length$!=='number')throw $.iae(length$);var end=start+length$;if(end>a.length)throw $.$$throw($.IndexOutOfRangeException$(end));for(var i=start;i<end;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);accumulator.push(a[i]);}return accumulator;};
-
 $.JSON_stringify = function(object){return $._JsonStringifier_stringify(object);};
 
 $._JsonStringifier_stringify = function(object){var output=$.StringBuffer_StringBuffer('');$._JsonStringifier$(output).stringifyValue$1(object);return $.toString(output);};
 
 $.charCodeAt = function(receiver,index){if(typeof receiver==='string'){if(!(typeof index==='number'))throw $.$$throw($.ArgumentError$(index));if(index<0)throw $.$$throw($.IndexOutOfRangeException$(index));if(index>=receiver.length)throw $.$$throw($.IndexOutOfRangeException$(index));return receiver.charCodeAt(index);}else return receiver.charCodeAt$1(index);};
+
+$.removeRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.removeRange$2(start,length$);$.checkGrowable(receiver,'removeRange');if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));var receiverLength=receiver.length;if(start<0||start>=receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=start+length$;if(t1>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(t1));var t2=receiverLength-length$;$.Arrays_copy(receiver,t1,receiver,start,t2-start);$.set$length(receiver,t2);};
 
 $.mul = function(a,b){return typeof a==='number'&&typeof b==='number'?a * b:$.mul$slow(a,b);};
 
@@ -4876,8 +4871,6 @@ $.typeNameInFirefox = function(obj){var name$=$.constructorNameFallback(obj);if(
 $.ExceptionImplementation$ = function(message){return new $.ExceptionImplementation(message);};
 
 $._WorkerEventsImpl$ = function(_ptr){return new $._WorkerEventsImpl(_ptr);};
-
-$.removeRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.removeRange$2(start,length$);$.checkGrowable(receiver,'removeRange');if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));var receiverLength=receiver.length;if(start<0||start>=receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=start+length$;if(t1>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(t1));var t2=receiverLength-length$;$.Arrays_copy(receiver,t1,receiver,start,t2-start);$.set$length(receiver,t2);};
 
 $.AudioContext_AudioContext = function(){return $._AudioContextFactoryProvider_createAudioContext();};
 
@@ -4939,6 +4932,8 @@ $._HttpRequestFactoryProvider_createHttpRequest = function(){return new XMLHttpR
 
 $.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
+$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
+
 $.requireArgumentNotNull = function(argument,argName){if(argument==null)throw $.$$throw($.NullArgumentException$(argName));};
 
 $.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(receiver);return receiver.iterator$0();};
@@ -4983,6 +4978,8 @@ $.KeyValuePair$ = function(key,value){return new $.KeyValuePair(key,value);};
 
 $._DocumentEventsImpl$ = function(_ptr){return new $._DocumentEventsImpl(_ptr);};
 
+$._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof startIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
+
 $.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,arg);};
 
 $.FutureNotCompleteException$ = function(){return new $.FutureNotCompleteException();};
@@ -5005,9 +5002,9 @@ $.checkNum = function(value){if(!(typeof value==='number')){$.checkNull(value);t
 
 $._Device_userAgent = function(){return $.window().get$navigator().get$userAgent();};
 
-$._serializeElement = function(e){if(e.get$attributes().containsKey$1('data-dart_id')===true)var id=$.index(e.get$attributes(),'data-dart_id');else{var t1=$._localNextElementId;$._localNextElementId=$.add(t1,1);id='dart-'+$.S(t1);$.indexSet(e.get$attributes(),'data-dart_id',id);}if(!(e===$.document().get$documentElement()))for(var top$=e;true;){if(top$.get$attributes().containsKey$1('data-dart_temporary_attached')===true){var newValue=$.concat($.index(top$.get$attributes(),'data-dart_temporary_attached'),'a');$.indexSet(top$.get$attributes(),'data-dart_temporary_attached',newValue);break;}if(top$.get$parent()==null){$.indexSet(top$.get$attributes(),'data-dart_temporary_attached','a');$.add$1($.document().get$documentElement().get$elements(),top$);break;}t1=top$.get$parent();var t2=$.document().get$documentElement();if(t1==null?t2==null:t1===t2)break;top$=top$.get$parent();}return id;};
-
 $._TextTrackListEventsImpl$ = function(_ptr){return new $._TextTrackListEventsImpl(_ptr);};
+
+$._serializeElement = function(e){if(e.get$attributes().containsKey$1('data-dart_id')===true)var id=$.index(e.get$attributes(),'data-dart_id');else{var t1=$._localNextElementId;$._localNextElementId=$.add(t1,1);id='dart-'+$.S(t1);$.indexSet(e.get$attributes(),'data-dart_id',id);}if(!(e===$.document().get$documentElement()))for(var top$=e;true;){if(top$.get$attributes().containsKey$1('data-dart_temporary_attached')===true){var newValue=$.concat($.index(top$.get$attributes(),'data-dart_temporary_attached'),'a');$.indexSet(top$.get$attributes(),'data-dart_temporary_attached',newValue);break;}if(top$.get$parent()==null){$.indexSet(top$.get$attributes(),'data-dart_temporary_attached','a');$.add$1($.document().get$documentElement().get$elements(),top$);break;}t1=top$.get$parent();var t2=$.document().get$documentElement();if(t1==null?t2==null:t1===t2)break;top$=top$.get$parent();}return id;};
 
 $._JsVisitedMap$ = function(){return new $._JsVisitedMap(null);};
 
@@ -5035,8 +5032,6 @@ $._Timer$repeating = function(milliSeconds,callback){var t1=new $._Timer(false,n
 
 $._onLoaded = function(args){if($.eqB($._imageLoader.get$state(),'loaded')){var t1=$._audioLoader;t1=t1==null||$.eqB(t1.get$state(),'loaded');}else t1=false;if(t1){var opaqueImage=$._imageLoader.getResource$1('dart_opaque_01.jpg');var textureData=$.TextureData$($._getTextures($._imageLoader.getResource$1('dart_transparent_01.png'),opaqueImage));if(!($._audioLoader==null)){var map=$.HashMapImplementation$();for(t1=$.iterator($.CTC);t1.hasNext$0()===true;){var t2=t1.next$0();var path='audio/'+$.S(t2)+'.webm';map.operator$indexSet$2(t2,$._audioLoader.getResource$1(path));}$.populateAudio($._audioLoader.get$context(),map);}$.query('#loading').get$style().set$display('none');$._runppw(textureData);}};
 
-$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
-
 $.Primitives_parseDouble = function(string){$.checkString(string);if(!/^\s*(?:NaN|[+-]?(?:Infinity|(?:\.\d+|\d+(?:\.\d+)?)(?:[eE][+-]?\d+)?))\s*$/.test(string))throw $.$$throw($.FormatException$(string));var result=parseFloat(string);if($.isNaN(result)===true&&!$.eqB(string,'NaN'))throw $.$$throw($.FormatException$(string));return result;};
 
 $._convertDartToNative_SerializedScriptValue = function(value){return $._convertDartToNative_PrepareForStructuredClone(value);};
@@ -5050,8 +5045,6 @@ $.hashCode = function(receiver){if(receiver==null)return 0;if(typeof receiver===
 $.FutureImpl_FutureImpl$immediate = function(value){var res=$.FutureImpl$();res._setValue$1(value);return res;};
 
 $._SimpleEnumerable$ = function(_source){return new $._SimpleEnumerable(_source);};
-
-$._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof startIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
 $.getTypeNameOf = function(obj){if($._getTypeNameOf==null)$._getTypeNameOf=$.getFunctionForTypeNameOf();return $._getTypeNameOf.call$1(obj);};
 
@@ -5089,11 +5082,11 @@ $.SquareElement$ = function(x,y){var t1=new $.SquareElement(x,y,null,$.ListImple
 
 $.geB = function(a,b){return typeof a==='number'&&typeof b==='number'?a >= b:$.ge$slow(a,b)===true;};
 
-$.add = function(a,b){return typeof a==='number'&&typeof b==='number'?a + b:$.add$slow(a,b);};
-
 $.StringMatch$ = function(_start,str,pattern){return new $.StringMatch(_start,str,pattern);};
 
 $.ioore = function(index){throw $.$$throw($.IndexOutOfRangeException$(index));};
+
+$.add = function(a,b){return typeof a==='number'&&typeof b==='number'?a + b:$.add$slow(a,b);};
 
 $._convertNativeToDart_IDBKey = function(nativeKey){if(new $._convertNativeToDart_IDBKey_containsDate().call$1(nativeKey)===true)throw $.$$throw($.CTC17);return nativeKey;};
 
@@ -5145,7 +5138,7 @@ $.Tuple$ = function(item1,item2){return new $.Tuple(item1,item2);};
 
 $._FilteredElementList$ = function(node){return new $._FilteredElementList(node,node.get$nodes());};
 
-$._runppw = function(textureData){$.GameRoot_GameRoot(7,7,$.toInt(7.65625),$.query('#gameCanvas'),textureData);$.add$1($.window().get$on().get$touchMove(),new $._runppw_anon());$.add$1($.window().get$on().get$popState(),new $._runppw_anon0());$._processUrlHash();};
+$._runppw = function(textureData){var size=$._processUrlHash()?16:7;$.GameRoot_GameRoot(size,size,$.toInt(size*size*0.15625),$.query('#gameCanvas'),textureData);$.add$1($.window().get$on().get$touchMove(),new $._runppw_anon());$.add$1($.window().get$on().get$popState(),new $._runppw_anon0());};
 
 $.addAll = function(receiver,collection){if(!$.isJsArray(receiver))return receiver.addAll$1(collection);var iterator=$.iterator(collection);for(;iterator.hasNext$0()===true;)$.add$1(receiver,iterator.next$0());};
 
@@ -5319,25 +5312,21 @@ $.Primitives_objectHashCode = function(object){var hash=object.$identityHash;if(
 
 $._inject = function(code){var script=$.ScriptElement_ScriptElement();script.set$type('text/javascript');script.set$innerHTML(code);$.add$1($.document().get$body().get$nodes(),script);};
 
-$.forEach = function(receiver,f){if(!$.isJsArray(receiver))return receiver.forEach$1(f);else return $.Collections_forEach(receiver,f);};
-
 $.gt = function(a,b){return typeof a==='number'&&typeof b==='number'?a > b:$.gt$slow(a,b);};
 
 $._IsolateContext$ = function(){var t1=new $._IsolateContext(null,null,null);t1._IsolateContext$0();return t1;};
 
 $.StringImplementation__fromCharCodes = function(charCodes){$.checkNull(charCodes);if(!$.isJsArray(charCodes))charCodes=$.ListImplementation_List$from(charCodes);return $.Primitives_stringFromCharCodes(charCodes);};
 
-$.isEmpty = function(receiver){if(typeof receiver==='string'||$.isJsArray(receiver))return receiver.length === 0;return receiver.isEmpty$0();};
-
-$.Collections_forEach = function(iterable,f){for(var t1=$.iterator(iterable);t1.hasNext$0()===true;)f.call$1(t1.next$0());};
+$.ListImplementation_List = function(length$){return $.Primitives_newList(length$);};
 
 $.document = function(){return document;};
 
-$.ListImplementation_List = function(length$){return $.Primitives_newList(length$);};
-
 $._ResourceEntry$ = function(url){return new $._ResourceEntry(url,null,null,null,0);};
 
-$._processUrlHash = function(){var loc=$.window().get$location();var hash=loc.get$hash();$.window().get$history();if($.eqB(hash,'#reset')){var href=loc.get$href();var newLoc=$.substring$2(href,0,$.sub($.get$length(href),$.get$length(hash)));$.clear($.window().get$localStorage());loc.replace$1(newLoc);}};
+$._processUrlHash = function(){var loc=$.window().get$location();var hash=loc.get$hash();var href=loc.get$href();$.window().get$history();if($.eqB(hash,'#reset')){var newLoc=$.substring$2(href,0,$.sub($.get$length(href),$.get$length(hash)));$.clear($.window().get$localStorage());loc.replace$1(newLoc);}else if($.eqB(hash,'#big'))return true;return false;};
+
+$.isEmpty = function(receiver){if(typeof receiver==='string'||$.isJsArray(receiver))return receiver.length === 0;return receiver.isEmpty$0();};
 
 $._browserPrefix = function(){if($._cachedBrowserPrefix==null)if($._Device_isFirefox()===true)$._cachedBrowserPrefix='-moz-';else if($._Device_isIE()===true)$._cachedBrowserPrefix='-ms-';else if($._Device_isOpera()===true)$._cachedBrowserPrefix='-o-';else $._cachedBrowserPrefix='-webkit-';return $._cachedBrowserPrefix;};
 
@@ -5346,6 +5335,10 @@ $._BodyElementEventsImpl$ = function(_ptr){return new $._BodyElementEventsImpl(_
 $.BoardElement$ = function(){return new $.BoardElement(null,$.ListImplementation_List(null),true,$.EventHandle$(),$.EventHandle$(),null,0,0,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);};
 
 $._Timer$ = function(milliSeconds,callback){var t1=new $._Timer(true,null);t1._Timer$2(milliSeconds,callback);return t1;};
+
+$.forEach = function(receiver,f){if(!$.isJsArray(receiver))return receiver.forEach$1(f);else return $.Collections_forEach(receiver,f);};
+
+$.Collections_forEach = function(iterable,f){for(var t1=$.iterator(iterable);t1.hasNext$0()===true;)f.call$1(t1.next$0());};
 
 $._proxiedObjectTable = function(){if($.__proxiedObjectTable==null)$.__proxiedObjectTable=$._ProxiedObjectTable$();return $.__proxiedObjectTable;};
 
@@ -5357,11 +5350,11 @@ $.queryAll = function(selector){return $._document().queryAll$1(selector);};
 
 $.Field_Field = function(mineCount,cols,rows,seed){if(typeof mineCount!=='number')return $.Field_Field$bailout(1,mineCount,cols,rows,seed);var squares=$.ListImplementation_List(null);$.insertRange$3(squares,0,rows*cols,false);var rnd=$.Random_Random(seed);for(var i=0;i<mineCount;++i){var index=null;do{index=rnd.nextInt$1(squares.length);if(index!==(index|0))throw $.iae(index);if(index<0||index>=squares.length)throw $.ioore(index);}while(squares[index]===true);squares[index]=true;}return $.Field$_internal(mineCount,cols,$.ReadOnlyCollection$(squares));};
 
-$._Collections_forEach = function(iterable,f){for(var t1=$.iterator(iterable);t1.hasNext$0()===true;)f.call$1(t1.next$0());};
-
 $._MutationObserverScheduler$ = function(callback){var t1=new $._MutationObserverScheduler(null,null,false,callback);t1._MutationObserverScheduler$1(callback);return t1;};
 
 $._SelectIterator$ = function(_source,_func){return new $._SelectIterator(_source,_func);};
+
+$._Collections_forEach = function(iterable,f){for(var t1=$.iterator(iterable);t1.hasNext$0()===true;)f.call$1(t1.next$0());};
 
 $.abs = function(receiver){if(!(typeof receiver==='number'))return receiver.abs$0();return Math.abs(receiver);};
 
@@ -5403,6 +5396,8 @@ $.ResourceLoader__buildRORE = function(urlList){return $.map($.$$(urlList),new $
 
 $.isInfinite = function(receiver){if(!(typeof receiver==='number'))return receiver.isInfinite$0();return receiver == Infinity||receiver == -Infinity;};
 
+$._Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
+
 $._EventListenerListImpl$ = function(_ptr,_type){return new $._EventListenerListImpl(_ptr,_type);};
 
 $.iae = function(argument){throw $.$$throw($.ArgumentError$(argument));};
@@ -5428,6 +5423,10 @@ $.addLast = function(receiver,value){if(!$.isJsArray(receiver))return receiver.a
 $.GameElement$ = function(textureData){var t1=$.PCanvas$(0,0,false);var t2=$.GameBackgroundElement$();var t3=$.BoardElement$();var t4=$.NewGameElement$();var t5=$.GameTitleElement$();var t6=$.EventHandle$();var t7=$.TextureAnimationElement$(0,0,textureData);var t8=$.TextureAnimationElement$(0,0,textureData);t6=new $.GameElement(t1,t2,t3,$.ScoreElement$(),t4,t5,t7,t8,textureData,t6,null,null,null,null,null,null,$.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,100,100,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);t6.GameElement$1(textureData);return t6;};
 
 $._LocalWindowEventsImpl$ = function(_ptr){return new $._LocalWindowEventsImpl(_ptr);};
+
+$.Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
+
+$._Collections_filter = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;){var t2=t1.next$0();if(f.call$1(t2)===true)destination.push(t2);}return destination;};
 
 $._JsonStringifier_escape = function(sb,s){var length$=$.get$length(s);var charCodes=$.ListImplementation_List(null);for(var needsEscape=false,i=0;$.ltB(i,length$);++i){var charCode=$.charCodeAt(s,i);if($.ltB(charCode,32)){charCodes.push(92);switch(charCode){case 8:charCodes.push(98);break;case 9:charCodes.push(116);break;case 10:charCodes.push(110);break;case 12:charCodes.push(102);break;case 13:charCodes.push(114);break;default:charCodes.push(117);var t1=$.and($.shr(charCode,12),15);if($.ltB(t1,10)){if(typeof t1!=='number')throw $.iae(t1);t1=48+t1;}else{if(typeof t1!=='number')throw $.iae(t1);t1=87+t1;}charCodes.push(t1);t1=$.and($.shr(charCode,8),15);if($.ltB(t1,10)){if(typeof t1!=='number')throw $.iae(t1);t1=48+t1;}else{if(typeof t1!=='number')throw $.iae(t1);t1=87+t1;}charCodes.push(t1);t1=$.and($.shr(charCode,4),15);if($.ltB(t1,10)){if(typeof t1!=='number')throw $.iae(t1);t1=48+t1;}else{if(typeof t1!=='number')throw $.iae(t1);t1=87+t1;}charCodes.push(t1);t1=$.and(charCode,15);if($.ltB(t1,10)){if(typeof t1!=='number')throw $.iae(t1);t1=48+t1;}else{if(typeof t1!=='number')throw $.iae(t1);t1=87+t1;}charCodes.push(t1);break;}needsEscape=true;}else if($.eqB(charCode,34)||$.eqB(charCode,92)){charCodes.push(92);charCodes.push(charCode);needsEscape=true;}else charCodes.push(charCode);}$.add$1(sb,needsEscape?$.StringImplementation_String$fromCharCodes(charCodes):s);};
 
@@ -5456,6 +5455,8 @@ $._LocationWrapper$ = function(_ptr){return new $._LocationWrapper(_ptr);};
 $.Stage$ = function(_canvas,_element){var t1=new $.Stage($.EventHandle$(),_canvas,_element,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);t1.Stage$2(_canvas,_element);return t1;};
 
 $.regExpExec = function(regExp,str){var result=$.regExpGetNative(regExp).exec(str);if(result === null)return;return result;};
+
+$.Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
 
 $.Primitives_getSeconds = function(receiver){return receiver.isUtc===true?$.Primitives_lazyAsJsDate(receiver).getUTCSeconds():$.Primitives_lazyAsJsDate(receiver).getSeconds();};
 
@@ -5495,6 +5496,8 @@ $._IDBOpenDBRequestEventsImpl$ = function(_ptr){return new $._IDBOpenDBRequestEv
 
 $.sqrt = function(x){return Math.sqrt($.checkNum(x));};
 
+$.map = function(receiver,f){if(!$.isJsArray(receiver))return receiver.map$1(f);else return $.Collections_map(receiver,[],f);};
+
 $._serializeMessage = function(message){if($._globalState().get$needSerialization()===true)return $._JsSerializer$0().traverse$1(message);else return $._JsCopier$().traverse$1(message);};
 
 $.IndexOutOfRangeException$ = function(_value){return new $.IndexOutOfRangeException(_value);};
@@ -5523,12 +5526,12 @@ $._DOMWindowCrossFrameImpl__createSafe = function(w){var t1=$.window();if(w==nul
 
 $._HistoryCrossFrameImpl__createSafe = function(h){var t1=$.window().get$history();if(h==null?t1==null:h===t1)return h;else return $._HistoryCrossFrameImpl$(h);};
 
-$._LocationCrossFrameImpl__createSafe = function(location$){var t1=$.window().get$location();if(location$==null?t1==null:location$===t1)return location$;else return $._LocationCrossFrameImpl$(location$);};
-
 $.ElementMouseEventArgs_ElementMouseEventArgs = function(element,mouseEvent){return $.ElementMouseEventArgs$_internal(element,mouseEvent.get$shiftKey());};
 
 $.defineProperty = function(obj,property,value){Object.defineProperty(obj, property,
       {value: value, enumerable: false, writable: true, configurable: true});};
+
+$._LocationCrossFrameImpl__createSafe = function(location$){var t1=$.window().get$location();if(location$==null?t1==null:location$===t1)return location$;else return $._LocationCrossFrameImpl$(location$);};
 
 $.lt = function(a,b){return typeof a==='number'&&typeof b==='number'?a < b:$.lt$slow(a,b);};
 
@@ -5540,11 +5543,9 @@ $._Manager$ = function(){var t1=new $._Manager(0,0,1,null,null,null,null,null,nu
 
 $.Duration$ = function(days,hours,milliseconds,minutes,seconds){var t1=days*86400000+hours*3600000+minutes*60000+seconds*1000;if(typeof milliseconds!=='number')throw $.iae(milliseconds);return new $.Duration(t1+milliseconds);};
 
-$.map = function(receiver,f){if(!$.isJsArray(receiver))return receiver.map$1(f);else return $.Collections_map(receiver,[],f);};
+$.sub = function(a,b){return typeof a==='number'&&typeof b==='number'?a - b:$.sub$slow(a,b);};
 
 $.ClickManager_addHandler = function(element,handler){return $.get$ClickManager__clickEvent().addHandler$2(element,handler);};
-
-$.sub = function(a,b){return typeof a==='number'&&typeof b==='number'?a - b:$.sub$slow(a,b);};
 
 $._Lists_indexOf$bailout = function(state,a,element,startIndex,endIndex){if($.geB(startIndex,$.get$length(a)))return -1;if($.ltB(startIndex,0))startIndex=0;for(var i=startIndex;$.ltB(i,endIndex);i=$.add(i,1))if($.eqB($.index(a,i),element))return i;return -1;};
 
@@ -5875,8 +5876,8 @@ $.GameState_lost = Isolate.$isolateProperties.CTC38;
 $._JsonParser_CHAR_T = 116;
 $.ReceivePortSync__portMap = null;
 $._JsonParser_CHAR_F = 102;
-$._JsonParser_RBRACE = 125;
 $._JsonParser_LBRACKET = 91;
+$._JsonParser_RBRACE = 125;
 $.ScoreElement__valueOffset = 15;
 $.ReceivePortSync__cachedIsolateId = null;
 $.__deserializedFunctionTable = null;
