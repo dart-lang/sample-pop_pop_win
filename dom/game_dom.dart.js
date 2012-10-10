@@ -1315,10 +1315,12 @@ $$.GameManager = {"":
  get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
  _click$3: function(x,y,alt){var ss=this._game.getSquareState$2(x,y);if(alt===true){if($.eqB(ss,$.CTC23))this._game.setFlag$3(x,y,true);else if($.eqB(ss,$.CTC24))this._game.setFlag$3(x,y,false);else if($.eqB(ss,$.CTC17))this._game.reveal$2(x,y);}else if($.eqB(ss,$.CTC23))this._game.reveal$2(x,y);},
  updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this._game.get$state(),$.CTC26))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this._game.get$state(),$.CTC26)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null;}},
+ onNewHighScore$1: function(value){},
+ onGameStateChanged$1: function(value){},
  _doClock$0: function(){this.updateClock$0();},
  get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
  get$_canClick: function(){return $.eqB(this._game.get$state(),$.CTC25)||$.eqB(this._game.get$state(),$.CTC26);},
- _gameStateChanged$1: function(newState){var t1=this._gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC34))t1.updateHighScore$1(this._game);this.updateClock$0();},
+ _gameStateChanged$1: function(newState){var t1=this._gameStorage;t1.recordState$1(newState);if($.eqB(newState,$.CTC34))if(t1.updateHighScore$1(this._game)===true)this.onNewHighScore$1(this.get$highScore());this.updateClock$0();this.onGameStateChanged$1(newState);},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(_width,_height,_mineCount){this.newGame$0();}
 };
