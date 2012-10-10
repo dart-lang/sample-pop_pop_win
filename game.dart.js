@@ -3474,7 +3474,7 @@ $$.GameRoot = {"":
  ["_lib3_stage", "_lib3_canvas", "_gameElement", "_clickMan", "_gameElementTx", "_frameRequested", "_lib5_width", "_lib5_height", "_mineCount", "_gameStorage", "_game", "_updatedEventId", "_gameStateChangedId", "_setIntervalId"],
  "super": "GameManager",
  newGame$0: function(){$.GameManager.prototype.newGame$0.call(this);var t1=$.GameManager.prototype.get$game.call(this);this._gameElement.set$game(t1);this._requestFrame$0();},
- onGameStateChanged$1: function(newState){$.trackAnalyticsEvent('game',newState.name,null,null);},
+ onGameStateChanged$1: function(newState){switch(newState){case $.CTC37:$.playAudio('ppw_win');break;}$.trackAnalyticsEvent('game',newState.name,null,null);},
  onNewHighScore$1: function(value){$.trackAnalyticsEvent('game','record milliseconds',null,value);},
  _updateCanvasSize$0: function(){this._updateCanvasSizeCore$1($.Size$($.window().get$innerWidth(),$.window().get$innerHeight()));},
  _updateCanvasSizeCore$1: function(windowSize){var t1=this._lib3_canvas;$.indexSet(t1.get$attributes(),'width',windowSize.width);$.indexSet(t1.get$attributes(),'height',windowSize.height);this._requestFrame$0();},
@@ -4514,9 +4514,9 @@ $.Callback$many = function(f){var t1=new $.Callback(null,null,null);t1.Callback$
 
 $._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$0());t1._JsCopier$0();return t1;};
 
-$.JSON_parse = function(json){return $._JsonParser$(json).parseToplevel$0();};
-
 $.regExpMakeNative = function(regExp,global){var pattern=regExp.get$pattern();var multiLine=regExp.get$multiLine();var ignoreCase=regExp.get$ignoreCase();$.checkString(pattern);var sb=$.StringBuffer_StringBuffer('');if(multiLine===true)$.add$1(sb,'m');if(ignoreCase===true)$.add$1(sb,'i');if(global)$.add$1(sb,'g');try{return new RegExp(pattern, $.toString(sb));}catch(exception){var t1=$.unwrapException(exception);var e=t1;throw $.$$throw($.IllegalJSRegExpException$(pattern,String(e)));}};
+
+$.JSON_parse = function(json){return $._JsonParser$(json).parseToplevel$0();};
 
 $.double_parse = function(source){return $.Primitives_parseDouble(source);};
 
@@ -4576,13 +4576,13 @@ $.ImageElement_ImageElement = function(src,width,height){var t1=$===src;if(t1)sr
 
 $.gt$slow = function(a,b){if($.checkNumbers(a,b))return a > b;return a.operator$gt$1(b);};
 
+$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
+
 $._MutationObserverFactoryProvider_createMutationObserver = function(callback){callback = $.convertDartClosureToJS(callback,2);    var constructor =
         window.MutationObserver || window.WebKitMutationObserver ||
         window.MozMutationObserver;
     return new constructor(callback);
   };
-
-$.filter = function(receiver,predicate){if(!$.isJsArray(receiver))return receiver.filter$1(predicate);else return $.Collections_filter(receiver,[],predicate);};
 
 $._getAudioPath = function(name$){return 'audio/'+$.S(name$)+'.webm';};
 
@@ -4620,13 +4620,13 @@ $.startRootIsolate = function(entry){var t1=$._Manager$();$._globalState0(t1);if
 
 $.truncate = function(receiver){return receiver<0?$.ceil(receiver):$.floor(receiver);};
 
-$.Field$_internal = function(mineCount,cols,source){var t1=$.Array2d_Array2d(cols,$.tdiv($.get$length(source),cols),null);var t2=cols>0&&true?$.tdiv($.get$length(source),cols):0;t2=new $.Field(mineCount,t1,cols,t2,source);t2.Array2d$wrap$2(cols,source);t2.Field$_internal$3(mineCount,cols,source);return t2;};
-
 $.sort = function(receiver,compare){if(!$.isJsArray(receiver))return receiver.sort$1(compare);$.checkMutable(receiver,'sort');$.DualPivotQuicksort_sort(receiver,compare);};
 
-$._convertNativeToDart_Window = function(win){return $._DOMWindowCrossFrameImpl__createSafe(win);};
+$.Field$_internal = function(mineCount,cols,source){var t1=$.Array2d_Array2d(cols,$.tdiv($.get$length(source),cols),null);var t2=cols>0&&true?$.tdiv($.get$length(source),cols):0;t2=new $.Field(mineCount,t1,cols,t2,source);t2.Array2d$wrap$2(cols,source);t2.Field$_internal$3(mineCount,cols,source);return t2;};
 
 $.DualPivotQuicksort_sort = function(a,compare){$.DualPivotQuicksort__doSort(a,0,$.sub($.get$length(a),1),compare);};
+
+$._convertNativeToDart_Window = function(win){return $._DOMWindowCrossFrameImpl__createSafe(win);};
 
 $._PostMessageScheduler$ = function(callback){var t1=new $._PostMessageScheduler('DART-MEASURE',false,callback);t1._PostMessageScheduler$1(callback);return t1;};
 
@@ -4734,19 +4734,19 @@ $.print = function(object){if(typeof object==='string')$.Primitives_printString(
 
 $.StackOverflowException$ = function(){return new $.StackOverflowException();};
 
-$.getRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.getRange$2(start,length$);if(0===length$)return [];$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));var t1=length$<0;if(t1)throw $.$$throw($.ArgumentError$(length$));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));var end=start+length$;if($.gtB(end,$.get$length(receiver)))throw $.$$throw($.IndexOutOfRangeException$(length$));if(t1)throw $.$$throw($.ArgumentError$(length$));return receiver.slice(start, end);};
-
 $._MeasurementScheduler__MeasurementScheduler$best = function(callback){if($._isMutationObserverSupported()===true)return $._MutationObserverScheduler$(callback);return $._PostMessageScheduler$(callback);};
+
+$.getRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.getRange$2(start,length$);if(0===length$)return [];$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));var t1=length$<0;if(t1)throw $.$$throw($.ArgumentError$(length$));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));var end=start+length$;if($.gtB(end,$.get$length(receiver)))throw $.$$throw($.IndexOutOfRangeException$(length$));if(t1)throw $.$$throw($.ArgumentError$(length$));return receiver.slice(start, end);};
 
 $.identical = function(a,b){return a===b;};
 
 $._convertNativeToDart_EventTarget = function(e){if("setInterval" in e)return $._DOMWindowCrossFrameImpl__createSafe($.throwNoSuchMethod('','get event',[]));else return e;};
 
-$._Lists_getRange = function(a,start,length$,accumulator){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if(typeof start!=='number')return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if($.ltB(length$,0))throw $.$$throw($.ArgumentError$('length'));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));if(typeof length$!=='number')throw $.iae(length$);var end=start+length$;if(end>a.length)throw $.$$throw($.IndexOutOfRangeException$(end));for(var i=start;i<end;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);accumulator.push(a[i]);}return accumulator;};
-
 $.max = function(a,b){if(typeof b==='number'){if(a>b)return a;if(a<b)return b;if(typeof b==='number'){if(typeof a==='number')if(a===0)return a+b;if($.isNaN(b)===true)return b;return a;}if(b===0&&$.isNegative(a)===true)return b;return a;}throw $.$$throw($.ArgumentError$(b));throw $.$$throw($.ArgumentError$(a));};
 
 $.ScoreElement$ = function(){return new $.ScoreElement(null,null,null,null,null,$.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,400,96,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);};
+
+$._Lists_getRange = function(a,start,length$,accumulator){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if(typeof start!=='number')return $._Lists_getRange$bailout(1,a,start,length$,accumulator);if($.ltB(length$,0))throw $.$$throw($.ArgumentError$('length'));if(start<0)throw $.$$throw($.IndexOutOfRangeException$(start));if(typeof length$!=='number')throw $.iae(length$);var end=start+length$;if(end>a.length)throw $.$$throw($.IndexOutOfRangeException$(end));for(var i=start;i<end;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);accumulator.push(a[i]);}return accumulator;};
 
 $.GameTitleElement$ = function(){return new $.GameTitleElement($.ListImplementation_List(null),false,$.EventHandle$(),$.EventHandle$(),null,318,96,null,null,false,null,$.HashMapImplementation$(),$.HashMapImplementation$(),false);};
 
@@ -4762,9 +4762,9 @@ $._JsonStringifier_stringify = function(object){var output=$.StringBuffer_String
 
 $.charCodeAt = function(receiver,index){if(typeof receiver==='string'){if(!(typeof index==='number'))throw $.$$throw($.ArgumentError$(index));if(index<0)throw $.$$throw($.IndexOutOfRangeException$(index));if(index>=receiver.length)throw $.$$throw($.IndexOutOfRangeException$(index));return receiver.charCodeAt(index);}else return receiver.charCodeAt$1(index);};
 
-$.mul = function(a,b){return typeof a==='number'&&typeof b==='number'?a * b:$.mul$slow(a,b);};
-
 $.removeRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.removeRange$2(start,length$);$.checkGrowable(receiver,'removeRange');if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));var receiverLength=receiver.length;if(start<0||start>=receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=start+length$;if(t1>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(t1));var t2=receiverLength-length$;$.Arrays_copy(receiver,t1,receiver,start,t2-start);$.set$length(receiver,t2);};
+
+$.mul = function(a,b){return typeof a==='number'&&typeof b==='number'?a * b:$.mul$slow(a,b);};
 
 $.Primitives_parseInt = function(string){$.checkString(string);var match=/^\s*[+-]?(?:0(x)[a-f0-9]+|\d+)\s*$/i.exec(string);if(match==null)throw $.$$throw($.FormatException$(string));var base=!($.index(match,1)==null)?16:10;var result=parseInt(string, base);if($.isNaN(result)===true)throw $.$$throw($.FormatException$(string));return result;};
 
@@ -4875,8 +4875,6 @@ $.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(
 
 $._FuncEnumerable$ = function(_source,_func){return new $._FuncEnumerable(_source,_func);};
 
-$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
-
 $._TextTrackCueEventsImpl$ = function(_ptr){return new $._TextTrackCueEventsImpl(_ptr);};
 
 $.endsWith = function(receiver,other){$.checkString(other);var receiverLength=receiver.length;var otherLength=other.length;if(otherLength>receiverLength)return false;return other===$.substring$1(receiver,receiverLength-otherLength);};
@@ -4893,6 +4891,8 @@ $.ReceivePortSync__lookup = function(isolateId,portId){if($.eqB(isolateId,$.Rece
 
 $.removeLast = function(receiver){if($.isJsArray(receiver)){$.checkGrowable(receiver,'removeLast');if($.get$length(receiver)===0)throw $.$$throw($.IndexOutOfRangeException$(-1));return receiver.pop();}return receiver.removeLast$0();};
 
+$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
+
 $._MeasurementRequest$ = function(computeValue,completer){return new $._MeasurementRequest(computeValue,completer,null,false);};
 
 $._MediaElementEventsImpl$ = function(_ptr){return new $._MediaElementEventsImpl(_ptr);};
@@ -4905,6 +4905,8 @@ $.propertySet = function(object,property,value){object[property] = value;};
 
 $._BatteryManagerEventsImpl$ = function(_ptr){return new $._BatteryManagerEventsImpl(_ptr);};
 
+$._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof startIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
+
 $.checkGrowable = function(list,reason){if(!!(list.fixed$length))throw $.$$throw($.UnsupportedOperationException$(reason));};
 
 $.le = function(a,b){return typeof a==='number'&&typeof b==='number'?a <= b:$.le$slow(a,b);};
@@ -4914,8 +4916,6 @@ $.JSSyntaxRegExp$ = function(pattern,ignoreCase,multiLine){return new $.JSSyntax
 $.KeyValuePair$ = function(key,value){return new $.KeyValuePair(key,value);};
 
 $._DocumentEventsImpl$ = function(_ptr){return new $._DocumentEventsImpl(_ptr);};
-
-$._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof startIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
 $.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,arg);};
 
@@ -5031,9 +5031,9 @@ $.DateImplementation$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoc
 
 $.mod = function(a,b){if($.checkNumbers(a,b)){var result=a % b;if(result===0)return 0;if(result>0)return result;if(b<0)return result-b;else return result+b;}return a.operator$mod$1(b);};
 
-$.compareTo = function(a,b){if($.checkNumbers(a,b))if($.ltB(a,b))return -1;else if($.gtB(a,b))return 1;else if($.eqB(a,b)){if($.eqB(a,0)){var aIsNegative=$.isNegative(a);if($.eqB(aIsNegative,$.isNegative(b)))return 0;if(aIsNegative===true)return -1;return 1;}return 0;}else if($.isNaN(a)===true){if($.isNaN(b)===true)return 0;return 1;}else return -1;else if(typeof a==='string'){if(!(typeof b==='string'))throw $.$$throw($.ArgumentError$(b));if(a == b)var t1=0;else t1=a < b?-1:1;return t1;}else return a.compareTo$1(b);};
-
 $._CustomEventFactoryProvider_createCustomEvent = function(type,canBubble,cancelable,detail){var e=$._document().$dom_createEvent$1('CustomEvent');e.$dom_initCustomEvent$4(type,canBubble,cancelable,detail);return e;};
+
+$.compareTo = function(a,b){if($.checkNumbers(a,b))if($.ltB(a,b))return -1;else if($.gtB(a,b))return 1;else if($.eqB(a,b)){if($.eqB(a,0)){var aIsNegative=$.isNegative(a);if($.eqB(aIsNegative,$.isNegative(b)))return 0;if(aIsNegative===true)return -1;return 1;}return 0;}else if($.isNaN(a)===true){if($.isNaN(b)===true)return 0;return 1;}else return -1;else if(typeof a==='string'){if(!(typeof b==='string'))throw $.$$throw($.ArgumentError$(b));if(a == b)var t1=0;else t1=a < b?-1:1;return t1;}else return a.compareTo$1(b);};
 
 $.ImageLoader$ = function(urls){var t1=$.EventHandle$();var t2=$.EventHandle$();return new $.ImageLoader($.ResourceLoader__buildRORE(urls),t1,t2,'unloaded');};
 
@@ -5337,13 +5337,13 @@ $.supportsAudio = function(){return $.contains$1($.window().get$clientInformatio
 
 $.StringImplementation__toJsStringArray = function(strings){if(typeof strings!=='object'||strings===null||(strings.constructor!==Array||!!strings.immutable$list)&&!strings.is$JavaScriptIndexingBehavior())return $.StringImplementation__toJsStringArray$bailout(1,strings);$.checkNull(strings);var length$=strings.length;if($.isJsArray(strings)){for(var i=0;i<length$;++i){if(i>=strings.length)throw $.ioore(i);var string=strings[i];$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.ArgumentError$(string));}var array=strings;}else{array=$.ListImplementation_List(length$);for(i=0;i<length$;++i){if(i>=strings.length)throw $.ioore(i);string=strings[i];$.checkNull(string);if(!(typeof string==='string'))throw $.$$throw($.ArgumentError$(string));array[i]=string;}}return array;};
 
+$._Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
+
 $._timerFactory = function(millis,callback,repeating){return repeating===true?$._Timer$repeating(millis,callback):$._Timer$(millis,callback);};
 
 $.query = function(selector){return $._document().query$1(selector);};
 
 $.constructorNameFallback = function(object){if(object==null)return 'Null';var constructor$=object.constructor;if(typeof(constructor$)==='function'){var name$=constructor$.name;if(typeof name$==='string')var t1=!(name$==='')&&!(name$==='Object')&&!(name$==='Function.prototype');else t1=false;if(t1)return name$;}var string=Object.prototype.toString.call(object);return string.substring(8, string.length - 1);};
-
-$._Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
 
 $.FormatException$ = function(message){return new $.FormatException(message);};
 
@@ -5395,13 +5395,13 @@ $._HttpRequestUploadEventsImpl$ = function(_ptr){return new $._HttpRequestUpload
 
 $.Mouse_markMouseOver = function(stage,coordinate){$.requireArgumentNotNull(stage,'stage');var t1=!(coordinate==null);$.requireArgument(coordinate==null||coordinate.get$isValid()===true,'coordinate',null);var items=$.get$Mouse__stageMouseCacheProperty().get$1(stage);if(!(items==null)){$.forEach(items,new $.Mouse_markMouseOver_anon());$.get$Mouse__stageMouseCacheProperty().clear$1(stage);}if(t1){var hits=$.RetainedUtil_hitTest(stage,coordinate);$.get$Mouse__stageMouseCacheProperty().set$2(stage,hits);$.forEach(hits,new $.Mouse_markMouseOver_anon0());if($.gtB($.get$length(hits),0))$.get$Mouse_isMouseDirectlyOverProperty().set$2($.index(hits,0),true);return hits;}return;};
 
+$.Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
+
 $.DualPivotQuicksort__doSort = function(a,left,right,compare){if($.leB($.sub(right,left),32))$.DualPivotQuicksort_insertionSort_(a,left,right,compare);else $.DualPivotQuicksort__dualPivotQuicksort(a,left,right,compare);};
 
 $.checkNull = function(object){if(object==null)throw $.$$throw($.NullPointerException$(null,$.CTC1));return object;};
 
 $.Collections__containsRef = function(c,ref){for(var t1=$.iterator(c);t1.hasNext$0()===true;){var t2=t1.next$0();if(t2==null?ref==null:t2===ref)return true;}return false;};
-
-$.Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
 
 $.concat = function(receiver,other){if(!(typeof receiver==='string'))return receiver.concat$1(other);return receiver + other;};
 
@@ -5449,6 +5449,8 @@ $.LinkedHashMapImplementation$ = function(){var t1=new $.LinkedHashMapImplementa
 
 $._DOMWindowCrossFrameImpl__createSafe = function(w){var t1=$.window();if(w==null?t1==null:w===t1)return w;else return $._DOMWindowCrossFrameImpl$(w);};
 
+$.map = function(receiver,f){if(!$.isJsArray(receiver))return receiver.map$1(f);else return $.Collections_map(receiver,[],f);};
+
 $.ElementMouseEventArgs_ElementMouseEventArgs = function(element,mouseEvent){return $.ElementMouseEventArgs$_internal(element,mouseEvent.get$shiftKey());};
 
 $.defineProperty = function(obj,property,value){Object.defineProperty(obj, property,
@@ -5463,8 +5465,6 @@ $._callPortSync = function(id,message){return ReceivePortSync.dispatchCall(id, m
 $._Manager$ = function(){var t1=new $._Manager(0,0,1,null,null,null,null,null,null,null,null,null);t1._Manager$0();return t1;};
 
 $.Duration$ = function(days,hours,milliseconds,minutes,seconds){var t1=days*86400000+hours*3600000+minutes*60000+seconds*1000;if(typeof milliseconds!=='number')throw $.iae(milliseconds);return new $.Duration(t1+milliseconds);};
-
-$.map = function(receiver,f){if(!$.isJsArray(receiver))return receiver.map$1(f);else return $.Collections_map(receiver,[],f);};
 
 $.sub = function(a,b){return typeof a==='number'&&typeof b==='number'?a - b:$.sub$slow(a,b);};
 
@@ -5576,21 +5576,21 @@ $.CTC78 = 1536;
 $.CTC27 = new Isolate.$isolateProperties.Size(2048, 1536);
 $.CTC79 = 0;
 $.CTC57 = new Isolate.$isolateProperties.Coordinate(0, 0);
-$.CTC80 = 352;
-$.CTC81 = 96;
-$.CTC28 = new Isolate.$isolateProperties.Vector(352, 96);
-$.CTC82 = 100;
-$.CTC30 = new Isolate.$isolateProperties.Size(100, 100);
-$.CTC83 = 32;
+$.CTC80 = 32;
 $.CTC26 = new Isolate.$isolateProperties.Coordinate(32, 32);
-$.CTC84 = 'offsetX is only supported on elements';
-$.CTC19 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
-$.CTC85 = 'The input sequence is empty.';
-$.CTC54 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
-$.CTC86 = -88;
-$.CTC49 = new Isolate.$isolateProperties.Vector(-88, -88);
-$.CTC87 = 'safe';
+$.CTC81 = 100;
+$.CTC30 = new Isolate.$isolateProperties.Size(100, 100);
+$.CTC82 = 'safe';
 $.CTC50 = new Isolate.$isolateProperties.SquareState('safe');
+$.CTC83 = 'offsetX is only supported on elements';
+$.CTC19 = new Isolate.$isolateProperties.UnsupportedOperationException('offsetX is only supported on elements');
+$.CTC84 = 'The input sequence is empty.';
+$.CTC54 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
+$.CTC85 = 352;
+$.CTC86 = 96;
+$.CTC28 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC87 = -88;
+$.CTC49 = new Isolate.$isolateProperties.Vector(-88, -88);
 $.CTC18 = new Isolate.$isolateProperties._UndefinedValue();
 $.CTC24 = new Isolate.$isolateProperties.IllegalAccessException();
 $.CTC88 = '^[*a-zA-Z0-9]+$';
@@ -5609,80 +5609,81 @@ $.CTC98 = 'number_eight';
 $.CTC52 = Isolate.makeConstantList(['game_board_center', 'number_one', 'number_two', 'number_three', 'number_four', 'number_five', 'number_six', 'number_seven', 'number_eight']);
 $.CTC99 = 'structured clone of ImageData';
 $.CTC7 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ImageData');
-$.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC100 = 'reset';
 $.CTC31 = new Isolate.$isolateProperties.GameState('reset');
+$.CTC101 = '';
+$.CTC40 = new Isolate.$isolateProperties.UnsupportedOperationException('');
 $.CTC16 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC101 = null;
-$.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
 $.CTC102 = 'Cannot removeLast on immutable List.';
 $.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeLast on immutable List.');
+$.CTC103 = 'Pop0';
+$.CTC104 = 'Pop1';
+$.CTC105 = 'Pop2';
+$.CTC106 = 'Pop3';
+$.CTC107 = 'Pop4';
+$.CTC108 = 'Pop5';
+$.CTC109 = 'Pop6';
+$.CTC110 = 'Pop7';
+$.CTC111 = 'Pop8';
+$.CTC112 = 'Bomb1';
+$.CTC113 = 'Bomb2';
+$.CTC114 = 'Bomb3';
+$.CTC115 = 'Bomb4';
+$.CTC116 = 'Bomb5';
+$.CTC117 = 'DartThrow3';
+$.CTC118 = 'Flag2';
+$.CTC119 = 'Unflag2';
+$.CTC120 = 'Click1';
+$.CTC121 = 'ppw_win';
+$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5', 'DartThrow3', 'Flag2', 'Unflag2', 'Click1', 'ppw_win']);
+$.CTC122 = null;
 $.CTC43 = new Isolate.$isolateProperties.NotImplementedException(null);
-$.CTC103 = 'The input sequence contains more than one element.';
-$.CTC55 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
-$.CTC104 = '';
-$.CTC40 = new Isolate.$isolateProperties.UnsupportedOperationException('');
-$.CTC105 = 'won';
-$.CTC37 = new Isolate.$isolateProperties.GameState('won');
-$.CTC106 = '^#[_a-zA-Z]\\w*$';
-$.CTC13 = new Isolate.$isolateProperties.JSSyntaxRegExp('^#[_a-zA-Z]\\w*$', false, false);
-$.CTC107 = 'structured clone of ArrayBuffer';
-$.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
-$.CTC108 = 'balloon_pieces_a.png';
-$.CTC109 = 'balloon_pieces_b.png';
-$.CTC110 = 'balloon_pieces_c.png';
-$.CTC111 = 'balloon_pieces_d.png';
+$.CTC0 = new Isolate.$isolateProperties.NullPointerException(null, Isolate.$isolateProperties.CTC1);
+$.CTC123 = 'balloon_pieces_a.png';
+$.CTC124 = 'balloon_pieces_b.png';
+$.CTC125 = 'balloon_pieces_c.png';
+$.CTC126 = 'balloon_pieces_d.png';
 $.CTC53 = Isolate.makeConstantList(['balloon_pieces_a.png', 'balloon_pieces_b.png', 'balloon_pieces_c.png', 'balloon_pieces_d.png']);
-$.CTC112 = 'lost';
+$.CTC127 = 'The input sequence contains more than one element.';
+$.CTC55 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence contains more than one element.');
+$.CTC11 = new Isolate.$isolateProperties.NoMoreElementsException();
+$.CTC128 = 'won';
+$.CTC37 = new Isolate.$isolateProperties.GameState('won');
+$.CTC129 = '^#[_a-zA-Z]\\w*$';
+$.CTC13 = new Isolate.$isolateProperties.JSSyntaxRegExp('^#[_a-zA-Z]\\w*$', false, false);
+$.CTC130 = 'structured clone of ArrayBuffer';
+$.CTC8 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBuffer');
+$.CTC131 = 'lost';
 $.CTC38 = new Isolate.$isolateProperties.GameState('lost');
-$.CTC113 = 'Cannot sort immutable List.';
+$.CTC132 = 'Cannot sort immutable List.';
 $.CTC47 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot sort immutable List.');
-$.CTC114 = 'structured clone of Date';
+$.CTC133 = 'structured clone of Date';
 $.CTC3 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Date');
 $.CTC56 = new Isolate.$isolateProperties.Object();
-$.CTC115 = 'IDBKey containing Date';
+$.CTC134 = 'IDBKey containing Date';
 $.CTC17 = new Isolate.$isolateProperties.NotImplementedException('IDBKey containing Date');
-$.CTC116 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC25 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC116, Isolate.$isolateProperties.CTC116, Isolate.$isolateProperties.CTC116, Isolate.$isolateProperties.CTC116, Isolate.$isolateProperties.CTC1);
-$.CTC117 = 'Incorrect number or type of arguments';
+$.CTC135 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC25 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC135, Isolate.$isolateProperties.CTC135, Isolate.$isolateProperties.CTC135, Isolate.$isolateProperties.CTC135, Isolate.$isolateProperties.CTC1);
+$.CTC136 = 'Incorrect number or type of arguments';
 $.CTC22 = new Isolate.$isolateProperties.ExceptionImplementation('Incorrect number or type of arguments');
-$.CTC118 = 'Cannot insertRange on immutable List.';
+$.CTC137 = 'Cannot insertRange on immutable List.';
 $.CTC32 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot insertRange on immutable List.');
-$.CTC119 = 'Pop0';
-$.CTC120 = 'Pop1';
-$.CTC121 = 'Pop2';
-$.CTC122 = 'Pop3';
-$.CTC123 = 'Pop4';
-$.CTC124 = 'Pop5';
-$.CTC125 = 'Pop6';
-$.CTC126 = 'Pop7';
-$.CTC127 = 'Pop8';
-$.CTC128 = 'Bomb1';
-$.CTC129 = 'Bomb2';
-$.CTC130 = 'Bomb3';
-$.CTC131 = 'Bomb4';
-$.CTC132 = 'Bomb5';
-$.CTC133 = 'DartThrow3';
-$.CTC134 = 'Flag2';
-$.CTC135 = 'Unflag2';
-$.CTC136 = 'Click1';
-$.CTC = Isolate.makeConstantList(['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5', 'DartThrow3', 'Flag2', 'Unflag2', 'Click1']);
-$.CTC137 = 'structured clone of Blob';
-$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
 $.CTC138 = 'Cannot removeRange on immutable List.';
 $.CTC39 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot removeRange on immutable List.');
-$.CTC139 = 'structured clone of RegExp';
+$.CTC139 = 'structured clone of Blob';
+$.CTC6 = new Isolate.$isolateProperties.NotImplementedException('structured clone of Blob');
+$.CTC140 = 'structured clone of RegExp';
 $.CTC4 = new Isolate.$isolateProperties.NotImplementedException('structured clone of RegExp');
-$.CTC140 = 'Invalid list length';
+$.CTC141 = 'Invalid list length';
 $.CTC44 = new Isolate.$isolateProperties.ArgumentError('Invalid list length');
 $.CTC33 = new Isolate.$isolateProperties._Random();
-$.CTC141 = 'hidden';
+$.CTC142 = 'hidden';
 $.CTC34 = new Isolate.$isolateProperties.SquareState('hidden');
-$.CTC142 = '^\\[name=["\'][^\'"]+[\'"]\\]$';
+$.CTC143 = '^\\[name=["\'][^\'"]+[\'"]\\]$';
 $.CTC41 = new Isolate.$isolateProperties.JSSyntaxRegExp('^\\[name=["\'][^\'"]+[\'"]\\]$', false, false);
-$.CTC143 = 'structured clone of other type';
+$.CTC144 = 'structured clone of other type';
 $.CTC10 = new Isolate.$isolateProperties.NotImplementedException('structured clone of other type');
-$.CTC144 = 'Mutation operations are not supported';
+$.CTC145 = 'Mutation operations are not supported';
 $.CTC21 = new Isolate.$isolateProperties.UnsupportedOperationException('Mutation operations are not supported');
 $.Property_Undefined = Isolate.$isolateProperties.CTC18;
 $.DateImplementation__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
