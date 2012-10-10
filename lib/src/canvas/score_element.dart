@@ -27,7 +27,7 @@ class ScoreElement extends PElement {
 
     var newClockStr = '';
     if(_game.duration != null) {
-      newClockStr = _game.duration.inSeconds.toString();
+      newClockStr = toRecordString(_game.duration.inMilliseconds);
     }
     if(newClockStr != _clockStr) {
       _clockStr = newClockStr;
@@ -36,9 +36,7 @@ class ScoreElement extends PElement {
 
     var highScoreStr = null;
     if(_gameManager.highScore != null) {
-      final ms = _gameManager.highScore;
-      final seconds = (ms * 0.001);
-      highScoreStr = seconds.toStringAsFixed(1);
+      highScoreStr = toRecordString(_gameManager.highScore);
     }
     if(_highScoreStr != highScoreStr) {
       _highScoreStr = highScoreStr;
@@ -73,6 +71,10 @@ class ScoreElement extends PElement {
       ctx.textAlign = 'left';
       ctx.fillText(_highScoreStr, textSize + _valueOffset, 2.5 * rowHeight);
     }
+  }
+
+  static String toRecordString(num milliseconds) {
+    return (milliseconds * 0.001).toStringAsFixed(1);
   }
 
   num _getTextSize(CanvasRenderingContext2D ctx) {
