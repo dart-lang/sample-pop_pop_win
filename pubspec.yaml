@@ -4,3 +4,5 @@ dependencies:
     sdk: unittest
   bot:
     git: git://github.com/kevmoo/bot.dart.git
+  js:
+    hosted: js

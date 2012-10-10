@@ -27,7 +27,10 @@ class GameRoot extends GameManager {
     _gameElement.setGameManager(this);
     _stage.invalidated.add(_stageInvalidated);
 
-    _gameElement.newGameClick.add((args) => newGame());
+    _gameElement.newGameClick.add((args) {
+      trackAnalyticsEvent('game', 'reset');
+      newGame();
+    });
 
     ClickManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
     ClickManager.addMouseOutHandler(_stage, _mouseOutHandler);
@@ -106,6 +109,7 @@ class GameRoot extends GameManager {
   }
 
   void gameUpdated(args) {
+    trackAnalyticsEvent('game', game.state.name);
     _requestFrame();
   }
 

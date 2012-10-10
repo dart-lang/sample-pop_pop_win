@@ -10,6 +10,7 @@
 
 #import('poppopwin.dart');
 #import('html.dart');
+#import('analytics.dart');
 
 #source('src/canvas/board_element.dart');
 #source('src/canvas/game_background_element.dart');
