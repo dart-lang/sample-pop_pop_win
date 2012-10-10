@@ -64,6 +64,10 @@ abstract class GameManager {
     }
   }
 
+  void onNewHighScore(int value){}
+
+  void onGameStateChanged(GameState value){}
+
   // DARTBUG: work around for http://code.google.com/p/dart/issues/detail?id=3197
   void _doClock() {
     updateClock();
@@ -78,7 +82,11 @@ abstract class GameManager {
     _gameStorage.recordState(newState);
     if(newState == GameState.won) {
       final newHighScore = _gameStorage.updateHighScore(_game);
+      if(newHighScore) {
+        onNewHighScore(highScore);
+      }
     }
     updateClock();
+    onGameStateChanged(newState);
   }
 }

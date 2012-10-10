@@ -27,10 +27,7 @@ class GameRoot extends GameManager {
     _gameElement.setGameManager(this);
     _stage.invalidated.add(_stageInvalidated);
 
-    _gameElement.newGameClick.add((args) {
-      newGame();
-      trackAnalyticsEvent('game', 'reset');
-    });
+    _gameElement.newGameClick.add((args) => newGame());
 
     ClickManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
     ClickManager.addMouseOutHandler(_stage, _mouseOutHandler);
@@ -43,7 +40,6 @@ class GameRoot extends GameManager {
     super.newGame();
     _gameElement.game = super.game;
     _requestFrame();
-    game.stateChanged.add((args) => trackAnalyticsEvent('game', game.state.name));
   }
 
   bool get canRevealTarget => _gameElement.canRevealTarget;
@@ -56,6 +52,14 @@ class GameRoot extends GameManager {
 
   EventRoot get targetChanged =>
       _gameElement.targetChanged;
+
+  void onGameStateChanged(GameState newState) {
+    trackAnalyticsEvent('game', newState.name);
+  }
+
+  void onNewHighScore(int value) {
+    trackAnalyticsEvent('game', 'record milliseconds', null, value);
+  }
 
   void _updateCanvasSize() {
     _updateCanvasSizeCore(new Size(window.innerWidth, window.innerHeight));
