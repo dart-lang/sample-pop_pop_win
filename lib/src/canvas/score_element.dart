@@ -37,9 +37,8 @@ class ScoreElement extends PElement {
     var highScoreStr = null;
     if(_gameManager.highScore != null) {
       final ms = _gameManager.highScore;
-      final s = ms * 0.001;
-      final oneDigit = (s * 10).toInt() * 0.1;
-      highScoreStr = oneDigit.toString();
+      final seconds = (ms * 0.001);
+      highScoreStr = seconds.toStringAsFixed(1);
     }
     if(_highScoreStr != highScoreStr) {
       _highScoreStr = highScoreStr;
