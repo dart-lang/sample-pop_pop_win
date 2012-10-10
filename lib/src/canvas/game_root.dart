@@ -59,11 +59,11 @@ class GameRoot extends GameManager {
         playAudio('ppw_win');
         break;
     }
-    trackAnalyticsEvent('game', newState.name);
+    trackAnalyticsEvent('game', newState.name, game.field.toString());
   }
 
   void onNewHighScore(int value) {
-    trackAnalyticsEvent('game', 'record milliseconds', null, value);
+    trackAnalyticsEvent('game', 'record', game.field.toString(), value);
   }
 
   void _updateCanvasSize() {
