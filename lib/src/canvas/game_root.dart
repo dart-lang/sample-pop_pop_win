@@ -67,12 +67,8 @@ class GameRoot extends GameManager {
   }
 
   void _updateCanvasSize() {
-    _updateCanvasSizeCore(new Size(window.innerWidth, window.innerHeight));
-  }
-
-  void _updateCanvasSizeCore(Size windowSize) {
-    _canvas.width = windowSize.width.toInt();
-    _canvas.height = windowSize.height.toInt();
+    _canvas.width = window.innerWidth;
+    _canvas.height = window.innerHeight;
     _requestFrame();
   }
 
