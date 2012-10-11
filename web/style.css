@@ -10,7 +10,35 @@ body {
   display: inline-block;
 }
 
+#popup {
+  font-family: 'Josefin Sans', serif;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 400px;
+  background: rgb(247,235,203);
+  border: 12px solid rgb(221,212,173);
+  margin: 20px;
+  box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+#popup div {
+  margin: 10px;
+}
+
+#popup #help p {
+  text-align: left;
+}
+
+#popup #help img {
+  width: 140px;
+  float: left;
+  margin-right: 10px;
+}
+
 #loading {
+  left: 0;
+  top: 0;
   position: relative;
   margin: 150px auto;
   width: 504px;
@@ -76,5 +104,6 @@ span.status {
 }
 
 canvas#gameCanvas {
+  position: absolute;
   -webkit-user-select: none;
 }
