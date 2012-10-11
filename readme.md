@@ -3,6 +3,8 @@
 
 An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> in [Dart](http://www.dartlang.org).
 
+[![](https://drone.io/kevmoo/pop-pop-win/status.png)](https://drone.io/kevmoo/pop-pop-win/latest)
+
 ## Getting the code
 
 _Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run `pub update` before you try to run tests, build, etc.
