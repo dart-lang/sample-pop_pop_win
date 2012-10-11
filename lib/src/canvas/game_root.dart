@@ -71,9 +71,8 @@ class GameRoot extends GameManager {
   }
 
   void _updateCanvasSizeCore(Size windowSize) {
-    // DARTBUG: http://code.google.com/p/dart/issues/detail?id=5172
-    _canvas.attributes['width'] = windowSize.width;
-    _canvas.attributes['height'] = windowSize.height;
+    _canvas.width = windowSize.width.toInt();
+    _canvas.height = windowSize.height.toInt();
     _requestFrame();
   }
 
