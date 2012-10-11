@@ -1097,8 +1097,8 @@ $$.Game = {"":
  _lib3_update$0: function(){return this._updatedEvent.fireEvent$1($.CTC31);},
  _setState$1: function(value){if(!$.eqB(this._state,value)){this._state=value;if($.eqB(this._state,$.CTC26))this._startTime=$.Date_Date$now();else if(this.get$gameEnded()===true)this._endTime=$.Date_Date$now();this._gameStateEvent.fireEvent$1(this._state);}},
  _ensureStarted$0: function(){if($.eqB(this.get$state(),$.CTC25))this._setState$1($.CTC26);},
- _getAdjacentCount$3: function(x,y,state){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentCount$3$bailout(1,state,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],state))++val;}return val;},
- _getAdjacentCount$3$bailout: function(state,state,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),state))++val;return val;},
+ _getAdjacentCount$3: function(x,y,ss){var t1=$.iterator(this.field.getAdjacentIndices$2(x,y));var t2=this._states;if(typeof t2!=='string'&&(typeof t2!=='object'||t2===null||t2.constructor!==Array&&!t2.is$JavaScriptIndexingBehavior()))return this._getAdjacentCount$3$bailout(1,ss,t1,t2);var val=0;for(;t1.hasNext$0()===true;){var t3=t1.next$0();if(t3!==(t3|0))throw $.iae(t3);if(t3<0||t3>=t2.length)throw $.ioore(t3);if($.eqB(t2[t3],ss))++val;}return val;},
+ _getAdjacentCount$3$bailout: function(state,ss,t1,t2){var val=0;for(;t1.hasNext$0()===true;)if($.eqB($.index(t2,t1.next$0()),ss))++val;return val;},
  Game$1: function(field){this._minesLeft=field.get$mineCount();this._revealsLeft=$.sub($.get$length(field),field.get$mineCount());}
 };
 
@@ -1135,9 +1135,9 @@ $$.Tuple = {"":
 };
 
 $$.NullArgumentException = {"":
- ["theArg", "message"],
- "super": "IllegalArgumentException",
- toString$0: function(){return 'Null argument(s): '+this.theArg;}
+ ["arg", "message"],
+ "super": "ArgumentError",
+ toString$0: function(){return 'Null argument: '+this.arg;}
 };
 
 $$.DetailedIllegalArgumentException = {"":
@@ -2351,7 +2351,7 @@ $._IDBVersionChangeRequestEventsImpl$ = function(_ptr){return new $._IDBVersionC
 
 $._MessageTraverserVisitedMap$ = function(){return new $._MessageTraverserVisitedMap();};
 
-$.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,arg);};
+$.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,'Null argument: '+arg);};
 
 $.FutureNotCompleteException$ = function(){return new $.FutureNotCompleteException();};
 
