@@ -7,22 +7,22 @@ class GameRoot extends GameManager {
 
   bool _frameRequested = false;
 
-  factory GameRoot(int width, int height, int mineCount,
+  factory GameRoot(int width, int height, int bombCount,
       CanvasElement canvasElement, TextureData textureData) {
 
     final rootElement = new GameElement(textureData);
     final stage = new Stage(canvasElement, rootElement);
     final clickMan = new ClickManager(stage);
 
-    return new GameRoot._internal(width, height, mineCount,
+    return new GameRoot._internal(width, height, bombCount,
         canvasElement, stage, rootElement, clickMan);
   }
 
-  GameRoot._internal(int width, int height, int mineCount,
+  GameRoot._internal(int width, int height, int bombCount,
       this._canvas, this._stage, GameElement gameElement, this._clickMan) :
       this._gameElement = gameElement,
       _gameElementTx = gameElement.addTransform(),
-      super(width, height, mineCount) {
+      super(width, height, bombCount) {
 
     _gameElement.setGameManager(this);
     _stage.invalidated.add(_stageInvalidated);

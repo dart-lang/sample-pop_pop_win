@@ -159,7 +159,7 @@ class GameElement extends ElementParentImpl {
             final c = new Coordinate(t.item1, t.item2);
             return new Tuple(c, game.getSquareState(c.x, c.y));
           })
-          .filter((t2) => t2.item2 == SquareState.mine || t2.item2 == SquareState.hidden)
+          .filter((t2) => t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
           .map((t2) => t2.item1)
           .toList();
     }
@@ -198,7 +198,7 @@ class GameElement extends ElementParentImpl {
           texturePrefix = 'balloon_pop';
           frameCount = 28;
           break;
-        case SquareState.mine:
+        case SquareState.bomb:
           texturePrefix = 'balloon_explode';
           frameCount = 24;
           break;
@@ -214,7 +214,7 @@ class GameElement extends ElementParentImpl {
         case SquareState.hidden:
           request.started.add((args) => _playPop());
           break;
-        case SquareState.mine:
+        case SquareState.bomb:
           request.started.add((args) => _playBoom());
           break;
       }

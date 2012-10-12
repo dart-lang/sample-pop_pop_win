@@ -40,7 +40,7 @@ class SquareElement extends PElement {
         final prefix = _numberMap[_adjacentCount];
         textureName = '$prefix.png';
         break;
-      case SquareState.mine:
+      case SquareState.bomb:
         textureName = 'crater_b.png';
         break;
       case SquareState.safe:

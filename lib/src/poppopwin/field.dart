@@ -1,20 +1,20 @@
 class Field extends Array2d<bool> {
-  final int mineCount;
+  final int bombCount;
   final Array2d<int> _adjacents;
 
-  factory Field([mineCount = 40, cols = 16, rows = 16, int seed = null]) {
+  factory Field([bombCount = 40, cols = 16, rows = 16, int seed = null]) {
     final squares = new List<bool>();
     squares.insertRange(0, rows * cols, false);
-    assert(mineCount < squares.length);
-    assert(mineCount > 0);
+    assert(bombCount < squares.length);
+    assert(bombCount > 0);
 
     final rnd = new math.Random(seed);
 
     // This is the most simple code, but it'll get slow as
-    // mineCount approaches the square count.
-    // But more efficient if mineCount << square count
+    // bombCount approaches the square count.
+    // But more efficient if bombCount << square count
     // which is expected.
-    for(int i = 0; i < mineCount; i++) {
+    for(int i = 0; i < bombCount; i++) {
       int index;
       do {
         index = rnd.nextInt(squares.length);
@@ -22,7 +22,7 @@ class Field extends Array2d<bool> {
       squares[index] = true;
     }
 
-    return new Field._internal(mineCount, cols,
+    return new Field._internal(bombCount, cols,
         new ReadOnlyCollection<bool>(squares));
   }
 
@@ -44,13 +44,13 @@ class Field extends Array2d<bool> {
         new ReadOnlyCollection<bool>(squares));
   }
 
-  Field._internal(this.mineCount, int cols, ReadOnlyCollection<bool> source) :
+  Field._internal(this.bombCount, int cols, ReadOnlyCollection<bool> source) :
     this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
     super.wrap(cols, source) {
     assert(width > 0);
     assert(height > 0);
-    assert(mineCount > 0);
-    assert(mineCount < length);
+    assert(bombCount > 0);
+    assert(bombCount < length);
 
     int count = 0;
     for(final m in this) {
@@ -58,7 +58,7 @@ class Field extends Array2d<bool> {
         count++;
       }
     }
-    assert(count == mineCount);
+    assert(count == bombCount);
   }
 
   int getAdjacentCount(int x, int y) {
@@ -80,5 +80,5 @@ class Field extends Array2d<bool> {
     return val;
   }
 
-  String toString() => 'w${width}h${height}m${mineCount}';
+  String toString() => 'w${width}h${height}m${bombCount}';
 }

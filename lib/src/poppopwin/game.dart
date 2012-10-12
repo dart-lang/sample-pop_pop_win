@@ -5,7 +5,7 @@ class Game {
   final EventHandle<GameState> _gameStateEvent = new EventHandle<GameState>();
 
   GameState _state;
-  int _minesLeft;
+  int _bombsLeft;
   int _revealsLeft;
   Date _startTime;
   Date _endTime;
@@ -15,11 +15,11 @@ class Game {
     _state = GameState.reset,
     _states = new Array2d<SquareState>(field.width, field.height, SquareState.hidden) {
     assert(field != null);
-    _minesLeft = field.mineCount;
-    _revealsLeft = field.length - field.mineCount;
+    _bombsLeft = field.bombCount;
+    _revealsLeft = field.length - field.bombCount;
   }
 
-  int get minesLeft => _minesLeft;
+  int get bombsLeft => _bombsLeft;
 
   int get revealsLeft => _revealsLeft;
 
@@ -58,11 +58,11 @@ class Game {
     if(value) {
       require(currentSS == SquareState.hidden);
       _states.set(x,y,SquareState.flagged);
-      _minesLeft--;
+      _bombsLeft--;
     } else {
       require(currentSS == SquareState.flagged);
       _states.set(x,y,SquareState.hidden);
-      _minesLeft++;
+      _bombsLeft++;
     }
     _update();
   }
@@ -200,7 +200,7 @@ class Game {
 
     var reveals = <Coordinate>[];
 
-    // if any of the hidden are mines, we've failed
+    // if any of the hidden are bombs, we've failed
     if(failed) {
       // TODO: assert one of the flags must be wrong, right?
       _setLost();
@@ -250,7 +250,7 @@ class Game {
     assert(state == GameState.started);
     for(int i = 0; i < field.length; i++) {
       if(field[i]) {
-        _states[i] = SquareState.mine;
+        _states[i] = SquareState.bomb;
       }
     }
     _setState(GameState.lost);

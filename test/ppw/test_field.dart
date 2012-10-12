@@ -23,7 +23,7 @@ class TestField {
   static void run() {
     group('Field', () {
       test('defaults', _testDefaults);
-      test('mineCount', _testMineCount);
+      test('bombCount', _testBombCount);
       test('fromSquares', _testFromSquares);
       test('adjacent', _testAdjacent);
     });
@@ -32,36 +32,36 @@ class TestField {
   static void _testDefaults() {
     final f = new Field();
 
-    expect(f.mineCount, equals(40));
+    expect(f.bombCount, equals(40));
     expect(f.height, equals(16));
     expect(f.width, equals(16));
   }
 
-  static void _testMineCount() {
+  static void _testBombCount() {
     final f = new Field();
 
-    int mineCount = 0;
+    int bombCount = 0;
     for(int x = 0; x < 16; x++) {
       for(int y = 0; y < 16; y++) {
         if(f.get(x, y)) {
-          mineCount++;
+          bombCount++;
         }
       }
     }
-    expect(mineCount, equals(f.mineCount));
+    expect(bombCount, equals(f.bombCount));
   }
 
   static void _testFromSquares() {
     final f = new Field.fromSquares(2, 2, [true, true, true, false]);
     expect(f.height, equals(2));
     expect(f.width, equals(2));
-    expect(f.mineCount, equals(3));
+    expect(f.bombCount, equals(3));
   }
 
   static void _testAdjacent() {
     final f = getSampleField();
 
-    expect(f.mineCount, equals(13));
+    expect(f.bombCount, equals(13));
 
     for(int x = 0; x < f.width; x++) {
       for(int y = 0; y < f.height; y++) {

@@ -7,14 +7,14 @@ class GameView extends GameManager {
   final Element _gameStateDiv;
   final Element _clockDiv;
 
-  GameView(int width, int height, int mineCount,
+  GameView(int width, int height, int bombCount,
       this._table, this._leftCountDiv, this._gameStateDiv,
-      this._clockDiv) : super(width, height, mineCount);
+      this._clockDiv) : super(width, height, bombCount);
 
   void updateElement() {
     updateClock();
     _gameStateDiv.innerHTML = game.state.name;
-    _leftCountDiv.innerHTML = game.minesLeft.toString();
+    _leftCountDiv.innerHTML = game.bombsLeft.toString();
 
     if(_table.elements.length == 0) {
 

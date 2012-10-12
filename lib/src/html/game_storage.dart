@@ -19,7 +19,7 @@ class GameStorage {
 
     final w = game.field.width;
     final h = game.field.height;
-    final m = game.field.mineCount;
+    final m = game.field.bombCount;
     final duration = game.duration.inMilliseconds;
 
     final key = _getKey(w, h, m);
@@ -34,8 +34,8 @@ class GameStorage {
     }
   }
 
-  int getBestTimeMilliseconds(int width, int height, int mineCount) {
-    final key = _getKey(width, height, mineCount);
+  int getBestTimeMilliseconds(int width, int height, int bombCount) {
+    final key = _getKey(width, height, bombCount);
     return _getIntValue(key, null);
   }
 

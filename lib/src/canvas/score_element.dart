@@ -1,12 +1,12 @@
 // NOTE: setGameManager must be called immediately after construction
 
 class ScoreElement extends PElement {
-  static const _minesLeftStr = "MINES LEFT:";
+  static const _bombsLeftStr = "BOMBS LEFT:";
   static const _valueOffset = 15;
 
   GameManager _gameManager;
 
-  String _clockStr, _minesStr, _bestTimeStr;
+  String _clockStr, _bombsStr, _bestTimeStr;
   num _textSize;
 
   ScoreElement() : super(400, 96);
@@ -19,9 +19,9 @@ class ScoreElement extends PElement {
   }
 
   void update() {
-    final newMineStr = _game.minesLeft.toString();
-    if(newMineStr != _minesStr) {
-      _minesStr = newMineStr;
+    final newBombStr = _game.bombsLeft.toString();
+    if(newBombStr != _bombsStr) {
+      _bombsStr = newBombStr;
       invalidateDraw();
     }
 
@@ -57,9 +57,9 @@ class ScoreElement extends PElement {
 
     ctx.fillStyle = 'black';
     ctx.textAlign = 'right';
-    ctx.fillText('MINES LEFT:', textSize, 0.5 * rowHeight);
+    ctx.fillText(_bombsLeftStr, textSize, 0.5 * rowHeight);
     ctx.textAlign = 'left';
-    ctx.fillText(_minesStr, textSize + _valueOffset, 0.5 * rowHeight);
+    ctx.fillText(_bombsStr, textSize + _valueOffset, 0.5 * rowHeight);
     ctx.textAlign = 'right';
     ctx.fillText('TIME:', textSize, 1.5 * rowHeight);
     ctx.textAlign = 'left';
@@ -79,7 +79,7 @@ class ScoreElement extends PElement {
 
   num _getTextSize(CanvasRenderingContext2D ctx) {
     if(_textSize == null) {
-      final mets = ctx.measureText(_minesLeftStr);
+      final mets = ctx.measureText(_bombsLeftStr);
       _textSize = mets.width;
     }
     return _textSize;

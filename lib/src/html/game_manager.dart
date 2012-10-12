@@ -1,5 +1,5 @@
 abstract class GameManager {
-  final int _width, _height, _mineCount;
+  final int _width, _height, _bombCount;
   final GameStorage _gameStorage = new GameStorage();
 
   Game _game;
@@ -7,7 +7,7 @@ abstract class GameManager {
   GlobalId _gameStateChangedId;
   int _setIntervalId;
 
-  GameManager(this._width, this._height, this._mineCount) {
+  GameManager(this._width, this._height, this._bombCount) {
     newGame();
   }
 
@@ -16,7 +16,7 @@ abstract class GameManager {
   EventRoot<EventArgs> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
   int get bestTimeMilliseconds =>
-      _gameStorage.getBestTimeMilliseconds(_width, _height, _mineCount);
+      _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
 
   void newGame() {
     if(_updatedEventId != null) {
@@ -26,7 +26,7 @@ abstract class GameManager {
       _game.stateChanged.remove(_gameStateChangedId);
       _gameStateChanged(GameState.reset);
     }
-    final f = new Field(_mineCount, _width, _height);
+    final f = new Field(_bombCount, _width, _height);
     _game = new Game(f);
     _updatedEventId = _game.updated.add(gameUpdated);
     _gameStateChangedId = _game.stateChanged.add(_gameStateChanged);

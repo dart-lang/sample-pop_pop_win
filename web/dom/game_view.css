@@ -30,7 +30,7 @@
   cursor: default;
 }
 
-#gameTable td.game-square.mine {
+#gameTable td.game-square.bomb {
   background: red;
   cursor: default;
 }
