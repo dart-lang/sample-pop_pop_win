@@ -8,8 +8,8 @@
 
 #source('texture_data.dart');
 
-const String _transparentTextureName = 'dart_transparent_01.png';
-const String _opaqueTextureName = 'dart_opaque_01.jpg';
+const String _transparentTextureName = 'images/dart_transparent_01.png';
+const String _opaqueTextureName = 'images/dart_opaque_01.jpg';
 
 const List<String> _audioNames =
   const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8',
