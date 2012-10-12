@@ -4990,7 +4990,7 @@ $.buildDynamicMetadata = function(inputTable){var result=[];for(var i=0;i<inputT
 
 $._Timer$repeating = function(milliSeconds,callback){var t1=new $._Timer(false,null);t1._Timer$repeating$2(milliSeconds,callback);return t1;};
 
-$._onLoaded = function(args){if($.eqB($._imageLoader.get$state(),'loaded')){var t1=$._audioLoader;t1=t1==null||$.eqB(t1.get$state(),'loaded');}else t1=false;if(t1){var opaqueImage=$._imageLoader.getResource$1('dart_opaque_01.jpg');var textureData=$.TextureData$($._getTextures($._imageLoader.getResource$1('dart_transparent_01.png'),opaqueImage));if(!($._audioLoader==null)){var map=$.HashMapImplementation$();for(t1=$.iterator($.CTC);t1.hasNext$0()===true;){var t2=t1.next$0();var path='audio/'+$.S(t2)+'.webm';map.operator$indexSet$2(t2,$._audioLoader.getResource$1(path));}$.populateAudio($._audioLoader.get$context(),map);}$.query('#loading').get$style().set$display('none');$._runppw(textureData);}};
+$._onLoaded = function(args){if($.eqB($._imageLoader.get$state(),'loaded')){var t1=$._audioLoader;t1=t1==null||$.eqB(t1.get$state(),'loaded');}else t1=false;if(t1){var opaqueImage=$._imageLoader.getResource$1('images/dart_opaque_01.jpg');var textureData=$.TextureData$($._getTextures($._imageLoader.getResource$1('images/dart_transparent_01.png'),opaqueImage));if(!($._audioLoader==null)){var map=$.HashMapImplementation$();for(t1=$.iterator($.CTC);t1.hasNext$0()===true;){var t2=t1.next$0();var path='audio/'+$.S(t2)+'.webm';map.operator$indexSet$2(t2,$._audioLoader.getResource$1(path));}$.populateAudio($._audioLoader.get$context(),map);}$.query('#loading').get$style().set$display('none');$._runppw(textureData);}};
 
 $.Primitives_parseDouble = function(string){$.checkString(string);if(!/^\s*(?:NaN|[+-]?(?:Infinity|(?:\.\d+|\d+(?:\.\d+)?)(?:[eE][+-]?\d+)?))\s*$/.test(string))throw $.$$throw($.FormatException$(string));var result=parseFloat(string);if($.isNaN(result)===true&&!$.eqB(string,'NaN'))throw $.$$throw($.FormatException$(string));return result;};
 
@@ -5024,7 +5024,7 @@ $.HashSetImplementation$ = function(){var t1=new $.HashSetImplementation(null);t
 
 $.dynamicBind = function(obj,name$,methods,arguments$){var tag=$.getTypeNameOf(obj);var method=methods[tag];if(method==null&&!($._dynamicMetadata0()==null))for(var i=0;i<$._dynamicMetadata0().length;++i){var entry=$._dynamicMetadata0()[i];if(entry.get$_lib4_set()[tag]){method=methods[entry.get$_tag()];if(!(method==null))break;}}if(method==null)method=methods['Object'];var proto=Object.getPrototypeOf(obj);if(method==null)method=function () {if (Object.getPrototypeOf(this) === proto) {throw new TypeError(name$ + " is not a function");} else {return Object.prototype[name$].apply(this, arguments);}};if(!proto.hasOwnProperty(name$))$.defineProperty(proto,name$,method);return method.apply(obj, arguments$);};
 
-$.main = function(){$._loadingBar=$.query('.sprite.loading_bar');$._loadingBar.get$style().set$display('block');$._loadingBar.get$style().set$width('0');$._imageLoader=$.ImageLoader$(['dart_transparent_01.png','dart_opaque_01.jpg']);$.add$1($._imageLoader.get$loaded(),$._onLoaded);$.add$1($._imageLoader.get$progress(),$._onProgress);$._imageLoader.load$0();if($.supportsAudio()===true){$._audioLoader=$.AudioLoader$($.AudioContext_AudioContext(),$.map($.$$($.CTC),$._getAudioPath));$.add$1($._audioLoader.get$loaded(),$._onLoaded);$.add$1($._audioLoader.get$progress(),$._onProgress);$._audioLoader.load$0();}};
+$.main = function(){$._loadingBar=$.query('.sprite.loading_bar');$._loadingBar.get$style().set$display('block');$._loadingBar.get$style().set$width('0');$._imageLoader=$.ImageLoader$(['images/dart_transparent_01.png','images/dart_opaque_01.jpg']);$.add$1($._imageLoader.get$loaded(),$._onLoaded);$.add$1($._imageLoader.get$progress(),$._onProgress);$._imageLoader.load$0();if($.supportsAudio()===true){$._audioLoader=$.AudioLoader$($.AudioContext_AudioContext(),$.map($.$$($.CTC),$._getAudioPath));$.add$1($._audioLoader.get$loaded(),$._onLoaded);$.add$1($._audioLoader.get$progress(),$._onProgress);$._audioLoader.load$0();}};
 
 $.ceil = function(receiver){return Math.ceil(receiver);};
 
@@ -5824,7 +5824,7 @@ $.Duration_MILLISECONDS_PER_DAY = 86400000;
 $.ResourceLoader__defaultSize = 2000;
 $._JsonParser_BACKSLASH = 92;
 $._JsonParser_CHAR_8 = 56;
-$._opaqueTextureName = 'dart_opaque_01.jpg';
+$._opaqueTextureName = 'images/dart_opaque_01.jpg';
 $.GameState_won = Isolate.$isolateProperties.CTC37;
 $._JsonParser_SLASH = 47;
 $._JsonParser_CHAR_9 = 57;
@@ -5836,7 +5836,7 @@ $._loadingBar = null;
 $._measurementScheduler = null;
 $.GameElement__backgroundSize = Isolate.$isolateProperties.CTC28;
 $._jsPortEquals = null;
-$._transparentTextureName = 'dart_transparent_01.png';
+$._transparentTextureName = 'images/dart_transparent_01.png';
 $.ScoreElement__bombsLeftStr = 'BOMBS LEFT:';
 $._cachedBrowserPrefix = null;
 $.GameState_lost = Isolate.$isolateProperties.CTC38;
