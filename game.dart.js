@@ -849,20 +849,17 @@ $$.Object = {"":
  createInverse$0: function() {
   return this.noSuchMethod$2("createInverse", []);
  },
- _updateCanvasSizeCore$1: function($0) {
-  return this.noSuchMethod$2("_updateCanvasSizeCore", [$0]);
- },
  clip$0: function() {
   return this.noSuchMethod$2("clip", []);
+ },
+ _updateCursor$1: function($0) {
+  return this.noSuchMethod$2("_updateCursor", [$0]);
  },
  clearInterval$1: function($0) {
   return this.noSuchMethod$2("clearInterval", [$0]);
  },
  _indexer$1: function($0) {
   return this.noSuchMethod$2("_indexer", [$0]);
- },
- _updateCursor$1: function($0) {
-  return this.noSuchMethod$2("_updateCursor", [$0]);
  },
  last$0: function() {
   return this.noSuchMethod$2("last", []);
@@ -3486,8 +3483,8 @@ $$.GameBackgroundElement = {"":
  ["_transforms", "cacheEnabled", "_updatedEventHandle", "_invalidatedEventHandle", "_cacheCanvas", "_width", "_height", "_alpha", "_lastDrawSize", "clip", "_lib1_parent", "_propertyValues", "_eventHandlers", "_disposed"],
  "super": "PElement",
  update$0: function(){if(!$.eqB(this.get$size(),this.get$_lib3_parent().get$size()))this.set$size(this.get$_lib3_parent().get$size());},
- drawOverride$1: function(ctx){var t1=$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$width(),1);if(typeof t1!=='number')throw $.iae(t1);var rightBgLoc=80*t1+32;var t2=$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$height(),1);if(typeof t2!=='number')throw $.iae(t2);var bottomBgLoc=80*t2+32;ctx.save$0();ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(),this.get$_lib3_parent().get$_scaledBoardOffset().get$y());this.get$_lib3_textureData().drawTextureKeyAt$2(ctx,'game_board_corner_top_left.png');this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));for(var i=1;$.ltB(i,$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$width(),1));++i){var xLoc=80*i+32;this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));}for(i=1;$.ltB(i,$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$height(),1));++i){var yLoc=80*i+32;this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));}ctx.restore$0();ctx.save$0();ctx.transform$6(this.get$_lib3_parent().get$_scale(),0,0,this.get$_lib3_parent().get$_scale(),0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC27.width,0);this._drawCorner$1(ctx);t1=$.CTC27.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();},
- _drawCorner$1: function(ctx){this.get$_lib3_textureData().drawTextureKeyAt$2(ctx,'background_top_left.png');this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'background_side_left.png',$.Coordinate$(0,$.CTC28.y));},
+ drawOverride$1: function(ctx){var t1=$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$width(),1);if(typeof t1!=='number')throw $.iae(t1);var rightBgLoc=80*t1+32;var t2=$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$height(),1);if(typeof t2!=='number')throw $.iae(t2);var bottomBgLoc=80*t2+32;ctx.save$0();ctx.translate$2(this.get$_lib3_parent().get$_scaledBoardOffset().get$x(),this.get$_lib3_parent().get$_scaledBoardOffset().get$y());this.get$_lib3_textureData().drawTextureKeyAt$2(ctx,'game_board_corner_top_left.png');this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_corner_top_right.png',$.Coordinate$(rightBgLoc,0));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_corner_bottom_left.png',$.Coordinate$(0,bottomBgLoc));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_corner_bottom_right.png',$.Coordinate$(rightBgLoc,bottomBgLoc));for(var i=1;$.ltB(i,$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$width(),1));++i){var xLoc=80*i+32;this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_top.png',$.Coordinate$(xLoc,0));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_bottom.png',$.Coordinate$(xLoc,bottomBgLoc));}for(i=1;$.ltB(i,$.sub(this.get$_lib3_parent().get$_lib3_game().get$field().get$height(),1));++i){var yLoc=80*i+32;this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_left.png',$.Coordinate$(0,yLoc));this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'game_board_side_right.png',$.Coordinate$(rightBgLoc,yLoc));}ctx.restore$0();ctx.save$0();ctx.transform$6(this.get$_lib3_parent().get$_scale(),0,0,this.get$_lib3_parent().get$_scale(),0,0);this._drawCorner$1(ctx);ctx.save$0();ctx.transform$6(-1,0,0,1,$.CTC28.width,0);this._drawCorner$1(ctx);t1=$.CTC28.height;ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();ctx.transform$6(1,0,0,-1,0,t1);this._drawCorner$1(ctx);ctx.restore$0();},
+ _drawCorner$1: function(ctx){this.get$_lib3_textureData().drawTextureKeyAt$2(ctx,'background_top_left.png');this.get$_lib3_textureData().drawTextureKeyAt$3(ctx,'background_side_left.png',$.Coordinate$(0,$.CTC29.y));},
  get$_lib3_parent: function(){return $.propertyTypeCast(this.get$parent(),'is$PCanvas').get$parent();},
  get$_lib3_textureData: function(){return this.get$_lib3_parent().get$_lib3_textureData();}
 };
@@ -3501,7 +3498,7 @@ $$.GameElement = {"":
  setGameManager$1: function(manager){this._scoreElement.setGameManager$1(manager);},
  get$visualChildCount: function(){return 1;},
  getVisualChild$1: function(index){return this._lib3_canvas;},
- update$0: function(){$.ElementParentImpl.prototype.update$0.call(this);var offset=$.add(this._scaledBoardOffset,$.CTC26);var t1=this._lib3_canvas;t1.setTopLeft$2(this._boardElement,offset);t1.setTopLeft$2(this._popAnimationLayer,offset);t1.setTopLeft$2(this._dartAnimationLayer,offset);var t2=this._scale;var t3=$.CTC27.width;if(typeof t3!=='number')throw $.iae(t3);var t4=40+t3;var t5=$.CTC28.x;if(typeof t5!=='number')throw $.iae(t5);t4-=t5;var t6=this._scoreElement;var t7=t6.get$width();if(typeof t7!=='number')throw $.iae(t7);t1.setTopLeft$2(t6,$.Coordinate$($.mul(t2,t4-t7),0));t6=t1.getChildTransform$1(t6);var t8=this._scale;t6.scale$2(t8,t8);t8=this._newGameElement;t6=$.mul(t8.get$width(),0.2);if(typeof t6!=='number')throw $.iae(t6);t6=t5+t6;t5=this._scale;if(typeof t5!=='number')throw $.iae(t5);t1.setTopLeft$2(t8,$.Coordinate$(t6*t5,0));t8=t1.getChildTransform$1(t8);var t9=this._scale;t8.scale$2(t9,t9);t9=$.mul(this._scale,0.5);t8=this._titleElement;var t10=$.mul(t8.get$width(),1.7);if(typeof t10!=='number')throw $.iae(t10);t1.setTopLeft$2(t8,$.Coordinate$($.mul(t9,t3-t10),0));t8=t1.getChildTransform$1(t8);t1=this._scale;if(typeof t1!=='number')throw $.iae(t1);t8.scale$2(1.7*t1,1.7*t1);},
+ update$0: function(){$.ElementParentImpl.prototype.update$0.call(this);var offset=$.add(this._scaledBoardOffset,$.CTC27);var t1=this._lib3_canvas;t1.setTopLeft$2(this._boardElement,offset);t1.setTopLeft$2(this._popAnimationLayer,offset);t1.setTopLeft$2(this._dartAnimationLayer,offset);var t2=this._scale;var t3=$.CTC28.width;if(typeof t3!=='number')throw $.iae(t3);var t4=40+t3;var t5=$.CTC29.x;if(typeof t5!=='number')throw $.iae(t5);t4-=t5;var t6=this._scoreElement;var t7=t6.get$width();if(typeof t7!=='number')throw $.iae(t7);t1.setTopLeft$2(t6,$.Coordinate$($.mul(t2,t4-t7),0));t6=t1.getChildTransform$1(t6);var t8=this._scale;t6.scale$2(t8,t8);t8=this._newGameElement;t6=$.mul(t8.get$width(),0.2);if(typeof t6!=='number')throw $.iae(t6);t6=t5+t6;t5=this._scale;if(typeof t5!=='number')throw $.iae(t5);t1.setTopLeft$2(t8,$.Coordinate$(t6*t5,0));t8=t1.getChildTransform$1(t8);var t9=this._scale;t8.scale$2(t9,t9);t9=$.mul(this._scale,0.5);t8=this._titleElement;var t10=$.mul(t8.get$width(),1.7);if(typeof t10!=='number')throw $.iae(t10);t1.setTopLeft$2(t8,$.Coordinate$($.mul(t9,t3-t10),0));t8=t1.getChildTransform$1(t8);t1=this._scale;if(typeof t1!=='number')throw $.iae(t1);t8.scale$2(1.7*t1,1.7*t1);},
  drawOverride$1: function(ctx){$.ElementParentImpl.prototype.drawOverride$1.call(this,ctx);this._drawTarget$1(ctx);},
  _drawTarget$1: function(ctx){var t1=this._targetX;if(!(t1==null)){var targetLoc=$.Vector$(t1,this._targetY).scale$1(80);ctx.set$fillStyle('rgba(255, 0, 0, 0.5)');$.CanvasUtil_centeredCircle(ctx,$.add(targetLoc.get$x(),40),$.add(targetLoc.get$y(),40),40);ctx.fill$0();}},
  _startPopAnimation$2: function(start,reveals){if(reveals==null)reveals=$.map($.filter($.map($.NumberEnumerable_NumberEnumerable$fromRange(0,$.get$length(this.get$game().get$field())),new $.GameElement__startPopAnimation_anon(this)),new $.GameElement__startPopAnimation_anon0()),new $.GameElement__startPopAnimation_anon1()).toList$0();var values=$.map($.$$(reveals),new $.GameElement__startPopAnimation_anon2(start)).toList$0();$.sort(values,new $.GameElement__startPopAnimation_anon3());for(var t1=$.iterator(values),t2=this._popAnimationLayer;t1.hasNext$0()===true;){var t3=t1.next$0();var c=$.index(t3,0);var initialOffset=$.index(t3,1);var squareOffset=$.index(t3,2);var delay=$.index(t3,3);var ss=this.get$game().getSquareState$2(c.get$x(),c.get$y());switch(ss){case $.CTC35:case $.CTC34:var frameCount=28;var texturePrefix='balloon_pop';break;case $.CTC46:frameCount=24;texturePrefix='balloon_explode';break;default:throw $.$$throw('not supported');}var request=$.TextureAnimationRequest$(texturePrefix,frameCount,squareOffset,delay,'balloon.png',initialOffset,0);switch(ss){case $.CTC35:case $.CTC34:$.add$1(request.get$started(),new $.GameElement__startPopAnimation_anon4(this));break;case $.CTC46:$.add$1(request.get$started(),new $.GameElement__startPopAnimation_anon5(this));break;}t2.add$1(request);}},
@@ -3517,7 +3514,7 @@ $$.GameElement = {"":
  get$_lib3_target: function() { return new $.BoundClosure3(this, '_lib3_target$2'); },
  _toggleFlag$2: function(x,y){var ss=this.get$game().getSquareState$2(x,y);if($.eqB(ss,$.CTC34)){this.get$game().setFlag$3(x,y,true);$.playAudio('Flag2');return true;}else if($.eqB(ss,$.CTC36)){this.get$game().setFlag$3(x,y,false);$.playAudio('Unflag2');return true;}return false;},
  _click$3: function(x,y,alt){var ss=this.get$game().getSquareState$2(x,y);var t1=alt===true;if(t1)if($.eqB(ss,$.CTC34)||$.eqB(ss,$.CTC36)){this._toggleFlag$2(x,y);var reveals=null;}else if($.eqB(ss,$.CTC35))if(this.get$game().canReveal$2(x,y)===true){this._startDartAnimation$1($.filter($.map($.$$(this.get$game().get$field().getAdjacentIndices$2(x,y)),new $.GameElement__click_anon(this)),new $.GameElement__click_anon0(this)).toList$0());reveals=this.get$game().reveal$2(x,y);}else reveals=null;else reveals=null;else if($.eqB(ss,$.CTC34)){this._startDartAnimation$1([$.Coordinate$(x,y)]);reveals=this.get$game().reveal$2(x,y);}else reveals=null;if(!(reveals==null)&&$.gtB($.get$length(reveals),0)){if(!t1)$.index(reveals,0);this._startPopAnimation$2($.Coordinate$(x,y),reveals);}else if($.eqB(this.get$game().get$state(),$.CTC38))this._startPopAnimation$1($.Coordinate$(x,y));},
- _updateSize$2: function(w,h){var t1=$.CTC27.width;var sizeX=$.GameElement__getScale(w,t1,1344);var sizeY=$.GameElement__getScale(h,$.CTC27.height,1344);var t2=$.Size$(sizeX,sizeY);this.set$size(t2);this._lib3_canvas.set$size(t2);this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC28.scale$1(this._scale);t2=this._scale;if(typeof t2!=='number')throw $.iae(t2);this._scaledInnerBox=$.Box$(256*t2,0,$.sub(sizeX,512*t2),sizeY);},
+ _updateSize$2: function(w,h){var t1=$.CTC28.width;var sizeX=$.GameElement__getScale(w,t1,1344);var sizeY=$.GameElement__getScale(h,$.CTC28.height,1344);var t2=$.Size$(sizeX,sizeY);this.set$size(t2);this._lib3_canvas.set$size(t2);this._scale=$.div(sizeX,t1);this._scaledBoardOffset=$.CTC29.scale$1(this._scale);t2=this._scale;if(typeof t2!=='number')throw $.iae(t2);this._scaledInnerBox=$.Box$(256*t2,0,$.sub(sizeX,512*t2),sizeY);},
  GameElement$1: function(textureData){var t1=this._lib3_canvas;t1.registerParent$1(this);t1.addElement$1(this._background);t1.addElement$1(this._boardElement);var t2=this._newGameElement;t1.addElement$1(t2);t1.addElement$1(this._scoreElement);t1.addElement$1(this._popAnimationLayer);var t3=this._titleElement;t1.addElement$1(t3);t1.addElement$1(this._dartAnimationLayer);$.add$1(t2.get$clicked(),new $.anon4());$.ClickManager_setClickable(t3,true);$.ClickManager_addHandler(t3,new $.anon5());}
 };
 
@@ -3527,8 +3524,7 @@ $$.GameRoot = {"":
  newGame$0: function(){$.GameManager.prototype.newGame$0.call(this);var t1=$.GameManager.prototype.get$game.call(this);this._gameElement.set$game(t1);this._requestFrame$0();},
  onGameStateChanged$1: function(newState){switch(newState){case $.CTC37:$.playAudio('ppw_win');break;}$.trackAnalyticsEvent('game',newState.name,$.toString(this.get$game().get$field()),null);},
  onNewBestTime$1: function(value){$.trackAnalyticsEvent('game','record',$.toString(this.get$game().get$field()),value);},
- _updateCanvasSize$0: function(){this._updateCanvasSizeCore$1($.Size$($.window().get$innerWidth(),$.window().get$innerHeight()));},
- _updateCanvasSizeCore$1: function(windowSize){var t1=this._lib3_canvas;$.indexSet(t1.get$attributes(),'width',windowSize.width);$.indexSet(t1.get$attributes(),'height',windowSize.height);this._requestFrame$0();},
+ _updateCanvasSize$0: function(){var t1=$.window().get$innerWidth();var t2=this._lib3_canvas;t2.set$width(t1);t2.set$height($.window().get$innerHeight());this._requestFrame$0();},
  _requestFrame$0: function(){if(!this._frameRequested){this._frameRequested=true;$.window().requestAnimationFrame$1(this.get$_onFrame());}},
  _onFrame$1: function(time){var t1=this._gameElement;var boardInnerBox=t1._scaledInnerBox;var t2=this._lib3_stage;var prettyScale=$.min(1,$.min($.div(t2.get$size().get$width(),boardInnerBox.get$width()),$.div(t2.get$size().get$height(),boardInnerBox.get$height())));var newDimensions=$.mul(t1.get$size(),prettyScale);var delta=$.Vector$($.sub(t2.get$size().get$width(),newDimensions.get$width()),$.sub(t2.get$size().get$height(),newDimensions.get$height())).scale$1(0.5).scale$1(1/prettyScale);var t3=this._gameElementTx;t3.setToScale$2(prettyScale,prettyScale);t3.translate$2(delta.get$x(),delta.get$y());var updated=t2.draw$0();this._frameRequested=false;if(updated===true)this._requestFrame$0();},
  get$_onFrame: function() { return new $.BoundClosure(this, '_onFrame$1'); },
@@ -4789,9 +4785,9 @@ $._JsonStringifier_stringify = function(object){var output=$.StringBuffer_String
 
 $.charCodeAt = function(receiver,index){if(typeof receiver==='string'){if(!(typeof index==='number'))throw $.$$throw($.ArgumentError$(index));if(index<0)throw $.$$throw($.IndexOutOfRangeException$(index));if(index>=receiver.length)throw $.$$throw($.IndexOutOfRangeException$(index));return receiver.charCodeAt(index);}else return receiver.charCodeAt$1(index);};
 
-$.removeRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.removeRange$2(start,length$);$.checkGrowable(receiver,'removeRange');if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));var receiverLength=receiver.length;if(start<0||start>=receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=start+length$;if(t1>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(t1));var t2=receiverLength-length$;$.Arrays_copy(receiver,t1,receiver,start,t2-start);$.set$length(receiver,t2);};
-
 $.mul = function(a,b){return typeof a==='number'&&typeof b==='number'?a * b:$.mul$slow(a,b);};
+
+$.removeRange = function(receiver,start,length$){if(!$.isJsArray(receiver))return receiver.removeRange$2(start,length$);$.checkGrowable(receiver,'removeRange');if(length$===0)return;$.checkNull(start);$.checkNull(length$);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));var receiverLength=receiver.length;if(start<0||start>=receiverLength)throw $.$$throw($.IndexOutOfRangeException$(start));var t1=start+length$;if(t1>receiverLength)throw $.$$throw($.IndexOutOfRangeException$(t1));var t2=receiverLength-length$;$.Arrays_copy(receiver,t1,receiver,start,t2-start);$.set$length(receiver,t2);};
 
 $.Primitives_parseInt = function(string){$.checkString(string);var match=/^\s*[+-]?(?:0(x)[a-f0-9]+|\d+)\s*$/i.exec(string);if(match==null)throw $.$$throw($.FormatException$(string));var base=!($.index(match,1)==null)?16:10;var result=parseInt(string, base);if($.isNaN(result)===true)throw $.$$throw($.FormatException$(string));return result;};
 
@@ -4898,8 +4894,6 @@ $._HttpRequestFactoryProvider_createHttpRequest = function(){return new XMLHttpR
 
 $.toString = function(value){if(typeof value == "object" && value !== null)if($.isJsArray(value))return $.Collections_collectionToString(value);else return value.toString$0();if(value === 0 && (1 / value) < 0)return '-0.0';if(value==null)return 'null';if(typeof value == "function")return 'Closure';return String(value);};
 
-$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
-
 $.requireArgumentNotNull = function(argument,argName){if(argument==null)throw $.$$throw($.NullArgumentException$(argName));};
 
 $.iterator = function(receiver){if($.isJsArray(receiver))return $.ListIterator$(receiver);return receiver.iterator$0();};
@@ -4934,6 +4928,8 @@ $.propertySet = function(object,property,value){object[property] = value;};
 
 $._BatteryManagerEventsImpl$ = function(_ptr){return new $._BatteryManagerEventsImpl(_ptr);};
 
+$._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof startIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
+
 $.checkGrowable = function(list,reason){if(!!(list.fixed$length))throw $.$$throw($.UnsupportedOperationException$(reason));};
 
 $.le = function(a,b){return typeof a==='number'&&typeof b==='number'?a <= b:$.le$slow(a,b);};
@@ -4943,8 +4939,6 @@ $.JSSyntaxRegExp$ = function(pattern,ignoreCase,multiLine){return new $.JSSyntax
 $.KeyValuePair$ = function(key,value){return new $.KeyValuePair(key,value);};
 
 $._DocumentEventsImpl$ = function(_ptr){return new $._DocumentEventsImpl(_ptr);};
-
-$._Lists_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof startIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(typeof endIndex!=='number')return $._Lists_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
 $.NullArgumentException$ = function(arg){return new $.NullArgumentException(arg,'Null argument: '+arg);};
 
@@ -5095,6 +5089,8 @@ $.Primitives_getDay = function(receiver){return receiver.isUtc===true?$.Primitiv
 $._LocalSendPortSync$_internal = function(_receivePort){return new $._LocalSendPortSync(_receivePort);};
 
 $._MainManagerStub$ = function(){return new $._MainManagerStub();};
+
+$.Arrays_indexOf = function(a,element,startIndex,endIndex){if(typeof a!=='string'&&(typeof a!=='object'||a===null||a.constructor!==Array&&!a.is$JavaScriptIndexingBehavior()))return $.Arrays_indexOf$bailout(1,a,element,startIndex,endIndex);if(startIndex>=a.length)return -1;if(startIndex<0)startIndex=0;for(var i=startIndex;i<endIndex;++i){if(i<0||i>=a.length)throw $.ioore(i);if($.eqB(a[i],element))return i;}return -1;};
 
 $.Coordinate$ = function(x,y){return new $.Coordinate(x,y);};
 
@@ -5364,13 +5360,13 @@ $.ResourceLoader__buildRORE = function(urlList){return $.map($.$$(urlList),new $
 
 $.isInfinite = function(receiver){if(!(typeof receiver==='number'))return receiver.isInfinite$0();return receiver == Infinity||receiver == -Infinity;};
 
-$._Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
-
 $._EventListenerListImpl$ = function(_ptr,_type){return new $._EventListenerListImpl(_ptr,_type);};
 
 $.iae = function(argument){throw $.$$throw($.ArgumentError$(argument));};
 
 $._DOMApplicationCacheEventsImpl$ = function(_ptr){return new $._DOMApplicationCacheEventsImpl(_ptr);};
+
+$._Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
 
 $.TextureInput__parseRect = function(input){return $.Box_Box$fromCoordSize($.Coordinate$($.index(input,'x'),$.index(input,'y')),$.Size$($.index(input,'w'),$.index(input,'h')));};
 
@@ -5424,8 +5420,6 @@ $.Stage$ = function(_canvas,_element){var t1=new $.Stage($.EventHandle$(),_canva
 
 $.regExpExec = function(regExp,str){var result=$.regExpGetNative(regExp).exec(str);if(result === null)return;return result;};
 
-$.Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
-
 $.Primitives_getSeconds = function(receiver){return receiver.isUtc===true?$.Primitives_lazyAsJsDate(receiver).getUTCSeconds():$.Primitives_lazyAsJsDate(receiver).getSeconds();};
 
 $.Util_getHashCode = function(source){for(var t1=$.iterator(source),hash=0;t1.hasNext$0()===true;){var t2=t1.next$0();var next=t2==null?0:$.hashCode(t2);if(typeof next!=='number')throw $.iae(next);var hash0=536870911&hash+next;var hash1=536870911&hash0+((524287&hash0)<<10>>>0);hash1=(hash1^$.shr(hash1,6))>>>0;hash=hash1;}hash0=536870911&hash+((67108863&hash)<<3>>>0);hash0=(hash0^$.shr(hash0,11))>>>0;return 536870911&hash0+((16383&hash0)<<15>>>0);};
@@ -5437,6 +5431,8 @@ $.contains = function(userAgent,name$){return userAgent.indexOf(name$)!==-1;};
 $._HttpRequestUploadEventsImpl$ = function(_ptr){return new $._HttpRequestUploadEventsImpl(_ptr);};
 
 $.Mouse_markMouseOver = function(stage,coordinate){$.requireArgumentNotNull(stage,'stage');var t1=!(coordinate==null);$.requireArgument(coordinate==null||coordinate.get$isValid()===true,'coordinate',null);var items=$.get$Mouse__stageMouseCacheProperty().get$1(stage);if(!(items==null)){$.forEach(items,new $.Mouse_markMouseOver_anon());$.get$Mouse__stageMouseCacheProperty().clear$1(stage);}if(t1){var hits=$.RetainedUtil_hitTest(stage,coordinate);$.get$Mouse__stageMouseCacheProperty().set$2(stage,hits);$.forEach(hits,new $.Mouse_markMouseOver_anon0());if($.gtB($.get$length(hits),0))$.get$Mouse_isMouseDirectlyOverProperty().set$2($.index(hits,0),true);return hits;}return;};
+
+$.Collections_map = function(source,destination,f){for(var t1=$.iterator(source);t1.hasNext$0()===true;)destination.push(f.call$1(t1.next$0()));return destination;};
 
 $.DualPivotQuicksort__doSort = function(a,left,right,compare){if($.leB($.sub(right,left),32))$.DualPivotQuicksort_insertionSort_(a,left,right,compare);else $.DualPivotQuicksort__dualPivotQuicksort(a,left,right,compare);};
 
@@ -5464,8 +5460,6 @@ $._IDBOpenDBRequestEventsImpl$ = function(_ptr){return new $._IDBOpenDBRequestEv
 
 $.sqrt = function(x){return Math.sqrt($.checkNum(x));};
 
-$.map = function(receiver,f){if(!$.isJsArray(receiver))return receiver.map$1(f);else return $.Collections_map(receiver,[],f);};
-
 $._serializeMessage = function(message){if($._globalState().get$needSerialization()===true)return $._JsSerializer$0().traverse$1(message);else return $._JsCopier$().traverse$1(message);};
 
 $.IndexOutOfRangeException$ = function(_value){return new $.IndexOutOfRangeException(_value);};
@@ -5477,6 +5471,8 @@ $._IDBVersionChangeRequestEventsImpl$ = function(_ptr){return new $._IDBVersionC
 $._MessageTraverserVisitedMap$ = function(){return new $._MessageTraverserVisitedMap();};
 
 $.sin = function(x){return Math.sin($.checkNum(x));};
+
+$.map = function(receiver,f){if(!$.isJsArray(receiver))return receiver.map$1(f);else return $.Collections_map(receiver,[],f);};
 
 $._MessageTraverserVisitedMap$0 = function(){return new $._MessageTraverserVisitedMap0();};
 
@@ -5494,12 +5490,12 @@ $._DOMWindowCrossFrameImpl__createSafe = function(w){var t1=$.window();if(w==nul
 
 $._HistoryCrossFrameImpl__createSafe = function(h){var t1=$.window().get$history();if(h==null?t1==null:h===t1)return h;else return $._HistoryCrossFrameImpl$(h);};
 
+$._LocationCrossFrameImpl__createSafe = function(location$){var t1=$.window().get$location();if(location$==null?t1==null:location$===t1)return location$;else return $._LocationCrossFrameImpl$(location$);};
+
 $.ElementMouseEventArgs_ElementMouseEventArgs = function(element,mouseEvent){return $.ElementMouseEventArgs$_internal(element,mouseEvent.get$shiftKey());};
 
 $.defineProperty = function(obj,property,value){Object.defineProperty(obj, property,
       {value: value, enumerable: false, writable: true, configurable: true});};
-
-$._LocationCrossFrameImpl__createSafe = function(location$){var t1=$.window().get$location();if(location$==null?t1==null:location$===t1)return location$;else return $._LocationCrossFrameImpl$(location$);};
 
 $.lt = function(a,b){return typeof a==='number'&&typeof b==='number'?a < b:$.lt$slow(a,b);};
 
@@ -5595,7 +5591,7 @@ $.CTC65 = true;
 $.CTC23 = new Isolate.$isolateProperties.ConstantMap(6, {'childList': true, 'attributes': true, 'characterData': true, 'subtree': true, 'attributeOldValue': true, 'characterDataOldValue': true}, Isolate.$isolateProperties.CTC64);
 $.CTC66 = 'structured clone of ArrayBufferView';
 $.CTC9 = new Isolate.$isolateProperties.NotImplementedException('structured clone of ArrayBufferView');
-$.CTC29 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC1);
+$.CTC26 = new Isolate.$isolateProperties.ConstantMap(0, {}, Isolate.$isolateProperties.CTC1);
 $.CTC67 = 'flagged';
 $.CTC36 = new Isolate.$isolateProperties.SquareState('flagged');
 $.CTC15 = new Isolate.$isolateProperties._DeletedKeySentinel();
@@ -5618,11 +5614,11 @@ $.CTC76 = 'started';
 $.CTC45 = new Isolate.$isolateProperties.GameState('started');
 $.CTC77 = 2048;
 $.CTC78 = 1536;
-$.CTC27 = new Isolate.$isolateProperties.Size(2048, 1536);
+$.CTC28 = new Isolate.$isolateProperties.Size(2048, 1536);
 $.CTC79 = 0;
 $.CTC57 = new Isolate.$isolateProperties.Coordinate(0, 0);
 $.CTC80 = 32;
-$.CTC26 = new Isolate.$isolateProperties.Coordinate(32, 32);
+$.CTC27 = new Isolate.$isolateProperties.Coordinate(32, 32);
 $.CTC81 = 100;
 $.CTC30 = new Isolate.$isolateProperties.Size(100, 100);
 $.CTC82 = 'safe';
@@ -5633,7 +5629,7 @@ $.CTC84 = 'The input sequence is empty.';
 $.CTC54 = new Isolate.$isolateProperties.InvalidOperationException('The input sequence is empty.');
 $.CTC85 = 352;
 $.CTC86 = 96;
-$.CTC28 = new Isolate.$isolateProperties.Vector(352, 96);
+$.CTC29 = new Isolate.$isolateProperties.Vector(352, 96);
 $.CTC87 = -88;
 $.CTC49 = new Isolate.$isolateProperties.Vector(-88, -88);
 $.CTC18 = new Isolate.$isolateProperties._UndefinedValue();
@@ -5810,7 +5806,7 @@ $._botHelperRandom = null;
 $.GlobalId__globalId = 0;
 $._jsPortDebug = null;
 $._JsonParser_CHAR_U = 117;
-$.GameElement__boardOffset = Isolate.$isolateProperties.CTC28;
+$.GameElement__boardOffset = Isolate.$isolateProperties.CTC29;
 $.SquareElement__size = 80;
 $._JsonParser_NUMBER_LITERAL = 45;
 $.ReceivePortSync__portIdCount = null;
@@ -5839,7 +5835,7 @@ $.Duration_SECONDS_PER_MINUTE = 60;
 $._pendingRequests = null;
 $._loadingBar = null;
 $._measurementScheduler = null;
-$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC27;
+$.GameElement__backgroundSize = Isolate.$isolateProperties.CTC28;
 $._jsPortEquals = null;
 $._transparentTextureName = 'dart_transparent_01.png';
 $._cachedBrowserPrefix = null;
@@ -6392,7 +6388,7 @@ $.$defineNativeClass('DocumentFragment', [], {
  translate$2: function(arg0, arg1) { return this.get$translate().call$2(arg0, arg1); },
  get$id: function(){return '';},
  get$parent: function(){return;},
- get$attributes: function(){return $.CTC29;},
+ get$attributes: function(){return $.CTC26;},
  get$style: function(){return $.Element_Element$tag('div').get$style();},
  set$hidden: function(value){throw $.$$throw($.UnsupportedOperationException$('Hidden can\'t be set for document fragments.'));},
  get$on: function(){return $._ElementEventsImpl$(this);},
