@@ -14,5 +14,4 @@ function build {
   echo
 }
 
-build './html/game.dart'
-build './html/dom/game_dom.dart'
+build './web/game.dart'
