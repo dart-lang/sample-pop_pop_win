@@ -282,12 +282,10 @@ class Game {
     assert(_startTime != null);
   }
 
-  // DARTBUG: http://code.google.com/p/dart/issues/detail?id=5807
-  // had to rename SquareState param from 'state' to 'ss'
-  int _getAdjacentCount(int x, int y, SquareState ss) {
+  int _getAdjacentCount(int x, int y, SquareState state) {
     int val = 0;
     for(final i in field.getAdjacentIndices(x, y)) {
-      if(_states[i] == ss) {
+      if(_states[i] == state) {
         val++;
       }
     }
