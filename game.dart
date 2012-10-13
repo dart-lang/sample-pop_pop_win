@@ -127,12 +127,11 @@ void _onPopupClick(MouseEvent args) {
 }
 
 void _onKeyDown(KeyboardEvent args) {
-  switch(args.keyIdentifier) {
-    case 'U+001B': // esc
+  switch(args.keyCode) {
+    case 27: // esc
       _toggleAbout(false);
       break;
-    case 'U+003F': // ?
-    case 'U+0048': // h
+    case 72: // h
       _toggleAbout();
       break;
   }
