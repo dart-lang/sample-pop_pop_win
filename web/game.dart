@@ -10,6 +10,7 @@
 
 const String _transparentTextureName = 'images/dart_transparent_01.png';
 const String _opaqueTextureName = 'images/dart_opaque_01.jpg';
+const String _transparentStaticTexture = 'images/transparent_static.png';
 
 const List<String> _audioNames =
   const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8',
@@ -27,7 +28,9 @@ main() {
   _loadingBar.style.display = 'block';
   _loadingBar.style.width = '0';
 
-  _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName]);
+  _imageLoader = new ImageLoader([_transparentTextureName,
+                                  _opaqueTextureName,
+                                  _transparentStaticTexture]);
   _imageLoader.loaded.add(_onLoaded);
   _imageLoader.progress.add(_onProgress);
   _imageLoader.load();
@@ -75,8 +78,9 @@ void _onLoaded(args) {
     //
     final opaqueImage = _imageLoader.getResource(_opaqueTextureName);
     final transparentImage = _imageLoader.getResource(_transparentTextureName);
+    final staticTransparentImage = _imageLoader.getResource(_transparentStaticTexture);
 
-    final textures = _getTextures(transparentImage, opaqueImage);
+    final textures = _getTextures(transparentImage, opaqueImage, staticTransparentImage);
 
     final textureData = new TextureData(textures);
 

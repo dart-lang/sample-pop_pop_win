@@ -1,5 +1,5 @@
 Map<String, TextureInput> _getTextures(ImageElement transparentElement,
-    ImageElement opaqueElement) {
+    ImageElement opaqueElement, ImageElement transparentStaticElement) {
 
   final frames = <String, TextureInput>{};
 
@@ -13,7 +13,41 @@ Map<String, TextureInput> _getTextures(ImageElement transparentElement,
     frames[key] = parsed;
   });
 
+  _getTransparentStaticItems().forEach((String key, Map<String, Dynamic> value) {
+    final parsed = new TextureInput.fromHash(key, value, transparentStaticElement);
+    frames[key] = parsed;
+  });
+
   return frames;
+}
+
+Map _getTransparentStaticItems() {
+  return {
+
+"button_new_game.png":
+{
+  "frame": {"x":398,"y":150,"w":294,"h":94},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":294,"h":94},
+  "sourceSize": {"w":294,"h":94}
+},
+"button_new_game_clicked.png":
+{
+  "frame": {"x":504,"y":0,"w":292,"h":94},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":292,"h":94},
+  "sourceSize": {"w":292,"h":94}
+},
+"logo_win.png":
+{
+  "frame": {"x":0,"y":88,"w":318,"h":96},
+  "rotated": false,
+  "trimmed": false,
+  "spriteSourceSize": {"x":0,"y":0,"w":318,"h":96},
+  "sourceSize": {"w":318,"h":96}
+}};
 }
 
 Map _getOpaqueItems() {
@@ -662,22 +696,6 @@ Map _getTransparentItems() {
   "trimmed": true,
   "spriteSourceSize": {"x":49,"y":56,"w":136,"h":148},
   "sourceSize": {"w":256,"h":256}
-},
-"button_new_game.png":
-{
-  "frame": {"x":190,"y":610,"w":294,"h":92},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":2,"y":2,"w":294,"h":92},
-  "sourceSize": {"w":296,"h":96}
-},
-"button_new_game_clicked.png":
-{
-  "frame": {"x":190,"y":906,"w":292,"h":92},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":4,"y":3,"w":292,"h":92},
-  "sourceSize": {"w":296,"h":96}
 },
 "dart_fly_0000.png":
 {
@@ -1558,13 +1576,5 @@ Map _getTransparentItems() {
   "trimmed": true,
   "spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
   "sourceSize": {"w":1024,"h":768}
-},
-"logo_win.png":
-{
-  "frame": {"x":190,"y":290,"w":318,"h":96},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":0,"y":0,"w":318,"h":96},
-  "sourceSize": {"w":320,"h":96}
 }};
 }
