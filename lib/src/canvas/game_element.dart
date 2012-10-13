@@ -43,7 +43,7 @@ class GameElement extends ElementParentImpl {
     _canvas.addElement(_titleElement);
     _canvas.addElement(_dartAnimationLayer);
 
-    _newGameElement.clicked.add((args) => playAudio('Click1'));
+    _newGameElement.clicked.add((args) => playAudio('click'));
 
     ClickManager.setClickable(_titleElement, true);
     ClickManager.addHandler(_titleElement, (args) {
@@ -236,7 +236,7 @@ class GameElement extends ElementParentImpl {
 
   void _startDartAnimation(List<Coordinate> points) {
     assert(points.length >= 1);
-    playAudio('DartThrow3');
+    playAudio('throw');
     for(final point in points) {
       final squareOffset = _dartAnimationOffset +
           new Vector(SquareElement._size * point.x, SquareElement._size * point.y);
@@ -265,11 +265,11 @@ class GameElement extends ElementParentImpl {
     final ss = game.getSquareState(x, y);
     if(ss == SquareState.hidden) {
       game.setFlag(x, y, true);
-      playAudio('Flag2');
+      playAudio('flag');
       return true;
     } else if(ss == SquareState.flagged) {
       game.setFlag(x, y, false);
-      playAudio('Unflag2');
+      playAudio('unflag');
       return true;
     }
     return false;
