@@ -47,7 +47,8 @@ class GameElement extends ElementParentImpl {
 
     ClickManager.setClickable(_titleElement, true);
     ClickManager.addHandler(_titleElement, (args) {
-      window.open('https://github.com/dart-lang/pop-pop-win', '_blank');
+      // TODO: this screams for global event handling
+      window.location.assign('#about');
     });
   }
 

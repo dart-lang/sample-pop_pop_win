@@ -13,7 +13,7 @@ body {
 #popup {
   font-family: 'Josefin Sans', serif;
   position: relative;
-  display: inline-block;
+  display: none;
   text-align: center;
   width: 400px;
   background: rgb(247,235,203);
