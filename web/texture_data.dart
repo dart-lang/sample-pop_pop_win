@@ -283,439 +283,439 @@ Map _getTransparentItems() {
 
 "balloon_explode_0000.png":
 {
-  "frame": {"x":1840,"y":1306,"w":80,"h":84},
+  "frame": {"x":1762,"y":1058,"w":80,"h":86},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":89,"y":89,"w":80,"h":84},
+  "spriteSourceSize": {"x":89,"y":87,"w":80,"h":86},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0001.png":
 {
-  "frame": {"x":736,"y":650,"w":188,"h":188},
+  "frame": {"x":446,"y":1332,"w":208,"h":208},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":43,"y":25,"w":188,"h":188},
+  "spriteSourceSize": {"x":35,"y":13,"w":208,"h":208},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0002.png":
 {
-  "frame": {"x":512,"y":1088,"w":216,"h":222},
-  "rotated": true,
+  "frame": {"x":868,"y":612,"w":230,"h":230},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":23,"y":19,"w":216,"h":222},
+  "spriteSourceSize": {"x":13,"y":13,"w":230,"h":230},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0003.png":
 {
-  "frame": {"x":284,"y":868,"w":226,"h":216},
-  "rotated": false,
+  "frame": {"x":1128,"y":840,"w":226,"h":222},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":17,"y":17,"w":226,"h":216},
+  "spriteSourceSize": {"x":18,"y":12,"w":226,"h":222},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0004.png":
 {
-  "frame": {"x":284,"y":650,"w":226,"h":216},
-  "rotated": false,
+  "frame": {"x":1072,"y":1074,"w":228,"h":218},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":17,"y":17,"w":226,"h":216},
+  "spriteSourceSize": {"x":16,"y":16,"w":228,"h":218},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0005.png":
 {
-  "frame": {"x":512,"y":650,"w":222,"h":218},
-  "rotated": false,
+  "frame": {"x":1100,"y":610,"w":228,"h":218},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":16,"y":15,"w":222,"h":218},
+  "spriteSourceSize": {"x":16,"y":15,"w":228,"h":218},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0006.png":
 {
-  "frame": {"x":512,"y":870,"w":222,"h":216},
-  "rotated": false,
+  "frame": {"x":908,"y":844,"w":228,"h":218},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":16,"y":16,"w":222,"h":216},
+  "spriteSourceSize": {"x":15,"y":15,"w":228,"h":218},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0007.png":
 {
-  "frame": {"x":1650,"y":462,"w":224,"h":216},
-  "rotated": false,
+  "frame": {"x":1362,"y":234,"w":224,"h":218},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":15,"y":16,"w":224,"h":216},
+  "spriteSourceSize": {"x":15,"y":14,"w":224,"h":218},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0008.png":
 {
-  "frame": {"x":1424,"y":462,"w":224,"h":216},
-  "rotated": false,
+  "frame": {"x":1320,"y":608,"w":224,"h":218},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":15,"y":15,"w":224,"h":216},
+  "spriteSourceSize": {"x":15,"y":14,"w":224,"h":218},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0009.png":
 {
-  "frame": {"x":1442,"y":234,"w":226,"h":216},
+  "frame": {"x":656,"y":1314,"w":226,"h":224},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":13,"y":15,"w":226,"h":216},
+  "spriteSourceSize": {"x":13,"y":14,"w":226,"h":224},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0010.png":
 {
-  "frame": {"x":1214,"y":234,"w":226,"h":224},
+  "frame": {"x":842,"y":1078,"w":228,"h":230},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":14,"y":14,"w":226,"h":224},
+  "spriteSourceSize": {"x":12,"y":13,"w":228,"h":230},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0011.png":
 {
-  "frame": {"x":1660,"y":232,"w":228,"h":222},
-  "rotated": true,
+  "frame": {"x":1298,"y":2,"w":228,"h":230},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":15,"w":228,"h":222},
+  "spriteSourceSize": {"x":12,"y":13,"w":228,"h":230},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0012.png":
 {
-  "frame": {"x":984,"y":234,"w":228,"h":224},
+  "frame": {"x":1132,"y":236,"w":228,"h":230},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":13,"w":228,"h":224},
+  "spriteSourceSize": {"x":12,"y":13,"w":228,"h":230},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0013.png":
 {
-  "frame": {"x":754,"y":234,"w":228,"h":226},
+  "frame": {"x":676,"y":846,"w":230,"h":230},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":13,"w":228,"h":226},
+  "spriteSourceSize": {"x":11,"y":13,"w":230,"h":230},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0014.png":
 {
-  "frame": {"x":522,"y":234,"w":230,"h":228},
+  "frame": {"x":1066,"y":2,"w":230,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":12,"w":230,"h":228},
+  "spriteSourceSize": {"x":11,"y":11,"w":230,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0015.png":
 {
-  "frame": {"x":1416,"y":2,"w":230,"h":230},
+  "frame": {"x":900,"y":236,"w":230,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":12,"w":230,"h":230},
+  "spriteSourceSize": {"x":11,"y":12,"w":230,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0016.png":
 {
-  "frame": {"x":1184,"y":2,"w":230,"h":230},
+  "frame": {"x":834,"y":2,"w":230,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":12,"w":230,"h":230},
+  "spriteSourceSize": {"x":12,"y":12,"w":230,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0017.png":
 {
-  "frame": {"x":718,"y":2,"w":232,"h":230},
+  "frame": {"x":666,"y":244,"w":232,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":13,"w":232,"h":230},
+  "spriteSourceSize": {"x":12,"y":12,"w":232,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0018.png":
 {
-  "frame": {"x":952,"y":2,"w":230,"h":230},
+  "frame": {"x":634,"y":612,"w":232,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":13,"w":230,"h":230},
+  "spriteSourceSize": {"x":11,"y":12,"w":232,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0019.png":
 {
-  "frame": {"x":484,"y":2,"w":232,"h":230},
+  "frame": {"x":442,"y":846,"w":232,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":13,"w":232,"h":230},
+  "spriteSourceSize": {"x":12,"y":12,"w":232,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0020.png":
 {
-  "frame": {"x":288,"y":234,"w":232,"h":226},
+  "frame": {"x":408,"y":1098,"w":232,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":13,"w":232,"h":226},
+  "spriteSourceSize": {"x":12,"y":11,"w":232,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0021.png":
 {
-  "frame": {"x":250,"y":2,"w":232,"h":230},
+  "frame": {"x":400,"y":612,"w":232,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":12,"w":232,"h":230},
+  "spriteSourceSize": {"x":12,"y":12,"w":232,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0022.png":
 {
-  "frame": {"x":1648,"y":2,"w":230,"h":228},
+  "frame": {"x":208,"y":864,"w":232,"h":232},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":13,"y":13,"w":230,"h":228},
+  "spriteSourceSize": {"x":12,"y":11,"w":232,"h":232},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_explode_0023.png":
 {
-  "frame": {"x":1232,"y":460,"w":190,"h":214},
-  "rotated": false,
+  "frame": {"x":882,"y":1310,"w":230,"h":228},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":23,"y":17,"w":190,"h":214},
+  "spriteSourceSize": {"x":12,"y":12,"w":230,"h":228},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0000.png":
 {
-  "frame": {"x":1120,"y":982,"w":142,"h":114},
+  "frame": {"x":1236,"y":1304,"w":142,"h":122},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":60,"y":66,"w":142,"h":114},
+  "spriteSourceSize": {"x":60,"y":62,"w":142,"h":122},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0001.png":
 {
-  "frame": {"x":522,"y":464,"w":230,"h":184},
-  "rotated": false,
+  "frame": {"x":642,"y":1080,"w":232,"h":198},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":16,"y":31,"w":230,"h":184},
+  "spriteSourceSize": {"x":15,"y":23,"w":232,"h":198},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0002.png":
 {
-  "frame": {"x":288,"y":462,"w":232,"h":186},
-  "rotated": false,
+  "frame": {"x":206,"y":1144,"w":234,"h":200},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":15,"y":30,"w":232,"h":186},
+  "spriteSourceSize": {"x":14,"y":22,"w":234,"h":200},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0003.png":
 {
-  "frame": {"x":2,"y":1056,"w":236,"h":186},
+  "frame": {"x":2,"y":1144,"w":238,"h":202},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":30,"w":236,"h":186},
+  "spriteSourceSize": {"x":11,"y":22,"w":238,"h":202},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0004.png":
 {
-  "frame": {"x":2,"y":818,"w":236,"h":186},
+  "frame": {"x":628,"y":2,"w":240,"h":204},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":31,"w":236,"h":186},
+  "spriteSourceSize": {"x":10,"y":21,"w":240,"h":204},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0005.png":
 {
-  "frame": {"x":2,"y":580,"w":236,"h":186},
+  "frame": {"x":458,"y":248,"w":242,"h":206},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":12,"y":31,"w":236,"h":186},
+  "spriteSourceSize": {"x":9,"y":20,"w":242,"h":206},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0006.png":
 {
-  "frame": {"x":754,"y":462,"w":238,"h":184},
-  "rotated": false,
+  "frame": {"x":422,"y":2,"w":244,"h":204},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":10,"y":33,"w":238,"h":184},
+  "spriteSourceSize": {"x":8,"y":22,"w":244,"h":204},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0007.png":
 {
-  "frame": {"x":994,"y":460,"w":236,"h":182},
-  "rotated": false,
+  "frame": {"x":250,"y":284,"w":248,"h":206},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":35,"w":236,"h":182},
+  "spriteSourceSize": {"x":5,"y":21,"w":248,"h":206},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0008.png":
 {
-  "frame": {"x":994,"y":644,"w":236,"h":180},
-  "rotated": false,
+  "frame": {"x":2,"y":892,"w":250,"h":204},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":36,"w":236,"h":180},
+  "spriteSourceSize": {"x":4,"y":23,"w":250,"h":204},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0009.png":
 {
-  "frame": {"x":1424,"y":680,"w":236,"h":178},
-  "rotated": false,
+  "frame": {"x":196,"y":612,"w":250,"h":202},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":11,"y":37,"w":236,"h":178},
+  "spriteSourceSize": {"x":4,"y":25,"w":250,"h":202},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0010.png":
 {
-  "frame": {"x":102,"y":1294,"w":84,"h":106},
-  "rotated": false,
+  "frame": {"x":1292,"y":1212,"w":88,"h":110},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":83,"y":79,"w":84,"h":106},
+  "spriteSourceSize": {"x":82,"y":78,"w":88,"h":110},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0011.png":
 {
-  "frame": {"x":1872,"y":1028,"w":88,"h":112},
-  "rotated": true,
+  "frame": {"x":1544,"y":948,"w":92,"h":116},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":81,"y":76,"w":88,"h":112},
+  "spriteSourceSize": {"x":80,"y":75,"w":92,"h":116},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0012.png":
 {
-  "frame": {"x":478,"y":1306,"w":94,"h":118},
+  "frame": {"x":1478,"y":1440,"w":98,"h":122},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":78,"y":73,"w":94,"h":118},
+  "spriteSourceSize": {"x":77,"y":72,"w":98,"h":122},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0013.png":
 {
-  "frame": {"x":1406,"y":976,"w":100,"h":124},
+  "frame": {"x":1730,"y":1424,"w":104,"h":128},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":74,"y":70,"w":100,"h":124},
+  "spriteSourceSize": {"x":73,"y":69,"w":104,"h":128},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0014.png":
 {
-  "frame": {"x":1300,"y":980,"w":104,"h":130},
-  "rotated": false,
+  "frame": {"x":1726,"y":948,"w":108,"h":134},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":72,"y":67,"w":104,"h":130},
+  "spriteSourceSize": {"x":71,"y":66,"w":108,"h":134},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0015.png":
 {
-  "frame": {"x":1874,"y":852,"w":110,"h":136},
-  "rotated": true,
+  "frame": {"x":924,"y":470,"w":114,"h":140},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":68,"y":64,"w":110,"h":136},
+  "spriteSourceSize": {"x":67,"y":63,"w":114,"h":140},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0016.png":
 {
-  "frame": {"x":1390,"y":860,"w":114,"h":140},
+  "frame": {"x":506,"y":492,"w":118,"h":144},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":66,"y":62,"w":114,"h":140},
+  "spriteSourceSize": {"x":65,"y":62,"w":118,"h":144},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0017.png":
 {
-  "frame": {"x":998,"y":982,"w":120,"h":144},
+  "frame": {"x":1112,"y":1304,"w":122,"h":150},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":62,"y":60,"w":120,"h":144},
+  "spriteSourceSize": {"x":63,"y":58,"w":122,"h":150},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0018.png":
 {
-  "frame": {"x":872,"y":1006,"w":124,"h":148},
+  "frame": {"x":2,"y":1384,"w":128,"h":154},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":60,"y":58,"w":124,"h":148},
+  "spriteSourceSize": {"x":59,"y":56,"w":128,"h":154},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0019.png":
 {
-  "frame": {"x":1260,"y":826,"w":128,"h":152},
-  "rotated": false,
+  "frame": {"x":764,"y":478,"w":132,"h":158},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":57,"y":56,"w":128,"h":152},
+  "spriteSourceSize": {"x":57,"y":54,"w":132,"h":158},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0020.png":
 {
-  "frame": {"x":1128,"y":826,"w":130,"h":154},
+  "frame": {"x":308,"y":1380,"w":136,"h":160},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":56,"y":55,"w":130,"h":154},
+  "spriteSourceSize": {"x":54,"y":53,"w":136,"h":160},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0021.png":
 {
-  "frame": {"x":736,"y":1000,"w":134,"h":158},
-  "rotated": false,
+  "frame": {"x":1040,"y":470,"w":138,"h":164},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":53,"y":53,"w":134,"h":158},
+  "spriteSourceSize": {"x":53,"y":51,"w":138,"h":164},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0022.png":
 {
-  "frame": {"x":1884,"y":326,"w":136,"h":160},
+  "frame": {"x":1832,"y":2,"w":142,"h":168},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":52,"y":51,"w":136,"h":160},
+  "spriteSourceSize": {"x":51,"y":49,"w":142,"h":168},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0023.png":
 {
-  "frame": {"x":1884,"y":186,"w":138,"h":162},
+  "frame": {"x":1608,"y":610,"w":146,"h":170},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":51,"y":50,"w":138,"h":162},
+  "spriteSourceSize": {"x":48,"y":48,"w":146,"h":170},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0024.png":
 {
-  "frame": {"x":336,"y":1224,"w":140,"h":160},
-  "rotated": false,
+  "frame": {"x":1438,"y":460,"w":146,"h":172},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":49,"y":51,"w":140,"h":160},
+  "spriteSourceSize": {"x":48,"y":47,"w":146,"h":172},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0025.png":
 {
-  "frame": {"x":1874,"y":690,"w":140,"h":160},
-  "rotated": false,
+  "frame": {"x":1794,"y":458,"w":148,"h":174},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":49,"y":51,"w":140,"h":160},
+  "spriteSourceSize": {"x":47,"y":46,"w":148,"h":174},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0026.png":
 {
-  "frame": {"x":736,"y":840,"w":142,"h":158},
-  "rotated": false,
+  "frame": {"x":132,"y":1384,"w":150,"h":174},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":47,"y":52,"w":142,"h":158},
+  "spriteSourceSize": {"x":45,"y":46,"w":150,"h":174},
   "sourceSize": {"w":256,"h":256}
 },
 "balloon_pop_0027.png":
 {
-  "frame": {"x":736,"y":1160,"w":136,"h":148},
-  "rotated": false,
+  "frame": {"x":1794,"y":608,"w":148,"h":172},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":49,"y":56,"w":136,"h":148},
+  "spriteSourceSize": {"x":46,"y":46,"w":148,"h":172},
   "sourceSize": {"w":256,"h":256}
 },
 "dart_fly_0000.png":
 {
-  "frame": {"x":880,"y":840,"w":108,"h":164},
-  "rotated": false,
+  "frame": {"x":1796,"y":330,"w":126,"h":194},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":869,"y":485,"w":108,"h":164},
+  "spriteSourceSize": {"x":869,"y":486,"w":126,"h":194},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0001.png":
 {
-  "frame": {"x":2,"y":290,"w":186,"h":288},
+  "frame": {"x":2,"y":2,"w":210,"h":320},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":794,"y":385,"w":186,"h":288},
+  "spriteSourceSize": {"x":794,"y":385,"w":210,"h":320},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0002.png":
 {
-  "frame": {"x":2,"y":2,"w":246,"h":286},
+  "frame": {"x":2,"y":324,"w":246,"h":286},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":736,"y":317,"w":246,"h":286},
@@ -723,39 +723,39 @@ Map _getTransparentItems() {
 },
 "dart_fly_0003.png":
 {
-  "frame": {"x":1662,"y":680,"w":210,"h":220},
+  "frame": {"x":1582,"y":228,"w":212,"h":220},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":690,"y":271,"w":210,"h":220},
+  "spriteSourceSize": {"x":689,"y":271,"w":212,"h":220},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0004.png":
 {
-  "frame": {"x":1880,"y":2,"w":182,"h":166},
+  "frame": {"x":1832,"y":146,"w":182,"h":166},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":653,"y":243,"w":182,"h":166},
+  "spriteSourceSize": {"x":653,"y":244,"w":182,"h":166},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0005.png":
 {
-  "frame": {"x":874,"y":1156,"w":160,"h":120},
-  "rotated": true,
+  "frame": {"x":1352,"y":834,"w":162,"h":120},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":622,"y":231,"w":160,"h":120},
+  "spriteSourceSize": {"x":621,"y":231,"w":162,"h":120},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0006.png":
 {
-  "frame": {"x":1654,"y":902,"w":142,"h":98},
-  "rotated": false,
+  "frame": {"x":1292,"y":1068,"w":142,"h":98},
+  "rotated": true,
   "trimmed": true,
   "spriteSourceSize": {"x":597,"y":211,"w":142,"h":98},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0007.png":
 {
-  "frame": {"x":1406,"y":1078,"w":126,"h":92},
+  "frame": {"x":1250,"y":1448,"w":126,"h":92},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":576,"y":189,"w":126,"h":92},
@@ -763,15 +763,15 @@ Map _getTransparentItems() {
 },
 "dart_fly_0008.png":
 {
-  "frame": {"x":996,"y":1192,"w":112,"h":86},
-  "rotated": false,
+  "frame": {"x":1638,"y":948,"w":112,"h":86},
+  "rotated": true,
   "trimmed": true,
   "spriteSourceSize": {"x":558,"y":179,"w":112,"h":86},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0009.png":
 {
-  "frame": {"x":598,"y":1306,"w":98,"h":94},
+  "frame": {"x":1518,"y":1206,"w":98,"h":94},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":545,"y":177,"w":98,"h":94},
@@ -779,15 +779,15 @@ Map _getTransparentItems() {
 },
 "dart_fly_0010.png":
 {
-  "frame": {"x":1136,"y":1126,"w":86,"h":110},
-  "rotated": true,
+  "frame": {"x":1456,"y":956,"w":86,"h":110},
+  "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":534,"y":185,"w":86,"h":110},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0011.png":
 {
-  "frame": {"x":1534,"y":1132,"w":76,"h":124},
+  "frame": {"x":1860,"y":1420,"w":76,"h":124},
   "rotated": true,
   "trimmed": true,
   "spriteSourceSize": {"x":524,"y":199,"w":76,"h":124},
@@ -795,7 +795,7 @@ Map _getTransparentItems() {
 },
 "dart_fly_0012.png":
 {
-  "frame": {"x":926,"y":648,"w":66,"h":134},
+  "frame": {"x":1540,"y":608,"w":66,"h":134},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":517,"y":221,"w":66,"h":134},
@@ -803,327 +803,327 @@ Map _getTransparentItems() {
 },
 "dart_fly_0013.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0014.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0015.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0016.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0017.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0018.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0019.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0020.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0021.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0022.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0023.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0024.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0025.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0026.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0027.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0028.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0029.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0030.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0031.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0032.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0033.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0034.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0035.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0036.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0037.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0038.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0039.png":
 {
-  "frame": {"x":1496,"y":1338,"w":62,"h":136},
+  "frame": {"x":1850,"y":1080,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0040.png":
 {
-  "frame": {"x":1358,"y":1338,"w":62,"h":136},
-  "rotated": true,
+  "frame": {"x":1930,"y":758,"w":64,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0041.png":
 {
-  "frame": {"x":1220,"y":1338,"w":62,"h":136},
+  "frame": {"x":1862,"y":1014,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0042.png":
 {
-  "frame": {"x":1514,"y":1274,"w":62,"h":136},
+  "frame": {"x":1862,"y":948,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0043.png":
 {
-  "frame": {"x":1514,"y":1210,"w":62,"h":136},
+  "frame": {"x":1792,"y":882,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0044.png":
 {
-  "frame": {"x":1376,"y":1236,"w":62,"h":136},
-  "rotated": true,
+  "frame": {"x":1696,"y":1062,"w":64,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0045.png":
 {
-  "frame": {"x":1376,"y":1172,"w":62,"h":136},
+  "frame": {"x":1654,"y":882,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0046.png":
 {
-  "frame": {"x":1312,"y":1112,"w":62,"h":136},
+  "frame": {"x":1630,"y":1066,"w":64,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0047.png":
 {
-  "frame": {"x":1248,"y":1120,"w":62,"h":136},
+  "frame": {"x":1564,"y":1066,"w":64,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0048.png":
 {
-  "frame": {"x":1110,"y":1214,"w":62,"h":136},
-  "rotated": true,
+  "frame": {"x":1578,"y":1302,"w":64,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0049.png":
 {
-  "frame": {"x":998,"y":1128,"w":62,"h":136},
-  "rotated": true,
+  "frame": {"x":1512,"y":1302,"w":64,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0050.png":
 {
-  "frame": {"x":1654,"y":1066,"w":62,"h":136},
-  "rotated": true,
+  "frame": {"x":1446,"y":1302,"w":64,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0051.png":
 {
-  "frame": {"x":1654,"y":1002,"w":62,"h":136},
+  "frame": {"x":1516,"y":882,"w":64,"h":136},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0052.png":
 {
-  "frame": {"x":1236,"y":982,"w":62,"h":136},
+  "frame": {"x":1540,"y":744,"w":64,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
+  "spriteSourceSize": {"x":505,"y":248,"w":64,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_0053.png":
 {
-  "frame": {"x":1874,"y":964,"w":62,"h":136},
+  "frame": {"x":1844,"y":1146,"w":62,"h":136},
   "rotated": true,
   "trimmed": true,
   "spriteSourceSize": {"x":506,"y":248,"w":62,"h":136},
@@ -1131,7 +1131,7 @@ Map _getTransparentItems() {
 },
 "dart_fly_0054.png":
 {
-  "frame": {"x":284,"y":610,"w":1,"h":1},
+  "frame": {"x":214,"y":287,"w":1,"h":1},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
@@ -1139,439 +1139,439 @@ Map _getTransparentItems() {
 },
 "dart_fly_shadow_0000.png":
 {
-  "frame": {"x":1880,"y":186,"w":1,"h":1},
+  "frame": {"x":1644,"y":1292,"w":102,"h":130},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},
+  "spriteSourceSize": {"x":390,"y":512,"w":102,"h":130},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0001.png":
 {
-  "frame": {"x":188,"y":1306,"w":94,"h":146},
-  "rotated": true,
+  "frame": {"x":1704,"y":2,"w":126,"h":216},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":393,"y":451,"w":94,"h":146},
+  "spriteSourceSize": {"x":378,"y":424,"w":126,"h":216},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0002.png":
 {
-  "frame": {"x":284,"y":1086,"w":136,"h":226},
-  "rotated": true,
+  "frame": {"x":214,"y":2,"w":206,"h":280},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":375,"y":382,"w":136,"h":226},
+  "spriteSourceSize": {"x":338,"y":359,"w":206,"h":280},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0003.png":
 {
-  "frame": {"x":1876,"y":464,"w":164,"h":224},
+  "frame": {"x":2,"y":612,"w":192,"h":278},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":355,"y":330,"w":164,"h":224},
+  "spriteSourceSize": {"x":340,"y":312,"w":192,"h":278},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0004.png":
 {
-  "frame": {"x":1232,"y":676,"w":148,"h":190},
-  "rotated": true,
+  "frame": {"x":1528,"y":2,"w":174,"h":224},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":362,"y":296,"w":148,"h":190},
+  "spriteSourceSize": {"x":347,"y":283,"w":174,"h":224},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0005.png":
 {
-  "frame": {"x":990,"y":826,"w":136,"h":154},
-  "rotated": false,
+  "frame": {"x":1612,"y":450,"w":158,"h":180},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":369,"y":273,"w":136,"h":154},
+  "spriteSourceSize": {"x":356,"y":265,"w":158,"h":180},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0006.png":
 {
-  "frame": {"x":1532,"y":860,"w":120,"h":118},
+  "frame": {"x":1206,"y":468,"w":144,"h":138},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":378,"y":261,"w":120,"h":118},
+  "spriteSourceSize": {"x":365,"y":257,"w":144,"h":138},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0007.png":
 {
-  "frame": {"x":2,"y":1294,"w":106,"h":98},
-  "rotated": true,
+  "frame": {"x":1606,"y":758,"w":130,"h":122},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":388,"y":249,"w":106,"h":98},
+  "spriteSourceSize": {"x":376,"y":235,"w":130,"h":122},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0008.png":
 {
-  "frame": {"x":698,"y":1310,"w":74,"h":90},
-  "rotated": false,
+  "frame": {"x":652,"y":492,"w":118,"h":110},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":410,"y":232,"w":74,"h":90},
+  "spriteSourceSize": {"x":387,"y":221,"w":118,"h":110},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0009.png":
 {
-  "frame": {"x":868,"y":1318,"w":92,"h":82},
-  "rotated": false,
+  "frame": {"x":1352,"y":956,"w":110,"h":102},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":404,"y":224,"w":92,"h":82},
+  "spriteSourceSize": {"x":394,"y":212,"w":110,"h":102},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0010.png":
 {
-  "frame": {"x":774,"y":1310,"w":92,"h":88},
-  "rotated": false,
+  "frame": {"x":1378,"y":1440,"w":100,"h":98},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":410,"y":223,"w":92,"h":88},
+  "spriteSourceSize": {"x":406,"y":215,"w":100,"h":98},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0011.png":
 {
-  "frame": {"x":1782,"y":1140,"w":86,"h":102},
+  "frame": {"x":1404,"y":1206,"w":94,"h":112},
   "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":420,"y":231,"w":86,"h":102},
+  "spriteSourceSize": {"x":416,"y":222,"w":94,"h":112},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0012.png":
 {
-  "frame": {"x":1792,"y":1024,"w":78,"h":114},
-  "rotated": false,
+  "frame": {"x":1618,"y":1204,"w":86,"h":122},
+  "rotated": true,
   "trimmed": true,
-  "spriteSourceSize": {"x":433,"y":244,"w":78,"h":114},
+  "spriteSourceSize": {"x":428,"y":237,"w":86,"h":122},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0013.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0014.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0015.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0016.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0017.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0018.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0019.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0020.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0021.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0022.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0023.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0024.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0025.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0026.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0027.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0028.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0029.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0030.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0031.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0032.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0033.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0034.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0035.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0036.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0037.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0038.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0039.png":
 {
-  "frame": {"x":996,"y":1280,"w":74,"h":120},
+  "frame": {"x":1478,"y":1068,"w":84,"h":136},
   "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0040.png":
 {
-  "frame": {"x":1660,"y":1130,"w":74,"h":120},
-  "rotated": true,
+  "frame": {"x":1360,"y":1302,"w":84,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0041.png":
 {
-  "frame": {"x":1532,"y":980,"w":74,"h":120},
-  "rotated": true,
+  "frame": {"x":1392,"y":1068,"w":84,"h":136},
+  "rotated": false,
   "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
   "sourceSize": {"w":1024,"h":768}
 },
 "dart_fly_shadow_0042.png":
 {
-  "frame": {"x":1798,"y":902,"w":74,"h":120},
+  "frame": {"x":1112,"y":1456,"w":84,"h":136},
+  "rotated": true,
+  "trimmed": true,
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0043.png":
+{
+  "frame": {"x":1352,"y":468,"w":84,"h":136},
+  "rotated": false,
+  "trimmed": true,
+  "spriteSourceSize": {"x":443,"y":261,"w":84,"h":136},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0044.png":
+{
+  "frame": {"x":1830,"y":1292,"w":80,"h":126},
+  "rotated": false,
+  "trimmed": true,
+  "spriteSourceSize": {"x":442,"y":261,"w":80,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0045.png":
+{
+  "frame": {"x":1748,"y":1292,"w":80,"h":126},
+  "rotated": false,
+  "trimmed": true,
+  "spriteSourceSize": {"x":442,"y":261,"w":80,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0046.png":
+{
+  "frame": {"x":1860,"y":1210,"w":80,"h":126},
+  "rotated": true,
+  "trimmed": true,
+  "spriteSourceSize": {"x":442,"y":261,"w":80,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0047.png":
+{
+  "frame": {"x":1602,"y":1440,"w":80,"h":126},
+  "rotated": true,
+  "trimmed": true,
+  "spriteSourceSize": {"x":442,"y":261,"w":80,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0048.png":
+{
+  "frame": {"x":1762,"y":1140,"w":80,"h":126},
+  "rotated": false,
+  "trimmed": true,
+  "spriteSourceSize": {"x":442,"y":261,"w":80,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0049.png":
+{
+  "frame": {"x":1912,"y":1292,"w":76,"h":126},
+  "rotated": false,
+  "trimmed": true,
+  "spriteSourceSize": {"x":443,"y":261,"w":76,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0050.png":
+{
+  "frame": {"x":378,"y":534,"w":76,"h":126},
+  "rotated": true,
+  "trimmed": true,
+  "spriteSourceSize": {"x":443,"y":261,"w":76,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0051.png":
+{
+  "frame": {"x":250,"y":534,"w":76,"h":126},
+  "rotated": true,
+  "trimmed": true,
+  "spriteSourceSize": {"x":443,"y":261,"w":76,"h":126},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0052.png":
+{
+  "frame": {"x":1738,"y":758,"w":76,"h":122},
+  "rotated": false,
+  "trimmed": true,
+  "spriteSourceSize": {"x":443,"y":262,"w":76,"h":122},
+  "sourceSize": {"w":1024,"h":768}
+},
+"dart_fly_shadow_0053.png":
+{
+  "frame": {"x":1816,"y":758,"w":74,"h":120},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":444,"y":264,"w":74,"h":120},
   "sourceSize": {"w":1024,"h":768}
 },
-"dart_fly_shadow_0043.png":
-{
-  "frame": {"x":1534,"y":1056,"w":74,"h":118},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":444,"y":266,"w":74,"h":118},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0044.png":
-{
-  "frame": {"x":1886,"y":1118,"w":72,"h":118},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":445,"y":266,"w":72,"h":118},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0045.png":
-{
-  "frame": {"x":1146,"y":1278,"w":72,"h":118},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":445,"y":266,"w":72,"h":118},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0046.png":
-{
-  "frame": {"x":1072,"y":1280,"w":72,"h":118},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":445,"y":266,"w":72,"h":118},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0047.png":
-{
-  "frame": {"x":1960,"y":1128,"w":72,"h":116},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":445,"y":268,"w":72,"h":116},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0048.png":
-{
-  "frame": {"x":1724,"y":1228,"w":70,"h":116},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":447,"y":268,"w":70,"h":116},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0049.png":
-{
-  "frame": {"x":1652,"y":1210,"w":70,"h":116},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":446,"y":268,"w":70,"h":116},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0050.png":
-{
-  "frame": {"x":1724,"y":1300,"w":68,"h":114},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":448,"y":270,"w":68,"h":114},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0051.png":
-{
-  "frame": {"x":1842,"y":1238,"w":66,"h":110},
-  "rotated": true,
-  "trimmed": true,
-  "spriteSourceSize": {"x":449,"y":274,"w":66,"h":110},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0052.png":
-{
-  "frame": {"x":190,"y":1200,"w":66,"h":104},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":449,"y":280,"w":66,"h":104},
-  "sourceSize": {"w":1024,"h":768}
-},
-"dart_fly_shadow_0053.png":
-{
-  "frame": {"x":1986,"y":1028,"w":60,"h":98},
-  "rotated": false,
-  "trimmed": true,
-  "spriteSourceSize": {"x":454,"y":286,"w":60,"h":98},
-  "sourceSize": {"w":1024,"h":768}
-},
 "dart_fly_shadow_0054.png":
 {
-  "frame": {"x":250,"y":234,"w":1,"h":1},
+  "frame": {"x":214,"y":284,"w":1,"h":1},
   "rotated": false,
   "trimmed": true,
   "spriteSourceSize": {"x":0,"y":0,"w":1,"h":1},

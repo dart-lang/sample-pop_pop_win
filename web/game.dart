@@ -8,7 +8,7 @@
 
 #source('texture_data.dart');
 
-const String _transparentTextureName = 'images/dart_transparent_01.png';
+const String _transparentTextureName = 'images/transparent_animated.png';
 const String _opaqueTextureName = 'images/dart_opaque_01.jpg';
 const String _transparentStaticTexture = 'images/transparent_static.png';
 
