@@ -22,13 +22,12 @@ body {
   display: block;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-image:url(images/loading.png);
+  background-image:url(images/transparent_static.png);
 }
 
 .loading_background {
   width:504px;
   height:88px;
-  background-position: -2px -2px;
 }
 
 .loading_bar {
@@ -37,7 +36,7 @@ body {
   top: 8px;
   width:398px;
   height:56px;
-  background-position: -2px -92px;
+  background-position: 0 -184px;
 }
 
 .loading_text {
@@ -45,7 +44,7 @@ body {
   top: 10px;
   width:218px;
   height:56px;
-  background-position: -2px -150px;
+  background-position: -318px -94px;
 }
 
 .status {

@@ -11,8 +11,9 @@
 
 #source('../texture_data.dart');
 
-const String _transparentTextureName = '../dart_transparent_01.png';
-const String _opaqueTextureName = '../dart_opaque_01.jpg';
+const String _transparentTextureName = '../images/transparent_animated.png';
+const String _opaqueTextureName = '../images/dart_opaque_01.jpg';
+const String _transparentStaticTexture = '../images/transparent_static.png';
 
 ImageLoader _imageLoader;
 List<String> _keys;
@@ -21,7 +22,8 @@ CanvasRenderingContext2D __ctx;
 TextureData _textureData;
 
 main() {
-  _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName]);
+  _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName,
+                                  _transparentStaticTexture]);
   _imageLoader.loaded.add((args) => _doLoad());
   _imageLoader.load();
 }
@@ -29,8 +31,9 @@ main() {
 _doLoad() {
   final opaqueImage = _imageLoader.getResource(_opaqueTextureName);
   final transparentImage = _imageLoader.getResource(_transparentTextureName);
+  final staticTransparentImage = _imageLoader.getResource(_transparentStaticTexture);
 
-  final textures = _getTextures(transparentImage, opaqueImage);
+  final textures = _getTextures(transparentImage, opaqueImage, staticTransparentImage);
   _textureData = new TextureData(textures);
 
   CanvasElement canvasElement = query('#textureCanvas');
