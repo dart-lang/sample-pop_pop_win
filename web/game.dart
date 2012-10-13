@@ -29,8 +29,7 @@ main() {
   _loadingBar.style.width = '0';
 
   _imageLoader = new ImageLoader([_transparentTextureName,
-                                  _opaqueTextureName,
-                                  _transparentStaticTexture]);
+                                  _opaqueTextureName]);
   _imageLoader.loaded.add(_onLoaded);
   _imageLoader.progress.add(_onProgress);
   _imageLoader.load();
@@ -78,7 +77,9 @@ void _onLoaded(args) {
     //
     final opaqueImage = _imageLoader.getResource(_opaqueTextureName);
     final transparentImage = _imageLoader.getResource(_transparentTextureName);
-    final staticTransparentImage = _imageLoader.getResource(_transparentStaticTexture);
+
+    // already loaded. Used in CSS.
+    final staticTransparentImage = new ImageElement(_transparentStaticTexture);
 
     final textures = _getTextures(transparentImage, opaqueImage, staticTransparentImage);
 
