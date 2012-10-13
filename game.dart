@@ -114,6 +114,45 @@ void _runppw(TextureData textureData) {
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());
   window.on.popState.add((args) => _processUrlHash());
+
+  window.on.keyDown.add(_onKeyDown);
+
+  query('#popup').on.click.add(_onPopupClick);
+}
+
+void _onPopupClick(MouseEvent args) {
+  if(!(args.toElement is AnchorElement)) {
+    _toggleAbout(false);
+  }
+}
+
+void _onKeyDown(KeyboardEvent args) {
+  switch(args.keyIdentifier) {
+    case 'U+001B': // esc
+      _toggleAbout(false);
+      break;
+    case 'U+003F': // ?
+    case 'U+0048': // h
+      _toggleAbout();
+      break;
+  }
+}
+
+void _toggleAbout([bool value = null]) {
+  final LocalLocation loc = window.location;
+  // ensure we treat empty hash like '#', which makes comparison easy later
+  final hash = loc.hash.length == 0 ? '#' : loc.hash;
+
+  final isOpen = hash == '#about';
+  if(value == null) {
+    // then toggle the current value
+    value = !isOpen;
+  }
+
+  var targetHash = value ? '#about' : '#';
+  if(targetHash != hash) {
+    loc.assign(targetHash);
+  }
 }
 
 String _getAudioPath(String name) => 'audio/$name.webm';
@@ -128,16 +167,24 @@ bool _processUrlHash() {
   final href = loc.href;
 
   final LocalHistory history = window.history;
-  if(hash == "#reset") {
-    assert(href.endsWith(hash));
-    var newLoc = href.substring(0, href.length - hash.length);
+  bool showAbout = false;
+  switch(hash) {
+    case "#reset":
+      assert(href.endsWith(hash));
+      var newLoc = href.substring(0, href.length - hash.length);
 
-    window.localStorage.clear();
+      window.localStorage.clear();
 
-    loc.replace(newLoc);
-  } else if(hash == '#big') {
-    return true;
+      loc.replace(newLoc);
+      break;
+    case '#big':
+      return true;
+    case '#about':
+      showAbout = true;
+      break;
   }
+
+  query('#popup').style.display = showAbout ? 'inline-block' : 'none';
 
   return false;
 }
