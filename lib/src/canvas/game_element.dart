@@ -25,6 +25,8 @@ class GameElement extends ElementParentImpl {
   double _scale;
   Vector _scaledBoardOffset;
   Box _scaledInnerBox;
+  SquareElement _mouseDownElement, _lastHoldUnfreeze;
+  int _mouseDownTimeoutHandleId;
 
   Game _game;
 
@@ -246,11 +248,56 @@ class GameElement extends ElementParentImpl {
     }
   }
 
+  void wireSquareMouseEvent(PElement square) {
+    ClickManager.addHandler(square, _squareClicked);
+    ClickManager.addMouseDownHandler(square, _squareMouseDown);
+    ClickManager.addMouseUpHandler(square, _squareMouseUp);
+    ClickManager.addMouseMoveHandler(square, _squareMouseMove);
+  }
+
   void _squareClicked(ElementMouseEventArgs args) {
-    if(!_game.gameEnded) {
+    if(!_game.gameEnded && _lastHoldUnfreeze == null) {
       final SquareElement se = args.element;
       _click(se.x, se.y, args.shiftKey);
     }
+  }
+
+  void _squareMouseDown(ElementMouseEventArgs args) {
+    _lastHoldUnfreeze = null;
+    if(_mouseDownTimeoutHandle != null) {
+      window.clearTimeout(_mouseDownTimeoutHandleId);
+    }
+    final SquareElement se = args.element;
+    _mouseDownElement = se;
+    _mouseDownTimeoutHandleId = window.setTimeout(_mouseDownTimeoutHandle, 1000);
+  }
+
+  void _squareMouseMove(ElementMouseEventArgs args) {
+    final SquareElement se = args.element;
+    if(_mouseDownElement != se) {
+      _clearTimeout();
+    }
+  }
+
+  void _squareMouseUp(ElementMouseEventArgs args) {
+    final SquareElement se = args.element;
+    _clearTimeout();
+  }
+
+  void _mouseDownTimeoutHandle() {
+    assert(_mouseDownTimeoutHandleId != null);
+    assert(_mouseDownElement != null);
+    _click(_mouseDownElement.x, _mouseDownElement.y, true);
+    _lastHoldUnfreeze = _mouseDownElement;
+    _clearTimeout();
+  }
+
+  void _clearTimeout() {
+    if(_mouseDownTimeoutHandleId != null) {
+      window.clearTimeout(_mouseDownTimeoutHandleId);
+      _mouseDownTimeoutHandleId = null;
+    }
+    _mouseDownElement = null;
   }
 
   void _target(int x, int y) {

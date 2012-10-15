@@ -27,7 +27,7 @@ class BoardElement extends ElementParentImpl {
         final se = new SquareElement(coords.item1, coords.item2);
         se.registerParent(this);
 
-        ClickManager.addHandler(se, _parent._squareClicked);
+        _parent.wireSquareMouseEvent(se);
 
         // position the square
         final etx = se.addTransform();
