@@ -27,7 +27,7 @@ _Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.da
 
 ## Assets
  * Art - Pete Parisi, [fuzzycube software](http://www.fuzzycubesoftware.com/)
- * Sound Effects - Alistair Hirst, [Omni Audio](http://omniaudio.com/)
+ * Sound Effects - Alistair Hirst, [OMNI Audio](http://omniaudio.com/)
  * Winning Sax Riff - Brian Moore
 
 ## License
