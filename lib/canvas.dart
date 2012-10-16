@@ -20,27 +20,7 @@
 #source('src/canvas/score_element.dart');
 #source('src/canvas/square_element.dart');
 #source('src/canvas/title_element.dart');
-
-Map<String, AudioBuffer> _buffers;
-AudioContext _audioContext;
-
-void populateAudio(AudioContext context, Map<String, AudioBuffer> buffers) {
-  assert(context != null);
-  assert(buffers != null);
-  assert(_audioContext == null);
-
-  _audioContext = context;
-  _buffers = buffers;
-}
-
-void playAudio(String name) {
-  if(_audioContext != null) {
-    var source = _audioContext.createBufferSource();
-    source.buffer = _buffers[name];
-    source.connect(_audioContext.destination, 0);
-    source.start(0);
-  }
-}
+#source('src/canvas/game_audio.dart');
 
 EventHandle _titleClickedEventHandle = new EventHandle<EventArgs>();
 

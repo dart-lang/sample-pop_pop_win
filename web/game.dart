@@ -14,8 +14,8 @@ const String _transparentStaticTexture = 'images/transparent_static.png';
 
 const List<String> _audioNames =
   const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8',
-         'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5',
-         'throw', 'flag', 'unflag', 'click', 'win'];
+         'Bomb0', 'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4',
+         GameAudio.THROW_DART, GameAudio.FLAG, GameAudio.UNFLAG, GameAudio.CLICK, GameAudio.WIN];
 
 const int _loadingBarPxWidth = 398;
 
@@ -120,6 +120,7 @@ void _runppw(TextureData textureData) {
   query('#popup').on.click.add(_onPopupClick);
 
   titleClickedEvent.add((args) => _toggleAbout(true));
+  GameAudio.audioEvent.add(_playAudio);
 }
 
 void _onPopupClick(MouseEvent args) {
@@ -188,4 +189,41 @@ bool _processUrlHash() {
   query('#popup').style.display = showAbout ? 'inline-block' : 'none';
 
   return false;
+}
+
+Map<String, AudioBuffer> _buffers;
+AudioContext _audioContext;
+
+void populateAudio(AudioContext context, Map<String, AudioBuffer> buffers) {
+  assert(context != null);
+  assert(buffers != null);
+  assert(_audioContext == null);
+
+  _audioContext = context;
+  _buffers = buffers;
+}
+
+void _playAudio(String name) {
+  switch(name) {
+    case GameAudio.POP:
+      final i = rnd.nextInt(8);
+      name = '${GameAudio.POP}$i';
+      break;
+    case GameAudio.BOMB:
+      final i = rnd.nextInt(4);
+      name = '${GameAudio.BOMB}$i';
+      break;
+  }
+  _playAudioCore(name);
+}
+
+void _playAudioCore(String name) {
+  if(_audioContext != null) {
+    var source = _audioContext.createBufferSource();
+    final buffer = _buffers[name];
+    assert(buffer != null);
+    source.buffer = buffer;
+    source.connect(_audioContext.destination, 0);
+    source.start(0);
+  }
 }

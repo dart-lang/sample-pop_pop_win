@@ -45,7 +45,7 @@ class GameElement extends ElementParentImpl {
     _canvas.addElement(_titleElement);
     _canvas.addElement(_dartAnimationLayer);
 
-    _newGameElement.clicked.add((args) => playAudio('click'));
+    _newGameElement.clicked.add((args) => GameAudio.click());
 
     ClickManager.setClickable(_titleElement, true);
     ClickManager.addHandler(_titleElement,
@@ -213,10 +213,10 @@ class GameElement extends ElementParentImpl {
       switch(ss) {
         case SquareState.revealed:
         case SquareState.hidden:
-          request.started.add((args) => _playPop());
+          request.started.add((args) => GameAudio.pop());
           break;
         case SquareState.bomb:
-          request.started.add((args) => _playBoom());
+          request.started.add((args) => GameAudio.bomb());
           break;
       }
 
@@ -224,19 +224,9 @@ class GameElement extends ElementParentImpl {
     }
   }
 
-  void _playPop() {
-    var i = rnd.nextInt(8);
-    playAudio('Pop$i');
-  }
-
-  void _playBoom() {
-    var i = rnd.nextInt(4) + 1;
-    playAudio('Bomb$i');
-  }
-
   void _startDartAnimation(List<Coordinate> points) {
     assert(points.length >= 1);
-    playAudio('throw');
+    GameAudio.throwDart();
     for(final point in points) {
       final squareOffset = _dartAnimationOffset +
           new Vector(SquareElement._size * point.x, SquareElement._size * point.y);
@@ -310,11 +300,11 @@ class GameElement extends ElementParentImpl {
     final ss = game.getSquareState(x, y);
     if(ss == SquareState.hidden) {
       game.setFlag(x, y, true);
-      playAudio('flag');
+      GameAudio.flag();
       return true;
     } else if(ss == SquareState.flagged) {
       game.setFlag(x, y, false);
-      playAudio('unflag');
+      GameAudio.unflag();
       return true;
     }
     return false;
