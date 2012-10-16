@@ -48,10 +48,8 @@ class GameElement extends ElementParentImpl {
     _newGameElement.clicked.add((args) => playAudio('click'));
 
     ClickManager.setClickable(_titleElement, true);
-    ClickManager.addHandler(_titleElement, (args) {
-      // TODO: this screams for global event handling
-      window.location.assign('#about');
-    });
+    ClickManager.addHandler(_titleElement,
+        (args) => _titleClickedEventHandle.fireEvent(EventArgs.empty));
   }
 
   EventRoot<EventArgs> get newGameClick => _newGameElement.clicked;

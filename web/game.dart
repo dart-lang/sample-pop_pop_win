@@ -118,6 +118,8 @@ void _runppw(TextureData textureData) {
   window.on.keyDown.add(_onKeyDown);
 
   query('#popup').on.click.add(_onPopupClick);
+
+  titleClickedEvent.add((args) => _toggleAbout(true));
 }
 
 void _onPopupClick(MouseEvent args) {

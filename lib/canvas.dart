@@ -41,3 +41,8 @@ void playAudio(String name) {
     source.start(0);
   }
 }
+
+EventHandle _titleClickedEventHandle = new EventHandle<EventArgs>();
+
+EventRoot titleClickedEvent = _titleClickedEventHandle;
+
