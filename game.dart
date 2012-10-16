@@ -7,21 +7,18 @@
 #import('package:poppopwin/canvas.dart');
 
 #source('texture_data.dart');
+#source('_audio.dart');
 
 const String _transparentTextureName = 'images/transparent_animated.png';
 const String _opaqueTextureName = 'images/dart_opaque_01.jpg';
 const String _transparentStaticTexture = 'images/transparent_static.png';
 
-const List<String> _audioNames =
-  const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8',
-         'Bomb1', 'Bomb2', 'Bomb3', 'Bomb4', 'Bomb5',
-         'throw', 'flag', 'unflag', 'click', 'win'];
-
 const int _loadingBarPxWidth = 398;
 
 DivElement _loadingBar;
 ImageLoader _imageLoader;
-AudioLoader _audioLoader;
+
+_Audio _audio;
 
 main() {
   _loadingBar = query('.sprite.loading_bar');
@@ -34,32 +31,15 @@ main() {
   _imageLoader.progress.add(_onProgress);
   _imageLoader.load();
 
-  //
-  // This code might fail wonderfully on systems that don't support
-  // AudioContext
-  //
-  if(supportsAudio) {
-    final audioContext = new AudioContext();
-    _audioLoader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
-    _audioLoader.loaded.add(_onLoaded);
-    _audioLoader.progress.add(_onProgress);
-    _audioLoader.load();
-  }
-}
-
-bool get supportsAudio {
-  final isChrome = window.clientInformation.userAgent.contains("Chrome");
-  return isChrome;
+  _audio = new _Audio();
 }
 
 void _onProgress(args) {
   int completedBytes = _imageLoader.completedBytes;
   int totalBytes = _imageLoader.totalBytes;
 
-  if(_audioLoader != null) {
-    completedBytes += _audioLoader.completedBytes;
-    totalBytes += _audioLoader.totalBytes;
-  }
+  completedBytes += _audio.completedBytes;
+  totalBytes += _audio.totalBytes;
 
   final percent = completedBytes / totalBytes;
   final percentClean = (percent * 1000).floor() / 10;
@@ -69,8 +49,7 @@ void _onProgress(args) {
 }
 
 void _onLoaded(args) {
-  if(_imageLoader.state == ResourceLoader.StateLoaded &&
-      (_audioLoader == null || _audioLoader.state == ResourceLoader.StateLoaded)) {
+  if(_imageLoader.state == ResourceLoader.StateLoaded && _audio.done) {
 
     //
     // load textures
@@ -84,19 +63,6 @@ void _onLoaded(args) {
     final textures = _getTextures(transparentImage, opaqueImage, staticTransparentImage);
 
     final textureData = new TextureData(textures);
-
-    //
-    // load audio -- if we have a context
-    //
-    if(_audioLoader != null) {
-      var map = new Map<String, AudioBuffer>();
-      for(final name in _audioNames) {
-        final path = _getAudioPath(name);
-        map[name] = _audioLoader.getResource(path);
-      }
-
-      populateAudio(_audioLoader.context, map);
-    }
 
     // run the app
     query('#loading').style.display = 'none';
@@ -118,6 +84,8 @@ void _runppw(TextureData textureData) {
   window.on.keyDown.add(_onKeyDown);
 
   query('#popup').on.click.add(_onPopupClick);
+
+  titleClickedEvent.add((args) => _toggleAbout(true));
 }
 
 void _onPopupClick(MouseEvent args) {
@@ -152,12 +120,6 @@ void _toggleAbout([bool value = null]) {
   if(targetHash != hash) {
     loc.assign(targetHash);
   }
-}
-
-String _getAudioPath(String name) => 'audio/$name.webm';
-
-Iterable<String> _getAudioPaths(Iterable<String> names) {
-  return $(names).map(_getAudioPath);
 }
 
 bool _processUrlHash() {
