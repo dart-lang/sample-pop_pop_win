@@ -21,9 +21,14 @@ _Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.da
  * Shift-click on squares to flag them.
  * Shift-click on revealed numbers to go fast--but be careful. If you've flagged incorrectly, you'll hit a bomb.
 
-## Authors
+## Developers
  * [Kevin Moore](https://github.com/kevmoo) ([@kevmoo](http://twitter.com/kevmoo))
  * _You? File bugs. Fix bugs. Add features._
+
+## Assets
+ * Art - Pete Parisi, [fuzzycube software](http://www.fuzzycubesoftware.com/)
+ * Sound Effects - Alistair Hirst, [Omni Audio](http://omniaudio.com/)
+ * Winning Sax Riff - Brian Moore
 
 ## License
 
