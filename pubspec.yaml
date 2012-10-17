@@ -2,9 +2,5 @@ name: poppopwin
 dependencies:
   unittest:
     sdk: unittest
-  bot:
-    git:
-      url: git://github.com/kevmoo/bot.dart.git
-      ref: v0.1.0
-  js:
-    hosted: js
+  bot: 0.1.0
+  js: 0.0.5
