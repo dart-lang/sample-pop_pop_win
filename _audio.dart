@@ -6,9 +6,10 @@ class _Audio {
 
   final AudioLoader _audioLoader;
   final Map<String, AudioBuffer> _buffers = new Map();
+  static final _audioFormat = _getAudioFormat();
 
   factory _Audio() {
-    if(_supportsAudio) {
+    if(_audioFormat != null) {
       final audioContext = new AudioContext();
       final loader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
       return new _Audio._internal(loader);
@@ -94,16 +95,27 @@ class _Audio {
     }
   }
 
-  static bool get _supportsAudio {
+  static String _getAudioFormat() {
     try {
-      final isChrome = window.clientInformation.userAgent.contains("Chrome");
-      return isChrome;
+      final isWebKit = window.clientInformation.userAgent.contains("WebKit");
+      if(isWebKit) {
+        final isChrome = window.clientInformation.userAgent.contains("Chrome");
+        if(isChrome) {
+          return 'webm';
+        } else {
+          return 'm4a';
+        }
+      }
     } catch (e) {
-      return false;
+      print("Error getting client info: ${e}");
     }
+    return null;
   }
 
-  static String _getAudioPath(String name) => 'audio/$name.webm';
+  static String _getAudioPath(String name) {
+    assert(_audioFormat != null);
+    return 'audio/${_audioFormat}/$name.${_audioFormat}';
+  }
 
   static Iterable<String> _getAudioPaths(Iterable<String> names) {
     return $(names).map(_getAudioPath);
