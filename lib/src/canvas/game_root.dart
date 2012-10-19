@@ -86,18 +86,13 @@ class GameRoot extends GameManager {
 
     final prettyScale = min(1, min(xScale, yScale));
 
-    //final logish = log(theScale) / LN2;
-    //final exp = logish.floor().toInt();
-
-    // DARTBUG: really weird that pow to an int returns an int and not double :-/
-    //final prettyScale = pow(2.0, exp);
-
-
     final newDimensions = _gameElement.size * prettyScale;
     //assert(newDimensions.fitsInside(_stage.size));
 
     final delta = new Vector(_stage.size.width - newDimensions.width,
-        _stage.size.height - newDimensions.height).scale(0.5).scale(1/prettyScale);
+        min(40, _stage.size.height - newDimensions.height))
+      .scale(0.5)
+      .scale(1/prettyScale);
 
     _gameElementTx.setToScale(prettyScale, prettyScale);
     _gameElementTx.translate(delta.x, delta.y);
