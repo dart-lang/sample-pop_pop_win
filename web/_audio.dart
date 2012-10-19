@@ -10,12 +10,15 @@ class _Audio {
 
   factory _Audio() {
     if(_audioFormat != null) {
-      final audioContext = new AudioContext();
-      final loader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
-      return new _Audio._internal(loader);
-    } else {
-      return new _Audio._disabled();
+      try {
+        final audioContext = new AudioContext();
+        final loader = new AudioLoader(audioContext, _getAudioPaths(_audioNames));
+        return new _Audio._internal(loader);
+      } catch (e) {
+        print("Error creating AudioContext: ${e}");
+      }
     }
+    return new _Audio._disabled();
   }
 
   _Audio._disabled() : this._audioLoader = null;
