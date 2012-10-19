@@ -71,7 +71,7 @@ void _onLoaded(args) {
 }
 
 void _runppw(TextureData textureData) {
-  final size = _processUrlHash() ? 16 : 7;
+  final size = _processUrlHash(false) ? 16 : 7;
   final int m = (size * size * 0.15625).toInt();
 
   final CanvasElement poppopwinTable = query('#gameCanvas');
@@ -79,7 +79,7 @@ void _runppw(TextureData textureData) {
 
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());
-  window.on.popState.add((args) => _processUrlHash());
+  window.on.popState.add((args) => _processUrlHash(true));
 
   window.on.keyDown.add(_onKeyDown);
 
@@ -122,7 +122,7 @@ void _toggleAbout([bool value = null]) {
   }
 }
 
-bool _processUrlHash() {
+bool _processUrlHash(bool forceReload) {
   final LocalLocation loc = window.location;
   final hash = loc.hash;
   final href = loc.href;
@@ -139,6 +139,12 @@ bool _processUrlHash() {
       loc.replace(newLoc);
       break;
     case '#big':
+      if(forceReload) {
+        // BUGBUG: https://github.com/dart-lang/pop-pop-win/issues/26
+        // DARTBUG: http://code.google.com/p/dart/issues/detail?id=5551
+        // would love to force a reload here, but we're blocked by a bug
+        // loc.reload();
+      }
       return true;
     case '#about':
       showAbout = true;
