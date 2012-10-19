@@ -96,14 +96,14 @@ class _Audio {
 
   static bool get _supportsAudio {
     try {
-      final isWebKit = window.clientInformation.userAgent.contains("WebKit");
-      return isWebKit;
+      final isChrome = window.clientInformation.userAgent.contains("Chrome");
+      return isChrome;
     } catch (e) {
       return false;
     }
   }
 
-  static String _getAudioPath(String name) => 'audio/$name.m4a';
+  static String _getAudioPath(String name) => 'audio/$name.webm';
 
   static Iterable<String> _getAudioPaths(Iterable<String> names) {
     return $(names).map(_getAudioPath);
