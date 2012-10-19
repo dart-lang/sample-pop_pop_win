@@ -97,9 +97,10 @@ class _Audio {
 
   static String _getAudioFormat() {
     try {
-      final isWebKit = window.clientInformation.userAgent.contains("WebKit");
+      final userAgent = window.clientInformation.userAgent;
+      final isWebKit = userAgent.contains("WebKit");
       if(isWebKit) {
-        final isChrome = window.clientInformation.userAgent.contains("Chrome");
+        final isChrome = userAgent.contains("Chrome");
         if(isChrome) {
           return 'webm';
         } else {
