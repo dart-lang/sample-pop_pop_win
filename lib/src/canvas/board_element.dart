@@ -1,4 +1,4 @@
-class BoardElement extends ElementParentImpl {
+class BoardElement extends ParentElement {
   Array2d<SquareElement> _elements;
 
   BoardElement() : super(0, 0, true);

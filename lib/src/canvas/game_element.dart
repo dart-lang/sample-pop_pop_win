@@ -1,4 +1,4 @@
-class GameElement extends ElementParentImpl {
+class GameElement extends ParentElement {
   static const _edgeOffset = 32;
   static const _backgroundSize = const Size(2048, 1536);
   static const _backgroundEdgeOffset = 256;
