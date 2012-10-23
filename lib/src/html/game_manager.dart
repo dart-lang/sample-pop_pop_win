@@ -70,6 +70,7 @@ abstract class GameManager {
   void onGameStateChanged(GameState value){}
 
   // DARTBUG: work around for http://code.google.com/p/dart/issues/detail?id=3197
+  // TODO: fixed in r13917? Need to verify and remove work-around
   void _doClock() {
     updateClock();
   }
