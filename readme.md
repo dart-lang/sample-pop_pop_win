@@ -9,6 +9,10 @@ An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_ga
 
 _Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run `pub update` before you try to run tests, build, etc.
 
+The code currently works against Dart build [r13679](https://gsdview.appspot.com/dart-editor-archive-integration/13679/) (M1) released on 16 Oct, 2012.
+
+Using other versions of the Dart tools with this source code might cause problems.
+
 ## Play
 
  * [dart-lang.github.com/pop-pop-win](http://dart-lang.github.com/pop-pop-win/)
