@@ -1,3 +1,5 @@
+part of ppw;
+
 class Field extends Array2d<bool> {
   final int bombCount;
   final Array2d<int> _adjacents;
@@ -46,7 +48,7 @@ class Field extends Array2d<bool> {
 
   Field._internal(this.bombCount, int cols, ReadOnlyCollection<bool> source) :
     this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
-    super.wrap(cols, source) {
+    super.wrap(cols, source.toList()) {
     assert(width > 0);
     assert(height > 0);
     assert(bombCount > 0);

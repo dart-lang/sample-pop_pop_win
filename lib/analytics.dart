@@ -1,6 +1,6 @@
-#library('ppw-analytics');
+library ppw_analytics;
 
-#import('package:js/js.dart', prefix: 'js');
+import 'package:js/js.dart' as js;
 
 void trackAnalyticsEvent(String category, String action, [String label, int value]) {
   js.scoped((){

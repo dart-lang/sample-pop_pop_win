@@ -1,3 +1,5 @@
+part of ppw_html;
+
 class GameStorage {
   static const _gameCountKey = 'gameCount';
   final EventHandle _bestTimeUpdated = new EventHandle();

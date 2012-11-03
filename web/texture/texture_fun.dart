@@ -40,7 +40,7 @@ _doLoad() {
   canvasElement.on.click.add((args) => _next());
   __ctx = canvasElement.context2d;
 
-  _keys = new List<String>.from(textures.getKeys());
+  _keys = new List<String>.from(textures.keys);
 
   _drawTexture();
 

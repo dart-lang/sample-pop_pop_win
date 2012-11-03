@@ -1,3 +1,5 @@
+part of ppw_test;
+
 class TestGame {
   static void run() {
     group('Game', () {
@@ -22,12 +24,12 @@ class TestGame {
     final f = TestField.getSampleField();
     final g = new Game(f);
 
-    expect(g.canReveal(5, 3));
+    expect(g.canReveal(5, 3), isTrue);
     var r = g.reveal(5, 3);
 
     g.setFlag(4, 2, true);
 
-    expect(g.canReveal(5, 3));
+    expect(g.canReveal(5, 3), isTrue);
     r = g.reveal(5, 3);
 
     expect(g.canReveal(5, 3), isFalse);
@@ -160,7 +162,7 @@ class TestGame {
             }
           }
         }
-        expect(g.state == GameState.won);
+        expect(g.state == GameState.won, isTrue);
       }
     }
   }

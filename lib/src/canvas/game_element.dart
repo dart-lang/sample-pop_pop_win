@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class GameElement extends ParentElement {
   static const _edgeOffset = 32;
   static const _backgroundSize = const Size(2048, 1536);

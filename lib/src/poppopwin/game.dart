@@ -1,3 +1,5 @@
+part of ppw;
+
 class Game {
   final Field field;
   final Array2d<SquareState> _states;

@@ -3,17 +3,17 @@ Map<String, TextureInput> _getTextures(ImageElement transparentElement,
 
   final frames = <String, TextureInput>{};
 
-  _getTransparentItems().forEach((String key, Map<String, Dynamic> value) {
+  _getTransparentItems().forEach((String key, Map<String, dynamic> value) {
     final parsed = new TextureInput.fromHash(key, value, transparentElement);
     frames[key] = parsed;
   });
 
-  _getOpaqueItems().forEach((String key, Map<String, Dynamic> value) {
+  _getOpaqueItems().forEach((String key, Map<String, dynamic> value) {
     final parsed = new TextureInput.fromHash(key, value, opaqueElement);
     frames[key] = parsed;
   });
 
-  _getTransparentStaticItems().forEach((String key, Map<String, Dynamic> value) {
+  _getTransparentStaticItems().forEach((String key, Map<String, dynamic> value) {
     final parsed = new TextureInput.fromHash(key, value, transparentStaticElement);
     frames[key] = parsed;
   });

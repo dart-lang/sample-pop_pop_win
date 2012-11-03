@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class BoardElement extends ParentElement {
   Array2d<SquareElement> _elements;
 

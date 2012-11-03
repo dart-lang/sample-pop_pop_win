@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class GameAudio {
   static const String WIN = 'win', CLICK = 'click', POP = 'Pop', FLAG = 'flag',
       UNFLAG = 'unflag', BOMB = 'Bomb', THROW_DART = 'throw';

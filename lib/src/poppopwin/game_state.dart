@@ -1,3 +1,5 @@
+part of ppw;
+
 class GameState {
   static const GameState reset = const GameState._internal("reset");
   static const GameState started = const GameState._internal("started");

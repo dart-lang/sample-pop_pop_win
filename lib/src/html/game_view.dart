@@ -1,3 +1,5 @@
+part of ppw_html;
+
 class GameView extends GameManager {
   static const String _xKey = 'x';
   static const String _yKey = 'y';

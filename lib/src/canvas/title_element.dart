@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class GameTitleElement extends PElement {
 
   GameTitleElement() : super(318, 96);

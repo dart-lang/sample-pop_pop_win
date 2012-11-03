@@ -1,10 +1,9 @@
-#library('ppw');
+library ppw;
 
-#import('dart:math', prefix:'math');
+import 'dart:math' as math;
+import 'package:bot/bot.dart';
 
-#import('package:bot/bot.dart');
-
-#source('src/poppopwin/field.dart');
-#source('src/poppopwin/game.dart');
-#source('src/poppopwin/game_state.dart');
-#source('src/poppopwin/square_state.dart');
+part 'src/poppopwin/field.dart';
+part 'src/poppopwin/game.dart';
+part 'src/poppopwin/game_state.dart';
+part 'src/poppopwin/square_state.dart';

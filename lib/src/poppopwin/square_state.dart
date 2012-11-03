@@ -1,3 +1,5 @@
+part of ppw;
+
 class SquareState {
   static const SquareState hidden = const SquareState._internal("hidden");
   static const SquareState revealed = const SquareState._internal("revealed");

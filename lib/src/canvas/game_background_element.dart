@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class GameBackgroundElement extends PElement {
   GameBackgroundElement() : super(0, 0, true);
 

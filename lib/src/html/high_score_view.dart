@@ -1,3 +1,5 @@
+part of ppw_html;
+
 class HighScoreView {
   final DivElement _div;
   final GameManager _manager;

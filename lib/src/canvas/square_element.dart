@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class SquareElement extends PElement {
   static const int _size = 80;
 

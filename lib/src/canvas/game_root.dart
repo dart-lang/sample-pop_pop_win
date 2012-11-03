@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class GameRoot extends GameManager {
   final Stage _stage;
   final CanvasElement _canvas;
@@ -79,7 +81,7 @@ class GameRoot extends GameManager {
     }
   }
 
-  void _onFrame(int time) {
+  void _onFrame(double time) {
     final boardInnerBox = _gameElement._scaledInnerBox;
     final xScale = _stage.size.width / boardInnerBox.width;
     final yScale = _stage.size.height / boardInnerBox.height;

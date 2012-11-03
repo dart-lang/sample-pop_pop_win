@@ -1,3 +1,5 @@
+part of ppw_canvas;
+
 class NewGameElement extends PElement {
   final EventHandle<EventArgs> _clickedEvent =
       new EventHandle<EventArgs>();

@@ -1,3 +1,5 @@
+part of ppw_html;
+
 abstract class GameManager {
   final int _width, _height, _bombCount;
   final GameStorage _gameStorage = new GameStorage();

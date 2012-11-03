@@ -1,15 +1,13 @@
-#library('ppw-html');
+library ppw_html;
 
-#import('dart:coreimpl');
-#import('dart:html');
-#import('dart:math', prefix:'math');
+import 'dart:collection';
+import 'dart:html';
+import 'dart:math' as math;
+import 'package:bot/bot.dart';
+import 'package:bot/html.dart';
+import 'poppopwin.dart';
 
-#import('package:bot/bot.dart');
-#import('package:bot/html.dart');
-
-#import('poppopwin.dart');
-
-#source('src/html/high_score_view.dart');
-#source('src/html/game_view.dart');
-#source('src/html/game_storage.dart');
-#source('src/html/game_manager.dart');
+part 'src/html/high_score_view.dart';
+part 'src/html/game_view.dart';
+part 'src/html/game_storage.dart';
+part 'src/html/game_manager.dart';
