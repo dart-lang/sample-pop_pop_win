@@ -1,15 +1,21 @@
 ![Pop, Pop, Win!](https://raw.github.com/dart-lang/pop-pop-win/master/web/images/icon_200.png)
 # Pop, Pop, Win!
 
-An implementation of <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a> in [Dart](http://www.dartlang.org).
+An implementation of 
+<a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a>
+in [Dart](http://www.dartlang.org).
 
 [![](https://drone.io/kevmoo/pop-pop-win/status.png)](https://drone.io/kevmoo/pop-pop-win/latest)
 
 ## Getting the code
 
-_Pop, Pop, Win!_ (PPW) uses the [Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run `pub update` before you try to run tests, build, etc.
+_Pop, Pop, Win!_ (PPW) uses the 
+[Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run 
+`pub update` before you try to run tests, build, etc.
 
-The code currently works against Dart build [r14554](https://gsdview.appspot.com/dart-editor-archive-continuous/14554/) released on 5 Nov, 2012.
+The code currently works against Dart build 
+[r14554](https://gsdview.appspot.com/dart-editor-archive-continuous/14554/) 
+released on 6 Nov, 2012.
 
 Using other versions of the Dart tools with this source code might cause problems.
 
