@@ -1,15 +1,15 @@
-#import('dart:html');
-#import('dart:math');
+import 'dart:html';
+import 'dart:math';
 
-#import('package:bot/bot.dart');
-#import('package:bot/html.dart');
-#import('package:bot/retained.dart');
-#import('package:bot/texture.dart');
+import 'package:bot/bot.dart';
+import 'package:bot/html.dart';
+import 'package:bot/retained.dart';
+import 'package:bot/texture.dart';
 
-#import('package:poppopwin/poppopwin.dart');
-#import('package:poppopwin/canvas.dart');
+import 'package:poppopwin/poppopwin.dart';
+import 'package:poppopwin/canvas.dart';
 
-#source('../texture_data.dart');
+part '../texture_data.dart';
 
 const String _transparentTextureName = '../images/transparent_animated.png';
 const String _opaqueTextureName = '../images/dart_opaque_01.jpg';
