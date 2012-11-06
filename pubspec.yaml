@@ -5,5 +5,5 @@ dependencies:
   bot:
     git:
       url: https://github.com/kevmoo/bot.dart.git
-      ref: working
+      ref: v0.5.0
   js: 0.0.9
