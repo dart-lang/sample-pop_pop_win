@@ -1,13 +1,13 @@
-#import('dart:html');
+import 'dart:html';
 
-#import('package:bot/bot.dart');
-#import('package:bot/html.dart');
-#import('package:bot/texture.dart');
-#import('package:poppopwin/poppopwin.dart');
-#import('package:poppopwin/canvas.dart');
+import 'package:bot/bot.dart';
+import 'package:bot/html.dart';
+import 'package:bot/texture.dart';
+import 'package:poppopwin/poppopwin.dart';
+import 'package:poppopwin/canvas.dart';
 
-#source('texture_data.dart');
-#source('_audio.dart');
+part 'texture_data.dart';
+part '_audio.dart';
 
 const String _transparentTextureName = 'images/transparent_animated.png';
 const String _opaqueTextureName = 'images/dart_opaque_01.jpg';
@@ -58,7 +58,7 @@ void _onLoaded(args) {
     final transparentImage = _imageLoader.getResource(_transparentTextureName);
 
     // already loaded. Used in CSS.
-    final staticTransparentImage = new ImageElement(_transparentStaticTexture);
+    final staticTransparentImage = new ImageElement(src: _transparentStaticTexture);
 
     final textures = _getTextures(transparentImage, opaqueImage, staticTransparentImage);
 
