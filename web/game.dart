@@ -1,10 +1,9 @@
 import 'dart:html';
-
 import 'package:bot/bot.dart';
 import 'package:bot/html.dart';
 import 'package:bot/texture.dart';
-import 'package:poppopwin/poppopwin.dart';
 import 'package:poppopwin/canvas.dart';
+import 'package:poppopwin/poppopwin.dart';
 
 part 'texture_data.dart';
 part '_audio.dart';
