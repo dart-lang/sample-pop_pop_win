@@ -1191,9 +1191,6 @@ $$.Object = {"": [],
  get$image: function() {
   return this.noSuchMethod$1($.createInvocationMirror("image", "image$0", 1, [], []));
  },
- get$_doClock: function() {
-  return this.noSuchMethod$1($.createInvocationMirror("_doClock", "_doClock$0", 1, [], []));
- },
  get$keyDown: function() {
   return this.noSuchMethod$1($.createInvocationMirror("keyDown", "keyDown$0", 1, [], []));
  },
@@ -2522,7 +2519,7 @@ $$._BaseSendPort = {"": ["_lib9_isolateId?"],
 
 $$._NativeJsSendPort = {"": ["_lib9_receivePort?", "_lib9_isolateId"],
  "super": "_BaseSendPort",
- send$2: function(message,replyTo){$._waitForPendingPorts([message,replyTo],new $._NativeJsSendPort_send_anon(replyTo,message,this))},
+ send$2: function(message,replyTo){$._waitForPendingPorts([message,replyTo],new $._NativeJsSendPort_send_anon(this,replyTo,message))},
  operator$eq$1: function(a){return typeof a==='object'&&a!==null&&!!a.is$_NativeJsSendPort&&$.eqB(this._lib9_receivePort,a._lib9_receivePort)},
  get$hashCode: function(){return this._lib9_receivePort.get$_lib9_id()},
  is$_NativeJsSendPort: true,
@@ -2531,7 +2528,7 @@ $$._NativeJsSendPort = {"": ["_lib9_receivePort?", "_lib9_isolateId"],
 
 $$._WorkerSendPort = {"": ["_workerId?", "_receivePortId", "_lib9_isolateId"],
  "super": "_BaseSendPort",
- send$2: function(message,replyTo){$._waitForPendingPorts([message,replyTo],new $._WorkerSendPort_send_anon(this,replyTo,message))},
+ send$2: function(message,replyTo){$._waitForPendingPorts([message,replyTo],new $._WorkerSendPort_send_anon(replyTo,this,message))},
  operator$eq$1: function(a){var z;if(typeof a==='object'&&a!==null&&!!a.is$_WorkerSendPort)z=$.eqB(this._workerId,a._workerId)&&$.eqB(this._lib9_isolateId,a._lib9_isolateId)&&$.eqB(this._receivePortId,a._receivePortId);else z=!1;return z},
  get$hashCode: function(){return $.xor($.xor($.shl(this._workerId,16),$.shl(this._lib9_isolateId,8)),this._receivePortId)},
  is$_WorkerSendPort: true,
@@ -2634,7 +2631,7 @@ $$._Deserializer0 = {"": [],
 
 $$._Timer = {"": ["_once", "_handle"],
  "super": "Object",
- _Timer$repeating$2: function(milliSeconds,callback){this._handle=$._window().setInterval$2(new $.anon8(callback,this),milliSeconds)},
+ _Timer$repeating$2: function(milliSeconds,callback){this._handle=$._window().setInterval$2(new $.anon8(this,callback),milliSeconds)},
  _Timer$2: function(milliSeconds,callback){this._handle=$._window().setTimeout$2(new $.anon7(callback,this),milliSeconds)}
 };
 
@@ -3190,6 +3187,7 @@ $$.GameRoot = {"": ["_lib3_stage", "_lib3_canvas?", "_gameElement?", "_clickMan"
  _onFrame$1: function(a){var z,y,x,w,v,u,t,s;z=this._gameElement;y=z._scaledInnerBox;x=this._lib3_stage;w=$.min(1,$.min($.div(x.get$size().get$width(),y.get$width()),$.div(x.get$size().get$height(),y.get$height())));v=$.mul(z.get$size(),w);u=$.Vector$($.sub(x.get$size().get$width(),v.get$width()),$.min(40,$.sub(x.get$size().get$height(),v.get$height()))).scale$1(0.5).scale$1(1/w);t=this._gameElementTx;t.setToScale$2(w,w);t.translate$2(u.get$x(),u.get$y());s=x.draw$0();this._frameRequested=!1;if(s===!0)this._requestFrame$0()},
  get$_onFrame: function() { return new $.BoundClosure(this, '_onFrame$1'); },
  updateClock$0: function(){this._requestFrame$0();$.GameManager.prototype.updateClock$0.call(this)},
+ get$updateClock: function() { return new $.BoundClosure0(this, 'updateClock$0'); },
  gameUpdated$1: function(a){this._requestFrame$0()},
  get$gameUpdated: function() { return new $.BoundClosure(this, 'gameUpdated$1'); },
  _stageInvalidated$1: function(a){this._requestFrame$0()},
@@ -3294,11 +3292,10 @@ $$.GameManager = {"": ["_game?"],
  get$bestTimeMilliseconds: function(){return this._gameStorage.getBestTimeMilliseconds$3(this._lib4_width,this._lib4_height,this._bombCount)},
  newGame$0: function(){if(!(this._updatedEventId==null)){this._game.get$updated().remove$1(this._updatedEventId);this._game.get$stateChanged().remove$1(this._gameStateChangedId);this._gameStateChanged$1($.CTC16)}this._game=$.Game$($.Field_Field(this._bombCount,this._lib4_width,this._lib4_height,null));this._updatedEventId=$.add$1(this._game.get$updated(),this.get$gameUpdated());this._gameStateChangedId=$.add$1(this._game.get$stateChanged(),this.get$_gameStateChanged())},
  _lib4_click$3: function(a,b,c){var z=this._game.getSquareState$2(a,b);if(c===!0){if($.eqB(z,$.CTC17))this._game.setFlag$3(a,b,!0);else if($.eqB(z,$.CTC19))this._game.setFlag$3(a,b,!1);else if($.eqB(z,$.CTC18))this._game.reveal$2(a,b)}else if($.eqB(z,$.CTC17))this._game.reveal$2(a,b)},
- updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this._game.get$state(),$.CTC22))this._setIntervalId=$.window().setInterval$2(this.get$_doClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this._game.get$state(),$.CTC22)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null}},
+ updateClock$0: function(){if(this._setIntervalId==null&&$.eqB(this._game.get$state(),$.CTC22))this._setIntervalId=$.window().setInterval$2(this.get$updateClock(),1000);else if(!(this._setIntervalId==null)&&!$.eqB(this._game.get$state(),$.CTC22)){$.window().clearInterval$1(this._setIntervalId);this._setIntervalId=null}},
+ get$updateClock: function() { return new $.BoundClosure0(this, 'updateClock$0'); },
  onNewBestTime$1: function(a){},
  onGameStateChanged$1: function(a){},
- _doClock$0: function(){this.updateClock$0()},
- get$_doClock: function() { return new $.BoundClosure0(this, '_doClock$0'); },
  _gameStateChanged$1: function(a){var z=this._gameStorage;z.recordState$1(a);if($.eqB(a,$.CTC20))if(z.updateBestTime$1(this._game)===!0)this.onNewBestTime$1(this.get$bestTimeMilliseconds());this.updateClock$0();this.onGameStateChanged$1(a)},
  get$_gameStateChanged: function() { return new $.BoundClosure(this, '_gameStateChanged$1'); },
  GameManager$3: function(a,b,c){this.newGame$0()}
@@ -3552,9 +3549,9 @@ $$.AttachableObject__addHandler_anon = {"": [],
  call$0: function(){return $.EventHandle$()}
 };
 
-$$.trackAnalyticsEvent_anon = {"": ["action_3", "category_2", "value_1", "label_0"],
+$$.trackAnalyticsEvent_anon = {"": ["label_3", "action_2", "category_1", "value_0"],
  "super": "Closure",
- call$0: function(){$.context().pushAnalytics$1($.array(['_trackEvent',this.category_2,this.action_3,this.label_0,this.value_1]))}
+ call$0: function(){$.context().pushAnalytics$1($.array(['_trackEvent',this.category_1,this.action_2,this.label_3,this.value_0]))}
 };
 
 $$.anon2 = {"": ["this_0"],
@@ -3790,10 +3787,10 @@ $$._convertNativeToDart_AcceptStructuredClone_writeSlot = {"": ["copies_3"],
  call$2: function(a,b){$.indexSet(this.copies_3,a,b)}
 };
 
-$$._convertNativeToDart_AcceptStructuredClone_walk = {"": ["readSlot_7", "findSlot_6", "mustCopy_5", "writeSlot_4"],
+$$._convertNativeToDart_AcceptStructuredClone_walk = {"": ["mustCopy_7", "readSlot_6", "findSlot_5", "writeSlot_4"],
  "super": "Closure",
- call$1: function(e){var slot,copy,t1,t2,t3,length$,i;if(typeof e!=='object'||e===null||(e.constructor!==Array||!!e.immutable$list)&&!e.is$JavaScriptIndexingBehavior())return this.call$1$bailout(1,e);if(e instanceof Date)throw $.$$throw($.UnimplementedError$('structured clone of Date'));if(e instanceof RegExp)throw $.$$throw($.UnimplementedError$('structured clone of RegExp'));if(Object.getPrototypeOf(e) === Object.prototype){slot=this.findSlot_6.call$1(e);copy=this.readSlot_7.call$1(slot);if(!(copy==null))return copy;copy=$.makeLiteralMap([]);if(typeof copy!=='object'||copy===null||(copy.constructor!==Array||!!copy.immutable$list)&&!copy.is$JavaScriptIndexingBehavior())return this.call$1$bailout(2,e,copy,slot);this.writeSlot_4.call$2(slot,copy);for(t1=$.iterator(Object.keys(e));t1.get$hasNext()===!0;){t2=t1.next$0();t3=this.call$1(e[t2]);if(t2!==(t2|0))throw $.iae(t2);if(t2<0||t2>=copy.length)throw $.ioore(t2);copy[t2]=t3}return copy}if(e instanceof Array){slot=this.findSlot_6.call$1(e);copy=this.readSlot_7.call$1(slot);if(!(copy==null))return copy;length$=e.length;if(this.mustCopy_5===!0)copy=new Array(length$);else copy=e;if(typeof copy!=='object'||copy===null||(copy.constructor!==Array||!!copy.immutable$list)&&!copy.is$JavaScriptIndexingBehavior())return this.call$1$bailout(3,e,length$,copy,slot);this.writeSlot_4.call$2(slot,copy);for(i=0;i<length$;++i){if(i>=e.length)throw $.ioore(i);t1=this.call$1(e[i]);if(i>=copy.length)throw $.ioore(i);copy[i]=t1}return copy}return e},
- call$1$bailout: function(a,b,c,d,e){switch(a){case 1:z=b;break;case 2:y=d;x=c;z=b;break;case 3:y=e;x=d;u=c;z=b;break}switch(a){case 0:case 1:a=0;if(z==null)return z;if(typeof z==='boolean')return z;if(typeof z==='number')return z;if(typeof z==='string')return z;if(z instanceof Date)throw $.$$throw($.UnimplementedError$('structured clone of Date'));if(z instanceof RegExp)throw $.$$throw($.UnimplementedError$('structured clone of RegExp'));case 2:if(a===2||a===0&&Object.getPrototypeOf(z) === Object.prototype)switch(a){case 0:y=this.findSlot_6.call$1(z);x=this.readSlot_7.call$1(y);if(!(x==null))return x;x=$.makeLiteralMap([]);case 2:a=0;this.writeSlot_4.call$2(y,x);for(w=$.iterator(Object.keys(z));w.get$hasNext()===!0;){v=w.next$0();$.indexSet(x,v,this.call$1(z[v]))}return x}case 3:var z,y,x,w,v,u,t;if(a===3||a===0&&z instanceof Array)switch(a){case 0:y=this.findSlot_6.call$1(z);x=this.readSlot_7.call$1(y);if(!(x==null))return x;u=$.get$length(z);x=this.mustCopy_5===!0?new Array(u):z;case 3:a=0;this.writeSlot_4.call$2(y,x);for(t=0;$.ltB(t,u);++t)$.indexSet(x,t,this.call$1($.index(z,t)));return x}return z}}
+ call$1: function(e){var slot,copy,t1,t2,t3,length$,i;if(typeof e!=='object'||e===null||(e.constructor!==Array||!!e.immutable$list)&&!e.is$JavaScriptIndexingBehavior())return this.call$1$bailout(1,e);if(e instanceof Date)throw $.$$throw($.UnimplementedError$('structured clone of Date'));if(e instanceof RegExp)throw $.$$throw($.UnimplementedError$('structured clone of RegExp'));if(Object.getPrototypeOf(e) === Object.prototype){slot=this.findSlot_5.call$1(e);copy=this.readSlot_6.call$1(slot);if(!(copy==null))return copy;copy=$.makeLiteralMap([]);if(typeof copy!=='object'||copy===null||(copy.constructor!==Array||!!copy.immutable$list)&&!copy.is$JavaScriptIndexingBehavior())return this.call$1$bailout(2,e,copy,slot);this.writeSlot_4.call$2(slot,copy);for(t1=$.iterator(Object.keys(e));t1.get$hasNext()===!0;){t2=t1.next$0();t3=this.call$1(e[t2]);if(t2!==(t2|0))throw $.iae(t2);if(t2<0||t2>=copy.length)throw $.ioore(t2);copy[t2]=t3}return copy}if(e instanceof Array){slot=this.findSlot_5.call$1(e);copy=this.readSlot_6.call$1(slot);if(!(copy==null))return copy;length$=e.length;if(this.mustCopy_7===!0)copy=new Array(length$);else copy=e;if(typeof copy!=='object'||copy===null||(copy.constructor!==Array||!!copy.immutable$list)&&!copy.is$JavaScriptIndexingBehavior())return this.call$1$bailout(3,e,length$,copy,slot);this.writeSlot_4.call$2(slot,copy);for(i=0;i<length$;++i){if(i>=e.length)throw $.ioore(i);t1=this.call$1(e[i]);if(i>=copy.length)throw $.ioore(i);copy[i]=t1}return copy}return e},
+ call$1$bailout: function(a,b,c,d,e){switch(a){case 1:z=b;break;case 2:y=d;x=c;z=b;break;case 3:y=e;x=d;u=c;z=b;break}switch(a){case 0:case 1:a=0;if(z==null)return z;if(typeof z==='boolean')return z;if(typeof z==='number')return z;if(typeof z==='string')return z;if(z instanceof Date)throw $.$$throw($.UnimplementedError$('structured clone of Date'));if(z instanceof RegExp)throw $.$$throw($.UnimplementedError$('structured clone of RegExp'));case 2:if(a===2||a===0&&Object.getPrototypeOf(z) === Object.prototype)switch(a){case 0:y=this.findSlot_5.call$1(z);x=this.readSlot_6.call$1(y);if(!(x==null))return x;x=$.makeLiteralMap([]);case 2:a=0;this.writeSlot_4.call$2(y,x);for(w=$.iterator(Object.keys(z));w.get$hasNext()===!0;){v=w.next$0();$.indexSet(x,v,this.call$1(z[v]))}return x}case 3:var z,y,x,w,v,u,t;if(a===3||a===0&&z instanceof Array)switch(a){case 0:y=this.findSlot_5.call$1(z);x=this.readSlot_6.call$1(y);if(!(x==null))return x;u=$.get$length(z);x=this.mustCopy_7===!0?new Array(u):z;case 3:a=0;this.writeSlot_4.call$2(y,x);for(t=0;$.ltB(t,u);++t)$.indexSet(x,t,this.call$1($.index(z,t)));return x}return z}}
 };
 
 $$.ResourceLoader_totalBytes_anon = {"": [],
@@ -3876,9 +3873,9 @@ $$._BaseSendPort_call_anon = {"": ["completer_1", "port_0"],
  call$2: function(a,b){var z,y;this.port_0.close$0();z=typeof a==='object'&&a!==null&&!!a.is$Exception;y=this.completer_1;if(z)y.completeException$1(a);else y.complete$1(a)}
 };
 
-$$._WorkerSendPort_send_anon = {"": ["this_2", "replyTo_1", "message_0"],
+$$._WorkerSendPort_send_anon = {"": ["replyTo_2", "this_1", "message_0"],
  "super": "Closure",
- call$0: function(){var z,y,x,w;z=this.this_2;y=this.replyTo_1;z._checkReplyTo$1(y);x=$._serializeMessage($.makeLiteralMap(['command','message','port',z,'msg',this.message_0,'replyTo',y]));y=$._globalState().get$isWorker()===!0;w=$._globalState;if(y)w().get$mainManager().postMessage$1(x);else $.index(w().get$managers(),z.get$_workerId()).postMessage$1(x)}
+ call$0: function(){var z,y,x,w;z=this.this_1;y=this.replyTo_2;z._checkReplyTo$1(y);x=$._serializeMessage($.makeLiteralMap(['command','message','port',z,'msg',this.message_0,'replyTo',y]));y=$._globalState().get$isWorker()===!0;w=$._globalState;if(y)w().get$mainManager().postMessage$1(x);else $.index(w().get$managers(),z.get$_workerId()).postMessage$1(x)}
 };
 
 $$._waitForPendingPorts_anon = {"": ["callback_0"],
@@ -3886,7 +3883,7 @@ $$._waitForPendingPorts_anon = {"": ["callback_0"],
  call$1: function(a){return this.callback_0.call$0()}
 };
 
-$$.Futures_wait_anon = {"": ["pos_5", "result_4", "completer_3", "box_0", "values_2"],
+$$.Futures_wait_anon = {"": ["pos_5", "result_4", "completer_3", "values_2", "box_0"],
  "super": "Closure",
  call$1: function(a){var z,y,x;z=this.values_2;$.indexSet(z,this.pos_5,a);y=this.box_0;x=$.sub(y.remaining_1,1);y.remaining_1=x;if($.eqB(x,0)&&this.result_4.get$isComplete()!==!0)this.completer_3.complete$1(z)}
 };
@@ -3906,14 +3903,14 @@ $$._PendingSendPortFinder_visitList_anon = {"": ["this_0"],
  call$1: function(a){return this.this_0._lib9_dispatch$1(a)}
 };
 
-$$._NativeJsSendPort_send_anon = {"": ["replyTo_5", "message_4", "this_3"],
+$$._NativeJsSendPort_send_anon = {"": ["this_5", "replyTo_4", "message_3"],
  "super": "Closure",
- call$0: function(){var t1,t2,t3,isolate,shouldSerialize,msg;t1={};t2=this.this_3;t3=this.replyTo_5;t2._checkReplyTo$1(t3);isolate=$.index($._globalState().get$isolates(),t2.get$_lib9_isolateId());if(isolate==null)return;if(t2.get$_lib9_receivePort().get$_lib9_callback()==null)return;shouldSerialize=!($._globalState().get$currentContext()==null)&&!$.eqB($._globalState().get$currentContext().get$id(),t2.get$_lib9_isolateId());msg=this.message_4;t1.msg_1=msg;t1.reply_2=t3;if(shouldSerialize){t1.msg_1=$._serializeMessage(t1.msg_1);t1.reply_2=$._serializeMessage(t1.reply_2)}$._globalState().get$topEventLoop().enqueue$3(isolate,new $._NativeJsSendPort_send_anon0(t1,shouldSerialize,t2),'receive '+$.S(msg))}
+ call$0: function(){var t1,t2,t3,isolate,shouldSerialize,msg;t1={};t2=this.this_5;t3=this.replyTo_4;t2._checkReplyTo$1(t3);isolate=$.index($._globalState().get$isolates(),t2.get$_lib9_isolateId());if(isolate==null)return;if(t2.get$_lib9_receivePort().get$_lib9_callback()==null)return;shouldSerialize=!($._globalState().get$currentContext()==null)&&!$.eqB($._globalState().get$currentContext().get$id(),t2.get$_lib9_isolateId());msg=this.message_3;t1.msg_1=msg;t1.reply_2=t3;if(shouldSerialize){t1.msg_1=$._serializeMessage(t1.msg_1);t1.reply_2=$._serializeMessage(t1.reply_2)}$._globalState().get$topEventLoop().enqueue$3(isolate,new $._NativeJsSendPort_send_anon0(t2,t1,shouldSerialize),'receive '+$.S(msg))}
 };
 
-$$._NativeJsSendPort_send_anon0 = {"": ["box_0", "shouldSerialize_7", "this_6"],
+$$._NativeJsSendPort_send_anon0 = {"": ["this_7", "box_0", "shouldSerialize_6"],
  "super": "Closure",
- call$0: function(){var z,y;z=this.this_6;if(!(z.get$_lib9_receivePort().get$_lib9_callback()==null)){if(this.shouldSerialize_7===!0){y=this.box_0;y.msg_1=$._deserializeMessage(y.msg_1);y.reply_2=$._deserializeMessage(y.reply_2)}z=z.get$_lib9_receivePort();y=this.box_0;z._lib9_callback$2(y.msg_1,y.reply_2)}}
+ call$0: function(){var z,y;z=this.this_7;if(!(z.get$_lib9_receivePort().get$_lib9_callback()==null)){if(this.shouldSerialize_6===!0){y=this.box_0;y.msg_1=$._deserializeMessage(y.msg_1);y.reply_2=$._deserializeMessage(y.reply_2)}z=z.get$_lib9_receivePort();y=this.box_0;z._lib9_callback$2(y.msg_1,y.reply_2)}}
 };
 
 $$._Copier_visitMap_anon = {"": ["this_2", "box_0"],
@@ -3931,9 +3928,9 @@ $$.anon7 = {"": ["callback_1", "this_0"],
  call$0: function(){return this.callback_1.call$1(this.this_0)}
 };
 
-$$.anon8 = {"": ["callback_1", "this_0"],
+$$.anon8 = {"": ["this_1", "callback_0"],
  "super": "Closure",
- call$0: function(){return this.callback_1.call$1(this.this_0)}
+ call$0: function(){return this.callback_0.call$1(this.this_1)}
 };
 
 $$.BoundClosure = {'':
@@ -3958,8 +3955,6 @@ $.sub = function(a,b){return typeof a==='number'&&typeof b==='number'?a - b:$.su
 $.mul = function(a,b){return typeof a==='number'&&typeof b==='number'?a * b:$.mul$slow(a,b)};
 
 $.gt = function(a,b){return typeof a==='number'&&typeof b==='number'?a > b:$.gt$slow(a,b)};
-
-$.div = function(a,b){return typeof a==='number'&&typeof b==='number'?a / b:$.div$slow(a,b)};
 
 $.lt = function(a,b){return typeof a==='number'&&typeof b==='number'?a < b:$.lt$slow(a,b)};
 
@@ -3997,7 +3992,7 @@ $.ge$slow = function(a,b){if($.checkNumbers(a,b))return a >= b;return a.operator
 
 $.lt$slow = function(a,b){if($.checkNumbers(a,b))return a < b;return a.operator$lt$1(b)};
 
-$.ClickManager_ClickManager = function(stage){$.requireArgumentNotNull(stage,'stage');return $.get$ClickManager__clickManagerProperty().get$2(stage,new $.ClickManager_ClickManager_anon())};
+$.ClickManager$_internal = function(_stage){var t1=new $.ClickManager(_stage,null);t1.ClickManager$_internal$1(_stage);return t1};
 
 $.shr = function(a,b){if($.checkNumbers(a,b)){if(b<0)throw $.$$throw($.ArgumentError$(b));if(a>0){if(b > 31)return 0;return a >>> b}if(b>31)b=31;return(a >> b) >>> 0}return a.operator$shr$1(b)};
 
@@ -4005,9 +4000,9 @@ $.and = function(a,b){if($.checkNumbers(a,b))return(a & b) >>> 0;return a.operat
 
 $.MediaStreamTrackListEvents$ = function(_ptr){return new $.MediaStreamTrackListEvents(_ptr)};
 
-$.ClickManager$_internal = function(_stage){var t1=new $.ClickManager(_stage,null);t1.ClickManager$_internal$1(_stage);return t1};
-
 $.le$slow = function(a,b){if($.checkNumbers(a,b))return a <= b;return a.operator$le$1(b)};
+
+$.neg = function(a){if(typeof a === "number")return-a;return a.negate$0()};
 
 $.index$slow = function(a,index){var t1;if(!(typeof a==='string'))t1=!(a==null)&&a.constructor === Array;else t1=!0;if(t1){if(!(typeof index==='number'&&Math.floor(index) === index)){if(!(typeof index==='number'))throw $.$$throw($.ArgumentError$(index));if(!($.truncate(index)===index))throw $.$$throw($.ArgumentError$(index))}if($.ltB(index,0)||$.geB(index,$.get$length(a)))throw $.$$throw($.RangeError$value(index));return a[index]}return a.operator$index$1(index)};
 
@@ -4037,6 +4032,8 @@ $.toStringWrapper = function(){return $.toString(this.dartException)};
 
 $.MediaStreamTrackEvents$ = function(_ptr){return new $.MediaStreamTrackEvents(_ptr)};
 
+$.AffineTransform$ = function(scaleX,shearY,shearX,scaleY,translateX,translateY){return new $.AffineTransform(scaleX,shearY,shearX,scaleY,translateX,translateY)};
+
 $.unwrapException = function(ex){var message,type,name$,ieErrorCode,ieFacilityNumber,t1;if("dartException" in ex)return ex.dartException;message=ex.message;if(ex instanceof TypeError){type=ex.type;name$=ex.arguments ? ex.arguments[0] : "";if($.eqB(type,'property_not_function')||$.eqB(type,'called_non_callable')||$.eqB(type,'non_object_property_call')||$.eqB(type,'non_object_property_load'))return $.NullPointerException$(null,$.CTC1);else if($.eqB(type,'undefined_method'))return $.NoSuchMethodError$('',name$,[],$.makeLiteralMap([]),null);ieErrorCode=ex.number & 0xffff;ieFacilityNumber=ex.number>>16 & 0x1FFF;if(typeof message==='string')if($.endsWith(message,'is null')===!0||$.endsWith(message,'is undefined')===!0||$.endsWith(message,'is null or undefined')===!0)return $.NullPointerException$(null,$.CTC1);else{if($.contains$1(message,' is not a function')!==!0)t1=ieErrorCode===438&&ieFacilityNumber===10;else t1=!0;if(t1)return $.NoSuchMethodError$('','<unknown>',[],$.makeLiteralMap([]),null)}return $._ExceptionImplementation$(typeof message==='string'?message:'')}if(ex instanceof RangeError){if(typeof message==='string'&&$.contains$1(message,'call stack')===!0)return $.StackOverflowError$();return $.ArgumentError$(null)}if(typeof InternalError == 'function' && ex instanceof InternalError)if(typeof message==='string'&&message==='too much recursion')return $.StackOverflowError$();return ex};
 
 $.makeLiteralMap = function(a){var z,y;z=$.iterator(a);y=$.LinkedHashMap_LinkedHashMap();for(;z.get$hasNext()===!0;)$.indexSet(y,z.next$0(),z.next$0());return y};
@@ -4047,15 +4044,19 @@ $.convertDartClosureToJS = function(closure,arity){var function$;if(closure==nul
     return $.invokeClosure.call$5(closure, $._currentIsolate(), arity, arguments[0], arguments[1]);
   };closure.$identity = function$;return function$};
 
-$.AffineTransform$ = function(scaleX,shearY,shearX,scaleY,translateX,translateY){return new $.AffineTransform(scaleX,shearY,shearX,scaleY,translateX,translateY)};
+$.ClickManager_ClickManager = function(stage){$.requireArgumentNotNull(stage,'stage');return $.get$ClickManager__clickManagerProperty().get$2(stage,new $.ClickManager_ClickManager_anon())};
 
-$.MediaStreamEvents$ = function(_ptr){return new $.MediaStreamEvents(_ptr)};
+$.ClickManager_addMouseOutHandler = function(a,b){return $.get$ClickManager__mouseOutEvent().addHandler$2(a,b)};
 
 $.div$slow = function(a,b){if($.checkNumbers(a,b))return a / b;return a.operator$div$1(b)};
 
-$.neg = function(a){if(typeof a === "number")return-a;return a.negate$0()};
+$.MediaStreamEvents$ = function(_ptr){return new $.MediaStreamEvents(_ptr)};
 
-$._ChildNodeListLazy$ = function(_this){return new $._ChildNodeListLazy(_this)};
+$.ClickManager_setClickable = function(a,b){if(b)$.get$ClickManager__isClickableProperty().set$2(a,!0);else $.get$ClickManager__isClickableProperty().clear$1(a)};
+
+$.listInsertRange = function(receiver,start,length$,initialValue){var receiverLength,t1,t2,t3,i;if(typeof receiver!=='object'||receiver===null||(receiver.constructor!==Array||!!receiver.immutable$list)&&!receiver.is$JavaScriptIndexingBehavior())return $.listInsertRange$bailout(1,receiver,start,length$,initialValue);if($.eqB(length$,0))return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.RangeError$value(start));t1=receiverLength+length$;$.set$length(receiver,t1);t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(t3=receiver.length,i=start;i<t2;++i){if(i<0||i>=t3)throw $.ioore(i);receiver[i]=initialValue}$.set$length(receiver,t1)};
+
+$.div = function(a,b){return typeof a==='number'&&typeof b==='number'?a / b:$.div$slow(a,b)};
 
 $.ge = function(a,b){return typeof a==='number'&&typeof b==='number'?a >= b:$.ge$slow(a,b)};
 
@@ -4065,13 +4066,11 @@ $.throwCyclicInit = function(a){throw $.$$throw($.RuntimeError$('Cyclic initiali
 
 $.Mouse_markMouseOver = function(stage,coordinate){var t1,items,hits;$.requireArgumentNotNull(stage,'stage');t1=!(coordinate==null);$.requireArgument(coordinate==null||coordinate.get$isValid()===!0,'coordinate',null);items=$.get$Mouse__stageMouseCacheProperty().get$1(stage);if(!(items==null)){$.forEach(items,new $.Mouse_markMouseOver_anon());$.get$Mouse__stageMouseCacheProperty().clear$1(stage)}if(t1){hits=$.RetainedUtil__hitTest(stage.get$rootElement(),coordinate);$.get$Mouse__stageMouseCacheProperty().set$2(stage,hits);$.forEach(hits,new $.Mouse_markMouseOver_anon0());if(hits.length>0){t1=$.get$Mouse_isMouseDirectlyOverProperty();if(0>=hits.length)throw $.ioore(0);t1.set$2(hits[0],!0)}return hits}return};
 
-$.listInsertRange = function(receiver,start,length$,initialValue){var receiverLength,t1,t2,t3,i;if(typeof receiver!=='object'||receiver===null||(receiver.constructor!==Array||!!receiver.immutable$list)&&!receiver.is$JavaScriptIndexingBehavior())return $.listInsertRange$bailout(1,receiver,start,length$,initialValue);if($.eqB(length$,0))return;$.checkNull(start);$.checkNull(length$);if(!(typeof length$==='number'&&Math.floor(length$) === length$))throw $.$$throw($.ArgumentError$(length$));if(length$<0)throw $.$$throw($.ArgumentError$(length$));if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));receiverLength=receiver.length;if(start<0||start>receiverLength)throw $.$$throw($.RangeError$value(start));t1=receiverLength+length$;$.set$length(receiver,t1);t2=start+length$;$.Arrays_copy(receiver,start,receiver,t2,receiverLength-start);if(!(initialValue==null))for(t3=receiver.length,i=start;i<t2;++i){if(i<0||i>=t3)throw $.ioore(i);receiver[i]=initialValue}$.set$length(receiver,t1)};
+$._ChildNodeListLazy$ = function(_this){return new $._ChildNodeListLazy(_this)};
 
 $.ClickManager_addMouseMoveHandler = function(a,b){return $.get$ClickManager__mouseMoveEvent().addHandler$2(a,b)};
 
 $.constructorNameFallback = function(object){var constructor$,name$,t1,string;if(object==null)return'Null';constructor$=object.constructor;if(typeof(constructor$)==='function'){name$=constructor$.name;if(typeof name$==='string')t1=!(name$==='')&&!(name$==='Object')&&!(name$==='Function.prototype');else t1=!1;if(t1)return name$}string=Object.prototype.toString.call(object);return string.substring(8, string.length - 1)};
-
-$.ClickManager_addMouseOutHandler = function(a,b){return $.get$ClickManager__mouseOutEvent().addHandler$2(a,b)};
 
 $.RetainedUtil__hitTest = function(a,b){var z,y,x,w,v;b=$.RetainedUtil_transformPointGlobalToLocal(a,b);z=$.Box$(0,0,a.get$width(),a.get$height());y=$._ListImpl_List(null);if(z.contains$1(b)===!0){if(typeof a==='object'&&a!==null&&!!a.is$ParentElement){x=a.get$visualChildCount();if(typeof x!=='number')return $.RetainedUtil__hitTest$bailout(1,a,b,y,x);for(w=x-1,v=0;v<x;++v){y=$.RetainedUtil__hitTest(a.getVisualChild$1(w-v),b);if(y.length>0)break}a=a}y.push(a)}return y};
 
@@ -4080,6 +4079,8 @@ $.RetainedUtil_transformPointGlobalToLocal = function(a,b){return a.getTransform
 $.ElementMouseEventArgs_ElementMouseEventArgs = function(a,b){return $.ElementMouseEventArgs$_internal(a,b.get$shiftKey())};
 
 $.ElementMouseEventArgs$_internal = function(element,shiftKey){return new $.ElementMouseEventArgs(element,shiftKey)};
+
+$.ClickManager_addHandler = function(a,b){return $.get$ClickManager__clickEvent().addHandler$2(a,b)};
 
 $.regExpExec = function(regExp,str){var result=$.regExpGetNative(regExp).exec(str);if(result == null)return;return result};
 
@@ -4105,78 +4106,71 @@ $.le = function(a,b){return typeof a==='number'&&typeof b==='number'?a <= b:$.le
 
 $.Game$ = function(field){var t1,t2;t1=$.EventHandle$();t2=$.EventHandle$();t2=new $.Game(field,$.Array2d_Array2d(field.get$width(),field.get$height(),$.CTC17),t1,t2,$.CTC16,null,null,null,null);t2.Game$1(field);return t2};
 
-$.propertyTypeCastError = function(a,b){throw $.$$throw($.CastErrorImplementation$($.Primitives_objectTypeName(a),$.substring$2(b,3,$.get$length(b))))};
-
 $.WorkerEvents$ = function(_ptr){return new $.WorkerEvents(_ptr)};
-
-$.hashCodeForNativeObject = function(a){return $.Primitives_objectHashCode(a)};
 
 $.AbstractWorkerEvents$ = function(_ptr){return new $.AbstractWorkerEvents(_ptr)};
 
 $.ClickManager_addMouseUpHandler = function(a,b){return $.get$ClickManager__mouseUpEvent().addHandler$2(a,b)};
 
+$.propertyTypeCastError = function(a,b){throw $.$$throw($.CastErrorImplementation$($.Primitives_objectTypeName(a),$.substring$2(b,3,$.get$length(b))))};
+
 $.propertyTypeCast = function(value,property){if(value==null||!!value[property])return value;$.propertyTypeCastError(value,property)};
-
-$.AffineTransform_AffineTransform$fromRotate = function(a,b,c){return $.AffineTransform$(1,0,0,1,0,0).setToRotation$3(a,b,c)};
-
-$.ClickManager_addHandler = function(a,b){return $.get$ClickManager__clickEvent().addHandler$2(a,b)};
 
 $.Mouse_isMouseDirectlyOver = function(a){return $.get$Mouse_isMouseDirectlyOverProperty().get$1(a)};
 
-$.ClickManager_setClickable = function(a,b){if(b)$.get$ClickManager__isClickableProperty().set$2(a,!0);else $.get$ClickManager__isClickableProperty().clear$1(a)};
-
 $.ClickManager_addMouseDownHandler = function(a,b){return $.get$ClickManager__mouseDownEvent().addHandler$2(a,b)};
+
+$.AffineTransform_AffineTransform$fromRotate = function(a,b,c){return $.AffineTransform$(1,0,0,1,0,0).setToRotation$3(a,b,c)};
 
 $.Url_revokeObjectUrl = function(objectUrl){return(window.URL || window.webkitURL).revokeObjectURL(objectUrl)};
 
+$.dynamicBind = function(obj,name$,methods,arguments$){var tag,method,i,entry,proto;tag=$.getTypeNameOf(obj);method=methods[tag];if(method==null&&!($._dynamicMetadata0()==null))for(i=0;i<$._dynamicMetadata0().length;++i){entry=$._dynamicMetadata0()[i];if(entry.get$_lib0_set()[tag]){method=methods[entry.get$_tag()];if(!(method==null))break}}if(method==null)method=methods['Object'];proto=Object.getPrototypeOf(obj);if(method==null)method=function () {if (Object.getPrototypeOf(this) === proto) {throw new TypeError(name$ + " is not a function");} else {return Object.prototype[name$].apply(this, arguments);}};if(!proto.hasOwnProperty(name$))$.defineProperty(proto,name$,method);return method.apply(obj, arguments$)};
+
+$.createInvocationMirror = function(a,b,c,d,e){return $.JSInvocationMirror$(a,b,c,d,e)};
+
 $.Url_createObjectUrl = function(blob_OR_source_OR_stream){return(window.URL || window.webkitURL).createObjectURL(blob_OR_source_OR_stream)};
 
-$.toStringForNativeObject = function(obj){return'Instance of '+$.getTypeNameOf(obj)};
+$.getFunctionForTypeNameOf = function(){if(!(typeof(navigator)==='object'))return $.typeNameInChrome;var userAgent=navigator.userAgent;if(userAgent.indexOf('Chrome')!==-1||userAgent.indexOf('DumpRenderTree')!==-1)return $.typeNameInChrome;else if(userAgent.indexOf('Firefox')!==-1)return $.typeNameInFirefox;else if(userAgent.indexOf('MSIE')!==-1)return $.typeNameInIE;else if(userAgent.indexOf('Opera')!==-1)return $.typeNameInOpera;else if(userAgent.indexOf('AppleWebKit')!==-1)return $.typeNameInSafari;else return $.constructorNameFallback};
 
-$.typeNameInOpera = function(obj){var name$=$.constructorNameFallback(obj);if(name$==='Window')return'DOMWindow';return name$};
+$.getTypeNameOf = function(a){if($._getTypeNameOf==null)$._getTypeNameOf=$.getFunctionForTypeNameOf();return $._getTypeNameOf.call$1(a)};
+
+$.toStringForNativeObject = function(obj){return'Instance of '+$.getTypeNameOf(obj)};
 
 $.typeNameInFirefox = function(obj){var name$=$.constructorNameFallback(obj);if(name$==='Window')return'DOMWindow';if(name$==='Document')return'HTMLDocument';if(name$==='XMLDocument')return'Document';if(name$==='WorkerMessageEvent')return'MessageEvent';if(name$==='DragEvent')return'MouseEvent';if(name$==='DataTransfer')return'Clipboard';if(name$==='MouseScrollEvent')return'WheelEvent';if(name$==='OfflineResourceList')return'DOMApplicationCache';return name$};
 
 $.typeNameInIE = function(obj){var name$=$.constructorNameFallback(obj);if(name$==='Window')return'DOMWindow';if(name$==='Document'){if(!!obj.xmlVersion)return'Document';return'HTMLDocument'}if(name$==='ApplicationCache')return'DOMApplicationCache';if(name$==='CanvasPixelArray')return'Uint8ClampedArray';if(name$==='DataTransfer')return'Clipboard';if(name$==='DragEvent')return'MouseEvent';if(name$==='HTMLDDElement')return'HTMLElement';if(name$==='HTMLDTElement')return'HTMLElement';if(name$==='HTMLTableDataCellElement')return'HTMLTableCellElement';if(name$==='HTMLTableHeaderCellElement')return'HTMLTableCellElement';if(name$==='HTMLPhraseElement')return'HTMLElement';if(name$==='MSStyleCSSProperties')return'CSSStyleDeclaration';if(name$==='MouseWheelEvent')return'WheelEvent';return name$};
 
-$._dynamicMetadata0 = function(){if(typeof($dynamicMetadata)==='undefined'){var t1=[];$._dynamicMetadata(t1)}return $dynamicMetadata};
-
 $.print = function(a){if(typeof a==='string')$.Primitives_printString(a);else $.Primitives_printString($.toString(a))};
-
-$._dynamicMetadata = function(table){$dynamicMetadata = table};
 
 $.dynamicSetMetadata = function(a){var z=$.buildDynamicMetadata(a);$._dynamicMetadata(z)};
 
-$.typeNameInSafari = function(obj){var name$=$.constructorNameFallback(obj);if(name$==='Window')return'DOMWindow';if(name$==='CanvasPixelArray')return'Uint8ClampedArray';if(name$==='WebKitMutationObserver')return'MutationObserver';if(name$==='AudioChannelMerger')return'ChannelMergerNode';if(name$==='AudioChannelSplitter')return'ChannelSplitterNode';if(name$==='AudioGainNode')return'GainNode';if(name$==='AudioPannerNode')return'PannerNode';if(name$==='JavaScriptAudioNode')return'ScriptProcessorNode';if(name$==='Oscillator')return'OscillatorNode';if(name$==='RealtimeAnalyserNode')return'AnalyserNode';return name$};
+$.typeNameInChrome = function(obj){var name$=obj.constructor.name;if(name$==='Window')return'DOMWindow';if(name$==='CanvasPixelArray')return'Uint8ClampedArray';if(name$==='WebKitMutationObserver')return'MutationObserver';if(name$==='AudioChannelMerger')return'ChannelMergerNode';if(name$==='AudioChannelSplitter')return'ChannelSplitterNode';if(name$==='AudioGainNode')return'GainNode';if(name$==='AudioPannerNode')return'PannerNode';if(name$==='JavaScriptAudioNode')return'ScriptProcessorNode';if(name$==='Oscillator')return'OscillatorNode';if(name$==='RealtimeAnalyserNode')return'AnalyserNode';return name$};
 
-$.defineProperty = function(obj,property,value){Object.defineProperty(obj, property,
-      {value: value, enumerable: false, writable: true, configurable: true})};
+$.hashCodeForNativeObject = function(a){return $.Primitives_objectHashCode(a)};
 
-$.dynamicBind = function(obj,name$,methods,arguments$){var tag,method,i,entry,proto;tag=$.getTypeNameOf(obj);method=methods[tag];if(method==null&&!($._dynamicMetadata0()==null))for(i=0;i<$._dynamicMetadata0().length;++i){entry=$._dynamicMetadata0()[i];if(entry.get$_lib0_set()[tag]){method=methods[entry.get$_tag()];if(!(method==null))break}}if(method==null)method=methods['Object'];proto=Object.getPrototypeOf(obj);if(method==null)method=function () {if (Object.getPrototypeOf(this) === proto) {throw new TypeError(name$ + " is not a function");} else {return Object.prototype[name$].apply(this, arguments);}};if(!proto.hasOwnProperty(name$))$.defineProperty(proto,name$,method);return method.apply(obj, arguments$)};
+$.typeNameInOpera = function(obj){var name$=$.constructorNameFallback(obj);if(name$==='Window')return'DOMWindow';return name$};
 
 $.dynamicFunction = function(name$){var f,methods,dartMethod,bind;f=Object.prototype[name$];if(!(f==null)&&!!f.methods)return f.methods;methods={};dartMethod=Object.getPrototypeOf($.CTC29)[name$];if(!(dartMethod==null))methods['Object'] = dartMethod;bind=function() {return $.dynamicBind.call$4(this, name$, methods, Array.prototype.slice.call(arguments));};bind.methods = methods;$.defineProperty(Object.prototype,name$,bind);return methods};
+
+$._dynamicMetadata0 = function(){if(typeof($dynamicMetadata)==='undefined'){var t1=[];$._dynamicMetadata(t1)}return $dynamicMetadata};
 
 $._LocationWrapper$ = function(_ptr){return new $._LocationWrapper(_ptr)};
 
 $.coreSort = function(a,b){$._Sort__doSort(a,0,$.sub($.get$length(a),1),b);return};
 
-$.getFunctionForTypeNameOf = function(){if(!(typeof(navigator)==='object'))return $.typeNameInChrome;var userAgent=navigator.userAgent;if(userAgent.indexOf('Chrome')!==-1||userAgent.indexOf('DumpRenderTree')!==-1)return $.typeNameInChrome;else if(userAgent.indexOf('Firefox')!==-1)return $.typeNameInFirefox;else if(userAgent.indexOf('MSIE')!==-1)return $.typeNameInIE;else if(userAgent.indexOf('Opera')!==-1)return $.typeNameInOpera;else if(userAgent.indexOf('AppleWebKit')!==-1)return $.typeNameInSafari;else return $.constructorNameFallback};
-
 $.getTraceFromException = function(exception){return $.StackTrace$(exception.stack)};
-
-$.createInvocationMirror = function(a,b,c,d,e){return $.JSInvocationMirror$(a,b,c,d,e)};
-
-$.typeNameInChrome = function(obj){var name$=obj.constructor.name;if(name$==='Window')return'DOMWindow';if(name$==='CanvasPixelArray')return'Uint8ClampedArray';if(name$==='WebKitMutationObserver')return'MutationObserver';if(name$==='AudioChannelMerger')return'ChannelMergerNode';if(name$==='AudioChannelSplitter')return'ChannelSplitterNode';if(name$==='AudioGainNode')return'GainNode';if(name$==='AudioPannerNode')return'PannerNode';if(name$==='JavaScriptAudioNode')return'ScriptProcessorNode';if(name$==='Oscillator')return'OscillatorNode';if(name$==='RealtimeAnalyserNode')return'AnalyserNode';return name$};
 
 $._LocationCrossFrame$ = function(_location){return new $._LocationCrossFrame(_location)};
 
 $._LocationCrossFrame__createSafe = function(a){var z=$.window().get$location();if(a==null?z==null:a===z)return a;else return $._LocationCrossFrame$(a)};
 
+$._dynamicMetadata = function(table){$dynamicMetadata = table};
+
 $.buildDynamicMetadata = function(inputTable){var result,i,tag,tags,set,tagNames,j;result=[];for(i=0;i<inputTable.length;++i){tag=inputTable[i][0];tags=inputTable[i][1];set={};tagNames=tags.split('|');for(j=0;j<tagNames.length;++j)set[tagNames[j]] = !0;result.push($.MetaInfo$(tag,tags,set))}return result};
 
 $.xor = function(a,b){if($.checkNumbers(a,b))return(a ^ b) >>> 0;return a.operator$xor$1(b)};
 
-$.getTypeNameOf = function(a){if($._getTypeNameOf==null)$._getTypeNameOf=$.getFunctionForTypeNameOf();return $._getTypeNameOf.call$1(a)};
+$.typeNameInSafari = function(obj){var name$=$.constructorNameFallback(obj);if(name$==='Window')return'DOMWindow';if(name$==='CanvasPixelArray')return'Uint8ClampedArray';if(name$==='WebKitMutationObserver')return'MutationObserver';if(name$==='AudioChannelMerger')return'ChannelMergerNode';if(name$==='AudioChannelSplitter')return'ChannelSplitterNode';if(name$==='AudioGainNode')return'GainNode';if(name$==='AudioPannerNode')return'PannerNode';if(name$==='JavaScriptAudioNode')return'ScriptProcessorNode';if(name$==='Oscillator')return'OscillatorNode';if(name$==='RealtimeAnalyserNode')return'AnalyserNode';return name$};
 
 $._LocationWrapper__get = function(p,m){return p[m]};
 
@@ -4210,9 +4204,9 @@ $.map = function(a,b){if(!$.isJsArray(a))return a.map$1(b);else return $.Collect
 
 $.clear = function(a){if(!$.isJsArray(a))return a.clear$0();$.set$length(a,0)};
 
-$.get$last = function(a){if(!$.isJsArray(a))return a.get$last();return $.index(a,$.sub($.get$length(a),1))};
-
 $.EventListenerList$ = function(_ptr,_type){return new $.EventListenerList(_ptr,_type)};
+
+$.get$last = function(a){if(!$.isJsArray(a))return a.get$last();return $.index(a,$.sub($.get$length(a),1))};
 
 $.indexOf$2 = function(receiver,element,start){if($.isJsArray(receiver)){if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));return $.Arrays_indexOf(receiver,element,start,receiver.length)}else if(typeof receiver==='string'){$.checkNull(element);if(!(typeof start==='number'&&Math.floor(start) === start))throw $.$$throw($.ArgumentError$(start));if(!(typeof element==='string'))throw $.$$throw($.ArgumentError$(element));if(start<0)return-1;return receiver.indexOf(element, start)}return receiver.indexOf$2(element,start)};
 
@@ -4264,8 +4258,6 @@ $.addAll = function(a,b){var z;if(!$.isJsArray(a))return a.addAll$1(b);z=$.itera
 
 $.abs = function(receiver){if(!(typeof receiver==='number'))return receiver.abs$0();return Math.abs(receiver)};
 
-$._HistoryCrossFrame$ = function(_history){return new $._HistoryCrossFrame(_history)};
-
 $._HistoryCrossFrame__createSafe = function(a){var z=$.window().get$history();if(a==null?z==null:a===z)return a;else return $._HistoryCrossFrame$(a)};
 
 $.compareTo = function(a,b){var aIsNegative,t1;if($.checkNumbers(a,b))if($.ltB(a,b))return-1;else if($.gtB(a,b))return 1;else if($.eqB(a,b)){if($.eqB(a,0)){aIsNegative=$.get$isNegative(a);if($.eqB(aIsNegative,$.get$isNegative(b)))return 0;if(aIsNegative===!0)return-1;return 1}return 0}else if($.get$isNaN(a)===!0){if($.get$isNaN(b)===!0)return 0;return 1}else return-1;else if(typeof a==='string'){if(!(typeof b==='string'))throw $.$$throw($.ArgumentError$(b));if(a == b)t1=0;else t1=a < b?-1:1;return t1}else return a.compareTo$1(b)};
@@ -4278,13 +4270,14 @@ $.every = function(a,b){if(!$.isJsArray(a))return a.every$1(b);else return $.Col
 
 $.toStringAsFixed = function(receiver,fractionDigits){var result;if(!(typeof receiver==='number'))return receiver.toStringAsFixed$1(fractionDigits);$.checkNum(fractionDigits);result=receiver.toFixed(fractionDigits);if(receiver===0&&$.get$isNegative(receiver)===!0)return'-'+result;return result};
 
+$.defineProperty = function(obj,property,value){Object.defineProperty(obj, property,
+      {value: value, enumerable: false, writable: true, configurable: true})};
+
 $.JSInvocationMirror$ = function(memberName,_internalName,_kind,_arguments,_namedArgumentNames){return new $.JSInvocationMirror(memberName,_internalName,_kind,_arguments,_namedArgumentNames,null)};
 
-$._Sort__doSort = function(a,b,c,d){if($.leB($.sub(c,b),32))$._Sort_insertionSort_(a,b,c,d);else $._Sort__dualPivotQuicksort(a,b,c,d)};
+$._Sort_insertionSort_ = function(a,b,c,d){var z,y,x,w,v,u;if(typeof a!=='object'||a===null||(a.constructor!==Array||!!a.immutable$list)&&!a.is$JavaScriptIndexingBehavior())return $._Sort_insertionSort_$bailout(1,a,b,c,d);if(typeof c!=='number')return $._Sort_insertionSort_$bailout(1,a,b,c,d);for(z=b+1;z<=c;++z){if(z!==(z|0))throw $.iae(z);if(z<0||z>=a.length)throw $.ioore(z);y=a[z];x=z;while(!0){if(x>b){w=x-1;if(w!==(w|0))throw $.iae(w);if(w<0||w>=a.length)throw $.ioore(w);v=$.gtB(d.call$2(a[w],y),0);w=v}else w=!1;v=a.length;if(!w)break;u=x-1;if(u!==(u|0))throw $.iae(u);if(u<0||u>=v)throw $.ioore(u);w=a[u];if(x!==(x|0))throw $.iae(x);if(x<0||x>=v)throw $.ioore(x);a[x]=w;x=u}if(x!==(x|0))throw $.iae(x);if(x<0||x>=v)throw $.ioore(x);a[x]=y}};
 
 $._Sort__dualPivotQuicksort = function(a,b,c,A){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d;if(typeof a!=='object'||a===null||(a.constructor!==Array||!!a.immutable$list)&&!a.is$JavaScriptIndexingBehavior())return $._Sort__dualPivotQuicksort$bailout(1,a,b,c,A);z=$.tdiv($.add($.sub(c,b),1),6);if(typeof z!=='number')throw $.iae(z);y=b+z;x=$.sub(c,z);if(typeof c!=='number')throw $.iae(c);w=$.tdiv(b+c,2);v=w-z;u=w+z;if(y!==(y|0))throw $.iae(y);t=a.length;if(y<0||y>=t)throw $.ioore(y);s=a[y];if(v!==(v|0))throw $.iae(v);if(v<0||v>=t)throw $.ioore(v);r=a[v];if(w!==(w|0))throw $.iae(w);if(w<0||w>=t)throw $.ioore(w);q=a[w];if(u!==(u|0))throw $.iae(u);if(u<0||u>=t)throw $.ioore(u);p=a[u];if(x!==(x|0))throw $.iae(x);if(x<0||x>=t)throw $.ioore(x);o=a[x];if($.gtB(A.call$2(s,r),0)){n=r;r=s;s=n}if($.gtB(A.call$2(p,o),0)){n=o;o=p;p=n}if($.gtB(A.call$2(s,q),0)){n=q;q=s;s=n}if($.gtB(A.call$2(r,q),0)){n=q;q=r;r=n}if($.gtB(A.call$2(s,p),0)){n=p;p=s;s=n}if($.gtB(A.call$2(q,p),0)){n=p;p=q;q=n}if($.gtB(A.call$2(r,o),0)){n=o;o=r;r=n}if($.gtB(A.call$2(r,q),0)){n=q;q=r;r=n}if($.gtB(A.call$2(p,o),0)){n=o;o=p;p=n}t=a.length;if(y>=t)throw $.ioore(y);a[y]=s;if(w>=t)throw $.ioore(w);a[w]=q;if(x>=t)throw $.ioore(x);a[x]=o;if(b!==(b|0))throw $.iae(b);if(b<0||b>=t)throw $.ioore(b);m=a[b];if(v>=t)throw $.ioore(v);a[v]=m;if(c!==(c|0))throw $.iae(c);if(c<0||c>=t)throw $.ioore(c);m=a[c];if(u>=t)throw $.ioore(u);a[u]=m;l=b+1;k=c-1;j=$.eqB(A.call$2(r,p),0);if(j)for(i=l;i<=k;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);h=a[i];g=A.call$2(h,r);if($.eqB(g,0))continue;if($.ltB(g,0)){if(!(i===l)){if(l!==(l|0))throw $.iae(l);t=a.length;if(l<0||l>=t)throw $.ioore(l);m=a[l];if(i>=t)throw $.ioore(i);a[i]=m;a[l]=h}++l}else for(;!0;){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);g=A.call$2(a[k],r);if($.gtB(g,0)){--k;continue}else{t=$.ltB(g,0);m=a.length;f=k-1;if(t){if(l!==(l|0))throw $.iae(l);if(l<0||l>=m)throw $.ioore(l);t=a[l];if(i>=m)throw $.ioore(i);a[i]=t;e=l+1;if(k>=m)throw $.ioore(k);a[l]=a[k];a[k]=h;k=f;l=e;break}else{if(k>=m)throw $.ioore(k);t=a[k];if(i>=m)throw $.ioore(i);a[i]=t;a[k]=h;k=f;break}}}}else for(i=l;i<=k;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);h=a[i];if($.ltB(A.call$2(h,r),0)){if(!(i===l)){if(l!==(l|0))throw $.iae(l);t=a.length;if(l<0||l>=t)throw $.ioore(l);m=a[l];if(i>=t)throw $.ioore(i);a[i]=m;a[l]=h}++l}else if($.gtB(A.call$2(h,p),0))for(;!0;){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);if($.gtB(A.call$2(a[k],p),0)){--k;if(k<i)break;continue}else{if(k>=a.length)throw $.ioore(k);t=$.ltB(A.call$2(a[k],r),0);m=a.length;f=k-1;if(t){if(l!==(l|0))throw $.iae(l);if(l<0||l>=m)throw $.ioore(l);t=a[l];if(i>=m)throw $.ioore(i);a[i]=t;e=l+1;if(k>=m)throw $.ioore(k);a[l]=a[k];a[k]=h;k=f;l=e}else{if(k>=m)throw $.ioore(k);t=a[k];if(i>=m)throw $.ioore(i);a[i]=t;a[k]=h;k=f}break}}}t=l-1;if(t!==(t|0))throw $.iae(t);m=a.length;if(t<0||t>=m)throw $.ioore(t);d=a[t];if(b>=m)throw $.ioore(b);a[b]=d;a[t]=r;t=k+1;if(t!==(t|0))throw $.iae(t);if(t<0||t>=m)throw $.ioore(t);d=a[t];if(c>=m)throw $.ioore(c);a[c]=d;a[t]=p;$._Sort__doSort(a,b,l-2,A);$._Sort__doSort(a,k+2,c,A);if(j)return;if(l<y&&k>x){while(!0){if(l!==(l|0))throw $.iae(l);if(l<0||l>=a.length)throw $.ioore(l);if(!$.eqB(A.call$2(a[l],r),0))break;++l}while(!0){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);if(!$.eqB(A.call$2(a[k],p),0))break;--k}for(i=l;i<=k;++i){if(i!==(i|0))throw $.iae(i);if(i<0||i>=a.length)throw $.ioore(i);h=a[i];if($.eqB(A.call$2(h,r),0)){if(!(i===l)){if(l!==(l|0))throw $.iae(l);t=a.length;if(l<0||l>=t)throw $.ioore(l);m=a[l];if(i>=t)throw $.ioore(i);a[i]=m;a[l]=h}++l}else if($.eqB(A.call$2(h,p),0))for(;!0;){if(k!==(k|0))throw $.iae(k);if(k<0||k>=a.length)throw $.ioore(k);if($.eqB(A.call$2(a[k],p),0)){--k;if(k<i)break;continue}else{if(k>=a.length)throw $.ioore(k);t=$.ltB(A.call$2(a[k],r),0);m=a.length;f=k-1;if(t){if(l!==(l|0))throw $.iae(l);if(l<0||l>=m)throw $.ioore(l);t=a[l];if(i>=m)throw $.ioore(i);a[i]=t;e=l+1;if(k>=m)throw $.ioore(k);a[l]=a[k];a[k]=h;k=f;l=e}else{if(k>=m)throw $.ioore(k);t=a[k];if(i>=m)throw $.ioore(i);a[i]=t;a[k]=h;k=f}break}}}$._Sort__doSort(a,l,k,A)}else $._Sort__doSort(a,l,k,A)};
-
-$._Sort_insertionSort_ = function(a,b,c,d){var z,y,x,w,v,u;if(typeof a!=='object'||a===null||(a.constructor!==Array||!!a.immutable$list)&&!a.is$JavaScriptIndexingBehavior())return $._Sort_insertionSort_$bailout(1,a,b,c,d);if(typeof c!=='number')return $._Sort_insertionSort_$bailout(1,a,b,c,d);for(z=b+1;z<=c;++z){if(z!==(z|0))throw $.iae(z);if(z<0||z>=a.length)throw $.ioore(z);y=a[z];x=z;while(!0){if(x>b){w=x-1;if(w!==(w|0))throw $.iae(w);if(w<0||w>=a.length)throw $.ioore(w);v=$.gtB(d.call$2(a[w],y),0);w=v}else w=!1;v=a.length;if(!w)break;u=x-1;if(u!==(u|0))throw $.iae(u);if(u<0||u>=v)throw $.ioore(u);w=a[u];if(x!==(x|0))throw $.iae(x);if(x<0||x>=v)throw $.ioore(x);a[x]=w;x=u}if(x!==(x|0))throw $.iae(x);if(x<0||x>=v)throw $.ioore(x);a[x]=y}};
 
 $.PCanvas$ = function(w,h,enableCache){return new $.PCanvas($._ListImpl_List(null),null,$._ListImpl_List(null),enableCache,$.EventHandle$(),null,w,h,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
 
@@ -4310,8 +4303,6 @@ $._getOpaqueItems = function(){return $.makeLiteralMap(['background_side_left.pn
 
 $._getTransparentItems = function(){return $.makeLiteralMap(['balloon_explode_0000.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1762,'y',1058,'w',80,'h',86]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',89,'y',87,'w',80,'h',86]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0001.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',446,'y',1332,'w',208,'h',208]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',35,'y',13,'w',208,'h',208]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0002.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',868,'y',612,'w',230,'h',230]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',13,'y',13,'w',230,'h',230]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0003.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1128,'y',840,'w',226,'h',222]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',18,'y',12,'w',226,'h',222]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0004.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1072,'y',1074,'w',228,'h',218]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',16,'y',16,'w',228,'h',218]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0005.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1100,'y',610,'w',228,'h',218]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',16,'y',15,'w',228,'h',218]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0006.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',908,'y',844,'w',228,'h',218]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',15,'y',15,'w',228,'h',218]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0007.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1362,'y',234,'w',224,'h',218]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',15,'y',14,'w',224,'h',218]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0008.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1320,'y',608,'w',224,'h',218]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',15,'y',14,'w',224,'h',218]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0009.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',656,'y',1314,'w',226,'h',224]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',13,'y',14,'w',226,'h',224]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0010.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',842,'y',1078,'w',228,'h',230]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',13,'w',228,'h',230]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0011.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1298,'y',2,'w',228,'h',230]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',13,'w',228,'h',230]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0012.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1132,'y',236,'w',228,'h',230]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',13,'w',228,'h',230]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0013.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',676,'y',846,'w',230,'h',230]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',11,'y',13,'w',230,'h',230]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0014.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1066,'y',2,'w',230,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',11,'y',11,'w',230,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0015.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',900,'y',236,'w',230,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',11,'y',12,'w',230,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0016.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',834,'y',2,'w',230,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',12,'w',230,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0017.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',666,'y',244,'w',232,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',12,'w',232,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0018.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',634,'y',612,'w',232,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',11,'y',12,'w',232,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0019.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',442,'y',846,'w',232,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',12,'w',232,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0020.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',408,'y',1098,'w',232,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',11,'w',232,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0021.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',400,'y',612,'w',232,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',12,'w',232,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0022.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',208,'y',864,'w',232,'h',232]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',11,'w',232,'h',232]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_explode_0023.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',882,'y',1310,'w',230,'h',228]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',12,'y',12,'w',230,'h',228]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0000.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1236,'y',1304,'w',142,'h',122]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',60,'y',62,'w',142,'h',122]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0001.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',642,'y',1080,'w',232,'h',198]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',15,'y',23,'w',232,'h',198]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0002.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',206,'y',1144,'w',234,'h',200]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',14,'y',22,'w',234,'h',200]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0003.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',2,'y',1144,'w',238,'h',202]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',11,'y',22,'w',238,'h',202]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0004.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',628,'y',2,'w',240,'h',204]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',10,'y',21,'w',240,'h',204]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0005.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',458,'y',248,'w',242,'h',206]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',9,'y',20,'w',242,'h',206]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0006.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',422,'y',2,'w',244,'h',204]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',8,'y',22,'w',244,'h',204]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0007.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',250,'y',284,'w',248,'h',206]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',5,'y',21,'w',248,'h',206]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0008.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',2,'y',892,'w',250,'h',204]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',4,'y',23,'w',250,'h',204]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0009.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',196,'y',612,'w',250,'h',202]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',4,'y',25,'w',250,'h',202]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0010.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1292,'y',1212,'w',88,'h',110]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',82,'y',78,'w',88,'h',110]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0011.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1544,'y',948,'w',92,'h',116]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',80,'y',75,'w',92,'h',116]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0012.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1440,'w',98,'h',122]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',77,'y',72,'w',98,'h',122]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0013.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1730,'y',1424,'w',104,'h',128]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',73,'y',69,'w',104,'h',128]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0014.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1726,'y',948,'w',108,'h',134]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',71,'y',66,'w',108,'h',134]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0015.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',924,'y',470,'w',114,'h',140]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',67,'y',63,'w',114,'h',140]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0016.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',506,'y',492,'w',118,'h',144]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',65,'y',62,'w',118,'h',144]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0017.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1112,'y',1304,'w',122,'h',150]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',63,'y',58,'w',122,'h',150]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0018.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',2,'y',1384,'w',128,'h',154]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',59,'y',56,'w',128,'h',154]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0019.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',764,'y',478,'w',132,'h',158]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',57,'y',54,'w',132,'h',158]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0020.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',308,'y',1380,'w',136,'h',160]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',54,'y',53,'w',136,'h',160]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0021.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1040,'y',470,'w',138,'h',164]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',53,'y',51,'w',138,'h',164]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0022.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1832,'y',2,'w',142,'h',168]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',51,'y',49,'w',142,'h',168]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0023.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1608,'y',610,'w',146,'h',170]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',48,'y',48,'w',146,'h',170]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0024.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1438,'y',460,'w',146,'h',172]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',48,'y',47,'w',146,'h',172]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0025.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1794,'y',458,'w',148,'h',174]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',47,'y',46,'w',148,'h',174]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0026.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',132,'y',1384,'w',150,'h',174]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',45,'y',46,'w',150,'h',174]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'balloon_pop_0027.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1794,'y',608,'w',148,'h',172]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',46,'y',46,'w',148,'h',172]),'sourceSize',$.makeLiteralMap(['w',256,'h',256])]),'dart_fly_0000.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1796,'y',330,'w',126,'h',194]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',869,'y',486,'w',126,'h',194]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0001.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',2,'y',2,'w',210,'h',320]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',794,'y',385,'w',210,'h',320]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0002.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',2,'y',324,'w',246,'h',286]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',736,'y',317,'w',246,'h',286]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0003.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1582,'y',228,'w',212,'h',220]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',689,'y',271,'w',212,'h',220]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0004.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1832,'y',146,'w',182,'h',166]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',653,'y',244,'w',182,'h',166]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0005.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1352,'y',834,'w',162,'h',120]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',621,'y',231,'w',162,'h',120]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0006.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1292,'y',1068,'w',142,'h',98]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',597,'y',211,'w',142,'h',98]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0007.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1250,'y',1448,'w',126,'h',92]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',576,'y',189,'w',126,'h',92]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0008.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1638,'y',948,'w',112,'h',86]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',558,'y',179,'w',112,'h',86]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0009.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1518,'y',1206,'w',98,'h',94]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',545,'y',177,'w',98,'h',94]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0010.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1456,'y',956,'w',86,'h',110]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',534,'y',185,'w',86,'h',110]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0011.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1860,'y',1420,'w',76,'h',124]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',524,'y',199,'w',76,'h',124]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0012.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1540,'y',608,'w',66,'h',134]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',517,'y',221,'w',66,'h',134]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0013.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0014.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0015.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0016.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0017.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0018.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0019.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0020.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0021.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0022.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0023.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0024.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0025.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0026.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0027.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0028.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0029.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0030.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0031.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0032.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0033.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0034.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0035.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0036.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0037.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0038.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0039.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1850,'y',1080,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0040.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1930,'y',758,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0041.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1862,'y',1014,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0042.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1862,'y',948,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0043.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1792,'y',882,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0044.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1696,'y',1062,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0045.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1654,'y',882,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0046.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1630,'y',1066,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0047.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1564,'y',1066,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0048.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1578,'y',1302,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0049.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1512,'y',1302,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0050.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1446,'y',1302,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0051.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1516,'y',882,'w',64,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0052.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1540,'y',744,'w',64,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',505,'y',248,'w',64,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0053.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1844,'y',1146,'w',62,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',506,'y',248,'w',62,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_0054.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',214,'y',287,'w',1,'h',1]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',0,'y',0,'w',1,'h',1]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0000.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1644,'y',1292,'w',102,'h',130]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',390,'y',512,'w',102,'h',130]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0001.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1704,'y',2,'w',126,'h',216]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',378,'y',424,'w',126,'h',216]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0002.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',214,'y',2,'w',206,'h',280]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',338,'y',359,'w',206,'h',280]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0003.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',2,'y',612,'w',192,'h',278]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',340,'y',312,'w',192,'h',278]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0004.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1528,'y',2,'w',174,'h',224]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',347,'y',283,'w',174,'h',224]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0005.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1612,'y',450,'w',158,'h',180]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',356,'y',265,'w',158,'h',180]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0006.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1206,'y',468,'w',144,'h',138]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',365,'y',257,'w',144,'h',138]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0007.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1606,'y',758,'w',130,'h',122]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',376,'y',235,'w',130,'h',122]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0008.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',652,'y',492,'w',118,'h',110]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',387,'y',221,'w',118,'h',110]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0009.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1352,'y',956,'w',110,'h',102]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',394,'y',212,'w',110,'h',102]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0010.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1378,'y',1440,'w',100,'h',98]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',406,'y',215,'w',100,'h',98]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0011.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1404,'y',1206,'w',94,'h',112]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',416,'y',222,'w',94,'h',112]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0012.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1618,'y',1204,'w',86,'h',122]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',428,'y',237,'w',86,'h',122]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0013.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0014.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0015.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0016.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0017.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0018.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0019.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0020.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0021.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0022.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0023.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0024.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0025.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0026.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0027.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0028.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0029.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0030.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0031.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0032.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0033.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0034.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0035.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0036.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0037.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0038.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0039.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1478,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0040.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1360,'y',1302,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0041.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1392,'y',1068,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0042.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1112,'y',1456,'w',84,'h',136]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0043.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1352,'y',468,'w',84,'h',136]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',84,'h',136]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0044.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1830,'y',1292,'w',80,'h',126]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',442,'y',261,'w',80,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0045.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1748,'y',1292,'w',80,'h',126]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',442,'y',261,'w',80,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0046.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1860,'y',1210,'w',80,'h',126]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',442,'y',261,'w',80,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0047.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1602,'y',1440,'w',80,'h',126]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',442,'y',261,'w',80,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0048.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1762,'y',1140,'w',80,'h',126]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',442,'y',261,'w',80,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0049.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1912,'y',1292,'w',76,'h',126]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',76,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0050.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',378,'y',534,'w',76,'h',126]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',76,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0051.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',250,'y',534,'w',76,'h',126]),'rotated',!0,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',261,'w',76,'h',126]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0052.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1738,'y',758,'w',76,'h',122]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',443,'y',262,'w',76,'h',122]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0053.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',1816,'y',758,'w',74,'h',120]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',444,'y',264,'w',74,'h',120]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])]),'dart_fly_shadow_0054.png',$.makeLiteralMap(['frame',$.makeLiteralMap(['x',214,'y',284,'w',1,'h',1]),'rotated',!1,'trimmed',!0,'spriteSourceSize',$.makeLiteralMap(['x',0,'y',0,'w',1,'h',1]),'sourceSize',$.makeLiteralMap(['w',1024,'h',768])])])};
 
-$.GameBackgroundElement$ = function(){return new $.GameBackgroundElement($._ListImpl_List(null),!0,$.EventHandle$(),null,0,0,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
-
 $.window = function(){return window};
 
 $.document = function(){return document};
@@ -4324,21 +4315,27 @@ $._getNewIsolateId = function(){if(!window.$dart$isolate$counter)window.$dart$is
 
 $.BoardElement$ = function(){return new $.BoardElement(null,$._ListImpl_List(null),!0,$.EventHandle$(),null,0,0,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
 
+$.GameBackgroundElement$ = function(){return new $.GameBackgroundElement($._ListImpl_List(null),!0,$.EventHandle$(),null,0,0,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
+
+$._Sort__doSort = function(a,b,c,d){if($.leB($.sub(c,b),32))$._Sort_insertionSort_(a,b,c,d);else $._Sort__dualPivotQuicksort(a,b,c,d)};
+
 $.ScoreElement$ = function(){return new $.ScoreElement(null,null,null,null,null,$._ListImpl_List(null),!1,$.EventHandle$(),null,400,96,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
 
 $.NewGameElement$ = function(){var t1=new $.NewGameElement($.EventHandle$(),$._ListImpl_List(null),!1,$.EventHandle$(),null,294,92,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1);t1.NewGameElement$0();return t1};
 
+$._onProgress = function(a){var z,y,x,w;z=$._imageLoader.get$completedBytes();y=$._imageLoader.get$totalBytes();x=$.div($.add(z,$._audio.get$completedBytes()),$.add(y,$._audio.get$totalBytes()));$.div($.floor($.mul(x,1000)),10);w=$.S($.toInt($.mul(x,398)))+'px';$._loadingBar.get$style().set$width(w)};
+
 $.GameTitleElement$ = function(){return new $.GameTitleElement($._ListImpl_List(null),!1,$.EventHandle$(),null,318,96,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
 
 $._browserPrefix = function(){if($._cachedBrowserPrefix==null)if($._Device_isFirefox()===!0)$._cachedBrowserPrefix='-moz-';else if($._Device_isIE()===!0)$._cachedBrowserPrefix='-ms-';else if($._Device_isOpera()===!0)$._cachedBrowserPrefix='-o-';else $._cachedBrowserPrefix='-webkit-';return $._cachedBrowserPrefix};
-
-$._onProgress = function(a){var z,y,x,w;z=$._imageLoader.get$completedBytes();y=$._imageLoader.get$totalBytes();x=$.div($.add(z,$._audio.get$completedBytes()),$.add(y,$._audio.get$totalBytes()));$.div($.floor($.mul(x,1000)),10);w=$.S($.toInt($.mul(x,398)))+'px';$._loadingBar.get$style().set$width(w)};
 
 $.TextureAnimationElement$ = function(width,height,_textureData){return new $.TextureAnimationElement(_textureData,$._ListImpl_List(null),$._ListImpl_List(null),!1,$.EventHandle$(),null,width,height,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1)};
 
 $.Box$ = function(left,top$,width,height){return new $.Box(left,top$,width,height)};
 
 $.Box_Box$fromCoordSize = function(a,b){return $.Box$(a.x,a.y,b.width,b.height)};
+
+$._HistoryCrossFrame$ = function(_history){return new $._HistoryCrossFrame(_history)};
 
 $._RangeEnumerable$ = function(_start,_count){return new $._RangeEnumerable(_start,_count)};
 
@@ -4392,7 +4389,7 @@ $._convertNativeToDart_SerializedScriptValue = function(a){return $._convertNati
 
 $._convertDartToNative_PrepareForStructuredClone = function(value){var values,copies,t1,t2,t3,t4,copy;values=[];copies=[];t1=new $._convertDartToNative_PrepareForStructuredClone_findSlot(copies,values);t2=new $._convertDartToNative_PrepareForStructuredClone_readSlot(copies);t3=new $._convertDartToNative_PrepareForStructuredClone_writeSlot(copies);t4=new $._convertDartToNative_PrepareForStructuredClone_cleanupSlots();copy=new $._convertDartToNative_PrepareForStructuredClone_walk(t3,t2,t1).call$1(value);t4.call$0();return copy};
 
-$._convertNativeToDart_AcceptStructuredClone = function(object,mustCopy){var values,copies,t1;values=[];copies=[];t1=new $._convertNativeToDart_AcceptStructuredClone_findSlot(copies,values);return new $._convertNativeToDart_AcceptStructuredClone_walk(new $._convertNativeToDart_AcceptStructuredClone_readSlot(copies),t1,mustCopy,new $._convertNativeToDart_AcceptStructuredClone_writeSlot(copies)).call$1(object)};
+$._convertNativeToDart_AcceptStructuredClone = function(object,mustCopy){var values,copies,t1;values=[];copies=[];t1=new $._convertNativeToDart_AcceptStructuredClone_findSlot(copies,values);return new $._convertNativeToDart_AcceptStructuredClone_walk(mustCopy,new $._convertNativeToDart_AcceptStructuredClone_readSlot(copies),t1,new $._convertNativeToDart_AcceptStructuredClone_writeSlot(copies)).call$1(object)};
 
 $.MetaInfo$ = function(_tag,_tags,_set){return new $.MetaInfo(_tag,_tags,_set)};
 
@@ -4464,9 +4461,9 @@ $.FormatException$ = function(message){return new $.FormatException(message)};
 
 $._ResourceEntry$ = function(url){return new $._ResourceEntry(url,null,null,null,0)};
 
-$.IDBTransactionEvents$ = function(_ptr){return new $.IDBTransactionEvents(_ptr)};
-
 $._LinkedHashMapImpl$ = function(){var t1=new $._LinkedHashMapImpl(null,null);t1._LinkedHashMapImpl$0();return t1};
+
+$.IDBTransactionEvents$ = function(_ptr){return new $.IDBTransactionEvents(_ptr)};
 
 $._Elements_createCanvasElement = function(a,b){var z=$.document().$dom_createElement$1('canvas');if(!(a==null))z.set$width(a);if(!(b==null))z.set$height(b);return z};
 
@@ -4484,9 +4481,9 @@ $._Audio$_internal = function(_audioLoader){var t1=new $._Audio(_audioLoader,$.M
 
 $.StackTrace$ = function(stack){return new $.StackTrace(stack)};
 
-$._Audio__getAudioFormat = function(a){var z,y,x,w,v;try{z=$.window().get$clientInformation().get$userAgent();y=$.contains$1(z,'WebKit');if(y===!0){x=$.contains$1(z,'Chrome');if(x===!0)return'webm';else return'm4a'}}catch(a){w=$.unwrapException(a);v=w;$.print('Error getting client info: '+$.S(v))}return};
-
 $._Audio__getAudioPath = function(a){return'audio/'+$.S($.get$_Audio__audioFormat())+'/'+$.S(a)+'.'+$.S($.get$_Audio__audioFormat())};
+
+$._Audio__getAudioFormat = function(a){var z,y,x,w,v;try{z=$.window().get$clientInformation().get$userAgent();y=$.contains$1(z,'WebKit');if(y===!0){x=$.contains$1(z,'Chrome');if(x===!0)return'webm';else return'm4a'}}catch(a){w=$.unwrapException(a);v=w;$.print('Error getting client info: '+$.S(v))}return};
 
 $.IDBOpenDBRequestEvents$ = function(_ptr){return new $.IDBOpenDBRequestEvents(_ptr)};
 
@@ -4506,6 +4503,8 @@ $._HashMapImpl__nextProbe = function(a,b,c){return(a+b&c-1)>>>0};
 
 $.Field$_internal = function(bombCount,cols,source){var t1,t2,t3;t1=$.Array2d_Array2d(cols,$.tdiv($.get$length(source),cols),null);t2=source.toList$0();t3=!(cols==null)&&$.gtB(cols,0)&&!(t2==null)?$.tdiv($.get$length(t2),cols):0;t3=new $.Field(bombCount,t1,cols,t3,t2);t3.Array2d$wrap$2(cols,t2);t3.Field$_internal$3(bombCount,cols,source);return t3};
 
+$.Array2d_Array2d = function(a,b,c){var z;$.requireArgumentNotNull(a,'width');$.requireArgumentNotNull(b,'height');$.requireArgument($.gt(a,0),'width',null);$.requireArgument($.gt(b,0),'height',null);z=$._ListImpl_List(null);$.insertRange$3(z,0,$.mul(a,b),c);return $.Array2d$wrap(a,z)};
+
 $.Array2d$wrap = function(width,source){var t1;if(!(width==null)&&$.gtB(width,0)&&!0){t1=source.length;if(typeof width!=='number')throw $.iae(width);t1=$.tdiv(t1,width)}else t1=0;t1=new $.Array2d(width,t1,source);t1.Array2d$wrap$2(width,source);return t1};
 
 $.HashMap_HashMap = function(){return $._HashMapImpl$()};
@@ -4516,15 +4515,11 @@ $.isValidNumber = function(a){return!(a==null)&&$.get$isInfinite(a)!==!0&&$.get$
 
 $.SpeechRecognitionEvents$ = function(_ptr){return new $.SpeechRecognitionEvents(_ptr)};
 
+$.Field_Field = function(a,b,c,d){var z,y,x,w;if(typeof a!=='number')return $.Field_Field$bailout(1,a,b,c,d);z=$._ListImpl_List(null);$.insertRange$3(z,0,$.mul(c,b),!1);y=$.Random_Random(d);for(x=0;x<a;++x){do{w=y.nextInt$1(z.length);if(w!==(w|0))throw $.iae(w);if(w<0||w>=z.length)throw $.ioore(w)}while(z[w]===!0);z[w]=!0}return $.Field$_internal(a,b,$.ReadOnlyCollection$(z))};
+
 $.requireArgument = function(a,b,c){if(a!==!0)if(!(c==null))throw $.$$throw($.DetailedIllegalArgumentException$(b,c));else throw $.$$throw($.ArgumentError$(b))};
 
 $.requireArgumentNotNull = function(a,b){if(a==null)throw $.$$throw($.NullArgumentException$(b))};
-
-$.Field_Field = function(a,b,c,d){var z,y,x,w;if(typeof a!=='number')return $.Field_Field$bailout(1,a,b,c,d);z=$._ListImpl_List(null);$.insertRange$3(z,0,$.mul(c,b),!1);y=$.Random_Random(d);for(x=0;x<a;++x){do{w=y.nextInt$1(z.length);if(w!==(w|0))throw $.iae(w);if(w<0||w>=z.length)throw $.ioore(w)}while(z[w]===!0);z[w]=!0}return $.Field$_internal(a,b,$.ReadOnlyCollection$(z))};
-
-$.require = function(a,b){if(a!==!0)throw $.$$throw($._ExceptionImplementation$(b))};
-
-$.Array2d_Array2d = function(a,b,c){var z;$.requireArgumentNotNull(a,'width');$.requireArgumentNotNull(b,'height');$.requireArgument($.gt(a,0),'width',null);$.requireArgument($.gt(b,0),'height',null);z=$._ListImpl_List(null);$.insertRange$3(z,0,$.mul(a,b),c);return $.Array2d$wrap(a,z)};
 
 $.getMouseEventCoordinate = function(a){return $.Coordinate$(a.get$offsetX(),a.get$offsetY())};
 
@@ -4542,17 +4537,19 @@ $.Primitives_newList = function(length$){var result;if(length$==null)return new 
 
 $.Primitives_stringFromCharCodes = function(charCodes){var t1,t2;for(t1=$.iterator(charCodes);t1.get$hasNext()===!0;){t2=t1.next$0();if(!(typeof t2==='number'&&Math.floor(t2) === t2))throw $.$$throw($.ArgumentError$(t2))}return String.fromCharCode.apply(null, charCodes)};
 
+$.Tuple$ = function(item1,item2){return new $.Tuple(item1,item2)};
+
 $.Primitives_lazyAsJsDate = function(receiver){if(receiver.date === (void 0))receiver.date = new Date(receiver.millisecondsSinceEpoch);return receiver.date};
 
 $.Primitives_getMonth = function(receiver){return receiver.isUtc===!0?$.Primitives_lazyAsJsDate(receiver).getUTCMonth() + 1:$.Primitives_lazyAsJsDate(receiver).getMonth() + 1};
 
 $.Primitives_getDay = function(receiver){return receiver.isUtc===!0?($.Primitives_lazyAsJsDate(receiver).getUTCDate() + 0):($.Primitives_lazyAsJsDate(receiver).getDate() + 0)};
 
+$.Primitives_getMinutes = function(receiver){return receiver.isUtc===!0?($.Primitives_lazyAsJsDate(receiver).getUTCMinutes() + 0):($.Primitives_lazyAsJsDate(receiver).getMinutes() + 0)};
+
 $.Primitives_getSeconds = function(receiver){return receiver.isUtc===!0?($.Primitives_lazyAsJsDate(receiver).getUTCSeconds() + 0):($.Primitives_lazyAsJsDate(receiver).getSeconds() + 0)};
 
 $.Primitives_getMilliseconds = function(receiver){return receiver.isUtc===!0?($.Primitives_lazyAsJsDate(receiver).getUTCMilliseconds() + 0):($.Primitives_lazyAsJsDate(receiver).getMilliseconds() + 0)};
-
-$.Primitives_getMinutes = function(receiver){return receiver.isUtc===!0?($.Primitives_lazyAsJsDate(receiver).getUTCMinutes() + 0):($.Primitives_lazyAsJsDate(receiver).getMinutes() + 0)};
 
 $.Primitives_dateNow = function(){return Date.now()};
 
@@ -4560,15 +4557,15 @@ $.Primitives_getHours = function(receiver){return receiver.isUtc===!0?($.Primiti
 
 $.Primitives_getYear = function(receiver){return receiver.isUtc===!0?($.Primitives_lazyAsJsDate(receiver).getUTCFullYear() + 0):($.Primitives_lazyAsJsDate(receiver).getFullYear() + 0)};
 
-$.Tuple$ = function(item1,item2){return new $.Tuple(item1,item2)};
-
 $.ArgumentError$ = function(message){return new $.ArgumentError(message)};
 
-$.Primitives_printString = function(string){if('\nThis program is using an experimental feature called "mirrors".  As\ncurrently implemented, mirrors do not work with minification, and will\ncause spurious errors depending on how code was optimized.\n\nThe authors of this program are aware of these problems and have\ndecided the thrill of using an experimental feature is outweighing the\nrisks.  Furthermore, the authors of this program understand that\nlong-term, to fix the problems mentioned above, mirrors may have\nnegative impact on size and performance of Dart programs compiled to\nJavaScript.\n'===string)$.Primitives_mirrorsEnabled=!0;else if(typeof dartPrint == "function"){dartPrint(string);return}if(typeof window == "object"){if(typeof console == "object")console.log(string);return}if(typeof print == "function"){print(string);return}throw 'Unable to print message: ' + String(string)};
+$.require = function(a,b){if(a!==!0)throw $.$$throw($._ExceptionImplementation$(b))};
 
-$.trackAnalyticsEvent = function(category,action,label,value){$.scoped(new $.trackAnalyticsEvent_anon(action,category,value,label))};
+$.trackAnalyticsEvent = function(category,action,label,value){$.scoped(new $.trackAnalyticsEvent_anon(label,action,category,value))};
 
 $._inject = function(a){var z=$.ScriptElement_ScriptElement();z.set$type('text/javascript');z.set$innerHTML(a);$.add$1($.document().get$body().get$nodes(),z)};
+
+$.Primitives_printString = function(string){if('\nThis program is using an experimental feature called "mirrors".  As\ncurrently implemented, mirrors do not work with minification, and will\ncause spurious errors depending on how code was optimized.\n\nThe authors of this program are aware of these problems and have\ndecided the thrill of using an experimental feature is outweighing the\nrisks.  Furthermore, the authors of this program understand that\nlong-term, to fix the problems mentioned above, mirrors may have\nnegative impact on size and performance of Dart programs compiled to\nJavaScript.\n'===string)$.Primitives_mirrorsEnabled=!0;else if(typeof dartPrint == "function"){dartPrint(string);return}if(typeof window == "object"){if(typeof console == "object")console.log(string);return}if(typeof print == "function"){print(string);return}throw 'Unable to print message: ' + String(string)};
 
 $.Collections_forEach = function(a,b){var z;for(z=$.iterator(a);z.get$hasNext()===!0;)b.call$1(z.next$0())};
 
@@ -4630,8 +4627,6 @@ $.IDBDatabaseEvents$ = function(_ptr){return new $.IDBDatabaseEvents(_ptr)};
 
 $._ListImpl_List = function(a){return $.Primitives_newList(a)};
 
-$.DetailedIllegalArgumentException$ = function(arg,message){return new $.DetailedIllegalArgumentException(arg,message)};
-
 $.Maps_mapToString = function(a){var z=$.StringBuffer_StringBuffer('');$.Maps__emitMap(a,z,$._ListImpl_List(null));return $.toString(z)};
 
 $.Maps__emitMap = function(m,result,visiting){var t1={};$.add$1(visiting,m);$.add$1(result,'{');t1.first_1=!0;$.forEach(m,new $.Maps__emitMap_anon(t1,visiting,result));$.add$1(result,'}');$.removeLast(visiting)};
@@ -4646,17 +4641,19 @@ $._Collections_map = function(a,b,c){var z;for(z=$.iterator(a);z.get$hasNext()==
 
 $.HttpRequestUploadEvents$ = function(_ptr){return new $.HttpRequestUploadEvents(_ptr)};
 
+$._Collections_every = function(a,b){var z;for(z=$.iterator(a);z.get$hasNext()===!0;)if(b.call$1(z.next$0())!==!0)return!1;return!0};
+
 $.SequenceIterator$ = function(_sequence){return new $.SequenceIterator(_sequence,0)};
 
-$._ListImpl_List$from = function(a){var z,y;z=$._ListImpl_List(null);for(y=$.iterator(a);y.get$hasNext()===!0;)z.push(y.next$0());return z};
+$.DetailedIllegalArgumentException$ = function(arg,message){return new $.DetailedIllegalArgumentException(arg,message)};
 
 $.int_parse = function(a){return $.Primitives_parseInt(a)};
 
 $.FixedSizeListIterator$ = function(array){return new $.FixedSizeListIterator($.get$length(array),array,0)};
 
-$.IndexIterator$ = function(length$,indexer){var t1=new $.IndexIterator(indexer,length$,0);t1.IndexIterator$2(length$,indexer);return t1};
+$._ListImpl_List$from = function(a){var z,y;z=$._ListImpl_List(null);for(y=$.iterator(a);y.get$hasNext()===!0;)z.push(y.next$0());return z};
 
-$._Collections_filter = function(a,b,c){var z,y;for(z=$.iterator(a);z.get$hasNext()===!0;){y=z.next$0();if(c.call$1(y)===!0)b.push(y)}return b};
+$.IndexIterator$ = function(length$,indexer){var t1=new $.IndexIterator(indexer,length$,0);t1.IndexIterator$2(length$,indexer);return t1};
 
 $.StateError$ = function(message){return new $.StateError(message)};
 
@@ -4666,7 +4663,7 @@ $._StringBufferImpl$ = function(content$){var t1=new $._StringBufferImpl(null,nu
 
 $.ImageElement_ImageElement = function(a,b,c){var z,y,x;z=$===a;if(z)a=null;y=$===b;if(y)b=null;x=$===c;if(x)c=null;if(y)return $._Elements_createImageElement(null,null,null);if(x)return $._Elements_createImageElement(b,null,null);if(z)return $._Elements_createImageElement(b,c,null);return $._Elements_createImageElement(b,c,a)};
 
-$._Collections_every = function(a,b){var z;for(z=$.iterator(a);z.get$hasNext()===!0;)if(b.call$1(z.next$0())!==!0)return!1;return!0};
+$._Collections_filter = function(a,b,c){var z,y;for(z=$.iterator(a);z.get$hasNext()===!0;){y=z.next$0();if(c.call$1(y)===!0)b.push(y)}return b};
 
 $.Strings_join = function(a,b){$.checkNull(a);$.checkNull(b);return $.stringJoinUnchecked($.Strings__toJsStringArray(a),b)};
 
@@ -4708,17 +4705,17 @@ $.ScriptElement_ScriptElement = function(){return $.document().$dom_createElemen
 
 $.CanvasElement_CanvasElement = function(a,b){var z,y;z=$===a;if(z)a=null;y=$===b;if(y)b=null;if(y)return $._Elements_createCanvasElement(null,null);if(z)return $._Elements_createCanvasElement(b,null);return $._Elements_createCanvasElement(b,a)};
 
-$.GlobalId_GlobalId = function(){var z=$.GlobalId__globalId;$.GlobalId__globalId=$.add(z,1);return $.GlobalId$_internal(z)};
-
 $.GlobalId$_internal = function(value){return new $.GlobalId(value,$.Util_getHashCode([value]))};
+
+$.GlobalId_GlobalId = function(){var z=$.GlobalId__globalId;$.GlobalId__globalId=$.add(z,1);return $.GlobalId$_internal(z)};
 
 $._ChildrenElementList$_wrap = function(element){return new $._ChildrenElementList(element,element.get$$$dom_children())};
 
 $._IsolateContext$ = function(){var t1=new $._IsolateContext(null,null,null);t1._IsolateContext$0();return t1};
 
-$._EventLoop$ = function(){return new $._EventLoop($.Queue_Queue())};
-
 $._FunctionProxy$_internal = function(port,id){var t1=new $._FunctionProxy(null,port,id);t1._FunctionProxy$_internal$2(port,id);return t1};
+
+$._EventLoop$ = function(){return new $._EventLoop($.Queue_Queue())};
 
 $._Manager$ = function(){var t1=new $._Manager(0,0,1,null,null,null,null,null,null,null,null,null);t1._Manager$0();return t1};
 
@@ -4736,23 +4733,23 @@ $._IsolateEvent$ = function(isolate,fn,message){return new $._IsolateEvent(isola
 
 $.UnimplementedError$ = function(message){return new $.UnimplementedError(message)};
 
+$._MainManagerStub$ = function(){return new $._MainManagerStub()};
+
 $.RegExp_RegExp = function(a,b,c){return $.JSSyntaxRegExp$(a,b,c)};
 
 $._NodeListWrapper$ = function(list){return new $._NodeListWrapper(list)};
-
-$._MainManagerStub$ = function(){return new $._MainManagerStub()};
-
-$._WorkerSendPort$ = function(_workerId,isolateId,_receivePortId){return new $._WorkerSendPort(_workerId,_receivePortId,isolateId)};
 
 $._FrozenElementList$_wrap = function(_nodeList){return new $._FrozenElementList(_nodeList)};
 
 $.FileWriterEvents$ = function(_ptr){return new $.FileWriterEvents(_ptr)};
 
-$._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$0());t1._JsCopier$0();return t1};
+$._MessageTraverserVisitedMap$0 = function(){return new $._MessageTraverserVisitedMap0()};
 
 $._JsVisitedMap$ = function(){return new $._JsVisitedMap(null)};
 
-$._MessageTraverserVisitedMap$0 = function(){return new $._MessageTraverserVisitedMap0()};
+$._WorkerSendPort$ = function(_workerId,isolateId,_receivePortId){return new $._WorkerSendPort(_workerId,_receivePortId,isolateId)};
+
+$._JsCopier$ = function(){var t1=new $._JsCopier($._MessageTraverserVisitedMap$0());t1._JsCopier$0();return t1};
 
 $.AudioContext_AudioContext = function(){return $._AudioContextFactoryProvider_createAudioContext()};
 
@@ -4768,17 +4765,17 @@ $.MediaElementEvents$ = function(_ptr){return new $.MediaElementEvents(_ptr)};
 
 $._ReceivePortImpl$ = function(){var t1=$._ReceivePortImpl__nextFreeId;$._ReceivePortImpl__nextFreeId=$.add(t1,1);t1=new $._ReceivePortImpl(t1,null);t1._ReceivePortImpl$0();return t1};
 
-$.Completer_Completer = function(){return $._CompleterImpl$()};
-
 $._PendingSendPortFinder$ = function(){var t1=$._MessageTraverserVisitedMap$0();t1=new $._PendingSendPortFinder([],t1);t1._PendingSendPortFinder$0();return t1};
 
-$._NativeJsSendPort$ = function(_receivePort,isolateId){return new $._NativeJsSendPort(_receivePort,isolateId)};
-
-$.Futures_wait = function(futures){var t1,completer,result,values,i,future;t1={};if(typeof futures!=='string'&&(typeof futures!=='object'||futures===null||futures.constructor!==Array&&!futures.is$JavaScriptIndexingBehavior()))return $.Futures_wait$bailout(1,futures,t1);if($.get$isEmpty(futures)===!0)return $.Future_Future$immediate($.CTC1);completer=$.Completer_Completer();result=completer.get$future();t1.remaining_1=futures.length;values=$._ListImpl_List(futures.length);for(i=0;i<futures.length;++i){future=futures[i];future.then$1(new $.Futures_wait_anon(i,result,completer,t1,values));future.handleException$1(new $.Futures_wait_anon0(result,completer,future))}return result};
+$.Futures_wait = function(futures){var t1,completer,result,values,i,future;t1={};if(typeof futures!=='string'&&(typeof futures!=='object'||futures===null||futures.constructor!==Array&&!futures.is$JavaScriptIndexingBehavior()))return $.Futures_wait$bailout(1,futures,t1);if($.get$isEmpty(futures)===!0)return $.Future_Future$immediate($.CTC1);completer=$.Completer_Completer();result=completer.get$future();t1.remaining_1=futures.length;values=$._ListImpl_List(futures.length);for(i=0;i<futures.length;++i){future=futures[i];future.then$1(new $.Futures_wait_anon(i,result,completer,values,t1));future.handleException$1(new $.Futures_wait_anon0(result,completer,future))}return result};
 
 $._JsSerializer$0 = function(){var t1=new $._JsSerializer0(0,$._MessageTraverserVisitedMap$0());t1._JsSerializer$0();return t1};
 
+$.Completer_Completer = function(){return $._CompleterImpl$()};
+
 $.ElementEvents$ = function(_ptr){return new $.ElementEvents(_ptr)};
+
+$._NativeJsSendPort$ = function(_receivePort,isolateId){return new $._NativeJsSendPort(_receivePort,isolateId)};
 
 $.RTCPeerConnectionEvents$ = function(_ptr){return new $.RTCPeerConnectionEvents(_ptr)};
 
@@ -4816,19 +4813,19 @@ $._HashSetImpl$ = function(){var t1=new $._HashSetImpl(null);t1._HashSetImpl$0()
 
 $.FutureNotCompleteException$ = function(){return new $.FutureNotCompleteException()};
 
+$.FutureAlreadyCompleteException$ = function(){return new $.FutureAlreadyCompleteException()};
+
 $.Set_Set = function(){return $._HashSetImpl$()};
 
 $.Future_Future$immediate = function(a){return $._FutureImpl__FutureImpl$immediate(a)};
 
 $._HashSetIterator$ = function(set_){var t1=new $._HashSetIterator(set_._backingMap._keys,-1);t1._HashSetIterator$1(set_);return t1};
 
-$.FutureAlreadyCompleteException$ = function(){return new $.FutureAlreadyCompleteException()};
+$._JsDeserializer$0 = function(){return new $._JsDeserializer0(null)};
 
 $.PeerConnection00Events$ = function(_ptr){return new $.PeerConnection00Events(_ptr)};
 
 $._LocalSendPortSync$_internal = function(_receivePort){return new $._LocalSendPortSync(_receivePort)};
-
-$._JsDeserializer$0 = function(){return new $._JsDeserializer0(null)};
 
 $._JsDeserializer$ = function(){return new $._JsDeserializer(null)};
 
@@ -4852,17 +4849,17 @@ $.DedicatedWorkerContextEvents$ = function(_ptr){return new $.DedicatedWorkerCon
 
 $.DoubleLinkedQueueEntry$ = function(e){var t1=new $.DoubleLinkedQueueEntry(null,null,null);t1.DoubleLinkedQueueEntry$1(e);return t1};
 
-$._JsonStringifier$ = function(sb){return new $._JsonStringifier(sb,[])};
-
 $._JsonStringifier_stringify = function(a){var z=$.StringBuffer_StringBuffer('');$._JsonStringifier$(z).stringifyValue$1(a);return $.toString(z)};
 
 $._JsonStringifier_escape = function(a,b){var z,y,x,w,v,u;z=$.get$length(b);y=$._ListImpl_List(null);for(x=!1,w=0;$.ltB(w,z);++w){v=$.getInterceptor(b).charCodeAt$1(b,w);if($.ltB(v,32)){y.push(92);switch(v){case 8:y.push(98);break;case 9:y.push(116);break;case 10:y.push(110);break;case 12:y.push(102);break;case 13:y.push(114);break;default:y.push(117);u=$.and($.shr(v,12),15);if($.ltB(u,10)){if(typeof u!=='number')throw $.iae(u);u=48+u}else{if(typeof u!=='number')throw $.iae(u);u=87+u}y.push(u);u=$.and($.shr(v,8),15);if($.ltB(u,10)){if(typeof u!=='number')throw $.iae(u);u=48+u}else{if(typeof u!=='number')throw $.iae(u);u=87+u}y.push(u);u=$.and($.shr(v,4),15);if($.ltB(u,10)){if(typeof u!=='number')throw $.iae(u);u=48+u}else{if(typeof u!=='number')throw $.iae(u);u=87+u}y.push(u);u=$.and(v,15);if($.ltB(u,10)){if(typeof u!=='number')throw $.iae(u);u=48+u}else{if(typeof u!=='number')throw $.iae(u);u=87+u}y.push(u);break}x=!0}else if($.eqB(v,34)||$.eqB(v,92)){y.push(92);y.push(v);x=!0}else y.push(v)}$.add$1(a,x?$.String_String$fromCharCodes(y):b)};
 
+$._JsonStringifier$ = function(sb){return new $._JsonStringifier(sb,[])};
+
 $._CustomEventFactoryProvider_createCustomEvent = function(a,b,c,d){var z=$.document().$dom_createEvent$1('CustomEvent');z.$dom_initCustomEvent$4(a,b,c,d);return z};
 
-$.JsonUnsupportedObjectError$withCause = function(unsupportedObject,cause){return new $.JsonUnsupportedObjectError(unsupportedObject,cause)};
-
 $.JsonUnsupportedObjectError$ = function(unsupportedObject){return new $.JsonUnsupportedObjectError(unsupportedObject,null)};
+
+$.JsonUnsupportedObjectError$withCause = function(unsupportedObject,cause){return new $.JsonUnsupportedObjectError(unsupportedObject,cause)};
 
 $.Util_getHashCode = function(a){var z,y,x,w,v,u;for(z=$.iterator(a),y=0;z.get$hasNext()===!0;y=u){x=z.next$0();w=x==null?0:$.get$hashCode(x);if(typeof w!=='number')throw $.iae(w);v=536870911&y+w;u=536870911&v+((524287&v)<<10>>>0);u=(u^$.shr(u,6))>>>0}v=536870911&y+((67108863&y)<<3>>>0);v=(v^$.shr(v,11))>>>0;return 536870911&v+((16383&v)<<15>>>0)};
 
@@ -4920,8 +4917,6 @@ $._DateImpl$now = function(){var t1=new $._DateImpl($.Primitives_dateNow(),!1);t
 
 $.Stage$ = function(_canvas,_element){var t1=new $.Stage($.EventHandle$(),_canvas,_element,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1);t1.Stage$2(_canvas,_element);return t1};
 
-$.GameElement$ = function(textureData){var t1,t2,t3,t4,t5,t6,t7,t8;t1=$.PCanvas$(0,0,!1);t2=$.GameBackgroundElement$();t3=$.BoardElement$();t4=$.NewGameElement$();t5=$.GameTitleElement$();t6=$.EventHandle$();t7=$.TextureAnimationElement$(0,0,textureData);t8=$.TextureAnimationElement$(0,0,textureData);t6=new $.GameElement(t1,t2,t3,$.ScoreElement$(),t4,t5,t7,t8,textureData,t6,null,null,null,null,null,null,null,null,null,$._ListImpl_List(null),!1,$.EventHandle$(),null,100,100,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1);t6.GameElement$1(textureData);return t6};
-
 $.MessagePortEvents$ = function(_ptr){return new $.MessagePortEvents(_ptr)};
 
 $.WorkerContextEvents$ = function(_ptr){return new $.WorkerContextEvents(_ptr)};
@@ -4930,15 +4925,17 @@ $.Events$ = function(_ptr){return new $.Events(_ptr)};
 
 $.GameElement__getScale = function(a,b,c){return $.div($.mul($.add($.mul(a,80),64),b),c)};
 
+$.GameElement$ = function(textureData){var t1,t2,t3,t4,t5,t6,t7,t8;t1=$.PCanvas$(0,0,!1);t2=$.GameBackgroundElement$();t3=$.BoardElement$();t4=$.NewGameElement$();t5=$.GameTitleElement$();t6=$.EventHandle$();t7=$.TextureAnimationElement$(0,0,textureData);t8=$.TextureAnimationElement$(0,0,textureData);t6=new $.GameElement(t1,t2,t3,$.ScoreElement$(),t4,t5,t7,t8,textureData,t6,null,null,null,null,null,null,null,null,null,$._ListImpl_List(null),!1,$.EventHandle$(),null,100,100,null,null,!1,null,$.HashMap_HashMap(),$.HashMap_HashMap(),!1);t6.GameElement$1(textureData);return t6};
+
 $.contains$1$bailout = function(a,b,c){var z;if(typeof b==='string')return $.contains$2(b,c,0);else if($.isJsArray(b)){for(z=0;$.ltB(z,$.get$length(b));++z)if($.eqB(c,$.index(b,z)))return!0;return!1}return b.contains$1(c)};
 
 $.Arrays_copy$bailout = function(a,b,c,d,e,f){var z,y;if(c<e)for(z=c+f-1,y=e+f-1;z>=c;--z,--y)$.indexSet(d,y,$.index(b,z));else for(y=e,z=c;z<c+f;++z,++y)$.indexSet(d,y,$.index(b,z))};
 
-$.Proxy__convert$bailout = function(a,b){switch(a){case 1:v=b;break}switch(a){case 0:case 1:var z,y,x,w,v,u;if(a===0&&typeof v==='object'&&v!==null&&v.is$Map()){z=$.Proxy_Proxy($.context().get$Object(),null,null,null,null);for(y=$.iterator(v.get$keys());y.get$hasNext()===!0;){x=y.next$0();w=$.Proxy__convert(v.operator$index$1(x));$.Proxy__forward(z,$.S(x),'set',[w])}return z}else switch(a){case 0:case 1:if(a===1||a===0&&typeof v==='object'&&v!==null&&(v.constructor===Array||v.is$List()))switch(a){case 0:case 1:a=0;z=$._deserialize($._jsPortCreateArray.callSync$1([]));for(u=0;$.ltB(u,$.get$length(v));++u){w=$.Proxy__convert($.index(v,u));$.Proxy__forward(z,$.S(u),'set',[w])}return z}}return v}};
+$.Arrays_indexOf$bailout = function(a,b,c,d,e){var z;if($.geB(d,$.get$length(b)))return-1;if(d<0)d=0;for(z=d;z<e;++z)if($.eqB($.index(b,z),c))return z;return-1};
 
 $.RetainedUtil__hitTest$bailout = function(a,b,c,d,e){switch(a){case 1:w=e;x=d;z=c;v=b;break}switch(a){case 0:z=$.RetainedUtil_transformPointGlobalToLocal(v,z);y=$.Box$(0,0,v.get$width(),v.get$height());x=$._ListImpl_List(null);case 1:var z,y,x,w,v,u;if(a===1||a===0&&y.contains$1(z)===!0)switch(a){case 0:case 1:if(a===1||a===0&&typeof v==='object'&&v!==null&&!!v.is$ParentElement)switch(a){case 0:w=v.get$visualChildCount();case 1:a=0;for(u=0;$.ltB(u,w);++u){x=$.RetainedUtil__hitTest(v.getVisualChild$1($.sub($.sub(w,1),u)),z);if(x.length>0)break}v=v}x.push(v)}return x}};
 
-$.Arrays_indexOf$bailout = function(a,b,c,d,e){var z;if($.geB(d,$.get$length(b)))return-1;if(d<0)d=0;for(z=d;z<e;++z)if($.eqB($.index(b,z),c))return z;return-1};
+$.Proxy__convert$bailout = function(a,b){switch(a){case 1:v=b;break}switch(a){case 0:case 1:var z,y,x,w,v,u;if(a===0&&typeof v==='object'&&v!==null&&v.is$Map()){z=$.Proxy_Proxy($.context().get$Object(),null,null,null,null);for(y=$.iterator(v.get$keys());y.get$hasNext()===!0;){x=y.next$0();w=$.Proxy__convert(v.operator$index$1(x));$.Proxy__forward(z,$.S(x),'set',[w])}return z}else switch(a){case 0:case 1:if(a===1||a===0&&typeof v==='object'&&v!==null&&(v.constructor===Array||v.is$List()))switch(a){case 0:case 1:a=0;z=$._deserialize($._jsPortCreateArray.callSync$1([]));for(u=0;$.ltB(u,$.get$length(v));++u){w=$.Proxy__convert($.index(v,u));$.Proxy__forward(z,$.S(u),'set',[w])}return z}}return v}};
 
 $.listInsertRange$bailout = function(a,b,c,d,e){var z,y,x,w;if($.eqB(d,0))return;$.checkNull(c);$.checkNull(d);if(!(typeof d==='number'&&Math.floor(d) === d))throw $.$$throw($.ArgumentError$(d));if(d<0)throw $.$$throw($.ArgumentError$(d));if(!(typeof c==='number'&&Math.floor(c) === c))throw $.$$throw($.ArgumentError$(c));z=b.length;if(c<0||c>z)throw $.$$throw($.RangeError$value(c));y=z+d;$.set$length(b,y);x=c+d;$.Arrays_copy(b,c,b,x,z-c);if(!(e==null))for(w=c;w<x;++w)$.indexSet(b,w,e);$.set$length(b,y)};
 
@@ -4954,7 +4951,7 @@ $._Lists_getRange$bailout = function(a,b,c,d,e){var z,y;if($.ltB(d,0))throw $.$$
 
 $.Strings__toJsStringArray$bailout = function(a,b){var z,y,x,w;$.checkNull(b);z=$.get$length(b);if($.isJsArray(b)){for(y=0;$.ltB(y,z);++y){x=$.index(b,y);$.checkNull(x);if(!(typeof x==='string'))throw $.$$throw($.ArgumentError$(x))}w=b}else{w=$._ListImpl_List(z);for(y=0;$.ltB(y,z);++y){x=$.index(b,y);$.checkNull(x);if(!(typeof x==='string'))throw $.$$throw($.ArgumentError$(x));if(y>=w.length)throw $.ioore(y);w[y]=x}}return w};
 
-$.Futures_wait$bailout = function(a,b,c){var z,y,x,w,v;if($.get$isEmpty(b)===!0)return $.Future_Future$immediate($.CTC1);z=$.Completer_Completer();y=z.get$future();c.remaining_1=$.get$length(b);x=$._ListImpl_List($.get$length(b));for(w=0;$.ltB(w,$.get$length(b));++w){v=$.index(b,w);v.then$1(new $.Futures_wait_anon(w,y,z,c,x));v.handleException$1(new $.Futures_wait_anon0(y,z,v))}return y};
+$.Futures_wait$bailout = function(a,b,c){var z,y,x,w,v;if($.get$isEmpty(b)===!0)return $.Future_Future$immediate($.CTC1);z=$.Completer_Completer();y=z.get$future();c.remaining_1=$.get$length(b);x=$._ListImpl_List($.get$length(b));for(w=0;$.ltB(w,$.get$length(b));++w){v=$.index(b,w);v.then$1(new $.Futures_wait_anon(w,y,z,x,c));v.handleException$1(new $.Futures_wait_anon0(y,z,v))}return y};
 
 $.typeNameInChrome.call$1 = $.typeNameInChrome;
 $.typeNameInChrome.$name = "typeNameInChrome";
@@ -5056,12 +5053,12 @@ $.ResourceLoader__defaultSize = 2000;
 $._TimerFactory__factory = null;
 $._JsonParser_BACKSPACE = 8;
 $._JsonParser_TAB = 9;
-$._JsonParser_FORM_FEED = 12;
 $._JsonParser_NEW_LINE = 10;
+$._JsonParser_FORM_FEED = 12;
 $._JsonParser_CARRIAGE_RETURN = 13;
 $._JsonParser_SPACE = 32;
-$._JsonParser_PLUS = 43;
 $._JsonParser_QUOTE = 34;
+$._JsonParser_PLUS = 43;
 $._JsonParser_COMMA = 44;
 $._JsonParser_MINUS = 45;
 $._JsonParser_DOT = 46;
@@ -5077,21 +5074,21 @@ $._JsonParser_CHAR_6 = 54;
 $.JSInvocationMirror_GETTER = 1;
 $._JsonParser_CHAR_7 = 55;
 $._JsonParser_CHAR_8 = 56;
-$.JSInvocationMirror_SETTER = 2;
 $._JsonParser_CHAR_9 = 57;
 $._JsonParser_COLON = 58;
 $._JsonParser_CHAR_CAPITAL_E = 69;
 $._JsonParser_LBRACKET = 91;
+$.JSInvocationMirror_SETTER = 2;
 $._JsonParser_BACKSLASH = 92;
 $._JsonParser_RBRACKET = 93;
 $._JsonParser_CHAR_B = 98;
 $._JsonParser_CHAR_E = 101;
 $._JsonParser_CHAR_F = 102;
 $._JsonParser_CHAR_N = 110;
-$._Sort__INSERTION_SORT_THRESHOLD = 32;
 $._JsonParser_CHAR_R = 114;
 $._JsonParser_CHAR_T = 116;
 $._JsonParser_CHAR_U = 117;
+$._Sort__INSERTION_SORT_THRESHOLD = 32;
 $._JsonParser_LBRACE = 123;
 $._JsonParser_RBRACE = 125;
 $._JsonParser_STRING_LITERAL = 34;
@@ -5104,10 +5101,10 @@ $._JsonParser_LAST_ASCII = 125;
 $._transparentTextureName = 'images/transparent_animated.png';
 $._JsonParser_NULL_STRING = 'null';
 $._JsonParser_TRUE_STRING = 'true';
-$._opaqueTextureName = 'images/dart_opaque_01.jpg';
-$._JsonParser_FALSE_STRING = 'false';
 $._Audio__audioNames = Isolate.$isolateProperties.CTC;
+$._JsonParser_FALSE_STRING = 'false';
 $._JsonParser_tokens = null;
+$._opaqueTextureName = 'images/dart_opaque_01.jpg';
 $._loadingBar = null;
 $._transparentStaticTexture = 'images/transparent_static.png';
 $._imageLoader = null;
@@ -5132,6 +5129,7 @@ $._jsPortCreateArray = null;
 $._jsPortDebug = null;
 $._jsPortEquals = null;
 $.Property_Undefined = Isolate.$isolateProperties.CTC6;
+$._jsPortInstanceof = null;
 $._jsEnterJavaScriptScope = null;
 $._jsGlobalize = null;
 $._jsExitJavaScriptScope = null;
@@ -5139,21 +5137,20 @@ $._jsInvalidate = null;
 $._dartEnterDartScope = null;
 $.SquareState_hidden = Isolate.$isolateProperties.CTC17;
 $.SquareState_revealed = Isolate.$isolateProperties.CTC18;
-$.SquareState_flagged = Isolate.$isolateProperties.CTC19;
 $._dartExitDartScope = null;
-$._jsPortInstanceof = null;
+$.SquareState_flagged = Isolate.$isolateProperties.CTC19;
 $.SquareState_bomb = Isolate.$isolateProperties.CTC23;
+$.SquareState_safe = Isolate.$isolateProperties.CTC25;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
+$.Duration_MINUTES_PER_HOUR = 60;
 $._DART_ID = 'data-dart_id';
 $._DART_TEMPORARY_ATTACHED = 'data-dart_temporary_attached';
-$.Duration_MILLISECONDS_PER_MINUTE = 60000;
-$._localNextElementId = 0;
 $.Duration_MILLISECONDS_PER_HOUR = 3600000;
-$.Duration_MILLISECONDS_PER_DAY = 86400000;
-$.Duration_MINUTES_PER_HOUR = 60;
-$.Duration_HOURS_PER_DAY = 24;
+$._localNextElementId = 0;
 $.Duration_SECONDS_PER_MINUTE = 60;
-$.SquareState_safe = Isolate.$isolateProperties.CTC25;
+$.Duration_MILLISECONDS_PER_DAY = 86400000;
+$.Duration_HOURS_PER_DAY = 24;
+$.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $._DateImpl__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.GameElement__edgeOffset = 32;
 $.GameElement__backgroundSize = Isolate.$isolateProperties.CTC13;
@@ -5163,9 +5160,8 @@ $.GameElement__boardOffset = Isolate.$isolateProperties.CTC14;
 $.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC24;
 $.GameElement__popAnimationHitFrame = 12;
 $.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC26;
-Isolate.$lazy($, '_containerTransformProperty', 'Panel__containerTransformProperty', 'get$Panel__containerTransformProperty', function(){return $.Property$('panelTransform',null)});
-Isolate.$lazy($, '_proxiedObjectTable', '_proxiedObjectTable', 'get$_proxiedObjectTable', function(){return $._ProxiedObjectTable$()});
 Isolate.$lazy($, '_map', '_FunctionProxy__map', 'get$_FunctionProxy__map', function(){return $.Map_Map()});
+Isolate.$lazy($, '_proxiedObjectTable', '_proxiedObjectTable', 'get$_proxiedObjectTable', function(){return $._ProxiedObjectTable$()});
 Isolate.$lazy($, '_audioEventHandle', 'GameAudio__audioEventHandle', 'get$GameAudio__audioEventHandle', function(){return $.EventHandle$()});
 Isolate.$lazy($, 'quoteRegExp', 'quoteRegExp', 'get$quoteRegExp', function(){return $.JSSyntaxRegExp$('[-[\\]{}()*+?.,\\\\^$|#\\s]',!1,!1)});
 Isolate.$lazy($, '_clickManagerProperty', 'ClickManager__clickManagerProperty', 'get$ClickManager__clickManagerProperty', function(){return $.Property$('_clickManager',null)});
@@ -5180,6 +5176,7 @@ Isolate.$lazy($, '_mouseMoveEvent', 'ClickManager__mouseMoveEvent', 'get$ClickMa
 Isolate.$lazy($, '_stageMouseCacheProperty', 'Mouse__stageMouseCacheProperty', 'get$Mouse__stageMouseCacheProperty', function(){return $.Property$('_stageMouseCacheProperty',null)});
 Isolate.$lazy($, '_mouseOutEvent', 'ClickManager__mouseOutEvent', 'get$ClickManager__mouseOutEvent', function(){return $.AttachedEvent$('mouseOut')});
 Isolate.$lazy($, '_titleClickedEventHandle', '_titleClickedEventHandle', 'get$_titleClickedEventHandle', function(){return $.EventHandle$()});
+Isolate.$lazy($, '_containerTransformProperty', 'Panel__containerTransformProperty', 'get$Panel__containerTransformProperty', function(){return $.Property$('panelTransform',null)});
 Isolate.$lazy($, 'titleClickedEvent', 'titleClickedEvent', 'get$titleClickedEvent', function(){return $.get$_titleClickedEventHandle()});
 var $ = null;
 Isolate.$finishClasses($$);
