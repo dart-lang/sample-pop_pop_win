@@ -254,7 +254,7 @@ class GameElement extends ParentElement {
 
   void _squareMouseDown(ElementMouseEventArgs args) {
     _lastHoldUnfreeze = null;
-    if(_mouseDownTimeoutHandle != null) {
+    if(_mouseDownTimeoutHandleId != null) {
       window.clearTimeout(_mouseDownTimeoutHandleId);
     }
     final SquareElement se = args.element;
