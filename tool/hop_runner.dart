@@ -8,6 +8,13 @@ void main() {
   _assertKnownPath();
 
   addAsyncTask('test', createUnitTestTask(test_console.testCore));
+
+  //
+  // Dart2js
+  //
+  final paths = const ['web/game.dart'];
+  addAsyncTask('dart2js', createDart2JsTask(paths));
+
   runHopCore();
 }
 
