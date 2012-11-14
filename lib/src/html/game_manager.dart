@@ -60,7 +60,7 @@ abstract class GameManager {
 
   void updateClock() {
     if(_setIntervalId == null && _game.state == GameState.started) {
-      _setIntervalId = window.setInterval(_doClock, 1000);
+      _setIntervalId = window.setInterval(updateClock, 1000);
     } else if(_setIntervalId != null && _game.state != GameState.started) {
       window.clearInterval(_setIntervalId);
       _setIntervalId = null;
@@ -70,12 +70,6 @@ abstract class GameManager {
   void onNewBestTime(int value){}
 
   void onGameStateChanged(GameState value){}
-
-  // DARTBUG: work around for http://code.google.com/p/dart/issues/detail?id=3197
-  // TODO: fixed in r13917? Need to verify and remove work-around
-  void _doClock() {
-    updateClock();
-  }
 
   bool get _canClick {
     return _game.state == GameState.reset ||
