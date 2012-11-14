@@ -13,7 +13,7 @@ void main() {
   // Dart2js
   //
   final paths = const ['web/game.dart'];
-  addAsyncTask('dart2js', createDart2JsTask(paths));
+  addAsyncTask('dart2js', createDart2JsTask(paths,  minify: true));
 
   runHopCore();
 }
