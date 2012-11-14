@@ -93,7 +93,10 @@ class _Audio {
       final buffer = _buffers[name];
       assert(buffer != null);
       source.buffer = buffer;
-      source.connect(_audioContext.destination, 0);
+      // DARTBUG: ??? Need to file
+      // Docs claim the 3rd param (input) can be undefined, but an exception is
+      // throw
+      source.connect(_audioContext.destination, 0, 0);
       source.start(0);
     }
   }
