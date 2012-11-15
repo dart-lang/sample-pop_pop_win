@@ -1,3 +1,5 @@
+library game;
+
 import 'dart:html';
 import 'package:bot/bot.dart';
 import 'package:bot/html.dart';
