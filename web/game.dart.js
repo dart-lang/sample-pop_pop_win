@@ -477,8 +477,8 @@ $$.Mh = {"": [],
  Wz: function($0, $1) {
   return this.e7($.hz("getAdjacentCount", "Wz",0, [$0, $1], []));
  },
- gP: function($0) {
-  return this.e7($.hz("_getByUrl", "gP",0, [$0], []));
+ a7: function($0) {
+  return this.e7($.hz("_getByUrl", "a7",0, [$0], []));
  },
  or: function() {
   return this.e7($.hz("closePath", "or",0, [], []));
@@ -1110,17 +1110,17 @@ $$.Mh = {"": [],
  Sv: function($0, $1) {
   return this.e7($.hz("_doMouseDown", "Sv",0, [$0, $1], []));
  },
- get$yc: function() {
-  return this.e7($.hz("rootContext", "Ye",1, [], []));
- },
- get$j5: function() {
-  return this.e7($.hz("mouseDown", "rQ",1, [], []));
+ get$K7: function() {
+  return this.e7($.hz("_m00", "BC",1, [], []));
  },
  get$DR: function() {
   return this.e7($.hz("_id", "LO",1, [], []));
  },
  get$QG: function() {
   return this.e7($.hz("_id", "Aq",1, [], []));
+ },
+ get$yc: function() {
+  return this.e7($.hz("rootContext", "Ye",1, [], []));
  },
  get$nB: function() {
   return this.e7($.hz("load", "o",1, [], []));
@@ -1242,7 +1242,7 @@ $$.Mh = {"": [],
  get$Vm: function() {
   return this.e7($.hz("namedArguments", "HL",1, [], []));
  },
- get$iY: function() {
+ get$gP: function() {
   return this.e7($.hz("navigator", "vF",1, [], []));
  },
  get$JJ: function() {
@@ -1386,9 +1386,6 @@ $$.Mh = {"": [],
  get$Qg: function() {
   return this.e7($.hz("attributes", "uH",1, [], []));
  },
- get$xU: function() {
-  return this.e7($.hz("clientInformation", "y7",1, [], []));
- },
  get$ZH: function() {
   return this.e7($.hz("_portId", "ns",1, [], []));
  },
@@ -1452,7 +1449,7 @@ $$.Mh = {"": [],
  get$Xz: function() {
   return this.e7($.hz("topEventLoop", "VV",1, [], []));
  },
- get$a7: function() {
+ get$aJ: function() {
   return this.e7($.hz("resize", "PZ",1, [], []));
  },
  get$i2: function() {
@@ -1659,14 +1656,14 @@ $$.Mh = {"": [],
  get$yD: function() {
   return this.e7($.hz("_clickedEvent", "h1",1, [], []));
  },
- get$Vs: function() {
-  return this.e7($.hz("inMilliseconds", "it",1, [], []));
+ get$hh: function() {
+  return this.e7($.hz("bombsLeft", "js",1, [], []));
  },
  get$Qn: function() {
   return this.e7($.hz("context2d", "kC",1, [], []));
  },
- get$hh: function() {
-  return this.e7($.hz("bombsLeft", "js",1, [], []));
+ get$Vs: function() {
+  return this.e7($.hz("inMilliseconds", "it",1, [], []));
  },
  get$vl: function() {
   return this.e7($.hz("_isolateId", "WB",1, [], []));
@@ -1677,11 +1674,11 @@ $$.Mh = {"": [],
  get$mW: function() {
   return this.e7($.hz("location", "pF",1, [], []));
  },
+ get$j5: function() {
+  return this.e7($.hz("mouseDown", "rQ",1, [], []));
+ },
  get$zP: function() {
   return this.e7($.hz("isNegative", "Sf",1, [], []));
- },
- get$K7: function() {
-  return this.e7($.hz("_m00", "BC",1, [], []));
  },
  set$d: function($0) {
   return this.e7($.hz("display=", "Dm",2, [$0], []));
@@ -1920,7 +1917,7 @@ $$.Uj = {"": ["t1"],
  get$nB: function(){return this.D('load')},
  o: function() { return this.get$nB().call$0(); },
  get$VG: function(){return this.D('popstate')},
- get$a7: function(){return this.D('resize')}
+ get$aJ: function(){return this.D('resize')}
 };
 
 $$.AF = {"": ["t1"],
@@ -2103,7 +2100,7 @@ $$.Mj = {"": ["t1"],
  get$nB: function(){return this.D('load')},
  o: function() { return this.get$nB().call$0(); },
  get$VG: function(){return this.D('popstate')},
- get$a7: function(){return this.D('resize')}
+ get$aJ: function(){return this.D('resize')}
 };
 
 $$.Sa = {"": ["t1"],
@@ -2173,7 +2170,7 @@ $$.o5 = {"": ["t1"],
  get$p: function(){return this.D('progress')},
  get$b6: function(){return this.D('reset')},
  CH: function() { return this.get$b6().call$0(); },
- get$a7: function(){return this.D('resize')},
+ get$aJ: function(){return this.D('resize')},
  get$ZJ: function(){return this.D('touchmove')}
 };
 
@@ -2714,7 +2711,7 @@ $$.TN = {"": ["t1"],
  get$CK: function(){return this.D('mouseup')},
  get$b6: function(){return this.D('reset')},
  CH: function() { return this.get$b6().call$0(); },
- get$a7: function(){return this.D('resize')}
+ get$aJ: function(){return this.D('resize')}
 };
 
 $$.jQ = {"": ["oc>"],
@@ -3015,16 +3012,16 @@ $$.Dc = {"": ["l2>"],
  get$ZQ: function(){return this.l2},
  get$l: function(){return this.ls},
  get$p: function(){return this.Dy},
- oF: function(a){return this.gP(a).get$xI()},
+ oF: function(a){return this.a7(a).get$xI()},
  get$WY: function(){return this.ut.BX(new $.Y0()).PA()},
  get$lG: function(){return this.ut.BX(new $.OF()).PA()},
  o: function(){this.l2='loading';for(var z=$.kz(this.ut);z.get$h()===!0;)this.Ge(z.x().get$As())},
  get$nB: function() { return new $.rT(this, 'o'); },
  p3: function(a){var z=this.nx(a);$.p(['failled to load resources with blobUrl',z.get$As()]);z.x0()},
  Ix: function(blobUrl,resource){var entry=this.nx(blobUrl);entry.x0();entry.Af(resource);if($.ns(this.ut,new $.vM())===!0){this.l2='loaded';this.ls.DG($.DAa)}},
- gP: function(url){return this.ut.TA(new $.UF(url))},
+ a7: function(url){return this.ut.TA(new $.UF(url))},
  nx: function(blobUrl){return this.ut.TA(new $.fc(blobUrl))},
- Ge: function(url){var request,e;request=$.RC();e=this.gP(url);$.a(request.get$qc().get$wX(),new $.Y7(e,this));$.a(request.get$qc().get$kc(),new $.G3(e,this));$.a(request.get$qc().get$HO(),new $.Pq(e,this));$.a(request.get$qc().get$p(),new $.Hz(e,this));request.gR('GET',url);request.set$Ox('blob');request.sT()},
+ Ge: function(url){var request,e;request=$.RC();e=this.a7(url);$.a(request.get$qc().get$wX(),new $.Y7(e,this));$.a(request.get$qc().get$kc(),new $.G3(e,this));$.a(request.get$qc().get$HO(),new $.Pq(e,this));$.a(request.get$qc().get$p(),new $.Hz(e,this));request.gR('GET',url);request.set$Ox('blob');request.sT()},
  Ll: function(a,b){var z=b.get$Sd();if($.B(z.get$ys(),200))this.PW(a.HX(z.get$bA()));else this.mw(a,b)},
  mw: function(a,b){throw $.r('wtf?')},
  u0: function(a,b){if(a.wU(b.get$l(),b.get$QV())===!0)this.Dy.DG($.DAa)}
@@ -3221,7 +3218,7 @@ $$.Yy = {"": ["MG", "oG>", "BF>", "hr", "hD", "Kd", "Xb", "b5", "vE", "aT", "LM"
  get$pL: function() { return new $.sh(this, 'Um'); },
  SM: function(a){var z='inherit';this.oG.get$s().set$kZ(z)},
  get$hn: function() { return new $.sh(this, 'SM'); },
- z6: function(width,height,bombCount,_canvas,_stage,gameElement,_clickMan){var t1,t2;t1=this.BF;t1.kw(this);t2=this.MG;$.a(t2.get$E3(),this.get$Hx());$.a(t1.get$nH(),new $.ac(this));$.z0(t1,this.get$pL());$.Hw(t2,this.get$hn());$.a($.lq().get$qc().get$a7(),new $.Qw(this));this.gv()}
+ z6: function(width,height,bombCount,_canvas,_stage,gameElement,_clickMan){var t1,t2;t1=this.BF;t1.kw(this);t2=this.MG;$.a(t2.get$E3(),this.get$Hx());$.a(t1.get$nH(),new $.ac(this));$.z0(t1,this.get$pL());$.Hw(t2,this.get$hn());$.a($.lq().get$qc().get$aJ(),new $.Qw(this));this.gv()}
 };
 
 $$.Ih = {"": ["yD>", "Lg", "L3", "LG", "fL", "Q0", "ZA", "Ru", "fG", "S0", "hG", "wO", "q9", "U3"],
@@ -4396,7 +4393,7 @@ $.ku = function(a,b,c,d){if(d==null)d=$.CJ(0,0,c.get$w(),c.get$fg());a.TP(b,c.ge
 
 $.oz = function(a,b,c,d,e){var z,y,x,w,v,u,t,s;z=d/2;y=z*0.5522847498307935;x=e/2;w=x*0.5522847498307935;v=$.ht(b,d);u=$.ht(c,e);t=$.ht(b,z);s=$.ht(c,x);a.Q4();a.bJ(b,s);a.ca(b,$.nE(s,w),$.nE(t,y),c,t,c);a.ca($.ht(t,y),c,v,$.nE(s,w),v,s);a.ca(v,$.ht(s,w),$.ht(t,y),u,t,u);a.ca($.nE(t,y),u,b,$.ht(s,w),b,s);a.or()};
 
-$.GQ = function(){return $.lq().get$iY().get$er()};
+$.GQ = function(){return $.lq().get$gP().get$er()};
 
 $.Xr = function(){return $.Is($.GQ(),'Opera',0)};
 
@@ -4512,7 +4509,7 @@ $.s = function(){return new $.N(null,$.M())};
 
 $.t = function(_audioLoader){var t1=new $.N(_audioLoader,$.M());t1.Ie(_audioLoader);return t1};
 
-$.xt = function(a){var z,y,x,w,v;try{z=$.lq().get$xU().get$er();y=$.tg(z,'WebKit');if(y===!0){x=$.tg(z,'Chrome');if(x===!0)return'webm';else return'm4a'}}catch(a){w=$.w(a);v=w;$.p('Error getting client info: '+$.S(v))}return};
+$.xt = function(a){var z,y,x,w,v;try{z=$.lq().get$gP().get$er();y=$.tg(z,'WebKit');if(y===!0){x=$.tg(z,'Chrome');if(x===!0)return'webm';else return'm4a'}}catch(a){w=$.w(a);v=w;$.p('Error getting client info: '+$.S(v))}return};
 
 $.e = function(a){return'audio/'+$.S($.g())+'/'+$.S(a)+'.'+$.S($.g())};
 
@@ -5456,7 +5453,7 @@ $.$defineNativeClass('CSSStyleDeclaration', {"": ["e:length~"],
  get$fg: function(){return this.T2('height')},
  set$fg: function(a){this.hV('height',a,'')},
  get$Bb: function(){return this.T2('left')},
- get$a7: function(){return this.T2('resize')},
+ get$aJ: function(){return this.T2('resize')},
  get$tL: function(){return this.T2('size')},
  set$tL: function(a){this.hV('size',a,'')},
  set$LA: function(a){this.hV('src',a,'')},
@@ -6381,7 +6378,7 @@ $.$defineNativeClass('Location', {"": ["rk:hash~", "LU:href~"],
 $.$defineNativeClass('LocalMediaStream', {"": []
 });
 
-$.$defineNativeClass('DOMWindow', {"": ["jY:history~", "i7:innerHeight~", "Tt:innerWidth~", "x2:localStorage~", "oc:name~", "iY:navigator~", "ys:status~"],
+$.$defineNativeClass('DOMWindow', {"": ["jY:history~", "i7:innerHeight~", "Tt:innerWidth~", "x2:localStorage~", "oc:name~", "gP:navigator~", "ys:status~"],
  hx: function(url,name$,options){if(options==null)return $.P1(this.open(url,name$));else return $.P1(this.open(url,name$,options))},
  gR: function(url,name$) {
   return this.hx(url,name$,null)
@@ -7422,7 +7419,7 @@ $.$defineNativeClass('Worker', {"": [],
  pv: function(message){return this.postMessage(message)}
 });
 
-$.$defineNativeClass('WorkerContext', {"": ["mW:location~", "iY:navigator~"],
+$.$defineNativeClass('WorkerContext', {"": ["mW:location~", "gP:navigator~"],
  get$qc: function(){  if (Object.getPrototypeOf(this).hasOwnProperty('get$qc')) {
   {return $.IB(this)}  } else {
     return Object.prototype.get$qc.call(this);
