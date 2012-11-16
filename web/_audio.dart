@@ -105,7 +105,7 @@ class _Audio {
 
   static String _getAudioFormat() {
     try {
-      final userAgent = window.clientInformation.userAgent;
+      final userAgent = window.navigator.userAgent;
       final isWebKit = userAgent.contains("WebKit");
       if(isWebKit) {
         final isChrome = userAgent.contains("Chrome");
