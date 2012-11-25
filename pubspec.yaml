@@ -3,7 +3,5 @@ dependencies:
   unittest:
     sdk: unittest
   bot:
-    git:
-      url: https://github.com/kevmoo/bot.dart.git
-      ref: master
-  js: 0.0.9
+    git: https://github.com/kevmoo/bot.dart.git
+  js: 0.0.10
