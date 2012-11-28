@@ -14,8 +14,8 @@ _Pop, Pop, Win!_ (PPW) uses the
 `pub update` before you try to run tests, build, etc.
 
 The code currently works against Dart build 
-[r14873](https://gsdview.appspot.com/dart-editor-archive-continuous/14873/) 
-released on 14 Nov, 2012.
+[r15355](https://gsdview.appspot.com/dart-editor-archive-integration/15355/) 
+released on 27 Nov, 2012.
 
 Using other versions of the Dart tools with this source code might cause problems.
 
