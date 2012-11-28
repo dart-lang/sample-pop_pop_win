@@ -12,8 +12,10 @@ void main() {
   //
   // Dart2js
   //
-  final paths = const ['web/game.dart'];
-  addTask('dart2js', createDart2JsTask(paths,  minify: true));
+
+  // DARTBUG: https://code.google.com/p/dart/issues/detail?id=6763
+  // disabling minify for now until dart bug is fixed
+  addTask('dart2js', createDart2JsTask(['web/game.dart'],  minify: false));
 
   runHopCore();
 }
