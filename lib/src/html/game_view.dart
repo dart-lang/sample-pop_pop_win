@@ -18,7 +18,7 @@ class GameView extends GameManager {
     _gameStateDiv.innerHTML = game.state.name;
     _leftCountDiv.innerHTML = game.bombsLeft.toString();
 
-    if(_table.elements.length == 0) {
+    if(_table.children.length == 0) {
 
       for(int r = 0; r < game.field.height; r++) {
         TableRowElement row = _table.insertRow(-1);
@@ -55,7 +55,7 @@ class GameView extends GameManager {
 
   void newGame() {
     super.newGame();
-    _table.elements.clear();
+    _table.children.clear();
     updateElement();
   }
 
