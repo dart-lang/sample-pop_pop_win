@@ -17,6 +17,12 @@ void main() {
   // disabling minify for now until dart bug is fixed
   addTask('dart2js', createDart2JsTask(['web/game.dart'],  minify: false));
 
+  //
+  // gh_pages
+  //
+  addAsyncTask('pages', (ctx) =>
+      branchForDir(ctx, 'compress', 'web', 'gh-pages'));
+
   runHopCore();
 }
 
