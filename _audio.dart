@@ -1,3 +1,5 @@
+part of game;
+
 class _Audio {
   static const List<String> _audioNames =
       const ['Pop0', 'Pop1', 'Pop2', 'Pop3', 'Pop4', 'Pop5', 'Pop6', 'Pop7', 'Pop8',
@@ -93,7 +95,7 @@ class _Audio {
       final buffer = _buffers[name];
       assert(buffer != null);
       source.buffer = buffer;
-      // DARTBUG: ??? Need to file
+      // DARTBUG: http://code.google.com/p/dart/issues/detail?id=6728
       // Docs claim the 3rd param (input) can be undefined, but an exception is
       // throw
       source.connect(_audioContext.destination, 0, 0);
@@ -103,7 +105,7 @@ class _Audio {
 
   static String _getAudioFormat() {
     try {
-      final userAgent = window.clientInformation.userAgent;
+      final userAgent = window.navigator.userAgent;
       final isWebKit = userAgent.contains("WebKit");
       if(isWebKit) {
         final isChrome = userAgent.contains("Chrome");
