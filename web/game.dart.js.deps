@@ -49,6 +49,7 @@ file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/html/html_util.da
 file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/html/html_view.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/html/image_loader.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/html/resource_loader.dart
+file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/retained/_retained_enum.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/retained/click_manager.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/retained/element_mouse_event_args.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/bot/src/retained/element_parent.dart
