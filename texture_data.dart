@@ -1,4 +1,9 @@
-Map<String, TextureInput> _getTextures(ImageElement transparentElement,
+library data;
+
+import 'dart:html';
+import 'package:bot/texture.dart';
+
+Map<String, TextureInput> getTextures(ImageElement transparentElement,
     ImageElement opaqueElement, ImageElement transparentStaticElement) {
 
   final frames = <String, TextureInput>{};
