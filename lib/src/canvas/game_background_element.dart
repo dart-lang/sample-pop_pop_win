@@ -1,6 +1,6 @@
 part of ppw_canvas;
 
-class GameBackgroundElement extends PElement {
+class GameBackgroundElement extends Thing {
   GameBackgroundElement() : super(0, 0, true);
 
   void update() {
@@ -83,7 +83,7 @@ class GameBackgroundElement extends PElement {
         new Coordinate(0, GameElement._boardOffset.y));
   }
 
-  GameElement get _parent => (parent as PCanvas).parent;
+  GameElement get _parent => (parent as CanvasThing).parent;
 
   TextureData get _textureData => _parent._textureData;
 }

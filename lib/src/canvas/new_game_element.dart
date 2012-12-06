@@ -1,6 +1,6 @@
 part of ppw_canvas;
 
-class NewGameElement extends PElement {
+class NewGameElement extends Thing {
   final EventHandle<EventArgs> _clickedEvent =
       new EventHandle<EventArgs>();
 
@@ -19,7 +19,7 @@ class NewGameElement extends PElement {
     _textureData.drawTextureKeyAt(ctx, texture);
   }
 
-  GameElement get _parent => (parent as PCanvas).parent;
+  GameElement get _parent => (parent as CanvasThing).parent;
 
   TextureData get _textureData => _parent._textureData;
 

@@ -2,7 +2,7 @@ part of ppw_canvas;
 
 // NOTE: setGameManager must be called immediately after construction
 
-class ScoreElement extends PElement {
+class ScoreElement extends Thing {
   static const _bombsLeftStr = "BOMBS LEFT:";
   static const _valueOffset = 15;
 

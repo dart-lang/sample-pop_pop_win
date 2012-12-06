@@ -1,6 +1,6 @@
 part of ppw_canvas;
 
-class GameTitleElement extends PElement {
+class GameTitleElement extends Thing {
 
   GameTitleElement() : super(318, 96);
 
@@ -8,7 +8,7 @@ class GameTitleElement extends PElement {
     _textureData.drawTextureKeyAt(ctx, 'logo_win.png');
   }
 
-  GameElement get _parent => (parent as PCanvas).parent;
+  GameElement get _parent => (parent as CanvasThing).parent;
 
   TextureData get _textureData => _parent._textureData;
 

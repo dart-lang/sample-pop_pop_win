@@ -1,6 +1,6 @@
 part of ppw_canvas;
 
-class BoardElement extends ParentElement {
+class BoardElement extends ParentThing {
   Array2d<SquareElement> _elements;
 
   BoardElement() : super(0, 0, true);
@@ -13,7 +13,7 @@ class BoardElement extends ParentElement {
     }
   }
 
-  PElement getVisualChild(int index) {
+  Thing getVisualChild(int index) {
     return _elements[index];
   }
 
@@ -45,7 +45,7 @@ class BoardElement extends ParentElement {
     super.update();
   }
 
-  GameElement get _parent => (parent as PCanvas).parent;
+  GameElement get _parent => (parent as CanvasThing).parent;
 
   Game get _game => _parent._game;
 

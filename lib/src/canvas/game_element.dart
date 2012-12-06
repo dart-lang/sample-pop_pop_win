@@ -1,6 +1,6 @@
 part of ppw_canvas;
 
-class GameElement extends ParentElement {
+class GameElement extends ParentThing {
   static const _edgeOffset = 32;
   static const _backgroundSize = const Size(2048, 1536);
   static const _backgroundEdgeOffset = 256;
@@ -13,13 +13,13 @@ class GameElement extends ParentElement {
       const Vector(-512 + 0.5 * SquareElement._size,
           -388 + 0.5 * SquareElement._size);
 
-  final PCanvas _canvas = new PCanvas(0, 0);
+  final CanvasThing _canvas = new CanvasThing(0, 0);
   final GameBackgroundElement _background = new GameBackgroundElement();
   final BoardElement _boardElement = new BoardElement();
   final ScoreElement _scoreElement;
   final NewGameElement _newGameElement = new NewGameElement();
   final GameTitleElement _titleElement = new GameTitleElement();
-  final TextureAnimationElement _popAnimationLayer, _dartAnimationLayer;
+  final TextureAnimationThing _popAnimationLayer, _dartAnimationLayer;
   final TextureData _textureData;
   final EventHandle _targetChanged = new EventHandle();
 
@@ -34,18 +34,18 @@ class GameElement extends ParentElement {
 
   GameElement(TextureData textureData) :
     _textureData = textureData,
-    _popAnimationLayer = new TextureAnimationElement(0, 0, textureData),
-    _dartAnimationLayer = new TextureAnimationElement(0, 0, textureData),
+    _popAnimationLayer = new TextureAnimationThing(0, 0, textureData),
+    _dartAnimationLayer = new TextureAnimationThing(0, 0, textureData),
     _scoreElement = new ScoreElement(),
     super(100, 100) {
     _canvas.registerParent(this);
-    _canvas.addElement(_background);
-    _canvas.addElement(_boardElement);
-    _canvas.addElement(_newGameElement);
-    _canvas.addElement(_scoreElement);
-    _canvas.addElement(_popAnimationLayer);
-    _canvas.addElement(_titleElement);
-    _canvas.addElement(_dartAnimationLayer);
+    _canvas.add(_background);
+    _canvas.add(_boardElement);
+    _canvas.add(_newGameElement);
+    _canvas.add(_scoreElement);
+    _canvas.add(_popAnimationLayer);
+    _canvas.add(_titleElement);
+    _canvas.add(_dartAnimationLayer);
 
     _newGameElement.clicked.add((args) => GameAudio.click());
 
@@ -97,7 +97,7 @@ class GameElement extends ParentElement {
 
   int get visualChildCount => 1;
 
-  PElement getVisualChild(int index) {
+  Thing getVisualChild(int index) {
     assert(index == 0);
     return _canvas;
   }
@@ -238,39 +238,39 @@ class GameElement extends ParentElement {
     }
   }
 
-  void wireSquareMouseEvent(PElement square) {
+  void wireSquareMouseEvent(Thing square) {
     ClickManager.addHandler(square, _squareClicked);
     ClickManager.addMouseDownHandler(square, _squareMouseDown);
     ClickManager.addMouseUpHandler(square, _squareMouseUp);
     ClickManager.addMouseMoveHandler(square, _squareMouseMove);
   }
 
-  void _squareClicked(ElementMouseEventArgs args) {
+  void _squareClicked(ThingMouseEventArgs args) {
     if(!_game.gameEnded && _lastHoldUnfreeze == null) {
-      final SquareElement se = args.element;
+      final SquareElement se = args.thing;
       _click(se.x, se.y, args.shiftKey);
     }
   }
 
-  void _squareMouseDown(ElementMouseEventArgs args) {
+  void _squareMouseDown(ThingMouseEventArgs args) {
     _lastHoldUnfreeze = null;
     if(_mouseDownTimeoutHandleId != null) {
       window.clearTimeout(_mouseDownTimeoutHandleId);
     }
-    final SquareElement se = args.element;
+    final SquareElement se = args.thing;
     _mouseDownElement = se;
     _mouseDownTimeoutHandleId = window.setTimeout(_mouseDownTimeoutHandle, 1000);
   }
 
-  void _squareMouseMove(ElementMouseEventArgs args) {
-    final SquareElement se = args.element;
+  void _squareMouseMove(ThingMouseEventArgs args) {
+    final SquareElement se = args.thing;
     if(_mouseDownElement != se) {
       _clearTimeout();
     }
   }
 
-  void _squareMouseUp(ElementMouseEventArgs args) {
-    final SquareElement se = args.element;
+  void _squareMouseUp(ThingMouseEventArgs args) {
+    final SquareElement se = args.thing;
     _clearTimeout();
   }
 

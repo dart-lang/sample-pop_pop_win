@@ -42,11 +42,11 @@ _doLoad() {
   _drawTexture();
 
   window.on.keyDown.add((KeyboardEvent args) {
-    switch(args.keyIdentifier) {
-      case "Right":
+    switch(args.keyCode) {
+      case KeyCode.RIGHT:
         _next();
         break;
-      case "Left":
+      case KeyCode.LEFT:
         _previous();
         break;
     }

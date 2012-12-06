@@ -1,6 +1,7 @@
 library game;
 
 import 'dart:html';
+import 'dart:web_audio';
 import 'package:bot/bot.dart';
 import 'package:bot/html.dart';
 import 'package:bot/texture.dart';

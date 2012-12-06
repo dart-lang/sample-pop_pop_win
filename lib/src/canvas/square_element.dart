@@ -1,6 +1,6 @@
 part of ppw_canvas;
 
-class SquareElement extends PElement {
+class SquareElement extends Thing {
   static const int _size = 80;
 
   static const List<String> _balloonBits = const['balloon_pieces_a.png',
