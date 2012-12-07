@@ -68,16 +68,16 @@ void _onLoaded(args) {
 
     // run the app
     query('#loading').style.display = 'none';
-    _runppw(textureData);
+    _runPPW(textureData);
   }
 }
 
-void _runppw(TextureData textureData) {
+void _runPPW(TextureData textureData) {
   final size = _processUrlHash(false) ? 16 : 7;
   final int m = (size * size * 0.15625).toInt();
 
-  final CanvasElement poppopwinTable = query('#gameCanvas');
-  final gameRoot = new GameRoot(size, size, m, poppopwinTable, textureData);
+  final CanvasElement gameCanvas = query('#gameCanvas');
+  final gameRoot = new GameRoot(size, size, m, gameCanvas, textureData);
 
   // disable touch events
   window.on.touchMove.add((args) => args.preventDefault());
