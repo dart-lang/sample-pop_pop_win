@@ -234,7 +234,7 @@ $$.ConstantMap = {"":"Object;length?,_jsObject,_lib0_keys?",
 },
  forEach$1: function(f) {
   var t1 = this._lib0_keys;
-  $.getInterceptor$JSArray(t1).forEach$1(t1, new $.ConstantMap_forEach_anon(this, f));
+  $.getInterceptor$JSArray(t1).forEach$1(t1, new $.ConstantMap_forEach_anon(f, this));
 },
  get$keys: function() {
   return this._lib0_keys;
@@ -243,7 +243,7 @@ $$.ConstantMap = {"":"Object;length?,_jsObject,_lib0_keys?",
   var result, t1;
   result = [];
   t1 = this._lib0_keys;
-  $.getInterceptor$JSArray(t1).forEach$1(t1, new $.ConstantMap_values_anon(this, result));
+  $.getInterceptor$JSArray(t1).forEach$1(t1, new $.ConstantMap_values_anon(result, this));
   return result;
 },
  get$isEmpty: function() {
@@ -1075,7 +1075,7 @@ $$._HashMapImpl = {"":"Object;_keys?,_values,_loadLimit,_numberOfEntries,_number
   t1 = {};
   list = $.List_List(this.get$length());
   t1.i_10 = 0;
-  this.forEach$1(new $._HashMapImpl_keys_anon(t1, list));
+  this.forEach$1(new $._HashMapImpl_keys_anon(list, t1));
   return list;
 },
  get$values: function() {
@@ -1143,7 +1143,7 @@ $$._LinkedHashMapImpl = {"":"Object;_list,_map",
   t1 = {};
   list = $.List_List(this.get$length());
   t1.index_10 = 0;
-  this._list.forEach$1(new $._LinkedHashMapImpl_keys_anon(list, t1));
+  this._list.forEach$1(new $._LinkedHashMapImpl_keys_anon(t1, list));
   return list;
 },
  get$values: function() {
@@ -2620,6 +2620,9 @@ $$.Object = {"":";",
  get$_m00: function() {
   return this.noSuchMethod$1($.createInvocationMirror("_m00", "_m00$0", 1, [], []));
  },
+ set$left: function($0) {
+  return this.noSuchMethod$1($.createInvocationMirror("left=", "left=$1", 2, [$0], []));
+ },
  set$_previous: function($0) {
   return this.noSuchMethod$1($.createInvocationMirror("_previous=", "_previous=$1", 2, [$0], []));
  },
@@ -2638,11 +2641,17 @@ $$.Object = {"":";",
  set$innerHTML: function($0) {
   return this.noSuchMethod$1($.createInvocationMirror("innerHTML=", "innerHTML=$1", 2, [$0], []));
  },
+ set$userSelect: function($0) {
+  return this.noSuchMethod$1($.createInvocationMirror("userSelect=", "userSelect=$1", 2, [$0], []));
+ },
  set$value: function($0) {
   return this.noSuchMethod$1($.createInvocationMirror("value=", "value=$1", 2, [$0], []));
  },
  set$src: function($0) {
   return this.noSuchMethod$1($.createInvocationMirror("src=", "src=$1", 2, [$0], []));
+ },
+ set$top: function($0) {
+  return this.noSuchMethod$1($.createInvocationMirror("top=", "top=$1", 2, [$0], []));
  },
  set$type: function($0) {
   return this.noSuchMethod$1($.createInvocationMirror("type=", "type=$1", 2, [$0], []));
@@ -3157,7 +3166,7 @@ $$.ObjectInterceptor = {"":"Object;",
  substring$2: function(receiver, a0, a1) { return receiver.substring$2(a0, a1); },
  get$last: function(receiver) { return receiver.get$last(); },
  filter$1: function(receiver, a0) { return receiver.filter$1(a0); },
- get$isNaN: function(receiver) { return receiver.get$isNaN(); },
+ get$isInfinite: function(receiver) { return receiver.get$isInfinite(); },
  clear$0: function(receiver) { return receiver.clear$0(); },
  contains$1: function(receiver, a0) { return receiver.contains$1(a0); },
  getRange$2: function(receiver, a0, a1) { return receiver.getRange$2(a0, a1); },
@@ -3165,7 +3174,7 @@ $$.ObjectInterceptor = {"":"Object;",
  get$hashCode: function(receiver) { return receiver.get$hashCode(); },
  allMatches$1: function(receiver, a0) { return receiver.allMatches$1(a0); },
  sort$1: function(receiver, a0) { return receiver.sort$1(a0); },
- get$isInfinite: function(receiver) { return receiver.get$isInfinite(); },
+ get$isNaN: function(receiver) { return receiver.get$isNaN(); },
  startsWith$1: function(receiver, a0) { return receiver.startsWith$1(a0); },
  abs$0: function(receiver) { return receiver.abs$0(); },
  addAll$1: function(receiver, a0) { return receiver.addAll$1(a0); },
@@ -3736,7 +3745,7 @@ $$._ChildrenElementList = {"":"Object;_lib_element?,_childElements",
  filter$1: function(f) {
   var output, t1, t2;
   output = [];
-  t1 = new $._ChildrenElementList_filter_anon(f, output);
+  t1 = new $._ChildrenElementList_filter_anon(output, f);
   for (t2 = this._childElements, t2 = $.getInterceptor$JSArray(t2).iterator$0(t2); t2.get$hasNext() === true;)
     t1.call$1(t2.next$0());
   return $._FrozenElementList$_wrap(output);
@@ -5761,7 +5770,7 @@ $$._Timer = {"":"Object;_once,_handle",
   this._handle = $._window().setInterval$2(new $.anon8(callback, this), milliSeconds);
 },
  _Timer$2: function(milliSeconds, callback) {
-  this._handle = $._window().setTimeout$2(new $.anon7(callback, this), milliSeconds);
+  this._handle = $._window().setTimeout$2(new $.anon7(this, callback), milliSeconds);
 }
 };
 
@@ -7003,7 +7012,7 @@ $$.ListBase = {"":"Enumerable;",
   while (true) {
     t1 = this.get$length();
     if (typeof t1 !== 'number')
-      return this.indexOf$2$bailout(2, i, element, t1);
+      return this.indexOf$2$bailout(2, element, t1, i);
     if (!(i < t1))
       break;
     if ($.eqB(this.operator$index$1(i), element))
@@ -7019,9 +7028,9 @@ $$.ListBase = {"":"Enumerable;",
       element = env0;
       break;
     case 2:
-      t1 = env2;
-      element = env1;
-      i = env0;
+      i = env2;
+      t1 = env1;
+      element = env0;
       break;
   }
   switch (state0) {
@@ -7507,9 +7516,9 @@ $$.AudioLoader = {"":"ResourceLoader;context?,_entries,_loadedEvent,_progressEve
   arrayBufferRequest.open$3("GET", blobUrl, true);
   arrayBufferRequest.set$responseType("arraybuffer");
   t1 = arrayBufferRequest.get$on().get$load();
-  $.getInterceptor$JSArray(t1).add$1(t1, new $.AudioLoader__doLoad_anon(this, blobUrl, arrayBufferRequest));
+  $.getInterceptor$JSArray(t1).add$1(t1, new $.AudioLoader__doLoad_anon(blobUrl, arrayBufferRequest, this));
   t1 = arrayBufferRequest.get$on().get$error();
-  $.getInterceptor$JSArray(t1).add$1(t1, new $.AudioLoader__doLoad_anon0(this, blobUrl));
+  $.getInterceptor$JSArray(t1).add$1(t1, new $.AudioLoader__doLoad_anon0(blobUrl, this));
   arrayBufferRequest.send$0();
 },
  _onAudioLoadError$3: function(blobUrl, description, error) {
@@ -7528,7 +7537,7 @@ $$.ImageLoader = {"":"ResourceLoader;_entries,_loadedEvent,_progressEvent,_lib7_
   var img, t1;
   img = $.ImageElement_ImageElement(null, blobUrl, null);
   t1 = img.get$on().get$load();
-  $.getInterceptor$JSArray(t1).add$1(t1, new $.ImageLoader__doLoad_anon(blobUrl, img, this));
+  $.getInterceptor$JSArray(t1).add$1(t1, new $.ImageLoader__doLoad_anon(blobUrl, this, img));
 }
 };
 
@@ -8759,11 +8768,21 @@ $$.GameRoot = {"":"GameManager;_lib2_stage,_lib2_canvas?,_gameElement?,_clickMan
   $.trackAnalyticsEvent("game", "record", $.getInterceptor(t1).toString$0(t1), value);
 },
  _updateCanvasSize$0: function() {
-  var t1, t2;
-  t1 = $.window().get$innerWidth();
-  t2 = this._lib2_canvas;
-  t2.set$width(t1);
-  t2.set$height($.window().get$innerHeight());
+  var windowSize, t1, t2, t3, t4, delta, t5, t6;
+  windowSize = $.Size$($.window().get$innerWidth(), $.window().get$innerHeight());
+  t1 = windowSize.width;
+  t2 = this._gameElement;
+  t3 = $.CTC4.toInt$0($.min(t1, t2.get$width()));
+  t4 = this._lib2_canvas;
+  t4.set$width(t3);
+  t3 = windowSize.height;
+  t4.set$height($.CTC4.toInt$0($.min(t3, t2.get$height())));
+  delta = $.Vector$($.sub(t1, t4.get$width()), $.sub(t3, t4.get$height())).scale$1(0.5);
+  t5 = delta.get$x();
+  t6 = $.S($.getInterceptor$JSNumber(t5).toInt$0(t5)) + "px";
+  t4.get$style().set$left(t6);
+  t6 = $.S($.CTC4.toInt$0($.min(delta.get$y(), 20))) + "px";
+  t4.get$style().set$top(t6);
   this._requestFrame$0();
 },
  _requestFrame$0: function() {
@@ -9088,7 +9107,7 @@ $$.Proxy = {"":"Object;_port?,_lib5_id?",
 
 $$._FunctionProxy = {"":"Proxy;_call,_port,_lib5_id",
  _FunctionProxy$_internal$2: function(port, id) {
-  this._call = new $.anon3(port, id);
+  this._call = new $.anon3(id, port);
   $.indexSet($.get$_FunctionProxy__map(), this._call, this);
 }
 };
@@ -9435,7 +9454,7 @@ $$.Game = {"":"Object;field?,_states,_updatedEvent,_gameStateEvent,_state,_bombs
   hidden = $.List_List(null);
   t3 = this.field;
   if (typeof t3 !== 'string' && (typeof t3 !== 'object' || t3 === null || t3.constructor !== Array && !t3.is$JavaScriptIndexingBehavior()))
-    return this._doChord$2$bailout(2, x, y, t1, flagged, hidden, t3);
+    return this._doChord$2$bailout(2, x, y, flagged, t3, hidden, t1);
   t3.getAdjacentCount$2(x, y);
   for (t2 = t3.getAdjacentIndices$2(x, y), t2 = $.getInterceptor$JSArray(t2).iterator$0(t2), failed = false; t2.get$hasNext() === true;) {
     t4 = t2.next$0();
@@ -9475,10 +9494,10 @@ $$.Game = {"":"Object;field?,_states,_updatedEvent,_gameStateEvent,_state,_bombs
       x = env0;
       break;
     case 2:
-      t3 = env5;
+      t1 = env5;
       hidden = env4;
-      flagged = env3;
-      t1 = env2;
+      t3 = env3;
+      flagged = env2;
       y = env1;
       x = env0;
       break;
@@ -9821,28 +9840,28 @@ $$.ResourceLoader__getByUrl_anon = {"":"Closure;url_0",
 }
 };
 
-$$._runppw_anon = {"":"Closure;",
+$$._runPPW_anon = {"":"Closure;",
  call$1: function(args) {
   return args.preventDefault$0();
 }
 };
 
-$$._runppw_anon0 = {"":"Closure;",
+$$._runPPW_anon0 = {"":"Closure;",
  call$1: function(args) {
   return $._processUrlHash(true);
 }
 };
 
-$$._runppw_anon1 = {"":"Closure;",
+$$._runPPW_anon1 = {"":"Closure;",
  call$1: function(args) {
   return $._toggleAbout(true);
 }
 };
 
-$$.getTextures_anon = {"":"Closure;frames_1,transparentElement_0",
+$$.getTextures_anon = {"":"Closure;transparentElement_1,frames_0",
  call$2: function(key, value) {
-  var parsed = $.TextureInput_TextureInput$fromHash(key, value, this.transparentElement_0);
-  $.indexSet(this.frames_1, key, parsed);
+  var parsed = $.TextureInput_TextureInput$fromHash(key, value, this.transparentElement_1);
+  $.indexSet(this.frames_0, key, parsed);
 }
 };
 
@@ -9999,9 +10018,9 @@ $$.AttachableObject__addHandler_anon = {"":"Closure;",
 }
 };
 
-$$.trackAnalyticsEvent_anon = {"":"Closure;label_3,action_2,category_1,value_0",
+$$.trackAnalyticsEvent_anon = {"":"Closure;value_3,label_2,action_1,category_0",
  call$0: function() {
-  $.context().pushAnalytics$1($.array(["_trackEvent", this.category_1, this.action_2, this.label_3, this.value_0]));
+  $.context().pushAnalytics$1($.array(["_trackEvent", this.category_0, this.action_1, this.label_2, this.value_3]));
 }
 };
 
@@ -10109,7 +10128,7 @@ $$.Storage_keys_anon = {"":"Closure;keys_0",
 }
 };
 
-$$._HashMapImpl_keys_anon = {"":"Closure;box_0,list_2",
+$$._HashMapImpl_keys_anon = {"":"Closure;list_2,box_0",
  call$2: function(key, value) {
   var t1, t2, t3;
   t1 = this.list_2;
@@ -10120,7 +10139,7 @@ $$._HashMapImpl_keys_anon = {"":"Closure;box_0,list_2",
 }
 };
 
-$$._LinkedHashMapImpl_keys_anon = {"":"Closure;list_2,box_0",
+$$._LinkedHashMapImpl_keys_anon = {"":"Closure;box_0,list_2",
  call$1: function(entry) {
   var t1, t2, t3;
   t1 = this.list_2;
@@ -10184,16 +10203,16 @@ $$._deserialize_deserializeObject = {"":"Closure;",
 }
 };
 
-$$.ConstantMap_values_anon = {"":"Closure;this_1,result_0",
+$$.ConstantMap_values_anon = {"":"Closure;result_1,this_0",
  call$1: function(key) {
-  var t1 = this.result_0;
-  return $.getInterceptor$JSArray(t1).add$1(t1, $.index(this.this_1, key));
+  var t1 = this.result_1;
+  return $.getInterceptor$JSArray(t1).add$1(t1, $.index(this.this_0, key));
 }
 };
 
-$$.ConstantMap_forEach_anon = {"":"Closure;this_1,f_0",
+$$.ConstantMap_forEach_anon = {"":"Closure;f_1,this_0",
  call$1: function(key) {
-  return this.f_0.call$2(key, $.index(this.this_1, key));
+  return this.f_1.call$2(key, $.index(this.this_0, key));
 }
 };
 
@@ -10219,11 +10238,11 @@ $$._HashSetImpl_filter_anon = {"":"Closure;f_1,result_0",
 }
 };
 
-$$._ChildrenElementList_filter_anon = {"":"Closure;f_1,output_0",
+$$._ChildrenElementList_filter_anon = {"":"Closure;output_1,f_0",
  call$1: function(element) {
   var t1;
-  if (this.f_1.call$1(element) === true) {
-    t1 = this.output_0;
+  if (this.f_0.call$1(element) === true) {
+    t1 = this.output_1;
     $.getInterceptor$JSArray(t1).add$1(t1, element);
   }
 }
@@ -10235,7 +10254,7 @@ $$.FilteredElementList_removeRange_anon = {"":"Closure;",
 }
 };
 
-$$.anon3 = {"":"Closure;port_1,id_0",
+$$.anon3 = {"":"Closure;id_1,port_0",
  call$4: function(arg0, arg1, arg2, arg3) {
   var t1, t2, t3, t4, args, message, result;
   t1 = $ === arg0;
@@ -10261,8 +10280,8 @@ $$.anon3 = {"":"Closure;port_1,id_0",
     args = [arg0, arg1];
   else
     args = t1 ? [arg0] : [];
-  message = [this.id_0, "", "apply", $.CTC1.map$1(args, $._serialize)];
-  result = this.port_1.callSync$1(message);
+  message = [this.id_1, "", "apply", $.CTC1.map$1(args, $._serialize)];
+  result = this.port_0.callSync$1(message);
   if ($.eqB($.index(result, 0), "throws"))
     throw $.$$throw($.index(result, 1));
   return $._deserialize($.index(result, 1));
@@ -10455,10 +10474,10 @@ $$.GameElement__startPopAnimation_anon5 = {"":"Closure;",
 }
 };
 
-$$._convertNativeToDart_AcceptStructuredClone_findSlot = {"":"Closure;values_1,copies_0",
+$$._convertNativeToDart_AcceptStructuredClone_findSlot = {"":"Closure;copies_1,values_0",
  call$1: function(value) {
   var t1, t3, length$, i, t2;
-  t1 = this.values_1;
+  t1 = this.values_0;
   if (typeof t1 !== 'string' && (typeof t1 !== 'object' || t1 === null || t1.constructor !== Array && !t1.is$JavaScriptIndexingBehavior()))
     return this.call$1$bailout0(1, value, t1);
   t3 = $.getInterceptor$JSStringJSArray(t1);
@@ -10469,7 +10488,7 @@ $$._convertNativeToDart_AcceptStructuredClone_findSlot = {"":"Closure;values_1,c
       return i;
   }
   t3.add$1(t1, value);
-  t1 = this.copies_0;
+  t1 = this.copies_1;
   $.getInterceptor$JSArray(t1).add$1(t1, null);
   return length$;
 },
@@ -10487,7 +10506,7 @@ $$._convertNativeToDart_AcceptStructuredClone_findSlot = {"":"Closure;values_1,c
   }
   switch (state0) {
     case 0:
-      t1 = this.values_1;
+      t1 = this.values_0;
     case 1:
       state0 = 0;
       length$ = $.getInterceptor$JSStringJSArray(t1).get$length(t1);
@@ -10500,7 +10519,7 @@ $$._convertNativeToDart_AcceptStructuredClone_findSlot = {"":"Closure;values_1,c
           return i;
       }
       $.getInterceptor$JSArray(t1).add$1(t1, value);
-      t1 = this.copies_0;
+      t1 = this.copies_1;
       $.getInterceptor$JSArray(t1).add$1(t1, null);
       return length$;
   }
@@ -10699,9 +10718,9 @@ $$.ResourceLoader__httpLoad_anon2 = {"":"Closure;e_7,this_6",
 }
 };
 
-$$.ImageLoader__doLoad_anon = {"":"Closure;blobUrl_2,img_1,this_0",
+$$.ImageLoader__doLoad_anon = {"":"Closure;blobUrl_2,this_1,img_0",
  call$1: function(args) {
-  this.this_0._loadResourceSucceed$2(this.blobUrl_2, this.img_1);
+  this.this_1._loadResourceSucceed$2(this.blobUrl_2, this.img_0);
 }
 };
 
@@ -10717,32 +10736,32 @@ $$.ResourceLoader__getByBlobUrl_anon = {"":"Closure;blobUrl_0",
 }
 };
 
-$$.AudioLoader__doLoad_anon = {"":"Closure;this_2,blobUrl_1,arrayBufferRequest_0",
+$$.AudioLoader__doLoad_anon = {"":"Closure;blobUrl_2,arrayBufferRequest_1,this_0",
  call$1: function(args) {
   var t1, t2, t3, t4;
-  t1 = this.this_2;
+  t1 = this.this_0;
   t2 = t1.get$context();
-  t3 = this.arrayBufferRequest_0.get$response();
-  t4 = this.blobUrl_1;
-  t2.decodeAudioData$3(t3, new $.AudioLoader__doLoad__anon(t1, t4), new $.AudioLoader__doLoad__anon0(t1, t4));
+  t3 = this.arrayBufferRequest_1.get$response();
+  t4 = this.blobUrl_2;
+  t2.decodeAudioData$3(t3, new $.AudioLoader__doLoad__anon(t4, t1), new $.AudioLoader__doLoad__anon0(t4, t1));
 }
 };
 
-$$.AudioLoader__doLoad__anon = {"":"Closure;this_4,blobUrl_3",
+$$.AudioLoader__doLoad__anon = {"":"Closure;blobUrl_4,this_3",
  call$1: function(buffer) {
-  return this.this_4._saveBuffer$2(this.blobUrl_3, buffer);
+  return this.this_3._saveBuffer$2(this.blobUrl_4, buffer);
 }
 };
 
-$$.AudioLoader__doLoad__anon0 = {"":"Closure;this_6,blobUrl_5",
+$$.AudioLoader__doLoad__anon0 = {"":"Closure;blobUrl_6,this_5",
  call$1: function(buffer) {
-  return this.this_6._onAudioLoadError$3(this.blobUrl_5, "decode error", buffer);
+  return this.this_5._onAudioLoadError$3(this.blobUrl_6, "decode error", buffer);
 }
 };
 
-$$.AudioLoader__doLoad_anon0 = {"":"Closure;this_8,blobUrl_7",
+$$.AudioLoader__doLoad_anon0 = {"":"Closure;blobUrl_8,this_7",
  call$1: function(args) {
-  this.this_8._onAudioLoadError$3(this.blobUrl_7, "BufferLoader: XHR error", args);
+  this.this_7._onAudioLoadError$3(this.blobUrl_8, "BufferLoader: XHR error", args);
 }
 };
 
@@ -11206,9 +11225,9 @@ $$._EventLoop__runHelper_next = {"":"Closure;this_0",
 }
 };
 
-$$.anon7 = {"":"Closure;callback_1,this_0",
+$$.anon7 = {"":"Closure;this_1,callback_0",
  call$0: function() {
-  return this.callback_1.call$1(this.this_0);
+  return this.callback_0.call$1(this.this_1);
 }
 };
 
@@ -11409,6 +11428,12 @@ $.and = function(a, b) {
   if ($.checkNumbers(a, b))
     return (a & b) >>> 0;
   return a.operator$and$1(b);
+};
+
+$.xor = function(a, b) {
+  if ($.checkNumbers(a, b))
+    return (a ^ b) >>> 0;
+  return a.operator$xor$1(b);
 };
 
 $.neg = function(a) {
@@ -11733,26 +11758,35 @@ $.IDBTransactionEvents$ = function(_ptr) {
   return new $.IDBTransactionEvents(_ptr);
 };
 
-$.createInvocationMirror = function(name$, internalName, type, arguments$, argumentNames) {
-  return $.JSInvocationMirror$(name$, internalName, type, arguments$, argumentNames);
-};
-
-$.xor = function(a, b) {
-  if ($.checkNumbers(a, b))
-    return (a ^ b) >>> 0;
-  return a.operator$xor$1(b);
-};
-
 $._DateImpl$now = function() {
   var t1 = new $._DateImpl($.Primitives_dateNow(), false);
   t1._DateImpl$now$0();
   return t1;
 };
 
+$.propertyTypeCastError = function(value, property) {
+  var actualType, t1;
+  actualType = $.Primitives_objectTypeName(value);
+  t1 = $.getInterceptor$JSString(property);
+  throw $.$$throw($.CastErrorImplementation$(actualType, t1.substring$2(property, 3, t1.get$length(property))));
+};
+
 $.propertyTypeCast = function(value, property) {
   if (value == null || !!value[property])
     return value;
   $.propertyTypeCastError(value, property);
+};
+
+$.createInvocationMirror = function(name$, internalName, type, arguments$, argumentNames) {
+  return $.JSInvocationMirror$(name$, internalName, type, arguments$, argumentNames);
+};
+
+$.IDBVersionChangeRequestEvents$ = function(_ptr) {
+  return new $.IDBVersionChangeRequestEvents(_ptr);
+};
+
+$.getTraceFromException = function(exception) {
+  return $.StackTrace$(exception.stack);
 };
 
 $.shl = function(a, b) {
@@ -11764,21 +11798,6 @@ $.shl = function(a, b) {
     return (a << b) >>> 0;
   }
   return a.operator$shl$1(b);
-};
-
-$.propertyTypeCastError = function(value, property) {
-  var actualType, t1;
-  actualType = $.Primitives_objectTypeName(value);
-  t1 = $.getInterceptor$JSString(property);
-  throw $.$$throw($.CastErrorImplementation$(actualType, t1.substring$2(property, 3, t1.get$length(property))));
-};
-
-$.IDBVersionChangeRequestEvents$ = function(_ptr) {
-  return new $.IDBVersionChangeRequestEvents(_ptr);
-};
-
-$.getTraceFromException = function(exception) {
-  return $.StackTrace$(exception.stack);
 };
 
 $.TextureInput$ = function(name$, frame, rotated, trimmed, sourceColorRect, sourceSize, image) {
@@ -12210,6 +12229,10 @@ $.Stage$ = function(_canvas, rootThing) {
   return t1;
 };
 
+$.Mouse_isMouseDirectlyOver = function(thing) {
+  return $.get$Mouse_isMouseDirectlyOverProperty().get$1(thing);
+};
+
 $.Mouse_markMouseOver = function(stage, coordinate) {
   var t1, items, hits;
   $.requireArgumentNotNull(stage, "stage");
@@ -12232,10 +12255,6 @@ $.Mouse_markMouseOver = function(stage, coordinate) {
   return;
 };
 
-$.Mouse_isMouseDirectlyOver = function(thing) {
-  return $.get$Mouse_isMouseDirectlyOverProperty().get$1(thing);
-};
-
 $.RetainedUtil__hitTest = function(thing, point) {
   var bounds, hits, length$, t1, i, t2;
   point = $.RetainedUtil_transformPointGlobalToLocal(thing, point);
@@ -12249,7 +12268,7 @@ $.RetainedUtil__hitTest = function(thing, point) {
       for (t1 = length$ - 1, i = 0; i < length$; ++i) {
         hits = $.RetainedUtil__hitTest(thing.getVisualChild$1(t1 - i), point);
         if (typeof hits !== 'object' || hits === null || hits.constructor !== Array || !!hits.fixed$length)
-          return $.RetainedUtil__hitTest$bailout(2, thing, i, hits, point, length$);
+          return $.RetainedUtil__hitTest$bailout(2, thing, hits, point, i, length$);
         t2 = hits.length;
         if (t2 > 0)
           break;
@@ -12323,24 +12342,27 @@ $._onLoaded = function(args) {
     opaqueImage = $._imageLoader.getResource$1("images/dart_opaque_01.jpg");
     textureData = $.TextureData$($.getTextures($._imageLoader.getResource$1("images/transparent_animated.png"), opaqueImage, $.ImageElement_ImageElement(null, "images/transparent_static.png", null)));
     $.query("#loading").get$style().set$display("none");
-    $._runppw(textureData);
+    $._runPPW(textureData);
   }
 };
 
-$._runppw = function(textureData) {
-  var size, t1;
+$._runPPW = function(textureData) {
+  var size, m, gameCanvas, t1;
   size = $._processUrlHash(false) ? 16 : 7;
-  $.GameRoot_GameRoot(size, size, $.CTC7.toInt$0(size * size * 0.15625), $.query("#gameCanvas"), textureData);
+  m = $.CTC7.toInt$0(size * size * 0.15625);
+  gameCanvas = $.query("#gameCanvas");
+  gameCanvas.get$style().set$userSelect("none");
+  $.GameRoot_GameRoot(size, size, m, gameCanvas, textureData);
   t1 = $.window().get$on().get$touchMove();
-  $.getInterceptor$JSArray(t1).add$1(t1, new $._runppw_anon());
+  $.getInterceptor$JSArray(t1).add$1(t1, new $._runPPW_anon());
   t1 = $.window().get$on().get$popState();
-  $.getInterceptor$JSArray(t1).add$1(t1, new $._runppw_anon0());
+  $.getInterceptor$JSArray(t1).add$1(t1, new $._runPPW_anon0());
   t1 = $.window().get$on().get$keyDown();
   $.getInterceptor$JSArray(t1).add$1(t1, $._onKeyDown);
   t1 = $.query("#popup").get$on().get$click();
   $.getInterceptor$JSArray(t1).add$1(t1, $._onPopupClick);
   t1 = $.get$titleClickedEvent();
-  $.getInterceptor$JSArray(t1).add$1(t1, new $._runppw_anon1());
+  $.getInterceptor$JSArray(t1).add$1(t1, new $._runPPW_anon1());
 };
 
 $._onPopupClick = function(args) {
@@ -12536,12 +12558,6 @@ $.GameStorage$ = function() {
   return new $.GameStorage($.EventHandle$(), $.window().get$localStorage());
 };
 
-$.TextureAnimationRequest$ = function(_texturePrefix, _frameCount, _offset, delay, initialFrame, initialFrameOffset, startFrame) {
-  var t1 = new $.TextureAnimationRequest($.EventHandle$(), _texturePrefix, _frameCount, _offset, delay, initialFrame, initialFrameOffset, false, null);
-  t1.TextureAnimationRequest$7$delay$initialFrame$initialFrameOffset$startFrame(_texturePrefix, _frameCount, _offset, delay, initialFrame, initialFrameOffset, startFrame);
-  return t1;
-};
-
 $.Game$ = function(field) {
   var t1, t2;
   t1 = $.EventHandle$();
@@ -12555,6 +12571,16 @@ $.Events$ = function(_ptr) {
   return new $.Events(_ptr);
 };
 
+$.TextureAnimationRequest$ = function(_texturePrefix, _frameCount, _offset, delay, initialFrame, initialFrameOffset, startFrame) {
+  var t1 = new $.TextureAnimationRequest($.EventHandle$(), _texturePrefix, _frameCount, _offset, delay, initialFrame, initialFrameOffset, false, null);
+  t1.TextureAnimationRequest$7$delay$initialFrame$initialFrameOffset$startFrame(_texturePrefix, _frameCount, _offset, delay, initialFrame, initialFrameOffset, startFrame);
+  return t1;
+};
+
+$.ElementInstanceEvents$ = function(_ptr) {
+  return new $.ElementInstanceEvents(_ptr);
+};
+
 $._Sort__doSort = function(a, left, right, compare) {
   if (right - left <= 32)
     $._Sort_insertionSort_(a, left, right, compare);
@@ -12562,8 +12588,40 @@ $._Sort__doSort = function(a, left, right, compare) {
     $._Sort__dualPivotQuicksort(a, left, right, compare);
 };
 
-$.ElementInstanceEvents$ = function(_ptr) {
-  return new $.ElementInstanceEvents(_ptr);
+$._Sort_insertionSort_ = function(a, left, right, compare) {
+  var i, el, j, t1, t2, j0;
+  if (typeof a !== 'object' || a === null || (a.constructor !== Array || !!a.immutable$list) && !a.is$JavaScriptIndexingBehavior())
+    return $._Sort_insertionSort_$bailout(1, a, left, right, compare);
+  for (i = left + 1; i <= right; ++i) {
+    if (i < 0 || i >= a.length)
+      throw $.ioore(i);
+    el = a[i];
+    j = i;
+    while (true) {
+      if (j > left) {
+        t1 = j - 1;
+        if (t1 < 0 || t1 >= a.length)
+          throw $.ioore(t1);
+        t2 = $.gtB(compare.call$2(a[t1], el), 0);
+        t1 = t2;
+      } else
+        t1 = false;
+      t2 = a.length;
+      if (!t1)
+        break;
+      j0 = j - 1;
+      if (j0 < 0 || j0 >= t2)
+        throw $.ioore(j0);
+      t1 = a[j0];
+      if (j < 0 || j >= t2)
+        throw $.ioore(j);
+      a[j] = t1;
+      j = j0;
+    }
+    if (j < 0 || j >= t2)
+      throw $.ioore(j);
+    a[j] = el;
+  }
 };
 
 $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
@@ -12593,19 +12651,19 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
     throw $.ioore(index5);
   el5 = a[index5];
   if ($.gtB(compare.call$2(el1, el2), 0)) {
-    t0 = el2;
-    el2 = el1;
-    el1 = t0;
+    t0 = el1;
+    el1 = el2;
+    el2 = t0;
   }
   if ($.gtB(compare.call$2(el4, el5), 0)) {
-    t0 = el4;
-    el4 = el5;
-    el5 = t0;
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
   }
   if ($.gtB(compare.call$2(el1, el3), 0)) {
-    t0 = el3;
-    el3 = el1;
-    el1 = t0;
+    t0 = el1;
+    el1 = el3;
+    el3 = t0;
   }
   if ($.gtB(compare.call$2(el2, el3), 0)) {
     t0 = el3;
@@ -12613,9 +12671,9 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
     el2 = t0;
   }
   if ($.gtB(compare.call$2(el1, el4), 0)) {
-    t0 = el4;
-    el4 = el1;
-    el1 = t0;
+    t0 = el1;
+    el1 = el4;
+    el4 = t0;
   }
   if ($.gtB(compare.call$2(el3, el4), 0)) {
     t0 = el4;
@@ -12623,9 +12681,9 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
     el3 = t0;
   }
   if ($.gtB(compare.call$2(el2, el5), 0)) {
-    t0 = el2;
-    el2 = el5;
-    el5 = t0;
+    t0 = el5;
+    el5 = el2;
+    el2 = t0;
   }
   if ($.gtB(compare.call$2(el2, el3), 0)) {
     t0 = el3;
@@ -12633,9 +12691,9 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
     el2 = t0;
   }
   if ($.gtB(compare.call$2(el4, el5), 0)) {
-    t0 = el4;
-    el4 = el5;
-    el5 = t0;
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
   }
   t1 = a.length;
   if (index1 >= t1)
@@ -12692,8 +12750,8 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
             continue;
           } else {
             t1 = $.ltB(comp, 0);
-            great0 = great - 1;
             t2 = a.length;
+            great0 = great - 1;
             if (t1) {
               if (less >= t2)
                 throw $.ioore(less);
@@ -12753,8 +12811,8 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
             if (great >= a.length)
               throw $.ioore(great);
             t1 = $.ltB(compare.call$2(a[great], el2), 0);
-            t2 = a.length;
             great0 = great - 1;
+            t2 = a.length;
             if (t1) {
               if (less >= t2)
                 throw $.ioore(less);
@@ -12881,42 +12939,6 @@ $._Sort__dualPivotQuicksort = function(a, left, right, compare) {
     $._Sort__doSort(a, less, great, compare);
 };
 
-$._Sort_insertionSort_ = function(a, left, right, compare) {
-  var i, el, j, t1, t2, j0;
-  if (typeof a !== 'object' || a === null || (a.constructor !== Array || !!a.immutable$list) && !a.is$JavaScriptIndexingBehavior())
-    return $._Sort_insertionSort_$bailout(1, a, left, right, compare);
-  for (i = left + 1; i <= right; ++i) {
-    if (i < 0 || i >= a.length)
-      throw $.ioore(i);
-    el = a[i];
-    j = i;
-    while (true) {
-      if (j > left) {
-        t1 = j - 1;
-        if (t1 < 0 || t1 >= a.length)
-          throw $.ioore(t1);
-        t2 = $.gtB(compare.call$2(a[t1], el), 0);
-        t1 = t2;
-      } else
-        t1 = false;
-      t2 = a.length;
-      if (!t1)
-        break;
-      j0 = j - 1;
-      if (j0 < 0 || j0 >= t2)
-        throw $.ioore(j0);
-      t1 = a[j0];
-      if (j < 0 || j >= t2)
-        throw $.ioore(j);
-      a[j] = t1;
-      j = j0;
-    }
-    if (j < 0 || j >= t2)
-      throw $.ioore(j);
-    a[j] = el;
-  }
-};
-
 $._ChildNodeListLazy$ = function(_this) {
   return new $._ChildNodeListLazy(_this);
 };
@@ -12957,12 +12979,12 @@ $._RangeEnumerable$ = function(_start, _count) {
   return new $._RangeEnumerable(_start, _count);
 };
 
-$._RangeIterator$ = function(_start, _count) {
-  return new $._RangeIterator(_start, _count, 0);
-};
-
 $.BatteryManagerEvents$ = function(_ptr) {
   return new $.BatteryManagerEvents(_ptr);
+};
+
+$._RangeIterator$ = function(_start, _count) {
+  return new $._RangeIterator(_start, _count, 0);
 };
 
 $.MediaElementEvents$ = function(_ptr) {
@@ -12986,15 +13008,15 @@ $._convertNativeToDart_Window = function(win) {
   return $._DOMWindowCrossFrame__createSafe(win);
 };
 
+$.MediaStreamTrackListEvents$ = function(_ptr) {
+  return new $.MediaStreamTrackListEvents(_ptr);
+};
+
 $._convertNativeToDart_EventTarget = function(e) {
   if ("setInterval" in e)
     return $._DOMWindowCrossFrame__createSafe(e);
   else
     return e;
-};
-
-$.MediaStreamTrackListEvents$ = function(_ptr) {
-  return new $.MediaStreamTrackListEvents(_ptr);
 };
 
 $.TextureAnimationThing$ = function(width, height, _textureData) {
@@ -13039,6 +13061,10 @@ $.ImageElement_ImageElement = function(height, src, width) {
   return e;
 };
 
+$._globalState = function() {
+  return $globalState;
+};
+
 $.ScoreElement$ = function() {
   return new $.ScoreElement(null, null, null, null, null, $.List_List(null), false, $.EventHandle$(), null, 400, 96, 1, null, false, null, $.HashMap_HashMap(), $.HashMap_HashMap(), false);
 };
@@ -13051,10 +13077,6 @@ $.SquareElement$ = function(x, y) {
 
 $.GameTitleElement$ = function() {
   return new $.GameTitleElement($.List_List(null), false, $.EventHandle$(), null, 318, 96, 1, null, false, null, $.HashMap_HashMap(), $.HashMap_HashMap(), false);
-};
-
-$._globalState = function() {
-  return $globalState;
 };
 
 $._convertNativeToDart_SerializedScriptValue = function(object) {
@@ -13128,7 +13150,7 @@ $._convertNativeToDart_AcceptStructuredClone = function(object, mustCopy) {
   var values, copies, t1, t2;
   values = [];
   copies = [];
-  t1 = new $._convertNativeToDart_AcceptStructuredClone_findSlot(values, copies);
+  t1 = new $._convertNativeToDart_AcceptStructuredClone_findSlot(copies, values);
   t2 = new $._convertNativeToDart_AcceptStructuredClone_readSlot(copies);
   return new $._convertNativeToDart_AcceptStructuredClone_walk(mustCopy, new $._convertNativeToDart_AcceptStructuredClone_writeSlot(copies), t2, t1).call$1(object);
 };
@@ -13151,6 +13173,13 @@ $.GameBackgroundElement$ = function() {
 
 $.AttachedEvent$ = function(name$) {
   return new $.AttachedEvent(name$);
+};
+
+$._deserializeMessage = function(message) {
+  if ($._globalState().get$needSerialization() === true)
+    return $._JsDeserializer$0().deserialize$1(message);
+  else
+    return message;
 };
 
 $._globalState0 = function(val) {
@@ -13209,21 +13238,12 @@ $._timerFactory = function(millis, callback, repeating) {
   return repeating === true ? $._Timer$repeating(millis, callback) : $._Timer$(millis, callback);
 };
 
-$._deserializeMessage = function(message) {
-  if ($._globalState().get$needSerialization() === true)
-    return $._JsDeserializer$0().deserialize$1(message);
-  else
-    return message;
-};
-
 $.CanvasUtil_getCanvasSize = function(canvasElement) {
   return $.Size$(canvasElement.get$width(), canvasElement.get$height());
 };
 
-$.CanvasUtil_transform = function(ctx, tx) {
-  $.requireArgumentNotNull(ctx, "ctx");
-  $.requireArgumentNotNull(tx, "tx");
-  ctx.transform$6(tx.get$scaleX(), tx.get$shearY(), tx.get$shearX(), tx.get$scaleY(), tx.get$translateX(), tx.get$translateY());
+$.NotificationEvents$ = function(_ptr) {
+  return new $.NotificationEvents(_ptr);
 };
 
 $.CanvasUtil_centeredCircle = function(ctx, x, y, radius) {
@@ -13234,10 +13254,10 @@ $.CanvasUtil_centeredCircle = function(ctx, x, y, radius) {
   $.CanvasUtil_ellipse(ctx, t1, t2, t3, t3);
 };
 
-$.CanvasUtil_drawImage = function(ctx, img, sourceBox, targetBox) {
-  if (targetBox == null)
-    targetBox = $.Box$(0, 0, sourceBox.get$width(), sourceBox.get$height());
-  ctx.drawImage$9(img, sourceBox.get$left(), sourceBox.get$top(), sourceBox.get$width(), sourceBox.get$height(), targetBox.get$left(), targetBox.get$top(), targetBox.get$width(), targetBox.get$height());
+$.CanvasUtil_transform = function(ctx, tx) {
+  $.requireArgumentNotNull(ctx, "ctx");
+  $.requireArgumentNotNull(tx, "tx");
+  ctx.transform$6(tx.get$scaleX(), tx.get$shearY(), tx.get$shearX(), tx.get$scaleY(), tx.get$translateX(), tx.get$translateY());
 };
 
 $.CanvasUtil_ellipse = function(ctx, x, y, width, height) {
@@ -13259,20 +13279,27 @@ $.CanvasUtil_ellipse = function(ctx, x, y, width, height) {
   ctx.closePath$0();
 };
 
-$.NotificationEvents$ = function(_ptr) {
-  return new $.NotificationEvents(_ptr);
+$.CanvasUtil_drawImage = function(ctx, img, sourceBox, targetBox) {
+  if (targetBox == null)
+    targetBox = $.Box$(0, 0, sourceBox.get$width(), sourceBox.get$height());
+  ctx.drawImage$9(img, sourceBox.get$left(), sourceBox.get$top(), sourceBox.get$width(), sourceBox.get$height(), targetBox.get$left(), targetBox.get$top(), targetBox.get$width(), targetBox.get$height());
 };
 
 $.HttpRequest_HttpRequest = function() {
   return new XMLHttpRequest();
 };
 
+$.StackOverflowError$ = function() {
+  return new $.StackOverflowError();
+};
+
 $._Device_userAgent = function() {
   return $.window().get$navigator().get$userAgent();
 };
 
-$.StackOverflowError$ = function() {
-  return new $.StackOverflowError();
+$._Device_isOpera = function() {
+  var t1 = $._Device_userAgent();
+  return $.getInterceptor$JSString(t1).contains$2(t1, "Opera", 0);
 };
 
 $._Device_isIE = function() {
@@ -13284,11 +13311,6 @@ $._Device_isIE = function() {
   } else
     t1 = false;
   return t1;
-};
-
-$._Device_isOpera = function() {
-  var t1 = $._Device_userAgent();
-  return $.getInterceptor$JSString(t1).contains$2(t1, "Opera", 0);
 };
 
 $._Device_isFirefox = function() {
@@ -13349,10 +13371,6 @@ $.RTCDataChannelEvents$ = function(_ptr) {
   return new $.RTCDataChannelEvents(_ptr);
 };
 
-$._SimpleEnumerable$ = function(_source) {
-  return new $._SimpleEnumerable(_source);
-};
-
 $.RTCPeerConnectionEvents$ = function(_ptr) {
   return new $.RTCPeerConnectionEvents(_ptr);
 };
@@ -13373,6 +13391,10 @@ $.rnd = function() {
   return $._botHelperRandom;
 };
 
+$._SimpleEnumerable$ = function(_source) {
+  return new $._SimpleEnumerable(_source);
+};
+
 $.getMouseEventCoordinate = function(event$) {
   return $.Coordinate$(event$.get$offsetX(), event$.get$offsetY());
 };
@@ -13389,18 +13411,23 @@ $.LinkedHashMap_LinkedHashMap = function() {
   return $._LinkedHashMapImpl$();
 };
 
+$.trackAnalyticsEvent = function(category, action, label, value) {
+  $.scoped(new $.trackAnalyticsEvent_anon(value, label, action, category));
+};
+
+$._inject = function(code) {
+  var script, t1;
+  script = $.ScriptElement_ScriptElement();
+  script.set$type("text/javascript");
+  script.set$innerHTML(code);
+  t1 = $.document().get$body().get$nodes();
+  $.getInterceptor$JSArray(t1).add$1(t1, script);
+};
+
 $._LinkedHashMapImpl$ = function() {
   var t1 = new $._LinkedHashMapImpl(null, null);
   t1._LinkedHashMapImpl$0();
   return t1;
-};
-
-$.trackAnalyticsEvent = function(category, action, label, value) {
-  $.scoped(new $.trackAnalyticsEvent_anon(label, action, category, value));
-};
-
-$._WhereIterator$ = function(_source, _func) {
-  return new $._WhereIterator(_source, _func, null, null);
 };
 
 $._depth = function() {
@@ -13432,12 +13459,14 @@ $._exitScope = function(depth) {
   $.get$_proxiedObjectTable().exitScope$0();
 };
 
-$._KeyValuePair$ = function(key, value) {
-  return new $._KeyValuePair(key, value);
+$.context = function() {
+  if ($.eqB($._depth(), 0))
+    throw $.$$throw("Cannot get JavaScript context out of scope.");
+  return $._deserialize($._jsPortSync.callSync$1([]));
 };
 
-$._FuncEnumerable$ = function(_source, _func) {
-  return new $._FuncEnumerable(_source, _func);
+$._KeyValuePair$ = function(key, value) {
+  return new $._KeyValuePair(key, value);
 };
 
 $._serialize = function(message) {
@@ -13473,6 +13502,10 @@ $._serialize = function(message) {
   }
 };
 
+$._WhereIterator$ = function(_source, _func) {
+  return new $._WhereIterator(_source, _func, null, null);
+};
+
 $._deserialize = function(message) {
   var t1, t2;
   t1 = new $._deserialize_deserializeFunction();
@@ -13492,10 +13525,6 @@ $._deserialize = function(message) {
       return $._deserializeElement($.index(message, 1));
   }
   throw $.$$throw("Unsupported serialized data: " + $.S(message));
-};
-
-$._SelectIterator$ = function(_source, _func) {
-  return new $._SelectIterator(_source, _func);
 };
 
 $._serializeElement = function(e) {
@@ -13564,8 +13593,8 @@ $._deserializeElement = function(id) {
   return e;
 };
 
-$.array = function(list) {
-  return $.Proxy_Proxy$_json(list);
+$._FuncEnumerable$ = function(_source, _func) {
+  return new $._FuncEnumerable(_source, _func);
 };
 
 $._initialize = function(exception) {
@@ -13601,38 +13630,23 @@ $._initialize = function(exception) {
   $.window().registerPort$2("js-dart-exit-scope", $._dartExitDartScope.toSendPort$0());
 };
 
-$.context = function() {
-  if ($.eqB($._depth(), 0))
-    throw $.$$throw("Cannot get JavaScript context out of scope.");
-  return $._deserialize($._jsPortSync.callSync$1([]));
-};
-
 $.ScriptProcessorNodeEvents$ = function(_ptr) {
   return new $.ScriptProcessorNodeEvents(_ptr);
 };
 
-$._inject = function(code) {
-  var script, t1;
-  script = $.ScriptElement_ScriptElement();
-  script.set$type("text/javascript");
-  script.set$innerHTML(code);
-  t1 = $.document().get$body().get$nodes();
-  $.getInterceptor$JSArray(t1).add$1(t1, script);
+$.array = function(list) {
+  return $.Proxy_Proxy$_json(list);
 };
 
-$.ImageLoader$ = function(urls) {
-  var t1, t2, t3;
-  t1 = $.EventHandle$();
-  t2 = $.EventHandle$();
-  t3 = $.$$(urls);
-  return new $.ImageLoader($.getInterceptor$JSArray(t3).map$1(t3, new $.anon()).toReadOnlyCollection$0(), t1, t2, "unloaded");
+$._SelectIterator$ = function(_source, _func) {
+  return new $._SelectIterator(_source, _func);
 };
 
 $.getTextures = function(transparentElement, opaqueElement, transparentStaticElement) {
   var frames$, t1;
   frames$ = $.makeLiteralMap([]);
   t1 = $._getTransparentItems();
-  $.getInterceptor$JSArray(t1).forEach$1(t1, new $.getTextures_anon(frames$, transparentElement));
+  $.getInterceptor$JSArray(t1).forEach$1(t1, new $.getTextures_anon(transparentElement, frames$));
   t1 = $._getOpaqueItems();
   $.getInterceptor$JSArray(t1).forEach$1(t1, new $.getTextures_anon0(opaqueElement, frames$));
   t1 = $._getTransparentStaticItems();
@@ -13650,6 +13664,14 @@ $._getOpaqueItems = function() {
 
 $._getTransparentItems = function() {
   return $.makeLiteralMap(["balloon_explode_0000.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1762, "y", 1058, "w", 80, "h", 86]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 89, "y", 87, "w", 80, "h", 86]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0001.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 446, "y", 1332, "w", 208, "h", 208]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 35, "y", 13, "w", 208, "h", 208]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0002.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 868, "y", 612, "w", 230, "h", 230]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 13, "y", 13, "w", 230, "h", 230]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0003.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1128, "y", 840, "w", 226, "h", 222]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 18, "y", 12, "w", 226, "h", 222]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0004.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1072, "y", 1074, "w", 228, "h", 218]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 16, "y", 16, "w", 228, "h", 218]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0005.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1100, "y", 610, "w", 228, "h", 218]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 16, "y", 15, "w", 228, "h", 218]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0006.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 908, "y", 844, "w", 228, "h", 218]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 15, "y", 15, "w", 228, "h", 218]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0007.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1362, "y", 234, "w", 224, "h", 218]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 15, "y", 14, "w", 224, "h", 218]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0008.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1320, "y", 608, "w", 224, "h", 218]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 15, "y", 14, "w", 224, "h", 218]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0009.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 656, "y", 1314, "w", 226, "h", 224]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 13, "y", 14, "w", 226, "h", 224]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0010.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 842, "y", 1078, "w", 228, "h", 230]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 13, "w", 228, "h", 230]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0011.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1298, "y", 2, "w", 228, "h", 230]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 13, "w", 228, "h", 230]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0012.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1132, "y", 236, "w", 228, "h", 230]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 13, "w", 228, "h", 230]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0013.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 676, "y", 846, "w", 230, "h", 230]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 11, "y", 13, "w", 230, "h", 230]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0014.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1066, "y", 2, "w", 230, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 11, "y", 11, "w", 230, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0015.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 900, "y", 236, "w", 230, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 11, "y", 12, "w", 230, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0016.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 834, "y", 2, "w", 230, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 12, "w", 230, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0017.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 666, "y", 244, "w", 232, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 12, "w", 232, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0018.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 634, "y", 612, "w", 232, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 11, "y", 12, "w", 232, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0019.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 442, "y", 846, "w", 232, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 12, "w", 232, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0020.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 408, "y", 1098, "w", 232, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 11, "w", 232, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0021.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 400, "y", 612, "w", 232, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 12, "w", 232, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0022.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 208, "y", 864, "w", 232, "h", 232]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 11, "w", 232, "h", 232]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_explode_0023.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 882, "y", 1310, "w", 230, "h", 228]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 12, "y", 12, "w", 230, "h", 228]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0000.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1236, "y", 1304, "w", 142, "h", 122]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 60, "y", 62, "w", 142, "h", 122]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0001.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 642, "y", 1080, "w", 232, "h", 198]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 15, "y", 23, "w", 232, "h", 198]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0002.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 206, "y", 1144, "w", 234, "h", 200]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 14, "y", 22, "w", 234, "h", 200]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0003.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 2, "y", 1144, "w", 238, "h", 202]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 11, "y", 22, "w", 238, "h", 202]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0004.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 628, "y", 2, "w", 240, "h", 204]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 10, "y", 21, "w", 240, "h", 204]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0005.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 458, "y", 248, "w", 242, "h", 206]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 9, "y", 20, "w", 242, "h", 206]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0006.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 422, "y", 2, "w", 244, "h", 204]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 8, "y", 22, "w", 244, "h", 204]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0007.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 250, "y", 284, "w", 248, "h", 206]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 5, "y", 21, "w", 248, "h", 206]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0008.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 2, "y", 892, "w", 250, "h", 204]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 4, "y", 23, "w", 250, "h", 204]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0009.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 196, "y", 612, "w", 250, "h", 202]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 4, "y", 25, "w", 250, "h", 202]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0010.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1292, "y", 1212, "w", 88, "h", 110]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 82, "y", 78, "w", 88, "h", 110]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0011.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1544, "y", 948, "w", 92, "h", 116]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 80, "y", 75, "w", 92, "h", 116]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0012.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1440, "w", 98, "h", 122]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 77, "y", 72, "w", 98, "h", 122]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0013.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1730, "y", 1424, "w", 104, "h", 128]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 73, "y", 69, "w", 104, "h", 128]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0014.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1726, "y", 948, "w", 108, "h", 134]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 71, "y", 66, "w", 108, "h", 134]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0015.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 924, "y", 470, "w", 114, "h", 140]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 67, "y", 63, "w", 114, "h", 140]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0016.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 506, "y", 492, "w", 118, "h", 144]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 65, "y", 62, "w", 118, "h", 144]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0017.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1112, "y", 1304, "w", 122, "h", 150]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 63, "y", 58, "w", 122, "h", 150]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0018.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 2, "y", 1384, "w", 128, "h", 154]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 59, "y", 56, "w", 128, "h", 154]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0019.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 764, "y", 478, "w", 132, "h", 158]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 57, "y", 54, "w", 132, "h", 158]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0020.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 308, "y", 1380, "w", 136, "h", 160]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 54, "y", 53, "w", 136, "h", 160]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0021.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1040, "y", 470, "w", 138, "h", 164]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 53, "y", 51, "w", 138, "h", 164]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0022.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1832, "y", 2, "w", 142, "h", 168]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 51, "y", 49, "w", 142, "h", 168]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0023.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1608, "y", 610, "w", 146, "h", 170]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 48, "y", 48, "w", 146, "h", 170]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0024.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1438, "y", 460, "w", 146, "h", 172]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 48, "y", 47, "w", 146, "h", 172]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0025.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1794, "y", 458, "w", 148, "h", 174]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 47, "y", 46, "w", 148, "h", 174]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0026.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 132, "y", 1384, "w", 150, "h", 174]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 45, "y", 46, "w", 150, "h", 174]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "balloon_pop_0027.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1794, "y", 608, "w", 148, "h", 172]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 46, "y", 46, "w", 148, "h", 172]), "sourceSize", $.makeLiteralMap(["w", 256, "h", 256])]), "dart_fly_0000.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1796, "y", 330, "w", 126, "h", 194]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 869, "y", 486, "w", 126, "h", 194]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0001.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 2, "y", 2, "w", 210, "h", 320]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 794, "y", 385, "w", 210, "h", 320]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0002.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 2, "y", 324, "w", 246, "h", 286]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 736, "y", 317, "w", 246, "h", 286]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0003.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1582, "y", 228, "w", 212, "h", 220]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 689, "y", 271, "w", 212, "h", 220]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0004.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1832, "y", 146, "w", 182, "h", 166]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 653, "y", 244, "w", 182, "h", 166]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0005.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1352, "y", 834, "w", 162, "h", 120]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 621, "y", 231, "w", 162, "h", 120]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0006.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1292, "y", 1068, "w", 142, "h", 98]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 597, "y", 211, "w", 142, "h", 98]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0007.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1250, "y", 1448, "w", 126, "h", 92]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 576, "y", 189, "w", 126, "h", 92]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0008.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1638, "y", 948, "w", 112, "h", 86]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 558, "y", 179, "w", 112, "h", 86]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0009.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1518, "y", 1206, "w", 98, "h", 94]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 545, "y", 177, "w", 98, "h", 94]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0010.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1456, "y", 956, "w", 86, "h", 110]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 534, "y", 185, "w", 86, "h", 110]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0011.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1860, "y", 1420, "w", 76, "h", 124]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 524, "y", 199, "w", 76, "h", 124]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0012.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1540, "y", 608, "w", 66, "h", 134]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 517, "y", 221, "w", 66, "h", 134]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0013.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0014.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0015.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0016.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0017.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0018.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0019.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0020.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0021.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0022.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0023.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0024.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0025.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0026.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0027.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0028.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0029.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0030.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0031.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0032.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0033.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0034.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0035.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0036.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0037.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0038.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0039.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1850, "y", 1080, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0040.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1930, "y", 758, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0041.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1862, "y", 1014, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0042.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1862, "y", 948, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0043.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1792, "y", 882, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0044.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1696, "y", 1062, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0045.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1654, "y", 882, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0046.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1630, "y", 1066, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0047.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1564, "y", 1066, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0048.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1578, "y", 1302, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0049.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1512, "y", 1302, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0050.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1446, "y", 1302, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0051.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1516, "y", 882, "w", 64, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0052.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1540, "y", 744, "w", 64, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 505, "y", 248, "w", 64, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0053.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1844, "y", 1146, "w", 62, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 506, "y", 248, "w", 62, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_0054.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 214, "y", 287, "w", 1, "h", 1]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 0, "y", 0, "w", 1, "h", 1]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0000.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1644, "y", 1292, "w", 102, "h", 130]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 390, "y", 512, "w", 102, "h", 130]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0001.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1704, "y", 2, "w", 126, "h", 216]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 378, "y", 424, "w", 126, "h", 216]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0002.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 214, "y", 2, "w", 206, "h", 280]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 338, "y", 359, "w", 206, "h", 280]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0003.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 2, "y", 612, "w", 192, "h", 278]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 340, "y", 312, "w", 192, "h", 278]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0004.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1528, "y", 2, "w", 174, "h", 224]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 347, "y", 283, "w", 174, "h", 224]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0005.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1612, "y", 450, "w", 158, "h", 180]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 356, "y", 265, "w", 158, "h", 180]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0006.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1206, "y", 468, "w", 144, "h", 138]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 365, "y", 257, "w", 144, "h", 138]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0007.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1606, "y", 758, "w", 130, "h", 122]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 376, "y", 235, "w", 130, "h", 122]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0008.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 652, "y", 492, "w", 118, "h", 110]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 387, "y", 221, "w", 118, "h", 110]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0009.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1352, "y", 956, "w", 110, "h", 102]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 394, "y", 212, "w", 110, "h", 102]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0010.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1378, "y", 1440, "w", 100, "h", 98]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 406, "y", 215, "w", 100, "h", 98]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0011.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1404, "y", 1206, "w", 94, "h", 112]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 416, "y", 222, "w", 94, "h", 112]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0012.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1618, "y", 1204, "w", 86, "h", 122]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 428, "y", 237, "w", 86, "h", 122]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0013.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0014.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0015.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0016.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0017.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0018.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0019.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0020.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0021.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0022.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0023.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0024.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0025.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0026.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0027.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0028.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0029.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0030.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0031.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0032.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0033.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0034.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0035.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0036.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0037.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0038.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0039.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1478, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0040.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1360, "y", 1302, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0041.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1392, "y", 1068, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0042.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1112, "y", 1456, "w", 84, "h", 136]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0043.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1352, "y", 468, "w", 84, "h", 136]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 84, "h", 136]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0044.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1830, "y", 1292, "w", 80, "h", 126]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 442, "y", 261, "w", 80, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0045.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1748, "y", 1292, "w", 80, "h", 126]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 442, "y", 261, "w", 80, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0046.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1860, "y", 1210, "w", 80, "h", 126]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 442, "y", 261, "w", 80, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0047.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1602, "y", 1440, "w", 80, "h", 126]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 442, "y", 261, "w", 80, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0048.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1762, "y", 1140, "w", 80, "h", 126]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 442, "y", 261, "w", 80, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0049.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1912, "y", 1292, "w", 76, "h", 126]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 76, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0050.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 378, "y", 534, "w", 76, "h", 126]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 76, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0051.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 250, "y", 534, "w", 76, "h", 126]), "rotated", true, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 261, "w", 76, "h", 126]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0052.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1738, "y", 758, "w", 76, "h", 122]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 443, "y", 262, "w", 76, "h", 122]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0053.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 1816, "y", 758, "w", 74, "h", 120]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 444, "y", 264, "w", 74, "h", 120]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])]), "dart_fly_shadow_0054.png", $.makeLiteralMap(["frame", $.makeLiteralMap(["x", 214, "y", 284, "w", 1, "h", 1]), "rotated", false, "trimmed", true, "spriteSourceSize", $.makeLiteralMap(["x", 0, "y", 0, "w", 1, "h", 1]), "sourceSize", $.makeLiteralMap(["w", 1024, "h", 768])])]);
+};
+
+$.ImageLoader$ = function(urls) {
+  var t1, t2, t3;
+  t1 = $.EventHandle$();
+  t2 = $.EventHandle$();
+  t3 = $.$$(urls);
+  return new $.ImageLoader($.getInterceptor$JSArray(t3).map$1(t3, new $.anon()).toReadOnlyCollection$0(), t1, t2, "unloaded");
 };
 
 $.StackTrace$ = function(stack) {
@@ -13692,17 +13714,6 @@ $.ListIterator$ = function(list) {
 
 $.ReadOnlyCollection$ = function(source) {
   return new $.ReadOnlyCollection($.List_List$from(source));
-};
-
-$.Field$_internal = function(bombCount, cols, source) {
-  var t1, t2, t3;
-  t1 = $.Array2d_Array2d(cols, $.tdiv($.getInterceptor$JSStringJSArray(source).get$length(source), cols), null);
-  t2 = source.toList$0();
-  t3 = !(cols == null) && $.gtB(cols, 0) && !(t2 == null) ? $.tdiv($.getInterceptor$JSStringJSArray(t2).get$length(t2), cols) : 0;
-  t3 = new $.Field(bombCount, t1, cols, t3, t2);
-  t3.Array2d$wrap$2(cols, t2);
-  t3.Field$_internal$3(bombCount, cols, source);
-  return t3;
 };
 
 $.Enumerable_Enumerable$fromIterable = function(source) {
@@ -13759,12 +13770,19 @@ $._ResourceEntry$ = function(url) {
   return new $._ResourceEntry(url, null, null, null, 0);
 };
 
-$.int_parse = function(source) {
-  return $.Primitives_parseInt(source);
+$.Field$_internal = function(bombCount, cols, source) {
+  var t1, t2, t3;
+  t1 = $.Array2d_Array2d(cols, $.tdiv($.getInterceptor$JSStringJSArray(source).get$length(source), cols), null);
+  t2 = source.toList$0();
+  t3 = !(cols == null) && $.gtB(cols, 0) && !(t2 == null) ? $.tdiv($.getInterceptor$JSStringJSArray(t2).get$length(t2), cols) : 0;
+  t3 = new $.Field(bombCount, t1, cols, t3, t2);
+  t3.Array2d$wrap$2(cols, t2);
+  t3.Field$_internal$3(bombCount, cols, source);
+  return t3;
 };
 
-$.Tuple$ = function(item1, item2) {
-  return new $.Tuple(item1, item2);
+$.int_parse = function(source) {
+  return $.Primitives_parseInt(source);
 };
 
 $.EventHandle$ = function() {
@@ -13773,6 +13791,10 @@ $.EventHandle$ = function() {
 
 $.SpeechRecognitionEvents$ = function(_ptr) {
   return new $.SpeechRecognitionEvents(_ptr);
+};
+
+$.Tuple$ = function(item1, item2) {
+  return new $.Tuple(item1, item2);
 };
 
 $._Audio__Audio = function(exception) {
@@ -13858,12 +13880,12 @@ $.HashMap_HashMap = function() {
   return $._HashMapImpl$();
 };
 
-$.TextTrackEvents$ = function(_ptr) {
-  return new $.TextTrackEvents(_ptr);
-};
-
 $.Duration$ = function(days, hours, milliseconds, minutes, seconds) {
   return new $.Duration($.add($.add($.add($.add($.mul(days, 86400000), $.mul(hours, 3600000)), $.mul(minutes, 60000)), $.mul(seconds, 1000)), milliseconds));
+};
+
+$.TextTrackEvents$ = function(_ptr) {
+  return new $.TextTrackEvents(_ptr);
 };
 
 $.TextTrackCueEvents$ = function(_ptr) {
@@ -13950,6 +13972,24 @@ $.Primitives_newList = function(length$) {
   return result;
 };
 
+$.Primitives_stringFromCodePoints = function(codePoints) {
+  var a, t1, t2;
+  a = [];
+  for (t1 = $.CTC1.iterator$0(codePoints); t1.get$hasNext() === true;) {
+    t2 = t1.next$0();
+    if (!(typeof t2 === 'number' && Math.floor(t2) === t2))
+      throw $.$$throw($.ArgumentError$(t2));
+    if (t2 <= 65535)
+      a.push(t2);
+    else if (t2 <= 1114111) {
+      a.push(55296 + ($.shr(t2 - 65536, 10) & 1023));
+      a.push(56320 + (t2 & 1023));
+    } else
+      throw $.$$throw($.ArgumentError$(t2));
+  }
+  return $.Primitives__fromCharCodeApply(a);
+};
+
 $.Primitives_stringFromCharCodes = function(charCodes) {
   var t1, t2;
   for (t1 = $.CTC1.iterator$0(charCodes); t1.get$hasNext() === true;) {
@@ -13980,12 +14020,6 @@ $.Primitives__fromCharCodeApply = function(array) {
   return result;
 };
 
-$.Primitives_lazyAsJsDate = function(receiver) {
-  if (receiver.date === (void 0))
-    receiver.date = new Date(receiver.millisecondsSinceEpoch);
-  return receiver.date;
-};
-
 $.Primitives_getMonth = function(receiver) {
   return receiver.isUtc === true ? $.Primitives_lazyAsJsDate(receiver).getUTCMonth() + 1 : $.Primitives_lazyAsJsDate(receiver).getMonth() + 1;
 };
@@ -13998,26 +14032,14 @@ $.Primitives_getSeconds = function(receiver) {
   return receiver.isUtc === true ? ($.Primitives_lazyAsJsDate(receiver).getUTCSeconds() + 0) : ($.Primitives_lazyAsJsDate(receiver).getSeconds() + 0);
 };
 
-$.Primitives_getHours = function(receiver) {
-  return receiver.isUtc === true ? ($.Primitives_lazyAsJsDate(receiver).getUTCHours() + 0) : ($.Primitives_lazyAsJsDate(receiver).getHours() + 0);
+$.Primitives_lazyAsJsDate = function(receiver) {
+  if (receiver.date === (void 0))
+    receiver.date = new Date(receiver.millisecondsSinceEpoch);
+  return receiver.date;
 };
 
-$.Primitives_stringFromCodePoints = function(codePoints) {
-  var a, t1, t2;
-  a = [];
-  for (t1 = $.CTC1.iterator$0(codePoints); t1.get$hasNext() === true;) {
-    t2 = t1.next$0();
-    if (!(typeof t2 === 'number' && Math.floor(t2) === t2))
-      throw $.$$throw($.ArgumentError$(t2));
-    if (t2 <= 65535)
-      a.push(t2);
-    else if (t2 <= 1114111) {
-      a.push(55296 + ($.shr(t2 - 65536, 10) & 1023));
-      a.push(56320 + (t2 & 1023));
-    } else
-      throw $.$$throw($.ArgumentError$(t2));
-  }
-  return $.Primitives__fromCharCodeApply(a);
+$.Primitives_getHours = function(receiver) {
+  return receiver.isUtc === true ? ($.Primitives_lazyAsJsDate(receiver).getUTCHours() + 0) : ($.Primitives_lazyAsJsDate(receiver).getHours() + 0);
 };
 
 $.Primitives_getYear = function(receiver) {
@@ -14067,12 +14089,12 @@ $.IndexIterator$ = function(length$, indexer) {
   return t1;
 };
 
-$.RangeError$ = function(message) {
-  return new $.RangeError(message);
-};
-
 $.RangeError$value = function(value) {
   return new $.RangeError("value " + $.S(value));
+};
+
+$.RangeError$ = function(message) {
+  return new $.RangeError(message);
 };
 
 $.Element_Element$tag = function(tag) {
@@ -14106,6 +14128,25 @@ $.CustomEvent_CustomEvent = function(type, canBubble, cancelable, detail) {
   return $._CustomEventFactoryProvider_createCustomEvent(type, canBubble, cancelable, detail);
 };
 
+$.Collections_forEach = function(iterable, f) {
+  var t1;
+  for (t1 = $.CTC1.iterator$0(iterable); t1.get$hasNext() === true;)
+    f.call$1(t1.next$0());
+};
+
+$.Proxy_Proxy$_json = function(data) {
+  if ($.eqB($._depth(), 0))
+    throw $.$$throw("Cannot create Proxy out of scope.");
+  return $._deserialize($._jsPortConvert.callSync$1($.Proxy__serializeDataTree(data)));
+};
+
+$.Collections_map = function(source, destination, f) {
+  var t1;
+  for (t1 = $.CTC1.iterator$0(source); t1.get$hasNext() === true;)
+    destination.push(f.call$1(t1.next$0()));
+  return destination;
+};
+
 $.Proxy__serializeDataTree = function(data) {
   var entries, t1, t2;
   if (typeof data === 'object' && data !== null && data.is$Map()) {
@@ -14119,29 +14160,6 @@ $.Proxy__serializeDataTree = function(data) {
     return ["list", $.getInterceptor$JSArray(data).map$1(data, new $.Proxy__serializeDataTree_anon())];
   else
     return ["simple", $._serialize(data)];
-};
-
-$.Collections_forEach = function(iterable, f) {
-  var t1;
-  for (t1 = $.CTC1.iterator$0(iterable); t1.get$hasNext() === true;)
-    f.call$1(t1.next$0());
-};
-
-$.Proxy__forward = function(receiver, member, kind, args) {
-  var result;
-  if ($.eqB($._depth(), 0))
-    throw $.$$throw("Cannot access a JavaScript proxy out of scope.");
-  result = receiver._port.callSync$1([receiver._lib5_id, member, kind, $.getInterceptor$JSArray(args).map$1(args, $._serialize)]);
-  switch ($.index(result, 0)) {
-    case "return":
-      return $._deserialize($.index(result, 1));
-    case "throws":
-      throw $.$$throw($._deserialize($.index(result, 1)));
-    case "none":
-      throw $.$$throw($.NoSuchMethodError$(receiver, member, args, $.makeLiteralMap([]), null));
-    default:
-      throw $.$$throw("Invalid return value");
-  }
 };
 
 $.Proxy$_internal = function(_port, _id) {
@@ -14208,25 +14226,29 @@ $.Collections_filter = function(source, destination, f) {
   return destination;
 };
 
+$.Proxy__forward = function(receiver, member, kind, args) {
+  var result;
+  if ($.eqB($._depth(), 0))
+    throw $.$$throw("Cannot access a JavaScript proxy out of scope.");
+  result = receiver._port.callSync$1([receiver._lib5_id, member, kind, $.getInterceptor$JSArray(args).map$1(args, $._serialize)]);
+  switch ($.index(result, 0)) {
+    case "return":
+      return $._deserialize($.index(result, 1));
+    case "throws":
+      throw $.$$throw($._deserialize($.index(result, 1)));
+    case "none":
+      throw $.$$throw($.NoSuchMethodError$(receiver, member, args, $.makeLiteralMap([]), null));
+    default:
+      throw $.$$throw("Invalid return value");
+  }
+};
+
 $.Collections_every = function(iterable, f) {
   var t1;
   for (t1 = $.CTC1.iterator$0(iterable); t1.get$hasNext() === true;)
     if (f.call$1(t1.next$0()) !== true)
       return false;
   return true;
-};
-
-$.Collections_map = function(source, destination, f) {
-  var t1;
-  for (t1 = $.CTC1.iterator$0(source); t1.get$hasNext() === true;)
-    destination.push(f.call$1(t1.next$0()));
-  return destination;
-};
-
-$.Proxy_Proxy$_json = function(data) {
-  if ($.eqB($._depth(), 0))
-    throw $.$$throw("Cannot create Proxy out of scope.");
-  return $._deserialize($._jsPortConvert.callSync$1($.Proxy__serializeDataTree(data)));
 };
 
 $.UnsupportedError$ = function(message) {
@@ -14248,6 +14270,21 @@ $._ProxiedObjectTable$ = function() {
   return t4;
 };
 
+$._Collections_contains = function(iterable, element) {
+  var t1;
+  for (t1 = $.getInterceptor$JSArray(iterable).iterator$0(iterable); t1.get$hasNext() === true;)
+    if ($.eqB(t1.next$0(), element))
+      return true;
+  return false;
+};
+
+$._Collections_map = function(source, destination, f) {
+  var t1;
+  for (t1 = $.getInterceptor$JSArray(source).iterator$0(source); t1.get$hasNext() === true;)
+    destination.push(f.call$1(t1.next$0()));
+  return destination;
+};
+
 $.ReceivePortSync$ = function() {
   var t1 = new $.ReceivePortSync(null, null, null);
   t1.ReceivePortSync$0();
@@ -14260,25 +14297,6 @@ $.ReceivePortSync__isolateId = function() {
   return $.ReceivePortSync__cachedIsolateId;
 };
 
-$._Collections_contains = function(iterable, element) {
-  var t1;
-  for (t1 = $.getInterceptor$JSArray(iterable).iterator$0(iterable); t1.get$hasNext() === true;)
-    if ($.eqB(t1.next$0(), element))
-      return true;
-  return false;
-};
-
-$.ReceivePortSync__getListenerName = function(isolateId, portId) {
-  return "dart-port-" + $.S(isolateId) + "-" + $.S(portId);
-};
-
-$._Collections_map = function(source, destination, f) {
-  var t1;
-  for (t1 = $.getInterceptor$JSArray(source).iterator$0(source); t1.get$hasNext() === true;)
-    destination.push(f.call$1(t1.next$0()));
-  return destination;
-};
-
 $._Collections_filter = function(source, destination, f) {
   var t1, t2;
   for (t1 = $.getInterceptor$JSArray(source).iterator$0(source); t1.get$hasNext() === true;) {
@@ -14287,6 +14305,10 @@ $._Collections_filter = function(source, destination, f) {
       destination.push(t2);
   }
   return destination;
+};
+
+$.ReceivePortSync__getListenerName = function(isolateId, portId) {
+  return "dart-port-" + $.S(isolateId) + "-" + $.S(portId);
 };
 
 $.ReceivePortSync__lookup = function(isolateId, portId) {
@@ -14322,10 +14344,6 @@ $._StringBufferImpl$ = function(content$) {
   var t1 = new $._StringBufferImpl(null, null);
   t1._StringBufferImpl$1(content$);
   return t1;
-};
-
-$._ChildrenElementList$_wrap = function(element) {
-  return new $._ChildrenElementList(element, element.children);
 };
 
 $.Strings__toJsStringArray = function(strings) {
@@ -14371,16 +14389,24 @@ $.CanvasElement_CanvasElement = function(height, width) {
   return e;
 };
 
+$._ChildrenElementList$_wrap = function(element) {
+  return new $._ChildrenElementList(element, element.children);
+};
+
+$.Url_createObjectUrl = function(blob_OR_source_OR_stream) {
+  return (window.URL || window.webkitURL).createObjectURL(blob_OR_source_OR_stream);
+};
+
 $.Url_revokeObjectUrl = function(objectUrl) {
   return (window.URL || window.webkitURL).revokeObjectURL(objectUrl);
 };
 
-$.FilteredElementList$ = function(node) {
-  return new $.FilteredElementList(node, node.get$nodes());
-};
-
 $.GameAudio_audioEvent = function() {
   return $.get$GameAudio__audioEventHandle();
+};
+
+$.FilteredElementList$ = function(node) {
+  return new $.FilteredElementList(node, node.get$nodes());
 };
 
 $.Random_Random = function(seed) {
@@ -14395,10 +14421,6 @@ $.GlobalId_GlobalId = function() {
   var t1 = $.GlobalId__globalId;
   $.GlobalId__globalId = $.add(t1, 1);
   return $.GlobalId$_internal(t1);
-};
-
-$.Url_createObjectUrl = function(blob_OR_source_OR_stream) {
-  return (window.URL || window.webkitURL).createObjectURL(blob_OR_source_OR_stream);
 };
 
 $._IsolateContext$ = function() {
@@ -14453,12 +14475,12 @@ $._MainManagerStub$ = function() {
   return new $._MainManagerStub();
 };
 
-$._FrozenElementListIterator$ = function(_list) {
-  return new $._FrozenElementListIterator(_list, 0);
-};
-
 $.UnimplementedError$ = function(message) {
   return new $.UnimplementedError(message);
+};
+
+$._FrozenElementListIterator$ = function(_list) {
+  return new $._FrozenElementListIterator(_list, 0);
 };
 
 $.RegExp_RegExp = function(pattern, ignoreCase, multiLine) {
@@ -14479,16 +14501,16 @@ $._ElementAttributeMap$ = function(_element) {
   return new $._ElementAttributeMap(_element);
 };
 
+$._MessageTraverserVisitedMap$0 = function() {
+  return new $._MessageTraverserVisitedMap0();
+};
+
 $._WorkerSendPort$ = function(_workerId, isolateId, _receivePortId) {
   return new $._WorkerSendPort(_workerId, _receivePortId, isolateId);
 };
 
 $._NativeJsSendPort$ = function(_receivePort, isolateId) {
   return new $._NativeJsSendPort(_receivePort, isolateId);
-};
-
-$._MessageTraverserVisitedMap$0 = function() {
-  return new $._MessageTraverserVisitedMap0();
 };
 
 $._JsCopier$ = function() {
@@ -14525,12 +14547,12 @@ $.Exception_Exception = function(message) {
   return $._ExceptionImplementation$(message);
 };
 
-$.Date_Date$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoch, isUtc) {
-  return $._DateImpl$fromMillisecondsSinceEpoch(millisecondsSinceEpoch, isUtc);
-};
-
 $.Date_Date$now = function() {
   return $._DateImpl$now();
+};
+
+$.Date_Date$fromMillisecondsSinceEpoch = function(millisecondsSinceEpoch, isUtc) {
+  return $._DateImpl$fromMillisecondsSinceEpoch(millisecondsSinceEpoch, isUtc);
 };
 
 $.Futures_wait = function(futures) {
@@ -14573,18 +14595,18 @@ $._HashSetImpl$ = function() {
   return t1;
 };
 
-$._FutureImpl__FutureImpl$immediate = function(value) {
-  var res = $._FutureImpl$();
-  res._setValue$1(value);
-  return res;
-};
-
 $.FileWriterEvents$ = function(_ptr) {
   return new $.FileWriterEvents(_ptr);
 };
 
 $._FutureImpl$ = function() {
   return new $._FutureImpl(false, null, null, null, false, false, [], [], []);
+};
+
+$._FutureImpl__FutureImpl$immediate = function(value) {
+  var res = $._FutureImpl$();
+  res._setValue$1(value);
+  return res;
 };
 
 $._HashSetIterator$ = function(set_) {
@@ -14630,36 +14652,12 @@ $.WebSocketEvents$ = function(_ptr) {
   return new $.WebSocketEvents(_ptr);
 };
 
-$._JsSendPortSync$ = function(_id) {
-  return new $._JsSendPortSync(_id);
-};
-
 $.IllegalJSRegExpException$ = function(_pattern, _errmsg) {
   return new $.IllegalJSRegExpException(_pattern, _errmsg);
 };
 
-$._RemoteSendPortSync$ = function(_isolateId, _portId) {
-  return new $._RemoteSendPortSync(_isolateId, _portId);
-};
-
-$.FrameSetElementEvents$ = function(_ptr) {
-  return new $.FrameSetElementEvents(_ptr);
-};
-
-$._DOMWindowCrossFrame$ = function(_window) {
-  return new $._DOMWindowCrossFrame(_window);
-};
-
-$._DOMWindowCrossFrame__createSafe = function(w) {
-  var t1 = $.window();
-  if (w == null ? t1 == null : w === t1)
-    return w;
-  else
-    return $._DOMWindowCrossFrame$(w);
-};
-
-$.JSON_parse = function(json) {
-  return $._JsonParser$(json).parseToplevel$0();
+$._JsSendPortSync$ = function(_id) {
+  return new $._JsSendPortSync(_id);
 };
 
 $._RemoteSendPortSync__call = function(isolateId, portId, message) {
@@ -14676,22 +14674,50 @@ $._RemoteSendPortSync__call = function(isolateId, portId, message) {
   return t1.result_1;
 };
 
+$.FrameSetElementEvents$ = function(_ptr) {
+  return new $.FrameSetElementEvents(_ptr);
+};
+
+$._RemoteSendPortSync$ = function(_isolateId, _portId) {
+  return new $._RemoteSendPortSync(_isolateId, _portId);
+};
+
+$._DOMWindowCrossFrame$ = function(_window) {
+  return new $._DOMWindowCrossFrame(_window);
+};
+
+$._DOMWindowCrossFrame__createSafe = function(w) {
+  var t1 = $.window();
+  if (w == null ? t1 == null : w === t1)
+    return w;
+  else
+    return $._DOMWindowCrossFrame$(w);
+};
+
 $.WorkerEvents$ = function(_ptr) {
   return new $.WorkerEvents(_ptr);
 };
 
-$.FutureNotCompleteException$ = function() {
-  return new $.FutureNotCompleteException();
+$.JSON_parse = function(json) {
+  return $._JsonParser$(json).parseToplevel$0();
 };
 
 $.JSON_stringify = function(object) {
   return $._JsonStringifier_stringify(object);
 };
 
+$.FutureNotCompleteException$ = function() {
+  return new $.FutureNotCompleteException();
+};
+
 $._CustomEventFactoryProvider_createCustomEvent = function(type, canBubble, cancelable, detail) {
   var e = $.document().$dom_createEvent$1("CustomEvent");
   e.$dom_initCustomEvent$4(type, canBubble, cancelable, detail);
   return e;
+};
+
+$._ExceptionImplementation$ = function(message) {
+  return new $._ExceptionImplementation(message);
 };
 
 $._JsonStringifier$ = function(sb) {
@@ -14704,16 +14730,12 @@ $._JsonStringifier_stringify = function(object) {
   return $.getInterceptor(output).toString$0(output);
 };
 
-$._ExceptionImplementation$ = function(message) {
-  return new $._ExceptionImplementation(message);
-};
-
 $._JsonStringifier_escape = function(sb, s) {
-  var t1, length$, charCodes, i, needsEscape, charCode, t2;
+  var t1, length$, charCodes, needsEscape, i, charCode, t2;
   t1 = $.getInterceptor$JSStringJSArray(s);
   length$ = t1.get$length(s);
   charCodes = $.List_List(null);
-  for (i = 0, needsEscape = false; $.ltB(i, length$); ++i) {
+  for (needsEscape = false, i = 0; $.ltB(i, length$); ++i) {
     charCode = t1.charCodeAt$1(s, i);
     if ($.ltB(charCode, 32)) {
       charCodes.push(92);
@@ -14939,6 +14961,20 @@ $._Lists_indexOf$bailout = function(state0, a, element, startIndex, endIndex) {
   return -1;
 };
 
+$._Lists_getRange$bailout = function(state0, a, start, length$, accumulator) {
+  var end, i;
+  if ($.ltB(length$, 0))
+    throw $.$$throw($.ArgumentError$("length"));
+  if ($.ltB(start, 0))
+    throw $.$$throw($.RangeError$value(start));
+  end = $.add(start, length$);
+  if ($.gtB(end, $.getInterceptor$JSStringJSArray(a).get$length(a)))
+    throw $.$$throw($.RangeError$value(end));
+  for (i = start; $.ltB(i, end); i = $.add(i, 1))
+    accumulator.push($.index(a, i));
+  return accumulator;
+};
+
 $.listInsertRange$bailout = function(state0, receiver, start, length$, initialValue) {
   var receiverLength, t1, t2, i;
   if ($.eqB(length$, 0))
@@ -14960,20 +14996,6 @@ $.listInsertRange$bailout = function(state0, receiver, start, length$, initialVa
     for (i = start; i < t2; ++i)
       $.indexSet(receiver, i, initialValue);
   $.CTC1.set$length(receiver, t1);
-};
-
-$._Lists_getRange$bailout = function(state0, a, start, length$, accumulator) {
-  var end, i;
-  if ($.ltB(length$, 0))
-    throw $.$$throw($.ArgumentError$("length"));
-  if ($.ltB(start, 0))
-    throw $.$$throw($.RangeError$value(start));
-  end = $.add(start, length$);
-  if ($.gtB(end, $.getInterceptor$JSStringJSArray(a).get$length(a)))
-    throw $.$$throw($.RangeError$value(end));
-  for (i = start; $.ltB(i, end); i = $.add(i, 1))
-    accumulator.push($.index(a, i));
-  return accumulator;
 };
 
 $.Arrays_copy$bailout = function(state0, src, srcStart, dst, dstStart, count) {
@@ -15023,7 +15045,7 @@ $._Sort_insertionSort_$bailout = function(state0, a, left, right, compare) {
 };
 
 $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) {
-  var sixth, index1, index5, index3, index2, index4, t1, el1, el2, el3, el4, el5, t0, less, great, pivots_are_equal, k, ak, comp, great0, t2, less0;
+  var sixth, index1, index5, index3, index2, index4, t1, el1, el2, el3, el4, el5, t0, less, great, pivots_are_equal, k, ak, comp, t2, great0, less0;
   sixth = $.tdiv(right - left + 1, 6);
   index1 = left + sixth;
   index5 = right - sixth;
@@ -15047,19 +15069,19 @@ $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) 
     throw $.ioore(index5);
   el5 = a[index5];
   if ($.gtB(compare.call$2(el1, el2), 0)) {
-    t0 = el2;
-    el2 = el1;
-    el1 = t0;
+    t0 = el1;
+    el1 = el2;
+    el2 = t0;
   }
   if ($.gtB(compare.call$2(el4, el5), 0)) {
-    t0 = el4;
-    el4 = el5;
-    el5 = t0;
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
   }
   if ($.gtB(compare.call$2(el1, el3), 0)) {
-    t0 = el3;
-    el3 = el1;
-    el1 = t0;
+    t0 = el1;
+    el1 = el3;
+    el3 = t0;
   }
   if ($.gtB(compare.call$2(el2, el3), 0)) {
     t0 = el3;
@@ -15067,9 +15089,9 @@ $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) 
     el2 = t0;
   }
   if ($.gtB(compare.call$2(el1, el4), 0)) {
-    t0 = el4;
-    el4 = el1;
-    el1 = t0;
+    t0 = el1;
+    el1 = el4;
+    el4 = t0;
   }
   if ($.gtB(compare.call$2(el3, el4), 0)) {
     t0 = el4;
@@ -15077,9 +15099,9 @@ $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) 
     el3 = t0;
   }
   if ($.gtB(compare.call$2(el2, el5), 0)) {
-    t0 = el2;
-    el2 = el5;
-    el5 = t0;
+    t0 = el5;
+    el5 = el2;
+    el2 = t0;
   }
   if ($.gtB(compare.call$2(el2, el3), 0)) {
     t0 = el3;
@@ -15087,9 +15109,9 @@ $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) 
     el2 = t0;
   }
   if ($.gtB(compare.call$2(el4, el5), 0)) {
-    t0 = el4;
-    el4 = el5;
-    el5 = t0;
+    t0 = el5;
+    el5 = el4;
+    el4 = t0;
   }
   $.indexSet(a, index1, el1);
   $.indexSet(a, index3, el3);
@@ -15129,8 +15151,8 @@ $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) 
             continue;
           } else {
             t1 = $.ltB(comp, 0);
-            great0 = great - 1;
             t2 = a.length;
+            great0 = great - 1;
             if (t1) {
               if (less >= t2)
                 throw $.ioore(less);
@@ -15180,8 +15202,8 @@ $._Sort__dualPivotQuicksort$bailout = function(state0, a, left, right, compare) 
             if (great >= a.length)
               throw $.ioore(great);
             t1 = $.ltB(compare.call$2(a[great], el2), 0);
-            t2 = a.length;
             great0 = great - 1;
+            t2 = a.length;
             if (t1) {
               if (less >= t2)
                 throw $.ioore(less);
@@ -15304,73 +15326,6 @@ $.Futures_wait$bailout = function(state0, futures, t1) {
   return result;
 };
 
-$.RetainedUtil__hitTest$bailout = function(state0, env0, env1, env2, env3, env4, env5) {
-  switch (state0) {
-    case 1:
-      length$ = env3;
-      hits = env2;
-      point = env1;
-      thing = env0;
-      break;
-    case 2:
-      length$ = env4;
-      point = env3;
-      hits = env2;
-      i = env1;
-      thing = env0;
-      break;
-    case 3:
-      t1 = env5;
-      hits = env4;
-      i = env3;
-      length$ = env2;
-      point = env1;
-      thing = env0;
-      break;
-  }
-  switch (state0) {
-    case 0:
-      point = $.RetainedUtil_transformPointGlobalToLocal(thing, point);
-      bounds = $.Box$(0, 0, thing.get$width(), thing.get$height());
-      hits = $.List_List(null);
-    default:
-      var point, bounds, hits, length$, thing, i, t1;
-      if (state0 === 3 || state0 === 2 || state0 === 1 || state0 === 0 && bounds.contains$1(point) === true)
-        switch (state0) {
-          case 0:
-          default:
-            if (state0 === 3 || state0 === 2 || state0 === 1 || state0 === 0 && typeof thing === 'object' && thing !== null && !!thing.is$ParentThing)
-              switch (state0) {
-                case 0:
-                  length$ = thing.get$visualChildCount();
-                case 1:
-                  state0 = 0;
-                  i = 0;
-                default:
-                  L0:
-                    while (true)
-                      switch (state0) {
-                        case 0:
-                          if (!$.ltB(i, length$))
-                            break L0;
-                          hits = $.RetainedUtil__hitTest(thing.getVisualChild$1($.sub($.sub(length$, 1), i)), point);
-                        case 2:
-                          state0 = 0;
-                          t1 = $.getInterceptor$JSStringJSArray(hits).get$length(hits);
-                        case 3:
-                          state0 = 0;
-                          if ($.gtB(t1, 0))
-                            break L0;
-                          ++i;
-                      }
-                  thing = thing;
-              }
-            $.getInterceptor$JSArray(hits).add$1(hits, thing);
-        }
-      return hits;
-  }
-};
-
 $.Strings__toJsStringArray$bailout = function(state0, env0, env1, env2) {
   switch (state0) {
     case 1:
@@ -15417,6 +15372,73 @@ $.Strings__toJsStringArray$bailout = function(state0, env0, env1, env2) {
             }
         }
       return array;
+  }
+};
+
+$.RetainedUtil__hitTest$bailout = function(state0, env0, env1, env2, env3, env4, env5) {
+  switch (state0) {
+    case 1:
+      length$ = env3;
+      hits = env2;
+      point = env1;
+      thing = env0;
+      break;
+    case 2:
+      length$ = env4;
+      i = env3;
+      point = env2;
+      hits = env1;
+      thing = env0;
+      break;
+    case 3:
+      t1 = env5;
+      i = env4;
+      hits = env3;
+      length$ = env2;
+      point = env1;
+      thing = env0;
+      break;
+  }
+  switch (state0) {
+    case 0:
+      point = $.RetainedUtil_transformPointGlobalToLocal(thing, point);
+      bounds = $.Box$(0, 0, thing.get$width(), thing.get$height());
+      hits = $.List_List(null);
+    default:
+      var point, bounds, hits, length$, thing, i, t1;
+      if (state0 === 3 || state0 === 2 || state0 === 1 || state0 === 0 && bounds.contains$1(point) === true)
+        switch (state0) {
+          case 0:
+          default:
+            if (state0 === 3 || state0 === 2 || state0 === 1 || state0 === 0 && typeof thing === 'object' && thing !== null && !!thing.is$ParentThing)
+              switch (state0) {
+                case 0:
+                  length$ = thing.get$visualChildCount();
+                case 1:
+                  state0 = 0;
+                  i = 0;
+                default:
+                  L0:
+                    while (true)
+                      switch (state0) {
+                        case 0:
+                          if (!$.ltB(i, length$))
+                            break L0;
+                          hits = $.RetainedUtil__hitTest(thing.getVisualChild$1($.sub($.sub(length$, 1), i)), point);
+                        case 2:
+                          state0 = 0;
+                          t1 = $.getInterceptor$JSStringJSArray(hits).get$length(hits);
+                        case 3:
+                          state0 = 0;
+                          if ($.gtB(t1, 0))
+                            break L0;
+                          ++i;
+                      }
+                  thing = thing;
+              }
+            $.getInterceptor$JSArray(hits).add$1(hits, thing);
+        }
+      return hits;
   }
 };
 
@@ -15502,19 +15524,19 @@ $.CTC20 = new Isolate.$isolateProperties.SquareState("flagged");
 $._Audio__audioNames = Isolate.$isolateProperties.CTC;
 $._DateImpl__MAX_MILLISECONDS_SINCE_EPOCH = 8640000000000000;
 $.SquareElement__size = 80;
-$.SquareState_hidden = Isolate.$isolateProperties.CTC18;
 $.SquareElement__balloonBits = Isolate.$isolateProperties.CTC30;
-$.SquareState_revealed = Isolate.$isolateProperties.CTC19;
 $.SquareElement__numberMap = Isolate.$isolateProperties.CTC29;
+$.SquareState_hidden = Isolate.$isolateProperties.CTC18;
+$.SquareState_revealed = Isolate.$isolateProperties.CTC19;
 $.SquareState_flagged = Isolate.$isolateProperties.CTC20;
 $.SquareState_bomb = Isolate.$isolateProperties.CTC25;
 $.SquareState_safe = Isolate.$isolateProperties.CTC27;
+$._HashMapImpl__DELETED_KEY = Isolate.$isolateProperties.CTC2;
 $.Duration_MILLISECONDS_PER_SECOND = 1000;
+$._HashMapImpl__INITIAL_CAPACITY = 8;
 $.Duration_SECONDS_PER_MINUTE = 60;
 $.Duration_MINUTES_PER_HOUR = 60;
-$._HashMapImpl__DELETED_KEY = Isolate.$isolateProperties.CTC2;
 $.Duration_HOURS_PER_DAY = 24;
-$._HashMapImpl__INITIAL_CAPACITY = 8;
 $.Duration_MILLISECONDS_PER_MINUTE = 60000;
 $.Duration_MILLISECONDS_PER_HOUR = 3600000;
 $.Duration_MILLISECONDS_PER_DAY = 86400000;
@@ -15531,9 +15553,9 @@ $.GameElement__backgroundSize = Isolate.$isolateProperties.CTC14;
 $.GameElement__backgroundEdgeOffset = 256;
 $.GameElement__backgroundHoleSize = 1344;
 $.GameElement__boardOffset = Isolate.$isolateProperties.CTC15;
-$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC26;
-$.GameElement__popAnimationHitFrame = 12;
 $.GameElement__dartAnimationOffset = Isolate.$isolateProperties.CTC28;
+$.GameElement__popAnimationHitFrame = 12;
+$.GameElement__popExplodeAnimationOffset = Isolate.$isolateProperties.CTC26;
 $.ReceivePortSync__portMap = null;
 $.ReceivePortSync__portIdCount = null;
 $.ReceivePortSync__cachedIsolateId = null;
@@ -15560,32 +15582,32 @@ $.GameAudio_FLAG = "flag";
 $.GameAudio_UNFLAG = "unflag";
 $.GameAudio_BOMB = "Bomb";
 $.GameAudio_THROW_DART = "throw";
-$._JsonParser_BACKSPACE = 8;
-$._JsonParser_TAB = 9;
 $._JsonParser_NEW_LINE = 10;
+$._JsonParser_BACKSPACE = 8;
 $._JsonParser_FORM_FEED = 12;
+$.GlobalId__globalId = 0;
 $._JsonParser_SPACE = 32;
 $._JsonParser_CARRIAGE_RETURN = 13;
 $._JsonParser_QUOTE = 34;
-$.GlobalId__globalId = 0;
-$._JsonParser_COMMA = 44;
 $._JsonParser_PLUS = 43;
-$._JsonParser_MINUS = 45;
+$._JsonParser_COMMA = 44;
+$._JsonParser_TAB = 9;
 $._JsonParser_DOT = 46;
+$._JsonParser_MINUS = 45;
 $._JsonParser_SLASH = 47;
-$._JsonParser_CHAR_1 = 49;
 $._JsonParser_CHAR_0 = 48;
+$._JsonParser_CHAR_1 = 49;
 $._JsonParser_CHAR_2 = 50;
 $._JsonParser_CHAR_3 = 51;
 $._JsonParser_CHAR_4 = 52;
 $._JsonParser_CHAR_5 = 53;
-$._JsonParser_CHAR_7 = 55;
 $._JsonParser_CHAR_6 = 54;
-$._JsonParser_CHAR_8 = 56;
+$._JsonParser_CHAR_7 = 55;
 $._JsonParser_CHAR_9 = 57;
+$._JsonParser_CHAR_8 = 56;
 $._JsonParser_COLON = 58;
-$._JsonParser_LBRACKET = 91;
 $._JsonParser_CHAR_CAPITAL_E = 69;
+$._JsonParser_LBRACKET = 91;
 $._JsonParser_BACKSLASH = 92;
 $._JsonParser_RBRACKET = 93;
 $._JsonParser_CHAR_B = 98;
@@ -15593,34 +15615,34 @@ $._JsonParser_CHAR_E = 101;
 $._JsonParser_CHAR_F = 102;
 $._JsonParser_CHAR_N = 110;
 $._JsonParser_CHAR_R = 114;
-$._JsonParser_CHAR_T = 116;
-$._JsonParser_CHAR_U = 117;
-$._JsonParser_LBRACE = 123;
 $._jsPortSync = null;
-$._JsonParser_RBRACE = 125;
+$._JsonParser_CHAR_T = 116;
 $._jsPortCreate = null;
-$._JsonParser_STRING_LITERAL = 34;
+$._JsonParser_CHAR_U = 117;
 $._jsPortDebug = null;
-$._JsonParser_NUMBER_LITERAL = 45;
+$._JsonParser_LBRACE = 123;
 $._jsPortEquals = null;
-$._JsonParser_NULL_LITERAL = 110;
+$._JsonParser_RBRACE = 125;
 $._jsPortInstanceof = null;
-$._JsonParser_FALSE_LITERAL = 102;
+$._JsonParser_STRING_LITERAL = 34;
 $._jsPortConvert = null;
-$._JsonParser_TRUE_LITERAL = 116;
+$._JsonParser_NUMBER_LITERAL = 45;
 $._jsEnterJavaScriptScope = null;
 $._jsExitJavaScriptScope = null;
+$._JsonParser_NULL_LITERAL = 110;
+$._JsonParser_TRUE_LITERAL = 116;
+$._JsonParser_FALSE_LITERAL = 102;
 $._JsonParser_WHITESPACE = 32;
-$._JsonParser_NULL_STRING = "null";
-$._JsonParser_LAST_ASCII = 125;
-$._JsonParser_TRUE_STRING = "true";
 $._dartEnterDartScope = null;
-$._JsonParser_FALSE_STRING = "false";
+$._JsonParser_LAST_ASCII = 125;
 $._jsGlobalize = null;
-$._JsonParser_tokens = null;
+$._JsonParser_NULL_STRING = "null";
 $._jsInvalidate = null;
-$._dartExitDartScope = null;
+$._JsonParser_TRUE_STRING = "true";
+$._JsonParser_FALSE_STRING = "false";
+$._JsonParser_tokens = null;
 $._Sort__INSERTION_SORT_THRESHOLD = 32;
+$._dartExitDartScope = null;
 $._localNextElementId = 0;
 $._DART_ID = "data-dart_id";
 $._DART_TEMPORARY_ATTACHED = "data-dart_temporary_attached";
@@ -15664,26 +15686,23 @@ $.getInterceptor$JSArray = function(receiver) {
   if (receiver != null && receiver.constructor == Array) return $.JSArray.prototype;
   return $.ObjectInterceptor.prototype;
 };
-Isolate.$lazy($, 'titleClickedEvent', 'titleClickedEvent', 'get$titleClickedEvent', function() {
-  return $.get$_titleClickedEventHandle();
-});
 Isolate.$lazy($, '_clickManagerProperty', 'ClickManager__clickManagerProperty', 'get$ClickManager__clickManagerProperty', function() {
   return $.Property$("_clickManager", null);
-});
-Isolate.$lazy($, '_stageMouseCacheProperty', 'Mouse__stageMouseCacheProperty', 'get$Mouse__stageMouseCacheProperty', function() {
-  return $.Property$("_stageMouseCacheProperty", null);
 });
 Isolate.$lazy($, '_isClickableProperty', 'ClickManager__isClickableProperty', 'get$ClickManager__isClickableProperty', function() {
   return $.Property$("isClickable", false);
 });
-Isolate.$lazy($, '_proxiedObjectTable', '_proxiedObjectTable', 'get$_proxiedObjectTable', function() {
-  return $._ProxiedObjectTable$();
+Isolate.$lazy($, 'isMouseOverProperty', 'Mouse_isMouseOverProperty', 'get$Mouse_isMouseOverProperty', function() {
+  return $.Property$("IsMouseOver", false);
+});
+Isolate.$lazy($, 'isMouseDirectlyOverProperty', 'Mouse_isMouseDirectlyOverProperty', 'get$Mouse_isMouseDirectlyOverProperty', function() {
+  return $.Property$("IsMouseDirectlyOver", false);
 });
 Isolate.$lazy($, '_clickEvent', 'ClickManager__clickEvent', 'get$ClickManager__clickEvent', function() {
   return $.AttachedEvent$("clickEvent");
 });
-Isolate.$lazy($, '_containerTransformProperty', 'PanelThing__containerTransformProperty', 'get$PanelThing__containerTransformProperty', function() {
-  return $.Property$("panelTransform", null);
+Isolate.$lazy($, '_stageMouseCacheProperty', 'Mouse__stageMouseCacheProperty', 'get$Mouse__stageMouseCacheProperty', function() {
+  return $.Property$("_stageMouseCacheProperty", null);
 });
 Isolate.$lazy($, '_mouseDownEvent', 'ClickManager__mouseDownEvent', 'get$ClickManager__mouseDownEvent', function() {
   return $.AttachedEvent$("mouseDown");
@@ -15691,11 +15710,14 @@ Isolate.$lazy($, '_mouseDownEvent', 'ClickManager__mouseDownEvent', 'get$ClickMa
 Isolate.$lazy($, '_mouseUpEvent', 'ClickManager__mouseUpEvent', 'get$ClickManager__mouseUpEvent', function() {
   return $.AttachedEvent$("mouseUp");
 });
-Isolate.$lazy($, '_map', '_FunctionProxy__map', 'get$_FunctionProxy__map', function() {
-  return $.Map_Map();
+Isolate.$lazy($, '_proxiedObjectTable', '_proxiedObjectTable', 'get$_proxiedObjectTable', function() {
+  return $._ProxiedObjectTable$();
 });
 Isolate.$lazy($, '_mouseMoveEvent', 'ClickManager__mouseMoveEvent', 'get$ClickManager__mouseMoveEvent', function() {
   return $.AttachedEvent$("mouseMove");
+});
+Isolate.$lazy($, '_containerTransformProperty', 'PanelThing__containerTransformProperty', 'get$PanelThing__containerTransformProperty', function() {
+  return $.Property$("panelTransform", null);
 });
 Isolate.$lazy($, '_mouseOutEvent', 'ClickManager__mouseOutEvent', 'get$ClickManager__mouseOutEvent', function() {
   return $.AttachedEvent$("mouseOut");
@@ -15703,20 +15725,20 @@ Isolate.$lazy($, '_mouseOutEvent', 'ClickManager__mouseOutEvent', 'get$ClickMana
 Isolate.$lazy($, 'quoteRegExp', 'quoteRegExp', 'get$quoteRegExp', function() {
   return $.JSSyntaxRegExp$("[-[\\]{}()*+?.,\\\\^$|#\\s]", false, false);
 });
+Isolate.$lazy($, '_map', '_FunctionProxy__map', 'get$_FunctionProxy__map', function() {
+  return $.Map_Map();
+});
 Isolate.$lazy($, '_audioEventHandle', 'GameAudio__audioEventHandle', 'get$GameAudio__audioEventHandle', function() {
   return $.EventHandle$();
 });
 Isolate.$lazy($, '_audioFormat', '_Audio__audioFormat', 'get$_Audio__audioFormat', function() {
   return $._Audio__getAudioFormat();
 });
-Isolate.$lazy($, 'isMouseOverProperty', 'Mouse_isMouseOverProperty', 'get$Mouse_isMouseOverProperty', function() {
-  return $.Property$("IsMouseOver", false);
-});
 Isolate.$lazy($, '_titleClickedEventHandle', '_titleClickedEventHandle', 'get$_titleClickedEventHandle', function() {
   return $.EventHandle$();
 });
-Isolate.$lazy($, 'isMouseDirectlyOverProperty', 'Mouse_isMouseDirectlyOverProperty', 'get$Mouse_isMouseDirectlyOverProperty', function() {
-  return $.Property$("IsMouseDirectlyOver", false);
+Isolate.$lazy($, 'titleClickedEvent', 'titleClickedEvent', 'get$titleClickedEvent', function() {
+  return $.get$_titleClickedEventHandle();
 });
 var $ = null;
 Isolate.$finishClasses($$);
@@ -15936,6 +15958,9 @@ $.$defineNativeClass('CSSStyleDeclaration', {"":"length?",
  get$left: function() {
   return this.getPropertyValue$1("left");
 },
+ set$left: function(value) {
+  this.setProperty$3("left", value, "");
+},
  get$resize: function() {
   return this.getPropertyValue$1("resize");
 },
@@ -15954,10 +15979,16 @@ $.$defineNativeClass('CSSStyleDeclaration', {"":"length?",
  get$top: function() {
   return this.getPropertyValue$1("top");
 },
+ set$top: function(value) {
+  this.setProperty$3("top", value, "");
+},
  get$transform: function() {
   return this.getPropertyValue$1($.S($._browserPrefix()) + "transform");
 },
  transform$6: function(arg0, arg1, arg2, arg3, arg4, arg5) { return this.get$transform().call$6(arg0, arg1, arg2, arg3, arg4, arg5); },
+ set$userSelect: function(value) {
+  this.setProperty$3($.S($._browserPrefix()) + "user-select", value, "");
+},
  get$width: function() {
   return this.getPropertyValue$1("width");
 },
