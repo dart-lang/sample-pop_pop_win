@@ -69,8 +69,22 @@ class GameRoot extends GameManager {
   }
 
   void _updateCanvasSize() {
-    _canvas.width = window.innerWidth;
-    _canvas.height = window.innerHeight;
+    final windowSize = new Size(window.innerWidth, window.innerHeight);
+
+    _canvas.width = min(windowSize.width, _gameElement.width).toInt();
+    _canvas.height = min(windowSize.height, _gameElement.height).toInt();
+
+    // now move it!
+    final delta = new Vector(windowSize.width - _canvas.width,
+        windowSize.height - _canvas.height).scale(0.5);
+
+    _canvas.style.left = "${delta.x.toInt()}px";
+
+    // add a little padding at the top (up to 20) if there's room
+    // but don't try to vertically center
+    final topDelta = min(delta.y, 20).toInt();
+    _canvas.style.top = "${topDelta}px";
+
     _requestFrame();
   }
 
@@ -89,7 +103,6 @@ class GameRoot extends GameManager {
     final prettyScale = min(1, min(xScale, yScale));
 
     final newDimensions = _gameElement.size * prettyScale;
-    //assert(newDimensions.fitsInside(_stage.size));
 
     final delta = new Vector(_stage.size.width - newDimensions.width,
         min(40, _stage.size.height - newDimensions.height))
