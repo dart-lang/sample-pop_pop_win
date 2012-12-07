@@ -107,5 +107,4 @@ canvas#gameCanvas {
   position: absolute;
   left: 0;
   top: 0;
-  -webkit-user-select: none;
 }

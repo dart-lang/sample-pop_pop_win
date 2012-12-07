@@ -77,6 +77,8 @@ void _runPPW(TextureData textureData) {
   final int m = (size * size * 0.15625).toInt();
 
   final CanvasElement gameCanvas = query('#gameCanvas');
+  gameCanvas.style.userSelect = 'none';
+
   final gameRoot = new GameRoot(size, size, m, gameCanvas, textureData);
 
   // disable touch events
