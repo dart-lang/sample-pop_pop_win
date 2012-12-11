@@ -2,4 +2,4 @@ name: poppopwin
 dependencies:
   bot:
     git: https://github.com/kevmoo/bot.dart.git
-  js: 0.0.12
+  js: 0.0.13
