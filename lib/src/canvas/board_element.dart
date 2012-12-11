@@ -3,7 +3,9 @@ part of ppw_canvas;
 class BoardElement extends ParentThing {
   Array2d<SquareElement> _elements;
 
-  BoardElement() : super(0, 0, true);
+  BoardElement() : super(0, 0) {
+    cacheEnabled = true;
+  }
 
   int get visualChildCount {
     if(_elements == null) {

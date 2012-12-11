@@ -1,7 +1,9 @@
 part of ppw_canvas;
 
 class GameBackgroundElement extends Thing {
-  GameBackgroundElement() : super(0, 0, true);
+  GameBackgroundElement() : super(0, 0) {
+    cacheEnabled = true;
+  }
 
   void update() {
     if(size != this._parent.size) {
