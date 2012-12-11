@@ -12,10 +12,7 @@ void main() {
   //
   // Dart2js
   //
-
-  // DARTBUG: https://code.google.com/p/dart/issues/detail?id=6763
-  // disabling minify for now until dart bug is fixed
-  addTask('dart2js', createDart2JsTask(['web/game.dart'],  minify: false));
+  addTask('dart2js', createDart2JsTask(['web/game.dart'],  minify: true));
 
   //
   // gh_pages
