@@ -1,10 +1,11 @@
 part of ppw_html;
 
 class GameStorage {
+  
   static const _gameCountKey = 'gameCount';
   final EventHandle _bestTimeUpdated = new EventHandle();
 
-  final Storage _storage = window.localStorage;
+  final Map _storage = new Map();
 
   int get gameCount => _getIntValue(_gameCountKey);
 

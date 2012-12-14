@@ -9,7 +9,7 @@ import 'package:poppopwin/canvas.dart';
 import 'package:poppopwin/poppopwin.dart';
 import 'texture_data.dart';
 
-part '_audio.dart';
+part 'audio.dart';
 
 const String _transparentTextureName = 'images/transparent_animated.png';
 const String _opaqueTextureName = 'images/dart_opaque_01.jpg';
