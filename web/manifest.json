@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Pop, Pop, Win!",
+  "version": "1",
+  "minimum_chrome_version": "23",
+  "icons": {"128": "dart_icon.png"},
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  }
+}
