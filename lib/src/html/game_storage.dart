@@ -4,8 +4,6 @@ class GameStorage {
   static const _gameCountKey = 'gameCount';
   final EventHandle _bestTimeUpdated = new EventHandle();
 
-  final Storage _storage = window.localStorage;
-
   int get gameCount => _getIntValue(_gameCountKey);
 
   EventRoot get bestTimeUpdated => _bestTimeUpdated;
@@ -42,14 +40,14 @@ class GameStorage {
   }
 
   void reset() {
-    _storage.clear();
+    targetPlatform.storage.clear();
   }
 
-  String toString() => Maps.mapToString(_storage);
+  String toString() => Maps.mapToString(targetPlatform.storage);
 
   int _getIntValue(String key, [int defaultValue = 0]) {
     assert(key != null);
-    final strValue = _storage[key];
+    final strValue = targetPlatform.storage[key];
     if(strValue == null) {
       return defaultValue;
     } else {
@@ -60,9 +58,9 @@ class GameStorage {
   void _setIntValue(String key, int value) {
     assert(key != null);
     if(value == null) {
-      _storage[key] = null;
+      targetPlatform.storage[key] = null;
     } else {
-      _storage[key] = value.toString();
+      targetPlatform.storage[key] = value.toString();
     }
   }
 

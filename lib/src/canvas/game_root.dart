@@ -61,11 +61,11 @@ class GameRoot extends GameManager {
         GameAudio.win();
         break;
     }
-    trackAnalyticsEvent('game', newState.name, game.field.toString());
+    targetPlatform.trackAnalyticsEvent('game', newState.name, game.field.toString());
   }
 
   void onNewBestTime(int value) {
-    trackAnalyticsEvent('game', 'record', game.field.toString(), value);
+    targetPlatform.trackAnalyticsEvent('game', 'record', game.field.toString(), value);
   }
 
   void _updateCanvasSize() {

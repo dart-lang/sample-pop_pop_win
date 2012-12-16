@@ -12,7 +12,7 @@ void main() {
   //
   // Dart2js
   //
-  addTask('dart2js', createDart2JsTask(['web/game.dart'],  minify: true));
+  addTask('dart2js', createDart2JsTask(['web/game_web.dart'],  minify: true));
 
   //
   // gh_pages

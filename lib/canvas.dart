@@ -6,7 +6,6 @@ import 'package:bot/bot.dart';
 import 'package:bot/html.dart';
 import 'package:bot/retained.dart';
 import 'package:bot/texture.dart';
-import 'analytics.dart';
 import 'html.dart';
 import 'poppopwin.dart';
 
