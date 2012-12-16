@@ -17,9 +17,9 @@ class HighScoreView {
     final milliseconds = _manager.bestTimeMilliseconds;
     if(milliseconds != null) {
       final duration = new Duration(seconds: milliseconds ~/ 1000);
-      _div.innerHTML = duration.toString();
+      _div.innerHtml = duration.toString();
     } else {
-      _div.innerHTML = '';
+      _div.innerHtml = '';
     }
   }
 }

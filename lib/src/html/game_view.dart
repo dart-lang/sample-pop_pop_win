@@ -15,8 +15,8 @@ class GameView extends GameManager {
 
   void updateElement() {
     updateClock();
-    _gameStateDiv.innerHTML = game.state.name;
-    _leftCountDiv.innerHTML = game.bombsLeft.toString();
+    _gameStateDiv.innerHtml = game.state.name;
+    _leftCountDiv.innerHtml = game.bombsLeft.toString();
 
     if(_table.children.length == 0) {
 
@@ -45,7 +45,7 @@ class GameView extends GameManager {
           final adj = game.field.getAdjacentCount(c, r);
           assert(adj != null);
           if(adj > 0) {
-            cell.innerHTML = adj.toString();
+            cell.innerHtml = adj.toString();
           }
         }
       }
@@ -61,9 +61,9 @@ class GameView extends GameManager {
 
   void updateClock() {
     if(game.duration == null) {
-      _clockDiv.innerHTML = '';
+      _clockDiv.innerHtml = '';
     } else {
-      _clockDiv.innerHTML = game.duration.inSeconds.toString();
+      _clockDiv.innerHtml = game.duration.inSeconds.toString();
     }
 
     super.updateClock();
