@@ -15,6 +15,15 @@ void main() {
   addTask('dart2js', createDart2JsTask(['web/game_web.dart'],  minify: true));
 
   //
+  //
+  //
+  addTask('app_dart2js', createDart2JsTask(['app_package/game_app.dart'],
+      minify: true,
+      allowUnsafeEval: false,
+      packageRoot: 'packages/'
+  ));
+
+  //
   // gh_pages
   //
   addAsyncTask('pages', (ctx) =>
