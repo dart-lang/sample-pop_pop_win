@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+  "name": "Pop, Pop, Win!",
+  "version": "1",
+  "minimum_chrome_version": "23",
+  "icons": {"128": "images/icon_128.png"},
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  }
+}
