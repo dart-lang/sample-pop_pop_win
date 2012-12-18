@@ -13,9 +13,9 @@ _Pop, Pop, Win!_ (PPW) uses the
 [Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run 
 `pub update` before you try to run tests, build, etc.
 
-The code currently works against Dart build 
-[r15948](https://gsdview.appspot.com/dart-editor-archive-integration/15948/) 
-released on 11 Dec, 2012.
+The code currently works against Dart M2 build 
+[0.2.9.7 r16251](https://gsdview.appspot.com/dart-editor-archive-integration/16251/) 
+released on 18 Dec, 2012.
 
 Using other versions of the Dart tools with this source code might cause problems.
 
