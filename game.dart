@@ -8,6 +8,8 @@ import 'package:bot/texture.dart';
 import 'package:poppopwin/canvas.dart';
 import 'package:poppopwin/poppopwin.dart';
 import 'texture_data.dart';
+import 'package:poppopwin/platform.dart';
+import 'package:poppopwin/html.dart';
 
 part '_audio.dart';
 
@@ -22,7 +24,9 @@ ImageLoader _imageLoader;
 
 _Audio _audio;
 
-main() {
+void startGame(PlatformTarget platform) {
+  initPlatform(platform);
+
   _loadingBar = query('.sprite.loading_bar');
   _loadingBar.style.display = 'block';
   _loadingBar.style.width = '0';
