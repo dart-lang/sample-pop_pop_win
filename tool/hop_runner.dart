@@ -12,7 +12,8 @@ void main() {
   //
   // Dart2js
   //
-  addTask('dart2js', createDart2JsTask(['web/game_web.dart'],  minify: true));
+  addTask('dart2js', createDart2JsTask(['web/game_web.dart'],
+      minify: true, liveTypeAnalysis: true, rejectDeprecatedFeatures: true));
 
   //
   //
@@ -20,6 +21,8 @@ void main() {
   addTask('app_dart2js', createDart2JsTask(['app_package/game_app.dart'],
       minify: true,
       allowUnsafeEval: false,
+      liveTypeAnalysis: true,
+      rejectDeprecatedFeatures: true,
       packageRoot: 'packages/'
   ));
 

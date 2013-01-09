@@ -4,7 +4,6 @@ class GameRoot extends GameManager {
   final Stage _stage;
   final CanvasElement _canvas;
   final GameElement _gameElement;
-  final ClickManager _clickMan;
   final AffineTransform _gameElementTx;
 
   bool _frameRequested = false;
@@ -14,14 +13,14 @@ class GameRoot extends GameManager {
 
     final rootElement = new GameElement(textureData);
     final stage = new Stage(canvasElement, rootElement);
-    final clickMan = new ClickManager(stage);
+    new MouseManager(stage);
 
     return new GameRoot._internal(width, height, bombCount,
-        canvasElement, stage, rootElement, clickMan);
+        canvasElement, stage, rootElement);
   }
 
   GameRoot._internal(int width, int height, int bombCount,
-      this._canvas, this._stage, GameElement gameElement, this._clickMan) :
+      this._canvas, this._stage, GameElement gameElement) :
       this._gameElement = gameElement,
       _gameElementTx = gameElement.addTransform(),
       super(width, height, bombCount) {
@@ -31,8 +30,8 @@ class GameRoot extends GameManager {
 
     _gameElement.newGameClick.add((args) => newGame());
 
-    ClickManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
-    ClickManager.addMouseOutHandler(_stage, _mouseOutHandler);
+    MouseManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
+    MouseManager.addMouseOutHandler(_stage, _mouseOutHandler);
 
     window.on.resize.add((args) => _updateCanvasSize());
     _updateCanvasSize();

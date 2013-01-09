@@ -49,8 +49,8 @@ class GameElement extends ParentThing {
 
     _newGameElement.clicked.add((args) => GameAudio.click());
 
-    ClickManager.setClickable(_titleElement, true);
-    ClickManager.addHandler(_titleElement,
+    MouseManager.setClickable(_titleElement, true);
+    MouseManager.addHandler(_titleElement,
         (args) => _titleClickedEventHandle.fireEvent(EventArgs.empty));
   }
 
@@ -239,10 +239,10 @@ class GameElement extends ParentThing {
   }
 
   void wireSquareMouseEvent(Thing square) {
-    ClickManager.addHandler(square, _squareClicked);
-    ClickManager.addMouseDownHandler(square, _squareMouseDown);
-    ClickManager.addMouseUpHandler(square, _squareMouseUp);
-    ClickManager.addMouseMoveHandler(square, _squareMouseMove);
+    MouseManager.addHandler(square, _squareClicked);
+    MouseManager.addMouseDownHandler(square, _squareMouseDown);
+    MouseManager.addMouseUpHandler(square, _squareMouseUp);
+    MouseManager.addMouseMoveHandler(square, _squareMouseMove);
   }
 
   void _squareClicked(ThingMouseEventArgs args) {

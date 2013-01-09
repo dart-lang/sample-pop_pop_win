@@ -3,9 +3,9 @@ library ppw_canvas;
 import 'dart:html';
 import 'dart:math';
 import 'package:bot/bot.dart';
-import 'package:bot/html.dart';
-import 'package:bot/retained.dart';
-import 'package:bot/texture.dart';
+import 'package:bot/bot_html.dart';
+import 'package:bot/bot_retained.dart';
+import 'package:bot/bot_texture.dart';
 import 'html.dart';
 import 'poppopwin.dart';
 

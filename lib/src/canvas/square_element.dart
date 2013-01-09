@@ -19,7 +19,7 @@ class SquareElement extends Thing {
   SquareState _lastDrawingState;
 
   SquareElement(this.x, this.y) : super(_size, _size) {
-    ClickManager.setClickable(this, true);
+    MouseManager.setClickable(this, true);
   }
 
   void update() {

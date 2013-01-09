@@ -5,8 +5,8 @@ class NewGameElement extends Thing {
       new EventHandle<EventArgs>();
 
   NewGameElement() : super(294, 92) {
-    ClickManager.setClickable(this, true);
-    ClickManager.addHandler(this, (args) =>
+    MouseManager.setClickable(this, true);
+    MouseManager.addHandler(this, (args) =>
         _clickedEvent.fireEvent(EventArgs.empty));
     Mouse.isMouseDirectlyOverProperty.addHandler(this, _mouseDirectlyOver);
   }

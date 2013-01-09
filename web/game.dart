@@ -3,8 +3,8 @@ library game;
 import 'dart:html';
 import 'dart:web_audio';
 import 'package:bot/bot.dart';
-import 'package:bot/html.dart';
-import 'package:bot/texture.dart';
+import 'package:bot/bot_html.dart';
+import 'package:bot/bot_texture.dart';
 import 'package:poppopwin/canvas.dart';
 import 'package:poppopwin/poppopwin.dart';
 import 'texture_data.dart';
@@ -114,7 +114,7 @@ void _onKeyDown(KeyboardEvent args) {
 }
 
 void _toggleAbout([bool value = null]) {
-  final LocalLocation loc = window.location;
+  final Location loc = window.location;
   // ensure we treat empty hash like '#', which makes comparison easy later
   final hash = loc.hash.length == 0 ? '#' : loc.hash;
 
@@ -131,11 +131,11 @@ void _toggleAbout([bool value = null]) {
 }
 
 bool _processUrlHash(bool forceReload) {
-  final LocalLocation loc = window.location;
+  final Location loc = window.location;
   final hash = loc.hash;
   final href = loc.href;
 
-  final LocalHistory history = window.history;
+  final History history = window.history;
   bool showAbout = false;
   switch(hash) {
     case "#reset":
