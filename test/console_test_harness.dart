@@ -5,7 +5,7 @@ import 'package:unittest/vm_config.dart';
 import 'ppw/_ppw_runner.dart';
 
 main() {
-  final config = new VmConfiguration();
+  final config = new VMConfiguration();
   testCore(config);
 }
 

@@ -157,17 +157,17 @@ class GameElement extends ParentThing {
     if(reveals == null) {
       assert(game.state == GameState.lost);
       reveals = new NumberEnumerable.fromRange(0, game.field.length)
-          .map((i) {
+          .mappedBy((i) {
             final t = game.field.getCoordinate(i);
             final c = new Coordinate(t.item1, t.item2);
             return new Tuple(c, game.getSquareState(c.x, c.y));
           })
-          .filter((t2) => t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
-          .map((t2) => t2.item1)
+          .where((t2) => t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
+          .mappedBy((t2) => t2.item1)
           .toList();
     }
 
-    final values = $(reveals).map((c) {
+    final values = reveals.mappedBy((c) {
       final initialOffset = new Vector(SquareElement._size * c.x,
           SquareElement._size * c.y);
       final squareOffset = _popExplodeAnimationOffset + initialOffset;
@@ -324,12 +324,12 @@ class GameElement extends ParentThing {
       } else if(ss == SquareState.revealed) {
         if(game.canReveal(x, y)) {
           // get adjacent ballons
-          final adjHidden = $(game.field.getAdjacentIndices(x, y))
-              .map((i) {
+          final adjHidden = game.field.getAdjacentIndices(x, y)
+              .mappedBy((i) {
                 final t = game.field.getCoordinate(i);
                 return new Coordinate(t.item1, t.item2);
               })
-              .filter((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
+              .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
           assert(adjHidden.length > 0);
