@@ -1,7 +1,7 @@
 library data;
 
 import 'dart:html';
-import 'package:bot/texture.dart';
+import 'package:bot/bot_texture.dart';
 
 Map<String, TextureInput> getTextures(ImageElement transparentElement,
     ImageElement opaqueElement, ImageElement transparentStaticElement) {
