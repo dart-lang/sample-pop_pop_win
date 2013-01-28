@@ -34,14 +34,14 @@ _doLoad() {
   _textureData = new TextureData(textures);
 
   CanvasElement canvasElement = query('#textureCanvas');
-  canvasElement.on.click.add((args) => _next());
+  canvasElement.onClick.listen((args) => _next());
   __ctx = canvasElement.context2d;
 
   _keys = new List<String>.from(textures.keys);
 
   _drawTexture();
 
-  window.on.keyDown.add((KeyboardEvent args) {
+  window.onKeyDown.listen((KeyboardEvent args) {
     switch(args.keyCode) {
       case KeyCode.RIGHT:
         _next();

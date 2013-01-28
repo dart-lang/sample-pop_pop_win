@@ -25,7 +25,7 @@ class GameView extends GameManager {
 
         for(int c = 0; c < game.field.width; c++) {
           TableCellElement cell = row.insertCell(-1);
-          cell.on.mouseDown.add(_cellClick);
+          cell.onMouseDown.listen(_cellClick);
           cell.dataAttributes[_xKey] = c.toString();
           cell.dataAttributes[_yKey] = r.toString();
         }

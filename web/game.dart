@@ -86,12 +86,12 @@ void _runPPW(TextureData textureData) {
   final gameRoot = new GameRoot(size, size, m, gameCanvas, textureData);
 
   // disable touch events
-  window.on.touchMove.add((args) => args.preventDefault());
-  window.on.popState.add((args) => _processUrlHash(true));
+  window.onTouchMove.listen((args) => args.preventDefault());
+  window.onPopState.listen((args) => _processUrlHash(true));
 
-  window.on.keyDown.add(_onKeyDown);
+  window.onKeyDown.listen(_onKeyDown);
 
-  query('#popup').on.click.add(_onPopupClick);
+  query('#popup').onClick.listen(_onPopupClick);
 
   titleClickedEvent.add((args) => _toggleAbout(true));
 }

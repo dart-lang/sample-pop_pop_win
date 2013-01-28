@@ -33,7 +33,7 @@ class GameRoot extends GameManager {
     MouseManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
     MouseManager.addMouseOutHandler(_stage, _mouseOutHandler);
 
-    window.on.resize.add((args) => _updateCanvasSize());
+    window.onResize.listen((args) => _updateCanvasSize());
     _updateCanvasSize();
   }
 

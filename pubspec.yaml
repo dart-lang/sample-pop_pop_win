@@ -1,4 +1,4 @@
 name: poppopwin
 dependencies:
-  bot: 0.11.0
-  js: 0.0.14
+  bot: '>=0.11.2'
+  js: '>=0.0.15'
