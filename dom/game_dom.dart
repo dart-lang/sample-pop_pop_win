@@ -16,5 +16,5 @@ main(){
   final highScoreView = new HighScoreView(gameView, highScoreDiv);
 
   final ButtonElement newGameButton = query('#newGame');
-  newGameButton.on.click.add((args) => gameView.newGame());
+  newGameButton.onClick.listen((args) => gameView.newGame());
 }
