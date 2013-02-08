@@ -3,5 +3,5 @@ homepage: https://github.com/dart-lang/pop-pop-win
 environment:
   sdk: '>=0.3.4'
 dependencies:
-  bot: '>=0.12.0'
+  bot: '>=0.13.0'
   js: '>=0.0.15'
