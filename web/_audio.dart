@@ -127,6 +127,6 @@ class _Audio {
   }
 
   static Iterable<String> _getAudioPaths(Iterable<String> names) {
-    return names.mappedBy(_getAudioPath);
+    return names.map(_getAudioPath);
   }
 }

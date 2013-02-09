@@ -17,7 +17,7 @@ class TestField {
 
 
   static Field getSampleField() {
-    final bools = new List<bool>.from(sample.mappedBy((x) => x == null));
+    final bools = new List<bool>.from(sample.map((x) => x == null));
 
     return new Field.fromSquares(6, 5, bools);
   }

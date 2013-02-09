@@ -157,17 +157,17 @@ class GameElement extends ParentThing {
     if(reveals == null) {
       assert(game.state == GameState.lost);
       reveals = new NumberEnumerable.fromRange(0, game.field.length)
-          .mappedBy((i) {
+          .map((i) {
             final t = game.field.getCoordinate(i);
             final c = new Coordinate(t.item1, t.item2);
             return new Tuple(c, game.getSquareState(c.x, c.y));
           })
           .where((t2) => t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
-          .mappedBy((t2) => t2.item1)
+          .map((t2) => t2.item1)
           .toList();
     }
 
-    final values = reveals.mappedBy((c) {
+    final values = reveals.map((c) {
       final initialOffset = new Vector(SquareElement._size * c.x,
           SquareElement._size * c.y);
       final squareOffset = _popExplodeAnimationOffset + initialOffset;
@@ -325,7 +325,7 @@ class GameElement extends ParentThing {
         if(game.canReveal(x, y)) {
           // get adjacent ballons
           final adjHidden = game.field.getAdjacentIndices(x, y)
-              .mappedBy((i) {
+              .map((i) {
                 final t = game.field.getCoordinate(i);
                 return new Coordinate(t.item1, t.item2);
               })

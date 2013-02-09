@@ -9,8 +9,8 @@ class Game {
   GameState _state;
   int _bombsLeft;
   int _revealsLeft;
-  Date _startTime;
-  Date _endTime;
+  DateTime _startTime;
+  DateTime _endTime;
 
   Game(Field field) :
     this.field = field,
@@ -41,7 +41,7 @@ class Game {
       return null;
     } else {
       assert((state == GameState.started) == (_endTime == null));
-      final end = (_endTime == null) ? new Date.now() : _endTime;
+      final end = (_endTime == null) ? new DateTime.now() : _endTime;
       return end.difference(_startTime);
     }
   }
@@ -267,9 +267,9 @@ class Game {
     if(_state != value) {
       _state = value;
       if(_state == GameState.started) {
-        _startTime = new Date.now();
+        _startTime = new DateTime.now();
       } else if(gameEnded) {
-        _endTime = new Date.now();
+        _endTime = new DateTime.now();
       }
       _gameStateEvent.fireEvent(_state);
     }
