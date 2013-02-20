@@ -110,7 +110,7 @@ class Game {
     final buffer = new StringBuffer();
     for(var y = -2; y < field.height; y++) {
       if(y > -2) {
-        buffer.add('\n');
+        buffer.write('\n');
       }
       for(var x = -2; x < field.width; x++) {
         var char = null;
@@ -149,7 +149,7 @@ class Game {
           }
         }
         assert(char != null);
-        buffer.add(char);
+        buffer.write(char);
       }
     }
     return buffer.toString();

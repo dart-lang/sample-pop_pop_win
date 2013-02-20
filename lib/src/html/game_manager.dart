@@ -7,7 +7,7 @@ abstract class GameManager {
   Game _game;
   GlobalId _updatedEventId;
   GlobalId _gameStateChangedId;
-  int _setIntervalId;
+  Timer _clockTimer;
 
   GameManager(this._width, this._height, this._bombCount) {
     newGame();
@@ -59,11 +59,11 @@ abstract class GameManager {
   }
 
   void updateClock() {
-    if(_setIntervalId == null && _game.state == GameState.started) {
-      _setIntervalId = window.setInterval(updateClock, 1000);
-    } else if(_setIntervalId != null && _game.state != GameState.started) {
-      window.clearInterval(_setIntervalId);
-      _setIntervalId = null;
+    if(_clockTimer == null && _game.state == GameState.started) {
+      _clockTimer = new Timer(const Duration(seconds: 1), updateClock);
+    } else if(_clockTimer != null && _game.state != GameState.started) {
+      _clockTimer.cancel();
+      _clockTimer = null;
     }
   }
 

@@ -1,5 +1,6 @@
 library ppw_canvas;
 
+import 'dart:async';
 import 'dart:html';
 import 'dart:math';
 import 'package:bot/bot.dart';

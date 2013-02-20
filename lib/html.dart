@@ -1,5 +1,6 @@
 library ppw_html;
 
+import 'dart:async';
 import 'dart:collection';
 import 'dart:html';
 import 'dart:math' as math;

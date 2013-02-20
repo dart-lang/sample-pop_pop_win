@@ -26,8 +26,8 @@ class GameView extends GameManager {
         for(int c = 0; c < game.field.width; c++) {
           TableCellElement cell = row.insertCell(-1);
           cell.onMouseDown.listen(_cellClick);
-          cell.dataAttributes[_xKey] = c.toString();
-          cell.dataAttributes[_yKey] = r.toString();
+          cell.dataset[_xKey] = c.toString();
+          cell.dataset[_yKey] = r.toString();
         }
       }
     }
@@ -72,8 +72,8 @@ class GameView extends GameManager {
   void _cellClick(MouseEvent args) {
     if(args.button == 0 && _canClick) {
       final TableCellElement cell = args.currentTarget;
-      final xStr = cell.dataAttributes[_xKey];
-      final yStr = cell.dataAttributes[_yKey];
+      final xStr = cell.dataset[_xKey];
+      final yStr = cell.dataset[_yKey];
 
       final x = int.parse(xStr);
       final y = int.parse(yStr);

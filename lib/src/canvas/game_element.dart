@@ -28,7 +28,7 @@ class GameElement extends ParentThing {
   Vector _scaledBoardOffset;
   Box _scaledInnerBox;
   SquareElement _mouseDownElement, _lastHoldUnfreeze;
-  int _mouseDownTimeoutHandleId;
+  Timer _mouseDownTimer;
 
   Game _game;
 
@@ -254,12 +254,12 @@ class GameElement extends ParentThing {
 
   void _squareMouseDown(ThingMouseEventArgs args) {
     _lastHoldUnfreeze = null;
-    if(_mouseDownTimeoutHandleId != null) {
-      window.clearTimeout(_mouseDownTimeoutHandleId);
+    if(_mouseDownTimer != null) {
+      _mouseDownTimer.cancel();
     }
     final SquareElement se = args.thing;
     _mouseDownElement = se;
-    _mouseDownTimeoutHandleId = window.setTimeout(_mouseDownTimeoutHandle, 1000);
+    _mouseDownTimer = new Timer(const Duration(seconds: 1), _mouseDownTimeoutHandle);
   }
 
   void _squareMouseMove(ThingMouseEventArgs args) {
@@ -275,7 +275,7 @@ class GameElement extends ParentThing {
   }
 
   void _mouseDownTimeoutHandle() {
-    assert(_mouseDownTimeoutHandleId != null);
+    assert(_mouseDownTimer != null);
     assert(_mouseDownElement != null);
     _click(_mouseDownElement.x, _mouseDownElement.y, true);
     _lastHoldUnfreeze = _mouseDownElement;
@@ -283,9 +283,9 @@ class GameElement extends ParentThing {
   }
 
   void _clearTimeout() {
-    if(_mouseDownTimeoutHandleId != null) {
-      window.clearTimeout(_mouseDownTimeoutHandleId);
-      _mouseDownTimeoutHandleId = null;
+    if(_mouseDownTimer != null) {
+      _mouseDownTimer.cancel();
+      _mouseDownTimer = null;
     }
     _mouseDownElement = null;
   }
