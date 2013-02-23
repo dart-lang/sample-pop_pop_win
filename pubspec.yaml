@@ -3,5 +3,6 @@ homepage: https://github.com/dart-lang/pop-pop-win
 environment:
   sdk: '>=0.4.0+0.r18915'
 dependencies:
-  bot: '>=0.14.2'
+  bot:
+    git: https://github.com/kevmoo/bot.dart.git
   js: '>=0.0.16'

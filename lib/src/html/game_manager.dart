@@ -5,8 +5,8 @@ abstract class GameManager {
   final GameStorage _gameStorage = new GameStorage();
 
   Game _game;
-  GlobalId _updatedEventId;
-  GlobalId _gameStateChangedId;
+  StreamSubscription _updatedEventId;
+  StreamSubscription _gameStateChangedId;
   Timer _clockTimer;
 
   GameManager(this._width, this._height, this._bombCount) {
@@ -15,7 +15,7 @@ abstract class GameManager {
 
   Game get game => _game;
 
-  EventRoot<EventArgs> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
+  Stream<EventArgs> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
   int get bestTimeMilliseconds =>
       _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
@@ -24,14 +24,14 @@ abstract class GameManager {
     if(_updatedEventId != null) {
       assert(_game != null);
       assert(_gameStateChangedId != null);
-      _game.updated.remove(_updatedEventId);
-      _game.stateChanged.remove(_gameStateChangedId);
+      _updatedEventId.cancel();
+      _gameStateChangedId.cancel();
       _gameStateChanged(GameState.reset);
     }
     final f = new Field(_bombCount, _width, _height);
     _game = new Game(f);
-    _updatedEventId = _game.updated.add(gameUpdated);
-    _gameStateChangedId = _game.stateChanged.add(_gameStateChanged);
+    _updatedEventId = _game.updated.listen(gameUpdated);
+    _gameStateChangedId = _game.stateChanged.listen(_gameStateChanged);
   }
 
   void gameUpdated(args);

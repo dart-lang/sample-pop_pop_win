@@ -6,12 +6,12 @@ class NewGameElement extends Thing {
 
   NewGameElement() : super(294, 92) {
     MouseManager.setClickable(this, true);
-    MouseManager.addHandler(this, (args) =>
-        _clickedEvent.fireEvent(EventArgs.empty));
-    Mouse.isMouseDirectlyOverProperty.addHandler(this, _mouseDirectlyOver);
+    MouseManager.getClickStream(this).listen((args) =>
+        _clickedEvent.add(EventArgs.empty));
+    Mouse.isMouseDirectlyOverProperty.getStream(this).listen(_mouseDirectlyOver);
   }
 
-  EventRoot<EventArgs> get clicked => _clickedEvent;
+  Stream<EventArgs> get clicked => _clickedEvent.stream;
 
   void drawOverride(CanvasRenderingContext2D ctx) {
     final texture = Mouse.isMouseDirectlyOver(this) ?

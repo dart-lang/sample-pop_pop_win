@@ -6,7 +6,7 @@ class GameStorage {
 
   int get gameCount => _getIntValue(_gameCountKey);
 
-  EventRoot get bestTimeUpdated => _bestTimeUpdated;
+  Stream get bestTimeUpdated => _bestTimeUpdated.stream;
 
   void recordState(GameState state) {
     assert(state != null);
@@ -27,7 +27,7 @@ class GameStorage {
     final currentScore = _getIntValue(key, null);
     if(currentScore == null || currentScore > duration) {
       _setIntValue(key, duration);
-      _bestTimeUpdated.fireEvent(null);
+      _bestTimeUpdated.add(null);
       return true;
     } else {
       return false;

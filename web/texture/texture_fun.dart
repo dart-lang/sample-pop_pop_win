@@ -21,7 +21,7 @@ TextureData _textureData;
 main() {
   _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName,
                                   _transparentStaticTexture]);
-  _imageLoader.loaded.add((args) => _doLoad());
+  _imageLoader.loaded.listen((args) => _doLoad());
   _imageLoader.load();
 }
 

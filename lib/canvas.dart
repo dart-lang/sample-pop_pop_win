@@ -22,5 +22,5 @@ part 'src/canvas/game_audio.dart';
 
 EventHandle _titleClickedEventHandle = new EventHandle<EventArgs>();
 
-EventRoot titleClickedEvent = _titleClickedEventHandle;
+Stream titleClickedEvent = _titleClickedEventHandle.stream;
 

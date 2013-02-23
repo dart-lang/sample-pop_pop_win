@@ -33,8 +33,8 @@ void startGame(PlatformTarget platform) {
 
   _imageLoader = new ImageLoader([_transparentTextureName,
                                   _opaqueTextureName]);
-  _imageLoader.loaded.add(_onLoaded);
-  _imageLoader.progress.add(_onProgress);
+  _imageLoader.loaded.listen(_onLoaded);
+  _imageLoader.progress.listen(_onProgress);
   _imageLoader.load();
 
   _audio = new _Audio();
@@ -93,7 +93,7 @@ void _runPPW(TextureData textureData) {
 
   query('#popup').onClick.listen(_onPopupClick);
 
-  titleClickedEvent.add((args) => _toggleAbout(true));
+  titleClickedEvent.listen((args) => _toggleAbout(true));
 }
 
 void _onPopupClick(MouseEvent args) {

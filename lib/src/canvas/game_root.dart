@@ -26,12 +26,12 @@ class GameRoot extends GameManager {
       super(width, height, bombCount) {
 
     _gameElement.setGameManager(this);
-    _stage.invalidated.add(_stageInvalidated);
+    _stage.invalidated.listen(_stageInvalidated);
 
-    _gameElement.newGameClick.add((args) => newGame());
+    _gameElement.newGameClick.listen((args) => newGame());
 
-    MouseManager.addMouseMoveHandler(_gameElement, _mouseMoveHandler);
-    MouseManager.addMouseOutHandler(_stage, _mouseOutHandler);
+    MouseManager.getMouseMoveStream(_gameElement).listen(_mouseMoveHandler);
+    MouseManager.getMouseOutStream(_stage).listen(_mouseOutHandler);
 
     window.onResize.listen((args) => _updateCanvasSize());
     _updateCanvasSize();
@@ -51,8 +51,7 @@ class GameRoot extends GameManager {
 
   void toggleTargetFlag() => _gameElement.toggleTargetFlag();
 
-  EventRoot get targetChanged =>
-      _gameElement.targetChanged;
+  Stream get targetChanged => _gameElement.targetChanged;
 
   void onGameStateChanged(GameState newState) {
     switch(newState) {

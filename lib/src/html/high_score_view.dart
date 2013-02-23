@@ -8,7 +8,7 @@ class HighScoreView {
     assert(_div != null);
     assert(_manager != null);
 
-    _manager.bestTimeUpdated.add((args) => _update());
+    _manager.bestTimeUpdated.listen((args) => _update());
 
     _update();
   }

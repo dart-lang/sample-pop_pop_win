@@ -27,9 +27,9 @@ class Game {
 
   GameState get state => _state;
 
-  EventRoot get updated => _updatedEvent;
+  Stream get updated => _updatedEvent.stream;
 
-  EventRoot get stateChanged => _gameStateEvent;
+  Stream get stateChanged => _gameStateEvent.stream;
 
   SquareState getSquareState(int x, int y) => _states.get(x,y);
 
@@ -258,7 +258,7 @@ class Game {
     _setState(GameState.lost);
   }
 
-  void _update() => _updatedEvent.fireEvent(EventArgs.empty);
+  void _update() => _updatedEvent.add(EventArgs.empty);
 
   void _setState(GameState value) {
     assert(value != null);
@@ -271,7 +271,7 @@ class Game {
       } else if(gameEnded) {
         _endTime = new DateTime.now();
       }
-      _gameStateEvent.fireEvent(_state);
+      _gameStateEvent.add(_state);
     }
   }
 

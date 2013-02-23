@@ -6,19 +6,19 @@ class GameAudio {
 
   static final EventHandle<String> _audioEventHandle = new EventHandle<String>();
 
-  static EventRoot<String> get audioEvent => _audioEventHandle;
+  static Stream<String> get audioEvent => _audioEventHandle.stream;
 
-  static void win() => _audioEventHandle.fireEvent(WIN);
+  static void win() => _audioEventHandle.add(WIN);
 
-  static void click() => _audioEventHandle.fireEvent(CLICK);
+  static void click() => _audioEventHandle.add(CLICK);
 
-  static void pop() => _audioEventHandle.fireEvent(POP);
+  static void pop() => _audioEventHandle.add(POP);
 
-  static void flag() => _audioEventHandle.fireEvent(FLAG);
+  static void flag() => _audioEventHandle.add(FLAG);
 
-  static void unflag() => _audioEventHandle.fireEvent(UNFLAG);
+  static void unflag() => _audioEventHandle.add(UNFLAG);
 
-  static void bomb() => _audioEventHandle.fireEvent(BOMB);
+  static void bomb() => _audioEventHandle.add(BOMB);
 
-  static void throwDart() => _audioEventHandle.fireEvent(THROW_DART);
+  static void throwDart() => _audioEventHandle.add(THROW_DART);
 }

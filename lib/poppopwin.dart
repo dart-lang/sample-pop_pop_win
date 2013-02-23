@@ -1,5 +1,6 @@
 library ppw;
 
+import 'dart:async';
 import 'dart:math' as math;
 import 'package:bot/bot.dart';
 

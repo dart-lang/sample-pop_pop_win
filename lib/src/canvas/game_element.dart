@@ -47,14 +47,14 @@ class GameElement extends ParentThing {
     _canvas.add(_titleElement);
     _canvas.add(_dartAnimationLayer);
 
-    _newGameElement.clicked.add((args) => GameAudio.click());
+    _newGameElement.clicked.listen((args) => GameAudio.click());
 
     MouseManager.setClickable(_titleElement, true);
-    MouseManager.addHandler(_titleElement,
-        (args) => _titleClickedEventHandle.fireEvent(EventArgs.empty));
+    MouseManager.getClickStream(_titleElement).listen((args) =>
+        _titleClickedEventHandle.add(EventArgs.empty));
   }
 
-  EventRoot<EventArgs> get newGameClick => _newGameElement.clicked;
+  Stream<EventArgs> get newGameClick => _newGameElement.clicked;
 
   Game get game => _game;
 
@@ -93,7 +93,7 @@ class GameElement extends ParentThing {
     }
   }
 
-  EventRoot get targetChanged => _targetChanged;
+  Stream get targetChanged => _targetChanged.stream;
 
   int get visualChildCount => 1;
 
@@ -215,10 +215,10 @@ class GameElement extends ParentThing {
       switch(ss) {
         case SquareState.revealed:
         case SquareState.hidden:
-          request.started.add((args) => GameAudio.pop());
+          request.started.listen((args) => GameAudio.pop());
           break;
         case SquareState.bomb:
-          request.started.add((args) => GameAudio.bomb());
+          request.started.listen((args) => GameAudio.bomb());
           break;
       }
 
@@ -239,10 +239,10 @@ class GameElement extends ParentThing {
   }
 
   void wireSquareMouseEvent(Thing square) {
-    MouseManager.addHandler(square, _squareClicked);
-    MouseManager.addMouseDownHandler(square, _squareMouseDown);
-    MouseManager.addMouseUpHandler(square, _squareMouseUp);
-    MouseManager.addMouseMoveHandler(square, _squareMouseMove);
+    MouseManager.getClickStream(square).listen(_squareClicked);
+    MouseManager.getMouseDownStream(square).listen(_squareMouseDown);
+    MouseManager.getMouseUpStream(square).listen(_squareMouseUp);
+    MouseManager.getMouseMoveStream(square).listen(_squareMouseMove);
   }
 
   void _squareClicked(ThingMouseEventArgs args) {
@@ -293,7 +293,7 @@ class GameElement extends ParentThing {
   void _target(int x, int y) {
     _targetX = x;
     _targetY = y;
-    _targetChanged.fireEvent(null);
+    _targetChanged.add(null);
     invalidateDraw();
   }
 
