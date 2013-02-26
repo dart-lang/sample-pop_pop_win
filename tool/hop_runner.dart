@@ -30,7 +30,7 @@ void main() {
   // gh_pages
   //
   addAsyncTask('pages', (ctx) =>
-      branchForDir(ctx, 'compress', 'web', 'gh-pages'));
+      branchForDir(ctx, 'master', 'web', 'gh-pages'));
 
   runHopCore();
 }
