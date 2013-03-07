@@ -32,7 +32,7 @@ void main() {
   addAsyncTask('pages', (ctx) =>
       branchForDir(ctx, 'master', 'web', 'gh-pages'));
 
-  runHopCore();
+  runHop();
 }
 
 void _assertKnownPath() {
