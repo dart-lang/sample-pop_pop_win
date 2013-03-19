@@ -4670,7 +4670,7 @@ gEv:function(){return $.Th($.lq())},
 ba:function(a,b,c,d){$.Aa(new $.uA(a,b,c,d))},
 uP:function(a,b,c){return this.ba(a,b,c,null)}}
 $$.uA={"":"Tp;a,b,c,d",
-call$0:function(){$.mM().Tm($.QN(["_trackEvent",this.a,this.b,this.c,this.d]))}}
+call$0:function(){$.UQ($.mM(),"pushAnalytics").call$1($.QN(["_trackEvent",this.a,this.b,this.c,this.d]))}}
 $$.ic={"":"op;uB,Cs,U2,qL,my,jh,bx,QJ,K7,UA,Wl,lX,Hm",
 gDV:function(){var z=this.uB
 if(z==null)return 0
@@ -8311,7 +8311,7 @@ $.$defineNativeClass("MouseEvent",{"":"dM:clientX=,BM:clientY=,qx:shiftKey=,RV:t
 gwl:function(a){var z=$.RE(a)
 return $.Uc(z.gdM(a),z.gBM(a))},
 gD7:function(a){var z,y,x
-if(!!a.offsetX)return $.Uc(a.offsetX,a.offsetY)
+if(!!a.offsetX)return $.Uc(a.offsetX,a.offsetX)
 else{z=$.RE(a)
 y=z.gN(a)
 if(!(typeof y==="object"&&y!==null&&y.$iscv()))throw $.b($.f("offsetX is only supported on elements"))
@@ -9724,7 +9724,7 @@ var F=new y()
 C.prototype=F
 F.constructor=C
 for(var G in E){if(!G)continue
-if(A.call(E,G)){F[G]=E[G]}}}}var p=a.a,o="BgbbbefgbbcbobbbckDXmFqBhwCgChDnBeCeBiGrChvBgtEaliEyBxCtFoqBxDeDcdCyEwCcsEzlEdDlnWeBeCcBmcBbpBdvCsBqlqGebocbBlbxwHaBkFiBeDqBlBkpBwBqEyHeEfBhFuDdiBdbBbhuDnhBuBDRSxFdFfDjBjgBxFoKsIwBfwFvhrhCmDgGyCcpwtItEmmYaBiDmEqhCjfBbdhpCdJqDaDmsBlBhHsbBiqBfHpBjHdEuDjCziEsrBoDkFAEdJgEuBgRjBHjBNvCuNoGtJsBbwErPxKx.BkDYtBlCbozvBhBjDkDhBtEbhBvhuBlBqbGcBbkBpBsFuuBrxDdCeCuCpEfpBdxjedDeBfmofbpEgvEhkBbvCbpXyBnftGdLgDbCllCaeEuGlxfCnoChBodBwDhBbzCdGqyfCcDqDfeCresBcBtDpgBDRQyKsBwBwjBeBrrCztgoxCkCcDbBsBnCxbxxtrChEuxBnxDypshFkHaBnCkErBtbDgiYzEfJoBqBqGgBzEpEgBnDhfnCcBxFwDoDaqBaEhEnBoDmCocgpcBnBeFAYiDmDyhBHlhCHjCGlHl,call$0,call$1,call$2,call$3,call$4,call$5,call$6,call$9".split(","),n=0,m=o[0],l=[0,1]
+if(A.call(E,G)){F[G]=E[G]}}}}var p=a.a,o="BgbbbefgbbcbobbbckDXmFqBhwCgChDnBeCeBiGrChvBgtEaliEyBxCtFoqBxDeDcdCyEwCcsEzlEdDlnWeBeCcBmcBbpBdvCsBqlqGebocbBlbxwHaBkFiBeDqBlBkpBwBqEyHeEfBhFuDdiBdbBbhuDnhBuBDRSxFdFfDjBjgBxFoKsIwBfwFvhrhCmDgGyCcpwtItEmmYaBiDmEqhCjfBbdhpCdJqDaDmsBlBhHsbBiqBfHpBjHdEuDjCziEsrBoDkFAEdJgEuBgRjBHjBNvCuNoGtJsBbwErPxKx.BkDYtBlCbozvBhBjDkDhBtEbhBvhuBlBqbGcBbkBpBsFuuBrxDdCeCuCpEfpBdxndDeBfmofbpEgvEhkBbvCbpXyBnftGdLgDbCllCaeEuGlxfCnoChBodBwDhBbzCdGqyfCcDqDfeCresBcBtDpgBDRQyKsBwBwjBeBrrCztgoxCkCcDbBsBnCxbxxtrChEuxBnxDypshFkHaBnCkErBtbDgiYzEfJoBqBqGgBzEpEgBnDhfnCcBxFwDoDaqBaEhEnBoDmCocgpcBnBeFAYiDmDyhBHlhCHjCGlHl,call$0,call$1,call$2,call$3,call$4,call$5,call$6,call$9".split(","),n=0,m=o[0],l=[0,1]
 for(var k=0;k<m.length;k++){var j=[],i=0,h=m.charCodeAt(k)
 if(h==46){n=0
 h=m.charCodeAt(++k)}while(h<=90){i*=26
