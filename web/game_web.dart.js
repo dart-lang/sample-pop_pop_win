@@ -8311,7 +8311,7 @@ $.$defineNativeClass("MouseEvent",{"":"dM:clientX=,BM:clientY=,qx:shiftKey=,RV:t
 gwl:function(a){var z=$.RE(a)
 return $.Uc(z.gdM(a),z.gBM(a))},
 gD7:function(a){var z,y,x
-if(!!a.offsetX)return $.Uc(a.offsetX,a.offsetX)
+if(!!a.offsetX)return $.Uc(a.offsetX,a.offsetY)
 else{z=$.RE(a)
 y=z.gN(a)
 if(!(typeof y==="object"&&y!==null&&y.$iscv()))throw $.b($.f("offsetX is only supported on elements"))
