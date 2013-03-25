@@ -28,10 +28,10 @@ class _Audio {
   _Audio._internal(this._audioLoader) {
     // TODO: less than ideal. Binding to event handlers defined in game.dart
     // re-expose events? Take in handlers in ctor? Hmm...
-    _audioLoader.progress.add(_onProgress);
-    _audioLoader.loaded.add(_onLoaded);
-    _audioLoader.loaded.add(_onLoad);
-    GameAudio.audioEvent.add(_playAudio);
+    _audioLoader.progress.listen(_onProgress);
+    _audioLoader.loaded.listen(_onLoaded);
+    _audioLoader.loaded.listen(_onLoad);
+    GameAudio.audioEvent.listen(_playAudio);
     _audioLoader.load();
   }
 
