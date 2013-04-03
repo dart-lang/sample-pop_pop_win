@@ -5,12 +5,11 @@ import 'package:unittest/vm_config.dart';
 import 'ppw/_ppw_runner.dart';
 
 main() {
-  final config = new VMConfiguration();
-  testCore(config);
+  testCore(new VMConfiguration());
 }
 
 void testCore(Configuration config) {
-    configure(config);
+  unittestConfiguration = config;
   groupSep = ' - ';
 
   runppwTests();
