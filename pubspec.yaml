@@ -1,7 +1,7 @@
 name: poppopwin
 homepage: https://github.com/dart-lang/pop-pop-win
 environment:
-  sdk: '>=0.4.4+4.r20810'
+  sdk: '>=0.4.5+1.r21094'
 dependencies:
-  bot: '>=0.16.2'
+  bot: '>=0.16.3+1'
   js: '>=0.0.18'
