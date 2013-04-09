@@ -6,7 +6,4 @@ environment:
   sdk: '>=0.4.5+1.r21094'
 dependencies:
   bot: '>=0.16.3+1'
-  js:
-    git:
-      ref: 1b08fcef9bf
-      url: https://github.com/dart-lang/js-interop.git
+  js: '>=0.0.19'
