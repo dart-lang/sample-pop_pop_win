@@ -21,7 +21,7 @@ Using other versions of the Dart tools with this source code might cause problem
 
 ## Play
 
- * [dart-lang.github.com/pop-pop-win](http://dart-lang.github.com/pop-pop-win/)
+ * [dart-lang.github.io/pop-pop-win](http://dart-lang.github.io/pop-pop-win/)
  * This is a version compiled to Javascript and should work in any modern browser.
  * This version does not work in Dartium (The custom Chromium version for Dart). The associated code files are not deployed.
 
