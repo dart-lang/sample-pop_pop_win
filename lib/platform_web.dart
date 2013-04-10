@@ -13,8 +13,6 @@ class PlatformWeb extends PlatformTarget {
   Map<String, String> get storage => window.localStorage;
 
   void trackAnalyticsEvent(String category, String action, [String label, int value]) {
-    js.scoped((){
-      js.context['pushAnalytics'](js.array(['_trackEvent', category, action, label, value]));
-    });
+    js.context['pushAnalytics'](js.array(['_trackEvent', category, action, label, value]));
   }
 }
