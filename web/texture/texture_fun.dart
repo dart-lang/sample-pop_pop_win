@@ -1,9 +1,9 @@
 import 'dart:html';
 import 'dart:math';
 import 'package:bot/bot.dart';
-import 'package:bot/bot_html.dart';
-import 'package:bot/bot_retained.dart';
-import 'package:bot/bot_texture.dart';
+import 'package:bot_web/bot_html.dart';
+import 'package:bot_web/bot_retained.dart';
+import 'package:bot_web/bot_texture.dart';
 import 'package:poppopwin/canvas.dart';
 import 'package:poppopwin/poppopwin.dart';
 import '../texture_data.dart';
