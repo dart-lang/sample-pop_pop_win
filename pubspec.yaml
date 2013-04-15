@@ -9,4 +9,4 @@ dependencies:
   bot: '>=0.16.3+1'
   js: '>=0.0.19'
 dev_dependencies:
-  hop: '>=0.20.0'
+  hop: '>=0.20.0+1'
