@@ -79,8 +79,7 @@ file:///Users/kevin/source/github/pop-pop-win/packages/logging/logging.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/meta/meta.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/canvas.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/html.dart
-file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/platform.dart
-file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/platform_web.dart
+file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/platform_target.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/poppopwin.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/src/canvas/board_element.dart
 file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/src/canvas/game_audio.dart
@@ -102,6 +101,7 @@ file:///Users/kevin/source/github/pop-pop-win/packages/poppopwin/src/poppopwin/s
 file:///Users/kevin/source/github/pop-pop-win/web/_audio.dart
 file:///Users/kevin/source/github/pop-pop-win/web/game.dart
 file:///Users/kevin/source/github/pop-pop-win/web/game_web.dart
+file:///Users/kevin/source/github/pop-pop-win/web/platform_web.dart
 file:///Users/kevin/source/github/pop-pop-win/web/texture_data.dart
 file:///usr/local/Cellar/dart-editor/21094/dart-sdk/lib/_collection_dev/arrays.dart
 file:///usr/local/Cellar/dart-editor/21094/dart-sdk/lib/_collection_dev/collection_dev.dart
