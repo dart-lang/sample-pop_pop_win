@@ -17,7 +17,7 @@ abstract class GameManager {
 
   Stream<EventArgs> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
-  int get bestTimeMilliseconds =>
+  Future<int> get bestTimeMilliseconds =>
       _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
 
   void newGame() {
@@ -79,10 +79,14 @@ abstract class GameManager {
   void _gameStateChanged(GameState newState) {
     _gameStorage.recordState(newState);
     if(newState == GameState.won) {
-      final newBestTime = _gameStorage.updateBestTime(_game);
-      if(newBestTime) {
-        onNewBestTime(bestTimeMilliseconds);
-      }
+      _gameStorage.updateBestTime(_game)
+        .then((bool newBestTime) {
+          if(newBestTime) {
+            bestTimeMilliseconds.then((int val) {
+              onNewBestTime(val);
+            });
+          }
+        });
     }
     updateClock();
     onGameStateChanged(newState);

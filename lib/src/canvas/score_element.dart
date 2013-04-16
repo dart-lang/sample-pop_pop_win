@@ -37,13 +37,15 @@ class ScoreElement extends Thing {
     }
 
     var bestTimeStr = null;
-    if(_gameManager.bestTimeMilliseconds != null) {
-      bestTimeStr = toRecordString(_gameManager.bestTimeMilliseconds);
-    }
-    if(_bestTimeStr != bestTimeStr) {
-      _bestTimeStr = bestTimeStr;
-      invalidateDraw();
-    }
+    _gameManager.bestTimeMilliseconds.then((int val) {
+      if(val != null) {
+        bestTimeStr = toRecordString(val);
+      }
+      if(_bestTimeStr != bestTimeStr) {
+        _bestTimeStr = bestTimeStr;
+        invalidateDraw();
+      }
+    });
 
     super.update();
   }

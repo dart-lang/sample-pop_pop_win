@@ -15,7 +15,7 @@ void main() {
       minify: true, liveTypeAnalysis: true, rejectDeprecatedFeatures: true));
 
   //
-  //
+  // Dart2js - App
   //
   addTask('app_dart2js', createDart2JsTask(['app_package/game_app.dart'],
       minify: true,

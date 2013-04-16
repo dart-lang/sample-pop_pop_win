@@ -3,8 +3,9 @@ part of ppw_html;
 class GameStorage {
   static const _gameCountKey = 'gameCount';
   final EventHandle _bestTimeUpdated = new EventHandle();
+  final Map<String, String> _cache = new Map<String, String>();
 
-  int get gameCount => _getIntValue(_gameCountKey);
+  Future<int> get gameCount => _getIntValue(_gameCountKey);
 
   Stream get bestTimeUpdated => _bestTimeUpdated.stream;
 
@@ -13,7 +14,7 @@ class GameStorage {
     _incrementIntValue(state.name);
   }
 
-  bool updateBestTime(Game game) {
+  Future<bool> updateBestTime(Game game) {
     assert(game != null);
     assert(game.state == GameState.won);
 
@@ -24,51 +25,63 @@ class GameStorage {
 
     final key = _getKey(w, h, m);
 
-    final currentScore = _getIntValue(key, null);
-    if(currentScore == null || currentScore > duration) {
-      _setIntValue(key, duration);
-      _bestTimeUpdated.add(null);
-      return true;
-    } else {
-      return false;
-    }
+    return _getIntValue(key, null)
+        .then((int currentScore) {
+          if(currentScore == null || currentScore > duration) {
+            _setIntValue(key, duration);
+            _bestTimeUpdated.add(null);
+            return true;
+          } else {
+            return false;
+          }
+        });
   }
 
-  int getBestTimeMilliseconds(int width, int height, int bombCount) {
+  Future<int> getBestTimeMilliseconds(int width, int height, int bombCount) {
     final key = _getKey(width, height, bombCount);
     return _getIntValue(key, null);
   }
 
-  void reset() {
-    targetPlatform.storage.clear();
+  Future reset() {
+    _cache.clear();
+    targetPlatform.clearValues();
   }
 
-  String toString() => Maps.mapToString(targetPlatform.storage);
-
-  int _getIntValue(String key, [int defaultValue = 0]) {
+  Future<int> _getIntValue(String key, [int defaultValue = 0]) {
     assert(key != null);
-    final strValue = targetPlatform.storage[key];
-    if(strValue == null) {
-      return defaultValue;
-    } else {
-      return int.parse(strValue);
+    if(_cache.containsKey(key)) {
+      return new Future.immediate(_parseValue(_cache[key], defaultValue));
     }
+
+    return targetPlatform.getValue(key)
+        .then((String strValue) {
+          _cache[key] = strValue;
+          return _parseValue(strValue, defaultValue);
+        });
   }
 
-  void _setIntValue(String key, int value) {
+  Future _setIntValue(String key, int value) {
     assert(key != null);
-    if(value == null) {
-      targetPlatform.storage[key] = null;
-    } else {
-      targetPlatform.storage[key] = value.toString();
-    }
+    _cache.remove(key);
+    String val = (value == null) ? null : value.toString();
+    return targetPlatform.setValue(key, val);
   }
 
-  void _incrementIntValue(String key) {
-    final value = _getIntValue(key);
-    _setIntValue(key, value + 1);
+  Future _incrementIntValue(String key) {
+    return _getIntValue(key)
+        .then((int val) {
+          return _setIntValue(key, val + 1);
+        });
   }
 
   static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";
+
+  static int _parseValue(String value, int defaultValue) {
+    if(value == null) {
+      return defaultValue;
+    } else {
+      return int.parse(value);
+    }
+  }
 
 }

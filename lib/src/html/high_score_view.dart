@@ -14,12 +14,14 @@ class HighScoreView {
   }
 
   void _update() {
-    final milliseconds = _manager.bestTimeMilliseconds;
-    if(milliseconds != null) {
-      final duration = new Duration(seconds: milliseconds ~/ 1000);
-      _div.innerHtml = duration.toString();
-    } else {
-      _div.innerHtml = '';
-    }
+    _manager.bestTimeMilliseconds
+      .then((int milliseconds) {
+        if(milliseconds != null) {
+          final duration = new Duration(seconds: milliseconds ~/ 1000);
+          _div.innerHtml = duration.toString();
+        } else {
+          _div.innerHtml = '';
+        }
+      });
   }
 }
