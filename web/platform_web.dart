@@ -1,14 +1,10 @@
 library ppw_platform_web;
 
-import 'html.dart';
 import 'dart:html';
 import 'package:js/js.dart' as js;
-import 'platform.dart';
+import 'package:poppopwin/platform_target.dart';
 
 class PlatformWeb extends PlatformTarget {
-  void initialize() {
-    super.initialize();
-  }
 
   Map<String, String> get storage => window.localStorage;
 

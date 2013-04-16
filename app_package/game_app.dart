@@ -1,8 +1,8 @@
 library game_app;
 
 import '../web/game.dart';
-import 'package:poppopwin/platform.dart';
+import 'platform_app.dart';
 
 void main() {
-  startGame(new PlatformTarget());
+  startGame(new PlatformApp());
 }
