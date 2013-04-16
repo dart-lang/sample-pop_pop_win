@@ -7,9 +7,10 @@ import 'package:bot_web/bot_html.dart';
 import 'package:bot_web/bot_texture.dart';
 import 'package:poppopwin/canvas.dart';
 import 'package:poppopwin/poppopwin.dart';
-import 'texture_data.dart';
-import 'package:poppopwin/platform.dart';
+import 'package:poppopwin/platform_target.dart';
 import 'package:poppopwin/html.dart';
+
+import 'texture_data.dart';
 
 part '_audio.dart';
 

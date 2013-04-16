@@ -1,6 +1,6 @@
 library game_web;
 
-import 'package:poppopwin/platform_web.dart';
+import 'platform_web.dart';
 import 'game.dart';
 
 void main() {
