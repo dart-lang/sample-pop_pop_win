@@ -50,7 +50,7 @@ class GameStorage {
   Future<int> _getIntValue(String key, [int defaultValue = 0]) {
     assert(key != null);
     if(_cache.containsKey(key)) {
-      return new Future.immediate(_parseValue(_cache[key], defaultValue));
+      return new Future.value(_parseValue(_cache[key], defaultValue));
     }
 
     return targetPlatform.getValue(key)

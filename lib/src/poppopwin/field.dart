@@ -5,8 +5,7 @@ class Field extends Array2d<bool> {
   final Array2d<int> _adjacents;
 
   factory Field([bombCount = 40, cols = 16, rows = 16, int seed = null]) {
-    final squares = new List<bool>();
-    squares.insertRange(0, rows * cols, false);
+    final squares = new List<bool>.filled(rows * cols, false);
     assert(bombCount < squares.length);
     assert(bombCount > 0);
 
