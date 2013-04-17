@@ -13,18 +13,18 @@ class PlatformWeb extends PlatformTarget {
   @override
   Future clearValues() {
     window.localStorage.clear();
-    return new Future.immediate(null);
+    return new Future.value(null);
   }
 
   @override
   Future setValue(String key, String value) {
     window.localStorage[key] = value;
-    return new Future.immediate(null);
+    return new Future.value(null);
   }
 
   @override
   Future<String> getValue(String key) =>
-      new Future.immediate(window.localStorage[key]);
+      new Future.value(window.localStorage[key]);
 
   @override
   void trackAnalyticsEvent(String category, String action, [String label, int value]) {
