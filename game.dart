@@ -149,10 +149,7 @@ bool _processUrlHash(bool forceReload) {
       break;
     case '#big':
       if(forceReload) {
-        // BUGBUG: https://github.com/dart-lang/pop-pop-win/issues/26
-        // DARTBUG: http://code.google.com/p/dart/issues/detail?id=5551
-        // would love to force a reload here, but we're blocked by a bug
-        // loc.reload();
+        loc.reload();
       }
       return true;
     case '#about':
