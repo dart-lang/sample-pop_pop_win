@@ -367,13 +367,15 @@
     // TODO(vsm): Add a more robust check for a local SendPortSync.
     if ("receivePort" in port) {
       // Local function.
-      return proxiedObjectTable.get(id);
+      return unbind(proxiedObjectTable.get(id));
     } else {
       // Remote function.  Forward to its port.
       var f = function () {
         var depth = enterScope();
         try {
-          var args = Array.prototype.slice.apply(arguments).map(serialize);
+          var args = Array.prototype.slice.apply(arguments);
+          args.splice(0, 0, this);
+          args = args.map(serialize);
           var result = port.callSync([id, '#call', args]);
           if (result[0] == 'throws') throw deserialize(result[1]);
           return deserialize(result[1]);
