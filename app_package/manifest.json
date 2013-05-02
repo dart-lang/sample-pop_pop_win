@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Pop, Pop, Win!",
-  "version": "1.4",
+  "version": "1.5",
   "minimum_chrome_version": "25",
   "icons": {
   	"16": "icons/icon_16.png",
