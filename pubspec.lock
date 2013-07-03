@@ -4,11 +4,11 @@ packages:
   args:
     description: args
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
   bot:
     description: bot
     source: hosted
-    version: "0.21.0"
+    version: "0.22.0"
   bot_io:
     description: bot_io
     source: hosted
@@ -20,11 +20,11 @@ packages:
   browser:
     description: browser
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
   crypto:
     description: crypto
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
   hop:
     description: hop
     source: hosted
@@ -32,20 +32,20 @@ packages:
   js:
     description: js
     source: hosted
-    version: "0.0.22"
+    version: "0.0.23"
   logging:
     description: logging
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
   meta:
     description: meta
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
   pathos:
     description: pathos
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
   unittest:
     description: unittest
     source: hosted
-    version: "0.5.13"
+    version: "0.6.2"
