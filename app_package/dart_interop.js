@@ -138,7 +138,6 @@
     delete this.globalIds[id];
     delete this.map[id];
     this._deletedCount++;
-    return old;
   }
 
   // Gets the object or function corresponding to this ID.
@@ -435,10 +434,10 @@
                             args[5], args[6]);
     } else if (args.length === 8) {
       ret = new constructor(args[0], args[1], args[2], args[3], args[4],
-                            args[5], args[6]);
+                            args[5], args[6], args[7]);
     } else if (args.length === 9) {
       ret = new constructor(args[0], args[1], args[2], args[3], args[4],
-                            args[5], args[6]);
+                            args[5], args[6], args[7], args[8]);
     } else if (args.length === 10) {
       ret = new constructor(args[0], args[1], args[2], args[3], args[4],
                             args[5], args[6], args[7], args[8], args[9]);
@@ -481,7 +480,14 @@
     return obj instanceof type;
   }
 
-  // Return true if a JavaScript proxy is instance of a given type (instanceof).
+  // Return true if a JavaScript proxy has a given property.
+  function proxyHasProperty(args) {
+    var obj = unbind(deserialize(args[0]));
+    var member = unbind(deserialize(args[1]));
+    return member in obj;
+  }
+
+  // Delete a given property of object.
   function proxyDeleteProperty(args) {
     var obj = unbind(deserialize(args[0]));
     var member = unbind(deserialize(args[1]));
@@ -554,18 +560,17 @@
   makeGlobalPort('dart-js-proxy-count', proxyCount);
   makeGlobalPort('dart-js-equals', proxyEquals);
   makeGlobalPort('dart-js-instanceof', proxyInstanceof);
+  makeGlobalPort('dart-js-has-property', proxyHasProperty);
   makeGlobalPort('dart-js-delete-property', proxyDeleteProperty);
   makeGlobalPort('dart-js-convert', proxyConvert);
   makeGlobalPort('dart-js-enter-scope', enterJavaScriptScope);
   makeGlobalPort('dart-js-exit-scope', exitJavaScriptScope);
   makeGlobalPort('dart-js-globalize', function(data) {
-    if (data[0] == "objref") return proxiedObjectTable.globalize(data[1]);
-    // TODO(vsm): Do we ever need to globalize functions?
+    if (data[0] == "objref" || data[0] == "funcref") return proxiedObjectTable.globalize(data[1]);
     throw 'Illegal type: ' + data[0];
   });
   makeGlobalPort('dart-js-invalidate', function(data) {
-    if (data[0] == "objref") return proxiedObjectTable.invalidate(data[1]);
-    // TODO(vsm): Do we ever need to globalize functions?
+    if (data[0] == "objref" || data[0] == "funcref") return proxiedObjectTable.invalidate(data[1]);
     throw 'Illegal type: ' + data[0];
   });
 })();
