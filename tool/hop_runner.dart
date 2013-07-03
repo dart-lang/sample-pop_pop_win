@@ -11,18 +11,18 @@ void main() {
   //
   // Analyzer
   //
-  addTask('analyze_libs', createDartAnalyzerTask(_getLibs));
+  addTask('analyze_libs', createAnalyzerTask(_getLibs));
 
   //
   // Dart2js
   //
-  addTask('dart2js', createDart2JsTask(['web/game_web.dart'],
+  addTask('dart2js', createDartCompilerTask(['web/game_web.dart'],
       minify: true, liveTypeAnalysis: true, rejectDeprecatedFeatures: true));
 
   //
   // Dart2js - App
   //
-  addTask('app_dart2js', createDart2JsTask(['app_package/game_app.dart'],
+  addTask('app_dart2js', createDartCompilerTask(['app_package/game_app.dart'],
       minify: true,
       allowUnsafeEval: false,
       liveTypeAnalysis: true,
