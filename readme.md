@@ -7,18 +7,6 @@ in [Dart](http://www.dartlang.org).
 
 [![](https://drone.io/kevmoo/pop-pop-win/status.png)](https://drone.io/kevmoo/pop-pop-win/latest)
 
-## Getting the code
-
-_Pop, Pop, Win!_ (PPW) uses the
-[Bag of Tricks](https://github.com/kevmoo/bot.dart) library. Make sure you run
-`pub update` before you try to run tests, build, etc.
-
-The code currently works against Dart build
-[0.6.2.1 r24646](https://gsdview.appspot.com/dart-editor-archive-trunk/24646/)
-released on 1 July, 2013.
-
-Using other versions of the Dart tools with this source code might cause problems.
-
 ## Play
 
  * [dart-lang.github.io/pop-pop-win](http://dart-lang.github.io/pop-pop-win/)
