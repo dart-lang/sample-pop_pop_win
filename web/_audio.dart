@@ -95,10 +95,7 @@ class _Audio {
       final buffer = _buffers[name];
       assert(buffer != null);
       source.buffer = buffer;
-      // DARTBUG: http://code.google.com/p/dart/issues/detail?id=6728
-      // Docs claim the 3rd param (input) can be undefined, but an exception is
-      // throw
-      source.connect(_audioContext.destination, 0, 0);
+      source.connectNode(_audioContext.destination);
       source.start(0);
     }
   }
