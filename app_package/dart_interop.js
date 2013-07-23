@@ -534,7 +534,7 @@
   function enterScope() {
     enterJavaScriptScope();
     if (!_dartEnterScopePort) {
-      _dartEnterScopePort = window.lookupPort('js-dart-enter-scope');
+      _dartEnterScopePort = window.lookupPort('js-dart-interop-enter-scope');
     }
     return _dartEnterScopePort.callSync([]);
   }
@@ -550,26 +550,26 @@
   function exitScope(depth) {
     exitJavaScriptScope();
     if (!_dartExitScopePort) {
-      _dartExitScopePort = window.lookupPort('js-dart-exit-scope');
+      _dartExitScopePort = window.lookupPort('js-dart-interop-exit-scope');
     }
     return _dartExitScopePort.callSync([ depth ]);
   }
 
-  makeGlobalPort('dart-js-context', context);
-  makeGlobalPort('dart-js-create', construct);
-  makeGlobalPort('dart-js-proxy-count', proxyCount);
-  makeGlobalPort('dart-js-equals', proxyEquals);
-  makeGlobalPort('dart-js-instanceof', proxyInstanceof);
-  makeGlobalPort('dart-js-has-property', proxyHasProperty);
-  makeGlobalPort('dart-js-delete-property', proxyDeleteProperty);
-  makeGlobalPort('dart-js-convert', proxyConvert);
-  makeGlobalPort('dart-js-enter-scope', enterJavaScriptScope);
-  makeGlobalPort('dart-js-exit-scope', exitJavaScriptScope);
-  makeGlobalPort('dart-js-globalize', function(data) {
+  makeGlobalPort('dart-js-interop-context', context);
+  makeGlobalPort('dart-js-interop-create', construct);
+  makeGlobalPort('dart-js-interop-proxy-count', proxyCount);
+  makeGlobalPort('dart-js-interop-equals', proxyEquals);
+  makeGlobalPort('dart-js-interop-instanceof', proxyInstanceof);
+  makeGlobalPort('dart-js-interop-has-property', proxyHasProperty);
+  makeGlobalPort('dart-js-interop-delete-property', proxyDeleteProperty);
+  makeGlobalPort('dart-js-interop-convert', proxyConvert);
+  makeGlobalPort('dart-js-interop-enter-scope', enterJavaScriptScope);
+  makeGlobalPort('dart-js-interop-exit-scope', exitJavaScriptScope);
+  makeGlobalPort('dart-js-interop-globalize', function(data) {
     if (data[0] == "objref" || data[0] == "funcref") return proxiedObjectTable.globalize(data[1]);
     throw 'Illegal type: ' + data[0];
   });
-  makeGlobalPort('dart-js-invalidate', function(data) {
+  makeGlobalPort('dart-js-interop-invalidate', function(data) {
     if (data[0] == "objref" || data[0] == "funcref") return proxiedObjectTable.invalidate(data[1]);
     throw 'Illegal type: ' + data[0];
   });
