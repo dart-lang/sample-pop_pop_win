@@ -1,6 +1,5 @@
 import 'dart:html';
 import 'package:poppopwin/html.dart';
-import 'package:poppopwin/poppopwin.dart';
 
 main(){
   final int w = 16, h = 16, m = 40;

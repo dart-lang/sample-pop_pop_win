@@ -1,11 +1,8 @@
 library ppw_html;
 
 import 'dart:async';
-import 'dart:collection';
 import 'dart:html';
-import 'dart:math' as math;
 import 'package:bot/bot.dart';
-import 'package:bot_web/bot_html.dart';
 import 'poppopwin.dart';
 import 'platform_target.dart';
 
