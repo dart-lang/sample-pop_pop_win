@@ -17,7 +17,7 @@ void main() {
   // Dart2js
   //
   addTask('dart2js', createDartCompilerTask(['web/game_web.dart'],
-      minify: true, liveTypeAnalysis: true, rejectDeprecatedFeatures: true));
+      minify: true, liveTypeAnalysis: true));
 
   //
   // Dart2js - App
@@ -25,9 +25,7 @@ void main() {
   addTask('app_dart2js', createDartCompilerTask(['app_package/game_app.dart'],
       minify: true,
       allowUnsafeEval: false,
-      liveTypeAnalysis: true,
-      rejectDeprecatedFeatures: true,
-      packageRoot: 'packages/'
+      liveTypeAnalysis: true
   ));
 
   //
