@@ -31,7 +31,7 @@ class BoardElement extends ParentThing {
         final se = new SquareElement(coords.item1, coords.item2);
         se.registerParent(this);
 
-        _parent.wireSquareMouseEvent(se);
+        _gameElement.wireSquareMouseEvent(se);
 
         // position the square
         final etx = se.addTransform();
@@ -47,9 +47,9 @@ class BoardElement extends ParentThing {
     super.update();
   }
 
-  GameElement get _parent => (parent as CanvasThing).parent;
+  GameElement get _gameElement => (parent as CanvasThing).parent;
 
-  Game get _game => _parent._game;
+  Game get _game => _gameElement._game;
 
   bool get _elementsNeedUpdate {
     assert(_game != null);
@@ -58,6 +58,6 @@ class BoardElement extends ParentThing {
         _elements.height != _game.field.height;
   }
 
-  TextureData get _textureData => _parent._textureData;
+  TextureData get _textureData => _gameElement._textureData;
 
 }

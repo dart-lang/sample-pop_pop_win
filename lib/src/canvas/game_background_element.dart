@@ -6,19 +6,19 @@ class GameBackgroundElement extends Thing {
   }
 
   void update() {
-    if(size != this._parent.size) {
-      size = this._parent.size;
+    if(size != this._gameElement.size) {
+      size = this._gameElement.size;
     }
   }
 
   void drawOverride(CanvasRenderingContext2D ctx) {
-    final rightBgLoc = SquareElement._size * (_parent._game.field.width -1) +
+    final rightBgLoc = SquareElement._size * (_gameElement._game.field.width -1) +
         GameElement._edgeOffset;
-    final bottomBgLoc = SquareElement._size * (_parent._game.field.height -1) +
+    final bottomBgLoc = SquareElement._size * (_gameElement._game.field.height -1) +
         GameElement._edgeOffset;
 
     ctx.save();
-    ctx.translate(_parent._scaledBoardOffset.x, _parent._scaledBoardOffset.y);
+    ctx.translate(_gameElement._scaledBoardOffset.x, _gameElement._scaledBoardOffset.y);
 
     _textureData.drawTextureKeyAt(ctx, 'game_board_corner_top_left.png');
 
@@ -30,7 +30,7 @@ class GameBackgroundElement extends Thing {
     _textureData.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
         new Coordinate(rightBgLoc, bottomBgLoc));
 
-    for(var i = 1; i < _parent._game.field.width - 1; i++) {
+    for(var i = 1; i < _gameElement._game.field.width - 1; i++) {
       final xLoc = SquareElement._size * i + GameElement._edgeOffset;
       _textureData.drawTextureKeyAt(ctx, 'game_board_side_top.png',
           new Coordinate(xLoc, 0));
@@ -38,7 +38,7 @@ class GameBackgroundElement extends Thing {
           new Coordinate(xLoc, bottomBgLoc));
     }
 
-    for(var i = 1; i < _parent._game.field.height - 1; i++) {
+    for(var i = 1; i < _gameElement._game.field.height - 1; i++) {
       final yLoc = SquareElement._size * i + GameElement._edgeOffset;
       _textureData.drawTextureKeyAt(ctx, 'game_board_side_left.png',
           new Coordinate(0, yLoc));
@@ -54,7 +54,7 @@ class GameBackgroundElement extends Thing {
 
     ctx.save();
     // top left
-    ctx.transform(_parent._scale, 0, 0, _parent._scale, 0, 0);
+    ctx.transform(_gameElement._scale, 0, 0, _gameElement._scale, 0, 0);
     _drawCorner(ctx);
 
     // right flip
@@ -85,7 +85,7 @@ class GameBackgroundElement extends Thing {
         new Coordinate(0, GameElement._boardOffset.y));
   }
 
-  GameElement get _parent => (parent as CanvasThing).parent;
+  GameElement get _gameElement => (parent as CanvasThing).parent;
 
-  TextureData get _textureData => _parent._textureData;
+  TextureData get _textureData => _gameElement._textureData;
 }

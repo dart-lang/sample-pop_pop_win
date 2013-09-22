@@ -8,11 +8,11 @@ class GameTitleElement extends Thing {
     _textureData.drawTextureKeyAt(ctx, 'logo_win.png');
   }
 
-  GameElement get _parent => (parent as CanvasThing).parent;
+  GameElement get _gameElement => (parent as CanvasThing).parent;
 
-  TextureData get _textureData => _parent._textureData;
+  TextureData get _textureData => _gameElement._textureData;
 
-  Game get _game => _parent._game;
+  Game get _game => _gameElement._game;
 
   void _mouseDirectlyOver(args) {
     invalidateDraw();
