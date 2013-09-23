@@ -21,8 +21,8 @@
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-26406144-14']);
     _gaq.push(['_trackPageview']);
-    window.pushAnalytics = function(args) {
-      _gaq.push(args);
+    window.pushAnalytics = function() {
+      _gaq.push(arguments);
     };
   </script>
   </head>
