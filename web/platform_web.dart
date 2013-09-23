@@ -2,8 +2,8 @@ library ppw_platform_web;
 
 import 'dart:async';
 import 'dart:html';
+import 'dart:js' as js;
 import 'package:meta/meta.dart';
-import 'package:js/js.dart' as js;
 import 'package:poppopwin/platform_target.dart';
 
 class PlatformWeb extends PlatformTarget {
@@ -28,6 +28,6 @@ class PlatformWeb extends PlatformTarget {
 
   @override
   void trackAnalyticsEvent(String category, String action, [String label, int value]) {
-    js.context['pushAnalytics'](js.array(['_trackEvent', category, action, label, value]));
+    js.context.callMethod('pushAnalytics', ['_trackEvent', category, action, label, value]);
   }
 }
