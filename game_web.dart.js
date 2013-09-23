@@ -6564,7 +6564,10 @@ $is_X0:true}}],["ppw_platform_web","platform_web.dart",,U,{Il:{"":"Fu;Ph",
 PC:function(a,b){window.localStorage.setItem(a,b)
 return P.Ab(null,null)},
 yY:function(a){return P.Ab(window.localStorage.getItem(a),null)},
-ba:function(a,b,c,d){new P.E4(window).V7("pushAnalytics",["_trackEvent",a,b,c,d])},
+ba:function(a,b,c,d){var z=["send","event",a,b]
+z.push(c)
+if(d!=null)z.push(d)
+new P.E4(window).V7("ga",z)},
 uP:function(a,b,c){return this.ba(a,b,c,null)}}}],])
 I.$finishClasses($$,$,null)
 $$=null

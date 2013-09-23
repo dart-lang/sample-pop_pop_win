@@ -28,6 +28,16 @@ class PlatformWeb extends PlatformTarget {
 
   @override
   void trackAnalyticsEvent(String category, String action, [String label, int value]) {
-    js.context.callMethod('pushAnalytics', ['_trackEvent', category, action, label, value]);
+    var args = ['send', 'event', category, action];
+    if(label != null) {
+      args.add(label);
+    }
+
+    if(value != null) {
+      assert(label != null);
+      args.add(value);
+    }
+
+    js.context.callMethod('ga', args);
   }
 }
