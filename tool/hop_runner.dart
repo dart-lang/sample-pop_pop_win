@@ -24,7 +24,6 @@ void main() {
   //
   addTask('app_dart2js', createDartCompilerTask(['app_package/game_app.dart'],
       minify: true,
-      allowUnsafeEval: false,
       liveTypeAnalysis: true
   ));
 
