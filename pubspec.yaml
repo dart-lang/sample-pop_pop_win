@@ -3,7 +3,7 @@ author: Kevin Moore <kevin@thinkpixellab.com>
 description: '"Pop, Pop, Win!" is an implementation of Minesweeper in Dart.'
 homepage: https://github.com/dart-lang/pop-pop-win
 environment:
-  sdk: '>=0.7.6'
+  sdk: '>=0.8.1'
 dependencies:
   bot: '>=0.23.1'
   bot_web: '>=0.20.5'
