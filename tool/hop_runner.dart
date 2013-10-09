@@ -33,8 +33,7 @@ void main() {
 
   addTask('app_update_js', createCopyJSTask('app_package',
       browserDart: true,
-      browserInterop: true,
-      jsDartInterop: true));
+      browserInterop: true));
 
   //
   // gh_pages
