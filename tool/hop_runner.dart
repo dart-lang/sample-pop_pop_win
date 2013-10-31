@@ -4,7 +4,7 @@ import 'package:hop/hop.dart';
 import 'package:hop/hop_tasks.dart';
 import '../test/console_test_harness.dart' as test_console;
 
-void main() {
+void main(List<String> args) {
 
   addTask('test', createUnitTestTask(test_console.testCore));
 
@@ -41,7 +41,7 @@ void main() {
   addAsyncTask('pages', (ctx) =>
       branchForDir(ctx, 'master', 'web', 'gh-pages'));
 
-  runHop();
+  runHop(args);
 }
 
 

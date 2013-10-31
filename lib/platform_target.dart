@@ -1,7 +1,6 @@
 library ppw_platform;
 
 import 'dart:async';
-import 'package:meta/meta.dart';
 
 abstract class PlatformTarget {
   bool _initialized = false;

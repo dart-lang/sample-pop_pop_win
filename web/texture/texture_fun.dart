@@ -29,9 +29,9 @@ _doLoad() {
   final textures = getTextures(transparentImage, opaqueImage, staticTransparentImage);
   _textureData = new TextureData(textures);
 
-  CanvasElement canvasElement = query('#textureCanvas');
+  CanvasElement canvasElement = querySelector('#textureCanvas');
   canvasElement.onClick.listen((args) => _next());
-  __ctx = canvasElement.context2d;
+  __ctx = canvasElement.context2D;
 
   _keys = new List<String>.from(textures.keys);
 
