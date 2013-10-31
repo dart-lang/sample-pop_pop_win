@@ -3,7 +3,6 @@ library ppw_platform_web;
 import 'dart:async';
 import 'dart:html';
 import 'dart:js' as js;
-import 'package:meta/meta.dart';
 import 'package:poppopwin/platform_target.dart';
 
 class PlatformWeb extends PlatformTarget {
