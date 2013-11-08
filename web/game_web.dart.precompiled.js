@@ -1461,15 +1461,9 @@ this.qv=e
 this.k9=f
 this.fP=g
 return this},
-XX:function(a){var z,y,x,w,v
-z=a.x
-y=J.Wx(z)
-x=y.U(z,this.vi)
-w=a.y
-v=J.Wx(w)
-w=new X.UC(J.WB(J.WB(x,v.U(w,this.Vi)),this.k9),J.WB(J.WB(y.U(z,this.p6),v.U(w,this.qv)),this.fP))
-H.VM(w,[null])
-return w},
+XX:function(a){var z=new X.UC(J.WB(J.WB(J.p0(a.gx(a),this.vi),J.p0(a.gy(a),this.Vi)),this.k9),J.WB(J.WB(J.p0(a.gx(a),this.p6),J.p0(a.gy(a),this.qv)),this.fP))
+H.VM(z,[null])
+return z},
 JK:function(){var z,y,x,w,v,u,t
 z=this.vi
 y=this.qv
@@ -1663,7 +1657,7 @@ $isEH:true}}],["bot_retained","package:bot_web/bot_retained.dart",,B,{Lv:functio
 X.xl("stage")
 if(a==null)H.vh(X.zT("stage"))
 z=b!=null
-if(z)y=X.GE(b.x)&&X.GE(b.y)
+if(z)y=X.GE(b.gx(b))&&X.GE(b.gy(b))
 else y=!0
 X.De(y,"coordinate",null)
 x=$.Aa().ox(a)
@@ -1708,22 +1702,19 @@ a.k8(z,!0)},
 $isEH:true,
 $is_aB:true},ap:{"":"a;vH,Jh,BO,f9",
 lo:function(a){var z,y,x,w,v,u
-z=J.HF(a)
-z=new X.UC(z.gx(z),z.gy(z))
-H.VM(z,[null])
-y=this.vH
-x=B.Lv(y,z)
-z=this.BO
-w=z!=null?$.Xe().ox(z):null
-z=x.length
-if(z>0){v=new B.a9(x[0],a)
-for(z=new H.a7(x,z,0,null);z.G();){a=z.mD
+z=this.vH
+y=B.Lv(z,J.HF(a))
+x=this.BO
+w=x!=null?$.Xe().ox(x):null
+x=y.length
+if(x>0){v=new B.a9(y[0],a)
+for(x=new H.a7(y,x,0,null);x.G();){a=x.mD
 u=$.Qe()
 u.toString
 a.B9(u,v)
-if(w==null)w=$.Xe().ox(a)}}z=$.Xe()
-z.toString
-y.k8(z,w)},
+if(w==null)w=$.Xe().ox(a)}}x=$.Xe()
+x.toString
+z.k8(x,w)},
 gyZ:function(){return new H.Pm(this,B.ap.prototype.lo,null,"lo")},
 If:function(a){var z,y
 z=this.vH
@@ -1735,30 +1726,24 @@ y=$.Xe()
 y.toString
 z.k8(y,null)},
 gvd:function(){return new H.Pm(this,B.ap.prototype.If,null,"If")},
-eK:function(a){var z,y,x
-z=J.HF(a)
-z=new X.UC(z.gx(z),z.gy(z))
-H.VM(z,[null])
-y=B.Lv(this.vH,z)
-y.toString
-x=H.Sz(y,new B.PW(),new B.Rp())
-if(x!=null){this.Jt(x,a)
-if(J.xC(x,this.Jh))this.m3(x,a)
+eK:function(a){var z,y
+z=B.Lv(this.vH,J.HF(a))
+z.toString
+y=H.Sz(z,new B.PW(),new B.Rp())
+if(y!=null){this.Jt(y,a)
+if(J.xC(y,this.Jh))this.m3(y,a)
 this.Jh=null}},
 grR:function(){return new H.Pm(this,B.ap.prototype.eK,null,"eK")},
-YI:function(a){var z,y,x,w,v
-z=J.HF(a)
-y=new X.UC(z.gx(z),z.gy(z))
-H.VM(y,[null])
-x=B.Lv(this.vH,y)
-for(z=new H.a7(x,x.length,0,null);z.G();){w=z.mD
-if($.QT().ox(w)===!0){this.BO=w
+YI:function(a){var z,y,x,w
+z=B.Lv(this.vH,J.HF(a))
+for(y=new H.a7(z,z.length,0,null);y.G();){x=y.mD
+if($.QT().ox(x)===!0){this.BO=x
 this.GK(this.BO,a)
-break}else if($.TV().ox(w)===!0){this.Jh=w
-z=this.Jh
-v=$.jD()
-v.toString
-z.B9(v,new B.a9(z,a))
+break}else if($.TV().ox(x)===!0){this.Jh=x
+y=this.Jh
+w=$.jD()
+w.toString
+y.B9(w,new B.a9(y,a))
 break}}},
 gmr:function(){return new H.Pm(this,B.ap.prototype.YI,null,"YI")},
 Jt:function(a,b){var z=$.i9()
