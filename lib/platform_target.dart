@@ -22,8 +22,10 @@ abstract class PlatformTarget {
 
   Future<String> getValue(String key);
 
-  void trackAnalyticsEvent(String category, String action, [String label, int value]) {
-    print('Analytics:: category: $category; action: $action, label: $label, value: $value');
+  void trackAnalyticsEvent(String category, String action, [String label,
+                                                            int value]) {
+    print('Analytics:: '
+        'category: $category; action: $action; label: $label; value: $value');
   }
 }
 
@@ -33,21 +35,12 @@ class _DefaultPlatform extends PlatformTarget {
   _DefaultPlatform() : super.base();
 
   @override
-  Future clearValues() {
-    return new Future(_values.clear);
-  }
+  Future clearValues() => new Future(_values.clear);
 
   @override
-  Future setValue(String key, String value) {
-    return new Future(() {
-      _values[key] = value;
-    });
-  }
+  Future setValue(String key, String value) =>
+      new Future(() { _values[key] = value; });
 
   @override
-  Future<String> getValue(String key) {
-    return new Future(() {
-      return _values[key];
-    });
-  }
+  Future<String> getValue(String key) => new Future(() => _values[key]);
 }

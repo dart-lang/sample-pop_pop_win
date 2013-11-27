@@ -12,13 +12,13 @@ class PlatformWeb extends PlatformTarget {
   @override
   Future clearValues() {
     window.localStorage.clear();
-    return new Future.value(null);
+    return new Future.value();
   }
 
   @override
   Future setValue(String key, String value) {
     window.localStorage[key] = value;
-    return new Future.value(null);
+    return new Future.value();
   }
 
   @override
@@ -26,7 +26,8 @@ class PlatformWeb extends PlatformTarget {
       new Future.value(window.localStorage[key]);
 
   @override
-  void trackAnalyticsEvent(String category, String action, [String label, int value]) {
+  void trackAnalyticsEvent(String category, String action, [String label,
+                                                            int value]) {
     var args = ['send', 'event', category, action];
     if(label != null) {
       args.add(label);
