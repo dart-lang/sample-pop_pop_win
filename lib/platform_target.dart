@@ -27,10 +27,20 @@ abstract class PlatformTarget {
     print('Analytics:: '
         'category: $category; action: $action; label: $label; value: $value');
   }
+
+  bool get renderBig;
+
+  bool get showAbout;
+
+  void toggleAbout([bool value]);
+
+  Stream get aboutChanged;
 }
 
 class _DefaultPlatform extends PlatformTarget {
   final Map<String, String> _values = new Map<String, String>();
+  final StreamController _aboutController = new StreamController(sync: true);
+  bool _about = false;
 
   _DefaultPlatform() : super.base();
 
@@ -43,4 +53,19 @@ class _DefaultPlatform extends PlatformTarget {
 
   @override
   Future<String> getValue(String key) => new Future(() => _values[key]);
+
+  bool get renderBig => false;
+
+  void toggleAbout([bool value]) {
+    assert(_about != null);
+    if(value == null) {
+      value = !_about;
+    }
+    _about = value;
+    _aboutController.add(null);
+  }
+
+  bool get showAbout => _about;
+
+  Stream get aboutChanged => _aboutController.stream;
 }
