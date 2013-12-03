@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Pop, Pop, Win!",
-  "description" : "A new spin on the classic Minesweeper game with darts and balloons."
+  "description" : "A new spin on the classic Minesweeper game with darts and balloons.",
   "version": "1.9.1",
   "minimum_chrome_version": "27",
   "icons": {
