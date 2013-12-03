@@ -10,8 +10,10 @@ in [Dart](http://www.dartlang.org).
 ## Play
 
  * [dart-lang.github.io/pop-pop-win](http://dart-lang.github.io/pop-pop-win/)
- * This is a version compiled to Javascript and should work in any modern browser.
- * This version does not work in Dartium (The custom Chromium version for Dart). The associated code files are not deployed.
+     * This is a version compiled to Javascript and should work in any modern browser.
+     * This version does not work in Dartium (The custom Chromium version for Dart). The associated code files are not deployed.
+ * [Chrome App](https://chrome.google.com/webstore/detail/pop-pop-win/mbghebmoaofincenahdohhpkljnkbbcn)
+     * Install **Pop, Pop, Win!** as a Chrome App from the Chrome Web Store.
 
 ## Interaction
 
