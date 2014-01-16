@@ -1,5 +1,5 @@
 name: poppopwin
-author: Kevin Moore <kevin@thinkpixellab.com>
+author: Kevin Moore <kevmoo@google.com>
 homepage: https://github.com/dart-lang/pop-pop-win
 description: '"Pop, Pop, Win!" is an implementation of Minesweeper in Dart.'
 environment:
