@@ -9,7 +9,7 @@ part 'test_field.dart';
 part 'test_game.dart';
 
 runppwTests() {
-  group('ppw', (){
+  group('ppw', () {
     TestField.run();
     TestGame.run();
   });

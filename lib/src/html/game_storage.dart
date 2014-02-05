@@ -49,7 +49,7 @@ class GameStorage {
 
   Future<int> _getIntValue(String key, [int defaultValue = 0]) {
     assert(key != null);
-    if(_cache.containsKey(key)) {
+    if (_cache.containsKey(key)) {
       return new Future.value(_parseValue(_cache[key], defaultValue));
     }
 
@@ -77,7 +77,7 @@ class GameStorage {
   static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";
 
   static int _parseValue(String value, int defaultValue) {
-    if(value == null) {
+    if (value == null) {
       return defaultValue;
     } else {
       return int.parse(value);

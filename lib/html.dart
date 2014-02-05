@@ -22,7 +22,7 @@ void initPlatform(PlatformTarget value) {
 }
 
 PlatformTarget get targetPlatform {
-  if(_platformImpl == null) {
+  if (_platformImpl == null) {
     initPlatform(new PlatformTarget());
   }
   return _platformImpl;

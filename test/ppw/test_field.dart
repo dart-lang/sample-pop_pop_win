@@ -43,9 +43,9 @@ class TestField {
     final f = new Field();
 
     int bombCount = 0;
-    for(int x = 0; x < 16; x++) {
-      for(int y = 0; y < 16; y++) {
-        if(f.get(x, y)) {
+    for (int x = 0; x < 16; x++) {
+      for (int y = 0; y < 16; y++) {
+        if (f.get(x, y)) {
           bombCount++;
         }
       }
@@ -65,8 +65,8 @@ class TestField {
 
     expect(f.bombCount, equals(13));
 
-    for(int x = 0; x < f.width; x++) {
-      for(int y = 0; y < f.height; y++) {
+    for (int x = 0; x < f.width; x++) {
+      for (int y = 0; y < f.height; y++) {
         final i = x + y * f.width;
         final adj = f.getAdjacentCount(x, y);
         expect(adj, equals(sample[i]));

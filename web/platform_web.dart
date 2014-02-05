@@ -35,11 +35,11 @@ class PlatformWeb extends PlatformTarget {
   void trackAnalyticsEvent(String category, String action, [String label,
                                                             int value]) {
     var args = ['send', 'event', category, action];
-    if(label != null) {
+    if (label != null) {
       args.add(label);
     }
 
-    if(value != null) {
+    if (value != null) {
       assert(label != null);
       args.add(value);
     }
@@ -59,13 +59,13 @@ class PlatformWeb extends PlatformTarget {
     final hash = loc.hash.length == 0 ? '#' : loc.hash;
 
     final isOpen = hash == _ABOUT_HASH;
-    if(value == null) {
+    if (value == null) {
       // then toggle the current value
       value = !isOpen;
     }
 
     var targetHash = value ? _ABOUT_HASH : '#';
-    if(targetHash != hash) {
+    if (targetHash != hash) {
       loc.assign(targetHash);
     }
     _aboutController.add(null);
@@ -79,7 +79,7 @@ class PlatformWeb extends PlatformTarget {
     final href = loc.href;
 
     final History history = window.history;
-    switch(hash) {
+    switch (hash) {
       case "#reset":
         assert(href.endsWith(hash));
         var newLoc = href.substring(0, href.length - hash.length);

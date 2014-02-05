@@ -146,18 +146,18 @@ class TestGame {
   // Test 5 random fields five times
   static void _testRandomField() {
     final rnd = new Random();
-    for(int i = 0; i < 5; i++) {
+    for (int i = 0; i < 5; i++) {
       final f = new Field();
 
-      for(int j = 0; j < 5; j++) {
+      for (int j = 0; j < 5; j++) {
         final g = new Game(f);
-        while(g.revealsLeft > 0) {
+        while (g.revealsLeft > 0) {
           final x = rnd.nextInt(f.width);
           final y = rnd.nextInt(f.height);
-          if(g.getSquareState(x, y) == SquareState.hidden) {
-            if(f.get(x, y)) {
+          if (g.getSquareState(x, y) == SquareState.hidden) {
+            if (f.get(x, y)) {
               g.setFlag(x, y, true);
-            } else if(!f.get(x, y)) {
+            } else if (!f.get(x, y)) {
               g.reveal(x, y);
             }
           }
@@ -189,9 +189,9 @@ class TestGame {
     expect(g.state, equals(GameState.reset));
     expect(g.duration, isNull);
 
-    for(int x = 0; x < f.width; x++) {
-      for(int y = 0; y < f.height; y++) {
-        expect(g.getSquareState(x,y), equals(SquareState.hidden));
+    for (int x = 0; x < f.width; x++) {
+      for (int y = 0; y < f.height; y++) {
+        expect(g.getSquareState(x, y), equals(SquareState.hidden));
       }
     }
   }
@@ -199,9 +199,9 @@ class TestGame {
   static void _testSetFlag() {
     final g = new Game(TestField.getSampleField());
 
-    expect(g.getSquareState(0,0), equals(SquareState.hidden));
+    expect(g.getSquareState(0, 0), equals(SquareState.hidden));
     g.setFlag(0, 0, true);
-    expect(g.getSquareState(0,0), equals(SquareState.flagged));
+    expect(g.getSquareState(0, 0), equals(SquareState.flagged));
     expect(g.bombsLeft, equals(12));
     expect(g.state, equals(GameState.started));
   }
@@ -209,34 +209,34 @@ class TestGame {
   static void _testCannotRevealFlagged() {
     final g = new Game(TestField.getSampleField());
 
-    expect(g.getSquareState(0,0), equals(SquareState.hidden));
+    expect(g.getSquareState(0, 0), equals(SquareState.hidden));
     g.setFlag(0, 0, true);
-    expect(g.getSquareState(0,0), equals(SquareState.flagged));
+    expect(g.getSquareState(0, 0), equals(SquareState.flagged));
     expect(g.bombsLeft, equals(12));
     expect(g.state, equals(GameState.started));
 
-    expect(() => g.reveal(0,0), throwsException);
+    expect(() => g.reveal(0, 0), throwsException);
   }
 
   static void _testCannotFlagRevealed() {
     final g = new Game(TestField.getSampleField());
 
-    expect(g.getSquareState(1,1), equals(SquareState.hidden));
+    expect(g.getSquareState(1, 1), equals(SquareState.hidden));
     g.reveal(1, 1);
-    expect(g.getSquareState(1,1), equals(SquareState.revealed));
+    expect(g.getSquareState(1, 1), equals(SquareState.revealed));
     expect(g.state, equals(GameState.started));
 
-    expect(() => g.setFlag(1,1,true), throwsException);
+    expect(() => g.setFlag(1, 1, true), throwsException);
   }
 
   static void _testLoss() {
     final g = new Game(TestField.getSampleField());
 
-    expect(g.getSquareState(0,0), equals(SquareState.hidden));
+    expect(g.getSquareState(0, 0), equals(SquareState.hidden));
     var revealed = g.reveal(0, 0);
     expect(revealed, isNull);
     expect(g.state, equals(GameState.lost));
-    expect(g.getSquareState(0,0), equals(SquareState.bomb));
+    expect(g.getSquareState(0, 0), equals(SquareState.bomb));
   }
 
   static void _testWin() {
@@ -246,17 +246,17 @@ class TestGame {
     int bombsLleft = f.bombCount;
     expect(g.revealsLeft, equals(f.length - 13));
     int revealsLeft = g.revealsLeft;
-    for(int x = 0; x < f.width; x++) {
-      for(int y = 0; y < f.height; y++) {
-        if(f.get(x,y)) {
+    for (int x = 0; x < f.width; x++) {
+      for (int y = 0; y < f.height; y++) {
+        if (f.get(x, y)) {
           g.setFlag(x, y, true);
           bombsLleft--;
           expect(g.bombsLeft, equals(bombsLleft));
-        } else if(g.getSquareState(x, y) == SquareState.hidden) {
+        } else if (g.getSquareState(x, y) == SquareState.hidden) {
           revealsLeft -= g.reveal(x, y).length;
           expect(revealsLeft, equals(g.revealsLeft));
         } else {
-          expect(g.getSquareState(x,y), equals(SquareState.revealed));
+          expect(g.getSquareState(x, y), equals(SquareState.revealed));
         }
         expect(g.state, isNot(equals(GameState.reset)));
         expect(g.state, isNot(equals(GameState.lost)));

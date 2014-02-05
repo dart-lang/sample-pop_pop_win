@@ -15,8 +15,8 @@ class GameRoot extends GameManager {
     final stage = new Stage(canvasElement, rootElement);
     new MouseManager(stage);
 
-    return new GameRoot._internal(width, height, bombCount,
-        canvasElement, stage, rootElement);
+    return new GameRoot._internal(width, height, bombCount, canvasElement,
+        stage, rootElement);
   }
 
   GameRoot._internal(int width, int height, int bombCount,
@@ -54,7 +54,7 @@ class GameRoot extends GameManager {
   Stream get targetChanged => _gameElement.targetChanged;
 
   void onGameStateChanged(GameState newState) {
-    switch(newState) {
+    switch (newState) {
       case GameState.won:
         GameAudio.win();
         break;
@@ -87,7 +87,7 @@ class GameRoot extends GameManager {
   }
 
   void _requestFrame() {
-    if(!_frameRequested) {
+    if (!_frameRequested) {
       _frameRequested = true;
       window.requestAnimationFrame(_onFrame);
     }
@@ -112,7 +112,7 @@ class GameRoot extends GameManager {
 
     var updated = _stage.draw();
     _frameRequested = false;
-    if(updated) {
+    if (updated) {
       _requestFrame();
     }
   }
@@ -132,12 +132,12 @@ class GameRoot extends GameManager {
 
   void _mouseMoveHandler(ThingMouseEventArgs args) {
     bool showPointer = false;
-    if(!game.gameEnded && args.thing is SquareElement) {
+    if (!game.gameEnded && args.thing is SquareElement) {
       final SquareElement se = args.thing;
       showPointer = game.canReveal(se.x, se.y);
-    } else if(args.thing is NewGameElement) {
+    } else if (args.thing is NewGameElement) {
       showPointer = true;
-    } else if(args.thing is GameTitleElement) {
+    } else if (args.thing is GameTitleElement) {
       showPointer = true;
     }
     _updateCursor(showPointer);

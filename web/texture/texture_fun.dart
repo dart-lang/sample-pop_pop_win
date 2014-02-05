@@ -16,7 +16,7 @@ TextureData _textureData;
 
 main() {
   _imageLoader = new ImageLoader([_transparentTextureName, _opaqueTextureName,
-                                  _transparentStaticTexture]);
+      _transparentStaticTexture]);
   _imageLoader.loaded.listen((args) => _doLoad());
   _imageLoader.load();
 }
@@ -24,9 +24,11 @@ main() {
 _doLoad() {
   final opaqueImage = _imageLoader.getResource(_opaqueTextureName);
   final transparentImage = _imageLoader.getResource(_transparentTextureName);
-  final staticTransparentImage = _imageLoader.getResource(_transparentStaticTexture);
+  final staticTransparentImage =
+      _imageLoader.getResource(_transparentStaticTexture);
 
-  final textures = getTextures(transparentImage, opaqueImage, staticTransparentImage);
+  final textures = getTextures(transparentImage, opaqueImage,
+      staticTransparentImage);
   _textureData = new TextureData(textures);
 
   CanvasElement canvasElement = querySelector('#textureCanvas');
@@ -38,7 +40,7 @@ _doLoad() {
   _drawTexture();
 
   window.onKeyDown.listen((KeyboardEvent args) {
-    switch(args.keyCode) {
+    switch (args.keyCode) {
       case KeyCode.RIGHT:
         _next();
         break;

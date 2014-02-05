@@ -30,7 +30,7 @@ class PlatformApp extends PlatformTarget {
 
   void toggleAbout([bool value]) {
     assert(_about != null);
-    if(value == null) {
+    if (value == null) {
       value = !_about;
     }
     _about = value;

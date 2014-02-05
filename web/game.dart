@@ -31,8 +31,7 @@ void startGame(PlatformTarget platform) {
   _loadingBar.style.display = 'block';
   _loadingBar.style.width = '0';
 
-  _imageLoader = new ImageLoader([_TRANSPARENT_TEXTURE,
-                                  _OPAQUE_TEXTURE]);
+  _imageLoader = new ImageLoader([_TRANSPARENT_TEXTURE, _OPAQUE_TEXTURE]);
   _imageLoader.loaded.listen(_onLoaded);
   _imageLoader.progress.listen(_onProgress);
   _imageLoader.load();
@@ -55,7 +54,7 @@ void _onProgress(args) {
 }
 
 void _onLoaded(args) {
-  if(_imageLoader.state == ResourceLoader.StateLoaded && _audio.done) {
+  if (_imageLoader.state == ResourceLoader.StateLoaded && _audio.done) {
 
     //
     // load textures
@@ -100,13 +99,13 @@ void _runPPW(TextureData textureData) {
 }
 
 void _onPopupClick(MouseEvent args) {
-  if(!(args.toElement is AnchorElement)) {
+  if (!(args.toElement is AnchorElement)) {
     targetPlatform.toggleAbout(false);
   }
 }
 
 void _onKeyDown(KeyboardEvent args) {
-  switch(args.keyCode) {
+  switch (args.keyCode) {
     case 27: // esc
       targetPlatform.toggleAbout(false);
       break;
