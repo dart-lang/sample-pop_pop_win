@@ -65,7 +65,8 @@ void _onLoaded(args) {
     // already loaded. Used in CSS.
     final staticTransparentImage = new ImageElement(src: _TRANSPARENT_STATIC_TEXTURE);
 
-    final textures = getTextures(transparentImage, opaqueImage, staticTransparentImage);
+    final textures = getTextures(transparentImage, opaqueImage,
+        staticTransparentImage);
 
     final textureData = new TextureData(textures);
 

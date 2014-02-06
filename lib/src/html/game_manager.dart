@@ -67,9 +67,9 @@ abstract class GameManager {
     }
   }
 
-  void onNewBestTime(int value){}
+  void onNewBestTime(int value) {}
 
-  void onGameStateChanged(GameState value){}
+  void onGameStateChanged(GameState value) {}
 
   bool get _canClick {
     return _game.state == GameState.reset ||

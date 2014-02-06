@@ -318,11 +318,11 @@ class GameElement extends ParentThing {
 
     List<Coordinate> reveals = null;
 
-    if(alt) {
-      if(ss == SquareState.hidden || ss == SquareState.flagged) {
+    if (alt) {
+      if (ss == SquareState.hidden || ss == SquareState.flagged) {
         _toggleFlag(x, y);
-      } else if(ss == SquareState.revealed) {
-        if(game.canReveal(x, y)) {
+      } else if (ss == SquareState.revealed) {
+        if (game.canReveal(x, y)) {
           // get adjacent ballons
           final adjHidden = game.field.getAdjacentIndices(x, y)
               .map((i) {

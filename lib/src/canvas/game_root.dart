@@ -19,11 +19,11 @@ class GameRoot extends GameManager {
         stage, rootElement);
   }
 
-  GameRoot._internal(int width, int height, int bombCount,
-      this._canvas, this._stage, GameElement gameElement) :
-      this._gameElement = gameElement,
-      _gameElementTx = gameElement.addTransform(),
-      super(width, height, bombCount) {
+  GameRoot._internal(int width, int height, int
+      bombCount, this._canvas, this._stage, GameElement gameElement)
+      : this._gameElement = gameElement,
+        _gameElementTx = gameElement.addTransform(),
+        super(width, height, bombCount) {
 
     _gameElement.setGameManager(this);
     _stage.invalidated.listen(_stageInvalidated);
@@ -59,11 +59,13 @@ class GameRoot extends GameManager {
         GameAudio.win();
         break;
     }
-    targetPlatform.trackAnalyticsEvent('game', newState.name, game.field.toString());
+    targetPlatform.trackAnalyticsEvent('game', newState.name,
+        game.field.toString());
   }
 
   void onNewBestTime(int value) {
-    targetPlatform.trackAnalyticsEvent('game', 'record', game.field.toString(), value);
+    targetPlatform.trackAnalyticsEvent('game', 'record', game.field.toString(),
+        value);
   }
 
   void _updateCanvasSize() {
