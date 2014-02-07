@@ -42,7 +42,7 @@ class _DefaultPlatform extends PlatformTarget {
   final StreamController _aboutController = new StreamController(sync: true);
   bool _about = false;
 
-  _DefaultPlatform() : super.base();
+  _DefaultPlatform(): super.base();
 
   @override
   Future clearValues() => new Future(_values.clear);

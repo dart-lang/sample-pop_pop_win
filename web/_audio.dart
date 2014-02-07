@@ -24,7 +24,7 @@ class _Audio {
     return new _Audio._disabled();
   }
 
-  _Audio._disabled() : this._audioLoader = null;
+  _Audio._disabled(): this._audioLoader = null;
 
   _Audio._internal(this._audioLoader) {
     // TODO: less than ideal. Binding to event handlers defined in game.dart

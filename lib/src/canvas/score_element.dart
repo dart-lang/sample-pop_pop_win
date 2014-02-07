@@ -11,7 +11,7 @@ class ScoreElement extends Thing {
   String _clockStr, _bombsStr, _bestTimeStr;
   num _textSize;
 
-  ScoreElement() : super(400, 96);
+  ScoreElement(): super(400, 96);
 
   void setGameManager(GameManager manager) {
     assert(_gameManager == null);

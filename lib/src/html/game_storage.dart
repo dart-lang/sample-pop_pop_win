@@ -53,11 +53,10 @@ class GameStorage {
       return new Future.value(_parseValue(_cache[key], defaultValue));
     }
 
-    return targetPlatform.getValue(key)
-        .then((String strValue) {
-          _cache[key] = strValue;
-          return _parseValue(strValue, defaultValue);
-        });
+    return targetPlatform.getValue(key).then((String strValue) {
+      _cache[key] = strValue;
+      return _parseValue(strValue, defaultValue);
+    });
   }
 
   Future _setIntValue(String key, int value) {
@@ -68,10 +67,9 @@ class GameStorage {
   }
 
   Future _incrementIntValue(String key) {
-    return _getIntValue(key)
-        .then((int val) {
-          return _setIntValue(key, val + 1);
-        });
+    return _getIntValue(key).then((int val) {
+      return _setIntValue(key, val + 1);
+    });
   }
 
   static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";

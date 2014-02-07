@@ -72,8 +72,7 @@ abstract class GameManager {
   void onGameStateChanged(GameState value) {}
 
   bool get _canClick {
-    return _game.state == GameState.reset ||
-        _game.state == GameState.started;
+    return _game.state == GameState.reset || _game.state == GameState.started;
   }
 
   void _gameStateChanged(GameState newState) {

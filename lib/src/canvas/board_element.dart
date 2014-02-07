@@ -3,7 +3,7 @@ part of ppw_canvas;
 class BoardElement extends ParentThing {
   Array2d<SquareElement> _elements;
 
-  BoardElement() : super(0, 0) {
+  BoardElement(): super(0, 0) {
     cacheEnabled = true;
   }
 

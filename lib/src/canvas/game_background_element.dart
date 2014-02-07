@@ -1,7 +1,7 @@
 part of ppw_canvas;
 
 class GameBackgroundElement extends Thing {
-  GameBackgroundElement() : super(0, 0) {
+  GameBackgroundElement(): super(0, 0) {
     cacheEnabled = true;
   }
 
@@ -26,7 +26,7 @@ class GameBackgroundElement extends Thing {
         new Coordinate(rightBgLoc, 0));
 
     _textureData.drawTextureKeyAt(ctx, 'game_board_corner_bottom_left.png',
-                     new Coordinate(0, bottomBgLoc));
+        new Coordinate(0, bottomBgLoc));
     _textureData.drawTextureKeyAt(ctx, 'game_board_corner_bottom_right.png',
         new Coordinate(rightBgLoc, bottomBgLoc));
 

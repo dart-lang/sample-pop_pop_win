@@ -45,9 +45,9 @@ class Field extends Array2d<bool> {
         new ReadOnlyCollection<bool>(squares));
   }
 
-  Field._internal(this.bombCount, int cols, ReadOnlyCollection<bool> source) :
-    this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
-    super.wrap(cols, source.toList()) {
+  Field._internal(this.bombCount, int cols, ReadOnlyCollection<bool> source)
+      : this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
+        super.wrap(cols, source.toList()) {
     assert(width > 0);
     assert(height > 0);
     assert(bombCount > 0);

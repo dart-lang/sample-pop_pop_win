@@ -9,7 +9,7 @@ class PlatformApp extends PlatformTarget {
   final StreamController _aboutController = new StreamController(sync: true);
   bool _about = false;
 
-  PlatformApp() : super.base();
+  PlatformApp(): super.base();
 
   @override
   Future clearValues() => storage.local.clear();
