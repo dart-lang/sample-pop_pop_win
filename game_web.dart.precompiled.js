@@ -5469,7 +5469,7 @@ H.VM(new P.Gm(y),[H.Kp(y,0)]).yI(this.gCN())
 z.xW(0)},
 static:{"^":"bl,Pg",Nd:function(){var z,y,x,w,v,u
 if(!!!(window.AudioContext||window.webkitAudioContext))P.L5(null,null,null,null,null)
-if($.Ev()!=null){z=new (window.AudioContext||window.webkitAudioContext)()
+if($.Ev()!=null&&!!(window.AudioContext||window.webkitAudioContext)){z=new (window.AudioContext||window.webkitAudioContext)()
 y=H.VM(new H.A8(C.ao,E.z6()),[null,null])
 x=P.bK(null,null,!0,null)
 w=P.bK(null,null,!0,null)
