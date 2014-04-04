@@ -1,4 +1,4 @@
-part of ppw_canvas;
+part of pop_pop_win.canvas;
 
 class GameRoot extends GameManager {
   final Stage _stage;
@@ -15,15 +15,15 @@ class GameRoot extends GameManager {
     final stage = new Stage(canvasElement, rootElement);
     new MouseManager(stage);
 
-    return new GameRoot._internal(width, height, bombCount, canvasElement,
-        stage, rootElement);
+    return new GameRoot._internal(width, height, bombCount,
+        canvasElement, stage, rootElement);
   }
 
-  GameRoot._internal(int width, int height, int
-      bombCount, this._canvas, this._stage, GameElement gameElement)
-      : this._gameElement = gameElement,
-        _gameElementTx = gameElement.addTransform(),
-        super(width, height, bombCount) {
+  GameRoot._internal(int width, int height, int bombCount,
+      this._canvas, this._stage, GameElement gameElement) :
+      this._gameElement = gameElement,
+      _gameElementTx = gameElement.addTransform(),
+      super(width, height, bombCount) {
 
     _gameElement.setGameManager(this);
     _stage.invalidated.listen(_stageInvalidated);
@@ -59,13 +59,6 @@ class GameRoot extends GameManager {
         GameAudio.win();
         break;
     }
-    targetPlatform.trackAnalyticsEvent('game', newState.name,
-        game.field.toString());
-  }
-
-  void onNewBestTime(int value) {
-    targetPlatform.trackAnalyticsEvent('game', 'record', game.field.toString(),
-        value);
   }
 
   void _updateCanvasSize() {

@@ -1,4 +1,4 @@
-part of ppw_html;
+part of pop_pop_win.html;
 
 class GameView extends GameManager {
   static const String _xKey = 'x';
@@ -18,12 +18,12 @@ class GameView extends GameManager {
     _gameStateDiv.innerHtml = game.state.name;
     _leftCountDiv.innerHtml = game.bombsLeft.toString();
 
-    if (_table.children.length == 0) {
+    if(_table.children.length == 0) {
 
-      for (int r = 0; r < game.field.height; r++) {
+      for(int r = 0; r < game.field.height; r++) {
         TableRowElement row = _table.insertRow(-1);
 
-        for (int c = 0; c < game.field.width; c++) {
+        for(int c = 0; c < game.field.width; c++) {
           TableCellElement cell = row.insertCell(-1);
           cell.onMouseDown.listen(_cellClick);
           cell.dataset[_xKey] = c.toString();
@@ -32,8 +32,8 @@ class GameView extends GameManager {
       }
     }
 
-    for (int r = 0; r < game.field.height; r++) {
-      for (int c = 0; c < game.field.width; c++) {
+    for(int r = 0; r < game.field.height; r++) {
+      for(int c = 0; c < game.field.width; c++) {
         TableRowElement row = _table.rows[r];
         TableCellElement cell = row.cells[c];
 
@@ -41,10 +41,10 @@ class GameView extends GameManager {
         cell.classes.add('game-square');
         final ss = game.getSquareState(c, r);
         cell.classes.add(ss.name);
-        if (ss == SquareState.revealed) {
+        if(ss == SquareState.revealed) {
           final adj = game.field.getAdjacentCount(c, r);
           assert(adj != null);
-          if (adj > 0) {
+          if(adj > 0) {
             cell.innerHtml = adj.toString();
           }
         }
@@ -60,7 +60,7 @@ class GameView extends GameManager {
   }
 
   void updateClock() {
-    if (game.duration == null) {
+    if(game.duration == null) {
       _clockDiv.innerHtml = '';
     } else {
       _clockDiv.innerHtml = game.duration.inSeconds.toString();
@@ -70,7 +70,7 @@ class GameView extends GameManager {
   }
 
   void _cellClick(MouseEvent args) {
-    if (args.button == 0 && _canClick) {
+    if(args.button == 0 && _canClick) {
       final TableCellElement cell = args.currentTarget;
       final xStr = cell.dataset[_xKey];
       final yStr = cell.dataset[_yKey];

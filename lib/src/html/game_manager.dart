@@ -1,4 +1,4 @@
-part of ppw_html;
+part of pop_pop_win.html;
 
 abstract class GameManager {
   final int _width, _height, _bombCount;
@@ -77,15 +77,14 @@ abstract class GameManager {
 
   void _gameStateChanged(GameState newState) {
     _gameStorage.recordState(newState);
-    if(newState == GameState.won) {
-      _gameStorage.updateBestTime(_game)
-        .then((bool newBestTime) {
-          if(newBestTime) {
-            bestTimeMilliseconds.then((int val) {
-              onNewBestTime(val);
-            });
-          }
-        });
+    if (newState == GameState.won) {
+      _gameStorage.updateBestTime(_game).then((bool newBestTime) {
+        if (newBestTime) {
+          bestTimeMilliseconds.then((int val) {
+            onNewBestTime(val);
+          });
+        }
+      });
     }
     updateClock();
     onGameStateChanged(newState);
