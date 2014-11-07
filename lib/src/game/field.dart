@@ -7,8 +7,8 @@ class Field extends Array2d<bool> {
   final int bombCount;
   final Array2d<int> _adjacents;
 
-  factory Field([int bombCount = 40, int cols = 16, int rows = 16,
-      int seed = null]) {
+  factory Field(
+      [int bombCount = 40, int cols = 16, int rows = 16, int seed = null]) {
     var squares = new List<bool>.filled(rows * cols, false);
     assert(bombCount < squares.length);
     assert(bombCount > 0);
@@ -27,8 +27,8 @@ class Field extends Array2d<bool> {
       squares[index] = true;
     }
 
-    return new Field._internal(bombCount, cols,
-        new UnmodifiableListView<bool>(squares));
+    return new Field._internal(
+        bombCount, cols, new UnmodifiableListView<bool>(squares));
   }
 
   factory Field.fromSquares(int cols, int rows, List<bool> squares) {
@@ -45,8 +45,8 @@ class Field extends Array2d<bool> {
     assert(count > 0);
     assert(count < squares.length);
 
-    return new Field._internal(count, cols,
-        new UnmodifiableListView<bool>(squares));
+    return new Field._internal(
+        count, cols, new UnmodifiableListView<bool>(squares));
   }
 
   Field._internal(this.bombCount, int cols, UnmodifiableListView<bool> source)

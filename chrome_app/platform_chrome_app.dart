@@ -14,14 +14,14 @@ class PlatformChromeApp extends PlatformTarget {
 
   int get size => 7;
 
-  PlatformChromeApp(): super.base();
+  PlatformChromeApp() : super.base();
 
   Future clearValues() => storage.local.clear();
 
-  Future setValue(String key, String value) => storage.local.set({key : value});
+  Future setValue(String key, String value) => storage.local.set({key: value});
 
-  Future<String> getValue(String key) => storage.local.get(key)
-        .then((Map<String, String> values) => values[key]);
+  Future<String> getValue(String key) =>
+      storage.local.get(key).then((Map<String, String> values) => values[key]);
 
   bool get showAbout => _about;
 

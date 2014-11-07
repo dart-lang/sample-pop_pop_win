@@ -25,9 +25,8 @@ class GameElement extends Sprite {
   static const BOARD_OFFSET = const Vector(352, 96);
   static const _popAnimationHitFrame = 12;
   static const _popExplodeAnimationOffset = const Vector(-88, -88);
-  static const _dartAnimationOffset =
-      const Vector(-512 + 0.5 * SquareElement.SIZE,
-          -388 + 0.5 * SquareElement.SIZE);
+  static const _dartAnimationOffset = const Vector(
+      -512 + 0.5 * SquareElement.SIZE, -388 + 0.5 * SquareElement.SIZE);
 
   final GameRoot manager;
 
@@ -37,10 +36,10 @@ class GameElement extends Sprite {
   BoardElement _boardElement;
   ScoreElement _scoreElement;
   SimpleButton _newGameButton, _logoButton;
-  Sprite _popLayer = new Sprite(), _dartLayer = new Sprite();
+  Sprite _popLayer = new Sprite(),
+      _dartLayer = new Sprite();
 
   num _boardSize, _boardScale;
-
 
   int _targetX, _targetY;
   TextureAtlas _animations;
@@ -68,8 +67,8 @@ class GameElement extends Sprite {
     var newButtonPressed =
         new Bitmap(sta.getBitmapData("button_new_game_clicked"));
 
-    _newGameButton = new SimpleButton(newButtonNormal, newButtonPressed,
-        newButtonPressed, newButtonPressed)
+    _newGameButton = new SimpleButton(
+        newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
         ..x = 450
         ..y = 20
         ..onMouseClick.listen((e) {
@@ -82,13 +81,11 @@ class GameElement extends Sprite {
         ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
         ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale;
 
-
     manager.bestTimeMilliseconds.then((v) {
       if (v == null) v = 0;
       _scoreElement = new ScoreElement(v)..addTo(this);
 
       stage.juggler.add(_scoreElement);
-
     });
 
     num logoScale = min(max(_boardScale, 1.1), 1.5);
@@ -117,7 +114,6 @@ class GameElement extends Sprite {
         ..scaleX = _boardScale
         ..scaleY = _boardScale
         ..addTo(this);
-
   }
 
   bool get canRevealTarget =>
@@ -144,12 +140,10 @@ class GameElement extends Sprite {
       } else if (ss == SquareState.revealed) {
         if (game.canReveal(x, y)) {
           // get adjacent ballons
-          final adjHidden = game.field.getAdjacentIndices(x, y)
-              .map((i) {
-                final t = game.field.getCoordinate(i);
-                return new Point(t.item1, t.item2);
-              })
-              .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
+          final adjHidden = game.field.getAdjacentIndices(x, y).map((i) {
+            final t = game.field.getCoordinate(i);
+            return new Point(t.item1, t.item2);
+          }).where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
           assert(adjHidden.length > 0);
@@ -253,8 +247,8 @@ class GameElement extends Sprite {
 
       stage.juggler
           ..add(anim)
-          ..delayCall(() => _animationDelay(anim, se, ss),
-              delay / stage.frameRate);
+          ..delayCall(() =>
+              _animationDelay(anim, se, ss), delay / stage.frameRate);
     }
   }
 

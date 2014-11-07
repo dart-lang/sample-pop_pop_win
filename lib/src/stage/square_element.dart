@@ -13,23 +13,27 @@ class SquareElement extends Sprite {
   static const int SIZE = 80;
 
   static const List<String> _balloonBits = const [
-      'balloon_pieces_a',
-      'balloon_pieces_b',
-      'balloon_pieces_c',
-      'balloon_pieces_d'
+    'balloon_pieces_a',
+    'balloon_pieces_b',
+    'balloon_pieces_c',
+    'balloon_pieces_d'
   ];
 
   static const List<String> _numberMap = const [
-      "game_board_center",
-      "number_one", "number_two",
-      "number_three", "number_four",
-      "number_five", "number_six",
-      "number_seven", "number_eight"
+    "game_board_center",
+    "number_one",
+    "number_two",
+    "number_three",
+    "number_four",
+    "number_five",
+    "number_six",
+    "number_seven",
+    "number_eight"
   ];
 
   final int x, y;
-  final Bitmap _bitmap = new Bitmap(new BitmapData(SIZE, SIZE, true,
-      Color.Transparent));
+  final Bitmap _bitmap =
+      new Bitmap(new BitmapData(SIZE, SIZE, true, Color.Transparent));
 
   SquareElement(this.x, this.y) {
     addChild(_bitmap);

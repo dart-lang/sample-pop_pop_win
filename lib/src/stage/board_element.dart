@@ -31,7 +31,6 @@ class BoardElement extends Sprite {
       _elements[i] = se;
       se.updateState();
     }
-
   }
 
   GameElement get gameElement => parent;

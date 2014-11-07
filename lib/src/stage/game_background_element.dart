@@ -9,7 +9,6 @@ import 'package:pop_pop_win/src/game.dart';
 import 'game_element.dart';
 
 class GameBackgroundElement extends Sprite {
-
   num get _backgroundScale => (parent as GameElement).boardScale;
   num get _boardSize => (parent as GameElement).boardSize;
   Game get _game => (parent as GameElement).game;
@@ -19,8 +18,7 @@ class GameBackgroundElement extends Sprite {
 
     //the lengths we go to reduce bytes down the wire...
     Bitmap ttl = new Bitmap(op.getBitmapData('background_top_left'));
-    Bitmap stl = new Bitmap(op.getBitmapData('background_side_left'))
-      ..y=96;
+    Bitmap stl = new Bitmap(op.getBitmapData('background_side_left'))..y = 96;
 
     Bitmap bbl = new Bitmap(op.getBitmapData('background_top_left'))
         ..scaleY = -1
@@ -60,8 +58,8 @@ class GameBackgroundElement extends Sprite {
     //draw the board
     var boardData = new BitmapData(_boardSize, _boardSize, true, 0x000000);
     var cr = new Rectangle(0, 0, 112, 122);
-    boardData.drawPixels(op.getBitmapData('game_board_corner_top_left'), cr,
-        new Point(0, 0));
+    boardData.drawPixels(op
+        .getBitmapData('game_board_corner_top_left'), cr, new Point(0, 0));
     boardData.drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
         new Point(_boardSize - 112, 0));
     boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_left'), cr,
