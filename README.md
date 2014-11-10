@@ -2,7 +2,7 @@
 
 An implementation of
 <a href="http://en.wikipedia.org/wiki/Minesweeper_(video_game)">Minesweeper</a>
-in [Dart](http://www.dartlang.org).
+in [Dart](https://www.dartlang.org).
 
 ## Interaction
 
