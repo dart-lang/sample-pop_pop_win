@@ -31,8 +31,7 @@ Future startGame(PlatformTarget platform) {
       ..addTextureAtlas("static", '$_ASSET_DIR/images/static.json',
           TextureAtlasFormat.JSON);
 
-  return resourceManager.load()
-      .then((resMan) => _initialLoad(resMan, stage));
+  return resourceManager.load().then((resMan) => _initialLoad(resMan, stage));
 }
 
 void _initialLoad(ResourceManager resourceManager, Stage stage) {
