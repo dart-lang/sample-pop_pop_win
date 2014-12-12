@@ -15,24 +15,24 @@ class GameRoot extends GameManager {
   final ResourceManager resourceManager;
   GameElement _gameElement;
 
-  GameRoot(int width, int height, int bombCount,
-      this.stage, this.resourceManager) : super(width, height, bombCount) {
-
+  GameRoot(
+      int width, int height, int bombCount, this.stage, this.resourceManager)
+      : super(width, height, bombCount) {
     var opa = resourceManager.getTextureAtlas('opaque');
     var sta = resourceManager.getTextureAtlas('static');
 
-    _gameElement = new GameElement(this)
-        ..alpha = 0;
+    _gameElement = new GameElement(this)..alpha = 0;
 
-    stage..addChild(_gameElement)
-        ..juggler.tween(_gameElement, .5).animate.alpha.to(1);
+    stage
+      ..addChild(_gameElement)
+      ..juggler.tween(_gameElement, .5).animate.alpha.to(1);
   }
 
   void onGameStateChanged(GameState newState) {
     if (newState == GameState.won) {
       _gameElement.boardElement.squares.forEach((se) => se.updateState());
-      if (game.duration.inMilliseconds < _gameElement.scoreElement.bestTime
-          || _gameElement.scoreElement.bestTime == 0) {
+      if (game.duration.inMilliseconds < _gameElement.scoreElement.bestTime ||
+          _gameElement.scoreElement.bestTime == 0) {
         _gameElement.scoreElement.bestTime = game.duration.inMilliseconds;
       }
       GameAudio.win();

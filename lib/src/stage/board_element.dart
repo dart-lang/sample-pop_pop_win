@@ -22,11 +22,11 @@ class BoardElement extends Sprite {
     for (int i = 0; i < _elements.length; i++) {
       var coords = _elements.getCoordinate(i);
       var se = new SquareElement(coords.item1, coords.item2)
-          ..x = coords.item1 * scaledSize
-          ..y = coords.item2 * scaledSize
-          ..scaleX = _boardScale
-          ..scaleY = _boardScale
-          ..addTo(this);
+        ..x = coords.item1 * scaledSize
+        ..y = coords.item2 * scaledSize
+        ..scaleX = _boardScale
+        ..scaleY = _boardScale
+        ..addTo(this);
 
       _elements[i] = se;
       se.updateState();

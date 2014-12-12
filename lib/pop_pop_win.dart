@@ -38,29 +38,29 @@ void _initialLoad(ResourceManager resourceManager, Stage stage) {
   var atlas = resourceManager.getTextureAtlas('static');
 
   var bar = new Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
-      ..x = 51
-      ..y = 8
-      ..ratio = 0;
+    ..x = 51
+    ..y = 8
+    ..ratio = 0;
 
   var loadingText = new Bitmap(atlas.getBitmapData('loading_text'))
-      ..x = 141
-      ..y = 10;
+    ..x = 141
+    ..y = 10;
 
   var loadingSprite = new Sprite()
-      ..addChild(new Bitmap(atlas.getBitmapData('loading_background')))
-      ..addChild(bar)
-      ..addChild(loadingText)
-      ..x = stage.sourceWidth ~/ 2 - 1008 ~/ 2
-      ..y = 400
-      ..scaleX = 2
-      ..scaleY = 2
-      ..addTo(stage);
+    ..addChild(new Bitmap(atlas.getBitmapData('loading_background')))
+    ..addChild(bar)
+    ..addChild(loadingText)
+    ..x = stage.sourceWidth ~/ 2 - 1008 ~/ 2
+    ..y = 400
+    ..scaleX = 2
+    ..scaleY = 2
+    ..addTo(stage);
 
   resourceManager
-      ..addTextureAtlas('opaque', '$_ASSET_DIR/images/opaque.json',
-          TextureAtlasFormat.JSON)
-      ..addTextureAtlas('animated', '$_ASSET_DIR/images/animated.json',
-          TextureAtlasFormat.JSON);
+    ..addTextureAtlas(
+        'opaque', '$_ASSET_DIR/images/opaque.json', TextureAtlasFormat.JSON)
+    ..addTextureAtlas('animated', '$_ASSET_DIR/images/animated.json',
+        TextureAtlasFormat.JSON);
 
   resourceManager.addSoundSprite('audio', '$_ASSET_DIR/audio/audio.json');
 
@@ -69,15 +69,16 @@ void _initialLoad(ResourceManager resourceManager, Stage stage) {
         resourceManager.resources.length;
   });
 
-  resourceManager.load().then((resMan) =>
-      _secondaryLoad(resMan, stage, loadingSprite));
+  resourceManager
+      .load()
+      .then((resMan) => _secondaryLoad(resMan, stage, loadingSprite));
 }
 
 void _secondaryLoad(ResourceManager resourceManager, Stage stage,
     Sprite loadingSprite) {
   var tween = stage.juggler.tween(loadingSprite, .5)
-      ..animate.alpha.to(0)
-      ..onComplete = () => stage.removeChild(loadingSprite);
+    ..animate.alpha.to(0)
+    ..onComplete = () => stage.removeChild(loadingSprite);
 
   _updateAbout();
 

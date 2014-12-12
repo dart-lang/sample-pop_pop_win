@@ -20,8 +20,8 @@ class ScoreElement extends TextField implements Animatable {
   }
 
   bool advanceTime(num time) {
-    var time = (game.duration == null) ? '0' :
-        (game.duration.inMilliseconds / 1000).toStringAsFixed(1);
+    var time = (game.duration == null) ?
+        '0' : (game.duration.inMilliseconds / 1000).toStringAsFixed(1);
     text = 'Bombs Left: ${game.bombsLeft}\nTime: $time';
     if (bestTime > 0) {
       text = text + '\nRecord: ${(bestTime/1000).toStringAsFixed(1)}';

@@ -64,22 +64,22 @@ class GameElement extends Sprite {
     _gameBackground = new GameBackgroundElement(this, opa);
 
     var newButtonNormal = new Bitmap(sta.getBitmapData("button_new_game"));
-    var newButtonPressed =
-        new Bitmap(sta.getBitmapData("button_new_game_clicked"));
+    var newButtonPressed = new Bitmap(sta
+        .getBitmapData("button_new_game_clicked"));
 
     _newGameButton = new SimpleButton(
         newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
-        ..x = 450
-        ..y = 20
-        ..onMouseClick.listen((e) {
-          GameAudio.click();
-          manager.newGame();
-        })
-        ..addTo(this);
+      ..x = 450
+      ..y = 20
+      ..onMouseClick.listen((e) {
+        GameAudio.click();
+        manager.newGame();
+      })
+      ..addTo(this);
 
     _boardElement = new BoardElement(this)
-        ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
-        ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale;
+      ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
+      ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale;
 
     manager.bestTimeMilliseconds.then((v) {
       if (v == null) v = 0;
@@ -92,28 +92,28 @@ class GameElement extends Sprite {
     Bitmap logo = new Bitmap(sta.getBitmapData('logo_win'));
     _logoButton = new SimpleButton(logo, logo, logo, logo);
     _logoButton
-        ..y = 20
-        ..scaleX = logoScale
-        ..scaleY = logoScale
-        ..x = _backgroundSize.width / 2 - _logoButton.width / 2
-        ..onMouseClick.listen((e) => _titleClickedEventHandle.add(null))
-        ..addTo(this);
+      ..y = 20
+      ..scaleX = logoScale
+      ..scaleY = logoScale
+      ..x = _backgroundSize.width / 2 - _logoButton.width / 2
+      ..onMouseClick.listen((e) => _titleClickedEventHandle.add(null))
+      ..addTo(this);
 
     _popLayer
-        ..mouseEnabled = false
-        ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
-        ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale
-        ..scaleX = _boardScale
-        ..scaleY = _boardScale
-        ..addTo(this);
+      ..mouseEnabled = false
+      ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
+      ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale
+      ..scaleX = _boardScale
+      ..scaleY = _boardScale
+      ..addTo(this);
 
     _dartLayer
-        ..mouseEnabled = false
-        ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
-        ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale
-        ..scaleX = _boardScale
-        ..scaleY = _boardScale
-        ..addTo(this);
+      ..mouseEnabled = false
+      ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
+      ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale
+      ..scaleX = _boardScale
+      ..scaleY = _boardScale
+      ..addTo(this);
   }
 
   bool get canRevealTarget =>
@@ -235,20 +235,20 @@ class GameElement extends Sprite {
       var texturePrefix = ss == SquareState.bomb ?
           'balloon_explode' : 'balloon_pop';
 
-      var anim = new FlipBook(_animations.getBitmapDatas(texturePrefix),
-          stage.frameRate, false)
-          ..x = squareOffset.x
-          ..y = squareOffset.y
-          ..alpha = 0
-          ..mouseEnabled = false
-          ..addTo(_popLayer);
+      var anim = new FlipBook(_animations
+          .getBitmapDatas(texturePrefix), stage.frameRate, false)
+        ..x = squareOffset.x
+        ..y = squareOffset.y
+        ..alpha = 0
+        ..mouseEnabled = false
+        ..addTo(_popLayer);
 
       anim.onComplete.listen((e) => anim.removeFromParent());
 
       stage.juggler
-          ..add(anim)
-          ..delayCall(() =>
-              _animationDelay(anim, se, ss), delay / stage.frameRate);
+        ..add(anim)
+        ..delayCall(() =>
+            _animationDelay(anim, se, ss), delay / stage.frameRate);
     }
   }
 
@@ -281,16 +281,16 @@ class GameElement extends Sprite {
       shadow.onComplete.listen((e) => shadow.removeFromParent());
 
       stage.juggler
-          ..add(dart)
-          ..add(shadow);
+        ..add(dart)
+        ..add(shadow);
     }
   }
 }
 
 void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
   anim
-      ..alpha = 1
-      ..play();
+    ..alpha = 1
+    ..play();
   se.updateState();
   switch (ss) {
     case SquareState.revealed:
