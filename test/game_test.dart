@@ -32,12 +32,12 @@ void _testCannotReReveal() {
   var g = new Game(f);
 
   expect(g.canReveal(5, 3), isTrue);
-  var r = g.reveal(5, 3);
+  g.reveal(5, 3);
 
   g.setFlag(4, 2, true);
 
   expect(g.canReveal(5, 3), isTrue);
-  r = g.reveal(5, 3);
+  g.reveal(5, 3);
 
   expect(g.canReveal(5, 3), isFalse);
 }

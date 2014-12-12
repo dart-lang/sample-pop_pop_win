@@ -32,10 +32,9 @@ class GameElement extends Sprite {
 
   final Random _rnd = new Random();
 
-  GameBackgroundElement _gameBackground;
   BoardElement _boardElement;
   ScoreElement _scoreElement;
-  SimpleButton _newGameButton, _logoButton;
+  SimpleButton _logoButton;
   Sprite _popLayer = new Sprite(),
       _dartLayer = new Sprite();
 
@@ -61,13 +60,13 @@ class GameElement extends Sprite {
     _boardSize = game.field.width * SquareElement.SIZE + 2 * _edgeOffset;
     _boardScale = _backgroundHoleSize / _boardSize;
 
-    _gameBackground = new GameBackgroundElement(this, opa);
+    new GameBackgroundElement(this, opa);
 
     var newButtonNormal = new Bitmap(sta.getBitmapData("button_new_game"));
     var newButtonPressed = new Bitmap(sta
         .getBitmapData("button_new_game_clicked"));
 
-    _newGameButton = new SimpleButton(
+    new SimpleButton(
         newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
       ..x = 450
       ..y = 20
@@ -225,7 +224,6 @@ class GameElement extends Sprite {
 
     for (var v in values) {
       Point c = v[0];
-      Vector initialOffset = v[1];
       Vector squareOffset = v[2];
       int delay = v[3];
 

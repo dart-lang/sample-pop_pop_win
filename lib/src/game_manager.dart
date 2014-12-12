@@ -48,24 +48,6 @@ abstract class GameManager {
     _gameStorage.reset();
   }
 
-  void _click(int x, int y, bool alt) {
-    final ss = _game.getSquareState(x, y);
-
-    if (alt) {
-      if (ss == SquareState.hidden) {
-        _game.setFlag(x, y, true);
-      } else if (ss == SquareState.flagged) {
-        _game.setFlag(x, y, false);
-      } else if (ss == SquareState.revealed) {
-        _game.reveal(x, y);
-      }
-    } else {
-      if (ss == SquareState.hidden) {
-        _game.reveal(x, y);
-      }
-    }
-  }
-
   void updateClock() {
     if (_clockTimer == null && _game.state == GameState.started) {
       _clockTimer = new Timer(const Duration(seconds: 1), updateClock);
@@ -78,10 +60,6 @@ abstract class GameManager {
   void onNewBestTime(int value) {}
 
   void onGameStateChanged(GameState value) {}
-
-  bool get _canClick {
-    return _game.state == GameState.reset || _game.state == GameState.started;
-  }
 
   void _gameStateChanged(GameState newState) {
     _gameStorage.recordState(newState);

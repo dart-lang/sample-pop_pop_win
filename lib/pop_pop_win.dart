@@ -21,7 +21,7 @@ Future startGame(PlatformTarget platform) {
   var stage = new Stage(querySelector('#gameCanvas'), webGL: true,
       color: 0xb4ad7f, frameRate: 60);
 
-  var renderLoop = new RenderLoop()
+  new RenderLoop()
       ..addStage(stage);
 
   BitmapData.defaultLoadOptions.webp = true;
@@ -76,7 +76,7 @@ void _initialLoad(ResourceManager resourceManager, Stage stage) {
 
 void _secondaryLoad(ResourceManager resourceManager, Stage stage,
     Sprite loadingSprite) {
-  var tween = stage.juggler.tween(loadingSprite, .5)
+  stage.juggler.tween(loadingSprite, .5)
     ..animate.alpha.to(0)
     ..onComplete = () => stage.removeChild(loadingSprite);
 
@@ -88,7 +88,7 @@ void _secondaryLoad(ResourceManager resourceManager, Stage stage,
   var m = (size * size * 0.15625).toInt();
 
   GameAudio.initialize(resourceManager);
-  var gameRoot = new GameRoot(size, size, m, stage, resourceManager);
+  new GameRoot(size, size, m, stage, resourceManager);
 
   // disable touch events
   window.onTouchMove.listen((args) => args.preventDefault());
