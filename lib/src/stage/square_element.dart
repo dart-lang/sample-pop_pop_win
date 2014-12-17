@@ -64,8 +64,9 @@ class SquareElement extends Sprite {
         break;
     }
 
-    useHandCursor = !_game.gameEnded && (squareState == SquareState.hidden ||
-        squareState == SquareState.flagged);
+    useHandCursor = !_game.gameEnded &&
+        (squareState == SquareState.hidden ||
+            squareState == SquareState.flagged);
 
     _bitmap.bitmapData
         ..clear()

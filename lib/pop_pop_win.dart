@@ -21,15 +21,14 @@ Future startGame(PlatformTarget platform) {
   var stage = new Stage(querySelector('#gameCanvas'), webGL: true,
       color: 0xb4ad7f, frameRate: 60);
 
-  new RenderLoop()
-      ..addStage(stage);
+  new RenderLoop()..addStage(stage);
 
   BitmapData.defaultLoadOptions.webp = true;
 
   //have to load the loading bar first...
   var resourceManager = new ResourceManager()
-      ..addTextureAtlas("static", '$_ASSET_DIR/images/static.json',
-          TextureAtlasFormat.JSON);
+    ..addTextureAtlas(
+        "static", '$_ASSET_DIR/images/static.json', TextureAtlasFormat.JSON);
 
   return resourceManager.load().then((resMan) => _initialLoad(resMan, stage));
 }
@@ -74,8 +73,8 @@ void _initialLoad(ResourceManager resourceManager, Stage stage) {
       .then((resMan) => _secondaryLoad(resMan, stage, loadingSprite));
 }
 
-void _secondaryLoad(ResourceManager resourceManager, Stage stage,
-    Sprite loadingSprite) {
+void _secondaryLoad(
+    ResourceManager resourceManager, Stage stage, Sprite loadingSprite) {
   stage.juggler.tween(loadingSprite, .5)
     ..animate.alpha.to(0)
     ..onComplete = () => stage.removeChild(loadingSprite);

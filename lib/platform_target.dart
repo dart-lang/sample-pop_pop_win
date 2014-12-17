@@ -45,8 +45,9 @@ class _DefaultPlatform extends PlatformTarget {
   Future clearValues() => new Future(_values.clear);
 
   @override
-  Future setValue(String key, String value) =>
-      new Future(() { _values[key] = value; });
+  Future setValue(String key, String value) => new Future(() {
+    _values[key] = value;
+  });
 
   @override
   Future<String> getValue(String key) => new Future(() => _values[key]);

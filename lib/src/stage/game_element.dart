@@ -255,8 +255,8 @@ class GameElement extends Sprite {
     GameAudio.throwDart();
     for (var point in points) {
       var squareOffset = _dartAnimationOffset +
-          new Vector(SquareElement.SIZE * point.x,
-              SquareElement.SIZE * point.y);
+          new Vector(
+              SquareElement.SIZE * point.x, SquareElement.SIZE * point.y);
 
       var dart = new FlipBook(_animations.getBitmapDatas('dart'),
           stage.frameRate, false)
