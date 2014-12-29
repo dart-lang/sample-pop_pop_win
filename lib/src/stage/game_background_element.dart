@@ -58,12 +58,12 @@ class GameBackgroundElement extends Sprite {
     //draw the board
     var boardData = new BitmapData(_boardSize, _boardSize, true, 0x000000);
     var cr = new Rectangle(0, 0, 112, 122);
-    boardData.drawPixels(op
-        .getBitmapData('game_board_corner_top_left'), cr, new Point(0, 0));
-    boardData.drawPixels(op.getBitmapData(
-        'game_board_corner_top_right'), cr, new Point(_boardSize - 112, 0));
-    boardData.drawPixels(op.getBitmapData(
-        'game_board_corner_bottom_left'), cr, new Point(0, _boardSize - 112));
+    boardData.drawPixels(
+        op.getBitmapData('game_board_corner_top_left'), cr, new Point(0, 0));
+    boardData.drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
+        new Point(_boardSize - 112, 0));
+    boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_left'), cr,
+        new Point(0, _boardSize - 112));
     boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
         new Point(_boardSize - 112, _boardSize - 112));
     var tbr = new Rectangle(0, 0, 80, 112);
