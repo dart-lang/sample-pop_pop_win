@@ -142,7 +142,8 @@ class GameElement extends Sprite {
           final adjHidden = game.field.getAdjacentIndices(x, y).map((i) {
             final t = game.field.getCoordinate(i);
             return new Point(t.item1, t.item2);
-          }).where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
+          })
+              .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
           assert(adjHidden.length > 0);
@@ -193,14 +194,13 @@ class GameElement extends Sprite {
   void _startPopAnimation(Point start, [Iterable<Point> reveals = null]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
-      reveals = new Iterable.generate(game.field.length)
-          .map((i) {
-            var t = game.field.getCoordinate(i);
-            var c = new Point(t.item1, t.item2);
-            return new Tuple(c, game.getSquareState(c.x, c.y));
-          })
-          .where((t2) => t2.item2 == SquareState.bomb ||
-              t2.item2 == SquareState.hidden)
+      reveals = new Iterable.generate(game.field.length).map((i) {
+        var t = game.field.getCoordinate(i);
+        var c = new Point(t.item1, t.item2);
+        return new Tuple(c, game.getSquareState(c.x, c.y));
+      })
+          .where((t2) =>
+              t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
           .map((t2) => t2.item1)
           .toList();
     }

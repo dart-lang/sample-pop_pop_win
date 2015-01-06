@@ -70,12 +70,12 @@ class GameBackgroundElement extends Sprite {
     var lrr = new Rectangle(0, 0, 112, 80);
     for (var i = 0; i < _game.field.width - 2; i++) {
       boardData
-        ..drawPixels(op.getBitmapData(
-            'game_board_side_top'), tbr, new Point(112 + i * 80, 0))
+        ..drawPixels(op.getBitmapData('game_board_side_top'), tbr,
+            new Point(112 + i * 80, 0))
         ..drawPixels(op.getBitmapData('game_board_side_bottom'), tbr,
             new Point(112 + i * 80, _boardSize - 112))
-        ..drawPixels(op.getBitmapData(
-            'game_board_side_left'), lrr, new Point(0, 112 + i * 80))
+        ..drawPixels(op.getBitmapData('game_board_side_left'), lrr,
+            new Point(0, 112 + i * 80))
         ..drawPixels(op.getBitmapData('game_board_side_right'), lrr,
             new Point(_boardSize - 112, 112 + i * 80));
     }

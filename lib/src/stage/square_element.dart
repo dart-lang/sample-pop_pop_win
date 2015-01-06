@@ -69,9 +69,9 @@ class SquareElement extends Sprite {
             squareState == SquareState.flagged);
 
     _bitmap.bitmapData
-        ..clear()
-        ..drawPixels(_opaqueAtlas.getBitmapData(textureName),
-            new Rectangle(0, 0, SIZE, SIZE), new Point(0, 0));
+      ..clear()
+      ..drawPixels(_opaqueAtlas.getBitmapData(textureName),
+          new Rectangle(0, 0, SIZE, SIZE), new Point(0, 0));
   }
 
   void _onClick(MouseEvent e) {
