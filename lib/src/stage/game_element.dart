@@ -63,8 +63,8 @@ class GameElement extends Sprite {
     new GameBackgroundElement(this, opa);
 
     var newButtonNormal = new Bitmap(sta.getBitmapData("button_new_game"));
-    var newButtonPressed = new Bitmap(
-        sta.getBitmapData("button_new_game_clicked"));
+    var newButtonPressed =
+        new Bitmap(sta.getBitmapData("button_new_game_clicked"));
 
     new SimpleButton(
         newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
@@ -230,11 +230,11 @@ class GameElement extends Sprite {
       var se = _boardElement.squares.get(c.x, c.y);
       var ss = se.squareState;
 
-      var texturePrefix = ss == SquareState.bomb ?
-          'balloon_explode' : 'balloon_pop';
+      var texturePrefix =
+          ss == SquareState.bomb ? 'balloon_explode' : 'balloon_pop';
 
-      var anim = new FlipBook(_animations
-          .getBitmapDatas(texturePrefix), stage.frameRate, false)
+      var anim = new FlipBook(
+          _animations.getBitmapDatas(texturePrefix), stage.frameRate, false)
         ..x = squareOffset.x
         ..y = squareOffset.y
         ..alpha = 0
@@ -245,8 +245,8 @@ class GameElement extends Sprite {
 
       stage.juggler
         ..add(anim)
-        ..delayCall(() =>
-            _animationDelay(anim, se, ss), delay / stage.frameRate);
+        ..delayCall(
+            () => _animationDelay(anim, se, ss), delay / stage.frameRate);
     }
   }
 
@@ -258,23 +258,23 @@ class GameElement extends Sprite {
           new Vector(
               SquareElement.SIZE * point.x, SquareElement.SIZE * point.y);
 
-      var dart = new FlipBook(_animations.getBitmapDatas('dart'),
-          stage.frameRate, false)
-          ..x = squareOffset.x
-          ..y = squareOffset.y
-          ..mouseEnabled = false
-          ..play()
-          ..addTo(_dartLayer);
+      var dart = new FlipBook(
+          _animations.getBitmapDatas('dart'), stage.frameRate, false)
+        ..x = squareOffset.x
+        ..y = squareOffset.y
+        ..mouseEnabled = false
+        ..play()
+        ..addTo(_dartLayer);
 
       dart.onComplete.listen((e) => dart.removeFromParent());
 
-      var shadow = new FlipBook(_animations.getBitmapDatas('shadow'),
-          stage.frameRate, false)
-          ..x = squareOffset.x
-          ..y = squareOffset.y
-          ..mouseEnabled = false
-          ..play()
-          ..addTo(_dartLayer);
+      var shadow = new FlipBook(
+          _animations.getBitmapDatas('shadow'), stage.frameRate, false)
+        ..x = squareOffset.x
+        ..y = squareOffset.y
+        ..mouseEnabled = false
+        ..play()
+        ..addTo(_dartLayer);
 
       shadow.onComplete.listen((e) => shadow.removeFromParent());
 

@@ -18,8 +18,8 @@ const String _ASSET_DIR = 'packages/pop_pop_win/assets';
 Future startGame(PlatformTarget platform) {
   initPlatform(platform);
 
-  var stage = new Stage(querySelector('#gameCanvas'), webGL: true,
-      color: 0xb4ad7f, frameRate: 60);
+  var stage = new Stage(querySelector('#gameCanvas'),
+      webGL: true, color: 0xb4ad7f, frameRate: 60);
 
   new RenderLoop()..addStage(stage);
 
