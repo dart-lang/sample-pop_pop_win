@@ -12,13 +12,38 @@ import 'package:pop_pop_win/src/game.dart';
 // X32321
 // 110000
 
-const SAMPLE_FIELD = const
-    [null, null, null, null, null, 2,
-     null,    7, null,    8, null, 3,
-     null,    5, null, null, null, 2,
-     null,    3,    2,    3,    2, 1,
-        1,    1,    0,    0,    0, 0];
-
+const SAMPLE_FIELD = const [
+  null,
+  null,
+  null,
+  null,
+  null,
+  2,
+  null,
+  7,
+  null,
+  8,
+  null,
+  3,
+  null,
+  5,
+  null,
+  null,
+  null,
+  2,
+  null,
+  3,
+  2,
+  3,
+  2,
+  1,
+  1,
+  1,
+  0,
+  0,
+  0,
+  0
+];
 
 Field getSampleField() {
   var bools = new List<bool>.from(SAMPLE_FIELD.map((x) => x == null));
