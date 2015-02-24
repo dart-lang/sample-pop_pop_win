@@ -54,16 +54,15 @@ class GameStorage {
     return targetPlatform.clearValues();
   }
 
-  Future<int> _getIntValue(String key, [int defaultValue = 0]) {
+  Future<int> _getIntValue(String key, [int defaultValue = 0]) async {
     assert(key != null);
     if (_cache.containsKey(key)) {
       return new Future.value(_parseValue(_cache[key], defaultValue));
     }
 
-    return targetPlatform.getValue(key).then((String strValue) {
-      _cache[key] = strValue;
-      return _parseValue(strValue, defaultValue);
-    });
+    var strValue = await targetPlatform.getValue(key);
+    _cache[key] = strValue;
+    return _parseValue(strValue, defaultValue);
   }
 
   Future _setIntValue(String key, int value) {
@@ -73,10 +72,9 @@ class GameStorage {
     return targetPlatform.setValue(key, val);
   }
 
-  Future _incrementIntValue(String key) {
-    return _getIntValue(key).then((int val) {
-      return _setIntValue(key, val + 1);
-    });
+  Future _incrementIntValue(String key) async {
+    var val = await _getIntValue(key);
+    return _setIntValue(key, val + 1);
   }
 
   static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";

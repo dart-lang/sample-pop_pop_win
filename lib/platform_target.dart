@@ -42,15 +42,13 @@ class _DefaultPlatform extends PlatformTarget {
   _DefaultPlatform() : super.base();
 
   @override
-  Future clearValues() => new Future(_values.clear);
+  Future clearValues() async => _values.clear();
 
   @override
-  Future setValue(String key, String value) => new Future(() {
-    _values[key] = value;
-  });
+  Future setValue(String key, String value) async => _values[key] = value;
 
   @override
-  Future<String> getValue(String key) => new Future(() => _values[key]);
+  Future<String> getValue(String key) async => _values[key];
 
   int get size => 7;
 

@@ -18,20 +18,14 @@ class PlatformWeb extends PlatformTarget {
   }
 
   @override
-  Future clearValues() {
-    window.localStorage.clear();
-    return new Future.value();
-  }
+  Future clearValues() async => window.localStorage.clear();
 
   @override
-  Future setValue(String key, String value) {
-    window.localStorage[key] = value;
-    return new Future.value();
-  }
+  Future setValue(String key, String value) async =>
+      window.localStorage[key] = value;
 
   @override
-  Future<String> getValue(String key) =>
-      new Future.value(window.localStorage[key]);
+  Future<String> getValue(String key) async => window.localStorage[key];
 
   int get size {
     _sizeAccessed = true;

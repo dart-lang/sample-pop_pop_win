@@ -15,7 +15,7 @@ import 'src/stage.dart';
 
 const String _ASSET_DIR = 'packages/pop_pop_win/assets';
 
-Future startGame(PlatformTarget platform) {
+Future startGame(PlatformTarget platform) async {
   initPlatform(platform);
 
   var stage = new Stage(querySelector('#gameCanvas'),
@@ -30,7 +30,8 @@ Future startGame(PlatformTarget platform) {
     ..addTextureAtlas(
         "static", '$_ASSET_DIR/images/static.json', TextureAtlasFormat.JSON);
 
-  return resourceManager.load().then((resMan) => _initialLoad(resMan, stage));
+  var resMan = await resourceManager.load();
+  _initialLoad(resMan, stage);
 }
 
 void _initialLoad(ResourceManager resourceManager, Stage stage) {
