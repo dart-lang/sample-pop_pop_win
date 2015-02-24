@@ -5,7 +5,7 @@ library pop_pop_win.stage.game_root;
 
 import 'package:stagexl/stagexl.dart';
 
-import 'package:pop_pop_win/src/audio.dart';
+import 'package:pop_pop_win/src/audio.dart' as GameAudio;
 import 'package:pop_pop_win/src/game.dart';
 import 'package:pop_pop_win/src/game_manager.dart';
 import 'game_element.dart';

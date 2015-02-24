@@ -9,7 +9,7 @@ import 'dart:html';
 import 'package:pop_pop_win/platform_target.dart';
 import 'package:stagexl/stagexl.dart';
 
-import 'src/audio.dart';
+import 'src/audio.dart' as GameAudio;
 import 'src/platform.dart';
 import 'src/stage.dart';
 

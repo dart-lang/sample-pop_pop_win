@@ -9,7 +9,7 @@ import 'dart:math';
 import 'package:bot/bot.dart' show Size, Vector, Tuple;
 import 'package:stagexl/stagexl.dart' hide Vector, Point;
 
-import 'package:pop_pop_win/src/audio.dart';
+import 'package:pop_pop_win/src/audio.dart' as GameAudio;
 import 'package:pop_pop_win/src/game.dart';
 
 import 'board_element.dart';
