@@ -1,7 +1,7 @@
 name: pop_pop_win
 author: Dart Team <misc@dartlang.org>
 description: '"Pop, Pop, Win!" is an implementation of Minesweeper in Dart.'
-homepage: https://www.dartlang.org
+homepage: https://github.com/dart-lang/sample-pop_pop_win
 environment:
   sdk: '>=1.3.0 <2.0.0'
 dependencies:
