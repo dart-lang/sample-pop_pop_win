@@ -6,7 +6,7 @@ library pop_pop_win.game_test;
 import 'dart:math';
 
 import 'package:pop_pop_win/src/game.dart';
-import 'package:unittest/unittest.dart';
+import 'package:test/test.dart';
 
 import 'test_util.dart';
 

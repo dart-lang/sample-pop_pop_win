@@ -10,4 +10,4 @@ dependencies:
   chrome: '^0.6.3'
   stagexl: '^0.11.0'
 dev_dependencies:
-  unittest: '^0.11.0'
+  test: '^0.12.0'
