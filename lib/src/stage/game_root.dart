@@ -25,7 +25,7 @@ class GameRoot extends GameManager {
 
     stage
       ..addChild(_gameElement)
-      ..juggler.tween(_gameElement, .5).animate.alpha.to(1);
+      ..juggler.addTween(_gameElement, .5).animate.alpha.to(1);
   }
 
   void onGameStateChanged(GameState newState) {

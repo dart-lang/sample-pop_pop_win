@@ -56,7 +56,7 @@ class GameBackgroundElement extends Sprite {
     addChild(sbr);
 
     //draw the board
-    var boardData = new BitmapData(_boardSize, _boardSize, true, 0x000000);
+    var boardData = new BitmapData(_boardSize, _boardSize, 0x000000);
     var cr = new Rectangle(0, 0, 112, 122);
     boardData.drawPixels(
         op.getBitmapData('game_board_corner_top_left'), cr, new Point(0, 0));

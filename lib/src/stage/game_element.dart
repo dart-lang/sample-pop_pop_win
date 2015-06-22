@@ -18,6 +18,8 @@ import 'game_root.dart';
 import 'score_element.dart';
 import 'square_element.dart';
 
+const _frameRate = 60;
+
 class GameElement extends Sprite {
   static const _edgeOffset = 32;
   static const _backgroundSize = const Size(2048, 1536);
@@ -234,7 +236,7 @@ class GameElement extends Sprite {
           ss == SquareState.bomb ? 'balloon_explode' : 'balloon_pop';
 
       var anim = new FlipBook(
-          _animations.getBitmapDatas(texturePrefix), stage.frameRate, false)
+          _animations.getBitmapDatas(texturePrefix), _frameRate, false)
         ..x = squareOffset.x
         ..y = squareOffset.y
         ..alpha = 0
@@ -245,8 +247,7 @@ class GameElement extends Sprite {
 
       stage.juggler
         ..add(anim)
-        ..delayCall(
-            () => _animationDelay(anim, se, ss), delay / stage.frameRate);
+        ..delayCall(() => _animationDelay(anim, se, ss), delay / _frameRate);
     }
   }
 
@@ -259,7 +260,7 @@ class GameElement extends Sprite {
               SquareElement.SIZE * point.x, SquareElement.SIZE * point.y);
 
       var dart = new FlipBook(
-          _animations.getBitmapDatas('dart'), stage.frameRate, false)
+          _animations.getBitmapDatas('dart'), _frameRate, false)
         ..x = squareOffset.x
         ..y = squareOffset.y
         ..mouseEnabled = false
@@ -269,7 +270,7 @@ class GameElement extends Sprite {
       dart.onComplete.listen((e) => dart.removeFromParent());
 
       var shadow = new FlipBook(
-          _animations.getBitmapDatas('shadow'), stage.frameRate, false)
+          _animations.getBitmapDatas('shadow'), _frameRate, false)
         ..x = squareOffset.x
         ..y = squareOffset.y
         ..mouseEnabled = false
@@ -278,9 +279,7 @@ class GameElement extends Sprite {
 
       shadow.onComplete.listen((e) => shadow.removeFromParent());
 
-      stage.juggler
-        ..add(dart)
-        ..add(shadow);
+      stage.juggler..add(dart)..add(shadow);
     }
   }
 }

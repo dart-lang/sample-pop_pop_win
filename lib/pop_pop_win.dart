@@ -18,8 +18,9 @@ const String _ASSET_DIR = 'packages/pop_pop_win/assets';
 Future startGame(PlatformTarget platform) async {
   initPlatform(platform);
 
-  var stage = new Stage(querySelector('#gameCanvas'),
-      webGL: true, color: 0xb4ad7f, frameRate: 60);
+  var options = new StageOptions()..backgroundColor = 0xb4ad7f;
+
+  var stage = new Stage(querySelector('#gameCanvas'), options: options);
 
   new RenderLoop()..addStage(stage);
 
@@ -76,7 +77,7 @@ void _initialLoad(ResourceManager resourceManager, Stage stage) {
 
 void _secondaryLoad(
     ResourceManager resourceManager, Stage stage, Sprite loadingSprite) {
-  stage.juggler.tween(loadingSprite, .5)
+  stage.juggler.addTween(loadingSprite, .5)
     ..animate.alpha.to(0)
     ..onComplete = () => stage.removeChild(loadingSprite);
 

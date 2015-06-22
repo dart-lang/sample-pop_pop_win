@@ -33,7 +33,7 @@ class SquareElement extends Sprite {
 
   final int x, y;
   final Bitmap _bitmap =
-      new Bitmap(new BitmapData(SIZE, SIZE, true, Color.Transparent));
+      new Bitmap(new BitmapData(SIZE, SIZE, Color.Transparent));
 
   SquareElement(this.x, this.y) {
     addChild(_bitmap);
