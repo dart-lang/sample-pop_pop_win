@@ -10,7 +10,7 @@ import 'game_element.dart';
 
 class GameBackgroundElement extends Sprite {
   num get _backgroundScale => (parent as GameElement).boardScale;
-  num get _boardSize => (parent as GameElement).boardSize;
+  int get _boardSize => (parent as GameElement).boardSize;
   Game get _game => (parent as GameElement).game;
 
   GameBackgroundElement(GameElement gameElement, TextureAtlas op) {
@@ -57,7 +57,7 @@ class GameBackgroundElement extends Sprite {
 
     //draw the board
     var boardData = new BitmapData(_boardSize, _boardSize, 0x000000);
-    var cr = new Rectangle(0, 0, 112, 122);
+    var cr = new Rectangle<int>(0, 0, 112, 122);
     boardData.drawPixels(
         op.getBitmapData('game_board_corner_top_left'), cr, new Point(0, 0));
     boardData.drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
@@ -66,8 +66,8 @@ class GameBackgroundElement extends Sprite {
         new Point(0, _boardSize - 112));
     boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
         new Point(_boardSize - 112, _boardSize - 112));
-    var tbr = new Rectangle(0, 0, 80, 112);
-    var lrr = new Rectangle(0, 0, 112, 80);
+    var tbr = new Rectangle<int>(0, 0, 80, 112);
+    var lrr = new Rectangle<int>(0, 0, 112, 80);
     for (var i = 0; i < _game.field.width - 2; i++) {
       boardData
         ..drawPixels(op.getBitmapData('game_board_side_top'), tbr,

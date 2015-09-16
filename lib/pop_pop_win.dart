@@ -7,7 +7,7 @@ import 'dart:async';
 import 'dart:html';
 
 import 'package:pop_pop_win/platform_target.dart';
-import 'package:stagexl/stagexl.dart';
+import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
 import 'src/audio.dart' as GameAudio;
 import 'src/platform.dart';
@@ -107,7 +107,7 @@ void _onPopupClick(args) {
   }
 }
 
-void _onKeyDown(args) {
+void _onKeyDown(KeyboardEvent args) {
   var keyEvent = new KeyEvent.wrap(args);
   switch (keyEvent.keyCode) {
     case KeyCode.ESC: // esc

@@ -235,7 +235,7 @@ class Game {
     _states.set(x, y, SquareState.revealed);
     _revealsLeft--;
     assert(_revealsLeft >= 0);
-    var reveals = [new Point(x, y)];
+    var reveals = <Point>[new Point(x, y)];
     if (_revealsLeft == 0) {
       _setWon();
     } else if (field.getAdjacentCount(x, y) == 0) {

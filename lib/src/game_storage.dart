@@ -22,7 +22,7 @@ class GameStorage {
     _incrementIntValue(state.name);
   }
 
-  Future<bool> updateBestTime(Game game) {
+  Future<bool> updateBestTime(Game game) async {
     assert(game != null);
     assert(game.state == GameState.won);
 
@@ -33,15 +33,14 @@ class GameStorage {
 
     var key = _getKey(w, h, m);
 
-    return _getIntValue(key, null).then((int currentScore) {
-      if (currentScore == null || currentScore > duration) {
-        _setIntValue(key, duration);
-        _bestTimeUpdated.add(null);
-        return true;
-      } else {
-        return false;
-      }
-    });
+    var currentScore = await _getIntValue(key, null);
+    if (currentScore == null || currentScore > duration) {
+      _setIntValue(key, duration);
+      _bestTimeUpdated.add(null);
+      return true;
+    } else {
+      return false;
+    }
   }
 
   Future<int> getBestTimeMilliseconds(int width, int height, int bombCount) {
@@ -57,7 +56,7 @@ class GameStorage {
   Future<int> _getIntValue(String key, [int defaultValue = 0]) async {
     assert(key != null);
     if (_cache.containsKey(key)) {
-      return new Future.value(_parseValue(_cache[key], defaultValue));
+      return _parseValue(_cache[key], defaultValue);
     }
 
     var strValue = await targetPlatform.getValue(key);

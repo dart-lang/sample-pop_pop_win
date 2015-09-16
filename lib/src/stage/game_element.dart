@@ -39,7 +39,8 @@ class GameElement extends Sprite {
   SimpleButton _logoButton;
   Sprite _popLayer = new Sprite(), _dartLayer = new Sprite();
 
-  num _boardSize, _boardScale;
+  int _boardSize;
+  num _boardScale;
 
   int _targetX, _targetY;
   TextureAtlas _animations;
@@ -47,7 +48,7 @@ class GameElement extends Sprite {
   Game get game => manager.game;
   ResourceManager get resourceManager => manager.resourceManager;
 
-  num get boardSize => _boardSize;
+  int get boardSize => _boardSize;
   num get boardScale => _boardScale;
 
   ScoreElement get scoreElement => _scoreElement;
