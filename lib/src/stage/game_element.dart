@@ -37,8 +37,7 @@ class GameElement extends Sprite {
   BoardElement _boardElement;
   ScoreElement _scoreElement;
   SimpleButton _logoButton;
-  Sprite _popLayer = new Sprite(),
-      _dartLayer = new Sprite();
+  Sprite _popLayer = new Sprite(), _dartLayer = new Sprite();
 
   num _boardSize, _boardScale;
 
@@ -259,23 +258,23 @@ class GameElement extends Sprite {
           new Vector(
               SquareElement.SIZE * point.x, SquareElement.SIZE * point.y);
 
-      var dart = new FlipBook(
-          _animations.getBitmapDatas('dart'), _frameRate, false)
-        ..x = squareOffset.x
-        ..y = squareOffset.y
-        ..mouseEnabled = false
-        ..play()
-        ..addTo(_dartLayer);
+      var dart =
+          new FlipBook(_animations.getBitmapDatas('dart'), _frameRate, false)
+            ..x = squareOffset.x
+            ..y = squareOffset.y
+            ..mouseEnabled = false
+            ..play()
+            ..addTo(_dartLayer);
 
       dart.onComplete.listen((e) => dart.removeFromParent());
 
-      var shadow = new FlipBook(
-          _animations.getBitmapDatas('shadow'), _frameRate, false)
-        ..x = squareOffset.x
-        ..y = squareOffset.y
-        ..mouseEnabled = false
-        ..play()
-        ..addTo(_dartLayer);
+      var shadow =
+          new FlipBook(_animations.getBitmapDatas('shadow'), _frameRate, false)
+            ..x = squareOffset.x
+            ..y = squareOffset.y
+            ..mouseEnabled = false
+            ..play()
+            ..addTo(_dartLayer);
 
       shadow.onComplete.listen((e) => shadow.removeFromParent());
 
