@@ -196,7 +196,8 @@ class GameElement extends Sprite {
   void _startPopAnimation(Point start, [Iterable<Point> reveals = null]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
-      reveals = new Iterable.generate(game.field.length).map((i) {
+
+      reveals = new Iterable.generate(game.field.length, (i) {
         var t = game.field.getCoordinate(i);
         var c = new Point(t.item1, t.item2);
         return new Tuple(c, game.getSquareState(c.x, c.y));
