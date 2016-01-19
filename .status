@@ -20,3 +20,6 @@ build/test/*/*/*/*: SkipByDesign
 [ $compiler == dart2analyzer ]
 test/game_test: StaticWarning # pkg/bot issues with Coordinate and Vector
 test/field_test: StaticWarning # pkg/bot issues with Coordinate and Vector
+
+[ $runtime == jsshell ]
+*: Skip # uses package:test which has non-zero timers
