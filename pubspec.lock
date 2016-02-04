@@ -4,15 +4,15 @@ packages:
   analyzer:
     description: analyzer
     source: hosted
-    version: "0.27.1+1"
+    version: "0.27.1+2"
   args:
     description: args
     source: hosted
-    version: "0.13.2"
+    version: "0.13.3+2"
   async:
     description: async
     source: hosted
-    version: "1.5.0"
+    version: "1.8.0"
   barback:
     description: barback
     source: hosted
@@ -36,7 +36,7 @@ packages:
   collection:
     description: collection
     source: hosted
-    version: "1.2.0"
+    version: "1.4.0"
   crypto:
     description: crypto
     source: hosted
@@ -48,7 +48,7 @@ packages:
   glob:
     description: glob
     source: hosted
-    version: "1.0.5"
+    version: "1.1.0"
   html:
     description: html
     source: hosted
@@ -60,7 +60,7 @@ packages:
   http_parser:
     description: http_parser
     source: hosted
-    version: "2.0.0"
+    version: "2.1.0"
   logging:
     description: logging
     source: hosted
@@ -96,15 +96,15 @@ packages:
   shelf:
     description: shelf
     source: hosted
-    version: "0.6.4+3"
+    version: "0.6.5"
   shelf_static:
     description: shelf_static
     source: hosted
-    version: "0.2.3+2"
+    version: "0.2.3+3"
   shelf_web_socket:
     description: shelf_web_socket
     source: hosted
-    version: "0.0.1+5"
+    version: "0.1.0"
   source_map_stack_trace:
     description: source_map_stack_trace
     source: hosted
@@ -120,19 +120,23 @@ packages:
   stack_trace:
     description: stack_trace
     source: hosted
-    version: "1.5.0"
+    version: "1.6.1"
   stagexl:
     description: stagexl
     source: hosted
     version: "0.12.0+1"
+  stream_channel:
+    description: stream_channel
+    source: hosted
+    version: "1.1.1"
   string_scanner:
     description: string_scanner
     source: hosted
-    version: "0.1.4"
+    version: "0.1.4+1"
   test:
     description: test
     source: hosted
-    version: "0.12.6+2"
+    version: "0.12.9"
   utf:
     description: utf
     source: hosted
@@ -144,4 +148,5 @@ packages:
   yaml:
     description: yaml
     source: hosted
-    version: "2.1.7"
+    version: "2.1.8"
+sdk: ">=1.14.0 <1.16.0"
