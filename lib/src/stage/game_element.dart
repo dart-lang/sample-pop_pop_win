@@ -141,10 +141,12 @@ class GameElement extends Sprite {
       } else if (ss == SquareState.revealed) {
         if (game.canReveal(x, y)) {
           // get adjacent ballons
-          final adjHidden = game.field.getAdjacentIndices(x, y).map((i) {
-            final t = game.field.getCoordinate(i);
-            return new Point(t.item1, t.item2);
-          })
+          final adjHidden = game.field
+              .getAdjacentIndices(x, y)
+              .map((i) {
+                final t = game.field.getCoordinate(i);
+                return new Point(t.item1, t.item2);
+              })
               .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 

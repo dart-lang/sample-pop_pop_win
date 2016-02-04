@@ -18,7 +18,9 @@ const String _ASSET_DIR = 'packages/pop_pop_win/assets';
 Future startGame(PlatformTarget platform) async {
   initPlatform(platform);
 
-  var options = new StageOptions()..backgroundColor = 0xb4ad7f;
+  var options = new StageOptions()
+    ..backgroundColor = 0xb4ad7f
+    ..transparent = true;
 
   var stage = new Stage(querySelector('#gameCanvas'), options: options);
 
@@ -32,10 +34,10 @@ Future startGame(PlatformTarget platform) async {
         "static", '$_ASSET_DIR/images/static.json', TextureAtlasFormat.JSON);
 
   var resMan = await resourceManager.load();
-  _initialLoad(resMan, stage);
+  await _initialLoad(resMan, stage);
 }
 
-void _initialLoad(ResourceManager resourceManager, Stage stage) {
+Future _initialLoad(ResourceManager resourceManager, Stage stage) async {
   var atlas = resourceManager.getTextureAtlas('static');
 
   var bar = new Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
@@ -70,9 +72,9 @@ void _initialLoad(ResourceManager resourceManager, Stage stage) {
         resourceManager.resources.length;
   });
 
-  resourceManager
-      .load()
-      .then((resMan) => _secondaryLoad(resMan, stage, loadingSprite));
+  await resourceManager.load();
+
+  _secondaryLoad(resourceManager, stage, loadingSprite);
 }
 
 void _secondaryLoad(

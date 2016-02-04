@@ -81,6 +81,10 @@ packages:
     description: path
     source: hosted
     version: "1.3.9"
+  petitparser:
+    description: petitparser
+    source: hosted
+    version: "1.5.1"
   plugin:
     description: plugin
     source: hosted
@@ -124,7 +128,7 @@ packages:
   stagexl:
     description: stagexl
     source: hosted
-    version: "0.12.0+1"
+    version: "0.13.1"
   stream_channel:
     description: stream_channel
     source: hosted
@@ -145,6 +149,10 @@ packages:
     description: watcher
     source: hosted
     version: "0.9.7"
+  xml:
+    description: xml
+    source: hosted
+    version: "2.4.1"
   yaml:
     description: yaml
     source: hosted
