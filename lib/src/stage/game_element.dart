@@ -4,10 +4,10 @@
 library pop_pop_win.stage.game_element;
 
 import 'dart:async';
-import 'dart:math';
+import 'dart:math' hide Point;
 
-import 'package:bot/bot.dart' show Size, Vector, Tuple;
-import 'package:stagexl/stagexl.dart' hide Vector, Point;
+import 'package:bot/bot.dart' show Tuple;
+import 'package:stagexl/stagexl.dart';
 
 import 'package:pop_pop_win/src/audio.dart' as GameAudio;
 import 'package:pop_pop_win/src/game.dart';
@@ -22,12 +22,12 @@ const _frameRate = 60;
 
 class GameElement extends Sprite {
   static const _edgeOffset = 32;
-  static const _backgroundSize = const Size(2048, 1536);
+  static final _backgroundSize = new Point(2048, 1536);
   static const _backgroundHoleSize = 16 * SquareElement.SIZE + 2 * _edgeOffset;
-  static const BOARD_OFFSET = const Vector(352, 96);
+  static final BOARD_OFFSET = new Vector(352, 96);
   static const _popAnimationHitFrame = 12;
-  static const _popExplodeAnimationOffset = const Vector(-88, -88);
-  static const _dartAnimationOffset = const Vector(
+  static final _popExplodeAnimationOffset = new Vector(-88, -88);
+  static final _dartAnimationOffset = new Vector(
       -512 + 0.5 * SquareElement.SIZE, -388 + 0.5 * SquareElement.SIZE);
 
   final GameRoot manager;
@@ -96,7 +96,7 @@ class GameElement extends Sprite {
       ..y = 20
       ..scaleX = logoScale
       ..scaleY = logoScale
-      ..x = _backgroundSize.width / 2 - _logoButton.width / 2
+      ..x = _backgroundSize.x / 2 - _logoButton.width / 2
       ..onMouseClick.listen((e) => _titleClickedEventHandle.add(null))
       ..addTo(this);
 

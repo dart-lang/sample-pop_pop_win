@@ -6,7 +6,7 @@ library pop_pop_win.game.field;
 import 'dart:collection';
 import 'dart:math';
 
-import 'package:bot/bot.dart' show Array2d, require;
+import 'package:bot/bot.dart' show Array2d;
 
 class Field extends Array2d<bool> {
   final int bombCount;
