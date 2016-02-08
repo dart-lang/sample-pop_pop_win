@@ -29,10 +29,6 @@ packages:
     description: charcode
     source: hosted
     version: "1.1.0"
-  chrome:
-    description: chrome
-    source: hosted
-    version: "0.6.5"
   collection:
     description: collection
     source: hosted
@@ -128,7 +124,7 @@ packages:
   stagexl:
     description: stagexl
     source: hosted
-    version: "0.13.1"
+    version: "0.13.2"
   stream_channel:
     description: stream_channel
     source: hosted
@@ -140,7 +136,7 @@ packages:
   test:
     description: test
     source: hosted
-    version: "0.12.9"
+    version: "0.12.10"
   utf:
     description: utf
     source: hosted
