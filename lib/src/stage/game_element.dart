@@ -9,9 +9,8 @@ import 'dart:math' hide Point;
 import 'package:bot/bot.dart' show Tuple;
 import 'package:stagexl/stagexl.dart';
 
-import 'package:pop_pop_win/src/audio.dart' as GameAudio;
-import 'package:pop_pop_win/src/game.dart';
-
+import '../audio.dart' as GameAudio;
+import '../game.dart';
 import 'board_element.dart';
 import 'game_background_element.dart';
 import 'game_root.dart';

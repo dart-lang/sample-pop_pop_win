@@ -4,6 +4,6 @@
 library pop_pop_win.game;
 
 export 'game/field.dart';
-export 'game/game_state.dart';
 export 'game/game.dart';
+export 'game/game_state.dart';
 export 'game/square_state.dart';

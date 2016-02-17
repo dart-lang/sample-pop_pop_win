@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 library pop_pop_win.platform;
 
-import 'package:pop_pop_win/platform_target.dart';
+import '../platform_target.dart';
 
 PlatformTarget _platformImpl;
 

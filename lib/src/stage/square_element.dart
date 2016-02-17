@@ -5,7 +5,7 @@ library pop_pop_win.stage.square_element;
 
 import 'package:stagexl/stagexl.dart';
 
-import 'package:pop_pop_win/src/game.dart';
+import '../game.dart';
 import 'board_element.dart';
 import 'game_element.dart';
 

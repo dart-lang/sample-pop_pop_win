@@ -6,7 +6,7 @@ library pop_pop_win.stage.board_element;
 import 'package:bot/bot.dart' show Array2d;
 import 'package:stagexl/stagexl.dart';
 
-import 'package:pop_pop_win/src/game.dart';
+import '../game.dart';
 import 'game_element.dart';
 import 'square_element.dart';
 

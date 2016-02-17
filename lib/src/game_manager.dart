@@ -5,8 +5,8 @@ library pop_pop_win.game_manager;
 
 import 'dart:async';
 
-import 'game_storage.dart';
 import 'game.dart';
+import 'game_storage.dart';
 
 abstract class GameManager {
   final int _width, _height, _bombCount;

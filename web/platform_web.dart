@@ -5,6 +5,7 @@ library pop_pop_win.platform_web;
 
 import 'dart:async';
 import 'dart:html';
+
 import 'package:pop_pop_win/platform_target.dart';
 
 class PlatformWeb extends PlatformTarget {

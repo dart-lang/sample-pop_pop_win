@@ -3,8 +3,9 @@
 // BSD-style license that can be found in the LICENSE file.
 library pop_pop_win.game_web;
 
-import 'platform_web.dart';
 import 'package:pop_pop_win/pop_pop_win.dart';
+
+import 'platform_web.dart';
 
 void main() {
   startGame(new PlatformWeb());

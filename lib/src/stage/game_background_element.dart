@@ -5,7 +5,7 @@ library pop_pop_win.stage.game_background_element;
 
 import 'package:stagexl/stagexl.dart';
 
-import 'package:pop_pop_win/src/game.dart';
+import '../game.dart';
 import 'game_element.dart';
 
 class GameBackgroundElement extends Sprite {
