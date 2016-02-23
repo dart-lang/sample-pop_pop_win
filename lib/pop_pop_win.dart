@@ -4,7 +4,7 @@
 library pop_pop_win;
 
 import 'dart:async';
-import 'dart:html';
+import 'dart:html' as html;
 
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
@@ -22,7 +22,7 @@ Future startGame(PlatformTarget platform) async {
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;
 
-  var stage = new Stage(querySelector('#gameCanvas'), options: options);
+  var stage = new Stage(html.querySelector('#gameCanvas'), options: options);
 
   new RenderLoop()..addStage(stage);
 
@@ -94,28 +94,28 @@ void _secondaryLoad(
   new GameRoot(size, size, m, stage, resourceManager);
 
   // disable touch events
-  window.onTouchMove.listen((args) => args.preventDefault());
+  html.window.onTouchMove.listen((args) => args.preventDefault());
 
-  window.onKeyDown.listen(_onKeyDown);
+  html.window.onKeyDown.listen(_onKeyDown);
 
-  querySelector('#popup').onClick.listen(_onPopupClick);
+  html.querySelector('#popup').onClick.listen(_onPopupClick);
 
   titleClickedEvent.listen((args) => targetPlatform.toggleAbout(true));
 }
 
-void _onPopupClick(args) {
-  if (args.toElement is! AnchorElement) {
+void _onPopupClick(html.MouseEvent args) {
+  if (args.toElement is! html.AnchorElement) {
     targetPlatform.toggleAbout(false);
   }
 }
 
-void _onKeyDown(KeyboardEvent args) {
-  var keyEvent = new KeyEvent.wrap(args);
+void _onKeyDown(html.KeyboardEvent args) {
+  var keyEvent = new html.KeyEvent.wrap(args);
   switch (keyEvent.keyCode) {
-    case KeyCode.ESC: // esc
+    case html.KeyCode.ESC: // esc
       targetPlatform.toggleAbout(false);
       break;
-    case KeyCode.H: // h
+    case html.KeyCode.H: // h
       targetPlatform.toggleAbout();
       break;
   }
@@ -123,5 +123,5 @@ void _onKeyDown(KeyboardEvent args) {
 
 void _updateAbout() {
   var popDisplay = targetPlatform.showAbout ? 'inline-block' : 'none';
-  querySelector('#popup').style.display = popDisplay;
+  html.querySelector('#popup').style.display = popDisplay;
 }
