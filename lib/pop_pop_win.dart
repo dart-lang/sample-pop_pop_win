@@ -104,7 +104,7 @@ void _secondaryLoad(
 }
 
 void _onPopupClick(html.MouseEvent args) {
-  if (args.toElement is! html.AnchorElement) {
+  if (args.relatedTarget is! html.AnchorElement) {
     targetPlatform.toggleAbout(false);
   }
 }
