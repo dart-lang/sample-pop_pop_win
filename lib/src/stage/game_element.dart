@@ -147,7 +147,7 @@ class GameElement extends Sprite {
                 return new Point(t.item1, t.item2);
               })
               .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
-              .toList();
+              .toList() as List<Point>;
 
           assert(adjHidden.length > 0);
 
@@ -198,7 +198,7 @@ class GameElement extends Sprite {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 
-      reveals = new Iterable.generate(game.field.length, (i) {
+      reveals = new Iterable<Tuple>.generate(game.field.length, (i) {
         var t = game.field.getCoordinate(i);
         var c = new Point(t.item1, t.item2);
         return new Tuple(c, game.getSquareState(c.x, c.y));
@@ -206,7 +206,7 @@ class GameElement extends Sprite {
           .where((t2) =>
               t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
           .map((t2) => t2.item1)
-          .toList();
+          .toList() as List<Point>;
     }
 
     final values = reveals.map((c) {
