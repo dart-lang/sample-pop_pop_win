@@ -4,10 +4,10 @@
 library pop_pop_win.stage.game_element;
 
 import 'dart:async';
-import 'dart:math' hide Point;
+import 'dart:math';
 
 import 'package:bot/bot.dart' show Tuple;
-import 'package:stagexl/stagexl.dart';
+import 'package:stagexl/stagexl.dart' hide Point;
 
 import '../audio.dart' as GameAudio;
 import '../game.dart';
@@ -157,7 +157,7 @@ class GameElement extends Sprite {
       }
     } else {
       if (ss == SquareState.hidden) {
-        _startDartAnimation([new Point(x, y)]);
+        _startDartAnimation(<Point>[new Point(x, y)]);
         reveals = game.reveal(x, y);
       }
     }
