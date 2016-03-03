@@ -50,8 +50,10 @@ class _DefaultPlatform extends PlatformTarget {
   @override
   Future<String> getValue(String key) async => _values[key];
 
+  @override
   int get size => 7;
 
+  @override
   void toggleAbout([bool value]) {
     assert(_about != null);
     if (value == null) {
@@ -61,7 +63,9 @@ class _DefaultPlatform extends PlatformTarget {
     _aboutController.add(null);
   }
 
+  @override
   bool get showAbout => _about;
 
+  @override
   Stream get aboutChanged => _aboutController.stream;
 }

@@ -19,6 +19,7 @@ class ScoreElement extends TextField implements Animatable {
     y = 20;
   }
 
+  @override
   bool advanceTime(num time) {
     var time = (game.duration == null)
         ? '0'

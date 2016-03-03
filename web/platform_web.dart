@@ -28,6 +28,7 @@ class PlatformWeb extends PlatformTarget {
   @override
   Future<String> getValue(String key) async => window.localStorage[key];
 
+  @override
   int get size {
     _sizeAccessed = true;
     var hash = (_urlHash == null) ? '7' : _urlHash;
@@ -35,10 +36,13 @@ class PlatformWeb extends PlatformTarget {
     return int.parse(hash, onError: (e) => 7);
   }
 
+  @override
   bool get showAbout => _urlHash == _ABOUT_HASH;
 
+  @override
   Stream get aboutChanged => _aboutController.stream;
 
+  @override
   void toggleAbout([bool value]) {
     var loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later

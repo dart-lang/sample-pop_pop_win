@@ -31,6 +31,7 @@ class SquareElement extends Sprite {
     "number_eight"
   ];
 
+  @override
   final int x, y;
   final Bitmap _bitmap =
       new Bitmap(new BitmapData(SIZE, SIZE, Color.Transparent));
@@ -81,6 +82,7 @@ class SquareElement extends Sprite {
     }
   }
 
+  @override
   String toString() => 'Square at [$x, $y]';
 
   String _getHiddenTexture() {

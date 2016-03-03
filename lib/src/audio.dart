@@ -43,11 +43,11 @@ void _playAudio(String name) {
   switch (name) {
     case _POP:
       var i = _rnd.nextInt(8);
-      name = '${_POP}$i';
+      name = '$_POP$i';
       break;
     case _BOMB:
       var i = _rnd.nextInt(4);
-      name = '${_BOMB}$i';
+      name = '$_BOMB$i';
       break;
   }
   _resourceManager.getSoundSprite('audio').play(name);

@@ -90,5 +90,6 @@ class Field extends Array2d<bool> {
     return val;
   }
 
-  String toString() => 'w${width}h${height}m${bombCount}';
+  @override
+  String toString() => 'w${width}h${height}m$bombCount';
 }

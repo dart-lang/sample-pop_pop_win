@@ -28,6 +28,7 @@ class GameRoot extends GameManager {
       ..juggler.addTween(_gameElement, .5).animate.alpha.to(1);
   }
 
+  @override
   void onGameStateChanged(GameState newState) {
     if (newState == GameState.won) {
       _gameElement.boardElement.squares.forEach((se) => se.updateState());
@@ -39,6 +40,7 @@ class GameRoot extends GameManager {
     }
   }
 
+  @override
   void newGame() {
     super.newGame();
     if (_gameElement != null) {

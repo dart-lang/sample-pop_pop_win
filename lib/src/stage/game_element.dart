@@ -147,7 +147,7 @@ class GameElement extends Sprite {
                 return new Point(t.item1, t.item2);
               })
               .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
-              .toList() as List<Point>;
+              .toList();
 
           assert(adjHidden.length > 0);
 

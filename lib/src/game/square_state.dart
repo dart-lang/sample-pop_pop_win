@@ -13,5 +13,6 @@ class SquareState {
 
   const SquareState._internal(this.name);
 
+  @override
   String toString() => 'SquareState: $name';
 }

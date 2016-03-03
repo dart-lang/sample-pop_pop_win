@@ -12,5 +12,6 @@ class GameState {
 
   const GameState._internal(this.name);
 
+  @override
   String toString() => 'GameState: $name';
 }
