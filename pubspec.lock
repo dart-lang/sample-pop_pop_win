@@ -12,19 +12,25 @@ packages:
       name: args
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.3+3"
+    version: "0.13.3+6"
   async:
     description:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.9.0"
   barback:
     description:
       name: barback
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.15.2+7"
+  boolean_selector:
+    description:
+      name: boolean_selector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   bot:
     description:
       name: bot
@@ -66,13 +72,13 @@ packages:
       name: dart_to_js_script_rewriter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0+4"
+    version: "1.0.1"
   glob:
     description:
       name: glob
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   html:
     description:
       name: html
@@ -90,7 +96,7 @@ packages:
       name: http_parser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.2.0"
   logging:
     description:
       name: logging
@@ -162,7 +168,7 @@ packages:
       name: shelf_web_socket
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.0"
+    version: "0.2.0"
   source_map_stack_trace:
     description:
       name: source_map_stack_trace
@@ -180,7 +186,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.1"
+    version: "1.2.2"
   stack_trace:
     description:
       name: stack_trace
@@ -192,7 +198,7 @@ packages:
       name: stagexl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.2"
+    version: "0.13.4"
   stream_channel:
     description:
       name: stream_channel
@@ -210,25 +216,31 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.10+2"
+    version: "0.12.11+2"
   utf:
     description:
       name: utf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.0+2"
+    version: "0.9.0+3"
   watcher:
     description:
       name: watcher
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.7"
+  web_socket_channel:
+    description:
+      name: web_socket_channel
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   xml:
     description:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.1"
+    version: "2.4.2"
   yaml:
     description:
       name: yaml
