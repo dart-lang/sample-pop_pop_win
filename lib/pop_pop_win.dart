@@ -9,11 +9,11 @@ import 'dart:html' as html;
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
 import 'platform_target.dart';
-import 'src/audio.dart' as GameAudio;
+import 'src/audio.dart' as game_audio;
 import 'src/platform.dart';
 import 'src/stage.dart';
 
-const String _ASSET_DIR = 'packages/pop_pop_win/assets';
+const String _assetDir = 'packages/pop_pop_win/assets';
 
 Future startGame(PlatformTarget platform) async {
   initPlatform(platform);
@@ -31,7 +31,7 @@ Future startGame(PlatformTarget platform) async {
   //have to load the loading bar first...
   var resourceManager = new ResourceManager()
     ..addTextureAtlas(
-        "static", '$_ASSET_DIR/images/static.json', TextureAtlasFormat.JSON);
+        "static", '$_assetDir/images/static.json', TextureAtlasFormat.JSON);
 
   var resMan = await resourceManager.load();
   await _initialLoad(resMan, stage);
@@ -61,11 +61,11 @@ Future _initialLoad(ResourceManager resourceManager, Stage stage) async {
 
   resourceManager
     ..addTextureAtlas(
-        'opaque', '$_ASSET_DIR/images/opaque.json', TextureAtlasFormat.JSON)
-    ..addTextureAtlas('animated', '$_ASSET_DIR/images/animated.json',
-        TextureAtlasFormat.JSON);
+        'opaque', '$_assetDir/images/opaque.json', TextureAtlasFormat.JSON)
+    ..addTextureAtlas(
+        'animated', '$_assetDir/images/animated.json', TextureAtlasFormat.JSON);
 
-  resourceManager.addSoundSprite('audio', '$_ASSET_DIR/audio/audio.json');
+  resourceManager.addSoundSprite('audio', '$_assetDir/audio/audio.json');
 
   resourceManager.onProgress.listen((e) {
     bar.ratio = resourceManager.finishedResources.length /
@@ -90,7 +90,7 @@ void _secondaryLoad(
   var size = targetPlatform.size;
   var m = (size * size * 0.15625).toInt();
 
-  GameAudio.initialize(resourceManager);
+  game_audio.initialize(resourceManager);
   new GameRoot(size, size, m, stage, resourceManager);
 
   // disable touch events

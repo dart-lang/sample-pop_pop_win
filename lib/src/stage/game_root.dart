@@ -5,7 +5,7 @@ library pop_pop_win.stage.game_root;
 
 import 'package:stagexl/stagexl.dart';
 
-import '../audio.dart' as GameAudio;
+import '../audio.dart' as game_audio;
 import '../game.dart';
 import '../game_manager.dart';
 import 'game_element.dart';
@@ -36,7 +36,7 @@ class GameRoot extends GameManager {
           _gameElement.scoreElement.bestTime == 0) {
         _gameElement.scoreElement.bestTime = game.duration.inMilliseconds;
       }
-      GameAudio.win();
+      game_audio.win();
     }
   }
 

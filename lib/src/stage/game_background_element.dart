@@ -58,31 +58,31 @@ class GameBackgroundElement extends Sprite {
     //draw the board
     var boardData = new BitmapData(_boardSize, _boardSize, 0x000000);
     var cr = new Rectangle<int>(0, 0, 112, 122);
-    boardData.drawPixels(
-        op.getBitmapData('game_board_corner_top_left'), cr, new Point(0, 0));
+    boardData.drawPixels(op.getBitmapData('game_board_corner_top_left'), cr,
+        new Point<int>(0, 0));
     boardData.drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
-        new Point(_boardSize - 112, 0));
+        new Point<int>(_boardSize - 112, 0));
     boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_left'), cr,
-        new Point(0, _boardSize - 112));
+        new Point<int>(0, _boardSize - 112));
     boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
-        new Point(_boardSize - 112, _boardSize - 112));
+        new Point<int>(_boardSize - 112, _boardSize - 112));
     var tbr = new Rectangle<int>(0, 0, 80, 112);
     var lrr = new Rectangle<int>(0, 0, 112, 80);
     for (var i = 0; i < _game.field.width - 2; i++) {
       boardData
         ..drawPixels(op.getBitmapData('game_board_side_top'), tbr,
-            new Point(112 + i * 80, 0))
+            new Point<int>(112 + i * 80, 0))
         ..drawPixels(op.getBitmapData('game_board_side_bottom'), tbr,
-            new Point(112 + i * 80, _boardSize - 112))
+            new Point<int>(112 + i * 80, _boardSize - 112))
         ..drawPixels(op.getBitmapData('game_board_side_left'), lrr,
-            new Point(0, 112 + i * 80))
+            new Point<int>(0, 112 + i * 80))
         ..drawPixels(op.getBitmapData('game_board_side_right'), lrr,
-            new Point(_boardSize - 112, 112 + i * 80));
+            new Point<int>(_boardSize - 112, 112 + i * 80));
     }
 
     Bitmap board = new Bitmap(boardData)
-      ..x = GameElement.BOARD_OFFSET.x
-      ..y = GameElement.BOARD_OFFSET.y
+      ..x = GameElement.boardOffset.x
+      ..y = GameElement.boardOffset.y
       ..scaleX = _backgroundScale
       ..scaleY = _backgroundScale;
 

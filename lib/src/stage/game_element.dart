@@ -9,7 +9,7 @@ import 'dart:math';
 import 'package:bot/bot.dart' show Tuple;
 import 'package:stagexl/stagexl.dart' hide Point;
 
-import '../audio.dart' as GameAudio;
+import '../audio.dart' as game_audio;
 import '../game.dart';
 import 'board_element.dart';
 import 'game_background_element.dart';
@@ -22,12 +22,12 @@ const _frameRate = 60;
 class GameElement extends Sprite {
   static const _edgeOffset = 32;
   static final _backgroundSize = new Point(2048, 1536);
-  static const _backgroundHoleSize = 16 * SquareElement.SIZE + 2 * _edgeOffset;
-  static final BOARD_OFFSET = new Vector(352, 96);
+  static const _backgroundHoleSize = 16 * SquareElement.size + 2 * _edgeOffset;
+  static final Vector boardOffset = new Vector(352, 96);
   static const _popAnimationHitFrame = 12;
   static final _popExplodeAnimationOffset = new Vector(-88, -88);
   static final _dartAnimationOffset = new Vector(
-      -512 + 0.5 * SquareElement.SIZE, -388 + 0.5 * SquareElement.SIZE);
+      -512 + 0.5 * SquareElement.size, -388 + 0.5 * SquareElement.size);
 
   final GameRoot manager;
 
@@ -58,7 +58,7 @@ class GameElement extends Sprite {
     TextureAtlas sta = resourceManager.getTextureAtlas('static');
     _animations = resourceManager.getTextureAtlas('animated');
 
-    _boardSize = game.field.width * SquareElement.SIZE + 2 * _edgeOffset;
+    _boardSize = game.field.width * SquareElement.size + 2 * _edgeOffset;
     _boardScale = _backgroundHoleSize / _boardSize;
 
     new GameBackgroundElement(this, opa);
@@ -72,14 +72,14 @@ class GameElement extends Sprite {
       ..x = 450
       ..y = 20
       ..onMouseClick.listen((e) {
-        GameAudio.click();
+        game_audio.click();
         manager.newGame();
       })
       ..addTo(this);
 
     _boardElement = new BoardElement(this)
-      ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
-      ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale;
+      ..x = boardOffset.x + _edgeOffset * _boardScale
+      ..y = boardOffset.y + _edgeOffset * _boardScale;
 
     manager.bestTimeMilliseconds.then((v) {
       if (v == null) v = 0;
@@ -101,16 +101,16 @@ class GameElement extends Sprite {
 
     _popLayer
       ..mouseEnabled = false
-      ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
-      ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale
+      ..x = boardOffset.x + _edgeOffset * _boardScale
+      ..y = boardOffset.y + _edgeOffset * _boardScale
       ..scaleX = _boardScale
       ..scaleY = _boardScale
       ..addTo(this);
 
     _dartLayer
       ..mouseEnabled = false
-      ..x = BOARD_OFFSET.x + _edgeOffset * _boardScale
-      ..y = BOARD_OFFSET.y + _edgeOffset * _boardScale
+      ..x = boardOffset.x + _edgeOffset * _boardScale
+      ..y = boardOffset.y + _edgeOffset * _boardScale
       ..scaleX = _boardScale
       ..scaleY = _boardScale
       ..addTo(this);
@@ -132,7 +132,7 @@ class GameElement extends Sprite {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
-    List<Point> reveals = null;
+    List<Point> reveals;
 
     if (alt) {
       if (ss == SquareState.hidden || ss == SquareState.flagged) {
@@ -183,12 +183,12 @@ class GameElement extends Sprite {
     if (ss == SquareState.hidden) {
       game.setFlag(x, y, true);
       se.updateState();
-      GameAudio.flag();
+      game_audio.flag();
       return true;
     } else if (ss == SquareState.flagged) {
       game.setFlag(x, y, false);
       se.updateState();
-      GameAudio.unflag();
+      game_audio.unflag();
       return true;
     }
     return false;
@@ -211,25 +211,22 @@ class GameElement extends Sprite {
 
     final values = reveals.map((c) {
       var initialOffset =
-          new Vector(SquareElement.SIZE * c.x, SquareElement.SIZE * c.y);
+          new Vector(SquareElement.size * c.x, SquareElement.size * c.y);
       var squareOffset = _popExplodeAnimationOffset + initialOffset;
 
       var delay = _popAnimationHitFrame + ((c - start).magnitude * 4).toInt();
       delay += _rnd.nextInt(10);
 
-      return [c, initialOffset, squareOffset, delay];
+      return new _Values(c, squareOffset, delay);
     }).toList();
 
     values.sort((a, b) {
-      int da = a[3];
-      int db = b[3];
-      return da.compareTo(db);
+      return a.delay.compareTo(b.delay);
     });
 
     for (var v in values) {
-      Point c = v[0];
-      Vector squareOffset = v[2];
-      int delay = v[3];
+      var c = v.point;
+      var squareOffset = v.squareOffset;
 
       var se = _boardElement.squares.get(c.x, c.y);
       var ss = se.squareState;
@@ -249,17 +246,17 @@ class GameElement extends Sprite {
 
       stage.juggler
         ..add(anim)
-        ..delayCall(() => _animationDelay(anim, se, ss), delay / _frameRate);
+        ..delayCall(() => _animationDelay(anim, se, ss), v.delay / _frameRate);
     }
   }
 
   void _startDartAnimation(List<Point> points) {
     assert(points.length >= 1);
-    GameAudio.throwDart();
+    game_audio.throwDart();
     for (var point in points) {
       var squareOffset = _dartAnimationOffset +
           new Vector(
-              SquareElement.SIZE * point.x, SquareElement.SIZE * point.y);
+              SquareElement.size * point.x, SquareElement.size * point.y);
 
       var dart =
           new FlipBook(_animations.getBitmapDatas('dart'), _frameRate, false)
@@ -294,10 +291,10 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
   switch (ss) {
     case SquareState.revealed:
     case SquareState.hidden:
-      GameAudio.pop();
+      game_audio.pop();
       break;
     case SquareState.bomb:
-      GameAudio.bomb();
+      game_audio.bomb();
       break;
   }
 }
@@ -305,3 +302,11 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
 final StreamController _titleClickedEventHandle = new StreamController();
 
 Stream get titleClickedEvent => _titleClickedEventHandle.stream;
+
+class _Values {
+  final Point<int> point;
+  final Vector squareOffset;
+  final int delay;
+
+  _Values(this.point, this.squareOffset, this.delay);
+}

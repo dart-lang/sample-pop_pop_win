@@ -9,7 +9,7 @@ import 'dart:html';
 import 'package:pop_pop_win/platform_target.dart';
 
 class PlatformWeb extends PlatformTarget {
-  static const String _ABOUT_HASH = '#about';
+  static const String _aboutHash = '#about';
   bool _sizeAccessed = false;
 
   final StreamController _aboutController = new StreamController(sync: true);
@@ -37,7 +37,7 @@ class PlatformWeb extends PlatformTarget {
   }
 
   @override
-  bool get showAbout => _urlHash == _ABOUT_HASH;
+  bool get showAbout => _urlHash == _aboutHash;
 
   @override
   Stream get aboutChanged => _aboutController.stream;
@@ -48,13 +48,13 @@ class PlatformWeb extends PlatformTarget {
     // ensure we treat empty hash like '#', which makes comparison easy later
     var hash = loc.hash.length == 0 ? '#' : loc.hash;
 
-    var isOpen = hash == _ABOUT_HASH;
+    var isOpen = hash == _aboutHash;
     if (value == null) {
       // then toggle the current value
       value = !isOpen;
     }
 
-    var targetHash = value ? _ABOUT_HASH : '#';
+    var targetHash = value ? _aboutHash : '#';
     if (targetHash != hash) {
       loc.assign(targetHash);
     }
@@ -77,7 +77,7 @@ class PlatformWeb extends PlatformTarget {
 
         loc.replace(newLoc);
         break;
-      case _ABOUT_HASH:
+      case _aboutHash:
         _aboutController.add(null);
         break;
       default:

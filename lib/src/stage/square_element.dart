@@ -10,7 +10,7 @@ import 'board_element.dart';
 import 'game_element.dart';
 
 class SquareElement extends Sprite {
-  static const int SIZE = 80;
+  static const int size = 80;
 
   static const List<String> _balloonBits = const [
     'balloon_pieces_a',
@@ -34,7 +34,7 @@ class SquareElement extends Sprite {
   @override
   final int x, y;
   final Bitmap _bitmap =
-      new Bitmap(new BitmapData(SIZE, SIZE, Color.Transparent));
+      new Bitmap(new BitmapData(size, size, Color.Transparent));
 
   SquareElement(this.x, this.y) {
     addChild(_bitmap);
@@ -72,7 +72,7 @@ class SquareElement extends Sprite {
     _bitmap.bitmapData
       ..clear()
       ..drawPixels(_opaqueAtlas.getBitmapData(textureName),
-          new Rectangle(0, 0, SIZE, SIZE), new Point(0, 0));
+          new Rectangle<int>(0, 0, size, size), new Point<int>(0, 0));
   }
 
   void _onClick(MouseEvent e) {

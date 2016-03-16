@@ -11,43 +11,43 @@ final Random _rnd = new Random();
 
 ResourceManager _resourceManager;
 
-const String _WIN = 'win',
-    _CLICK = 'click',
-    _POP = 'Pop',
-    _FLAG = 'flag',
-    _UNFLAG = 'unflag',
-    _BOMB = 'Bomb',
-    _THROW_DART = 'throw';
+const String _win = 'win',
+    _click = 'click',
+    _pop = 'Pop',
+    _flag = 'flag',
+    _unflag = 'unflag',
+    _bomb = 'Bomb',
+    _throwDart = 'throw';
 
 void initialize(ResourceManager resourceManager) {
   if (_resourceManager != null) throw new StateError('already initialized');
   _resourceManager = resourceManager;
 }
 
-void win() => _playAudio(_WIN);
+void win() => _playAudio(_win);
 
-void click() => _playAudio(_CLICK);
+void click() => _playAudio(_click);
 
-void pop() => _playAudio(_POP);
+void pop() => _playAudio(_pop);
 
-void flag() => _playAudio(_FLAG);
+void flag() => _playAudio(_flag);
 
-void unflag() => _playAudio(_UNFLAG);
+void unflag() => _playAudio(_unflag);
 
-void bomb() => _playAudio(_BOMB);
+void bomb() => _playAudio(_bomb);
 
-void throwDart() => _playAudio(_THROW_DART);
+void throwDart() => _playAudio(_throwDart);
 
 void _playAudio(String name) {
   if (_resourceManager == null) throw new StateError('Not initialized');
   switch (name) {
-    case _POP:
+    case _pop:
       var i = _rnd.nextInt(8);
-      name = '$_POP$i';
+      name = '$_pop$i';
       break;
-    case _BOMB:
+    case _bomb:
       var i = _rnd.nextInt(4);
-      name = '$_BOMB$i';
+      name = '$_bomb$i';
       break;
   }
   _resourceManager.getSoundSprite('audio').play(name);

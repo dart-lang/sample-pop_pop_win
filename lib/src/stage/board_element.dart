@@ -18,7 +18,7 @@ class BoardElement extends Sprite {
 
     _elements = new Array2d<SquareElement>(game.field.width, game.field.height);
 
-    num scaledSize = SquareElement.SIZE * _boardScale;
+    num scaledSize = SquareElement.size * _boardScale;
     for (int i = 0; i < _elements.length; i++) {
       var coords = _elements.getCoordinate(i);
       var se = new SquareElement(coords.item1, coords.item2)
