@@ -18,7 +18,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.10.0"
   barback:
     description:
       name: barback
@@ -60,19 +60,19 @@ packages:
       name: convert
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.1.0"
   crypto:
     description:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.1.1"
   csslib:
     description:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2"
+    version: "0.13.1"
   dart_to_js_script_rewriter:
     description:
       name: dart_to_js_script_rewriter
@@ -90,7 +90,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2+1"
+    version: "0.12.2+2"
   http_multi_server:
     description:
       name: http_multi_server
@@ -108,7 +108,7 @@ packages:
       name: logging
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.2"
+    version: "0.11.3"
   matcher:
     description:
       name: matcher
@@ -138,7 +138,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.1"
+    version: "1.5.3"
   plugin:
     description:
       name: plugin
@@ -150,7 +150,7 @@ packages:
       name: pool
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.2"
+    version: "1.2.3"
   pub_semver:
     description:
       name: pub_semver
@@ -198,13 +198,13 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.4"
+    version: "1.6.5"
   stagexl:
     description:
       name: stagexl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.5+1"
+    version: "0.13.6"
   stream_channel:
     description:
       name: stream_channel
@@ -252,11 +252,11 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.4.2"
+    version: "2.4.3"
   yaml:
     description:
       name: yaml
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.8"
-sdk: ">=1.14.0 <1.17.0"
+sdk: ">=1.16.0-dev.5.0 <1.17.0"
