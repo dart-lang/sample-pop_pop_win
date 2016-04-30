@@ -3,7 +3,6 @@
 // BSD-style license that can be found in the LICENSE file.
 library pop_pop_win.game.field;
 
-import 'dart:collection';
 import 'dart:math';
 
 import 'package:bot/bot.dart' show Array2d;
@@ -32,8 +31,7 @@ class Field extends Array2d<bool> {
       squares[index] = true;
     }
 
-    return new Field._internal(
-        bombCount, cols, new UnmodifiableListView<bool>(squares));
+    return new Field._internal(bombCount, cols, squares);
   }
 
   factory Field.fromSquares(int cols, int rows, List<bool> squares) {
@@ -50,13 +48,12 @@ class Field extends Array2d<bool> {
     assert(count > 0);
     assert(count < squares.length);
 
-    return new Field._internal(
-        count, cols, new UnmodifiableListView<bool>(squares));
+    return new Field._internal(count, cols, new List.unmodifiable(squares));
   }
 
-  Field._internal(this.bombCount, int cols, UnmodifiableListView<bool> source)
+  Field._internal(this.bombCount, int cols, List<bool> source)
       : this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
-        super.wrap(cols, source.toList()) {
+        super.wrap(cols, source) {
     assert(width > 0);
     assert(height > 0);
     assert(bombCount > 0);
