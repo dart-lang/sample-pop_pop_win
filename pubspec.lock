@@ -30,7 +30,7 @@ packages:
       name: boolean_selector
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   bot:
     description:
       name: bot
@@ -54,7 +54,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.9.0"
   convert:
     description:
       name: convert
@@ -84,7 +84,7 @@ packages:
       name: glob
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.3"
   html:
     description:
       name: html
@@ -96,13 +96,13 @@ packages:
       name: http_multi_server
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   http_parser:
     description:
       name: http_parser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.1"
+    version: "3.0.2"
   logging:
     description:
       name: logging
@@ -168,7 +168,7 @@ packages:
       name: shelf_static
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.3+4"
+    version: "0.2.4"
   shelf_web_socket:
     description:
       name: shelf_web_socket
@@ -198,13 +198,13 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.5"
+    version: "1.6.6"
   stagexl:
     description:
       name: stagexl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.8"
+    version: "0.13.9+2"
   stream_channel:
     description:
       name: stream_channel
@@ -216,13 +216,13 @@ packages:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.5"
+    version: "1.0.0"
   test:
     description:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.13+5"
+    version: "0.12.15+1"
   typed_data:
     description:
       name: typed_data
@@ -258,5 +258,5 @@ packages:
       name: yaml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.9"
-sdk: ">=1.17.0 <1.19.0"
+    version: "2.1.10"
+sdk: ">=1.17.0 <1.20.0"
