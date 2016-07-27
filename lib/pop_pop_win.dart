@@ -22,7 +22,8 @@ Future startGame(PlatformTarget platform) async {
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;
 
-  var stage = new Stage(html.querySelector('#gameCanvas'), options: options);
+  var stage = new Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
+      options: options);
 
   new RenderLoop()..addStage(stage);
 

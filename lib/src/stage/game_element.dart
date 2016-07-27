@@ -81,7 +81,7 @@ class GameElement extends Sprite {
       ..x = boardOffset.x + _edgeOffset * _boardScale
       ..y = boardOffset.y + _edgeOffset * _boardScale;
 
-    manager.bestTimeMilliseconds.then((v) {
+    manager.bestTimeMilliseconds.then/*<Null>*/((v) {
       if (v == null) v = 0;
       _scoreElement = new ScoreElement(v)..addTo(this);
 
@@ -132,7 +132,7 @@ class GameElement extends Sprite {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
-    List<Point> reveals;
+    List<Point<int>> reveals;
 
     if (alt) {
       if (ss == SquareState.hidden || ss == SquareState.flagged) {
@@ -194,11 +194,13 @@ class GameElement extends Sprite {
     return false;
   }
 
-  void _startPopAnimation(Point start, [Iterable<Point> reveals = null]) {
+  void _startPopAnimation(Point<int> start,
+      [Iterable<Point<int>> reveals = null]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 
-      reveals = new Iterable<Tuple>.generate(game.field.length, (i) {
+      reveals = new Iterable<Tuple<Point<int>, SquareState>>.generate(
+              game.field.length, (i) {
         var t = game.field.getCoordinate(i);
         var c = new Point(t.item1, t.item2);
         return new Tuple(c, game.getSquareState(c.x, c.y));
@@ -206,7 +208,7 @@ class GameElement extends Sprite {
           .where((t2) =>
               t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
           .map((t2) => t2.item1)
-          .toList() as List<Point>;
+          .toList();
     }
 
     final values = reveals.map((c) {
@@ -299,9 +301,9 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
   }
 }
 
-final StreamController _titleClickedEventHandle = new StreamController();
+final _titleClickedEventHandle = new StreamController<Null>();
 
-Stream get titleClickedEvent => _titleClickedEventHandle.stream;
+Stream<Null> get titleClickedEvent => _titleClickedEventHandle.stream;
 
 class _Values {
   final Point<int> point;

@@ -31,12 +31,12 @@ abstract class PlatformTarget {
 
   void toggleAbout([bool value]);
 
-  Stream get aboutChanged;
+  Stream<Null> get aboutChanged;
 }
 
 class _DefaultPlatform extends PlatformTarget {
   final Map<String, String> _values = new Map<String, String>();
-  final StreamController _aboutController = new StreamController(sync: true);
+  final _aboutController = new StreamController<Null>(sync: true);
   bool _about = false;
 
   _DefaultPlatform() : super.base();
@@ -67,5 +67,5 @@ class _DefaultPlatform extends PlatformTarget {
   bool get showAbout => _about;
 
   @override
-  Stream get aboutChanged => _aboutController.stream;
+  Stream<Null> get aboutChanged => _aboutController.stream;
 }
