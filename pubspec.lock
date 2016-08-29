@@ -6,7 +6,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.27.4"
+    version: "0.28.1"
   args:
     description:
       name: args
@@ -114,7 +114,7 @@ packages:
       name: isolate
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.2.3"
   logging:
     description:
       name: logging
@@ -127,6 +127,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.12.0+2"
+  meta:
+    description:
+      name: meta
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   mime:
     description:
       name: mime
@@ -144,7 +150,7 @@ packages:
       name: package_resolver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   path:
     description:
       name: path
@@ -180,7 +186,7 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.5+2"
+    version: "0.6.5+3"
   shelf_packages_handler:
     description:
       name: shelf_packages_handler
@@ -246,7 +252,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.15+3"
+    version: "0.12.15+6"
   typed_data:
     description:
       name: typed_data
