@@ -132,7 +132,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.4"
   mime:
     description:
       name: mime
@@ -234,7 +234,7 @@ packages:
       name: stagexl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.10+2"
+    version: "0.13.10+3"
   stream_channel:
     description:
       name: stream_channel
@@ -290,4 +290,4 @@ packages:
     source: hosted
     version: "2.1.10"
 sdks:
-  dart: ">=1.17.0 <2.0.0"
+  dart: ">=1.19.0 <2.0.0"
