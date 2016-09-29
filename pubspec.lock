@@ -18,7 +18,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.11.1"
+    version: "1.11.2"
   barback:
     description:
       name: barback
@@ -78,7 +78,7 @@ packages:
       name: dart_to_js_script_rewriter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   glob:
     description:
       name: glob
@@ -90,7 +90,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2+2"
+    version: "0.13.0"
   http:
     description:
       name: http
@@ -252,7 +252,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.15+6"
+    version: "0.12.15+7"
   typed_data:
     description:
       name: typed_data
