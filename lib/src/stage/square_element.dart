@@ -46,7 +46,7 @@ class SquareElement extends Sprite {
   }
 
   void updateState() {
-    var textureName;
+    String textureName;
     switch (squareState) {
       case SquareState.hidden:
         textureName = _getHiddenTexture();
@@ -101,10 +101,7 @@ class SquareElement extends Sprite {
 
   int get _adjacentCount => _game.field.getAdjacentCount(x, y);
 
-  BoardElement get _board {
-    final BoardElement p = this.parent;
-    return p;
-  }
+  BoardElement get _board => this.parent as BoardElement;
 
   GameElement get _gameElement => _board.gameElement;
 

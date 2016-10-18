@@ -33,7 +33,7 @@ class BoardElement extends Sprite {
     }
   }
 
-  GameElement get gameElement => parent;
+  GameElement get gameElement => parent as GameElement;
   num get _boardScale => gameElement.boardScale;
   Array2d<SquareElement> get squares => _elements;
   Game get game => gameElement.game;
