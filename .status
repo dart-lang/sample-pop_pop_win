@@ -2,24 +2,5 @@
 # for details. All rights reserved. Use of this source code is governed by a
 # BSD-style license that can be found in the LICENSE file.
 
-# Skip non-test files ending with "_test".
-packages/*: Skip
-*/packages/*: Skip
-*/*/packages/*: Skip
-*/*/*/packages/*: Skip
-*/*/*/*packages/*: Skip
-*/*/*/*/*packages/*: Skip
-
-# Only run tests from the test directory, since we don't care about the
-# difference between transformed an untransformed code.
-build/test/*: SkipByDesign
-build/test/*/*: SkipByDesign
-build/test/*/*/*: SkipByDesign
-build/test/*/*/*/*: SkipByDesign
-
-[ $compiler == dart2analyzer ]
-test/game_test: StaticWarning # pkg/bot issues with Coordinate and Vector
-test/field_test: StaticWarning # pkg/bot issues with Coordinate and Vector
-
 [ $runtime == jsshell ]
 *: Skip # uses package:test which has non-zero timers
