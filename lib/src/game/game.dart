@@ -6,8 +6,8 @@ library pop_pop_win.game.game;
 import 'dart:async';
 import 'dart:math';
 
-import 'package:bot/bot.dart' show Array2d, require;
-
+import '../array_2d.dart';
+import '../util.dart';
 import 'field.dart';
 import 'game_state.dart';
 import 'square_state.dart';

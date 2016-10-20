@@ -3,9 +3,9 @@
 // BSD-style license that can be found in the LICENSE file.
 library pop_pop_win.stage.board_element;
 
-import 'package:bot/bot.dart' show Array2d;
 import 'package:stagexl/stagexl.dart';
 
+import '../array_2d.dart';
 import '../game.dart';
 import 'game_element.dart';
 import 'square_element.dart';

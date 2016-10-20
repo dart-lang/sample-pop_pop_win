@@ -6,11 +6,11 @@ library pop_pop_win.stage.game_element;
 import 'dart:async';
 import 'dart:math';
 
-import 'package:bot/bot.dart' show Tuple;
 import 'package:stagexl/stagexl.dart' hide Point;
 
 import '../audio.dart' as game_audio;
 import '../game.dart';
+import '../util.dart';
 import 'board_element.dart';
 import 'game_background_element.dart';
 import 'game_root.dart';

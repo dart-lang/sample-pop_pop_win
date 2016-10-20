@@ -31,12 +31,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  bot:
-    description:
-      name: bot
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.28.0"
   browser:
     description:
       name: browser
