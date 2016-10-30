@@ -6,29 +6,25 @@ library pop_pop_win.platform_web;
 import 'dart:async';
 import 'dart:html';
 
-import 'package:pop_pop_win/platform_target.dart';
+final PlatformWeb targetPlatform = new PlatformWeb._();
 
-class PlatformWeb extends PlatformTarget {
+class PlatformWeb {
   static const String _aboutHash = '#about';
   bool _sizeAccessed = false;
 
   final StreamController _aboutController = new StreamController(sync: true);
 
-  PlatformWeb() : super.base() {
+  PlatformWeb._() {
     window.onPopState.listen((args) => _processUrlHash());
   }
 
-  @override
   Future clearValues() async => window.localStorage.clear();
 
-  @override
   Future setValue(String key, String value) async =>
       window.localStorage[key] = value;
 
-  @override
   Future<String> getValue(String key) async => window.localStorage[key];
 
-  @override
   int get size {
     _sizeAccessed = true;
     var hash = (_urlHash == null) ? '7' : _urlHash;
@@ -36,13 +32,10 @@ class PlatformWeb extends PlatformTarget {
     return int.parse(hash, onError: (e) => 7);
   }
 
-  @override
   bool get showAbout => _urlHash == _aboutHash;
 
-  @override
   Stream get aboutChanged => _aboutController.stream;
 
-  @override
   void toggleAbout([bool value]) {
     var loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later

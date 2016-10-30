@@ -8,16 +8,13 @@ import 'dart:html' as html;
 
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
-import 'platform_target.dart';
 import 'src/audio.dart' as game_audio;
-import 'src/platform.dart';
+import 'src/platform_web.dart';
 import 'src/stage.dart';
 
 const String _assetDir = 'packages/pop_pop_win/assets';
 
-Future startGame(PlatformTarget platform) async {
-  initPlatform(platform);
-
+Future startGame() async {
   var options = new StageOptions()
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;

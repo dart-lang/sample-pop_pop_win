@@ -6,7 +6,7 @@ library pop_pop_win.game_storage;
 import 'dart:async';
 
 import 'game.dart';
-import 'platform.dart';
+import 'platform_web.dart';
 
 class GameStorage {
   static const _gameCountKey = 'gameCount';
