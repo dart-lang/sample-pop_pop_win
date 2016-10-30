@@ -13,7 +13,7 @@ class GameStorage {
   final StreamController _bestTimeUpdated = new StreamController();
   final Map<String, String> _cache = new Map<String, String>();
 
-  Future<int> get gameCount => _getIntValue(_gameCountKey);
+  int get gameCount => _getIntValue(_gameCountKey);
 
   Stream get bestTimeUpdated => _bestTimeUpdated.stream;
 
@@ -33,7 +33,7 @@ class GameStorage {
 
     var key = _getKey(w, h, m);
 
-    var currentScore = await _getIntValue(key, null);
+    var currentScore = _getIntValue(key, null);
     if (currentScore == null || currentScore > duration) {
       _setIntValue(key, duration);
       _bestTimeUpdated.add(null);
@@ -43,37 +43,37 @@ class GameStorage {
     }
   }
 
-  Future<int> getBestTimeMilliseconds(int width, int height, int bombCount) {
+  int getBestTimeMilliseconds(int width, int height, int bombCount) {
     final key = _getKey(width, height, bombCount);
     return _getIntValue(key, null);
   }
 
-  Future reset() {
+  void reset() {
     _cache.clear();
-    return targetPlatform.clearValues();
+    targetPlatform.clearValues();
   }
 
-  Future<int> _getIntValue(String key, [int defaultValue = 0]) async {
+  int _getIntValue(String key, [int defaultValue = 0]) {
     assert(key != null);
     if (_cache.containsKey(key)) {
       return _parseValue(_cache[key], defaultValue);
     }
 
-    var strValue = await targetPlatform.getValue(key);
+    var strValue = targetPlatform.getValue(key);
     _cache[key] = strValue;
     return _parseValue(strValue, defaultValue);
   }
 
-  Future _setIntValue(String key, int value) {
+  void _setIntValue(String key, int value) {
     assert(key != null);
     _cache.remove(key);
     String val = (value == null) ? null : value.toString();
-    return targetPlatform.setValue(key, val);
+    targetPlatform.setValue(key, val);
   }
 
-  Future _incrementIntValue(String key) async {
-    var val = await _getIntValue(key);
-    return _setIntValue(key, val + 1);
+  void _incrementIntValue(String key) {
+    var val = _getIntValue(key);
+    _setIntValue(key, val + 1);
   }
 
   static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";

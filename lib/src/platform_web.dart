@@ -18,12 +18,13 @@ class PlatformWeb {
     window.onPopState.listen((args) => _processUrlHash());
   }
 
-  Future clearValues() async => window.localStorage.clear();
+  void clearValues() => window.localStorage.clear();
 
-  Future setValue(String key, String value) async =>
-      window.localStorage[key] = value;
+  void setValue(String key, String value) {
+    window.localStorage[key] = value;
+  }
 
-  Future<String> getValue(String key) async => window.localStorage[key];
+  String getValue(String key) => window.localStorage[key];
 
   int get size {
     _sizeAccessed = true;
