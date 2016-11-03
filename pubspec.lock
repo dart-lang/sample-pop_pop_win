@@ -48,7 +48,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.1"
+    version: "1.11.0"
   convert:
     description:
       name: convert
@@ -210,7 +210,7 @@ packages:
       name: source_maps
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.1+1"
+    version: "0.10.1+2"
   source_span:
     description:
       name: source_span
@@ -228,7 +228,7 @@ packages:
       name: stagexl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.11+1"
+    version: "0.13.12"
   stream_channel:
     description:
       name: stream_channel
@@ -240,7 +240,7 @@ packages:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.1"
   test:
     description:
       name: test
