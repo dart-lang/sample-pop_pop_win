@@ -31,7 +31,9 @@ class GameRoot extends GameManager {
   @override
   void onGameStateChanged(GameState newState) {
     if (newState == GameState.won) {
-      _gameElement.boardElement.squares.forEach((se) => se.updateState());
+      for (var se in _gameElement.boardElement.squares) {
+        se.updateState();
+      }
       if (game.duration.inMilliseconds < _gameElement.scoreElement.bestTime ||
           _gameElement.scoreElement.bestTime == 0) {
         _gameElement.scoreElement.bestTime = game.duration.inMilliseconds;
@@ -44,7 +46,9 @@ class GameRoot extends GameManager {
   void newGame() {
     super.newGame();
     if (_gameElement != null) {
-      _gameElement.boardElement.squares.forEach((se) => se.updateState());
+      for (var se in _gameElement.boardElement.squares) {
+        se.updateState();
+      }
     }
   }
 }
