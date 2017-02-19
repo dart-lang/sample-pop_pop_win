@@ -106,11 +106,11 @@ class Array2d<T> extends ListBase<T> {
     return adj;
   }
 
-  Tuple<int, int> getCoordinate(int index) {
+  math.Point<int> getCoordinate(int index) {
     final x = index % width;
     final y = index ~/ width;
     assert(_getIndex(x, y) == index);
-    return new Tuple<int, int>(x, y);
+    return new math.Point<int>(x, y);
   }
 
   int _getIndex(int x, int y) {
@@ -171,14 +171,4 @@ class _Array2dRow<T> extends ListBase<T> {
   void operator []=(int index, T value) {
     throw new UnsupportedError('Not supported');
   }
-
-  @override
-  bool operator ==(other) {
-    return other is _Array2dRow &&
-        other.source == this.source &&
-        other.row == this.row;
-  }
-
-  @override
-  int get hashCode => getHashCode([source.hashCode, row]);
 }

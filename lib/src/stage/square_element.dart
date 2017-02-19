@@ -31,12 +31,12 @@ class SquareElement extends Sprite {
     "number_eight"
   ];
 
-  @override
-  final int x, y;
+  final int column, row;
+
   final Bitmap _bitmap =
       new Bitmap(new BitmapData(size, size, Color.Transparent));
 
-  SquareElement(this.x, this.y) {
+  SquareElement(this.column, this.row) {
     addChild(_bitmap);
 
     onMouseClick.listen(_onClick);
@@ -78,7 +78,7 @@ class SquareElement extends Sprite {
   void _onClick(MouseEvent e) {
     if (!_game.gameEnded) {
       bool alt = (e.type == MouseEvent.RIGHT_CLICK) || e.shiftKey;
-      _gameElement.click(x, y, alt);
+      _gameElement.click(column, row, alt);
     }
   }
 
@@ -89,7 +89,7 @@ class SquareElement extends Sprite {
     assert(squareState == SquareState.hidden);
     if (_game.state == GameState.lost) {
       useHandCursor = false;
-      final index = (x + y) % _balloonBits.length;
+      final index = (column + row) % _balloonBits.length;
       return _balloonBits[index];
     } else {
       useHandCursor = true;
@@ -97,9 +97,9 @@ class SquareElement extends Sprite {
     }
   }
 
-  SquareState get squareState => _game.getSquareState(x, y);
+  SquareState get squareState => _game.getSquareState(column, row);
 
-  int get _adjacentCount => _game.field.getAdjacentCount(x, y);
+  int get _adjacentCount => _game.field.getAdjacentCount(column, row);
 
   BoardElement get _board {
     final BoardElement p = this.parent;

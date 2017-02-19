@@ -142,10 +142,7 @@ class GameElement extends Sprite {
           // get adjacent ballons
           final adjHidden = game.field
               .getAdjacentIndices(x, y)
-              .map((i) {
-                final t = game.field.getCoordinate(i);
-                return new Point(t.item1, t.item2);
-              })
+              .map((i) => game.field.getCoordinate(i))
               .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
@@ -199,8 +196,7 @@ class GameElement extends Sprite {
       assert(game.state == GameState.lost);
 
       reveals = new Iterable<Tuple>.generate(game.field.length, (i) {
-        var t = game.field.getCoordinate(i);
-        var c = new Point(t.item1, t.item2);
+        var c = game.field.getCoordinate(i);
         return new Tuple(c, game.getSquareState(c.x, c.y));
       })
           .where((t2) =>
