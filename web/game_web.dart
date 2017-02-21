@@ -4,6 +4,4 @@
 
 import 'package:pop_pop_win/pop_pop_win.dart';
 
-void main() {
-  startGame();
-}
+main() => startGame();

@@ -18,7 +18,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.13.1"
+    version: "1.13.2"
   barback:
     description:
       name: barback
@@ -258,7 +258,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.19+1"
+    version: "0.12.20"
   typed_data:
     description:
       name: typed_data
