@@ -13,6 +13,7 @@ dev_dependencies:
 transformers:
 - $dart2js:
     commandLineOptions:
+      - --show-package-warnings
       - --dump-info
       - --no-frequency-based-minification
       - --trust-type-annotations
