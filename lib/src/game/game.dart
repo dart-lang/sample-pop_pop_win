@@ -158,6 +158,8 @@ class Game {
               case SquareState.hidden:
                 char = '?';
                 break;
+              default:
+              // noop;
             }
           }
         }

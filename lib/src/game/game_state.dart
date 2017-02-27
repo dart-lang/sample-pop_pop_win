@@ -3,15 +3,4 @@
 // BSD-style license that can be found in the LICENSE file.
 library pop_pop_win.game.game_state;
 
-class GameState {
-  static const GameState reset = const GameState._internal("reset");
-  static const GameState started = const GameState._internal("started");
-  static const GameState won = const GameState._internal("won");
-  static const GameState lost = const GameState._internal("lost");
-  final String name;
-
-  const GameState._internal(this.name);
-
-  @override
-  String toString() => 'GameState: $name';
-}
+enum GameState { reset, started, won, lost }

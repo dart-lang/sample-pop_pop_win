@@ -292,6 +292,8 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
     case SquareState.bomb:
       game_audio.bomb();
       break;
+    default:
+    // noop
   }
 }
 

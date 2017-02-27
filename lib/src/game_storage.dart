@@ -19,7 +19,7 @@ class GameStorage {
 
   void recordState(GameState state) {
     assert(state != null);
-    _incrementIntValue(state.name);
+    _incrementIntValue(state.toString());
   }
 
   Future<bool> updateBestTime(Game game) async {
