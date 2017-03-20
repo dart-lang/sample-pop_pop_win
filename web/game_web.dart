@@ -3,5 +3,10 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:pop_pop_win/pop_pop_win.dart';
+import 'package:pwa/client.dart' as pwa;
 
-main() => startGame();
+main() {
+  // register PWA ServiceWorker for offline caching.
+  new pwa.Client();
+  startGame();
+}
