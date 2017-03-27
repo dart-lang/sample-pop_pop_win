@@ -196,14 +196,14 @@ class GameElement extends Sprite {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 
-      reveals = new Iterable<Tuple>.generate(game.field.length, (i) {
+      reveals = new Iterable.generate(game.field.length, (i) {
         var c = game.field.getCoordinate(i);
         return new Tuple(c, game.getSquareState(c.x, c.y));
       })
           .where((t2) =>
               t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
           .map((t2) => t2.item1)
-          .toList() as List<Point<int>>;
+          .toList();
     }
 
     final values = reveals.map((c) {
