@@ -132,7 +132,7 @@ class GameElement extends Sprite {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
-    List<Point> reveals;
+    List<Point<int>> reveals;
 
     if (alt) {
       if (ss == SquareState.hidden || ss == SquareState.flagged) {
@@ -154,7 +154,7 @@ class GameElement extends Sprite {
       }
     } else {
       if (ss == SquareState.hidden) {
-        _startDartAnimation(<Point>[new Point(x, y)]);
+        _startDartAnimation([new Point(x, y)]);
         reveals = game.reveal(x, y);
       }
     }
@@ -191,7 +191,8 @@ class GameElement extends Sprite {
     return false;
   }
 
-  void _startPopAnimation(Point start, [Iterable<Point> reveals = null]) {
+  void _startPopAnimation(Point<int> start,
+      [Iterable<Point<int>> reveals = null]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 
@@ -202,7 +203,7 @@ class GameElement extends Sprite {
           .where((t2) =>
               t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
           .map((t2) => t2.item1)
-          .toList() as List<Point>;
+          .toList() as List<Point<int>>;
     }
 
     final values = reveals.map((c) {
