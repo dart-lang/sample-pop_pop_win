@@ -6,7 +6,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.29.7"
+    version: "0.29.10"
   args:
     description:
       name: args
@@ -24,7 +24,7 @@ packages:
       name: barback
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.2+9"
+    version: "0.15.2+10"
   boolean_selector:
     description:
       name: boolean_selector
@@ -54,7 +54,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.13.0"
+    version: "1.14.0"
   convert:
     description:
       name: convert
@@ -72,7 +72,7 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.3+1"
+    version: "0.13.5"
   dart_to_js_script_rewriter:
     description:
       name: dart_to_js_script_rewriter
@@ -96,7 +96,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.3+9"
+    version: "0.11.3+13"
   http_multi_server:
     description:
       name: http_multi_server
@@ -132,7 +132,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "1.0.5"
   mime:
     description:
       name: mime
@@ -216,7 +216,7 @@ packages:
       name: source_maps
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.2"
+    version: "0.10.4"
   source_span:
     description:
       name: source_span
@@ -228,7 +228,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.1"
+    version: "1.7.3"
   stagexl:
     description:
       name: stagexl
@@ -258,7 +258,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.20"
+    version: "0.12.20+10"
   typed_data:
     description:
       name: typed_data
@@ -308,4 +308,4 @@ packages:
     source: hosted
     version: "2.1.12"
 sdks:
-  dart: ">=1.22.0 <2.0.0"
+  dart: ">=1.23.0-dev.0.0 <2.0.0"
