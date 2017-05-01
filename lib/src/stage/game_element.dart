@@ -21,7 +21,7 @@ const _frameRate = 60;
 
 class GameElement extends Sprite {
   static const _edgeOffset = 32;
-  static final _backgroundSize = new Point(2048, 1536);
+  static final _backgroundSize = new Point<int>(2048, 1536);
   static const _backgroundHoleSize = 16 * SquareElement.size + 2 * _edgeOffset;
   static final Vector boardOffset = new Vector(352, 96);
   static const _popAnimationHitFrame = 12;
@@ -36,7 +36,7 @@ class GameElement extends Sprite {
   BoardElement _boardElement;
   ScoreElement _scoreElement;
   SimpleButton _logoButton;
-  Sprite _popLayer = new Sprite(), _dartLayer = new Sprite();
+  final _popLayer = new Sprite(), _dartLayer = new Sprite();
 
   int _boardSize;
   num _boardScale;
