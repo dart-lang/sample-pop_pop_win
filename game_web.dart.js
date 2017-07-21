@@ -6729,7 +6729,7 @@ this.x.sy6(this.f)}},
 Cp:function(a){if(a!==this.Q){this.x.fZ(0)
 this.Q=a
 this.e.blendFunc(a.a,a.b)}},
-wi:function(a){var z,y,x
+wi:function(a){var z,y,x,w
 z=this.fx
 if(a!==z[0]){this.x.fZ(0)
 z[0]=a
@@ -6742,16 +6742,19 @@ a.Q=z
 a.ch=z.createTexture()
 a.Q.activeTexture(33984)
 a.Q.bindTexture(3553,a.ch)
+x=a.Q.isEnabled(3089)
+if(x)a.Q.disable(3089)
 z=a.c
 y=a.Q
-x=y&&C.mx
-if(z!=null){x.ZE(y,3553,0,6408,6408,5121,z)
-a.z=a.Q.getError()===1281}else x.kl(y,3553,0,6408,a.a,a.b,0,6408,5121,null)
+w=y&&C.mx
+if(z!=null){w.ZE(y,3553,0,6408,6408,5121,z)
+a.z=a.Q.getError()===1281}else w.kl(y,3553,0,6408,a.a,a.b,0,6408,5121,null)
 if(a.z){z=a.a
 z=W.d9(a.b,z)
 a.d=z
 z.getContext("2d").drawImage(a.c,0,0)
-z=a.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,a.d)}a.Q.texParameteri(3553,10242,a.f.a)
+z=a.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,a.d)}if(x)a.Q.enable(3089)
+a.Q.texParameteri(3553,10242,a.f.a)
 a.Q.texParameteri(3553,10243,a.r.a)
 a.Q.texParameteri(3553,10241,a.e.a)
 a.Q.texParameteri(3553,10240,a.e.a)}else{a.Q.activeTexture(33984)
@@ -7092,15 +7095,18 @@ this.b=c
 z=W.d9(c,b)
 this.c=z
 this.d=z}},
-Li:function(a){var z=this.x
+Li:function(a){var z,y
+z=this.x
 if(z==null||this.ch==null)return
 if(z.cx!==this.y)return
+y=this.Q.isEnabled(3089)
+if(y)this.Q.disable(3089)
 if(this.z){z=this.d
 z.toString
 z.getContext("2d").drawImage(this.c,0,0)
 this.x.wi(this)
-z=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.d)}else{z.wi(this)
-z=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.c)}},
+z=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.d)}else{this.x.wi(this)
+z=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.c)}if(y)this.Q.enable(3089)},
 xZ:function(a,b,c){var z,y
 if(a<=0)throw H.b(P.q("width"))
 if(b<=0)throw H.b(P.q("height"))
