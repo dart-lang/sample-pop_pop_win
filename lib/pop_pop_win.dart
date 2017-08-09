@@ -19,7 +19,8 @@ Future startGame() async {
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;
 
-  var stage = new Stage(html.querySelector('#gameCanvas'), options: options);
+  var stage = new Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
+      options: options);
 
   new RenderLoop()..addStage(stage);
 
@@ -28,7 +29,7 @@ Future startGame() async {
   //have to load the loading bar first...
   var resourceManager = new ResourceManager()
     ..addTextureAtlas(
-        "static", '$_assetDir/images/static.json', TextureAtlasFormat.JSON);
+        'static', '$_assetDir/images/static.json', TextureAtlasFormat.JSON);
 
   var resMan = await resourceManager.load();
   await _initialLoad(resMan, stage);

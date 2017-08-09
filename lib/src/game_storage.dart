@@ -76,7 +76,7 @@ class GameStorage {
     _setIntValue(key, val + 1);
   }
 
-  static String _getKey(int w, int h, int m) => "w$w-h$h-m$m";
+  static String _getKey(int w, int h, int m) => 'w$w-h$h-m$m';
 
   static int _parseValue(String value, int defaultValue) {
     if (value == null) {

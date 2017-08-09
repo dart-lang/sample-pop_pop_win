@@ -20,15 +20,15 @@ class SquareElement extends Sprite {
   ];
 
   static const List<String> _numberMap = const [
-    "game_board_center",
-    "number_one",
-    "number_two",
-    "number_three",
-    "number_four",
-    "number_five",
-    "number_six",
-    "number_seven",
-    "number_eight"
+    'game_board_center',
+    'number_one',
+    'number_two',
+    'number_three',
+    'number_four',
+    'number_five',
+    'number_six',
+    'number_seven',
+    'number_eigh'
   ];
 
   final int column, row;
@@ -46,7 +46,7 @@ class SquareElement extends Sprite {
   }
 
   void updateState() {
-    var textureName;
+    String textureName;
     switch (squareState) {
       case SquareState.hidden:
         textureName = _getHiddenTexture();

@@ -11,8 +11,7 @@ class Field extends Array2d<bool> {
   final int bombCount;
   final Array2d<int> _adjacents;
 
-  factory Field(
-      [int bombCount = 40, int cols = 16, int rows = 16, int seed = null]) {
+  factory Field([int bombCount = 40, int cols = 16, int rows = 16, int seed]) {
     var squares = new List<bool>.filled(rows * cols, false);
     assert(bombCount < squares.length);
     assert(bombCount > 0);

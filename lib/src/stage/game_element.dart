@@ -63,9 +63,9 @@ class GameElement extends Sprite {
 
     new GameBackgroundElement(this, opa);
 
-    var newButtonNormal = new Bitmap(sta.getBitmapData("button_new_game"));
+    var newButtonNormal = new Bitmap(sta.getBitmapData('button_new_game'));
     var newButtonPressed =
-        new Bitmap(sta.getBitmapData("button_new_game_clicked"));
+        new Bitmap(sta.getBitmapData('button_new_game_clicked'));
 
     new SimpleButton(
         newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
@@ -191,8 +191,7 @@ class GameElement extends Sprite {
     return false;
   }
 
-  void _startPopAnimation(Point<int> start,
-      [Iterable<Point<int>> reveals = null]) {
+  void _startPopAnimation(Point<int> start, [Iterable<Point<int>> reveals]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 

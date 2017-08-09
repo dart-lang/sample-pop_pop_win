@@ -94,7 +94,7 @@ class Game {
 
   List<Point<int>> reveal(int x, int y) {
     _ensureStarted();
-    require(canReveal(x, y), "Item cannot be revealed.");
+    require(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
     List<Point<int>> reveals;

@@ -63,7 +63,7 @@ class PlatformWeb {
     var href = loc.href;
 
     switch (hash) {
-      case "#reset":
+      case '#reset':
         assert(href.endsWith(hash));
         var newLoc = href.substring(0, href.length - hash.length);
 
