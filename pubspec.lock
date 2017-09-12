@@ -282,7 +282,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.24+3"
+    version: "0.12.24+4"
   typed_data:
     description:
       name: typed_data
