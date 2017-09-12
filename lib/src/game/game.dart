@@ -43,7 +43,7 @@ class Game {
 
   Stream get updated => _updatedEvent.stream;
 
-  Stream get stateChanged => _gameStateEvent.stream;
+  Stream<GameState> get stateChanged => _gameStateEvent.stream;
 
   SquareState getSquareState(int x, int y) => _states.get(x, y);
 
