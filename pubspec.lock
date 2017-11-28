@@ -31,12 +31,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
-  browser:
-    description:
-      name: browser
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.10.0+2"
   charcode:
     description:
       name: charcode
@@ -73,12 +67,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.14.1"
-  dart_to_js_script_rewriter:
-    description:
-      name: dart_to_js_script_rewriter
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.3"
   front_end:
     description:
       name: front_end
