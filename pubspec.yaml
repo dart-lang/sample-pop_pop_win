@@ -8,6 +8,8 @@ dependencies:
   stagexl: '^1.0.0'
 dev_dependencies:
   test: '^0.12.0'
+  build_runner: ^0.7.0
+  build_web_compilers: ^0.1.1
 
 web:
   compiler:
