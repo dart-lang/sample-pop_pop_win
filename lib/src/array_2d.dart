@@ -74,10 +74,6 @@ class Array2d<T> extends ListBase<T> {
     _source[index] = value;
   }
 
-  // TODO: test
-  //  - especially equality across instances, rows, etc
-  List<List<T>> get rows => new _Array2dRows(this);
-
   T get(int x, int y) {
     final i = _getIndex(x, y);
     return this[i];
@@ -117,58 +113,5 @@ class Array2d<T> extends ListBase<T> {
     assert(x >= 0 && x < width);
     assert(y >= 0 && y < height);
     return x + y * width;
-  }
-}
-
-class _Array2dRows<T> extends ListBase<List<T>> {
-  final Array2d<T> source;
-
-  _Array2dRows(this.source);
-
-  @override
-  int get length => source.height;
-
-  @override
-  set length(int value) {
-    throw new UnsupportedError('Not supported');
-  }
-
-  @override
-  List<T> operator [](int index) => new _Array2dRow<T>(this.source, index);
-
-  @override
-  void operator []=(int index, List<T> value) {
-    throw new UnsupportedError('Not supported');
-  }
-
-  @override
-  bool operator ==(other) {
-    return other is _Array2dRows && other.source == this.source;
-  }
-
-  @override
-  int get hashCode => source.hashCode;
-}
-
-class _Array2dRow<T> extends ListBase<T> {
-  final Array2d<T> source;
-  final int row;
-
-  _Array2dRow(this.source, this.row);
-
-  @override
-  int get length => source.width;
-
-  @override
-  set length(int value) {
-    throw new UnsupportedError('Not supported');
-  }
-
-  @override
-  T operator [](int index) => source.get(index, row);
-
-  @override
-  void operator []=(int index, T value) {
-    throw new UnsupportedError('Not supported');
   }
 }
