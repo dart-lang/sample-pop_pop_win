@@ -25,7 +25,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "pop_pop_win.stage.game_element",
-        "size": 5808,
+        "size": 5819,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -7707,7 +7707,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 5713,
+        "size": 5724,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -20021,7 +20021,7 @@
         "id": "function/68375000",
         "kind": "function",
         "name": "call",
-        "size": 524,
+        "size": 535,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/305821002",
         "children": [],
@@ -20042,7 +20042,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var z,y,x\nif(a==null)a=0\nz=this.a\ny=H.VM([],[Y.EW])\nx=$.LS\n$.LS=x+1\nx=new K.XY(a,\"\",null,\"none\",\"dynamic\",0,0,0,0,0,0,0,!1,!1,!1,!1,!1,\"\\u2022\",16777215,0,0,100,100,0,0,y,3,!0,null,null,!1,!0,\"auto\",!0,0,x,0,0,0,0,1,1,0,0,0,1,!0,!1,null,null,H.VM([],[A.WO]),null,\"\",null,T.oy(),!0,null,null)\nx.Iv(null,null)\nx.LD=new Y.xV(\"Slackey, cursive\",28,4278190080,0,4278190080,null,400,!1,!1,!1,\"left\",\"top\",0,0,0,0,0,1).NW(0)\ny=x.HV|=3\nx.kX=\"left\"\nx.HV=y|3\nx.sx(0,1400)\nx.sy(0,20)\nz.bS(x)\nz.zN=x\nz.gDA().oJ.i(0,z.zN)}\n",
+        "code": "$1:function(a){var z,y,x\nif(a==null)a=0\nz=this.a\ny=H.VM([],[Y.EW])\nx=$.LS\n$.LS=x+1\nx=new K.XY(a,\"\",null,\"none\",\"dynamic\",0,0,0,0,0,0,0,!1,!1,!1,!1,!1,\"\\u2022\",4294967295,4278190080,0,100,100,0,0,y,3,!0,null,null,!1,!0,\"auto\",!0,0,x,0,0,0,0,1,1,0,0,0,1,!0,!1,null,null,H.VM([],[A.WO]),null,\"\",null,T.oy(),!0,null,null)\nx.Iv(null,null)\nx.LD=new Y.xV(\"Slackey, cursive\",28,4278190080,0,4278190080,null,400,!1,!1,!1,\"left\",\"top\",0,0,0,0,0,1).NW(0)\ny=x.HV|=3\nx.kX=\"left\"\nx.HV=y|3\nx.sx(0,1400)\nx.sy(0,20)\nz.bS(x)\nz.zN=x\nz.gDA().oJ.i(0,z.zN)}\n",
         "type": "(dynamic) -> dynamic",
         "measurements": null
       },
@@ -71313,7 +71313,7 @@
         "id": "function/956446518",
         "kind": "function",
         "name": "GameElement",
-        "size": 1318,
+        "size": 1329,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -79882,7 +79882,7 @@
         "id": "closure/305821002",
         "kind": "closure",
         "name": "GameElement_closure",
-        "size": 540,
+        "size": 551,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/956446518",
         "function": "function/68375000"
@@ -120816,7 +120816,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 266513,
+      "size": 266524,
       "imports": []
     }
   ],
@@ -120825,11 +120825,11 @@
   "dump_minor_version": "0",
   "program": {
     "entrypoint": "function/391852842",
-    "size": 266513,
+    "size": 266524,
     "dart2jsVersion": null,
-    "compilationMoment": "2018-02-07 20:47:51.591091",
-    "compilationDuration": 10012722,
-    "toJsonDuration": 65000,
+    "compilationMoment": "2018-02-07 20:50:06.624143",
+    "compilationDuration": 10242911,
+    "toJsonDuration": 64000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
