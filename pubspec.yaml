@@ -9,7 +9,7 @@ dependencies:
 dev_dependencies:
   test: '^0.12.0'
   build_runner: ^0.7.0
-  build_web_compilers: ^0.1.1
+  build_web_compilers: ^0.3.0
 
 web:
   compiler:
