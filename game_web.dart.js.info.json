@@ -82,7 +82,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 29214,
+        "size": 29275,
         "children": [
           "class/1753632",
           "class/6212434",
@@ -578,6 +578,7 @@
           "typedef/53167012",
           "typedef/55986852",
           "typedef/63901059",
+          "typedef/94499620",
           "typedef/116778202",
           "typedef/206096963",
           "typedef/291642082",
@@ -640,7 +641,7 @@
         "id": "library/180049376",
         "kind": "library",
         "name": "_isolate_helper",
-        "size": 14354,
+        "size": 14370,
         "children": [
           "class/21047326",
           "class/61102751",
@@ -746,7 +747,7 @@
         "id": "library/223393735",
         "kind": "library",
         "name": "dart.convert",
-        "size": 1961,
+        "size": 2423,
         "children": [
           "class/241896936",
           "class/440511818",
@@ -864,7 +865,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 13558,
+        "size": 13655,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -936,7 +937,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15470,
+        "size": 15464,
         "children": [
           "class/9026159",
           "class/55317202",
@@ -995,7 +996,7 @@
         "id": "library/470705070",
         "kind": "library",
         "name": "dart.dom.svg",
-        "size": 5856,
+        "size": 5850,
         "children": [
           "class/1889497",
           "class/8054138",
@@ -1313,7 +1314,7 @@
         "id": "library/686112276",
         "kind": "library",
         "name": "dart.dom.web_sql",
-        "size": 585,
+        "size": 583,
         "children": [
           "class/97754",
           "class/84259111",
@@ -1331,7 +1332,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 4701,
+        "size": 4721,
         "children": [
           "class/60704969",
           "class/202804702",
@@ -1359,7 +1360,7 @@
         "id": "library/754126564",
         "kind": "library",
         "name": "dart.collection",
-        "size": 6435,
+        "size": 6936,
         "children": [
           "class/113750884",
           "class/123522748",
@@ -1367,11 +1368,13 @@
           "class/172151835",
           "class/224053384",
           "class/405537822",
+          "class/476286669",
           "class/591860850",
           "class/594605500",
           "class/607623563",
           "class/614050497",
           "class/675989739",
+          "class/748502014",
           "class/758572498",
           "class/812154630",
           "class/868658259",
@@ -1540,7 +1543,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 27772,
+        "size": 27911,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1749,7 +1752,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 19032,
+        "size": 19047,
         "children": [
           "class/80405414",
           "class/105901179",
@@ -1787,6 +1790,7 @@
           "class/1028054261",
           "class/1029457687",
           "class/1040168844",
+          "class/1040612955",
           "class/1045817757",
           "class/1059755229",
           "field/29748263",
@@ -1849,7 +1853,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 22018,
+        "size": 22026,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -3458,7 +3462,7 @@
         "id": "class/119001910",
         "kind": "class",
         "name": "HtmlCollection",
-        "size": 484,
+        "size": 483,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4156,7 +4160,7 @@
         "id": "class/155769173",
         "kind": "class",
         "name": "TimerImpl",
-        "size": 839,
+        "size": 857,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/180049376",
         "modifiers": {
@@ -4545,7 +4549,7 @@
         "id": "class/183163108",
         "kind": "class",
         "name": "PluginArray",
-        "size": 431,
+        "size": 432,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4641,7 +4645,7 @@
         "id": "class/187781663",
         "kind": "class",
         "name": "Storage",
-        "size": 408,
+        "size": 397,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -5228,7 +5232,7 @@
         "id": "class/241896936",
         "kind": "class",
         "name": "_JsonMapKeyIterable",
-        "size": 388,
+        "size": 429,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/223393735",
         "modifiers": {
@@ -5238,7 +5242,8 @@
           "function/402882813",
           "function/459501018",
           "function/885529815",
-          "function/1013713190"
+          "function/1013713190",
+          "function/1014056972"
         ]
       },
       "245066649": {
@@ -6682,7 +6687,7 @@
         "id": "class/356374571",
         "kind": "class",
         "name": "RenderTexture",
-        "size": 1890,
+        "size": 1884,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -6823,7 +6828,7 @@
         "id": "class/365655194",
         "kind": "class",
         "name": "ListIterator",
-        "size": 214,
+        "size": 234,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "modifiers": {
@@ -6916,7 +6921,7 @@
         "id": "class/373504153",
         "kind": "class",
         "name": "LinkedHashMapKeyIterable",
-        "size": 128,
+        "size": 169,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -6925,6 +6930,7 @@
         "children": [
           "function/526699367",
           "function/739160294",
+          "function/779071751",
           "function/950782810"
         ]
       },
@@ -7836,7 +7842,7 @@
         "id": "class/445899275",
         "kind": "class",
         "name": "BitmapDataLoadInfo",
-        "size": 544,
+        "size": 552,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -8133,6 +8139,24 @@
           "abstract": true
         },
         "children": []
+      },
+      "476286669": {
+        "id": "class/476286669",
+        "kind": "class",
+        "name": "MapMixin",
+        "size": 410,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/754126564",
+        "modifiers": {
+          "abstract": true
+        },
+        "children": [
+          "function/6151384",
+          "function/407848564",
+          "function/891910474",
+          "function/1008544093",
+          "function/1049918996"
+        ]
       },
       "478042359": {
         "id": "class/478042359",
@@ -8642,7 +8666,7 @@
         "id": "class/523978038",
         "kind": "class",
         "name": "JSArray",
-        "size": 2451,
+        "size": 2548,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -9511,7 +9535,7 @@
         "id": "class/590797799",
         "kind": "class",
         "name": "_Serializer",
-        "size": 1871,
+        "size": 1869,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/180049376",
         "modifiers": {
@@ -9554,7 +9578,7 @@
         "id": "class/591860850",
         "kind": "class",
         "name": "Maps",
-        "size": 128,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -9801,7 +9825,7 @@
         "id": "class/607591059",
         "kind": "class",
         "name": "TouchList",
-        "size": 429,
+        "size": 430,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9932,6 +9956,7 @@
           "abstract": true
         },
         "children": [
+          "function/116599339",
           "function/195726635",
           "function/889846592"
         ]
@@ -10249,7 +10274,7 @@
         "id": "class/643072719",
         "kind": "class",
         "name": "MimeTypeArray",
-        "size": 433,
+        "size": 434,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -10502,7 +10527,7 @@
         "id": "class/665153380",
         "kind": "class",
         "name": "Converter",
-        "size": 10,
+        "size": 11,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/223393735",
         "modifiers": {
@@ -11231,7 +11256,7 @@
         "id": "class/722522722",
         "kind": "class",
         "name": "JsLinkedHashMap",
-        "size": 3066,
+        "size": 3077,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -11608,6 +11633,20 @@
         },
         "children": []
       },
+      "748502014": {
+        "id": "class/748502014",
+        "kind": "class",
+        "name": "MapBase",
+        "size": 139,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/754126564",
+        "modifiers": {
+          "abstract": true
+        },
+        "children": [
+          "function/987508329"
+        ]
+      },
       "751340741": {
         "id": "class/751340741",
         "kind": "class",
@@ -11785,7 +11824,7 @@
         "id": "class/766774061",
         "kind": "class",
         "name": "NodeList",
-        "size": 442,
+        "size": 443,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13455,7 +13494,7 @@
         "id": "class/878983453",
         "kind": "class",
         "name": "LengthList",
-        "size": 367,
+        "size": 366,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -13583,7 +13622,7 @@
         "id": "class/896399668",
         "kind": "class",
         "name": "_CssRuleList",
-        "size": 432,
+        "size": 431,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13981,18 +14020,18 @@
         "id": "class/931332797",
         "kind": "class",
         "name": "_JsonMap",
-        "size": 972,
+        "size": 1392,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/223393735",
         "modifiers": {
           "abstract": false
         },
         "children": [
+          "function/48980716",
           "function/122097752",
           "function/130872070",
           "function/150610395",
           "function/179350318",
-          "function/215103299",
           "function/303806557",
           "function/304437833",
           "function/386656858",
@@ -14004,7 +14043,8 @@
           "function/720607723",
           "function/782014772",
           "function/842911185",
-          "function/864919156"
+          "function/864919156",
+          "function/965712036"
         ]
       },
       "932959358": {
@@ -14615,7 +14655,7 @@
         "id": "class/980673591",
         "kind": "class",
         "name": "NumberList",
-        "size": 367,
+        "size": 366,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -15661,6 +15701,18 @@
           "function/1066287858"
         ]
       },
+      "1040612955": {
+        "id": "class/1040612955",
+        "kind": "class",
+        "name": "StreamTransformerBase",
+        "size": 10,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1052666095",
+        "modifiers": {
+          "abstract": true
+        },
+        "children": []
+      },
       "1041555217": {
         "id": "class/1041555217",
         "kind": "class",
@@ -16536,6 +16588,35 @@
         "type": "(RenderContextWebGL) -> void",
         "measurements": null
       },
+      "6151384": {
+        "id": "function/6151384",
+        "kind": "function",
+        "name": "containsKey",
+        "size": 43,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/476286669",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "key",
+            "type": "Union([exact=JSString], [subclass=JSPositiveInt])",
+            "declaredType": "Object"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "x4:function(a,b){return J.zl(this.gK(a),b)}\n",
+        "type": "(Object) -> bool",
+        "measurements": null
+      },
       "6219765": {
         "id": "function/6219765",
         "kind": "function",
@@ -16561,7 +16642,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "xX:function(a){var z,y,x,w,v,u,t\nz=a.a\nz=Math.sqrt(Math.abs(z[0]*z[3]-z[1]*z[2]))\ny=this.pG\nx=y==null?y:y.e\nif(x==null)x=0\nif(x<z*0.8)this.HV|=2\nif(x>z*1.25)this.HV|=2\ny=this.HV\nif((y&2)===0)return\nthis.HV=y&253\nw=C.CD.a3(Math.max(1,this.eD*z))\nv=C.CD.a3(Math.max(1,this.jq*z))\ny=this.Jz\nif(y==null){y=L.fL(w,v,16777215)\nthis.Jz=y\ny=y.gpB()\nz=L.NA(y.a,y.b,y.c,y.d,z)\nthis.pG=z}else{y.lO(0,w,v)\ny=this.Jz.gpB()\nz=L.NA(y.a,y.b,y.c,y.d,z)\nthis.pG=z}u=z.gmH()\nz=this.Jz\nz=z.gqN(z)\nz.toString\nt=z.getContext(\"2d\")\nz=u.a\nt.setTransform(z[0],z[1],z[2],z[3],z[4],z[5])\nt.clearRect(0,0,this.eD,this.jq)\nthis.Cg(t)\nthis.Jz.Li(0)}\n",
+        "code": "xX:function(a){var z,y,x,w,v,u,t\nz=a.a\nz=Math.sqrt(Math.abs(z[0]*z[3]-z[1]*z[2]))\ny=this.pG\nx=y==null?y:y.e\nif(x==null)x=0\nif(x<z*0.8)this.HV|=2\nif(x>z*1.25)this.HV|=2\ny=this.HV\nif((y&2)===0)return\nthis.HV=y&253\nw=C.CD.a3(Math.max(1,this.eD*z))\nv=C.CD.a3(Math.max(1,this.jq*z))\ny=this.Jz\nif(y==null){y=L.fL(w,v,16777215)\nthis.Jz=y\ny=y.gff()\nz=L.NA(y.a,y.b,y.c,y.d,z)\nthis.pG=z}else{y.lO(0,w,v)\ny=this.Jz.gff()\nz=L.NA(y.a,y.b,y.c,y.d,z)\nthis.pG=z}u=z.gmH()\nz=this.Jz\nz=z.gqN(z)\nz.toString\nt=z.getContext(\"2d\")\nz=u.a\nt.setTransform(z[0],z[1],z[2],z[3],z[4],z[5])\nt.clearRect(0,0,this.eD,this.jq)\nthis.Cg(t)\nthis.Jz.Li(0)}\n",
         "type": "(Matrix) -> void",
         "measurements": null
       },
@@ -17484,7 +17565,7 @@
           "external": false
         },
         "returnType": "int",
-        "inferredReturnType": "[subclass=JSInt]",
+        "inferredReturnType": "[null|subclass=JSInt]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -18819,6 +18900,40 @@
         "inlinedCount": 4,
         "code": null,
         "type": "() -> bool",
+        "measurements": null
+      },
+      "48980716": {
+        "id": "function/48980716",
+        "kind": "function",
+        "name": "[]=",
+        "size": 164,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/931332797",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "key",
+            "type": "[subclass=JSPositiveInt]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "value",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "t:function(a,b,c){var z,y\nif(this.b==null)this.c.t(0,b,c)\nelse if(this.x4(0,b)){z=this.b\nz[b]=c\ny=this.a\nif(y==null?z!=null:y!==z)y[b]=null}else this.XK().t(0,b,c)}\n",
+        "type": "(dynamic, dynamic) -> dynamic",
         "measurements": null
       },
       "49963287": {
@@ -22325,6 +22440,29 @@
         "type": "(dynamic, Completer) -> dynamic",
         "measurements": null
       },
+      "116599339": {
+        "id": "function/116599339",
+        "kind": "function",
+        "name": "LinkedHashMap._empty",
+        "size": 68,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/614050497",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": true,
+          "external": false
+        },
+        "returnType": "LinkedHashMap<LinkedHashMap.K, LinkedHashMap.V>",
+        "inferredReturnType": "[subclass=JsLinkedHashMap]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 0,
+        "code": "Fl:function(a,b){return new H.u(0,null,null,null,null,null,0,[a,b])}\n",
+        "type": "() -> LinkedHashMap<LinkedHashMap.K, LinkedHashMap.V>",
+        "measurements": null
+      },
       "117407374": {
         "id": "function/117407374",
         "kind": "function",
@@ -22819,7 +22957,7 @@
         "inferredReturnType": "[exact=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 19,
+        "inlinedCount": 20,
         "code": null,
         "type": "() -> dynamic",
         "measurements": null
@@ -23387,7 +23525,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 8,
+        "inlinedCount": 10,
         "code": null,
         "type": "() -> bool",
         "measurements": null
@@ -23763,6 +23901,40 @@
         "type": "(String, (String) -> int) -> int",
         "measurements": null
       },
+      "139456351": {
+        "id": "function/139456351",
+        "kind": "function",
+        "name": "call",
+        "size": 110,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "closure/637664934",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "k",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "v",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads field; writes anything)",
+        "inlinedCount": 0,
+        "code": "$2:function(a,b){var z,y\nz=this.a\nif(!z.a)this.b.a+=\", \"\nz.a=!1\nz=this.b\ny=z.a+=H.d(a)\nz.a=y+\": \"\nz.a+=H.d(b)}\n",
+        "type": "(dynamic, dynamic) -> dynamic",
+        "measurements": null
+      },
       "140289549": {
         "id": "function/140289549",
         "kind": "function",
@@ -23803,7 +23975,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "MB:function(a,b,c,d){var z=L.fL(C.CD.zQ(a*d),C.CD.zQ(b*d),c).gpB()\nreturn A.Kf(L.NA(z.a,z.b,z.c,z.d,d))}\n",
+        "code": "MB:function(a,b,c,d){var z=L.fL(C.CD.zQ(a*d),C.CD.zQ(b*d),c).gff()\nreturn A.Kf(L.NA(z.a,z.b,z.c,z.d,d))}\n",
         "type": "(num, num, [int, num]) -> BitmapData",
         "measurements": null
       },
@@ -24217,7 +24389,7 @@
         "id": "function/144469778",
         "kind": "function",
         "name": "length",
-        "size": 102,
+        "size": 180,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/523978038",
         "children": [],
@@ -24232,13 +24404,13 @@
         "parameters": [
           {
             "name": "newLength",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "int"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "sk:function(a,b){this.PP(a,\"set length\")\nif(b<0)throw H.b(P.TE(b,0,null,\"newLength\",null))\na.length=b}\n",
+        "code": "sk:function(a,b){this.PP(a,\"set length\")\nif(typeof b!==\"number\"||Math.floor(b)!==b)throw H.b(P.L3(b,\"newLength\",null))\nif(b<0)throw H.b(P.TE(b,0,null,\"newLength\",null))\na.length=b}\n",
         "type": "(int) -> dynamic",
         "measurements": null
       },
@@ -24686,7 +24858,7 @@
           "external": false
         },
         "returnType": "int",
-        "inferredReturnType": "[subclass=JSInt]",
+        "inferredReturnType": "[null|subclass=JSInt]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -25073,40 +25245,6 @@
         "type": "(() -> void, () -> void) -> dynamic",
         "measurements": null
       },
-      "159099030": {
-        "id": "function/159099030",
-        "kind": "function",
-        "name": "call",
-        "size": 110,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "closure/448168699",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[null]",
-        "parameters": [
-          {
-            "name": "k",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "v",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
-        "inlinedCount": 0,
-        "code": "$2:function(a,b){var z,y\nz=this.a\nif(!z.a)this.b.a+=\", \"\nz.a=!1\nz=this.b\ny=z.a+=H.d(a)\nz.a=y+\": \"\nz.a+=H.d(b)}\n",
-        "type": "(dynamic, dynamic) -> dynamic",
-        "measurements": null
-      },
       "159490969": {
         "id": "function/159490969",
         "kind": "function",
@@ -25122,7 +25260,7 @@
           "external": false
         },
         "returnType": "dynamic",
-        "inferredReturnType": "[empty]",
+        "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
             "name": "d",
@@ -25130,7 +25268,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){return J.oi(a,0,this.a)}\n",
         "type": "(dynamic) -> dynamic",
@@ -27871,29 +28009,6 @@
         "type": "() -> void",
         "measurements": null
       },
-      "215103299": {
-        "id": "function/215103299",
-        "kind": "function",
-        "name": "toString",
-        "size": 33,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/931332797",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "String",
-        "inferredReturnType": "[exact=JSString]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "bu:function(a){return P.vW(this)}\n",
-        "type": "() -> String",
-        "measurements": null
-      },
       "215520061": {
         "id": "function/215520061",
         "kind": "function",
@@ -28722,7 +28837,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gwe:function(){var z,y\nz=this.a\nz=J.kc(z,z)\ny=this.b\nreturn Math.sqrt(J.pb(z,J.kc(y,y)))}\n",
+        "code": "gwe:function(){var z,y\nz=this.a\nz=J.kc(z,z)\ny=this.b\nreturn Math.sqrt(J.bb(z,J.kc(y,y)))}\n",
         "type": "() -> double",
         "measurements": null
       },
@@ -29138,7 +29253,7 @@
         "id": "function/236906282",
         "kind": "function",
         "name": "[]=",
-        "size": 0,
+        "size": 33,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/187781663",
         "children": [],
@@ -29164,7 +29279,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
-        "code": null,
+        "code": "t:function(a,b,c){a.setItem(b,c)}\n",
         "type": "(String, String) -> void",
         "measurements": null
       },
@@ -29681,11 +29796,11 @@
           "external": false
         },
         "returnType": "int",
-        "inferredReturnType": "[subclass=JSInt]",
+        "inferredReturnType": "[null|subclass=JSInt]",
         "parameters": [
           {
             "name": "start",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "int"
           },
           {
@@ -29695,7 +29810,7 @@
           },
           {
             "name": "length",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "int"
           },
           {
@@ -31869,7 +31984,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "i:function(a,b){var z,y,x\nif(typeof b===\"string\"&&b!==\"__proto__\"){z=this.b\nif(z==null){y=Object.create(null)\ny[\"<non-identifier-key>\"]=y\ndelete y[\"<non-identifier-key>\"]\nthis.b=y\nz=y}return this.cW(z,b)}else if(typeof b===\"number\"&&(b&0x3ffffff)===b){x=this.c\nif(x==null){y=Object.create(null)\ny[\"<non-identifier-key>\"]=y\ndelete y[\"<non-identifier-key>\"]\nthis.c=y\nx=y}return this.cW(x,b)}else return this.B7(0,b)}\n",
+        "code": "i:function(a,b){var z,y,x\nif(typeof b===\"string\"&&b!==\"__proto__\"){z=this.b\nif(z==null){y=Object.create(null)\ny[\"<non-identifier-key>\"]=y\ndelete y[\"<non-identifier-key>\"]\nthis.b=y\nz=y}return this.bQ(z,b)}else if(typeof b===\"number\"&&(b&0x3ffffff)===b){x=this.c\nif(x==null){y=Object.create(null)\ny[\"<non-identifier-key>\"]=y\ndelete y[\"<non-identifier-key>\"]\nthis.c=y\nx=y}return this.bQ(x,b)}else return this.B7(0,b)}\n",
         "type": "(_LinkedHashSet.E) -> bool",
         "measurements": null
       },
@@ -33441,7 +33556,7 @@
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 6,
+        "inlinedCount": 8,
         "code": null,
         "type": "() -> Map<String, dynamic>",
         "measurements": null
@@ -34561,7 +34676,7 @@
         "parameters": [
           {
             "name": "length",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "dynamic"
           }
         ],
@@ -37385,7 +37500,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
+        "inlinedCount": 2,
         "code": null,
         "type": "() -> bool",
         "measurements": null
@@ -38750,7 +38865,7 @@
         "id": "function/407139250",
         "kind": "function",
         "name": "setRange",
-        "size": 263,
+        "size": 282,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/523978038",
         "children": [],
@@ -38765,17 +38880,17 @@
         "parameters": [
           {
             "name": "start",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "int"
           },
           {
             "name": "end",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "int"
           },
           {
             "name": "iterable",
-            "type": "[subclass=JSArray]",
+            "type": "Union([subclass=JSArray], [subtype=ListMixin])",
             "declaredType": "Iterable<JSArray.E>"
           },
           {
@@ -38786,8 +38901,37 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "YW:function(a,b,c,d,e){var z,y\nthis.uy(a,\"setRange\")\nP.jB(b,c,a.length,null,null,null)\nz=c-b\nif(z===0)return\nif(e<0)H.Vj(P.TE(e,0,null,\"skipCount\",null))\nif(e+z>d.length)throw H.b(H.ar())\nif(e<b)for(y=z-1;y>=0;--y)a[b+y]=d[e+y]\nelse for(y=0;y<z;++y)a[b+y]=d[e+y]}\n",
+        "code": "YW:function(a,b,c,d,e){var z,y,x\nthis.uy(a,\"setRange\")\nP.jB(b,c,a.length,null,null,null)\nz=c-b\nif(z===0)return\nif(e<0)H.Vj(P.TE(e,0,null,\"skipCount\",null))\ny=J.U6(d)\nif(e+z>y.gk(d))throw H.b(H.ar())\nif(e<b)for(x=z-1;x>=0;--x)a[b+x]=y.q(d,e+x)\nelse for(x=0;x<z;++x)a[b+x]=y.q(d,e+x)}\n",
         "type": "(int, int, Iterable<JSArray.E>, [int]) -> void",
+        "measurements": null
+      },
+      "407848564": {
+        "id": "function/407848564",
+        "kind": "function",
+        "name": "forEach",
+        "size": 87,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/476286669",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "action",
+            "type": "[subtype=Function]",
+            "declaredType": "(MapMixin.K, MapMixin.V) -> void"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "aN:function(a,b){var z,y\nfor(z=J.IT(this.gK(a));z.VF();){y=z.gR()\nb.$2(y,this.q(a,y))}}\n",
+        "type": "((MapMixin.K, MapMixin.V) -> void) -> void",
         "measurements": null
       },
       "407995169": {
@@ -39016,7 +39160,7 @@
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
+        "inlinedCount": 1,
         "code": "fZ:function(a){this.x.fZ(0)}\n",
         "type": "() -> void",
         "measurements": null
@@ -39218,7 +39362,7 @@
         "id": "function/413843067",
         "kind": "function",
         "name": "serialize",
-        "size": 909,
+        "size": 908,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/590797799",
         "children": [],
@@ -39239,7 +39383,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "M:[function(a){var z,y,x,w,v\nif(a==null||typeof a===\"string\"||typeof a===\"number\"||typeof a===\"boolean\")return a\nz=this.b\ny=z.q(0,a)\nif(y!=null)return[\"ref\",y]\nz.t(0,a,z.gk(z))\nz=J.v(a)\nif(!!z.$isWZ)return[\"buffer\",a]\nif(!!z.$isET)return[\"typed\",a]\nif(!!z.$isDD)return this.C(a)\nif(!!z.$isym){x=this.gp()\nw=z.gK(a)\nw=H.K1(w,x,H.W8(w,\"cX\",0),null)\nw=P.PW(w,!0,H.W8(w,\"cX\",0))\nz=z.gU(a)\nz=H.K1(z,x,H.W8(z,\"cX\",0),null)\nreturn[\"map\",w,P.PW(z,!0,H.W8(z,\"cX\",0))]}if(!!z.$isvm)return this.xw(a)\nif(!!z.$isvB)this.Y(a)\nif(!!z.$isaL)this.T(a,\"RawReceivePorts can't be transmitted:\")\nif(!!z.$isJM)return this.PE(a)\nif(!!z.$isns)return this.ff(a)\nif(!!z.$isTp){v=a.$static_name\nif(v==null)this.T(a,\"Closures can't be transmitted:\")\nreturn[\"function\",v]}if(!!z.$isk)return[\"capability\",a.a]\nif(!(a instanceof P.j))this.Y(a)\nreturn[\"dart\",init.classIdExtractor(a),this.jG(init.classFieldsExtractor(a))]},\"$1\",\"gp\",2,0,0]\n",
+        "code": "M:[function(a){var z,y,x,w,v\nif(a==null||typeof a===\"string\"||typeof a===\"number\"||typeof a===\"boolean\")return a\nz=this.b\ny=z.q(0,a)\nif(y!=null)return[\"ref\",y]\nz.t(0,a,z.gk(z))\nz=J.v(a)\nif(!!z.$isWZ)return[\"buffer\",a]\nif(!!z.$isET)return[\"typed\",a]\nif(!!z.$isDD)return this.C(a)\nif(!!z.$isym){x=this.gp()\nw=z.gK(a)\nw=H.K1(w,x,H.W8(w,\"cX\",0),null)\nw=P.PW(w,!0,H.W8(w,\"cX\",0))\nz=z.gU(a)\nz=H.K1(z,x,H.W8(z,\"cX\",0),null)\nreturn[\"map\",w,P.PW(z,!0,H.W8(z,\"cX\",0))]}if(!!z.$isvm)return this.xw(a)\nif(!!z.$isvB)this.Y(a)\nif(!!z.$isaL)this.T(a,\"RawReceivePorts can't be transmitted:\")\nif(!!z.$isJM)return this.PE(a)\nif(!!z.$isns)return this.u(a)\nif(!!z.$isTp){v=a.$static_name\nif(v==null)this.T(a,\"Closures can't be transmitted:\")\nreturn[\"function\",v]}if(!!z.$isk)return[\"capability\",a.a]\nif(!(a instanceof P.j))this.Y(a)\nreturn[\"dart\",init.classIdExtractor(a),this.jG(init.classFieldsExtractor(a))]},\"$1\",\"gp\",2,0,0]\n",
         "type": "(dynamic) -> dynamic",
         "measurements": null
       },
@@ -43477,7 +43621,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 4,
         "code": null,
         "type": "(dynamic, String, dynamic) -> dynamic",
         "measurements": null
@@ -43650,7 +43794,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 2,
+        "inlinedCount": 1,
         "code": null,
         "type": "(int) -> Iterable<JSArray.E>",
         "measurements": null
@@ -44251,7 +44395,7 @@
         "id": "function/490290235",
         "kind": "function",
         "name": "serializeWorkerSendPort",
-        "size": 81,
+        "size": 80,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/590797799",
         "children": [],
@@ -44272,7 +44416,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "ff:function(a){if(this.a)return[\"sendport\",a.b,a.a,a.c]\nreturn[\"raw sendport\",a]}\n",
+        "code": "u:function(a){if(this.a)return[\"sendport\",a.b,a.a,a.c]\nreturn[\"raw sendport\",a]}\n",
         "type": "(_WorkerSendPort) -> dynamic",
         "measurements": null
       },
@@ -44483,7 +44627,7 @@
         "inferredReturnType": "[exact=Es6LinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 17,
+        "inlinedCount": 18,
         "code": null,
         "type": "() -> dynamic",
         "measurements": null
@@ -48284,7 +48428,7 @@
         "parameters": [
           {
             "name": "length",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "dynamic"
           }
         ],
@@ -48635,7 +48779,7 @@
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads static; writes nothing)",
-        "inlinedCount": 16,
+        "inlinedCount": 17,
         "code": "YR:function(a,b){return new H.u(0,null,null,null,null,null,0,[a,b])}\n",
         "type": "() -> JsLinkedHashMap<JsLinkedHashMap.K, JsLinkedHashMap.V>",
         "measurements": null
@@ -52179,12 +52323,10 @@
         "id": "function/643002706",
         "kind": "function",
         "name": "mapToString",
-        "size": 357,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/591860850",
-        "children": [
-          "closure/448168699"
-        ],
+        "children": [],
         "modifiers": {
           "static": true,
           "const": false,
@@ -52196,13 +52338,13 @@
         "parameters": [
           {
             "name": "m",
-            "type": "Union([exact=_JsonMap], [subclass=JsLinkedHashMap])",
+            "type": "[subclass=JsLinkedHashMap]",
             "declaredType": "Map"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "vW:function(a){var z,y,x\nz={}\nif(P.hB(a))return\"{...}\"\ny=new P.Rn(\"\")\ntry{$.$get$d2().push(a)\nx=y\nx.a=x.gIN()+\"{\"\nz.a=!0\na.aN(0,new P.ZQ(z,y))\nz=y\nz.a=z.gIN()+\"}\"}finally{$.$get$d2().pop()}z=y.gIN()\nreturn z.charCodeAt(0)==0?z:z}\n",
+        "inlinedCount": 1,
+        "code": null,
         "type": "(Map) -> String",
         "measurements": null
       },
@@ -54111,7 +54253,7 @@
         "parameters": [
           {
             "name": "key",
-            "type": "Value([exact=JSString], value: \"vertices\")",
+            "type": "Union([exact=JSString], [subclass=JSPositiveInt])",
             "declaredType": "Object"
           }
         ],
@@ -54670,7 +54812,7 @@
           "external": false
         },
         "returnType": "dynamic",
-        "inferredReturnType": "[empty]",
+        "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
             "name": "d",
@@ -54678,7 +54820,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){return J.oi(a,this.b,this.a)}\n",
         "type": "(dynamic) -> dynamic",
@@ -55446,7 +55588,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 17,
+        "inlinedCount": 18,
         "code": null,
         "type": "() -> bool",
         "measurements": null
@@ -56128,7 +56270,7 @@
         "id": "function/702114504",
         "kind": "function",
         "name": "_addHashTableEntry",
-        "size": 82,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/722522722",
         "children": [],
@@ -56158,8 +56300,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "u:function(a,b,c){var z=this.j(a,b)\nif(z==null)this.E(a,b,this.O(b,c))\nelse z.b=c}\n",
+        "inlinedCount": 2,
+        "code": null,
         "type": "(dynamic, JsLinkedHashMap.K, JsLinkedHashMap.V) -> void",
         "measurements": null
       },
@@ -56310,7 +56452,7 @@
           "external": false
         },
         "returnType": "int",
-        "inferredReturnType": "[subclass=JSInt]",
+        "inferredReturnType": "[null|subclass=JSInt]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -58536,7 +58678,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var z=L.WS(a).gpB()\nreturn A.Kf(L.NA(z.a,z.b,z.c,z.d,this.a))}\n",
+        "code": "$1:function(a){var z=L.WS(a).gff()\nreturn A.Kf(L.NA(z.a,z.b,z.c,z.d,this.a))}\n",
         "type": "(dynamic) -> dynamic",
         "measurements": null
       },
@@ -60137,7 +60279,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gpB:function(){var z,y,x\nz=this.a\ny=this.b\nx=[P.J]\nreturn L.NA(this,new U.tn(0,0,z,y,x),new U.tn(0,0,z,y,x),0,1)}\n",
+        "code": "gff:function(){var z,y,x\nz=this.a\ny=this.b\nx=[P.J]\nreturn L.NA(this,new U.tn(0,0,z,y,x),new U.tn(0,0,z,y,x),0,1)}\n",
         "type": "() -> RenderTextureQuad",
         "measurements": null
       },
@@ -61127,7 +61269,7 @@
         "parameters": [
           {
             "name": "o",
-            "type": "Union([exact=_JsonMap], [subclass=JsLinkedHashMap], [subtype=Iterable])",
+            "type": "Union([subtype=Iterable], [subtype=MapMixin])",
             "declaredType": "Object"
           }
         ],
@@ -61158,6 +61300,35 @@
         "inlinedCount": 0,
         "code": "bu:function(a){return P.WE(a,\"[\",\"]\")}\n",
         "type": "() -> String",
+        "measurements": null
+      },
+      "779071751": {
+        "id": "function/779071751",
+        "kind": "function",
+        "name": "contains",
+        "size": 39,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/373504153",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "element",
+            "type": "Union([exact=JSString], [subclass=JSPositiveInt])",
+            "declaredType": "Object"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "tg:function(a,b){return this.a.x4(0,b)}\n",
+        "type": "(Object) -> bool",
         "measurements": null
       },
       "779765691": {
@@ -62939,7 +63110,7 @@
           },
           {
             "name": "end",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "int"
           },
           {
@@ -63369,7 +63540,7 @@
         "id": "function/820195095",
         "kind": "function",
         "name": "[]=",
-        "size": 388,
+        "size": 482,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/722522722",
         "children": [],
@@ -63395,7 +63566,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "t:function(a,b,c){var z,y,x,w,v,u\nif(typeof b===\"string\"){z=this.b\nif(z==null){z=this.l()\nthis.b=z}this.u(z,b,c)}else if(typeof b===\"number\"&&(b&0x3ffffff)===b){y=this.c\nif(y==null){y=this.l()\nthis.c=y}this.u(y,b,c)}else{x=this.d\nif(x==null){x=this.l()\nthis.d=x}w=this.w(b)\nv=this.B(x,w)\nif(v==null)this.E(x,w,[this.O(b,c)])\nelse{u=this.F(v,b)\nif(u>=0)v[u].b=c\nelse v.push(this.O(b,c))}}}\n",
+        "code": "t:function(a,b,c){var z,y,x,w,v,u,t\nif(typeof b===\"string\"){z=this.b\nif(z==null){z=this.l()\nthis.b=z}y=this.j(z,b)\nif(y==null)this.E(z,b,this.O(b,c))\nelse y.b=c}else if(typeof b===\"number\"&&(b&0x3ffffff)===b){x=this.c\nif(x==null){x=this.l()\nthis.c=x}y=this.j(x,b)\nif(y==null)this.E(x,b,this.O(b,c))\nelse y.b=c}else{w=this.d\nif(w==null){w=this.l()\nthis.d=w}v=this.w(b)\nu=this.B(w,v)\nif(u==null)this.E(w,v,[this.O(b,c)])\nelse{t=this.F(u,b)\nif(t>=0)u[t].b=c\nelse u.push(this.O(b,c))}}}\n",
         "type": "(JsLinkedHashMap.K, JsLinkedHashMap.V) -> void",
         "measurements": null
       },
@@ -63893,7 +64064,7 @@
         "id": "function/827571674",
         "kind": "function",
         "name": "checkInt",
-        "size": 0,
+        "size": 85,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -63908,13 +64079,13 @@
         "parameters": [
           {
             "name": "value",
-            "type": "[subclass=JSInt]",
+            "type": "[null|subclass=JSInt]",
             "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 2,
-        "code": null,
+        "code": "fI:function(a){if(typeof a!==\"number\"||Math.floor(a)!==a)throw H.b(H.tL(a))\nreturn a}\n",
         "type": "(dynamic) -> dynamic",
         "measurements": null
       },
@@ -64615,7 +64786,7 @@
         "id": "function/842911185",
         "kind": "function",
         "name": "containsKey",
-        "size": 109,
+        "size": 141,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/931332797",
         "children": [],
@@ -64630,13 +64801,13 @@
         "parameters": [
           {
             "name": "key",
-            "type": "Value([exact=JSString], value: \"vertices\")",
+            "type": "Union([exact=JSString], [subclass=JSPositiveInt])",
             "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "x4:function(a,b){if(this.b==null)return this.c.x4(0,b)\nreturn Object.prototype.hasOwnProperty.call(this.a,b)}\n",
+        "code": "x4:function(a,b){if(this.b==null)return this.c.x4(0,b)\nif(typeof b!==\"string\")return!1\nreturn Object.prototype.hasOwnProperty.call(this.a,b)}\n",
         "type": "(dynamic) -> bool",
         "measurements": null
       },
@@ -64775,7 +64946,7 @@
         "id": "function/847550959",
         "kind": "function",
         "name": "TimerImpl",
-        "size": 202,
+        "size": 218,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/155769173",
         "children": [
@@ -64804,7 +64975,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cy:function(a,b){var z=new H.yH(!0,!1,null)\nz.Qa(a,b)\nreturn z}\n",
+        "code": "cy:function(a,b){var z=new H.yH(!0,!1,null,0)\nz.Qa(a,b)\nreturn z}\n",
         "type": "(int, () -> void) -> dynamic",
         "measurements": null
       },
@@ -66253,7 +66424,7 @@
         "id": "function/875158512",
         "kind": "function",
         "name": "call",
-        "size": 63,
+        "size": 77,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/969683916",
         "children": [],
@@ -66268,7 +66439,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){this.a.c=null;--init.globalState.f.b\nthis.b.$0()}\n",
+        "code": "$0:function(){var z=this.a\nz.c=null;--init.globalState.f.b\nz.d=1\nthis.b.$0()}\n",
         "type": "() -> void",
         "measurements": null
       },
@@ -66475,7 +66646,7 @@
         "parameters": [
           {
             "name": "key",
-            "type": "Union([exact=JSUInt31], [null|exact=JSString])",
+            "type": "[null|subclass=Object]",
             "declaredType": "Object"
           }
         ],
@@ -67337,6 +67508,29 @@
         "inlinedCount": 1,
         "code": null,
         "type": "(List<FixedSizeListIterator.T>) -> dynamic",
+        "measurements": null
+      },
+      "891910474": {
+        "id": "function/891910474",
+        "kind": "function",
+        "name": "toString",
+        "size": 30,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/476286669",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[exact=JSString]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "bu:function(a){return P.nO(a)}\n",
+        "type": "() -> String",
         "measurements": null
       },
       "892678131": {
@@ -68541,7 +68735,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Tm:function(a){var z=0,y=P.Bg(),x,w=this,v,u,t,s,r\nvar $async$Tm=P.lz(function(b,c){if(b===1)return P.f3(c,y)\nwhile(true)switch(z){case 0:v=w.b\nu=v.b\nt=v.c\nv=w.a\ns=v.c\nv.e\nr=L\nz=3\nreturn P.jQ(N.y2(V.ox(u,a),s,!1).b.a,$async$Tm)\ncase 3:v=r.WS(c).gpB()\nx=L.NA(v.a,v.b,v.c,v.d,t)\nz=1\nbreak\ncase 1:return P.yC(x,y)}})\nreturn P.IN($async$Tm,y)}\n",
+        "code": "Tm:function(a){var z=0,y=P.Bg(),x,w=this,v,u,t,s,r\nvar $async$Tm=P.lz(function(b,c){if(b===1)return P.f3(c,y)\nwhile(true)switch(z){case 0:v=w.b\nu=v.b\nt=v.c\nv=w.a\ns=v.c\nv.e\nr=L\nz=3\nreturn P.jQ(N.y2(V.ox(u,a),s,!1).b.a,$async$Tm)\ncase 3:v=r.WS(c).gff()\nx=L.NA(v.a,v.b,v.c,v.d,t)\nz=1\nbreak\ncase 1:return P.yC(x,y)}})\nreturn P.IN($async$Tm,y)}\n",
         "type": "(String) -> Future<RenderTextureQuad>",
         "measurements": null
       },
@@ -69968,7 +70162,7 @@
         "id": "function/936971725",
         "kind": "function",
         "name": "update",
-        "size": 382,
+        "size": 376,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/356374571",
         "children": [],
@@ -69983,7 +70177,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Li:function(a){var z,y\nz=this.x\nif(z==null||this.ch==null)return\nif(z.cx!==this.y)return\ny=this.Q.isEnabled(3089)\nif(y)this.Q.disable(3089)\nif(this.z){z=this.d\nz.toString\nz.getContext(\"2d\").drawImage(this.c,0,0)\nthis.x.wi(this)\nz=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.d)}else{this.x.wi(this)\nz=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.c)}if(y)this.Q.enable(3089)}\n",
+        "code": "Li:function(a){var z,y\nz=this.x\nif(z==null||this.ch==null)return\nif(z.cx!==this.y)return\nz.x.fZ(0)\nthis.x.wi(this)\ny=this.Q.isEnabled(3089)\nif(y)this.Q.disable(3089)\nif(this.z){z=this.d\nz.toString\nz.getContext(\"2d\").drawImage(this.c,0,0)\nz=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.d)}else{z=this.Q;(z&&C.mx).ZE(z,3553,0,6408,6408,5121,this.c)}if(y)this.Q.enable(3089)}\n",
         "type": "() -> void",
         "measurements": null
       },
@@ -71223,7 +71417,7 @@
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 4,
         "code": null,
         "type": "() -> void",
         "measurements": null
@@ -71908,6 +72102,29 @@
         "inlinedCount": 1,
         "code": null,
         "type": "() -> bool",
+        "measurements": null
+      },
+      "965712036": {
+        "id": "function/965712036",
+        "kind": "function",
+        "name": "_upgrade",
+        "size": 226,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/931332797",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "Map<String, dynamic>",
+        "inferredReturnType": "[subclass=JsLinkedHashMap]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "XK:function(){var z,y,x,w,v\nif(this.b==null)return this.c\nz=P.Fl(P.qU,null)\ny=this.Cf()\nfor(x=0;w=y.length,x<w;++x){v=y[x]\nz.t(0,v,this.q(0,v))}if(w===0)y.push(null)\nelse C.Nm.sk(y,0)\nthis.b=null\nthis.a=null\nthis.c=z\nreturn z}\n",
+        "type": "() -> Map<String, dynamic>",
         "measurements": null
       },
       "966941645": {
@@ -72779,6 +72996,37 @@
         "inlinedCount": 0,
         "code": "$0:function(){--init.globalState.f.b\nthis.a.$0()}\n",
         "type": "() -> dynamic",
+        "measurements": null
+      },
+      "987508329": {
+        "id": "function/987508329",
+        "kind": "function",
+        "name": "mapToString",
+        "size": 357,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/748502014",
+        "children": [
+          "closure/637664934"
+        ],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[exact=JSString]",
+        "parameters": [
+          {
+            "name": "m",
+            "type": "[subtype=MapMixin]",
+            "declaredType": "Map"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "nO:function(a){var z,y,x\nz={}\nif(P.hB(a))return\"{...}\"\ny=new P.Rn(\"\")\ntry{$.$get$d2().push(a)\nx=y\nx.a=x.gIN()+\"{\"\nz.a=!0\nJ.hE(a,new P.ra(z,y))\nz=y\nz.a=z.gIN()+\"}\"}finally{$.$get$d2().pop()}z=y.gIN()\nreturn z.charCodeAt(0)==0?z:z}\n",
+        "type": "(Map) -> String",
         "measurements": null
       },
       "987844978": {
@@ -73976,7 +74224,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cW:function(a,b){if(a[b]!=null)return!1\na[b]=this.dg(b)\nreturn!0}\n",
+        "code": "bQ:function(a,b){if(a[b]!=null)return!1\na[b]=this.dg(b)\nreturn!0}\n",
         "type": "(dynamic, _LinkedHashSet.E) -> bool",
         "measurements": null
       },
@@ -74416,6 +74664,29 @@
         "type": "(int) -> String",
         "measurements": null
       },
+      "1008544093": {
+        "id": "function/1008544093",
+        "kind": "function",
+        "name": "length",
+        "size": 39,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/476286669",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "int",
+        "inferredReturnType": "[subclass=JSInt]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "gk:function(a){return J.Hm(this.gK(a))}\n",
+        "type": "() -> int",
+        "measurements": null
+      },
       "1008986067": {
         "id": "function/1008986067",
         "kind": "function",
@@ -74710,6 +74981,35 @@
         "inlinedCount": 0,
         "code": "gm:function(a){var z=this.a\nif(z.b==null){z=z.gK(z)\nz=z.gm(z)}else{z=z.Cf()\nz=new J.m1(z,z.length,0,null)}return z}\n",
         "type": "() -> Iterator<String>",
+        "measurements": null
+      },
+      "1014056972": {
+        "id": "function/1014056972",
+        "kind": "function",
+        "name": "contains",
+        "size": 39,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/241896936",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "key",
+            "type": "Union([exact=JSString], [subclass=JSPositiveInt])",
+            "declaredType": "Object"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "tg:function(a,b){return this.a.x4(0,b)}\n",
+        "type": "(Object) -> bool",
         "measurements": null
       },
       "1014821943": {
@@ -75667,7 +75967,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){return P.vW(this)}\n",
+        "code": "bu:function(a){return P.nO(this)}\n",
         "type": "() -> String",
         "measurements": null
       },
@@ -76281,7 +76581,7 @@
         "id": "function/1047605700",
         "kind": "function",
         "name": "moveNext",
-        "size": 165,
+        "size": 185,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/365655194",
         "children": [],
@@ -76296,7 +76596,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "VF:function(){var z,y,x,w\nz=this.a\ny=J.U6(z)\nx=y.gk(z)\nif(this.b!==x)throw H.b(new P.UV(z))\nw=this.c\nif(w>=x){this.d=null\nreturn!1}this.d=y.Z(z,w);++this.c\nreturn!0}\n",
+        "code": "VF:function(){var z,y,x,w\nz=this.a\ny=J.U6(z)\nx=y.gk(z)\nw=this.b\nif(w==null?x!=null:w!==x)throw H.b(new P.UV(z))\nw=this.c\nif(w>=x){this.d=null\nreturn!1}this.d=y.Z(z,w);++this.c\nreturn!0}\n",
         "type": "() -> bool",
         "measurements": null
       },
@@ -76407,6 +76707,45 @@
         "inlinedCount": 15,
         "code": null,
         "type": "(dynamic, String) -> dynamic",
+        "measurements": null
+      },
+      "1049918996": {
+        "id": "function/1049918996",
+        "kind": "function",
+        "name": "update",
+        "size": 165,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/476286669",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "MapMixin.V",
+        "inferredReturnType": "[null|subclass=Object]",
+        "parameters": [
+          {
+            "name": "key",
+            "type": "[subclass=JSPositiveInt]",
+            "declaredType": "MapMixin.K"
+          },
+          {
+            "name": "update",
+            "type": "[empty]",
+            "declaredType": "(MapMixin.V) -> MapMixin.V"
+          },
+          {
+            "name": "ifAbsent",
+            "type": "[null]",
+            "declaredType": "() -> MapMixin.V"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "dh:function(a,b,c,d){var z\nif(this.x4(a,b)){z=c.$1(this.q(a,b))\nthis.t(a,b,z)\nreturn z}z=d.$0()\nthis.t(a,b,z)\nreturn z}\nOg:function(a,b,c){return this.dh(a,b,c,null)}\n",
+        "type": "(MapMixin.K, (MapMixin.V) -> MapMixin.V, {() -> MapMixin.V ifAbsent}) -> MapMixin.V",
         "measurements": null
       },
       "1049951884": {
@@ -77533,6 +77872,15 @@
         "parent": "library/85591458",
         "type": "(IdleDeadline) -> void"
       },
+      "94499620": {
+        "id": "typedef/94499620",
+        "kind": "typedef",
+        "name": "_FileCallback",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458",
+        "type": "(File) -> void"
+      },
       "116778202": {
         "id": "typedef/116778202",
         "kind": "typedef",
@@ -78575,7 +78923,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "children": [],
-        "inferredType": "Container([exact=JSExtendableArray], element: Union([exact=_JsonMap], [subclass=JsLinkedHashMap], [subtype=Iterable]), length: null)",
+        "inferredType": "Container([exact=JSExtendableArray], element: Union([subtype=Iterable], [subtype=MapMixin]), length: null)",
         "code": null,
         "type": "List"
       },
@@ -80049,15 +80397,6 @@
         "parent": "function/69719263",
         "function": "function/354249342"
       },
-      "448168699": {
-        "id": "closure/448168699",
-        "kind": "closure",
-        "name": "Maps_mapToString_closure",
-        "size": 128,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "function/643002706",
-        "function": "function/159099030"
-      },
       "464380400": {
         "id": "closure/464380400",
         "kind": "closure",
@@ -80147,6 +80486,15 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "function/227475046",
         "function": "function/620539768"
+      },
+      "637664934": {
+        "id": "closure/637664934",
+        "kind": "closure",
+        "name": "MapBase_mapToString_closure",
+        "size": 128,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "function/987508329",
+        "function": "function/139456351"
       },
       "654052218": {
         "id": "closure/654052218",
@@ -80584,7 +80932,7 @@
         "id": "closure/969683916",
         "kind": "closure",
         "name": "TimerImpl_internalCallback",
-        "size": 81,
+        "size": 95,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/847550959",
         "function": "function/875158512"
@@ -81527,6 +81875,36 @@
       {
         "id": "function/665416673",
         "mask": "[subclass=JsLinkedHashMap]"
+      }
+    ],
+    "function/6151384": [
+      {
+        "id": "function/1014056972",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/122097752",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/147253557",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/346305693",
+        "mask": "null"
+      },
+      {
+        "id": "function/721101260",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/731794670",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/779071751",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
       }
     ],
     "function/6219765": [
@@ -83309,6 +83687,44 @@
       {
         "id": "function/991090123",
         "mask": "[null|subtype=List]"
+      }
+    ],
+    "function/48980716": [
+      {
+        "id": "function/130872070",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/130872070",
+        "mask": "null"
+      },
+      {
+        "id": "function/304437833",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/304437833",
+        "mask": "null"
+      },
+      {
+        "id": "function/479851144",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/479851144",
+        "mask": "null"
+      },
+      {
+        "id": "function/820195095",
+        "mask": "[subclass=JsLinkedHashMap]"
+      },
+      {
+        "id": "function/842911185",
+        "mask": "null"
+      },
+      {
+        "id": "function/965712036",
+        "mask": "null"
       }
     ],
     "function/51139097": [
@@ -85837,6 +86253,28 @@
         "mask": "null"
       }
     ],
+    "function/116599339": [
+      {
+        "id": "function/123959555",
+        "mask": "null"
+      },
+      {
+        "id": "function/494583530",
+        "mask": "null"
+      },
+      {
+        "id": "function/573775196",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/573775196",
+        "mask": "null"
+      },
+      {
+        "id": "function/687991937",
+        "mask": "null"
+      }
+    ],
     "function/117407374": [
       {
         "id": "function/460512542",
@@ -87347,6 +87785,28 @@
         "mask": "null"
       }
     ],
+    "function/139456351": [
+      {
+        "id": "function/335045122",
+        "mask": "null"
+      },
+      {
+        "id": "function/358340511",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/358340511",
+        "mask": "null"
+      },
+      {
+        "id": "function/445547062",
+        "mask": "null"
+      },
+      {
+        "id": "function/507333070",
+        "mask": "null"
+      }
+    ],
     "function/140289549": [
       {
         "id": "function/262329488",
@@ -87637,10 +88097,6 @@
         "mask": "[null|subclass=Object]"
       },
       {
-        "id": "function/215103299",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/240627941",
         "mask": "[null|subclass=Object]"
       },
@@ -87861,6 +88317,10 @@
         "mask": "[null|subclass=Object]"
       },
       {
+        "id": "function/891910474",
+        "mask": "[null|subclass=Object]"
+      },
+      {
         "id": "function/896337761",
         "mask": "[null|subclass=Object]"
       },
@@ -88078,6 +88538,10 @@
       },
       {
         "id": "function/427434111",
+        "mask": "null"
+      },
+      {
+        "id": "function/606572177",
         "mask": "null"
       },
       {
@@ -89003,29 +89467,11 @@
         "mask": "null"
       }
     ],
-    "function/159099030": [
-      {
-        "id": "function/335045122",
-        "mask": "null"
-      },
-      {
-        "id": "function/358340511",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/358340511",
-        "mask": "null"
-      },
-      {
-        "id": "function/445547062",
-        "mask": "null"
-      },
-      {
-        "id": "function/507333070",
-        "mask": "null"
-      }
-    ],
     "function/159490969": [
+      {
+        "id": "function/1049918996",
+        "mask": "[null|subclass=Object]"
+      },
       {
         "id": "function/346305693",
         "mask": "null"
@@ -90177,12 +90623,6 @@
         "mask": "null"
       }
     ],
-    "function/215103299": [
-      {
-        "id": "function/643002706",
-        "mask": "null"
-      }
-    ],
     "function/215520061": [
       {
         "id": "function/351273619",
@@ -91141,10 +91581,6 @@
         "mask": "[subclass=Object]"
       },
       {
-        "id": "function/215103299",
-        "mask": "[subclass=Object]"
-      },
-      {
         "id": "function/240627941",
         "mask": "[subclass=Object]"
       },
@@ -91334,6 +91770,10 @@
       },
       {
         "id": "function/885722947",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/891910474",
         "mask": "[subclass=Object]"
       },
       {
@@ -96285,10 +96725,6 @@
         "mask": "[null|subclass=Object]"
       },
       {
-        "id": "function/215103299",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/240627941",
         "mask": "[null|subclass=Object]"
       },
@@ -96478,6 +96914,10 @@
       },
       {
         "id": "function/885722947",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/891910474",
         "mask": "[null|subclass=Object]"
       },
       {
@@ -98327,32 +98767,268 @@
     ],
     "function/407139250": [
       {
+        "id": "function/1010900152",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/1017086768",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/1024788427",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/1030866718",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/1051508743",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/127923807",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/141703218",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/144469777",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/152682178",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/156013619",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/156463617",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/16299308",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
         "id": "function/163889622",
         "mask": "null"
+      },
+      {
+        "id": "function/203928505",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/207058841",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/212098596",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/227348255",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/231269804",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
         "id": "function/243489700",
         "mask": "null"
       },
       {
+        "id": "function/262809646",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/279542538",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/285278716",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/286048120",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/288496489",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
         "id": "function/308590446",
         "mask": "null"
+      },
+      {
+        "id": "function/313434709",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/346305693",
+        "mask": "null"
+      },
+      {
+        "id": "function/367201536",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/394009594",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/411201683",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
         "id": "function/427434111",
         "mask": "null"
       },
       {
+        "id": "function/455451228",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
         "id": "function/458931695",
         "mask": "null"
       },
       {
-        "id": "function/482441661",
-        "mask": "inlined"
+        "id": "function/503120266",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
-        "id": "function/482441661",
-        "mask": "null"
+        "id": "function/517798504",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/519358181",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/523531331",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/54221385",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/543418398",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/546874939",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/565190626",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/574459415",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/57679782",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/63296748",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/637946819",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/641196165",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/648624981",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/65546368",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/662048555",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/670085070",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/676221427",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/699578922",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/704221000",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/712425151",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/774880085",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/80981784",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/818212569",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/81945880",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/825039833",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/826764320",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/858703970",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/867200397",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/886470495",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/895773113",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/918582944",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      },
+      {
+        "id": "function/92331580",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
         "id": "function/965257927",
@@ -98365,6 +99041,68 @@
       {
         "id": "function/979933658",
         "mask": "null"
+      },
+      {
+        "id": "function/991090123",
+        "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
+      }
+    ],
+    "function/407848564": [
+      {
+        "id": "function/1013713190",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/1027535878",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator], [exact=_Es6MapIterator])"
+      },
+      {
+        "id": "function/122097752",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/200279515",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator], [exact=_Es6MapIterator])"
+      },
+      {
+        "id": "function/292915674",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator], [exact=_Es6MapIterator])"
+      },
+      {
+        "id": "function/346305693",
+        "mask": "null"
+      },
+      {
+        "id": "function/405266426",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/526699367",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/665416673",
+        "mask": "Union([exact=Storage], [exact=_ElementAttributeMap], [exact=_JsonMap], [subclass=JsLinkedHashMap])"
+      },
+      {
+        "id": "function/668848422",
+        "mask": "Union([exact=Storage], [exact=_ElementAttributeMap], [exact=_JsonMap], [subclass=JsLinkedHashMap])"
+      },
+      {
+        "id": "function/721101260",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/731794670",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/880396435",
+        "mask": "Union([exact=Storage], [exact=_ElementAttributeMap], [exact=_JsonMap], [subclass=JsLinkedHashMap])"
+      },
+      {
+        "id": "function/950708086",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator], [exact=_Es6MapIterator])"
       }
     ],
     "function/408622425": [
@@ -99685,10 +100423,6 @@
         "mask": "[null|subclass=Object]"
       },
       {
-        "id": "function/215103299",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/240627941",
         "mask": "[null|subclass=Object]"
       },
@@ -99877,6 +100611,10 @@
         "mask": "[null|subclass=Object]"
       },
       {
+        "id": "function/891910474",
+        "mask": "[null|subclass=Object]"
+      },
+      {
         "id": "function/896337761",
         "mask": "[null|subclass=Object]"
       },
@@ -100036,6 +100774,10 @@
       },
       {
         "id": "function/386656858",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/407848564",
         "mask": "[subtype=Map]"
       },
       {
@@ -100409,10 +101151,6 @@
         "mask": "[null|subclass=Object]"
       },
       {
-        "id": "function/215103299",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/240627941",
         "mask": "[null|subclass=Object]"
       },
@@ -100602,6 +101340,10 @@
       },
       {
         "id": "function/885722947",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/891910474",
         "mask": "[null|subclass=Object]"
       },
       {
@@ -105525,64 +106267,6 @@
         "mask": "null"
       }
     ],
-    "function/643002706": [
-      {
-        "id": "field/522978319",
-        "mask": "null"
-      },
-      {
-        "id": "function/159099030",
-        "mask": "null"
-      },
-      {
-        "id": "function/210296716",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/210296716",
-        "mask": "null"
-      },
-      {
-        "id": "function/335045122",
-        "mask": "null"
-      },
-      {
-        "id": "function/358340511",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/358340511",
-        "mask": "null"
-      },
-      {
-        "id": "function/372037963",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/372037963",
-        "mask": "null"
-      },
-      {
-        "id": "function/386656858",
-        "mask": "Union([exact=_JsonMap], [subclass=JsLinkedHashMap])"
-      },
-      {
-        "id": "function/507333070",
-        "mask": "null"
-      },
-      {
-        "id": "function/540949546",
-        "mask": "null"
-      },
-      {
-        "id": "function/689271731",
-        "mask": "Union([exact=_JsonMap], [subclass=JsLinkedHashMap])"
-      },
-      {
-        "id": "function/778541068",
-        "mask": "null"
-      }
-    ],
     "function/643758282": [
       {
         "id": "function/567899523",
@@ -107571,6 +108255,10 @@
     ],
     "function/680451397": [
       {
+        "id": "function/1049918996",
+        "mask": "[null|subclass=Object]"
+      },
+      {
         "id": "function/346305693",
         "mask": "null"
       }
@@ -108185,20 +108873,6 @@
         "mask": "[subclass=JsLinkedHashMap]"
       }
     ],
-    "function/702114504": [
-      {
-        "id": "function/38646490",
-        "mask": "[subclass=JsLinkedHashMap]"
-      },
-      {
-        "id": "function/585544091",
-        "mask": "null"
-      },
-      {
-        "id": "function/897413385",
-        "mask": "[subclass=JsLinkedHashMap]"
-      }
-    ],
     "function/702314761": [
       {
         "id": "function/531358499",
@@ -108464,6 +109138,10 @@
       }
     ],
     "function/714600619": [
+      {
+        "id": "function/1008544093",
+        "mask": "[null|subclass=Object]"
+      },
       {
         "id": "function/1010900152",
         "mask": "[null|subclass=Object]"
@@ -110697,6 +111375,12 @@
         "mask": "null"
       }
     ],
+    "function/779071751": [
+      {
+        "id": "function/603180942",
+        "mask": "[subclass=JsLinkedHashMap]"
+      }
+    ],
     "function/779765691": [
       {
         "id": "function/94108092",
@@ -112082,10 +112766,18 @@
       },
       {
         "id": "function/702114504",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/702114504",
         "mask": "null"
       },
       {
         "id": "function/889342435",
+        "mask": "[subclass=JsLinkedHashMap]"
+      },
+      {
+        "id": "function/897413385",
         "mask": "[subclass=JsLinkedHashMap]"
       }
     ],
@@ -112199,6 +112891,16 @@
       {
         "id": "function/10463749",
         "mask": "inlined"
+      }
+    ],
+    "function/827571674": [
+      {
+        "id": "function/163889622",
+        "mask": "null"
+      },
+      {
+        "id": "function/679532174",
+        "mask": "null"
       }
     ],
     "function/829902700": [
@@ -113471,6 +114173,10 @@
     ],
     "function/884615129": [
       {
+        "id": "function/1008544093",
+        "mask": "[null|subclass=Object]"
+      },
+      {
         "id": "function/1010900152",
         "mask": "[null|subclass=Object]"
       },
@@ -113883,6 +114589,12 @@
       {
         "id": "function/751200407",
         "mask": "inlined"
+      }
+    ],
+    "function/891910474": [
+      {
+        "id": "function/987508329",
+        "mask": "null"
       }
     ],
     "function/892678131": [
@@ -115390,6 +116102,18 @@
       }
     ],
     "function/936971725": [
+      {
+        "id": "function/1045422933",
+        "mask": "null"
+      },
+      {
+        "id": "function/411739554",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/411739554",
+        "mask": "null"
+      },
       {
         "id": "function/554069480",
         "mask": "[null|exact=RenderingContext]"
@@ -117055,6 +117779,60 @@
         "mask": "inlined"
       }
     ],
+    "function/965712036": [
+      {
+        "id": "function/116599339",
+        "mask": "null"
+      },
+      {
+        "id": "function/130872070",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/130872070",
+        "mask": "null"
+      },
+      {
+        "id": "function/144469778",
+        "mask": "[exact=JSExtendableArray]"
+      },
+      {
+        "id": "function/304437833",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/304437833",
+        "mask": "null"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "null"
+      },
+      {
+        "id": "function/668848422",
+        "mask": "null"
+      },
+      {
+        "id": "function/720607723",
+        "mask": "null"
+      },
+      {
+        "id": "function/820195095",
+        "mask": "[subclass=JsLinkedHashMap]"
+      },
+      {
+        "id": "function/955389148",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/955389148",
+        "mask": "null"
+      }
+    ],
     "function/968241519": [
       {
         "id": "field/42778158",
@@ -117479,6 +118257,10 @@
     ],
     "function/985926244": [
       {
+        "id": "function/1008544093",
+        "mask": "[null|subclass=Object]"
+      },
+      {
         "id": "function/1010900152",
         "mask": "[null|subclass=Object]"
       },
@@ -117682,6 +118464,76 @@
       },
       {
         "id": "function/16937173",
+        "mask": "null"
+      }
+    ],
+    "function/987508329": [
+      {
+        "id": "field/522978319",
+        "mask": "null"
+      },
+      {
+        "id": "function/139456351",
+        "mask": "null"
+      },
+      {
+        "id": "function/210296716",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/210296716",
+        "mask": "null"
+      },
+      {
+        "id": "function/335045122",
+        "mask": "null"
+      },
+      {
+        "id": "function/346305693",
+        "mask": "null"
+      },
+      {
+        "id": "function/358340511",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/358340511",
+        "mask": "null"
+      },
+      {
+        "id": "function/372037963",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/372037963",
+        "mask": "null"
+      },
+      {
+        "id": "function/385334287",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/386656858",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/407848564",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/507333070",
+        "mask": "null"
+      },
+      {
+        "id": "function/540949546",
+        "mask": "null"
+      },
+      {
+        "id": "function/689271731",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/778541068",
         "mask": "null"
       }
     ],
@@ -118413,6 +119265,36 @@
         "mask": "null"
       }
     ],
+    "function/1008544093": [
+      {
+        "id": "function/122097752",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/144469777",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/346305693",
+        "mask": "null"
+      },
+      {
+        "id": "function/459501018",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/721101260",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/731794670",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/950782810",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_Es6MapIterable], [exact=_JsonMapKeyIterable])"
+      }
+    ],
     "function/1009304694": [
       {
         "id": "function/620499495",
@@ -118494,6 +119376,12 @@
       },
       {
         "id": "function/977867690",
+        "mask": "null"
+      }
+    ],
+    "function/1014056972": [
+      {
+        "id": "function/842911185",
         "mask": "null"
       }
     ],
@@ -119478,6 +120366,14 @@
     "function/1033661873": [
       {
         "id": "function/643002706",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/643002706",
+        "mask": "null"
+      },
+      {
+        "id": "function/987508329",
         "mask": "null"
       }
     ],
@@ -120283,6 +121179,60 @@
         "mask": "inlined"
       }
     ],
+    "function/1049918996": [
+      {
+        "id": "function/236906282",
+        "mask": "Union([exact=Storage], [exact=_ElementAttributeMap], [exact=_JsonMap], [subclass=JsLinkedHashMap])"
+      },
+      {
+        "id": "function/236906282",
+        "mask": "Union([exact=Storage], [subclass=MapBase])"
+      },
+      {
+        "id": "function/48980716",
+        "mask": "Union([exact=Storage], [exact=_ElementAttributeMap], [exact=_JsonMap], [subclass=JsLinkedHashMap])"
+      },
+      {
+        "id": "function/48980716",
+        "mask": "Union([exact=Storage], [subclass=MapBase])"
+      },
+      {
+        "id": "function/603180942",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/6151384",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/665416673",
+        "mask": "Union([exact=Storage], [subclass=MapBase])"
+      },
+      {
+        "id": "function/668848422",
+        "mask": "Union([exact=Storage], [subclass=MapBase])"
+      },
+      {
+        "id": "function/673938374",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/820195095",
+        "mask": "Union([exact=Storage], [exact=_ElementAttributeMap], [exact=_JsonMap], [subclass=JsLinkedHashMap])"
+      },
+      {
+        "id": "function/820195095",
+        "mask": "Union([exact=Storage], [subclass=MapBase])"
+      },
+      {
+        "id": "function/842911185",
+        "mask": "[subtype=MapMixin]"
+      },
+      {
+        "id": "function/880396435",
+        "mask": "Union([exact=Storage], [subclass=MapBase])"
+      }
+    ],
     "function/1050965402": [
       {
         "id": "function/752981084",
@@ -120816,7 +121766,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 266524,
+      "size": 268165,
       "imports": []
     }
   ],
@@ -120825,11 +121775,11 @@
   "dump_minor_version": "0",
   "program": {
     "entrypoint": "function/391852842",
-    "size": 266524,
+    "size": 268165,
     "dart2jsVersion": null,
-    "compilationMoment": "2018-02-07 20:50:06.624143",
-    "compilationDuration": 10242911,
-    "toJsonDuration": 64000,
+    "compilationMoment": "2018-02-12 11:56:18.671136",
+    "compilationDuration": 10410572,
+    "toJsonDuration": 68000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
