@@ -82,7 +82,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 29275,
+        "size": 26598,
         "children": [
           "class/1753632",
           "class/6212434",
@@ -257,6 +257,7 @@
           "class/361739753",
           "class/362659686",
           "class/367024087",
+          "class/367342748",
           "class/375304374",
           "class/375956786",
           "class/376821423",
@@ -680,7 +681,7 @@
         "id": "library/189282297",
         "kind": "library",
         "name": "dart.dom.web_audio",
-        "size": 1418,
+        "size": 1419,
         "children": [
           "class/126923191",
           "class/132424371",
@@ -832,7 +833,7 @@
         "id": "library/313287501",
         "kind": "library",
         "name": "stagexl.geom.rectangle",
-        "size": 626,
+        "size": 615,
         "children": [
           "class/557252279"
         ],
@@ -865,7 +866,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 13655,
+        "size": 13820,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -996,7 +997,7 @@
         "id": "library/470705070",
         "kind": "library",
         "name": "dart.dom.svg",
-        "size": 5850,
+        "size": 4856,
         "children": [
           "class/1889497",
           "class/8054138",
@@ -1205,7 +1206,7 @@
         "id": "library/618419128",
         "kind": "library",
         "name": "dart.typed_data",
-        "size": 0,
+        "size": 192,
         "children": [
           "class/85786303",
           "class/745898544"
@@ -1216,7 +1217,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7112,
+        "size": 7110,
         "children": [
           "class/36312556",
           "class/70813553",
@@ -1314,7 +1315,7 @@
         "id": "library/686112276",
         "kind": "library",
         "name": "dart.dom.web_sql",
-        "size": 583,
+        "size": 489,
         "children": [
           "class/97754",
           "class/84259111",
@@ -1332,7 +1333,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 4721,
+        "size": 4710,
         "children": [
           "class/60704969",
           "class/202804702",
@@ -1360,7 +1361,7 @@
         "id": "library/754126564",
         "kind": "library",
         "name": "dart.collection",
-        "size": 6936,
+        "size": 6844,
         "children": [
           "class/113750884",
           "class/123522748",
@@ -1424,7 +1425,7 @@
         "id": "library/811088491",
         "kind": "library",
         "name": "dart.dom.web_gl",
-        "size": 805,
+        "size": 683,
         "children": [
           "class/7207189",
           "class/9198534",
@@ -1479,7 +1480,7 @@
         "id": "library/871432775",
         "kind": "library",
         "name": "pop_pop_win.game.field",
-        "size": 758,
+        "size": 790,
         "children": [
           "class/719265771"
         ],
@@ -1543,7 +1544,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 27911,
+        "size": 27793,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1579,6 +1580,7 @@
           "field/203897729",
           "field/546650141",
           "function/10463749",
+          "function/21667157",
           "function/56890470",
           "function/64968119",
           "function/71650819",
@@ -1611,6 +1613,7 @@
           "function/308590446",
           "function/308862942",
           "function/309114439",
+          "function/310457557",
           "function/316732114",
           "function/340651472",
           "function/350306118",
@@ -1636,7 +1639,6 @@
           "function/501712645",
           "function/528985088",
           "function/535698545",
-          "function/543918546",
           "function/544746737",
           "function/551570860",
           "function/553851206",
@@ -1651,11 +1653,13 @@
           "function/638604543",
           "function/639806883",
           "function/643891917",
-          "function/647097825",
+          "function/658082982",
           "function/665676035",
           "function/668300184",
           "function/679532174",
+          "function/689069465",
           "function/691150797",
+          "function/708419578",
           "function/710092165",
           "function/712948390",
           "function/714600619",
@@ -1671,6 +1675,7 @@
           "function/753586447",
           "function/755649197",
           "function/756575134",
+          "function/764768055",
           "function/768480442",
           "function/788412943",
           "function/798288240",
@@ -1686,16 +1691,15 @@
           "function/906921796",
           "function/907479362",
           "function/914458783",
-          "function/941855663",
           "function/954428895",
           "function/962567303",
+          "function/967508646",
           "function/976021255",
+          "function/984452543",
           "function/992679489",
           "function/1012615396",
           "function/1031330752",
-          "function/1045273225",
-          "function/1049802380",
-          "function/1056153541"
+          "function/1049802380"
         ],
         "canonicalUri": "dart:_js_helper"
       },
@@ -1703,7 +1707,7 @@
         "id": "library/979174469",
         "kind": "library",
         "name": "dart.math",
-        "size": 1024,
+        "size": 1029,
         "children": [
           "class/124177071",
           "class/180608460",
@@ -1724,7 +1728,7 @@
         "id": "library/1038137564",
         "kind": "library",
         "name": "dart.typed_data.implementation",
-        "size": 2651,
+        "size": 1742,
         "children": [
           "class/72050732",
           "class/164720227",
@@ -1752,7 +1756,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 19047,
+        "size": 19113,
         "children": [
           "class/80405414",
           "class/105901179",
@@ -1853,7 +1857,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 22026,
+        "size": 22008,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -1886,7 +1890,7 @@
         "id": "class/97754",
         "kind": "class",
         "name": "SqlResultSetRowList",
-        "size": 376,
+        "size": 440,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/686112276",
         "modifiers": {
@@ -2025,7 +2029,7 @@
         "id": "class/8054138",
         "kind": "class",
         "name": "ViewElement",
-        "size": 40,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -2114,7 +2118,7 @@
         "id": "class/13662881",
         "kind": "class",
         "name": "TextTrack",
-        "size": 34,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -2183,7 +2187,7 @@
         "id": "class/18456725",
         "kind": "class",
         "name": "CompositorWorker",
-        "size": 50,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -2340,7 +2344,7 @@
         "id": "class/30325274",
         "kind": "class",
         "name": "SpeechRecognitionResult",
-        "size": 57,
+        "size": 50,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -2553,7 +2557,7 @@
         "id": "class/52691840",
         "kind": "class",
         "name": "TextPathElement",
-        "size": 44,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -2625,7 +2629,7 @@
         "id": "class/59811093",
         "kind": "class",
         "name": "FESpecularLightingElement",
-        "size": 78,
+        "size": 70,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -2700,7 +2704,7 @@
         "id": "class/64659325",
         "kind": "class",
         "name": "StringList",
-        "size": 366,
+        "size": 430,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -2787,7 +2791,7 @@
         "id": "class/72050732",
         "kind": "class",
         "name": "NativeInt32List",
-        "size": 179,
+        "size": 101,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -2880,7 +2884,7 @@
         "id": "class/75520085",
         "kind": "class",
         "name": "DomStringList",
-        "size": 434,
+        "size": 498,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3039,7 +3043,7 @@
         "id": "class/85786303",
         "kind": "class",
         "name": "Float32List",
-        "size": 0,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/618419128",
         "modifiers": {
@@ -3053,7 +3057,7 @@
         "id": "class/86936801",
         "kind": "class",
         "name": "Interceptor",
-        "size": 4273,
+        "size": 4469,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -3159,7 +3163,7 @@
         "id": "class/96039302",
         "kind": "class",
         "name": "HtmlElement",
-        "size": 871,
+        "size": 907,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3171,7 +3175,7 @@
         "id": "class/96608627",
         "kind": "class",
         "name": "_ServiceWorker",
-        "size": 47,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3250,7 +3254,7 @@
         "id": "class/105592489",
         "kind": "class",
         "name": "UniformLocation",
-        "size": 45,
+        "size": 46,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/811088491",
         "modifiers": {
@@ -3301,7 +3305,7 @@
         "id": "class/108371593",
         "kind": "class",
         "name": "TextContentElement",
-        "size": 40,
+        "size": 58,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -3328,7 +3332,7 @@
         "id": "class/109454374",
         "kind": "class",
         "name": "_NamedNodeMap",
-        "size": 449,
+        "size": 513,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3462,7 +3466,7 @@
         "id": "class/119001910",
         "kind": "class",
         "name": "HtmlCollection",
-        "size": 483,
+        "size": 547,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3558,7 +3562,7 @@
         "id": "class/123522748",
         "kind": "class",
         "name": "_LinkedHashSet",
-        "size": 2395,
+        "size": 2374,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -3674,7 +3678,7 @@
         "id": "class/129353727",
         "kind": "class",
         "name": "RenderingContext2",
-        "size": 48,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/811088491",
         "modifiers": {
@@ -3907,7 +3911,7 @@
         "id": "class/143510818",
         "kind": "class",
         "name": "LinkedHashSet",
-        "size": 0,
+        "size": 21,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -4000,7 +4004,7 @@
         "id": "class/144812292",
         "kind": "class",
         "name": "File",
-        "size": 37,
+        "size": 30,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4106,7 +4110,7 @@
         "id": "class/153889192",
         "kind": "class",
         "name": "FEBlendElement",
-        "size": 67,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -4347,7 +4351,7 @@
         "id": "class/168793843",
         "kind": "class",
         "name": "HttpRequest",
-        "size": 436,
+        "size": 428,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4379,7 +4383,7 @@
         "id": "class/172151835",
         "kind": "class",
         "name": "ListMixin",
-        "size": 246,
+        "size": 206,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -4412,7 +4416,7 @@
         "id": "class/176208724",
         "kind": "class",
         "name": "_SVGCursorElement",
-        "size": 42,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -4466,7 +4470,7 @@
         "id": "class/178843313",
         "kind": "class",
         "name": "KeyboardEvent",
-        "size": 54,
+        "size": 39,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4549,7 +4553,7 @@
         "id": "class/183163108",
         "kind": "class",
         "name": "PluginArray",
-        "size": 432,
+        "size": 496,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4566,7 +4570,7 @@
         "id": "class/183853919",
         "kind": "class",
         "name": "_GradientElement",
-        "size": 94,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -4645,7 +4649,7 @@
         "id": "class/187781663",
         "kind": "class",
         "name": "Storage",
-        "size": 397,
+        "size": 480,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4692,7 +4696,7 @@
         "id": "class/189655249",
         "kind": "class",
         "name": "ImmutableListMixin",
-        "size": 108,
+        "size": 68,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -4814,7 +4818,7 @@
         "id": "class/202804702",
         "kind": "class",
         "name": "EfficientLengthIterable",
-        "size": 22,
+        "size": 11,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "modifiers": {
@@ -5111,7 +5115,7 @@
         "id": "class/229347833",
         "kind": "class",
         "name": "ViewSpec",
-        "size": 37,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -5522,7 +5526,7 @@
         "id": "class/274441186",
         "kind": "class",
         "name": "RegExp",
-        "size": 0,
+        "size": 10,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -5560,7 +5564,7 @@
         "id": "class/279444083",
         "kind": "class",
         "name": "SpeechGrammar",
-        "size": 38,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -5620,7 +5624,7 @@
         "id": "class/287475928",
         "kind": "class",
         "name": "AudioTrackList",
-        "size": 434,
+        "size": 498,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -5689,7 +5693,7 @@
         "id": "class/288980645",
         "kind": "class",
         "name": "StyleSheet",
-        "size": 49,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -5717,7 +5721,7 @@
         "id": "class/290646792",
         "kind": "class",
         "name": "TextTrackCue",
-        "size": 38,
+        "size": 31,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -5822,7 +5826,7 @@
         "id": "class/296172725",
         "kind": "class",
         "name": "DisplayObjectContainer",
-        "size": 1998,
+        "size": 1980,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -5847,7 +5851,7 @@
         "id": "class/296924437",
         "kind": "class",
         "name": "NativeFloat64List",
-        "size": 110,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -5896,7 +5900,7 @@
         "id": "class/300099060",
         "kind": "class",
         "name": "Transform",
-        "size": 37,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -5944,7 +5948,7 @@
         "id": "class/304755094",
         "kind": "class",
         "name": "_SVGMPathElement",
-        "size": 41,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -6054,7 +6058,7 @@
         "id": "class/316560382",
         "kind": "class",
         "name": "TextTrackList",
-        "size": 433,
+        "size": 497,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -6206,7 +6210,7 @@
         "id": "class/326605283",
         "kind": "class",
         "name": "TransformList",
-        "size": 369,
+        "size": 433,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -6487,7 +6491,7 @@
         "id": "class/347377144",
         "kind": "class",
         "name": "AudioElement",
-        "size": 49,
+        "size": 42,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -6736,7 +6740,7 @@
         "id": "class/359696216",
         "kind": "class",
         "name": "JSDouble",
-        "size": 19,
+        "size": 11,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -6760,7 +6764,7 @@
         "id": "class/360439509",
         "kind": "class",
         "name": "MimeType",
-        "size": 33,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -6844,11 +6848,23 @@
         "id": "class/367024087",
         "kind": "class",
         "name": "CssRule",
-        "size": 123,
+        "size": 116,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
           "abstract": false
+        },
+        "children": []
+      },
+      "367342748": {
+        "id": "class/367342748",
+        "kind": "class",
+        "name": "WindowEventHandlers",
+        "size": 11,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458",
+        "modifiers": {
+          "abstract": true
         },
         "children": []
       },
@@ -7151,7 +7167,7 @@
         "id": "class/391122424",
         "kind": "class",
         "name": "NativeTypedArrayOfDouble",
-        "size": 152,
+        "size": 329,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -7255,7 +7271,7 @@
         "id": "class/397200730",
         "kind": "class",
         "name": "FEGaussianBlurElement",
-        "size": 74,
+        "size": 66,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -7370,7 +7386,7 @@
         "id": "class/408772435",
         "kind": "class",
         "name": "SharedWorker",
-        "size": 46,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -7506,7 +7522,7 @@
         "id": "class/418854932",
         "kind": "class",
         "name": "JSNull",
-        "size": 100,
+        "size": 108,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -7602,7 +7618,7 @@
         "id": "class/428718493",
         "kind": "class",
         "name": "_StyleSheetList",
-        "size": 434,
+        "size": 498,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -7859,7 +7875,7 @@
         "id": "class/447096903",
         "kind": "class",
         "name": "FEDiffuseLightingElement",
-        "size": 77,
+        "size": 69,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -8054,7 +8070,7 @@
         "id": "class/471305727",
         "kind": "class",
         "name": "Completer",
-        "size": 0,
+        "size": 13,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -8132,7 +8148,7 @@
         "id": "class/475481832",
         "kind": "class",
         "name": "_SVGFEDropShadowElement",
-        "size": 48,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -8144,7 +8160,7 @@
         "id": "class/476286669",
         "kind": "class",
         "name": "MapMixin",
-        "size": 410,
+        "size": 398,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -8233,7 +8249,7 @@
         "id": "class/482876309",
         "kind": "class",
         "name": "TextTrackCueList",
-        "size": 437,
+        "size": 501,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -8514,7 +8530,7 @@
         "id": "class/509979829",
         "kind": "class",
         "name": "Gamepad",
-        "size": 32,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -8623,7 +8639,7 @@
         "id": "class/518228506",
         "kind": "class",
         "name": "_StackTrace",
-        "size": 154,
+        "size": 163,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -8666,7 +8682,7 @@
         "id": "class/523978038",
         "kind": "class",
         "name": "JSArray",
-        "size": 2548,
+        "size": 2525,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -8848,7 +8864,7 @@
         "id": "class/535463912",
         "kind": "class",
         "name": "FETileElement",
-        "size": 66,
+        "size": 58,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -8860,7 +8876,7 @@
         "id": "class/535478555",
         "kind": "class",
         "name": "JSInt",
-        "size": 26,
+        "size": 18,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -8936,7 +8952,7 @@
         "id": "class/542290981",
         "kind": "class",
         "name": "GraphicsElement",
-        "size": 107,
+        "size": 111,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -9076,7 +9092,7 @@
         "id": "class/551044018",
         "kind": "class",
         "name": "DocumentFragment",
-        "size": 53,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9100,7 +9116,7 @@
         "id": "class/553990467",
         "kind": "class",
         "name": "BodyElement",
-        "size": 49,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9139,7 +9155,7 @@
         "id": "class/557252279",
         "kind": "class",
         "name": "Rectangle",
-        "size": 614,
+        "size": 603,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/313287501",
         "modifiers": {
@@ -9160,7 +9176,7 @@
         "id": "class/557401430",
         "kind": "class",
         "name": "FilterElement",
-        "size": 66,
+        "size": 58,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -9196,7 +9212,7 @@
         "id": "class/559747317",
         "kind": "class",
         "name": "UseElement",
-        "size": 63,
+        "size": 55,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -9286,7 +9302,7 @@
         "id": "class/567359146",
         "kind": "class",
         "name": "Number",
-        "size": 43,
+        "size": 36,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -9518,7 +9534,7 @@
         "id": "class/589723079",
         "kind": "class",
         "name": "_GamepadList",
-        "size": 432,
+        "size": 496,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9604,7 +9620,7 @@
         "id": "class/594605500",
         "kind": "class",
         "name": "ListQueue",
-        "size": 1109,
+        "size": 1097,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -9645,7 +9661,7 @@
         "id": "class/595229906",
         "kind": "class",
         "name": "MarkerElement",
-        "size": 42,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -9657,7 +9673,7 @@
         "id": "class/596279927",
         "kind": "class",
         "name": "Url",
-        "size": 65,
+        "size": 56,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9695,7 +9711,7 @@
         "id": "class/599208010",
         "kind": "class",
         "name": "FEMorphologyElement",
-        "size": 72,
+        "size": 64,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -9743,7 +9759,7 @@
         "id": "class/603794732",
         "kind": "class",
         "name": "_SpeechRecognitionResultList",
-        "size": 447,
+        "size": 511,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9825,7 +9841,7 @@
         "id": "class/607591059",
         "kind": "class",
         "name": "TouchList",
-        "size": 430,
+        "size": 494,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -9842,7 +9858,7 @@
         "id": "class/607623563",
         "kind": "class",
         "name": "ListBase",
-        "size": 11,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -10103,7 +10119,7 @@
         "id": "class/631051714",
         "kind": "class",
         "name": "Exception",
-        "size": 0,
+        "size": 10,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -10129,7 +10145,7 @@
         "id": "class/631990593",
         "kind": "class",
         "name": "SymbolElement",
-        "size": 42,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -10141,7 +10157,7 @@
         "id": "class/632137932",
         "kind": "class",
         "name": "ImageElement",
-        "size": 80,
+        "size": 73,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -10256,7 +10272,7 @@
         "id": "class/641591578",
         "kind": "class",
         "name": "NativeFloat32List",
-        "size": 110,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -10274,7 +10290,7 @@
         "id": "class/643072719",
         "kind": "class",
         "name": "MimeTypeArray",
-        "size": 434,
+        "size": 498,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -10472,7 +10488,7 @@
         "id": "class/659262112",
         "kind": "class",
         "name": "ContextEvent",
-        "size": 58,
+        "size": 43,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/811088491",
         "modifiers": {
@@ -10496,7 +10512,7 @@
         "id": "class/661490465",
         "kind": "class",
         "name": "EventTarget",
-        "size": 812,
+        "size": 886,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -10539,7 +10555,7 @@
         "id": "class/666257371",
         "kind": "class",
         "name": "_WorkerNavigator",
-        "size": 41,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -10714,7 +10730,7 @@
         "id": "class/679379074",
         "kind": "class",
         "name": "Random",
-        "size": 0,
+        "size": 10,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/979174469",
         "modifiers": {
@@ -10807,7 +10823,7 @@
         "id": "class/690560860",
         "kind": "class",
         "name": "SvgSvgElement",
-        "size": 63,
+        "size": 55,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -10833,7 +10849,7 @@
         "id": "class/692968068",
         "kind": "class",
         "name": "AnchorElement",
-        "size": 88,
+        "size": 79,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -10863,7 +10879,7 @@
         "id": "class/693359846",
         "kind": "class",
         "name": "NativeUint8ClampedList",
-        "size": 236,
+        "size": 158,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -10961,7 +10977,7 @@
         "id": "class/703055111",
         "kind": "class",
         "name": "FEDisplacementMapElement",
-        "size": 77,
+        "size": 69,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -10988,7 +11004,7 @@
         "id": "class/706131694",
         "kind": "class",
         "name": "SvgElement",
-        "size": 356,
+        "size": 632,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -11066,7 +11082,7 @@
         "id": "class/713066731",
         "kind": "class",
         "name": "Rectangle",
-        "size": 24,
+        "size": 14,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/979174469",
         "modifiers": {
@@ -11090,7 +11106,7 @@
         "id": "class/714144513",
         "kind": "class",
         "name": "CharacterData",
-        "size": 96,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11157,7 +11173,7 @@
         "id": "class/716879929",
         "kind": "class",
         "name": "NativeTypedArrayOfInt",
-        "size": 158,
+        "size": 220,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -11187,7 +11203,7 @@
         "id": "class/717878191",
         "kind": "class",
         "name": "Touch",
-        "size": 30,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11203,7 +11219,7 @@
         "id": "class/719265771",
         "kind": "class",
         "name": "Field",
-        "size": 746,
+        "size": 778,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/871432775",
         "modifiers": {
@@ -11256,7 +11272,7 @@
         "id": "class/722522722",
         "kind": "class",
         "name": "JsLinkedHashMap",
-        "size": 3077,
+        "size": 3056,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -11316,7 +11332,7 @@
         "id": "class/724744680",
         "kind": "class",
         "name": "_DocumentType",
-        "size": 38,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11365,7 +11381,7 @@
         "id": "class/727184504",
         "kind": "class",
         "name": "FEImageElement",
-        "size": 67,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -11377,7 +11393,7 @@
         "id": "class/729850703",
         "kind": "class",
         "name": "AudioTrack",
-        "size": 35,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11498,7 +11514,7 @@
         "id": "class/739097046",
         "kind": "class",
         "name": "AreaElement",
-        "size": 77,
+        "size": 68,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11578,7 +11594,7 @@
         "id": "class/745898544",
         "kind": "class",
         "name": "Int16List",
-        "size": 0,
+        "size": 87,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/618419128",
         "modifiers": {
@@ -11592,7 +11608,7 @@
         "id": "class/746356060",
         "kind": "class",
         "name": "FEComponentTransferElement",
-        "size": 79,
+        "size": 71,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -11604,7 +11620,7 @@
         "id": "class/747062931",
         "kind": "class",
         "name": "Window",
-        "size": 656,
+        "size": 638,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11738,7 +11754,7 @@
         "id": "class/758572498",
         "kind": "class",
         "name": "SetMixin",
-        "size": 77,
+        "size": 65,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/754126564",
         "modifiers": {
@@ -11812,7 +11828,7 @@
         "id": "class/764600059",
         "kind": "class",
         "name": "ImageElement",
-        "size": 65,
+        "size": 57,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -11824,7 +11840,7 @@
         "id": "class/766774061",
         "kind": "class",
         "name": "NodeList",
-        "size": 443,
+        "size": 507,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11965,7 +11981,7 @@
         "id": "class/774363766",
         "kind": "class",
         "name": "NativeUint8List",
-        "size": 213,
+        "size": 135,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -12040,7 +12056,7 @@
         "id": "class/780056150",
         "kind": "class",
         "name": "Path2D",
-        "size": 32,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -12151,7 +12167,7 @@
         "id": "class/784178238",
         "kind": "class",
         "name": "_Future",
-        "size": 4504,
+        "size": 4519,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -12399,7 +12415,7 @@
         "id": "class/796633142",
         "kind": "class",
         "name": "WheelEvent",
-        "size": 274,
+        "size": 248,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -12609,7 +12625,7 @@
         "id": "class/812840016",
         "kind": "class",
         "name": "FECompositeElement",
-        "size": 71,
+        "size": 63,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -12621,7 +12637,7 @@
         "id": "class/813969515",
         "kind": "class",
         "name": "Length",
-        "size": 43,
+        "size": 36,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -12736,7 +12752,7 @@
         "id": "class/823247724",
         "kind": "class",
         "name": "WorkerGlobalScope",
-        "size": 123,
+        "size": 115,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -12748,7 +12764,7 @@
         "id": "class/824364214",
         "kind": "class",
         "name": "_WorkerLocation",
-        "size": 40,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -12760,7 +12776,7 @@
         "id": "class/824743323",
         "kind": "class",
         "name": "FEConvolveMatrixElement",
-        "size": 76,
+        "size": 68,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -12772,7 +12788,7 @@
         "id": "class/825441369",
         "kind": "class",
         "name": "TouchEvent",
-        "size": 51,
+        "size": 36,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -12846,7 +12862,7 @@
         "id": "class/831546412",
         "kind": "class",
         "name": "FEMergeElement",
-        "size": 67,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -12945,7 +12961,7 @@
         "id": "class/840806500",
         "kind": "class",
         "name": "FileList",
-        "size": 429,
+        "size": 493,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -12986,7 +13002,7 @@
         "id": "class/844191589",
         "kind": "class",
         "name": "MaskElement",
-        "size": 64,
+        "size": 56,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -12998,7 +13014,7 @@
         "id": "class/844667283",
         "kind": "class",
         "name": "Worker",
-        "size": 40,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13036,7 +13052,7 @@
         "id": "class/846559365",
         "kind": "class",
         "name": "SpeechGrammarList",
-        "size": 437,
+        "size": 501,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13199,7 +13215,7 @@
         "id": "class/859163164",
         "kind": "class",
         "name": "Node",
-        "size": 217,
+        "size": 249,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13251,7 +13267,7 @@
         "id": "class/861929861",
         "kind": "class",
         "name": "StreamController",
-        "size": 0,
+        "size": 13,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -13403,7 +13419,7 @@
         "id": "class/874583101",
         "kind": "class",
         "name": "NativeInt16List",
-        "size": 179,
+        "size": 101,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -13446,7 +13462,7 @@
         "id": "class/875813697",
         "kind": "class",
         "name": "SourceBuffer",
-        "size": 37,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13494,7 +13510,7 @@
         "id": "class/878983453",
         "kind": "class",
         "name": "LengthList",
-        "size": 366,
+        "size": 430,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -13581,7 +13597,7 @@
         "id": "class/888030090",
         "kind": "class",
         "name": "InputElement",
-        "size": 87,
+        "size": 71,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13622,7 +13638,7 @@
         "id": "class/896399668",
         "kind": "class",
         "name": "_CssRuleList",
-        "size": 431,
+        "size": 495,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13651,7 +13667,7 @@
         "id": "class/897378195",
         "kind": "class",
         "name": "MouseEvent",
-        "size": 62,
+        "size": 47,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13714,7 +13730,7 @@
         "id": "class/903962995",
         "kind": "class",
         "name": "_ClientRectList",
-        "size": 442,
+        "size": 504,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -13769,7 +13785,7 @@
         "id": "class/907462466",
         "kind": "class",
         "name": "AElement",
-        "size": 37,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -13781,7 +13797,7 @@
         "id": "class/913141581",
         "kind": "class",
         "name": "PatternElement",
-        "size": 67,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -13869,7 +13885,7 @@
         "id": "class/920446962",
         "kind": "class",
         "name": "NativeUint32List",
-        "size": 180,
+        "size": 102,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -13919,7 +13935,7 @@
         "id": "class/924812431",
         "kind": "class",
         "name": "_WebGL2RenderingContextBase",
-        "size": 52,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/811088491",
         "modifiers": {
@@ -14213,7 +14229,7 @@
         "id": "class/942752524",
         "kind": "class",
         "name": "NativeInt8List",
-        "size": 178,
+        "size": 100,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -14449,7 +14465,7 @@
         "id": "class/959990109",
         "kind": "class",
         "name": "List",
-        "size": 42,
+        "size": 21,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -14476,7 +14492,7 @@
         "id": "class/961309232",
         "kind": "class",
         "name": "_HTMLFrameSetElement",
-        "size": 53,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -14503,7 +14519,7 @@
         "id": "class/965279547",
         "kind": "class",
         "name": "ScriptElement",
-        "size": 42,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -14655,7 +14671,7 @@
         "id": "class/980673591",
         "kind": "class",
         "name": "NumberList",
-        "size": 366,
+        "size": 430,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -14672,7 +14688,7 @@
         "id": "class/981166865",
         "kind": "class",
         "name": "Navigator",
-        "size": 35,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -14696,7 +14712,7 @@
         "id": "class/984553163",
         "kind": "class",
         "name": "FEOffsetElement",
-        "size": 68,
+        "size": 60,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -14771,7 +14787,7 @@
         "id": "class/992156986",
         "kind": "class",
         "name": "Element",
-        "size": 145,
+        "size": 127,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -14858,7 +14874,7 @@
         "id": "class/994609984",
         "kind": "class",
         "name": "Plugin",
-        "size": 49,
+        "size": 42,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -14882,7 +14898,7 @@
         "id": "class/996025280",
         "kind": "class",
         "name": "Event",
-        "size": 1247,
+        "size": 1239,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -15034,7 +15050,7 @@
         "id": "class/1003322925",
         "kind": "class",
         "name": "FETurbulenceElement",
-        "size": 72,
+        "size": 64,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -15070,7 +15086,7 @@
         "id": "class/1006644664",
         "kind": "class",
         "name": "AudioBuffer",
-        "size": 45,
+        "size": 46,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/189282297",
         "modifiers": {
@@ -15118,7 +15134,7 @@
         "id": "class/1010514842",
         "kind": "class",
         "name": "AnimationElement",
-        "size": 128,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -15130,7 +15146,7 @@
         "id": "class/1011186223",
         "kind": "class",
         "name": "FEFloodElement",
-        "size": 67,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -15173,7 +15189,7 @@
         "id": "class/1012203707",
         "kind": "class",
         "name": "Timer",
-        "size": 0,
+        "size": 10,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -15213,7 +15229,7 @@
         "id": "class/1012479736",
         "kind": "class",
         "name": "FEColorMatrixElement",
-        "size": 73,
+        "size": 65,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/470705070",
         "modifiers": {
@@ -15225,7 +15241,7 @@
         "id": "class/1014795918",
         "kind": "class",
         "name": "NativeUint16List",
-        "size": 180,
+        "size": 102,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1038137564",
         "modifiers": {
@@ -15741,7 +15757,7 @@
         "id": "class/1044518519",
         "kind": "class",
         "name": "SourceBufferList",
-        "size": 436,
+        "size": 500,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -15804,7 +15820,7 @@
         "id": "class/1052045656",
         "kind": "class",
         "name": "Map",
-        "size": 24,
+        "size": 13,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -17174,7 +17190,7 @@
         "id": "function/15925204",
         "kind": "function",
         "name": "_complete",
-        "size": 169,
+        "size": 180,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -17195,7 +17211,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "HH:function(a){var z,y\nz=this.$ti\nif(H.RB(a,\"$isb8\",z,\"$asb8\"))if(H.RB(a,\"$isvs\",z,null))P.A9(a,this)\nelse P.k3(a,this)\nelse{y=this.ah()\nthis.a=4\nthis.c=a\nP.HZ(this,y)}}\n",
+        "code": "HH:function(a){var z,y,x\nz=this.$ti\ny=H.e7(a,\"$isb8\",z,\"$asb8\")\nif(y){z=H.e7(a,\"$isvs\",z,null)\nif(z)P.A9(a,this)\nelse P.k3(a,this)}else{x=this.ah()\nthis.a=4\nthis.c=a\nP.HZ(this,x)}}\n",
         "type": "(dynamic) -> void",
         "measurements": null
       },
@@ -17514,6 +17530,45 @@
         "inlinedCount": 1,
         "code": null,
         "type": "(int) -> dynamic",
+        "measurements": null
+      },
+      "21667157": {
+        "id": "function/21667157",
+        "kind": "function",
+        "name": "areAssignableV1",
+        "size": 243,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "s",
+            "type": "[null|subtype=List]",
+            "declaredType": "List"
+          },
+          {
+            "name": "t",
+            "type": "[null|subtype=List]",
+            "declaredType": "List"
+          },
+          {
+            "name": "allowShorter",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Cu:function(a,b,c){var z,y,x,w,v\nz=b==null\nif(z&&a==null)return!0\nif(z)return c\nif(a==null)return!1\ny=a.length\nx=b.length\nif(c){if(y<x)return!1}else if(y!==x)return!1\nfor(w=0;w<x;++w){z=a[w]\nv=b[w]\nif(!(H.wV(z,v)||H.wV(v,z)))return!1}return!0}\n",
+        "type": "(List, List, bool) -> bool",
         "measurements": null
       },
       "22227107": {
@@ -21944,7 +21999,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": null,
         "type": "(dynamic, dynamic) -> dynamic",
         "measurements": null
@@ -23034,7 +23089,7 @@
         "id": "function/126109279",
         "kind": "function",
         "name": "subtypeCast",
-        "size": 230,
+        "size": 234,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -23070,7 +23125,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Cv:function(a,b,c,d){var z,y\nif(a==null)return a\nif(H.RB(a,b,c,d))return a\nz=b.substring(3)\ny=H.oa(c,0,null)\nthrow H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(z+y,init.mangledGlobalNames)))}\n",
+        "code": "Cv:function(a,b,c,d){var z,y\nif(a==null)return a\nz=H.e7(a,b,c,d)\nif(z)return a\nz=b.substring(3)\ny=H.oa(c,0,null)\nthrow H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(z+y,init.mangledGlobalNames)))}\n",
         "type": "(Object, String, List, String) -> Object",
         "measurements": null
       },
@@ -23739,7 +23794,7 @@
         "id": "function/136972596",
         "kind": "function",
         "name": "isFunctionSubtype",
-        "size": 800,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -23764,8 +23819,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Ly:function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j\nif(!('func' in a))return!1\nif(\"bounds\" in a){if(!(\"bounds\" in b))return!1\nz=a.bounds\ny=b.bounds\nif(z.length!==y.length)return!1}else if(\"bounds\" in b)return!1\nif(\"v\" in a){if(!(\"v\" in b)&&\"ret\" in b)return!1}else if(!(\"v\" in b)){x=a.ret\nw=b.ret\nif(!(H.t1(x,w)||H.t1(w,x)))return!1}v=a.args\nu=b.args\nt=a.opt\ns=b.opt\nr=v!=null?v.length:0\nq=u!=null?u.length:0\np=t!=null?t.length:0\no=s!=null?s.length:0\nif(r>q)return!1\nif(r+p<q+o)return!1\nif(r===q){if(!H.Hc(v,u,!1))return!1\nif(!H.Hc(t,s,!0))return!1}else{for(n=0;n<r;++n){m=v[n]\nl=u[n]\nif(!(H.t1(m,l)||H.t1(l,m)))return!1}for(k=n,j=0;k<q;++j,++k){m=t[j]\nl=u[k]\nif(!(H.t1(m,l)||H.t1(l,m)))return!1}for(k=0;k<o;++j,++k){m=t[j]\nl=s[k]\nif(!(H.t1(m,l)||H.t1(l,m)))return!1}}return H.Vt(a.named,b.named)}\n",
+        "inlinedCount": 2,
+        "code": null,
         "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
@@ -27982,7 +28037,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
-        "code": "wV:function(a,b){var z\nif(b!=null){z=b.x\nif(z!=null)return z}return!!J.v(a).$isXj}\n",
+        "code": "Gp:function(a,b){var z\nif(b!=null){z=b.x\nif(z!=null)return z}return!!J.v(a).$isXj}\n",
         "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
@@ -30049,7 +30104,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 4,
-        "code": "J4:[function(){return Date.now()},\"$0\",\"nX\",0,0,34]\n",
+        "code": "Ly:[function(){return Date.now()},\"$0\",\"nX\",0,0,34]\n",
         "type": "() -> num",
         "measurements": null
       },
@@ -33925,6 +33980,40 @@
         "type": "() -> num",
         "measurements": null
       },
+      "310457557": {
+        "id": "function/310457557",
+        "kind": "function",
+        "name": "isAssignableV1",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "s",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "t",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 6,
+        "code": null,
+        "type": "(dynamic, dynamic) -> bool",
+        "measurements": null
+      },
       "310700980": {
         "id": "function/310700980",
         "kind": "function",
@@ -34690,7 +34779,7 @@
         "id": "function/325386239",
         "kind": "function",
         "name": "_chainFuture",
-        "size": 221,
+        "size": 223,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -34713,7 +34802,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cU:function(a){var z\nif(H.RB(a,\"$isvs\",this.$ti,null)){if(a.a===8){this.a=1\nz=this.b\nz.toString\nP.Tk(null,null,z,new P.KF(this,a))}else P.A9(a,this)\nreturn}P.k3(a,this)}\n",
+        "code": "cU:function(a){var z=H.e7(a,\"$isvs\",this.$ti,null)\nif(z){if(a.a===8){this.a=1\nz=this.b\nz.toString\nP.Tk(null,null,z,new P.KF(this,a))}else P.A9(a,this)\nreturn}P.k3(a,this)}\n",
         "type": "(Future<_Future.T>) -> void",
         "measurements": null
       },
@@ -42402,7 +42491,7 @@
         "id": "function/465655007",
         "kind": "function",
         "name": "isSubtype",
-        "size": 595,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -42427,8 +42516,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "t1:function(a,b){var z,y,x,w,v,u\nif(a===b)return!0\nif(a==null||b==null)return!0\nif(typeof a===\"number\")return!1\nif(typeof b===\"number\")return!1\nif(a.builtin$cls===\"D\")return!0\nif('func' in b)return H.Ly(a,b)\nif('func' in a)return b.builtin$cls===\"EH\"||b.builtin$cls===\"j\"\nz=typeof a===\"object\"&&a!==null&&a.constructor===Array\ny=z?a[0]:a\nx=typeof b===\"object\"&&b!==null&&b.constructor===Array\nw=x?b[0]:b\nif(w!==y){v=H.Ko(w,null)\nif(!('$is'+v in y.prototype))return!1\nu=y.prototype[\"$as\"+v]}else u=null\nif(!z&&u==null||!x)return!0\nz=z?a.slice(1):null\nx=x?b.slice(1):null\nreturn H.hv(H.Y9(u,z),x)}\n",
+        "inlinedCount": 1,
+        "code": null,
         "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
@@ -47095,40 +47184,6 @@
         "type": "(int) -> JSArray.E",
         "measurements": null
       },
-      "543918546": {
-        "id": "function/543918546",
-        "kind": "function",
-        "name": "areSubtypes",
-        "size": 119,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "s",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "t",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "hv:function(a,b){var z,y\nif(a==null||b==null)return!0\nz=a.length\nfor(y=0;y<z;++y)if(!H.t1(a[y],b[y]))return!1\nreturn!0}\n",
-        "type": "(dynamic, dynamic) -> bool",
-        "measurements": null
-      },
       "544672183": {
         "id": "function/544672183",
         "kind": "function",
@@ -47691,7 +47746,7 @@
         "id": "function/553851206",
         "kind": "function",
         "name": "functionTypeTest",
-        "size": 81,
+        "size": 97,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -47717,7 +47772,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Xy:function(a,b){var z\nif(a==null)return!1\nz=H.ao(a)\nreturn z==null?!1:H.Ly(z,b)}\n",
+        "code": "Xy:function(a,b){var z,y\nif(a==null)return!1\nz=H.ao(a)\nif(z==null)y=!1\nelse y=H.qJ(z,b)\nreturn y}\n",
         "type": "(dynamic, dynamic) -> dynamic",
         "measurements": null
       },
@@ -48136,7 +48191,7 @@
         "id": "function/560797298",
         "kind": "function",
         "name": "checkSubtype",
-        "size": 119,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -48171,8 +48226,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "RB:function(a,b,c,d){var z,y\nif(a==null)return!1\nz=H.oX(a)\ny=J.v(a)\nif(y[b]==null)return!1\nreturn H.hv(H.Y9(y[d],z),c)}\n",
+        "inlinedCount": 5,
+        "code": null,
         "type": "(Object, String, List, String) -> bool",
         "measurements": null
       },
@@ -52510,45 +52565,6 @@
         "type": "([(Object, Object) -> dynamic]) -> dynamic",
         "measurements": null
       },
-      "647097825": {
-        "id": "function/647097825",
-        "kind": "function",
-        "name": "checkArguments",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "substitution",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "arguments",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "checks",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
-        "code": null,
-        "type": "(dynamic, dynamic, dynamic) -> bool",
-        "measurements": null
-      },
       "647344528": {
         "id": "function/647344528",
         "kind": "function",
@@ -53274,6 +53290,40 @@
         "type": "(Object) -> bool",
         "measurements": null
       },
+      "658082982": {
+        "id": "function/658082982",
+        "kind": "function",
+        "name": "isFunctionSubtypeV1",
+        "size": 664,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "s",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "t",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "qJ:function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l\nif(!('func' in a))return!1\nif(\"v\" in a){if(!(\"v\" in b)&&\"ret\" in b)return!1}else if(!(\"v\" in b)){z=a.ret\ny=b.ret\nif(!(H.wV(z,y)||H.wV(y,z)))return!1}x=a.args\nw=b.args\nv=a.opt\nu=b.opt\nt=x!=null?x.length:0\ns=w!=null?w.length:0\nr=v!=null?v.length:0\nq=u!=null?u.length:0\nif(t>s)return!1\nif(t+r<s+q)return!1\nif(t===s){if(!H.Cu(x,w,!1))return!1\nif(!H.Cu(v,u,!0))return!1}else{for(p=0;p<t;++p){o=x[p]\nn=w[p]\nif(!(H.wV(o,n)||H.wV(n,o)))return!1}for(m=p,l=0;m<s;++l,++m){o=v[l]\nn=w[m]\nif(!(H.wV(o,n)||H.wV(n,o)))return!1}for(m=0;m<q;++l,++m){o=v[l]\nn=u[m]\nif(!(H.wV(o,n)||H.wV(n,o)))return!1}}return H.Eq(a.named,b.named)}\n",
+        "type": "(dynamic, dynamic) -> bool",
+        "measurements": null
+      },
       "658532475": {
         "id": "function/658532475",
         "kind": "function",
@@ -53651,7 +53701,7 @@
         "id": "function/664449932",
         "kind": "function",
         "name": "_asyncComplete",
-        "size": 190,
+        "size": 192,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -53674,7 +53724,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ds:function(a){var z\nif(H.RB(a,\"$isb8\",this.$ti,\"$asb8\")){this.cU(a)\nreturn}this.a=1\nz=this.b\nz.toString\nP.Tk(null,null,z,new P.rH(this,a))}\n",
+        "code": "Ds:function(a){var z=H.e7(a,\"$isb8\",this.$ti,\"$asb8\")\nif(z){this.cU(a)\nreturn}this.a=1\nz=this.b\nz.toString\nP.Tk(null,null,z,new P.rH(this,a))}\n",
         "type": "(dynamic) -> void",
         "measurements": null
       },
@@ -55593,6 +55643,40 @@
         "type": "() -> bool",
         "measurements": null
       },
+      "689069465": {
+        "id": "function/689069465",
+        "kind": "function",
+        "name": "isSubtypeV1",
+        "size": 595,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "s",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "t",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "wV:function(a,b){var z,y,x,w,v,u\nif(a===b)return!0\nif(a==null||b==null)return!0\nif(typeof a===\"number\")return!1\nif(typeof b===\"number\")return!1\nif(a.builtin$cls===\"D\")return!0\nif('func' in b)return H.qJ(a,b)\nif('func' in a)return b.builtin$cls===\"EH\"||b.builtin$cls===\"j\"\nz=typeof a===\"object\"&&a!==null&&a.constructor===Array\ny=z?a[0]:a\nx=typeof b===\"object\"&&b!==null&&b.constructor===Array\nw=x?b[0]:b\nif(w!==y){v=H.Ko(w,null)\nif(!('$is'+v in y.prototype))return!1\nu=y.prototype[\"$as\"+v]}else u=null\nif(!z&&u==null||!x)return!0\nz=z?a.slice(1):null\nx=x?b.slice(1):null\nreturn H.qj(H.Y9(u,z),x)}\n",
+        "type": "(dynamic, dynamic) -> bool",
+        "measurements": null
+      },
       "689271731": {
         "id": "function/689271731",
         "kind": "function",
@@ -56573,6 +56657,45 @@
         "inlinedCount": 0,
         "code": "$1:function(a){return this.a(a)}\n",
         "type": "(String) -> dynamic",
+        "measurements": null
+      },
+      "708419578": {
+        "id": "function/708419578",
+        "kind": "function",
+        "name": "checkArgumentsV1",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "substitution",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "arguments",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "checks",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 2,
+        "code": null,
+        "type": "(dynamic, dynamic, dynamic) -> bool",
         "measurements": null
       },
       "710092165": {
@@ -57568,7 +57691,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 7,
+        "inlinedCount": 4,
         "code": null,
         "type": "(dynamic, dynamic) -> dynamic",
         "measurements": null
@@ -58706,7 +58829,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
-        "inlinedCount": 11,
+        "inlinedCount": 9,
         "code": null,
         "type": "(dynamic) -> int",
         "measurements": null
@@ -60052,7 +60175,7 @@
         "id": "function/755649197",
         "kind": "function",
         "name": "checkSubtypeOfRuntimeType",
-        "size": 285,
+        "size": 295,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -60078,7 +60201,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "IU:function(a,b){var z,y,x\nif(a==null)return b==null||b.builtin$cls===\"j\"||b.builtin$cls===\"D\"\nif(b==null)return!0\nz=H.oX(a)\na=J.v(a)\ny=a.constructor\nif(z!=null){z=z.slice()\nz.splice(0,0,y)\ny=z}if('func' in b){x=a.$S\nif(x==null)return!1\nreturn H.Ly(x.apply(a,null),b)}return H.t1(y,b)}\n",
+        "code": "IU:function(a,b){var z,y,x,w\nif(a==null)return b==null||b.builtin$cls===\"j\"||b.builtin$cls===\"D\"\nif(b==null)return!0\nz=H.oX(a)\na=J.v(a)\ny=a.constructor\nif(z!=null){z=z.slice()\nz.splice(0,0,y)\ny=z}if('func' in b){x=a.$S\nif(x==null)return!1\nw=H.qJ(x.apply(a,null),b)\nreturn w}w=H.wV(y,b)\nreturn w}\n",
         "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
@@ -60477,6 +60600,40 @@
         "inlinedCount": 3,
         "code": null,
         "type": "(int) -> dynamic",
+        "measurements": null
+      },
+      "764768055": {
+        "id": "function/764768055",
+        "kind": "function",
+        "name": "areAssignableMapsV1",
+        "size": 269,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "s",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "t",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Eq:function(a,b){var z,y,x,w,v,u\nif(b==null)return!0\nif(a==null)return!1\nz=Object.getOwnPropertyNames(b)\nz.fixed$length=Array\ny=z\nfor(z=y.length,x=0;x<z;++x){w=y[x]\nif(!Object.hasOwnProperty.call(a,w))return!1\nv=b[w]\nu=a[w]\nif(!(H.wV(v,u)||H.wV(u,v)))return!1}return!0}\n",
+        "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
       "765482738": {
@@ -68203,7 +68360,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z4:function(a,b,c,d){var z,y\nz=H.DV\ny=H.yS\nswitch(b?-1:a){case 0:throw H.b(new H.Eq(\"Intercepted function with no arguments.\"))\ncase 1:return function(e,f,g){return function(){return f(this)[e](g(this))}}(c,z,y)\ncase 2:return function(e,f,g){return function(h){return f(this)[e](g(this),h)}}(c,z,y)\ncase 3:return function(e,f,g){return function(h,i){return f(this)[e](g(this),h,i)}}(c,z,y)\ncase 4:return function(e,f,g){return function(h,i,j){return f(this)[e](g(this),h,i,j)}}(c,z,y)\ncase 5:return function(e,f,g){return function(h,i,j,k){return f(this)[e](g(this),h,i,j,k)}}(c,z,y)\ncase 6:return function(e,f,g){return function(h,i,j,k,l){return f(this)[e](g(this),h,i,j,k,l)}}(c,z,y)\ndefault:return function(e,f,g,h){return function(){h=[g(this)]\nArray.prototype.push.apply(h,arguments)\nreturn e.apply(f(this),h)}}(d,z,y)}}\n",
+        "code": "Z4:function(a,b,c,d){var z,y\nz=H.DV\ny=H.yS\nswitch(b?-1:a){case 0:throw H.b(new H.tc(\"Intercepted function with no arguments.\"))\ncase 1:return function(e,f,g){return function(){return f(this)[e](g(this))}}(c,z,y)\ncase 2:return function(e,f,g){return function(h){return f(this)[e](g(this),h)}}(c,z,y)\ncase 3:return function(e,f,g){return function(h,i){return f(this)[e](g(this),h,i)}}(c,z,y)\ncase 4:return function(e,f,g){return function(h,i,j){return f(this)[e](g(this),h,i,j)}}(c,z,y)\ncase 5:return function(e,f,g){return function(h,i,j,k){return f(this)[e](g(this),h,i,j,k)}}(c,z,y)\ncase 6:return function(e,f,g){return function(h,i,j,k,l){return f(this)[e](g(this),h,i,j,k,l)}}(c,z,y)\ndefault:return function(e,f,g,h){return function(){h=[g(this)]\nArray.prototype.push.apply(h,arguments)\nreturn e.apply(f(this),h)}}(d,z,y)}}\n",
         "type": "(int, bool, String, dynamic) -> dynamic",
         "measurements": null
       },
@@ -68350,7 +68507,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vW:function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i\nz=b.a\nif(z===C.XB)try{z=b.r\ny=new T.Xo(new Float32Array(H.T0(16)))\ny.xI()\nx=H.VM([],[L.Xt])\nw=P.qU\nv=[w,P.J]\nu=[w,P.SI]\nt=new L.E3(-1,null,null,new H.u(0,null,null,null,null,null,0,v),new H.u(0,null,null,null,null,null,0,u),new L.Io(new Int16Array(H.T0(0)),35048,0,0,-1,null,null,null),new L.O3(new Float32Array(H.T0(0)),35048,0,0,-1,null,null,null),new L.PT(0,0,0))\ns=new Int16Array(H.T0(0))\nr=new Float32Array(H.T0(0))\nq=new Int16Array(H.T0(0))\np=new Float32Array(H.T0(0))\no=new Int16Array(H.T0(16384))\nn=new Float32Array(H.T0(32768))\nm=H.VM(new Array(8),[L.Bv])\nl=H.VM([],[L.lA])\nk=[L.dZ]\ny=new L.ti(a,null,y,x,null,null,null,null,!0,0,t,new L.zj(-1,null,null,new H.u(0,null,null,null,null,null,0,v),new H.u(0,null,null,null,null,null,0,u),new L.Io(s,35048,0,0,-1,null,null,null),new L.O3(r,35048,0,0,-1,null,null,null),new L.PT(0,0,0)),new L.tf(-1,null,null,new H.u(0,null,null,null,null,null,0,v),new H.u(0,null,null,null,null,null,0,u),new L.Io(q,35048,0,0,-1,null,null,null),new L.O3(p,35048,0,0,-1,null,null,null),new L.PT(0,0,0)),new L.Io(o,35048,0,0,-1,null,null,null),new L.O3(n,35048,0,0,-1,null,null,null),m,l,new H.u(0,null,null,null,null,null,0,[w,L.e7]),new L.PT(0,0,0),new P.DL(null,null,0,null,null,null,null,k),new P.DL(null,null,0,null,null,null,null,k))\nW.JE(a,\"webglcontextlost\",y.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",y.gyD(),!1)\nj=C.p1.Bw(a,z,!1,!1,!0,!1,!0)\nif(!J.v(j).$isJo)H.Vj(new P.lj(\"Failed to get WebGL context.\"))\ny.e=j\nj.enable(3042)\ny.e.disable(2960)\ny.e.disable(2929)\ny.e.disable(2884)\ny.e.pixelStorei(37441,1)\ny.e.blendFunc(1,771)\ny.x=t\nt.W9(0,y)\ny.ch=!0\nz=$.cU+1\n$.cU=z\ny.cx=z\ny.CH(0)\nreturn y}catch(i){H.Ru(i)\nz=T.oy()\ny=a.getContext(\"2d\")\nx=[L.dZ]\nz=new L.p5(a,y,z,C.dH,1,new L.PT(0,0,0),new P.DL(null,null,0,null,null,null,null,x),new P.DL(null,null,0,null,null,null,null,x))\nz.CH(0)\nreturn z}else if(z===C.qV){z=T.oy()\ny=a.getContext(\"2d\")\nx=[L.dZ]\nz=new L.p5(a,y,z,C.dH,1,new L.PT(0,0,0),new P.DL(null,null,0,null,null,null,null,x),new P.DL(null,null,0,null,null,null,null,x))\nz.CH(0)\nreturn z}else throw H.b(new P.lj(\"Unknown RenderEngine\"))}\n",
+        "code": "vW:function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i\nz=b.a\nif(z===C.XB)try{z=b.r\ny=new T.Xo(new Float32Array(H.T0(16)))\ny.xI()\nx=H.VM([],[L.Xt])\nw=P.qU\nv=[w,P.J]\nu=[w,P.SI]\nt=new L.E3(-1,null,null,new H.u(0,null,null,null,null,null,0,v),new H.u(0,null,null,null,null,null,0,u),new L.Io(new Int16Array(H.T0(0)),35048,0,0,-1,null,null,null),new L.O3(new Float32Array(H.T0(0)),35048,0,0,-1,null,null,null),new L.PT(0,0,0))\ns=new Int16Array(H.T0(0))\nr=new Float32Array(H.T0(0))\nq=new Int16Array(H.T0(0))\np=new Float32Array(H.T0(0))\no=new Int16Array(H.T0(16384))\nn=new Float32Array(H.T0(32768))\nm=H.VM(new Array(8),[L.Bv])\nl=H.VM([],[L.lA])\nk=[L.dZ]\ny=new L.ti(a,null,y,x,null,null,null,null,!0,0,t,new L.zj(-1,null,null,new H.u(0,null,null,null,null,null,0,v),new H.u(0,null,null,null,null,null,0,u),new L.Io(s,35048,0,0,-1,null,null,null),new L.O3(r,35048,0,0,-1,null,null,null),new L.PT(0,0,0)),new L.tf(-1,null,null,new H.u(0,null,null,null,null,null,0,v),new H.u(0,null,null,null,null,null,0,u),new L.Io(q,35048,0,0,-1,null,null,null),new L.O3(p,35048,0,0,-1,null,null,null),new L.PT(0,0,0)),new L.Io(o,35048,0,0,-1,null,null,null),new L.O3(n,35048,0,0,-1,null,null,null),m,l,new H.u(0,null,null,null,null,null,0,[w,L.pr]),new L.PT(0,0,0),new P.DL(null,null,0,null,null,null,null,k),new P.DL(null,null,0,null,null,null,null,k))\nW.JE(a,\"webglcontextlost\",y.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",y.gyD(),!1)\nj=C.p1.Bw(a,z,!1,!1,!0,!1,!0)\nif(!J.v(j).$isJo)H.Vj(new P.lj(\"Failed to get WebGL context.\"))\ny.e=j\nj.enable(3042)\ny.e.disable(2960)\ny.e.disable(2929)\ny.e.disable(2884)\ny.e.pixelStorei(37441,1)\ny.e.blendFunc(1,771)\ny.x=t\nt.W9(0,y)\ny.ch=!0\nz=$.cU+1\n$.cU=z\ny.cx=z\ny.CH(0)\nreturn y}catch(i){H.Ru(i)\nz=T.oy()\ny=a.getContext(\"2d\")\nx=[L.dZ]\nz=new L.p5(a,y,z,C.dH,1,new L.PT(0,0,0),new P.DL(null,null,0,null,null,null,null,x),new P.DL(null,null,0,null,null,null,null,x))\nz.CH(0)\nreturn z}else if(z===C.qV){z=T.oy()\ny=a.getContext(\"2d\")\nx=[L.dZ]\nz=new L.p5(a,y,z,C.dH,1,new L.PT(0,0,0),new P.DL(null,null,0,null,null,null,null,x),new P.DL(null,null,0,null,null,null,null,x))\nz.CH(0)\nreturn z}else throw H.b(new P.lj(\"Unknown RenderEngine\"))}\n",
         "type": "(CanvasElement, StageOptions) -> RenderContext",
         "measurements": null
       },
@@ -70410,45 +70567,6 @@
         "type": "() -> bool",
         "measurements": null
       },
-      "941855663": {
-        "id": "function/941855663",
-        "kind": "function",
-        "name": "areAssignable",
-        "size": 243,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "s",
-            "type": "[null|subtype=List]",
-            "declaredType": "List"
-          },
-          {
-            "name": "t",
-            "type": "[null|subtype=List]",
-            "declaredType": "List"
-          },
-          {
-            "name": "allowShorter",
-            "type": "[exact=JSBool]",
-            "declaredType": "bool"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Hc:function(a,b,c){var z,y,x,w,v\nz=b==null\nif(z&&a==null)return!0\nif(z)return c\nif(a==null)return!1\ny=a.length\nx=b.length\nif(c){if(y<x)return!1}else if(y!==x)return!1\nfor(w=0;w<x;++w){z=a[w]\nv=b[w]\nif(!(H.t1(z,v)||H.t1(v,z)))return!1}return!0}\n",
-        "type": "(List, List, bool) -> bool",
-        "measurements": null
-      },
       "942042573": {
         "id": "function/942042573",
         "kind": "function",
@@ -72179,6 +72297,50 @@
         "type": "() -> String",
         "measurements": null
       },
+      "967508646": {
+        "id": "function/967508646",
+        "kind": "function",
+        "name": "checkSubtypeV1",
+        "size": 119,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "object",
+            "type": "[null|subclass=Object]",
+            "declaredType": "Object"
+          },
+          {
+            "name": "isField",
+            "type": "[null|exact=JSString]",
+            "declaredType": "String"
+          },
+          {
+            "name": "checks",
+            "type": "[null|subtype=List]",
+            "declaredType": "List"
+          },
+          {
+            "name": "asField",
+            "type": "[null|exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "e7:function(a,b,c,d){var z,y\nif(a==null)return!1\nz=H.oX(a)\ny=J.v(a)\nif(y[b]==null)return!1\nreturn H.qj(H.Y9(y[d],z),c)}\n",
+        "type": "(Object, String, List, String) -> bool",
+        "measurements": null
+      },
       "967541158": {
         "id": "function/967541158",
         "kind": "function",
@@ -72821,6 +72983,40 @@
         "inlinedCount": 0,
         "code": "Z:function(a,b){return this.q(a,b)}\n",
         "type": "(int) -> ListMixin.E",
+        "measurements": null
+      },
+      "984452543": {
+        "id": "function/984452543",
+        "kind": "function",
+        "name": "areSubtypesV1",
+        "size": 119,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "s",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "t",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "qj:function(a,b){var z,y\nif(a==null||b==null)return!0\nz=a.length\nfor(y=0;y<z;++y)if(!H.wV(a[y],b[y]))return!1\nreturn!0}\n",
+        "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
       "984634330": {
@@ -76440,40 +76636,6 @@
         "type": "() -> dynamic",
         "measurements": null
       },
-      "1045273225": {
-        "id": "function/1045273225",
-        "kind": "function",
-        "name": "areAssignableMaps",
-        "size": 269,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "s",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "t",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Vt:function(a,b){var z,y,x,w,v,u\nif(b==null)return!0\nif(a==null)return!1\nz=Object.getOwnPropertyNames(b)\nz.fixed$length=Array\ny=z\nfor(z=y.length,x=0;x<z;++x){w=y[x]\nif(!Object.hasOwnProperty.call(a,w))return!1\nv=b[w]\nu=a[w]\nif(!(H.t1(v,u)||H.t1(u,v)))return!1}return!0}\n",
-        "type": "(dynamic, dynamic) -> bool",
-        "measurements": null
-      },
       "1045422933": {
         "id": "function/1045422933",
         "kind": "function",
@@ -76704,7 +76866,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
-        "inlinedCount": 15,
+        "inlinedCount": 13,
         "code": null,
         "type": "(dynamic, String) -> dynamic",
         "measurements": null
@@ -76986,40 +77148,6 @@
         "inlinedCount": 0,
         "code": "uW:function(a,b,c,d){return E.fA(this,a,b,c,d)}\n",
         "type": "(num, num, [bool, SoundTransform]) -> SoundChannel",
-        "measurements": null
-      },
-      "1056153541": {
-        "id": "function/1056153541",
-        "kind": "function",
-        "name": "isAssignable",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "s",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "t",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 6,
-        "code": null,
-        "type": "(dynamic, dynamic) -> bool",
         "measurements": null
       },
       "1056628789": {
@@ -82412,6 +82540,10 @@
       },
       {
         "id": "function/560797298",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/560797298",
         "mask": "null"
       },
       {
@@ -82420,6 +82552,10 @@
       },
       {
         "id": "function/901078366",
+        "mask": "null"
+      },
+      {
+        "id": "function/967508646",
         "mask": "null"
       }
     ],
@@ -82624,6 +82760,36 @@
       },
       {
         "id": "function/952130975",
+        "mask": "null"
+      }
+    ],
+    "function/21667157": [
+      {
+        "id": "function/268773900",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/268773900",
+        "mask": "null"
+      },
+      {
+        "id": "function/310457557",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/310457557",
+        "mask": "null"
+      },
+      {
+        "id": "function/689069465",
+        "mask": "null"
+      },
+      {
+        "id": "function/736875717",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/736875717",
         "mask": "null"
       }
     ],
@@ -86478,6 +86644,10 @@
       },
       {
         "id": "function/560797298",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/560797298",
         "mask": "null"
       },
       {
@@ -86502,6 +86672,10 @@
       },
       {
         "id": "function/890739228",
+        "mask": "null"
+      },
+      {
+        "id": "function/967508646",
         "mask": "null"
       }
     ],
@@ -87602,76 +87776,6 @@
       },
       {
         "id": "function/1050105482",
-        "mask": "null"
-      }
-    ],
-    "function/136972596": [
-      {
-        "id": "function/1045273225",
-        "mask": "null"
-      },
-      {
-        "id": "function/1049802380",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1049802380",
-        "mask": "null"
-      },
-      {
-        "id": "function/1056153541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1056153541",
-        "mask": "null"
-      },
-      {
-        "id": "function/108053021",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/108053021",
-        "mask": "null"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "null"
-      },
-      {
-        "id": "function/316732114",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/316732114",
-        "mask": "null"
-      },
-      {
-        "id": "function/465655007",
-        "mask": "null"
-      },
-      {
-        "id": "function/722993348",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/722993348",
-        "mask": "null"
-      },
-      {
-        "id": "function/736875717",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/736875717",
-        "mask": "null"
-      },
-      {
-        "id": "function/941855663",
         "mask": "null"
       }
     ],
@@ -95846,6 +95950,10 @@
       },
       {
         "id": "function/560797298",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/560797298",
         "mask": "null"
       },
       {
@@ -95862,6 +95970,10 @@
       },
       {
         "id": "function/899674954",
+        "mask": "null"
+      },
+      {
+        "id": "function/967508646",
         "mask": "null"
       },
       {
@@ -101991,128 +102103,6 @@
         "mask": "[null|subclass=Object]"
       }
     ],
-    "function/465655007": [
-      {
-        "id": "function/1012615396",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1012615396",
-        "mask": "null"
-      },
-      {
-        "id": "function/1049802380",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1049802380",
-        "mask": "null"
-      },
-      {
-        "id": "function/136972596",
-        "mask": "null"
-      },
-      {
-        "id": "function/257728434",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/257728434",
-        "mask": "null"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "null"
-      },
-      {
-        "id": "function/299781104",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/299781104",
-        "mask": "null"
-      },
-      {
-        "id": "function/316732114",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/316732114",
-        "mask": "null"
-      },
-      {
-        "id": "function/487598887",
-        "mask": "null"
-      },
-      {
-        "id": "function/543918546",
-        "mask": "null"
-      },
-      {
-        "id": "function/607704865",
-        "mask": "null"
-      },
-      {
-        "id": "function/639806883",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/639806883",
-        "mask": "null"
-      },
-      {
-        "id": "function/647097825",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/647097825",
-        "mask": "null"
-      },
-      {
-        "id": "function/665676035",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/665676035",
-        "mask": "null"
-      },
-      {
-        "id": "function/710092165",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/710092165",
-        "mask": "null"
-      },
-      {
-        "id": "function/734834560",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/734834560",
-        "mask": "null"
-      },
-      {
-        "id": "function/798288240",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/798288240",
-        "mask": "null"
-      },
-      {
-        "id": "function/813370328",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/813370328",
-        "mask": "null"
-      }
-    ],
     "function/466117817": [
       {
         "id": "function/268773900",
@@ -104307,28 +104297,6 @@
         "mask": "null"
       }
     ],
-    "function/543918546": [
-      {
-        "id": "function/268773900",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "null"
-      },
-      {
-        "id": "function/465655007",
-        "mask": "null"
-      },
-      {
-        "id": "function/736875717",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/736875717",
-        "mask": "null"
-      }
-    ],
     "function/544672183": [
       {
         "id": "function/79265776",
@@ -104434,10 +104402,18 @@
     "function/553851206": [
       {
         "id": "function/136972596",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/136972596",
         "mask": "null"
       },
       {
         "id": "function/419713835",
+        "mask": "null"
+      },
+      {
+        "id": "function/658082982",
         "mask": "null"
       }
     ],
@@ -104561,40 +104537,6 @@
       {
         "id": "function/543279874",
         "mask": "inlined"
-      }
-    ],
-    "function/560797298": [
-      {
-        "id": "function/1049802380",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1049802380",
-        "mask": "null"
-      },
-      {
-        "id": "function/543918546",
-        "mask": "null"
-      },
-      {
-        "id": "function/555987509",
-        "mask": "null"
-      },
-      {
-        "id": "function/607704865",
-        "mask": "null"
-      },
-      {
-        "id": "function/647097825",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/647097825",
-        "mask": "null"
-      },
-      {
-        "id": "function/821285776",
-        "mask": "null"
       }
     ],
     "function/561163773": [
@@ -106935,6 +106877,76 @@
         "mask": "[subclass=_LinkedHashSet]"
       }
     ],
+    "function/658082982": [
+      {
+        "id": "function/1049802380",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1049802380",
+        "mask": "null"
+      },
+      {
+        "id": "function/108053021",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/108053021",
+        "mask": "null"
+      },
+      {
+        "id": "function/21667157",
+        "mask": "null"
+      },
+      {
+        "id": "function/268773900",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/268773900",
+        "mask": "null"
+      },
+      {
+        "id": "function/310457557",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/310457557",
+        "mask": "null"
+      },
+      {
+        "id": "function/316732114",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/316732114",
+        "mask": "null"
+      },
+      {
+        "id": "function/689069465",
+        "mask": "null"
+      },
+      {
+        "id": "function/722993348",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/722993348",
+        "mask": "null"
+      },
+      {
+        "id": "function/736875717",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/736875717",
+        "mask": "null"
+      },
+      {
+        "id": "function/764768055",
+        "mask": "null"
+      }
+    ],
     "function/658532475": [
       {
         "id": "function/1069819234",
@@ -107098,6 +107110,10 @@
       },
       {
         "id": "function/560797298",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/560797298",
         "mask": "null"
       },
       {
@@ -107114,6 +107130,10 @@
       },
       {
         "id": "function/667149426",
+        "mask": "null"
+      },
+      {
+        "id": "function/967508646",
         "mask": "null"
       }
     ],
@@ -108574,6 +108594,128 @@
     "function/686206063": [
       {
         "id": "function/868873797",
+        "mask": "null"
+      }
+    ],
+    "function/689069465": [
+      {
+        "id": "function/1012615396",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1012615396",
+        "mask": "null"
+      },
+      {
+        "id": "function/1049802380",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1049802380",
+        "mask": "null"
+      },
+      {
+        "id": "function/257728434",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/257728434",
+        "mask": "null"
+      },
+      {
+        "id": "function/268773900",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/268773900",
+        "mask": "null"
+      },
+      {
+        "id": "function/299781104",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/299781104",
+        "mask": "null"
+      },
+      {
+        "id": "function/316732114",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/316732114",
+        "mask": "null"
+      },
+      {
+        "id": "function/487598887",
+        "mask": "null"
+      },
+      {
+        "id": "function/607704865",
+        "mask": "null"
+      },
+      {
+        "id": "function/639806883",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/639806883",
+        "mask": "null"
+      },
+      {
+        "id": "function/658082982",
+        "mask": "null"
+      },
+      {
+        "id": "function/665676035",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/665676035",
+        "mask": "null"
+      },
+      {
+        "id": "function/708419578",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/708419578",
+        "mask": "null"
+      },
+      {
+        "id": "function/710092165",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/710092165",
+        "mask": "null"
+      },
+      {
+        "id": "function/734834560",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/734834560",
+        "mask": "null"
+      },
+      {
+        "id": "function/798288240",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/798288240",
+        "mask": "null"
+      },
+      {
+        "id": "function/813370328",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/813370328",
+        "mask": "null"
+      },
+      {
+        "id": "function/984452543",
         "mask": "null"
       }
     ],
@@ -110892,6 +111034,10 @@
       },
       {
         "id": "function/136972596",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/136972596",
         "mask": "null"
       },
       {
@@ -110916,6 +111062,10 @@
       },
       {
         "id": "function/465655007",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/465655007",
         "mask": "null"
       },
       {
@@ -110936,6 +111086,14 @@
       },
       {
         "id": "function/555987509",
+        "mask": "null"
+      },
+      {
+        "id": "function/658082982",
+        "mask": "null"
+      },
+      {
+        "id": "function/689069465",
         "mask": "null"
       },
       {
@@ -111034,6 +111192,28 @@
       },
       {
         "id": "function/951132231",
+        "mask": "null"
+      }
+    ],
+    "function/764768055": [
+      {
+        "id": "function/310457557",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/310457557",
+        "mask": "null"
+      },
+      {
+        "id": "function/478486472",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/478486472",
+        "mask": "null"
+      },
+      {
+        "id": "function/689069465",
         "mask": "null"
       }
     ],
@@ -116177,36 +116357,6 @@
         "mask": "null"
       }
     ],
-    "function/941855663": [
-      {
-        "id": "function/1056153541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1056153541",
-        "mask": "null"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/268773900",
-        "mask": "null"
-      },
-      {
-        "id": "function/465655007",
-        "mask": "null"
-      },
-      {
-        "id": "function/736875717",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/736875717",
-        "mask": "null"
-      }
-    ],
     "function/942656503": [
       {
         "id": "function/358862628",
@@ -117833,6 +117983,40 @@
         "mask": "null"
       }
     ],
+    "function/967508646": [
+      {
+        "id": "function/1049802380",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1049802380",
+        "mask": "null"
+      },
+      {
+        "id": "function/555987509",
+        "mask": "null"
+      },
+      {
+        "id": "function/607704865",
+        "mask": "null"
+      },
+      {
+        "id": "function/708419578",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/708419578",
+        "mask": "null"
+      },
+      {
+        "id": "function/821285776",
+        "mask": "null"
+      },
+      {
+        "id": "function/984452543",
+        "mask": "null"
+      }
+    ],
     "function/968241519": [
       {
         "id": "field/42778158",
@@ -118253,6 +118437,28 @@
       {
         "id": "function/991090123",
         "mask": "[subtype=ListMixin]"
+      }
+    ],
+    "function/984452543": [
+      {
+        "id": "function/268773900",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/268773900",
+        "mask": "null"
+      },
+      {
+        "id": "function/689069465",
+        "mask": "null"
+      },
+      {
+        "id": "function/736875717",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/736875717",
+        "mask": "null"
       }
     ],
     "function/985926244": [
@@ -120721,28 +120927,6 @@
         "mask": "null"
       }
     ],
-    "function/1045273225": [
-      {
-        "id": "function/1056153541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1056153541",
-        "mask": "null"
-      },
-      {
-        "id": "function/465655007",
-        "mask": "null"
-      },
-      {
-        "id": "function/478486472",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/478486472",
-        "mask": "null"
-      }
-    ],
     "function/1045422933": [
       {
         "id": "function/1005388313",
@@ -121766,7 +121950,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 268165,
+      "size": 263590,
       "imports": []
     }
   ],
@@ -121775,11 +121959,11 @@
   "dump_minor_version": "0",
   "program": {
     "entrypoint": "function/391852842",
-    "size": 268165,
+    "size": 263590,
     "dart2jsVersion": null,
-    "compilationMoment": "2018-02-12 11:56:18.671136",
-    "compilationDuration": 10410572,
-    "toJsonDuration": 68000,
+    "compilationMoment": "2018-02-15 12:42:19.132640",
+    "compilationDuration": 13022809,
+    "toJsonDuration": 77000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
