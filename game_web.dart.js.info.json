@@ -82,7 +82,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 26598,
+        "size": 26508,
         "children": [
           "class/1753632",
           "class/6212434",
@@ -544,6 +544,7 @@
           "class/998776674",
           "class/999869486",
           "class/1005439389",
+          "class/1005609929",
           "class/1005726990",
           "class/1008445523",
           "class/1009632255",
@@ -783,11 +784,21 @@
         ],
         "canonicalUri": "package:pop_pop_win/src/stage/game_root.dart"
       },
+      "246088797": {
+        "id": "library/246088797",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 56,
+        "children": [
+          "function/520630489"
+        ],
+        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spacemoBdbM/web/game_web.dart"
+      },
       "268514421": {
         "id": "library/268514421",
         "kind": "library",
         "name": "dart.dom.indexed_db",
-        "size": 387,
+        "size": 440,
         "children": [
           "class/110370800",
           "class/178973068",
@@ -1217,7 +1228,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7110,
+        "size": 7093,
         "children": [
           "class/36312556",
           "class/70813553",
@@ -1300,16 +1311,6 @@
           "typedef/699332211"
         ],
         "canonicalUri": "package:stagexl/src/events.dart"
-      },
-      "681231086": {
-        "id": "library/681231086",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 56,
-        "children": [
-          "function/391852842"
-        ],
-        "canonicalUri": "file:///Users/kevmoo/source/github/sample-pop_pop_win/web/game_web.dart"
       },
       "686112276": {
         "id": "library/686112276",
@@ -1857,7 +1858,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 22008,
+        "size": 21851,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -5826,7 +5827,7 @@
         "id": "class/296172725",
         "kind": "class",
         "name": "DisplayObjectContainer",
-        "size": 1980,
+        "size": 1885,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -7096,7 +7097,7 @@
         "id": "class/384231720",
         "kind": "class",
         "name": "DateTime",
-        "size": 915,
+        "size": 898,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -8300,7 +8301,7 @@
         "id": "class/485201602",
         "kind": "class",
         "name": "CssStyleDeclarationBase",
-        "size": 257,
+        "size": 175,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -8308,8 +8309,7 @@
         },
         "children": [
           "function/467794102",
-          "function/874431050",
-          "function/1051732215"
+          "function/874431050"
         ]
       },
       "485578406": {
@@ -10397,7 +10397,7 @@
         "id": "class/654155003",
         "kind": "class",
         "name": "VersionChangeEvent",
-        "size": 0,
+        "size": 49,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/268514421",
         "modifiers": {
@@ -14898,7 +14898,7 @@
         "id": "class/996025280",
         "kind": "class",
         "name": "Event",
-        "size": 1239,
+        "size": 1231,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -15031,7 +15031,6 @@
           "function/499807915",
           "function/510752749",
           "function/531823224",
-          "function/660702445",
           "function/730575370",
           "function/738104072",
           "function/741922895",
@@ -15063,6 +15062,18 @@
         "kind": "class",
         "name": "Blob",
         "size": 23,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458",
+        "modifiers": {
+          "abstract": false
+        },
+        "children": []
+      },
+      "1005609929": {
+        "id": "class/1005609929",
+        "kind": "class",
+        "name": "MutationEvent",
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -15458,7 +15469,7 @@
         "id": "class/1030275855",
         "kind": "class",
         "name": "DisplayObject",
-        "size": 2086,
+        "size": 2024,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -16658,7 +16669,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "xX:function(a){var z,y,x,w,v,u,t\nz=a.a\nz=Math.sqrt(Math.abs(z[0]*z[3]-z[1]*z[2]))\ny=this.pG\nx=y==null?y:y.e\nif(x==null)x=0\nif(x<z*0.8)this.HV|=2\nif(x>z*1.25)this.HV|=2\ny=this.HV\nif((y&2)===0)return\nthis.HV=y&253\nw=C.CD.a3(Math.max(1,this.eD*z))\nv=C.CD.a3(Math.max(1,this.jq*z))\ny=this.Jz\nif(y==null){y=L.fL(w,v,16777215)\nthis.Jz=y\ny=y.gff()\nz=L.NA(y.a,y.b,y.c,y.d,z)\nthis.pG=z}else{y.lO(0,w,v)\ny=this.Jz.gff()\nz=L.NA(y.a,y.b,y.c,y.d,z)\nthis.pG=z}u=z.gmH()\nz=this.Jz\nz=z.gqN(z)\nz.toString\nt=z.getContext(\"2d\")\nz=u.a\nt.setTransform(z[0],z[1],z[2],z[3],z[4],z[5])\nt.clearRect(0,0,this.eD,this.jq)\nthis.Cg(t)\nthis.Jz.Li(0)}\n",
+        "code": "xX:function(a){var z,y,x,w,v,u,t\nz=a.a\ny=Math.sqrt(Math.abs(z[0]*z[3]-z[1]*z[2]))\nz=this.pG\nx=z==null?z:z.e\nif(x==null)x=0\nif(x<y*0.8)this.HV|=2\nif(x>y*1.25)this.HV|=2\nz=this.HV\nif((z&2)===0)return\nthis.HV=z&253\nw=C.CD.a3(Math.max(1,this.eD*y))\nv=C.CD.a3(Math.max(1,this.jq*y))\nz=this.Jz\nif(z==null){z=L.fL(w,v,16777215)\nthis.Jz=z\nz=z.gff()\nz=L.NA(z.a,z.b,z.c,z.d,y)\nthis.pG=z}else{z.lO(0,w,v)\nz=this.Jz.gff()\nz=L.NA(z.a,z.b,z.c,z.d,y)\nthis.pG=z}u=z.gmH()\nz=this.Jz\nz=z.gqN(z)\nz.toString\nt=z.getContext(\"2d\")\nz=u.a\nt.setTransform(z[0],z[1],z[2],z[3],z[4],z[5])\nt.clearRect(0,0,this.eD,this.jq)\nthis.Cg(t)\nthis.Jz.Li(0)}\n",
         "type": "(Matrix) -> void",
         "measurements": null
       },
@@ -16723,7 +16734,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
             "name": "x",
@@ -19783,7 +19794,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 5,
@@ -23554,7 +23565,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -23623,7 +23634,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -24024,7 +24035,7 @@
           },
           {
             "name": "pixelRatio",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "[subclass=JSNumber]",
             "declaredType": "num"
           }
         ],
@@ -24788,7 +24799,7 @@
         "id": "function/149139912",
         "kind": "function",
         "name": "_dispatchStageEventsRecursion",
-        "size": 151,
+        "size": 143,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -24803,7 +24814,7 @@
         "parameters": [
           {
             "name": "displayObject",
-            "type": "[null|subclass=DisplayObject]",
+            "type": "[subclass=DisplayObject]",
             "declaredType": "DisplayObject"
           },
           {
@@ -24819,7 +24830,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "CI:function(a,b,c){var z,y,x\nz=!c\nif(!z||a.mZ(b.a))a.H2(0,b)\nif(a instanceof A.my){c=!z||a.bg(b.a,!0)\ny=a.e1\nfor(x=0;x<y.length;++x)this.CI(y[x],b,c)}}\n",
+        "code": "CI:function(a,b,c){var z,y,x\nz=!c\nif(!z||a.mZ(b.a))a.H2(0,b)\nif(!!a.$ismy){c=!z||a.bg(b.a,!0)\ny=a.e1\nfor(x=0;x<y.length;++x)this.CI(y[x],b,c)}}\n",
         "type": "(DisplayObject, Event, bool) -> void",
         "measurements": null
       },
@@ -25138,7 +25149,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -27888,7 +27899,7 @@
         "parameters": [
           {
             "name": "child",
-            "type": "[null|subclass=DisplayObject]",
+            "type": "[subclass=DisplayObject]",
             "declaredType": "DisplayObject"
           }
         ],
@@ -28111,7 +28122,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": null,
         "type": "(String) -> String",
         "measurements": null
@@ -28888,7 +28899,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -30175,7 +30186,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([null|exact=JSDouble], [null|subclass=JSInt])",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -30797,7 +30808,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "num",
+        "returnType": "JSNumber",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -30809,7 +30820,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "HN:function(a,b){if(typeof b!==\"number\")throw H.b(H.tL(b))\nreturn a-b}\n",
-        "type": "(num) -> num",
+        "type": "(num) -> JSNumber",
         "measurements": null
       },
       "262026503": {
@@ -30898,7 +30909,7 @@
         "parameters": [
           {
             "name": "pixelRatio",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "[subclass=JSNumber]",
             "declaredType": "num"
           }
         ],
@@ -30941,7 +30952,7 @@
         "id": "function/262898682",
         "kind": "function",
         "name": "hitTestInput",
-        "size": 396,
+        "size": 309,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -30967,7 +30978,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Fo:[\"tJ\",function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j\na.toString\nb.toString\nfor(z=this.e1,y=z.length-1,x=null;y>=0;--y){w=z[y]\nv=J.RE(w)\nu=v.gaP(w)\nt=w.gwr()\nif(v.gwx(w)&&!0){v=t.a\ns=a-v[4]\nr=b-v[5]\nq=v[3]\np=v[2]\no=v[0]\nv=v[1]\nn=o*q-v*p\nm=(q*s-p*r)/n\nl=(o*r-v*s)/n\nif(u!=null){k=u.gLK()?a:m\nu.TZ(k,u.gLK()?b:l)}j=w.Fo(m,l)\nif(j==null)continue\nif(!!j.$isHV&&j.k4)return j\nx=this}}return x}]\n",
+        "code": "Fo:[\"tJ\",function(a,b){var z,y,x,w,v,u,t,s,r,q,p,o,n\na.toString\nb.toString\nfor(z=this.e1,y=z.length-1,x=null;y>=0;--y){w=z[y]\nv=w.gwr()\nif(w.cx&&!0){u=v.a\nt=a-u[4]\ns=b-u[5]\nr=u[3]\nq=u[2]\np=u[0]\nu=u[1]\no=p*r-u*q\nn=w.Fo((r*t-q*s)/o,(p*s-u*t)/o)\nif(n==null)continue\nif(!!n.$isHV&&n.k4)return n\nx=this}}return x}]\n",
         "type": "(num, num) -> DisplayObject",
         "measurements": null
       },
@@ -31252,7 +31263,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
@@ -31626,7 +31637,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 2,
@@ -32178,7 +32189,7 @@
         "id": "function/277833455",
         "kind": "function",
         "name": "bounds",
-        "size": 275,
+        "size": 299,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -32193,7 +32204,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var z,y,x,w,v,u,t,s,r,q,p\nz=this.e1\nif(z.length===0)return A.fE.prototype.gBP.call(this)\nfor(y=1/0,x=1/0,w=-1/0,v=-1/0,u=0;u<z.length;++u){t=z[u].gcl()\ns=t.a\nif(s<y)y=s\nr=t.b\nif(r<x)x=r\nq=s+t.c\nif(q>w)w=q\np=r+t.d\nif(p>v)v=p}return new U.tn(y,x,w-y,v-x,[P.FK])}\n",
+        "code": "gBP:function(){var z,y,x,w,v,u,t,s,r,q,p,o\nz=this.e1\nif(z.length===0)return A.fE.prototype.gBP.call(this)\nfor(y=1/0,x=1/0,w=-1/0,v=-1/0,u=0;u<z.length;++u){t=z[u]\ns=t.gBP()\ns=t.gwr().Qb(s,s)\nr=s.a\nif(r<y)y=r\nq=s.b\nif(q<x)x=q\np=r+s.c\nif(p>w)w=p\no=q+s.d\nif(o>v)v=o}return new U.tn(y,x,w-y,v-x,[P.FK])}\n",
         "type": "() -> Rectangle<num>",
         "measurements": null
       },
@@ -32363,7 +32374,7 @@
           },
           {
             "name": "pixelRatio",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "[subclass=JSNumber]",
             "declaredType": "num"
           }
         ],
@@ -32498,7 +32509,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
             "name": "radians",
@@ -33113,7 +33124,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -33383,7 +33394,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "num",
+        "returnType": "double",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -33395,7 +33406,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Ck:function(a,b){if(typeof b!==\"number\")throw H.b(H.tL(b))\nreturn a/b}\n",
-        "type": "(num) -> num",
+        "type": "(num) -> double",
         "measurements": null
       },
       "302617892": {
@@ -34629,7 +34640,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gbM:function(a){var z,y,x\nif(this.y||this.x)return this.cx\nelse{z=$.$get$Yj().currentTime-this.cy\ny=this.z\nx=this.ch\nreturn y?C.ON.zY(z,x):C.ON.IV(z,0,x)}}\n",
+        "code": "gbM:function(a){var z,y,x\nif(this.y||this.x)return this.cx\nelse{z=$.$get$Yj().currentTime-this.cy\ny=this.z\nx=this.ch\nreturn y?C.CD.zY(z,x):C.CD.IV(z,0,x)}}\n",
         "type": "() -> num",
         "measurements": null
       },
@@ -35176,7 +35187,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([null|exact=JSDouble], [null|subclass=JSInt])",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
@@ -36084,7 +36095,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -37420,7 +37431,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([exact=JSDouble], [null|subclass=JSInt])",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [
           {
             "name": "a",
@@ -37429,7 +37440,7 @@
           },
           {
             "name": "b",
-            "type": "Union([exact=JSDouble], [null|subclass=JSInt])",
+            "type": "[null|subclass=JSNumber]",
             "declaredType": "num"
           }
         ],
@@ -37955,7 +37966,7 @@
         "parameters": [
           {
             "name": "alpha",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "[subclass=JSNumber]",
             "declaredType": "double"
           }
         ],
@@ -38077,7 +38088,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([exact=JSDouble], [null|subclass=JSInt])",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 6,
@@ -38193,29 +38204,6 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 3,
         "code": null,
-        "type": "() -> dynamic",
-        "measurements": null
-      },
-      "391852842": {
-        "id": "function/391852842",
-        "kind": "function",
-        "name": "main",
-        "size": 46,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/681231086",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
         "type": "() -> dynamic",
         "measurements": null
       },
@@ -39050,7 +39038,7 @@
         "id": "function/408622425",
         "kind": "function",
         "name": "render",
-        "size": 118,
+        "size": 94,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -39071,7 +39059,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dd:[\"Xa\",function(a){var z,y,x,w\nfor(z=this.e1,y=0;y<z.length;++y){x=z[y]\nif(x.cx){x.cy\nw=!0}else w=!1\nif(w)a.zs(x)}}]\n",
+        "code": "dd:[\"Xa\",function(a){var z,y,x\nfor(z=this.e1,y=0;y<z.length;++y){x=z[y]\nif(x.cx&&!0)a.zs(x)}}]\n",
         "type": "(RenderState) -> void",
         "measurements": null
       },
@@ -40476,7 +40464,7 @@
         "id": "function/431493272",
         "kind": "function",
         "name": "transformationMatrix",
-        "size": 573,
+        "size": 577,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1030275855",
         "children": [],
@@ -40491,7 +40479,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gwr:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n\nif(this.id){this.id=!1\nz=this.go\ny=this.Q\nx=this.r\nw=this.x\nv=this.y\nu=this.z\nif(x>-0.0001&&x<0.0001)x=x>=0?0.0001:-0.0001\nif(w>-0.0001&&w<0.0001)w=w>=0?0.0001:-0.0001\nif(v!==0||u!==0){t=u+y\ns=x*Math.cos(t)\nr=x*Math.sin(t)\nt=v+y\nq=-w*Math.sin(t)\np=w*Math.cos(t)\nt=this.c\no=this.e\nn=this.f\nz.Vy(s,r,q,p,t-o*s-n*q,this.d-o*r-n*p)}else if(y!==0){t=Math.cos(y)\no=Math.sin(y)\ns=x*t\nr=x*o\nq=-w*o\np=w*t\nt=this.c\no=this.e\nn=this.f\nz.Vy(s,r,q,p,t-o*s-n*q,this.d-o*r-n*p)}else z.Vy(x,0,0,w,this.c-this.e*x,this.d-this.f*w)}return this.go}\n",
+        "code": "gwr:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l\nif(this.id){this.id=!1\nz=this.go\ny=this.Q\nx=this.r\nw=this.x\nv=this.y\nu=this.z\nif(x>-0.0001&&x<0.0001)x=x>=0?0.0001:-0.0001\nif(w>-0.0001&&w<0.0001)w=w>=0?0.0001:-0.0001\nif(v!==0||u!==0){t=u+y\ns=x*Math.cos(t)\nr=x*Math.sin(t)\nt=v+y\nq=-w*Math.sin(t)\np=w*Math.cos(t)\nt=this.c\no=this.e\nn=this.f\nz.Vy(s,r,q,p,t-o*s-n*q,this.d-o*r-n*p)}else if(y!==0){m=Math.cos(y)\nl=Math.sin(y)\ns=x*m\nr=x*l\nq=-w*l\np=w*m\nt=this.c\no=this.e\nn=this.f\nz.Vy(s,r,q,p,t-o*s-n*q,this.d-o*r-n*p)}else z.Vy(x,0,0,w,this.c-this.e*x,this.d-this.f*w)}return this.go}\n",
         "type": "() -> Matrix",
         "measurements": null
       },
@@ -40636,7 +40624,7 @@
         "id": "function/434886004",
         "kind": "function",
         "name": "mask",
-        "size": 31,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1030275855",
         "children": [],
@@ -40650,8 +40638,8 @@
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 1,
-        "code": "gaP:function(a){return this.db}\n",
+        "inlinedCount": 2,
+        "code": null,
         "type": "() -> Mask",
         "measurements": null
       },
@@ -40887,7 +40875,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -40944,7 +40932,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field, static; writes nothing)",
         "inlinedCount": 1,
@@ -42080,7 +42068,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -42427,7 +42415,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -44027,7 +44015,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "[null|subtype=double]",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [
           {
             "name": "source",
@@ -45047,7 +45035,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
             "name": "radians",
@@ -45490,7 +45478,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "num",
+        "returnType": "JSNumber",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -45502,7 +45490,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Ix:function(a,b){if(typeof b!==\"number\")throw H.b(H.tL(b))\nreturn a*b}\n",
-        "type": "(num) -> num",
+        "type": "(num) -> JSNumber",
         "measurements": null
       },
       "511005349": {
@@ -46073,6 +46061,29 @@
         "type": "(dynamic) -> bool",
         "measurements": null
       },
+      "520630489": {
+        "id": "function/520630489",
+        "kind": "function",
+        "name": "main",
+        "size": 46,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/246088797",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
+        "type": "() -> dynamic",
+        "measurements": null
+      },
       "521116467": {
         "id": "function/521116467",
         "kind": "function",
@@ -46627,7 +46638,7 @@
         "id": "function/531694589",
         "kind": "function",
         "name": "_fourDigits",
-        "size": 154,
+        "size": 139,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/384231720",
         "children": [],
@@ -46648,7 +46659,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
-        "code": "Gq:function(a){var z,y\nz=Math.abs(a)\ny=a<0?\"-\":\"\"\nif(z>=1000)return\"\"+a\nif(z>=100)return y+\"0\"+H.d(z)\nif(z>=10)return y+\"00\"+H.d(z)\nreturn y+\"000\"+H.d(z)}\n",
+        "code": "Gq:function(a){var z,y\nz=Math.abs(a)\ny=a<0?\"-\":\"\"\nif(z>=1000)return\"\"+a\nif(z>=100)return y+\"0\"+z\nif(z>=10)return y+\"00\"+z\nreturn y+\"000\"+z}\n",
         "type": "(int) -> String",
         "measurements": null
       },
@@ -46705,7 +46716,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": null,
         "type": "(String) -> String",
         "measurements": null
@@ -49579,7 +49590,7 @@
         "inferredReturnType": "[exact=Rectangle]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
+        "inlinedCount": 1,
         "code": "gcl:function(){var z=this.gBP()\nreturn this.gwr().Qb(z,z)}\n",
         "type": "() -> Rectangle<num>",
         "measurements": null
@@ -49871,7 +49882,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -51174,7 +51185,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([null|exact=JSDouble], [null|subclass=JSInt])",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
@@ -52291,7 +52302,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
@@ -53109,7 +53120,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "[null|subtype=double]",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [
           {
             "name": "source",
@@ -53467,29 +53478,6 @@
         "inlinedCount": 1,
         "code": null,
         "type": "(int, int, int, Stage, ResourceManager) -> dynamic",
-        "measurements": null
-      },
-      "660702445": {
-        "id": "function/660702445",
-        "kind": "function",
-        "name": "abs",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/1003011102",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "num",
-        "inferredReturnType": "[subclass=JSNumber]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 7,
-        "code": null,
-        "type": "() -> num",
         "measurements": null
       },
       "660922452": {
@@ -57104,7 +57092,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -58426,7 +58414,7 @@
         "parameters": [
           {
             "name": "pixelRatio",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "[subclass=JSNumber]",
             "declaredType": "double"
           }
         ],
@@ -58944,7 +58932,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "num",
+        "returnType": "JSNumber",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -58956,7 +58944,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "M2:function(a,b){if(typeof b!==\"number\")throw H.b(H.tL(b))\nreturn a+b}\n",
-        "type": "(num) -> num",
+        "type": "(num) -> JSNumber",
         "measurements": null
       },
       "738448951": {
@@ -59188,7 +59176,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
@@ -59516,7 +59504,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -59629,7 +59617,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -60134,7 +60122,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
@@ -60220,7 +60208,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 2,
@@ -60312,7 +60300,7 @@
         "id": "function/757429593",
         "kind": "function",
         "name": "visible",
-        "size": 31,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1030275855",
         "children": [],
@@ -60326,8 +60314,8 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 2,
-        "code": "gwx:function(a){return this.cx}\n",
+        "inlinedCount": 3,
+        "code": null,
         "type": "() -> bool",
         "measurements": null
       },
@@ -60824,7 +60812,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 2,
@@ -64929,7 +64917,7 @@
           },
           {
             "name": "pixelRatio",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "[subclass=JSNumber]",
             "declaredType": "num"
           }
         ],
@@ -65586,7 +65574,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "num",
+        "returnType": "JSNumber",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -65598,7 +65586,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "zY:function(a,b){var z=a%b\nif(z===0)return 0\nif(z>0)return z\nif(b<0)return z-b\nelse return z+b}\n",
-        "type": "(num) -> num",
+        "type": "(num) -> JSNumber",
         "measurements": null
       },
       "858471552": {
@@ -66919,12 +66907,12 @@
           },
           {
             "name": "deltaX",
-            "type": "Union([null|exact=JSDouble], [null|subclass=JSInt])",
+            "type": "[null|subclass=JSNumber]",
             "declaredType": "num"
           },
           {
             "name": "deltaY",
-            "type": "Union([null|exact=JSDouble], [null|subclass=JSInt])",
+            "type": "[null|subclass=JSNumber]",
             "declaredType": "num"
           },
           {
@@ -67926,7 +67914,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -70690,7 +70678,7 @@
           "external": false
         },
         "returnType": "num",
-        "inferredReturnType": "Union([null|exact=JSDouble], [null|subclass=JSInt])",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
@@ -73140,7 +73128,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 3,
@@ -73780,7 +73768,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
@@ -73912,7 +73900,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "Union([exact=JSDouble], [subclass=JSInt])",
+        "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 2,
@@ -77037,29 +77025,6 @@
         "type": "(int) -> TextTrack",
         "measurements": null
       },
-      "1051732215": {
-        "id": "function/1051732215",
-        "kind": "function",
-        "name": "mask",
-        "size": 80,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/485201602",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "String",
-        "inferredReturnType": "[exact=JSString]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "gaP:function(a){var z=a.getPropertyValue(this.Qe(a,\"mask\"))\nreturn z==null?\"\":z}\n",
-        "type": "() -> String",
-        "measurements": null
-      },
       "1053431651": {
         "id": "function/1053431651",
         "kind": "function",
@@ -77839,7 +77804,7 @@
           "external": false
         },
         "returnType": "double",
-        "inferredReturnType": "[null|subtype=double]",
+        "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [
           {
             "name": "source",
@@ -78991,7 +78956,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "library/307092771",
         "children": [],
-        "inferredType": "Union([exact=JSDouble], [null|subclass=JSInt])",
+        "inferredType": "[null|subclass=JSNumber]",
         "code": null,
         "type": "num"
       },
@@ -82121,14 +82086,6 @@
         "mask": "null"
       },
       {
-        "id": "function/660702445",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/660702445",
-        "mask": "null"
-      },
-      {
         "id": "function/742133204",
         "mask": "inlined"
       },
@@ -83668,7 +83625,7 @@
       },
       {
         "id": "function/845814928",
-        "mask": "Container([exact=JSExtendableArray], element: [null|subclass=Object], length: null)"
+        "mask": "Container([exact=JSExtendableArray], element: [subclass=DisplayObject], length: null)"
       },
       {
         "id": "function/885768717",
@@ -89324,7 +89281,7 @@
       },
       {
         "id": "function/583976315",
-        "mask": "[null|subclass=DisplayObject]"
+        "mask": "[subclass=DisplayObject]"
       },
       {
         "id": "function/583976315",
@@ -89529,16 +89486,6 @@
       {
         "id": "function/667617894",
         "mask": "inlined"
-      }
-    ],
-    "function/155843171": [
-      {
-        "id": "function/660702445",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/660702445",
-        "mask": "null"
       }
     ],
     "function/156013619": [
@@ -93026,15 +92973,11 @@
       },
       {
         "id": "function/1017141061",
-        "mask": "Union([exact=CssStyleDeclaration], [exact=_RenderTextureQuadObject], [null|subclass=DisplayObject], [subclass=_MaskState])"
+        "mask": "[subclass=DisplayObject]"
       },
       {
         "id": "function/1045170782",
         "mask": "[subclass=DisplayObject]"
-      },
-      {
-        "id": "function/1051732215",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/199666843",
@@ -93077,10 +93020,6 @@
         "mask": "[subclass=DisplayObject]"
       },
       {
-        "id": "function/346305693",
-        "mask": "null"
-      },
-      {
         "id": "function/349849963",
         "mask": "[subclass=DisplayObject]"
       },
@@ -93090,11 +93029,15 @@
       },
       {
         "id": "function/431493272",
-        "mask": "Union([exact=CssStyleDeclaration], [exact=_RenderTextureQuadObject], [null|subclass=DisplayObject], [subclass=_MaskState])"
+        "mask": "[subclass=DisplayObject]"
       },
       {
         "id": "function/434886004",
-        "mask": "[null|subclass=Object]"
+        "mask": "inlined"
+      },
+      {
+        "id": "function/434886004",
+        "mask": "null"
       },
       {
         "id": "function/440257940",
@@ -93134,7 +93077,11 @@
       },
       {
         "id": "function/757429593",
-        "mask": "Union([exact=_RenderTextureQuadObject], [subclass=DisplayObject])"
+        "mask": "inlined"
+      },
+      {
+        "id": "function/757429593",
+        "mask": "null"
       },
       {
         "id": "function/826735511",
@@ -94159,6 +94106,10 @@
     ],
     "function/277833455": [
       {
+        "id": "function/1017141061",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
         "id": "function/1042676018",
         "mask": "inlined"
       },
@@ -94173,10 +94124,54 @@
       {
         "id": "function/146632492",
         "mask": "null"
+      },
+      {
+        "id": "function/183230030",
+        "mask": "null"
+      },
+      {
+        "id": "function/234058331",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/277833455",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/370761899",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/416160192",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/431493272",
+        "mask": "[subclass=DisplayObject]"
       },
       {
         "id": "function/584980360",
-        "mask": "[null|subclass=Object]"
+        "mask": "inlined"
+      },
+      {
+        "id": "function/584980360",
+        "mask": "null"
+      },
+      {
+        "id": "function/603471334",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/607638111",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/643758282",
+        "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/680779983",
+        "mask": "[subclass=DisplayObject]"
       },
       {
         "id": "function/680779983",
@@ -98192,12 +98187,6 @@
     "function/390828239": [
       {
         "id": "function/726344781",
-        "mask": "null"
-      }
-    ],
-    "function/391852842": [
-      {
-        "id": "function/14078432",
         "mask": "null"
       }
     ],
@@ -103575,6 +103564,12 @@
         "mask": "null"
       }
     ],
+    "function/520630489": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/521116467": [
       {
         "id": "function/163889622",
@@ -103760,7 +103755,7 @@
       },
       {
         "id": "function/299842351",
-        "mask": "[null|subtype=double]"
+        "mask": "[null|subclass=JSNumber]"
       },
       {
         "id": "function/299842351",
@@ -103974,20 +103969,6 @@
       },
       {
         "id": "function/901978442",
-        "mask": "null"
-      }
-    ],
-    "function/531694589": [
-      {
-        "id": "function/445547062",
-        "mask": "null"
-      },
-      {
-        "id": "function/660702445",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/660702445",
         "mask": "null"
       }
     ],
@@ -105393,20 +105374,12 @@
         "mask": "null"
       },
       {
-        "id": "function/749970393",
-        "mask": "[null|subtype=double]"
-      },
-      {
-        "id": "function/796179660",
-        "mask": "[null|subtype=double]"
-      },
-      {
         "id": "function/854200700",
-        "mask": "[null|subtype=double]"
+        "mask": "[null|subclass=JSNumber]"
       },
       {
         "id": "function/878987098",
-        "mask": "[null|subtype=double]"
+        "mask": "[null|subclass=JSNumber]"
       },
       {
         "id": "function/897372637",
@@ -113581,14 +113554,6 @@
         "mask": "null"
       },
       {
-        "id": "function/660702445",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/660702445",
-        "mask": "null"
-      },
-      {
         "id": "function/893300768",
         "mask": "inlined"
       },
@@ -121439,24 +121404,6 @@
         "mask": "null"
       }
     ],
-    "function/1051732215": [
-      {
-        "id": "function/215715873",
-        "mask": "null"
-      },
-      {
-        "id": "function/532070566",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/532070566",
-        "mask": "null"
-      },
-      {
-        "id": "function/577273721",
-        "mask": "null"
-      }
-    ],
     "function/1053431651": [
       {
         "id": "function/1070189535",
@@ -121950,7 +121897,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 263590,
+      "size": 263379,
       "imports": []
     }
   ],
@@ -121958,12 +121905,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/391852842",
-    "size": 263590,
-    "dart2jsVersion": null,
-    "compilationMoment": "2018-02-15 12:42:19.132640",
-    "compilationDuration": 13022809,
-    "toJsonDuration": 77000,
+    "entrypoint": "function/520630489",
+    "size": 263379,
+    "dart2jsVersion": "2.0.0-dev.32.0",
+    "compilationMoment": "2018-03-06 14:32:46.862752",
+    "compilationDuration": 4846779,
+    "toJsonDuration": 57000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
