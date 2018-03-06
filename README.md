@@ -34,5 +34,3 @@ in [Dart](https://www.dartlang.org).
    
    Setting `--config release` tells `build_runner` to use the
    `build.release.yaml` configuration file.
-
-See `build.yaml` for configuration.
