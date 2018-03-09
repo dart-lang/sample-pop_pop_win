@@ -48,10 +48,10 @@ class Array2d<T> extends ListBase<T> {
     requireArgument(width >= 0, 'width', 'width must be non-zero');
 
     if (width * height == 0) {
-      requireArgument(_source.length == 0, 'width',
+      requireArgument(_source.isEmpty, 'width',
           'width must be greater than zero if the source is non-empty');
     } else {
-      requireArgument(_source.length > 0, 'source',
+      requireArgument(_source.isNotEmpty, 'source',
           'if width is non-zero, source must be non-empty');
       requireArgument(_source.length % width == 0, 'width',
           'width must evenly divide the source');

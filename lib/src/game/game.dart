@@ -126,7 +126,7 @@ class Game {
         buffer.write('\n');
       }
       for (var x = -2; x < field.width; x++) {
-        var char;
+        String char;
         if (y == -2) {
           if (x == -2) {
             char = ' ';

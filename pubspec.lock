@@ -63,7 +63,7 @@ packages:
       name: build_modules
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0+1"
+    version: "0.2.0+2"
   build_resolvers:
     dependency: transitive
     description:
@@ -77,7 +77,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.12"
+    version: "0.7.13+1"
   build_web_compilers:
     dependency: "direct dev"
     description:
@@ -315,7 +315,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.0"
+    version: "1.7.4"
   plugin:
     dependency: transitive
     description:
@@ -455,7 +455,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.32"
+    version: "0.12.32+1"
   typed_data:
     dependency: transitive
     description:
@@ -499,4 +499,4 @@ packages:
     source: hosted
     version: "2.1.13"
 sdks:
-  dart: ">=2.0.0-dev.23.0 <=2.0.0-dev.32.0"
+  dart: ">=2.0.0-dev.23.0 <=2.0.0-dev.35.0"

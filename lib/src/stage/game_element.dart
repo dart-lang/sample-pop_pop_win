@@ -82,7 +82,7 @@ class GameElement extends Sprite {
       ..y = boardOffset.y + _edgeOffset * _boardScale;
 
     manager.bestTimeMilliseconds.then((v) {
-      if (v == null) v = 0;
+      v ??= 0;
       _scoreElement = new ScoreElement(v)..addTo(this);
 
       stage.juggler.add(_scoreElement);
@@ -146,7 +146,7 @@ class GameElement extends Sprite {
               .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
-          assert(adjHidden.length > 0);
+          assert(adjHidden.isNotEmpty);
 
           _startDartAnimation(adjHidden);
           reveals = game.reveal(x, y);
@@ -159,7 +159,7 @@ class GameElement extends Sprite {
       }
     }
 
-    if (reveals != null && reveals.length > 0) {
+    if (reveals != null && reveals.isNotEmpty) {
       assert(game.state != GameState.lost);
       if (!alt) {
         // if it was a normal click, the first item should be the clicked item
@@ -247,7 +247,7 @@ class GameElement extends Sprite {
   }
 
   void _startDartAnimation(List<Point> points) {
-    assert(points.length >= 1);
+    assert(points.isNotEmpty);
     game_audio.throwDart();
     for (var point in points) {
       var squareOffset = _dartAnimationOffset +

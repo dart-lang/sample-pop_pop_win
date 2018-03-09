@@ -66,9 +66,7 @@ abstract class GameManager {
     if (newState == GameState.won) {
       _gameStorage.updateBestTime(_game).then((bool newBestTime) {
         if (newBestTime) {
-          bestTimeMilliseconds.then((int val) {
-            onNewBestTime(val);
-          });
+          bestTimeMilliseconds.then(onNewBestTime);
         }
       });
     }

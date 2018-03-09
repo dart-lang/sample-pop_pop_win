@@ -40,13 +40,10 @@ class PlatformWeb {
   void toggleAbout([bool value]) {
     var loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later
-    var hash = loc.hash.length == 0 ? '#' : loc.hash;
+    var hash = loc.hash.isEmpty ? '#' : loc.hash;
 
     var isOpen = hash == _aboutHash;
-    if (value == null) {
-      // then toggle the current value
-      value = !isOpen;
-    }
+    value ??= !isOpen;
 
     var targetHash = value ? _aboutHash : '#';
     if (targetHash != hash) {
