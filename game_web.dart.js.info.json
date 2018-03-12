@@ -778,7 +778,7 @@
         "id": "library/239566622",
         "kind": "library",
         "name": "pop_pop_win.stage.game_root",
-        "size": 379,
+        "size": 552,
         "children": [
           "class/81308393"
         ],
@@ -867,7 +867,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 13820,
+        "size": 13853,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -913,7 +913,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "pop_pop_win",
-        "size": 4084,
+        "size": 4101,
         "children": [
           "function/14078432",
           "function/443181349",
@@ -923,6 +923,16 @@
           "function/948303177"
         ],
         "canonicalUri": "package:pop_pop_win/pop_pop_win.dart"
+      },
+      "390911103": {
+        "id": "library/390911103",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 56,
+        "children": [
+          "function/391310965"
+        ],
+        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceX8iEl0/web/game_web.dart"
       },
       "409565288": {
         "id": "library/409565288",
@@ -1348,6 +1358,16 @@
         ],
         "canonicalUri": "dart:_internal"
       },
+      "746986899": {
+        "id": "library/746986899",
+        "kind": "library",
+        "name": "analytics",
+        "size": 30,
+        "children": [
+          "class/677924827"
+        ],
+        "canonicalUri": "package:pop_pop_win/src/analytics.dart"
+      },
       "754126564": {
         "id": "library/754126564",
         "kind": "library",
@@ -1466,16 +1486,6 @@
           "class/924812431"
         ],
         "canonicalUri": "dart:web_gl"
-      },
-      "869466531": {
-        "id": "library/869466531",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 56,
-        "children": [
-          "function/213098870"
-        ],
-        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceBs5clq/web/game_web.dart"
       },
       "871432775": {
         "id": "library/871432775",
@@ -2980,7 +2990,7 @@
         "id": "class/81308393",
         "kind": "class",
         "name": "GameRoot",
-        "size": 367,
+        "size": 540,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/239566622",
         "modifiers": {
@@ -10726,6 +10736,20 @@
           "function/242668367"
         ]
       },
+      "677924827": {
+        "id": "class/677924827",
+        "kind": "class",
+        "name": "GTagAnalyticsEventOptions",
+        "size": 18,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/746986899",
+        "modifiers": {
+          "abstract": false
+        },
+        "children": [
+          "function/349901696"
+        ]
+      },
       "679379074": {
         "id": "class/679379074",
         "kind": "class",
@@ -13105,7 +13129,7 @@
         "id": "class/851867060",
         "kind": "class",
         "name": "JavaScriptObject",
-        "size": 87,
+        "size": 120,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -27880,29 +27904,6 @@
         "type": "() -> EventTarget",
         "measurements": null
       },
-      "213098870": {
-        "id": "function/213098870",
-        "kind": "function",
-        "name": "main",
-        "size": 46,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/869466531",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
-        "type": "() -> dynamic",
-        "measurements": null
-      },
       "213148420": {
         "id": "function/213148420",
         "kind": "function",
@@ -33654,7 +33655,7 @@
         "id": "function/306721563",
         "kind": "function",
         "name": "onGameStateChanged",
-        "size": 223,
+        "size": 392,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/81308393",
         "children": [],
@@ -33675,7 +33676,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zj:function(a){var z,y,x\nif(a===C.mV){for(z=this.Q.rS.Qt,z=new H.a7(z,z.gk(z),0,null);z.VF();)z.d.Xl()\nz=this.e\nz=C.jn.W(z.gzo(z).a,1000)\ny=this.Q.zN\nx=y.rT\nif(z<x||x===0){z=this.e\ny.rT=C.jn.W(z.gzo(z).a,1000)}Q.jr(\"win\")}}\n",
+        "code": "Zj:function(a){var z,y,x,w\nz=this.Q\ny=z.q(0,a)\nx=(y==null?0:y)+1\nz.t(0,a,x)\nz={event_category:\"sample-pop_pop_win\",event_label:J.Ac(a).split(\".\")[1],value:x}\nself.gtag(\"event\",\"game_event\",z)\nif(a===C.mV){for(z=this.ch.rS.Qt,z=new H.a7(z,z.gk(z),0,null);z.VF();)z.d.Xl()\nz=this.e\nz=C.jn.W(z.gzo(z).a,1000)\ny=this.ch.zN\nw=y.rT\nif(z<w||w===0){z=this.e\ny.rT=C.jn.W(z.gzo(z).a,1000)}Q.jr(\"win\")}}\n",
         "type": "(GameState) -> void",
         "measurements": null
       },
@@ -36005,6 +36006,29 @@
         "type": "(num, num) -> DisplayObject",
         "measurements": null
       },
+      "349901696": {
+        "id": "function/349901696",
+        "kind": "function",
+        "name": "value",
+        "size": 31,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/677924827",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": true
+        },
+        "returnType": "int",
+        "inferredReturnType": "[null|subclass=Object]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 0,
+        "code": "gnw:function(a){return a.value}\n",
+        "type": "() -> int",
+        "measurements": null
+      },
       "349997389": {
         "id": "function/349997389",
         "kind": "function",
@@ -38204,6 +38228,29 @@
         "inlinedCount": 1,
         "code": "ud:function(a,b){return a(b)||b}\n",
         "type": "(dynamic, dynamic) -> dynamic",
+        "measurements": null
+      },
+      "391310965": {
+        "id": "function/391310965",
+        "kind": "function",
+        "name": "main",
+        "size": 46,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/390911103",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
+        "type": "() -> dynamic",
         "measurements": null
       },
       "391637908": {
@@ -49864,7 +49911,7 @@
         "id": "function/598252498",
         "kind": "function",
         "name": "newGame",
-        "size": 108,
+        "size": 109,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/81308393",
         "children": [],
@@ -49879,7 +49926,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "p8:function(){this.PC()\nvar z=this.Q\nif(z!=null)for(z=z.rS.Qt,z=new H.a7(z,z.gk(z),0,null);z.VF();)z.d.Xl()}\n",
+        "code": "p8:function(){this.PC()\nvar z=this.ch\nif(z!=null)for(z=z.rS.Qt,z=new H.a7(z,z.gk(z),0,null);z.VF();)z.d.Xl()}\n",
         "type": "() -> void",
         "measurements": null
       },
@@ -70965,7 +71012,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 991,
+        "size": 1008,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -71001,7 +71048,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var z,y,x,w,v\nz=b.oJ\ny=z.RY(c,0.5)\nx=y.gtV(y)\nx.a.HQ(x,9).d=0\ny.f=new E.XG(b,c)\nE.z6()\ny=$.$get$e1()\nx=y.b\nnew P.u8(x,[H.Kp(x,0)]).yI(new E.S5())\nw=y.gtL(y)\nv=C.CD.yu(w*w*0.15625)\nif($.pL!=null)H.Vj(new P.lj(\"already initialized\"))\n$.pL=a\ny=P.qU\ny=new B.Yy(b,a,null,w,w,v,new R.HB(new P.q1(null,0,null,null,null,null,null,[null]),new H.u(0,null,null,null,null,null,0,[y,y])),null,null,null,null)\ny.p8()\nH.Go(a.n9(\"TextureAtlas\",\"opaque\"),\"$isUN\")\nH.Go(a.n9(\"TextureAtlas\",\"static\"),\"$isUN\")\nx=R.kZ(y)\nx.sVR(0,0)\ny.Q=x\nb.bS(x)\ny=z.RY(y.Q,0.5)\ny=y.gtV(y)\ny.a.HQ(y,9).d=1\nW.JE(window,\"touchmove\",new E.C8(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\ny=J.qF(document.querySelector(\"#popup\"))\nW.JE(y.a,y.b,E.o9(),!1)\ny=$.$get$iN()\ny.toString\nnew P.u8(y,[H.Kp(y,0)]).yI(new E.kN())}\n",
+        "code": "TI:function(a,b,c){var z,y,x,w,v\nz=b.oJ\ny=z.RY(c,0.5)\nx=y.gtV(y)\nx.a.HQ(x,9).d=0\ny.f=new E.XG(b,c)\nE.z6()\ny=$.$get$e1()\nx=y.b\nnew P.u8(x,[H.Kp(x,0)]).yI(new E.S5())\nw=y.gtL(y)\nv=C.CD.yu(w*w*0.15625)\nif($.pL!=null)H.Vj(new P.lj(\"already initialized\"))\n$.pL=a\ny=P.qU\ny=new B.Yy(b,a,P.Fl(Z.cw,P.J),null,w,w,v,new R.HB(new P.q1(null,0,null,null,null,null,null,[null]),new H.u(0,null,null,null,null,null,0,[y,y])),null,null,null,null)\ny.p8()\nH.Go(a.n9(\"TextureAtlas\",\"opaque\"),\"$isUN\")\nH.Go(a.n9(\"TextureAtlas\",\"static\"),\"$isUN\")\nx=R.kZ(y)\nx.sVR(0,0)\ny.ch=x\nb.bS(x)\ny=z.RY(y.ch,0.5)\ny=y.gtV(y)\ny.a.HQ(y,9).d=1\nW.JE(window,\"touchmove\",new E.C8(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\ny=J.qF(document.querySelector(\"#popup\"))\nW.JE(y.a,y.b,E.o9(),!1)\ny=$.$get$iN()\ny.toString\nnew P.u8(y,[H.Kp(y,0)]).yI(new E.kN())}\n",
         "type": "(ResourceManager, Stage, Sprite) -> void",
         "measurements": null
       },
@@ -83431,6 +83478,10 @@
         "mask": "null"
       },
       {
+        "id": "function/349901696",
+        "mask": "[subclass=Object]"
+      },
+      {
         "id": "function/554609154",
         "mask": "[subclass=Object]"
       },
@@ -90567,12 +90618,6 @@
         "mask": "null"
       }
     ],
-    "function/213098870": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/213148420": [
       {
         "id": "function/401831690",
@@ -94969,6 +95014,10 @@
         "mask": "null"
       },
       {
+        "id": "function/268798319",
+        "mask": "[null|exact=GameState]"
+      },
+      {
         "id": "function/288496489",
         "mask": "null"
       },
@@ -94978,6 +95027,10 @@
       },
       {
         "id": "function/291238918",
+        "mask": "null"
+      },
+      {
+        "id": "function/346305693",
         "mask": "null"
       },
       {
@@ -95005,6 +95058,10 @@
         "mask": "null"
       },
       {
+        "id": "function/665416673",
+        "mask": "Map([subclass=JsLinkedHashMap], key: [null|exact=GameState], value: [null|subclass=JSPositiveInt])"
+      },
+      {
         "id": "function/675254093",
         "mask": "null"
       },
@@ -95017,12 +95074,20 @@
         "mask": "null"
       },
       {
+        "id": "function/820195095",
+        "mask": "Map([subclass=JsLinkedHashMap], key: [null|exact=GameState], value: [null|subclass=JSPositiveInt])"
+      },
+      {
         "id": "function/872137241",
         "mask": "inlined"
       },
       {
         "id": "function/872137241",
         "mask": "null"
+      },
+      {
+        "id": "function/962973203",
+        "mask": "[null|exact=GameState]"
       },
       {
         "id": "function/969710394",
@@ -98165,6 +98230,12 @@
         "mask": "null"
       }
     ],
+    "function/391310965": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/392481975": [
       {
         "id": "function/141703218",
@@ -99319,6 +99390,10 @@
       {
         "id": "function/346305693",
         "mask": "null"
+      },
+      {
+        "id": "function/349901696",
+        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/554609154",
@@ -113125,6 +113200,10 @@
         "mask": "null"
       },
       {
+        "id": "function/349901696",
+        "mask": "[null|subclass=Object]"
+      },
+      {
         "id": "function/554609154",
         "mask": "[null|subclass=Object]"
       },
@@ -116917,6 +116996,10 @@
       {
         "id": "function/1023619719",
         "mask": "[exact=GameElement]"
+      },
+      {
+        "id": "function/116599339",
+        "mask": "null"
       },
       {
         "id": "function/123959555",
@@ -121868,7 +121951,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 263387,
+      "size": 263998,
       "imports": []
     }
   ],
@@ -121876,12 +121959,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/213098870",
-    "size": 263387,
+    "entrypoint": "function/391310965",
+    "size": 263998,
     "dart2jsVersion": "2.0.0-dev.35.0",
-    "compilationMoment": "2018-03-09 09:29:35.798851",
-    "compilationDuration": 6339769,
-    "toJsonDuration": 61000,
+    "compilationMoment": "2018-03-12 11:30:49.755857",
+    "compilationDuration": 5455724,
+    "toJsonDuration": 60000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
