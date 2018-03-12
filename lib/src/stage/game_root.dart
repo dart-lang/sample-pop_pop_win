@@ -5,6 +5,7 @@ library pop_pop_win.stage.game_root;
 
 import 'package:stagexl/stagexl.dart';
 
+import '../analytics.dart';
 import '../audio.dart' as game_audio;
 import '../game.dart';
 import '../game_manager.dart';
@@ -13,6 +14,8 @@ import 'game_element.dart';
 class GameRoot extends GameManager {
   final Stage stage;
   final ResourceManager resourceManager;
+  final _eventCount = <GameState, int>{};
+
   GameElement _gameElement;
 
   GameRoot(
@@ -30,6 +33,15 @@ class GameRoot extends GameManager {
 
   @override
   void onGameStateChanged(GameState newState) {
+    var count = _eventCount[newState] = (_eventCount[newState] ?? 0) + 1;
+
+    gtag(
+        'event',
+        'game_event',
+        new GTagAnalyticsEventOptions(
+            event_category: 'sample-pop_pop_win',
+            event_label: newState.toString().split('.')[1],
+            value: count));
     if (newState == GameState.won) {
       for (var se in _gameElement.boardElement.squares) {
         se.updateState();

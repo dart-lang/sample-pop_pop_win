@@ -49,7 +49,7 @@ packages:
       name: build
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.0+1"
+    version: "0.12.0+2"
   build_config:
     dependency: transitive
     description:
@@ -189,7 +189,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.2+2"
+    version: "0.13.3"
   http:
     dependency: transitive
     description:
@@ -226,7 +226,7 @@ packages:
     source: hosted
     version: "1.1.0"
   js:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: js
       url: "https://pub.dartlang.org"
@@ -315,7 +315,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.4"
+    version: "1.7.5"
   plugin:
     dependency: transitive
     description:
@@ -490,7 +490,7 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.6.0"
+    version: "3.0.0"
   yaml:
     dependency: transitive
     description:

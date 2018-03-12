@@ -5,8 +5,9 @@ homepage: https://github.com/dart-lang/sample-pop_pop_win
 environment:
   sdk: '>=1.9.0 <2.0.0'
 dependencies:
-  stagexl: '^1.0.0'
+  js: ^0.6.1
+  stagexl: ^1.0.0
 dev_dependencies:
-  test: '^0.12.0'
+  test: ^0.12.0
   build_runner: ^0.7.0
   build_web_compilers: ^0.3.3
