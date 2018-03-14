@@ -924,16 +924,6 @@
         ],
         "canonicalUri": "package:pop_pop_win/pop_pop_win.dart"
       },
-      "390911103": {
-        "id": "library/390911103",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 56,
-        "children": [
-          "function/391310965"
-        ],
-        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceX8iEl0/web/game_web.dart"
-      },
       "409565288": {
         "id": "library/409565288",
         "kind": "library",
@@ -1223,6 +1213,16 @@
           "class/745898544"
         ],
         "canonicalUri": "dart:typed_data"
+      },
+      "622959780": {
+        "id": "library/622959780",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 56,
+        "children": [
+          "function/8517005"
+        ],
+        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceFCwkSo/web/game_web.dart"
       },
       "631335891": {
         "id": "library/631335891",
@@ -16770,6 +16770,29 @@
         "inlinedCount": 4,
         "code": null,
         "type": "(num) -> double",
+        "measurements": null
+      },
+      "8517005": {
+        "id": "function/8517005",
+        "kind": "function",
+        "name": "main",
+        "size": 46,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/622959780",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
+        "type": "() -> dynamic",
         "measurements": null
       },
       "9680854": {
@@ -38228,29 +38251,6 @@
         "inlinedCount": 1,
         "code": "ud:function(a,b){return a(b)||b}\n",
         "type": "(dynamic, dynamic) -> dynamic",
-        "measurements": null
-      },
-      "391310965": {
-        "id": "function/391310965",
-        "kind": "function",
-        "name": "main",
-        "size": 46,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/390911103",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
-        "type": "() -> dynamic",
         "measurements": null
       },
       "391637908": {
@@ -82134,6 +82134,12 @@
         "mask": "null"
       }
     ],
+    "function/8517005": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/9680854": [
       {
         "id": "function/1000826866",
@@ -98227,12 +98233,6 @@
     "function/390828239": [
       {
         "id": "function/726344781",
-        "mask": "null"
-      }
-    ],
-    "function/391310965": [
-      {
-        "id": "function/14078432",
         "mask": "null"
       }
     ],
@@ -121959,12 +121959,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/391310965",
+    "entrypoint": "function/8517005",
     "size": 263998,
     "dart2jsVersion": "2.0.0-dev.35.0",
-    "compilationMoment": "2018-03-12 11:30:49.755857",
-    "compilationDuration": 5455724,
-    "toJsonDuration": 60000,
+    "compilationMoment": "2018-03-14 09:46:37.322920",
+    "compilationDuration": 4956302,
+    "toJsonDuration": 63000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
