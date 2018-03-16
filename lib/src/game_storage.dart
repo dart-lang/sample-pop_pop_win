@@ -11,7 +11,7 @@ import 'platform_web.dart';
 class GameStorage {
   static const _gameCountKey = 'gameCount';
   final StreamController _bestTimeUpdated = new StreamController();
-  final Map<String, String> _cache = new Map<String, String>();
+  final Map<String, String> _cache = <String, String>{};
 
   int get gameCount => _getIntValue(_gameCountKey);
 
@@ -67,7 +67,7 @@ class GameStorage {
   void _setIntValue(String key, int value) {
     assert(key != null);
     _cache.remove(key);
-    String val = (value == null) ? null : value.toString();
+    var val = (value == null) ? null : value.toString();
     targetPlatform.setValue(key, val);
   }
 

@@ -37,9 +37,8 @@ class Array2d<T> extends ListBase<T> {
     assert(height >= 0);
   }
 
-  Array2d.wrap(int width, List<T> source)
-      : this.width = width,
-        this._source = source,
+  Array2d.wrap(this.width, List<T> source)
+      : this._source = source,
         this.height = (width != null && width > 0 && source != null)
             ? source.length ~/ width
             : 0 {
@@ -90,10 +89,10 @@ class Array2d<T> extends ListBase<T> {
   }
 
   List<int> getAdjacentIndices(int x, int y) {
-    final List<int> adj = new List<int>();
+    final adj = <int>[];
 
-    for (int k = math.max(0, y - 1); k < math.min(height, (y + 2)); k++) {
-      for (int j = math.max(0, x - 1); j < math.min(width, (x + 2)); j++) {
+    for (var k = math.max(0, y - 1); k < math.min(height, (y + 2)); k++) {
+      for (var j = math.max(0, x - 1); j < math.min(width, (x + 2)); j++) {
         if (j != x || k != y) {
           adj.add(_getIndex(j, k));
         }

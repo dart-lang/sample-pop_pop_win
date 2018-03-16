@@ -26,9 +26,9 @@ void _testDefaults() {
 void _testBombCount() {
   var f = new Field();
 
-  int bombCount = 0;
-  for (int x = 0; x < 16; x++) {
-    for (int y = 0; y < 16; y++) {
+  var bombCount = 0;
+  for (var x = 0; x < 16; x++) {
+    for (var y = 0; y < 16; y++) {
       if (f.get(x, y)) {
         bombCount++;
       }
@@ -49,8 +49,8 @@ void _testAdjacent() {
 
   expect(f.bombCount, equals(13));
 
-  for (int x = 0; x < f.width; x++) {
-    for (int y = 0; y < f.height; y++) {
+  for (var x = 0; x < f.width; x++) {
+    for (var y = 0; y < f.height; y++) {
       var i = x + y * f.width;
       var adj = f.getAdjacentCount(x, y);
       expect(adj, equals(sampleField[i]));

@@ -77,7 +77,7 @@ class SquareElement extends Sprite {
 
   void _onClick(MouseEvent e) {
     if (!_game.gameEnded) {
-      bool alt = (e.type == MouseEvent.RIGHT_CLICK) || e.shiftKey;
+      var alt = (e.type == MouseEvent.RIGHT_CLICK) || e.shiftKey;
       _gameElement.click(column, row, alt);
     }
   }
@@ -102,7 +102,7 @@ class SquareElement extends Sprite {
   int get _adjacentCount => _game.field.getAdjacentCount(column, row);
 
   BoardElement get _board {
-    final BoardElement p = this.parent;
+    final BoardElement p = parent;
     return p;
   }
 

@@ -26,7 +26,7 @@ class ScoreElement extends TextField implements Animatable {
         : (game.duration.inMilliseconds / 1000).toStringAsFixed(1);
     text = 'Bombs Left: ${game.bombsLeft}\nTime: $timeInSeconds';
     if (bestTime > 0) {
-      text = text + '\nRecord: ${(bestTime/1000).toStringAsFixed(1)}';
+      text = '$text\nRecord: ${(bestTime/1000).toStringAsFixed(1)}';
     }
     return true;
   }

@@ -21,8 +21,7 @@ class GameRoot extends GameManager {
   GameRoot(
       int width, int height, int bombCount, this.stage, this.resourceManager)
       : super(width, height, bombCount) {
-    resourceManager.getTextureAtlas('opaque');
-    resourceManager.getTextureAtlas('static');
+    resourceManager..getTextureAtlas('opaque')..getTextureAtlas('static');
 
     _gameElement = new GameElement(this)..alpha = 0;
 

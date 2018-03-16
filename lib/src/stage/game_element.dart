@@ -21,7 +21,7 @@ const _frameRate = 60;
 
 class GameElement extends Sprite {
   static const _edgeOffset = 32;
-  static final _backgroundSize = new Point<int>(2048, 1536);
+  static const _backgroundSize = const Point<int>(2048, 1536);
   static const _backgroundHoleSize = 16 * SquareElement.size + 2 * _edgeOffset;
   static final Vector boardOffset = new Vector(352, 96);
   static const _popAnimationHitFrame = 12;
@@ -54,8 +54,8 @@ class GameElement extends Sprite {
   BoardElement get boardElement => _boardElement;
 
   GameElement(this.manager) {
-    TextureAtlas opa = resourceManager.getTextureAtlas('opaque');
-    TextureAtlas sta = resourceManager.getTextureAtlas('static');
+    var opa = resourceManager.getTextureAtlas('opaque');
+    var sta = resourceManager.getTextureAtlas('static');
     _animations = resourceManager.getTextureAtlas('animated');
 
     _boardSize = game.field.width * SquareElement.size + 2 * _edgeOffset;
@@ -88,8 +88,8 @@ class GameElement extends Sprite {
       stage.juggler.add(_scoreElement);
     });
 
-    num logoScale = min(max(_boardScale, 1.1), 1.5);
-    Bitmap logo = new Bitmap(sta.getBitmapData('logo_win'));
+    var logoScale = min(max(_boardScale, 1.1), 1.5);
+    var logo = new Bitmap(sta.getBitmapData('logo_win'));
     _logoButton = new SimpleButton(logo, logo, logo, logo);
     _logoButton
       ..y = 20
@@ -214,11 +214,10 @@ class GameElement extends Sprite {
       delay += _rnd.nextInt(10);
 
       return new _Values(c, squareOffset, delay);
-    }).toList();
-
-    values.sort((a, b) {
-      return a.delay.compareTo(b.delay);
-    });
+    }).toList()
+      ..sort((a, b) {
+        return a.delay.compareTo(b.delay);
+      });
 
     for (var v in values) {
       var c = v.point;

@@ -22,7 +22,7 @@ class Field extends Array2d<bool> {
     // bombCount approaches the square count.
     // But more efficient if bombCount << square count
     // which is expected.
-    for (int i = 0; i < bombCount; i++) {
+    for (var i = 0; i < bombCount; i++) {
       int index;
       do {
         index = rnd.nextInt(squares.length);
@@ -38,7 +38,7 @@ class Field extends Array2d<bool> {
     assert(rows > 0);
     assert(squares.length == cols * rows);
 
-    int count = 0;
+    var count = 0;
     for (final m in squares) {
       if (m) {
         count++;
@@ -58,7 +58,7 @@ class Field extends Array2d<bool> {
     assert(bombCount > 0);
     assert(bombCount < length);
 
-    int count = 0;
+    var count = 0;
     for (var m in this) {
       if (m) {
         count++;
@@ -73,7 +73,7 @@ class Field extends Array2d<bool> {
       return null;
     }
 
-    int val = _adjacents.get(x, y);
+    var val = _adjacents.get(x, y);
 
     if (val == null) {
       val = 0;

@@ -17,30 +17,30 @@ class GameBackgroundElement extends Sprite {
     addTo(gameElement);
 
     //the lengths we go to reduce bytes down the wire...
-    Bitmap ttl = new Bitmap(op.getBitmapData('background_top_left'));
-    Bitmap stl = new Bitmap(op.getBitmapData('background_side_left'))..y = 96;
+    var ttl = new Bitmap(op.getBitmapData('background_top_left'));
+    var stl = new Bitmap(op.getBitmapData('background_side_left'))..y = 96;
 
-    Bitmap bbl = new Bitmap(op.getBitmapData('background_top_left'))
+    var bbl = new Bitmap(op.getBitmapData('background_top_left'))
       ..scaleY = -1
       ..y = 1534;
-    Bitmap sbl = new Bitmap(op.getBitmapData('background_side_left'))
+    var sbl = new Bitmap(op.getBitmapData('background_side_left'))
       ..scaleY = -1
       ..y = 1438;
 
-    Bitmap ttr = new Bitmap(op.getBitmapData('background_top_left'))
+    var ttr = new Bitmap(op.getBitmapData('background_top_left'))
       ..scaleX = -1
       ..x = 2048;
-    Bitmap str = new Bitmap(op.getBitmapData('background_side_left'))
+    var str = new Bitmap(op.getBitmapData('background_side_left'))
       ..scaleX = -1
       ..x = 2048
       ..y = 96;
 
-    Bitmap bbr = new Bitmap(op.getBitmapData('background_top_left'))
+    var bbr = new Bitmap(op.getBitmapData('background_top_left'))
       ..scaleX = -1
       ..x = 2048
       ..scaleY = -1
       ..y = 1534;
-    Bitmap sbr = new Bitmap(op.getBitmapData('background_side_left'))
+    var sbr = new Bitmap(op.getBitmapData('background_side_left'))
       ..scaleX = -1
       ..x = 2048
       ..scaleY = -1
@@ -58,14 +58,15 @@ class GameBackgroundElement extends Sprite {
     //draw the board
     var boardData = new BitmapData(_boardSize, _boardSize, 0x000000);
     var cr = new Rectangle<int>(0, 0, 112, 122);
-    boardData.drawPixels(op.getBitmapData('game_board_corner_top_left'), cr,
-        new Point<int>(0, 0));
-    boardData.drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
-        new Point<int>(_boardSize - 112, 0));
-    boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_left'), cr,
-        new Point<int>(0, _boardSize - 112));
-    boardData.drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
-        new Point<int>(_boardSize - 112, _boardSize - 112));
+    boardData
+      ..drawPixels(op.getBitmapData('game_board_corner_top_left'), cr,
+          new Point<int>(0, 0))
+      ..drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
+          new Point<int>(_boardSize - 112, 0))
+      ..drawPixels(op.getBitmapData('game_board_corner_bottom_left'), cr,
+          new Point<int>(0, _boardSize - 112))
+      ..drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
+          new Point<int>(_boardSize - 112, _boardSize - 112));
     var tbr = new Rectangle<int>(0, 0, 80, 112);
     var lrr = new Rectangle<int>(0, 0, 112, 80);
     for (var i = 0; i < _game.field.width - 2; i++) {
@@ -80,7 +81,7 @@ class GameBackgroundElement extends Sprite {
             new Point<int>(_boardSize - 112, 112 + i * 80));
     }
 
-    Bitmap board = new Bitmap(boardData)
+    var board = new Bitmap(boardData)
       ..x = GameElement.boardOffset.x
       ..y = GameElement.boardOffset.y
       ..scaleX = _backgroundScale

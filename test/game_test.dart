@@ -32,9 +32,9 @@ void _testCannotReReveal() {
   var g = new Game(f);
 
   expect(g.canReveal(5, 3), isTrue);
-  g.reveal(5, 3);
-
-  g.setFlag(4, 2, true);
+  g
+    ..reveal(5, 3)
+    ..setFlag(4, 2, true);
 
   expect(g.canReveal(5, 3), isTrue);
   g.reveal(5, 3);
@@ -94,9 +94,10 @@ void _testBadChord() {
   expect(g.revealsLeft, equals(startReveals));
   expect(g.state, equals(GameState.reset));
 
-  g.reveal(2, 3);
-  g.setFlag(1, 2, true);
-  g.setFlag(3, 2, true);
+  g
+    ..reveal(2, 3)
+    ..setFlag(1, 2, true)
+    ..setFlag(3, 2, true);
 
   expect(g.bombsLeft, equals(11));
   expect(g.revealsLeft, equals(startReveals - 1));
@@ -137,9 +138,10 @@ void _testGoodChord() {
   expect(g.revealsLeft, equals(startReveals));
   expect(g.state, equals(GameState.reset));
 
-  g.reveal(2, 3);
-  g.setFlag(2, 2, true);
-  g.setFlag(3, 2, true);
+  g
+    ..reveal(2, 3)
+    ..setFlag(2, 2, true)
+    ..setFlag(3, 2, true);
 
   expect(g.bombsLeft, equals(11));
   expect(g.revealsLeft, equals(startReveals - 1));
@@ -153,10 +155,10 @@ void _testGoodChord() {
 // Test 5 random fields five times
 void _testRandomField() {
   var rnd = new Random();
-  for (int i = 0; i < 5; i++) {
+  for (var i = 0; i < 5; i++) {
     var f = new Field();
 
-    for (int j = 0; j < 5; j++) {
+    for (var j = 0; j < 5; j++) {
       var g = new Game(f);
       while (g.revealsLeft > 0) {
         var x = rnd.nextInt(f.width);
@@ -196,8 +198,8 @@ void _testInitial() {
   expect(g.state, equals(GameState.reset));
   expect(g.duration, isNull);
 
-  for (int x = 0; x < f.width; x++) {
-    for (int y = 0; y < f.height; y++) {
+  for (var x = 0; x < f.width; x++) {
+    for (var y = 0; y < f.height; y++) {
       expect(g.getSquareState(x, y), equals(SquareState.hidden));
     }
   }
@@ -250,11 +252,11 @@ void _testWin() {
   var f = getSampleField();
   var g = new Game(f);
 
-  int bombsLleft = f.bombCount;
+  var bombsLleft = f.bombCount;
   expect(g.revealsLeft, equals(f.length - 13));
-  int revealsLeft = g.revealsLeft;
-  for (int x = 0; x < f.width; x++) {
-    for (int y = 0; y < f.height; y++) {
+  var revealsLeft = g.revealsLeft;
+  for (var x = 0; x < f.width; x++) {
+    for (var y = 0; y < f.height; y++) {
       if (f.get(x, y)) {
         g.setFlag(x, y, true);
         bombsLleft--;

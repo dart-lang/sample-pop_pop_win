@@ -25,9 +25,8 @@ class Game {
   DateTime _startTime;
   DateTime _endTime;
 
-  Game(Field field)
-      : this.field = field,
-        _state = GameState.reset,
+  Game(this.field)
+      : _state = GameState.reset,
         _states = new Array2d<SquareState>(
             field.width, field.height, SquareState.hidden) {
     assert(field != null);
@@ -194,12 +193,12 @@ class Game {
     final currentSS = _states.get(x, y);
     assert(currentSS == SquareState.revealed);
 
-    final flagged = new List<int>();
-    final hidden = new List<int>();
+    final flagged = <int>[];
+    final hidden = <int>[];
     final adjCount = field.getAdjacentCount(x, y);
     assert(adjCount > 0);
 
-    bool failed = false;
+    var failed = false;
 
     for (final i in field.getAdjacentIndices(x, y)) {
       if (_states[i] == SquareState.hidden) {
@@ -254,7 +253,7 @@ class Game {
 
   void _setWon() {
     assert(state == GameState.started);
-    for (int i = 0; i < field.length; i++) {
+    for (var i = 0; i < field.length; i++) {
       if (field[i]) {
         _states[i] = SquareState.safe;
       }
@@ -264,7 +263,7 @@ class Game {
 
   void _setLost() {
     assert(state == GameState.started);
-    for (int i = 0; i < field.length; i++) {
+    for (var i = 0; i < field.length; i++) {
       if (field[i]) {
         _states[i] = SquareState.bomb;
       }
@@ -299,7 +298,7 @@ class Game {
   }
 
   int _getAdjacentCount(int x, int y, SquareState state) {
-    int val = 0;
+    var val = 0;
     for (final i in field.getAdjacentIndices(x, y)) {
       if (_states[i] == state) {
         val++;
