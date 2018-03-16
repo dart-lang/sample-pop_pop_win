@@ -25,7 +25,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "pop_pop_win.stage.game_element",
-        "size": 5821,
+        "size": 5810,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -72,7 +72,7 @@
         "id": "library/74200570",
         "kind": "library",
         "name": "pop_pop_win.stage.score_element",
-        "size": 496,
+        "size": 494,
         "children": [
           "class/290460470"
         ],
@@ -913,7 +913,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "pop_pop_win",
-        "size": 4101,
+        "size": 4067,
         "children": [
           "function/14078432",
           "function/443181349",
@@ -970,16 +970,6 @@
           "function/70353884"
         ],
         "canonicalUri": "package:stagexl/src/engine.dart"
-      },
-      "421648183": {
-        "id": "library/421648183",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 56,
-        "children": [
-          "function/270423816"
-        ],
-        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spacei0ab2b/web/game_web.dart"
       },
       "439666169": {
         "id": "library/439666169",
@@ -1160,7 +1150,7 @@
         "id": "library/588515828",
         "kind": "library",
         "name": "bot.collection.array_2d",
-        "size": 1050,
+        "size": 1055,
         "children": [
           "class/707091899"
         ],
@@ -1223,6 +1213,16 @@
           "class/745898544"
         ],
         "canonicalUri": "dart:typed_data"
+      },
+      "627090010": {
+        "id": "library/627090010",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 56,
+        "children": [
+          "function/58171881"
+        ],
+        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_space2yntBZ/web/game_web.dart"
       },
       "631335891": {
         "id": "library/631335891",
@@ -1717,7 +1717,7 @@
         "id": "library/979174469",
         "kind": "library",
         "name": "dart.math",
-        "size": 1029,
+        "size": 973,
         "children": [
           "class/124177071",
           "class/180608460",
@@ -5715,7 +5715,7 @@
         "id": "class/290460470",
         "kind": "class",
         "name": "ScoreElement",
-        "size": 484,
+        "size": 482,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/74200570",
         "modifiers": {
@@ -7739,7 +7739,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 5726,
+        "size": 5715,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -7748,7 +7748,6 @@
         "children": [
           "field/141529218",
           "field/651516298",
-          "field/897863903",
           "field/944819271",
           "function/233093575",
           "function/262976543",
@@ -8578,7 +8577,7 @@
         "id": "class/510589568",
         "kind": "class",
         "name": "Point",
-        "size": 612,
+        "size": 556,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/979174469",
         "modifiers": {
@@ -11027,7 +11026,7 @@
         "id": "class/707091899",
         "kind": "class",
         "name": "Array2d",
-        "size": 1038,
+        "size": 1043,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/588515828",
         "modifiers": {
@@ -17379,7 +17378,7 @@
         "id": "function/17530218",
         "kind": "function",
         "name": "getAdjacentIndices",
-        "size": 211,
+        "size": 205,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/707091899",
         "children": [],
@@ -17405,7 +17404,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "V5:function(a,b){var z,y,x,w,v,u,t,s\nz=H.VM([],[P.J])\nfor(y=Math.max(0,b-1),x=Math.min(this.b,b+2),w=this.a;y<x;++y)for(v=Math.max(0,a-1),u=Math.min(w,a+2),t=y!==b,s=y*w;v<u;++v)if(v!==a||t)z.push(v+s)\nreturn z}\n",
+        "code": "V5:function(a,b){var z,y,x,w,v,u,t\nz=H.VM([],[P.J])\nfor(y=Math.max(0,b-1),x=Math.min(this.b,b+2),w=this.a;y<x;++y)for(v=Math.max(0,a-1),u=Math.min(w,a+2),t=y!==b;v<u;++v)if(v!==a||t)z.push(v+y*w)\nreturn z}\n",
         "type": "(int, int) -> List<int>",
         "measurements": null
       },
@@ -19694,6 +19693,29 @@
         "inlinedCount": 0,
         "code": "Ys:function(a,b,c){var z\nif(c>a.length)throw H.b(P.TE(c,0,a.length,null,null))\nz=c+b.length\nif(z>a.length)return!1\nreturn b===a.substring(c,z)}\nnC:function(a,b){return this.Ys(a,b,0)}\n",
         "type": "(Pattern, [int]) -> bool",
+        "measurements": null
+      },
+      "58171881": {
+        "id": "function/58171881",
+        "kind": "function",
+        "name": "main",
+        "size": 46,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/627090010",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
+        "type": "() -> dynamic",
         "measurements": null
       },
       "58194360": {
@@ -23032,7 +23054,7 @@
         "inferredReturnType": "[exact=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 20,
+        "inlinedCount": 19,
         "code": null,
         "type": "() -> dynamic",
         "measurements": null
@@ -31452,29 +31474,6 @@
         "inlinedCount": 12,
         "code": null,
         "type": "(DisplayObjectParent) -> void",
-        "measurements": null
-      },
-      "270423816": {
-        "id": "function/270423816",
-        "kind": "function",
-        "name": "main",
-        "size": 46,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/421648183",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
-        "type": "() -> dynamic",
         "measurements": null
       },
       "270787137": {
@@ -44758,7 +44757,7 @@
         "inferredReturnType": "[exact=Es6LinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 18,
+        "inlinedCount": 17,
         "code": null,
         "type": "() -> dynamic",
         "measurements": null
@@ -48847,7 +48846,7 @@
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads static; writes nothing)",
-        "inlinedCount": 17,
+        "inlinedCount": 16,
         "code": "YR:function(a,b){return new H.u(0,null,null,null,null,null,0,[a,b])}\n",
         "type": "() -> JsLinkedHashMap<JsLinkedHashMap.K, JsLinkedHashMap.V>",
         "measurements": null
@@ -55599,7 +55598,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 18,
+        "inlinedCount": 17,
         "code": null,
         "type": "() -> bool",
         "measurements": null
@@ -55865,7 +55864,7 @@
         "id": "function/692799421",
         "kind": "function",
         "name": "advanceTime",
-        "size": 300,
+        "size": 298,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/290460470",
         "children": [],
@@ -55886,7 +55885,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gz:function(a){var z,y\nz=H.Go(this.fy,\"$isYt\").Qt.e\nif(z.gzo(z)==null)y=\"0\"\nelse{z=H.Go(this.fy,\"$isYt\").Qt.e\ny=C.ON.nv(C.jn.W(z.gzo(z).a,1000)/1000,1)}this.sa4(0,\"Bombs Left: \"+H.Go(this.fy,\"$isYt\").Qt.e.f+\"\\nTime: \"+y)\nz=this.rT\nif(z>0)this.sa4(0,this.e1+(\"\\nRecord: \"+C.ON.nv(z/1000,1)))\nreturn!0}\n",
+        "code": "Gz:function(a){var z,y\nz=H.Go(this.fy,\"$isYt\").Qt.e\nif(z.gzo(z)==null)y=\"0\"\nelse{z=H.Go(this.fy,\"$isYt\").Qt.e\ny=C.ON.nv(C.jn.W(z.gzo(z).a,1000)/1000,1)}this.sa4(0,\"Bombs Left: \"+H.Go(this.fy,\"$isYt\").Qt.e.f+\"\\nTime: \"+y)\nz=this.rT\nif(z>0)this.sa4(0,this.e1+\"\\nRecord: \"+C.ON.nv(z/1000,1))\nreturn!0}\n",
         "type": "(num) -> bool",
         "measurements": null
       },
@@ -60475,7 +60474,7 @@
         "id": "function/762202966",
         "kind": "function",
         "name": "Point",
-        "size": 44,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/510589568",
         "children": [],
@@ -60501,7 +60500,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 13,
-        "code": "lu:function(a,b,c){return new P.hL(a,b,[c])}\n",
+        "code": null,
         "type": "(Point.T, Point.T) -> dynamic",
         "measurements": null
       },
@@ -70968,7 +70967,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 1008,
+        "size": 974,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -71004,7 +71003,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var z,y,x,w,v\nz=b.oJ\ny=z.RY(c,0.5)\nx=y.gtV(y)\nx.a.HQ(x,9).d=0\ny.f=new E.XG(b,c)\nE.z6()\ny=$.$get$e1()\nx=y.b\nnew P.u8(x,[H.Kp(x,0)]).yI(new E.S5())\nw=y.gtL(y)\nv=C.CD.yu(w*w*0.15625)\nif($.pL!=null)H.Vj(new P.lj(\"already initialized\"))\n$.pL=a\ny=P.qU\ny=new B.Yy(b,a,P.Fl(Z.cw,P.J),null,w,w,v,new R.HB(new P.q1(null,0,null,null,null,null,null,[null]),new H.u(0,null,null,null,null,null,0,[y,y])),null,null,null,null)\ny.p8()\nH.Go(a.n9(\"TextureAtlas\",\"opaque\"),\"$isUN\")\nH.Go(a.n9(\"TextureAtlas\",\"static\"),\"$isUN\")\nx=R.kZ(y)\nx.sVR(0,0)\ny.ch=x\nb.bS(x)\ny=z.RY(y.ch,0.5)\ny=y.gtV(y)\ny.a.HQ(y,9).d=1\nW.JE(window,\"touchmove\",new E.C8(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\ny=J.qF(document.querySelector(\"#popup\"))\nW.JE(y.a,y.b,E.o9(),!1)\ny=$.$get$iN()\ny.toString\nnew P.u8(y,[H.Kp(y,0)]).yI(new E.kN())}\n",
+        "code": "TI:function(a,b,c){var z,y,x,w,v\nz=b.oJ\ny=z.RY(c,0.5)\nx=y.gtV(y)\nx.a.HQ(x,9).d=0\ny.f=new E.XG(b,c)\nE.z6()\ny=$.$get$e1()\nx=y.b\nnew P.u8(x,[H.Kp(x,0)]).yI(new E.S5())\nw=y.gtL(y)\nv=C.CD.yu(w*w*0.15625)\nif($.pL!=null)H.Vj(new P.lj(\"already initialized\"))\n$.pL=a\ny=P.qU\ny=new B.Yy(b,a,P.Fl(Z.cw,P.J),null,w,w,v,new R.HB(new P.q1(null,0,null,null,null,null,null,[null]),P.Fl(y,y)),null,null,null,null)\ny.p8()\nH.Go(a.n9(\"TextureAtlas\",\"opaque\"),\"$isUN\")\nH.Go(a.n9(\"TextureAtlas\",\"static\"),\"$isUN\")\nx=R.kZ(y)\nx.sVR(0,0)\ny.ch=x\nb.bS(x)\ny=z.RY(y.ch,0.5)\ny=y.gtV(y)\ny.a.HQ(y,9).d=1\nW.JE(window,\"touchmove\",new E.C8(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\ny=J.qF(document.querySelector(\"#popup\"))\nW.JE(y.a,y.b,E.o9(),!1)\ny=$.$get$iN()\ny.toString\nnew P.u8(y,[H.Kp(y,0)]).yI(new E.kN())}\n",
         "type": "(ResourceManager, Stage, Sprite) -> void",
         "measurements": null
       },
@@ -79281,18 +79280,6 @@
         "code": null,
         "type": "WebAudioApiMixer"
       },
-      "897863903": {
-        "id": "field/897863903",
-        "kind": "field",
-        "name": "_backgroundSize",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/435993532",
-        "children": [],
-        "inferredType": "[null|exact=Point]",
-        "code": null,
-        "type": "dynamic"
-      },
       "929290482": {
         "id": "field/929290482",
         "kind": "field",
@@ -81629,16 +81616,6 @@
       }
     ],
     "field/799184287": [
-      {
-        "id": "function/788412943",
-        "mask": "null"
-      }
-    ],
-    "field/897863903": [
-      {
-        "id": "function/762202966",
-        "mask": "null"
-      },
       {
         "id": "function/788412943",
         "mask": "null"
@@ -84105,6 +84082,12 @@
       },
       {
         "id": "function/427434111",
+        "mask": "null"
+      }
+    ],
+    "function/58171881": [
+      {
+        "id": "function/14078432",
         "mask": "null"
       }
     ],
@@ -93510,12 +93493,6 @@
         "mask": "null"
       }
     ],
-    "function/270423816": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/270787137": [
       {
         "id": "function/617325576",
@@ -100821,10 +100798,6 @@
       }
     ],
     "function/437424329": [
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
       {
         "id": "function/858739159",
         "mask": "inlined"
@@ -115411,7 +115384,7 @@
       },
       {
         "id": "function/734152549",
-        "mask": "[subclass=JsLinkedHashMap]"
+        "mask": "Map([subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|exact=JSString])"
       },
       {
         "id": "function/920256762",
@@ -116207,11 +116180,11 @@
       },
       {
         "id": "function/603180942",
-        "mask": "[subclass=JsLinkedHashMap]"
+        "mask": "Map([subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|exact=JSString])"
       },
       {
         "id": "function/665416673",
-        "mask": "[subclass=JsLinkedHashMap]"
+        "mask": "Map([subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|exact=JSString])"
       },
       {
         "id": "function/698629541",
@@ -116227,7 +116200,7 @@
       },
       {
         "id": "function/820195095",
-        "mask": "[subclass=JsLinkedHashMap]"
+        "mask": "Map([subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|exact=JSString])"
       },
       {
         "id": "function/880396435",
@@ -116958,10 +116931,6 @@
         "mask": "null"
       },
       {
-        "id": "function/123959555",
-        "mask": "null"
-      },
-      {
         "id": "function/15283215",
         "mask": "null"
       },
@@ -117074,19 +117043,11 @@
         "mask": "null"
       },
       {
-        "id": "function/494583530",
-        "mask": "null"
-      },
-      {
         "id": "function/55764546",
         "mask": "null"
       },
       {
         "id": "function/568778369",
-        "mask": "null"
-      },
-      {
-        "id": "function/573775196",
         "mask": "null"
       },
       {
@@ -117111,10 +117072,6 @@
       },
       {
         "id": "function/660696668",
-        "mask": "null"
-      },
-      {
-        "id": "function/687991937",
         "mask": "null"
       },
       {
@@ -121899,7 +121856,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 263998,
+      "size": 263846,
       "imports": []
     }
   ],
@@ -121907,12 +121864,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/270423816",
-    "size": 263998,
+    "entrypoint": "function/58171881",
+    "size": 263846,
     "dart2jsVersion": "2.0.0-dev.39.0",
-    "compilationMoment": "2018-03-16 11:00:55.295794",
-    "compilationDuration": 9378186,
-    "toJsonDuration": 48000,
+    "compilationMoment": "2018-03-16 11:02:00.126594",
+    "compilationDuration": 11158332,
+    "toJsonDuration": 50000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
