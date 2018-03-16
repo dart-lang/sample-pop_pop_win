@@ -971,6 +971,16 @@
         ],
         "canonicalUri": "package:stagexl/src/engine.dart"
       },
+      "421648183": {
+        "id": "library/421648183",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 56,
+        "children": [
+          "function/270423816"
+        ],
+        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spacei0ab2b/web/game_web.dart"
+      },
       "439666169": {
         "id": "library/439666169",
         "kind": "library",
@@ -1214,16 +1224,6 @@
         ],
         "canonicalUri": "dart:typed_data"
       },
-      "622959780": {
-        "id": "library/622959780",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 56,
-        "children": [
-          "function/8517005"
-        ],
-        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceFCwkSo/web/game_web.dart"
-      },
       "631335891": {
         "id": "library/631335891",
         "kind": "library",
@@ -1381,7 +1381,6 @@
           "class/224053384",
           "class/405537822",
           "class/476286669",
-          "class/591860850",
           "class/594605500",
           "class/607623563",
           "class/614050497",
@@ -9600,20 +9599,6 @@
         },
         "children": []
       },
-      "591860850": {
-        "id": "class/591860850",
-        "kind": "class",
-        "name": "Maps",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/754126564",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": [
-          "function/643002706"
-        ]
-      },
       "593368024": {
         "id": "class/593368024",
         "kind": "class",
@@ -16770,29 +16755,6 @@
         "inlinedCount": 4,
         "code": null,
         "type": "(num) -> double",
-        "measurements": null
-      },
-      "8517005": {
-        "id": "function/8517005",
-        "kind": "function",
-        "name": "main",
-        "size": 46,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/622959780",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
-        "type": "() -> dynamic",
         "measurements": null
       },
       "9680854": {
@@ -31490,6 +31452,29 @@
         "inlinedCount": 12,
         "code": null,
         "type": "(DisplayObjectParent) -> void",
+        "measurements": null
+      },
+      "270423816": {
+        "id": "function/270423816",
+        "kind": "function",
+        "name": "main",
+        "size": 46,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/421648183",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "Iq:[function(){return E.AQ()},\"$0\",\"Vd\",0,0,1]\n",
+        "type": "() -> dynamic",
         "measurements": null
       },
       "270787137": {
@@ -52400,35 +52385,6 @@
         "inlinedCount": 1,
         "code": null,
         "type": "() -> bool",
-        "measurements": null
-      },
-      "643002706": {
-        "id": "function/643002706",
-        "kind": "function",
-        "name": "mapToString",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/591860850",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "String",
-        "inferredReturnType": "[exact=JSString]",
-        "parameters": [
-          {
-            "name": "m",
-            "type": "[subclass=JsLinkedHashMap]",
-            "declaredType": "Map"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": null,
-        "type": "(Map) -> String",
         "measurements": null
       },
       "643647076": {
@@ -82134,12 +82090,6 @@
         "mask": "null"
       }
     ],
-    "function/8517005": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/9680854": [
       {
         "id": "function/1000826866",
@@ -93557,6 +93507,12 @@
       },
       {
         "id": "function/792983327",
+        "mask": "null"
+      }
+    ],
+    "function/270423816": [
+      {
+        "id": "function/14078432",
         "mask": "null"
       }
     ],
@@ -120590,14 +120546,6 @@
     ],
     "function/1033661873": [
       {
-        "id": "function/643002706",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/643002706",
-        "mask": "null"
-      },
-      {
         "id": "function/987508329",
         "mask": "null"
       }
@@ -121959,12 +121907,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/8517005",
+    "entrypoint": "function/270423816",
     "size": 263998,
-    "dart2jsVersion": "2.0.0-dev.35.0",
-    "compilationMoment": "2018-03-14 09:46:37.322920",
-    "compilationDuration": 4956302,
-    "toJsonDuration": 63000,
+    "dart2jsVersion": "2.0.0-dev.39.0",
+    "compilationMoment": "2018-03-16 11:00:55.295794",
+    "compilationDuration": 9378186,
+    "toJsonDuration": 48000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
