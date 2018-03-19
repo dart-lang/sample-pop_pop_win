@@ -1,5 +1,3 @@
-library bot.collection.array_2d;
-
 import 'dart:collection';
 import 'dart:math' as math;
 
