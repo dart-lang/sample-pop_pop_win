@@ -98,14 +98,14 @@ packages:
       name: built_collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.5"
+    version: "3.1.1"
   built_value:
     dependency: transitive
     description:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.2.1"
+    version: "5.2.2"
   charcode:
     dependency: transitive
     description:
@@ -357,7 +357,7 @@ packages:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.28.1"
+    version: "0.28.2"
   scratch_space:
     dependency: transitive
     description:
@@ -441,7 +441,7 @@ packages:
       name: stream_transform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.10"
+    version: "0.0.11"
   string_scanner:
     dependency: transitive
     description:
@@ -462,7 +462,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.32+2"
+    version: "0.12.33"
   typed_data:
     dependency: transitive
     description:
