@@ -1184,6 +1184,16 @@
         ],
         "canonicalUri": "dart:_js_names"
       },
+      "530665005": {
+        "id": "library/530665005",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 25,
+        "children": [
+          "function/1054762782"
+        ],
+        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceou72px/web/game_web.dart"
+      },
       "537824867": {
         "id": "library/537824867",
         "kind": "library",
@@ -1356,16 +1366,6 @@
           "function/310700980"
         ],
         "canonicalUri": "package:stagexl/src/events.dart"
-      },
-      "672763466": {
-        "id": "library/672763466",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 25,
-        "children": [
-          "function/37516011"
-        ],
-        "canonicalUri": "file:///private/var/folders/9_/hw8ty6ns5c31y68b55m6v3bw0071_k/T/scratch_spaceSYoMck/web/game_web.dart"
       },
       "686112276": {
         "id": "library/686112276",
@@ -19638,29 +19638,6 @@
         "inlinedCount": 0,
         "code": "n9:function(a,b){var z,y\nz=this.a.q(0,a+\".\"+b)\nif(z==null)throw H.b(P.PV(\"Resource '\"+b+\"' does not exist.\"))\nelse{y=J.RE(z)\nif(y.gnw(z)!=null)return y.gnw(z)\nelse if(y.gkc(z)!=null)throw H.b(y.gkc(z))\nelse throw H.b(P.PV(\"Resource '\"+b+\"' has not finished loading yet.\"))}}\n",
         "type": "dynamic Function(String,String)",
-        "measurements": null
-      },
-      "37516011": {
-        "id": "function/37516011",
-        "kind": "function",
-        "name": "main",
-        "size": 25,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/672763466",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.AQ()}\n",
-        "type": "dynamic Function()",
         "measurements": null
       },
       "37896180": {
@@ -78093,6 +78070,29 @@
         "type": "int Function()",
         "measurements": null
       },
+      "1054762782": {
+        "id": "function/1054762782",
+        "kind": "function",
+        "name": "main",
+        "size": 25,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/530665005",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.AQ()}\n",
+        "type": "dynamic Function()",
+        "measurements": null
+      },
       "1055095230": {
         "id": "function/1055095230",
         "kind": "function",
@@ -83971,12 +83971,6 @@
       {
         "id": "function/678861550",
         "mask": "[subclass=Object]"
-      }
-    ],
-    "function/37516011": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
       }
     ],
     "function/39412415": [
@@ -120969,6 +120963,12 @@
         "mask": "[null|subclass=JSNumber]"
       }
     ],
+    "function/1054762782": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/1055840448": [
       {
         "id": "function/584893544",
@@ -121486,12 +121486,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/37516011",
+    "entrypoint": "function/1054762782",
     "size": 330265,
     "dart2jsVersion": "2.0.0-dev.42.0",
-    "compilationMoment": "2018-03-23 16:08:48.031132",
-    "compilationDuration": 4158424,
-    "toJsonDuration": 44000,
+    "compilationMoment": "2018-03-27 08:19:20.300783",
+    "compilationDuration": 4739573,
+    "toJsonDuration": 46000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
