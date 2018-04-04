@@ -762,13 +762,6 @@ t=H.oX(a)
 s=J.v(a)
 if(s[b]==null)return!1
 return H.qj(H.Y9(s[d],t),c)},
-Cv:function(a,b,c,d){var t,s
-if(a==null)return a
-t=H.e7(a,b,c,d)
-if(t)return a
-t=b.substring(3)
-s=H.oa(c,0,null)
-throw H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(t+s,u.mangledGlobalNames)))},
 qj:function(a,b){var t,s
 if(a==null||b==null)return!0
 t=a.length
@@ -3446,28 +3439,27 @@ t=3
 return P.jQ(W.Kn(a,null,null),$async$Yw)
 case 3:o=c.kV(0,a1)
 n=J.U6(o)
-m=P.qU
-l=H.Cv(n.q(o,"urls"),"$isz",[m],"$asz")
-k=n.q(o,"sprite")
-j=H.VM([],[m])
-n=J.v(k)
-if(!!n.$isZ0)for(m=J.IT(n.gK(k));m.VF();){i=m.gR(m)
-h=H.ug(n.q(k,i))
+m=H.ug(n.q(o,"urls"))
+l=n.q(o,"sprite")
+k=H.VM([],[P.qU])
+n=J.v(l)
+if(!!n.$isZ0)for(j=J.IT(n.gK(l));j.VF();){i=j.gR(j)
+h=H.ug(n.q(l,i))
 g=J.U6(h)
 f=V.VC(g.q(h,0))
 e=V.VC(g.q(h,1))
-q.push(new O.en(p,i,f,e,V.wJ(g.gA(h)>2&&g.q(h,2))))}C.Nm.Ay(j,J.iu(l,new O.Hi(a)))
+q.push(new O.en(p,i,f,e,V.wJ(g.gA(h)>2&&g.q(h,2))))}C.Nm.Ay(k,J.iu(m,new O.Hi(a)))
 q=$.$get$t3()
 d=new E.ye(!0,!0,!0,!1,!0,!0,null,!0,!1,null)
-l=q.r
+m=q.r
 d.z=q.z
-if(l==null)q=null
-else q=H.VM(l.slice(0),[H.Kp(l,0)])
+if(m==null)q=null
+else q=H.VM(m.slice(0),[H.Kp(m,0)])
 d.r=q
-d.r=H.j5(j,1,null,H.Kp(j,0)).br(0)
+d.r=H.j5(k,1,null,H.Kp(k,0)).br(0)
 c=p
 t=4
-return P.jQ(E.Kk(j[0],d),$async$Yw)
+return P.jQ(E.Kk(k[0],d),$async$Yw)
 case 4:c.b=a1
 r=p
 t=1
@@ -10319,7 +10311,7 @@ if(t==null)throw H.b(P.q("SoundSpriteSegment not found: '"+a+"'"))
 else return t}}
 O.Hi.prototype={
 $1:function(a){return V.FV(this.a,a)},
-$S:function(){return{func:1,args:[P.qU]}}}
+$S:function(){return{func:1,args:[,]}}}
 O.EQ.prototype={
 $1:function(a){return J.Ay(a)===this.a},
 $S:function(){return{func:1,args:[,]}}}

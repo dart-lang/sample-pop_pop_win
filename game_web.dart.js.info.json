@@ -665,6 +665,16 @@
         ],
         "canonicalUri": "dart:html"
       },
+      "128767254": {
+        "id": "library/128767254",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 25,
+        "children": [
+          "function/75713740"
+        ],
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacevZTPqw/web/game_web.dart"
+      },
       "152998570": {
         "id": "library/152998570",
         "kind": "library",
@@ -892,16 +902,6 @@
           "function/681386379"
         ],
         "canonicalUri": "package:stagexl/src/internal/environment.dart"
-      },
-      "307199300": {
-        "id": "library/307199300",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 25,
-        "children": [
-          "function/878302749"
-        ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceyH1KrU/web/game_web.dart"
       },
       "313287501": {
         "id": "library/313287501",
@@ -1230,7 +1230,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 7562,
+        "size": 7537,
         "children": [
           "class/192166",
           "class/14460442",
@@ -1607,7 +1607,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 28643,
+        "size": 28415,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1653,7 +1653,6 @@
           "function/108053021",
           "function/109394176",
           "function/122459214",
-          "function/126109279",
           "function/136972596",
           "function/163889622",
           "function/172520147",
@@ -1725,7 +1724,6 @@
           "function/668300184",
           "function/679532174",
           "function/689069465",
-          "function/691150797",
           "function/708419578",
           "function/710092165",
           "function/712948390",
@@ -1744,7 +1742,6 @@
           "function/755649197",
           "function/756575134",
           "function/764768055",
-          "function/768480442",
           "function/768861350",
           "function/788412943",
           "function/798288240",
@@ -16614,7 +16611,7 @@
         "id": "class/1029103814",
         "kind": "class",
         "name": "SoundSprite",
-        "size": 431,
+        "size": 428,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -21704,6 +21701,29 @@
         "type": "num Function()",
         "measurements": null
       },
+      "75713740": {
+        "id": "function/75713740",
+        "kind": "function",
+        "name": "main",
+        "size": 25,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/128767254",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.AQ()}\n",
+        "type": "dynamic Function()",
+        "measurements": null
+      },
       "77168805": {
         "id": "function/77168805",
         "kind": "function",
@@ -24324,50 +24344,6 @@
         "inlinedCount": 1,
         "code": null,
         "type": "Float32List Function(ByteBuffer,[int,int])",
-        "measurements": null
-      },
-      "126109279": {
-        "id": "function/126109279",
-        "kind": "function",
-        "name": "subtypeCast",
-        "size": 228,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "Object",
-        "inferredReturnType": "[null|subclass=Object]",
-        "parameters": [
-          {
-            "name": "object",
-            "type": "[null|subclass=Object]",
-            "declaredType": "Object"
-          },
-          {
-            "name": "isField",
-            "type": "[null|exact=JSString]",
-            "declaredType": "String"
-          },
-          {
-            "name": "checks",
-            "type": "[null|subtype=List]",
-            "declaredType": "List<dynamic>"
-          },
-          {
-            "name": "asField",
-            "type": "[null|exact=JSString]",
-            "declaredType": "String"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(a,b,c,d){var z,y\nif(a==null)return a\nz=H.e7(a,b,c,d)\nif(z)return a\nz=b.substring(3)\ny=H.oa(c,0,null)\nthrow H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(z+y,init.mangledGlobalNames)))}\n",
-        "type": "Object Function(Object,String,List<dynamic>,String)",
         "measurements": null
       },
       "126240345": {
@@ -32026,7 +32002,7 @@
         "id": "function/259316864",
         "kind": "function",
         "name": "load",
-        "size": 973,
+        "size": 948,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1029103814",
         "children": [
@@ -32054,7 +32030,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b){var z=0,y=P.Bg(),x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i\nvar $async$Yw=P.lz(function(c,d){if(c===1)return P.f3(d,y)\nwhile(true)switch(z){case 0:w=H.VM([],[O.en])\nv=new O.lN(w,null)\ni=C.xr\nz=3\nreturn P.jQ(W.Kn(a,null,null),$async$Yw)\ncase 3:u=i.kV(0,d)\nt=J.U6(u)\ns=P.qU\nr=H.Cv(t.q(u,\"urls\"),\"$isz\",[s],\"$asz\")\nq=t.q(u,\"sprite\")\np=H.VM([],[s])\nt=J.v(q)\nif(!!t.$isZ0)for(s=J.IT(t.gK(q));s.VF();){o=s.gR(s)\nn=H.ug(t.q(q,o))\nm=J.U6(n)\nl=V.VC(m.q(n,0))\nk=V.VC(m.q(n,1))\nw.push(new O.en(v,o,l,k,V.wJ(m.gA(n)>2&&m.q(n,2))))}C.Nm.Ay(p,J.iu(r,new O.Hi(a)))\nw=$.$get$t3()\nj=new E.ye(!0,!0,!0,!1,!0,!0,null,!0,!1,null)\nr=w.r\nj.z=w.z\nif(r==null)w=null\nelse w=H.VM(r.slice(0),[H.Kp(r,0)])\nj.r=w\nj.r=H.j5(p,1,null,H.Kp(p,0)).br(0)\ni=v\nz=4\nreturn P.jQ(E.Kk(p[0],j),$async$Yw)\ncase 4:i.b=d\nx=v\nz=1\nbreak\ncase 1:return P.yC(x,y)}})\nreturn P.IN($async$Yw,y)}\n",
+        "code": "function(a,b){var z=0,y=P.Bg(),x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i\nvar $async$Yw=P.lz(function(c,d){if(c===1)return P.f3(d,y)\nwhile(true)switch(z){case 0:w=H.VM([],[O.en])\nv=new O.lN(w,null)\ni=C.xr\nz=3\nreturn P.jQ(W.Kn(a,null,null),$async$Yw)\ncase 3:u=i.kV(0,d)\nt=J.U6(u)\ns=H.ug(t.q(u,\"urls\"))\nr=t.q(u,\"sprite\")\nq=H.VM([],[P.qU])\nt=J.v(r)\nif(!!t.$isZ0)for(p=J.IT(t.gK(r));p.VF();){o=p.gR(p)\nn=H.ug(t.q(r,o))\nm=J.U6(n)\nl=V.VC(m.q(n,0))\nk=V.VC(m.q(n,1))\nw.push(new O.en(v,o,l,k,V.wJ(m.gA(n)>2&&m.q(n,2))))}C.Nm.Ay(q,J.iu(s,new O.Hi(a)))\nw=$.$get$t3()\nj=new E.ye(!0,!0,!0,!1,!0,!0,null,!0,!1,null)\ns=w.r\nj.z=w.z\nif(s==null)w=null\nelse w=H.VM(s.slice(0),[H.Kp(s,0)])\nj.r=w\nj.r=H.j5(q,1,null,H.Kp(q,0)).br(0)\ni=v\nz=4\nreturn P.jQ(E.Kk(q[0],j),$async$Yw)\ncase 4:i.b=d\nx=v\nz=1\nbreak\ncase 1:return P.yC(x,y)}})\nreturn P.IN($async$Yw,y)}\n",
         "type": "Future<SoundSprite> Function(String,[SoundLoadOptions])",
         "measurements": null
       },
@@ -46718,7 +46694,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": null,
         "type": "String Function(String)",
         "measurements": null
@@ -49579,7 +49555,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 5,
+        "inlinedCount": 4,
         "code": null,
         "type": "bool Function(Object,String,List<dynamic>,String)",
         "measurements": null
@@ -57017,35 +56993,6 @@
         "type": "void Function()",
         "measurements": null
       },
-      "691150797": {
-        "id": "function/691150797",
-        "kind": "function",
-        "name": "isCheckPropertyToJsConstructorName",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "String",
-        "inferredReturnType": "[exact=JSString]",
-        "parameters": [
-          {
-            "name": "isCheckProperty",
-            "type": "[null|exact=JSString]",
-            "declaredType": "String"
-          }
-        ],
-        "sideEffects": "SideEffects(reads static; writes nothing)",
-        "inlinedCount": 1,
-        "code": null,
-        "type": "String Function(String)",
-        "measurements": null
-      },
       "691212419": {
         "id": "function/691212419",
         "kind": "function",
@@ -59331,14 +59278,14 @@
         "parameters": [
           {
             "name": "u",
-            "type": "[null|exact=JSString]",
-            "declaredType": "String"
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){return V.FV(this.a,a)}\n",
-        "type": "dynamic Function(String)",
+        "type": "dynamic Function(dynamic)",
         "measurements": null
       },
       "727629131": {
@@ -61069,7 +61016,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 1,
         "code": null,
         "type": "String Function(dynamic,int)",
         "measurements": null
@@ -62205,40 +62152,6 @@
         "inlinedCount": 0,
         "code": "$0:function(){var z=this.a\nz.f.aM(0,z)}\n",
         "type": "dynamic Function()",
-        "measurements": null
-      },
-      "768480442": {
-        "id": "function/768480442",
-        "kind": "function",
-        "name": "computeTypeName",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/966364039",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "String",
-        "inferredReturnType": "[exact=JSString]",
-        "parameters": [
-          {
-            "name": "isField",
-            "type": "[null|exact=JSString]",
-            "declaredType": "String"
-          },
-          {
-            "name": "arguments",
-            "type": "[null|subtype=List]",
-            "declaredType": "List<dynamic>"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": null,
-        "type": "String Function(String,List<dynamic>)",
         "measurements": null
       },
       "768861350": {
@@ -68043,29 +67956,6 @@
         "type": "Future<_Future.T> Function(Function,{bool Function(dynamic) test})",
         "measurements": null
       },
-      "878302749": {
-        "id": "function/878302749",
-        "kind": "function",
-        "name": "main",
-        "size": 25,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/307199300",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.AQ()}\n",
-        "type": "dynamic Function()",
-        "measurements": null
-      },
       "878499322": {
         "id": "function/878499322",
         "kind": "function",
@@ -68974,7 +68864,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 1,
         "code": null,
         "type": "String Function(String,List<dynamic>)",
         "measurements": null
@@ -81554,7 +81444,7 @@
         "id": "closure/917019879",
         "kind": "closure",
         "name": "SoundSprite_load_closure",
-        "size": 122,
+        "size": 119,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/259316864",
         "function": "function/727262764"
@@ -85186,6 +85076,12 @@
         "mask": "inlined"
       }
     ],
+    "function/75713740": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/77168805": [
       {
         "id": "function/919454713",
@@ -87216,56 +87112,6 @@
       {
         "id": "function/154492436",
         "mask": "inlined"
-      }
-    ],
-    "function/126109279": [
-      {
-        "id": "function/163889622",
-        "mask": "null"
-      },
-      {
-        "id": "function/501712645",
-        "mask": "null"
-      },
-      {
-        "id": "function/508874693",
-        "mask": "null"
-      },
-      {
-        "id": "function/560797298",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/560797298",
-        "mask": "null"
-      },
-      {
-        "id": "function/691150797",
-        "mask": "null"
-      },
-      {
-        "id": "function/751200407",
-        "mask": "null"
-      },
-      {
-        "id": "function/768480442",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/768480442",
-        "mask": "null"
-      },
-      {
-        "id": "function/792983327",
-        "mask": "null"
-      },
-      {
-        "id": "function/890739228",
-        "mask": "null"
-      },
-      {
-        "id": "function/967508646",
-        "mask": "null"
       }
     ],
     "function/126827845": [
@@ -92700,10 +92546,6 @@
       {
         "id": "function/122097752",
         "mask": "[subtype=Map]"
-      },
-      {
-        "id": "function/126109279",
-        "mask": "null"
       },
       {
         "id": "function/127923807",
@@ -111570,16 +111412,6 @@
         "mask": "null"
       }
     ],
-    "function/768480442": [
-      {
-        "id": "function/691150797",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/890739228",
-        "mask": "inlined"
-      }
-    ],
     "function/769070936": [
       {
         "id": "function/120716174",
@@ -114369,12 +114201,6 @@
       },
       {
         "id": "function/94108092",
-        "mask": "null"
-      }
-    ],
-    "function/878302749": [
-      {
-        "id": "function/14078432",
         "mask": "null"
       }
     ],
@@ -121857,7 +121683,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 330852,
+      "size": 330594,
       "imports": []
     }
   ],
@@ -121865,12 +121691,12 @@
   "deferredFiles": {},
   "dump_minor_version": "0",
   "program": {
-    "entrypoint": "function/878302749",
-    "size": 330852,
+    "entrypoint": "function/75713740",
+    "size": 330594,
     "dart2jsVersion": "2.0.0-dev.44.0",
-    "compilationMoment": "2018-04-04 10:57:59.833686",
-    "compilationDuration": 4445681,
-    "toJsonDuration": 57000,
+    "compilationMoment": "2018-04-04 10:58:56.387982",
+    "compilationDuration": 4897989,
+    "toJsonDuration": 60000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "minified": true
