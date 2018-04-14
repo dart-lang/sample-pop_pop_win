@@ -29,7 +29,7 @@ class PlatformWeb {
     _sizeAccessed = true;
     var hash = (_urlHash == null) ? '7' : _urlHash;
     hash = hash.replaceAll('#', '');
-    return int.parse(hash, onError: (e) => 7);
+    return int.tryParse(hash) ?? 7;
   }
 
   bool get showAbout => _urlHash == _aboutHash;
