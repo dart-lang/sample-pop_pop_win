@@ -4,5 +4,3 @@
 
 export 'game/field.dart';
 export 'game/game_core.dart';
-export 'game/game_state.dart';
-export 'game/square_state.dart';

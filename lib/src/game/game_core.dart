@@ -8,8 +8,10 @@ import 'dart:math';
 import '../array_2d.dart';
 import '../util.dart';
 import 'field.dart';
-import 'game_state.dart';
-import 'square_state.dart';
+
+enum SquareState { hidden, revealed, flagged, bomb, safe }
+
+enum GameState { reset, started, won, lost }
 
 class Game {
   final Field field;
