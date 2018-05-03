@@ -28,14 +28,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.6"
-  barback:
-    dependency: transitive
-    description:
-      name: barback
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.15.2+16"
+    version: "2.0.7"
   bazel_worker:
     dependency: transitive
     description:
@@ -91,7 +84,7 @@ packages:
       name: build_web_compilers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.8"
+    version: "0.4.0"
   built_collection:
     dependency: transitive
     description:
@@ -105,7 +98,7 @@ packages:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.4.3"
+    version: "5.4.4"
   charcode:
     dependency: transitive
     description:
@@ -147,7 +140,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2+1"
+    version: "2.0.3"
   csslib:
     dependency: transitive
     description:
@@ -266,14 +259,14 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.2"
+    version: "0.12.2+1"
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.2"
+    version: "1.1.5"
   mime:
     dependency: transitive
     description:
@@ -371,7 +364,7 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.2"
+    version: "0.7.3"
   shelf_packages_handler:
     dependency: transitive
     description:
@@ -462,7 +455,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.36"
+    version: "0.12.37"
   typed_data:
     dependency: transitive
     description:
@@ -506,4 +499,4 @@ packages:
     source: hosted
     version: "2.1.13"
 sdks:
-  dart: ">=2.0.0-dev.50 <=2.0.0-dev.52.0"
+  dart: ">=2.0.0-dev.52.0 <=2.0.0-dev.54.0"
