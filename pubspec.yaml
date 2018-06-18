@@ -8,6 +8,6 @@ dependencies:
   js: ^0.6.1
   stagexl: ^1.0.0
 dev_dependencies:
-  test: ^0.12.0
+  test: ^1.0.0
   build_runner: ^0.8.2
   build_web_compilers: ^0.4.0
