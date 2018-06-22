@@ -17,4 +17,4 @@ targets:
             - --no-source-maps
             - --show-package-warnings
             - --trust-primitives
-            - --trust-type-annotations
+            - --omit-implicit-checks

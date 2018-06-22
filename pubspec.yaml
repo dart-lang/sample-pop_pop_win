@@ -6,8 +6,8 @@ environment:
   sdk: '>=2.0.0-dev.48.0 <2.0.0'
 dependencies:
   js: ^0.6.1
-  stagexl: ^1.0.0
+  stagexl: ^1.4.0-dev
 dev_dependencies:
   test: ^1.0.0
-  build_runner: ^0.8.2
+  build_runner: ^0.8.10
   build_web_compilers: ^0.4.0
