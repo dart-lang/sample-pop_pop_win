@@ -1593,15 +1593,15 @@
         ],
         "canonicalUri": "package:stagexl/src/internal/audio_loader.dart"
       },
-      "925648793": {
-        "id": "library/925648793",
+      "961242366": {
+        "id": "library/961242366",
         "kind": "library",
         "name": "<unnamed>",
         "size": 24,
         "children": [
-          "function/904365684"
+          "function/540500618"
         ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceVtbq0b/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceIryd0z/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1858,7 +1858,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20856,
+        "size": 20838,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -19119,7 +19119,7 @@
         "id": "class/1040168844",
         "kind": "class",
         "name": "_StreamIterator",
-        "size": 76,
+        "size": 64,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -20508,7 +20508,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "HH:function(a){var z,y,x\nz=this.$ti\ny=H.Lr(a,\"$isb8\",z,\"$asb8\")\nif(y){z=H.Lr(a,\"$isvs\",z,null)\nif(z)P.A9(a,this)\nelse P.k3(a,this)}else{x=this.ah()\nthis.a=4\nthis.c=a\nP.HZ(this,x)}}\n",
-        "type": "void Function(FutureOr<_Future.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "16299308": {
@@ -21247,7 +21247,7 @@
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": null,
-        "type": "Element Function(Element)",
+        "type": "Element Function(Object)",
         "measurements": null
       },
       "33077563": {
@@ -21765,7 +21765,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "c1:function(a){var z,y\nif(a.fy!==this)throw H.b(P.xY(\"The supplied DisplayObject must be a child of the caller.\"))\nelse{z=this.L\ny=C.Nm.OY(z,a)\nthis.ZK(a)\nC.Nm.W4(z,y)}}\n",
-        "type": "void Function(DisplayObject)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "47070963": {
@@ -24123,7 +24123,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": null,
-        "type": "void Function(_EventDispatch<_StreamImplEvents.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "92331580": {
@@ -24331,7 +24331,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "X2:function(a){var z=this.ah()\nthis.a=4\nthis.c=a\nP.HZ(this,z)}\n",
-        "type": "void Function(_Future.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "97062567": {
@@ -24485,7 +24485,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "aM:function(a,b){var z=this.a\nif(z.a!==0)throw H.b(P.PV(\"Future already completed\"))\nz.HH(b)}\ntZ:function(a){return this.aM(a,null)}\n",
-        "type": "void Function([FutureOr<_SyncCompleter.T>])",
+        "type": "void Function([Object])",
         "measurements": null
       },
       "102471615": {
@@ -24514,7 +24514,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "aM:function(a,b){var z=this.a\nif(z.a!==0)throw H.b(P.PV(\"Future already completed\"))\nz.Ds(b)}\ntZ:function(a){return this.aM(a,null)}\n",
-        "type": "void Function([FutureOr<_AsyncCompleter.T>])",
+        "type": "void Function([Object])",
         "measurements": null
       },
       "103122920": {
@@ -24595,7 +24595,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "MW:function(a){var z=this.e\nthis.e=(z|32)>>>0\nthis.d.m1(this.a,a)\nthis.e=(this.e&4294967263)>>>0\nthis.Iy((z&4)!==0)}\n",
-        "type": "void Function(_BufferingStreamSubscription.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "105543261": {
@@ -25813,7 +25813,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "rR:function(a){var z,y\nz=null\nif((this.b&8)!==0)z=C.jN.Gv(this.a)\nthis.a=null\nthis.b=this.b&4294967286|2\ny=new P.Bc(this)\nif(z!=null)z=z.wM(y)\nelse y.$0()\nreturn z}\n",
-        "type": "Future<dynamic> Function(StreamSubscription<_StreamController.T>)",
+        "type": "Future<dynamic> Function(Object)",
         "measurements": null
       },
       "129180720": {
@@ -27092,7 +27092,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "FV:function(a,b){var z\nif(!!a.fixed$length)H.vh(P.L4(\"addAll\"))\nfor(z=J.IT(b);z.VF();)a.push(z.gRX(z))}\n",
-        "type": "void Function(Iterable<JSArray.E>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "148863126": {
@@ -28169,7 +28169,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "MW:function(a){this.glI().Ai(0,a)}\n",
-        "type": "void Function(_SyncStreamControllerDispatch.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "170831562": {
@@ -29000,7 +29000,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,TextTrackCue)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "193120176": {
@@ -30804,7 +30804,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "MW:function(a){this.glI().C2(new P.LV(a))}\n",
-        "type": "void Function(_AsyncStreamControllerDispatch.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "227475046": {
@@ -31338,7 +31338,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": null,
-        "type": "void Function(String,String)",
+        "type": "void Function(Object,Object)",
         "measurements": null
       },
       "237319496": {
@@ -33929,7 +33929,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,StyleSheet)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "276933896": {
@@ -33992,7 +33992,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,SourceBuffer)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "277833455": {
@@ -34191,7 +34191,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Ai:function(a,b){var z=this.e\nif((z&8)!==0)return\nif(z<32)this.MW(b)\nelse this.C2(new P.LV(b))}\n",
-        "type": "void Function(_BufferingStreamSubscription.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "284373603": {
@@ -34608,7 +34608,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "iM:function(a,b){var z\nif(typeof b!==\"number\")throw H.b(H.t(b))\nif(a<b)return-1\nelse if(a>b)return 1\nelse if(a===b){if(a===0){z=this.gzP(b)\nif(this.gzP(a)===z)return 0\nif(this.gzP(a))return-1\nreturn 1}return 0}else if(isNaN(a)){if(isNaN(b))return 0\nreturn 1}else return-1}\n",
-        "type": "int Function(num)",
+        "type": "int Function(Object)",
         "measurements": null
       },
       "290250840": {
@@ -34804,7 +34804,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 2,
         "code": null,
-        "type": "dynamic Function(String)",
+        "type": "dynamic Function(Object)",
         "measurements": null
       },
       "292751514": {
@@ -35129,7 +35129,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Qk:function(a,b,c){var z,y,x\nz=a.length\nfor(y=0;y<z;++y){x=a[y]\nif(b.$1(x))return x\nif(a.length!==z)throw H.b(P.a4(a))}throw H.b(H.Wp())}\n",
-        "type": "JSArray.E Function(bool Function(JSArray.E),{JSArray.E Function() orElse})",
+        "type": "JSArray.E Function(bool Function(JSArray.E),{Object orElse})",
         "measurements": null
       },
       "301016432": {
@@ -35325,7 +35325,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,SpeechGrammar)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "303806557": {
@@ -36614,7 +36614,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "cU:function(a){var z=H.Lr(a,\"$isvs\",this.$ti,null)\nif(z){if(a.a===8){this.a=1\nz=this.b\nz.toString\nP.Tk(null,null,z,new P.KF(this,a))}else P.A9(a,this)\nreturn}P.k3(a,this)}\n",
-        "type": "void Function(Future<_Future.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "325639624": {
@@ -36648,7 +36648,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Plugin)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "325903689": {
@@ -37731,7 +37731,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": null,
-        "type": "FutureOr<_FutureListener.T> Function(_FutureListener.S)",
+        "type": "FutureOr<_FutureListener.T> Function(Object)",
         "measurements": null
       },
       "350398314": {
@@ -38048,7 +38048,7 @@
         "id": "function/357627841",
         "kind": "function",
         "name": "StreamIterator",
-        "size": 40,
+        "size": 34,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/240292734",
         "children": [],
@@ -38069,7 +38069,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "function(a,b){return new P.xI(a,!1,[b])}\n",
+        "code": "function(a){return new P.xI(a,!1)}\n",
         "type": "StreamIterator<#A> Function<#A>(Stream<#A>)",
         "measurements": null
       },
@@ -38219,7 +38219,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,File)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "362337880": {
@@ -38396,7 +38396,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "to:function(a,b,c){var z\nif(this.x4(0,b))return this.WH(0,b)\nz=c.$0()\nthis.Y5(0,b,z)\nreturn z}\n",
-        "type": "JsLinkedHashMap.V Function(JsLinkedHashMap.K,JsLinkedHashMap.V Function())",
+        "type": "JsLinkedHashMap.V Function(Object,Object)",
         "measurements": null
       },
       "367201536": {
@@ -38739,7 +38739,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "EB:function(a){if((this.b&8)!==0)C.jN.zd(this.a)\nP.ot(this.e)}\n",
-        "type": "void Function(StreamSubscription<_StreamController.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "371026210": {
@@ -38819,7 +38819,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,SpeechRecognitionResult)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "372037963": {
@@ -39356,7 +39356,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "E9:function(a){if(a==null)return\nthis.r=a\nif(a.c!=null){this.e=(this.e|64)>>>0\na.t2(this)}}\n",
-        "type": "void Function(_PendingEvents<_BufferingStreamSubscription.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "383364052": {
@@ -40434,7 +40434,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": null,
-        "type": "void Function(JsLinkedHashMap.K,JsLinkedHashMap.V)",
+        "type": "void Function(Object,Object)",
         "measurements": null
       },
       "401567756": {
@@ -41171,7 +41171,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "bS:function(a){if(a===this)throw H.b(P.xY(\"An object cannot be added as a child of itself.\"))\nelse if(a.fy===this)this.kW(a)\nelse{a.JZ()\nthis.hu(a)\nthis.L.push(a)\nthis.Kk(a)}}\n",
-        "type": "void Function(DisplayObject)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "419393586": {
@@ -42533,7 +42533,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Map<dynamic,dynamic>)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "442213581": {
@@ -43496,7 +43496,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": null,
-        "type": "void Function(_StreamController.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "463065062": {
@@ -43619,7 +43619,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Transform)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "464290033": {
@@ -44094,7 +44094,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Node)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "470683202": {
@@ -44367,7 +44367,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Number)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "476075947": {
@@ -44508,7 +44508,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){if(!!a.immutable$list)H.vh(P.L4(\"indexed set\"))\nif(typeof b!==\"number\"||Math.floor(b)!==b)throw H.b(H.HY(a,b))\nif(b>=a.length||b<0)throw H.b(H.HY(a,b))\na[b]=c}\n",
-        "type": "void Function(int,JSArray.E)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "476563722": {
@@ -46385,7 +46385,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){H.od(b,a,a.length)\na[b]=c}\n",
-        "type": "void Function(int,double)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "513053773": {
@@ -46831,7 +46831,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,String)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "521621182": {
@@ -47142,7 +47142,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "AN:function(a,b){if(!this.gd9())throw H.b(this.Pq())\nthis.MW(b)}\n",
-        "type": "void Function(_BroadcastStreamController.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "528985088": {
@@ -47485,7 +47485,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "MW:function(a){var z\nfor(z=this.d;z!=null;z=z.dy)z.C2(new P.LV(a))}\n",
-        "type": "void Function(_AsyncBroadcastStreamController.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "535203277": {
@@ -47604,6 +47604,29 @@
         "inlinedCount": 0,
         "code": "gZ2:function(){return\"RangeError\"}\n",
         "type": "String Function()",
+        "measurements": null
+      },
+      "540500618": {
+        "id": "function/540500618",
+        "kind": "function",
+        "name": "main",
+        "size": 24,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/961242366",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.E()}\n",
+        "type": "dynamic Function()",
         "measurements": null
       },
       "540614297": {
@@ -48024,7 +48047,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Touch)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "548734216": {
@@ -48647,7 +48670,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "t2:function(a){var z=this.a\nif(z===1)return\nif(z>=1){this.a=1\nreturn}P.rb(new P.CR(this,a))\nthis.a=1}\n",
-        "type": "void Function(_EventDispatch<_PendingEvents.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "559652014": {
@@ -50082,7 +50105,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Oz:function(a,b){var z,y\nz=new H.db(a,b)\nif(this.e==null){this.f=z\nthis.e=z}else{y=this.f\nz.d=y\ny.c=z\nthis.f=z}++this.a\nthis.GY()\nreturn z}\n",
-        "type": "LinkedHashMapCell Function(JsLinkedHashMap.K,JsLinkedHashMap.V)",
+        "type": "LinkedHashMapCell Function(Object,Object)",
         "measurements": null
       },
       "585783017": {
@@ -50956,7 +50979,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "MW:function(a){this.glI().Ai(0,a)}\n",
-        "type": "void Function(_SyncStreamControllerDispatch.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "611195136": {
@@ -51295,7 +51318,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "aM:function(a,b){var z\nif(this.b)this.a.aM(0,b)\nelse{z=H.Lr(b,\"$isb8\",this.$ti,\"$asb8\")\nif(z){z=this.a\nb.Sq(z.gv6(z),z.gYJ(),-1)}else P.rb(new P.rX(this,b))}}\n",
-        "type": "void Function([FutureOr<_AsyncAwaitCompleter.T>])",
+        "type": "void Function([Object])",
         "measurements": null
       },
       "620005669": {
@@ -52228,7 +52251,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Gamepad)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "633677177": {
@@ -53134,7 +53157,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "wb:function(a,b,c){var z,y,x,w,v,u,t,s\nz=this.c\ny=c===C.b7\nx=!!a.$isPA?a:null\nfor(w=z.length,v=this.a,u=0;u<w;++u){t=z[u]\nif(!t.c)if(t.b<=0){t.d\ns=y}else s=!0\nelse s=!0\nif(s)continue\na.d=b\na.e=v\na.c=c\n$.Oz=x\nt.f.$1(a)\n$.Oz=null\nif(a.r)return}}\n",
-        "type": "void Function(EventStream.T,EventDispatcher,EventPhase)",
+        "type": "void Function(Object,EventDispatcher,EventPhase)",
         "measurements": null
       },
       "650870464": {
@@ -53751,7 +53774,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Length)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "661708794": {
@@ -53959,7 +53982,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Ds:function(a){var z=H.Lr(a,\"$isb8\",this.$ti,\"$asb8\")\nif(z){this.cU(a)\nreturn}this.a=1\nz=this.b\nz.toString\nP.Tk(null,null,z,new P.rH(this,a))}\n",
-        "type": "void Function(FutureOr<_Future.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "665416673": {
@@ -55300,7 +55323,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "pW:function(a,b,c){var z=P.BS(b,this.gHe().a)\nreturn z}\nkV:function(a,b){return this.pW(a,b,null)}\n",
-        "type": "dynamic Function(String,{dynamic Function(Object,Object) reviver})",
+        "type": "dynamic Function(Object,{dynamic Function(Object,Object) reviver})",
         "measurements": null
       },
       "683763320": {
@@ -56086,7 +56109,7 @@
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "fC:function(a){var z,y\nz=a.fr\ny=a.dy\nif(z==null)this.d=y\nelse z.dy=y\nif(y==null)this.e=z\nelse y.fr=z\na.fr=a\na.dy=a}\n",
-        "type": "void Function(_BroadcastSubscription<_BroadcastStreamController.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "698206676": {
@@ -56189,7 +56212,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,CssRule)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "700902689": {
@@ -56315,7 +56338,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "u9:function(a,b,c){var z=this.j2(a,b)\nif(z==null)this.EI(a,b,this.Oz(b,c))\nelse z.b=c}\n",
-        "type": "void Function(dynamic,JsLinkedHashMap.K,JsLinkedHashMap.V)",
+        "type": "void Function(dynamic,Object,Object)",
         "measurements": null
       },
       "702314761": {
@@ -57514,7 +57537,7 @@
         "sideEffects": "SideEffects(reads nothing; writes field)",
         "inlinedCount": 0,
         "code": "PU:function(a,b,c,d){this.a=a\nthis.b=b\nthis.c=c\nthis.d=d}\n",
-        "type": "void Function(Rectangle.T,Rectangle.T,Rectangle.T,Rectangle.T)",
+        "type": "void Function(Object,Object,Object,Object)",
         "measurements": null
       },
       "722405802": {
@@ -59521,7 +59544,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "HN:function(a,b){return new P.hL(this.a-b.a,this.b-b.b,this.$ti)}\n",
-        "type": "Point<Point.T> Function(Point<Point.T>)",
+        "type": "Point<Point.T> Function(Object)",
         "measurements": null
       },
       "751200407": {
@@ -60176,7 +60199,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "EB:function(a){}\n",
-        "type": "void Function(StreamSubscription<_BroadcastStreamController.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "762030080": {
@@ -62100,7 +62123,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "AN:function(a,b){var z=this.b\nif(z>=4)throw H.b(this.Q4())\nif((z&1)!==0)this.MW(b)\nelse if((z&3)===0)this.Hf().AN(0,new P.LV(b))}\n",
-        "type": "void Function(_StreamController.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "798288240": {
@@ -62916,7 +62939,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,TextTrack)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "816702927": {
@@ -63183,7 +63206,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){var z,y,x,w,v,u\nif(typeof b===\"string\"){z=this.b\nif(z==null){z=this.zK()\nthis.b=z}this.u9(z,b,c)}else if(typeof b===\"number\"&&(b&0x3ffffff)===b){y=this.c\nif(y==null){y=this.zK()\nthis.c=y}this.u9(y,b,c)}else{x=this.d\nif(x==null){x=this.zK()\nthis.d=x}w=J.hf(b)&0x3ffffff\nv=this.Bt(x,w)\nif(v==null)this.EI(x,w,[this.Oz(b,c)])\nelse{u=this.Fh(v,b)\nif(u>=0)v[u].b=c\nelse v.push(this.Oz(b,c))}}}\n",
-        "type": "void Function(JsLinkedHashMap.K,JsLinkedHashMap.V)",
+        "type": "void Function(Object,Object)",
         "measurements": null
       },
       "820310527": {
@@ -64233,7 +64256,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Rectangle<num>)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "842911185": {
@@ -65069,7 +65092,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,MimeType)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "864228238": {
@@ -65281,7 +65304,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Node)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "867200397": {
@@ -67005,7 +67028,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "rR:function(a){var z\nif(a.dy===a)return\nz=a.dx\nif((z&2)!==0)a.dx=z|4\nelse{this.fC(a)\nif((this.c&2)===0&&this.d==null)this.cR()}return}\n",
-        "type": "Future<dynamic> Function(StreamSubscription<_BroadcastStreamController.T>)",
+        "type": "Future<dynamic> Function(Object)",
         "measurements": null
       },
       "895773113": {
@@ -67473,7 +67496,7 @@
         "sideEffects": "SideEffects(reads static; writes field)",
         "inlinedCount": 5,
         "code": null,
-        "type": "void Function(_Future.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "901978442": {
@@ -67583,29 +67606,6 @@
         "inlinedCount": 5,
         "code": null,
         "type": "#A Function(#B) Function<#A,#B>(#A Function(#B))",
-        "measurements": null
-      },
-      "904365684": {
-        "id": "function/904365684",
-        "kind": "function",
-        "name": "main",
-        "size": 24,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/925648793",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
         "measurements": null
       },
       "906547755": {
@@ -67983,7 +67983,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,String)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "912377105": {
@@ -68419,7 +68419,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "dP:function(a){a.MW(this.b)}\n",
-        "type": "void Function(_EventDispatch<_DelayedData.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "919454713": {
@@ -69027,7 +69027,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "HN:function(a,b){return new U.tZ(this.a-b.a,this.b-b.b,this.$ti)}\n",
-        "type": "Point<Point.T> Function(Point<Point.T>)",
+        "type": "Point<Point.T> Function(Object)",
         "measurements": null
       },
       "936301331": {
@@ -71277,7 +71277,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "MW:function(a){this.glI().C2(new P.LV(a))}\n",
-        "type": "void Function(_AsyncStreamControllerDispatch.T)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "977867690": {
@@ -72518,7 +72518,7 @@
         "sideEffects": "SideEffects(reads field, static; writes field)",
         "inlinedCount": 1,
         "code": null,
-        "type": "void Function(_BroadcastSubscription<_BroadcastStreamController.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "1000826866": {
@@ -72908,7 +72908,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}\n",
-        "type": "void Function(int,Node)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "1008087245": {
@@ -73062,7 +73062,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "ho:function(a){if((this.b&8)!==0)C.jN.QE(this.a)\nP.ot(this.f)}\n",
-        "type": "void Function(StreamSubscription<_StreamController.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "1009875590": {
@@ -73919,7 +73919,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "ho:function(a){}\n",
-        "type": "void Function(StreamSubscription<_BroadcastStreamController.T>)",
+        "type": "void Function(Object)",
         "measurements": null
       },
       "1030866718": {
@@ -75265,7 +75265,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 7,
         "code": "Y5:function(a,b,c){this.c[b]=c}\n",
-        "type": "void Function(int,Array2d.T)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "1064995482": {
@@ -75361,7 +75361,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 4,
         "code": null,
-        "type": "void Function(int,int,Array2d.T)",
+        "type": "void Function(int,int,Object)",
         "measurements": null
       },
       "1066963434": {
@@ -75504,7 +75504,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){H.od(b,a,a.length)\na[b]=c}\n",
-        "type": "void Function(int,int)",
+        "type": "void Function(int,Object)",
         "measurements": null
       },
       "1069236326": {
@@ -123856,6 +123856,12 @@
         "mask": "null"
       }
     ],
+    "function/540500618": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/540614297": [
       {
         "id": "field/146324484",
@@ -136882,12 +136888,6 @@
         "mask": "null"
       }
     ],
-    "function/904365684": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/906547755": [
       {
         "id": "field/1006017221",
@@ -143385,7 +143385,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 286405,
+      "size": 286311,
       "imports": []
     }
   ],
@@ -143393,12 +143393,12 @@
   "deferredFiles": {},
   "dump_minor_version": 1,
   "program": {
-    "entrypoint": "function/904365684",
-    "size": 286405,
-    "dart2jsVersion": "2.0.0-dev.64.1",
-    "compilationMoment": "2018-06-22 08:33:29.858989",
-    "compilationDuration": 10163602,
-    "toJsonDuration": 218000,
+    "entrypoint": "function/540500618",
+    "size": 286311,
+    "dart2jsVersion": "2.0.0-dev.66.0",
+    "compilationMoment": "2018-06-29 08:05:26.535416",
+    "compilationDuration": 8838249,
+    "toJsonDuration": 85000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
