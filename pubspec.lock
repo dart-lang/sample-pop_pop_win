@@ -434,7 +434,7 @@ packages:
       name: stagexl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.4.0-dev"
+    version: "1.4.0"
   stream_channel:
     dependency: transitive
     description:
@@ -520,4 +520,4 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.0.0-dev.65 <2.0.0"
+  dart: ">=2.0.0-dev.65 <3.0.0"
