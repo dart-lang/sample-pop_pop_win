@@ -681,6 +681,16 @@
         ],
         "canonicalUri": "package:stagexl/src/drawing.dart"
       },
+      "129202025": {
+        "id": "library/129202025",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 24,
+        "children": [
+          "function/384735963"
+        ],
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacej2ht9X/web/main.dart"
+      },
       "152998570": {
         "id": "library/152998570",
         "kind": "library",
@@ -1160,16 +1170,6 @@
           "class/1063322967"
         ],
         "canonicalUri": "dart:svg"
-      },
-      "477385120": {
-        "id": "library/477385120",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 24,
-        "children": [
-          "function/909483956"
-        ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacej79Jvd/web/main.dart"
       },
       "521324912": {
         "id": "library/521324912",
@@ -39429,6 +39429,29 @@
         "type": "int Function(num)",
         "measurements": null
       },
+      "384735963": {
+        "id": "function/384735963",
+        "kind": "function",
+        "name": "main",
+        "size": 24,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/129202025",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.E()}\n",
+        "type": "dynamic Function()",
+        "measurements": null
+      },
       "384822666": {
         "id": "function/384822666",
         "kind": "function",
@@ -67853,29 +67876,6 @@
         "inlinedCount": 0,
         "code": "Tm:function(a){return this.QH(a)}\n",
         "type": "Future<RenderTextureQuad> Function(String)",
-        "measurements": null
-      },
-      "909483956": {
-        "id": "function/909483956",
-        "kind": "function",
-        "name": "main",
-        "size": 24,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/477385120",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
         "measurements": null
       },
       "910942700": {
@@ -117219,6 +117219,12 @@
         "mask": "null"
       }
     ],
+    "function/384735963": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/384822666": [
       {
         "id": "function/900664723",
@@ -137003,12 +137009,6 @@
         "mask": "inlined"
       }
     ],
-    "function/909483956": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/910942700": [
       {
         "id": "function/265638794",
@@ -143420,12 +143420,12 @@
   "deferredFiles": {},
   "dump_minor_version": 1,
   "program": {
-    "entrypoint": "function/909483956",
+    "entrypoint": "function/384735963",
     "size": 286384,
-    "dart2jsVersion": "2.0.0-dev.69.3",
-    "compilationMoment": "2018-07-25 12:19:22.692166",
-    "compilationDuration": 7956207,
-    "toJsonDuration": 83000,
+    "dart2jsVersion": "2.0.0",
+    "compilationMoment": "2018-08-06 17:05:39.476435",
+    "compilationDuration": 6363221,
+    "toJsonDuration": 65000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
