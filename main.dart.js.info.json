@@ -681,15 +681,15 @@
         ],
         "canonicalUri": "package:stagexl/src/drawing.dart"
       },
-      "129202025": {
-        "id": "library/129202025",
+      "121057291": {
+        "id": "library/121057291",
         "kind": "library",
         "name": "<unnamed>",
         "size": 24,
         "children": [
-          "function/384735963"
+          "function/1035601697"
         ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacej2ht9X/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_space8RCNGa/web/main.dart"
       },
       "152998570": {
         "id": "library/152998570",
@@ -35445,7 +35445,7 @@
         "inferredReturnType": "[null]",
         "parameters": [
           {
-            "name": "newState",
+            "name": "value",
             "type": "[null|exact=GameState]",
             "declaredType": "GameState"
           }
@@ -39427,29 +39427,6 @@
         "inlinedCount": 0,
         "code": "xG:function(a,b){if(typeof b!==\"number\")throw H.b(H.t(b))\nif((a|0)===a)if(b>=1||b<-1)return a/b|0\nreturn this.DJ(a,b)}\n",
         "type": "int Function(num)",
-        "measurements": null
-      },
-      "384735963": {
-        "id": "function/384735963",
-        "kind": "function",
-        "name": "main",
-        "size": 24,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/129202025",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
         "measurements": null
       },
       "384822666": {
@@ -74106,6 +74083,29 @@
         "inlinedCount": 0,
         "code": "bu:function(a){return P.nO(this)}\n",
         "type": "String Function()",
+        "measurements": null
+      },
+      "1035601697": {
+        "id": "function/1035601697",
+        "kind": "function",
+        "name": "main",
+        "size": 24,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/121057291",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.E()}\n",
+        "type": "dynamic Function()",
         "measurements": null
       },
       "1036675160": {
@@ -117219,12 +117219,6 @@
         "mask": "null"
       }
     ],
-    "function/384735963": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/384822666": [
       {
         "id": "function/900664723",
@@ -142151,6 +142145,12 @@
         "mask": "null"
       }
     ],
+    "function/1035601697": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/1036675160": [
       {
         "id": "field/42778158",
@@ -143420,12 +143420,12 @@
   "deferredFiles": {},
   "dump_minor_version": 1,
   "program": {
-    "entrypoint": "function/384735963",
+    "entrypoint": "function/1035601697",
     "size": 286384,
     "dart2jsVersion": "2.0.0",
-    "compilationMoment": "2018-08-06 17:05:39.476435",
-    "compilationDuration": 6363221,
-    "toJsonDuration": 65000,
+    "compilationMoment": "2018-08-08 13:48:23.677857",
+    "compilationDuration": 6349845,
+    "toJsonDuration": 64000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
