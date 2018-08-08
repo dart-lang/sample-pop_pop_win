@@ -9,7 +9,7 @@ import 'game_storage.dart';
 
 abstract class GameManager {
   final int _width, _height, _bombCount;
-  final GameStorage _gameStorage = new GameStorage();
+  final GameStorage _gameStorage = GameStorage();
 
   Game _game;
   StreamSubscription _updatedEventId;
@@ -35,8 +35,8 @@ abstract class GameManager {
       _gameStateChangedId.cancel();
       _gameStateChanged(GameState.reset);
     }
-    final f = new Field(_bombCount, _width, _height);
-    _game = new Game(f);
+    final f = Field(_bombCount, _width, _height);
+    _game = Game(f);
     _updatedEventId = _game.updated.listen((_) => gameUpdated());
     _gameStateChangedId = _game.stateChanged.listen(_gameStateChanged);
   }
@@ -49,7 +49,7 @@ abstract class GameManager {
 
   void updateClock() {
     if (_clockTimer == null && _game.state == GameState.started) {
-      _clockTimer = new Timer(const Duration(seconds: 1), updateClock);
+      _clockTimer = Timer(const Duration(seconds: 1), updateClock);
     } else if (_clockTimer != null && _game.state != GameState.started) {
       _clockTimer.cancel();
       _clockTimer = null;

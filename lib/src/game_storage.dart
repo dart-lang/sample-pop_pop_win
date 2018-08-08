@@ -9,7 +9,7 @@ import 'platform_web.dart';
 
 class GameStorage {
   static const _gameCountKey = 'gameCount';
-  final StreamController _bestTimeUpdated = new StreamController();
+  final StreamController _bestTimeUpdated = StreamController();
   final Map<String, String> _cache = <String, String>{};
 
   int get gameCount => _getIntValue(_gameCountKey);

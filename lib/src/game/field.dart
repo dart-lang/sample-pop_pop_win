@@ -11,11 +11,11 @@ class Field extends Array2d<bool> {
   final Array2d<int> _adjacents;
 
   factory Field([int bombCount = 40, int cols = 16, int rows = 16, int seed]) {
-    var squares = new List<bool>.filled(rows * cols, false);
+    var squares = List<bool>.filled(rows * cols, false);
     assert(bombCount < squares.length);
     assert(bombCount > 0);
 
-    var rnd = new Random(seed);
+    var rnd = Random(seed);
 
     // This is the most simple code, but it'll get slow as
     // bombCount approaches the square count.
@@ -29,7 +29,7 @@ class Field extends Array2d<bool> {
       squares[index] = true;
     }
 
-    return new Field._internal(bombCount, cols, squares);
+    return Field._internal(bombCount, cols, squares);
   }
 
   factory Field.fromSquares(int cols, int rows, List<bool> squares) {
@@ -46,11 +46,11 @@ class Field extends Array2d<bool> {
     assert(count > 0);
     assert(count < squares.length);
 
-    return new Field._internal(count, cols, new List.unmodifiable(squares));
+    return Field._internal(count, cols, List.unmodifiable(squares));
   }
 
   Field._internal(this.bombCount, int cols, List<bool> source)
-      : this._adjacents = new Array2d<int>(cols, source.length ~/ cols),
+      : this._adjacents = Array2d<int>(cols, source.length ~/ cols),
         super.wrap(cols, source) {
     assert(width > 0);
     assert(height > 0);

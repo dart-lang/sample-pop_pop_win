@@ -28,7 +28,7 @@ void main() {
 
 void _testCannotReReveal() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.canReveal(5, 3), isTrue);
   g
@@ -43,7 +43,7 @@ void _testCannotReReveal() {
 
 void _testCanFlag() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.canToggleFlag(0, 0), isTrue);
   expect(g.state, GameState.reset);
@@ -60,7 +60,7 @@ void _testCanFlag() {
 
 void _testCanReveal() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.canReveal(0, 0), isTrue);
   expect(g.state, GameState.reset);
@@ -86,7 +86,7 @@ void _testCanReveal() {
 
 void _testBadChord() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.bombsLeft, equals(13));
   var startReveals = f.length - 13;
@@ -110,7 +110,7 @@ void _testBadChord() {
 // so nothing happens
 void _testNoopChord() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.bombsLeft, equals(13));
   var startReveals = f.length - 13;
@@ -130,7 +130,7 @@ void _testNoopChord() {
 
 void _testGoodChord() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.bombsLeft, equals(13));
   var startReveals = f.length - 13;
@@ -153,12 +153,12 @@ void _testGoodChord() {
 
 // Test 5 random fields five times
 void _testRandomField() {
-  var rnd = new Random();
+  var rnd = Random();
   for (var i = 0; i < 5; i++) {
-    var f = new Field();
+    var f = Field();
 
     for (var j = 0; j < 5; j++) {
-      var g = new Game(f);
+      var g = Game(f);
       while (g.revealsLeft > 0) {
         var x = rnd.nextInt(f.width);
         var y = rnd.nextInt(f.height);
@@ -177,7 +177,7 @@ void _testRandomField() {
 
 void _testRevealZero() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.bombsLeft, equals(13));
   var startReveals = f.length - 13;
@@ -190,7 +190,7 @@ void _testRevealZero() {
 
 void _testInitial() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   expect(g.bombsLeft, equals(13));
   expect(g.revealsLeft, equals(f.length - 13));
@@ -205,7 +205,7 @@ void _testInitial() {
 }
 
 void _testSetFlag() {
-  var g = new Game(getSampleField());
+  var g = Game(getSampleField());
 
   expect(g.getSquareState(0, 0), equals(SquareState.hidden));
   g.setFlag(0, 0, true);
@@ -215,7 +215,7 @@ void _testSetFlag() {
 }
 
 void _testCannotRevealFlagged() {
-  var g = new Game(getSampleField());
+  var g = Game(getSampleField());
 
   expect(g.getSquareState(0, 0), equals(SquareState.hidden));
   g.setFlag(0, 0, true);
@@ -227,7 +227,7 @@ void _testCannotRevealFlagged() {
 }
 
 void _testCannotFlagRevealed() {
-  var g = new Game(getSampleField());
+  var g = Game(getSampleField());
 
   expect(g.getSquareState(1, 1), equals(SquareState.hidden));
   g.reveal(1, 1);
@@ -238,7 +238,7 @@ void _testCannotFlagRevealed() {
 }
 
 void _testLoss() {
-  var g = new Game(getSampleField());
+  var g = Game(getSampleField());
 
   expect(g.getSquareState(0, 0), equals(SquareState.hidden));
   var revealed = g.reveal(0, 0);
@@ -249,7 +249,7 @@ void _testLoss() {
 
 void _testWin() {
   var f = getSampleField();
-  var g = new Game(f);
+  var g = Game(f);
 
   var bombsLleft = f.bombCount;
   expect(g.revealsLeft, equals(f.length - 13));

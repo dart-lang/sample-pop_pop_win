@@ -11,7 +11,7 @@ import 'package:pop_pop_win/src/game.dart';
 // X32321
 // 110000
 
-const List<int> sampleField = const <int>[
+const List<int> sampleField = <int>[
   null,
   null,
   null,
@@ -45,7 +45,7 @@ const List<int> sampleField = const <int>[
 ];
 
 Field getSampleField() {
-  var bools = new List<bool>.from(sampleField.map((x) => x == null));
+  var bools = List<bool>.from(sampleField.map((x) => x == null));
 
-  return new Field.fromSquares(6, 5, bools);
+  return Field.fromSquares(6, 5, bools);
 }

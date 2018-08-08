@@ -12,7 +12,7 @@ class ScoreElement extends TextField implements Animatable {
 
   ScoreElement(this.bestTime) {
     defaultTextFormat =
-        new TextFormat('Slackey, cursive', 28, Color.Black, leading: 1);
+        TextFormat('Slackey, cursive', 28, Color.Black, leading: 1);
     autoSize = TextFieldAutoSize.LEFT;
     x = 1400;
     y = 20;

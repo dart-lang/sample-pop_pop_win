@@ -5,13 +5,13 @@
 import 'dart:async';
 import 'dart:html';
 
-final PlatformWeb targetPlatform = new PlatformWeb._();
+final PlatformWeb targetPlatform = PlatformWeb._();
 
 class PlatformWeb {
   static const String _aboutHash = '#about';
   bool _sizeAccessed = false;
 
-  final StreamController _aboutController = new StreamController(sync: true);
+  final StreamController _aboutController = StreamController(sync: true);
 
   PlatformWeb._() {
     window.onPopState.listen((args) => _processUrlHash());

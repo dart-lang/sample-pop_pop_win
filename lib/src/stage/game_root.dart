@@ -22,7 +22,7 @@ class GameRoot extends GameManager {
       : super(width, height, bombCount) {
     resourceManager..getTextureAtlas('opaque')..getTextureAtlas('static');
 
-    _gameElement = new GameElement(this)..alpha = 0;
+    _gameElement = GameElement(this)..alpha = 0;
 
     stage
       ..addChild(_gameElement)
@@ -30,17 +30,17 @@ class GameRoot extends GameManager {
   }
 
   @override
-  void onGameStateChanged(GameState newState) {
-    var count = _eventCount[newState] = (_eventCount[newState] ?? 0) + 1;
+  void onGameStateChanged(GameState value) {
+    var count = _eventCount[value] = (_eventCount[value] ?? 0) + 1;
 
     gtag(
         'event',
         'game_event',
-        new GTagAnalyticsEventOptions(
+        GTagAnalyticsEventOptions(
             event_category: 'sample-pop_pop_win',
-            event_label: newState.toString().split('.')[1],
+            event_label: value.toString().split('.')[1],
             value: count));
-    if (newState == GameState.won) {
+    if (value == GameState.won) {
       for (var se in _gameElement.boardElement.squares) {
         se.updateState();
       }

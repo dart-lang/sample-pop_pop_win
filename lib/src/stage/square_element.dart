@@ -11,14 +11,14 @@ import 'game_element.dart';
 class SquareElement extends Sprite {
   static const int size = 80;
 
-  static const List<String> _balloonBits = const [
+  static const List<String> _balloonBits = [
     'balloon_pieces_a',
     'balloon_pieces_b',
     'balloon_pieces_c',
     'balloon_pieces_d'
   ];
 
-  static const List<String> _numberMap = const [
+  static const List<String> _numberMap = [
     'game_board_center',
     'number_one',
     'number_two',
@@ -32,8 +32,7 @@ class SquareElement extends Sprite {
 
   final int column, row;
 
-  final Bitmap _bitmap =
-      new Bitmap(new BitmapData(size, size, Color.Transparent));
+  final Bitmap _bitmap = Bitmap(BitmapData(size, size, Color.Transparent));
 
   SquareElement(this.column, this.row) {
     addChild(_bitmap);
@@ -71,7 +70,7 @@ class SquareElement extends Sprite {
     _bitmap.bitmapData
       ..clear()
       ..drawPixels(_opaqueAtlas.getBitmapData(textureName),
-          new Rectangle<int>(0, 0, size, size), new Point<int>(0, 0));
+          Rectangle<int>(0, 0, size, size), Point<int>(0, 0));
   }
 
   void _onClick(MouseEvent e) {

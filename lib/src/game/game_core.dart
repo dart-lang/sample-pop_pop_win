@@ -16,9 +16,9 @@ enum GameState { reset, started, won, lost }
 class Game {
   final Field field;
   final Array2d<SquareState> _states;
-  final StreamController _updatedEvent = new StreamController();
+  final StreamController _updatedEvent = StreamController();
   final StreamController<GameState> _gameStateEvent =
-      new StreamController<GameState>();
+      StreamController<GameState>();
 
   GameState _state;
   int _bombsLeft;
@@ -28,7 +28,7 @@ class Game {
 
   Game(this.field)
       : _state = GameState.reset,
-        _states = new Array2d<SquareState>(
+        _states = Array2d<SquareState>(
             field.width, field.height, SquareState.hidden) {
     assert(field != null);
     _bombsLeft = field.bombCount;
@@ -55,7 +55,7 @@ class Game {
       return null;
     } else {
       assert((state == GameState.started) == (_endTime == null));
-      final end = (_endTime == null) ? new DateTime.now() : _endTime;
+      final end = (_endTime == null) ? DateTime.now() : _endTime;
       return end.difference(_startTime);
     }
   }
@@ -120,7 +120,7 @@ class Game {
   }
 
   String toBoardString() {
-    final buffer = new StringBuffer();
+    final buffer = StringBuffer();
     for (var y = -2; y < field.height; y++) {
       if (y > -2) {
         buffer.write('\n');
@@ -237,7 +237,7 @@ class Game {
     _states.set(x, y, SquareState.revealed);
     _revealsLeft--;
     assert(_revealsLeft >= 0);
-    var reveals = [new Point(x, y)];
+    var reveals = [Point(x, y)];
     if (_revealsLeft == 0) {
       _setWon();
     } else if (field.getAdjacentCount(x, y) == 0) {
@@ -281,9 +281,9 @@ class Game {
     if (_state != value) {
       _state = value;
       if (_state == GameState.started) {
-        _startTime = new DateTime.now();
+        _startTime = DateTime.now();
       } else if (gameEnded) {
-        _endTime = new DateTime.now();
+        _endTime = DateTime.now();
       }
       _gameStateEvent.add(_state);
     }

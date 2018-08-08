@@ -13,7 +13,7 @@ int getHashCode(Iterable source) {
 
 void require(bool truth, [String message]) {
   if (!truth) {
-    throw new Exception(message);
+    throw Exception(message);
   }
 }
 
@@ -22,13 +22,13 @@ void requireArgument(bool truth, String argName, [String message]) {
     if (message == null || message.isEmpty) {
       message = 'value was invalid';
     }
-    throw new ArgumentError([argName, message]);
+    throw ArgumentError([argName, message]);
   }
 }
 
 void requireArgumentNotNull(argument, String argName) {
   if (argument == null) {
-    throw new ArgumentError.notNull(argName);
+    throw ArgumentError.notNull(argName);
   }
 }
 

@@ -15,12 +15,12 @@ class BoardElement extends Sprite {
   BoardElement(GameElement gameElement) {
     addTo(gameElement);
 
-    _elements = new Array2d<SquareElement>(game.field.width, game.field.height);
+    _elements = Array2d<SquareElement>(game.field.width, game.field.height);
 
     var scaledSize = SquareElement.size * _boardScale;
     for (var i = 0; i < _elements.length; i++) {
       var coords = _elements.getCoordinate(i);
-      var se = new SquareElement(coords.x, coords.y)
+      var se = SquareElement(coords.x, coords.y)
         ..x = coords.x * scaledSize
         ..y = coords.y * scaledSize
         ..scaleX = _boardScale

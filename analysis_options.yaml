@@ -14,8 +14,10 @@ linter:
     - avoid_function_literals_in_foreach_calls
     - avoid_init_to_null
     - avoid_null_checks_in_equality_operators
+    - avoid_renaming_method_parameters
     - avoid_return_types_on_setters
     - avoid_returning_null
+    - avoid_types_as_parameter_names
     - avoid_unused_constructor_parameters
     - await_only_futures
     - camel_case_types
@@ -49,8 +51,8 @@ linter:
     - prefer_conditional_assignment
     - prefer_const_constructors
     - prefer_contains
+    - prefer_equal_for_default_values
     - prefer_final_fields
-    #- prefer_final_locals
     - prefer_initializing_formals
     - prefer_interpolation_to_compose_strings
     - prefer_is_empty
@@ -65,8 +67,10 @@ linter:
     - type_init_formals
     - unawaited_futures
     - unnecessary_brace_in_string_interps
+    - unnecessary_const
     - unnecessary_getters_setters
     - unnecessary_lambdas
+    - unnecessary_new
     - unnecessary_null_aware_assignments
     - unnecessary_statements
     - unnecessary_this

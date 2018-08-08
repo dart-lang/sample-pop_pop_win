@@ -13,20 +13,20 @@ class Array2d<T> extends ListBase<T> {
     requireArgumentNotNull(height, 'height');
     requireArgument(width >= 0, 'width');
     requireArgument(height >= 0, 'height');
-    final s = new List<T>.filled(width * height, initialValue);
+    final s = List<T>.filled(width * height, initialValue);
     assert(s.length == width * height);
     if (width == 0) {
-      return new Array2d._skinny(height);
+      return Array2d._skinny(height);
     }
-    return new Array2d.wrap(width, s);
+    return Array2d.wrap(width, s);
   }
 
   factory Array2d.readonlyFrom(int width, Iterable<T> source) {
     requireArgumentNotNull(width, 'width');
     requireArgumentNotNull(source, 'source');
-    var list = new List<T>.from(source);
-    var s = source == null ? null : new UnmodifiableListView<T>(list);
-    return new Array2d.wrap(width, s);
+    var list = List<T>.from(source);
+    var s = source == null ? null : UnmodifiableListView<T>(list);
+    return Array2d.wrap(width, s);
   }
 
   Array2d._skinny(this.height)
@@ -60,7 +60,7 @@ class Array2d<T> extends ListBase<T> {
 
   @override
   set length(int value) {
-    throw new UnsupportedError('Not supported');
+    throw UnsupportedError('Not supported');
   }
 
   @override
@@ -83,7 +83,7 @@ class Array2d<T> extends ListBase<T> {
 
   List<T> getAdjacent(int x, int y) {
     final m = getAdjacentIndices(x, y).map((i) => this[i]);
-    return new List<T>.from(m);
+    return List<T>.from(m);
   }
 
   List<int> getAdjacentIndices(int x, int y) {
@@ -103,7 +103,7 @@ class Array2d<T> extends ListBase<T> {
     final x = index % width;
     final y = index ~/ width;
     assert(_getIndex(x, y) == index);
-    return new math.Point<int>(x, y);
+    return math.Point<int>(x, y);
   }
 
   int _getIndex(int x, int y) {

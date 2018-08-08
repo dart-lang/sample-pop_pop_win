@@ -14,19 +14,19 @@ import 'src/stage.dart';
 const String _assetDir = 'packages/pop_pop_win/assets';
 
 Future startGame() async {
-  var options = new StageOptions()
+  var options = StageOptions()
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;
 
-  var stage = new Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
+  var stage = Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
       options: options);
 
-  new RenderLoop()..addStage(stage);
+  RenderLoop()..addStage(stage);
 
   BitmapData.defaultLoadOptions.webp = true;
 
   //have to load the loading bar first...
-  var resourceManager = new ResourceManager()
+  var resourceManager = ResourceManager()
     ..addTextureAtlas(
         'static', '$_assetDir/images/static.json', TextureAtlasFormat.JSON);
 
@@ -37,17 +37,17 @@ Future startGame() async {
 Future _initialLoad(ResourceManager resourceManager, Stage stage) async {
   var atlas = resourceManager.getTextureAtlas('static');
 
-  var bar = new Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
+  var bar = Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
     ..x = 51
     ..y = 8
     ..ratio = 0;
 
-  var loadingText = new Bitmap(atlas.getBitmapData('loading_text'))
+  var loadingText = Bitmap(atlas.getBitmapData('loading_text'))
     ..x = 141
     ..y = 10;
 
-  var loadingSprite = new Sprite()
-    ..addChild(new Bitmap(atlas.getBitmapData('loading_background')))
+  var loadingSprite = Sprite()
+    ..addChild(Bitmap(atlas.getBitmapData('loading_background')))
     ..addChild(bar)
     ..addChild(loadingText)
     ..x = stage.sourceWidth ~/ 2 - 1008 ~/ 2
@@ -87,7 +87,7 @@ void _secondaryLoad(
   var m = (size * size * 0.15625).toInt();
 
   game_audio.initialize(resourceManager);
-  new GameRoot(size, size, m, stage, resourceManager);
+  GameRoot(size, size, m, stage, resourceManager);
 
   // disable touch events
   html.window.onTouchMove.listen((args) => args.preventDefault());
@@ -106,7 +106,7 @@ void _onPopupClick(html.MouseEvent args) {
 }
 
 void _onKeyDown(html.KeyboardEvent args) {
-  var keyEvent = new html.KeyEvent.wrap(args);
+  var keyEvent = html.KeyEvent.wrap(args);
   switch (keyEvent.keyCode) {
     case html.KeyCode.ESC: // esc
       targetPlatform.toggleAbout(false);

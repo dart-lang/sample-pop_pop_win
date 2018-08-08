@@ -6,7 +6,7 @@ import 'dart:math';
 
 import 'package:stagexl/stagexl.dart';
 
-final Random _rnd = new Random();
+final Random _rnd = Random();
 
 ResourceManager _resourceManager;
 
@@ -19,7 +19,7 @@ const String _win = 'win',
     _throwDart = 'throw';
 
 void initialize(ResourceManager resourceManager) {
-  if (_resourceManager != null) throw new StateError('already initialized');
+  if (_resourceManager != null) throw StateError('already initialized');
   _resourceManager = resourceManager;
 }
 
@@ -38,7 +38,7 @@ void bomb() => _playAudio(_bomb);
 void throwDart() => _playAudio(_throwDart);
 
 void _playAudio(String name) {
-  if (_resourceManager == null) throw new StateError('Not initialized');
+  if (_resourceManager == null) throw StateError('Not initialized');
   switch (name) {
     case _pop:
       var i = _rnd.nextInt(8);
