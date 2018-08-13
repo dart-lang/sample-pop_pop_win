@@ -681,6 +681,16 @@
         ],
         "canonicalUri": "package:stagexl/src/drawing.dart"
       },
+      "141430470": {
+        "id": "library/141430470",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 24,
+        "children": [
+          "function/945693907"
+        ],
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceZKiI7T/web/main.dart"
+      },
       "152998570": {
         "id": "library/152998570",
         "kind": "library",
@@ -1160,16 +1170,6 @@
         ],
         "canonicalUri": "dart:svg"
       },
-      "510516103": {
-        "id": "library/510516103",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 24,
-        "children": [
-          "function/1069064646"
-        ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceIvoURn/web/main.dart"
-      },
       "521324912": {
         "id": "library/521324912",
         "kind": "library",
@@ -1354,7 +1354,7 @@
         "id": "library/668511847",
         "kind": "library",
         "name": "stagexl.events",
-        "size": 3022,
+        "size": 3141,
         "children": [
           "class/7554034",
           "class/74794766",
@@ -1623,7 +1623,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 28133,
+        "size": 28361,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1686,6 +1686,7 @@
           "function/108053021",
           "function/109394176",
           "function/122459214",
+          "function/126109279",
           "function/136972596",
           "function/163889622",
           "function/172520147",
@@ -1759,6 +1760,7 @@
           "function/665676035",
           "function/668300184",
           "function/679532174",
+          "function/691150797",
           "function/710092165",
           "function/712948390",
           "function/714600619",
@@ -1775,6 +1777,7 @@
           "function/753047160",
           "function/755649197",
           "function/756575134",
+          "function/768480442",
           "function/768861350",
           "function/788412943",
           "function/798288240",
@@ -15356,7 +15359,7 @@
         "id": "class/820012780",
         "kind": "class",
         "name": "EventStream",
-        "size": 1098,
+        "size": 1217,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -25685,6 +25688,50 @@
         "type": "Float32List Function(ByteBuffer,[int,int])",
         "measurements": null
       },
+      "126109279": {
+        "id": "function/126109279",
+        "kind": "function",
+        "name": "subtypeCast",
+        "size": 228,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "Object",
+        "inferredReturnType": "[null|subclass=Object]",
+        "parameters": [
+          {
+            "name": "object",
+            "type": "[null|subclass=Object]",
+            "declaredType": "Object"
+          },
+          {
+            "name": "isField",
+            "type": "[null|exact=JSString]",
+            "declaredType": "String"
+          },
+          {
+            "name": "checks",
+            "type": "[null|subtype=List]",
+            "declaredType": "List<dynamic>"
+          },
+          {
+            "name": "asField",
+            "type": "[null|exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(a,b,c,d){var z,y\nif(a==null)return a\nz=H.Lr(a,b,c,d)\nif(z)return a\nz=b.substring(3)\ny=H.nQ(c,0,null)\nthrow H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(z+y,init.mangledGlobalNames)))}\n",
+        "type": "Object Function(Object,String,List<dynamic>,String)",
+        "measurements": null
+      },
       "126240345": {
         "id": "function/126240345",
         "kind": "function",
@@ -35851,13 +35898,13 @@
           {
             "name": "subscriptions",
             "type": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
-            "declaredType": "List<EventStreamSubscription<Event>>"
+            "declaredType": "List<EventStreamSubscription<_dispatchBroadcastEvent.T>>"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "function(a,b){var z,y,x,w\nz=b.length\nfor(y=0;y<z;++y){x=b[y]\nif(!x.c){a.f=!1\na.r=!1\nw=x.e.a\na.d=w\na.e=w\na.c=C.wq\nx.f.$1(a)}else{C.Nm.W4(b,y);--z;--y}}}\n",
-        "type": "void Function(BroadcastEvent,List<EventStreamSubscription<Event>>)",
+        "type": "void Function<#A extends BroadcastEvent>(BroadcastEvent,List<EventStreamSubscription<#A>>)",
         "measurements": null
       },
       "311086956": {
@@ -46209,7 +46256,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 3,
         "code": null,
         "type": "String Function(String)",
         "measurements": null
@@ -48800,7 +48847,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 14,
+        "inlinedCount": 18,
         "code": null,
         "type": "bool Function(Object,String,List<dynamic>,String)",
         "measurements": null
@@ -55826,11 +55873,40 @@
         "type": "int Function()",
         "measurements": null
       },
+      "691150797": {
+        "id": "function/691150797",
+        "kind": "function",
+        "name": "isCheckPropertyToJsConstructorName",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[exact=JSString]",
+        "parameters": [
+          {
+            "name": "isCheckProperty",
+            "type": "[null|exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads static; writes nothing)",
+        "inlinedCount": 1,
+        "code": null,
+        "type": "String Function(String)",
+        "measurements": null
+      },
       "691212419": {
         "id": "function/691212419",
         "kind": "function",
         "name": "_subscribe",
-        "size": 423,
+        "size": 542,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/820012780",
         "children": [],
@@ -55861,7 +55937,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "XE:function(a,b,c){var z,y,x,w,v,u,t,s,r,q\nz=new R.hw(c,0,!1,!1,this,a,this.$ti)\ny=this.c\nx=y.length\nw=new Array(x+1)\nw.fixed$length=Array\nv=H.K(w,[[R.hw,H.Kp(this,0)]])\nu=v.length-1\nfor(t=0,s=0;t<x;++t,s=q){r=y[t]\nif(t===s&&r.a<c){q=s+1\nu=s\ns=q}q=s+1\nv[s]=r}v[u]=z\nthis.c=v\nswitch(this.b){case\"enterFrame\":$.$get$Jp().push(z)\nbreak\ncase\"exitFrame\":$.$get$Af().push(z)\nbreak\ncase\"render\":$.$get$KV().push(z)\nbreak}return z}\n",
+        "code": "XE:function(a,b,c){var z,y,x,w,v,u,t,s,r,q\nz=new R.hw(c,0,!1,!1,this,a,this.$ti)\ny=this.c\nx=y.length\nw=new Array(x+1)\nw.fixed$length=Array\nv=H.K(w,[[R.hw,H.Kp(this,0)]])\nu=v.length-1\nfor(t=0,s=0;t<x;++t,s=q){r=y[t]\nif(t===s&&r.a<c){q=s+1\nu=s\ns=q}q=s+1\nv[s]=r}v[u]=z\nthis.c=v\nx=[R.y]\nw=H.Lr(z,\"$ishw\",x,null)\nif(w)$.$get$Jp().push(H.Cv(z,\"$ishw\",x,\"$ashw\"))\nelse{x=[R.v]\nw=H.Lr(z,\"$ishw\",x,null)\nif(w)$.$get$Af().push(H.Cv(z,\"$ishw\",x,\"$ashw\"))\nelse{x=[R.b5]\nw=H.Lr(z,\"$ishw\",x,null)\nif(w)$.$get$KV().push(H.Cv(z,\"$ishw\",x,\"$ashw\"))}}return z}\n",
         "type": "EventStreamSubscription<EventStream.T> Function(void Function(EventStream.T),bool,int)",
         "measurements": null
       },
@@ -59704,7 +59780,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 3,
         "code": null,
         "type": "String Function(dynamic,int)",
         "measurements": null
@@ -60720,6 +60796,40 @@
         "inlinedCount": 0,
         "code": "$0:function(){var z=this.a\nz.f.aM(0,z)}\n",
         "type": "Null Function()",
+        "measurements": null
+      },
+      "768480442": {
+        "id": "function/768480442",
+        "kind": "function",
+        "name": "computeTypeName",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[exact=JSString]",
+        "parameters": [
+          {
+            "name": "isField",
+            "type": "[null|exact=JSString]",
+            "declaredType": "String"
+          },
+          {
+            "name": "arguments",
+            "type": "[null|subtype=List]",
+            "declaredType": "List<dynamic>"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 1,
+        "code": null,
+        "type": "String Function(String,List<dynamic>)",
         "measurements": null
       },
       "768861350": {
@@ -66682,7 +66792,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
+        "inlinedCount": 2,
         "code": null,
         "type": "String Function(String,List<dynamic>)",
         "measurements": null
@@ -69660,6 +69770,29 @@
         "inlinedCount": 1,
         "code": null,
         "type": "dynamic Function(dynamic)",
+        "measurements": null
+      },
+      "945693907": {
+        "id": "function/945693907",
+        "kind": "function",
+        "name": "main",
+        "size": 24,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/141430470",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.E()}\n",
+        "type": "dynamic Function()",
         "measurements": null
       },
       "946181542": {
@@ -75572,29 +75705,6 @@
         "type": "bool Function(dynamic)",
         "measurements": null
       },
-      "1069064646": {
-        "id": "function/1069064646",
-        "kind": "function",
-        "name": "main",
-        "size": 24,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/510516103",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
-        "measurements": null
-      },
       "1069069567": {
         "id": "function/1069069567",
         "kind": "function",
@@ -77768,7 +77878,7 @@
         "children": [],
         "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
         "code": null,
-        "type": "List<EventStreamSubscription<Event>>"
+        "type": "List<EventStreamSubscription<RenderEvent>>"
       },
       "79346280": {
         "id": "field/79346280",
@@ -93953,7 +94063,7 @@
         "children": [],
         "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
         "code": null,
-        "type": "List<EventStreamSubscription<Event>>"
+        "type": "List<EventStreamSubscription<EnterFrameEvent>>"
       },
       "796510762": {
         "id": "field/796510762",
@@ -94025,7 +94135,7 @@
         "children": [],
         "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
         "code": null,
-        "type": "List<EventStreamSubscription<Event>>"
+        "type": "List<EventStreamSubscription<ExitFrameEvent>>"
       },
       "800225965": {
         "id": "field/800225965",
@@ -106434,6 +106544,56 @@
       {
         "id": "function/154492436",
         "mask": "inlined"
+      }
+    ],
+    "function/126109279": [
+      {
+        "id": "function/163889622",
+        "mask": "null"
+      },
+      {
+        "id": "function/508874693",
+        "mask": "null"
+      },
+      {
+        "id": "function/560797298",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/560797298",
+        "mask": "null"
+      },
+      {
+        "id": "function/625236438",
+        "mask": "null"
+      },
+      {
+        "id": "function/691150797",
+        "mask": "null"
+      },
+      {
+        "id": "function/729293350",
+        "mask": "null"
+      },
+      {
+        "id": "function/751200407",
+        "mask": "null"
+      },
+      {
+        "id": "function/768480442",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/768480442",
+        "mask": "null"
+      },
+      {
+        "id": "function/792983327",
+        "mask": "null"
+      },
+      {
+        "id": "function/890739228",
+        "mask": "null"
       }
     ],
     "function/126827845": [
@@ -128620,10 +128780,6 @@
         "mask": "null"
       },
       {
-        "id": "field/704574398",
-        "mask": "null"
-      },
-      {
         "id": "field/78985547",
         "mask": "null"
       },
@@ -128644,6 +128800,10 @@
         "mask": "null"
       },
       {
+        "id": "function/126109279",
+        "mask": "null"
+      },
+      {
         "id": "function/478451597",
         "mask": "null"
       },
@@ -128653,6 +128813,18 @@
       },
       {
         "id": "function/558102800",
+        "mask": "null"
+      },
+      {
+        "id": "function/560797298",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/560797298",
+        "mask": "null"
+      },
+      {
+        "id": "function/625236438",
         "mask": "null"
       },
       {
@@ -132586,6 +132758,16 @@
       {
         "id": "function/102471615",
         "mask": "null"
+      }
+    ],
+    "function/768480442": [
+      {
+        "id": "function/691150797",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/890739228",
+        "mask": "inlined"
       }
     ],
     "function/770092188": [
@@ -138134,6 +138316,12 @@
         "mask": "null"
       }
     ],
+    "function/945693907": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/946181542": [
       {
         "id": "field/265791227",
@@ -143444,12 +143632,6 @@
         "mask": "Union([exact=CssStyleDeclaration], [subtype=Rectangle])"
       }
     ],
-    "function/1069064646": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/1069069567": [
       {
         "id": "function/180581426",
@@ -143565,7 +143747,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 286346,
+      "size": 286696,
       "imports": []
     }
   ],
@@ -143573,12 +143755,12 @@
   "deferredFiles": {},
   "dump_minor_version": 1,
   "program": {
-    "entrypoint": "function/1069064646",
-    "size": 286346,
+    "entrypoint": "function/945693907",
+    "size": 286696,
     "dart2jsVersion": "2.1.0-dev.0.0",
-    "compilationMoment": "2018-08-09 06:58:25.521463",
-    "compilationDuration": 6247019,
-    "toJsonDuration": 75000,
+    "compilationMoment": "2018-08-13 13:05:32.014935",
+    "compilationDuration": 6780406,
+    "toJsonDuration": 80000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
