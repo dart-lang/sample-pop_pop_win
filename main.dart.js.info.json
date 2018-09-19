@@ -952,16 +952,6 @@
         ],
         "canonicalUri": "dart:_interceptors"
       },
-      "345834471": {
-        "id": "library/345834471",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 24,
-        "children": [
-          "function/995700291"
-        ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceae6ydD/web/main.dart"
-      },
       "363394238": {
         "id": "library/363394238",
         "kind": "library",
@@ -1536,6 +1526,16 @@
           "class/924812431"
         ],
         "canonicalUri": "dart:web_gl"
+      },
+      "821147960": {
+        "id": "library/821147960",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 24,
+        "children": [
+          "function/445958305"
+        ],
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceGZHL6n/web/main.dart"
       },
       "871432775": {
         "id": "library/871432775",
@@ -28520,7 +28520,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "void",
+        "returnType": "dynamic",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -28532,7 +28532,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){return this.a.$1(a)}\n",
-        "type": "void Function(Event)",
+        "type": "dynamic Function(Event)",
         "measurements": null
       },
       "177457892": {
@@ -42837,6 +42837,29 @@
         "type": "String Function(dynamic)",
         "measurements": null
       },
+      "445958305": {
+        "id": "function/445958305",
+        "kind": "function",
+        "name": "main",
+        "size": 24,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/821147960",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.E()}\n",
+        "type": "dynamic Function()",
+        "measurements": null
+      },
       "448129133": {
         "id": "function/448129133",
         "kind": "function",
@@ -45177,7 +45200,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "void",
+        "returnType": "String",
         "inferredReturnType": "[exact=JSString]",
         "parameters": [
           {
@@ -45189,7 +45212,7 @@
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){var z,y\nz=this.a\ny=z.a+\" | \"+H.d(a)\nz.a=y\nreturn y}\n",
-        "type": "void Function(Error)",
+        "type": "String Function(Error)",
         "measurements": null
       },
       "484773716": {
@@ -72081,7 +72104,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "void",
+        "returnType": "bool",
         "inferredReturnType": "Value([exact=JSBool], value: true)",
         "parameters": [
           {
@@ -72093,7 +72116,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){a.oJ.Gz(this.a)\nreturn!0}\n",
-        "type": "void Function(Stage)",
+        "type": "bool Function(Stage)",
         "measurements": null
       },
       "993503373": {
@@ -72284,29 +72307,6 @@
         "inlinedCount": 0,
         "code": "bu:function(a){return\"Vector [x=\"+H.d(this.a)+\", y=\"+H.d(this.b)+\"]\"}\n",
         "type": "String Function()",
-        "measurements": null
-      },
-      "995700291": {
-        "id": "function/995700291",
-        "kind": "function",
-        "name": "main",
-        "size": 24,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/345834471",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
         "measurements": null
       },
       "996698946": {
@@ -120879,6 +120879,12 @@
         "mask": "[null|subclass=Object]"
       }
     ],
+    "function/445958305": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
+      }
+    ],
     "function/448129133": [
       {
         "id": "function/1010900152",
@@ -140755,12 +140761,6 @@
         "mask": "null"
       }
     ],
-    "function/995700291": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
-      }
-    ],
     "function/997099929": [
       {
         "id": "function/653699436",
@@ -143442,12 +143442,12 @@
   "deferredFiles": {},
   "dump_minor_version": 1,
   "program": {
-    "entrypoint": "function/995700291",
+    "entrypoint": "function/445958305",
     "size": 286336,
-    "dart2jsVersion": "2.1.0-dev.3.0",
-    "compilationMoment": "2018-08-28 09:15:21.793498",
-    "compilationDuration": 5282724,
-    "toJsonDuration": 54000,
+    "dart2jsVersion": "2.1.0-dev.4.0",
+    "compilationMoment": "2018-09-19 14:28:25.124382",
+    "compilationDuration": 5574259,
+    "toJsonDuration": 68000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
