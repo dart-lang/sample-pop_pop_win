@@ -1064,16 +1064,6 @@
         ],
         "canonicalUri": "dart:web_gl"
       },
-      "812107788": {
-        "id": "library/812107788",
-        "kind": "library",
-        "name": "<unnamed>",
-        "size": 24,
-        "children": [
-          "function/345961871"
-        ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacekMhlZV/web/main.dart"
-      },
       "871432775": {
         "id": "library/871432775",
         "kind": "library",
@@ -1136,6 +1126,16 @@
         ],
         "canonicalUri": "package:stagexl/src/internal/audio_loader.dart"
       },
+      "960322812": {
+        "id": "library/960322812",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 24,
+        "children": [
+          "function/233162298"
+        ],
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceba72yJ/web/main.dart"
+      },
       "965528565": {
         "id": "library/965528565",
         "kind": "library",
@@ -1157,7 +1157,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 28210,
+        "size": 28154,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -9456,7 +9456,7 @@
         "id": "class/790616034",
         "kind": "class",
         "name": "NullError",
-        "size": 177,
+        "size": 193,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -16390,7 +16390,7 @@
         "id": "function/88725279",
         "kind": "function",
         "name": "listTypeCast",
-        "size": 75,
+        "size": 84,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -16411,7 +16411,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a){if(!!J.ia(a).$iszM||a==null)return a\nthrow H.b(H.aq(a,\"List\"))}\n",
+        "code": "function(a){if(!!J.ia(a).$iszM||a==null)return a\nthrow H.b(H.aq(a,\"List<dynamic>\"))}\n",
         "type": "dynamic Function(dynamic)",
         "measurements": null
       },
@@ -18022,7 +18022,7 @@
         "id": "function/126109279",
         "kind": "function",
         "name": "subtypeCast",
-        "size": 208,
+        "size": 214,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -18058,7 +18058,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b,c,d){if(a==null)return a\nif(H.RB(a,b,c,d))return a\nthrow H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(b.substring(3)+H.XS(c,0,null),init.mangledGlobalNames)))}\n",
+        "code": "function(a,b,c,d){if(a==null)return a\nif(H.RB(a,b,c,d))return a\nthrow H.b(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(H.NQ(b.substring(3))+H.XS(c,0,null),init.mangledGlobalNames)))}\n",
         "type": "Object Function(Object,String,List<dynamic>,String)",
         "measurements": null
       },
@@ -19026,7 +19026,7 @@
         "id": "function/143741280",
         "kind": "function",
         "name": "toString",
-        "size": 124,
+        "size": 140,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/790616034",
         "children": [],
@@ -19041,7 +19041,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){var z=this.b\nif(z==null)return\"NullError: \"+H.d(this.a)\nreturn\"NullError: method not found: '\"+z+\"' on null\"}\n",
+        "code": "bu:function(a){var z=this.b\nif(z==null)return\"NoSuchMethodError: \"+H.d(this.a)\nreturn\"NoSuchMethodError: method not found: '\"+z+\"' on null\"}\n",
         "type": "String Function()",
         "measurements": null
       },
@@ -23103,6 +23103,29 @@
         "type": "ScoreElement Function()",
         "measurements": null
       },
+      "233162298": {
+        "id": "function/233162298",
+        "kind": "function",
+        "name": "main",
+        "size": 24,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/960322812",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=_Future]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "function(){return E.E()}\n",
+        "type": "dynamic Function()",
+        "measurements": null
+      },
       "233769273": {
         "id": "function/233769273",
         "kind": "function",
@@ -24323,7 +24346,7 @@
         "id": "function/253794122",
         "kind": "function",
         "name": "fromTearOff",
-        "size": 1001,
+        "size": 970,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -24343,7 +24366,7 @@
           },
           {
             "name": "functions",
-            "type": "[exact=JSFixedArray]",
+            "type": "[subclass=JSArray]",
             "declaredType": "List<dynamic>"
           },
           {
@@ -24362,9 +24385,9 @@
             "declaredType": "bool"
           },
           {
-            "name": "jsArguments",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
+            "name": "isIntercepted",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
           },
           {
             "name": "propertyName",
@@ -24374,8 +24397,8 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b,c,d,e,f,g){var z,y,x,w,v,u,t,s,r,q,p,o,n,m\nz=b[0]\ny=z.$callName\nif(!!J.ia(d).$iszM){z.$reflectionInfo=d\nx=H.zh(z).r}else x=d\nw=e?Object.create(new H.zx().constructor.prototype):Object.create(new H.rT(null,null,null,null).constructor.prototype)\nw.$initialize=w.constructor\nif(e)v=function static_tear_off(){this.$initialize()}\nelse{u=$.yj\n$.yj=u+1\nu=new Function(\"a,b,c,d\"+u,\"this.$initialize(a,b,c,d\"+u+\")\")\nv=u}w.constructor=v\nv.prototype=w\nif(!e){t=f.length==1&&!0\ns=H.bx(a,z,t)\ns.$reflectionInfo=d}else{w.$static_name=g\ns=z\nt=!1}if(typeof x==\"number\")r=function(h,i){return function(){return h(i)}}(H.Dm,x)\nelse if(typeof x==\"function\")if(e)r=x\nelse{q=t?H.yS:H.DV\nr=function(h,i){return function(){return h.apply({$receiver:i(this)},arguments)}}(x,q)}else throw H.b(\"Error in reflectionInfo.\")\nw.$S=r\nw[y]=s\nfor(u=b.length,p=s,o=1;o<u;++o){n=b[o]\nm=n.$callName\nif(m!=null){n=e?n:H.bx(a,n,t)\nw[m]=n}if(o===c){n.$reflectionInfo=d\np=n}}w[\"call*\"]=p\nw.$R=z.$R\nw.$D=z.$D\nreturn v}\n",
-        "type": "dynamic Function(dynamic,List<dynamic>,int,dynamic,bool,dynamic,String)",
+        "code": "function(a,b,c,d,e,f,g){var z,y,x,w,v,u,t,s,r,q,p,o,n\nz=b[0]\ny=z.$callName\nif(!!J.ia(d).$iszM){z.$reflectionInfo=d\nx=H.zh(z).r}else x=d\nw=e?Object.create(new H.zx().constructor.prototype):Object.create(new H.rT(null,null,null,null).constructor.prototype)\nw.$initialize=w.constructor\nif(e)v=function static_tear_off(){this.$initialize()}\nelse{u=$.yj\n$.yj=u+1\nu=new Function(\"a,b,c,d\"+u,\"this.$initialize(a,b,c,d\"+u+\")\")\nv=u}w.constructor=v\nv.prototype=w\nif(!e){t=H.bx(a,z,f)\nt.$reflectionInfo=d}else{w.$static_name=g\nt=z}if(typeof x==\"number\")s=function(h,i){return function(){return h(i)}}(H.Dm,x)\nelse if(typeof x==\"function\")if(e)s=x\nelse{r=f?H.yS:H.DV\ns=function(h,i){return function(){return h.apply({$receiver:i(this)},arguments)}}(x,r)}else throw H.b(\"Error in reflectionInfo.\")\nw.$S=s\nw[y]=t\nfor(q=t,p=1;p<b.length;++p){o=b[p]\nn=o.$callName\nif(n!=null){o=e?o:H.bx(a,o,f)\nw[n]=o}if(p===c){o.$reflectionInfo=d\nq=o}}w[\"call*\"]=q\nw.$R=z.$R\nw.$D=z.$D\nreturn v}\n",
+        "type": "dynamic Function(dynamic,List<dynamic>,int,dynamic,bool,bool,String)",
         "measurements": null
       },
       "256810776": {
@@ -28957,29 +28980,6 @@
         "inlinedCount": 1,
         "code": null,
         "type": "Stream<num> Function()",
-        "measurements": null
-      },
-      "345961871": {
-        "id": "function/345961871",
-        "kind": "function",
-        "name": "main",
-        "size": 24,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/812107788",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "dynamic",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
         "measurements": null
       },
       "346305693": {
@@ -44633,7 +44633,7 @@
         "id": "function/668300184",
         "kind": "function",
         "name": "closureFromTearOff",
-        "size": 99,
+        "size": 55,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -44672,7 +44672,7 @@
             "declaredType": "dynamic"
           },
           {
-            "name": "jsArguments",
+            "name": "isIntercepted",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
           },
@@ -44684,7 +44684,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b,c,d,e,f,g){var z,y\nz=J.Ep(b)\ny=!!J.ia(d).$iszM?J.Ep(d):d\nreturn H.iA(a,z,c,y,!!e,f,g)}\n",
+        "code": "function(a,b,c,d,e,f,g){return H.iA(a,b,c,d,!!e,!!f,g)}\n",
         "type": "dynamic Function(dynamic,dynamic,dynamic,dynamic,dynamic,dynamic,dynamic)",
         "measurements": null
       },
@@ -46060,7 +46060,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads static; writes nothing)",
-        "inlinedCount": 1,
+        "inlinedCount": 2,
         "code": null,
         "type": "String Function(String)",
         "measurements": null
@@ -55936,7 +55936,7 @@
         "id": "function/884615129",
         "kind": "function",
         "name": "propertyTypeCastError",
-        "size": 66,
+        "size": 54,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -55962,7 +55962,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b){var z=J.U6(b)\nthrow H.b(H.aq(a,z.Nj(b,3,z.gkF(b))))}\n",
+        "code": "function(a,b){throw H.b(H.aq(a,H.NQ(b.substring(3))))}\n",
         "type": "void Function(dynamic,dynamic)",
         "measurements": null
       },
@@ -88436,6 +88436,10 @@
         "mask": "null"
       },
       {
+        "id": "function/295807328",
+        "mask": "null"
+      },
+      {
         "id": "function/508874693",
         "mask": "null"
       },
@@ -91578,6 +91582,12 @@
       {
         "id": "function/1070189535",
         "mask": "inlined"
+      }
+    ],
+    "function/233162298": [
+      {
+        "id": "function/14078432",
+        "mask": "null"
       }
     ],
     "function/234058331": [
@@ -96642,12 +96652,6 @@
       {
         "id": "function/136706883",
         "mask": "inlined"
-      }
-    ],
-    "function/345961871": [
-      {
-        "id": "function/14078432",
-        "mask": "null"
       }
     ],
     "function/346305693": [
@@ -107182,14 +107186,6 @@
       {
         "id": "function/253794122",
         "mask": "null"
-      },
-      {
-        "id": "function/346305693",
-        "mask": "null"
-      },
-      {
-        "id": "function/478486472",
-        "mask": "null"
       }
     ],
     "function/668848422": [
@@ -114906,144 +114902,24 @@
     ],
     "function/884615129": [
       {
-        "id": "field/1001724888",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/199171849",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/370927607",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/633300604",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/649225262",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/927766504",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/954188953",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1008544093",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/144469778",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/156463617",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/163889622",
         "mask": "null"
       },
       {
-        "id": "function/186999466",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/22749633",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/247997110",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/284388814",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/288496489",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/31006852",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/312768442",
-        "mask": "[subclass=Object]"
-      },
-      {
-        "id": "function/346305693",
+        "id": "function/295807328",
         "mask": "null"
       },
       {
-        "id": "function/430236296",
-        "mask": "[null|subclass=Object]"
+        "id": "function/691150797",
+        "mask": "inlined"
       },
       {
-        "id": "function/459501018",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/464985932",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/521874428",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/623080699",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/699578922",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/707502824",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/756812986",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/784650927",
-        "mask": "[null|subclass=Object]"
+        "id": "function/691150797",
+        "mask": "null"
       },
       {
         "id": "function/792983327",
         "mask": "null"
-      },
-      {
-        "id": "function/818212569",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/823151285",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/825039833",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/864919156",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/944307894",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/950782810",
-        "mask": "[null|subclass=Object]"
       }
     ],
     "function/884850100": [
@@ -121143,7 +121019,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 241288,
+      "size": 236760,
       "imports": []
     }
   ],
@@ -121151,12 +121027,12 @@
   "deferredFiles": {},
   "dump_minor_version": 1,
   "program": {
-    "entrypoint": "function/345961871",
-    "size": 241288,
-    "dart2jsVersion": "2.1.0-dev.5.0",
-    "compilationMoment": "2018-09-19 14:38:59.740643",
-    "compilationDuration": 5768107,
-    "toJsonDuration": 62000,
+    "entrypoint": "function/233162298",
+    "size": 236760,
+    "dart2jsVersion": "2.1.0-dev.8.0",
+    "compilationMoment": "2018-10-24 14:13:40.934282",
+    "compilationDuration": 5389427,
+    "toJsonDuration": 53000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
