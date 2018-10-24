@@ -36,8 +36,8 @@ class Array2d<T> extends ListBase<T> {
   }
 
   Array2d.wrap(this.width, List<T> source)
-      : this._source = source,
-        this.height = (width != null && width > 0 && source != null)
+      : _source = source,
+        height = (width != null && width > 0 && source != null)
             ? source.length ~/ width
             : 0 {
     requireArgumentNotNull(width, 'width');
