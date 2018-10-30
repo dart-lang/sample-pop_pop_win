@@ -1134,7 +1134,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceba72yJ/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacettfuq9/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1465,7 +1465,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 22451,
+        "size": 22310,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -8732,7 +8732,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 11149,
+        "size": 11008,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -27435,7 +27435,7 @@
           },
           {
             "name": "subscriptions",
-            "type": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+            "type": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
             "declaredType": "List<EventStreamSubscription<_dispatchBroadcastEvent.T>>"
           }
         ],
@@ -30616,7 +30616,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 9,
         "code": null,
         "type": "bool Function()",
         "measurements": null
@@ -37642,7 +37642,7 @@
         "id": "function/524805631",
         "kind": "function",
         "name": "_updateCanvasSize",
-        "size": 1269,
+        "size": 1171,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -37657,7 +37657,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Vp:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j\nz=this.Yr\ny=this.ZL\nx=this.I6.getBoundingClientRect()\nw=this.I6\nv=w.clientLeft\nu=C.CD.zQ(x.left)\nt=w.clientTop\ns=C.CD.zQ(x.top)\nr=w.clientWidth\nq=w.clientHeight\nif(typeof r!==\"number\")throw H.b(\"dart2js_hint\")\nif(typeof q!==\"number\")throw H.b(\"dart2js_hint\")\nif(r===0||q===0)return\np=r/z\no=q/y\nswitch(this.c4){case C.pq:n=o\nm=p\nbreak\ncase C.o6:n=p>o?p:o\nm=n\nbreak\ncase C.bM:m=1\nn=1\nbreak\ncase C.as:n=p<o?p:o\nm=n\nbreak\ndefault:m=1\nn=1}w=this.bb\nswitch(w){case C.fR:case C.kx:case C.e8:l=0\nbreak\ncase C.d4:case C.eb:case C.L6:l=(r-z*m)/2\nbreak\ncase C.IK:case C.ld:case C.Kq:l=r-z*m\nbreak\ndefault:l=0}switch(w){case C.e8:case C.d4:case C.IK:k=0\nbreak\ncase C.fR:case C.eb:case C.ld:k=(q-y*n)/2\nbreak\ncase C.kx:case C.L6:case C.Kq:k=q-y*n\nbreak\ndefault:k=0}w=this.GI\nw.a=-l/m\nw.b=-k/n\nw.c=r/m\nw.d=q/n\nw=this.M4\nw.Vy(m,0,0,n,l,k)\nj=this.iN\nw.Pc(0,j,j)\nj=this.No\nj.Vy(1,0,0,1,-(v+u)-l,-(t+s)-k)\nj.Pc(0,1/m,1/n)\nj=this.V6\nj.E8()\ns=this.iN\nj.Pc(0,s,s)\nif(this.G4!==r||this.hU!==q){this.G4=r\nthis.hU=q\nw=this.I6\nv=this.iN\nw.width=C.CD.zQ(r*v)\nw.height=C.CD.zQ(q*v)\nif(w.clientWidth!==r||w.clientHeight!==q){w=w.style\nv=H.d(r)+\"px\"\nw.width=v\nw=this.I6.style\nv=H.d(q)+\"px\"\nw.height=v}this.H2(0,new R.pS(\"resize\",!1,C.wq,!1,!1))}}\n",
+        "code": "Vp:function(){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j\nz=this.Yr\ny=this.ZL\nx=this.I6.getBoundingClientRect()\nw=this.I6\nv=w.clientLeft\nu=C.CD.zQ(x.left)\nt=w.clientTop\ns=C.CD.zQ(x.top)\nr=w.clientWidth\nq=w.clientHeight\nif(r===0||q===0)return\np=r/z\no=q/y\nswitch(this.c4){case C.pq:n=o\nm=p\nbreak\ncase C.o6:n=p>o?p:o\nm=n\nbreak\ncase C.bM:m=1\nn=1\nbreak\ncase C.as:n=p<o?p:o\nm=n\nbreak\ndefault:m=1\nn=1}w=this.bb\nswitch(w){case C.fR:case C.kx:case C.e8:l=0\nbreak\ncase C.d4:case C.eb:case C.L6:l=(r-z*m)/2\nbreak\ncase C.IK:case C.ld:case C.Kq:l=r-z*m\nbreak\ndefault:l=0}switch(w){case C.e8:case C.d4:case C.IK:k=0\nbreak\ncase C.fR:case C.eb:case C.ld:k=(q-y*n)/2\nbreak\ncase C.kx:case C.L6:case C.Kq:k=q-y*n\nbreak\ndefault:k=0}w=this.GI\nw.a=-l/m\nw.b=-k/n\nw.c=r/m\nw.d=q/n\nw=this.M4\nw.Vy(m,0,0,n,l,k)\nj=this.iN\nw.Pc(0,j,j)\nj=this.No\nj.Vy(1,0,0,1,-(v+u)-l,-(t+s)-k)\nj.Pc(0,1/m,1/n)\nj=this.V6\nj.E8()\ns=this.iN\nj.Pc(0,s,s)\nif(this.G4!==r||this.hU!==q){this.G4=r\nthis.hU=q\nw=this.I6\nv=this.iN\nw.width=C.CD.zQ(r*v)\nw.height=C.CD.zQ(q*v)\nif(w.clientWidth!==r||w.clientHeight!==q){w=w.style\nv=H.d(r)+\"px\"\nw.width=v\nw=this.I6.style\nv=H.d(q)+\"px\"\nw.height=v}this.H2(0,new R.pS(\"resize\",!1,C.wq,!1,!1))}}\n",
         "type": "void Function()",
         "measurements": null
       },
@@ -54295,7 +54295,7 @@
         "parameters": [
           {
             "name": "element",
-            "type": "Union([null|exact=JSString], [subclass=DisplayObject])",
+            "type": "[subclass=DisplayObject]",
             "declaredType": "Object"
           },
           {
@@ -62371,7 +62371,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 3,
         "code": null,
         "type": "bool Function()",
         "measurements": null
@@ -66101,7 +66101,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "children": [],
-        "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+        "inferredType": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
         "code": null,
         "type": "List<EventStreamSubscription<RenderEvent>>"
       },
@@ -77915,7 +77915,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "children": [],
-        "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+        "inferredType": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
         "code": null,
         "type": "List<EventStreamSubscription<EnterFrameEvent>>"
       },
@@ -77975,7 +77975,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "children": [],
-        "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+        "inferredType": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
         "code": null,
         "type": "List<EventStreamSubscription<ExitFrameEvent>>"
       },
@@ -84340,6 +84340,10 @@
     ],
     "field/551971461": [
       {
+        "id": "function/147253557",
+        "mask": "null"
+      },
+      {
         "id": "function/399195151",
         "mask": "null"
       },
@@ -84370,10 +84374,6 @@
       {
         "id": "function/788412943",
         "mask": "null"
-      },
-      {
-        "id": "function/845814928",
-        "mask": "Container([exact=JSExtendableArray], element: [exact=JSString], length: 2)"
       }
     ],
     "field/570983786": [
@@ -86673,6 +86673,14 @@
       },
       {
         "id": "function/346305693",
+        "mask": "null"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/381082213",
         "mask": "null"
       },
       {
@@ -92042,6 +92050,10 @@
     ],
     "function/246115103": [
       {
+        "id": "function/381082213",
+        "mask": "inlined"
+      },
+      {
         "id": "function/999459123",
         "mask": "inlined"
       }
@@ -94178,6 +94190,14 @@
       {
         "id": "function/370761899",
         "mask": "[subclass=DisplayObject]"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "null"
       },
       {
         "id": "function/416160192",
@@ -103540,10 +103560,6 @@
         "mask": "null"
       },
       {
-        "id": "function/163889622",
-        "mask": "null"
-      },
-      {
         "id": "function/299842351",
         "mask": "null"
       },
@@ -110168,6 +110184,14 @@
         "mask": "null"
       },
       {
+        "id": "function/1009875590",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1009875590",
+        "mask": "null"
+      },
+      {
         "id": "function/1017141061",
         "mask": "[null|subclass=DisplayObject]"
       },
@@ -110241,6 +110265,10 @@
       },
       {
         "id": "function/350398314",
+        "mask": "null"
+      },
+      {
+        "id": "function/381082213",
         "mask": "null"
       },
       {
@@ -115184,6 +115212,14 @@
         "mask": "null"
       },
       {
+        "id": "function/381082213",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "null"
+      },
+      {
         "id": "function/581936585",
         "mask": "null"
       },
@@ -119280,6 +119316,14 @@
         "mask": "null"
       },
       {
+        "id": "function/381082213",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/381082213",
+        "mask": "null"
+      },
+      {
         "id": "function/478451597",
         "mask": "null"
       },
@@ -121019,7 +121063,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 236760,
+      "size": 236589,
       "imports": []
     }
   ],
@@ -121028,11 +121072,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 236760,
+    "size": 236589,
     "dart2jsVersion": "2.1.0-dev.8.0",
-    "compilationMoment": "2018-10-24 14:13:40.934282",
-    "compilationDuration": 5389427,
-    "toJsonDuration": 53000,
+    "compilationMoment": "2018-10-30 08:22:46.724548",
+    "compilationDuration": 5603465,
+    "toJsonDuration": 61000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

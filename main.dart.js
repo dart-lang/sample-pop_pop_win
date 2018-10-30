@@ -6432,7 +6432,6 @@ A.P0.prototype={
 bu:function(a){return this.b}}
 A.a.prototype={
 VB:function(a,b,c,d){var t,s,r,q
-if(!J.ia(a).$isn)throw H.b(P.xY("canvas"))
 if(a.tabIndex<=0)a.tabIndex=1
 t=a.style
 if(t.outline==="")t.outline="none"
@@ -6554,8 +6553,6 @@ n=q.clientTop
 m=C.CD.zQ(r.top)
 l=q.clientWidth
 k=q.clientHeight
-if(typeof l!=="number")throw H.b("dart2js_hint")
-if(typeof k!=="number")throw H.b("dart2js_hint")
 if(l===0||k===0)return
 j=l/t
 i=k/s
@@ -8824,12 +8821,12 @@ t=P.q
 s=H.K([],[t])
 r=W.Lb(null)
 q=H.K(["maybe","probably"],[t])
-if(C.Nm.OY(q,r.canPlayType("audio/ogg; codecs=opus"))!==-1)s.push("opus")
-if(C.Nm.OY(q,r.canPlayType("audio/mpeg"))!==-1)s.push("mp3")
-if(C.Nm.OY(q,r.canPlayType("audio/mp4"))!==-1)s.push("mp4")
-if(C.Nm.OY(q,r.canPlayType("audio/ogg"))!==-1)s.push("ogg")
-if(C.Nm.OY(q,r.canPlayType("audio/ac3"))!==-1)s.push("ac3")
-if(C.Nm.OY(q,r.canPlayType("audio/wav"))!==-1)s.push("wav")
+if(C.Nm.tg(q,r.canPlayType("audio/ogg; codecs=opus")))s.push("opus")
+if(C.Nm.tg(q,r.canPlayType("audio/mpeg")))s.push("mp3")
+if(C.Nm.tg(q,r.canPlayType("audio/mp4")))s.push("mp4")
+if(C.Nm.tg(q,r.canPlayType("audio/ogg")))s.push("ogg")
+if(C.Nm.tg(q,r.canPlayType("audio/ac3")))s.push("ac3")
+if(C.Nm.tg(q,r.canPlayType("audio/wav")))s.push("wav")
 P.JS("StageXL audio types   : "+H.d(s))
 return C.Nm.tt(s,!1)})
 lazy($,"KE","$get$KE",function(){var t=W.lq().devicePixelRatio
