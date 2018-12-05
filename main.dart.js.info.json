@@ -872,7 +872,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7176,
+        "size": 7166,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -1132,7 +1132,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceKloRdh/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceLkHuxY/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1155,7 +1155,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 28095,
+        "size": 28090,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1381,7 +1381,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20263,
+        "size": 20255,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1463,7 +1463,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 22162,
+        "size": 22123,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -1862,7 +1862,7 @@
         "id": "class/36312556",
         "kind": "class",
         "name": "ConcurrentModificationError",
-        "size": 199,
+        "size": 194,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -2933,7 +2933,7 @@
         "id": "class/143626168",
         "kind": "class",
         "name": "ArgumentError",
-        "size": 347,
+        "size": 342,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -2948,7 +2948,8 @@
           "function/464959827",
           "function/606572177",
           "function/717852932",
-          "function/885768717"
+          "function/885768717",
+          "function/1040711986"
         ]
       },
       "144451205": {
@@ -8694,7 +8695,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 10893,
+        "size": 10854,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -14834,7 +14835,7 @@
           "external": false
         },
         "returnType": "dynamic",
-        "inferredReturnType": "[null|subclass=Object]",
+        "inferredReturnType": "[null|subtype=bool]",
         "parameters": [
           {
             "name": "value",
@@ -15309,7 +15310,7 @@
         "id": "function/66405152",
         "kind": "function",
         "name": "_cancelAndValue",
-        "size": 185,
+        "size": 177,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [
@@ -15342,7 +15343,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b,c){var z=a.Gv()\nif(!!J.ia(z).$isb8&&z!==$.Yj())z.wM(new P.QX(b,c))\nelse b.HH(c)}\n",
+        "code": "function(a,b,c){var z=a.Gv()\nif(z!=null&&z!==$.Yj())z.wM(new P.QX(b,c))\nelse b.HH(c)}\n",
         "type": "void Function(StreamSubscription<dynamic>,_Future<dynamic>,dynamic)",
         "measurements": null
       },
@@ -15662,7 +15663,7 @@
           "external": false
         },
         "returnType": "dynamic",
-        "inferredReturnType": "[null|subclass=Object]",
+        "inferredReturnType": "[null|exact=JSString]",
         "parameters": [
           {
             "name": "value",
@@ -16258,7 +16259,7 @@
           "external": false
         },
         "returnType": "dynamic",
-        "inferredReturnType": "[null|subclass=Object]",
+        "inferredReturnType": "[null|subtype=List]",
         "parameters": [
           {
             "name": "value",
@@ -17523,7 +17524,7 @@
         "parameters": [
           {
             "name": "argument",
-            "type": "Union([exact=JSFixedArray], [subclass=JSInt])",
+            "type": "Union([null|exact=JSFixedArray], [subclass=JSInt])",
             "declaredType": "dynamic"
           },
           {
@@ -18390,7 +18391,7 @@
         "id": "function/135645840",
         "kind": "function",
         "name": "_onTouchEvent",
-        "size": 1905,
+        "size": 1892,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -18414,7 +18415,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "XM:function(b0){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9\nb0.preventDefault()\nz=b0.type\ny=b0.altKey\nx=b0.ctrlKey\nw=b0.shiftKey\nfor(v=b0.changedTouches,u=v.length,t=z===\"touchmove\",s=z===\"touchcancel\",r=z===\"touchend\",q=z===\"touchstart\",p=this.mn,o=this.hi,n=P.F,m=[n],l=this.No,n=[n],k=[A.fE],j=0;j<v.length;v.length===u||(0,H.lk)(v),++j){i=v[j]\nh=i.identifier\ng=l.Ey(new P.hL(C.CD.zQ(i.clientX),C.CD.zQ(i.clientY),m))\nf=new U.tZ(0,0,n)\ne=this.tJ(g.a,g.b)\ne=H.G(e!=null?e:this,\"$isHV\")\nd=p.to(0,h,new A.cZ(this,e))\nc=d.a\nb=d.b\nC.Nm.aN(o,new A.EZ(c,g))\na=d.d\nif(a!==e){a0=H.K([],k)\na1=H.K([],k)\nfor(a2=a;a2!=null;a2=a2.fy)a0.push(a2)\nfor(a2=e;a2!=null;a2=a2.fy)a1.push(a2)\nfor(a3=a0.length,a4=a1.length,a5=0;!0;++a5){if(a5===a3)break\nif(a5===a4)break\nif(a0[a3-a5-1]!==a1[a4-a5-1])break}if(a!=null){a.TK(g,f)\na.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchOut\",!0,C.wq,!1,!1))}for(a6=0;a6<a0.length-a5;++a6){a7=a0[a6]\na7.TK(g,f)\na7.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchRollOut\",!1,C.wq,!1,!1))}for(a6=a1.length-a5-1;a6>=0;--a6){a7=a1[a6]\na7.TK(g,f)\na7.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchRollOver\",!1,C.wq,!1,!1))}e.TK(g,f)\ne.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchOver\",!0,C.wq,!1,!1))\nd.d=e}if(q){this.I6.focus()\np.Y5(0,h,d)\na8=\"touchBegin\"}else a8=null\nif(r){p.Rz(0,h)\na9=d.c===e\na8=\"touchEnd\"}else a9=!1\nif(s){p.Rz(0,h)\na8=\"touchCancel\"}if(t)a8=\"touchMove\"\nif(a8!=null&&!0){e.TK(g,f)\ne.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,a8,!0,C.wq,!1,!1))\nif(a9)e.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchTap\",!0,C.wq,!1,!1))}}}\n",
+        "code": "XM:function(b0){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9\nb0.preventDefault()\nz=b0.type\ny=b0.altKey\nx=b0.ctrlKey\nw=b0.shiftKey\nfor(v=b0.changedTouches,u=v.length,t=z===\"touchmove\",s=z===\"touchcancel\",r=z===\"touchend\",q=z===\"touchstart\",p=this.mn,o=this.hi,n=P.F,m=[n],l=this.No,n=[n],k=[A.fE],j=0;j<v.length;v.length===u||(0,H.lk)(v),++j){i=v[j]\nh=i.identifier\ng=l.Ey(new P.hL(C.CD.zQ(i.clientX),C.CD.zQ(i.clientY),m))\nf=new U.tZ(0,0,n)\ne=this.tJ(g.a,g.b)\ne=e!=null?e:this\nd=p.to(0,h,new A.cZ(this,e))\nc=d.a\nb=d.b\nC.Nm.aN(o,new A.EZ(c,g))\na=d.d\nif(a!==e){a0=H.K([],k)\na1=H.K([],k)\nfor(a2=a;a2!=null;a2=a2.fy)a0.push(a2)\nfor(a2=e;a2!=null;a2=a2.fy)a1.push(a2)\nfor(a3=a0.length,a4=a1.length,a5=0;!0;++a5){if(a5===a3)break\nif(a5===a4)break\nif(a0[a3-a5-1]!==a1[a4-a5-1])break}if(a!=null){a.TK(g,f)\na.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchOut\",!0,C.wq,!1,!1))}for(a6=0;a6<a0.length-a5;++a6){a7=a0[a6]\na7.TK(g,f)\na7.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchRollOut\",!1,C.wq,!1,!1))}for(a6=a1.length-a5-1;a6>=0;--a6){a7=a1[a6]\na7.TK(g,f)\na7.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchRollOver\",!1,C.wq,!1,!1))}e.TK(g,f)\ne.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchOver\",!0,C.wq,!1,!1))\nd.d=e}if(q){this.I6.focus()\np.Y5(0,h,d)\na8=\"touchBegin\"}else a8=null\nif(r){p.Rz(0,h)\na9=d.c===e\na8=\"touchEnd\"}else a9=!1\nif(s){p.Rz(0,h)\na8=\"touchCancel\"}if(t)a8=\"touchMove\"\nif(a8!=null&&!0){e.TK(g,f)\ne.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,a8,!0,C.wq,!1,!1))\nif(a9)e.H2(0,new R.y6(c,b,f.a,f.b,g.a,g.b,y,x,w,!1,\"touchTap\",!0,C.wq,!1,!1))}}}\n",
         "type": "void Function(TouchEvent)",
         "measurements": null
       },
@@ -24560,7 +24561,7 @@
           "external": false
         },
         "returnType": "DisplayObject",
-        "inferredReturnType": "[null|subclass=DisplayObject]",
+        "inferredReturnType": "[null|subclass=InteractiveObject]",
         "parameters": [
           {
             "name": "localX",
@@ -29232,7 +29233,7 @@
           "external": false
         },
         "returnType": "String",
-        "inferredReturnType": "[null|exact=JSString]",
+        "inferredReturnType": "[exact=JSString]",
         "parameters": [
           {
             "name": "object",
@@ -30545,7 +30546,7 @@
           "external": false
         },
         "returnType": "DisplayObject",
-        "inferredReturnType": "[null|subclass=DisplayObject]",
+        "inferredReturnType": "[null|subclass=InteractiveObject]",
         "parameters": [
           {
             "name": "localX",
@@ -32544,7 +32545,7 @@
         "parameters": [
           {
             "name": "invalidValue",
-            "type": "[null|subclass=JSInt]",
+            "type": "[subclass=JSInt]",
             "declaredType": "num"
           },
           {
@@ -34342,7 +34343,7 @@
         "id": "function/464155614",
         "kind": "function",
         "name": "_onMouseEvent",
-        "size": 1951,
+        "size": 1938,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -34365,7 +34366,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "kp:function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e\na.preventDefault()\nz=Date.now()\ny=a.button\nx=P.F\nw=this.No.Ey(new P.hL(a.clientX,a.clientY,[x]))\nv=new U.tZ(0,0,[x])\nif(y<0||y>2)return\nif(a.type===\"mousemove\"&&this.ZB.eT(0,w))return\nu=this.HG[y]\nthis.ZB=w\nC.Nm.aN(this.hi,new A.PK(w))\nif(a.type!==\"mouseout\")t=H.G(this.Fo(w.a,w.b),\"$isHV\")\nelse{this.H2(0,new R.pS(\"mouseLeave\",!1,C.wq,!1,!1))\nt=null}s=this.rT\nif(s!=t){x=[A.fE]\nr=H.K([],x)\nq=H.K([],x)\nfor(p=s;p!=null;p=p.fy)r.push(p)\nfor(p=t;p!=null;p=p.fy)q.push(p)\nfor(x=r.length,o=q.length,n=0;!0;++n){if(n===x)break\nif(n===o)break\nif(r[x-n-1]!==q[o-n-1])break}if(s!=null){s.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\ns.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"mouseOut\",!0,C.wq,!1,!1))}for(h=0;h<r.length-n;++h){g=r[h]\ng.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\ng.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"rollOut\",!1,C.wq,!1,!1))}for(h=q.length-n-1;h>=0;--h){g=q[h]\ng.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\ng.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"rollOver\",!1,C.wq,!1,!1))}if(t!=null){t.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\nt.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"mouseOver\",!0,C.wq,!1,!1))}this.rT=t}this.cq()\nif(a.type===\"mousedown\"){this.I6.focus()\nf=u.a\nif(t!=u.e||z>u.r+500)u.x=0\nu.f=!0\nu.e=t\nu.r=z;++u.x}else f=null\nif(a.type===\"mouseup\"){f=u.b\nu.f=!1\ne=u.e==t\ne}else e=!1\nz=a.type\nif(z===\"mousemove\")f=\"mouseMove\"\nif(z===\"contextmenu\")f=\"contextMenu\"\nif(f!=null&&t!=null){t.TK(w,v)\nz=v.a\nx=v.b\no=w.a\nm=w.b\nl=a.altKey\nk=a.ctrlKey\nj=a.shiftKey\nt.H2(0,new R.OK(0,0,u.f,u.x,z,x,o,m,l,k,j,!1,f,!0,C.wq,!1,!1))\nif(e){z=v.a\nx=v.b\no=w.a\nm=w.b\nl=a.altKey\nk=a.ctrlKey\nj=a.shiftKey\nt.H2(0,new R.OK(0,0,u.f,0,z,x,o,m,l,k,j,!1,u.c,!0,C.wq,!1,!1))}}}\n",
+        "code": "kp:function(a){var z,y,x,w,v,u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e\na.preventDefault()\nz=Date.now()\ny=a.button\nx=P.F\nw=this.No.Ey(new P.hL(a.clientX,a.clientY,[x]))\nv=new U.tZ(0,0,[x])\nif(y<0||y>2)return\nif(a.type===\"mousemove\"&&this.ZB.eT(0,w))return\nu=this.HG[y]\nthis.ZB=w\nC.Nm.aN(this.hi,new A.PK(w))\nif(a.type!==\"mouseout\")t=this.Fo(w.a,w.b)\nelse{this.H2(0,new R.pS(\"mouseLeave\",!1,C.wq,!1,!1))\nt=null}s=this.rT\nif(s!=t){x=[A.fE]\nr=H.K([],x)\nq=H.K([],x)\nfor(p=s;p!=null;p=p.fy)r.push(p)\nfor(p=t;p!=null;p=p.fy)q.push(p)\nfor(x=r.length,o=q.length,n=0;!0;++n){if(n===x)break\nif(n===o)break\nif(r[x-n-1]!==q[o-n-1])break}if(s!=null){s.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\ns.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"mouseOut\",!0,C.wq,!1,!1))}for(h=0;h<r.length-n;++h){g=r[h]\ng.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\ng.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"rollOut\",!1,C.wq,!1,!1))}for(h=q.length-n-1;h>=0;--h){g=q[h]\ng.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\ng.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"rollOver\",!1,C.wq,!1,!1))}if(t!=null){t.TK(w,v)\nx=v.a\no=v.b\nm=w.a\nl=w.b\nk=a.altKey\nj=a.ctrlKey\ni=a.shiftKey\nt.H2(0,new R.OK(0,0,u.f,0,x,o,m,l,k,j,i,!1,\"mouseOver\",!0,C.wq,!1,!1))}this.rT=t}this.cq()\nif(a.type===\"mousedown\"){this.I6.focus()\nf=u.a\nif(t!=u.e||z>u.r+500)u.x=0\nu.f=!0\nu.e=t\nu.r=z;++u.x}else f=null\nif(a.type===\"mouseup\"){f=u.b\nu.f=!1\ne=u.e==t\ne}else e=!1\nz=a.type\nif(z===\"mousemove\")f=\"mouseMove\"\nif(z===\"contextmenu\")f=\"contextMenu\"\nif(f!=null&&t!=null){t.TK(w,v)\nz=v.a\nx=v.b\no=w.a\nm=w.b\nl=a.altKey\nk=a.ctrlKey\nj=a.shiftKey\nt.H2(0,new R.OK(0,0,u.f,u.x,z,x,o,m,l,k,j,!1,f,!0,C.wq,!1,!1))\nif(e){z=v.a\nx=v.b\no=w.a\nm=w.b\nl=a.altKey\nk=a.ctrlKey\nj=a.shiftKey\nt.H2(0,new R.OK(0,0,u.f,0,z,x,o,m,l,k,j,!1,u.c,!0,C.wq,!1,!1))}}}\n",
         "type": "void Function(MouseEvent)",
         "measurements": null
       },
@@ -34407,7 +34408,7 @@
         "id": "function/464959827",
         "kind": "function",
         "name": "toString",
-        "size": 186,
+        "size": 181,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/143626168",
         "children": [],
@@ -34422,7 +34423,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){var z,y,x,w,v,u\nz=this.c\ny=z!=null?\" (\"+z+\")\":\"\"\nz=this.d\nx=z==null?\"\":\": \"+H.d(z)\nw=this.gZ2()+y+x\nif(!this.a)return w\nv=this.guF()\nu=P.hl(this.b)\nreturn w+v+\": \"+H.d(u)}\n",
+        "code": "bu:function(a){var z,y,x,w,v,u\nz=this.c\ny=z!=null?\" (\"+z+\")\":\"\"\nz=this.d\nx=z==null?\"\":\": \"+H.d(z)\nw=this.gZ2()+y+x\nif(!this.a)return w\nv=this.guF()\nu=P.hl(this.b)\nreturn w+v+\": \"+u}\n",
         "type": "String Function()",
         "measurements": null
       },
@@ -36336,7 +36337,7 @@
         "parameters": [
           {
             "name": "result",
-            "type": "Union([exact=JSUnmodifiableArray], [exact=MockSound], [exact=_Future])",
+            "type": "Union([exact=JSUnmodifiableArray], [exact=MockSound])",
             "declaredType": "FutureOr<_Future.T>"
           }
         ],
@@ -49140,7 +49141,7 @@
         "id": "function/745741399",
         "kind": "function",
         "name": "toString",
-        "size": 157,
+        "size": 152,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/36312556",
         "children": [],
@@ -49155,7 +49156,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){var z=this.a\nif(z==null)return\"Concurrent modification during iteration.\"\nreturn\"Concurrent modification during iteration: \"+H.d(P.hl(z))+\".\"}\n",
+        "code": "bu:function(a){var z=this.a\nif(z==null)return\"Concurrent modification during iteration.\"\nreturn\"Concurrent modification during iteration: \"+P.hl(z)+\".\"}\n",
         "type": "String Function()",
         "measurements": null
       },
@@ -51495,7 +51496,7 @@
         "id": "function/792983327",
         "kind": "function",
         "name": "CastErrorImplementation",
-        "size": 114,
+        "size": 109,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/644348892",
         "children": [],
@@ -51521,7 +51522,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "function(a,b){return new H.Pe(\"CastError: \"+H.d(P.hl(a))+\": type '\"+H.QR(a)+\"' is not a subtype of type '\"+b+\"'\")}\n",
+        "code": "function(a,b){return new H.Pe(\"CastError: \"+P.hl(a)+\": type '\"+H.QR(a)+\"' is not a subtype of type '\"+b+\"'\")}\n",
         "type": "dynamic Function(Object,Object)",
         "measurements": null
       },
@@ -57208,7 +57209,7 @@
         "id": "function/911365869",
         "kind": "function",
         "name": "_onMouseWheelEvent",
-        "size": 311,
+        "size": 298,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -57229,7 +57230,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yo:function(a){var z,y,x,w,v,u,t,s,r,q\nz=P.F\ny=this.No.Ey(new P.hL(a.clientX,a.clientY,[z]))\nx=new U.tZ(0,0,[z])\nw=H.G(this.Fo(y.a,y.b),\"$isHV\")\nw.TK(y,x)\nz=x.a\nv=x.b\nu=y.a\nt=y.b\ns=a.altKey\nr=a.ctrlKey\nq=a.shiftKey\nw.H2(0,new R.OK((a&&C.Kb).gOW(a),C.Kb.gNC(a),!1,0,z,v,u,t,s,r,q,!1,\"mouseWheel\",!0,C.wq,!1,!1))}\n",
+        "code": "Yo:function(a){var z,y,x,w,v,u,t,s,r,q\nz=P.F\ny=this.No.Ey(new P.hL(a.clientX,a.clientY,[z]))\nx=new U.tZ(0,0,[z])\nw=this.Fo(y.a,y.b)\nw.TK(y,x)\nz=x.a\nv=x.b\nu=y.a\nt=y.b\ns=a.altKey\nr=a.ctrlKey\nq=a.shiftKey\nw.H2(0,new R.OK((a&&C.Kb).gOW(a),C.Kb.gNC(a),!1,0,z,v,u,t,s,r,q,!1,\"mouseWheel\",!0,C.wq,!1,!1))}\n",
         "type": "void Function(WheelEvent)",
         "measurements": null
       },
@@ -62999,6 +63000,40 @@
         "type": "num Function()",
         "measurements": null
       },
+      "1040711986": {
+        "id": "function/1040711986",
+        "kind": "function",
+        "name": "checkNotNull",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/143626168",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "argument",
+            "type": "[subclass=JSInt]",
+            "declaredType": "Object"
+          },
+          {
+            "name": "name",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 1,
+        "code": null,
+        "type": "void Function(Object,[String])",
+        "measurements": null
+      },
       "1041028498": {
         "id": "function/1041028498",
         "kind": "function",
@@ -63255,7 +63290,7 @@
           "external": false
         },
         "returnType": "DisplayObject",
-        "inferredReturnType": "[subclass=DisplayObject]",
+        "inferredReturnType": "[subclass=InteractiveObject]",
         "parameters": [
           {
             "name": "localX",
@@ -85869,10 +85904,6 @@
         "mask": "null"
       },
       {
-        "id": "function/346305693",
-        "mask": "null"
-      },
-      {
         "id": "function/349794930",
         "mask": "Union([exact=EventStreamSubscription], [exact=_EventStreamSubscription], [null|exact=_DoneStreamSubscription], [subclass=_ControllerSubscription])"
       },
@@ -86977,6 +87008,14 @@
       {
         "id": "function/1027535878",
         "mask": "[subtype=Iterator]"
+      },
+      {
+        "id": "function/1040711986",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1040711986",
+        "mask": "null"
       },
       {
         "id": "function/1047605700",
@@ -88294,10 +88333,6 @@
       },
       {
         "id": "function/544746737",
-        "mask": "null"
-      },
-      {
-        "id": "function/580095665",
         "mask": "null"
       },
       {
@@ -100121,10 +100156,6 @@
         "mask": "null"
       },
       {
-        "id": "function/580095665",
-        "mask": "null"
-      },
-      {
         "id": "function/609704510",
         "mask": "inlined"
       },
@@ -109025,10 +109056,6 @@
       {
         "id": "function/355012434",
         "mask": "null"
-      },
-      {
-        "id": "function/445547062",
-        "mask": "null"
       }
     ],
     "function/746888330": [
@@ -110720,10 +110747,6 @@
       },
       {
         "id": "function/401567756",
-        "mask": "null"
-      },
-      {
-        "id": "function/445547062",
         "mask": "null"
       }
     ],
@@ -114246,10 +114269,6 @@
       },
       {
         "id": "function/48882503",
-        "mask": "null"
-      },
-      {
-        "id": "function/580095665",
         "mask": "null"
       },
       {
@@ -119376,7 +119395,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 232191,
+      "size": 232129,
       "imports": []
     }
   ],
@@ -119385,11 +119404,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 232191,
-    "dart2jsVersion": "2.2.0-dev.0.0",
-    "compilationMoment": "2018-11-26 09:56:34.896812",
-    "compilationDuration": 3869123,
-    "toJsonDuration": 60000,
+    "size": 232129,
+    "dart2jsVersion": "2.2.0-edge.4cd567b3a2af288df48347c2b8c8d3d8990f930f",
+    "compilationMoment": "2018-12-05 12:14:45.061903",
+    "compilationDuration": 3968021,
+    "toJsonDuration": 65000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
