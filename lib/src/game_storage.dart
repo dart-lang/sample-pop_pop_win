@@ -25,14 +25,14 @@ class GameStorage {
     assert(game != null);
     assert(game.state == GameState.won);
 
-    var w = game.field.width;
-    var h = game.field.height;
-    var m = game.field.bombCount;
-    var duration = game.duration.inMilliseconds;
+    final w = game.field.width;
+    final h = game.field.height;
+    final m = game.field.bombCount;
+    final duration = game.duration.inMilliseconds;
 
-    var key = _getKey(w, h, m);
+    final key = _getKey(w, h, m);
 
-    var currentScore = _getIntValue(key, null);
+    final currentScore = _getIntValue(key, null);
     if (currentScore == null || currentScore > duration) {
       _setIntValue(key, duration);
       _bestTimeUpdated.add(null);
@@ -58,7 +58,7 @@ class GameStorage {
       return _parseValue(_cache[key], defaultValue);
     }
 
-    var strValue = targetPlatform.getValue(key);
+    final strValue = targetPlatform.getValue(key);
     _cache[key] = strValue;
     return _parseValue(strValue, defaultValue);
   }
@@ -66,12 +66,12 @@ class GameStorage {
   void _setIntValue(String key, int value) {
     assert(key != null);
     _cache.remove(key);
-    var val = (value == null) ? null : value.toString();
+    final val = (value == null) ? null : value.toString();
     targetPlatform.setValue(key, val);
   }
 
   void _incrementIntValue(String key) {
-    var val = _getIntValue(key);
+    final val = _getIntValue(key);
     _setIntValue(key, val + 1);
   }
 

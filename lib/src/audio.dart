@@ -41,11 +41,11 @@ void _playAudio(String name) {
   if (_resourceManager == null) throw StateError('Not initialized');
   switch (name) {
     case _pop:
-      var i = _rnd.nextInt(8);
+      final i = _rnd.nextInt(8);
       name = '$_pop$i';
       break;
     case _bomb:
-      var i = _rnd.nextInt(4);
+      final i = _rnd.nextInt(4);
       name = '$_bomb$i';
       break;
   }

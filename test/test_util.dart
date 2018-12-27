@@ -45,7 +45,7 @@ const List<int> sampleField = <int>[
 ];
 
 Field getSampleField() {
-  var bools = List<bool>.from(sampleField.map((x) => x == null));
+  final bools = List<bool>.from(sampleField.map((x) => x == null));
 
   return Field.fromSquares(6, 5, bools);
 }

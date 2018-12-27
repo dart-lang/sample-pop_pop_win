@@ -44,17 +44,20 @@ class GameElement extends Sprite {
   TextureAtlas _animations;
 
   Game get game => manager.game;
+
   ResourceManager get resourceManager => manager.resourceManager;
 
   int get boardSize => _boardSize;
+
   num get boardScale => _boardScale;
 
   ScoreElement get scoreElement => _scoreElement;
+
   BoardElement get boardElement => _boardElement;
 
   GameElement(this.manager) {
-    var opa = resourceManager.getTextureAtlas('opaque');
-    var sta = resourceManager.getTextureAtlas('static');
+    final opa = resourceManager.getTextureAtlas('opaque');
+    final sta = resourceManager.getTextureAtlas('static');
     _animations = resourceManager.getTextureAtlas('animated');
 
     _boardSize = game.field.width * SquareElement.size + 2 * _edgeOffset;
@@ -62,8 +65,9 @@ class GameElement extends Sprite {
 
     GameBackgroundElement(this, opa);
 
-    var newButtonNormal = Bitmap(sta.getBitmapData('button_new_game'));
-    var newButtonPressed = Bitmap(sta.getBitmapData('button_new_game_clicked'));
+    final newButtonNormal = Bitmap(sta.getBitmapData('button_new_game'));
+    final newButtonPressed =
+        Bitmap(sta.getBitmapData('button_new_game_clicked'));
 
     SimpleButton(
         newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
@@ -86,8 +90,8 @@ class GameElement extends Sprite {
       stage.juggler.add(_scoreElement);
     });
 
-    var logoScale = min(max(_boardScale, 1.1), 1.5);
-    var logo = Bitmap(sta.getBitmapData('logo_win'));
+    final logoScale = min(max(_boardScale, 1.1), 1.5);
+    final logo = Bitmap(sta.getBitmapData('logo_win'));
     _logoButton = SimpleButton(logo, logo, logo, logo);
     _logoButton
       ..y = 20
@@ -161,7 +165,7 @@ class GameElement extends Sprite {
       assert(game.state != GameState.lost);
       if (!alt) {
         // if it was a normal click, the first item should be the clicked item
-        var first = reveals[0];
+        final first = reveals[0];
         assert(first.x == x);
         assert(first.y == y);
       }
@@ -194,7 +198,7 @@ class GameElement extends Sprite {
       assert(game.state == GameState.lost);
 
       reveals = Iterable.generate(game.field.length, (i) {
-        var c = game.field.getCoordinate(i);
+        final c = game.field.getCoordinate(i);
         return Tuple(c, game.getSquareState(c.x, c.y));
       })
           .where((t2) =>
@@ -204,9 +208,9 @@ class GameElement extends Sprite {
     }
 
     final values = reveals.map((c) {
-      var initialOffset =
+      final initialOffset =
           Vector(SquareElement.size * c.x, SquareElement.size * c.y);
-      var squareOffset = _popExplodeAnimationOffset + initialOffset;
+      final squareOffset = _popExplodeAnimationOffset + initialOffset;
 
       var delay = _popAnimationHitFrame + ((c - start).magnitude * 4).toInt();
       delay += _rnd.nextInt(10);
@@ -218,16 +222,16 @@ class GameElement extends Sprite {
       });
 
     for (var v in values) {
-      var c = v.point;
-      var squareOffset = v.squareOffset;
+      final c = v.point;
+      final squareOffset = v.squareOffset;
 
-      var se = _boardElement.squares.get(c.x, c.y);
-      var ss = se.squareState;
+      final se = _boardElement.squares.get(c.x, c.y);
+      final ss = se.squareState;
 
-      var texturePrefix =
+      final texturePrefix =
           ss == SquareState.bomb ? 'balloon_explode' : 'balloon_pop';
 
-      var anim =
+      final anim =
           FlipBook(_animations.getBitmapDatas(texturePrefix), _frameRate, false)
             ..x = squareOffset.x
             ..y = squareOffset.y
@@ -247,19 +251,20 @@ class GameElement extends Sprite {
     assert(points.isNotEmpty);
     game_audio.throwDart();
     for (var point in points) {
-      var squareOffset = _dartAnimationOffset +
+      final squareOffset = _dartAnimationOffset +
           Vector(SquareElement.size * point.x, SquareElement.size * point.y);
 
-      var dart = FlipBook(_animations.getBitmapDatas('dart'), _frameRate, false)
-        ..x = squareOffset.x
-        ..y = squareOffset.y
-        ..mouseEnabled = false
-        ..play()
-        ..addTo(_dartLayer);
+      final dart =
+          FlipBook(_animations.getBitmapDatas('dart'), _frameRate, false)
+            ..x = squareOffset.x
+            ..y = squareOffset.y
+            ..mouseEnabled = false
+            ..play()
+            ..addTo(_dartLayer);
 
       dart.onComplete.listen((e) => dart.removeFromParent());
 
-      var shadow =
+      final shadow =
           FlipBook(_animations.getBitmapDatas('shadow'), _frameRate, false)
             ..x = squareOffset.x
             ..y = squareOffset.y

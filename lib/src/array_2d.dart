@@ -24,8 +24,8 @@ class Array2d<T> extends ListBase<T> {
   factory Array2d.readonlyFrom(int width, Iterable<T> source) {
     requireArgumentNotNull(width, 'width');
     requireArgumentNotNull(source, 'source');
-    var list = List<T>.from(source);
-    var s = source == null ? null : UnmodifiableListView<T>(list);
+    final list = List<T>.from(source);
+    final s = source == null ? null : UnmodifiableListView<T>(list);
     return Array2d.wrap(width, s);
   }
 
@@ -89,8 +89,8 @@ class Array2d<T> extends ListBase<T> {
   List<int> getAdjacentIndices(int x, int y) {
     final adj = <int>[];
 
-    for (var k = math.max(0, y - 1); k < math.min(height, (y + 2)); k++) {
-      for (var j = math.max(0, x - 1); j < math.min(width, (x + 2)); j++) {
+    for (var k = math.max(0, y - 1); k < math.min(height, y + 2); k++) {
+      for (var j = math.max(0, x - 1); j < math.min(width, x + 2); j++) {
         if (j != x || k != y) {
           adj.add(_getIndex(j, k));
         }

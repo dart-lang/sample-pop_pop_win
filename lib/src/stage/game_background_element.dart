@@ -9,37 +9,39 @@ import 'game_element.dart';
 
 class GameBackgroundElement extends Sprite {
   num get _backgroundScale => (parent as GameElement).boardScale;
+
   int get _boardSize => (parent as GameElement).boardSize;
+
   Game get _game => (parent as GameElement).game;
 
   GameBackgroundElement(GameElement gameElement, TextureAtlas op) {
     addTo(gameElement);
 
     //the lengths we go to reduce bytes down the wire...
-    var ttl = Bitmap(op.getBitmapData('background_top_left'));
-    var stl = Bitmap(op.getBitmapData('background_side_left'))..y = 96;
+    final ttl = Bitmap(op.getBitmapData('background_top_left'));
+    final stl = Bitmap(op.getBitmapData('background_side_left'))..y = 96;
 
-    var bbl = Bitmap(op.getBitmapData('background_top_left'))
+    final bbl = Bitmap(op.getBitmapData('background_top_left'))
       ..scaleY = -1
       ..y = 1534;
-    var sbl = Bitmap(op.getBitmapData('background_side_left'))
+    final sbl = Bitmap(op.getBitmapData('background_side_left'))
       ..scaleY = -1
       ..y = 1438;
 
-    var ttr = Bitmap(op.getBitmapData('background_top_left'))
+    final ttr = Bitmap(op.getBitmapData('background_top_left'))
       ..scaleX = -1
       ..x = 2048;
-    var str = Bitmap(op.getBitmapData('background_side_left'))
+    final str = Bitmap(op.getBitmapData('background_side_left'))
       ..scaleX = -1
       ..x = 2048
       ..y = 96;
 
-    var bbr = Bitmap(op.getBitmapData('background_top_left'))
+    final bbr = Bitmap(op.getBitmapData('background_top_left'))
       ..scaleX = -1
       ..x = 2048
       ..scaleY = -1
       ..y = 1534;
-    var sbr = Bitmap(op.getBitmapData('background_side_left'))
+    final sbr = Bitmap(op.getBitmapData('background_side_left'))
       ..scaleX = -1
       ..x = 2048
       ..scaleY = -1
@@ -55,8 +57,8 @@ class GameBackgroundElement extends Sprite {
     addChild(sbr);
 
     //draw the board
-    var boardData = BitmapData(_boardSize, _boardSize, 0x000000);
-    var cr = Rectangle<int>(0, 0, 112, 122);
+    final boardData = BitmapData(_boardSize, _boardSize, 0x000000);
+    final cr = Rectangle<int>(0, 0, 112, 122);
     boardData
       ..drawPixels(
           op.getBitmapData('game_board_corner_top_left'), cr, Point<int>(0, 0))
@@ -66,8 +68,8 @@ class GameBackgroundElement extends Sprite {
           Point<int>(0, _boardSize - 112))
       ..drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
           Point<int>(_boardSize - 112, _boardSize - 112));
-    var tbr = Rectangle<int>(0, 0, 80, 112);
-    var lrr = Rectangle<int>(0, 0, 112, 80);
+    final tbr = Rectangle<int>(0, 0, 80, 112);
+    final lrr = Rectangle<int>(0, 0, 112, 80);
     for (var i = 0; i < _game.field.width - 2; i++) {
       boardData
         ..drawPixels(op.getBitmapData('game_board_side_top'), tbr,
@@ -80,7 +82,7 @@ class GameBackgroundElement extends Sprite {
             Point<int>(_boardSize - 112, 112 + i * 80));
     }
 
-    var board = Bitmap(boardData)
+    final board = Bitmap(boardData)
       ..x = GameElement.boardOffset.x
       ..y = GameElement.boardOffset.y
       ..scaleX = _backgroundScale

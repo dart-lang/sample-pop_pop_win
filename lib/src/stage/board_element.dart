@@ -17,10 +17,10 @@ class BoardElement extends Sprite {
 
     _elements = Array2d<SquareElement>(game.field.width, game.field.height);
 
-    var scaledSize = SquareElement.size * _boardScale;
+    final scaledSize = SquareElement.size * _boardScale;
     for (var i = 0; i < _elements.length; i++) {
-      var coords = _elements.getCoordinate(i);
-      var se = SquareElement(coords.x, coords.y)
+      final coords = _elements.getCoordinate(i);
+      final se = SquareElement(coords.x, coords.y)
         ..x = coords.x * scaledSize
         ..y = coords.y * scaledSize
         ..scaleX = _boardScale
@@ -33,8 +33,11 @@ class BoardElement extends Sprite {
   }
 
   GameElement get gameElement => parent as GameElement;
+
   num get _boardScale => gameElement.boardScale;
+
   Array2d<SquareElement> get squares => _elements;
+
   Game get game => gameElement.game;
 
   TextureAtlas get opaqueAtlas =>

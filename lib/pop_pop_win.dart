@@ -14,11 +14,11 @@ import 'src/stage.dart';
 const String _assetDir = 'packages/pop_pop_win/assets';
 
 Future startGame() async {
-  var options = StageOptions()
+  final options = StageOptions()
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;
 
-  var stage = Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
+  final stage = Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
       options: options);
 
   RenderLoop()..addStage(stage);
@@ -26,27 +26,27 @@ Future startGame() async {
   BitmapData.defaultLoadOptions.webp = true;
 
   //have to load the loading bar first...
-  var resourceManager = ResourceManager()
+  final resourceManager = ResourceManager()
     ..addTextureAtlas(
         'static', '$_assetDir/images/static.json', TextureAtlasFormat.JSON);
 
-  var resMan = await resourceManager.load();
+  final resMan = await resourceManager.load();
   await _initialLoad(resMan, stage);
 }
 
 Future _initialLoad(ResourceManager resourceManager, Stage stage) async {
-  var atlas = resourceManager.getTextureAtlas('static');
+  final atlas = resourceManager.getTextureAtlas('static');
 
-  var bar = Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
+  final bar = Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
     ..x = 51
     ..y = 8
     ..ratio = 0;
 
-  var loadingText = Bitmap(atlas.getBitmapData('loading_text'))
+  final loadingText = Bitmap(atlas.getBitmapData('loading_text'))
     ..x = 141
     ..y = 10;
 
-  var loadingSprite = Sprite()
+  final loadingSprite = Sprite()
     ..addChild(Bitmap(atlas.getBitmapData('loading_background')))
     ..addChild(bar)
     ..addChild(loadingText)
@@ -83,8 +83,8 @@ void _secondaryLoad(
 
   targetPlatform.aboutChanged.listen((_) => _updateAbout());
 
-  var size = targetPlatform.size;
-  var m = (size * size * 0.15625).toInt();
+  final size = targetPlatform.size;
+  final m = (size * size * 0.15625).toInt();
 
   game_audio.initialize(resourceManager);
   GameRoot(size, size, m, stage, resourceManager);
@@ -106,7 +106,7 @@ void _onPopupClick(html.MouseEvent args) {
 }
 
 void _onKeyDown(html.KeyboardEvent args) {
-  var keyEvent = html.KeyEvent.wrap(args);
+  final keyEvent = html.KeyEvent.wrap(args);
   switch (keyEvent.keyCode) {
     case html.KeyCode.ESC: // esc
       targetPlatform.toggleAbout(false);
@@ -118,6 +118,6 @@ void _onKeyDown(html.KeyboardEvent args) {
 }
 
 void _updateAbout() {
-  var popDisplay = targetPlatform.showAbout ? 'inline-block' : 'none';
+  final popDisplay = targetPlatform.showAbout ? 'inline-block' : 'none';
   html.querySelector('#popup').style.display = popDisplay;
 }

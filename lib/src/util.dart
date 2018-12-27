@@ -1,7 +1,7 @@
 int getHashCode(Iterable source) {
   var hash = 0;
   for (final h in source) {
-    var next = h == null ? 0 : h.hashCode;
+    final next = h == null ? 0 : h.hashCode;
     hash = 0x1fffffff & (hash + next);
     hash = 0x1fffffff & (hash + ((0x0007ffff & hash) << 10));
     hash ^= hash >> 6;

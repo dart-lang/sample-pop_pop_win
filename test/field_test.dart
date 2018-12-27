@@ -15,7 +15,7 @@ void main() {
 }
 
 void _testDefaults() {
-  var f = Field();
+  final f = Field();
 
   expect(f.bombCount, equals(40));
   expect(f.height, equals(16));
@@ -23,7 +23,7 @@ void _testDefaults() {
 }
 
 void _testBombCount() {
-  var f = Field();
+  final f = Field();
 
   var bombCount = 0;
   for (var x = 0; x < 16; x++) {
@@ -37,21 +37,21 @@ void _testBombCount() {
 }
 
 void _testFromSquares() {
-  var f = Field.fromSquares(2, 2, [true, true, true, false]);
+  final f = Field.fromSquares(2, 2, [true, true, true, false]);
   expect(f.height, equals(2));
   expect(f.width, equals(2));
   expect(f.bombCount, equals(3));
 }
 
 void _testAdjacent() {
-  var f = getSampleField();
+  final f = getSampleField();
 
   expect(f.bombCount, equals(13));
 
   for (var x = 0; x < f.width; x++) {
     for (var y = 0; y < f.height; y++) {
-      var i = x + y * f.width;
-      var adj = f.getAdjacentCount(x, y);
+      final i = x + y * f.width;
+      final adj = f.getAdjacentCount(x, y);
       expect(adj, equals(sampleField[i]));
     }
   }

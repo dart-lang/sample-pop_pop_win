@@ -152,7 +152,7 @@ class Game {
                 char = '\u2611';
                 break;
               case SquareState.revealed:
-                var count = field.getAdjacentCount(x, y);
+                final count = field.getAdjacentCount(x, y);
                 char = count.toString();
                 break;
               case SquareState.hidden:
@@ -215,7 +215,7 @@ class Game {
     // for now we assume counts have been checked
     assert(flagged.length == adjCount);
 
-    var reveals = <Point<int>>[];
+    final reveals = <Point<int>>[];
 
     // if any of the hidden are bombs, we've failed
     if (failed) {
@@ -237,7 +237,7 @@ class Game {
     _states.set(x, y, SquareState.revealed);
     _revealsLeft--;
     assert(_revealsLeft >= 0);
-    var reveals = [Point(x, y)];
+    final reveals = [Point(x, y)];
     if (_revealsLeft == 0) {
       _setWon();
     } else if (field.getAdjacentCount(x, y) == 0) {

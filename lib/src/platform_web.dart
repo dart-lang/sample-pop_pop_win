@@ -37,14 +37,14 @@ class PlatformWeb {
   Stream get aboutChanged => _aboutController.stream;
 
   void toggleAbout([bool value]) {
-    var loc = window.location;
+    final loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later
-    var hash = loc.hash.isEmpty ? '#' : loc.hash;
+    final hash = loc.hash.isEmpty ? '#' : loc.hash;
 
-    var isOpen = hash == _aboutHash;
+    final isOpen = hash == _aboutHash;
     value ??= !isOpen;
 
-    var targetHash = value ? _aboutHash : '#';
+    final targetHash = value ? _aboutHash : '#';
     if (targetHash != hash) {
       loc.assign(targetHash);
     }
@@ -54,14 +54,14 @@ class PlatformWeb {
   String get _urlHash => window.location.hash;
 
   void _processUrlHash() {
-    var loc = window.location;
-    var hash = loc.hash;
-    var href = loc.href;
+    final loc = window.location;
+    final hash = loc.hash;
+    final href = loc.href;
 
     switch (hash) {
       case '#reset':
         assert(href.endsWith(hash));
-        var newLoc = href.substring(0, href.length - hash.length);
+        final newLoc = href.substring(0, href.length - hash.length);
 
         window.localStorage.clear();
 

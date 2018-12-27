@@ -31,7 +31,7 @@ class GameRoot extends GameManager {
 
   @override
   void onGameStateChanged(GameState value) {
-    var count = _eventCount[value] = (_eventCount[value] ?? 0) + 1;
+    final count = _eventCount[value] = (_eventCount[value] ?? 0) + 1;
 
     gtag(
         'event',
