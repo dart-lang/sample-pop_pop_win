@@ -1132,7 +1132,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spacet5pu4h/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceZLhY2W/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -22929,13 +22929,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "dynamic",
+        "returnType": "void",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "function(){return E.E()}\n",
-        "type": "dynamic Function()",
+        "type": "void Function()",
         "measurements": null
       },
       "233769273": {
@@ -119405,10 +119405,10 @@
   "program": {
     "entrypoint": "function/233162298",
     "size": 232129,
-    "dart2jsVersion": "2.2.0-dev.1.1",
-    "compilationMoment": "2018-12-13 07:18:50.006117",
-    "compilationDuration": 5002650,
-    "toJsonDuration": 78000,
+    "dart2jsVersion": "2.1.1-dev.0.1",
+    "compilationMoment": "2018-12-27 09:44:41.313839",
+    "compilationDuration": 4170598,
+    "toJsonDuration": 66000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
