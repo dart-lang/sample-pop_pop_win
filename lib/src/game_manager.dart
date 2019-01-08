@@ -63,7 +63,7 @@ abstract class GameManager {
   void _gameStateChanged(GameState newState) {
     _gameStorage.recordState(newState);
     if (newState == GameState.won) {
-      _gameStorage.updateBestTime(_game).then((bool newBestTime) {
+      _gameStorage.updateBestTime(_game).then((newBestTime) {
         if (newBestTime) {
           bestTimeMilliseconds.then(onNewBestTime);
         }

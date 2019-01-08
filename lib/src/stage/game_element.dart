@@ -217,9 +217,7 @@ class GameElement extends Sprite {
 
       return _Values(c, squareOffset, delay);
     }).toList()
-      ..sort((a, b) {
-        return a.delay.compareTo(b.delay);
-      });
+      ..sort((a, b) => a.delay.compareTo(b.delay));
 
     for (var v in values) {
       final c = v.point;
