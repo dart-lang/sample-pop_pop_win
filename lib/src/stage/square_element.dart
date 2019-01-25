@@ -99,10 +99,7 @@ class SquareElement extends Sprite {
 
   int get _adjacentCount => _game.field.getAdjacentCount(column, row);
 
-  BoardElement get _board {
-    final BoardElement p = parent;
-    return p;
-  }
+  BoardElement get _board => parent as BoardElement;
 
   GameElement get _gameElement => _board.gameElement;
 
