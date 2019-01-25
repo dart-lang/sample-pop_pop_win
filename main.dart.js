@@ -5564,7 +5564,7 @@ Au:function(a,b){var u,t,s,r
 u=this.rS.Qt
 t=u.a
 s=u.c[a+b*t]
-t=H.G(s.fy.fy,"$iMp").Qt.e
+t=H.G(H.G(s.fy,"$iic").fy,"$iMp").Qt.e
 u=s.Qt
 r=s.lN
 t=t.b
@@ -5588,7 +5588,7 @@ l=o.gx(o)
 k=o.gy(o)
 j=m.a
 i=m.c[l+k*j]
-j=H.G(i.fy.fy,"$iMp").Qt.e
+j=H.G(H.G(i.fy,"$iic").fy,"$iMp").Qt.e
 k=i.Qt
 l=i.lN
 j=j.b
@@ -5736,7 +5736,7 @@ return!0},
 $iDM:1}
 A.LN.prototype={
 Xl:function(){var u,t,s,r,q,p
-u=H.G(this.fy.fy,"$iMp").Qt.e
+u=H.G(H.G(this.fy,"$iic").fy,"$iMp").Qt.e
 t=this.Qt
 s=this.lN
 r=u.b
@@ -5750,7 +5750,7 @@ case C.e5:q="crater_b"
 break
 case C.fL:q="balloon_tagged_bomb"
 break
-default:q=null}if(!H.G(this.fy.fy,"$iMp").Qt.e.gau()){u=H.G(this.fy.fy,"$iMp").Qt.e.b
+default:q=null}if(!H.G(H.G(this.fy,"$iic").fy,"$iMp").Qt.e.gau()){u=H.G(H.G(this.fy,"$iic").fy,"$iMp").Qt.e.b
 u=u.c[t+s*u.a]
 u=u===C.Bl||u===C.No}else u=!1
 this.r1=u?"pointer":null
@@ -5762,12 +5762,12 @@ r=p.a
 s.e.clearRect(0,0,r.a,r.b)
 r.c.a.Li(0)
 r=P.KN
-t.xV(H.G(H.G(this.fy.fy,"$iMp").Qt.z.n9("TextureAtlas","opaque"),"$ivx").kI(q),new U.KJ(0,0,80,80,[r]),new U.tZ(0,0,[r]))},
+t.xV(H.G(H.G(H.G(this.fy,"$iic").fy,"$iMp").Qt.z.n9("TextureAtlas","opaque"),"$ivx").kI(q),new U.KJ(0,0,80,80,[r]),new U.tZ(0,0,[r]))},
 Nu:function(a){var u
-if(!H.G(this.fy.fy,"$iMp").Qt.e.gau()){u=a.a==="rightClick"||a.cy
-H.G(this.fy.fy,"$iMp").wZ(0,this.Qt,this.lN,u)}},
+if(!H.G(H.G(this.fy,"$iic").fy,"$iMp").Qt.e.gau()){u=a.a==="rightClick"||a.cy
+H.G(H.G(this.fy,"$iic").fy,"$iMp").wZ(0,this.Qt,this.lN,u)}},
 bu:function(a){return"Square at ["+H.d(this.c)+", "+H.d(this.d)+"]"},
-cV:function(){if(H.G(this.fy.fy,"$iMp").Qt.e.e===C.He){this.r1=null
+cV:function(){if(H.G(H.G(this.fy,"$iic").fy,"$iMp").Qt.e.e===C.He){this.r1=null
 return C.ak[C.jn.zY(this.Qt+this.lN,4)]}else{this.r1="pointer"
 return"balloon"}}}
 M.Ke.prototype={}
