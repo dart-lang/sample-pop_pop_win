@@ -505,7 +505,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6974,
+        "size": 6941,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -601,7 +601,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 16243,
+        "size": 16217,
         "children": [
           "class/9026159",
           "class/55317202",
@@ -769,7 +769,7 @@
         "id": "library/537824867",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3755,
+        "size": 3709,
         "children": [
           "class/10306130"
         ],
@@ -839,7 +839,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 7033,
+        "size": 7018,
         "children": [
           "class/17452859",
           "class/35111259",
@@ -1131,7 +1131,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceTwAabN/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/53/wcg58s8n72b4thbmd7mhqjyc0071_k/T/scratch_spaceFzPXzs/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1463,7 +1463,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 21861,
+        "size": 21850,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -1621,7 +1621,7 @@
         "id": "class/10306130",
         "kind": "class",
         "name": "GameBackgroundElement",
-        "size": 3613,
+        "size": 3567,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/537824867",
         "modifiers": {
@@ -2395,7 +2395,7 @@
         "id": "class/89885051",
         "kind": "class",
         "name": "AudioElementSoundChannel",
-        "size": 1075,
+        "size": 1053,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -4779,7 +4779,7 @@
         "id": "class/356374571",
         "kind": "class",
         "name": "RenderTexture",
-        "size": 1383,
+        "size": 1368,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -4954,7 +4954,7 @@
         "id": "class/372829643",
         "kind": "class",
         "name": "TextField",
-        "size": 5466,
+        "size": 5451,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "modifiers": {
@@ -6809,7 +6809,7 @@
         "id": "class/543965788",
         "kind": "class",
         "name": "SoundLoadOptions",
-        "size": 629,
+        "size": 618,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -12538,7 +12538,7 @@
         "id": "function/6219765",
         "kind": "function",
         "name": "_refreshCache",
-        "size": 557,
+        "size": 542,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/372829643",
         "children": [],
@@ -12559,7 +12559,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "xX:function(a){var u,t,s,r,q,p,o\nu=Math.sqrt(Math.abs(a.gR9()))\nt=this.h\ns=t==null?null:t.e\nif(s==null)s=0\nif(s<u*0.8)this.F|=2\nif(s>u*1.25)this.F|=2\nt=this.F\nif((t&2)===0)return\nthis.F=t&253\nr=C.CD.a3(Math.max(1,this.eD*u))\nq=C.CD.a3(Math.max(1,this.jq*u))\nt=this.Jz\nif(t==null){t=L.fL(r,q,16777215)\nthis.Jz=t\nt=t.gff().nG(u)\nthis.h=t}else{t.lO(0,r,q)\nt=this.Jz.gff().nG(u)\nthis.h=t}p=t.gmH()\nt=this.Jz\nt=t.gqN(t)\nt.toString\no=t.getContext(\"2d\")\nt=p.a\no.setTransform(t[0],t[1],t[2],t[3],t[4],t[5])\no.clearRect(0,0,this.eD,this.jq)\nthis.Cg(o)\nthis.Jz.Li(0)}\n",
+        "code": "xX:function(a){var u,t,s,r,q,p,o\nu=Math.sqrt(Math.abs(a.gR9()))\nt=this.h\ns=t==null?null:t.e\nif(s==null)s=0\nif(s<u*0.8)this.F|=2\nif(s>u*1.25)this.F|=2\nt=this.F\nif((t&2)===0)return\nthis.F=t&253\nr=C.CD.a3(Math.max(1,this.eD*u))\nq=C.CD.a3(Math.max(1,this.jq*u))\nt=this.Jz\nif(t==null){t=L.fL(r,q,16777215)\nthis.Jz=t\nt=t.gff().nG(u)\nthis.h=t}else{t.lO(0,r,q)\nt=this.Jz.gff().nG(u)\nthis.h=t}p=t.gmH()\nt=this.Jz\no=t.gqN(t).getContext(\"2d\")\nt=p.a\no.setTransform(t[0],t[1],t[2],t[3],t[4],t[5])\no.clearRect(0,0,this.eD,this.jq)\nthis.Cg(o)\nthis.Jz.Li(0)}\n",
         "type": "void Function(Matrix)",
         "measurements": null
       },
@@ -12779,7 +12779,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "dynamic",
+        "returnType": "String",
         "inferredReturnType": "[exact=JSString]",
         "parameters": [
           {
@@ -12791,7 +12791,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 10,
         "code": null,
-        "type": "dynamic Function(dynamic)",
+        "type": "String Function(dynamic)",
         "measurements": null
       },
       "11196761": {
@@ -15451,7 +15451,7 @@
         "id": "function/70353884",
         "kind": "function",
         "name": "_globalFrameRequest",
-        "size": 325,
+        "size": 314,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "children": [
@@ -21538,7 +21538,7 @@
         "id": "function/213844089",
         "kind": "function",
         "name": "_onCompleteTimer",
-        "size": 151,
+        "size": 140,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/89885051",
         "children": [],
@@ -21553,7 +21553,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ak:function(){if(!this.y)if(this.z){var u=this.e\nu.currentTime=this.Q\nu.toString\nW.U8(u.play(),null)\nthis.zb(this.ch)}else this.TP(0)}\nq(o,\"gG7\",\"ak\",3)\n",
+        "code": "ak:function(){if(!this.y)if(this.z){var u=this.e\nu.currentTime=this.Q\nW.U8(u.play(),null)\nthis.zb(this.ch)}else this.TP(0)}\nq(o,\"gG7\",\"ak\",3)\n",
         "type": "void Function()",
         "measurements": null
       },
@@ -22708,7 +22708,7 @@
         "id": "function/235168592",
         "kind": "function",
         "name": "BitmapDataUpdateBatch",
-        "size": 221,
+        "size": 210,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/203523669",
         "children": [],
@@ -22729,7 +22729,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 4,
-        "code": "tj:function(a){var u,t,s,r,q\nu=a.c\nt=u.a\nt=t.gqN(t)\ns=T.oy()\nt.toString\nr=t.getContext(\"2d\")\nq=[L.dZ]\nt=new L.p5(t,r,s,C.dH,1,new L.PT(),new P.H(null,null,0,q),new P.H(null,null,0,q))\nt.CH(0)\nreturn new A.Oo(a,t,u.gmH())}\n",
+        "code": "tj:function(a){var u,t,s,r,q\nu=a.c\nt=u.a\nt=t.gqN(t)\ns=T.oy()\nr=t.getContext(\"2d\")\nq=[L.dZ]\nt=new L.p5(t,r,s,C.dH,1,new L.PT(),new P.H(null,null,0,q),new P.H(null,null,0,q))\nt.CH(0)\nreturn new A.Oo(a,t,u.gmH())}\n",
         "type": "dynamic Function(BitmapData)",
         "measurements": null
       },
@@ -41790,7 +41790,7 @@
         "id": "function/629904327",
         "kind": "function",
         "name": "call",
-        "size": 189,
+        "size": 178,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/466649304",
         "children": [],
@@ -41811,7 +41811,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var u,t,s,r,q\nu=a/1000\nt=u-$.jR\n$.jR=u\n$.uU=-1\nL.m()\ns=$.x()\ns.toString\ns=H.K(s.slice(0),[H.Kp(s,0)])\nr=s.length\nq=0\nfor(;q<s.length;s.length===r||(0,H.lk)(s),++q)s[q].$1(t)}\n",
+        "code": "$1:function(a){var u,t,s,r,q\nu=a/1000\nt=u-$.jR\n$.jR=u\n$.uU=-1\nL.m()\ns=$.x()\ns=H.K(s.slice(0),[H.Kp(s,0)])\nr=s.length\nq=0\nfor(;q<s.length;s.length===r||(0,H.lk)(s),++q)s[q].$1(t)}\n",
         "type": "Null Function(num)",
         "measurements": null
       },
@@ -46252,7 +46252,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "dynamic",
+        "returnType": "num",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -46264,7 +46264,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "E0:function(a){if(typeof a!==\"number\")throw H.B(H.t(a))\nreturn a}\n",
-        "type": "dynamic Function(dynamic)",
+        "type": "num Function(dynamic)",
         "measurements": null
       },
       "713235752": {
@@ -50775,7 +50775,7 @@
         "id": "function/787312647",
         "kind": "function",
         "name": "getOptimalAudioUrls",
-        "size": 514,
+        "size": 503,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/543965788",
         "children": [],
@@ -50796,7 +50796,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "hz:function(a){var u,t,s,r,q,p,o,n,m,l\nu=$.JJ()\nu.toString\nt=H.K(u.slice(0),[H.Kp(u,0)])\nC.Nm.Rz(t,\"opus\")\ns=H.K([],[P.q])\nr=P.nu(\"([A-Za-z0-9]+)$\",!0,!1)\nq=r.ej(a)\nif(q==null)return s\nif(C.Nm.Rz(t,q.b[1]))s.push(a)\nu=this.r\nif(u!=null)for(p=u.length,o=0;o<u.length;u.length===p||(0,H.lk)(u),++o){n=u[o]\nm=r.ej(n)\nif(m==null)continue\nif(C.Nm.tg(t,m.b[1]))s.push(n)}else for(u=t.length,o=0;o<t.length;t.length===u||(0,H.lk)(t),++o){l=t[o]\na.toString\nif(typeof l!==\"string\")H.vh(H.t(l))\ns.push(H.ys(a,r,l))}return s}\n",
+        "code": "hz:function(a){var u,t,s,r,q,p,o,n,m,l\nu=$.JJ()\nt=H.K(u.slice(0),[H.Kp(u,0)])\nC.Nm.Rz(t,\"opus\")\ns=H.K([],[P.q])\nr=P.nu(\"([A-Za-z0-9]+)$\",!0,!1)\nq=r.ej(a)\nif(q==null)return s\nif(C.Nm.Rz(t,q.b[1]))s.push(a)\nu=this.r\nif(u!=null)for(p=u.length,o=0;o<u.length;u.length===p||(0,H.lk)(u),++o){n=u[o]\nm=r.ej(n)\nif(m==null)continue\nif(C.Nm.tg(t,m.b[1]))s.push(n)}else for(u=t.length,o=0;o<t.length;t.length===u||(0,H.lk)(t),++o){l=t[o]\na.toString\nif(typeof l!==\"string\")H.vh(H.t(l))\ns.push(H.ys(a,r,l))}return s}\n",
         "type": "List<String> Function(String)",
         "measurements": null
       },
@@ -52830,7 +52830,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "dynamic",
+        "returnType": "int",
         "inferredReturnType": "[subclass=JSInt]",
         "parameters": [
           {
@@ -52842,7 +52842,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 8,
         "code": null,
-        "type": "dynamic Function(dynamic)",
+        "type": "int Function(dynamic)",
         "measurements": null
       },
       "829741983": {
@@ -57848,7 +57848,7 @@
         "id": "function/936971725",
         "kind": "function",
         "name": "update",
-        "size": 376,
+        "size": 361,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/356374571",
         "children": [],
@@ -57863,7 +57863,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Li:function(a){var u,t\nu=this.x\nif(u==null||this.ch==null)return\nif(u.cx!==this.y)return\nu.x.fZ(0)\nthis.x.wi(this)\nt=this.Q.isEnabled(3089)\nif(t)this.Q.disable(3089)\nif(this.z){u=this.d\nu.toString\nu.getContext(\"2d\").drawImage(this.c,0,0)\nu=this.Q;(u&&C.mx).ZE(u,3553,0,6408,6408,5121,this.d)}else{u=this.Q;(u&&C.mx).ZE(u,3553,0,6408,6408,5121,this.c)}if(t)this.Q.enable(3089)}\n",
+        "code": "Li:function(a){var u,t\nu=this.x\nif(u==null||this.ch==null)return\nif(u.cx!==this.y)return\nu.x.fZ(0)\nthis.x.wi(this)\nt=this.Q.isEnabled(3089)\nif(t)this.Q.disable(3089)\nif(this.z){this.d.getContext(\"2d\").drawImage(this.c,0,0)\nu=this.Q;(u&&C.mx).ZE(u,3553,0,6408,6408,5121,this.d)}else{u=this.Q;(u&&C.mx).ZE(u,3553,0,6408,6408,5121,this.c)}if(t)this.Q.enable(3089)}\n",
         "type": "void Function()",
         "measurements": null
       },
@@ -58818,7 +58818,7 @@
         "id": "function/955797726",
         "kind": "function",
         "name": "_onAudioElement",
-        "size": 291,
+        "size": 280,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/89885051",
         "children": [],
@@ -58839,7 +58839,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "nR:function(a){var u,t\nu=$.qu\nif(this.x)this.c.b.Y5(0,a,null)\nelse{this.e=a\na.volume=this.d.a*u.a\nt=u.b\nthis.f=new P.Gm(t,[H.Kp(t,0)]).yI(this.gGh())\nif(!this.y){t=this.e\nt.currentTime=this.Q+this.cx\nt.toString\nW.U8(t.play(),null)\nthis.zb(this.ch-this.cx)}}}\np(o=E.zo.prototype,\"gAD\",\"nR\",29)\n",
+        "code": "nR:function(a){var u,t\nu=$.qu\nif(this.x)this.c.b.Y5(0,a,null)\nelse{this.e=a\na.volume=this.d.a*u.a\nt=u.b\nthis.f=new P.Gm(t,[H.Kp(t,0)]).yI(this.gGh())\nif(!this.y){t=this.e\nt.currentTime=this.Q+this.cx\nW.U8(t.play(),null)\nthis.zb(this.ch-this.cx)}}}\np(o=E.zo.prototype,\"gAD\",\"nR\",29)\n",
         "type": "void Function(AudioElement)",
         "measurements": null
       },
@@ -81214,7 +81214,7 @@
         "id": "closure/466649304",
         "kind": "closure",
         "name": "_globalFrameRequest_closure",
-        "size": 236,
+        "size": 225,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/70353884",
         "function": "function/629904327"
@@ -117737,7 +117737,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 228611,
+      "size": 228480,
       "imports": []
     }
   ],
@@ -117746,11 +117746,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 228611,
-    "dart2jsVersion": "2.1.1-dev.3.2",
-    "compilationMoment": "2019-02-05 14:46:53.040068",
-    "compilationDuration": 3901397,
-    "toJsonDuration": 62000,
+    "size": 228480,
+    "dart2jsVersion": "2.1.2-dev.0.0",
+    "compilationMoment": "2019-02-19 16:44:03.128014",
+    "compilationDuration": 4481330,
+    "toJsonDuration": 51000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

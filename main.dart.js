@@ -2179,7 +2179,6 @@ u=a.c
 t=u.a
 t=t.gqN(t)
 s=T.oy()
-t.toString
 r=t.getContext("2d")
 q=[L.dZ]
 t=new L.p5(t,r,s,C.dH,1,new L.PT(),new P.H(null,null,0,q),new P.H(null,null,0,q))
@@ -5419,7 +5418,6 @@ for(t=g.c,r=t.a,q=[L.dZ],c=0;c<H.G(this.fy,"$iMp").Qt.e.a.a-2;++c){p=a5.kI("game
 o=112+c*80
 b=r.gqN(r)
 a=T.oy()
-b.toString
 a0=b.getContext("2d")
 a1=a.a
 a0.setTransform(a1[0],a1[1],a1[2],a1[3],a1[4],a1[5])
@@ -5431,7 +5429,6 @@ p=a5.kI("game_board_side_bottom")
 a=H.G(this.fy,"$iMp").Hs
 a0=r.gqN(r)
 b=T.oy()
-a0.toString
 a1=a0.getContext("2d")
 a2=b.a
 a1.setTransform(a2[0],a2[1],a2[2],a2[3],a2[4],a2[5])
@@ -5442,7 +5439,6 @@ r.Li(0)
 a=a5.kI("game_board_side_left")
 p=r.gqN(r)
 b=T.oy()
-p.toString
 a1=p.getContext("2d")
 a0=b.a
 a1.setTransform(a0[0],a0[1],a0[2],a0[3],a0[4],a0[5])
@@ -5454,7 +5450,6 @@ a=a5.kI("game_board_side_right")
 b=H.G(this.fy,"$iMp").Hs
 a1=r.gqN(r)
 p=T.oy()
-a1.toString
 a0=a1.getContext("2d")
 a2=p.a
 a0.setTransform(a2[0],a2[1],a2[2],a2[3],a2[4],a2[5])
@@ -6856,7 +6851,6 @@ $.jR=u
 $.uU=-1
 L.m()
 s=$.x()
-s.toString
 s=H.K(s.slice(0),[H.Kp(s,0)])
 r=s.length
 q=0
@@ -7161,9 +7155,7 @@ u.x.fZ(0)
 this.x.wi(this)
 t=this.Q.isEnabled(3089)
 if(t)this.Q.disable(3089)
-if(this.z){u=this.d
-u.toString
-u.getContext("2d").drawImage(this.c,0,0)
+if(this.z){this.d.getContext("2d").drawImage(this.c,0,0)
 u=this.Q;(u&&C.mx).ZE(u,3553,0,6408,6408,5121,this.d)}else{u=this.Q;(u&&C.mx).ZE(u,3553,0,6408,6408,5121,this.c)}if(t)this.Q.enable(3089)}}
 L.jc.prototype={}
 L.RK.prototype={
@@ -7609,13 +7601,11 @@ t=u.b
 this.f=new P.Gm(t,[H.Kp(t,0)]).yI(this.gGh())
 if(!this.y){t=this.e
 t.currentTime=this.Q+this.cx
-t.toString
 W.U8(t.play(),null)
 this.zb(this.ch-this.cx)}}},
 zb:function(a){this.r=P.zV(P.k5(0,0,0,C.CD.yu(C.CD.IV(a,0,this.ch)*1000),0,0),this.gG7())},
 ak:function(){if(!this.y)if(this.z){var u=this.e
 u.currentTime=this.Q
-u.toString
 W.U8(u.play(),null)
 this.zb(this.ch)}else this.TP(0)},
 rH:function(a){this.e.volume=this.d.a*a}}
@@ -7681,7 +7671,6 @@ bu:function(a){return this.b}}
 E.ye.prototype={
 hz:function(a){var u,t,s,r,q,p,o,n,m,l
 u=$.JJ()
-u.toString
 t=H.K(u.slice(0),[H.Kp(u,0)])
 C.Nm.Rz(t,"opus")
 s=H.K([],[P.q])
@@ -8075,9 +8064,7 @@ this.h=t}else{t.lO(0,r,q)
 t=this.Jz.gff().nG(u)
 this.h=t}p=t.gmH()
 t=this.Jz
-t=t.gqN(t)
-t.toString
-o=t.getContext("2d")
+o=t.gqN(t).getContext("2d")
 t=p.a
 o.setTransform(t[0],t[1],t[2],t[3],t[4],t[5])
 o.clearRect(0,0,this.eD,this.jq)
