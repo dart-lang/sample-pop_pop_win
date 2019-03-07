@@ -7,7 +7,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.35.2"
+    version: "0.35.3"
   archive:
     dependency: transitive
     description:
@@ -63,14 +63,14 @@ packages:
       name: build_daemon
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.0"
+    version: "0.4.2"
   build_modules:
     dependency: transitive
     description:
       name: build_modules
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.8"
+    version: "1.0.9"
   build_resolvers:
     dependency: transitive
     description:
@@ -84,7 +84,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.7"
+    version: "1.2.8"
   build_runner_core:
     dependency: transitive
     description:
@@ -112,7 +112,7 @@ packages:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.3.0"
+    version: "6.3.1"
   charcode:
     dependency: transitive
     description:
@@ -175,7 +175,7 @@ packages:
       name: front_end
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.12"
+    version: "0.1.13"
   glob:
     dependency: transitive
     description:
@@ -196,7 +196,7 @@ packages:
       name: html
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.3+3"
+    version: "0.13.4+1"
   http:
     dependency: transitive
     description:
@@ -252,7 +252,7 @@ packages:
       name: kernel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.12"
+    version: "0.3.13"
   logging:
     dependency: transitive
     description:
@@ -329,7 +329,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.2.1"
   plugin:
     dependency: transitive
     description:
@@ -427,7 +427,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.5.4"
+    version: "1.5.5"
   stack_trace:
     dependency: transitive
     description:
@@ -539,7 +539,7 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.3.1"
+    version: "3.4.1"
   yaml:
     dependency: transitive
     description:
@@ -548,4 +548,4 @@ packages:
     source: hosted
     version: "2.1.15"
 sdks:
-  dart: ">=2.1.1-dev.0.0 <3.0.0"
+  dart: ">=2.2.0 <3.0.0"
