@@ -528,7 +528,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 12076,
+        "size": 12074,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -799,7 +799,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 6859,
+        "size": 6854,
         "children": [
           "class/192166",
           "class/14460442",
@@ -1131,7 +1131,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceeQXR2m/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacem18Soy/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -6477,7 +6477,7 @@
         "id": "class/523978038",
         "kind": "class",
         "name": "JSArray",
-        "size": 1794,
+        "size": 1792,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -11620,7 +11620,7 @@
         "id": "class/1029103814",
         "kind": "class",
         "name": "SoundSprite",
-        "size": 374,
+        "size": 369,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -13059,7 +13059,7 @@
         "id": "function/17382067",
         "kind": "function",
         "name": "getSegment",
-        "size": 220,
+        "size": 215,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1029103814",
         "children": [
@@ -13082,7 +13082,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "yk:function(a){var u=C.Nm.Qk(this.a,new O.EQ(a),null)\nif(u==null)throw H.A(P.xY(\"SoundSpriteSegment not found: '\"+a+\"'\"))\nelse return u}",
+        "code": "yk:function(a){var u=C.Nm.XG(this.a,new O.EQ(a))\nif(u==null)throw H.A(P.xY(\"SoundSpriteSegment not found: '\"+a+\"'\"))\nelse return u}",
         "type": "SoundSpriteSegment Function(String)"
       },
       "17530218": {
@@ -25637,7 +25637,7 @@
         "id": "function/300541235",
         "kind": "function",
         "name": "firstWhere",
-        "size": 135,
+        "size": 133,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/523978038",
         "children": [],
@@ -25654,16 +25654,11 @@
             "name": "test",
             "type": "[subtype=Function]",
             "declaredType": "bool Function(JSArray.E)"
-          },
-          {
-            "name": "orElse",
-            "type": "[null]",
-            "declaredType": "JSArray.E Function()"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Qk:function(a,b,c){var u,t,s=a.length\nfor(u=0;u<s;++u){t=a[u]\nif(b.$1(t))return t\nif(a.length!==s)throw H.A(P.a4(a))}throw H.A(H.Wp())}",
+        "code": "XG:function(a,b){var u,t,s=a.length\nfor(u=0;u<s;++u){t=a[u]\nif(b.$1(t))return t\nif(a.length!==s)throw H.A(P.a4(a))}throw H.A(H.Wp())}",
         "type": "JSArray.E Function(bool Function(JSArray.E),{Object orElse})"
       },
       "301932486": {
@@ -120233,7 +120228,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 216484,
+      "size": 216477,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -120243,11 +120238,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 216484,
+    "size": 216477,
     "dart2jsVersion": "2.2.1-dev.1.1",
-    "compilationMoment": "2019-03-15 11:08:54.060388",
-    "compilationDuration": 3345662,
-    "toJsonDuration": 21000,
+    "compilationMoment": "2019-03-27 17:07:34.493933",
+    "compilationDuration": 6293863,
+    "toJsonDuration": 41000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
