@@ -21,7 +21,7 @@ Future startGame() async {
   final stage = Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
       options: options);
 
-  RenderLoop()..addStage(stage);
+  RenderLoop().addStage(stage);
 
   BitmapData.defaultLoadOptions.webp = true;
 
