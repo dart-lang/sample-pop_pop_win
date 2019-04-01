@@ -1,15 +1,16 @@
 language: dart
-sudo: false
+
 dart:
   - dev
 
 dart_task:
   - test: -p vm,firefox
   - dartfmt
+  - dartanalyzer: --fatal-warnings --fatal-hints .
 
 matrix:
   include:
-    - dart: dev
+    - dart: 2.2.0
       dart_task:
         dartanalyzer: --fatal-warnings --fatal-hints .
 
