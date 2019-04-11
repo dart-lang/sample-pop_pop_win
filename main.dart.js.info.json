@@ -80,7 +80,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 8456,
+        "size": 8470,
         "children": [
           "class/6212434",
           "class/6966771",
@@ -408,7 +408,7 @@
         "id": "library/223393735",
         "kind": "library",
         "name": "dart.convert",
-        "size": 2108,
+        "size": 2099,
         "children": [
           "class/241896936",
           "class/440511818",
@@ -505,7 +505,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6559,
+        "size": 6531,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -601,7 +601,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15586,
+        "size": 15483,
         "children": [
           "class/9026159",
           "class/55317202",
@@ -1131,7 +1131,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacet2H0Pu/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacecPbK1o/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1383,7 +1383,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20319,
+        "size": 20303,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1831,7 +1831,7 @@
         "id": "class/32494041",
         "kind": "class",
         "name": "_TimerImpl",
-        "size": 452,
+        "size": 443,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -2128,7 +2128,7 @@
         "id": "class/73206098",
         "kind": "class",
         "name": "WebAudioApiSound",
-        "size": 596,
+        "size": 595,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -2399,7 +2399,7 @@
         "id": "class/89885051",
         "kind": "class",
         "name": "AudioElementSoundChannel",
-        "size": 939,
+        "size": 922,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -4757,7 +4757,7 @@
         "id": "class/356374571",
         "kind": "class",
         "name": "RenderTexture",
-        "size": 1226,
+        "size": 1197,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -5475,7 +5475,7 @@
         "id": "class/419917486",
         "kind": "class",
         "name": "AudioElementSound",
-        "size": 873,
+        "size": 872,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -8482,7 +8482,7 @@
         "id": "class/717878191",
         "kind": "class",
         "name": "Touch",
-        "size": 39,
+        "size": 45,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -8958,7 +8958,7 @@
         "id": "class/758263733",
         "kind": "class",
         "name": "JsonCodec",
-        "size": 185,
+        "size": 176,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/223393735",
         "modifiers": {
@@ -9893,7 +9893,7 @@
         "id": "class/859163164",
         "kind": "class",
         "name": "Node",
-        "size": 148,
+        "size": 156,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -11019,7 +11019,7 @@
         "id": "class/976943569",
         "kind": "class",
         "name": "SoundTransform",
-        "size": 48,
+        "size": 39,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -24542,7 +24542,7 @@
         "id": "function/274701165",
         "kind": "function",
         "name": "RenderTexture",
-        "size": 272,
+        "size": 235,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/356374571",
         "children": [],
@@ -24573,7 +24573,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "fL:function(a,b,c){var u,t,s,r,q=null,p=new L.Gp(0,0,q,q,C.Ls,C.Fx,C.Fx,q,-1,!1,q,q)\nif(a<=0)H.vh(P.xY(\"width\"))\nif(b<=0)H.vh(P.xY(\"height\"))\nu=p.a=V.YX(a)\nt=p.b=V.YX(b)\ns=W.d9(t,u)\np.c=p.d=s\nif(c!==0){r=s.getContext(\"2d\")\nr.fillStyle=V.xH(c)\nr.fillRect(0,0,u,t)}return p}",
+        "code": "fL:function(a,b,c){var u,t,s,r,q=new L.Gp(C.Ls)\nif(a<=0)H.vh(P.xY(\"width\"))\nif(b<=0)H.vh(P.xY(\"height\"))\nu=q.a=V.YX(a)\nt=q.b=V.YX(b)\ns=W.d9(t,u)\nq.c=q.d=s\nif(c!==0){r=s.getContext(\"2d\")\nr.fillStyle=V.xH(c)\nr.fillRect(0,0,u,t)}return q}",
         "type": "dynamic Function(int,int,int)"
       },
       "274709672": {
@@ -37432,7 +37432,7 @@
         "id": "function/554074082",
         "kind": "function",
         "name": "RenderTexture.fromImageElement",
-        "size": 125,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/356374571",
         "children": [],
@@ -37453,7 +37453,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WS:function(a){var u=null,t=new L.Gp(0,0,u,u,C.Ls,C.Fx,C.Fx,u,-1,!1,u,u)\nt.a=V.YX(a.width)\nt.b=V.YX(a.height)\nt.c=a\nreturn t}",
+        "code": "WS:function(a){var u=new L.Gp(C.Ls)\nu.a=V.YX(a.width)\nu.b=V.YX(a.height)\nu.c=a\nreturn u}",
         "type": "dynamic Function(ImageElement)"
       },
       "555987509": {
@@ -46857,7 +46857,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wi:function(a){var u,t,s,r=this,q=3553,p=6408,o=r.fx\nif(a!==o[0]){r.x.fZ(0)\no[0]=a\no=a.y\nu=r.cx\nif(o!==u){a.x=r\na.y=u\no=r.e\na.Q=o\na.ch=o.createTexture()\na.Q.activeTexture(33984)\na.Q.bindTexture(q,a.ch)\nt=a.Q.isEnabled(3089)\nif(t)a.Q.disable(3089)\no=a.c\nu=a.Q\ns=u&&C.mx\nif(o!=null){s.ZE(u,q,0,p,p,5121,o)\na.z=a.Q.getError()===1281}else s.kl(u,q,0,p,a.a,a.b,0,p,5121,null)\nif(a.z){o=a.a\no=W.d9(a.b,o)\na.d=o\no.getContext(\"2d\").drawImage(a.c,0,0)\no=a.Q;(o&&C.mx).ZE(o,q,0,p,p,5121,a.d)}if(t)a.Q.enable(3089)\na.Q.texParameteri(q,10242,a.f.a)\na.Q.texParameteri(q,10243,a.r.a)\na.Q.texParameteri(q,10241,a.e.a)\na.Q.texParameteri(q,10240,a.e.a)}else{a.Q.activeTexture(33984)\na.Q.bindTexture(q,a.ch)}}}",
+        "code": "wi:function(a){var u,t,s,r=this,q=3553,p=6408,o=r.fx\nif(a!==o[0]){r.x.fZ(0)\no[0]=a\no=a.y\nu=r.cx\nif(o!==u){a.x=r\na.y=u\no=r.e\na.Q=o\na.ch=o.createTexture()\na.Q.activeTexture(33984)\na.Q.bindTexture(q,a.ch)\nt=a.Q.isEnabled(3089)\nif(t)a.Q.disable(3089)\no=a.c\nu=a.Q\ns=u&&C.mx\nif(o!=null){s.ZE(u,q,0,p,p,5121,o)\na.z=a.Q.getError()===1281}else s.kl(u,q,0,p,a.a,a.b,0,p,5121,null)\nif(a.z){o=a.a\no=W.d9(a.b,o)\na.d=o\no.getContext(\"2d\").drawImage(a.c,0,0)\no=a.Q;(o&&C.mx).ZE(o,q,0,p,p,5121,a.d)}if(t)a.Q.enable(3089)\na.Q.texParameteri(q,10242,33071)\na.Q.texParameteri(q,10243,33071)\na.Q.texParameteri(q,10241,a.e.a)\na.Q.texParameteri(q,10240,a.e.a)}else{a.Q.activeTexture(33984)\na.Q.bindTexture(q,a.ch)}}}",
         "type": "void Function(RenderTexture)"
       },
       "742868068": {
@@ -47130,7 +47130,7 @@
         "id": "function/747238964",
         "kind": "function",
         "name": "playSegment",
-        "size": 506,
+        "size": 505,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/73206098",
         "children": [],
@@ -47166,7 +47166,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uW:function(a,b,c,d){var u,t,s,r,q,p,o,n=new E.bH()\nn.d=new E.e5(1)\nn.c=this\nn.Q=a\nn.ch=b\nn.z=c\nu=n.e=E.dP($.HX.b)\nt=$.Y6()\ns=t.currentTime\nr=Math.pow(1,2)\nu.b.gain.setValueAtTime(r,s)\nq=this.a\np=a+0\nif(c){n.y=!1\no=n.f=t.createBufferSource()\no.buffer=q\no.loop=!0\no.loopStart=a\no.loopEnd=a+b\no.connect(u.b,0,0)\no.start(0,p)\nn.cy=t.currentTime-0}else{n.y=!1\no=n.f=t.createBufferSource()\no.buffer=q\no.loop=!1\no.connect(u.b,0,0)\no.start(0,p,b-0)\nn.r=W.JE(o,\"ended\",n.gxv(),!1)\nn.cy=t.currentTime-n.cx}return n}",
+        "code": "uW:function(a,b,c,d){var u,t,s,r,q,p,o,n=new E.bH()\nn.d=new E.e5()\nn.c=this\nn.Q=a\nn.ch=b\nn.z=c\nu=n.e=E.dP($.HX.b)\nt=$.Y6()\ns=t.currentTime\nr=Math.pow(1,2)\nu.b.gain.setValueAtTime(r,s)\nq=this.a\np=a+0\nif(c){n.y=!1\no=n.f=t.createBufferSource()\no.buffer=q\no.loop=!0\no.loopStart=a\no.loopEnd=a+b\no.connect(u.b,0,0)\no.start(0,p)\nn.cy=t.currentTime-0}else{n.y=!1\no=n.f=t.createBufferSource()\no.buffer=q\no.loop=!1\no.connect(u.b,0,0)\no.start(0,p,b-0)\nn.r=W.JE(o,\"ended\",n.gxv(),!1)\nn.cy=t.currentTime-n.cx}return n}",
         "type": "SoundChannel Function(num,num,[bool,SoundTransform])"
       },
       "747888205": {
@@ -48601,7 +48601,7 @@
         "id": "function/773230206",
         "kind": "function",
         "name": "_TimerImpl",
-        "size": 160,
+        "size": 153,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/32494041",
         "children": [
@@ -48629,7 +48629,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "QN:function(a,b){var u=new P.W3(!0,null)\nu.PJ(a,b)\nreturn u}",
+        "code": "QN:function(a,b){var u=new P.W3()\nu.PJ(a,b)\nreturn u}",
         "type": "dynamic Function(int,void Function())"
       },
       "773528822": {
@@ -56895,7 +56895,7 @@
         "id": "function/955797726",
         "kind": "function",
         "name": "_onAudioElement",
-        "size": 257,
+        "size": 249,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/89885051",
         "children": [],
@@ -56916,7 +56916,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "nR:function(a){var u,t=this,s=$.qu\nif(t.x)t.c.b.Y5(0,a,null)\nelse{t.e=a\nu=t.d\ns.toString\na.volume=u.a\nu=s.b\nt.f=new P.Gm(u,[H.Kp(u,0)]).yI(t.gGh())\nif(!t.y){u=t.e\nu.currentTime=t.Q+t.cx\nW.U8(u.play(),null)\nt.zb(t.ch-t.cx)}}}\np(o=E.zo.prototype,\"gAD\",\"nR\",29)",
+        "code": "nR:function(a){var u,t=this,s=$.qu\nif(t.x)t.c.b.Y5(0,a,null)\nelse{t.e=a\ns.toString\na.volume=1\nu=s.b\nt.f=new P.Gm(u,[H.Kp(u,0)]).yI(t.gGh())\nif(!t.y){u=t.e\nu.currentTime=t.Q+t.cx\nW.U8(u.play(),null)\nt.zb(t.ch-t.cx)}}}\np(o=E.zo.prototype,\"gAD\",\"nR\",29)",
         "type": "void Function(AudioElement)"
       },
       "955972197": {
@@ -57531,7 +57531,7 @@
         "id": "function/967541158",
         "kind": "function",
         "name": "_onVolumeChanged",
-        "size": 58,
+        "size": 49,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/89885051",
         "children": [],
@@ -57552,7 +57552,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "rH:function(a){this.e.volume=this.d.a*a}\np(o,\"gGh\",\"rH\",15)",
+        "code": "rH:function(a){this.e.volume=a}\np(o,\"gGh\",\"rH\",15)",
         "type": "void Function(num)"
       },
       "968241519": {
@@ -59453,7 +59453,7 @@
         "id": "function/1009304694",
         "kind": "function",
         "name": "playSegment",
-        "size": 117,
+        "size": 116,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/419917486",
         "children": [],
@@ -59489,7 +59489,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uW:function(a,b,c,d){var u=new E.zo()\nu.d=new E.e5(1)\nu.c=this\nu.Q=a\nu.ch=b\nu.z=c\nthis.cY(u).W7(u.gAD(),-1)\nreturn u}",
+        "code": "uW:function(a,b,c,d){var u=new E.zo()\nu.d=new E.e5()\nu.c=this\nu.Q=a\nu.ch=b\nu.z=c\nthis.cY(u).W7(u.gAD(),-1)\nreturn u}",
         "type": "SoundChannel Function(num,num,[bool,SoundTransform])"
       },
       "1009402965": {
@@ -63380,7 +63380,7 @@
         "code": "",
         "type": "JsonCodec",
         "const": true,
-        "initializer": "constant/174460308"
+        "initializer": "constant/418772141"
       },
       "98737183": {
         "id": "field/98737183",
@@ -74431,7 +74431,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/56472591",
         "children": [],
-        "inferredType": "[null]",
+        "inferredType": "Value([null|exact=JSString], value: \"boolean expression must not be null\")",
         "code": "",
         "type": "Object"
       },
@@ -78125,14 +78125,6 @@
         "outputUnit": "outputUnit/669725655",
         "code": "C.Yq=function() {\n  var toStringFunction = Object.prototype.toString;\n  function getTag(o) {\n    var s = toStringFunction.call(o);\n    return s.substring(8, s.length - 1);\n  }\n  function getUnknownTag(object, tag) {\n    if (/^HTML[A-Z].*Element$/.test(tag)) {\n      var name = toStringFunction.call(object);\n      if (name == \"[object Object]\") return null;\n      return \"HTMLElement\";\n    }\n  }\n  function getUnknownTagGenericBrowser(object, tag) {\n    if (self.HTMLElement && object instanceof HTMLElement) return \"HTMLElement\";\n    return getUnknownTag(object, tag);\n  }\n  function prototypeForTag(tag) {\n    if (typeof window == \"undefined\") return null;\n    if (typeof window[tag] == \"undefined\") return null;\n    var constructor = window[tag];\n    if (typeof constructor != \"function\") return null;\n    return constructor.prototype;\n  }\n  function discriminator(tag) { return null; }\n  var isBrowser = typeof navigator == \"object\";\n  return {\n    getTag: getTag,\n    getUnknownTag: isBrowser ? getUnknownTagGenericBrowser : getUnknownTag,\n    prototypeForTag: prototypeForTag,\n    discriminator: discriminator };\n}"
       },
-      "174460308": {
-        "id": "constant/174460308",
-        "kind": "constant",
-        "name": null,
-        "size": 19,
-        "outputUnit": "outputUnit/669725655",
-        "code": "C.Pb=new P.by(null)"
-      },
       "235533672": {
         "id": "constant/235533672",
         "kind": "constant",
@@ -78260,6 +78252,14 @@
         "size": 33,
         "outputUnit": "outputUnit/669725655",
         "code": "C.ld=new A.P0(\"StageAlign.RIGHT\")"
+      },
+      "418772141": {
+        "id": "constant/418772141",
+        "kind": "constant",
+        "name": null,
+        "size": 15,
+        "outputUnit": "outputUnit/669725655",
+        "code": "C.Ct=new P.by()"
       },
       "425183292": {
         "id": "constant/425183292",
@@ -79620,25 +79620,7 @@
         "mask": null
       }
     ],
-    "field/5563708": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/9743357": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/11132143": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/15284507": [
       {
         "id": "function/788412943",
         "mask": null
@@ -79831,12 +79813,6 @@
       }
     ],
     "field/72747365": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/72972738": [
       {
         "id": "function/788412943",
         "mask": null
@@ -80204,12 +80180,6 @@
         "mask": null
       }
     ],
-    "field/170816186": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/172148876": [
       {
         "id": "function/788412943",
@@ -80386,12 +80356,6 @@
         "mask": null
       }
     ],
-    "field/218069654": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/227203777": [
       {
         "id": "function/788412943",
@@ -80428,12 +80392,6 @@
         "mask": null
       }
     ],
-    "field/240717940": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/242765044": [
       {
         "id": "function/788412943",
@@ -80458,12 +80416,6 @@
         "mask": null
       }
     ],
-    "field/249316133": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/252551888": [
       {
         "id": "function/788412943",
@@ -80471,12 +80423,6 @@
       }
     ],
     "field/258205921": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/261376927": [
       {
         "id": "function/788412943",
         "mask": null
@@ -80577,12 +80523,6 @@
       }
     ],
     "field/292087827": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/293873568": [
       {
         "id": "function/788412943",
         "mask": null
@@ -81116,12 +81056,6 @@
         "mask": null
       }
     ],
-    "field/469309007": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/470973377": [
       {
         "id": "function/788412943",
@@ -81610,12 +81544,6 @@
         "mask": null
       }
     ],
-    "field/655181169": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/658903008": [
       {
         "id": "function/788412943",
@@ -81876,12 +81804,6 @@
         "mask": null
       }
     ],
-    "field/764326654": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/765600298": [
       {
         "id": "function/788412943",
@@ -81907,12 +81829,6 @@
       }
     ],
     "field/774491990": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/778104060": [
       {
         "id": "function/788412943",
         "mask": null
@@ -82154,12 +82070,6 @@
         "mask": null
       }
     ],
-    "field/889385105": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/889950382": [
       {
         "id": "function/788412943",
@@ -82257,12 +82167,6 @@
       }
     ],
     "field/915928818": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/918580166": [
       {
         "id": "function/788412943",
         "mask": null
@@ -110750,10 +110654,6 @@
     ],
     "function/742866902": [
       {
-        "id": "field/1028498408",
-        "mask": null
-      },
-      {
         "id": "field/121322053",
         "mask": null
       },
@@ -110763,10 +110663,6 @@
       },
       {
         "id": "field/161778106",
-        "mask": null
-      },
-      {
-        "id": "field/170816186",
         "mask": null
       },
       {
@@ -110791,10 +110687,6 @@
       },
       {
         "id": "field/293873568",
-        "mask": null
-      },
-      {
-        "id": "field/469309007",
         "mask": null
       },
       {
@@ -110851,11 +110743,11 @@
       },
       {
         "id": "function/308200592",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/308200592",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/327357990",
@@ -118806,14 +118698,6 @@
         "mask": null
       },
       {
-        "id": "field/72972738",
-        "mask": null
-      },
-      {
-        "id": "field/757969794",
-        "mask": null
-      },
-      {
         "id": "field/770936577",
         "mask": null
       },
@@ -119337,14 +119221,6 @@
     "function/967541158": [
       {
         "id": "field/564798235",
-        "mask": null
-      },
-      {
-        "id": "field/72972738",
-        "mask": null
-      },
-      {
-        "id": "field/757969794",
         "mask": null
       },
       {
@@ -122935,7 +122811,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 216470,
+      "size": 216324,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -122945,11 +122821,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 216470,
-    "dart2jsVersion": "2.2.1-dev.3.0",
-    "compilationMoment": "2019-04-03 13:06:06.875931",
-    "compilationDuration": 2995880,
-    "toJsonDuration": 22000,
+    "size": 216324,
+    "dart2jsVersion": "2.2.1-dev.4.0",
+    "compilationMoment": "2019-04-11 06:22:00.573388",
+    "compilationDuration": 3560114,
+    "toJsonDuration": 26000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

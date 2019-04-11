@@ -921,7 +921,7 @@ jN:function(a){self.setImmediate(H.tR(new P.Ft(a),0))},
 Bz:function(a){P.YF(C.RT,a)},
 YF:function(a,b){var u=C.jn.BU(a.a,1000)
 return P.QN(u<0?0:u,b)},
-QN:function(a,b){var u=new P.W3(!0,null)
+QN:function(a,b){var u=new P.W3()
 u.PJ(a,b)
 return u},
 I:function(a){return new P.ih(new P.bf(new P.vs($.X3,[a]),[a]),[a])},
@@ -1110,8 +1110,7 @@ this.b=b
 this.c=c},
 C6:function C6(a){this.a=a},
 Ft:function Ft(a){this.a=a},
-W3:function W3(a,b){this.a=a
-this.b=b},
+W3:function W3(){this.b=null},
 yH:function yH(a,b){this.a=a
 this.b=b},
 ih:function ih(a,b){this.a=a
@@ -1353,7 +1352,7 @@ this.c=null},
 i8:function i8(a){this.a=a},
 pW:function pW(){},
 wI:function wI(){},
-by:function by(a){this.a=a},
+by:function by(){},
 Mx:function Mx(a){this.a=a},
 QA:function(a){var u=H.Hp(a,null)
 if(u!=null)return u
@@ -1897,7 +1896,7 @@ _.r=null
 _.x=!0
 _.y=!1
 _.z=null},
-e5:function e5(a){this.a=a}},Y={QO:function QO(){},Yy:function Yy(a,b,c,d,e,f,g){var _=this
+e5:function e5(){}},Y={QO:function QO(){},Yy:function Yy(a,b,c,d,e,f,g){var _=this
 _.y=a
 _.z=b
 _.Q=c
@@ -2436,7 +2435,7 @@ KV:function(a,b){var u=0,t=P.I(O.lN),s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c
 var $async$Yw=P.M(function(a0,a1){if(a0===1)return P.H(a1,t)
 while(true)switch(u){case 0:i=H.K([],[O.en])
 h=new O.lN(i)
-c=C.Pb
+c=C.Ct
 u=3
 return P.j(W.Kn(a),$async$Yw)
 case 3:g=c.kV(0,a1)
@@ -2535,21 +2534,21 @@ u.e=s
 if(b instanceof T.yW)t.M1(b)
 if(typeof c==="number")s.a=c
 return u},
-fL:function(a,b,c){var u,t,s,r,q=null,p=new L.Gp(0,0,q,q,C.Ls,C.Fx,C.Fx,q,-1,!1,q,q)
+fL:function(a,b,c){var u,t,s,r,q=new L.Gp(C.Ls)
 if(a<=0)H.vh(P.xY("width"))
 if(b<=0)H.vh(P.xY("height"))
-u=p.a=V.YX(a)
-t=p.b=V.YX(b)
+u=q.a=V.YX(a)
+t=q.b=V.YX(b)
 s=W.d9(t,u)
-p.c=p.d=s
+q.c=q.d=s
 if(c!==0){r=s.getContext("2d")
 r.fillStyle=V.xH(c)
-r.fillRect(0,0,u,t)}return p},
-WS:function(a){var u=null,t=new L.Gp(0,0,u,u,C.Ls,C.Fx,C.Fx,u,-1,!1,u,u)
-t.a=V.YX(a.width)
-t.b=V.YX(a.height)
-t.c=a
-return t},
+r.fillRect(0,0,u,t)}return q},
+WS:function(a){var u=new L.Gp(C.Ls)
+u.a=V.YX(a.width)
+u.b=V.YX(a.height)
+u.c=a
+return u},
 NA:function(a,b,c,d,e){var u,t,s,r,q=new Int16Array(6),p=new Float32Array(16),o=new L.RK(a,b,c,d,e,q,p),n=d===0
 if(n||d===2){u=0-c.a
 t=u/e
@@ -2784,19 +2783,14 @@ _.c=a
 _.d=b
 _.e=null},
 PT:function PT(){this.c=this.b=this.a=0},
-Gp:function Gp(a,b,c,d,e,f,g,h,i,j,k,l){var _=this
-_.a=a
-_.b=b
-_.c=c
-_.d=d
-_.e=e
-_.f=f
-_.r=g
-_.x=h
-_.y=i
-_.z=j
-_.Q=k
-_.ch=l},
+Gp:function Gp(a){var _=this
+_.b=_.a=0
+_.d=_.c=null
+_.e=a
+_.x=null
+_.y=-1
+_.z=!1
+_.ch=_.Q=null},
 jc:function jc(a){this.a=a},
 RK:function RK(a,b,c,d,e,f,g){var _=this
 _.a=a
@@ -4312,7 +4306,8 @@ W.Aj.prototype={$iAj:1}
 W.uH.prototype={
 bu:function(a){var u=a.nodeValue
 return u==null?this.UG(a):u},
-jx:function(a,b){return a.appendChild(b)}}
+jx:function(a,b){return a.appendChild(b)},
+$iuH:1}
 W.ni.prototype={$ini:1}
 W.ew.prototype={$iew:1}
 W.lp.prototype={
@@ -4333,7 +4328,7 @@ $iZ0:1,
 $aZ0:function(){return[P.q,P.q]}}
 W.cX.prototype={
 $2:function(a,b){return this.a.push(a)}}
-W.a9.prototype={}
+W.a9.prototype={$ia9:1}
 W.yT.prototype={$iyT:1}
 W.o4.prototype={
 gkF:function(a){return a.length},
@@ -6077,8 +6072,8 @@ o=W.d9(a.b,o)
 a.d=o
 o.getContext("2d").drawImage(a.c,0,0)
 o=a.Q;(o&&C.mx).ZE(o,q,0,p,p,5121,a.d)}if(t)a.Q.enable(3089)
-a.Q.texParameteri(q,10242,a.f.a)
-a.Q.texParameteri(q,10243,a.r.a)
+a.Q.texParameteri(q,10242,33071)
+a.Q.texParameteri(q,10243,33071)
 a.Q.texParameteri(q,10241,a.e.a)
 a.Q.texParameteri(q,10240,a.e.a)}else{a.Q.activeTexture(33984)
 a.Q.bindTexture(q,a.ch)}}},
@@ -6689,7 +6684,7 @@ E.Er.prototype={}
 E.za.prototype={
 gkF:function(a){return this.a.duration},
 uW:function(a,b,c,d){var u=new E.zo()
-u.d=new E.e5(1)
+u.d=new E.e5()
 u.c=this
 u.Q=a
 u.ch=b
@@ -6740,9 +6735,8 @@ t.J0(new R.ea("complete",!1),t,C.wq)}},
 nR:function(a){var u,t=this,s=$.qu
 if(t.x)t.c.b.Y5(0,a,null)
 else{t.e=a
-u=t.d
 s.toString
-a.volume=u.a
+a.volume=1
 u=s.b
 t.f=new P.Gm(u,[H.Kp(u,0)]).yI(t.gGh())
 if(!t.y){u=t.e
@@ -6755,7 +6749,7 @@ if(!t.y)if(t.z){u=t.e
 u.currentTime=t.Q
 W.U8(u.play(),null)
 t.zb(t.ch)}else t.TP(0)},
-rH:function(a){this.e.volume=this.d.a*a}}
+rH:function(a){this.e.volume=a}}
 E.RX.prototype={
 gkF:function(a){return 0/0},
 uW:function(a,b,c,d){return new E.tg()}}
@@ -6764,7 +6758,7 @@ E.W1.prototype={}
 E.CI.prototype={
 gkF:function(a){return this.a.duration},
 uW:function(a,b,c,d){var u,t,s,r,q,p,o,n=new E.bH()
-n.d=new E.e5(1)
+n.d=new E.e5()
 n.c=this
 n.Q=a
 n.ch=b
@@ -6916,7 +6910,7 @@ while(true)switch(u){case 0:u=3
 return P.j(W.Kn(b.b.b),$async$cD)
 case 3:l=d
 k=new O.vx(H.K([],[O.vp]))
-j=C.Pb.pW(0,l,null)
+j=C.Ct.pW(0,l,null)
 i=J.U6(j)
 h=i.WH(j,"frames")
 g=H.G(i.WH(j,"meta"),"$iZ0")
@@ -7479,6 +7473,7 @@ C.xi=function(hooks) {
 }
 C.i7=function(hooks) { return hooks; }
 
+C.Ct=new P.by()
 C.Eq=new P.ii()
 C.pr=new P.b2()
 C.NU=new P.R8()
@@ -7495,7 +7490,6 @@ C.He=new N.cw("GameState.lost")
 C.aN=new R.vZ("InputEventMode.MouseOnly")
 C.O7=new R.vZ("InputEventMode.TouchOnly")
 C.Pr=new R.vZ("InputEventMode.MouseAndTouch")
-C.Pb=new P.by(null)
 C.A3=new P.Mx(null)
 C.ak=H.K(u(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"]),[P.q])
 C.xD=H.K(u([]),[P.c8])
