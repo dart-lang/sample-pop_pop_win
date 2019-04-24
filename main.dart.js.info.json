@@ -1131,7 +1131,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space3rrfuI/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space8mMKfd/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1154,7 +1154,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 28840,
+        "size": 28872,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -8544,7 +8544,7 @@
         "id": "class/722522722",
         "kind": "class",
         "name": "JsLinkedHashMap",
-        "size": 2954,
+        "size": 2986,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -40990,7 +40990,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": "",
         "type": "List<LinkedHashMapCell> Function(dynamic,dynamic)"
       },
@@ -44311,7 +44311,7 @@
         "id": "function/701104223",
         "kind": "function",
         "name": "internalRemove",
-        "size": 148,
+        "size": 180,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/722522722",
         "children": [],
@@ -44332,7 +44332,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WM:function(a){var u,t,s,r=this,q=r.d\nif(q==null)return\nu=r.Bt(q,J.hf(a)&0x3ffffff)\nt=r.Fh(u,a)\nif(t<0)return\ns=u.splice(t,1)[0]\nr.GS(s)\nreturn s.b}",
+        "code": "WM:function(a){var u,t,s,r,q=this,p=q.d\nif(p==null)return\nu=J.hf(a)&0x3ffffff\nt=q.Bt(p,u)\ns=q.Fh(t,a)\nif(s<0)return\nr=t.splice(s,1)[0]\nq.GS(r)\nif(t.length===0)q.rn(p,u)\nreturn r.b}",
         "type": "JsLinkedHashMap.V Function(Object)"
       },
       "701409225": {
@@ -106378,10 +106378,6 @@
       {
         "id": "function/370295194",
         "mask": "inlined"
-      },
-      {
-        "id": "function/370295194",
-        "mask": "inlined"
       }
     ],
     "function/638604543": [
@@ -108884,12 +108880,12 @@
         "mask": null
       },
       {
-        "id": "function/636443477",
-        "mask": null
+        "id": "function/370295194",
+        "mask": "inlined"
       },
       {
-        "id": "function/636443477",
-        "mask": "inlined"
+        "id": "function/542135743",
+        "mask": "[subclass=JsLinkedHashMap]"
       },
       {
         "id": "function/669694580",
@@ -122811,7 +122807,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 216324,
+      "size": 216356,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -122821,11 +122817,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 216324,
-    "dart2jsVersion": "2.3.0-dev.0.1",
-    "compilationMoment": "2019-04-18 11:08:40.411915",
-    "compilationDuration": 5013318,
-    "toJsonDuration": 33000,
+    "size": 216356,
+    "dart2jsVersion": "2.3.0-dev.0.3",
+    "compilationMoment": "2019-04-24 06:14:56.542803",
+    "compilationDuration": 3037938,
+    "toJsonDuration": 24000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
