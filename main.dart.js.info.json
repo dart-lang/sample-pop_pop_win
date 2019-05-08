@@ -80,7 +80,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 8470,
+        "size": 8344,
         "children": [
           "class/6212434",
           "class/6966771",
@@ -342,7 +342,7 @@
         "id": "library/189282297",
         "kind": "library",
         "name": "dart.dom.web_audio",
-        "size": 704,
+        "size": 637,
         "children": [
           "class/126923191",
           "class/132424371",
@@ -528,7 +528,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 12064,
+        "size": 11899,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -839,7 +839,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 5263,
+        "size": 5134,
         "children": [
           "class/17452859",
           "class/35111259",
@@ -871,7 +871,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7446,
+        "size": 7501,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -899,6 +899,7 @@
           "class/632310905",
           "class/635685670",
           "class/800881942",
+          "class/801355802",
           "class/803883908",
           "class/893386369",
           "class/945673373",
@@ -925,7 +926,7 @@
         "id": "library/668511847",
         "kind": "library",
         "name": "stagexl.events",
-        "size": 2848,
+        "size": 2822,
         "children": [
           "class/7554034",
           "class/74794766",
@@ -965,7 +966,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 5213,
+        "size": 5153,
         "children": [
           "class/60704969",
           "class/171867442",
@@ -1024,7 +1025,7 @@
         "id": "library/771373711",
         "kind": "library",
         "name": "stagexl.geom.vector",
-        "size": 704,
+        "size": 642,
         "children": [
           "class/375501103"
         ],
@@ -1131,7 +1132,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceTjjCx6/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacev4f8r5/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1154,7 +1155,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 28872,
+        "size": 29129,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1383,7 +1384,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20303,
+        "size": 20150,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1465,7 +1466,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 18698,
+        "size": 18667,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -2942,6 +2943,7 @@
           "field/509005655",
           "field/727752212",
           "field/759319863",
+          "function/92190096",
           "function/448227795",
           "function/464959827",
           "function/606572177",
@@ -3424,7 +3426,7 @@
         "id": "class/182777088",
         "kind": "class",
         "name": "JSSyntaxRegExp",
-        "size": 606,
+        "size": 657,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -3435,6 +3437,7 @@
           "field/61454735",
           "field/204326440",
           "field/854464763",
+          "function/53930291",
           "function/244952367",
           "function/312847150",
           "function/321493163",
@@ -3442,9 +3445,11 @@
           "function/371026210",
           "function/387497873",
           "function/557700166",
+          "function/625818865",
           "function/793142738",
           "function/861458101",
-          "function/972287397"
+          "function/972287397",
+          "function/1007776597"
         ]
       },
       "183853919": {
@@ -3634,7 +3639,7 @@
         "id": "class/207206915",
         "kind": "class",
         "name": "_StreamController",
-        "size": 1235,
+        "size": 1281,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -4859,7 +4864,7 @@
         "id": "class/364826778",
         "kind": "class",
         "name": "TextLineMetrics",
-        "size": 147,
+        "size": 86,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "modifiers": {
@@ -4932,7 +4937,7 @@
         "id": "class/372829643",
         "kind": "class",
         "name": "TextField",
-        "size": 3761,
+        "size": 3693,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "modifiers": {
@@ -4972,7 +4977,6 @@
           "function/17775173",
           "function/199666843",
           "function/229317322",
-          "function/309212141",
           "function/323971990",
           "function/358862628",
           "function/400191402",
@@ -5010,7 +5014,7 @@
         "id": "class/375501103",
         "kind": "class",
         "name": "Vector",
-        "size": 666,
+        "size": 604,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/771373711",
         "modifiers": {
@@ -5497,7 +5501,7 @@
         "id": "class/420380175",
         "kind": "class",
         "name": "BaseAudioContext",
-        "size": 106,
+        "size": 39,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/189282297",
         "modifiers": {
@@ -5505,8 +5509,7 @@
         },
         "children": [
           "field/696608104",
-          "field/970551518",
-          "function/369241247"
+          "field/970551518"
         ]
       },
       "422296824": {
@@ -5736,7 +5739,6 @@
           "abstract": true
         },
         "children": [
-          "field/1016218670",
           "field/1022934707",
           "function/385444888",
           "function/513053773",
@@ -6975,7 +6977,7 @@
         "id": "class/562571521",
         "kind": "class",
         "name": "_EventStreamSubscription",
-        "size": 439,
+        "size": 285,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -7418,7 +7420,7 @@
         "id": "class/604138865",
         "kind": "class",
         "name": "_BufferingStreamSubscription",
-        "size": 1462,
+        "size": 1287,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -8209,7 +8211,7 @@
         "id": "class/696371859",
         "kind": "class",
         "name": "EventStreamSubscription",
-        "size": 152,
+        "size": 146,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -9054,7 +9056,7 @@
         "id": "class/768321595",
         "kind": "class",
         "name": "_AllMatchesIterator",
-        "size": 290,
+        "size": 466,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -9065,6 +9067,8 @@
           "field/67042351",
           "field/687949338",
           "field/1003009060",
+          "function/253251003",
+          "function/275552132",
           "function/625376887",
           "function/943902272",
           "function/1069819234"
@@ -9169,7 +9173,7 @@
         "id": "class/780019487",
         "kind": "class",
         "name": "_DoneStreamSubscription",
-        "size": 302,
+        "size": 278,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -9469,11 +9473,23 @@
           "function/560446084"
         ]
       },
+      "801355802": {
+        "id": "class/801355802",
+        "kind": "class",
+        "name": "RegExpMatch",
+        "size": 39,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891",
+        "modifiers": {
+          "abstract": true
+        },
+        "children": []
+      },
       "803883908": {
         "id": "class/803883908",
         "kind": "class",
         "name": "Duration",
-        "size": 777,
+        "size": 727,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -9499,7 +9515,6 @@
           "function/357240896",
           "function/364589491",
           "function/565402348",
-          "function/742868068",
           "function/764462671",
           "function/972906189",
           "function/1009157688",
@@ -9626,7 +9641,7 @@
         "id": "class/820012780",
         "kind": "class",
         "name": "EventStream",
-        "size": 1019,
+        "size": 999,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -11278,7 +11293,7 @@
         "id": "class/1003011102",
         "kind": "class",
         "name": "JSNumber",
-        "size": 2363,
+        "size": 2291,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -11302,7 +11317,6 @@
           "function/431823134",
           "function/440018750",
           "function/510752749",
-          "function/531823224",
           "function/741922895",
           "function/752981084",
           "function/755311629",
@@ -11708,7 +11722,7 @@
         "id": "class/1030275855",
         "kind": "class",
         "name": "DisplayObject",
-        "size": 1629,
+        "size": 1598,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -11911,7 +11925,7 @@
         "id": "class/1040168844",
         "kind": "class",
         "name": "_StreamIterator",
-        "size": 70,
+        "size": 39,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -13701,7 +13715,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "K1:function(a,b,c,d){if(!!J.i(a).$ibQ)return new H.xy(a,b,[c,d])\nreturn new H.i1(a,b,[c,d])}",
+        "code": "fR:function(a,b,c,d){if(!!J.i(a).$ibQ)return new H.OV(a,b,[c,d])\nreturn new H.i1(a,b,[c,d])}",
         "type": "MappedIterable<#A,#B> Function<#A,#B>(Iterable<#A>,#B Function(#A))"
       },
       "37343626": {
@@ -14392,6 +14406,28 @@
         "code": "",
         "type": "Duration Function()"
       },
+      "53930291": {
+        "id": "function/53930291",
+        "kind": "function",
+        "name": "isUnicode",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/182777088",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function()"
+      },
       "54364179": {
         "id": "function/54364179",
         "kind": "function",
@@ -14473,7 +14509,7 @@
         "id": "function/55764546",
         "kind": "function",
         "name": "_EventStreamSubscription",
-        "size": 171,
+        "size": 199,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [
@@ -14511,7 +14547,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "JE:function(a,b,c,d){var u=W.aF(new W.vN(c),W.pS)\nu=new W.xC(a,b,u,!1)\nu.DN()\nreturn u}",
+        "code": "JE:function(a,b,c,d){var u=W.aF(new W.vN(c),W.pS),t=u!=null\nif(t&&!0)if(t)J.vS(a,b,u,!1)\nreturn new W.xC(a,b,u,!1)}",
         "type": "dynamic Function(EventTarget,String,void Function(_EventStreamSubscription.T),bool)"
       },
       "56298275": {
@@ -15696,7 +15732,7 @@
         "id": "function/82464416",
         "kind": "function",
         "name": "_subscribe",
-        "size": 334,
+        "size": 380,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/207206915",
         "children": [
@@ -15734,7 +15770,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "MI:function(a,b,c,d){var u,t,s,r,q=this\nif((q.b&3)!==0)throw H.B(P.PV(\"Stream has already been listened to.\"))\nu=$.X3\nt=new P.yU(q,u,d?1:0)\nt.PJ(a,b,c,d)\ns=q.gKj()\nu=q.b|=1\nif((u&8)!==0){r=q.a\nr.sJg(t)\nr.QE(0)}else q.a=t\nt.E9(s)\nt.Ge(new P.UO(q))\nreturn t}",
+        "code": "MI:function(a,b,c,d){var u,t,s,r,q=this\nif((q.b&3)!==0)throw H.B(P.PV(\"Stream has already been listened to.\"))\nu=$.X3\nt=new P.yU(q,u,d?1:0)\nt.PJ(a,b,c,d)\ns=q.gKj()\nu=q.b|=1\nif((u&8)!==0){r=q.a\nr.sJg(t)\nr.QE(0)}else q.a=t\nt.E9(s)\nu=t.e\nt.e=u|32\nnew P.UO(q).$0()\nt.e&=4294967263\nt.Iy((u&4)!==0)\nreturn t}",
         "type": "StreamSubscription<_StreamController.T> Function(void Function(_StreamController.T),Function,void Function(),bool)"
       },
       "82702408": {
@@ -15945,6 +15981,34 @@
         "inlinedCount": 1,
         "code": "",
         "type": "void Function()"
+      },
+      "92190096": {
+        "id": "function/92190096",
+        "kind": "function",
+        "name": "ArgumentError.notNull",
+        "size": 60,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/143626168",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=ArgumentError]",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 0,
+        "code": "hG:function(a){return new P.h(!1,null,a,\"Must not be null\")}",
+        "type": "dynamic Function([String])"
       },
       "92202521": {
         "id": "function/92202521",
@@ -16405,7 +16469,7 @@
         "id": "function/104977034",
         "kind": "function",
         "name": "_sendData",
-        "size": 102,
+        "size": 87,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -16426,7 +16490,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "MW:function(a){var u=this,t=u.e\nu.e=(t|32)>>>0\nu.d.m1(u.a,a)\nu.e=(u.e&4294967263)>>>0\nu.Iy((t&4)!==0)}",
+        "code": "MW:function(a){var u=this,t=u.e\nu.e=t|32\nu.d.m1(u.a,a)\nu.e&=4294967263\nu.Iy((t&4)!==0)}",
         "type": "void Function(Object)"
       },
       "105543261": {
@@ -16818,7 +16882,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
-        "code": "M2:function(a,b){return new U.OV(this.a+b.a,this.b+b.b)}",
+        "code": "M2:function(a,b){return new U.xy(this.a+b.a,this.b+b.b)}",
         "type": "Vector Function(Vector)"
       },
       "114640328": {
@@ -17656,7 +17720,7 @@
         "id": "function/129973416",
         "kind": "function",
         "name": "_tryResume",
-        "size": 97,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [],
@@ -17670,8 +17734,8 @@
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 0,
-        "code": "DN:function(){var u,t=this,s=t.d,r=s!=null\nif(r&&t.a<=0){u=t.b\nu.toString\nif(r)J.vS(u,t.c,s,!1)}}",
+        "inlinedCount": 1,
+        "code": "",
         "type": "void Function()"
       },
       "130041650": {
@@ -17826,7 +17890,7 @@
         "id": "function/134135678",
         "kind": "function",
         "name": "y",
-        "size": 29,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/364826778",
         "children": [],
@@ -17841,7 +17905,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 6,
-        "code": "gy:function(a){return this.d}",
+        "code": "",
         "type": "num Function()"
       },
       "134894197": {
@@ -17929,7 +17993,7 @@
         "id": "function/135722261",
         "kind": "function",
         "name": "_checkState",
-        "size": 361,
+        "size": 331,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -17950,7 +18014,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Iy:function(a){var u,t,s=this,r=s.e\nif((r&64)!==0&&s.r.c==null){r=s.e=(r&4294967231)>>>0\nif((r&4)!==0)if(r<128){u=s.r\nu=u==null||u.c==null}else u=!1\nelse u=!1\nif(u){r=(r&4294967291)>>>0\ns.e=r}}for(;!0;a=t){if((r&8)!==0)return s.r=null\nt=(r&4)!==0\nif(a===t)break\ns.e=(r^32)>>>0\nif(t)s.lT()\nelse s.ie()\nr=(s.e&4294967263)>>>0\ns.e=r}if((r&64)!==0&&r<128)s.r.t2(s)}",
+        "code": "Iy:function(a){var u,t,s=this,r=s.e\nif((r&64)!==0&&s.r.c==null){r=s.e=r&4294967231\nif((r&4)!==0)if(r<128){u=s.r\nu=u==null||u.c==null}else u=!1\nelse u=!1\nif(u){r&=4294967291\ns.e=r}}for(;!0;a=t){if((r&8)!==0)return s.r=null\nt=(r&4)!==0\nif(a===t)break\ns.e=r^32\nif(t)s.lT()\nelse s.ie()\nr=s.e&=4294967263}if((r&64)!==0&&r<128)s.r.t2(s)}",
         "type": "void Function(bool)"
       },
       "136706883": {
@@ -19411,7 +19475,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn!!J.i(b).$ihL&&this.a==b.gx(b)&&this.b==b.gy(b)}",
+        "code": "DN:function(a,b){if(b==null)return!1\nreturn!!J.i(b).$ihL&&this.a==b.gx(b)&&this.b==b.gy(b)}",
         "type": "bool Function(dynamic)"
       },
       "164775669": {
@@ -22860,7 +22924,17 @@
             "declaredType": "bool"
           },
           {
+            "name": "dotAll",
+            "type": "Value([exact=JSBool], value: false)",
+            "declaredType": "bool"
+          },
+          {
             "name": "multiLine",
+            "type": "Value([exact=JSBool], value: false)",
+            "declaredType": "bool"
+          },
+          {
+            "name": "unicode",
             "type": "Value([exact=JSBool], value: false)",
             "declaredType": "bool"
           }
@@ -22868,7 +22942,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": "",
-        "type": "dynamic Function(String,{bool caseSensitive,bool multiLine})"
+        "type": "dynamic Function(String,{bool caseSensitive,bool dotAll,bool multiLine,bool unicode})"
       },
       "244999219": {
         "id": "function/244999219",
@@ -23299,6 +23373,34 @@
         "inlinedCount": 1,
         "code": "",
         "type": "void Function(dynamic)"
+      },
+      "253251003": {
+        "id": "function/253251003",
+        "kind": "function",
+        "name": "_isLeadSurrogate",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/768321595",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "c",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function(int)"
       },
       "253794122": {
         "id": "function/253794122",
@@ -24642,6 +24744,34 @@
         "code": "gZ2:function(){return\"RangeError\"}",
         "type": "String Function()"
       },
+      "275552132": {
+        "id": "function/275552132",
+        "kind": "function",
+        "name": "_isTrailSurrogate",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/768321595",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "c",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function(int)"
+      },
       "275681184": {
         "id": "function/275681184",
         "kind": "function",
@@ -25032,7 +25162,7 @@
         "id": "function/286260800",
         "kind": "function",
         "name": "y",
-        "size": 29,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1030275855",
         "children": [],
@@ -25047,7 +25177,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
-        "code": "gy:function(a){return this.d}",
+        "code": "",
         "type": "num Function()"
       },
       "286260801": {
@@ -25584,7 +25714,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn b instanceof H.cu&&this.gVX()===b.gVX()}",
+        "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof H.cu&&this.gVX()===b.gVX()}",
         "type": "bool Function(dynamic)"
       },
       "297130634": {
@@ -26288,28 +26418,6 @@
         "code": "ft:function(a,b,c,d,e,f){switch(b){case 0:return a.$0()\ncase 1:return a.$1(c)\ncase 2:return a.$2(c,d)\ncase 3:return a.$3(c,d,e)\ncase 4:return a.$4(c,d,e,f)}throw H.B(P.FM(\"Unsupported number of arguments for wrapped closure\"))}",
         "type": "dynamic Function(Function,int,dynamic,dynamic,dynamic,dynamic)"
       },
-      "309212141": {
-        "id": "function/309212141",
-        "kind": "function",
-        "name": "x",
-        "size": 66,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/372829643",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "num",
-        "inferredReturnType": "[subclass=JSNumber]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "gx:function(a){this.JL()\nreturn A.fE.prototype.gx.call(this,this)}",
-        "type": "num Function()"
-      },
       "310700980": {
         "id": "function/310700980",
         "kind": "function",
@@ -26493,7 +26601,7 @@
         "id": "function/312847150",
         "kind": "function",
         "name": "toString",
-        "size": 42,
+        "size": 55,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/182777088",
         "children": [],
@@ -26506,9 +26614,9 @@
         "returnType": "String",
         "inferredReturnType": "[exact=JSString]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){return\"RegExp/\"+this.a+\"/\"}",
+        "code": "bu:function(a){return\"RegExp/\"+this.a+\"/\"+this.b.flags}",
         "type": "String Function()"
       },
       "313163592": {
@@ -26646,7 +26754,7 @@
         "id": "function/316134826",
         "kind": "function",
         "name": "x",
-        "size": 29,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/364826778",
         "children": [],
@@ -26661,7 +26769,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 6,
-        "code": "gx:function(a){return this.c}",
+        "code": "",
         "type": "num Function()"
       },
       "316301225": {
@@ -26861,7 +26969,7 @@
         "id": "function/321493163",
         "kind": "function",
         "name": "makeNative",
-        "size": 222,
+        "size": 252,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/182777088",
         "children": [],
@@ -26890,6 +26998,16 @@
             "declaredType": "bool"
           },
           {
+            "name": "unicode",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
+          },
+          {
+            "name": "dotAll",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
+          },
+          {
             "name": "global",
             "type": "[exact=JSBool]",
             "declaredType": "bool"
@@ -26897,8 +27015,8 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "v4:function(a,b,c,d){var u=b?\"m\":\"\",t=c?\"\":\"i\",s=d?\"g\":\"\",r=function(e,f){try{return new RegExp(e,f)}catch(q){return q}}(a,u+t+s)\nif(r instanceof RegExp)return r\nthrow H.B(P.rr(\"Illegal RegExp pattern (\"+String(r)+\")\",a))}",
-        "type": "dynamic Function(String,bool,bool,bool)"
+        "code": "v4:function(a,b,c,d,e,f){var u=b?\"m\":\"\",t=c?\"\":\"i\",s=d?\"u\":\"\",r=e?\"s\":\"\",q=f?\"g\":\"\",p=function(g,h){try{return new RegExp(g,h)}catch(o){return o}}(a,u+t+s+r+q)\nif(p instanceof RegExp)return p\nthrow H.B(P.rr(\"Illegal RegExp pattern (\"+String(p)+\")\",a))}",
+        "type": "dynamic Function(String,bool,bool,bool,bool,bool)"
       },
       "322244069": {
         "id": "function/322244069",
@@ -27050,7 +27168,7 @@
         "id": "function/326750651",
         "kind": "function",
         "name": "_sendDone",
-        "size": 123,
+        "size": 108,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/780019487",
         "children": [],
@@ -27065,7 +27183,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Dd:function(){var u=this,t=u.b=(u.b&4294967293)>>>0\nif(t>=4)return\nu.b=(t|1)>>>0\nu.a.bH(u.c)}\nq(P.EM.prototype,\"gcv\",\"Dd\",3)",
+        "code": "Dd:function(){var u=this,t=u.b&=4294967293\nif(t>=4)return\nu.b=t|1\nu.a.bH(u.c)}\nq(P.EM.prototype,\"gcv\",\"Dd\",3)",
         "type": "void Function()"
       },
       "327357990": {
@@ -27330,7 +27448,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nif(this===b)return!0\nreturn b instanceof P.u8&&b.a===this.a}",
+        "code": "DN:function(a,b){if(b==null)return!1\nif(this===b)return!0\nreturn b instanceof P.u8&&b.a===this.a}",
         "type": "bool Function(Object)"
       },
       "334431217": {
@@ -27879,7 +27997,7 @@
         "id": "function/348704014",
         "kind": "function",
         "name": "_nativeAnchoredVersion",
-        "size": 114,
+        "size": 133,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/182777088",
         "children": [],
@@ -27894,14 +28012,14 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gIa:function(){var u=this,t=u.d\nif(t!=null)return t\nt=u.b\nreturn u.d=H.v4(u.a+\"|()\",t.multiline,!t.ignoreCase,!0)}",
+        "code": "gIa:function(){var u=this,t=u.d\nif(t!=null)return t\nt=u.b\nreturn u.d=H.v4(u.a+\"|()\",t.multiline,!t.ignoreCase,t.unicode,t.dotAll,!0)}",
         "type": "dynamic Function()"
       },
       "349794930": {
         "id": "function/349794930",
         "kind": "function",
         "name": "cancel",
-        "size": 186,
+        "size": 171,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -27916,7 +28034,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gv:function(){var u,t=this,s=t.e=(t.e&4294967279)>>>0\nif((s&8)===0){s=t.e=(s|8)>>>0\nif((s&64)!==0){u=t.r\nif(u.a===1)u.a=3}if((s&32)===0)t.r=null\nt.f=t.EZ()}s=t.f\nreturn s==null?$.Yj():s}",
+        "code": "Gv:function(){var u,t=this,s=t.e&=4294967279\nif((s&8)===0){s=t.e=s|8\nif((s&64)!==0){u=t.r\nif(u.a===1)u.a=3}if((s&32)===0)t.r=null\nt.f=t.EZ()}s=t.f\nreturn s==null?$.Yj():s}",
         "type": "Future<dynamic> Function()"
       },
       "349849963": {
@@ -28361,7 +28479,7 @@
         "id": "function/357627841",
         "kind": "function",
         "name": "StreamIterator",
-        "size": 34,
+        "size": 65,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/240292734",
         "children": [],
@@ -28382,7 +28500,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Qw:function(a){return new P.xI(a)}",
+        "code": "Qw:function(a){if(a==null)H.vh(P.hG(\"stream\"))\nreturn new P.xI()}",
         "type": "StreamIterator<#A> Function<#A>(Stream<#A>)"
       },
       "358340511": {
@@ -28732,7 +28850,7 @@
         "id": "function/368669143",
         "kind": "function",
         "name": "RegExp",
-        "size": 55,
+        "size": 61,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/274441186",
         "children": [],
@@ -28763,36 +28881,8 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "nu:function(a,b,c){return new H.VR(a,H.v4(a,!1,!0,!1))}",
-        "type": "RegExp Function(String,{bool caseSensitive,bool multiLine})"
-      },
-      "369241247": {
-        "id": "function/369241247",
-        "kind": "function",
-        "name": "decodeAudioData",
-        "size": 66,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/420380175",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "Future<AudioBuffer>",
-        "inferredReturnType": "[exact=_Future]",
-        "parameters": [
-          {
-            "name": "audioData",
-            "type": "[empty]",
-            "declaredType": "ByteBuffer"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Mi:function(a,b){return W.U8(a.decodeAudioData(b,null,null),P.r2)}",
-        "type": "Future<AudioBuffer> Function(ByteBuffer,[void Function(AudioBuffer),void Function(DomException)])"
+        "code": "nu:function(a,b,c){return new H.VR(a,H.v4(a,!1,!0,!1,!1,!1))}",
+        "type": "RegExp Function(String,{bool caseSensitive,bool dotAll,bool multiLine,bool unicode})"
       },
       "369349235": {
         "id": "function/369349235",
@@ -28998,7 +29088,7 @@
         "id": "function/371026210",
         "kind": "function",
         "name": "_nativeGlobalVersion",
-        "size": 108,
+        "size": 127,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/182777088",
         "children": [],
@@ -29013,7 +29103,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gHc:function(){var u=this,t=u.c\nif(t!=null)return t\nt=u.b\nreturn u.c=H.v4(u.a,t.multiline,!t.ignoreCase,!0)}",
+        "code": "gHc:function(){var u=this,t=u.c\nif(t!=null)return t\nt=u.b\nreturn u.c=H.v4(u.a,t.multiline,!t.ignoreCase,t.unicode,t.dotAll,!0)}",
         "type": "dynamic Function()"
       },
       "371264899": {
@@ -29345,7 +29435,7 @@
         "id": "function/380830053",
         "kind": "function",
         "name": "_schedule",
-        "size": 108,
+        "size": 99,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/780019487",
         "children": [],
@@ -29360,7 +29450,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "q1:function(){var u,t=this\nif((t.b&2)!==0)return\nu=t.a\nu.toString\nP.Tk(null,null,u,t.gcv())\nt.b=(t.b|2)>>>0}",
+        "code": "q1:function(){var u,t=this\nif((t.b&2)!==0)return\nu=t.a\nu.toString\nP.Tk(null,null,u,t.gcv())\nt.b|=2}",
         "type": "void Function()"
       },
       "381082213": {
@@ -29433,7 +29523,7 @@
         "id": "function/383109511",
         "kind": "function",
         "name": "_setPendingEvents",
-        "size": 90,
+        "size": 79,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -29454,7 +29544,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "E9:function(a){var u=this\nif(a==null)return\nu.r=a\nif(a.c!=null){u.e=(u.e|64)>>>0\na.t2(u)}}",
+        "code": "E9:function(a){if(a==null)return\nthis.r=a\nif(a.c!=null){this.e|=64\na.t2(this)}}",
         "type": "void Function(Object)"
       },
       "383364052": {
@@ -29769,7 +29859,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Iterable<Match>",
+        "returnType": "Iterable<RegExpMatch>",
         "inferredReturnType": "[exact=_AllMatchesIterable]",
         "parameters": [
           {
@@ -29781,7 +29871,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "pj:function(a,b){return new H.KW(this,b,0)}",
-        "type": "Iterable<Match> Function(String,[int])"
+        "type": "Iterable<RegExpMatch> Function(String,[int])"
       },
       "387594083": {
         "id": "function/387594083",
@@ -29808,7 +29898,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ck:function(a,b){return new U.OV(C.CD.Ck(this.a,b.gx(b)),C.CD.Ck(this.b,b.gy(b)))}",
+        "code": "Ck:function(a,b){return new U.xy(C.CD.Ck(this.a,b.gx(b)),C.CD.Ck(this.b,b.gy(b)))}",
         "type": "Vector Function(Vector)"
       },
       "388977016": {
@@ -30195,7 +30285,7 @@
         "id": "function/398427551",
         "kind": "function",
         "name": "_insertionSort",
-        "size": 179,
+        "size": 173,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1071198161",
         "children": [],
@@ -30231,7 +30321,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "w9:function(a,b,c,d){var u,t,s,r,q\nfor(u=b+1,t=J.U6(a);u<=c;++u){s=t.WH(a,u)\nr=u\nwhile(!0){if(!(r>b&&J.Na(d.$2(t.WH(a,r-1),s),0)))break\nq=r-1\nt.Y5(a,r,t.WH(a,q))\nr=q}t.Y5(a,r,s)}}",
+        "code": "w9:function(a,b,c,d){var u,t,s,r,q\nfor(u=b+1,t=J.U6(a);u<=c;++u){s=t.WH(a,u)\nr=u\nwhile(!0){if(!(r>b&&d.$2(t.WH(a,r-1),s)>0))break\nq=r-1\nt.Y5(a,r,t.WH(a,q))\nr=q}t.Y5(a,r,s)}}",
         "type": "void Function<#A>(List<#A>,int,int,int Function(#A,#A))"
       },
       "398913941": {
@@ -30895,7 +30985,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zC:function(a,b){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=this\nif(b==null)b=P.cH(d.Qt.e.a.c.length,new U.Pi(d),[M.Ke,[P.hL,P.KN],N.Il]).ev(0,new U.CT()).E2(0,new U.Ag(),[P.hL,P.KN]).br(0)\nu=new H.A8(b,new U.Be(d,a),[H.Kp(b,0),U.tp]).br(0)\nH.Qs(u,new U.Ha())\nfor(t=u.length,s=d.Na,r=R.ea,q=0;q<u.length;u.length===t||(0,H.lk)(u),++q){p=u[q]\no=p.a\nn=p.b\nm=d.rS.Qt\nl=o.gx(o)\nk=o.gy(o)\nj=m.a\ni=m.c[l+k*j]\nj=H.G(H.G(i.fy,\"$iic\").fy,\"$iMp\").Qt.e\nk=i.Qt\nl=i.lN\nj=j.b\nj=j.c[k+l*j.a]\nh=j===C.e5?\"balloon_explode\":\"balloon_pop\"\ng=O.u7(d.La.dF(h),60,!1)\ng.c=n.a\ng.id=!0\ng.d=n.b\ng.ch=0\ng.k4=!1\ns.bS(g)\ng.Ep(0,\"complete\",r).XE(new U.BJ(g),!1,0)\nf=d.gYK()\nm=(f instanceof A.a?f:null).oJ\nm.AN(0,g)\ne=new K.fR(new U.df(g,i,j))\ne.c=Math.max(p.c/60,0.0001)\nm.AN(0,e)}}\nJ1:function(a){return this.zC(a,null)}",
+        "code": "zC:function(a,b){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=this\nif(b==null)b=P.cH(d.Qt.e.a.c.length,new U.Pi(d),[M.Ke,[P.hL,P.KN],N.Il]).ev(0,new U.CT()).E2(0,new U.Ag(),[P.hL,P.KN]).br(0)\nu=new H.A8(b,new U.Be(d,a),[H.Kp(b,0),U.tp]).br(0)\nH.Qs(u,new U.Ha())\nfor(t=u.length,s=d.Na,r=R.ea,q=0;q<u.length;u.length===t||(0,H.lk)(u),++q){p=u[q]\no=p.a\nn=p.b\nm=d.rS.Qt\nl=o.gx(o)\nk=o.gy(o)\nj=m.a\ni=m.c[l+k*j]\nj=H.G(H.G(i.fy,\"$iic\").fy,\"$iMp\").Qt.e\nk=i.Qt\nl=i.lN\nj=j.b\nj=j.c[k+l*j.a]\nh=j===C.e5?\"balloon_explode\":\"balloon_pop\"\ng=O.u7(d.La.dF(h),60,!1)\ng.c=n.a\ng.id=!0\ng.d=n.b\ng.ch=0\ng.k4=!1\ns.bS(g)\ng.Ep(0,\"complete\",r).XE(new U.BJ(g),!1,0)\nf=d.gYK()\nm=(f instanceof A.a?f:null).oJ\nm.AN(0,g)\ne=new K.K1(new U.df(g,i,j))\ne.c=Math.max(p.c/60,0.0001)\nm.AN(0,e)}}\nJ1:function(a){return this.zC(a,null)}",
         "type": "void Function(Point<int>,[Iterable<Point<int>>])"
       },
       "415315997": {
@@ -31249,7 +31339,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){return a===b}",
+        "code": "DN:function(a,b){return a===b}",
         "type": "bool Function(dynamic)"
       },
       "425401265": {
@@ -32406,7 +32496,7 @@
         "id": "function/444410091",
         "kind": "function",
         "name": "_addPending",
-        "size": 129,
+        "size": 122,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -32427,7 +32517,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "C2:function(a){var u,t=this,s=t.r;(s==null?t.r=new P.Qk():s).AN(0,a)\nu=t.e\nif((u&64)===0){u=(u|64)>>>0\nt.e=u\nif(u<128)t.r.t2(t)}}",
+        "code": "C2:function(a){var u,t=this,s=t.r;(s==null?t.r=new P.Qk():s).AN(0,a)\nu=t.e\nif((u&64)===0){u|=64\nt.e=u\nif(u<128)t.r.t2(t)}}",
         "type": "void Function(_DelayedEvent<dynamic>)"
       },
       "444469673": {
@@ -32805,7 +32895,7 @@
         "id": "function/456685986",
         "kind": "function",
         "name": "_unlisten",
-        "size": 91,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [],
@@ -32819,8 +32909,8 @@
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 0,
-        "code": "EO:function(){var u,t=this.d,s=t!=null\nif(s){u=this.b\nu.toString\nif(s)J.Yh(u,this.c,t,!1)}}",
+        "inlinedCount": 1,
+        "code": "",
         "type": "void Function()"
       },
       "457624725": {
@@ -33133,7 +33223,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z3:function(a){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this\na.preventDefault()\nu=Date.now()\nt=a.button\ns=P.F\nr=c.No.Ey(new P.hL(a.clientX,a.clientY,[s]))\nq=new U.tZ(0,0,[s])\nif(t<0||t>2)return\nif(a.type===\"mousemove\"&&c.ZB.eT(0,r))return\np=c.HG[t]\nc.ZB=r\nC.Nm.aN(c.hi,new A.PK(r))\nif(a.type!==\"mouseout\")o=c.Fo(r.a,r.b)\nelse{c.H2(0,new R.ea(\"mouseLeave\",!1))\no=null}n=c.rT\nif(n!=o){s=[A.fE]\nm=H.K([],s)\nl=H.K([],s)\nfor(k=n;k!=null;k=k.fy)m.push(k)\nfor(k=o;k!=null;k=k.fy)l.push(k)\nfor(s=m.length,j=l.length,i=0;!0;++i){if(i===s)break\nif(i===j)break\nif(m[s-i-1]!==l[j-i-1])break}if(n!=null){n.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nn.H2(0,new R.OK(p.f,s,j,h,\"mouseOut\",!0))}for(g=0;g<m.length-i;++g){f=m[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOut\",!1))}for(g=l.length-i-1;g>=0;--g){f=l[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOver\",!1))}if(o!=null){o.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\no.H2(0,new R.OK(p.f,s,j,h,\"mouseOver\",!0))}c.rT=o}c.cq()\nif(a.type===\"mousedown\"){c.I6.focus()\ne=p.a\nif(o!=p.e||u>p.r+500)p.x=0\np.f=!0\np.e=o\np.r=u;++p.x}else e=null\nif(a.type===\"mouseup\"){e=p.b\np.f=!1\nd=p.e==o\nd}else d=!1\nu=a.type\nif(u===\"mousemove\")e=\"mouseMove\"\nif(u===\"contextmenu\")e=\"contextMenu\"\nif(e!=null&&o!=null){o.TK(r,q)\nu=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,e,!0))\nif(d){u=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,p.c,!0))}}}\np(o=A.a.prototype,\"gNT\",\"Z3\",13)",
+        "code": "Z3:function(a){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this\na.preventDefault()\nu=Date.now()\nt=a.button\ns=P.F\nr=c.No.Ey(new P.hL(a.clientX,a.clientY,[s]))\nq=new U.tZ(0,0,[s])\nif(t<0||t>2)return\nif(a.type===\"mousemove\"&&c.ZB.DN(0,r))return\np=c.HG[t]\nc.ZB=r\nC.Nm.aN(c.hi,new A.PK(r))\nif(a.type!==\"mouseout\")o=c.Fo(r.a,r.b)\nelse{c.H2(0,new R.ea(\"mouseLeave\",!1))\no=null}n=c.rT\nif(n!=o){s=[A.fE]\nm=H.K([],s)\nl=H.K([],s)\nfor(k=n;k!=null;k=k.fy)m.push(k)\nfor(k=o;k!=null;k=k.fy)l.push(k)\nfor(s=m.length,j=l.length,i=0;!0;++i){if(i===s)break\nif(i===j)break\nif(m[s-i-1]!==l[j-i-1])break}if(n!=null){n.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nn.H2(0,new R.OK(p.f,s,j,h,\"mouseOut\",!0))}for(g=0;g<m.length-i;++g){f=m[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOut\",!1))}for(g=l.length-i-1;g>=0;--g){f=l[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOver\",!1))}if(o!=null){o.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\no.H2(0,new R.OK(p.f,s,j,h,\"mouseOver\",!0))}c.rT=o}c.cq()\nif(a.type===\"mousedown\"){c.I6.focus()\ne=p.a\nif(o!=p.e||u>p.r+500)p.x=0\np.f=!0\np.e=o\np.r=u;++p.x}else e=null\nif(a.type===\"mouseup\"){e=p.b\np.f=!1\nd=p.e==o\nd}else d=!1\nu=a.type\nif(u===\"mousemove\")e=\"mouseMove\"\nif(u===\"contextmenu\")e=\"contextMenu\"\nif(e!=null&&o!=null){o.TK(r,q)\nu=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,e,!0))\nif(d){u=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,p.c,!0))}}}\np(o=A.a.prototype,\"gNT\",\"Z3\",13)",
         "type": "void Function(MouseEvent)"
       },
       "464290033": {
@@ -35935,7 +36025,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){return null==b}",
+        "code": "DN:function(a,b){return null==b}",
         "type": "bool Function(dynamic)"
       },
       "521621182": {
@@ -36308,34 +36398,6 @@
         "inlinedCount": 0,
         "code": "Gq:function(a){var u=Math.abs(a),t=a<0?\"-\":\"\"\nif(u>=1000)return\"\"+a\nif(u>=100)return t+\"0\"+u\nif(u>=10)return t+\"00\"+u\nreturn t+\"000\"+u}",
         "type": "String Function(int)"
-      },
-      "531823224": {
-        "id": "function/531823224",
-        "kind": "function",
-        "name": ">",
-        "size": 70,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/1003011102",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "other",
-            "type": "[null|subclass=JSNumber]",
-            "declaredType": "num"
-          }
-        ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 0,
-        "code": "os:function(a,b){if(typeof b!==\"number\")throw H.B(H.tL(b))\nreturn a>b}",
-        "type": "bool Function(num)"
       },
       "532459700": {
         "id": "function/532459700",
@@ -37520,7 +37582,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Match",
+        "returnType": "RegExpMatch",
         "inferredReturnType": "[null|exact=_MatchImplementation]",
         "parameters": [
           {
@@ -37537,7 +37599,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "UZ:function(a,b){var u,t=this.gHc()\nt.lastIndex=b\nu=t.exec(a)\nif(u==null)return\nreturn new H.EK(u)}",
-        "type": "Match Function(String,int)"
+        "type": "RegExpMatch Function(String,int)"
       },
       "558102800": {
         "id": "function/558102800",
@@ -39201,7 +39263,7 @@
         "id": "function/601591851",
         "kind": "function",
         "name": "_guardCallback",
-        "size": 95,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -39221,8 +39283,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Ge:function(a){var u=this,t=u.e\nu.e=(t|32)>>>0\na.$0()\nu.e=(u.e&4294967263)>>>0\nu.Iy((t&4)!==0)}",
+        "inlinedCount": 1,
+        "code": "",
         "type": "void Function(void Function())"
       },
       "602286117": {
@@ -40352,13 +40414,35 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Match",
+        "returnType": "RegExpMatch",
         "inferredReturnType": "[null|exact=_MatchImplementation]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gRX:function(){return this.d}",
-        "type": "Match Function()"
+        "type": "RegExpMatch Function()"
+      },
+      "625818865": {
+        "id": "function/625818865",
+        "kind": "function",
+        "name": "_isUnicode",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/182777088",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
+        "inlinedCount": 3,
+        "code": "",
+        "type": "bool Function()"
       },
       "626059138": {
         "id": "function/626059138",
@@ -41586,7 +41670,7 @@
         "id": "function/648707259",
         "kind": "function",
         "name": "_dispatchEventInternal",
-        "size": 158,
+        "size": 138,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/820012780",
         "children": [],
@@ -41617,7 +41701,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wb:function(a,b,c){var u,t,s,r,q=this.c,p=c===C.b7\nfor(u=q.length,t=0;t<u;++t){s=q[t]\nif(!s.c)if(s.b<=0){s.d\nr=p}else r=!0\nelse r=!0\nif(r)continue\ns.f.$1(a)}}",
+        "code": "wb:function(a,b,c){var u,t,s,r,q=this.c,p=c===C.b7\nfor(u=q.length,t=0;t<u;++t){s=q[t]\nif(!s.c){s.d\nr=p}else r=!0\nif(r)continue\ns.f.$1(a)}}",
         "type": "void Function(Object,EventDispatcher,EventPhase)"
       },
       "650870464": {
@@ -41730,7 +41814,7 @@
         "id": "function/652205922",
         "kind": "function",
         "name": "_dualPivotQuicksort",
-        "size": 1914,
+        "size": 1860,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1071198161",
         "children": [],
@@ -41766,7 +41850,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "d4:function(a1,a2,a3,a4){var u,t,s,r,q,p,o,n,m,l,k=C.jn.BU(a3-a2+1,6),j=a2+k,i=a3-k,h=C.jn.BU(a2+a3,2),g=h-k,f=h+k,e=J.U6(a1),d=e.WH(a1,j),c=e.WH(a1,g),b=e.WH(a1,h),a=e.WH(a1,f),a0=e.WH(a1,i)\nif(J.Na(a4.$2(d,c),0)){u=c\nc=d\nd=u}if(J.Na(a4.$2(a,a0),0)){u=a0\na0=a\na=u}if(J.Na(a4.$2(d,b),0)){u=b\nb=d\nd=u}if(J.Na(a4.$2(c,b),0)){u=b\nb=c\nc=u}if(J.Na(a4.$2(d,a),0)){u=a\na=d\nd=u}if(J.Na(a4.$2(b,a),0)){u=a\na=b\nb=u}if(J.Na(a4.$2(c,a0),0)){u=a0\na0=c\nc=u}if(J.Na(a4.$2(c,b),0)){u=b\nb=c\nc=u}if(J.Na(a4.$2(a,a0),0)){u=a0\na0=a\na=u}e.Y5(a1,j,d)\ne.Y5(a1,h,b)\ne.Y5(a1,i,a0)\ne.Y5(a1,g,e.WH(a1,a2))\ne.Y5(a1,f,e.WH(a1,a3))\nt=a2+1\ns=a3-1\nif(J.RM(a4.$2(c,a),0)){for(r=t;r<=s;++r){q=e.WH(a1,r)\np=a4.$2(q,c)\nif(p===0)continue\nif(p<0){if(r!==t){e.Y5(a1,r,e.WH(a1,t))\ne.Y5(a1,t,q)}++t}else for(;!0;){p=a4.$2(e.WH(a1,s),c)\nif(p>0){--s\ncontinue}else{o=s-1\nif(p<0){e.Y5(a1,r,e.WH(a1,t))\nn=t+1\ne.Y5(a1,t,e.WH(a1,s))\ne.Y5(a1,s,q)\ns=o\nt=n\nbreak}else{e.Y5(a1,r,e.WH(a1,s))\ne.Y5(a1,s,q)\ns=o\nbreak}}}}m=!0}else{for(r=t;r<=s;++r){q=e.WH(a1,r)\nif(a4.$2(q,c)<0){if(r!==t){e.Y5(a1,r,e.WH(a1,t))\ne.Y5(a1,t,q)}++t}else if(a4.$2(q,a)>0)for(;!0;)if(a4.$2(e.WH(a1,s),a)>0){--s\nif(s<r)break\ncontinue}else{o=s-1\nif(a4.$2(e.WH(a1,s),c)<0){e.Y5(a1,r,e.WH(a1,t))\nn=t+1\ne.Y5(a1,t,e.WH(a1,s))\ne.Y5(a1,s,q)\nt=n}else{e.Y5(a1,r,e.WH(a1,s))\ne.Y5(a1,s,q)}s=o\nbreak}}m=!1}l=t-1\ne.Y5(a1,a2,e.WH(a1,l))\ne.Y5(a1,l,c)\nl=s+1\ne.Y5(a1,a3,e.WH(a1,l))\ne.Y5(a1,l,a)\nH.ZE(a1,a2,t-2,a4)\nH.ZE(a1,s+2,a3,a4)\nif(m)return\nif(t<j&&s>i){for(;J.RM(a4.$2(e.WH(a1,t),c),0);)++t\nfor(;J.RM(a4.$2(e.WH(a1,s),a),0);)--s\nfor(r=t;r<=s;++r){q=e.WH(a1,r)\nif(a4.$2(q,c)===0){if(r!==t){e.Y5(a1,r,e.WH(a1,t))\ne.Y5(a1,t,q)}++t}else if(a4.$2(q,a)===0)for(;!0;)if(a4.$2(e.WH(a1,s),a)===0){--s\nif(s<r)break\ncontinue}else{o=s-1\nif(a4.$2(e.WH(a1,s),c)<0){e.Y5(a1,r,e.WH(a1,t))\nn=t+1\ne.Y5(a1,t,e.WH(a1,s))\ne.Y5(a1,s,q)\nt=n}else{e.Y5(a1,r,e.WH(a1,s))\ne.Y5(a1,s,q)}s=o\nbreak}}H.ZE(a1,t,s,a4)}else H.ZE(a1,t,s,a4)}",
+        "code": "d4:function(a1,a2,a3,a4){var u,t,s,r,q,p,o,n,m,l,k=C.jn.BU(a3-a2+1,6),j=a2+k,i=a3-k,h=C.jn.BU(a2+a3,2),g=h-k,f=h+k,e=J.U6(a1),d=e.WH(a1,j),c=e.WH(a1,g),b=e.WH(a1,h),a=e.WH(a1,f),a0=e.WH(a1,i)\nif(a4.$2(d,c)>0){u=c\nc=d\nd=u}if(a4.$2(a,a0)>0){u=a0\na0=a\na=u}if(a4.$2(d,b)>0){u=b\nb=d\nd=u}if(a4.$2(c,b)>0){u=b\nb=c\nc=u}if(a4.$2(d,a)>0){u=a\na=d\nd=u}if(a4.$2(b,a)>0){u=a\na=b\nb=u}if(a4.$2(c,a0)>0){u=a0\na0=c\nc=u}if(a4.$2(c,b)>0){u=b\nb=c\nc=u}if(a4.$2(a,a0)>0){u=a0\na0=a\na=u}e.Y5(a1,j,d)\ne.Y5(a1,h,b)\ne.Y5(a1,i,a0)\ne.Y5(a1,g,e.WH(a1,a2))\ne.Y5(a1,f,e.WH(a1,a3))\nt=a2+1\ns=a3-1\nif(J.RM(a4.$2(c,a),0)){for(r=t;r<=s;++r){q=e.WH(a1,r)\np=a4.$2(q,c)\nif(p===0)continue\nif(p<0){if(r!==t){e.Y5(a1,r,e.WH(a1,t))\ne.Y5(a1,t,q)}++t}else for(;!0;){p=a4.$2(e.WH(a1,s),c)\nif(p>0){--s\ncontinue}else{o=s-1\nif(p<0){e.Y5(a1,r,e.WH(a1,t))\nn=t+1\ne.Y5(a1,t,e.WH(a1,s))\ne.Y5(a1,s,q)\ns=o\nt=n\nbreak}else{e.Y5(a1,r,e.WH(a1,s))\ne.Y5(a1,s,q)\ns=o\nbreak}}}}m=!0}else{for(r=t;r<=s;++r){q=e.WH(a1,r)\nif(a4.$2(q,c)<0){if(r!==t){e.Y5(a1,r,e.WH(a1,t))\ne.Y5(a1,t,q)}++t}else if(a4.$2(q,a)>0)for(;!0;)if(a4.$2(e.WH(a1,s),a)>0){--s\nif(s<r)break\ncontinue}else{o=s-1\nif(a4.$2(e.WH(a1,s),c)<0){e.Y5(a1,r,e.WH(a1,t))\nn=t+1\ne.Y5(a1,t,e.WH(a1,s))\ne.Y5(a1,s,q)\nt=n}else{e.Y5(a1,r,e.WH(a1,s))\ne.Y5(a1,s,q)}s=o\nbreak}}m=!1}l=t-1\ne.Y5(a1,a2,e.WH(a1,l))\ne.Y5(a1,l,c)\nl=s+1\ne.Y5(a1,a3,e.WH(a1,l))\ne.Y5(a1,l,a)\nH.ZE(a1,a2,t-2,a4)\nH.ZE(a1,s+2,a3,a4)\nif(m)return\nif(t<j&&s>i){for(;J.RM(a4.$2(e.WH(a1,t),c),0);)++t\nfor(;J.RM(a4.$2(e.WH(a1,s),a),0);)--s\nfor(r=t;r<=s;++r){q=e.WH(a1,r)\nif(a4.$2(q,c)===0){if(r!==t){e.Y5(a1,r,e.WH(a1,t))\ne.Y5(a1,t,q)}++t}else if(a4.$2(q,a)===0)for(;!0;)if(a4.$2(e.WH(a1,s),a)===0){--s\nif(s<r)break\ncontinue}else{o=s-1\nif(a4.$2(e.WH(a1,s),c)<0){e.Y5(a1,r,e.WH(a1,t))\nn=t+1\ne.Y5(a1,t,e.WH(a1,s))\ne.Y5(a1,s,q)\nt=n}else{e.Y5(a1,r,e.WH(a1,s))\ne.Y5(a1,s,q)}s=o\nbreak}}H.ZE(a1,t,s,a4)}else H.ZE(a1,t,s,a4)}",
         "type": "void Function<#A>(List<#A>,int,int,int Function(#A,#A))"
       },
       "652233020": {
@@ -42927,7 +43011,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var u=a.gx(a),t=a.gy(a)\nreturn new U.tp(a,$.f9().M2(0,new U.OV(80*u,80*t)),12+C.CD.yu(a.HN(0,this.b).gwe()*4)+this.a.lN.j1(10))}",
+        "code": "$1:function(a){var u=a.gx(a),t=a.gy(a)\nreturn new U.tp(a,$.f9().M2(0,new U.xy(80*u,80*t)),12+C.CD.yu(a.HN(0,this.b).gwe()*4)+this.a.lN.j1(10))}",
         "type": "_Values Function(Point<int>)"
       },
       "675759758": {
@@ -44481,7 +44565,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var u=this\nif(b==null)return!1\nif(u===b)return!0\nif(!(b instanceof H.rT))return!1\nreturn u.a===b.a&&u.b===b.b&&u.c===b.c}",
+        "code": "DN:function(a,b){var u=this\nif(b==null)return!1\nif(u===b)return!0\nif(!(b instanceof H.rT))return!1\nreturn u.a===b.a&&u.b===b.b&&u.c===b.c}",
         "type": "bool Function(dynamic)"
       },
       "707502824": {
@@ -46352,7 +46436,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nif(!u.$itn)return!1\nreturn a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
+        "code": "DN:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nif(!u.$itn)return!1\nreturn a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
         "type": "bool Function(dynamic)"
       },
       "733284854": {
@@ -46859,34 +46943,6 @@
         "inlinedCount": 0,
         "code": "wi:function(a){var u,t,s,r=this,q=3553,p=6408,o=r.fx\nif(a!==o[0]){r.x.fZ(0)\no[0]=a\no=a.y\nu=r.cx\nif(o!==u){a.x=r\na.y=u\no=r.e\na.Q=o\na.ch=o.createTexture()\na.Q.activeTexture(33984)\na.Q.bindTexture(q,a.ch)\nt=a.Q.isEnabled(3089)\nif(t)a.Q.disable(3089)\no=a.c\nu=a.Q\ns=u&&C.mx\nif(o!=null){s.ZE(u,q,0,p,p,5121,o)\na.z=a.Q.getError()===1281}else s.kl(u,q,0,p,a.a,a.b,0,p,5121,null)\nif(a.z){o=a.a\no=W.d9(a.b,o)\na.d=o\no.getContext(\"2d\").drawImage(a.c,0,0)\no=a.Q;(o&&C.mx).ZE(o,q,0,p,p,5121,a.d)}if(t)a.Q.enable(3089)\na.Q.texParameteri(q,10242,33071)\na.Q.texParameteri(q,10243,33071)\na.Q.texParameteri(q,10241,a.e.a)\na.Q.texParameteri(q,10240,a.e.a)}else{a.Q.activeTexture(33984)\na.Q.bindTexture(q,a.ch)}}}",
         "type": "void Function(RenderTexture)"
-      },
-      "742868068": {
-        "id": "function/742868068",
-        "kind": "function",
-        "name": ">",
-        "size": 48,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/803883908",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "other",
-            "type": "[empty]",
-            "declaredType": "Duration"
-          }
-        ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 0,
-        "code": "os:function(a,b){return C.jn.os(this.a,b.gm5())}",
-        "type": "bool Function(Duration)"
       },
       "742924822": {
         "id": "function/742924822",
@@ -47398,7 +47454,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn!!J.i(b).$ihL&&this.a===b.gx(b)&&this.b===b.gy(b)}",
+        "code": "DN:function(a,b){if(b==null)return!1\nreturn!!J.i(b).$ihL&&this.a===b.gx(b)&&this.b===b.gy(b)}",
         "type": "bool Function(Object)"
       },
       "752238315": {
@@ -48679,7 +48735,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn b instanceof P.iP&&this.a===b.a&&this.b===b.b}",
+        "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof P.iP&&this.a===b.a&&this.b===b.b}",
         "type": "bool Function(dynamic)"
       },
       "774880085": {
@@ -48762,7 +48818,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 6,
-        "code": "JH:function(a,b){return new U.OV(a,b)}",
+        "code": "JH:function(a,b){return new U.xy(a,b)}",
         "type": "dynamic Function(num,num)"
       },
       "778541068": {
@@ -50611,13 +50667,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Iterator<Match>",
+        "returnType": "Iterator<RegExpMatch>",
         "inferredReturnType": "[exact=_AllMatchesIterator]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gkz:function(a){return new H.Pb(this.a,this.b,this.c)}",
-        "type": "Iterator<Match> Function()"
+        "type": "Iterator<RegExpMatch> Function()"
       },
       "818211217": {
         "id": "function/818211217",
@@ -51065,7 +51121,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "gUQ:function(a){var u=this,t=H.Kp(u,0)\nreturn H.K1(new H.i5(u,[t]),new H.Mw(u),t,H.Kp(u,1))}",
+        "code": "gUQ:function(a){var u=this,t=H.Kp(u,0)\nreturn H.fR(new H.i5(u,[t]),new H.Mw(u),t,H.Kp(u,1))}",
         "type": "Iterable<JsLinkedHashMap.V> Function()"
       },
       "825708700": {
@@ -51549,7 +51605,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 29,
-        "code": "eT:function(a,b){return this===b}",
+        "code": "DN:function(a,b){return this===b}",
         "type": "bool Function(dynamic)"
       },
       "838719084": {
@@ -53175,7 +53231,7 @@
         "id": "function/881358956",
         "kind": "function",
         "name": "cancel",
-        "size": 72,
+        "size": 116,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [],
@@ -53190,7 +53246,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
-        "code": "Gv:function(){var u=this\nif(u.b==null)return\nu.EO()\nreturn u.d=u.b=null}",
+        "code": "Gv:function(){var u,t,s=this,r=s.b\nif(r==null)return\nu=s.d\nt=u!=null\nif(t)if(t)J.Yh(r,s.c,u,!1)\nreturn s.d=s.b=null}",
         "type": "Future<dynamic> Function()"
       },
       "881865232": {
@@ -55253,7 +55309,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var u,t=this\nif(b==null)return!1\nu=J.i(b)\nreturn!!u.$itn&&t.a===u.gBb(b)&&t.b===u.gG6(b)&&t.c===u.gq9(b)&&t.d===u.gLj(b)}",
+        "code": "DN:function(a,b){var u,t=this\nif(b==null)return!1\nu=J.i(b)\nreturn!!u.$itn&&t.a===u.gBb(b)&&t.b===u.gG6(b)&&t.c===u.gq9(b)&&t.d===u.gLj(b)}",
         "type": "bool Function(Object)"
       },
       "919008289": {
@@ -57104,7 +57160,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ix:function(a,b){return new U.OV(C.CD.Ix(this.a,b.gx(b)),C.CD.Ix(this.b,b.gy(b)))}",
+        "code": "Ix:function(a,b){return new U.xy(C.CD.Ix(this.a,b.gx(b)),C.CD.Ix(this.b,b.gy(b)))}",
         "type": "Vector Function(Vector)"
       },
       "961983334": {
@@ -57735,7 +57791,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Match",
+        "returnType": "RegExpMatch",
         "inferredReturnType": "[null|exact=_MatchImplementation]",
         "parameters": [
           {
@@ -57747,7 +57803,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "ej:function(a){var u\nif(typeof a!==\"string\")H.vh(H.tL(a))\nu=this.b.exec(a)\nif(u==null)return\nreturn new H.EK(u)}",
-        "type": "Match Function(String)"
+        "type": "RegExpMatch Function(String)"
       },
       "972906189": {
         "id": "function/972906189",
@@ -59103,7 +59159,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn b instanceof U.OV&&this.a===b.a&&this.b===b.b}",
+        "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof U.xy&&this.a===b.a&&this.b===b.b}",
         "type": "bool Function(Object)"
       },
       "1003188102": {
@@ -59371,6 +59427,28 @@
         "code": "Px:function(a){var u,t,s,r,q,p,o,n\na.c=!0\nu=this.c\nt=u.length\nif(t===0)return\ns=new Array(t-1)\ns.fixed$length=Array\nr=H.K(s,[[R.hw,H.Kp(this,0)]])\nfor(s=r.length,q=0,p=0;q<t;++q){o=u[q]\nif(o===a)continue\nif(p>=s)return\nn=p+1\nr[p]=o\np=n}this.c=r}",
         "type": "void Function(EventStreamSubscription<Event>)"
       },
+      "1007776597": {
+        "id": "function/1007776597",
+        "kind": "function",
+        "name": "_isDotAll",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/182777088",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
+        "inlinedCount": 2,
+        "code": "",
+        "type": "bool Function()"
+      },
       "1008087245": {
         "id": "function/1008087245",
         "kind": "function",
@@ -59446,7 +59524,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn b instanceof P.a6&&this.a===b.a}",
+        "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof P.a6&&this.a===b.a}",
         "type": "bool Function(dynamic)"
       },
       "1009304694": {
@@ -61635,7 +61713,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nif(!u.$itn)return!1\nreturn a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
+        "code": "DN:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nif(!u.$itn)return!1\nreturn a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
         "type": "bool Function(dynamic)"
       },
       "1069069567": {
@@ -61703,7 +61781,7 @@
         "id": "function/1069819234",
         "kind": "function",
         "name": "moveNext",
-        "size": 177,
+        "size": 353,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/768321595",
         "children": [],
@@ -61718,7 +61796,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "VF:function(){var u,t,s,r=this,q=r.b\nif(q==null)return!1\nu=r.c\nif(u<=q.length){t=r.a.UZ(q,u)\nif(t!=null){r.d=t\ns=t.geX()\nr.c=t.b.index===s?s+1:s\nreturn!0}}r.b=r.d=null\nreturn!1}",
+        "code": "VF:function(){var u,t,s,r,q=this,p=q.b\nif(p==null)return!1\nu=q.c\nif(u<=p.length){t=q.a\ns=t.UZ(p,u)\nif(s!=null){q.d=s\nr=s.geX()\nif(s.b.index===r){if(t.b.unicode){p=q.c\nu=p+1\nt=q.b\nif(u<t.length){p=J.rY(t).O2(t,p)\nif(p>=55296&&p<=56319){p=C.xB.O2(t,u)\np=p>=56320&&p<=57343}else p=!1}else p=!1}else p=!1\nr=(p?r+1:r)+1}q.c=r\nreturn!0}}q.b=q.d=null\nreturn!1}",
         "type": "bool Function()"
       },
       "1070189535": {
@@ -62129,7 +62207,7 @@
         "children": [],
         "inferredType": "[null|exact=_MatchImplementation]",
         "code": "",
-        "type": "Match"
+        "type": "RegExpMatch"
       },
       "20349989": {
         "id": "field/20349989",
@@ -62619,7 +62697,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1040168844",
         "children": [],
-        "inferredType": "[exact=JSBool]",
+        "inferredType": "Value([exact=JSBool], value: false)",
         "code": "",
         "type": "bool"
       },
@@ -64418,7 +64496,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1040168844",
         "children": [],
-        "inferredType": "[null|subclass=Object]",
+        "inferredType": "[subclass=Stream]",
         "code": "",
         "type": "Object"
       },
@@ -64879,7 +64957,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
-        "inferredType": "[subclass=JSInt]",
+        "inferredType": "[exact=JSUInt31]",
         "code": "",
         "type": "int"
       },
@@ -66642,7 +66720,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1040168844",
         "children": [],
-        "inferredType": "Union([exact=EventStreamSubscription], [exact=_EventStreamSubscription], [null|exact=_DoneStreamSubscription], [subclass=_ControllerSubscription])",
+        "inferredType": "[null]",
         "code": "",
         "type": "StreamSubscription<dynamic>"
       },
@@ -70495,7 +70573,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/696371859",
         "children": [],
-        "inferredType": "[subclass=JSInt]",
+        "inferredType": "[exact=JSUInt31]",
         "code": "",
         "type": "int"
       },
@@ -77137,18 +77215,6 @@
         "code": "",
         "type": "num"
       },
-      "1016218670": {
-        "id": "field/1016218670",
-        "kind": "field",
-        "name": "_falseFuture",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/438137149",
-        "children": [],
-        "inferredType": "[null|exact=_Future]",
-        "code": "",
-        "type": "_Future<bool>"
-      },
       "1016692963": {
         "id": "field/1016692963",
         "kind": "field",
@@ -77822,7 +77888,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/780019487",
         "children": [],
-        "inferredType": "[subclass=JSInt]",
+        "inferredType": "[exact=JSUInt31]",
         "code": "",
         "type": "int"
       },
@@ -78011,7 +78077,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [],
-        "inferredType": "[subclass=JSInt]",
+        "inferredType": "[exact=JSUInt31]",
         "code": "",
         "type": "int"
       },
@@ -79740,6 +79806,12 @@
         "mask": null
       }
     ],
+    "field/51249772": [
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
     "field/52345936": [
       {
         "id": "function/788412943",
@@ -80338,6 +80410,12 @@
         "mask": null
       }
     ],
+    "field/211410127": [
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
     "field/215196414": [
       {
         "id": "function/788412943",
@@ -80571,6 +80649,12 @@
       }
     ],
     "field/304825305": [
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
+    "field/305114389": [
       {
         "id": "function/788412943",
         "mask": null
@@ -83227,7 +83311,7 @@
       },
       {
         "id": "function/1058735230",
-        "mask": "[null|subclass=Object]"
+        "mask": "[exact=_Future]"
       },
       {
         "id": "function/11804710",
@@ -84708,6 +84792,12 @@
         "mask": "inlined"
       }
     ],
+    "function/53930291": [
+      {
+        "id": "function/625818865",
+        "mask": "inlined"
+      }
+    ],
     "function/54364179": [
       {
         "id": "field/249316133",
@@ -84788,7 +84878,23 @@
         "mask": null
       },
       {
+        "id": "function/346305693",
+        "mask": null
+      },
+      {
+        "id": "function/579004227",
+        "mask": "[subclass=EventTarget]"
+      },
+      {
         "id": "function/738448951",
+        "mask": null
+      },
+      {
+        "id": "function/791144318",
+        "mask": null
+      },
+      {
+        "id": "function/928973022",
         "mask": null
       }
     ],
@@ -85594,6 +85700,14 @@
     ],
     "function/82464416": [
       {
+        "id": "field/193576254",
+        "mask": null
+      },
+      {
+        "id": "field/193576254",
+        "mask": null
+      },
+      {
         "id": "field/311453985",
         "mask": null
       },
@@ -85611,6 +85725,10 @@
       },
       {
         "id": "field/42778158",
+        "mask": null
+      },
+      {
+        "id": "function/135722261",
         "mask": null
       },
       {
@@ -85638,6 +85756,10 @@
         "mask": null
       },
       {
+        "id": "function/564169382",
+        "mask": null
+      },
+      {
         "id": "function/581547464",
         "mask": null
       },
@@ -85648,6 +85770,10 @@
       {
         "id": "function/601591851",
         "mask": null
+      },
+      {
+        "id": "function/601591851",
+        "mask": "inlined"
       },
       {
         "id": "function/77168805",
@@ -87231,7 +87357,7 @@
       },
       {
         "id": "function/472201782",
-        "mask": "[null|subclass=Object]"
+        "mask": "[exact=_Future]"
       },
       {
         "id": "function/482740919",
@@ -87312,40 +87438,8 @@
     ],
     "function/129973416": [
       {
-        "id": "field/1072989280",
-        "mask": null
-      },
-      {
-        "id": "field/191480351",
-        "mask": null
-      },
-      {
-        "id": "field/747250201",
-        "mask": null
-      },
-      {
-        "id": "field/952958921",
-        "mask": null
-      },
-      {
-        "id": "function/346305693",
-        "mask": null
-      },
-      {
-        "id": "function/579004227",
-        "mask": "[null|subclass=EventTarget]"
-      },
-      {
-        "id": "function/791144318",
-        "mask": null
-      },
-      {
         "id": "function/791144318",
         "mask": "inlined"
-      },
-      {
-        "id": "function/928973022",
-        "mask": null
       },
       {
         "id": "function/928973022",
@@ -87492,12 +87586,6 @@
       {
         "id": "function/942042573",
         "mask": "inlined"
-      }
-    ],
-    "function/134135678": [
-      {
-        "id": "field/1024739941",
-        "mask": null
       }
     ],
     "function/134894197": [
@@ -91573,7 +91661,7 @@
       },
       {
         "id": "field/165753159",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|subtype=Point]"
       },
       {
         "id": "field/169158791",
@@ -91584,16 +91672,12 @@
         "mask": null
       },
       {
-        "id": "field/262809715",
-        "mask": "[subclass=Object]"
-      },
-      {
         "id": "field/357642249",
         "mask": null
       },
       {
         "id": "field/40378972",
-        "mask": "[subclass=Object]"
+        "mask": "[subtype=Point]"
       },
       {
         "id": "field/416291462",
@@ -91609,7 +91693,7 @@
       },
       {
         "id": "field/584542480",
-        "mask": "[subclass=Object]"
+        "mask": "[subtype=Point]"
       },
       {
         "id": "field/627817508",
@@ -91629,15 +91713,11 @@
       },
       {
         "id": "field/888828691",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "field/888828691",
         "mask": null
       },
       {
         "id": "field/890342789",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|subtype=Point]"
       },
       {
         "id": "field/905769690",
@@ -91661,15 +91741,11 @@
       },
       {
         "id": "function/114234992",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/114234992",
         "mask": null
       },
       {
-        "id": "function/134135678",
-        "mask": "[subclass=Object]"
+        "id": "function/114234992",
+        "mask": "inlined"
       },
       {
         "id": "function/219257492",
@@ -91688,10 +91764,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/286260800",
-        "mask": "[subclass=Object]"
-      },
-      {
         "id": "function/286260801",
         "mask": "inlined"
       },
@@ -91702,14 +91774,6 @@
       {
         "id": "function/286260801",
         "mask": null
-      },
-      {
-        "id": "function/309212141",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/316134826",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/346305693",
@@ -91798,10 +91862,6 @@
       {
         "id": "function/912529575",
         "mask": null
-      },
-      {
-        "id": "function/932957023",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/932957024",
@@ -93058,12 +93118,6 @@
         "mask": null
       }
     ],
-    "function/286260800": [
-      {
-        "id": "field/811132849",
-        "mask": null
-      }
-    ],
     "function/287555929": [
       {
         "id": "function/407995169",
@@ -94254,16 +94308,6 @@
         "mask": null
       }
     ],
-    "function/309212141": [
-      {
-        "id": "function/358862628",
-        "mask": null
-      },
-      {
-        "id": "function/932957023",
-        "mask": null
-      }
-    ],
     "function/310700980": [
       {
         "id": "field/1070939839",
@@ -94628,17 +94672,15 @@
       {
         "id": "field/204326440",
         "mask": null
+      },
+      {
+        "id": "field/61454735",
+        "mask": null
       }
     ],
     "function/314157058": [
       {
         "id": "field/362900150",
-        "mask": null
-      }
-    ],
-    "function/316134826": [
-      {
-        "id": "field/997869363",
         "mask": null
       }
     ],
@@ -95632,8 +95674,24 @@
         "mask": null
       },
       {
+        "id": "function/1007776597",
+        "mask": null
+      },
+      {
+        "id": "function/1007776597",
+        "mask": "inlined"
+      },
+      {
         "id": "function/321493163",
         "mask": null
+      },
+      {
+        "id": "function/625818865",
+        "mask": null
+      },
+      {
+        "id": "function/625818865",
+        "mask": "inlined"
       },
       {
         "id": "function/793142738",
@@ -96000,10 +96058,6 @@
     ],
     "function/355012434": [
       {
-        "id": "function/1033661873",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/1042482096",
         "mask": null
       },
@@ -96012,292 +96066,40 @@
         "mask": "inlined"
       },
       {
-        "id": "function/1051093947",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/109394176",
         "mask": null
       },
       {
-        "id": "function/130041650",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/133986333",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/143741280",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/150705145",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/15478302",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/167405219",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/168797306",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/173208082",
-        "mask": "[null|subclass=Object]"
+        "mask": "Union([null|subclass=JSNumber], [subtype=bool])"
       },
       {
         "id": "function/173469993",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/178826056",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/195205650",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/198481897",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/240627941",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/257019158",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/284757751",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/285148179",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/288870017",
-        "mask": "[null|subclass=Object]"
+        "mask": "Union([null|subclass=JSNumber], [subtype=bool])"
       },
       {
         "id": "function/302617892",
         "mask": null
       },
       {
-        "id": "function/312847150",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/324072707",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/325903689",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/346305693",
         "mask": null
       },
       {
-        "id": "function/369614033",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/372037963",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/380325809",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/404075927",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/412092690",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/41770310",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/422690638",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/425964859",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/431897853",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/436231120",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/439855108",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/440018750",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/449342208",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/464959827",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/474133145",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/481591986",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/485481119",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/498780890",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/550544609",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/560446084",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/565013754",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/58194360",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/613119304",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/636061569",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/643999252",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/647368947",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/66015995",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/696699261",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/730595126",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/745741399",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/752238315",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/753429677",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/778843282",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/793410068",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/806886465",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/848267879",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/891910474",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/896337761",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/903216293",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/928060092",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/93381370",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/939485191",
-        "mask": "[null|subclass=Object]"
+        "mask": "Union([null|subclass=JSNumber], [subtype=bool])"
       },
       {
         "id": "function/944731702",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/946181542",
-        "mask": "[null|subclass=Object]"
+        "mask": "Union([null|subclass=JSNumber], [subtype=bool])"
       },
       {
         "id": "function/962973203",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/967193471",
-        "mask": "[null|subclass=Object]"
+        "mask": "Union([null|subclass=JSNumber], [subtype=bool])"
       },
       {
         "id": "function/991909617",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/995182644",
-        "mask": "[null|subclass=Object]"
+        "mask": "Union([null|subclass=JSNumber], [subtype=bool])"
       }
     ],
     "function/356756062": [
@@ -96384,6 +96186,14 @@
       {
         "id": "function/188708191",
         "mask": "inlined"
+      },
+      {
+        "id": "function/308590446",
+        "mask": null
+      },
+      {
+        "id": "function/92190096",
+        "mask": null
       }
     ],
     "function/358340511": [
@@ -96904,12 +96714,6 @@
         "mask": null
       }
     ],
-    "function/369241247": [
-      {
-        "id": "function/576480806",
-        "mask": null
-      }
-    ],
     "function/369464890": [
       {
         "id": "field/1011501671",
@@ -97014,8 +96818,24 @@
         "mask": null
       },
       {
+        "id": "function/1007776597",
+        "mask": null
+      },
+      {
+        "id": "function/1007776597",
+        "mask": "inlined"
+      },
+      {
         "id": "function/321493163",
         "mask": null
+      },
+      {
+        "id": "function/625818865",
+        "mask": null
+      },
+      {
+        "id": "function/625818865",
+        "mask": "inlined"
       },
       {
         "id": "function/793142738",
@@ -97391,7 +97211,7 @@
       },
       {
         "id": "function/1058735230",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=_Future]"
       },
       {
         "id": "function/22749633",
@@ -97912,10 +97732,6 @@
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
-        "id": "function/531823224",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/543418398",
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
@@ -97930,10 +97746,6 @@
       {
         "id": "function/63296748",
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
-      },
-      {
-        "id": "function/742868068",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/774880085",
@@ -99306,14 +99118,6 @@
         "mask": null
       },
       {
-        "id": "function/1002083601",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1009157688",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/1064544181",
         "mask": null
       },
@@ -99326,16 +99130,8 @@
         "mask": "inlined"
       },
       {
-        "id": "function/1068557554",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/147524116",
         "mask": null
-      },
-      {
-        "id": "function/164587325",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/17530218",
@@ -99350,14 +99146,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/296963380",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/332849406",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/343738687",
         "mask": null
       },
@@ -99370,10 +99158,6 @@
         "mask": null
       },
       {
-        "id": "function/425007214",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/428858922",
         "mask": null
       },
@@ -99383,7 +99167,7 @@
       },
       {
         "id": "function/519947595",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=SquareState]"
       },
       {
         "id": "function/542635962",
@@ -99402,28 +99186,12 @@
         "mask": null
       },
       {
-        "id": "function/705889064",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/733239608",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/751906651",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/762202966",
-        "mask": "inlined"
-      },
-      {
         "id": "function/762202966",
         "mask": null
       },
       {
-        "id": "function/774248985",
-        "mask": "[null|subclass=Object]"
+        "id": "function/762202966",
+        "mask": "inlined"
       },
       {
         "id": "function/834381448",
@@ -99431,15 +99199,11 @@
       },
       {
         "id": "function/837956997",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=SquareState]"
       },
       {
         "id": "function/857809232",
         "mask": null
-      },
-      {
-        "id": "function/918999143",
-        "mask": "[null|subclass=Object]"
       }
     ],
     "function/428991443": [
@@ -100397,31 +100161,31 @@
     "function/445547062": [
       {
         "id": "function/1033661873",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/1051093947",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/130041650",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/133986333",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/143741280",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/150705145",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/15478302",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/163889622",
@@ -100429,63 +100193,63 @@
       },
       {
         "id": "function/167405219",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/168797306",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/173208082",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/173469993",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/178826056",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/195205650",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/198481897",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/240627941",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/257019158",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/284757751",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/285148179",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/288870017",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/312847150",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/324072707",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/325903689",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/346305693",
@@ -100493,111 +100257,111 @@
       },
       {
         "id": "function/369614033",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/372037963",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/380325809",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/404075927",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/412092690",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/41770310",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/422690638",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/425964859",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/431897853",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/436231120",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/439855108",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/440018750",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/449342208",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/464959827",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/474133145",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/481591986",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/485481119",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/498780890",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/550544609",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/560446084",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/565013754",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/58194360",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/613119304",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/636061569",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/643999252",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/647368947",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/66015995",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/679532174",
@@ -100605,87 +100369,83 @@
       },
       {
         "id": "function/696699261",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/730595126",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/745741399",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/752238315",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/753429677",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/778843282",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/793410068",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/806886465",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/848267879",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/891910474",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/896337761",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/903216293",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/928060092",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/93381370",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/939485191",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/944731702",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/946181542",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/962973203",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/967193471",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/991909617",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/995182644",
-        "mask": "[null|subclass=Object]"
+        "mask": "[subclass=Object]"
       }
     ],
     "function/448129133": [
@@ -100787,30 +100547,6 @@
       }
     ],
     "function/456685986": [
-      {
-        "id": "field/191480351",
-        "mask": null
-      },
-      {
-        "id": "field/747250201",
-        "mask": null
-      },
-      {
-        "id": "field/952958921",
-        "mask": null
-      },
-      {
-        "id": "function/346305693",
-        "mask": null
-      },
-      {
-        "id": "function/433098641",
-        "mask": "[null|subclass=EventTarget]"
-      },
-      {
-        "id": "function/953175377",
-        "mask": null
-      },
       {
         "id": "function/953175377",
         "mask": "inlined"
@@ -103460,16 +103196,6 @@
         "mask": "inlined"
       }
     ],
-    "function/531823224": [
-      {
-        "id": "function/163889622",
-        "mask": null
-      },
-      {
-        "id": "function/679532174",
-        "mask": null
-      }
-    ],
     "function/532459700": [
       {
         "id": "field/146709854",
@@ -105644,22 +105370,6 @@
     ],
     "function/601591851": [
       {
-        "id": "field/193576254",
-        "mask": null
-      },
-      {
-        "id": "field/193576254",
-        "mask": null
-      },
-      {
-        "id": "function/135722261",
-        "mask": null
-      },
-      {
-        "id": "function/564169382",
-        "mask": null
-      },
-      {
         "id": "function/564169382",
         "mask": "inlined"
       }
@@ -105895,7 +105605,7 @@
       },
       {
         "id": "function/1058735230",
-        "mask": "[null|subclass=Object]"
+        "mask": "[exact=_Future]"
       },
       {
         "id": "function/336168458",
@@ -106616,10 +106326,6 @@
         "mask": null
       },
       {
-        "id": "field/560405824",
-        "mask": null
-      },
-      {
         "id": "field/806496423",
         "mask": null
       },
@@ -106756,28 +106462,12 @@
     ],
     "function/652205922": [
       {
-        "id": "function/1002083601",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1009157688",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/1064544181",
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
-        "id": "function/1068557554",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/1069069567",
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
-      },
-      {
-        "id": "function/164587325",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/170831562",
@@ -106796,20 +106486,12 @@
         "mask": null
       },
       {
-        "id": "function/296963380",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/332849406",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/346305693",
         "mask": null
       },
       {
         "id": "function/425007214",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|subclass=JSInt]"
       },
       {
         "id": "function/470412651",
@@ -106829,11 +106511,7 @@
       },
       {
         "id": "function/519947595",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/531823224",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|subclass=JSInt]"
       },
       {
         "id": "function/543418398",
@@ -106852,36 +106530,8 @@
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
       },
       {
-        "id": "function/705889064",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/733239608",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/742868068",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/751906651",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/774248985",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/774880085",
         "mask": "Union([subclass=JSArray], [subtype=ListMixin])"
-      },
-      {
-        "id": "function/837956997",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/918999143",
-        "mask": "[null|subclass=Object]"
       }
     ],
     "function/652233020": [
@@ -109038,24 +108688,8 @@
         "mask": null
       },
       {
-        "id": "function/1002083601",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1009157688",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1068557554",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/147524116",
         "mask": null
-      },
-      {
-        "id": "function/164587325",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/17530218",
@@ -109078,24 +108712,12 @@
         "mask": "inlined"
       },
       {
-        "id": "function/296963380",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/332849406",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/346305693",
         "mask": null
       },
       {
         "id": "function/384323776",
         "mask": null
-      },
-      {
-        "id": "function/425007214",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/478451597",
@@ -109107,7 +108729,7 @@
       },
       {
         "id": "function/519947595",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=SquareState]"
       },
       {
         "id": "function/542635962",
@@ -109134,24 +108756,8 @@
         "mask": "inlined"
       },
       {
-        "id": "function/705889064",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/733239608",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/751906651",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/762202966",
         "mask": null
-      },
-      {
-        "id": "function/774248985",
-        "mask": "[null|subclass=Object]"
       },
       {
         "id": "function/834381448",
@@ -109159,7 +108765,7 @@
       },
       {
         "id": "function/837956997",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=SquareState]"
       },
       {
         "id": "function/845539260",
@@ -109172,10 +108778,6 @@
       {
         "id": "function/857809232",
         "mask": null
-      },
-      {
-        "id": "function/918999143",
-        "mask": "[null|subclass=Object]"
       }
     ],
     "function/710611585": [
@@ -109782,22 +109384,6 @@
         "mask": null
       },
       {
-        "id": "function/1002083601",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1009157688",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/1068557554",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/164587325",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/17530218",
         "mask": null
       },
@@ -109810,52 +109396,20 @@
         "mask": "inlined"
       },
       {
-        "id": "function/296963380",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/332849406",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/346305693",
         "mask": null
       },
       {
-        "id": "function/425007214",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/519947595",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=SquareState]"
       },
       {
         "id": "function/544746737",
         "mask": null
       },
       {
-        "id": "function/705889064",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/733239608",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/751906651",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/774248985",
-        "mask": "[null|subclass=Object]"
-      },
-      {
         "id": "function/837956997",
-        "mask": "[null|subclass=Object]"
-      },
-      {
-        "id": "function/918999143",
-        "mask": "[null|subclass=Object]"
+        "mask": "[null|exact=SquareState]"
       }
     ],
     "function/728557802": [
@@ -110775,16 +110329,6 @@
       },
       {
         "id": "function/971942041",
-        "mask": null
-      }
-    ],
-    "function/742868068": [
-      {
-        "id": "field/914591285",
-        "mask": null
-      },
-      {
-        "id": "function/531823224",
         "mask": null
       }
     ],
@@ -115805,11 +115349,11 @@
       },
       {
         "id": "function/415279150",
-        "mask": null
+        "mask": "[exact=GameElement]"
       },
       {
         "id": "function/415279150",
-        "mask": "[exact=GameElement]"
+        "mask": null
       },
       {
         "id": "function/43614407",
@@ -115825,11 +115369,11 @@
       },
       {
         "id": "function/484773716",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/484773716",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/518571465",
@@ -115837,11 +115381,11 @@
       },
       {
         "id": "function/51963113",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/51963113",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/524517352",
@@ -115962,16 +115506,36 @@
         "mask": null
       },
       {
+        "id": "field/191480351",
+        "mask": null
+      },
+      {
+        "id": "field/747250201",
+        "mask": null
+      },
+      {
         "id": "field/952958921",
         "mask": null
       },
       {
         "id": "field/952958921",
         "mask": null
+      },
+      {
+        "id": "function/346305693",
+        "mask": null
+      },
+      {
+        "id": "function/433098641",
+        "mask": "[subclass=EventTarget]"
       },
       {
         "id": "function/456685986",
         "mask": null
+      },
+      {
+        "id": "function/456685986",
+        "mask": "inlined"
       },
       {
         "id": "function/720351286",
@@ -115980,6 +115544,10 @@
       {
         "id": "function/720351286",
         "mask": "inlined"
+      },
+      {
+        "id": "function/953175377",
+        "mask": null
       }
     ],
     "function/882827014": [
@@ -122726,6 +122294,10 @@
         "mask": null
       },
       {
+        "id": "field/61454735",
+        "mask": null
+      },
+      {
         "id": "field/67042351",
         "mask": null
       },
@@ -122742,11 +122314,47 @@
         "mask": null
       },
       {
+        "id": "function/1000283646",
+        "mask": null
+      },
+      {
+        "id": "function/253251003",
+        "mask": null
+      },
+      {
+        "id": "function/253251003",
+        "mask": "inlined"
+      },
+      {
         "id": "function/265591727",
         "mask": null
       },
       {
+        "id": "function/275552132",
+        "mask": null
+      },
+      {
+        "id": "function/275552132",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/346305693",
+        "mask": null
+      },
+      {
+        "id": "function/53930291",
+        "mask": null
+      },
+      {
+        "id": "function/53930291",
+        "mask": "inlined"
+      },
+      {
         "id": "function/557700166",
+        "mask": null
+      },
+      {
+        "id": "function/625818865",
         "mask": null
       },
       {
@@ -122807,7 +122415,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 216356,
+      "size": 215853,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -122817,11 +122425,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 216356,
-    "dart2jsVersion": "2.3.0-dev.0.3",
-    "compilationMoment": "2019-04-24 12:06:01.909050",
-    "compilationDuration": 3396076,
-    "toJsonDuration": 27000,
+    "size": 215853,
+    "dart2jsVersion": "2.3.1-dev.0.0",
+    "compilationMoment": "2019-05-08 09:37:24.004540",
+    "compilationDuration": 3311203,
+    "toJsonDuration": 24000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
