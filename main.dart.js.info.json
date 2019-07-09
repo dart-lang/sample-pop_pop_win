@@ -505,7 +505,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6531,
+        "size": 6497,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -574,7 +574,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3368,
+        "size": 3334,
         "children": [
           "field/5840271",
           "function/14078432",
@@ -799,7 +799,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 6851,
+        "size": 6817,
         "children": [
           "class/192166",
           "class/14460442",
@@ -1132,7 +1132,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacegkF9M1/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space6qeLrD/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -23636,7 +23636,7 @@
         "id": "function/259316864",
         "kind": "function",
         "name": "load",
-        "size": 127,
+        "size": 884,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1029103814",
         "children": [
@@ -23664,7 +23664,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yw:function(a,b){return O.KV(a,b)}",
+        "code": "Yw:function(a,b){var u=0,t=P.I(O.lN),s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c\nvar $async$Yw=P.M(function(a0,a1){if(a0===1)return P.H(a1,t)\nwhile(true)switch(u){case 0:i=H.K([],[O.en])\nh=new O.lN(i)\nc=C.Ct\nu=3\nreturn P.j(W.Kn(a),$async$Yw)\ncase 3:g=c.kV(0,a1)\nf=J.U6(g)\ne=H.ug(f.WH(g,\"urls\"))\nd=f.WH(g,\"sprite\")\nf=P.q\nr=H.K([],[f])\nq=J.i(d)\nif(!!q.$iZ0)for(p=J.IT(q.gvc(d));p.VF();){o=p.gRX()\nn=H.ug(q.WH(d,o))\nm=J.U6(n)\nl=V.VC(m.WH(n,0))\nk=V.VC(m.WH(n,1))\ni.push(new O.en(h,o,l,k,V.wJ(m.gkF(n)>2&&m.WH(n,2))))}C.Nm.FV(r,J.M1(e,new O.Hi(a),f))\ni=$.mX()\nj=new E.ye()\ne=i.r\nj.z=i.z\nif(e==null)f=null\nelse f=H.K(e.slice(0),[H.Kp(e,0)])\nj.r=f\ni.y\nj.r=H.qC(r,1,null,H.Kp(r,0)).br(0)\nc=h\nu=4\nreturn P.j(E.Kk(r[0],j),$async$Yw)\ncase 4:c.b=a1\ns=h\nu=1\nbreak\ncase 1:return P.k(s,t)}})\nreturn P.e($async$Yw,t)}",
         "type": "Future<SoundSprite> Function(String,[SoundLoadOptions])"
       },
       "260422866": {
@@ -32439,7 +32439,7 @@
         "id": "function/443181349",
         "kind": "function",
         "name": "_initialLoad",
-        "size": 211,
+        "size": 1209,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -32467,7 +32467,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "c:function(a,b){return E.cK(a,b)}",
+        "code": "c:function(a,b){var u=0,t=P.I(null),s,r,q,p,o,n,m\nvar $async$c=P.M(function(c,d){if(c===1)return P.H(d,t)\nwhile(true)switch(u){case 0:o=H.G(a.n9(\"TextureAtlas\",\"static\"),\"$ivx\")\nn=o.kI(\"loading_bar\")\nm=$.LS\n$.LS=m+1\ns=[A.WO]\nr=new O.Jq(n,\"DIRECTION_RIGHT\",m,H.K([],s),T.oy())\nr.c=51\nr.d=8\nr.sA7(0,0)\nn=o.kI(\"loading_text\")\nm=$.LS\n$.LS=m+1\nq=new A.jx(n,m,H.K([],s),T.oy())\nq.c=141\nq.d=10\nn=H.K([],[A.fE])\nm=$.LS\n$.LS=m+1\np=new A.AE(n,m,H.K([],s),T.oy())\nm=o.kI(\"loading_background\")\nn=$.LS\n$.LS=n+1\np.bS(new A.jx(m,n,H.K([],s),T.oy()))\np.bS(r)\np.bS(q)\np.c=C.jn.BU(b.Yr,2)-504\np.id=!0\np.d=400\np.r=2\np.x=2\nb.bS(p)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",\"packages/pop_pop_win/assets/audio/audio.json\",O.Yw(\"packages/pop_pop_win/assets/audio/audio.json\",null))\nn=a.b\nnew P.Gm(n,[H.Kp(n,0)]).yI(new E.y9(r,a))\nu=2\nreturn P.j(a.xW(0),$async$c)\ncase 2:E.TI(a,b,p)\nreturn P.k(null,t)}})\nreturn P.e($async$c,t)}",
         "type": "Future<dynamic> Function(ResourceManager,Stage)"
       },
       "443784093": {
@@ -56758,7 +56758,7 @@
         "id": "function/953514253",
         "kind": "function",
         "name": "load",
-        "size": 34,
+        "size": 793,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/73206098",
         "children": [],
@@ -56784,7 +56784,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nh:function(a,b){return E.Lq(a,b)}",
+        "code": "Nh:function(a,a0){var u=0,t=P.I(E.Me),s,r=2,q,p=[],o,n,m,l,k,j,i,h,g,f,e,d,c,b\nvar $async$Nh=P.M(function(a1,a2){if(a1===1){q=a2\nu=r}while(true)switch(u){case 0:e=a0.hz(a)\nd=$.Y6()\nc=new T.XF(\"Error loading sound.\",H.K([],[P.Ge]))\ni=e.length,h=0\ncase 3:if(!(h<e.length)){u=5\nbreak}o=e[h]\nr=7\nu=10\nreturn P.j(W.lt(o,null,\"arraybuffer\",null),$async$Nh)\ncase 10:n=a2\nm=H.G(W.Z9(n.response),\"$iI2\")\nu=11\nreturn P.j(J.R7(d,m),$async$Nh)\ncase 11:l=a2\ng=new E.CI(l)\nE.A2()\ns=g\nu=1\nbreak\nr=2\nu=9\nbreak\ncase 7:r=6\nb=q\nk=H.Ru(b)\nj=new T.Dy(\"Failed to load \"+H.d(o),k)\nc.b.push(j)\nu=9\nbreak\ncase 6:u=2\nbreak\ncase 9:case 4:e.length===i||(0,H.lk)(e),++h\nu=3\nbreak\ncase 5:E.A2()\ni=new P.vs($.X3,[E.Me])\ni.Ds(new E.RX())\ns=i\nu=1\nbreak\ncase 1:return P.k(s,t)\ncase 2:return P.H(q,t)}})\nreturn P.e($async$Nh,t)}",
         "type": "Future<Sound> Function(String,[SoundLoadOptions])"
       },
       "953564733": {
@@ -91366,7 +91366,135 @@
     ],
     "function/259316864": [
       {
+        "id": "field/218763941",
+        "mask": null
+      },
+      {
+        "id": "field/218763941",
+        "mask": null
+      },
+      {
+        "id": "field/274973604",
+        "mask": null
+      },
+      {
+        "id": "field/476140677",
+        "mask": null
+      },
+      {
+        "id": "field/476140677",
+        "mask": null
+      },
+      {
+        "id": "field/477820844",
+        "mask": null
+      },
+      {
+        "id": "field/506614058",
+        "mask": null
+      },
+      {
+        "id": "function/1006502273",
+        "mask": null
+      },
+      {
+        "id": "function/1008087245",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/1008087245",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/1013713190",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/1016194181",
+        "mask": "[exact=SubListIterable]"
+      },
+      {
+        "id": "function/1024143730",
+        "mask": null
+      },
+      {
+        "id": "function/1027535878",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator])"
+      },
+      {
         "id": "function/116583875",
+        "mask": null
+      },
+      {
+        "id": "function/122097752",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/144469777",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/147524116",
+        "mask": null
+      },
+      {
+        "id": "function/156463617",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/164228231",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/164228231",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/189306366",
+        "mask": null
+      },
+      {
+        "id": "function/199851072",
+        "mask": null
+      },
+      {
+        "id": "function/200279515",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator])"
+      },
+      {
+        "id": "function/203928505",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/203928505",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/203928505",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/203928505",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/227348255",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/227348255",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/227348255",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/227348255",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/227475046",
         "mask": null
       },
       {
@@ -91374,11 +91502,35 @@
         "mask": "inlined"
       },
       {
+        "id": "function/233769273",
+        "mask": null
+      },
+      {
+        "id": "function/241732623",
+        "mask": null
+      },
+      {
         "id": "function/271854590",
         "mask": null
       },
       {
+        "id": "function/288496489",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/292915674",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator])"
+      },
+      {
         "id": "function/330018012",
+        "mask": null
+      },
+      {
+        "id": "function/340651472",
+        "mask": null
+      },
+      {
+        "id": "function/346305693",
         "mask": null
       },
       {
@@ -91386,15 +91538,143 @@
         "mask": null
       },
       {
+        "id": "function/405266426",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
         "id": "function/420475672",
         "mask": "inlined"
+      },
+      {
+        "id": "function/420475672",
+        "mask": null
+      },
+      {
+        "id": "function/459912602",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/459912602",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/478451597",
+        "mask": null
+      },
+      {
+        "id": "function/478451597",
+        "mask": null
+      },
+      {
+        "id": "function/482441661",
+        "mask": null
       },
       {
         "id": "function/482441661",
         "mask": "inlined"
       },
       {
+        "id": "function/489747191",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/489747191",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/503120266",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/503120266",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/503120266",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/503120266",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/526699367",
+        "mask": "Union([exact=JSExtendableArray], [exact=LinkedHashMapKeyIterable], [exact=_JsonMapKeyIterable])"
+      },
+      {
+        "id": "function/543418398",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/543418398",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/543418398",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/543418398",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/555987509",
+        "mask": null
+      },
+      {
+        "id": "function/566015677",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/574120591",
+        "mask": null
+      },
+      {
+        "id": "function/574459415",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/574459415",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/574459415",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/574459415",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/583030208",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/592015402",
+        "mask": null
+      },
+      {
+        "id": "function/63296748",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/63296748",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/63296748",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/63296748",
+        "mask": "[null|subtype=List]"
+      },
+      {
         "id": "function/635153575",
+        "mask": null
+      },
+      {
+        "id": "function/653699436",
         "mask": null
       },
       {
@@ -91402,8 +91682,124 @@
         "mask": null
       },
       {
+        "id": "function/665416673",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/665416673",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/665416673",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/668848422",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/668848422",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/668848422",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/683736908",
+        "mask": "[exact=JsonCodec]"
+      },
+      {
+        "id": "function/699578922",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/710611585",
+        "mask": null
+      },
+      {
+        "id": "function/721101260",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/727262764",
+        "mask": null
+      },
+      {
+        "id": "function/727262764",
+        "mask": null
+      },
+      {
+        "id": "function/731794670",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/770458885",
+        "mask": null
+      },
+      {
         "id": "function/770458885",
         "mask": "inlined"
+      },
+      {
+        "id": "function/774880085",
+        "mask": "[null|subtype=List]"
+      },
+      {
+        "id": "function/774880085",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/774880085",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/774880085",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/818212569",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/825039833",
+        "mask": "[subtype=List]"
+      },
+      {
+        "id": "function/880396435",
+        "mask": "[subtype=Map]"
+      },
+      {
+        "id": "function/880396435",
+        "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/880396435",
+        "mask": "[null|subclass=Object]"
+      },
+      {
+        "id": "function/88725279",
+        "mask": null
+      },
+      {
+        "id": "function/892678131",
+        "mask": null
+      },
+      {
+        "id": "function/914458783",
+        "mask": null
+      },
+      {
+        "id": "function/950708086",
+        "mask": "Union([exact=ArrayIterator], [exact=LinkedHashMapKeyIterator])"
+      },
+      {
+        "id": "function/9711936",
+        "mask": null
+      },
+      {
+        "id": "function/994666398",
+        "mask": null
       }
     ],
     "function/260422866": [
@@ -99960,16 +100356,84 @@
     ],
     "function/443181349": [
       {
+        "id": "field/125241314",
+        "mask": null
+      },
+      {
+        "id": "field/184825993",
+        "mask": null
+      },
+      {
+        "id": "field/540467957",
+        "mask": null
+      },
+      {
+        "id": "field/742407736",
+        "mask": null
+      },
+      {
+        "id": "field/811132849",
+        "mask": null
+      },
+      {
+        "id": "field/905769690",
+        "mask": null
+      },
+      {
+        "id": "field/945534036",
+        "mask": null
+      },
+      {
+        "id": "field/945534036",
+        "mask": null
+      },
+      {
+        "id": "field/947925980",
+        "mask": null
+      },
+      {
         "id": "function/10460083",
         "mask": "inlined"
+      },
+      {
+        "id": "function/10460083",
+        "mask": null
+      },
+      {
+        "id": "function/1050105482",
+        "mask": null
       },
       {
         "id": "function/116583875",
         "mask": null
       },
       {
+        "id": "function/136706883",
+        "mask": null
+      },
+      {
+        "id": "function/170831562",
+        "mask": null
+      },
+      {
+        "id": "function/220077559",
+        "mask": null
+      },
+      {
+        "id": "function/220077559",
+        "mask": null
+      },
+      {
+        "id": "function/259316864",
+        "mask": null
+      },
+      {
         "id": "function/269921077",
         "mask": "inlined"
+      },
+      {
+        "id": "function/269921077",
+        "mask": null
       },
       {
         "id": "function/271854590",
@@ -99985,7 +100449,15 @@
       },
       {
         "id": "function/286260801",
+        "mask": null
+      },
+      {
+        "id": "function/286260801",
         "mask": "inlined"
+      },
+      {
+        "id": "function/308690752",
+        "mask": null
       },
       {
         "id": "function/308690752",
@@ -99997,7 +100469,19 @@
       },
       {
         "id": "function/340606427",
+        "mask": null
+      },
+      {
+        "id": "function/340606427",
         "mask": "inlined"
+      },
+      {
+        "id": "function/340651472",
+        "mask": null
+      },
+      {
+        "id": "function/345551775",
+        "mask": null
       },
       {
         "id": "function/345551775",
@@ -100008,8 +100492,52 @@
         "mask": null
       },
       {
+        "id": "function/37343626",
+        "mask": null
+      },
+      {
+        "id": "function/391637908",
+        "mask": null
+      },
+      {
         "id": "function/391637908",
         "mask": "inlined"
+      },
+      {
+        "id": "function/418214700",
+        "mask": null
+      },
+      {
+        "id": "function/443784093",
+        "mask": null
+      },
+      {
+        "id": "function/476149970",
+        "mask": null
+      },
+      {
+        "id": "function/478451597",
+        "mask": null
+      },
+      {
+        "id": "function/478451597",
+        "mask": null
+      },
+      {
+        "id": "function/484815699",
+        "mask": null
+      },
+      {
+        "id": "function/511610050",
+        "mask": null
+      },
+      {
+        "id": "function/555987509",
+        "mask": null
+      },
+      {
+        "id": "function/580095665",
+        "mask": null
       },
       {
         "id": "function/635153575",
@@ -100020,8 +100548,16 @@
         "mask": null
       },
       {
+        "id": "function/710611585",
+        "mask": null
+      },
+      {
         "id": "function/719088908",
         "mask": "inlined"
+      },
+      {
+        "id": "function/719088908",
+        "mask": null
       },
       {
         "id": "function/719088908",
@@ -100032,12 +100568,36 @@
         "mask": "inlined"
       },
       {
+        "id": "function/727886120",
+        "mask": null
+      },
+      {
+        "id": "function/789100089",
+        "mask": "[exact=_BroadcastStream]"
+      },
+      {
+        "id": "function/794306718",
+        "mask": null
+      },
+      {
+        "id": "function/892678131",
+        "mask": null
+      },
+      {
+        "id": "function/893513912",
+        "mask": "[exact=Gauge]"
+      },
+      {
+        "id": "function/914458783",
+        "mask": null
+      },
+      {
         "id": "function/914822933",
         "mask": "inlined"
       },
       {
-        "id": "function/932957024",
-        "mask": "inlined"
+        "id": "function/914822933",
+        "mask": null
       },
       {
         "id": "function/932957024",
@@ -100046,6 +100606,22 @@
       {
         "id": "function/932957024",
         "mask": "inlined"
+      },
+      {
+        "id": "function/932957024",
+        "mask": null
+      },
+      {
+        "id": "function/932957024",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/948303177",
+        "mask": null
+      },
+      {
+        "id": "function/99006791",
+        "mask": null
       },
       {
         "id": "function/99006791",
@@ -118128,12 +118704,40 @@
     ],
     "function/953514253": [
       {
+        "id": "field/42778158",
+        "mask": null
+      },
+      {
+        "id": "field/435119801",
+        "mask": null
+      },
+      {
+        "id": "field/815294060",
+        "mask": null
+      },
+      {
+        "id": "field/992919729",
+        "mask": null
+      },
+      {
         "id": "function/116583875",
         "mask": null
       },
       {
         "id": "function/141256066",
         "mask": "inlined"
+      },
+      {
+        "id": "function/141256066",
+        "mask": null
+      },
+      {
+        "id": "function/258652222",
+        "mask": null
+      },
+      {
+        "id": "function/265638794",
+        "mask": null
       },
       {
         "id": "function/271854590",
@@ -118144,7 +118748,19 @@
         "mask": null
       },
       {
+        "id": "function/346305693",
+        "mask": null
+      },
+      {
         "id": "function/357627841",
+        "mask": null
+      },
+      {
+        "id": "function/445547062",
+        "mask": null
+      },
+      {
+        "id": "function/460512542",
         "mask": null
       },
       {
@@ -118152,11 +118768,55 @@
         "mask": "inlined"
       },
       {
+        "id": "function/476563722",
+        "mask": null
+      },
+      {
+        "id": "function/478451597",
+        "mask": null
+      },
+      {
+        "id": "function/492708773",
+        "mask": null
+      },
+      {
+        "id": "function/513053773",
+        "mask": null
+      },
+      {
+        "id": "function/544746737",
+        "mask": null
+      },
+      {
+        "id": "function/57850543",
+        "mask": null
+      },
+      {
+        "id": "function/580095665",
+        "mask": null
+      },
+      {
+        "id": "function/6297674",
+        "mask": null
+      },
+      {
         "id": "function/635153575",
         "mask": null
       },
       {
+        "id": "function/650870464",
+        "mask": "[null|exact=AudioContext]"
+      },
+      {
         "id": "function/663282901",
+        "mask": null
+      },
+      {
+        "id": "function/664449932",
+        "mask": null
+      },
+      {
+        "id": "function/710611585",
         "mask": null
       },
       {
@@ -118164,8 +118824,28 @@
         "mask": "inlined"
       },
       {
+        "id": "function/743368842",
+        "mask": null
+      },
+      {
+        "id": "function/787312647",
+        "mask": null
+      },
+      {
         "id": "function/824211997",
         "mask": "inlined"
+      },
+      {
+        "id": "function/824211997",
+        "mask": null
+      },
+      {
+        "id": "function/897016617",
+        "mask": null
+      },
+      {
+        "id": "function/999459123",
+        "mask": null
       },
       {
         "id": "function/999459123",
@@ -122415,7 +123095,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 215852,
+      "size": 215744,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -122425,11 +123105,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 215852,
-    "dart2jsVersion": "2.4.0-dev.0.1",
-    "compilationMoment": "2019-06-20 13:42:16.039570",
-    "compilationDuration": 3257844,
-    "toJsonDuration": 21000,
+    "size": 215744,
+    "dart2jsVersion": "2.5.0-dev.1.0",
+    "compilationMoment": "2019-07-09 09:35:44.097874",
+    "compilationDuration": 3005637,
+    "toJsonDuration": 10000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
