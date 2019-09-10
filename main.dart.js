@@ -3215,8 +3215,8 @@ u=t!==null&&typeof t==="object"?t.stack:null
 return this.b=u==null?"":u},
 $iBp:1}
 H.Tp.prototype={
-bu:function(a){var u=this.constructor,t=u==null?null:u.name
-return"Closure '"+(t==null?"unknown":t)+"'"},
+bu:function(a){var u=H.lh(this).trim()
+return"Closure '"+u+"'"},
 geC:function(){return this},
 $C:"$1",
 $R:1,

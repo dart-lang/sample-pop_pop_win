@@ -1104,7 +1104,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space1z7GWv/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacerAOUgn/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1122,7 +1122,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 29220,
+        "size": 29179,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -4241,7 +4241,7 @@
         "id": "class/317291728",
         "kind": "class",
         "name": "Closure",
-        "size": 197,
+        "size": 156,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -13240,7 +13240,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "MappedIterable<#A,#B>",
+        "returnType": "MappedIterable<#A/*free*/,#B/*free*/>",
         "inferredReturnType": "[subclass=MappedIterable]",
         "parameters": [
           {
@@ -14385,7 +14385,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -14831,7 +14831,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "void Function(#A)",
+        "returnType": "void Function(#A/*free*/)",
         "inferredReturnType": "[subtype=Function]",
         "parameters": [
           {
@@ -16495,7 +16495,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "LinkedHashMap<#A,#B>",
+        "returnType": "LinkedHashMap<#A/*free*/,#B/*free*/>",
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
@@ -17731,7 +17731,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "List<#A>",
+        "returnType": "List<#A/*free*/>",
         "inferredReturnType": "Union([exact=JSExtendableArray], [exact=JSFixedArray])",
         "parameters": [
           {
@@ -18056,7 +18056,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "Array2d<#A>",
+        "returnType": "Array2d<#A/*free*/>",
         "inferredReturnType": "[exact=Array2d]",
         "parameters": [
           {
@@ -18728,7 +18728,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -18978,7 +18978,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A Function()",
+        "returnType": "#A/*free*/ Function()",
         "inferredReturnType": "[subtype=Function]",
         "parameters": [
           {
@@ -20361,7 +20361,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "List<#A>",
+        "returnType": "List<#A/*free*/>",
         "inferredReturnType": "[exact=JSFixedArray]",
         "parameters": [
           {
@@ -20584,7 +20584,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "List<#A>",
+        "returnType": "List<#A/*free*/>",
         "inferredReturnType": "Union([exact=JSExtendableArray], [exact=JSFixedArray])",
         "parameters": [
           {
@@ -23195,7 +23195,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -27964,7 +27964,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -27997,7 +27997,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "StreamIterator<#A>",
+        "returnType": "StreamIterator<#A/*free*/>",
         "inferredReturnType": "[exact=_StreamIterator]",
         "parameters": [
           {
@@ -28103,7 +28103,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -29183,7 +29183,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Future<List<#A>>",
+        "returnType": "Future<List<#A/*free*/>>",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [
           {
@@ -31689,7 +31689,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "JSArray<#A>",
+        "returnType": "JSArray<#A/*free*/>",
         "inferredReturnType": "[exact=JSFixedArray]",
         "parameters": [
           {
@@ -32401,7 +32401,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "JSArray<#A>",
+        "returnType": "JSArray<#A/*free*/>",
         "inferredReturnType": "[exact=JSFixedArray]",
         "parameters": [
           {
@@ -35213,7 +35213,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "Future<#A>",
+        "returnType": "Future<#A/*free*/>",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [
           {
@@ -35367,7 +35367,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "Iterable<#A>",
+        "returnType": "Iterable<#A/*free*/>",
         "inferredReturnType": "Union([exact=EmptyIterable], [exact=_GeneratorIterable])",
         "parameters": [
           {
@@ -36483,7 +36483,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "LinkedHashMap<#A,#B>",
+        "returnType": "LinkedHashMap<#A/*free*/,#B/*free*/>",
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [
           {
@@ -37534,7 +37534,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Iterable<#A>",
+        "returnType": "Iterable<#A/*free*/>",
         "inferredReturnType": "[exact=MappedListIterable]",
         "parameters": [
           {
@@ -37750,7 +37750,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "JsLinkedHashMap<#A,#B>",
+        "returnType": "JsLinkedHashMap<#A/*free*/,#B/*free*/>",
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
@@ -37916,7 +37916,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Future<#A>",
+        "returnType": "Future<#A/*free*/>",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [
           {
@@ -38273,7 +38273,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Iterable<#A>",
+        "returnType": "Iterable<#A/*free*/>",
         "inferredReturnType": "[exact=MappedListIterable]",
         "parameters": [
           {
@@ -40387,7 +40387,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A Function()",
+        "returnType": "#A/*free*/ Function()",
         "inferredReturnType": "[subtype=Function]",
         "parameters": [
           {
@@ -41266,7 +41266,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -41473,7 +41473,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "JSArray<#A>",
+        "returnType": "JSArray<#A/*free*/>",
         "inferredReturnType": "[exact=JSExtendableArray]",
         "parameters": [
           {
@@ -43922,7 +43922,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "EventStream<#A>",
+        "returnType": "EventStream<#A/*free*/>",
         "inferredReturnType": "[exact=EventStream]",
         "parameters": [
           {
@@ -44326,7 +44326,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Completer<#A>",
+        "returnType": "Completer<#A/*free*/>",
         "inferredReturnType": "[exact=_AsyncAwaitCompleter]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
@@ -46220,7 +46220,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "void Function(#A)",
+        "returnType": "void Function(#A/*free*/)",
         "inferredReturnType": "[null|subtype=Function]",
         "parameters": [
           {
@@ -47138,7 +47138,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Future<#A>",
+        "returnType": "Future<#A/*free*/>",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [
           {
@@ -47270,7 +47270,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "Future<#A>",
+        "returnType": "Future<#A/*free*/>",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [
           {
@@ -50091,7 +50091,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [
           {
@@ -51947,7 +51947,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "StreamController<#A>",
+        "returnType": "StreamController<#A/*free*/>",
         "inferredReturnType": "Union([exact=_AsyncStreamController], [exact=_SyncStreamController])",
         "parameters": [
           {
@@ -53221,7 +53221,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A Function(#B,#C)",
+        "returnType": "#A/*free*/ Function(#B/*free*/,#C/*free*/)",
         "inferredReturnType": "[subtype=Function]",
         "parameters": [
           {
@@ -54231,7 +54231,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A Function(#B)",
+        "returnType": "#A/*free*/ Function(#B/*free*/)",
         "inferredReturnType": "[subtype=Function]",
         "parameters": [
           {
@@ -57257,7 +57257,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -58244,7 +58244,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Iterable<#A>",
+        "returnType": "Iterable<#A/*free*/>",
         "inferredReturnType": "[exact=EmptyIterable]",
         "parameters": [
           {
@@ -58449,7 +58449,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "JSArray<#A>",
+        "returnType": "JSArray<#A/*free*/>",
         "inferredReturnType": "[exact=JSExtendableArray]",
         "parameters": [
           {
@@ -58902,7 +58902,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Iterable<#A>",
+        "returnType": "Iterable<#A/*free*/>",
         "inferredReturnType": "[exact=MappedIterable]",
         "parameters": [
           {
@@ -59383,7 +59383,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "Completer<#A>",
+        "returnType": "Completer<#A/*free*/>",
         "inferredReturnType": "[exact=_AsyncCompleter]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
@@ -59638,7 +59638,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "JSArray<#A>",
+        "returnType": "JSArray<#A/*free*/>",
         "inferredReturnType": "[subclass=JSArray]",
         "parameters": [
           {
@@ -60051,7 +60051,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "#A",
+        "returnType": "#A/*free*/",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -60741,7 +60741,7 @@
         "id": "function/1051093947",
         "kind": "function",
         "name": "toString",
-        "size": 104,
+        "size": 63,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -60756,7 +60756,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){var u=this.constructor,t=u==null?null:u.name\nreturn\"Closure '\"+(t==null?\"unknown\":t)+\"'\"}",
+        "code": "bu:function(a){var u=H.lh(this).trim()\nreturn\"Closure '\"+u+\"'\"}",
         "type": "String Function()"
       },
       "1053431651": {
@@ -60860,7 +60860,7 @@
           "factory": true,
           "external": false
         },
-        "returnType": "StreamController<#A>",
+        "returnType": "StreamController<#A/*free*/>",
         "inferredReturnType": "Union([exact=_AsyncBroadcastStreamController], [exact=_SyncBroadcastStreamController])",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
@@ -60904,7 +60904,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Future<#A>",
+        "returnType": "Future<#A/*free*/>",
         "inferredReturnType": "[exact=_Future]",
         "parameters": [
           {
@@ -117458,6 +117458,12 @@
         "mask": null
       }
     ],
+    "function/1051093947": [
+      {
+        "id": "function/873863767",
+        "mask": null
+      }
+    ],
     "function/1053431651": [
       {
         "id": "field/584542480",
@@ -118223,7 +118229,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 214863,
+      "size": 214822,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -118233,11 +118239,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 214863,
-    "dart2jsVersion": "2.5.0",
-    "compilationMoment": "2019-09-10 07:43:41.864347",
-    "compilationDuration": 4491310,
-    "toJsonDuration": 14000,
+    "size": 214822,
+    "dart2jsVersion": "2.6.0-dev.0.0",
+    "compilationMoment": "2019-09-10 10:12:38.658302",
+    "compilationDuration": 2982271,
+    "toJsonDuration": 8000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
