@@ -1104,7 +1104,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacerAOUgn/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceyVbkGt/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1334,7 +1334,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 19357,
+        "size": 19363,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -27332,7 +27332,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dO:function(a){var u=this,t=u.d,s=J.A(a)\nt.Wo(s,t.QF(s)+1)\nif(a===C.mV)t.uE(u.e).W7(new A.Gf(u),null)\nu.TE()\nu.Zj(a)}\np(o,\"gpe\",\"dO\",17)",
+        "code": "dO:function(a){var u=this,t=u.d,s=J.A(a)\nt.Wo(s,t.QF(s)+1)\nif(a===C.mV)t.uE(u.e).W7(new A.Gf(u),P.c8)\nu.TE()\nu.Zj(a)}\np(o,\"gpe\",\"dO\",17)",
         "type": "void Function(GameState)"
       },
       "341046768": {
@@ -29170,7 +29170,7 @@
         "id": "function/385444888",
         "kind": "function",
         "name": "wait",
-        "size": 993,
+        "size": 999,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/438137149",
         "children": [
@@ -29194,7 +29194,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "pH:function(a,b){var u,t,s,r,q,p,o,n,m={},l=null,k=!1,j=[[P.zM,b]],i=new P.vs($.X3,j)\nm.a=null\nm.b=0\nm.c=m.d=null\nu=new P.VN(m,l,k,i)\ntry{for(p=new H.a7(a,a.gkF(a));p.VF();){t=p.d\ns=m.b\nt.Sq(new P.ff(m,s,i,l,k,b),u,null);++m.b}p=m.b\nif(p===0){p=new P.vs($.X3,j)\np.Ds(C.xD)\nreturn p}p=new Array(p)\np.fixed$length=Array\nm.a=H.K(p,[b])}catch(o){r=H.Ru(o)\nq=H.ts(o)\nif(m.b===0||k){n=r\nif(n==null)n=new P.LK()\np=$.X3\np!==C.NU\nj=new P.vs(p,j)\nj.Nk(n,q)\nreturn j}else{m.d=r\nm.c=q}}return i}",
+        "code": "pH:function(a,b){var u,t,s,r,q,p,o,n,m,l={},k=null,j=!1,i=[[P.zM,b]],h=new P.vs($.X3,i)\nl.a=null\nl.b=0\nl.c=l.d=null\nu=new P.VN(l,k,j,h)\ntry{for(p=new H.a7(a,a.gkF(a)),o=P.c8;p.VF();){t=p.d\ns=l.b\nt.Sq(new P.ff(l,s,h,k,j,b),u,o);++l.b}p=l.b\nif(p===0){p=new P.vs($.X3,i)\np.Ds(C.xD)\nreturn p}p=new Array(p)\np.fixed$length=Array\nl.a=H.K(p,[b])}catch(n){r=H.Ru(n)\nq=H.ts(n)\nif(l.b===0||j){m=r\nif(m==null)m=new P.LK()\np=$.X3\np!==C.NU\ni=new P.vs(p,i)\ni.Nk(m,q)\nreturn i}else{l.d=r\nl.c=q}}return h}",
         "type": "Future<List<#A>> Function<#A>(Iterable<Future<#A>>,{void Function(#A) cleanUp,bool eagerError})"
       },
       "385791026": {
@@ -34197,7 +34197,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Fb:function(a,b,c,d){var u=a+\".\"+b,t=O.Zx(a,b,c,d),s=this.a\nif(s.x4(0,u))throw H.B(P.PV(\"ResourceManager already contains a resource called '\"+b+\"'\"))\nelse s.Y5(0,u,t)\nt.f.a.W7(new O.i9(this),null)}",
+        "code": "Fb:function(a,b,c,d){var u=a+\".\"+b,t=O.Zx(a,b,c,d),s=this.a\nif(s.x4(0,u))throw H.B(P.PV(\"ResourceManager already contains a resource called '\"+b+\"'\"))\nelse s.Y5(0,u,t)\nt.f.a.W7(new O.i9(this),P.c8)}",
         "type": "void Function(String,String,String,Future<dynamic>)"
       },
       "484862451": {
@@ -36855,7 +36855,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "k3:function(a,b){var u,t,s\nb.a=1\ntry{a.Sq(new P.pV(b),new P.U7(b),null)}catch(s){u=H.Ru(s)\nt=H.ts(s)\nP.rb(new P.vr(b,u,t))}}",
+        "code": "k3:function(a,b){var u,t,s\nb.a=1\ntry{a.Sq(new P.pV(b),new P.U7(b),P.c8)}catch(s){u=H.Ru(s)\nt=H.ts(s)\nP.rb(new P.vr(b,u,t))}}",
         "type": "void Function(Future<dynamic>,_Future<dynamic>)"
       },
       "553278458": {
@@ -118229,7 +118229,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 214822,
+      "size": 214828,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -118239,10 +118239,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 214822,
-    "dart2jsVersion": "2.6.0-dev.0.0",
-    "compilationMoment": "2019-09-10 10:12:38.658302",
-    "compilationDuration": 2982271,
+    "size": 214828,
+    "dart2jsVersion": "2.6.0-dev.1.0",
+    "compilationMoment": "2019-09-16 10:22:37.332848",
+    "compilationDuration": 2867720,
     "toJsonDuration": 8000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
