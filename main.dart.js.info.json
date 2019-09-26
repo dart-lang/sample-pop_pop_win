@@ -505,7 +505,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 11856,
+        "size": 11857,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -1104,7 +1104,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceFO96Ef/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceK1w1HL/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1414,7 +1414,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 18668,
+        "size": 18652,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -8349,7 +8349,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 8498,
+        "size": 8482,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -9049,7 +9049,7 @@
         "id": "class/793539876",
         "kind": "class",
         "name": "JSString",
-        "size": 2005,
+        "size": 2006,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -19686,7 +19686,7 @@
         "id": "function/182893984",
         "kind": "function",
         "name": "contains",
-        "size": 131,
+        "size": 132,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/793539876",
         "children": [],
@@ -19712,7 +19712,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Is:function(a,b,c){if(c>a.length)throw H.B(P.TE(c,0,a.length,null,null))\nreturn H.m2(a,b,c)}\ntg:function(a,b){return this.Is(a,b,0)}",
+        "code": "Is:function(a,b,c){var u=a.length\nif(c>u)throw H.B(P.TE(c,0,u,null,null))\nreturn H.m2(a,b,c)}\ntg:function(a,b){return this.Is(a,b,0)}",
         "type": "bool Function(Pattern,[int])"
       },
       "183230030": {
@@ -54083,7 +54083,7 @@
         "id": "function/900729957",
         "kind": "function",
         "name": "_createRenderContext",
-        "size": 1321,
+        "size": 1305,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -54109,7 +54109,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vW:function(a,b){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d\ntry{u=b.r\nt=new T.Xo(new Float32Array(16))\nt.xI()\ns=H.K([],[L.Xt])\nr=P.q\nq=P.KN\np=P.SI\no=new Int16Array(0)\no=new L.E3(new H.u([r,q]),new H.u([r,p]),new L.Io(o),new L.O3(new Float32Array(0)),new L.PT())\nn=new Int16Array(0)\nm=new Float32Array(0)\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(16384)\ni=new Float32Array(32768)\nh=new Array(8)\nh.fixed$length=Array\nh=H.K(h,[L.Gp])\ng=H.K([],[L.F7])\nf=L.dZ\nf=new L.IM(a,t,s,o,new L.te(new H.u([r,q]),new H.u([r,p]),new L.Io(n),new L.O3(m),new L.PT()),new L.tf(new H.u([r,q]),new H.u([r,p]),new L.Io(l),new L.O3(k),new L.PT()),new L.Io(j),new L.O3(i),h,g,new H.u([r,L.e7]),new L.PT(),P.z(f),P.z(f))\nW.JE(a,\"webglcontextlost\",f.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",f.gyD(),!1)\nb=P.EF([\"alpha\",u,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],r,null)\ne=C.p1.eW(a,\"webgl\",b)\nif(e==null)e=C.p1.eW(a,\"experimental-webgl\",b)\nif(!J.i(e).$iJo)H.vh(P.PV(\"Failed to get WebGL context.\"))\nf.e=e\ne.enable(3042)\nf.e.disable(2960)\nf.e.disable(2929)\nf.e.disable(2884)\nf.e.pixelStorei(37441,1)\nf.e.blendFunc(1,771)\nf.x=o\no.W9(f)\nf.cx=$.cU=$.cU+1\nf.CH(0)\nreturn f}catch(d){H.Ru(d)\nu=T.oy()\nt=L.dZ\nt=new L.p5(a,a.getContext(\"2d\"),u,C.yK,new L.PT(),P.z(t),P.z(t))\nt.CH(0)\nreturn t}}",
+        "code": "vW:function(a,b){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d\ntry{u=b.r\nt=new T.Xo(new Float32Array(16))\nt.xI()\ns=H.K([],[L.Xt])\nr=P.q\nq=[r,P.KN]\np=[r,P.SI]\no=new Int16Array(0)\no=new L.E3(new H.u(q),new H.u(p),new L.Io(o),new L.O3(new Float32Array(0)),new L.PT())\nn=new Int16Array(0)\nm=new Float32Array(0)\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(16384)\ni=new Float32Array(32768)\nh=new Array(8)\nh.fixed$length=Array\nh=H.K(h,[L.Gp])\ng=H.K([],[L.F7])\nf=L.dZ\nf=new L.IM(a,t,s,o,new L.te(new H.u(q),new H.u(p),new L.Io(n),new L.O3(m),new L.PT()),new L.tf(new H.u(q),new H.u(p),new L.Io(l),new L.O3(k),new L.PT()),new L.Io(j),new L.O3(i),h,g,new H.u([r,L.e7]),new L.PT(),P.z(f),P.z(f))\nW.JE(a,\"webglcontextlost\",f.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",f.gyD(),!1)\nb=P.EF([\"alpha\",u,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],r,null)\ne=C.p1.eW(a,\"webgl\",b)\nif(e==null)e=C.p1.eW(a,\"experimental-webgl\",b)\nif(!J.i(e).$iJo)H.vh(P.PV(\"Failed to get WebGL context.\"))\nf.e=e\ne.enable(3042)\nf.e.disable(2960)\nf.e.disable(2929)\nf.e.disable(2884)\nf.e.pixelStorei(37441,1)\nf.e.blendFunc(1,771)\nf.x=o\no.W9(f)\nf.cx=$.cU=$.cU+1\nf.CH(0)\nreturn f}catch(d){H.Ru(d)\nu=T.oy()\nt=L.dZ\nt=new L.p5(a,a.getContext(\"2d\"),u,C.yK,new L.PT(),P.z(t),P.z(t))\nt.CH(0)\nreturn t}}",
         "type": "RenderContext Function(CanvasElement,StageOptions)"
       },
       "901078366": {
@@ -118229,7 +118229,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 214828,
+      "size": 214813,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -118239,11 +118239,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 214828,
-    "dart2jsVersion": "2.6.0-dev.1.0",
-    "compilationMoment": "2019-09-25 08:03:41.111765",
-    "compilationDuration": 2982014,
-    "toJsonDuration": 14000,
+    "size": 214813,
+    "dart2jsVersion": "2.6.0-dev.3.0",
+    "compilationMoment": "2019-09-26 07:52:38.489884",
+    "compilationDuration": 3247299,
+    "toJsonDuration": 11000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
