@@ -7,7 +7,7 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.38.4"
+    version: "0.38.5"
   archive:
     dependency: transitive
     description:
@@ -98,7 +98,7 @@ packages:
       name: build_web_compilers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.6.2"
+    version: "2.6.3"
   built_collection:
     dependency: transitive
     description:
@@ -182,7 +182,7 @@ packages:
       name: front_end
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.26"
+    version: "0.1.27"
   glob:
     dependency: transitive
     description:
@@ -252,7 +252,7 @@ packages:
       name: kernel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.26"
+    version: "0.3.27"
   logging:
     dependency: transitive
     description:
@@ -378,7 +378,7 @@ packages:
       name: scratch_space
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.4"
+    version: "0.0.4+1"
   shelf:
     dependency: transitive
     description:
