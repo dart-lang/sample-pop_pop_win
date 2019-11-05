@@ -72,7 +72,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 8109,
+        "size": 8087,
         "children": [
           "class/6212434",
           "class/6966771",
@@ -1103,7 +1103,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacek0WLr1/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space6szdoI/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1121,7 +1121,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 29242,
+        "size": 29287,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1512,7 +1512,7 @@
         "id": "class/6966771",
         "kind": "class",
         "name": "DomRectReadOnly",
-        "size": 568,
+        "size": 557,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3808,6 +3808,7 @@
           "abstract": false
         },
         "children": [
+          "field/558782121",
           "field/726821079",
           "field/862009491",
           "field/1034922434"
@@ -4241,7 +4242,7 @@
         "id": "class/317291728",
         "kind": "class",
         "name": "Closure",
-        "size": 156,
+        "size": 201,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -9273,7 +9274,7 @@
         "id": "class/815753246",
         "kind": "class",
         "name": "_DomRect",
-        "size": 475,
+        "size": 464,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -45957,7 +45958,7 @@
         "id": "function/733239608",
         "kind": "function",
         "name": "==",
-        "size": 156,
+        "size": 145,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/6966771",
         "children": [],
@@ -45978,7 +45979,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "DN:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nif(!u.$itn)return!1\nreturn a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
+        "code": "DN:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nreturn!!u.$itn&&a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
         "type": "bool Function(dynamic)"
       },
       "733284854": {
@@ -60687,7 +60688,7 @@
         "id": "function/1051093947",
         "kind": "function",
         "name": "toString",
-        "size": 63,
+        "size": 108,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -60702,7 +60703,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){var u=H.lh(this).trim()\nreturn\"Closure '\"+u+\"'\"}",
+        "code": "bu:function(a){var u=this.constructor,t=u==null?null:u.name\nreturn\"Closure '\"+H.NQ(t==null?\"unknown\":t)+\"'\"}",
         "type": "String Function()"
       },
       "1053431651": {
@@ -61232,7 +61233,7 @@
         "id": "function/1068557554",
         "kind": "function",
         "name": "==",
-        "size": 156,
+        "size": 145,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/815753246",
         "children": [],
@@ -61253,7 +61254,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "DN:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nif(!u.$itn)return!1\nreturn a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
+        "code": "DN:function(a,b){var u\nif(b==null)return!1\nu=J.i(b)\nreturn!!u.$itn&&a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)}",
         "type": "bool Function(dynamic)"
       },
       "1069069567": {
@@ -67411,7 +67412,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/214521760",
         "children": [],
-        "inferredType": "Union([exact=JSString], [null|exact=Rti], [subclass=JSInt])",
+        "inferredType": "Union([exact=Rti], [null|exact=JSString], [subclass=JSInt])",
         "code": "",
         "type": "dynamic"
       },
@@ -67738,6 +67739,18 @@
         "inferredType": "[subclass=JsLinkedHashMap]",
         "code": "",
         "type": "Map<String,int>"
+      },
+      "558782121": {
+        "id": "field/558782121",
+        "kind": "field",
+        "name": "erasedTypes",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/251751824",
+        "children": [],
+        "inferredType": "Value([exact=JSString], value: \"eT\")",
+        "code": "",
+        "type": "String"
       },
       "559677575": {
         "id": "field/559677575",
@@ -71743,7 +71756,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/214521760",
         "children": [],
-        "inferredType": "Union([null|exact=_FunctionParameters], [subclass=JSArray])",
+        "inferredType": "[null|subclass=Object]",
         "code": "",
         "type": "dynamic"
       },
@@ -117318,7 +117331,7 @@
     ],
     "function/1051093947": [
       {
-        "id": "function/873863767",
+        "id": "function/295807328",
         "mask": null
       }
     ],
@@ -118087,7 +118100,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 214558,
+      "size": 214581,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -118097,10 +118110,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 214558,
-    "dart2jsVersion": "2.6.0-dev.8.0",
-    "compilationMoment": "2019-10-16 17:17:18.844988",
-    "compilationDuration": 3034711,
+    "size": 214581,
+    "dart2jsVersion": "2.7.0-dev.0.0",
+    "compilationMoment": "2019-11-05 15:12:46.220515",
+    "compilationDuration": 3470308,
     "toJsonDuration": 9000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,

@@ -3213,8 +3213,8 @@ u=t!==null&&typeof t==="object"?t.stack:null
 return this.b=u==null?"":u},
 $iBp:1}
 H.Tp.prototype={
-bu:function(a){var u=H.lh(this).trim()
-return"Closure '"+u+"'"},
+bu:function(a){var u=this.constructor,t=u==null?null:u.name
+return"Closure '"+H.NQ(t==null?"unknown":t)+"'"},
 geC:function(){return this},
 $C:"$1",
 $R:1,
@@ -4193,8 +4193,7 @@ bu:function(a){return"Rectangle ("+H.d(a.left)+", "+H.d(a.top)+") "+H.d(a.width)
 DN:function(a,b){var u
 if(b==null)return!1
 u=J.i(b)
-if(!u.$itn)return!1
-return a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)},
+return!!u.$itn&&a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)},
 giO:function(a){return W.rE(C.CD.giO(a.left),C.CD.giO(a.top),C.CD.giO(a.width),C.CD.giO(a.height))},
 gLj:function(a){return a.height},
 gBb:function(a){return a.left},
@@ -4304,8 +4303,7 @@ bu:function(a){return"Rectangle ("+H.d(a.left)+", "+H.d(a.top)+") "+H.d(a.width)
 DN:function(a,b){var u
 if(b==null)return!1
 u=J.i(b)
-if(!u.$itn)return!1
-return a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)},
+return!!u.$itn&&a.left===u.gBb(b)&&a.top===u.gG6(b)&&a.width===u.gq9(b)&&a.height===u.gLj(b)},
 giO:function(a){return W.rE(C.CD.giO(a.left),C.CD.giO(a.top),C.CD.giO(a.width),C.CD.giO(a.height))},
 gLj:function(a){return a.height},
 gq9:function(a){return a.width}}
