@@ -1112,7 +1112,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacei0eBw0/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceDkQHri/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -3818,6 +3818,7 @@
           "abstract": false
         },
         "children": [
+          "field/307514869",
           "field/558782121",
           "field/726821079",
           "field/862009491",
@@ -65230,6 +65231,18 @@
         "code": "",
         "type": "String"
       },
+      "307514869": {
+        "id": "field/307514869",
+        "kind": "field",
+        "name": "typeParameterVariances",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/251751824",
+        "children": [],
+        "inferredType": "Value([exact=JSString], value: \"tPV\")",
+        "code": "",
+        "type": "String"
+      },
       "311453985": {
         "id": "field/311453985",
         "kind": "field",
@@ -86200,11 +86213,11 @@
       },
       {
         "id": "function/380325809",
-        "mask": null
+        "mask": "[subclass=Object]"
       },
       {
         "id": "function/380325809",
-        "mask": "[subclass=Object]"
+        "mask": null
       },
       {
         "id": "function/404075927",
@@ -118133,10 +118146,10 @@
   "program": {
     "entrypoint": "function/233162298",
     "size": 214581,
-    "dart2jsVersion": "2.7.0-dev.2.1",
-    "compilationMoment": "2019-12-05 13:00:41.879782",
-    "compilationDuration": 4424129,
-    "toJsonDuration": 9000,
+    "dart2jsVersion": "2.8.0-dev.0.0",
+    "compilationMoment": "2019-12-18 19:46:29.030219",
+    "compilationDuration": 3207925,
+    "toJsonDuration": 11000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
