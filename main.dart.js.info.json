@@ -385,7 +385,7 @@
         "id": "library/219141364",
         "kind": "library",
         "name": "stagexl.ui.mouse",
-        "size": 184,
+        "size": 154,
         "children": [
           "class/230234314",
           "class/600598281"
@@ -481,7 +481,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6495,
+        "size": 6489,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -549,7 +549,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3334,
+        "size": 3324,
         "children": [
           "function/14078432",
           "function/443181349",
@@ -585,7 +585,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15460,
+        "size": 15428,
         "children": [
           "class/9026159",
           "class/55317202",
@@ -825,7 +825,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 5134,
+        "size": 5094,
         "children": [
           "class/364826778",
           "class/372829643",
@@ -853,7 +853,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7501,
+        "size": 7505,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -908,7 +908,7 @@
         "id": "library/668511847",
         "kind": "library",
         "name": "stagexl.events",
-        "size": 2822,
+        "size": 2733,
         "children": [
           "class/7554034",
           "class/74794766",
@@ -987,7 +987,7 @@
         "id": "library/754126564",
         "kind": "library",
         "name": "dart.collection",
-        "size": 2283,
+        "size": 2287,
         "children": [
           "class/172151835",
           "class/356694352",
@@ -1098,7 +1098,7 @@
         "id": "library/921930589",
         "kind": "library",
         "name": "stagexl.internal.audio_loader",
-        "size": 1035,
+        "size": 1033,
         "children": [
           "class/483097323"
         ],
@@ -1112,7 +1112,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceDkQHri/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacegtYWzn/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1130,7 +1130,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 29287,
+        "size": 29244,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1423,7 +1423,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 18652,
+        "size": 18601,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -2329,7 +2329,7 @@
         "id": "class/99550178",
         "kind": "class",
         "name": "EventDispatcher",
-        "size": 512,
+        "size": 506,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -4055,7 +4055,7 @@
         "id": "class/293821936",
         "kind": "class",
         "name": "StringBuffer",
-        "size": 142,
+        "size": 146,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -4299,7 +4299,7 @@
         "id": "class/323606306",
         "kind": "class",
         "name": "RenderLoop",
-        "size": 1173,
+        "size": 1167,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -7960,7 +7960,7 @@
         "id": "class/696371859",
         "kind": "class",
         "name": "EventStreamSubscription",
-        "size": 146,
+        "size": 156,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -8282,7 +8282,7 @@
         "id": "class/722522722",
         "kind": "class",
         "name": "JsLinkedHashMap",
-        "size": 2986,
+        "size": 2990,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -8361,7 +8361,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 8482,
+        "size": 8443,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -9333,7 +9333,7 @@
         "id": "class/820012780",
         "kind": "class",
         "name": "EventStream",
-        "size": 999,
+        "size": 993,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -10855,13 +10855,10 @@
           "abstract": false
         },
         "children": [
-          "field/34449733",
           "field/114855014",
-          "field/158386993",
           "field/345270786",
           "field/351470839",
           "field/581571516",
-          "field/1042887776",
           "field/1067320472",
           "function/584893544"
         ]
@@ -10870,7 +10867,7 @@
         "id": "class/998035767",
         "kind": "class",
         "name": "RenderProgramTinted",
-        "size": 756,
+        "size": 754,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -12040,7 +12037,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "a3:function(a){var u,t\nif(a>=0){if(a<=2147483647){u=a|0\nreturn a===u?u:u+1}}else if(a>=-2147483648)return a|0\nt=Math.ceil(a)\nif(isFinite(t))return t\nthrow H.B(P.L4(\"\"+a+\".ceil()\"))}",
+        "code": "a3:function(a){var u,t\nif(a>=0){if(a<=2147483647){u=a|0\nreturn a===u?u:u+1}}else if(a>=-2147483648)return a|0\nt=Math.ceil(a)\nif(isFinite(t))return t\nthrow H.c(P.L4(\"\"+a+\".ceil()\"))}",
         "type": "int Function()"
       },
       "4829636": {
@@ -12430,7 +12427,7 @@
         "id": "function/14078432",
         "kind": "function",
         "name": "startGame",
-        "size": 654,
+        "size": 646,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [],
@@ -12445,7 +12442,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "E:function(){var u=0,t=P.I(null),s,r,q,p,o,n,m\nvar $async$E=P.M(function(a,b){if(a===1)return P.H(b,t)\nwhile(true)switch(u){case 0:n=new A.J()\nn.f=11840895\nn.r=!0\ns=A.f(H.G(document.querySelector(\"#gameCanvas\"),\"$in\"),n)\nr=K.L()\nq=H.K([],[A.a])\nr=new A.l(r,q,new R.y(\"enterFrame\",!1),new R.v(\"exitFrame\",!1))\nr.a=!0\nL.m()\n$.x().push(r.gE())\np=s.qJ\nif(p!=null)if(C.Nm.Rz(p.c,s))s.qJ=null\ns.qJ=r\nq.push(s)\n$.b().c=!0\no=new O.D(new H.u([P.q,O.YY]),P.z(P.F))\no.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",C.kH)\nm=E\nu=3\nreturn P.j(o.xW(0),$async$E)\ncase 3:u=2\nreturn P.j(m.c(b,s),$async$E)\ncase 2:return P.k(null,t)}})\nreturn P.e($async$E,t)}",
+        "code": "E:function(){var u=0,t=P.I(null),s,r,q,p,o,n,m\nvar $async$E=P.M(function(a,b){if(a===1)return P.x(b,t)\nwhile(true)switch(u){case 0:n=new A.J()\nn.f=11840895\nn.r=!0\ns=A.f(H.G(document.querySelector(\"#gameCanvas\"),\"$in\"),n)\nr=K.L()\nq=H.K([],[A.a])\nr=new A.l(r,q,new R.y(\"enterFrame\",!1),new R.v(\"exitFrame\",!1))\nr.a=!0\nL.m()\n$.C.push(r.gE())\np=s.qJ\nif(p!=null)if(C.Nm.Rz(p.c,s))s.qJ=null\ns.qJ=r\nq.push(s)\n$.b().c=!0\no=new O.D(P.F(P.q,O.YY),P.z(P.B))\no.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",C.kH)\nm=E\nu=3\nreturn P.j(o.xW(0),$async$E)\ncase 3:u=2\nreturn P.j(m.u(b,s),$async$E)\ncase 2:return P.k(null,t)}})\nreturn P.e($async$E,t)}",
         "type": "Future<dynamic> Function()"
       },
       "14519227": {
@@ -12572,7 +12569,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "yu:function(a){var u\nif(a>=-2147483648&&a<=2147483647)return a|0\nif(isFinite(a)){u=a<0?Math.ceil(a):Math.floor(a)\nreturn u+0}throw H.B(P.L4(\"\"+a+\".toInt()\"))}",
+        "code": "yu:function(a){var u\nif(a>=-2147483648&&a<=2147483647)return a|0\nif(isFinite(a)){u=a<0?Math.ceil(a):Math.floor(a)\nreturn u+0}throw H.c(P.L4(\"\"+a+\".toInt()\"))}",
         "type": "int Function()"
       },
       "15478302": {
@@ -12652,7 +12649,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "yk:function(a){var u=C.Nm.XG(this.a,new O.EQ(a))\nif(u==null)throw H.B(P.xY(\"SoundSpriteSegment not found: '\"+a+\"'\"))\nelse return u}",
+        "code": "yk:function(a){var u=C.Nm.XG(this.a,new O.EQ(a))\nif(u==null)throw H.c(P.xY(\"SoundSpriteSegment not found: '\"+a+\"'\"))\nelse return u}",
         "type": "SoundSpriteSegment Function(String)"
       },
       "17530218": {
@@ -12795,7 +12792,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "W4:function(a,b){if(!!a.fixed$length)H.vh(P.L4(\"removeAt\"))\nif(b<0||b>=a.length)throw H.B(P.O7(b,null))\nreturn a.splice(b,1)[0]}",
+        "code": "W4:function(a,b){if(!!a.fixed$length)H.vh(P.L4(\"removeAt\"))\nif(b<0||b>=a.length)throw H.c(P.O7(b,null))\nreturn a.splice(b,1)[0]}",
         "type": "JSArray.E Function(int)"
       },
       "20204391": {
@@ -13388,7 +13385,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "n9:function(a,b){var u,t=this.a.WH(0,a+\".\"+b)\nif(t==null)throw H.B(P.PV(\"Resource '\"+b+\"' does not exist.\"))\nelse{u=t.d\nif(u!=null)return u\nelse{u=t.e\nif(u!=null)throw H.B(u)\nelse throw H.B(P.PV(\"Resource '\"+b+\"' has not finished loading yet.\"))}}}",
+        "code": "n9:function(a,b){var u,t=this.a.WH(0,a+\".\"+b)\nif(t==null)throw H.c(P.PV(\"Resource '\"+b+\"' does not exist.\"))\nelse{u=t.d\nif(u!=null)return u\nelse{u=t.e\nif(u!=null)throw H.c(u)\nelse throw H.c(P.PV(\"Resource '\"+b+\"' has not finished loading yet.\"))}}}",
         "type": "dynamic Function(String,String)"
       },
       "38646490": {
@@ -13707,7 +13704,7 @@
         "id": "function/45216828",
         "kind": "function",
         "name": "_runtimeTypeToString",
-        "size": 484,
+        "size": 482,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -13733,7 +13730,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "lz:function(a,b){if(a==null)return\"dynamic\"\nif(a===-1)return\"void\"\nif(typeof a===\"object\"&&a!==null&&a.constructor===Array)return H.NQ(a[0].name)+H.XS(a,1,b)\nif(typeof a==\"function\")return H.NQ(a.name)\nif(a===-2)return\"dynamic\"\nif(typeof a===\"number\"){if(b==null||a<0||a>=b.length)return\"unexpected-generic-index:\"+H.d(a)\nreturn H.d(b[b.length-a-1])}if('func' in a)return H.bI(a,b)\nif('futureOr' in a)return\"FutureOr<\"+H.lz(\"type\" in a?a.type:null,b)+\">\"\nreturn\"unknown-reified-type\"}",
+        "code": "H:function(a,b){if(a==null)return\"dynamic\"\nif(a===-1)return\"void\"\nif(typeof a===\"object\"&&a!==null&&a.constructor===Array)return H.NQ(a[0].name)+H.XS(a,1,b)\nif(typeof a==\"function\")return H.NQ(a.name)\nif(a===-2)return\"dynamic\"\nif(typeof a===\"number\"){if(b==null||a<0||a>=b.length)return\"unexpected-generic-index:\"+H.d(a)\nreturn H.d(b[b.length-a-1])}if('func' in a)return H.bI(a,b)\nif('futureOr' in a)return\"FutureOr<\"+H.H(\"type\" in a?a.type:null,b)+\">\"\nreturn\"unknown-reified-type\"}",
         "type": "String Function(dynamic,List<String>)"
       },
       "45545643": {
@@ -13761,7 +13758,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "c1:function(a){var u,t,s,r=this\nif(a.fy!==r)throw H.B(P.xY(\"The supplied DisplayObject must be a child of the caller.\"))\nelse{u=r.L\nt=C.Nm.OY(u,a)\na.H2(0,new R.ea(\"removed\",!0))\ns=r.gYK()\nif((s instanceof A.a?s:null)!=null)r.ul(a,\"removedFromStage\")\na.fy=null\nC.Nm.W4(u,t)}}",
+        "code": "c1:function(a){var u,t,s,r=this\nif(a.fy!==r)throw H.c(P.xY(\"The supplied DisplayObject must be a child of the caller.\"))\nelse{u=r.L\nt=C.Nm.OY(u,a)\na.H2(0,new R.ea(\"removed\",!0))\ns=r.gYK()\nif((s instanceof A.a?s:null)!=null)r.ul(a,\"removedFromStage\")\na.fy=null\nC.Nm.W4(u,t)}}",
         "type": "void Function(Object)"
       },
       "47070963": {
@@ -14087,7 +14084,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gqN:function(a){var u=this,t=u.c,s=J.i(t)\nif(!!s.$in)return t\nelse if(!!s.$ipA){s=u.a\ns=W.d9(u.b,s)\nu.d=u.c=s\ns.getContext(\"2d\").drawImage(t,0,0,u.a,u.b)\nreturn u.d}else throw H.B(P.PV(\"RenderTexture is read only.\"))}",
+        "code": "gqN:function(a){var u=this,t=u.c,s=J.i(t)\nif(!!s.$in)return t\nelse if(!!s.$ipA){s=u.a\ns=W.d9(u.b,s)\nu.d=u.c=s\ns.getContext(\"2d\").drawImage(t,0,0,u.a,u.b)\nreturn u.d}else throw H.c(P.PV(\"RenderTexture is read only.\"))}",
         "type": "CanvasElement Function()"
       },
       "55331110": {
@@ -14243,7 +14240,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "NT:function(a){if(typeof a===\"boolean\"||a==null)return a\nthrow H.B(H.aq(a,\"bool\"))}",
+        "code": "NT:function(a){if(typeof a===\"boolean\"||a==null)return a\nthrow H.c(H.aq(a,\"bool\"))}",
         "type": "dynamic Function(dynamic)"
       },
       "57158184": {
@@ -14351,7 +14348,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "A2:function(){if($.FS!=null)return\n$.FS=C.lX\n$.qu=new E.Er(P.z(P.F))\nif(!!(window.AudioContext||window.webkitAudioContext)){$.FS=C.QD\n$.HX=E.dP(null)}var u=window.navigator.userAgent\nif(J.U6(u).tg(u,\"IEMobile\"))if(C.xB.tg(u,\"9.0\"))$.FS=C.a1\nif(C.xB.tg(u,\"iPhone\")||C.xB.tg(u,\"iPad\")||C.xB.tg(u,\"iPod\"))if(C.xB.tg(u,\"OS 3\")||C.xB.tg(u,\"OS 4\")||C.xB.tg(u,\"OS 5\"))$.FS=C.a1\nif($.JJ().length===0)$.FS=C.a1\nP.JS(\"StageXL sound engine  : \"+H.d(E.mh()))}",
+        "code": "A2:function(){if($.FS!=null)return\n$.FS=C.lX\n$.qu=new E.Er(P.z(P.B))\nif(!!(window.AudioContext||window.webkitAudioContext)){$.FS=C.QD\n$.HX=E.dP(null)}var u=window.navigator.userAgent\nif(J.U6(u).tg(u,\"IEMobile\"))if(C.xB.tg(u,\"9.0\"))$.FS=C.a1\nif(C.xB.tg(u,\"iPhone\")||C.xB.tg(u,\"iPad\")||C.xB.tg(u,\"iPod\"))if(C.xB.tg(u,\"OS 3\")||C.xB.tg(u,\"OS 4\")||C.xB.tg(u,\"OS 5\"))$.FS=C.a1\nif($.JJ().length===0)$.FS=C.a1\nP.JS(\"StageXL sound engine  : \"+H.d(E.mh()))}",
         "type": "void Function()"
       },
       "57895586": {
@@ -14799,7 +14796,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){R.iu(\"click\")\nthis.a.Qt.p8()}",
+        "code": "$1:function(a){R.jr(\"click\")\nthis.a.Qt.p8()}",
         "type": "Null Function(MouseEvent)"
       },
       "68375000": {
@@ -14914,7 +14911,7 @@
         "id": "function/70353884",
         "kind": "function",
         "name": "_globalFrameRequest",
-        "size": 310,
+        "size": 308,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "children": [
@@ -14931,7 +14928,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "m:function(){if($.uU===-1){var u=window\nC.ol.y4(u)\n$.uU=C.ol.ne(u,W.aF(new L.HD(),P.F))}}",
+        "code": "m:function(){if($.uU===-1){var u=window\nC.ol.y4(u)\n$.uU=C.ol.ne(u,W.aF(new L.HD(),P.B))}}",
         "type": "void Function()"
       },
       "71650819": {
@@ -14959,7 +14956,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dm:function(a){if(typeof a===\"string\"||a==null)return a\nthrow H.B(H.aq(a,\"String\"))}",
+        "code": "dm:function(a){if(typeof a===\"string\"||a==null)return a\nthrow H.c(H.aq(a,\"String\"))}",
         "type": "dynamic Function(dynamic)"
       },
       "72045125": {
@@ -15114,7 +15111,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "IV:function(a,b,c){if(C.jn.iM(b,c)>0)throw H.B(H.tL(b))\nif(this.iM(a,b)<0)return b\nif(this.iM(a,c)>0)return c\nreturn a}",
+        "code": "IV:function(a,b,c){if(C.jn.iM(b,c)>0)throw H.c(H.tL(b))\nif(this.iM(a,b)<0)return b\nif(this.iM(a,c)>0)return c\nreturn a}",
         "type": "num Function(num,num)"
       },
       "78266446": {
@@ -15170,7 +15167,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ey:function(a){var u,t,s,r,q=a.a\nq.toString\nu=a.b\nu.toString\nt=this.a\ns=q*t[0]+u*t[2]+t[4]\nr=q*t[1]+u*t[3]+t[5]\nif(!!C.jN.$itZ){null.Nl(s,r)\nreturn}else return new U.tZ(s,r,[P.F])}",
+        "code": "Ey:function(a){var u,t,s,r,q=a.a\nq.toString\nu=a.b\nu.toString\nt=this.a\ns=q*t[0]+u*t[2]+t[4]\nr=q*t[1]+u*t[3]+t[5]\nif(!!C.jN.$itZ){null.Nl(s,r)\nreturn}else return new U.tZ(s,r,[P.B])}",
         "type": "Point<num> Function(Point<num>,[Point<num>])"
       },
       "78829423": {
@@ -15349,7 +15346,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "MI:function(a,b,c,d){var u,t,s,r,q=this\nif((q.b&3)!==0)throw H.B(P.PV(\"Stream has already been listened to.\"))\nu=$.X3\nt=new P.yU(q,u,d?1:0)\nt.PJ(a,b,c,d)\ns=q.gKj()\nu=q.b|=1\nif((u&8)!==0){r=q.a\nr.sJg(t)\nr.QE(0)}else q.a=t\nt.E9(s)\nu=t.e\nt.e=u|32\nnew P.UO(q).$0()\nt.e&=4294967263\nt.Iy((u&4)!==0)\nreturn t}",
+        "code": "MI:function(a,b,c,d){var u,t,s,r,q=this\nif((q.b&3)!==0)throw H.c(P.PV(\"Stream has already been listened to.\"))\nu=$.X3\nt=new P.yU(q,u,d?1:0)\nt.PJ(a,b,c,d)\ns=q.gKj()\nu=q.b|=1\nif((u&8)!==0){r=q.a\nr.sJg(t)\nr.QE(0)}else q.a=t\nt.E9(s)\nu=t.e\nt.e=u|32\nnew P.UO(q).$0()\nt.e&=4294967263\nt.Iy((u&4)!==0)\nreturn t}",
         "type": "StreamSubscription<_StreamController.T> Function(void Function(_StreamController.T),Function,void Function(),bool)"
       },
       "82702408": {
@@ -15444,7 +15441,7 @@
           "external": false
         },
         "returnType": "Map<String,UniformLocation>",
-        "inferredReturnType": "[subclass=JsLinkedHashMap]",
+        "inferredReturnType": "Map([subclass=JsLinkedHashMap], key: [null|exact=JSString], value: [null|exact=UniformLocation])",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
@@ -15514,7 +15511,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ug:function(a){if(!!J.i(a).$izM||a==null)return a\nthrow H.B(H.aq(a,\"List<dynamic>\"))}",
+        "code": "ug:function(a){if(!!J.i(a).$izM||a==null)return a\nthrow H.c(H.aq(a,\"List<dynamic>\"))}",
         "type": "dynamic Function(dynamic)"
       },
       "91425461": {
@@ -15847,7 +15844,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Sy:function(a,b){var u\nif(b<0||b>20)throw H.B(P.TE(b,0,20,\"fractionDigits\",null))\nu=a.toFixed(b)\nif(a===0&&this.gzP(a))return\"-\"+u\nreturn u}",
+        "code": "Sy:function(a,b){var u\nif(b<0||b>20)throw H.c(P.TE(b,0,20,\"fractionDigits\",null))\nu=a.toFixed(b)\nif(a===0&&this.gzP(a))return\"-\"+u\nreturn u}",
         "type": "String Function(int)"
       },
       "97379748": {
@@ -15963,7 +15960,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aM:function(a,b){var u=this.a\nif(u.a!==0)throw H.B(P.PV(\"Future already completed\"))\nu.Ds(b)}",
+        "code": "aM:function(a,b){var u=this.a\nif(u.a!==0)throw H.c(P.PV(\"Future already completed\"))\nu.Ds(b)}",
         "type": "void Function([Object])"
       },
       "103122920": {
@@ -16302,7 +16299,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zv:function(a,b){var u,t,s\nP.k1(b,\"index\")\nfor(u=this.gkz(this),t=0;u.VF();){s=u.gRX()\nif(b===t)return s;++t}throw H.B(P.Cf(b,this,\"index\",null,t))}",
+        "code": "Zv:function(a,b){var u,t,s\nP.k1(b,\"index\")\nfor(u=this.gkz(this),t=0;u.VF();){s=u.gRX()\nif(b===t)return s;++t}throw H.c(P.Cf(b,this,\"index\",null,t))}",
         "type": "Iterable.E Function(int)"
       },
       "112687105": {
@@ -16521,7 +16518,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "H:function(a,b){b.w0(H.Ru(a),H.ts(a))}",
+        "code": "x:function(a,b){b.w0(H.Ru(a),H.ts(a))}",
         "type": "dynamic Function(dynamic,Completer<dynamic>)"
       },
       "116599339": {
@@ -16543,7 +16540,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Fl:function(a,b){return new H.u([a,b])}",
+        "code": "F:function(a,b){return new H.N5([a,b])}",
         "type": "LinkedHashMap<#A,#B> Function<#A,#B>()"
       },
       "117407374": {
@@ -16847,7 +16844,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ap:function(a){var u,t\nif(a>=0){if(a<=2147483647)return a|0}else if(a>=-2147483648){u=a|0\nreturn a===u?u:u-1}t=Math.floor(a)\nif(isFinite(t))return t\nthrow H.B(P.L4(\"\"+a+\".floor()\"))}",
+        "code": "Ap:function(a){var u,t\nif(a>=0){if(a<=2147483647)return a|0}else if(a>=-2147483648){u=a|0\nreturn a===u?u:u-1}t=Math.floor(a)\nif(isFinite(t))return t\nthrow H.c(P.L4(\"\"+a+\".floor()\"))}",
         "type": "int Function()"
       },
       "123209574": {
@@ -16901,7 +16898,7 @@
         "inferredReturnType": "[exact=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 15,
+        "inlinedCount": 3,
         "code": "",
         "type": "dynamic Function()"
       },
@@ -17033,7 +17030,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Cv:function(a,b,c,d){if(a==null)return a\nif(H.RB(a,b,c,d))return a\nthrow H.B(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(H.NQ(b.substring(2))+H.XS(c,0,null),v.mangledGlobalNames)))}",
+        "code": "Cv:function(a,b,c,d){if(a==null)return a\nif(H.RB(a,b,c,d))return a\nthrow H.c(H.aq(a,function(e,f){return e.replace(/[^<,> ]+/g,function(g){return f[g]||g})}(H.NQ(b.substring(2))+H.XS(c,0,null),v.mangledGlobalNames)))}",
         "type": "Object Function(Object,String,List<dynamic>,String)"
       },
       "126240345": {
@@ -17513,7 +17510,7 @@
         "id": "function/135645840",
         "kind": "function",
         "name": "_onTouchEvent",
-        "size": 1686,
+        "size": 1687,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -17537,7 +17534,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "XM:function(b4){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3=this\nb4.preventDefault()\nu=b4.type\nt=b4.shiftKey\nfor(s=b4.changedTouches,r=s.length,q=u===\"touchmove\",p=u===\"touchcancel\",o=u===\"touchend\",n=u===\"touchstart\",m=b3.mn,l=b3.hi,k=P.F,j=[k],i=b3.No,k=[k],h=[A.fE],g=0;g<s.length;s.length===r||(0,H.lk)(s),++g){f=s[g]\ne=f.identifier\nd=i.Ey(new P.hL(C.CD.zQ(f.clientX),C.CD.zQ(f.clientY),j))\nc=new U.tZ(0,0,k)\nb=b3.tJ(d.a,d.b)\nb=b!=null?b:b3\na=m.to(0,e,new A.cZ(b3,b))\na0=a.a\na1=a.b\nC.Nm.aN(l,new A.EZ(a0,d))\na2=a.d\nif(a2!==b){a3=H.K([],h)\na4=H.K([],h)\nfor(a5=a2;a5!=null;a5=a5.fy)a3.push(a5)\nfor(a5=b;a5!=null;a5=a5.fy)a4.push(a5)\nfor(a6=a3.length,a7=a4.length,a8=0;!0;++a8){if(a8===a6)break\nif(a8===a7)break\nif(a3[a6-a8-1]!==a4[a7-a8-1])break}if(a2!=null){a2.TK(d,c)\na2.H2(0,new R.y6(a1,c.a,c.b,t,\"touchOut\",!0))}for(a9=0;a9<a3.length-a8;++a9){b0=a3[a9]\nb0.TK(d,c)\nb0.H2(0,new R.y6(a1,c.a,c.b,t,\"touchRollOut\",!1))}for(a9=a4.length-a8-1;a9>=0;--a9){b0=a4[a9]\nb0.TK(d,c)\nb0.H2(0,new R.y6(a1,c.a,c.b,t,\"touchRollOver\",!1))}b.TK(d,c)\nb.H2(0,new R.y6(a1,c.a,c.b,t,\"touchOver\",!0))\na.d=b}if(n){b3.I6.focus()\nm.Y5(0,e,a)\nb1=\"touchBegin\"}else b1=null\nif(o){m.Rz(0,e)\nb2=a.c===b\nb1=\"touchEnd\"}else b2=!1\nif(p){m.Rz(0,e)\nb1=\"touchCancel\"}if(q)b1=\"touchMove\"\nif(b1!=null&&!0){b.TK(d,c)\nb.H2(0,new R.y6(a1,c.a,c.b,t,b1,!0))\nif(b2)b.H2(0,new R.y6(a1,c.a,c.b,t,\"touchTap\",!0))}}}\np(o,\"gd6\",\"XM\",24)",
+        "code": "XM:function(b4){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3=this\nb4.preventDefault()\nu=b4.type\nt=b4.shiftKey\nfor(s=b4.changedTouches,r=s.length,q=u===\"touchmove\",p=u===\"touchcancel\",o=u===\"touchend\",n=u===\"touchstart\",m=b3.mn,l=b3.hi,k=P.B,j=[k],i=b3.No,k=[k],h=[A.fE],g=0;g<s.length;s.length===r||(0,H.lk)(s),++g){f=s[g]\ne=f.identifier\nd=i.Ey(new P.hL(C.CD.zQ(f.clientX),C.CD.zQ(f.clientY),j))\nc=new U.tZ(0,0,k)\nb=b3.tJ(d.a,d.b)\nif(b==null)b=b3\na=m.to(0,e,new A.cZ(b3,b))\na0=a.a\na1=a.b\nC.Nm.aN(l,new A.EZ(a0,d))\na2=a.d\nif(a2!==b){a3=H.K([],h)\na4=H.K([],h)\nfor(a5=a2;a5!=null;a5=a5.fy)a3.push(a5)\nfor(a5=b;a5!=null;a5=a5.fy)a4.push(a5)\nfor(a6=a3.length,a7=a4.length,a8=0;!0;++a8){if(a8===a6)break\nif(a8===a7)break\nif(a3[a6-a8-1]!==a4[a7-a8-1])break}if(a2!=null){a2.TK(d,c)\na2.H2(0,new R.y6(a1,c.a,c.b,t,\"touchOut\",!0))}for(a9=0;a9<a3.length-a8;++a9){b0=a3[a9]\nb0.TK(d,c)\nb0.H2(0,new R.y6(a1,c.a,c.b,t,\"touchRollOut\",!1))}for(a9=a4.length-a8-1;a9>=0;--a9){b0=a4[a9]\nb0.TK(d,c)\nb0.H2(0,new R.y6(a1,c.a,c.b,t,\"touchRollOver\",!1))}b.TK(d,c)\nb.H2(0,new R.y6(a1,c.a,c.b,t,\"touchOver\",!0))\na.d=b}if(n){b3.I6.focus()\nm.Y5(0,e,a)\nb1=\"touchBegin\"}else b1=null\nif(o){m.Rz(0,e)\nb2=a.c===b\nb1=\"touchEnd\"}else b2=!1\nif(p){m.Rz(0,e)\nb1=\"touchCancel\"}if(q)b1=\"touchMove\"\nif(b1!=null&&!0){b.TK(d,c)\nb.H2(0,new R.y6(a1,c.a,c.b,t,b1,!0))\nif(b2)b.H2(0,new R.y6(a1,c.a,c.b,t,\"touchTap\",!0))}}}\np(o,\"gd6\",\"XM\",24)",
         "type": "void Function(TouchEvent)"
       },
       "135722261": {
@@ -18027,7 +18024,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "skF:function(a,b){if(!!a.fixed$length)H.vh(P.L4(\"set length\"))\nif(b<0)throw H.B(P.TE(b,0,null,\"newLength\",null))\na.length=b}",
+        "code": "skF:function(a,b){if(!!a.fixed$length)H.vh(P.L4(\"set length\"))\nif(b<0)throw H.c(P.TE(b,0,null,\"newLength\",null))\na.length=b}",
         "type": "void Function(int)"
       },
       "146380938": {
@@ -18926,7 +18923,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "B:function(a){var u\nif(a==null)a=new P.LK()\nu=new Error()\nu.dartException=a\nif(\"defineProperty\" in Object){Object.defineProperty(u,\"message\",{get:H.o})\nu.name=\"\"}else u.toString=H.o\nreturn u}",
+        "code": "c:function(a){var u\nif(a==null)a=new P.LK()\nu=new Error()\nu.dartException=a\nif(\"defineProperty\" in Object){Object.defineProperty(u,\"message\",{get:H.o})\nu.name=\"\"}else u.toString=H.o\nreturn u}",
         "type": "dynamic Function(dynamic)"
       },
       "164227626": {
@@ -19634,7 +19631,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "od:function(a,b,c){if(a>>>0!==a||a>=c)throw H.B(H.HY(b,a))}",
+        "code": "od:function(a,b,c){if(a>>>0!==a||a>=c)throw H.c(H.HY(b,a))}",
         "type": "void Function(int,List<dynamic>,int)"
       },
       "181105898": {
@@ -19755,7 +19752,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Is:function(a,b,c){var u=a.length\nif(c>u)throw H.B(P.TE(c,0,u,null,null))\nreturn H.m2(a,b,c)}\ntg:function(a,b){return this.Is(a,b,0)}",
+        "code": "Is:function(a,b,c){var u=a.length\nif(c>u)throw H.c(P.TE(c,0,u,null,null))\nreturn H.m2(a,b,c)}\ntg:function(a,b){return this.Is(a,b,0)}",
         "type": "bool Function(Pattern,[int])"
       },
       "183230030": {
@@ -19788,7 +19785,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Qb:function(a6,a7){var u,t,s,r,q,p,o,n,m,l,k,j,i=a6.a,h=i+a6.c,g=a6.b,f=g+a6.d,e=this.a,d=e[0],c=i*d,b=e[2],a=g*b,a0=c+a,a1=e[1],a2=i*a1,a3=e[3],a4=g*a3,a5=a2+a4\nd=h*d\nu=d+a\na1=h*a1\nt=a1+a4\nb=f*b\ns=d+b\na3=f*a3\nr=a1+a3\nq=c+b\np=a2+a3\no=a0>u?u:a0\nif(o>s)o=s\nif(o>q)o=q\nn=a5>t?t:a5\nif(n>r)n=r\nif(n>p)n=p\nm=a0<u?u:a0\nif(m<s)m=s\nif(m<q)m=q\nl=a5<t?t:a5\nif(l<r)l=r\nif(l<p)l=p\nk=m-o\nj=l-n\nif(!!a7.$iVb){d=e[4]\ne=e[5]\na7.a=d+o\na7.b=e+n\na7.c=k\na7.d=j\nreturn a7}else return new U.Vb(e[4]+o,e[5]+n,k,j,[P.F])}",
+        "code": "Qb:function(a6,a7){var u,t,s,r,q,p,o,n,m,l,k,j,i=a6.a,h=i+a6.c,g=a6.b,f=g+a6.d,e=this.a,d=e[0],c=i*d,b=e[2],a=g*b,a0=c+a,a1=e[1],a2=i*a1,a3=e[3],a4=g*a3,a5=a2+a4\nd=h*d\nu=d+a\na1=h*a1\nt=a1+a4\nb=f*b\ns=d+b\na3=f*a3\nr=a1+a3\nq=c+b\np=a2+a3\no=a0>u?u:a0\nif(o>s)o=s\nif(o>q)o=q\nn=a5>t?t:a5\nif(n>r)n=r\nif(n>p)n=p\nm=a0<u?u:a0\nif(m<s)m=s\nif(m<q)m=q\nl=a5<t?t:a5\nif(l<r)l=r\nif(l<p)l=p\nk=m-o\nj=l-n\nif(!!a7.$iVb){d=e[4]\ne=e[5]\na7.a=d+o\na7.b=e+n\na7.c=k\na7.d=j\nreturn a7}else return new U.Vb(e[4]+o,e[5]+n,k,j,[P.B])}",
         "type": "Rectangle<num> Function(Rectangle<num>,[Rectangle<num>])"
       },
       "186999466": {
@@ -20331,7 +20328,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "VF:function(){var u=this,t=u.a\nif(u.b!==t.r)throw H.B(P.a4(t))\nelse{t=u.c\nif(t==null){u.d=null\nreturn!1}else{u.d=t.a\nu.c=t.c\nreturn!0}}}",
+        "code": "VF:function(){var u=this,t=u.a\nif(u.b!==t.r)throw H.c(P.a4(t))\nelse{t=u.c\nif(t==null){u.d=null\nreturn!1}else{u.d=t.a\nu.c=t.c\nreturn!0}}}",
         "type": "bool Function()"
       },
       "203738274": {
@@ -20443,7 +20440,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
-        "code": "Wd:function(a,b){if(b>=a.length)throw H.B(H.HY(a,b))\nreturn a.charCodeAt(b)}",
+        "code": "Wd:function(a,b){if(b>=a.length)throw H.c(H.HY(a,b))\nreturn a.charCodeAt(b)}",
         "type": "int Function(int)"
       },
       "205154197": {
@@ -20476,7 +20473,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
-        "code": "VH:function(a,b){if(H.Xy(a,{func:1,args:[P.Mh,P.Bp]}))return b.fS(a)\nif(H.Xy(a,{func:1,args:[P.Mh]}))return a\nthrow H.B(P.L3(a,\"onError\",\"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a a valid result\"))}",
+        "code": "VH:function(a,b){if(H.Xy(a,{func:1,args:[P.Mh,P.Bp]}))return b.fS(a)\nif(H.Xy(a,{func:1,args:[P.Mh]}))return a\nthrow H.c(P.L3(a,\"onError\",\"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a a valid result\"))}",
         "type": "Function Function(Function,Zone)"
       },
       "206465367": {
@@ -20921,7 +20918,7 @@
         "id": "function/216003508",
         "kind": "function",
         "name": "_updateMouseCursor",
-        "size": 363,
+        "size": 359,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -20936,7 +20933,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cq:function(){var u,t,s,r,q,p,o,n,m,l=this,k=l.rT\nif(k!=null&&!0){u=k.r1\nt=u!=null&&u!==\"auto\"?u:\"auto\"}else t=\"auto\"\nif(t===\"auto\")t=\"default\"\nif(l.qV!==t){l.qV=t\ns=l.I6.style\nif($.YW().x4(0,t)){r=$.YW().WH(0,t)\nq=C.jN.gO3(r)\np=r.gOh()\no=p.gx(p)\np=r.gOh()\nn=p.gy(p)\nm=\"url('\"+H.d(q)+\"') \"+H.d(o)+\" \"+H.d(n)+\", \"+H.d(t)}else m=t\ns.toString\ns.cursor=m==null?\"\":m}}",
+        "code": "cq:function(){var u,t,s,r,q,p,o,n,m,l=this,k=l.rT\nif(k!=null&&!0){u=k.r1\nt=u!=null&&u!==\"auto\"?u:\"auto\"}else t=\"auto\"\nif(t===\"auto\")t=\"default\"\nif(l.qV!==t){l.qV=t\ns=l.I6.style\nif($.br.x4(0,t)){r=$.br.WH(0,t)\nq=C.jN.gO3(r)\np=r.gOh()\no=p.gx(p)\np=r.gOh()\nn=p.gy(p)\nm=\"url('\"+H.d(q)+\"') \"+H.d(o)+\" \"+H.d(n)+\", \"+H.d(t)}else m=t\ns.toString\ns.cursor=m==null?\"\":m}}",
         "type": "void Function()"
       },
       "216085196": {
@@ -21833,7 +21830,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var u=this.k3\nreturn new U.Vb(0,0,u.a,u.b,[P.F])}",
+        "code": "gBP:function(){var u=this.k3\nreturn new U.Vb(0,0,u.a,u.b,[P.B])}",
         "type": "Rectangle<num> Function()"
       },
       "235168592": {
@@ -22036,7 +22033,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gv:function(){if(self.setTimeout!=null){var u=this.b\nif(u==null)return\nself.clearTimeout(u)\nthis.b=null}else throw H.B(P.L4(\"Canceling a timer.\"))}",
+        "code": "Gv:function(){if(self.setTimeout!=null){var u=this.b\nif(u==null)return\nself.clearTimeout(u)\nthis.b=null}else throw H.c(P.L4(\"Canceling a timer.\"))}",
         "type": "void Function()"
       },
       "238684594": {
@@ -22152,7 +22149,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
-        "code": "L:function(){var u=new K.LE(P.z(P.F))\nu.b=u.a=new K.Gn()\nreturn u}",
+        "code": "L:function(){var u=new K.LE(P.z(P.B))\nu.b=u.a=new K.Gn()\nreturn u}",
         "type": "dynamic Function()"
       },
       "240304015": {
@@ -22422,7 +22419,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "jB:function(a,b,c){if(0>a||a>c)throw H.B(P.TE(a,0,c,\"start\",null))\nif(b!=null){if(a>b||b>c)throw H.B(P.TE(b,a,c,\"end\",null))\nreturn b}return c}",
+        "code": "jB:function(a,b,c){if(0>a||a>c)throw H.c(P.TE(a,0,c,\"start\",null))\nif(b!=null){if(a>b||b>c)throw H.c(P.TE(b,a,c,\"end\",null))\nreturn b}return c}",
         "type": "int Function(int,int,int,[String,String,String])"
       },
       "243953624": {
@@ -22450,7 +22447,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
-        "code": "YX:function(a){if(typeof a===\"number\"&&Math.floor(a)===a)return a\nelse throw H.B(P.xY(\"The supplied value (\"+H.d(a)+\") is not an int.\"))}",
+        "code": "YX:function(a){if(typeof a===\"number\"&&Math.floor(a)===a)return a\nelse throw H.c(P.xY(\"The supplied value (\"+H.d(a)+\") is not an int.\"))}",
         "type": "int Function(int)"
       },
       "244952367": {
@@ -23199,7 +23196,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yw:function(a,b){var u=0,t=P.I(O.lN),s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c\nvar $async$Yw=P.M(function(a0,a1){if(a0===1)return P.H(a1,t)\nwhile(true)switch(u){case 0:i=H.K([],[O.en])\nh=new O.lN(i)\nc=C.Ct\nu=3\nreturn P.j(W.Kn(a),$async$Yw)\ncase 3:g=c.kV(0,a1)\nf=J.U6(g)\ne=H.ug(f.WH(g,\"urls\"))\nd=f.WH(g,\"sprite\")\nf=P.q\nr=H.K([],[f])\nq=J.i(d)\nif(!!q.$iZ0)for(p=J.IT(q.gvc(d));p.VF();){o=p.gRX()\nn=H.ug(q.WH(d,o))\nm=J.U6(n)\nl=V.VC(m.WH(n,0))\nk=V.VC(m.WH(n,1))\ni.push(new O.en(h,o,l,k,V.wJ(m.gkF(n)>2&&m.WH(n,2))))}C.Nm.FV(r,J.M1(e,new O.Hi(a),f))\ni=$.mX()\nj=new E.ye()\ne=i.r\nj.z=i.z\nif(e==null)f=null\nelse f=H.K(e.slice(0),[H.Kp(e,0)])\nj.r=f\ni.y\nj.r=H.qC(r,1,null,H.Kp(r,0)).br(0)\nc=h\nu=4\nreturn P.j(E.Kk(r[0],j),$async$Yw)\ncase 4:c.b=a1\ns=h\nu=1\nbreak\ncase 1:return P.k(s,t)}})\nreturn P.e($async$Yw,t)}",
+        "code": "Yw:function(a,b){var u=0,t=P.I(O.lN),s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c\nvar $async$Yw=P.M(function(a0,a1){if(a0===1)return P.x(a1,t)\nwhile(true)switch(u){case 0:i=H.K([],[O.en])\nh=new O.lN(i)\nc=C.Ct\nu=3\nreturn P.j(W.Kn(a),$async$Yw)\ncase 3:g=c.kV(0,a1)\nf=J.U6(g)\ne=H.ug(f.WH(g,\"urls\"))\nd=f.WH(g,\"sprite\")\nf=P.q\nr=H.K([],[f])\nq=J.i(d)\nif(!!q.$iZ0)for(p=J.IT(q.gvc(d));p.VF();){o=p.gRX()\nn=H.ug(q.WH(d,o))\nm=J.U6(n)\nl=V.VC(m.WH(n,0))\nk=V.VC(m.WH(n,1))\ni.push(new O.en(h,o,l,k,V.wJ(m.gkF(n)>2&&m.WH(n,2))))}C.Nm.FV(r,J.M1(e,new O.Hi(a),f))\ni=$.mX()\nj=new E.ye()\ne=i.r\nj.z=i.z\nif(e==null)f=null\nelse f=H.K(e.slice(0),[H.Kp(e,0)])\nj.r=f\ni.y\nj.r=H.qC(r,1,null,H.Kp(r,0)).br(0)\nc=h\nu=4\nreturn P.j(E.Kk(r[0],j),$async$Yw)\ncase 4:c.b=a1\ns=h\nu=1\nbreak\ncase 1:return P.k(s,t)}})\nreturn P.e($async$Yw,t)}",
         "type": "Future<SoundSprite> Function(String,[SoundLoadOptions])"
       },
       "260422866": {
@@ -23378,7 +23375,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "hM:function(a){var u,t,s,r,q,p,o,n,m,l,k,j=this,i=\"complete\"\nR.iu(\"throw\")\nfor(u=a.length,t=j.YL,s=R.ea,r=0;r<a.length;a.length===u||(0,H.lk)(a),++r){q=a[r]\np=$.bD()\no=J.LX(q)\nn=o.gx(q)\no=o.gy(q)\nn=p.a+80*n\no=p.b+80*o\nm=O.u7(j.La.dF(\"dart\"),60,!1)\nm.c=n\nm.id=!0\nm.d=o\nm.k4=!1\nif(!m.m){m.m=!0\nm.R=null}t.bS(m)\nm.Ep(0,i,s).XE(new U.m8(m),!1,0)\nl=O.u7(j.La.dF(\"shadow\"),60,!1)\nl.c=n\nl.id=!0\nl.d=o\nl.k4=!1\nif(!l.m){l.m=!0\nl.R=null}t.bS(l)\nl.Ep(0,i,s).XE(new U.qA(l),!1,0)\nk=j.gYK()\np=(k instanceof A.a?k:null).oJ\np.AN(0,m)\np.AN(0,l)}}",
+        "code": "hM:function(a){var u,t,s,r,q,p,o,n,m,l,k,j=this,i=\"complete\"\nR.jr(\"throw\")\nfor(u=a.length,t=j.YL,s=R.ea,r=0;r<a.length;a.length===u||(0,H.lk)(a),++r){q=a[r]\np=$.bD()\no=J.LX(q)\nn=o.gx(q)\no=o.gy(q)\nn=p.a+80*n\no=p.b+80*o\nm=O.u7(j.La.dF(\"dart\"),60,!1)\nm.c=n\nm.id=!0\nm.d=o\nm.k4=!1\nif(!m.m){m.m=!0\nm.R=null}t.bS(m)\nm.Ep(0,i,s).XE(new U.m8(m),!1,0)\nl=O.u7(j.La.dF(\"shadow\"),60,!1)\nl.c=n\nl.id=!0\nl.d=o\nl.k4=!1\nif(!l.m){l.m=!0\nl.R=null}t.bS(l)\nl.Ep(0,i,s).XE(new U.qA(l),!1,0)\nk=j.gYK()\np=(k instanceof A.a?k:null).oJ\np.AN(0,m)\np.AN(0,l)}}",
         "type": "void Function(List<Point<num>>)"
       },
       "263363184": {
@@ -23492,7 +23489,7 @@
           "external": false
         },
         "returnType": "Map<String,int>",
-        "inferredReturnType": "[subclass=JsLinkedHashMap]",
+        "inferredReturnType": "Map([subclass=JsLinkedHashMap], key: [null|exact=JSString], value: [null|subclass=JSInt])",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 5,
@@ -23608,7 +23605,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "j2:function(a,b,c){var u\nif(typeof a==\"number\")return function(d,e){return function(){return d(e)}}(H.Dm,a)\nif(typeof a==\"function\")if(b)return a\nelse{u=c?H.yS:H.DV\nreturn function(d,e){return function(){return d.apply({$receiver:e(this)},arguments)}}(a,u)}throw H.B(\"Error in functionType of tearoff\")}",
+        "code": "j2:function(a,b,c){var u\nif(typeof a==\"number\")return function(d,e){return function(){return d(e)}}(H.Dm,a)\nif(typeof a==\"function\")if(b)return a\nelse{u=c?H.yS:H.DV\nreturn function(d,e){return function(){return d.apply({$receiver:e(this)},arguments)}}(a,u)}throw H.c(\"Error in functionType of tearoff\")}",
         "type": "dynamic Function(Object,bool,bool)"
       },
       "267519106": {
@@ -23663,7 +23660,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ul:function(a,b){if(a!=null&&!H.IU(a,b))throw H.B(H.aq(a,H.Ko(b)))\nreturn a}",
+        "code": "ul:function(a,b){if(a!=null&&!H.IU(a,b))throw H.c(H.aq(a,H.Ko(b)))\nreturn a}",
         "type": "Object Function(Object,dynamic)"
       },
       "268773900": {
@@ -24453,7 +24450,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var u,t,s,r,q,p,o,n,m,l,k,j=this.L\nif(j.length===0)return A.fE.prototype.gBP.call(this)\nfor(u=1/0,t=1/0,s=-1/0,r=-1/0,q=0;q<j.length;++q){p=j[q]\no=p.gBP()\no=p.gwr().Qb(o,o)\nn=o.a\nif(n<u)u=n\nm=o.b\nif(m<t)t=m\nl=n+o.c\nif(l>s)s=l\nk=m+o.d\nif(k>r)r=k}return new U.Vb(u,t,s-u,r-t,[P.F])}",
+        "code": "gBP:function(){var u,t,s,r,q,p,o,n,m,l,k,j=this.L\nif(j.length===0)return A.fE.prototype.gBP.call(this)\nfor(u=1/0,t=1/0,s=-1/0,r=-1/0,q=0;q<j.length;++q){p=j[q]\no=p.gBP()\no=p.gwr().Qb(o,o)\nn=o.a\nif(n<u)u=n\nm=o.b\nif(m<t)t=m\nl=n+o.c\nif(l>s)s=l\nk=m+o.d\nif(k>r)r=k}return new U.Vb(u,t,s-u,r-t,[P.B])}",
         "type": "Rectangle<num> Function()"
       },
       "280231148": {
@@ -24891,7 +24888,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "iM:function(a,b){var u\nif(typeof b!==\"number\")throw H.B(H.tL(b))\nif(a<b)return-1\nelse if(a>b)return 1\nelse if(a===b){if(a===0){u=this.gzP(b)\nif(this.gzP(a)===u)return 0\nif(this.gzP(a))return-1\nreturn 1}return 0}else if(isNaN(a)){if(isNaN(b))return 0\nreturn 1}else return-1}",
+        "code": "iM:function(a,b){var u\nif(typeof b!==\"number\")throw H.c(H.tL(b))\nif(a<b)return-1\nelse if(a>b)return 1\nelse if(a===b){if(a===0){u=this.gzP(b)\nif(this.gzP(a)===u)return 0\nif(this.gzP(a))return-1\nreturn 1}return 0}else if(isNaN(a)){if(isNaN(b))return 0\nreturn 1}else return-1}",
         "type": "int Function(Object)"
       },
       "290250840": {
@@ -25380,7 +25377,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zQ:function(a){if(a>0){if(a!==1/0)return Math.round(a)}else if(a>-1/0)return 0-Math.round(0-a)\nthrow H.B(P.L4(\"\"+a+\".round()\"))}",
+        "code": "zQ:function(a){if(a>0){if(a!==1/0)return Math.round(a)}else if(a>-1/0)return 0-Math.round(0-a)\nthrow H.c(P.L4(\"\"+a+\".round()\"))}",
         "type": "int Function()"
       },
       "299972169": {
@@ -25430,7 +25427,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "XG:function(a,b){var u,t,s=a.length\nfor(u=0;u<s;++u){t=a[u]\nif(b.$1(t))return t\nif(a.length!==s)throw H.B(P.a4(a))}throw H.B(H.Wp())}",
+        "code": "XG:function(a,b){var u,t,s=a.length\nfor(u=0;u<s;++u){t=a[u]\nif(b.$1(t))return t\nif(a.length!==s)throw H.c(P.a4(a))}throw H.c(H.Wp())}",
         "type": "JSArray.E Function(bool Function(JSArray.E),{Object orElse})"
       },
       "301932486": {
@@ -25486,7 +25483,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Ck:function(a,b){if(typeof b!==\"number\")throw H.B(H.tL(b))\nreturn a/b}",
+        "code": "Ck:function(a,b){if(typeof b!==\"number\")throw H.c(H.tL(b))\nreturn a/b}",
         "type": "double Function(num)"
       },
       "302617892": {
@@ -25697,7 +25694,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zj:function(a){var u,t=this,s=t.Q,r=s.WH(0,a),q=(r==null?0:r)+1\ns.Y5(0,a,q)\ns={event_category:\"sample-pop_pop_win\",event_label:J.A(a).split(\".\")[1],value:q}\nself.gtag(\"event\",\"game_event\",s)\nif(a===C.mV){for(s=t.ch.rS.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()\ns=t.e\ns=C.jn.BU(s.gzo(s).a,1000)\nr=t.ch.zN\nu=r.rT\nif(s<u||u===0){s=t.e\nr.rT=C.jn.BU(s.gzo(s).a,1000)}R.iu(\"win\")}}",
+        "code": "Zj:function(a){var u,t=this,s=t.Q,r=s.WH(0,a),q=(r==null?0:r)+1\ns.Y5(0,a,q)\ns={event_category:\"sample-pop_pop_win\",event_label:J.A(a).split(\".\")[1],value:q}\nself.gtag(\"event\",\"game_event\",s)\nif(a===C.mV){for(s=t.ch.rS.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()\ns=t.e\ns=C.jn.BU(s.gzo(s).a,1000)\nr=t.ch.zN\nu=r.rT\nif(s<u||u===0){s=t.e\nr.rT=C.jn.BU(s.gzo(s).a,1000)}R.jr(\"win\")}}",
         "type": "void Function(GameState)"
       },
       "306861682": {
@@ -25824,7 +25821,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vh:function(a){throw H.B(a)}",
+        "code": "vh:function(a){throw H.c(a)}",
         "type": "dynamic Function(dynamic)"
       },
       "308630078": {
@@ -25988,7 +25985,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ft:function(a,b,c,d,e,f){switch(b){case 0:return a.$0()\ncase 1:return a.$1(c)\ncase 2:return a.$2(c,d)\ncase 3:return a.$3(c,d,e)\ncase 4:return a.$4(c,d,e,f)}throw H.B(P.FM(\"Unsupported number of arguments for wrapped closure\"))}",
+        "code": "ft:function(a,b,c,d,e,f){switch(b){case 0:return a.$0()\ncase 1:return a.$1(c)\ncase 2:return a.$2(c,d)\ncase 3:return a.$3(c,d,e)\ncase 4:return a.$4(c,d,e,f)}throw H.c(P.FM(\"Unsupported number of arguments for wrapped closure\"))}",
         "type": "dynamic Function(Function,int,dynamic,dynamic,dynamic,dynamic)"
       },
       "310700980": {
@@ -26015,7 +26012,7 @@
           },
           {
             "name": "subscriptions",
-            "type": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+            "type": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
             "declaredType": "List<EventStreamSubscription<_dispatchBroadcastEvent.T>>"
           }
         ],
@@ -26051,7 +26048,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Pv:function(a){var u,t,s,r,q,p,o,n,m,l=this,k={}\nif(a==null)return a\nif(typeof a===\"boolean\")return a\nif(typeof a===\"number\")return a\nif(typeof a===\"string\")return a\nif(a instanceof Date){u=a.getTime()\nif(Math.abs(u)<=864e13)t=!1\nelse t=!0\nif(t)H.vh(P.xY(\"DateTime is outside valid range: \"+u))\nreturn new P.iP(u,!0)}if(a instanceof RegExp)throw H.B(P.SY(\"structured clone of RegExp\"))\nif(typeof Promise!=\"undefined\"&&a instanceof Promise)return P.U8(a,null)\ns=Object.getPrototypeOf(a)\nif(s===Object.prototype||s===null){r=l.VH(a)\nt=l.b\nq=k.a=t[r]\nif(q!=null)return q\nq=P.u5()\nk.a=q\nt[r]=q\nl.Hp(a,new P.K5(k,l))\nreturn k.a}if(a instanceof Array){p=a\nr=l.VH(p)\nt=l.b\nq=t[r]\nif(q!=null)return q\no=J.U6(p)\nn=o.gkF(p)\nq=l.c?new Array(n):p\nt[r]=q\nfor(t=J.w1(q),m=0;m<n;++m)t.Y5(q,m,l.Pv(o.WH(p,m)))\nreturn q}return a}",
+        "code": "Pv:function(a){var u,t,s,r,q,p,o,n,m,l=this,k={}\nif(a==null)return a\nif(typeof a===\"boolean\")return a\nif(typeof a===\"number\")return a\nif(typeof a===\"string\")return a\nif(a instanceof Date){u=a.getTime()\nif(Math.abs(u)<=864e13)t=!1\nelse t=!0\nif(t)H.vh(P.xY(\"DateTime is outside valid range: \"+u))\nreturn new P.iP(u,!0)}if(a instanceof RegExp)throw H.c(P.SY(\"structured clone of RegExp\"))\nif(typeof Promise!=\"undefined\"&&a instanceof Promise)return P.U8(a,null)\ns=Object.getPrototypeOf(a)\nif(s===Object.prototype||s===null){r=l.VH(a)\nt=l.b\nq=k.a=t[r]\nif(q!=null)return q\nq=P.u5()\nk.a=q\nt[r]=q\nl.Hp(a,new P.K5(k,l))\nreturn k.a}if(a instanceof Array){p=a\nr=l.VH(p)\nt=l.b\nq=t[r]\nif(q!=null)return q\no=J.U6(p)\nn=o.gkF(p)\nq=l.c?new Array(n):p\nt[r]=q\nfor(t=J.w1(q),m=0;m<n;++m)t.Y5(q,m,l.Pv(o.WH(p,m)))\nreturn q}return a}",
         "type": "dynamic Function(dynamic)"
       },
       "311306250": {
@@ -26167,7 +26164,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nj:function(a,b,c){if(c==null)c=a.length\nif(b<0)throw H.B(P.O7(b,null))\nif(b>c)throw H.B(P.O7(b,null))\nif(c>a.length)throw H.B(P.O7(c,null))\nreturn a.substring(b,c)}\nGX:function(a,b){return this.Nj(a,b,null)}",
+        "code": "Nj:function(a,b,c){if(c==null)c=a.length\nif(b<0)throw H.c(P.O7(b,null))\nif(b>c)throw H.c(P.O7(b,null))\nif(c>a.length)throw H.c(P.O7(c,null))\nreturn a.substring(b,c)}\nGX:function(a,b){return this.Nj(a,b,null)}",
         "type": "String Function(int,[int])"
       },
       "312847150": {
@@ -26588,7 +26585,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "v4:function(a,b,c,d,e,f){var u=b?\"m\":\"\",t=c?\"\":\"i\",s=d?\"u\":\"\",r=e?\"s\":\"\",q=f?\"g\":\"\",p=function(g,h){try{return new RegExp(g,h)}catch(o){return o}}(a,u+t+s+r+q)\nif(p instanceof RegExp)return p\nthrow H.B(P.rr(\"Illegal RegExp pattern (\"+String(p)+\")\",a))}",
+        "code": "v4:function(a,b,c,d,e,f){var u=b?\"m\":\"\",t=c?\"\":\"i\",s=d?\"u\":\"\",r=e?\"s\":\"\",q=f?\"g\":\"\",p=function(g,h){try{return new RegExp(g,h)}catch(o){return o}}(a,u+t+s+r+q)\nif(p instanceof RegExp)return p\nthrow H.c(P.rr(\"Illegal RegExp pattern (\"+String(p)+\")\",a))}",
         "type": "dynamic Function(String,bool,bool,bool,bool,bool)"
       },
       "322244069": {
@@ -27043,7 +27040,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
-        "code": "gOW:function(a){if(a.deltaX!==undefined)return a.deltaX\nthrow H.B(P.L4(\"deltaX is not supported\"))}",
+        "code": "gOW:function(a){if(a.deltaX!==undefined)return a.deltaX\nthrow H.c(P.L4(\"deltaX is not supported\"))}",
         "type": "num Function()"
       },
       "334997397": {
@@ -27541,7 +27538,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ks:function(a){var u,t,s,r,q=a[v.dispatchPropertyName]\nif(q==null)if($.Bv==null){H.XD()\nq=a[v.dispatchPropertyName]}if(q!=null){u=q.p\nif(!1===u)return q.i\nif(!0===u)return a\nt=Object.getPrototypeOf(a)\nif(u===t)return q.i\nif(q.e===t)throw H.B(P.SY(\"Return interceptor for \"+H.d(u(a,q))))}s=a.constructor\nr=s==null?null:s[$.UN()]\nif(r!=null)return r\nr=H.w3(a)\nif(r!=null)return r\nif(typeof a==\"function\")return C.DG\nu=Object.getPrototypeOf(a)\nif(u==null)return C.ZQ\nif(u===Object.prototype)return C.ZQ\nif(typeof s==\"function\"){Object.defineProperty(s,$.UN(),{value:C.vB,enumerable:false,writable:true,configurable:true})\nreturn C.vB}return C.vB}",
+        "code": "ks:function(a){var u,t,s,r,q=a[v.dispatchPropertyName]\nif(q==null)if($.Bv==null){H.XD()\nq=a[v.dispatchPropertyName]}if(q!=null){u=q.p\nif(!1===u)return q.i\nif(!0===u)return a\nt=Object.getPrototypeOf(a)\nif(u===t)return q.i\nif(q.e===t)throw H.c(P.SY(\"Return interceptor for \"+H.d(u(a,q))))}s=a.constructor\nr=s==null?null:s[$.UN()]\nif(r!=null)return r\nr=H.w3(a)\nif(r!=null)return r\nif(typeof a==\"function\")return C.DG\nu=Object.getPrototypeOf(a)\nif(u==null)return C.ZQ\nif(u===Object.prototype)return C.ZQ\nif(typeof s==\"function\"){Object.defineProperty(s,$.UN(),{value:C.vB,enumerable:false,writable:true,configurable:true})\nreturn C.vB}return C.vB}",
         "type": "dynamic Function(dynamic)"
       },
       "347974666": {
@@ -28162,7 +28159,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "N0:function(a,b,c){var u,t,s=a.length\nfor(u=b,t=0;t<s;++t){u=c.$2(u,a[t])\nif(a.length!==s)throw H.B(P.a4(a))}return u}\niD:function(a,b,c){return this.N0(a,b,c,null)}",
+        "code": "N0:function(a,b,c){var u,t,s=a.length\nfor(u=b,t=0;t<s;++t){u=c.$2(u,a[t])\nif(a.length!==s)throw H.c(P.a4(a))}return u}\niD:function(a,b,c){return this.N0(a,b,c,null)}",
         "type": "#A Function<#A>(#A,#A Function(#A,JSArray.E))"
       },
       "362098629": {
@@ -28604,7 +28601,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var u=this.L[this.k]\nreturn new U.Vb(0,0,u.a,u.b,[P.F])}",
+        "code": "gBP:function(){var u=this.L[this.k]\nreturn new U.Vb(0,0,u.a,u.b,[P.B])}",
         "type": "Rectangle<num> Function()"
       },
       "370971319": {
@@ -29287,7 +29284,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aN:function(a,b){var u,t,s,r,q=this\nif(q.b==null)return q.c.aN(0,b)\nu=q.Cf()\nfor(t=0;t<u.length;++t){s=u[t]\nr=q.b[s]\nif(typeof r==\"undefined\"){r=P.KH(q.a[s])\nq.b[s]=r}b.$2(s,r)\nif(u!==q.c)throw H.B(P.a4(q))}}",
+        "code": "aN:function(a,b){var u,t,s,r,q=this\nif(q.b==null)return q.c.aN(0,b)\nu=q.Cf()\nfor(t=0;t<u.length;++t){s=u[t]\nr=q.b[s]\nif(typeof r==\"undefined\"){r=P.KH(q.a[s])\nq.b[s]=r}b.$2(s,r)\nif(u!==q.c)throw H.c(P.a4(q))}}",
         "type": "void Function(void Function(String,dynamic))"
       },
       "386733598": {
@@ -29698,7 +29695,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "De:function(a,b,c){if(!a)throw H.B(P.xY(H.K([b,c==null||c.length===0?\"value was invalid\":c],[P.q])))}",
+        "code": "De:function(a,b,c){if(!a)throw H.c(P.xY(H.K([b,c==null||c.length===0?\"value was invalid\":c],[P.q])))}",
         "type": "void Function(bool,String,[String])"
       },
       "395760836": {
@@ -30035,7 +30032,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "QR:function(a){var u,t=J.i(a)\nif(!!t.$iTp){u=H.CS(t)\nif(u!=null)return H.Ko(u)\nreturn\"Closure\"}return H.lh(a)}",
+        "code": "N6:function(a){var u,t=J.i(a)\nif(!!t.$iTp){u=H.CS(t)\nif(u!=null)return H.Ko(u)\nreturn\"Closure\"}return H.lh(a)}",
         "type": "String Function(dynamic)"
       },
       "401831690": {
@@ -30664,7 +30661,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bS:function(a){var u,t=this\nif(a===t)throw H.B(P.xY(\"An object cannot be added as a child of itself.\"))\nelse if(a.fy===t)t.kW(a)\nelse{a.JZ()\nt.hu(a)\nt.L.push(a)\na.fy=t\na.H2(0,new R.ea(\"added\",!0))\nu=t.gYK()\nif((u instanceof A.a?u:null)!=null)t.ul(a,\"addedToStage\")}}",
+        "code": "bS:function(a){var u,t=this\nif(a===t)throw H.c(P.xY(\"An object cannot be added as a child of itself.\"))\nelse if(a.fy===t)t.kW(a)\nelse{a.JZ()\nt.hu(a)\nt.L.push(a)\na.fy=t\na.H2(0,new R.ea(\"added\",!0))\nu=t.gYK()\nif((u instanceof A.a?u:null)!=null)t.ul(a,\"addedToStage\")}}",
         "type": "void Function(Object)"
       },
       "419713835": {
@@ -30896,7 +30893,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ip:function(a){var u,t,s,r,q=this.fy\nif(q!=null)q.ip(a)\nu=!!a.$itZ?a:new U.tZ(0,0,[P.F])\nt=a.a\ns=a.b\nr=this.gwr()\nq=r.a\nu.a=(q[3]*(t-q[4])-q[2]*(s-q[5]))/r.gR9()\nu.b=(q[0]*(s-q[5])-q[1]*(t-q[4]))/r.gR9()}",
+        "code": "ip:function(a){var u,t,s,r,q=this.fy\nif(q!=null)q.ip(a)\nu=!!a.$itZ?a:new U.tZ(0,0,[P.B])\nt=a.a\ns=a.b\nr=this.gwr()\nq=r.a\nu.a=(q[3]*(t-q[4])-q[2]*(s-q[5]))/r.gR9()\nu.b=(q[0]*(s-q[5])-q[1]*(t-q[4]))/r.gR9()}",
         "type": "void Function(Point<num>)"
       },
       "425643264": {
@@ -31605,7 +31602,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "QA:function(a){var u=H.Hp(a,null)\nif(u!=null)return u\nthrow H.B(P.rr(a,null))}",
+        "code": "QA:function(a){var u=H.Hp(a,null)\nif(u!=null)return u\nthrow H.c(P.rr(a,null))}",
         "type": "int Function(String,{int Function(String) onError,int radix})"
       },
       "435575019": {
@@ -31743,7 +31740,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Qi:function(a,b){if(a<0||a>4294967295)throw H.B(P.TE(a,0,4294967295,\"length\",null))\nreturn J.py(new Array(a),b)}",
+        "code": "Qi:function(a,b){if(a<0||a>4294967295)throw H.c(P.TE(a,0,4294967295,\"length\",null))\nreturn J.py(new Array(a),b)}",
         "type": "JSArray<#A> Function<#A>(int)"
       },
       "437424329": {
@@ -31798,7 +31795,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "BS:function(a,b){var u,t,s,r\nif(typeof a!==\"string\")throw H.B(H.tL(a))\nu=null\ntry{u=JSON.parse(a)}catch(s){t=H.Ru(s)\nr=P.rr(String(t),null)\nthrow H.B(r)}r=P.KH(u)\nreturn r}",
+        "code": "BS:function(a,b){var u,t,s,r\nif(typeof a!==\"string\")throw H.c(H.tL(a))\nu=null\ntry{u=JSON.parse(a)}catch(s){t=H.Ru(s)\nr=P.rr(String(t),null)\nthrow H.c(r)}r=P.KH(u)\nreturn r}",
         "type": "dynamic Function(String,dynamic Function(dynamic,dynamic))"
       },
       "439855108": {
@@ -31984,7 +31981,7 @@
         "id": "function/443038950",
         "kind": "function",
         "name": "cancel",
-        "size": 48,
+        "size": 58,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/696371859",
         "children": [],
@@ -31999,7 +31996,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gv:function(){if(!this.c)this.e.Px(this)\nreturn}",
+        "code": "Gv:function(){var u=this\nif(!u.c){u.e.Px(u)\nu.c=!0}return}",
         "type": "Future<dynamic> Function()"
       },
       "443181349": {
@@ -32034,7 +32031,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "c:function(a,b){var u=0,t=P.I(null),s,r,q,p,o,n,m\nvar $async$c=P.M(function(c,d){if(c===1)return P.H(d,t)\nwhile(true)switch(u){case 0:o=H.G(a.n9(\"TextureAtlas\",\"static\"),\"$ivx\")\nn=o.kI(\"loading_bar\")\nm=$.LS\n$.LS=m+1\ns=[A.WO]\nr=new O.Jq(n,\"DIRECTION_RIGHT\",m,H.K([],s),T.oy())\nr.c=51\nr.d=8\nr.sA7(0,0)\nn=o.kI(\"loading_text\")\nm=$.LS\n$.LS=m+1\nq=new A.jx(n,m,H.K([],s),T.oy())\nq.c=141\nq.d=10\nn=H.K([],[A.fE])\nm=$.LS\n$.LS=m+1\np=new A.AE(n,m,H.K([],s),T.oy())\nm=o.kI(\"loading_background\")\nn=$.LS\n$.LS=n+1\np.bS(new A.jx(m,n,H.K([],s),T.oy()))\np.bS(r)\np.bS(q)\np.c=C.jn.BU(b.Yr,2)-504\np.id=!0\np.d=400\np.r=2\np.x=2\nb.bS(p)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",\"packages/pop_pop_win/assets/audio/audio.json\",O.Yw(\"packages/pop_pop_win/assets/audio/audio.json\",null))\nn=a.b\nnew P.Gm(n,[H.Kp(n,0)]).yI(new E.y9(r,a))\nu=2\nreturn P.j(a.xW(0),$async$c)\ncase 2:E.TI(a,b,p)\nreturn P.k(null,t)}})\nreturn P.e($async$c,t)}",
+        "code": "u:function(a,b){var u=0,t=P.I(null),s,r,q,p,o,n,m\nvar $async$u=P.M(function(c,d){if(c===1)return P.x(d,t)\nwhile(true)switch(u){case 0:o=H.G(a.n9(\"TextureAtlas\",\"static\"),\"$ivx\")\nn=o.kI(\"loading_bar\")\nm=$.LS\n$.LS=m+1\ns=[A.WO]\nr=new O.Jq(n,\"DIRECTION_RIGHT\",m,H.K([],s),T.oy())\nr.c=51\nr.d=8\nr.sA7(0,0)\nn=o.kI(\"loading_text\")\nm=$.LS\n$.LS=m+1\nq=new A.jx(n,m,H.K([],s),T.oy())\nq.c=141\nq.d=10\nn=H.K([],[A.fE])\nm=$.LS\n$.LS=m+1\np=new A.AE(n,m,H.K([],s),T.oy())\nm=o.kI(\"loading_background\")\nn=$.LS\n$.LS=n+1\np.bS(new A.jx(m,n,H.K([],s),T.oy()))\np.bS(r)\np.bS(q)\np.c=C.jn.BU(b.Yr,2)-504\np.id=!0\np.d=400\np.r=2\np.x=2\nb.bS(p)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",\"packages/pop_pop_win/assets/audio/audio.json\",O.Yw(\"packages/pop_pop_win/assets/audio/audio.json\",null))\nn=a.b\nnew P.Gm(n,[H.Kp(n,0)]).yI(new E.y9(r,a))\nu=2\nreturn P.j(a.xW(0),$async$u)\ncase 2:E.TI(a,b,p)\nreturn P.k(null,t)}})\nreturn P.e($async$u,t)}",
         "type": "Future<dynamic> Function(ResourceManager,Stage)"
       },
       "443784093": {
@@ -32162,7 +32159,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "d:function(a){var u\nif(typeof a===\"string\")return a\nif(typeof a===\"number\"){if(a!==0)return\"\"+a}else if(!0===a)return\"true\"\nelse if(!1===a)return\"false\"\nelse if(a==null)return\"null\"\nu=J.A(a)\nif(typeof u!==\"string\")throw H.B(H.tL(a))\nreturn u}",
+        "code": "d:function(a){var u\nif(typeof a===\"string\")return a\nif(typeof a===\"number\"){if(a!==0)return\"\"+a}else if(!0===a)return\"true\"\nelse if(!1===a)return\"false\"\nelse if(a==null)return\"null\"\nu=J.A(a)\nif(typeof u!==\"string\")throw H.c(H.tL(a))\nreturn u}",
         "type": "String Function(dynamic)"
       },
       "448129133": {
@@ -32790,7 +32787,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z3:function(a){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this\na.preventDefault()\nu=Date.now()\nt=a.button\ns=P.F\nr=c.No.Ey(new P.hL(a.clientX,a.clientY,[s]))\nq=new U.tZ(0,0,[s])\nif(t<0||t>2)return\nif(a.type===\"mousemove\"&&c.ZB.DN(0,r))return\np=c.HG[t]\nc.ZB=r\nC.Nm.aN(c.hi,new A.PK(r))\nif(a.type!==\"mouseout\")o=c.Fo(r.a,r.b)\nelse{c.H2(0,new R.ea(\"mouseLeave\",!1))\no=null}n=c.rT\nif(n!=o){s=[A.fE]\nm=H.K([],s)\nl=H.K([],s)\nfor(k=n;k!=null;k=k.fy)m.push(k)\nfor(k=o;k!=null;k=k.fy)l.push(k)\nfor(s=m.length,j=l.length,i=0;!0;++i){if(i===s)break\nif(i===j)break\nif(m[s-i-1]!==l[j-i-1])break}if(n!=null){n.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nn.H2(0,new R.OK(p.f,s,j,h,\"mouseOut\",!0))}for(g=0;g<m.length-i;++g){f=m[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOut\",!1))}for(g=l.length-i-1;g>=0;--g){f=l[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOver\",!1))}if(o!=null){o.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\no.H2(0,new R.OK(p.f,s,j,h,\"mouseOver\",!0))}c.rT=o}c.cq()\nif(a.type===\"mousedown\"){c.I6.focus()\ne=p.a\nif(o!=p.e||u>p.r+500)p.x=0\np.f=!0\np.e=o\np.r=u;++p.x}else e=null\nif(a.type===\"mouseup\"){e=p.b\np.f=!1\nd=p.e==o\nd}else d=!1\nu=a.type\nif(u===\"mousemove\")e=\"mouseMove\"\nif(u===\"contextmenu\")e=\"contextMenu\"\nif(e!=null&&o!=null){o.TK(r,q)\nu=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,e,!0))\nif(d){u=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,p.c,!0))}}}\np(o=A.a.prototype,\"gNT\",\"Z3\",12)",
+        "code": "Z3:function(a){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c=this\na.preventDefault()\nu=Date.now()\nt=a.button\ns=P.B\nr=c.No.Ey(new P.hL(a.clientX,a.clientY,[s]))\nq=new U.tZ(0,0,[s])\nif(t<0||t>2)return\nif(a.type===\"mousemove\"&&c.ZB.DN(0,r))return\np=c.HG[t]\nc.ZB=r\nC.Nm.aN(c.hi,new A.PK(r))\nif(a.type!==\"mouseout\")o=c.Fo(r.a,r.b)\nelse{c.H2(0,new R.ea(\"mouseLeave\",!1))\no=null}n=c.rT\nif(n!=o){s=[A.fE]\nm=H.K([],s)\nl=H.K([],s)\nfor(k=n;k!=null;k=k.fy)m.push(k)\nfor(k=o;k!=null;k=k.fy)l.push(k)\nfor(s=m.length,j=l.length,i=0;!0;++i){if(i===s)break\nif(i===j)break\nif(m[s-i-1]!==l[j-i-1])break}if(n!=null){n.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nn.H2(0,new R.OK(p.f,s,j,h,\"mouseOut\",!0))}for(g=0;g<m.length-i;++g){f=m[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOut\",!1))}for(g=l.length-i-1;g>=0;--g){f=l[g]\nf.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\nf.H2(0,new R.OK(p.f,s,j,h,\"rollOver\",!1))}if(o!=null){o.TK(r,q)\ns=q.a\nj=q.b\nh=a.shiftKey\no.H2(0,new R.OK(p.f,s,j,h,\"mouseOver\",!0))}c.rT=o}c.cq()\nif(a.type===\"mousedown\"){c.I6.focus()\ne=p.a\nif(o!=p.e||u>p.r+500)p.x=0\np.f=!0\np.e=o\np.r=u;++p.x}else e=null\nif(a.type===\"mouseup\"){e=p.b\np.f=!1\nd=p.e==o\nd}else d=!1\nu=a.type\nif(u===\"mousemove\")e=\"mouseMove\"\nif(u===\"contextmenu\")e=\"contextMenu\"\nif(e!=null&&o!=null){o.TK(r,q)\nu=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,e,!0))\nif(d){u=q.a\ns=q.b\nj=a.shiftKey\no.H2(0,new R.OK(p.f,u,s,j,p.c,!0))}}}\np(o=A.a.prototype,\"gNT\",\"Z3\",12)",
         "type": "void Function(MouseEvent)"
       },
       "464290033": {
@@ -33249,7 +33246,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Y5:function(a,b,c){throw H.B(P.L4(\"Cannot assign element of immutable List.\"))}",
+        "code": "Y5:function(a,b,c){throw H.c(P.L4(\"Cannot assign element of immutable List.\"))}",
         "type": "void Function(int,Object)"
       },
       "470683202": {
@@ -33612,7 +33609,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Y5:function(a,b,c){if(!!a.immutable$list)H.vh(P.L4(\"indexed set\"))\nif(typeof b!==\"number\"||Math.floor(b)!==b)throw H.B(H.HY(a,b))\nif(b>=a.length||b<0)throw H.B(H.HY(a,b))\na[b]=c}",
+        "code": "Y5:function(a,b,c){if(!!a.immutable$list)H.vh(P.L4(\"indexed set\"))\nif(typeof b!==\"number\"||Math.floor(b)!==b)throw H.c(H.HY(a,b))\nif(b>=a.length||b<0)throw H.c(H.HY(a,b))\na[b]=c}",
         "type": "void Function(int,Object)"
       },
       "476563722": {
@@ -34240,7 +34237,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Fb:function(a,b,c,d){var u=a+\".\"+b,t=O.Zx(a,b,c,d),s=this.a\nif(s.x4(0,u))throw H.B(P.PV(\"ResourceManager already contains a resource called '\"+b+\"'\"))\nelse s.Y5(0,u,t)\nt.f.a.W7(new O.i9(this),P.c8)}",
+        "code": "Fb:function(a,b,c,d){var u=a+\".\"+b,t=O.Zx(a,b,c,d),s=this.a\nif(s.x4(0,u))throw H.c(P.PV(\"ResourceManager already contains a resource called '\"+b+\"'\"))\nelse s.Y5(0,u,t)\nt.f.a.W7(new O.i9(this),P.c8)}",
         "type": "void Function(String,String,String,Future<dynamic>)"
       },
       "484862451": {
@@ -34275,7 +34272,7 @@
         "id": "function/485024264",
         "kind": "function",
         "name": "_getFontStyleMetrics",
-        "size": 146,
+        "size": 136,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "children": [
@@ -34298,7 +34295,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "us:function(a){var u=a.gBK()\nreturn $.pI().to(0,u,new Y.AU(a))}",
+        "code": "us:function(a){return $.E1.to(0,a.gBK(),new Y.AU(a))}",
         "type": "_FontStyleMetrics Function(TextFormat)"
       },
       "485481119": {
@@ -34449,7 +34446,7 @@
         "id": "function/487598887",
         "kind": "function",
         "name": "runtimeTypeToString",
-        "size": 35,
+        "size": 34,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -34470,7 +34467,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ko:function(a){return H.lz(a,null)}",
+        "code": "Ko:function(a){return H.H(a,null)}",
         "type": "String Function(dynamic)"
       },
       "487726275": {
@@ -34712,7 +34709,7 @@
         "inferredReturnType": "[exact=Es6LinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 14,
+        "inlinedCount": 2,
         "code": "",
         "type": "dynamic Function()"
       },
@@ -34891,7 +34888,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gmH:function(){var u,t,s=this,r=s.e,q=s.d\nif(q===0){q=s.b\nu=s.c\nreturn T.Te(r,0,0,r,q.a+u.a,q.b+u.b)}else if(q===1){q=s.b\nu=s.c\nreturn T.Te(0,r,0-r,0,q.a+q.c-u.b,q.b+u.a)}else if(q===2){q=s.b\nu=s.c\nt=0-r\nreturn T.Te(t,0,0,t,q.a+q.c-u.a,q.b+q.d-u.b)}else if(q===3){q=s.b\nu=s.c\nreturn T.Te(0,0-r,r,0,q.a+u.b,q.b+q.d-u.a)}else throw H.B(P.Vx())}",
+        "code": "gmH:function(){var u,t,s=this,r=s.e,q=s.d\nif(q===0){q=s.b\nu=s.c\nreturn T.Te(r,0,0,r,q.a+u.a,q.b+u.b)}else if(q===1){q=s.b\nu=s.c\nreturn T.Te(0,r,0-r,0,q.a+q.c-u.b,q.b+u.a)}else if(q===2){q=s.b\nu=s.c\nt=0-r\nreturn T.Te(t,0,0,t,q.a+q.c-u.a,q.b+q.d-u.b)}else if(q===3){q=s.b\nu=s.c\nreturn T.Te(0,0-r,r,0,q.a+u.b,q.b+q.d-u.a)}else throw H.c(P.Vx())}",
         "type": "Matrix Function()"
       },
       "502031733": {
@@ -34947,7 +34944,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WH:function(a,b){if(b>>>0!==b||b>=a.length)throw H.B(P.Cf(b,a,null,null,null))\nreturn a[b]}",
+        "code": "WH:function(a,b){if(b>>>0!==b||b>=a.length)throw H.c(P.Cf(b,a,null,null,null))\nreturn a[b]}",
         "type": "Touch Function(int)"
       },
       "507333070": {
@@ -35150,7 +35147,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Ix:function(a,b){if(typeof b!==\"number\")throw H.B(H.tL(b))\nreturn a*b}",
+        "code": "Ix:function(a,b){if(typeof b!==\"number\")throw H.c(H.tL(b))\nreturn a*b}",
         "type": "JSNumber Function(num)"
       },
       "511005349": {
@@ -35206,7 +35203,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "kI:function(a){var u,t,s,r\nfor(u=this.a,t=u.length,s=0;s<t;++s){r=u[s]\nif(r.c==a)return r.db}throw H.B(P.xY(\"TextureAtlasFrame not found: '\"+H.d(a)+\"'\"))}",
+        "code": "kI:function(a){var u,t,s,r\nfor(u=this.a,t=u.length,s=0;s<t;++s){r=u[s]\nif(r.c==a)return r.db}throw H.c(P.xY(\"TextureAtlasFrame not found: '\"+H.d(a)+\"'\"))}",
         "type": "BitmapData Function(String)"
       },
       "512180782": {
@@ -35725,7 +35722,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
-        "code": "gkz:function(a){var u=this.a,t=new H.N6(u,u.r)\nt.c=u.e\nreturn t}",
+        "code": "gkz:function(a){var u=this.a,t=new H.ui(u,u.r)\nt.c=u.e\nreturn t}",
         "type": "Iterator<LinkedHashMapKeyIterable.E> Function()"
       },
       "526775044": {
@@ -35803,7 +35800,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "AN:function(a,b){if(!this.gd9())throw H.B(this.Pq())\nthis.MW(b)}",
+        "code": "AN:function(a,b){if(!this.gd9())throw H.c(this.Pq())\nthis.MW(b)}",
         "type": "void Function(Object)"
       },
       "528985088": {
@@ -36249,7 +36246,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "iu:function(a){var u,t\nif($.pL==null)throw H.B(P.PV(\"Not initialized\"))\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}u=H.G($.pL.n9(\"SoundSprite\",\"audio\"),\"$ilN\").yk(a)\nt=u.a.b\nt.uW(u.c,u.d,u.e,null)}",
+        "code": "jr:function(a){var u,t\nif($.pL==null)throw H.c(P.PV(\"Not initialized\"))\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}u=H.G($.pL.n9(\"SoundSprite\",\"audio\"),\"$ilN\").yk(a)\nt=u.a.b\nt.uW(u.c,u.d,u.e,null)}",
         "type": "void Function(String)"
       },
       "540949546": {
@@ -36416,7 +36413,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WH:function(a,b){if(typeof b!==\"number\"||Math.floor(b)!==b)throw H.B(H.HY(a,b))\nif(b>=a.length||b<0)throw H.B(H.HY(a,b))\nreturn a[b]}",
+        "code": "WH:function(a,b){if(typeof b!==\"number\"||Math.floor(b)!==b)throw H.c(H.HY(a,b))\nif(b>=a.length||b<0)throw H.c(H.HY(a,b))\nreturn a[b]}",
         "type": "JSArray.E Function(int)"
       },
       "543918546": {
@@ -36487,7 +36484,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "lk:function(a){throw H.B(P.a4(a))}",
+        "code": "lk:function(a){throw H.c(P.a4(a))}",
         "type": "dynamic Function(dynamic)"
       },
       "546260514": {
@@ -36516,7 +36513,7 @@
         "id": "function/546289262",
         "kind": "function",
         "name": "LinkedHashMap._literal",
-        "size": 49,
+        "size": 50,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/614050497",
         "children": [],
@@ -36537,7 +36534,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "EF:function(a,b,c){return H.B7(a,new H.u([b,c]))}",
+        "code": "EF:function(a,b,c){return H.B7(a,new H.N5([b,c]))}",
         "type": "LinkedHashMap<#A,#B> Function<#A,#B>(List<dynamic>)"
       },
       "546320785": {
@@ -36620,7 +36617,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Y5:function(a,b,c){throw H.B(P.L4(\"Cannot assign element of immutable List.\"))}",
+        "code": "Y5:function(a,b,c){throw H.c(P.L4(\"Cannot assign element of immutable List.\"))}",
         "type": "void Function(int,Object)"
       },
       "548734216": {
@@ -37021,7 +37018,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "kl:function(a,b,c,d,e,f,g,h,i,j){var u,t=i==null\nif(!t&&h!=null&&typeof g===\"number\"&&Math.floor(g)===g){a.texImage2D(b,c,d,e,f,g,h,i,j)\nreturn}u=J.i(g)\nif(!!u.$ipA&&h==null&&t&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}if(!!u.$in&&h==null&&t&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}throw H.B(P.xY(\"Incorrect number or type of arguments\"))}\nZE:function(a,b,c,d,e,f,g){return this.kl(a,b,c,d,e,f,g,null,null,null)}",
+        "code": "kl:function(a,b,c,d,e,f,g,h,i,j){var u,t=i==null\nif(!t&&h!=null&&typeof g===\"number\"&&Math.floor(g)===g){a.texImage2D(b,c,d,e,f,g,h,i,j)\nreturn}u=J.i(g)\nif(!!u.$ipA&&h==null&&t&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}if(!!u.$in&&h==null&&t&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}throw H.c(P.xY(\"Incorrect number or type of arguments\"))}\nZE:function(a,b,c,d,e,f,g){return this.kl(a,b,c,d,e,f,g,null,null,null)}",
         "type": "void Function(int,int,int,int,int,dynamic,[int,int,TypedData])"
       },
       "554074082": {
@@ -37711,7 +37708,7 @@
         "id": "function/569617398",
         "kind": "function",
         "name": "fragmentShaderSource",
-        "size": 242,
+        "size": 241,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/998035767",
         "children": [],
@@ -37722,11 +37719,11 @@
           "external": false
         },
         "returnType": "String",
-        "inferredReturnType": "Value([exact=JSString], value: \"\n    precision mediump float;\n    uniform sampler2D uSampler;\n    varying vec2 vTextCoord;\n    varying vec4 vColor; \n\n    void main() {\n      gl_FragColor = texture2D(uSampler, vTextCoord) * vColor;\n    }\n    \")",
+        "inferredReturnType": "Value([exact=JSString], value: \"\n    precision mediump float;\n    uniform sampler2D uSampler;\n    varying vec2 vTextCoord;\n    varying vec4 vColor;\n\n    void main() {\n      gl_FragColor = texture2D(uSampler, vTextCoord) * vColor;\n    }\n    \")",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "gE0:function(){return\"\\n    precision mediump float;\\n    uniform sampler2D uSampler;\\n    varying vec2 vTextCoord;\\n    varying vec4 vColor; \\n\\n    void main() {\\n      gl_FragColor = texture2D(uSampler, vTextCoord) * vColor;\\n    }\\n    \"}",
+        "code": "gE0:function(){return\"\\n    precision mediump float;\\n    uniform sampler2D uSampler;\\n    varying vec2 vTextCoord;\\n    varying vec4 vColor;\\n\\n    void main() {\\n      gl_FragColor = texture2D(uSampler, vTextCoord) * vColor;\\n    }\\n    \"}",
         "type": "String Function()"
       },
       "571452376": {
@@ -37783,7 +37780,7 @@
         "id": "function/573775196",
         "kind": "function",
         "name": "JsLinkedHashMap.es6",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/722522722",
         "children": [],
@@ -37797,8 +37794,8 @@
         "inferredReturnType": "[subclass=JsLinkedHashMap]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 13,
-        "code": "YR:function(a,b){return new H.u([a,b])}",
+        "inlinedCount": 2,
+        "code": "",
         "type": "JsLinkedHashMap<#A,#B> Function<#A,#B>()"
       },
       "574120591": {
@@ -37826,7 +37823,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
-        "code": "wJ:function(a){if(typeof a===\"boolean\")return a\nelse throw H.B(P.xY(\"The supplied value (\"+H.d(a)+\") is not a bool.\"))}",
+        "code": "wJ:function(a){if(typeof a===\"boolean\")return a\nelse throw H.c(P.xY(\"The supplied value (\"+H.d(a)+\") is not a bool.\"))}",
         "type": "bool Function(bool)"
       },
       "574356143": {
@@ -37884,7 +37881,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WH:function(a,b){if(b>>>0!==b||b>=a.length)throw H.B(P.Cf(b,a,null,null,null))\nreturn a[b]}",
+        "code": "WH:function(a,b){if(b>>>0!==b||b>=a.length)throw H.c(P.Cf(b,a,null,null,null))\nreturn a[b]}",
         "type": "Node Function(int)"
       },
       "574550003": {
@@ -38083,7 +38080,7 @@
         "id": "function/580865640",
         "kind": "function",
         "name": "iterableToFullString",
-        "size": 172,
+        "size": 173,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/812154630",
         "children": [],
@@ -38114,7 +38111,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WE:function(a,b,c){var u,t\nif(P.hB(a))return b+\"...\"+c\nu=new P.C(b)\n$.xg.push(a)\ntry{t=u\nt.a=P.vg(t.a,a,\", \")}finally{$.xg.pop()}u.a+=c\nt=u.a\nreturn t.charCodeAt(0)==0?t:t}",
+        "code": "WE:function(a,b,c){var u,t\nif(P.hB(a))return b+\"...\"+c\nu=new P.Rn(b)\n$.xg.push(a)\ntry{t=u\nt.a=P.vg(t.a,a,\", \")}finally{$.xg.pop()}u.a+=c\nt=u.a\nreturn t.charCodeAt(0)==0?t:t}",
         "type": "String Function(Iterable<dynamic>,[String,String])"
       },
       "581270226": {
@@ -38881,7 +38878,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var u=this.k3\nreturn new U.Vb(0,0,u.a,u.b,[P.F])}",
+        "code": "gBP:function(){var u=this.k3\nreturn new U.Vb(0,0,u.a,u.b,[P.B])}",
         "type": "Rectangle<num> Function()"
       },
       "604282426": {
@@ -39089,7 +39086,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var u,t=this\nt.JL()\nu=t.eD\nt.JL()\nreturn new U.Vb(0,0,u,t.jq,[P.F])}",
+        "code": "gBP:function(){var u,t=this\nt.JL()\nu=t.eD\nt.JL()\nreturn new U.Vb(0,0,u,t.jq,[P.B])}",
         "type": "Rectangle<num> Function()"
       },
       "607704865": {
@@ -39838,7 +39835,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
-        "code": "gNC:function(a){if(a.deltaY!==undefined)return a.deltaY\nthrow H.B(P.L4(\"deltaY is not supported\"))}",
+        "code": "gNC:function(a){if(a.deltaY!==undefined)return a.deltaY\nthrow H.c(P.L4(\"deltaY is not supported\"))}",
         "type": "num Function()"
       },
       "623533787": {
@@ -40176,7 +40173,7 @@
         "id": "function/629904327",
         "kind": "function",
         "name": "call",
-        "size": 174,
+        "size": 172,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/466649304",
         "children": [],
@@ -40197,7 +40194,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var u,t,s,r=a/1000,q=r-$.jR\n$.jR=r\n$.uU=-1\nL.m()\nu=$.x()\nu=H.K(u.slice(0),[H.Kp(u,0)])\nt=u.length\ns=0\nfor(;s<u.length;u.length===t||(0,H.lk)(u),++s)u[s].$1(q)}",
+        "code": "$1:function(a){var u,t,s,r=a/1000,q=r-$.jR\n$.jR=r\n$.uU=-1\nL.m()\nu=$.C\nu=H.K(u.slice(0),[H.Kp(u,0)])\nt=u.length\ns=0\nfor(;s<u.length;u.length===t||(0,H.lk)(u),++s)u[s].$1(q)}",
         "type": "Null Function(num)"
       },
       "630788869": {
@@ -41440,7 +41437,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ix:function(a,b){var u,t\nif(0>=b)return\"\"\nif(b===1||a.length===0)return a\nif(b!==b>>>0)throw H.B(C.Eq)\nfor(u=a,t=\"\";!0;){if((b&1)===1)t=u+t\nb=b>>>1\nif(b===0)break\nu+=u}return t}",
+        "code": "Ix:function(a,b){var u,t\nif(0>=b)return\"\"\nif(b===1||a.length===0)return a\nif(b!==b>>>0)throw H.c(C.Eq)\nfor(u=a,t=\"\";!0;){if((b&1)===1)t=u+t\nb=b>>>1\nif(b===0)break\nu+=u}return t}",
         "type": "String Function(int)"
       },
       "652999961": {
@@ -42684,7 +42681,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var u=this.a\nu.sVR(0,1)\nu.bY(0)\nthis.b.Iv()\nswitch(this.c){case C.Ni:case C.Bl:R.iu(\"Pop\")\nbreak\ncase C.e5:R.iu(\"Bomb\")\nbreak}return}",
+        "code": "$0:function(){var u=this.a\nu.sVR(0,1)\nu.bY(0)\nthis.b.Iv()\nswitch(this.c){case C.Ni:case C.Bl:R.jr(\"Pop\")\nbreak\ncase C.e5:R.jr(\"Bomb\")\nbreak}return}",
         "type": "void Function()"
       },
       "677800418": {
@@ -42922,7 +42919,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "gBP:function(){return new U.Vb(0,0,0,0,[P.F])}",
+        "code": "gBP:function(){return new U.Vb(0,0,0,0,[P.B])}",
         "type": "Rectangle<num> Function()"
       },
       "681115215": {
@@ -43060,7 +43057,7 @@
         "id": "function/681882543",
         "kind": "function",
         "name": "Stage",
-        "size": 570,
+        "size": 564,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -43088,7 +43085,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "f:function(a,b){var u=\"middleClick\",t=\"rightClick\",s=P.F,r=T.oy(),q=T.oy(),p=T.oy(),o=H.K([],[A.ZF]),n=H.K([new A.Bg(\"mouseDown\",\"mouseUp\",\"click\",\"doubleClick\"),new A.Bg(\"middleMouseDown\",\"middleMouseUp\",u,u),new A.Bg(\"rightMouseDown\",\"rightMouseUp\",t,t)],[A.Bg]),m=K.L(),l=H.K([],[A.fE]),k=$.LS\n$.LS=k+1\nk=new A.a(new U.Vb(0,0,0,0,[s]),r,q,p,new R.b5(\"render\",!1),C.aN,C.vh,C.as,C.eb,new U.tZ(0,0,[s]),o,new H.u([P.KN,A.oA]),n,m,l,k,H.K([],[A.WO]),T.oy())\nk.VB(a,null,b,null)\nreturn k}",
+        "code": "f:function(a,b){var u=\"middleClick\",t=\"rightClick\",s=P.B,r=T.oy(),q=T.oy(),p=T.oy(),o=H.K([],[A.ZF]),n=H.K([new A.Bg(\"mouseDown\",\"mouseUp\",\"click\",\"doubleClick\"),new A.Bg(\"middleMouseDown\",\"middleMouseUp\",u,u),new A.Bg(\"rightMouseDown\",\"rightMouseUp\",t,t)],[A.Bg]),m=K.L(),l=H.K([],[A.fE]),k=$.LS\n$.LS=k+1\nk=new A.a(new U.Vb(0,0,0,0,[s]),r,q,p,new R.b5(\"render\",!1),C.aN,C.vh,C.as,C.eb,new U.tZ(0,0,[s]),o,P.F(P.KN,A.oA),n,m,l,k,H.K([],[A.WO]),T.oy())\nk.VB(a,null,b,null)\nreturn k}",
         "type": "dynamic Function(CanvasElement,{int height,StageOptions options,int width})"
       },
       "682272829": {
@@ -43512,7 +43509,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 14,
+        "inlinedCount": 2,
         "code": "",
         "type": "bool Function()"
       },
@@ -43541,7 +43538,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aN:function(a,b){var u=this,t=u.e,s=u.r\nfor(;t!=null;){b.$2(t.a,t.b)\nif(s!==u.r)throw H.B(P.a4(u))\nt=t.c}}",
+        "code": "aN:function(a,b){var u=this,t=u.e,s=u.r\nfor(;t!=null;){b.$2(t.a,t.b)\nif(s!==u.r)throw H.c(P.a4(u))\nt=t.c}}",
         "type": "void Function(void Function(JsLinkedHashMap.K,JsLinkedHashMap.V))"
       },
       "690312332": {
@@ -43598,7 +43595,7 @@
         "id": "function/691212419",
         "kind": "function",
         "name": "_subscribe",
-        "size": 485,
+        "size": 479,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/820012780",
         "children": [],
@@ -43629,7 +43626,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "XE:function(a,b,c){var u,t,s,r,q,p,o=this,n=new R.hw(c,!1,o,a,o.$ti),m=o.c,l=m.length,k=new Array(l+1)\nk.fixed$length=Array\nu=H.K(k,[[R.hw,H.Kp(o,0)]])\nt=u.length-1\nfor(s=0,r=0;s<l;++s,r=p){q=m[s]\nif(s===r&&q.a<c){p=r+1\nt=r\nr=p}p=r+1\nu[r]=q}u[t]=n\no.c=u\nl=[R.y]\nif(H.RB(n,\"$ihw\",l,null))$.RR().push(H.Cv(n,\"$ihw\",l,\"$ahw\"))\nelse{l=[R.v]\nif(H.RB(n,\"$ihw\",l,null))$.jr().push(H.Cv(n,\"$ihw\",l,\"$ahw\"))\nelse{l=[R.b5]\nif(H.RB(n,\"$ihw\",l,null))$.HE().push(H.Cv(n,\"$ihw\",l,\"$ahw\"))}}return n}",
+        "code": "XE:function(a,b,c){var u,t,s,r,q,p,o=this,n=new R.hw(c,!1,o,a,o.$ti),m=o.c,l=m.length,k=new Array(l+1)\nk.fixed$length=Array\nu=H.K(k,[[R.hw,H.Kp(o,0)]])\nt=u.length-1\nfor(s=0,r=0;s<l;++s,r=p){q=m[s]\nif(s===r&&q.a<c){p=r+1\nt=r\nr=p}p=r+1\nu[r]=q}u[t]=n\no.c=u\nl=[R.y]\nif(H.RB(n,\"$ihw\",l,null))$.Jp.push(H.Cv(n,\"$ihw\",l,\"$ahw\"))\nelse{l=[R.v]\nif(H.RB(n,\"$ihw\",l,null))$.Af.push(H.Cv(n,\"$ihw\",l,\"$ahw\"))\nelse{l=[R.b5]\nif(H.RB(n,\"$ihw\",l,null))$.Wx.push(H.Cv(n,\"$ihw\",l,\"$ahw\"))}}return n}",
         "type": "EventStreamSubscription<EventStream.T> Function(void Function(EventStream.T),bool,int)"
       },
       "691771928": {
@@ -43957,7 +43954,7 @@
         "id": "function/700902689",
         "kind": "function",
         "name": "on",
-        "size": 203,
+        "size": 197,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/99550178",
         "children": [],
@@ -43978,7 +43975,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ep:function(a,b,c){var u,t,s=this.a\nif(s==null)s=this.a=new H.u([P.q,[R.q4,R.ea]])\nu=s.WH(0,b)\nif(u==null){t=new Array(0)\nt.fixed$length=Array\nu=new R.q4(this,H.K(t,[[R.hw,c]]),[c])\ns.Y5(0,b,u)}return u}",
+        "code": "Ep:function(a,b,c){var u,t,s=this.a\nif(s==null)s=this.a=P.F(P.q,[R.q4,R.ea])\nu=s.WH(0,b)\nif(u==null){t=new Array(0)\nt.fixed$length=Array\nu=new R.q4(this,H.K(t,[[R.hw,c]]),[c])\ns.Y5(0,b,u)}return u}",
         "type": "EventStream<#A> Function<#A extends Event>(String)"
       },
       "701104223": {
@@ -44476,7 +44473,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "E0:function(a){if(typeof a!==\"number\")throw H.B(H.tL(a))\nreturn a}",
+        "code": "E0:function(a){if(typeof a!==\"number\")throw H.c(H.tL(a))\nreturn a}",
         "type": "num Function(dynamic)"
       },
       "713235752": {
@@ -45428,7 +45425,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "M2:function(a,b){if(typeof b!==\"string\")throw H.B(P.L3(b,null,null))\nreturn a+b}",
+        "code": "M2:function(a,b){if(typeof b!==\"string\")throw H.c(P.L3(b,null,null))\nreturn a+b}",
         "type": "String Function(String)"
       },
       "727262764": {
@@ -45837,7 +45834,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "j1:function(a){if(a<=0||a>4294967296)throw H.B(P.C3(\"max must be in range 0 < max \\u2264 2^32, was \"+a))\nreturn Math.random()*a>>>0}",
+        "code": "j1:function(a){if(a<=0||a>4294967296)throw H.c(P.C3(\"max must be in range 0 < max \\u2264 2^32, was \"+a))\nreturn Math.random()*a>>>0}",
         "type": "int Function(int)"
       },
       "731625924": {
@@ -46248,7 +46245,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "f9:function(a,b,c){var u=a.createShader(c)\na.shaderSource(u,b)\na.compileShader(u)\nif(a.getShaderParameter(u,35713)===!0)return u\nthrow H.B(P.PV(a.isContextLost()?\"ContextLost\":a.getShaderInfoLog(u)))}",
+        "code": "f9:function(a,b,c){var u=a.createShader(c)\na.shaderSource(u,b)\na.compileShader(u)\nif(a.getShaderParameter(u,35713)===!0)return u\nthrow H.c(P.PV(a.isContextLost()?\"ContextLost\":a.getShaderInfoLog(u)))}",
         "type": "Shader Function(RenderingContext,String,int)"
       },
       "738448951": {
@@ -46880,7 +46877,7 @@
         "id": "function/749763418",
         "kind": "function",
         "name": "advanceTime",
-        "size": 1075,
+        "size": 1069,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/323606306",
         "children": [
@@ -46904,7 +46901,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gz:function(a){var u,t=this\nt.f+=a\nR.CL(t.d,$.RR())\nt.b.Gz(a)\nu=t.c\nC.Nm.aN(u,new A.D5(a))\nC.Nm.aN(u,new A.HR(t,a))\nR.CL(t.e,$.jr())}",
+        "code": "Gz:function(a){var u,t=this\nt.f+=a\nR.CL(t.d,$.Jp)\nt.b.Gz(a)\nu=t.c\nC.Nm.aN(u,new A.D5(a))\nC.Nm.aN(u,new A.HR(t,a))\nR.CL(t.e,$.Af)}",
         "type": "void Function(num)"
       },
       "749970393": {
@@ -47828,7 +47825,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "w0:function(a,b){var u\nif(a==null)a=new P.LK()\nu=this.a\nif(u.a!==0)throw H.B(P.PV(\"Future already completed\"))\nu.Nk(a,b)}\npm:function(a){return this.w0(a,null)}\nr(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"w0\",\"pm\"],5,0)",
+        "code": "w0:function(a,b){var u\nif(a==null)a=new P.LK()\nu=this.a\nif(u.a!==0)throw H.c(P.PV(\"Future already completed\"))\nu.Nk(a,b)}\npm:function(a){return this.w0(a,null)}\nr(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"w0\",\"pm\"],5,0)",
         "type": "void Function(Object,[StackTrace])"
       },
       "766601802": {
@@ -48679,7 +48676,7 @@
         "id": "function/784786245",
         "kind": "function",
         "name": "vertexShaderSource",
-        "size": 403,
+        "size": 402,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/998035767",
         "children": [],
@@ -48690,11 +48687,11 @@
           "external": false
         },
         "returnType": "String",
-        "inferredReturnType": "Value([exact=JSString], value: \"\n    uniform mat4 uProjectionMatrix;\n    attribute vec2 aVertexPosition;\n    attribute vec2 aVertexTextCoord;\n    attribute vec4 aVertexColor;\n    varying vec2 vTextCoord;\n    varying vec4 vColor; \n\n    void main() {\n      vTextCoord = aVertexTextCoord;\n      vColor = aVertexColor;\n      gl_Position = vec4(aVertexPosition, 0.0, 1.0) * uProjectionMatrix;\n    }\n    \")",
+        "inferredReturnType": "Value([exact=JSString], value: \"\n    uniform mat4 uProjectionMatrix;\n    attribute vec2 aVertexPosition;\n    attribute vec2 aVertexTextCoord;\n    attribute vec4 aVertexColor;\n    varying vec2 vTextCoord;\n    varying vec4 vColor;\n\n    void main() {\n      vTextCoord = aVertexTextCoord;\n      vColor = aVertexColor;\n      gl_Position = vec4(aVertexPosition, 0.0, 1.0) * uProjectionMatrix;\n    }\n    \")",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "gRr:function(){return\"\\n    uniform mat4 uProjectionMatrix;\\n    attribute vec2 aVertexPosition;\\n    attribute vec2 aVertexTextCoord;\\n    attribute vec4 aVertexColor;\\n    varying vec2 vTextCoord;\\n    varying vec4 vColor; \\n\\n    void main() {\\n      vTextCoord = aVertexTextCoord;\\n      vColor = aVertexColor;\\n      gl_Position = vec4(aVertexPosition, 0.0, 1.0) * uProjectionMatrix;\\n    }\\n    \"}",
+        "code": "gRr:function(){return\"\\n    uniform mat4 uProjectionMatrix;\\n    attribute vec2 aVertexPosition;\\n    attribute vec2 aVertexTextCoord;\\n    attribute vec4 aVertexColor;\\n    varying vec2 vTextCoord;\\n    varying vec4 vColor;\\n\\n    void main() {\\n      vTextCoord = aVertexTextCoord;\\n      vColor = aVertexColor;\\n      gl_Position = vec4(aVertexPosition, 0.0, 1.0) * uProjectionMatrix;\\n    }\\n    \"}",
         "type": "String Function()"
       },
       "785332985": {
@@ -48855,7 +48852,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "ag:function(a){throw H.B(new P.t(a))}",
+        "code": "ag:function(a){throw H.c(new P.t(a))}",
         "type": "void Function(String)"
       },
       "789100089": {
@@ -49019,7 +49016,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aq:function(a,b){return new H.Pe(\"CastError: \"+P.p(a)+\": type '\"+H.d(H.QR(a))+\"' is not a subtype of type '\"+b+\"'\")}",
+        "code": "aq:function(a,b){return new H.Pe(\"CastError: \"+P.p(a)+\": type '\"+H.d(H.N6(a))+\"' is not a subtype of type '\"+b+\"'\")}",
         "type": "dynamic Function(Object,Object)"
       },
       "793142738": {
@@ -49143,7 +49140,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "xW:function(a){var u=0,t=P.I(O.D),s,r=this,q,p\nvar $async$xW=P.M(function(b,c){if(b===1)return P.H(c,t)\nwhile(true)switch(u){case 0:p=r.gPb()\nu=3\nreturn P.j(P.pH(new H.A8(p,new O.Gr(),[H.Kp(p,0),[P.b8,,]]),null),$async$xW)\ncase 3:q=r.gow().length\nif(q>0)throw H.B(P.PV(\"Failed to load \"+q+\" resource(s).\"))\nelse{s=r\nu=1\nbreak}case 1:return P.k(s,t)}})\nreturn P.e($async$xW,t)}",
+        "code": "xW:function(a){var u=0,t=P.I(O.D),s,r=this,q,p\nvar $async$xW=P.M(function(b,c){if(b===1)return P.x(c,t)\nwhile(true)switch(u){case 0:p=r.gPb()\nu=3\nreturn P.j(P.pH(new H.A8(p,new O.Gr(),[H.Kp(p,0),[P.b8,,]]),null),$async$xW)\ncase 3:q=r.gow().length\nif(q>0)throw H.c(P.PV(\"Failed to load \"+q+\" resource(s).\"))\nelse{s=r\nu=1\nbreak}case 1:return P.k(s,t)}})\nreturn P.e($async$xW,t)}",
         "type": "Future<ResourceManager> Function()"
       },
       "794452327": {
@@ -49243,7 +49240,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "gtV:function(a){var u=this.a\nif(!!J.i(u).$ia0)return new K.AS(this,u)\nelse throw H.B(P.PV(\"Invalid tween object for 2D animation.\"))}",
+        "code": "gtV:function(a){var u=this.a\nif(!!J.i(u).$ia0)return new K.AS(this,u)\nelse throw H.c(P.PV(\"Invalid tween object for 2D animation.\"))}",
         "type": "TweenPropertyAccessor2D Function()"
       },
       "796179660": {
@@ -49408,7 +49405,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "XS:function(a,b,c){var u,t,s,r,q,p\nif(a==null)return\"\"\nu=new P.C(\"\")\nfor(t=b,s=\"\",r=!0,q=\"\";t<a.length;++t,s=\", \"){u.a=q+s\np=a[t]\nif(p!=null)r=!1\nq=u.a+=H.lz(p,c)}return\"<\"+u.bu(0)+\">\"}",
+        "code": "XS:function(a,b,c){var u,t,s,r,q,p\nif(a==null)return\"\"\nu=new P.Rn(\"\")\nfor(t=b,s=\"\",r=!0,q=\"\";t<a.length;++t,s=\", \"){u.a=q+s\np=a[t]\nif(p!=null)r=!1\nq=u.a+=H.H(p,c)}return\"<\"+u.bu(0)+\">\"}",
         "type": "String Function(dynamic,int,List<String>)"
       },
       "797976194": {
@@ -49436,7 +49433,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "AN:function(a,b){var u=this,t=u.b\nif(t>=4)throw H.B(u.Q4())\nif((t&1)!==0)u.MW(b)\nelse if((t&3)===0)u.Hf().AN(0,new P.LV(b))}",
+        "code": "AN:function(a,b){var u=this,t=u.b\nif(t>=4)throw H.c(u.Q4())\nif((t&1)!==0)u.MW(b)\nelse if((t&3)===0)u.Hf().AN(0,new P.LV(b))}",
         "type": "void Function(Object)"
       },
       "798288240": {
@@ -49989,7 +49986,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var u,t=this.a,s=t.a\nt=s==null?t.a=new P.LK():s\ns=this.b\nif(s==null)throw H.B(t)\nu=H.B(t)\nu.stack=s.bu(0)\nthrow u}",
+        "code": "$0:function(){var u,t=this.a,s=t.a\nt=s==null?t.a=new P.LK():s\ns=this.b\nif(s==null)throw H.c(t)\nu=H.c(t)\nu.stack=s.bu(0)\nthrow u}",
         "type": "Null Function()"
       },
       "812405435": {
@@ -50856,7 +50853,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "AN:function(a,b){var u\nif(!J.i(b).$iDM)throw H.B(P.xY(\"The supplied animatable does not extend type Animatable.\"))\nif(!this.tg(0,b)){u=this.b\nu.a=b\nthis.b=u.b=new K.Gn()}}",
+        "code": "AN:function(a,b){var u\nif(!J.i(b).$iDM)throw H.c(P.xY(\"The supplied animatable does not extend type Animatable.\"))\nif(!this.tg(0,b)){u=this.b\nu.a=b\nthis.b=u.b=new K.Gn()}}",
         "type": "void Function(Animatable)"
       },
       "831655802": {
@@ -51596,7 +51593,7 @@
         "id": "function/851054923",
         "kind": "function",
         "name": "_functionRtiToString",
-        "size": 766,
+        "size": 761,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -51622,7 +51619,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bI:function(a,a0){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=\", \"\nif(\"bounds\" in a){u=a.bounds\nif(a0==null){a0=H.K([],[P.q])\nt=null}else t=a0.length\ns=a0.length\nfor(r=u.length,q=r;q>0;--q)a0.push(\"T\"+(s+q))\nfor(p=\"<\",o=\"\",q=0;q<r;++q,o=b){p=C.xB.M2(p+o,a0[a0.length-q-1])\nn=u[q]\nif(n!=null&&n!==P.Mh)p+=\" extends \"+H.lz(n,a0)}p+=\">\"}else{p=\"\"\nt=null}m=!!a.v?\"void\":H.lz(a.ret,a0)\nif(\"args\" in a){l=a.args\nfor(k=l.length,j=\"\",i=\"\",h=0;h<k;++h,i=b){g=l[h]\nj=j+i+H.lz(g,a0)}}else{j=\"\"\ni=\"\"}if(\"opt\" in a){f=a.opt\nj+=i+\"[\"\nfor(k=f.length,i=\"\",h=0;h<k;++h,i=b){g=f[h]\nj=j+i+H.lz(g,a0)}j+=\"]\"}if(\"named\" in a){e=a.named\nj+=i+\"{\"\nfor(k=H.kU(e),d=k.length,i=\"\",h=0;h<d;++h,i=b){c=k[h]\nj=j+i+H.lz(e[c],a0)+(\" \"+H.d(c))}j+=\"}\"}if(t!=null)a0.length=t\nreturn p+\"(\"+j+\") => \"+m}",
+        "code": "bI:function(a,a0){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=\", \"\nif(\"bounds\" in a){u=a.bounds\nif(a0==null){a0=H.K([],[P.q])\nt=null}else t=a0.length\ns=a0.length\nfor(r=u.length,q=r;q>0;--q)a0.push(\"T\"+(s+q))\nfor(p=\"<\",o=\"\",q=0;q<r;++q,o=b){p=C.xB.M2(p+o,a0[a0.length-q-1])\nn=u[q]\nif(n!=null&&n!==P.Mh)p+=\" extends \"+H.H(n,a0)}p+=\">\"}else{p=\"\"\nt=null}m=!!a.v?\"void\":H.H(a.ret,a0)\nif(\"args\" in a){l=a.args\nfor(k=l.length,j=\"\",i=\"\",h=0;h<k;++h,i=b){g=l[h]\nj=j+i+H.H(g,a0)}}else{j=\"\"\ni=\"\"}if(\"opt\" in a){f=a.opt\nj+=i+\"[\"\nfor(k=f.length,i=\"\",h=0;h<k;++h,i=b){g=f[h]\nj=j+i+H.H(g,a0)}j+=\"]\"}if(\"named\" in a){e=a.named\nj+=i+\"{\"\nfor(k=H.kU(e),d=k.length,i=\"\",h=0;h<d;++h,i=b){c=k[h]\nj=j+i+H.H(e[c],a0)+(\" \"+H.d(c))}j+=\"}\"}if(t!=null)a0.length=t\nreturn p+\"(\"+j+\") => \"+m}",
         "type": "String Function(dynamic,List<String>)"
       },
       "852141617": {
@@ -52698,7 +52695,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wZ:function(a,b,c,d){var u,t=this,s=null,r=t.Qt,q=r.e,p=q.b\np=p.c[b+c*p.a]\nif(d)if(p===C.Bl||p===C.No){t.Au(b,c)\nu=s}else if(p===C.Ni)if(q.Km(b,c)){q=r.e.a.V5(b,c)\nq=new H.A8(q,new U.BE(t),[H.Kp(q,0),[P.hL,P.KN]]).GG(0,new U.cR(t))\nt.hM(P.PW(q,!0,H.Kp(q,0)))\nu=r.e.tm(b,c)}else u=s\nelse u=s\nelse if(p===C.Bl){t.hM(H.K([new P.hL(b,c,[P.F])],[[P.hL,P.F]]))\nu=r.e.tm(b,c)}else u=s\nif(u!=null&&u.length!==0){if(!d)u[0]\nt.zC(new P.hL(b,c,[P.KN]),u)}else if(r.e.e===C.He)t.J1(new P.hL(b,c,[P.KN]))}",
+        "code": "wZ:function(a,b,c,d){var u,t=this,s=null,r=t.Qt,q=r.e,p=q.b\np=p.c[b+c*p.a]\nif(d)if(p===C.Bl||p===C.No){t.Au(b,c)\nu=s}else if(p===C.Ni)if(q.Km(b,c)){q=r.e.a.V5(b,c)\nq=new H.A8(q,new U.BE(t),[H.Kp(q,0),[P.hL,P.KN]]).GG(0,new U.cR(t))\nt.hM(P.PW(q,!0,H.Kp(q,0)))\nu=r.e.tm(b,c)}else u=s\nelse u=s\nelse if(p===C.Bl){t.hM(H.K([new P.hL(b,c,[P.B])],[[P.hL,P.B]]))\nu=r.e.tm(b,c)}else u=s\nif(u!=null&&u.length!==0){if(!d)u[0]\nt.zC(new P.hL(b,c,[P.KN]),u)}else if(r.e.e===C.He)t.J1(new P.hL(b,c,[P.KN]))}",
         "type": "void Function(int,int,bool)"
       },
       "881061929": {
@@ -52978,7 +52975,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "SE:function(a,b){throw H.B(H.aq(a,H.NQ(b.substring(2))))}",
+        "code": "SE:function(a,b){throw H.c(H.aq(a,H.NQ(b.substring(2))))}",
         "type": "void Function(dynamic,dynamic)"
       },
       "884850100": {
@@ -53218,7 +53215,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "DJ:function(a,b){var u=a/b\nif(u>=-2147483648&&u<=2147483647)return u|0\nif(u>0){if(u!==1/0)return Math.floor(u)}else if(u>-1/0)return Math.ceil(u)\nthrow H.B(P.L4(\"Result of truncating division is \"+H.d(u)+\": \"+H.d(a)+\" ~/ \"+b))}",
+        "code": "DJ:function(a,b){var u=a/b\nif(u>=-2147483648&&u<=2147483647)return u|0\nif(u>0){if(u!==1/0)return Math.floor(u)}else if(u>-1/0)return Math.ceil(u)\nthrow H.c(P.L4(\"Result of truncating division is \"+H.d(u)+\": \"+H.d(a)+\" ~/ \"+b))}",
         "type": "int Function(num)"
       },
       "889342435": {
@@ -53258,7 +53255,7 @@
         "id": "function/889846592",
         "kind": "function",
         "name": "_makeEmpty",
-        "size": 42,
+        "size": 43,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/614050497",
         "children": [],
@@ -53273,7 +53270,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "u5:function(){return new H.u([null,null])}",
+        "code": "u5:function(){return new H.N5([null,null])}",
         "type": "dynamic Function()"
       },
       "890739228": {
@@ -53925,7 +53922,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z4:function(a,b,c,d){var u=H.DV,t=H.yS\nswitch(b?-1:a){case 0:throw H.B(H.Ef(\"Intercepted function with no arguments.\"))\ncase 1:return function(e,f,g){return function(){return f(this)[e](g(this))}}(c,u,t)\ncase 2:return function(e,f,g){return function(h){return f(this)[e](g(this),h)}}(c,u,t)\ncase 3:return function(e,f,g){return function(h,i){return f(this)[e](g(this),h,i)}}(c,u,t)\ncase 4:return function(e,f,g){return function(h,i,j){return f(this)[e](g(this),h,i,j)}}(c,u,t)\ncase 5:return function(e,f,g){return function(h,i,j,k){return f(this)[e](g(this),h,i,j,k)}}(c,u,t)\ncase 6:return function(e,f,g){return function(h,i,j,k,l){return f(this)[e](g(this),h,i,j,k,l)}}(c,u,t)\ndefault:return function(e,f,g,h){return function(){h=[g(this)]\nArray.prototype.push.apply(h,arguments)\nreturn e.apply(f(this),h)}}(d,u,t)}}",
+        "code": "Z4:function(a,b,c,d){var u=H.DV,t=H.yS\nswitch(b?-1:a){case 0:throw H.c(H.Ef(\"Intercepted function with no arguments.\"))\ncase 1:return function(e,f,g){return function(){return f(this)[e](g(this))}}(c,u,t)\ncase 2:return function(e,f,g){return function(h){return f(this)[e](g(this),h)}}(c,u,t)\ncase 3:return function(e,f,g){return function(h,i){return f(this)[e](g(this),h,i)}}(c,u,t)\ncase 4:return function(e,f,g){return function(h,i,j){return f(this)[e](g(this),h,i,j)}}(c,u,t)\ncase 5:return function(e,f,g){return function(h,i,j,k){return f(this)[e](g(this),h,i,j,k)}}(c,u,t)\ncase 6:return function(e,f,g){return function(h,i,j,k,l){return f(this)[e](g(this),h,i,j,k,l)}}(c,u,t)\ndefault:return function(e,f,g,h){return function(){h=[g(this)]\nArray.prototype.push.apply(h,arguments)\nreturn e.apply(f(this),h)}}(d,u,t)}}",
         "type": "dynamic Function(int,bool,String,dynamic)"
       },
       "899549742": {
@@ -54041,7 +54038,7 @@
         "id": "function/900729957",
         "kind": "function",
         "name": "_createRenderContext",
-        "size": 1305,
+        "size": 1269,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -54067,7 +54064,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vW:function(a,b){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d\ntry{u=b.r\nt=new T.Xo(new Float32Array(16))\nt.xI()\ns=H.K([],[L.Xt])\nr=P.q\nq=[r,P.KN]\np=[r,P.SI]\no=new Int16Array(0)\no=new L.E3(new H.u(q),new H.u(p),new L.Io(o),new L.O3(new Float32Array(0)),new L.PT())\nn=new Int16Array(0)\nm=new Float32Array(0)\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(16384)\ni=new Float32Array(32768)\nh=new Array(8)\nh.fixed$length=Array\nh=H.K(h,[L.Gp])\ng=H.K([],[L.F7])\nf=L.dZ\nf=new L.IM(a,t,s,o,new L.te(new H.u(q),new H.u(p),new L.Io(n),new L.O3(m),new L.PT()),new L.tf(new H.u(q),new H.u(p),new L.Io(l),new L.O3(k),new L.PT()),new L.Io(j),new L.O3(i),h,g,new H.u([r,L.e7]),new L.PT(),P.z(f),P.z(f))\nW.JE(a,\"webglcontextlost\",f.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",f.gyD(),!1)\nb=P.EF([\"alpha\",u,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],r,null)\ne=C.p1.eW(a,\"webgl\",b)\nif(e==null)e=C.p1.eW(a,\"experimental-webgl\",b)\nif(!J.i(e).$iJo)H.vh(P.PV(\"Failed to get WebGL context.\"))\nf.e=e\ne.enable(3042)\nf.e.disable(2960)\nf.e.disable(2929)\nf.e.disable(2884)\nf.e.pixelStorei(37441,1)\nf.e.blendFunc(1,771)\nf.x=o\no.W9(f)\nf.cx=$.cU=$.cU+1\nf.CH(0)\nreturn f}catch(d){H.Ru(d)\nu=T.oy()\nt=L.dZ\nt=new L.p5(a,a.getContext(\"2d\"),u,C.yK,new L.PT(),P.z(t),P.z(t))\nt.CH(0)\nreturn t}}",
+        "code": "vW:function(a,b){var u,t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e\ntry{u=b.r\nt=new T.Xo(new Float32Array(16))\nt.xI()\ns=H.K([],[L.Xt])\nr=P.q\nq=P.KN\np=P.SI\no=new Int16Array(0)\no=new L.E3(P.F(r,q),P.F(r,p),new L.Io(o),new L.O3(new Float32Array(0)),new L.PT())\nn=new Int16Array(0)\nm=new Float32Array(0)\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(16384)\ni=new Float32Array(32768)\nh=new Array(8)\nh.fixed$length=Array\ng=L.dZ\ng=new L.IM(a,t,s,o,new L.te(P.F(r,q),P.F(r,p),new L.Io(n),new L.O3(m),new L.PT()),new L.tf(P.F(r,q),P.F(r,p),new L.Io(l),new L.O3(k),new L.PT()),new L.Io(j),new L.O3(i),H.K(h,[L.Gp]),H.K([],[L.F7]),P.F(r,L.e7),new L.PT(),P.z(g),P.z(g))\nW.JE(a,\"webglcontextlost\",g.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",g.gyD(),!1)\nb=P.EF([\"alpha\",u,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],r,null)\nf=C.p1.eW(a,\"webgl\",b)\nif(f==null)f=C.p1.eW(a,\"experimental-webgl\",b)\nif(!J.i(f).$iJo)H.vh(P.PV(\"Failed to get WebGL context.\"))\ng.e=f\nf.enable(3042)\ng.e.disable(2960)\ng.e.disable(2929)\ng.e.disable(2884)\ng.e.pixelStorei(37441,1)\ng.e.blendFunc(1,771)\ng.x=o\no.W9(g)\ng.cx=$.cU=$.cU+1\ng.CH(0)\nreturn g}catch(e){H.Ru(e)\nu=T.oy()\nt=L.dZ\nt=new L.p5(a,a.getContext(\"2d\"),u,C.yK,new L.PT(),P.z(t),P.z(t))\nt.CH(0)\nreturn t}}",
         "type": "RenderContext Function(CanvasElement,StageOptions)"
       },
       "901078366": {
@@ -54434,7 +54431,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yo:function(a){var u,t,s=P.F,r=this.No.Ey(new P.hL(a.clientX,a.clientY,[s])),q=new U.tZ(0,0,[s]),p=this.Fo(r.a,r.b)\np.TK(r,q)\ns=q.a\nu=q.b\nt=a.shiftKey;(a&&C.Kb).gOW(a)\nC.Kb.gNC(a)\np.H2(0,new R.OK(!1,s,u,t,\"mouseWheel\",!0))}\np(o,\"gUm\",\"Yo\",23)",
+        "code": "Yo:function(a){var u,t,s=P.B,r=this.No.Ey(new P.hL(a.clientX,a.clientY,[s])),q=new U.tZ(0,0,[s]),p=this.Fo(r.a,r.b)\np.TK(r,q)\ns=q.a\nu=q.b\nt=a.shiftKey;(a&&C.Kb).gOW(a)\nC.Kb.gNC(a)\np.H2(0,new R.OK(!1,s,u,t,\"mouseWheel\",!0))}\np(o,\"gUm\",\"Yo\",23)",
         "type": "void Function(WheelEvent)"
       },
       "911633748": {
@@ -55357,7 +55354,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var u,t,s,r\ntry{s=H.Wp()\nthrow H.B(s)}catch(r){u=H.Ru(r)\nt=H.ts(r)\nthis.a.D6(u,t)}}",
+        "code": "$0:function(){var u,t,s,r\ntry{s=H.Wp()\nthrow H.c(s)}catch(r){u=H.Ru(r)\nt=H.ts(r)\nthis.a.D6(u,t)}}",
         "type": "Null Function()"
       },
       "932957023": {
@@ -56067,7 +56064,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 1122,
+        "size": 1120,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -56103,7 +56100,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var u,t,s,r=\"TextureAtlas\",q=b.oJ,p=q.RY(c,0.5),o=p.gtV(p)\no.a.HQ(o,9).d=0\np.f=new E.XG(b,c)\nE.z6()\np=$.fF()\no=p.b\nnew P.u8(o,[H.Kp(o,0)]).yI(new E.S5())\np.a=!0\nu=window.location.hash==null?\"7\":window.location.hash\nu.toString\nt=H.Hp(H.ys(u,\"#\",\"\"),null)\nif(t==null)t=7\ns=C.CD.yu(t*t*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\np=P.q\np=new Y.Yy(b,a,P.Fl(N.cw,P.KN),t,t,s,new M.HB(P.x2(!1,null),P.Fl(p,p)))\np.p8()\nH.G(a.n9(r,\"opaque\"),\"$ivx\")\nH.G(a.n9(r,\"static\"),\"$ivx\")\no=U.kZ(p)\no.sVR(0,0)\np.ch=o\nb.bS(o)\np=q.RY(p.ch,0.5)\np=p.gtV(p)\np.a.HQ(p,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.UM(),!1)\np=J.qF(document.querySelector(\"#popup\"))\nW.JE(p.a,p.b,E.o9(),!1)\np=$.KP()\np.toString\nnew P.u8(p,[H.Kp(p,0)]).yI(new E.C8())}",
+        "code": "TI:function(a,b,c){var u,t,s,r=\"TextureAtlas\",q=b.oJ,p=q.RY(c,0.5),o=p.gtV(p)\no.a.HQ(o,9).d=0\np.f=new E.XG(b,c)\nE.z6()\np=$.fF()\no=p.b\nnew P.u8(o,[H.Kp(o,0)]).yI(new E.S5())\np.a=!0\nu=window.location.hash==null?\"7\":window.location.hash\nu.toString\nt=H.Hp(H.ys(u,\"#\",\"\"),null)\nif(t==null)t=7\ns=C.CD.yu(t*t*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\np=P.q\np=new Y.Yy(b,a,P.F(N.cw,P.KN),t,t,s,new M.HB(P.x2(!1,null),P.F(p,p)))\np.p8()\nH.G(a.n9(r,\"opaque\"),\"$ivx\")\nH.G(a.n9(r,\"static\"),\"$ivx\")\no=U.kZ(p)\no.sVR(0,0)\np.ch=o\nb.bS(o)\np=q.RY(p.ch,0.5)\np=p.gtV(p)\np.a.HQ(p,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.UM(),!1)\np=J.qF(document.querySelector(\"#popup\"))\nW.JE(p.a,p.b,E.o9(),!1)\np=$.KP()\np.toString\nnew P.u8(p,[H.Kp(p,0)]).yI(new E.C8())}",
         "type": "void Function(ResourceManager,Stage,Sprite)"
       },
       "950377748": {
@@ -56346,7 +56343,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nh:function(a,a0){var u=0,t=P.I(E.Me),s,r=2,q,p=[],o,n,m,l,k,j,i,h,g,f,e,d,c,b\nvar $async$Nh=P.M(function(a1,a2){if(a1===1){q=a2\nu=r}while(true)switch(u){case 0:e=a0.hz(a)\nd=$.Y6()\nc=new T.XF(\"Error loading sound.\",H.K([],[P.Ge]))\ni=e.length,h=0\ncase 3:if(!(h<e.length)){u=5\nbreak}o=e[h]\nr=7\nu=10\nreturn P.j(W.lt(o,null,\"arraybuffer\",null),$async$Nh)\ncase 10:n=a2\nm=H.G(W.Z9(n.response),\"$iI2\")\nu=11\nreturn P.j(J.R7(d,m),$async$Nh)\ncase 11:l=a2\ng=new E.CI(l)\nE.A2()\ns=g\nu=1\nbreak\nr=2\nu=9\nbreak\ncase 7:r=6\nb=q\nk=H.Ru(b)\nj=new T.Dy(\"Failed to load \"+H.d(o),k)\nc.b.push(j)\nu=9\nbreak\ncase 6:u=2\nbreak\ncase 9:case 4:e.length===i||(0,H.lk)(e),++h\nu=3\nbreak\ncase 5:E.A2()\ni=new P.vs($.X3,[E.Me])\ni.Ds(new E.RX())\ns=i\nu=1\nbreak\ncase 1:return P.k(s,t)\ncase 2:return P.H(q,t)}})\nreturn P.e($async$Nh,t)}",
+        "code": "Nh:function(a,a0){var u=0,t=P.I(E.Me),s,r=2,q,p=[],o,n,m,l,k,j,i,h,g,f,e,d,c,b\nvar $async$Nh=P.M(function(a1,a2){if(a1===1){q=a2\nu=r}while(true)switch(u){case 0:e=a0.hz(a)\nd=$.Y6()\nc=new T.XF(\"Error loading sound.\",H.K([],[P.Ge]))\ni=e.length,h=0\ncase 3:if(!(h<e.length)){u=5\nbreak}o=e[h]\nr=7\nu=10\nreturn P.j(W.lt(o,null,\"arraybuffer\",null),$async$Nh)\ncase 10:n=a2\nm=H.G(W.Z9(n.response),\"$iI2\")\nu=11\nreturn P.j(J.R7(d,m),$async$Nh)\ncase 11:l=a2\ng=new E.CI(l)\nE.A2()\ns=g\nu=1\nbreak\nr=2\nu=9\nbreak\ncase 7:r=6\nb=q\nk=H.Ru(b)\nj=new T.Dy(\"Failed to load \"+H.d(o),k)\nc.b.push(j)\nu=9\nbreak\ncase 6:u=2\nbreak\ncase 9:case 4:e.length===i||(0,H.lk)(e),++h\nu=3\nbreak\ncase 5:E.A2()\ni=new P.vs($.X3,[E.Me])\ni.Ds(new E.RX())\ns=i\nu=1\nbreak\ncase 1:return P.k(s,t)\ncase 2:return P.x(q,t)}})\nreturn P.e($async$Nh,t)}",
         "type": "Future<Sound> Function(String,[SoundLoadOptions])"
       },
       "953564733": {
@@ -56832,7 +56829,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ys:function(a,b,c){var u\nif(typeof b===\"string\")return H.nM(a,b,c)\nif(b instanceof H.VR){u=b.gHc()\nu.lastIndex=0\nreturn a.replace(u,H.A4(c))}throw H.B(\"String.replaceAll(Pattern) UNIMPLEMENTED\")}",
+        "code": "ys:function(a,b,c){var u\nif(typeof b===\"string\")return H.nM(a,b,c)\nif(b instanceof H.VR){u=b.gHc()\nu.lastIndex=0\nreturn a.replace(u,H.A4(c))}throw H.c(\"String.replaceAll(Pattern) UNIMPLEMENTED\")}",
         "type": "dynamic Function(dynamic,dynamic,dynamic)"
       },
       "962801254": {
@@ -57120,7 +57117,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "k1:function(a,b){if(a<0)throw H.B(P.TE(a,0,null,b,null))}",
+        "code": "k1:function(a,b){if(a<0)throw H.c(P.TE(a,0,null,b,null))}",
         "type": "void Function(int,[String,String])"
       },
       "966941645": {
@@ -57834,7 +57831,7 @@
         "id": "function/987508329",
         "kind": "function",
         "name": "mapToString",
-        "size": 358,
+        "size": 359,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/748502014",
         "children": [
@@ -57857,7 +57854,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "nO:function(a){var u,t={}\nif(P.hB(a))return\"{...}\"\nu=new P.C(\"\")\ntry{$.xg.push(a)\nu.a+=\"{\"\nt.a=!0\nJ.hE(a,new P.ra(t,u))\nu.a+=\"}\"}finally{$.xg.pop()}t=u.a\nreturn t.charCodeAt(0)==0?t:t}",
+        "code": "nO:function(a){var u,t={}\nif(P.hB(a))return\"{...}\"\nu=new P.Rn(\"\")\ntry{$.xg.push(a)\nu.a+=\"{\"\nt.a=!0\nJ.hE(a,new P.ra(t,u))\nu.a+=\"}\"}finally{$.xg.pop()}t=u.a\nreturn t.charCodeAt(0)==0?t:t}",
         "type": "String Function(Map<dynamic,dynamic>)"
       },
       "988692765": {
@@ -57957,7 +57954,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zv:function(a,b){var u=this,t=u.gAs()+b\nif(b<0||t>=u.gKN())throw H.B(P.Cf(b,u,\"index\",null,null))\nreturn J.GA(u.a,t)}",
+        "code": "Zv:function(a,b){var u=this,t=u.gAs()+b\nif(b<0||t>=u.gKN())throw H.c(P.Cf(b,u,\"index\",null,null))\nreturn J.GA(u.a,t)}",
         "type": "SubListIterable.E Function(int)"
       },
       "991909617": {
@@ -58142,7 +58139,7 @@
         "id": "function/993503373",
         "kind": "function",
         "name": "call",
-        "size": 793,
+        "size": 791,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/34649069",
         "children": [],
@@ -58163,7 +58160,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var u,t,s,r,q=this.a.f,p=a.ZO\nif(p!==C.vh)p=p===C.lU\nelse p=!0\nif(p){u=new P.P1()\nif($.N8==null){H.w4()\n$.N8=$.zI}p=$.lE.$0()\nu.a=p-0\nu.b=null\na.Vp()\nR.CL(a.oM,$.HE())\na.Jq.CH(0)\np=a.Jq\nt=p.a\nt.c=t.b=t.a=0\np.Sl(0,a.O7)\na.Xs.Z0(0,a.M4)\nV.VC(q)\na.Xs.b=V.VC(this.b)\na.Xs.zs(a)\na.Xs.c.fZ(0)\nq=a.fg=!1\ns=a.Jq.a\nr=u.gTt()\na.x9=a.x9*0.75+s.a*0.25\na.wP=a.wP*0.75+s.b*0.25\na.vv=a.vv*0.75+s.c*0.25\na.Gt=a.Gt*0.95+r*0.05\np=a.r3\nif(p.cx){p.toString\nq=!0}if(q){C.Nm.skF(p.r2,0)\np.ry=p.rx=0\na.r3.Ch(0,\"FRAMETIME\"+C.xB.th(C.jn.bu(C.CD.zQ(a.Gt)),6))\na.r3.Ch(0,\"DRAWCALLS\"+C.xB.th(C.jn.bu(C.CD.zQ(a.x9)),6))\na.r3.Ch(0,\"VERTICES\"+C.xB.th(C.jn.bu(C.CD.zQ(a.wP)),7))\na.r3.Ch(0,\"INDICES\"+C.xB.th(C.jn.bu(C.CD.zQ(a.vv)),8))\na.Xs.Z0(0,a.V6)\na.Xs.zs(a.r3)\na.Xs.c.fZ(0)}}if(a.ZO===C.lU)a.ZO=C.Ed\nreturn}",
+        "code": "$1:function(a){var u,t,s,r,q=this.a.f,p=a.ZO\nif(p!==C.vh)p=p===C.lU\nelse p=!0\nif(p){u=new P.P1()\nif($.N8==null){H.w4()\n$.N8=$.zI}p=$.lE.$0()\nu.a=p-0\nu.b=null\na.Vp()\nR.CL(a.oM,$.Wx)\na.Jq.CH(0)\np=a.Jq\nt=p.a\nt.c=t.b=t.a=0\np.Sl(0,a.O7)\na.Xs.Z0(0,a.M4)\nV.VC(q)\na.Xs.b=V.VC(this.b)\na.Xs.zs(a)\na.Xs.c.fZ(0)\nq=a.fg=!1\ns=a.Jq.a\nr=u.gTt()\na.x9=a.x9*0.75+s.a*0.25\na.wP=a.wP*0.75+s.b*0.25\na.vv=a.vv*0.75+s.c*0.25\na.Gt=a.Gt*0.95+r*0.05\np=a.r3\nif(p.cx){p.toString\nq=!0}if(q){C.Nm.skF(p.r2,0)\np.ry=p.rx=0\na.r3.Ch(0,\"FRAMETIME\"+C.xB.th(C.jn.bu(C.CD.zQ(a.Gt)),6))\na.r3.Ch(0,\"DRAWCALLS\"+C.xB.th(C.jn.bu(C.CD.zQ(a.x9)),6))\na.r3.Ch(0,\"VERTICES\"+C.xB.th(C.jn.bu(C.CD.zQ(a.wP)),7))\na.r3.Ch(0,\"INDICES\"+C.xB.th(C.jn.bu(C.CD.zQ(a.vv)),8))\na.Xs.Z0(0,a.V6)\na.Xs.zs(a.r3)\na.Xs.c.fZ(0)}}if(a.ZO===C.lU)a.ZO=C.Ed\nreturn}",
         "type": "void Function(Stage)"
       },
       "993596104": {
@@ -58263,7 +58260,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
-        "code": "VC:function(a){if(typeof a===\"number\")return a\nelse throw H.B(P.xY(\"The supplied value (\"+H.d(a)+\") is not a number.\"))}",
+        "code": "VC:function(a){if(typeof a===\"number\")return a\nelse throw H.c(P.xY(\"The supplied value (\"+H.d(a)+\") is not a number.\"))}",
         "type": "num Function(Object)"
       },
       "994971500": {
@@ -58296,7 +58293,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TK:function(a,b){var u=!!b.$itZ?b:new U.tZ(0,0,[P.F])\nu.a=a.a\nu.b=a.b\nthis.ip(u)\nreturn u}",
+        "code": "TK:function(a,b){var u=!!b.$itZ?b:new U.tZ(0,0,[P.B])\nu.a=a.a\nu.b=a.b\nthis.ip(u)\nreturn u}",
         "type": "Point<num> Function(Point<num>,[Point<num>])"
       },
       "995182644": {
@@ -58451,7 +58448,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Au:function(a,b){var u,t=this.rS.Qt,s=t.a,r=t.c[a+b*s]\ns=H.G(H.G(r.fy,\"$iic\").fy,\"$iMp\").Qt.e\nt=r.Qt\nu=r.lN\ns=s.b\ns=s.c[t+u*s.a]\nif(s===C.Bl){this.Qt.e.rY(a,b,!0)\nr.Iv()\nR.iu(\"flag\")\nreturn!0}else if(s===C.No){this.Qt.e.rY(a,b,!1)\nr.Iv()\nR.iu(\"unflag\")\nreturn!0}return!1}",
+        "code": "Au:function(a,b){var u,t=this.rS.Qt,s=t.a,r=t.c[a+b*s]\ns=H.G(H.G(r.fy,\"$iic\").fy,\"$iMp\").Qt.e\nt=r.Qt\nu=r.lN\ns=s.b\ns=s.c[t+u*s.a]\nif(s===C.Bl){this.Qt.e.rY(a,b,!0)\nr.Iv()\nR.jr(\"flag\")\nreturn!0}else if(s===C.No){this.Qt.e.rY(a,b,!1)\nr.Iv()\nR.jr(\"unflag\")\nreturn!0}return!1}",
         "type": "bool Function(int,int)"
       },
       "999384984": {
@@ -58583,7 +58580,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "O2:function(a,b){if(b<0)throw H.B(H.HY(a,b))\nif(b>=a.length)H.vh(H.HY(a,b))\nreturn a.charCodeAt(b)}",
+        "code": "O2:function(a,b){if(b<0)throw H.c(H.HY(a,b))\nif(b>=a.length)H.vh(H.HY(a,b))\nreturn a.charCodeAt(b)}",
         "type": "int Function(int)"
       },
       "1000720044": {
@@ -58739,7 +58736,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "hu:function(a){var u\nfor(u=this;u!=null;u=u.fy)if(u===a)throw H.B(P.xY(\"An object cannot be added as a child to one of it's children (or children's children, etc.).\"))}",
+        "code": "hu:function(a){var u\nfor(u=this;u!=null;u=u.fy)if(u===a)throw H.c(P.xY(\"An object cannot be added as a child to one of it's children (or children's children, etc.).\"))}",
         "type": "void Function(DisplayObject)"
       },
       "1005324356": {
@@ -59026,7 +59023,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WH:function(a,b){if(b>=a.length||!1)throw H.B(H.HY(a,b))\nreturn a[b]}",
+        "code": "WH:function(a,b){if(b>=a.length||!1)throw H.c(H.HY(a,b))\nreturn a[b]}",
         "type": "String Function(int)"
       },
       "1008544093": {
@@ -59424,7 +59421,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "tt:function(a,b){var u,t,s,r,q=this,p=q.b,o=q.a,n=J.U6(o),m=n.gkF(o),l=m-p\nif(l<0)l=0\nu=q.$ti\nif(b){t=H.K([],u)\nC.Nm.skF(t,l)}else{s=new Array(l)\ns.fixed$length=Array\nt=H.K(s,u)}for(r=0;r<l;++r){t[r]=n.Zv(o,p+r)\nif(n.gkF(o)<m)throw H.B(P.a4(q))}return t}\nbr:function(a){return this.tt(a,!0)}",
+        "code": "tt:function(a,b){var u,t,s,r,q=this,p=q.b,o=q.a,n=J.U6(o),m=n.gkF(o),l=m-p\nif(l<0)l=0\nu=q.$ti\nif(b){t=H.K([],u)\nC.Nm.skF(t,l)}else{s=new Array(l)\ns.fixed$length=Array\nt=H.K(s,u)}for(r=0;r<l;++r){t[r]=n.Zv(o,p+r)\nif(n.gkF(o)<m)throw H.c(P.a4(q))}return t}\nbr:function(a){return this.tt(a,!0)}",
         "type": "List<SubListIterable.E> Function({bool growable})"
       },
       "1016753694": {
@@ -59717,7 +59714,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "VF:function(){var u,t=this,s=t.a,r=s.length\nif(t.b!==r)throw H.B(H.lk(s))\nu=t.c\nif(u>=r){t.d=null\nreturn!1}t.d=s[u]\nt.c=u+1\nreturn!0}",
+        "code": "VF:function(){var u,t=this,s=t.a,r=s.length\nif(t.b!==r)throw H.c(H.lk(s))\nu=t.c\nif(u>=r){t.d=null\nreturn!1}t.d=s[u]\nt.c=u+1\nreturn!0}",
         "type": "bool Function()"
       },
       "1028646913": {
@@ -59926,7 +59923,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "w3:function(a){var u,t,s,r,q=$.NF.$1(a),p=$.nw[q]\nif(p!=null){Object.defineProperty(a,v.dispatchPropertyName,{value:p,enumerable:false,writable:true,configurable:true})\nreturn p.i}u=$.vv[q]\nif(u!=null)return u\nt=v.interceptorsByTag[q]\nif(t==null){q=$.TX.$2(a,q)\nif(q!=null){p=$.nw[q]\nif(p!=null){Object.defineProperty(a,v.dispatchPropertyName,{value:p,enumerable:false,writable:true,configurable:true})\nreturn p.i}u=$.vv[q]\nif(u!=null)return u\nt=v.interceptorsByTag[q]}}if(t==null)return\nu=t.prototype\ns=q[0]\nif(s===\"!\"){p=H.Va(u)\n$.nw[q]=p\nObject.defineProperty(a,v.dispatchPropertyName,{value:p,enumerable:false,writable:true,configurable:true})\nreturn p.i}if(s===\"~\"){$.vv[q]=u\nreturn u}if(s===\"-\"){r=H.Va(u)\nObject.defineProperty(Object.getPrototypeOf(a),v.dispatchPropertyName,{value:r,enumerable:false,writable:true,configurable:true})\nreturn r.i}if(s===\"+\")return H.Lc(a,u)\nif(s===\"*\")throw H.B(P.SY(q))\nif(v.leafTags[q]===true){r=H.Va(u)\nObject.defineProperty(Object.getPrototypeOf(a),v.dispatchPropertyName,{value:r,enumerable:false,writable:true,configurable:true})\nreturn r.i}else return H.Lc(a,u)}",
+        "code": "w3:function(a){var u,t,s,r,q=$.NF.$1(a),p=$.nw[q]\nif(p!=null){Object.defineProperty(a,v.dispatchPropertyName,{value:p,enumerable:false,writable:true,configurable:true})\nreturn p.i}u=$.vv[q]\nif(u!=null)return u\nt=v.interceptorsByTag[q]\nif(t==null){q=$.TX.$2(a,q)\nif(q!=null){p=$.nw[q]\nif(p!=null){Object.defineProperty(a,v.dispatchPropertyName,{value:p,enumerable:false,writable:true,configurable:true})\nreturn p.i}u=$.vv[q]\nif(u!=null)return u\nt=v.interceptorsByTag[q]}}if(t==null)return\nu=t.prototype\ns=q[0]\nif(s===\"!\"){p=H.Va(u)\n$.nw[q]=p\nObject.defineProperty(a,v.dispatchPropertyName,{value:p,enumerable:false,writable:true,configurable:true})\nreturn p.i}if(s===\"~\"){$.vv[q]=u\nreturn u}if(s===\"-\"){r=H.Va(u)\nObject.defineProperty(Object.getPrototypeOf(a),v.dispatchPropertyName,{value:r,enumerable:false,writable:true,configurable:true})\nreturn r.i}if(s===\"+\")return H.Lc(a,u)\nif(s===\"*\")throw H.c(P.SY(q))\nif(v.leafTags[q]===true){r=H.Va(u)\nObject.defineProperty(Object.getPrototypeOf(a),v.dispatchPropertyName,{value:r,enumerable:false,writable:true,configurable:true})\nreturn r.i}else return H.Lc(a,u)}",
         "type": "dynamic Function(dynamic)"
       },
       "1031889892": {
@@ -59948,7 +59945,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gfL:function(){var u=0,t=P.I(P.KN),s,r=this\nvar $async$gfL=P.M(function(a,b){if(a===1)return P.H(b,t)\nwhile(true)switch(u){case 0:s=r.d.RZ(\"w\"+r.a+\"-h\"+r.b+\"-m\"+r.c,null)\nu=1\nbreak\ncase 1:return P.k(s,t)}})\nreturn P.e($async$gfL,t)}",
+        "code": "gfL:function(){var u=0,t=P.I(P.KN),s,r=this\nvar $async$gfL=P.M(function(a,b){if(a===1)return P.x(b,t)\nwhile(true)switch(u){case 0:s=r.d.RZ(\"w\"+r.a+\"-h\"+r.b+\"-m\"+r.c,null)\nu=1\nbreak\ncase 1:return P.k(s,t)}})\nreturn P.e($async$gfL,t)}",
         "type": "Future<int> Function()"
       },
       "1033514292": {
@@ -60135,7 +60132,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aN:function(a,b){var u,t=a.length\nfor(u=0;u<t;++u){b.$1(a[u])\nif(a.length!==t)throw H.B(P.a4(a))}}",
+        "code": "aN:function(a,b){var u,t=a.length\nfor(u=0;u<t;++u){b.$1(a[u])\nif(a.length!==t)throw H.c(P.a4(a))}}",
         "type": "void Function(void Function(JSArray.E))"
       },
       "1041328554": {
@@ -60372,7 +60369,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
-        "code": "Fo:function(a,b){var u=this.tJ(a,b)\nreturn u!=null?u:this}",
+        "code": "Fo:function(a,b){var u=this.tJ(a,b)\nreturn u==null?this:u}",
         "type": "DisplayObject Function(num,num)"
       },
       "1045267964": {
@@ -60515,7 +60512,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "VF:function(){var u,t=this,s=t.a,r=J.U6(s),q=r.gkF(s)\nif(t.b!==q)throw H.B(P.a4(s))\nu=t.c\nif(u>=q){t.d=null\nreturn!1}t.d=r.Zv(s,u);++t.c\nreturn!0}",
+        "code": "VF:function(){var u,t=this,s=t.a,r=J.U6(s),q=r.gkF(s)\nif(t.b!==q)throw H.c(P.a4(s))\nu=t.c\nif(u>=q){t.d=null\nreturn!1}t.d=r.Zv(s,u);++t.c\nreturn!0}",
         "type": "bool Function()"
       },
       "1047811124": {
@@ -60543,7 +60540,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bf:function(a){var u=this,t=a.createProgram(),s=u.f9(a,u.gRr(),35633),r=u.f9(a,u.gE0(),35632)\na.attachShader(t,s)\na.attachShader(t,r)\na.linkProgram(t)\nif(a.getProgramParameter(t,35714)===!0)return t\nthrow H.B(P.PV(a.isContextLost()?\"ContextLost\":a.getProgramInfoLog(t)))}",
+        "code": "bf:function(a){var u=this,t=a.createProgram(),s=u.f9(a,u.gRr(),35633),r=u.f9(a,u.gE0(),35632)\na.attachShader(t,s)\na.attachShader(t,r)\na.linkProgram(t)\nif(a.getProgramParameter(t,35714)===!0)return t\nthrow H.c(P.PV(a.isContextLost()?\"ContextLost\":a.getProgramInfoLog(t)))}",
         "type": "Program Function(RenderingContext)"
       },
       "1047835519": {
@@ -61326,7 +61323,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Lg:function(a){var u=H.IH(a)\nif(u!=null)return u\nthrow H.B(P.rr(\"Invalid double\",a))}",
+        "code": "Lg:function(a){var u=H.IH(a)\nif(u!=null)return u\nthrow H.c(P.rr(\"Invalid double\",a))}",
         "type": "double Function(String,[double Function(String)])"
       },
       "1069819234": {
@@ -61774,18 +61771,6 @@
         "inferredType": "[exact=_AnimatableLink]",
         "code": "",
         "type": "_AnimatableLink"
-      },
-      "34449733": {
-        "id": "field/34449733",
-        "kind": "field",
-        "name": "_startTime",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/997136026",
-        "children": [],
-        "inferredType": "[exact=JSUInt31]",
-        "code": "",
-        "type": "num"
       },
       "34826663": {
         "id": "field/34826663",
@@ -62379,12 +62364,12 @@
         "id": "field/78985547",
         "kind": "field",
         "name": "_renderSubscriptions",
-        "size": 56,
+        "size": 27,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "children": [],
-        "inferredType": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
-        "code": "u($,\"Ip\",\"HE\",function(){return H.K([],[[R.hw,R.b5]])})",
+        "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+        "code": "$.Wx=H.K([],[[R.hw,R.b5]])",
         "type": "List<EventStreamSubscription<RenderEvent>>"
       },
       "79346280": {
@@ -62463,12 +62448,12 @@
         "id": "field/84936445",
         "kind": "field",
         "name": "_globalFrameListeners",
-        "size": 35,
+        "size": 7,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "children": [],
-        "inferredType": "Container([null|exact=JSExtendableArray], element: [subtype=Function], length: null)",
-        "code": "u($,\"CY\",\"x\",function(){return[]})",
+        "inferredType": "Container([exact=JSExtendableArray], element: [subtype=Function], length: null)",
+        "code": "$.C=[]",
         "type": "List<dynamic>"
       },
       "86854685": {
@@ -63103,7 +63088,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/343789814",
         "children": [],
-        "inferredType": "[subclass=JsLinkedHashMap]",
+        "inferredType": "Map([subclass=JsLinkedHashMap], key: [null|exact=JSString], value: [null|exact=UniformLocation])",
         "code": "",
         "type": "Map<String,UniformLocation>"
       },
@@ -63248,18 +63233,6 @@
         "parent": "class/352522771",
         "children": [],
         "inferredType": "[subclass=JSNumber]",
-        "code": "",
-        "type": "num"
-      },
-      "158386993": {
-        "id": "field/158386993",
-        "kind": "field",
-        "name": "_duration",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/997136026",
-        "children": [],
-        "inferredType": "[exact=JSUInt31]",
         "code": "",
         "type": "num"
       },
@@ -65059,7 +65032,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/99550178",
         "children": [],
-        "inferredType": "[null|subclass=JsLinkedHashMap]",
+        "inferredType": "Map([null|subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|exact=EventStream])",
         "code": "",
         "type": "Map<String,EventStream<Event>>"
       },
@@ -67719,12 +67692,12 @@
         "id": "field/551971461",
         "kind": "field",
         "name": "supportedTypes",
-        "size": 498,
+        "size": 496,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/483097323",
         "children": [],
         "inferredType": "Union([exact=JSFixedArray], [null|exact=JSExtendableArray])",
-        "code": "u($,\"Ni\",\"JJ\",function(){var t=P.q,s=H.K([],[t]),r=W.Lb(),q=H.K([\"maybe\",\"probably\"],[t])\nif(C.Nm.tg(q,r.canPlayType(\"audio/ogg; codecs=opus\")))s.push(\"opus\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/mpeg\")))s.push(\"mp3\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/mp4\")))s.push(\"mp4\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/ogg\")))s.push(\"ogg\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/ac3\")))s.push(\"ac3\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/wav\")))s.push(\"wav\")\nP.JS(\"StageXL audio types   : \"+H.d(s))\nreturn C.Nm.tt(s,!1)})",
+        "code": "u($,\"Ni\",\"JJ\",function(){var t=[P.q],s=H.K([],t),r=W.Lb(),q=H.K([\"maybe\",\"probably\"],t)\nif(C.Nm.tg(q,r.canPlayType(\"audio/ogg; codecs=opus\")))s.push(\"opus\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/mpeg\")))s.push(\"mp3\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/mp4\")))s.push(\"mp4\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/ogg\")))s.push(\"ogg\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/ac3\")))s.push(\"ac3\")\nif(C.Nm.tg(q,r.canPlayType(\"audio/wav\")))s.push(\"wav\")\nP.JS(\"StageXL audio types   : \"+H.d(s))\nreturn C.Nm.tt(s,!1)})",
         "type": "List<String>"
       },
       "555172581": {
@@ -67759,7 +67732,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/343789814",
         "children": [],
-        "inferredType": "[subclass=JsLinkedHashMap]",
+        "inferredType": "Map([subclass=JsLinkedHashMap], key: [null|exact=JSString], value: [null|subclass=JSInt])",
         "code": "",
         "type": "Map<String,int>"
       },
@@ -69044,7 +69017,7 @@
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|exact=JSBool]",
-        "code": "u($,\"Tc\",\"PR\",function(){return Q.cz()})",
+        "code": "u($,\"iu\",\"PR\",function(){return Q.cz()})",
         "type": "bool"
       },
       "681592204": {
@@ -69283,7 +69256,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/585024760",
         "children": [],
-        "inferredType": "[subclass=JsLinkedHashMap]",
+        "inferredType": "Dictionary([subclass=JsLinkedHashMap], key: [empty], value: [null], map: {})",
         "code": "",
         "type": "Map<String,RenderProgram>"
       },
@@ -69319,7 +69292,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
-        "inferredType": "[subclass=JsLinkedHashMap]",
+        "inferredType": "Map([subclass=JsLinkedHashMap], key: [null|subclass=JSInt], value: [null|subclass=Object])",
         "code": "",
         "type": "Map<int,_TouchPoint>"
       },
@@ -69463,7 +69436,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/419917486",
         "children": [],
-        "inferredType": "[subclass=JsLinkedHashMap]",
+        "inferredType": "Map([subclass=JsLinkedHashMap], key: [null|exact=AudioElement], value: [null|exact=AudioElementSoundChannel])",
         "code": "",
         "type": "Map<AudioElement,AudioElementSoundChannel>"
       },
@@ -69507,12 +69480,12 @@
         "id": "field/727706462",
         "kind": "field",
         "name": "_cursorDatas",
-        "size": 49,
+        "size": 19,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/230234314",
         "children": [],
-        "inferredType": "[null|subclass=JsLinkedHashMap]",
-        "code": "u($,\"br\",\"YW\",function(){return H.YR(P.q,Q.JW)})",
+        "inferredType": "Dictionary([subclass=JsLinkedHashMap], key: [empty], value: [null], map: {})",
+        "code": "$.br=P.F(P.q,Q.JW)",
         "type": "Map<String,MouseCursorData>"
       },
       "727752212": {
@@ -70287,12 +70260,12 @@
         "id": "field/796118848",
         "kind": "field",
         "name": "_enterFrameSubscriptions",
-        "size": 55,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "children": [],
-        "inferredType": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
-        "code": "u($,\"Jp\",\"RR\",function(){return H.K([],[[R.hw,R.y]])})",
+        "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+        "code": "$.Jp=H.K([],[[R.hw,R.y]])",
         "type": "List<EventStreamSubscription<EnterFrameEvent>>"
       },
       "796510762": {
@@ -70347,12 +70320,12 @@
         "id": "field/799184287",
         "kind": "field",
         "name": "_exitFrameSubscriptions",
-        "size": 55,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "children": [],
-        "inferredType": "Container([null|exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
-        "code": "u($,\"Af\",\"jr\",function(){return H.K([],[[R.hw,R.v]])})",
+        "inferredType": "Container([exact=JSExtendableArray], element: [exact=EventStreamSubscription], length: null)",
+        "code": "$.Af=H.K([],[[R.hw,R.v]])",
         "type": "List<EventStreamSubscription<ExitFrameEvent>>"
       },
       "802466739": {
@@ -72163,7 +72136,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1063402080",
         "children": [],
-        "inferredType": "[subclass=JsLinkedHashMap]",
+        "inferredType": "Map([subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|exact=ResourceManagerResource])",
         "code": "",
         "type": "Map<String,ResourceManagerResource>"
       },
@@ -72711,12 +72684,12 @@
         "id": "field/1018177357",
         "kind": "field",
         "name": "_fontStyleMetrics",
-        "size": 49,
+        "size": 19,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "children": [],
-        "inferredType": "[null|subclass=JsLinkedHashMap]",
-        "code": "u($,\"E1\",\"pI\",function(){return H.YR(P.q,Y.Xv)})",
+        "inferredType": "Map([subclass=JsLinkedHashMap], key: [exact=JSString], value: [null|subclass=Object])",
+        "code": "$.E1=P.F(P.q,Y.Xv)",
         "type": "Map<String,_FontStyleMetrics>"
       },
       "1019067305": {
@@ -72958,18 +72931,6 @@
         "inferredType": "[subclass=JSNumber]",
         "code": "",
         "type": "double"
-      },
-      "1042887776": {
-        "id": "field/1042887776",
-        "kind": "field",
-        "name": "_position",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/997136026",
-        "children": [],
-        "inferredType": "[exact=JSUInt31]",
-        "code": "",
-        "type": "num"
       },
       "1043579345": {
         "id": "field/1043579345",
@@ -73361,14 +73322,6 @@
         "outputUnit": "outputUnit/669725655",
         "code": "C.Yq=function() {\n  var toStringFunction = Object.prototype.toString;\n  function getTag(o) {\n    var s = toStringFunction.call(o);\n    return s.substring(8, s.length - 1);\n  }\n  function getUnknownTag(object, tag) {\n    if (/^HTML[A-Z].*Element$/.test(tag)) {\n      var name = toStringFunction.call(object);\n      if (name == \"[object Object]\") return null;\n      return \"HTMLElement\";\n    }\n  }\n  function getUnknownTagGenericBrowser(object, tag) {\n    if (self.HTMLElement && object instanceof HTMLElement) return \"HTMLElement\";\n    return getUnknownTag(object, tag);\n  }\n  function prototypeForTag(tag) {\n    if (typeof window == \"undefined\") return null;\n    if (typeof window[tag] == \"undefined\") return null;\n    var constructor = window[tag];\n    if (typeof constructor != \"function\") return null;\n    return constructor.prototype;\n  }\n  function discriminator(tag) { return null; }\n  var isBrowser = typeof navigator == \"object\";\n  return {\n    getTag: getTag,\n    getUnknownTag: isBrowser ? getUnknownTagGenericBrowser : getUnknownTag,\n    prototypeForTag: prototypeForTag,\n    discriminator: discriminator };\n}"
       },
-      "189868807": {
-        "id": "constant/189868807",
-        "kind": "constant",
-        "name": null,
-        "size": 15,
-        "outputUnit": "outputUnit/669725655",
-        "code": "C.yK=new L.GK()"
-      },
       "235533672": {
         "id": "constant/235533672",
         "kind": "constant",
@@ -73440,6 +73393,14 @@
         "size": 37,
         "outputUnit": "outputUnit/669725655",
         "code": "C.lU=new A.dG(\"StageRenderMode.ONCE\")"
+      },
+      "310539608": {
+        "id": "constant/310539608",
+        "kind": "constant",
+        "name": null,
+        "size": 15,
+        "outputUnit": "outputUnit/669725655",
+        "code": "C.yK=new L.mf()"
       },
       "323259411": {
         "id": "constant/323259411",
@@ -73929,7 +73890,7 @@
         "id": "closure/34649069",
         "kind": "closure",
         "name": "RenderLoop_advanceTime_closure",
-        "size": 853,
+        "size": 851,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/749763418",
         "function": "function/993503373"
@@ -74244,7 +74205,7 @@
         "id": "closure/466649304",
         "kind": "closure",
         "name": "_globalFrameRequest_closure",
-        "size": 221,
+        "size": 219,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/70353884",
         "function": "function/629904327"
@@ -74882,12 +74843,6 @@
         "mask": null
       }
     ],
-    "field/34449733": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/35879789": [
       {
         "id": "function/788412943",
@@ -75074,10 +75029,6 @@
       {
         "id": "function/478451597",
         "mask": null
-      },
-      {
-        "id": "function/788412943",
-        "mask": null
       }
     ],
     "field/79943715": [
@@ -75107,12 +75058,6 @@
       }
     ],
     "field/82947652": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/84936445": [
       {
         "id": "function/788412943",
         "mask": null
@@ -75351,12 +75296,6 @@
       }
     ],
     "field/157441590": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/158386993": [
       {
         "id": "function/788412943",
         "mask": null
@@ -76914,11 +76853,7 @@
     ],
     "field/727706462": [
       {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
+        "id": "function/116599339",
         "mask": null
       }
     ],
@@ -77094,10 +77029,6 @@
       {
         "id": "function/478451597",
         "mask": null
-      },
-      {
-        "id": "function/788412943",
-        "mask": null
       }
     ],
     "field/798143281": [
@@ -77109,10 +77040,6 @@
     "field/799184287": [
       {
         "id": "function/478451597",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
         "mask": null
       }
     ],
@@ -77624,11 +77551,7 @@
     ],
     "field/1018177357": [
       {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
+        "id": "function/116599339",
         "mask": null
       }
     ],
@@ -77685,12 +77608,6 @@
       }
     ],
     "field/1040507814": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/1042887776": [
       {
         "id": "function/788412943",
         "mask": null
@@ -78238,7 +78155,7 @@
         "mask": null
       },
       {
-        "id": "function/123959555",
+        "id": "function/116599339",
         "mask": null
       },
       {
@@ -78294,14 +78211,6 @@
         "mask": null
       },
       {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
         "id": "function/577717062",
         "mask": null
       },
@@ -78319,10 +78228,6 @@
       },
       {
         "id": "function/681882543",
-        "mask": null
-      },
-      {
-        "id": "function/687991937",
         "mask": null
       },
       {
@@ -78367,11 +78272,11 @@
       },
       {
         "id": "function/958421942",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/958421942",
-        "mask": "inlined"
+        "mask": null
       }
     ],
     "function/14519227": [
@@ -89788,14 +89693,6 @@
       {
         "id": "function/528709086",
         "mask": "inlined"
-      },
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
       }
     ],
     "function/308200592": [
@@ -90781,14 +90678,6 @@
       },
       {
         "id": "function/528709086",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/573775196",
         "mask": "inlined"
       }
     ],
@@ -95524,6 +95413,10 @@
         "mask": null
       },
       {
+        "id": "field/446420132",
+        "mask": null
+      },
+      {
         "id": "function/1007657427",
         "mask": null
       }
@@ -96270,12 +96163,6 @@
       {
         "id": "function/985926244",
         "mask": null
-      }
-    ],
-    "function/455947814": [
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
       }
     ],
     "function/456567103": [
@@ -100035,58 +99922,6 @@
       },
       {
         "id": "function/123959555",
-        "mask": null
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/123959555",
         "mask": "inlined"
       },
       {
@@ -100095,110 +99930,6 @@
       },
       {
         "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/494583530",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": null
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/687991937",
         "mask": "inlined"
       },
       {
@@ -101342,10 +101073,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
-      {
         "id": "function/784290925",
         "mask": "inlined"
       }
@@ -101587,12 +101314,6 @@
       },
       {
         "id": "function/1014074245",
-        "mask": "inlined"
-      }
-    ],
-    "function/635592143": [
-      {
-        "id": "function/573775196",
         "mask": "inlined"
       }
     ],
@@ -103676,7 +103397,7 @@
         "mask": null
       },
       {
-        "id": "function/123959555",
+        "id": "function/116599339",
         "mask": null
       },
       {
@@ -103724,23 +103445,7 @@
         "mask": null
       },
       {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
-      {
         "id": "function/639148711",
-        "mask": null
-      },
-      {
-        "id": "function/687991937",
         "mask": null
       }
     ],
@@ -104150,7 +103855,7 @@
         "mask": null
       },
       {
-        "id": "function/123959555",
+        "id": "function/116599339",
         "mask": null
       },
       {
@@ -104166,23 +103871,7 @@
         "mask": null
       },
       {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
-      {
         "id": "function/665416673",
-        "mask": null
-      },
-      {
-        "id": "function/687991937",
         "mask": null
       },
       {
@@ -107971,14 +107660,6 @@
       },
       {
         "id": "function/528709086",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/573775196",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/573775196",
         "mask": "inlined"
       }
     ],
@@ -111866,15 +111547,7 @@
         "mask": null
       },
       {
-        "id": "function/123959555",
-        "mask": null
-      },
-      {
-        "id": "function/123959555",
-        "mask": null
-      },
-      {
-        "id": "function/123959555",
+        "id": "function/116599339",
         "mask": null
       },
       {
@@ -111942,18 +111615,6 @@
         "mask": null
       },
       {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
-        "id": "function/494583530",
-        "mask": null
-      },
-      {
         "id": "function/515160018",
         "mask": null
       },
@@ -111986,18 +111647,6 @@
         "mask": null
       },
       {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
-        "id": "function/573775196",
-        "mask": null
-      },
-      {
         "id": "function/577717062",
         "mask": null
       },
@@ -112007,14 +111656,14 @@
       },
       {
         "id": "function/622541814",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/622541814",
-        "mask": null
+        "mask": "inlined"
       },
       {
-        "id": "function/687991937",
+        "id": "function/731989769",
         "mask": null
       },
       {
@@ -112024,10 +111673,6 @@
       {
         "id": "function/731989769",
         "mask": "inlined"
-      },
-      {
-        "id": "function/731989769",
-        "mask": null
       },
       {
         "id": "function/742133204",
@@ -112051,11 +111696,11 @@
       },
       {
         "id": "function/837956997",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/837956997",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/837956997",
@@ -118135,7 +117780,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 214581,
+      "size": 214284,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -118145,11 +117790,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 214581,
+    "size": 214284,
     "dart2jsVersion": "2.8.0-dev.0.0",
-    "compilationMoment": "2019-12-18 19:46:29.030219",
-    "compilationDuration": 3207925,
-    "toJsonDuration": 11000,
+    "compilationMoment": "2019-12-27 15:21:10.167973",
+    "compilationDuration": 3109716,
+    "toJsonDuration": 10000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
