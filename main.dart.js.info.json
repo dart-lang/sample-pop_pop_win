@@ -1112,7 +1112,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacegtYWzn/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceXJkVta/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -117792,9 +117792,9 @@
     "entrypoint": "function/233162298",
     "size": 214284,
     "dart2jsVersion": "2.8.0-dev.0.0",
-    "compilationMoment": "2019-12-27 15:21:10.167973",
-    "compilationDuration": 3109716,
-    "toJsonDuration": 10000,
+    "compilationMoment": "2020-01-06 12:39:38.817877",
+    "compilationDuration": 3812608,
+    "toJsonDuration": 9000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
