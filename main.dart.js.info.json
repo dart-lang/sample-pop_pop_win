@@ -771,7 +771,7 @@
         "id": "library/579882441",
         "kind": "library",
         "name": "rti",
-        "size": 13367,
+        "size": 13296,
         "children": [
           "class/121755874",
           "class/214521760",
@@ -786,6 +786,7 @@
           "function/38537875",
           "function/54584556",
           "function/66145123",
+          "function/76923042",
           "function/77140749",
           "function/83342486",
           "function/89307104",
@@ -819,9 +820,10 @@
           "function/598215859",
           "function/603464342",
           "function/603807818",
-          "function/614790632",
           "function/620456164",
           "function/624647930",
+          "function/638672010",
+          "function/654849933",
           "function/666277254",
           "function/702246006",
           "function/713151216",
@@ -847,7 +849,7 @@
         "id": "library/588515828",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 1114,
+        "size": 1101,
         "children": [
           "class/707091899"
         ],
@@ -1184,7 +1186,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceH7GJDs/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space0OOIsE/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -8145,7 +8147,7 @@
         "id": "class/707091899",
         "kind": "class",
         "name": "Array2d",
-        "size": 825,
+        "size": 812,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/588515828",
         "modifiers": {
@@ -12518,7 +12520,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -13041,7 +13043,7 @@
             "declaredType": "TextFormat"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "sJv:function(a){this.X=Y.Uk(a.a,a.b,a.c,a.Q,!1,a.cy,a.f,a.dy,!1,a.fr,a.db,a.dx,a.e,a.d,a.cx,!1,a.ch,a.r)\nthis.F|=3}",
         "type": "void Function(TextFormat)"
@@ -13476,7 +13478,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "E6:function(a,b){a=536870911&a+b\na=536870911&a+((524287&a)<<10)\nreturn a^a>>>6}",
         "type": "int Function(int,int)"
@@ -13531,7 +13533,7 @@
         "returnType": "Error",
         "inferredReturnType": "[exact=StateError]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Q4:function(){if((this.b&4)!==0)return new P.lj(\"Cannot add event after closing\")\nreturn new P.lj(\"Cannot add event while adding a stream\")}",
         "type": "Error Function()"
@@ -13775,12 +13777,17 @@
             "name": "tParameters",
             "type": "[exact=_FunctionParameters]",
             "declaredType": "_FunctionParameters"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": "",
-        "type": "bool Function(_FunctionParameters,_FunctionParameters)"
+        "type": "bool Function(_FunctionParameters,_FunctionParameters,dynamic)"
       },
       "38646490": {
         "id": "function/38646490",
@@ -13870,7 +13877,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "bool Function()"
@@ -14551,7 +14558,7 @@
         "id": "function/54584556",
         "kind": "function",
         "name": "typesEqual",
-        "size": 113,
+        "size": 118,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -14573,12 +14580,17 @@
             "name": "tArray",
             "type": "[exact=JSUnmodifiableArray]",
             "declaredType": "Object"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zu:function(a,b){var t,s=a.length\nif(s!==b.length)return!1\nfor(t=0;t<s;++t)if(!H.Nr(a[t],b[t]))return!1\nreturn!0}",
-        "type": "bool Function(Object,Object)"
+        "code": "zu:function(a,b,c){var t,s=a.length\nif(s!==b.length)return!1\nfor(t=0;t<s;++t)if(!H.Nr(a[t],b[t],!0))return!1\nreturn!0}",
+        "type": "bool Function(Object,Object,dynamic)"
       },
       "54796797": {
         "id": "function/54796797",
@@ -14950,7 +14962,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -14994,7 +15006,7 @@
         "returnType": "double",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 5,
         "code": "",
         "type": "double Function()"
@@ -15520,7 +15532,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "e:function(a){var t=a!==\"Object\"&&a!==\"\"\nreturn t}",
         "type": "bool Function(dynamic)"
@@ -15653,6 +15665,34 @@
         "code": "",
         "type": "num Function()"
       },
+      "76923042": {
+        "id": "function/76923042",
+        "kind": "function",
+        "name": "isLegacyTopType",
+        "size": 33,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/579882441",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "t",
+            "type": "[exact=Rti]",
+            "declaredType": "Rti"
+          }
+        ],
+        "sideEffects": "SideEffects(reads field; writes anything)",
+        "inlinedCount": 2,
+        "code": "rN:function(a){return H.cc(a,!0)}",
+        "type": "bool Function(Rti)"
+      },
       "77140749": {
         "id": "function/77140749",
         "kind": "function",
@@ -15703,7 +15743,7 @@
         "returnType": "_PendingEvents<_StreamController.T>",
         "inferredReturnType": "[null|exact=_StreamImplEvents]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gKj:function(){if((this.b&8)===0)return this.a\nreturn this.a.gJg()}",
         "type": "_PendingEvents<_StreamController.T> Function()"
@@ -15731,7 +15771,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "k5:function(a){return new P.a6(1000*a)}",
         "type": "dynamic Function({int days,int hours,int microseconds,int milliseconds,int minutes,int seconds})"
@@ -15764,7 +15804,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "IV:function(a,b,c){if(C.jn.iM(b,c)>0)throw H.c(H.G(b))\nif(this.iM(a,b)<0)return b\nif(this.iM(a,c)>0)return c\nreturn a}",
         "type": "num Function(num,num)"
@@ -16530,7 +16570,7 @@
             "declaredType": "RenderTextureQuad"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "dynamic Function(RenderTextureQuad)"
@@ -16740,7 +16780,7 @@
             "declaredType": "_FunctionParameters"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(Rti,_FunctionParameters)"
@@ -16818,7 +16858,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSUInt32]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "int Function()"
@@ -17107,7 +17147,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "C0:function(a,b){a=536870911&a+b\na=536870911&a+((524287&a)<<10)\nreturn a^a>>>6}",
         "type": "int Function(int,int)"
@@ -17135,7 +17175,7 @@
             "declaredType": "Rti"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(Rti)"
@@ -17294,7 +17334,7 @@
         "returnType": "num",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gbM:function(a){var t=this\nif(t.y||t.x||t.e==null)return t.cx\nelse return C.CD.IV(t.e.currentTime-t.Q,0,t.ch)}",
         "type": "num Function()"
@@ -17322,7 +17362,7 @@
             "declaredType": "Vector"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "M2:function(a,b){return new U.xy(this.a+b.a,this.b+b.b)}",
         "type": "Vector Function(Vector)"
@@ -17623,7 +17663,7 @@
         "id": "function/120424305",
         "kind": "function",
         "name": "isTopType",
-        "size": 153,
+        "size": 158,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -17640,12 +17680,17 @@
             "name": "t",
             "type": "[null|exact=Rti]",
             "declaredType": "Rti"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "bool"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
-        "code": "cc:function(a){var t,s\nif(a===u.K)return!0\nt=a.z\nif(t!==2)if(t!==3)if(t!==4)if(t!==5)s=t===8&&H.cc(a.Q)\nelse s=!0\nelse s=!0\nelse s=!0\nelse s=!0\nreturn s}",
-        "type": "bool Function(Rti)"
+        "code": "cc:function(a,b){var t,s\nif(a===u.K)return!0\nt=a.z\nif(t!==2)if(t!==3)if(t!==4)if(t!==5)s=t===8&&H.cc(a.Q,!0)\nelse s=!0\nelse s=!0\nelse s=!0\nelse s=!0\nreturn s}",
+        "type": "bool Function(Rti,bool)"
       },
       "122097752": {
         "id": "function/122097752",
@@ -17797,7 +17842,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "int Function(int,int)"
@@ -17897,7 +17942,7 @@
             "declaredType": "LinkedHashMapCell"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "GS:function(a){var t=this,s=a.d,r=a.c\nif(s==null)t.e=r\nelse s.c=r\nif(r==null)t.f=s\nelse r.d=s;--t.a\nt.Xy()}",
         "type": "void Function(LinkedHashMapCell)"
@@ -18033,7 +18078,7 @@
             "declaredType": "MouseEvent"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "Z3:function(a){if(a.a===\"mouseOut\")this.I=C.So\nelse if(a.k3)this.I=C.UK\nelse this.I=C.Br}\no(n=A.QQ.prototype,\"gNT\",\"Z3\",6)",
         "type": "void Function(MouseEvent)"
@@ -18166,7 +18211,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -18605,7 +18650,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "bool Function()"
@@ -18841,7 +18886,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -19657,7 +19702,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "$2:function(a,b){var t=this.a\nreturn Math.abs(a-t)<Math.abs(b-t)&&a>0?a:b}",
         "type": "num Function(num,num)"
@@ -19893,7 +19938,7 @@
         "returnType": "Error",
         "inferredReturnType": "[exact=StateError]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Pq:function(){if((this.c&4)!==0)return new P.lj(\"Cannot add new events after calling close\")\nreturn new P.lj(\"Cannot add new events while doing an addStream\")}",
         "type": "Error Function()"
@@ -20023,7 +20068,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "WH:function(a,b){if(b!==0)H.vh(P.O7(b,null))\nreturn this.c}",
         "type": "String Function(int)"
@@ -20051,7 +20096,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){if(b==null)return!1\nreturn u.M.c(b)&&this.a==b.gx(b)&&this.b==b.gy(b)}",
         "type": "bool Function(dynamic)"
@@ -20492,7 +20537,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSPositiveInt]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "giO:function(a){return a?519018:218159}",
         "type": "int Function()"
@@ -21364,7 +21409,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Ga:function(a){if(a<256)switch(a){case 9:case 10:case 11:case 12:case 13:case 32:case 133:case 160:return!0\ndefault:return!1}switch(a){case 5760:case 8192:case 8193:case 8194:case 8195:case 8196:case 8197:case 8198:case 8199:case 8200:case 8201:case 8202:case 8232:case 8233:case 8239:case 8287:case 12288:case 65279:return!0\ndefault:return!1}}",
         "type": "bool Function(int)"
@@ -21430,7 +21475,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){if(a>=1e5)return\"\"+a\nif(a>=1e4)return\"0\"+a\nif(a>=1000)return\"00\"+a\nif(a>=100)return\"000\"+a\nif(a>=10)return\"0000\"+a\nreturn\"00000\"+a}",
         "type": "String Function(int)"
@@ -21523,7 +21568,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "VF:function(){var t=this,s=t.a\nif(t.b!==s.r)throw H.c(P.a4(s))\nelse{s=t.c\nif(s==null){t.d=null\nreturn!1}else{t.d=s.a\nt.c=s.c\nreturn!0}}}",
         "type": "bool Function()"
@@ -21765,7 +21810,7 @@
         "id": "function/207792788",
         "kind": "function",
         "name": "_installSpecializedIsTest",
-        "size": 281,
+        "size": 284,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -21786,7 +21831,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "JJ:function(a){var t,s=this,r=s.z,q=H.YO\nif(H.cc(s)){q=H.Iw\ns.b=s.a=H.hn}else if(r===9){t=s.db\nif(\"KN\"===t)q=H.ok\nelse if(\"CP\"===t)q=H.KH\nelse if(\"FK\"===t)q=H.KH\nelse if(\"qU\"===t)q=H.MM\nelse if(\"a2\"===t)q=H.r\nelse{r=s.Q\nif(s.ch.every(H.cc)){s.x=\"$i\"+r\nq=H.t4}}}s.c=q\nreturn s.c(a)}",
+        "code": "JJ:function(a){var t,s=this,r=s.z,q=H.YO\nif(H.cc(s,!0)){q=H.Iw\ns.b=s.a=H.hn}else if(r===9){t=s.db\nif(\"KN\"===t)q=H.ok\nelse if(\"CP\"===t)q=H.KH\nelse if(\"FK\"===t)q=H.KH\nelse if(\"qU\"===t)q=H.MM\nelse if(\"a2\"===t)q=H.r\nelse{r=s.Q\nif(s.ch.every(H.rN)){s.x=\"$i\"+r\nq=H.t4}}}s.c=q\nreturn s.c(a)}",
         "type": "bool Function(dynamic)"
       },
       "208283907": {
@@ -22382,7 +22427,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Zm:function(a,b){a=536870911&a+b\na=536870911&a+((524287&a)<<10)\nreturn a^a>>>6}",
         "type": "int Function(int,int)"
@@ -23064,7 +23109,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "int Function(dynamic,dynamic)"
@@ -23185,7 +23230,7 @@
         "returnType": "Rectangle<num>",
         "inferredReturnType": "[exact=Rectangle]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gBP:function(){var t=this.k3\nreturn new U.tn(0,0,t.a,t.b,u.I)}",
         "type": "Rectangle<num> Function()"
@@ -23774,7 +23819,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "jB:function(a,b,c){if(0>a||a>c)throw H.c(P.TE(a,0,c,\"start\",null))\nif(b!=null){if(a>b||b>c)throw H.c(P.TE(b,a,c,\"end\",null))\nreturn b}return c}",
         "type": "int Function(int,int,int,[String,String,String])"
@@ -24049,7 +24094,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "bool Function()"
@@ -24071,7 +24116,7 @@
         "returnType": "num",
         "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gkF:function(a){return this.a.duration}",
         "type": "num Function()"
@@ -24225,7 +24270,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -24319,7 +24364,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function(int)"
@@ -24621,7 +24666,7 @@
         "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "V1:function(a){var t=this\nif(t.a>0){t.b=t.c=t.d=t.e=t.f=null\nt.a=0\nt.Xy()}}",
         "type": "void Function()"
@@ -24918,7 +24963,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSInt]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "geX:function(){var t=this.b\nreturn t.index+t[0].length}",
         "type": "int Function()"
@@ -24950,7 +24995,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ru:function(a){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e=new H.Am(a)\nif(a==null)return\nif(a instanceof H.bq)return e.$1(a.a)\nif(typeof a!==\"object\")return a\nif(\"dartException\" in a)return e.$1(a.dartException)\nelse if(!(\"message\" in a))return a\nt=a.message\nif(\"number\" in a&&typeof a.number==\"number\"){s=a.number\nr=s&65535\nif((C.jn.wG(s,16)&8191)===10)switch(r){case 438:return e.$1(H.T3(H.d(t)+\" (Error \"+r+\")\",f))\ncase 445:case 5007:return e.$1(H.Ij(H.d(t)+\" (Error \"+r+\")\",f))}}if(a instanceof TypeError){q=$.Sn()\np=$.lq()\no=$.N9()\nn=$.iI()\nm=$.Kf()\nl=$.Zh()\nk=$.rN()\n$.c3()\nj=$.HK()\ni=$.r1()\nh=q.qS(t)\nif(h!=null)return e.$1(H.T3(t,h))\nelse{h=p.qS(t)\nif(h!=null){h.method=\"call\"\nreturn e.$1(H.T3(t,h))}else{h=o.qS(t)\nif(h==null){h=n.qS(t)\nif(h==null){h=m.qS(t)\nif(h==null){h=l.qS(t)\nif(h==null){h=k.qS(t)\nif(h==null){h=n.qS(t)\nif(h==null){h=j.qS(t)\nif(h==null){h=i.qS(t)\ng=h!=null}else g=!0}else g=!0}else g=!0}else g=!0}else g=!0}else g=!0}else g=!0\nif(g)return e.$1(H.Ij(t,h))}}return e.$1(new H.vV(typeof t==\"string\"?t:\"\"))}if(a instanceof RangeError){if(typeof t==\"string\"&&t.indexOf(\"call stack\")!==-1)return new P.VS()\nt=function(b){try{return String(b)}catch(d){}return null}(a)\nreturn e.$1(new P.h(!1,f,f,typeof t==\"string\"?t.replace(/^RangeError:\\s*/,\"\"):t))}if(typeof InternalError==\"function\"&&a instanceof InternalError)if(typeof t==\"string\"&&t===\"too much recursion\")return new P.VS()\nreturn a}",
+        "code": "Ru:function(a){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e=new H.Am(a)\nif(a==null)return\nif(a instanceof H.bq)return e.$1(a.a)\nif(typeof a!==\"object\")return a\nif(\"dartException\" in a)return e.$1(a.dartException)\nelse if(!(\"message\" in a))return a\nt=a.message\nif(\"number\" in a&&typeof a.number==\"number\"){s=a.number\nr=s&65535\nif((C.jn.wG(s,16)&8191)===10)switch(r){case 438:return e.$1(H.T3(H.d(t)+\" (Error \"+r+\")\",f))\ncase 445:case 5007:return e.$1(H.Ij(H.d(t)+\" (Error \"+r+\")\",f))}}if(a instanceof TypeError){q=$.Sn()\np=$.lq()\no=$.N9()\nn=$.iI()\nm=$.Kf()\nl=$.Zh()\nk=$.cP()\n$.c3()\nj=$.HK()\ni=$.r1()\nh=q.qS(t)\nif(h!=null)return e.$1(H.T3(t,h))\nelse{h=p.qS(t)\nif(h!=null){h.method=\"call\"\nreturn e.$1(H.T3(t,h))}else{h=o.qS(t)\nif(h==null){h=n.qS(t)\nif(h==null){h=m.qS(t)\nif(h==null){h=l.qS(t)\nif(h==null){h=k.qS(t)\nif(h==null){h=n.qS(t)\nif(h==null){h=j.qS(t)\nif(h==null){h=i.qS(t)\ng=h!=null}else g=!0}else g=!0}else g=!0}else g=!0}else g=!0}else g=!0}else g=!0\nif(g)return e.$1(H.Ij(t,h))}}return e.$1(new H.vV(typeof t==\"string\"?t:\"\"))}if(a instanceof RangeError){if(typeof t==\"string\"&&t.indexOf(\"call stack\")!==-1)return new P.VS()\nt=function(b){try{return String(b)}catch(d){}return null}(a)\nreturn e.$1(new P.h(!1,f,f,typeof t==\"string\"?t.replace(/^RangeError:\\s*/,\"\"):t))}if(typeof InternalError==\"function\"&&a instanceof InternalError)if(typeof t==\"string\"&&t===\"too much recursion\")return new P.VS()\nreturn a}",
         "type": "dynamic Function(dynamic)"
       },
       "266327677": {
@@ -24976,7 +25021,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "int Function(int)"
@@ -25566,7 +25611,7 @@
         "returnType": "_StreamImplEvents<_StreamController.T>",
         "inferredReturnType": "[null|exact=_StreamImplEvents]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "Hf:function(){var t,s,r=this\nif((r.b&8)===0){t=r.a\nreturn t==null?r.a=new P.Qk():t}s=r.a\ns.gJg()\nreturn s.gJg()}",
         "type": "_StreamImplEvents<_StreamController.T> Function()"
@@ -25754,7 +25799,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function(int)"
@@ -26057,7 +26102,7 @@
         "returnType": "String",
         "inferredReturnType": "[exact=JSString]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
         "code": "bu:function(a){var t=this,s=P.Gq(H.tJ(t)),r=P.h0(H.NS(t)),q=P.h0(H.jA(t)),p=P.h0(H.KL(t)),o=P.h0(H.ch(t)),n=P.h0(H.Jd(t)),m=P.yy(H.o1(t))\nif(t.b)return s+\"-\"+r+\"-\"+q+\" \"+p+\":\"+o+\":\"+n+\".\"+m+\"Z\"\nelse return s+\"-\"+r+\"-\"+q+\" \"+p+\":\"+o+\":\"+n+\".\"+m}",
         "type": "String Function()"
@@ -26250,7 +26295,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSUInt32]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 5,
         "code": "gkF:function(a){return this.c.length}",
         "type": "int Function()"
@@ -26303,7 +26348,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "iM:function(a,b){var t\nif(typeof b!=\"number\")throw H.c(H.G(b))\nif(a<b)return-1\nelse if(a>b)return 1\nelse if(a===b){if(a===0){t=this.gzP(b)\nif(this.gzP(a)===t)return 0\nif(this.gzP(a))return-1\nreturn 1}return 0}else if(isNaN(a)){if(isNaN(b))return 0\nreturn 1}else return-1}",
         "type": "int Function(Object)"
@@ -27225,7 +27270,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "int Function(int)"
@@ -28007,7 +28052,7 @@
         "returnType": "num",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field, static; writes nothing)",
         "inlinedCount": 0,
         "code": "gbM:function(a){var t,s,r,q=this\nif(q.y||q.x)return q.cx\nelse{t=$.Y6().currentTime-q.cy\ns=q.z\nr=q.ch\nreturn s?C.CD.zY(t,r):C.CD.IV(t,0,r)}}",
         "type": "num Function()"
@@ -28338,7 +28383,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -28426,7 +28471,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Fo:function(a,b){if(a<0||a>=this.k3.a)return\nif(b<0||b>=this.k3.b)return\nreturn this}",
         "type": "DisplayObject Function(num,num)"
@@ -29369,7 +29414,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Fo:function(a,b){if(a<0||a>=this.k3.a)return\nif(b<0||b>=this.k3.b)return\nreturn this}",
         "type": "DisplayObject Function(num,num)"
@@ -30614,7 +30659,7 @@
         "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 2,
         "code": "bY:function(a){if(!this.m){this.m=!0\nthis.R=null}}",
         "type": "void Function()"
@@ -30829,7 +30874,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Jy:function(a,b){if(a<=b)return a\nelse return b}",
         "type": "num Function(num,num)"
@@ -30917,7 +30962,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 9,
         "code": "",
         "type": "bool Function()"
@@ -30989,7 +31034,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -31209,7 +31254,7 @@
             "declaredType": "TouchEvent"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "XM:function(a){var t,s=this\nif(a.k2){t=a.a\nif(t===\"touchOver\")s.I=C.UK\nelse if(t===\"touchOut\")s.I=C.So\nelse if(t===\"touchBegin\")s.I=C.UK\nelse if(t===\"touchEnd\")s.I=C.So}}\no(n,\"gd6\",\"XM\",23)",
         "type": "void Function(TouchEvent)"
@@ -31293,7 +31338,7 @@
             "declaredType": "String"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "pj:function(a,b){return new H.KW(this,b,0)}",
         "type": "Iterable<RegExpMatch> Function(String,[int])"
@@ -31321,7 +31366,7 @@
             "declaredType": "Vector"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Ck:function(a,b){return new U.xy(C.CD.Ck(this.a,b.gx(b)),C.CD.Ck(this.b,b.gy(b)))}",
         "type": "Vector Function(Vector)"
@@ -31620,7 +31665,7 @@
             "declaredType": "String"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "De:function(a,b,c){if(!a)throw H.c(P.xY(H.K([b,c==null||c.length===0?\"value was invalid\":c],u.s)))}",
         "type": "void Function(bool,String,[String])"
@@ -31859,7 +31904,7 @@
         "id": "function/400204433",
         "kind": "function",
         "name": "_functionRtiToString",
-        "size": 690,
+        "size": 693,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -31890,7 +31935,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bI:function(a,a0,a1){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=\", \"\nif(a1!=null){t=a1.length\nif(a0==null){a0=H.K([],u.s)\ns=null}else s=a0.length\nr=a0.length\nfor(q=t;q>0;--q)a0.push(\"T\"+(r+q))\nfor(p=\"<\",o=\"\",q=0;q<t;++q,o=b){p=C.xB.M2(p+o,a0[a0.length-1-q])\nn=a1[q]\nif(!H.cc(n))p+=C.xB.M2(\" extends \",H.dm(n,a0))}p+=\">\"}else{p=\"\"\ns=null}m=a.Q\nl=a.ch\nk=l.a\nj=k.length\ni=l.b\nh=i.length\ng=l.c\nf=g.length\ne=H.dm(m,a0)\nfor(d=\"\",c=\"\",q=0;q<j;++q,c=b)d+=C.xB.M2(c,H.dm(k[q],a0))\nif(h>0){d+=c+\"[\"\nfor(c=\"\",q=0;q<h;++q,c=b)d+=C.xB.M2(c,H.dm(i[q],a0))\nd+=\"]\"}if(f>0){d+=c+\"{\"\nfor(c=\"\",q=0;q<f;q+=2,c=b)d+=C.xB.M2(c,H.dm(g[q+1],a0))+\" \"+g[q]\nd+=\"}\"}if(s!=null)a0.length=s\nreturn p+\"(\"+d+\") => \"+H.d(e)}",
+        "code": "bI:function(a,a0,a1){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=\", \"\nif(a1!=null){t=a1.length\nif(a0==null){a0=H.K([],u.s)\ns=null}else s=a0.length\nr=a0.length\nfor(q=t;q>0;--q)a0.push(\"T\"+(r+q))\nfor(p=\"<\",o=\"\",q=0;q<t;++q,o=b){p=C.xB.M2(p+o,a0[a0.length-1-q])\nn=a1[q]\nif(!H.cc(n,!0))p+=C.xB.M2(\" extends \",H.dm(n,a0))}p+=\">\"}else{p=\"\"\ns=null}m=a.Q\nl=a.ch\nk=l.a\nj=k.length\ni=l.b\nh=i.length\ng=l.c\nf=g.length\ne=H.dm(m,a0)\nfor(d=\"\",c=\"\",q=0;q<j;++q,c=b)d+=C.xB.M2(c,H.dm(k[q],a0))\nif(h>0){d+=c+\"[\"\nfor(c=\"\",q=0;q<h;++q,c=b)d+=C.xB.M2(c,H.dm(i[q],a0))\nd+=\"]\"}if(f>0){d+=c+\"{\"\nfor(c=\"\",q=0;q<f;q+=2,c=b)d+=C.xB.M2(c,H.dm(g[q+1],a0))+\" \"+g[q]\nd+=\"}\"}if(s!=null)a0.length=s\nreturn p+\"(\"+d+\") => \"+H.d(e)}",
         "type": "String Function(Rti,List<String>,{Object bounds})"
       },
       "400256876": {
@@ -31934,7 +31979,7 @@
         "returnType": "num",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "num Function()"
@@ -32072,7 +32117,7 @@
         "returnType": "Iterator<JSArray.E>",
         "inferredReturnType": "[exact=ArrayIterator]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "gkz:function(a){return new J.m1(a,a.length)}",
         "type": "Iterator<JSArray.E> Function()"
@@ -34337,7 +34382,7 @@
         "returnType": "Iterator<ImmutableListMixin.E>",
         "inferredReturnType": "[exact=FixedSizeListIterator]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "gkz:function(a){return new W.W9(a,this.gkF(a))}",
         "type": "Iterator<ImmutableListMixin.E> Function()"
@@ -34536,7 +34581,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "h5:function(a){a=536870911&a+((67108863&a)<<3)\na^=a>>>11\nreturn 536870911&a+((16383&a)<<15)}",
         "type": "int Function(int)"
@@ -35137,7 +35182,7 @@
             "declaredType": "ResourceManagerResource"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "$1:function(a){return a.f.a}",
         "type": "Future<dynamic> Function(ResourceManagerResource)"
@@ -35243,7 +35288,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "int Function(int)"
@@ -36162,7 +36207,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "h0:function(a){if(a>=10)return\"\"+a\nreturn\"0\"+a}",
         "type": "String Function(int)"
@@ -37999,7 +38044,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "xH:function(a){return\"rgba(\"+(a>>>16&255)+\",\"+(a>>>8&255)+\",\"+(a&255)+\",\"+H.d((a>>>24&255)/255)+\")\"}",
         "type": "String Function(int)"
@@ -38060,7 +38105,7 @@
             "declaredType": "Iterable.E Function(int)"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "pF:function(a,b,c){if(a<=0)return new H.Jv(c.CT(\"Jv<0>\"))\nreturn new P.Rt(a,b,c.CT(\"Rt<0>\"))}",
         "type": "Iterable<#A> Function<#A>(int,[#A Function(int)])"
@@ -38082,7 +38127,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "bool Function()"
@@ -38144,7 +38189,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 42,
+        "inlinedCount": 44,
         "code": "",
         "type": "Object Function(Rti)"
       },
@@ -38375,7 +38420,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSInt]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "gkF:function(a){return this.a.length}",
         "type": "int Function()"
@@ -38403,7 +38448,7 @@
             "declaredType": "String"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "pj:function(a,b){return new H.un(b,a,0)}",
         "type": "Iterable<Match> Function(String,[int])"
@@ -38431,7 +38476,7 @@
             "declaredType": "_FunctionParameters"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(_FunctionParameters)"
@@ -38818,7 +38863,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "Gq:function(a){var t=Math.abs(a),s=a<0?\"-\":\"\"\nif(t>=1000)return\"\"+a\nif(t>=100)return s+\"0\"+t\nif(t>=10)return s+\"00\"+t\nreturn s+\"000\"+t}",
         "type": "String Function(int)"
@@ -38989,7 +39034,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -39128,7 +39173,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 85,
+        "inlinedCount": 87,
         "code": "",
         "type": "Rti Function(dynamic)"
       },
@@ -39729,7 +39774,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(Rti,Object)"
@@ -39884,7 +39929,7 @@
             "declaredType": "ImageElement"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
         "code": "WS:function(a){var t=new L.Gp(C.Ls)\nt.a=V.YX(a.width)\nt.b=V.YX(a.height)\nt.c=a\nreturn t}",
         "type": "dynamic Function(ImageElement)"
@@ -40258,7 +40303,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 4,
         "code": "",
         "type": "bool Function()"
@@ -40313,7 +40358,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(Rti,Object)"
@@ -40924,7 +40969,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "int Function(int)"
@@ -41384,7 +41429,7 @@
             "declaredType": "JsLinkedHashMap.V"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "Oz:function(a,b){var t,s=this,r=new H.db(a,b)\nif(s.e==null)s.e=s.f=r\nelse{t=s.f\nr.d=t\ns.f=t.c=r}++s.a\ns.Xy()\nreturn r}",
         "type": "LinkedHashMapCell Function(Object,Object)"
@@ -41657,7 +41702,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -41688,7 +41733,7 @@
         "id": "function/598215859",
         "kind": "function",
         "name": "_generalIsTestImplementation",
-        "size": 76,
+        "size": 79,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -41709,7 +41754,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "YO:function(a){var t=this\nreturn H.We(v.typeUniverse,H.Ue(a,t),null,t,null)}",
+        "code": "YO:function(a){var t=this\nreturn H.We(v.typeUniverse,H.Ue(a,t),null,t,null,!0)}",
         "type": "bool Function(dynamic)"
       },
       "598252498": {
@@ -41965,7 +42010,7 @@
         "id": "function/603464342",
         "kind": "function",
         "name": "_isInterfaceSubtype",
-        "size": 306,
+        "size": 314,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -42002,12 +42047,17 @@
             "name": "tEnv",
             "type": "[null|subclass=JSArray]",
             "declaredType": "dynamic"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "pG:function(a,b,c,d,e){var t,s,r,q,p,o,n,m,l=b.Q,k=d.Q\nif(l===k){t=b.ch\ns=d.ch\nr=t.length\nfor(q=0;q<r;++q){p=t[q]\no=s[q]\nif(!H.We(a,p,c,o,e))return!1}return!0}n=H.Qo(a,l)\nif(n==null)return!1\nm=n[k]\nif(m==null)return!1\nr=m.length\ns=d.ch\nfor(q=0;q<r;++q)if(!H.We(a,H.cE(a,b,m[q]),c,s[q],e))return!1\nreturn!0}",
-        "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic)"
+        "code": "pG:function(a,b,c,d,e,f){var t,s,r,q,p,o,n,m,l=b.Q,k=d.Q\nif(l===k){t=b.ch\ns=d.ch\nr=t.length\nfor(q=0;q<r;++q){p=t[q]\no=s[q]\nif(!H.We(a,p,c,o,e,!0))return!1}return!0}n=H.Qo(a,l)\nif(n==null)return!1\nm=n[k]\nif(m==null)return!1\nr=m.length\ns=d.ch\nfor(q=0;q<r;++q)if(!H.We(a,H.cE(a,b,m[q]),c,s[q],e,!0))return!1\nreturn!0}",
+        "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic,bool)"
       },
       "603471334": {
         "id": "function/603471334",
@@ -42026,7 +42076,7 @@
         "returnType": "Rectangle<num>",
         "inferredReturnType": "[exact=Rectangle]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gBP:function(){var t=this.k3\nreturn new U.tn(0,0,t.a,t.b,u.I)}",
         "type": "Rectangle<num> Function()"
@@ -42119,7 +42169,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "PE:function(a,b,c){if(a<=b)return b\nelse if(a>=c)return c\nelse return a}",
         "type": "int Function(int,int,int)"
@@ -42245,7 +42295,7 @@
         "returnType": "RenderTextureQuad",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "RenderTextureQuad Function()"
@@ -42649,48 +42699,10 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
-      },
-      "614790632": {
-        "id": "function/614790632",
-        "kind": "function",
-        "name": "isSubtype",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/579882441",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bool",
-        "inferredReturnType": "[exact=JSBool]",
-        "parameters": [
-          {
-            "name": "universe",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "s",
-            "type": "[null|exact=Rti]",
-            "declaredType": "Rti"
-          },
-          {
-            "name": "t",
-            "type": "[null|exact=Rti]",
-            "declaredType": "Rti"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "bool Function(dynamic,Rti,Rti)"
       },
       "614839327": {
         "id": "function/614839327",
@@ -42885,7 +42897,7 @@
         "returnType": "String",
         "inferredReturnType": "[exact=JSString]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
         "code": "guF:function(){if(this.b<0)return\": index must not be negative\"\nvar t=this.f\nif(t===0)return\": no indices are valid\"\nreturn\": index should be less than \"+H.d(t)}",
         "type": "String Function()"
@@ -42894,7 +42906,7 @@
         "id": "function/620456164",
         "kind": "function",
         "name": "_isSubtype",
-        "size": 1074,
+        "size": 882,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -42931,12 +42943,17 @@
             "name": "tEnv",
             "type": "[null|subclass=JSArray]",
             "declaredType": "dynamic"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "We:function(a,b,c,d,e){var t,s,r,q,p,o,n\nif(b===d)return!0\nif(H.cc(d))return!0\nt=b.z\nif(t===4)return!0\nif(H.cc(b))return!1\ns=u.P\nif(b===s)return!0\nr=t===13\nif(r)if(H.We(a,c[b.Q],c,d,e))return!0\nq=d.z\nif(b===s){if(q===8)return H.We(a,b,c,d.Q,e)\nreturn d===s||q===7||q===6}if(d===u.K){if(t===8)return H.We(a,b.Q,c,d,e)\nif(t===6)return H.We(a,b.Q,c,d,e)\nreturn t!==7}if(t===6)return H.We(a,b.Q,c,d,e)\nif(q===6){p=d.d\nif(p==null){s=d.Q\np=d.d=H.Sh(a,7,s,s.db+\"?\")}return H.We(a,b,c,p,e)}if(t===8){if(!H.We(a,b.Q,c,d,e))return!1\nreturn H.We(a,H.xZ(a,b),c,d,e)}if(t===7)return H.We(a,s,c,d,e)&&H.We(a,b.Q,c,d,e)\nif(q===8){if(H.We(a,b,c,d.Q,e))return!0\nreturn H.We(a,b,c,H.xZ(a,d),e)}if(q===7)return H.We(a,b,c,s,e)||H.We(a,b,c,d.Q,e)\nif(r)return!1\ns=t!==11\nif((!s||t===12)&&d===u.Z)return!0\nif(q===12){if(b===u.L)return!0\nif(t!==12)return!1\no=b.ch\nn=d.ch\nif(!H.zu(o,n))return!1\nc=c==null?o:o.concat(c)\ne=e==null?n:n.concat(e)\nreturn H.bO(a,b.Q,c,d.Q,e)}if(q===11){if(b===u.L)return!0\nif(s)return!1\nreturn H.bO(a,b,c,d,e)}if(t===9){if(q!==9)return!1\nreturn H.pG(a,b,c,d,e)}return!1}",
-        "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic)"
+        "code": "We:function(a,b,c,d,e,f){var t,s,r,q,p,o\nif(b===d)return!0\nif(H.cc(d,!0))return!0\nt=b.z\nif(t===4)return!0\nif(H.cc(b,!0))return!1\nif(b===u.P)return!0\ns=t===13\nif(s)if(H.We(a,c[b.Q],c,d,e,!0))return!0\nr=d.z\nif(t===6)return H.We(a,b.Q,c,d,e,!0)\nif(r===6){q=d.Q\nreturn H.We(a,b,c,q,e,!0)}if(t===8){if(!H.We(a,b.Q,c,d,e,!0))return!1\nreturn H.We(a,H.xZ(a,b),c,d,e,!0)}if(t===7){q=H.We(a,b.Q,c,d,e,!0)\nreturn q}if(r===8){if(H.We(a,b,c,d.Q,e,!0))return!0\nreturn H.We(a,b,c,H.xZ(a,d),e,!0)}if(r===7){q=H.We(a,b,c,d.Q,e,!0)\nreturn q}if(s)return!1\nq=t!==11\nif((!q||t===12)&&d===u.Z)return!0\nif(r===12){if(b===u.L)return!0\nif(t!==12)return!1\np=b.ch\no=d.ch\nif(!H.zu(p,o,!0))return!1\nc=c==null?p:p.concat(c)\ne=e==null?o:o.concat(e)\nreturn H.bO(a,b.Q,c,d.Q,e,!0)}if(r===11){if(b===u.L)return!0\nif(q)return!1\nreturn H.bO(a,b,c,d,e,!0)}if(t===9){if(r!==9)return!1\nreturn H.pG(a,b,c,d,e,!0)}return!1}",
+        "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic,bool)"
       },
       "620499495": {
         "id": "function/620499495",
@@ -43284,7 +43301,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 23,
         "code": "",
         "type": "int Function(int,int)"
@@ -43361,7 +43378,7 @@
             "declaredType": "bool"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 1,
         "code": "",
         "type": "dynamic Function(int,{bool isUtc})"
@@ -43383,7 +43400,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gau:function(){var t=this.e\nreturn t===C.mV||t===C.He}",
         "type": "bool Function()"
@@ -43600,7 +43617,7 @@
         "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 1,
         "code": "",
         "type": "void Function()"
@@ -43661,7 +43678,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "Ux:function(a){var t,s,r,q=a.length\nfor(t=\"\",s=\"\",r=0;r<q;++r,s=\",\")t+=s+a[r].db\nreturn t}",
         "type": "String Function(Object)"
@@ -44084,7 +44101,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "S4:function(a){var t,s,r,q,p,o=a.length\nfor(t=\"\",s=\"\",r=0;r<o;r+=2,s=\",\"){q=a[r]\np=a[r+1].db\nt+=s+q+\":\"+p}return t}",
         "type": "String Function(Object)"
@@ -44110,6 +44127,34 @@
         "inlinedCount": 0,
         "code": "XD:function(){if(!0===$.Bv)return\n$.Bv=!0\nH.Z1()}",
         "type": "void Function()"
+      },
+      "638672010": {
+        "id": "function/638672010",
+        "kind": "function",
+        "name": "isNullableObjectType",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/579882441",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "t",
+            "type": "[null|exact=Rti]",
+            "declaredType": "Rti"
+          }
+        ],
+        "sideEffects": "SideEffects(reads field; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function(Rti)"
       },
       "638807044": {
         "id": "function/638807044",
@@ -44773,7 +44818,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "Ix:function(a,b){var t,s\nif(0>=b)return\"\"\nif(b===1||a.length===0)return a\nif(b!==b>>>0)throw H.c(C.Eq)\nfor(t=a,s=\"\";!0;){if((b&1)===1)s=t+s\nb=b>>>1\nif(b===0)break\nt+=t}return s}",
         "type": "String Function(int)"
@@ -44866,6 +44911,44 @@
         "inlinedCount": 7,
         "code": "",
         "type": "JSArray<#A> Function<#A>(dynamic)"
+      },
+      "654849933": {
+        "id": "function/654849933",
+        "kind": "function",
+        "name": "isLegacySubtype",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/579882441",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "universe",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          },
+          {
+            "name": "s",
+            "type": "[null|exact=Rti]",
+            "declaredType": "Rti"
+          },
+          {
+            "name": "t",
+            "type": "[null|exact=Rti]",
+            "declaredType": "Rti"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function(dynamic,Rti,Rti)"
       },
       "654887641": {
         "id": "function/654887641",
@@ -45435,7 +45518,7 @@
         "id": "function/666277254",
         "kind": "function",
         "name": "_isFunctionSubtype",
-        "size": 594,
+        "size": 612,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -45472,12 +45555,17 @@
             "name": "tEnv",
             "type": "[null|subclass=JSArray]",
             "declaredType": "dynamic"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bO:function(a0,a1,a2,a3,a4){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a\nif(!H.We(a0,a1.Q,a2,a3.Q,a4))return!1\nt=a1.ch\ns=a3.ch\nr=t.a\nq=s.a\np=r.length\no=q.length\nif(p>o)return!1\nn=o-p\nm=t.b\nl=s.b\nk=m.length\nj=l.length\nif(p+k<o+j)return!1\nfor(i=0;i<p;++i){h=r[i]\nif(!H.We(a0,q[i],a4,h,a2))return!1}for(i=0;i<n;++i){h=m[i]\nif(!H.We(a0,q[p+i],a4,h,a2))return!1}for(i=0;i<j;++i){h=m[n+i]\nif(!H.We(a0,l[i],a4,h,a2))return!1}g=t.c\nf=s.c\ne=g.length\nd=f.length\nfor(i=0,c=0;c<d;c+=2){b=f[c]\ndo{if(i>=e)return!1\na=g[i]\ni+=2}while(a<b)\nif(b<a)return!1\nh=g[i-1]\nif(!H.We(a0,f[c+1],a4,h,a2))return!1}return!0}",
-        "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic)"
+        "code": "bO:function(a0,a1,a2,a3,a4,a5){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a\nif(!H.We(a0,a1.Q,a2,a3.Q,a4,!0))return!1\nt=a1.ch\ns=a3.ch\nr=t.a\nq=s.a\np=r.length\no=q.length\nif(p>o)return!1\nn=o-p\nm=t.b\nl=s.b\nk=m.length\nj=l.length\nif(p+k<o+j)return!1\nfor(i=0;i<p;++i){h=r[i]\nif(!H.We(a0,q[i],a4,h,a2,!0))return!1}for(i=0;i<n;++i){h=m[i]\nif(!H.We(a0,q[p+i],a4,h,a2,!0))return!1}for(i=0;i<j;++i){h=m[n+i]\nif(!H.We(a0,l[i],a4,h,a2,!0))return!1}g=t.c\nf=s.c\ne=g.length\nd=f.length\nfor(i=0,c=0;c<d;c+=2){b=f[c]\ndo{if(i>=e)return!1\na=g[i]\ni+=2}while(a<b)\nif(b<a)return!1\nh=g[i-1]\nif(!H.We(a0,f[c+1],a4,h,a2,!0))return!1}return!0}",
+        "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic,bool)"
       },
       "666782753": {
         "id": "function/666782753",
@@ -45650,7 +45738,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -45769,7 +45857,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "Fh:function(a,b){var t,s\nif(a==null)return-1\nt=a.length\nfor(s=0;s<t;++s)if(J.RM(a[s].a,b))return s\nreturn-1}",
         "type": "int Function(dynamic,dynamic)"
@@ -45791,7 +45879,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSUInt32]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "int Function()"
@@ -45975,7 +46063,7 @@
             "declaredType": "Tuple<Point<int>,SquareState>"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "$1:function(a){var t=a.b\nreturn t===C.e5||t===C.Bl}",
         "type": "bool Function(Tuple<Point<int>,SquareState>)"
@@ -46064,7 +46152,7 @@
             "declaredType": "_Values"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "$2:function(a,b){return C.jn.iM(a.c,b.c)}",
         "type": "int Function(_Values,_Values)"
@@ -46596,7 +46684,7 @@
             "declaredType": "Animatable"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "tg:function(a,b){var t,s=this.a\nfor(t=this.b;s!==t;){if(s.a===b)return!0\ns=s.b}return!1}",
         "type": "bool Function(Animatable)"
@@ -47262,7 +47350,7 @@
             "declaredType": "DateTime"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "Duration Function(DateTime)"
@@ -47445,7 +47533,7 @@
             "declaredType": "Rti"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Q1:function(a){var t=a.z\nif(t===6||t===7||t===8)return H.Q1(a.Q)\nreturn t===11||t===12}",
         "type": "bool Function(Rti)"
@@ -47937,7 +48025,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(String,Object)"
@@ -48149,7 +48237,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 3,
         "code": "",
         "type": "bool Function(Rti)"
       },
@@ -48486,7 +48574,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "bool Function()"
@@ -48851,7 +48939,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "bool Function()"
@@ -49377,7 +49465,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){if(a>=10)return\"\"+a\nreturn\"0\"+a}",
         "type": "String Function(int)"
@@ -49638,7 +49726,7 @@
             "declaredType": "Stream.T"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "$1:function(a){++this.a.a}",
         "type": "Null Function(Stream.T)"
@@ -49716,7 +49804,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){var t\nif(b==null)return!1\nif(u.i.c(b)){t=J.RE(b)\nt=a.left===t.gBb(b)&&a.top===t.gG6(b)&&a.width===t.gq9(b)&&a.height===t.gLj(b)}else t=!1\nreturn t}",
         "type": "bool Function(dynamic)"
@@ -49938,7 +50026,7 @@
             "declaredType": "void Function(_wrapZone.T)"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads static; writes nothing)",
         "inlinedCount": 0,
         "code": "aF:function(a,b){var t=$.X3\nif(t===C.NU)return a\nreturn t.Py(a,b)}",
         "type": "void Function(#A) Function<#A>(void Function(#A))"
@@ -50075,7 +50163,7 @@
         "id": "function/741232476",
         "kind": "function",
         "name": "namedTypesEqual",
-        "size": 147,
+        "size": 152,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -50097,12 +50185,17 @@
             "name": "tArray",
             "type": "[exact=JSUnmodifiableArray]",
             "declaredType": "Object"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Xs:function(a,b){var t,s,r=a.length\nif(r!==b.length)return!1\nfor(t=0;t<r;t+=2){if(a[t]!==b[t])return!1\ns=t+1\nif(!H.Nr(a[s],b[s]))return!1}return!0}",
-        "type": "bool Function(Object,Object)"
+        "code": "Xs:function(a,b,c){var t,s,r=a.length\nif(r!==b.length)return!1\nfor(t=0;t<r;t+=2){if(a[t]!==b[t])return!1\ns=t+1\nif(!H.Nr(a[s],b[s],!0))return!1}return!0}",
+        "type": "bool Function(Object,Object,dynamic)"
       },
       "741775692": {
         "id": "function/741775692",
@@ -50470,7 +50563,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "bool Function(int)"
@@ -50655,7 +50748,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "bool Function()"
@@ -50796,7 +50889,7 @@
             "declaredType": "Rti"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(Rti)"
@@ -50848,7 +50941,7 @@
             "declaredType": "Point<Point.T>"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "HN:function(a,b){return new P.hL(this.a-b.a,this.b-b.b,this.$ti)}",
         "type": "Point<Point.T> Function(Object)"
@@ -50909,7 +51002,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){if(b==null)return!1\nreturn u.M.c(b)&&this.a===b.gx(b)&&this.b===b.gy(b)}",
         "type": "bool Function(Object)"
@@ -50959,7 +51052,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "wG:function(a,b){var t\nif(a>0)t=this.p3(a,b)\nelse{t=b>31?31:b\nt=a>>t>>>0}return t}",
         "type": "num Function(num)"
@@ -51655,7 +51748,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "th:function(a,b){var t=b-a.length\nif(t<=0)return a\nreturn this.Ix(\" \",t)+a}",
         "type": "String Function(int,[String])"
@@ -51867,7 +51960,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "RY:function(a,b){var t=new K.J3(a,K.XM(),H.K([],u.fx))\nif(!u.gi.c(a))H.vh(P.xY(\"tweenObject\"))\nt.r=Math.max(0.0001,b)\nthis.AN(0,t)\nreturn t}",
         "type": "Tween Function(TweenObject,num,[num Function(num)])"
@@ -52068,7 +52161,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 5,
         "code": "",
         "type": "bool Function()"
@@ -52096,7 +52189,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof P.iP&&this.a===b.a&&this.b===b.b}",
         "type": "bool Function(dynamic)"
@@ -54320,7 +54413,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -54629,7 +54722,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "bool Function()"
@@ -54878,7 +54971,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "int Function(int,int,int,int)"
@@ -54900,7 +54993,7 @@
         "returnType": "int",
         "inferredReturnType": "[subclass=JSInt]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "geX:function(){return this.a+this.c.length}",
         "type": "int Function()"
@@ -54956,7 +55049,7 @@
             "declaredType": "Animatable"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "AN:function(a,b){var t\nif(!u.T.c(b))throw H.c(P.xY(\"The supplied animatable does not extend type Animatable.\"))\nif(!this.tg(0,b)){t=this.b\nt.a=b\nthis.b=t.b=new K.Gn()}}",
         "type": "void Function(Animatable)"
@@ -55057,7 +55150,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 29,
+        "inlinedCount": 30,
         "code": "",
         "type": "int Function(Object)"
       },
@@ -55668,7 +55761,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 1,
         "code": "",
         "type": "DelayedCall Function(Function,num)"
@@ -56120,7 +56213,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "zY:function(a,b){var t=a%b\nif(t===0)return 0\nif(t>0)return t\nif(b<0)return t-b\nelse return t+b}",
         "type": "JSNumber Function(num)"
@@ -56475,7 +56568,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "yy:function(a){if(a>=100)return\"\"+a\nif(a>=10)return\"0\"+a\nreturn\"00\"+a}",
         "type": "String Function(int)"
@@ -57155,7 +57248,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "gzP:function(a){return a===0?1/a<0:a<0}",
         "type": "bool Function()"
@@ -57627,7 +57720,7 @@
             "declaredType": "List<FixedSizeListIterator.T>"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "dynamic Function(List<FixedSizeListIterator.T>)"
@@ -57841,7 +57934,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes field)",
+        "sideEffects": "SideEffects(reads nothing; writes field)",
         "inlinedCount": 0,
         "code": "sA7:function(a,b){if(b<0)b=0\nthis.r1=b>1?1:b}",
         "type": "void Function(num)"
@@ -58170,7 +58263,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "rE:function(a,b,c,d){var t=W.C0(W.C0(W.C0(W.C0(0,a),b),c),d),s=536870911&t+((67108863&t)<<3)\ns^=s>>>11\nreturn 536870911&s+((16383&s)<<15)}",
         "type": "int Function(dynamic,dynamic,dynamic,dynamic)"
@@ -59014,7 +59107,7 @@
             "declaredType": "String"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes field)",
         "inlinedCount": 0,
         "code": "sa4:function(a,b){this.L=b\nthis.m=b.length\nthis.F|=3}",
         "type": "void Function(String)"
@@ -59047,7 +59140,7 @@
             "declaredType": "String"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "dynamic Function(BitmapData,[String])"
@@ -59146,7 +59239,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "int Function(int)"
@@ -59235,7 +59328,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){var t,s=this\nif(b==null)return!1\nif(u.i.c(b)){t=J.RE(b)\nt=s.a===t.gBb(b)&&s.b===t.gG6(b)&&s.c===t.gq9(b)&&s.d===t.gLj(b)}else t=!1\nreturn t}",
         "type": "bool Function(Object)"
@@ -59285,7 +59378,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 7,
         "code": "",
         "type": "bool Function()"
@@ -59307,7 +59400,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -59888,7 +59981,7 @@
             "declaredType": "Point<Point.T>"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "HN:function(a,b){return new U.tZ(this.a-b.a,this.b-b.b,this.$ti)}",
         "type": "Point<Point.T> Function(Object)"
@@ -60409,7 +60502,7 @@
         "returnType": "num",
         "inferredReturnType": "[null|subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "gkF:function(a){return this.a.duration}",
         "type": "num Function()"
@@ -60498,7 +60591,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 14,
+        "inlinedCount": 15,
         "code": "",
         "type": "int Function(Rti)"
       },
@@ -60642,7 +60735,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 3,
+        "inlinedCount": 4,
         "code": "",
         "type": "Rti Function(Rti)"
       },
@@ -61275,7 +61368,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
         "code": "Qq:function(a){return\"rgb(\"+(a>>>16&255)+\",\"+(a>>>8&255)+\",\"+(a&255)+\")\"}",
         "type": "String Function(int)"
@@ -61359,7 +61452,7 @@
             "declaredType": "Vector"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "Ix:function(a,b){return new U.xy(C.CD.Ix(this.a,b.gx(b)),C.CD.Ix(this.b,b.gy(b)))}",
         "type": "Vector Function(Vector)"
@@ -61757,7 +61850,7 @@
             "declaredType": "String"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "k1:function(a,b){if(a<0)throw H.c(P.TE(a,0,null,b,null))}",
         "type": "void Function(int,[String,String])"
@@ -61835,7 +61928,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "rH:function(a){this.e.volume=a}\no(n,\"gGh\",\"rH\",14)",
         "type": "void Function(num)"
@@ -62266,7 +62359,7 @@
             "declaredType": "JSArray<ArrayIterator.E>"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "dynamic Function(JSArray<ArrayIterator.E>)"
@@ -62432,7 +62525,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "bool Function()"
@@ -62641,7 +62734,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 10,
+        "inlinedCount": 11,
         "code": "",
         "type": "bool Function(dynamic,dynamic)"
       },
@@ -62801,7 +62894,7 @@
         "id": "function/990987259",
         "kind": "function",
         "name": "typeEqual",
-        "size": 416,
+        "size": 454,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -62823,12 +62916,17 @@
             "name": "t",
             "type": "[exact=Rti]",
             "declaredType": "Rti"
+          },
+          {
+            "name": "isLegacy",
+            "type": "Value([exact=JSBool], value: true)",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nr:function(a,b){var t,s,r\nif(a===b)return!0\nif(H.cc(a))return H.cc(b)\nt=a.z\nif(t!==b.z)return!1\nswitch(t){case 6:case 7:case 8:return H.Nr(a.Q,b.Q)\ncase 9:if(a.Q!==b.Q)return!1\nreturn H.zu(a.ch,b.ch)\ncase 10:return H.Nr(a.Q,b.Q)&&H.zu(a.ch,b.ch)\ncase 11:if(H.Nr(a.Q,b.Q)){s=a.ch\nr=b.ch\ns=H.zu(s.a,r.a)&&H.zu(s.b,r.b)&&H.Xs(s.c,r.c)}else s=!1\nreturn s\ncase 12:return H.Nr(a.Q,b.Q)&&H.zu(a.ch,b.ch)\ndefault:return!1}}",
-        "type": "bool Function(Rti,Rti)"
+        "code": "Nr:function(a,b,c){var t,s,r\nif(a===b)return!0\nif(H.cc(a,!0))return H.cc(b,!0)\nt=a.z\nif(t!==b.z)return!1\nswitch(t){case 6:case 7:case 8:return H.Nr(a.Q,b.Q,!0)\ncase 9:if(a.Q!==b.Q)return!1\nreturn H.zu(a.ch,b.ch,!0)\ncase 10:return H.Nr(a.Q,b.Q,!0)&&H.zu(a.ch,b.ch,!0)\ncase 11:if(H.Nr(a.Q,b.Q,!0)){s=a.ch\nr=b.ch\ns=H.zu(s.a,r.a,!0)&&H.zu(s.b,r.b,!0)&&H.Xs(s.c,r.c,!0)}else s=!1\nreturn s\ncase 12:return H.Nr(a.Q,b.Q,!0)&&H.zu(a.ch,b.ch,!0)\ndefault:return!1}}",
+        "type": "bool Function(Rti,Rti,bool)"
       },
       "991909617": {
         "id": "function/991909617",
@@ -63236,7 +63334,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "String Function(int)"
@@ -63607,7 +63705,7 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof U.xy&&this.a===b.a&&this.b===b.b}",
         "type": "bool Function(Object)"
@@ -63668,7 +63766,7 @@
             "declaredType": "DisplayObject"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
         "code": "hu:function(a){var t\nfor(t=this;t!=null;t=t.fy)if(t===a)throw H.c(P.xY(\"An object cannot be added as a child to one of it's children (or children's children, etc.).\"))}",
         "type": "void Function(DisplayObject)"
@@ -64033,7 +64131,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){if(b==null)return!1\nreturn b instanceof P.a6&&this.a===b.a}",
         "type": "bool Function(dynamic)"
@@ -64126,7 +64224,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "bool Function()"
@@ -64154,7 +64252,7 @@
             "declaredType": "Rti"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 2,
         "code": "",
         "type": "String Function(Rti)"
@@ -64182,7 +64280,7 @@
             "declaredType": "SoundSpriteSegment"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "$1:function(a){return a.b===this.a}",
         "type": "bool Function(SoundSpriteSegment)"
@@ -64232,7 +64330,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "bool Function(int)"
@@ -64348,7 +64446,7 @@
         "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
         "code": "Xy:function(){this.r=this.r+1&67108863}",
         "type": "void Function()"
@@ -64587,7 +64685,7 @@
             "declaredType": "num"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes field)",
+        "sideEffects": "SideEffects(reads nothing; writes field)",
         "inlinedCount": 2,
         "code": "sVR:function(a,b){if(b<=0)b=0\nthis.ch=b>=1?1:b}",
         "type": "void Function(num)"
@@ -64934,7 +65032,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function()"
@@ -65188,7 +65286,7 @@
         "returnType": "num",
         "inferredReturnType": "[subclass=JSNumber]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
         "code": "",
         "type": "num Function()"
@@ -65789,7 +65887,7 @@
         "returnType": "bool",
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 4,
         "code": "",
         "type": "bool Function()"
@@ -66214,7 +66312,7 @@
         "returnType": "_ControllerSubscription<_StreamController.T>",
         "inferredReturnType": "[null|exact=_ControllerSubscription]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "glI:function(){if((this.b&8)!==0)return this.a.gJg()\nreturn this.a}",
         "type": "_ControllerSubscription<_StreamController.T> Function()"
@@ -66478,7 +66576,7 @@
             "declaredType": "dynamic"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
         "code": "DN:function(a,b){var t\nif(b==null)return!1\nif(u.i.c(b)){t=J.RE(b)\nt=a.left===t.gBb(b)&&a.top===t.gG6(b)&&a.width===t.gq9(b)&&a.height===t.gLj(b)}else t=!1\nreturn t}",
         "type": "bool Function(dynamic)"
@@ -66617,7 +66715,7 @@
             "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "int Function(int)"
@@ -66646,7 +66744,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 4,
+        "inlinedCount": 5,
         "code": "",
         "type": "Rti Function(Rti)"
       },
@@ -67667,7 +67765,7 @@
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "t($,\"BX\",\"rN\",function(){return H.cM(H.Mj(null))})",
+        "code": "t($,\"BX\",\"cP\",function(){return H.cM(H.Mj(null))})",
         "type": "TypeErrorDecoder"
       },
       "81307483": {
@@ -86731,6 +86829,12 @@
         "mask": "inlined"
       }
     ],
+    "function/76923042": [
+      {
+        "id": "function/120424305",
+        "mask": null
+      }
+    ],
     "function/77140749": [
       {
         "id": "function/539569943",
@@ -88213,6 +88317,14 @@
         "mask": null
       },
       {
+        "id": "function/638672010",
+        "mask": null
+      },
+      {
+        "id": "function/638672010",
+        "mask": "inlined"
+      },
+      {
         "id": "function/713151216",
         "mask": null
       },
@@ -88231,6 +88343,10 @@
       {
         "id": "function/944782426",
         "mask": "inlined"
+      },
+      {
+        "id": "function/947722698",
+        "mask": null
       },
       {
         "id": "function/982751380",
@@ -91715,10 +91831,6 @@
         "mask": null
       },
       {
-        "id": "function/120424305",
-        "mask": null
-      },
-      {
         "id": "function/194452894",
         "mask": null
       },
@@ -91744,11 +91856,11 @@
       },
       {
         "id": "function/405722833",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/405722833",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/436761607",
@@ -91780,11 +91892,11 @@
       },
       {
         "id": "function/55984201",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/55984201",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/598215859",
@@ -91796,6 +91908,18 @@
       },
       {
         "id": "function/696476121",
+        "mask": null
+      },
+      {
+        "id": "function/76923042",
+        "mask": null
+      },
+      {
+        "id": "function/76923042",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/76923042",
         "mask": null
       },
       {
@@ -101528,11 +101652,11 @@
       },
       {
         "id": "function/393568742",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/393568742",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/445547062",
@@ -101544,11 +101668,11 @@
       },
       {
         "id": "function/501313936",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/501313936",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/517327012",
@@ -101564,11 +101688,11 @@
       },
       {
         "id": "function/539569943",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/539569943",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/539569943",
@@ -101584,10 +101708,22 @@
       },
       {
         "id": "function/753032370",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/753032370",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/76923042",
+        "mask": null
+      },
+      {
+        "id": "function/76923042",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/781422565",
         "mask": null
       },
       {
@@ -101595,10 +101731,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/781422565",
-        "mask": null
-      },
-      {
         "id": "function/852326327",
         "mask": "inlined"
       },
@@ -101624,19 +101756,19 @@
       },
       {
         "id": "function/91691962",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/91691962",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/91691962",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/91691962",
         "mask": null
-      },
-      {
-        "id": "function/91691962",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/91691962",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/91691962",
-        "mask": "inlined"
       },
       {
         "id": "function/91691962",
@@ -101644,11 +101776,11 @@
       },
       {
         "id": "function/942726385",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/942726385",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/982751380",
@@ -110307,16 +110439,16 @@
         "mask": "inlined"
       },
       {
-        "id": "function/614790632",
-        "mask": null
-      },
-      {
-        "id": "function/614790632",
-        "mask": "inlined"
-      },
-      {
         "id": "function/620456164",
         "mask": null
+      },
+      {
+        "id": "function/654849933",
+        "mask": null
+      },
+      {
+        "id": "function/654849933",
+        "mask": "inlined"
       },
       {
         "id": "function/702246006",
@@ -111115,18 +111247,6 @@
     ],
     "function/620456164": [
       {
-        "id": "field/206062167",
-        "mask": null
-      },
-      {
-        "id": "field/206062167",
-        "mask": null
-      },
-      {
-        "id": "field/351779368",
-        "mask": null
-      },
-      {
         "id": "field/410674423",
         "mask": null
       },
@@ -111156,10 +111276,6 @@
       },
       {
         "id": "function/1070901287",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1070901287",
         "mask": null
       },
       {
@@ -111167,12 +111283,20 @@
         "mask": "inlined"
       },
       {
-        "id": "function/110436482",
-        "mask": null
+        "id": "function/1070901287",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1070901287",
+        "mask": "inlined"
       },
       {
         "id": "function/110436482",
         "mask": "inlined"
+      },
+      {
+        "id": "function/110436482",
+        "mask": null
       },
       {
         "id": "function/110436482",
@@ -111208,6 +111332,10 @@
       },
       {
         "id": "function/407860982",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/407860982",
         "mask": null
       },
       {
@@ -111215,20 +111343,16 @@
         "mask": "inlined"
       },
       {
-        "id": "function/407860982",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/412727111",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/412727111",
-        "mask": "inlined"
-      },
-      {
         "id": "function/412727111",
         "mask": null
+      },
+      {
+        "id": "function/412727111",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/412727111",
+        "mask": "inlined"
       },
       {
         "id": "function/412727111",
@@ -111259,10 +111383,6 @@
         "mask": null
       },
       {
-        "id": "function/517577557",
-        "mask": null
-      },
-      {
         "id": "function/539569943",
         "mask": null
       },
@@ -111276,15 +111396,15 @@
       },
       {
         "id": "function/589675001",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/589675001",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/589675001",
         "mask": null
+      },
+      {
+        "id": "function/589675001",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/589675001",
+        "mask": "inlined"
       },
       {
         "id": "function/589675001",
@@ -111300,11 +111420,11 @@
       },
       {
         "id": "function/616327902",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/616327902",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/620456164",
@@ -111316,19 +111436,19 @@
       },
       {
         "id": "function/713151216",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/713151216",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/74759397",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/74759397",
         "mask": null
+      },
+      {
+        "id": "function/74759397",
+        "mask": "inlined"
       },
       {
         "id": "function/74759397",
@@ -111368,11 +111488,11 @@
       },
       {
         "id": "function/947722698",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/947722698",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/982751380",
@@ -111915,6 +112035,20 @@
       {
         "id": "function/382271887",
         "mask": null
+      }
+    ],
+    "function/638672010": [
+      {
+        "id": "function/713151216",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/944782426",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/947722698",
+        "mask": "inlined"
       }
     ],
     "function/639422941": [
@@ -115328,6 +115462,10 @@
       }
     ],
     "function/713151216": [
+      {
+        "id": "function/986643735",
+        "mask": "inlined"
+      },
       {
         "id": "function/986643735",
         "mask": "inlined"
@@ -125711,6 +125849,10 @@
       {
         "id": "function/832692823",
         "mask": "inlined"
+      },
+      {
+        "id": "function/832692823",
+        "mask": "inlined"
       }
     ],
     "function/946181542": [
@@ -125762,6 +125904,14 @@
       },
       {
         "id": "function/517327012",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/517327012",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/539569943",
         "mask": "inlined"
       },
       {
@@ -132253,6 +132403,14 @@
         "mask": "inlined"
       },
       {
+        "id": "function/517327012",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/539569943",
+        "mask": "inlined"
+      },
+      {
         "id": "function/539569943",
         "mask": "inlined"
       },
@@ -132318,7 +132476,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 224885,
+      "size": 224803,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -132328,11 +132486,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 224885,
-    "dart2jsVersion": "2.8.0-dev.1.0",
-    "compilationMoment": "2020-01-14 08:49:45.279984",
-    "compilationDuration": 3180126,
-    "toJsonDuration": 11000,
+    "size": 224803,
+    "dart2jsVersion": "2.8.0-dev.2.0",
+    "compilationMoment": "2020-01-14 13:54:44.020501",
+    "compilationDuration": 3736104,
+    "toJsonDuration": 14000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
