@@ -771,7 +771,7 @@
         "id": "library/579882441",
         "kind": "library",
         "name": "rti",
-        "size": 13296,
+        "size": 13338,
         "children": [
           "class/121755874",
           "class/214521760",
@@ -859,7 +859,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 6852,
+        "size": 6851,
         "children": [
           "class/192166",
           "class/14460442",
@@ -1186,7 +1186,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space0OOIsE/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacenIWgAU/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -4437,7 +4437,7 @@
         "id": "class/328942404",
         "kind": "class",
         "name": "_TextureAtlasFormatJson",
-        "size": 2060,
+        "size": 2059,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -10280,6 +10280,7 @@
           "function/477858577",
           "function/479155815",
           "function/490035833",
+          "function/494259168",
           "function/495511570",
           "function/517189775",
           "function/566090952",
@@ -10288,7 +10289,6 @@
           "function/712382592",
           "function/744088497",
           "function/747174278",
-          "function/800670649",
           "function/821928955",
           "function/922651191",
           "function/935592878",
@@ -18374,7 +18374,7 @@
         "id": "function/132742275",
         "kind": "function",
         "name": "_arrayInstanceType",
-        "size": 48,
+        "size": 105,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -18394,8 +18394,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "t6:function(a){var t=a.$ti\nreturn t!=null?t:u.m}",
+        "inlinedCount": 0,
+        "code": "t6:function(a){var t=a.$ti,s=u.gn\nif(t==null)return s\nif(t.constructor!==s.constructor)return s\nreturn t}",
         "type": "Rti Function(dynamic)"
       },
       "133009644": {
@@ -24646,7 +24646,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yw:function(a,a0){var t=0,s=P.I(u.F),r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b\nvar $async$Yw=P.M(function(a1,a2){if(a1===1)return P.x(a2,s)\nwhile(true)switch(t){case 0:j=H.K([],u.d6)\ni=new O.lN(j)\nb=C.Ct\nt=3\nreturn P.j(W.Kn(a),$async$Yw)\ncase 3:h=b.kV(0,a2)\ng=J.U6(h)\nf=u.j\ne=f.a(g.WH(h,\"urls\"))\nd=g.WH(h,\"sprite\")\nc=H.K([],u.s)\nif(u.f.c(d))for(g=J.RE(d),q=J.IT(g.gvc(d));q.VF();){p=q.gRX()\no=f.a(g.WH(d,p))\nn=J.U6(o)\nm=V.VC(n.WH(o,0))\nl=V.VC(n.WH(o,1))\nj.push(new O.en(i,p,m,l,V.wJ(n.gkF(o)>2&&n.WH(o,2))))}j=u.N\nC.Nm.FV(c,J.M1(e,new O.Hi(a),j))\ng=$.mX()\nk=new E.ye()\ne=g.r\nk.z=g.z\nif(e==null)g=null\nelse g=H.K(e.slice(0),H.t6(e))\nk.r=g\nk.r=H.qC(c,1,null,j).br(0)\nb=i\nt=4\nreturn P.j(E.Kk(c[0],k),$async$Yw)\ncase 4:b.b=a2\nr=i\nt=1\nbreak\ncase 1:return P.k(r,s)}})\nreturn P.D($async$Yw,s)}",
+        "code": "Yw:function(a,a0){var t=0,s=P.I(u.m),r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b\nvar $async$Yw=P.M(function(a1,a2){if(a1===1)return P.x(a2,s)\nwhile(true)switch(t){case 0:j=H.K([],u.d6)\ni=new O.lN(j)\nb=C.Ct\nt=3\nreturn P.j(W.Kn(a),$async$Yw)\ncase 3:h=b.kV(0,a2)\ng=J.U6(h)\nf=u.j\ne=f.a(g.WH(h,\"urls\"))\nd=g.WH(h,\"sprite\")\nc=H.K([],u.s)\nif(u.f.c(d))for(g=J.RE(d),q=J.IT(g.gvc(d));q.VF();){p=q.gRX()\no=f.a(g.WH(d,p))\nn=J.U6(o)\nm=V.VC(n.WH(o,0))\nl=V.VC(n.WH(o,1))\nj.push(new O.en(i,p,m,l,V.wJ(n.gkF(o)>2&&n.WH(o,2))))}j=u.N\nC.Nm.FV(c,J.M1(e,new O.Hi(a),j))\ng=$.mX()\nk=new E.ye()\ne=g.r\nk.z=g.z\nif(e==null)g=null\nelse g=H.K(e.slice(0),H.t6(e))\nk.r=g\nk.r=H.qC(c,1,null,j).br(0)\nb=i\nt=4\nreturn P.j(E.Kk(c[0],k),$async$Yw)\ncase 4:b.b=a2\nr=i\nt=1\nbreak\ncase 1:return P.k(r,s)}})\nreturn P.D($async$Yw,s)}",
         "type": "Future<SoundSprite> Function(String,[SoundLoadOptions])"
       },
       "260422866": {
@@ -27907,7 +27907,7 @@
         "id": "function/317451330",
         "kind": "function",
         "name": "instanceType",
-        "size": 145,
+        "size": 130,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -27928,7 +27928,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "z:function(a){var t\nif(a instanceof P.Mh){t=a.$ti\nreturn t!=null?t:H.VU(a)}if(Array.isArray(a)){t=a.$ti\nreturn t!=null?t:u.m}return H.VU(J.i(a))}",
+        "code": "z:function(a){var t\nif(a instanceof P.Mh){t=a.$ti\nreturn t!=null?t:H.VU(a)}if(Array.isArray(a))return H.t6(a)\nreturn H.VU(J.i(a))}",
         "type": "Rti Function(dynamic)"
       },
       "317498645": {
@@ -37099,6 +37099,54 @@
         "code": "gKN:function(){var t=J.Hm(this.a)\nreturn t}",
         "type": "int Function()"
       },
+      "494259168": {
+        "id": "function/494259168",
+        "kind": "function",
+        "name": "handleIdentifier",
+        "size": 369,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/926198907",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "int",
+        "inferredReturnType": "[subclass=JSPositiveInt]",
+        "parameters": [
+          {
+            "name": "parser",
+            "type": "[null|subclass=Object]",
+            "declaredType": "Object"
+          },
+          {
+            "name": "start",
+            "type": "[subclass=JSPositiveInt]",
+            "declaredType": "int"
+          },
+          {
+            "name": "source",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          },
+          {
+            "name": "stack",
+            "type": "[null|subclass=Object]",
+            "declaredType": "Object"
+          },
+          {
+            "name": "hasPeriod",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "R8:function(a,b,c,d,e){var t,s,r,q,p,o,n=b+1\nfor(t=c.length;n<t;++n){s=c.charCodeAt(n)\nif(s===46){if(e)break\ne=!0}else{if(!((((s|32)>>>0)-97&65535)<26||s===95||s===36))r=s>=48&&s<=57\nelse r=!0\nif(!r)break}}q=c.substring(b,n)\nif(e){t=a.u\np=a.e\nif(p.z===10)p=p.Q\no=H.Qo(t,p.Q)[q]\nif(o==null)H.vh('No \"'+q+'\" in \"'+H.mD(p)+'\"')\nd.push(H.cE(t,p,o))}else d.push(q)\nreturn n}",
+        "type": "int Function(Object,int,String,Object,bool)"
+      },
       "494356220": {
         "id": "function/494356220",
         "kind": "function",
@@ -39173,7 +39221,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 87,
+        "inlinedCount": 86,
         "code": "",
         "type": "Rti Function(dynamic)"
       },
@@ -39202,7 +39250,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jr:function(a){var t,s\nif($.pL==null)throw H.c(P.PV(\"Not initialized\"))\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}t=u.F.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
+        "code": "jr:function(a){var t,s\nif($.pL==null)throw H.c(P.PV(\"Not initialized\"))\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}t=u.m.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
         "type": "void Function(String)"
       },
       "540949546": {
@@ -53473,54 +53521,6 @@
         "code": "",
         "type": "dynamic Function(Iterable<EfficientLengthMappedIterable.S>,EfficientLengthMappedIterable.T Function(EfficientLengthMappedIterable.S))"
       },
-      "800670649": {
-        "id": "function/800670649",
-        "kind": "function",
-        "name": "handleIdentifer",
-        "size": 369,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/926198907",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "int",
-        "inferredReturnType": "[subclass=JSPositiveInt]",
-        "parameters": [
-          {
-            "name": "parser",
-            "type": "[null|subclass=Object]",
-            "declaredType": "Object"
-          },
-          {
-            "name": "start",
-            "type": "[subclass=JSPositiveInt]",
-            "declaredType": "int"
-          },
-          {
-            "name": "source",
-            "type": "[exact=JSString]",
-            "declaredType": "String"
-          },
-          {
-            "name": "stack",
-            "type": "[null|subclass=Object]",
-            "declaredType": "Object"
-          },
-          {
-            "name": "hasPeriod",
-            "type": "[exact=JSBool]",
-            "declaredType": "bool"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "iX:function(a,b,c,d,e){var t,s,r,q,p,o,n=b+1\nfor(t=c.length;n<t;++n){s=c.charCodeAt(n)\nif(s===46){if(e)break\ne=!0}else{if(!((((s|32)>>>0)-97&65535)<26||s===95||s===36))r=s>=48&&s<=57\nelse r=!0\nif(!r)break}}q=c.substring(b,n)\nif(e){t=a.u\np=a.e\nif(p.z===10)p=p.Q\no=H.Qo(t,p.Q)[q]\nif(o==null)H.vh('No \"'+q+'\" in \"'+H.mD(p)+'\"')\nd.push(H.cE(t,p,o))}else d.push(q)\nreturn n}",
-        "type": "int Function(Object,int,String,Object,bool)"
-      },
       "800724830": {
         "id": "function/800724830",
         "kind": "function",
@@ -65244,7 +65244,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a){var t,s,r,q,p,o,n,m,l,k,j,i,h,g=a.r,f=a.s\nfor(t=g.length,s=0;s<t;){r=g.charCodeAt(s)\nif(r>=48&&r<=57)s=H.Al(s+1,r,g,f)\nelse if((((r|32)>>>0)-97&65535)<26||r===95||r===36)s=H.iX(a,s,g,f,!1)\nelse if(r===46)s=H.iX(a,s,g,f,!0)\nelse{++s\nswitch(r){case 44:break\ncase 58:break\ncase 59:f.push(H.KQ(a.u,a.e,f.pop()))\nbreak\ncase 94:f.push(H.Hc(a.u,f.pop()))\nbreak\ncase 35:f.push(H.mZ(a.u,5,\"#\"))\nbreak\ncase 64:f.push(H.mZ(a.u,2,\"@\"))\nbreak\ncase 126:f.push(H.mZ(a.u,3,\"~\"))\nbreak\ncase 60:f.push(a.p)\na.p=f.length\nbreak\ncase 62:q=a.u\np=f.splice(a.p)\nH.cH(a.u,a.e,p)\na.p=f.pop()\no=f.pop()\nif(typeof o==\"string\")f.push(H.Q2(q,o,p))\nelse{n=H.KQ(q,a.e,o)\nswitch(n.z){case 11:f.push(H.DS(q,n,p))\nbreak\ndefault:f.push(H.ap(q,n,p))\nbreak}}break\ncase 38:H.I3(a,f)\nbreak\ncase 42:m=a.u\nl=H.KQ(m,a.e,f.pop())\nf.push(H.Sh(m,6,l,l.db+\"*\"))\nbreak\ncase 63:m=a.u\nl=H.KQ(m,a.e,f.pop())\nf.push(H.Sh(m,7,l,l.db+\"?\"))\nbreak\ncase 47:m=a.u\nl=H.KQ(m,a.e,f.pop())\nf.push(H.Sh(m,8,l,l.db+\"/\"))\nbreak\ncase 40:f.push(a.p)\na.p=f.length\nbreak\ncase 41:q=a.u\nk=new H.ET()\nj=q.sEA\ni=q.sEA\no=f.pop()\nif(typeof o==\"number\")switch(o){case-1:j=f.pop()\nbreak\ncase-2:i=f.pop()\nbreak\ndefault:f.push(o)\nbreak}else f.push(o)\np=f.splice(a.p)\nH.cH(a.u,a.e,p)\na.p=f.pop()\nk.a=p\nk.b=j\nk.c=i\nf.push(H.Nf(q,H.KQ(q,a.e,f.pop()),k))\nbreak\ncase 91:f.push(a.p)\na.p=f.length\nbreak\ncase 93:p=f.splice(a.p)\nH.cH(a.u,a.e,p)\na.p=f.pop()\nf.push(p)\nf.push(-1)\nbreak\ncase 123:f.push(a.p)\na.p=f.length\nbreak\ncase 125:p=f.splice(a.p)\nH.Be(a.u,a.e,p)\na.p=f.pop()\nf.push(p)\nf.push(-2)\nbreak\ndefault:throw\"Bad character \"+r}}}h=f.pop()\nreturn H.KQ(a.u,a.e,h)}",
+        "code": "eT:function(a){var t,s,r,q,p,o,n,m,l,k,j,i,h,g=a.r,f=a.s\nfor(t=g.length,s=0;s<t;){r=g.charCodeAt(s)\nif(r>=48&&r<=57)s=H.Al(s+1,r,g,f)\nelse if((((r|32)>>>0)-97&65535)<26||r===95||r===36)s=H.R8(a,s,g,f,!1)\nelse if(r===46)s=H.R8(a,s,g,f,!0)\nelse{++s\nswitch(r){case 44:break\ncase 58:break\ncase 59:f.push(H.KQ(a.u,a.e,f.pop()))\nbreak\ncase 94:f.push(H.Hc(a.u,f.pop()))\nbreak\ncase 35:f.push(H.mZ(a.u,5,\"#\"))\nbreak\ncase 64:f.push(H.mZ(a.u,2,\"@\"))\nbreak\ncase 126:f.push(H.mZ(a.u,3,\"~\"))\nbreak\ncase 60:f.push(a.p)\na.p=f.length\nbreak\ncase 62:q=a.u\np=f.splice(a.p)\nH.cH(a.u,a.e,p)\na.p=f.pop()\no=f.pop()\nif(typeof o==\"string\")f.push(H.Q2(q,o,p))\nelse{n=H.KQ(q,a.e,o)\nswitch(n.z){case 11:f.push(H.DS(q,n,p))\nbreak\ndefault:f.push(H.ap(q,n,p))\nbreak}}break\ncase 38:H.I3(a,f)\nbreak\ncase 42:m=a.u\nl=H.KQ(m,a.e,f.pop())\nf.push(H.Sh(m,6,l,l.db+\"*\"))\nbreak\ncase 63:m=a.u\nl=H.KQ(m,a.e,f.pop())\nf.push(H.Sh(m,7,l,l.db+\"?\"))\nbreak\ncase 47:m=a.u\nl=H.KQ(m,a.e,f.pop())\nf.push(H.Sh(m,8,l,l.db+\"/\"))\nbreak\ncase 40:f.push(a.p)\na.p=f.length\nbreak\ncase 41:q=a.u\nk=new H.ET()\nj=q.sEA\ni=q.sEA\no=f.pop()\nif(typeof o==\"number\")switch(o){case-1:j=f.pop()\nbreak\ncase-2:i=f.pop()\nbreak\ndefault:f.push(o)\nbreak}else f.push(o)\np=f.splice(a.p)\nH.cH(a.u,a.e,p)\na.p=f.pop()\nk.a=p\nk.b=j\nk.c=i\nf.push(H.Nf(q,H.KQ(q,a.e,f.pop()),k))\nbreak\ncase 91:f.push(a.p)\na.p=f.length\nbreak\ncase 93:p=f.splice(a.p)\nH.cH(a.u,a.e,p)\na.p=f.pop()\nf.push(p)\nf.push(-1)\nbreak\ncase 123:f.push(a.p)\na.p=f.length\nbreak\ncase 125:p=f.splice(a.p)\nH.Be(a.u,a.e,p)\na.p=f.pop()\nf.push(p)\nf.push(-2)\nbreak\ndefault:throw\"Bad character \"+r}}}h=f.pop()\nreturn H.KQ(a.u,a.e,h)}",
         "type": "Rti Function(Object)"
       },
       "1036743690": {
@@ -78998,14 +78998,6 @@
         "outputUnit": "outputUnit/669725655",
         "code": "C.L6=new A.P0(\"StageAlign.BOTTOM\")"
       },
-      "770507272": {
-        "id": "constant/770507272",
-        "kind": "constant",
-        "name": null,
-        "size": 15,
-        "outputUnit": "outputUnit/669725655",
-        "code": "C.NU=new P.R8()"
-      },
       "775905741": {
         "id": "constant/775905741",
         "kind": "constant",
@@ -79013,6 +79005,14 @@
         "size": 41,
         "outputUnit": "outputUnit/669725655",
         "code": "C.O7=new R.vZ(\"InputEventMode.TouchOnly\")"
+      },
+      "785207266": {
+        "id": "constant/785207266",
+        "kind": "constant",
+        "name": null,
+        "size": 15,
+        "outputUnit": "outputUnit/669725655",
+        "code": "C.NU=new P.Ji()"
       },
       "801290344": {
         "id": "constant/801290344",
@@ -89235,10 +89235,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/539569943",
-        "mask": "inlined"
-      },
-      {
         "id": "function/982751380",
         "mask": null
       }
@@ -98119,10 +98115,6 @@
         "mask": null
       },
       {
-        "id": "function/132742275",
-        "mask": "inlined"
-      },
-      {
         "id": "function/160933185",
         "mask": null
       },
@@ -98157,10 +98149,6 @@
       {
         "id": "function/831592736",
         "mask": "inlined"
-      },
-      {
-        "id": "function/982751380",
-        "mask": null
       }
     ],
     "function/319720211": [
@@ -106767,6 +106755,132 @@
       {
         "id": "function/825039833",
         "mask": "Union([subclass=JSArray], [subclass=ListIterable], [subtype=ListMixin])"
+      }
+    ],
+    "function/494259168": [
+      {
+        "id": "field/410674423",
+        "mask": null
+      },
+      {
+        "id": "field/523754696",
+        "mask": null
+      },
+      {
+        "id": "function/1013396128",
+        "mask": null
+      },
+      {
+        "id": "function/1013396128",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/1019584284",
+        "mask": null
+      },
+      {
+        "id": "function/1019584284",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/212177062",
+        "mask": null
+      },
+      {
+        "id": "function/212177062",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/308590446",
+        "mask": null
+      },
+      {
+        "id": "function/436761607",
+        "mask": null
+      },
+      {
+        "id": "function/447148542",
+        "mask": null
+      },
+      {
+        "id": "function/447148542",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/46139592",
+        "mask": null
+      },
+      {
+        "id": "function/489157293",
+        "mask": null
+      },
+      {
+        "id": "function/490035833",
+        "mask": null
+      },
+      {
+        "id": "function/490035833",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/490035833",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/517327012",
+        "mask": null
+      },
+      {
+        "id": "function/539569943",
+        "mask": null
+      },
+      {
+        "id": "function/566090952",
+        "mask": null
+      },
+      {
+        "id": "function/566090952",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/746055337",
+        "mask": null
+      },
+      {
+        "id": "function/746055337",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/765963979",
+        "mask": null
+      },
+      {
+        "id": "function/832692823",
+        "mask": null
+      },
+      {
+        "id": "function/852359021",
+        "mask": null
+      },
+      {
+        "id": "function/852359021",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/942726385",
+        "mask": null
+      },
+      {
+        "id": "function/944782426",
+        "mask": null
+      },
+      {
+        "id": "function/960612858",
+        "mask": null
+      },
+      {
+        "id": "function/964398244",
+        "mask": null
       }
     ],
     "function/495511570": [
@@ -120289,132 +120403,6 @@
         "mask": "[subclass=_StreamController]"
       }
     ],
-    "function/800670649": [
-      {
-        "id": "field/410674423",
-        "mask": null
-      },
-      {
-        "id": "field/523754696",
-        "mask": null
-      },
-      {
-        "id": "function/1013396128",
-        "mask": null
-      },
-      {
-        "id": "function/1013396128",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/1019584284",
-        "mask": null
-      },
-      {
-        "id": "function/1019584284",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/212177062",
-        "mask": null
-      },
-      {
-        "id": "function/212177062",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/308590446",
-        "mask": null
-      },
-      {
-        "id": "function/436761607",
-        "mask": null
-      },
-      {
-        "id": "function/447148542",
-        "mask": null
-      },
-      {
-        "id": "function/447148542",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/46139592",
-        "mask": null
-      },
-      {
-        "id": "function/489157293",
-        "mask": null
-      },
-      {
-        "id": "function/490035833",
-        "mask": null
-      },
-      {
-        "id": "function/490035833",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/490035833",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/517327012",
-        "mask": null
-      },
-      {
-        "id": "function/539569943",
-        "mask": null
-      },
-      {
-        "id": "function/566090952",
-        "mask": null
-      },
-      {
-        "id": "function/566090952",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/746055337",
-        "mask": null
-      },
-      {
-        "id": "function/746055337",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/765963979",
-        "mask": null
-      },
-      {
-        "id": "function/832692823",
-        "mask": null
-      },
-      {
-        "id": "function/852359021",
-        "mask": null
-      },
-      {
-        "id": "function/852359021",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/942726385",
-        "mask": null
-      },
-      {
-        "id": "function/944782426",
-        "mask": null
-      },
-      {
-        "id": "function/960612858",
-        "mask": null
-      },
-      {
-        "id": "function/964398244",
-        "mask": null
-      }
-    ],
     "function/800724830": [
       {
         "id": "field/1064789081",
@@ -130708,10 +130696,6 @@
       },
       {
         "id": "function/490035833",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/490035833",
         "mask": null
       },
       {
@@ -130723,11 +130707,19 @@
         "mask": "inlined"
       },
       {
+        "id": "function/490035833",
+        "mask": "inlined"
+      },
+      {
         "id": "function/49259755",
         "mask": "inlined"
       },
       {
         "id": "function/49259755",
+        "mask": null
+      },
+      {
+        "id": "function/494259168",
         "mask": null
       },
       {
@@ -130808,11 +130800,11 @@
       },
       {
         "id": "function/712382592",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/712382592",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/744088497",
@@ -130837,10 +130829,6 @@
       {
         "id": "function/78867062",
         "mask": "inlined"
-      },
-      {
-        "id": "function/800670649",
-        "mask": null
       },
       {
         "id": "function/801619570",
@@ -130884,11 +130872,11 @@
       },
       {
         "id": "function/935592878",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/935592878",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/942726385",
@@ -132476,7 +132464,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 224803,
+      "size": 224844,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -132486,10 +132474,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 224803,
-    "dart2jsVersion": "2.8.0-dev.2.0",
-    "compilationMoment": "2020-01-14 13:54:44.020501",
-    "compilationDuration": 3736104,
+    "size": 224844,
+    "dart2jsVersion": "2.8.0-dev.4.0",
+    "compilationMoment": "2020-01-21 11:11:14.311176",
+    "compilationDuration": 5124460,
     "toJsonDuration": 14000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
