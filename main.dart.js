@@ -4408,7 +4408,9 @@ return"0"+a},
 $S:9}
 P.Ge.prototype={}
 P.C6.prototype={
-bu:function(a){return"Assertion failed"}}
+bu:function(a){var t=this.a
+if(t!=null)return"Assertion failed: "+P.p(t)
+return"Assertion failed"}}
 P.B.prototype={
 bu:function(a){return"Throw of null."}}
 P.h.prototype={

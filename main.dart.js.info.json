@@ -917,7 +917,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7654,
+        "size": 7712,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -1186,7 +1186,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacenIWgAU/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceG7Pd5B/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1917,7 +1917,7 @@
         "id": "class/56472591",
         "kind": "class",
         "name": "AssertionError",
-        "size": 89,
+        "size": 147,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -45163,7 +45163,7 @@
         "id": "function/658851039",
         "kind": "function",
         "name": "toString",
-        "size": 40,
+        "size": 98,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/56472591",
         "children": [],
@@ -45174,11 +45174,11 @@
           "external": false
         },
         "returnType": "String",
-        "inferredReturnType": "Value([exact=JSString], value: \"Assertion failed\")",
+        "inferredReturnType": "[exact=JSString]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bu:function(a){return\"Assertion failed\"}",
+        "code": "bu:function(a){var t=this.a\nif(t!=null)return\"Assertion failed: \"+P.p(t)\nreturn\"Assertion failed\"}",
         "type": "String Function()"
       },
       "658921946": {
@@ -112927,6 +112927,16 @@
         "mask": null
       }
     ],
+    "function/658851039": [
+      {
+        "id": "field/840751619",
+        "mask": null
+      },
+      {
+        "id": "function/355012434",
+        "mask": null
+      }
+    ],
     "function/658921946": [
       {
         "id": "function/390828239",
@@ -132464,7 +132474,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 224844,
+      "size": 224902,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -132474,10 +132484,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 224844,
-    "dart2jsVersion": "2.8.0-dev.4.0",
-    "compilationMoment": "2020-01-21 11:11:14.311176",
-    "compilationDuration": 5124460,
+    "size": 224902,
+    "dart2jsVersion": "2.8.0-dev.5.0",
+    "compilationMoment": "2020-01-23 06:52:37.406458",
+    "compilationDuration": 3200580,
     "toJsonDuration": 14000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
