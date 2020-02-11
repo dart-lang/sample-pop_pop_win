@@ -11,7 +11,7 @@ class GameStorage {
   static const _gameCountKey = 'gameCount';
   final _bestTimeUpdated = StreamController<void>();
 
-  int get gameCount => _getIntValue(_gameCountKey);
+  int get gameCount => _getIntValue(_gameCountKey) ?? 0;
 
   Stream<void> get bestTimeUpdated => _bestTimeUpdated.stream;
 
@@ -41,7 +41,7 @@ class GameStorage {
     }
   }
 
-  int getBestTimeMilliseconds(int width, int height, int bombCount) {
+  int? getBestTimeMilliseconds(int width, int height, int bombCount) {
     final key = _getKey(width, height, bombCount);
     return _getIntValue(key, null);
   }
@@ -50,27 +50,28 @@ class GameStorage {
     targetPlatform.clearValues();
   }
 
-  int _getIntValue(String key, [int defaultValue = 0]) {
-    assert(key != null);
-
+  int? _getIntValue(String key, [int? defaultValue = 0]) {
     final strValue = targetPlatform.getValue(key);
     return _parseValue(strValue, defaultValue);
   }
 
   void _setIntValue(String key, int value) {
     assert(key != null);
-    final val = (value == null) ? null : value.toString();
-    targetPlatform.setValue(key, val);
+    if (value == null) {
+      throw UnimplementedError();
+    } else {
+      targetPlatform.setValue(key, value.toString());
+    }
   }
 
   void _incrementIntValue(String key) {
     final val = _getIntValue(key);
-    _setIntValue(key, val + 1);
+    _setIntValue(key, val ?? 0 + 1);
   }
 
   static String _getKey(int w, int h, int m) => 'w$w-h$h-m$m';
 
-  static int _parseValue(String value, int defaultValue) {
+  static int? _parseValue(String? value, int? defaultValue) {
     if (value == null) {
       return defaultValue;
     } else {

@@ -15,7 +15,7 @@ class GameRoot extends GameManager {
   final ResourceManager resourceManager;
   final _eventCount = <GameState, int>{};
 
-  GameElement _gameElement;
+  late GameElement _gameElement;
 
   GameRoot(
       int width, int height, int bombCount, this.stage, this.resourceManager)

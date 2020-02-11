@@ -32,9 +32,9 @@ class GameElement extends Sprite {
 
   final Random _rnd = Random();
 
-  BoardElement _boardElement;
-  ScoreElement _scoreElement;
-  SimpleButton _logoButton;
+  late BoardElement _boardElement;
+  late ScoreElement _scoreElement;
+  late SimpleButton _logoButton;
   final _popLayer = Sprite(), _dartLayer = Sprite();
 
   int _boardSize;

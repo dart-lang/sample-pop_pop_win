@@ -94,7 +94,7 @@ void _secondaryLoad(
 
   html.window.onKeyDown.listen(_onKeyDown);
 
-  html.querySelector('#popup').onClick.listen(_onPopupClick);
+  html.querySelector('#popup')!.onClick.listen(_onPopupClick);
 
   titleClickedEvent.listen((args) => targetPlatform.toggleAbout(true));
 }
@@ -119,5 +119,5 @@ void _onKeyDown(html.KeyboardEvent args) {
 
 void _updateAbout() {
   final popDisplay = targetPlatform.showAbout ? 'inline-block' : 'none';
-  html.querySelector('#popup').style.display = popDisplay;
+  html.querySelector('#popup')!.style.display = popDisplay;
 }

@@ -20,9 +20,9 @@ class Game {
   final _gameStateEvent = StreamController<GameState>();
   final _watch = Stopwatch();
 
-  GameState _state;
-  int _bombsLeft;
-  int _revealsLeft;
+  late GameState _state;
+  late int _bombsLeft;
+  late int _revealsLeft;
 
   Game(this.field)
       : _state = GameState.reset,
@@ -85,7 +85,7 @@ class Game {
     return false;
   }
 
-  List<Point<int>> reveal(int x, int y) {
+  List<Point<int>>? reveal(int x, int y) {
     _ensureStarted();
     require(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
