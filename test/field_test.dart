@@ -51,8 +51,14 @@ void _testAdjacent() {
   for (var x = 0; x < f.width; x++) {
     for (var y = 0; y < f.height; y++) {
       final i = x + y * f.width;
-      final adj = f.getAdjacentCount(x, y);
-      expect(adj, equals(sampleField[i]));
+
+      final expected = sampleField[i];
+
+      if (expected == null) {
+        expect(() => f.getAdjacentCount(x, y), throwsStateError);
+      } else {
+        expect(f.getAdjacentCount(x, y), expected);
+      }
     }
   }
 }
