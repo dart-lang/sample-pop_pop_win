@@ -23,7 +23,7 @@ class PlatformWeb {
     window.localStorage[key] = value;
   }
 
-  String getValue(String key) => window.localStorage[key];
+  String? getValue(String key) => window.localStorage[key];
 
   int get size {
     _sizeAccessed = true;
@@ -36,7 +36,7 @@ class PlatformWeb {
 
   Stream<void> get aboutChanged => _aboutController.stream;
 
-  void toggleAbout([bool value]) {
+  void toggleAbout([bool? value]) {
     final loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later
     final hash = loc.hash.isEmpty ? '#' : loc.hash;

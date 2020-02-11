@@ -11,13 +11,13 @@ int getHashCode(Iterable<Object> source) {
   return 0x1fffffff & (hash + ((0x00003fff & hash) << 15));
 }
 
-void require(bool truth, [String message]) {
+void require(bool truth, [String? message]) {
   if (!truth) {
     throw Exception(message);
   }
 }
 
-void requireArgument(bool truth, String argName, [String message]) {
+void requireArgument(bool truth, String argName, [String? message]) {
   if (!truth) {
     if (message == null || message.isEmpty) {
       message = 'value was invalid';

@@ -8,7 +8,7 @@ import 'package:stagexl/stagexl.dart';
 
 final Random _rnd = Random();
 
-ResourceManager _resourceManager;
+late ResourceManager _resourceManager;
 
 const String _win = 'win',
     _click = 'click',
@@ -19,7 +19,6 @@ const String _win = 'win',
     _throwDart = 'throw';
 
 void initialize(ResourceManager resourceManager) {
-  if (_resourceManager != null) throw StateError('already initialized');
   _resourceManager = resourceManager;
 }
 

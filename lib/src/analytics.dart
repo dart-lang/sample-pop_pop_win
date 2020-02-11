@@ -11,7 +11,7 @@ import 'package:js/js.dart';
 
 @JS('gtag')
 external void gtag(String event, String eventName,
-    [GTagAnalyticsEventOptions eventParams]);
+    [GTagAnalyticsEventOptions? eventParams]);
 
 @JS()
 @anonymous
@@ -21,5 +21,5 @@ class GTagAnalyticsEventOptions {
   external int get value;
 
   external factory GTagAnalyticsEventOptions(
-      {String event_category, String event_label, int value});
+      {String? event_category, String? event_label, int? value});
 }

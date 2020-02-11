@@ -11,7 +11,7 @@ import 'package:pop_pop_win/src/game.dart';
 // X32321
 // 110000
 
-const List<int> sampleField = <int>[
+const List<int?> sampleField = [
   null,
   null,
   null,
