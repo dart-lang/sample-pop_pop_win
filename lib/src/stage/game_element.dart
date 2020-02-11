@@ -290,9 +290,9 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
   }
 }
 
-final StreamController _titleClickedEventHandle = StreamController();
+final _titleClickedEventHandle = StreamController<void>();
 
-Stream get titleClickedEvent => _titleClickedEventHandle.stream;
+Stream<void> get titleClickedEvent => _titleClickedEventHandle.stream;
 
 class _Values {
   final Point<int> point;

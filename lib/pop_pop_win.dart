@@ -13,7 +13,7 @@ import 'src/stage.dart';
 
 const String _assetDir = 'packages/pop_pop_win/assets';
 
-Future startGame() async {
+Future<void> startGame() async {
   final options = StageOptions()
     ..backgroundColor = 0xb4ad7f
     ..transparent = true;
@@ -34,7 +34,7 @@ Future startGame() async {
   await _initialLoad(resMan, stage);
 }
 
-Future _initialLoad(ResourceManager resourceManager, Stage stage) async {
+Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
   final atlas = resourceManager.getTextureAtlas('static');
 
   final bar = Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)

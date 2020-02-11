@@ -1,4 +1,4 @@
-int getHashCode(Iterable source) {
+int getHashCode(Iterable<Object> source) {
   var hash = 0;
   for (final h in source) {
     final next = h == null ? 0 : h.hashCode;

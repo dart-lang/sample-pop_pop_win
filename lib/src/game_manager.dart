@@ -12,7 +12,7 @@ abstract class GameManager {
   final GameStorage _gameStorage = GameStorage();
 
   Game _game;
-  StreamSubscription _gameStateChangedSub;
+  StreamSubscription<void> _gameStateChangedSub;
   Timer _clockTimer;
 
   GameManager(this._width, this._height, this._bombCount) {
@@ -21,7 +21,7 @@ abstract class GameManager {
 
   Game get game => _game;
 
-  Stream get bestTimeUpdated => _gameStorage.bestTimeUpdated;
+  Stream<void> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
   int get bestTimeMilliseconds =>
       _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);

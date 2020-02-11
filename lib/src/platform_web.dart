@@ -11,7 +11,7 @@ class PlatformWeb {
   static const String _aboutHash = '#about';
   bool _sizeAccessed = false;
 
-  final StreamController _aboutController = StreamController(sync: true);
+  final _aboutController = StreamController<void>(sync: true);
 
   PlatformWeb._() {
     window.onPopState.listen((args) => _processUrlHash());
@@ -34,7 +34,7 @@ class PlatformWeb {
 
   bool get showAbout => _urlHash == _aboutHash;
 
-  Stream get aboutChanged => _aboutController.stream;
+  Stream<void> get aboutChanged => _aboutController.stream;
 
   void toggleAbout([bool value]) {
     final loc = window.location;
