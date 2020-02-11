@@ -12,8 +12,7 @@ abstract class GameManager {
   final GameStorage _gameStorage = GameStorage();
 
   Game _game;
-  StreamSubscription _updatedEventId;
-  StreamSubscription _gameStateChangedId;
+  StreamSubscription _gameStateChangedSub;
   Timer _clockTimer;
 
   GameManager(this._width, this._height, this._bombCount) {
@@ -24,24 +23,19 @@ abstract class GameManager {
 
   Stream get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
-  Future<int> get bestTimeMilliseconds async =>
+  int get bestTimeMilliseconds =>
       _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
 
   void newGame() {
-    if (_updatedEventId != null) {
+    if (_gameStateChangedSub != null) {
       assert(_game != null);
-      assert(_gameStateChangedId != null);
-      _updatedEventId.cancel();
-      _gameStateChangedId.cancel();
+      _gameStateChangedSub.cancel();
       _gameStateChanged(GameState.reset);
     }
     final f = Field(_bombCount, _width, _height);
     _game = Game(f);
-    _updatedEventId = _game.updated.listen((_) => gameUpdated());
-    _gameStateChangedId = _game.stateChanged.listen(_gameStateChanged);
+    _gameStateChangedSub = _game.stateChanged.listen(_gameStateChanged);
   }
-
-  void gameUpdated() {}
 
   void resetScores() {
     _gameStorage.reset();
@@ -56,18 +50,12 @@ abstract class GameManager {
     }
   }
 
-  void onNewBestTime(int value) {}
-
-  void onGameStateChanged(GameState value) {}
+  void onGameStateChanged(GameState value);
 
   void _gameStateChanged(GameState newState) {
     _gameStorage.recordState(newState);
     if (newState == GameState.won) {
-      _gameStorage.updateBestTime(_game).then((newBestTime) {
-        if (newBestTime) {
-          bestTimeMilliseconds.then(onNewBestTime);
-        }
-      });
+      _gameStorage.updateBestTime(_game);
     }
     updateClock();
     onGameStateChanged(newState);
