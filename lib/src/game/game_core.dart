@@ -18,12 +18,11 @@ class Game {
   final Array2d<SquareState> _states;
   final _updatedEvent = StreamController<void>();
   final _gameStateEvent = StreamController<GameState>();
+  final _watch = Stopwatch();
 
   GameState _state;
   int _bombsLeft;
   int _revealsLeft;
-  DateTime _startTime;
-  DateTime _endTime;
 
   Game(this.field)
       : _state = GameState.reset,
@@ -48,16 +47,7 @@ class Game {
 
   bool get gameEnded => _state == GameState.won || _state == GameState.lost;
 
-  Duration get duration {
-    if (_startTime == null) {
-      assert(state == GameState.reset);
-      return null;
-    } else {
-      assert((state == GameState.started) == (_endTime == null));
-      final end = (_endTime == null) ? DateTime.now() : _endTime;
-      return end.difference(_startTime);
-    }
-  }
+  Duration get duration => _watch.elapsed;
 
   bool canToggleFlag(int x, int y) {
     final currentSS = _states.get(x, y);
@@ -276,13 +266,16 @@ class Game {
   void _setState(GameState value) {
     assert(value != null);
     assert(_state != null);
-    assert((_state == GameState.reset) == (_startTime == null));
+    assert((_state == GameState.reset) == (!_watch.isRunning));
     if (_state != value) {
       _state = value;
       if (_state == GameState.started) {
-        _startTime = DateTime.now();
+        assert(!_watch.isRunning);
+        _watch.reset();
+        _watch.start();
       } else if (gameEnded) {
-        _endTime = DateTime.now();
+        assert(_watch.isRunning);
+        _watch.stop();
       }
       _gameStateEvent.add(_state);
     }
@@ -290,11 +283,11 @@ class Game {
 
   void _ensureStarted() {
     if (state == GameState.reset) {
-      assert(_startTime == null);
+      assert(!_watch.isRunning);
       _setState(GameState.started);
     }
     assert(state == GameState.started);
-    assert(_startTime != null);
+    assert(_watch.isRunning);
   }
 
   int _getAdjacentCount(int x, int y, SquareState state) {
