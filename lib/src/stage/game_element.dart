@@ -83,12 +83,7 @@ class GameElement extends Sprite {
       ..x = boardOffset.x + _edgeOffset * _boardScale
       ..y = boardOffset.y + _edgeOffset * _boardScale;
 
-    manager.bestTimeMilliseconds.then((v) {
-      v ??= 0;
-      _scoreElement = ScoreElement(v)..addTo(this);
-
-      stage.juggler.add(_scoreElement);
-    });
+    _scoreElement = ScoreElement(manager.bestTimeMilliseconds)..addTo(this);
 
     final logoScale = min(max(_boardScale, 1.1), 1.5);
     final logo = Bitmap(sta.getBitmapData('logo_win'));

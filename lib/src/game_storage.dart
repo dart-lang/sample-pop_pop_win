@@ -21,7 +21,7 @@ class GameStorage {
     _incrementIntValue(state.toString());
   }
 
-  Future<bool> updateBestTime(Game game) async {
+  bool updateBestTime(Game game) {
     assert(game != null);
     assert(game.state == GameState.won);
 

@@ -7,7 +7,7 @@ import 'package:stagexl/stagexl.dart';
 import '../game.dart';
 import 'game_element.dart';
 
-class ScoreElement extends TextField implements Animatable {
+class ScoreElement extends TextField {
   int bestTime;
 
   ScoreElement(this.bestTime) {
@@ -19,16 +19,25 @@ class ScoreElement extends TextField implements Animatable {
   }
 
   @override
-  bool advanceTime(num time) {
-    final timeInSeconds = (game.duration == null)
-        ? '0'
-        : (game.duration.inMilliseconds / 1000).toStringAsFixed(1);
-    text = 'Bombs Left: ${game.bombsLeft}\nTime: $timeInSeconds';
-    if (bestTime > 0) {
-      text = '$text\nRecord: ${(bestTime / 1000).toStringAsFixed(1)}';
+  void render(RenderState renderState) {
+    final newTextValue = _textValue();
+    if (newTextValue != text) {
+      text = newTextValue;
     }
-    return true;
+    super.render(renderState);
   }
 
-  Game get game => (parent as GameElement).manager.game;
+  String _textValue() {
+    final timeInSeconds = (_game.duration == null)
+        ? '0'
+        : (_game.duration.inMilliseconds / 1000).toStringAsFixed(1);
+    var textValue = 'Bombs Left: ${_game.bombsLeft}\nTime: $timeInSeconds';
+    if (bestTime != null) {
+      textValue = '$textValue\nRecord: ${(bestTime / 1000).toStringAsFixed(1)}';
+    }
+
+    return textValue;
+  }
+
+  Game get _game => (parent as GameElement).manager.game;
 }
