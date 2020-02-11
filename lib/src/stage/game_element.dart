@@ -136,7 +136,7 @@ class GameElement extends Sprite {
         _toggleFlag(x, y);
       } else if (ss == SquareState.revealed) {
         if (game.canReveal(x, y)) {
-          // get adjacent ballons
+          // get adjacent balloons
           final adjHidden = game.field
               .getAdjacentIndices(x, y)
               .map((i) => game.field.getCoordinate(i))

@@ -251,15 +251,15 @@ void _testWin() {
   final f = getSampleField();
   final g = Game(f);
 
-  var bombsLleft = f.bombCount;
+  var bombsLeft = f.bombCount;
   expect(g.revealsLeft, equals(f.length - 13));
   var revealsLeft = g.revealsLeft;
   for (var x = 0; x < f.width; x++) {
     for (var y = 0; y < f.height; y++) {
       if (f.get(x, y)) {
         g.setFlag(x, y, true);
-        bombsLleft--;
-        expect(g.bombsLeft, equals(bombsLleft));
+        bombsLeft--;
+        expect(g.bombsLeft, equals(bombsLeft));
       } else if (g.getSquareState(x, y) == SquareState.hidden) {
         revealsLeft -= g.reveal(x, y).length;
         expect(revealsLeft, equals(g.revealsLeft));
