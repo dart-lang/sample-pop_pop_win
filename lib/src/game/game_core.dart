@@ -16,9 +16,8 @@ enum GameState { reset, started, won, lost }
 class Game {
   final Field field;
   final Array2d<SquareState> _states;
-  final StreamController _updatedEvent = StreamController();
-  final StreamController<GameState> _gameStateEvent =
-      StreamController<GameState>();
+  final _updatedEvent = StreamController<void>();
+  final _gameStateEvent = StreamController<GameState>();
 
   GameState _state;
   int _bombsLeft;
@@ -41,7 +40,7 @@ class Game {
 
   GameState get state => _state;
 
-  Stream get updated => _updatedEvent.stream;
+  Stream<void> get updated => _updatedEvent.stream;
 
   Stream<GameState> get stateChanged => _gameStateEvent.stream;
 
