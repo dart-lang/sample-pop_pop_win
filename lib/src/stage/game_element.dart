@@ -40,7 +40,6 @@ class GameElement extends Sprite {
   int _boardSize;
   num _boardScale;
 
-  int _targetX, _targetY;
   TextureAtlas _animations;
 
   Game get game => manager.game;
@@ -111,18 +110,6 @@ class GameElement extends Sprite {
       ..scaleX = _boardScale
       ..scaleY = _boardScale
       ..addTo(this);
-  }
-
-  bool get canRevealTarget =>
-      _targetX != null && game.canReveal(_targetX, _targetY);
-
-  bool get canFlagTarget =>
-      _targetX != null && game.canToggleFlag(_targetX, _targetY);
-
-  void revealTarget() {
-    if (_targetX != null) {
-      game.reveal(_targetX, _targetY);
-    }
   }
 
   void click(int x, int y, bool alt) {
