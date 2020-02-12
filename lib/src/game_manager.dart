@@ -16,7 +16,7 @@ abstract class GameManager {
   Timer _clockTimer;
 
   GameManager(this._width, this._height, this._bombCount) {
-    newGame();
+    _newGame();
   }
 
   Game get game => _game;
@@ -27,11 +27,16 @@ abstract class GameManager {
       _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
 
   void newGame() {
-    if (_gameStateChangedSub != null) {
-      assert(_game != null);
-      _gameStateChangedSub.cancel();
-      _gameStateChanged(GameState.reset);
-    }
+    _cleanup();
+    _newGame();
+  }
+
+  void _cleanup() {
+    _gameStateChangedSub.cancel();
+    _gameStateChanged(GameState.reset);
+  }
+
+  void _newGame() {
     final f = Field(_bombCount, _width, _height);
     _game = Game(f);
     _gameStateChangedSub = _game.stateChanged.listen(_gameStateChanged);
