@@ -10,7 +10,7 @@ import 'game_element.dart';
 import 'square_element.dart';
 
 class BoardElement extends Sprite {
-  Array2d<SquareElement> _elements;
+  late Array2d<SquareElement> _elements;
 
   BoardElement(GameElement gameElement) {
     addTo(gameElement);

@@ -90,7 +90,7 @@ class Game {
     require(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
-    List<Point<int>> reveals;
+    List<Point<int>>? reveals;
 
     // normal reveal
     if (currentSS == SquareState.hidden) {
@@ -152,7 +152,7 @@ class Game {
                 char = '?';
                 break;
               default:
-              // noop;
+                throw StateError('Got into a bad state!');
             }
           }
         }
@@ -217,7 +217,7 @@ class Game {
       for (final i in hidden) {
         final c = field.getCoordinate(i);
         if (canReveal(c.x, c.y)) {
-          reveals.addAll(reveal(c.x, c.y));
+          reveals.addAll(reveal(c.x, c.y)!);
         }
       }
     }

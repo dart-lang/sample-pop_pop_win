@@ -37,10 +37,10 @@ class GameElement extends Sprite {
   late SimpleButton _logoButton;
   final _popLayer = Sprite(), _dartLayer = Sprite();
 
-  int _boardSize;
-  num _boardScale;
+  late int _boardSize;
+  late num _boardScale;
 
-  TextureAtlas _animations;
+  late TextureAtlas _animations;
 
   Game get game => manager.game;
 
@@ -116,7 +116,7 @@ class GameElement extends Sprite {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
-    List<Point<int>> reveals;
+    List<Point<int>>? reveals;
 
     if (alt) {
       if (ss == SquareState.hidden || ss == SquareState.flagged) {
@@ -175,7 +175,7 @@ class GameElement extends Sprite {
     return false;
   }
 
-  void _startPopAnimation(Point<int> start, [Iterable<Point<int>> reveals]) {
+  void _startPopAnimation(Point<int> start, [Iterable<Point<int>>? reveals]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 

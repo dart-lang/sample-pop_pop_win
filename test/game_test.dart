@@ -261,7 +261,7 @@ void _testWin() {
         bombsLeft--;
         expect(g.bombsLeft, equals(bombsLeft));
       } else if (g.getSquareState(x, y) == SquareState.hidden) {
-        revealsLeft -= g.reveal(x, y).length;
+        revealsLeft -= g.reveal(x, y)!.length;
         expect(revealsLeft, equals(g.revealsLeft));
       } else {
         expect(g.getSquareState(x, y), equals(SquareState.revealed));

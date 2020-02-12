@@ -11,9 +11,9 @@ abstract class GameManager {
   final int _width, _height, _bombCount;
   final GameStorage _gameStorage = GameStorage();
 
-  Game _game;
-  StreamSubscription<void> _gameStateChangedSub;
-  Timer _clockTimer;
+  late Game _game;
+  late StreamSubscription<void> _gameStateChangedSub;
+  Timer? _clockTimer;
 
   GameManager(this._width, this._height, this._bombCount) {
     newGame();
@@ -23,7 +23,7 @@ abstract class GameManager {
 
   Stream<void> get bestTimeUpdated => _gameStorage.bestTimeUpdated;
 
-  int get bestTimeMilliseconds =>
+  int? get bestTimeMilliseconds =>
       _gameStorage.getBestTimeMilliseconds(_width, _height, _bombCount);
 
   void newGame() {
@@ -45,7 +45,7 @@ abstract class GameManager {
     if (_clockTimer == null && _game.state == GameState.started) {
       _clockTimer = Timer(const Duration(seconds: 1), updateClock);
     } else if (_clockTimer != null && _game.state != GameState.started) {
-      _clockTimer.cancel();
+      _clockTimer!.cancel();
       _clockTimer = null;
     }
   }
