@@ -2591,7 +2591,7 @@ _.lN=b
 _.KQ=_.zN=_.rS=null
 _.Na=c
 _.YL=d
-_.La=_.m9=_.Hs=null
+_.VP=_.m9=_.Hs=null
 _.L=e
 _.k4=!0
 _.r1="auto"
@@ -5086,7 +5086,7 @@ if(s)a5.x=t
 a6.bS(a5)}}
 U.Mp.prototype={
 Fr:function(a){var t,s,r,q,p,o,n,m,l,k=this,j=null,i="TextureAtlas",h=4278190080,g=k.Qt,f=g.y,e=u.p,d=e.a(f.n9(i,"opaque")),c=e.a(f.n9(i,"static"))
-k.La=e.a(f.n9(i,"animated"))
+k.VP=e.a(f.n9(i,"animated"))
 f=g.e.a.a*80+64
 k.Hs=f
 k.m9=1344/f
@@ -5211,7 +5211,7 @@ i=f.lN
 g=g.b
 g=g.c[h+i*g.a]
 e=g===C.e5?"balloon_explode":"balloon_pop"
-d=O.u7(a.La.dF(e),60,!1)
+d=O.u7(a.VP.dF(e),60,!1)
 d.c=k.a
 d.id=!0
 d.d=k.b
@@ -5235,7 +5235,7 @@ m=n.gx(p)
 n=n.gy(p)
 m=o.a+80*m
 n=o.b+80*n
-l=O.u7(i.La.dF("dart"),60,!1)
+l=O.u7(i.VP.dF("dart"),60,!1)
 l.c=m
 l.id=!0
 l.d=n
@@ -5243,7 +5243,7 @@ l.k4=!1
 if(!l.m){l.m=!0
 l.R=null}s.bS(l)
 l.Ep(0,h,r).XE(new U.m8(l),!1,0)
-k=O.u7(i.La.dF("shadow"),60,!1)
+k=O.u7(i.VP.dF("shadow"),60,!1)
 k.c=m
 k.id=!0
 k.d=n
