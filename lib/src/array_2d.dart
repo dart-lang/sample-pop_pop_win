@@ -8,16 +8,13 @@ class Array2d<T> extends ListBase<T> {
   final int height;
   final List<T> _source;
 
-  factory Array2d(int width, int height, T Function(int x, int y) generate) {
+  factory Array2d(int width, int height, T Function(int i) generate) {
     requireArgument(width >= 0, 'width');
     requireArgument(height >= 0, 'height');
     if (width == 0) {
       return Array2d._skinny(height);
     }
-    final s = List<T>.generate(
-      width * height,
-      (i) => generate(i % width, i ~/ width),
-    );
+    final s = List<T>.generate(width * height, generate);
     return Array2d.wrap(width, s);
   }
 
