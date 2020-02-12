@@ -17,6 +17,4 @@ dev_dependencies:
 
 dependency_overrides:
   stagexl:
-    git:
-      url: https://github.com/kevmoo/StageXL
-      ref: sdk_40485
+    path: /Users/kevmoo/github/stageXL
