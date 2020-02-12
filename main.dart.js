@@ -2010,7 +2010,7 @@ r=C.CD.yu(s*s*0.15625)
 if($.pL!=null)H.vh(P.PV("already initialized"))
 $.pL=a
 o=new Y.Yy(b,a,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))
-o.p8()
+o.jI()
 n=u.p
 n.a(a.n9(q,"opaque"))
 n.a(a.n9(q,"static"))
@@ -4898,9 +4898,10 @@ N.li.prototype={
 $1:function(a){return C.Bl},
 $S:19}
 A.k0.prototype={
-p8:function(){var t=this,s=t.f
-if(s!=null){s.Gv()
-t.dO(C.Ns)}s=N.vd(F.Xf(t.c,t.a,t.b))
+p8:function(){this.f.Gv()
+this.dO(C.Ns)
+this.jI()},
+jI:function(){var t=this,s=N.vd(F.Xf(t.c,t.a,t.b))
 t.e=s
 s=s.d
 t.f=new P.u8(s,H.Lh(s).CT("u8<1>")).yI(t.gpe())},
@@ -5359,7 +5360,7 @@ case C.e5:t="crater_b"
 break
 case C.fL:t="balloon_tagged_bomb"
 break
-default:t=null}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){o=p.a(q.a(r.fy).fy).Qt.e.b
+default:throw H.c(P.PV(H.d(r.gF2())+" not supported"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){o=p.a(q.a(r.fy).fy).Qt.e.b
 o=o.c[n+m*o.a]
 o=o===C.Bl||o===C.No}else o=!1
 r.r1=o?"pointer":null
@@ -5378,7 +5379,9 @@ bu:function(a){return"Square at ["+H.d(this.c)+", "+H.d(this.d)+"]"},
 cV:function(){var t=this
 if(u.q.a(u.o.a(t.fy).fy).Qt.e.f===C.He){t.r1=null
 return C.ak[C.jn.zY(t.Qt+t.lN,4)]}else{t.r1="pointer"
-return"balloon"}}}
+return"balloon"}},
+gF2:function(){var t=u.q.a(u.o.a(this.fy).fy).Qt.e.b
+return t.c[this.Qt+this.lN*t.a]}}
 M.Ke.prototype={}
 K.K1.prototype={
 Gz:function(a){var t,s=this,r=s.b+a,q=s.a
@@ -7117,7 +7120,7 @@ dF:function(a){var t=this.a,s=H.t6(t),r=s.CT("i1<1,js>")
 return P.CH(new H.i1(new H.U5(t,new O.Oc(a),s.CT("U5<1>")),new O.ua(),r),!0,r.CT("Ly.E"))},
 kI:function(a){var t,s,r,q
 for(t=this.a,s=t.length,r=0;r<s;++r){q=t[r]
-if(q.c==a)return q.db}throw H.c(P.xY("TextureAtlasFrame not found: '"+H.d(a)+"'"))}}
+if(q.c===a)return q.db}throw H.c(P.xY("TextureAtlasFrame not found: '"+a+"'"))}}
 O.Oc.prototype={
 $1:function(a){return J.au(a.c,this.a)}}
 O.ua.prototype={

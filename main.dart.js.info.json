@@ -301,7 +301,7 @@
         "id": "library/152998570",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 1190,
+        "size": 1317,
         "children": [
           "class/394021680"
         ],
@@ -853,7 +853,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 6851,
+        "size": 6847,
         "children": [
           "class/192166",
           "class/14460442",
@@ -1125,7 +1125,7 @@
         "id": "library/875107492",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 460,
+        "size": 476,
         "children": [
           "class/1056075311"
         ],
@@ -1180,7 +1180,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceJ1bDKP/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceuJXc6k/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1466,7 +1466,7 @@
         "id": "class/192166",
         "kind": "class",
         "name": "TextureAtlas",
-        "size": 507,
+        "size": 503,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -5136,7 +5136,7 @@
         "id": "class/394021680",
         "kind": "class",
         "name": "SquareElement",
-        "size": 1190,
+        "size": 1317,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/152998570",
         "modifiers": {
@@ -11827,7 +11827,7 @@
         "id": "class/1056075311",
         "kind": "class",
         "name": "GameManager",
-        "size": 460,
+        "size": 476,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/875107492",
         "modifiers": {
@@ -11841,10 +11841,12 @@
           "field/903958112",
           "field/909285805",
           "field/1040507814",
+          "function/42019867",
           "function/43614407",
           "function/340784388",
           "function/750394785",
           "function/776074840",
+          "function/901483317",
           "function/1031889892"
         ]
       },
@@ -14025,6 +14027,28 @@
         "code": "",
         "type": "Float32List Function()"
       },
+      "42019867": {
+        "id": "function/42019867",
+        "kind": "function",
+        "name": "_cleanup",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/1056075311",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "void Function()"
+      },
       "43614407": {
         "id": "function/43614407",
         "kind": "function",
@@ -14043,7 +14067,7 @@
         "inferredReturnType": "[null|exact=Game]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 33,
+        "inlinedCount": 34,
         "code": "",
         "type": "Game Function()"
       },
@@ -22596,7 +22620,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 26,
+        "inlinedCount": 27,
         "code": "WH:function(a,b){return this.c[b]}",
         "type": "Array2d.T Function(int)"
       },
@@ -23118,7 +23142,7 @@
         "inferredReturnType": "[null|exact=BoardElement]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 11,
+        "inlinedCount": 12,
         "code": "",
         "type": "BoardElement Function()"
       },
@@ -30953,7 +30977,7 @@
         "inferredReturnType": "[null|exact=GameElement]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 18,
+        "inlinedCount": 19,
         "code": "",
         "type": "GameElement Function()"
       },
@@ -32411,7 +32435,7 @@
         "id": "function/414740792",
         "kind": "function",
         "name": "squareState",
-        "size": 0,
+        "size": 85,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/394021680",
         "children": [],
@@ -32426,7 +32450,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 5,
-        "code": "",
+        "code": "gF2:function(){var t=u.q.a(u.o.a(this.fy).fy).Qt.e.b\nreturn t.c[this.Qt+this.lN*t.a]}",
         "type": "SquareState Function()"
       },
       "415279150": {
@@ -36258,7 +36282,7 @@
         "inferredReturnType": "[null|exact=Game]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 9,
+        "inlinedCount": 10,
         "code": "",
         "type": "Game Function()"
       },
@@ -36395,7 +36419,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 8,
+        "inlinedCount": 9,
         "code": "",
         "type": "SquareState Function(int,int)"
       },
@@ -37749,7 +37773,7 @@
         "id": "function/511610050",
         "kind": "function",
         "name": "getBitmapData",
-        "size": 154,
+        "size": 150,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/192166",
         "children": [],
@@ -37764,13 +37788,13 @@
         "parameters": [
           {
             "name": "name",
-            "type": "[null|exact=JSString]",
+            "type": "[exact=JSString]",
             "declaredType": "String"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "kI:function(a){var t,s,r,q\nfor(t=this.a,s=t.length,r=0;r<s;++r){q=t[r]\nif(q.c==a)return q.db}throw H.c(P.xY(\"TextureAtlasFrame not found: '\"+H.d(a)+\"'\"))}",
+        "code": "kI:function(a){var t,s,r,q\nfor(t=this.a,s=t.length,r=0;r<s;++r){q=t[r]\nif(q.c===a)return q.db}throw H.c(P.xY(\"TextureAtlasFrame not found: '\"+a+\"'\"))}",
         "type": "BitmapData Function(String)"
       },
       "512180782": {
@@ -43318,7 +43342,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 23,
+        "inlinedCount": 24,
         "code": "",
         "type": "int Function(int,int)"
       },
@@ -44868,7 +44892,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 18,
+        "inlinedCount": 19,
         "code": "",
         "type": "Array2d.T Function(int,int)"
       },
@@ -50805,7 +50829,7 @@
         "id": "function/750394785",
         "kind": "function",
         "name": "newGame",
-        "size": 172,
+        "size": 75,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1056075311",
         "children": [],
@@ -50820,7 +50844,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "p8:function(){var t=this,s=t.f\nif(s!=null){s.Gv()\nt.dO(C.Ns)}s=N.vd(F.Xf(t.c,t.a,t.b))\nt.e=s\ns=s.d\nt.f=new P.u8(s,H.Lh(s).CT(\"u8<1>\")).yI(t.gpe())}\nt=A.k0.prototype\nt.PC=t.p8",
+        "code": "p8:function(){this.f.Gv()\nthis.dO(C.Ns)\nthis.jI()}\nt=A.k0.prototype\nt.PC=t.p8",
         "type": "void Function()"
       },
       "751041822": {
@@ -55100,7 +55124,7 @@
         "inferredReturnType": "[null|exact=Game]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 13,
+        "inlinedCount": 14,
         "code": "",
         "type": "Game Function()"
       },
@@ -58322,7 +58346,7 @@
         "inferredReturnType": "[null|subclass=DisplayObjectContainer]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 59,
+        "inlinedCount": 61,
         "code": "",
         "type": "DisplayObjectParent<DisplayObject> Function()"
       },
@@ -58386,6 +58410,28 @@
         "inlinedCount": 5,
         "code": "",
         "type": "void Function(Object)"
+      },
+      "901483317": {
+        "id": "function/901483317",
+        "kind": "function",
+        "name": "_newGame",
+        "size": 111,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/1056075311",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "jI:function(){var t=this,s=N.vd(F.Xf(t.c,t.a,t.b))\nt.e=s\ns=s.d\nt.f=new P.u8(s,H.Lh(s).CT(\"u8<1>\")).yI(t.gpe())}",
+        "type": "void Function()"
       },
       "901978442": {
         "id": "function/901978442",
@@ -59705,7 +59751,7 @@
         "inferredReturnType": "[null|exact=Game]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 28,
+        "inlinedCount": 29,
         "code": "",
         "type": "Game Function()"
       },
@@ -60680,7 +60726,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var t,s,r,q=\"TextureAtlas\",p=b.oJ,o=p.RY(c,0.5),n=o.gtV(o)\nn.a.HQ(n,9).d=0\no.f=new E.XG(b,c)\nE.z6()\no=$.fF()\nn=o.b\nnew P.u8(n,H.Lh(n).CT(\"u8<1>\")).yI(new E.S5())\no.a=!0\nt=window.location.hash==null?\"7\":window.location.hash\nt.toString\ns=H.Hp(H.ys(t,\"#\",\"\"),null)\nif(s==null)s=7\nr=C.CD.yu(s*s*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\no=new Y.Yy(b,a,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))\no.p8()\nn=u.p\nn.a(a.n9(q,\"opaque\"))\nn.a(a.n9(q,\"static\"))\nn=U.kZ(o)\nn.sVR(0,0)\no.Q=n\nb.bS(n)\no=p.RY(o.Q,0.5)\no=o.gtV(o)\no.a.HQ(o,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\no=J.qF(document.querySelector(\"#popup\"))\nW.JE(o.a,o.b,E.o9(),!1)\no=$.KP()\no.toString\nnew P.u8(o,H.Lh(o).CT(\"u8<1>\")).yI(new E.C8())}",
+        "code": "TI:function(a,b,c){var t,s,r,q=\"TextureAtlas\",p=b.oJ,o=p.RY(c,0.5),n=o.gtV(o)\nn.a.HQ(n,9).d=0\no.f=new E.XG(b,c)\nE.z6()\no=$.fF()\nn=o.b\nnew P.u8(n,H.Lh(n).CT(\"u8<1>\")).yI(new E.S5())\no.a=!0\nt=window.location.hash==null?\"7\":window.location.hash\nt.toString\ns=H.Hp(H.ys(t,\"#\",\"\"),null)\nif(s==null)s=7\nr=C.CD.yu(s*s*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\no=new Y.Yy(b,a,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))\no.jI()\nn=u.p\nn.a(a.n9(q,\"opaque\"))\nn.a(a.n9(q,\"static\"))\nn=U.kZ(o)\nn.sVR(0,0)\no.Q=n\nb.bS(n)\no=p.RY(o.Q,0.5)\no=o.gtV(o)\no.a.HQ(o,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\no=J.qF(document.querySelector(\"#popup\"))\nW.JE(o.a,o.b,E.o9(),!1)\no=$.KP()\no.toString\nnew P.u8(o,H.Lh(o).CT(\"u8<1>\")).yI(new E.C8())}",
         "type": "void Function(ResourceManager,Stage,Sprite)"
       },
       "949168228": {
@@ -61842,7 +61888,7 @@
         "id": "function/969710394",
         "kind": "function",
         "name": "updateState",
-        "size": 618,
+        "size": 658,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/394021680",
         "children": [],
@@ -61857,7 +61903,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Iv:function(){var t,s,r=this,q=u.o,p=u.q,o=p.a(q.a(r.fy).fy).Qt.e,n=r.Qt,m=r.lN,l=o.b\nswitch(l.c[n+m*l.a]){case C.Bl:t=r.cV()\nbreak\ncase C.No:t=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:t=C.Hf[o.a.Wz(n,m)]\nbreak\ncase C.e5:t=\"crater_b\"\nbreak\ncase C.fL:t=\"balloon_tagged_bomb\"\nbreak\ndefault:t=null}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){o=p.a(q.a(r.fy).fy).Qt.e.b\no=o.c[n+m*o.a]\no=o===C.Bl||o===C.No}else o=!1\nr.r1=o?\"pointer\":null\nn=r.rS.k3\ns=A.Jd(n)\nm=s.b\nm.A3(0,s.c)\nl=s.a\nm.e.clearRect(0,0,l.a,l.b)\nl.c.a.Li(0)\nn.xV(u.p.a(p.a(q.a(r.fy).fy).Qt.y.n9(\"TextureAtlas\",\"opaque\")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))}",
+        "code": "Iv:function(){var t,s,r=this,q=u.o,p=u.q,o=p.a(q.a(r.fy).fy).Qt.e,n=r.Qt,m=r.lN,l=o.b\nswitch(l.c[n+m*l.a]){case C.Bl:t=r.cV()\nbreak\ncase C.No:t=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:t=C.Hf[o.a.Wz(n,m)]\nbreak\ncase C.e5:t=\"crater_b\"\nbreak\ncase C.fL:t=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.c(P.PV(H.d(r.gF2())+\" not supported\"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){o=p.a(q.a(r.fy).fy).Qt.e.b\no=o.c[n+m*o.a]\no=o===C.Bl||o===C.No}else o=!1\nr.r1=o?\"pointer\":null\nn=r.rS.k3\ns=A.Jd(n)\nm=s.b\nm.A3(0,s.c)\nl=s.a\nm.e.clearRect(0,0,l.a,l.b)\nl.c.a.Li(0)\nn.xV(u.p.a(p.a(q.a(r.fy).fy).Qt.y.n9(\"TextureAtlas\",\"opaque\")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))}",
         "type": "void Function()"
       },
       "970179042": {
@@ -92563,6 +92609,10 @@
       {
         "id": "function/900664723",
         "mask": "inlined"
+      },
+      {
+        "id": "function/900664723",
+        "mask": "inlined"
       }
     ],
     "function/235447685": [
@@ -100741,6 +100791,10 @@
       {
         "id": "function/900664723",
         "mask": "inlined"
+      },
+      {
+        "id": "function/900664723",
+        "mask": "inlined"
       }
     ],
     "function/385334287": [
@@ -102185,6 +102239,106 @@
     ],
     "function/414740792": [
       {
+        "id": "field/303534284",
+        "mask": null
+      },
+      {
+        "id": "field/385428141",
+        "mask": null
+      },
+      {
+        "id": "field/781327351",
+        "mask": null
+      },
+      {
+        "id": "field/810129425",
+        "mask": null
+      },
+      {
+        "id": "field/825180580",
+        "mask": null
+      },
+      {
+        "id": "field/909285805",
+        "mask": null
+      },
+      {
+        "id": "field/93929270",
+        "mask": null
+      },
+      {
+        "id": "field/957644745",
+        "mask": null
+      },
+      {
+        "id": "function/1024234418",
+        "mask": null
+      },
+      {
+        "id": "function/102561197",
+        "mask": null
+      },
+      {
+        "id": "function/1029410465",
+        "mask": null
+      },
+      {
+        "id": "function/103899378",
+        "mask": null
+      },
+      {
+        "id": "function/128591853",
+        "mask": null
+      },
+      {
+        "id": "function/132742275",
+        "mask": null
+      },
+      {
+        "id": "function/138115619",
+        "mask": null
+      },
+      {
+        "id": "function/160933185",
+        "mask": null
+      },
+      {
+        "id": "function/216705978",
+        "mask": null
+      },
+      {
+        "id": "function/227348255",
+        "mask": null
+      },
+      {
+        "id": "function/235281992",
+        "mask": null
+      },
+      {
+        "id": "function/244294290",
+        "mask": null
+      },
+      {
+        "id": "function/317451330",
+        "mask": null
+      },
+      {
+        "id": "function/331565025",
+        "mask": null
+      },
+      {
+        "id": "function/384822666",
+        "mask": null
+      },
+      {
+        "id": "function/43614407",
+        "mask": null
+      },
+      {
+        "id": "function/482884199",
+        "mask": "inlined"
+      },
+      {
         "id": "function/482884199",
         "mask": "inlined"
       },
@@ -102195,6 +102349,10 @@
       {
         "id": "function/482884199",
         "mask": "inlined"
+      },
+      {
+        "id": "function/482884199",
+        "mask": null
       },
       {
         "id": "function/482884199",
@@ -102218,11 +102376,91 @@
       },
       {
         "id": "function/484773716",
+        "mask": null
+      },
+      {
+        "id": "function/484773716",
         "mask": "inlined"
       },
       {
         "id": "function/484773716",
         "mask": "inlined"
+      },
+      {
+        "id": "function/484773716",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/502696664",
+        "mask": null
+      },
+      {
+        "id": "function/520073200",
+        "mask": null
+      },
+      {
+        "id": "function/583513756",
+        "mask": null
+      },
+      {
+        "id": "function/598215859",
+        "mask": null
+      },
+      {
+        "id": "function/624647930",
+        "mask": null
+      },
+      {
+        "id": "function/624967491",
+        "mask": null
+      },
+      {
+        "id": "function/652999961",
+        "mask": null
+      },
+      {
+        "id": "function/726422620",
+        "mask": null
+      },
+      {
+        "id": "function/791758355",
+        "mask": null
+      },
+      {
+        "id": "function/83342486",
+        "mask": null
+      },
+      {
+        "id": "function/834530829",
+        "mask": null
+      },
+      {
+        "id": "function/865184799",
+        "mask": null
+      },
+      {
+        "id": "function/900664723",
+        "mask": null
+      },
+      {
+        "id": "function/911422554",
+        "mask": null
+      },
+      {
+        "id": "function/921906180",
+        "mask": null
+      },
+      {
+        "id": "function/931956644",
+        "mask": null
+      },
+      {
+        "id": "function/980907524",
+        "mask": null
+      },
+      {
+        "id": "function/982751380",
+        "mask": null
       }
     ],
     "function/415279150": [
@@ -106121,6 +106359,14 @@
         "mask": "inlined"
       },
       {
+        "id": "function/235281992",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/834530829",
+        "mask": "inlined"
+      },
+      {
         "id": "function/834530829",
         "mask": "inlined"
       },
@@ -106264,6 +106510,10 @@
       }
     ],
     "function/484773716": [
+      {
+        "id": "function/652999961",
+        "mask": "inlined"
+      },
       {
         "id": "function/652999961",
         "mask": "inlined"
@@ -107267,10 +107517,6 @@
       {
         "id": "function/239262988",
         "mask": "inlined"
-      },
-      {
-        "id": "function/445547062",
-        "mask": null
       },
       {
         "id": "function/885768717",
@@ -112589,6 +112835,14 @@
         "mask": "inlined"
       },
       {
+        "id": "function/227348255",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/624967491",
+        "mask": "inlined"
+      },
+      {
         "id": "function/624967491",
         "mask": "inlined"
       },
@@ -117873,84 +118127,32 @@
     ],
     "function/750394785": [
       {
-        "id": "field/142402878",
-        "mask": null
-      },
-      {
-        "id": "field/41252785",
-        "mask": null
-      },
-      {
         "id": "field/431730917",
-        "mask": null
-      },
-      {
-        "id": "field/431730917",
-        "mask": null
-      },
-      {
-        "id": "field/72747365",
-        "mask": null
-      },
-      {
-        "id": "field/903958112",
-        "mask": null
-      },
-      {
-        "id": "field/909285805",
-        "mask": null
-      },
-      {
-        "id": "function/1062488791",
-        "mask": null
-      },
-      {
-        "id": "function/160933185",
         "mask": null
       },
       {
         "id": "function/340784388",
         "mask": null
-      },
-      {
-        "id": "function/340784388",
-        "mask": "[exact=GameManager]"
       },
       {
         "id": "function/349794930",
-        "mask": "Union([exact=_DoneStreamSubscription], [subclass=_ControllerSubscription])"
+        "mask": "Union(null, [exact=_DoneStreamSubscription], [subclass=_ControllerSubscription])"
+      },
+      {
+        "id": "function/42019867",
+        "mask": null
+      },
+      {
+        "id": "function/42019867",
+        "mask": "inlined"
       },
       {
         "id": "function/55621917",
-        "mask": "Union([exact=_DoneStreamSubscription], [subclass=_ControllerSubscription])"
+        "mask": "Union(null, [exact=_DoneStreamSubscription], [subclass=_ControllerSubscription])"
       },
       {
-        "id": "function/568778369",
+        "id": "function/901483317",
         "mask": null
-      },
-      {
-        "id": "function/693403311",
-        "mask": null
-      },
-      {
-        "id": "function/789100089",
-        "mask": "[exact=_ControllerStream]"
-      },
-      {
-        "id": "function/791758355",
-        "mask": null
-      },
-      {
-        "id": "function/818211217",
-        "mask": null
-      },
-      {
-        "id": "function/942963540",
-        "mask": null
-      },
-      {
-        "id": "function/942963540",
-        "mask": "inlined"
       }
     ],
     "function/751041822": [
@@ -121585,6 +121787,14 @@
         "mask": "inlined"
       },
       {
+        "id": "function/384822666",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/931956644",
+        "mask": "inlined"
+      },
+      {
         "id": "function/931956644",
         "mask": "inlined"
       },
@@ -123961,6 +124171,72 @@
         "mask": null
       }
     ],
+    "function/901483317": [
+      {
+        "id": "field/142402878",
+        "mask": null
+      },
+      {
+        "id": "field/41252785",
+        "mask": null
+      },
+      {
+        "id": "field/431730917",
+        "mask": null
+      },
+      {
+        "id": "field/72747365",
+        "mask": null
+      },
+      {
+        "id": "field/903958112",
+        "mask": null
+      },
+      {
+        "id": "field/909285805",
+        "mask": null
+      },
+      {
+        "id": "function/1062488791",
+        "mask": null
+      },
+      {
+        "id": "function/160933185",
+        "mask": null
+      },
+      {
+        "id": "function/340784388",
+        "mask": "[exact=GameManager]"
+      },
+      {
+        "id": "function/568778369",
+        "mask": null
+      },
+      {
+        "id": "function/693403311",
+        "mask": null
+      },
+      {
+        "id": "function/789100089",
+        "mask": "[exact=_ControllerStream]"
+      },
+      {
+        "id": "function/791758355",
+        "mask": null
+      },
+      {
+        "id": "function/818211217",
+        "mask": null
+      },
+      {
+        "id": "function/942963540",
+        "mask": null
+      },
+      {
+        "id": "function/942963540",
+        "mask": "inlined"
+      }
+    ],
     "function/903216293": [
       {
         "id": "field/584542480",
@@ -125083,6 +125359,10 @@
       {
         "id": "function/43614407",
         "mask": "inlined"
+      },
+      {
+        "id": "function/43614407",
+        "mask": "inlined"
       }
     ],
     "function/932861390": [
@@ -125764,15 +126044,15 @@
       },
       {
         "id": "function/226045063",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/226045063",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/226045063",
         "mask": null
-      },
-      {
-        "id": "function/226045063",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/226045063",
-        "mask": "inlined"
       },
       {
         "id": "function/226045063",
@@ -125868,11 +126148,11 @@
       },
       {
         "id": "function/442540373",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/442540373",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/478451597",
@@ -125907,10 +126187,6 @@
         "mask": null
       },
       {
-        "id": "function/598252498",
-        "mask": null
-      },
-      {
         "id": "function/611864195",
         "mask": null
       },
@@ -125924,11 +126200,11 @@
       },
       {
         "id": "function/660696668",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/660696668",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/693403311",
@@ -125964,11 +126240,11 @@
       },
       {
         "id": "function/740456220",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/740456220",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/770092188",
@@ -126016,6 +126292,10 @@
       },
       {
         "id": "function/878499322",
+        "mask": null
+      },
+      {
+        "id": "function/901483317",
         "mask": null
       },
       {
@@ -127211,6 +127491,10 @@
         "mask": null
       },
       {
+        "id": "function/163889622",
+        "mask": null
+      },
+      {
         "id": "function/174756704",
         "mask": null
       },
@@ -127220,11 +127504,11 @@
       },
       {
         "id": "function/224498298",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/224498298",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/227348255",
@@ -127240,6 +127524,10 @@
       },
       {
         "id": "function/244294290",
+        "mask": null
+      },
+      {
+        "id": "function/271556856",
         "mask": null
       },
       {
@@ -127291,6 +127579,10 @@
         "mask": null
       },
       {
+        "id": "function/414740792",
+        "mask": null
+      },
+      {
         "id": "function/428690704",
         "mask": null
       },
@@ -127300,6 +127592,10 @@
       },
       {
         "id": "function/43614407",
+        "mask": null
+      },
+      {
+        "id": "function/445547062",
         "mask": null
       },
       {
@@ -131926,7 +132222,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 223857,
+      "size": 223996,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -131936,11 +132232,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 223857,
+    "size": 223996,
     "dart2jsVersion": "2.8.0-dev.9.0",
-    "compilationMoment": "2020-02-12 07:51:48.032027",
-    "compilationDuration": 3367716,
-    "toJsonDuration": 19000,
+    "compilationMoment": "2020-02-12 11:17:32.141672",
+    "compilationDuration": 3406032,
+    "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
