@@ -452,9 +452,11 @@ packages:
   stagexl:
     dependency: "direct main"
     description:
-      path: "/Users/kevmoo/github/stageXL"
-      relative: false
-    source: path
+      path: "."
+      ref: sdk_40485
+      resolved-ref: "56fd308dee9738d78c80b0dcde42f6745907a87d"
+      url: "https://github.com/kevmoo/StageXL"
+    source: git
     version: "1.4.3"
   stream_channel:
     dependency: transitive
