@@ -44,9 +44,10 @@ class GameRoot extends GameManager {
       for (var se in _gameElement.boardElement.squares) {
         se.updateState();
       }
+
       if (_gameElement.scoreElement.bestTime == null ||
-          game.duration.inMilliseconds < _gameElement.scoreElement.bestTime!) {
-        _gameElement.scoreElement.bestTime = game.duration.inMilliseconds;
+          game.duration!.inMilliseconds < _gameElement.scoreElement.bestTime!) {
+        _gameElement.scoreElement.bestTime = game.duration!.inMilliseconds;
       }
       game_audio.win();
     }

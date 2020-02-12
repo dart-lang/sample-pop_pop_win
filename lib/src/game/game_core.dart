@@ -50,7 +50,7 @@ class Game {
 
   bool get gameEnded => _state == GameState.won || _state == GameState.lost;
 
-  Duration get duration =>
+  Duration? get duration =>
       (!_watch.isRunning && _watch.elapsedTicks == 0) ? null : _watch.elapsed;
 
   bool canToggleFlag(int x, int y) {

@@ -27,7 +27,7 @@ class GameStorage {
     final w = game.field.width;
     final h = game.field.height;
     final m = game.field.bombCount;
-    final duration = game.duration.inMilliseconds;
+    final duration = game.duration!.inMilliseconds;
 
     final key = _getKey(w, h, m);
 
