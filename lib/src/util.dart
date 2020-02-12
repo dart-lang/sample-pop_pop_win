@@ -1,3 +1,4 @@
+// @dart = 2.8
 int getHashCode(Iterable<Object> source) {
   var hash = 0;
   for (final h in source) {
