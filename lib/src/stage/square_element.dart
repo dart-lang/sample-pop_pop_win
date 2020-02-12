@@ -61,6 +61,8 @@ class SquareElement extends Sprite {
       case SquareState.safe:
         textureName = 'balloon_tagged_bomb';
         break;
+      default:
+        throw StateError('$squareState not supported');
     }
 
     useHandCursor = !_game.gameEnded &&
