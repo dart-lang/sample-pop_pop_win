@@ -8,26 +8,21 @@ class Array2d<T> extends ListBase<T> {
   final int height;
   final List<T> _source;
 
-  factory Array2d(int width, int height, [T initialValue]) {
-    requireArgumentNotNull(width, 'width');
-    requireArgumentNotNull(height, 'height');
+  factory Array2d(int width, int height, T Function(int x, int y) generate) {
     requireArgument(width >= 0, 'width');
     requireArgument(height >= 0, 'height');
-    final s = List<T>.filled(width * height, initialValue);
-    assert(s.length == width * height);
     if (width == 0) {
       return Array2d._skinny(height);
     }
+    final s = List<T>.generate(
+      width * height,
+      (i) => generate(i % width, i ~/ width),
+    );
     return Array2d.wrap(width, s);
   }
 
-  factory Array2d.readonlyFrom(int width, Iterable<T> source) {
-    requireArgumentNotNull(width, 'width');
-    requireArgumentNotNull(source, 'source');
-    final list = List<T>.from(source);
-    final s = source == null ? null : UnmodifiableListView<T>(list);
-    return Array2d.wrap(width, s);
-  }
+  factory Array2d.readonlyFrom(int width, Iterable<T> source) => Array2d.wrap(
+      width, UnmodifiableListView<T>(source.toList(growable: false)));
 
   Array2d._skinny(this.height)
       : width = 0,
@@ -40,8 +35,6 @@ class Array2d<T> extends ListBase<T> {
         height = (width != null && width > 0 && source != null)
             ? source.length ~/ width
             : 0 {
-    requireArgumentNotNull(width, 'width');
-    requireArgumentNotNull(source, 'source');
     requireArgument(width >= 0, 'width', 'width must be non-zero');
 
     if (width * height == 0) {

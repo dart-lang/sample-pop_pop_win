@@ -26,12 +26,6 @@ void requireArgument(bool truth, String argName, [String message]) {
   }
 }
 
-void requireArgumentNotNull(argument, String argName) {
-  if (argument == null) {
-    throw ArgumentError.notNull(argName);
-  }
-}
-
 class Tuple<T1, T2> {
   final T1 item1;
   final T2 item2;

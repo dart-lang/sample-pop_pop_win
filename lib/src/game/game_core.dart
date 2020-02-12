@@ -27,7 +27,10 @@ class Game {
   Game(this.field)
       : _state = GameState.reset,
         _states = Array2d<SquareState>(
-            field.width, field.height, SquareState.hidden) {
+          field.width,
+          field.height,
+          (x, y) => SquareState.hidden,
+        ) {
     assert(field != null);
     _bombsLeft = field.bombCount;
     _revealsLeft = field.length - field.bombCount;
