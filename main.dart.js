@@ -3196,7 +3196,6 @@ _.e=_.d=null
 _.f=d
 _.r=!1},
 jr:function(a){var t,s
-if($.pL==null)throw H.c(P.PV("Not initialized"))
 switch(a){case"Pop":a="Pop"+$.ov().j1(8)
 break
 case"Bomb":a="Bomb"+$.ov().j1(4)
@@ -4797,14 +4796,11 @@ return new P.hL(C.jn.zY(a,t),C.jn.xG(a,t),u.D)}}
 F.xB.prototype={
 VB:function(a,b,c){var t,s
 for(t=new H.a7(this,this.gkF(this)),s=0;t.VF();)if(t.d)++s},
-Wz:function(a,b){var t,s,r,q,p,o,n=this,m=n.c
-if(m[a+b*n.a])throw H.c(P.PV("Cannot get adjacent count from populated list!"))
-t=n.e
-s=a+b*t.a
-t=t.c
-r=t[s]
-if(r==null){for(q=n.V5(a,b),p=q.length,r=0,o=0;o<p;++o)if(m[q[o]])++r
-t[s]=r}return r},
+Wz:function(a,b){var t,s,r,q,p,o=this.e,n=a+b*o.a
+o=o.c
+t=o[n]
+if(t==null){for(s=this.V5(a,b),r=s.length,q=this.c,t=0,p=0;p<r;++p)if(q[s[p]])++t
+o[n]=t}return t},
 bu:function(a){return"w"+this.a+"h"+this.b+"m"+this.d}}
 F.Zg.prototype={
 $1:function(a){return null},

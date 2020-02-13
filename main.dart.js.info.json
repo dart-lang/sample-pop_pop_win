@@ -5,7 +5,7 @@
         "id": "library/6021244",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 288,
+        "size": 239,
         "children": [
           "field/555172581",
           "field/601802462",
@@ -1104,7 +1104,7 @@
         "id": "library/871432775",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 824,
+        "size": 744,
         "children": [
           "class/719265771"
         ],
@@ -1169,7 +1169,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceTH4idN/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacewvve2M/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -8315,7 +8315,7 @@
         "id": "class/719265771",
         "kind": "class",
         "name": "Field",
-        "size": 556,
+        "size": 476,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/871432775",
         "modifiers": {
@@ -22642,7 +22642,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 27,
+        "inlinedCount": 26,
         "code": "WH:function(a,b){return this.c[b]}",
         "type": "Array2d.T Function(int)"
       },
@@ -39155,7 +39155,7 @@
         "id": "function/540614297",
         "kind": "function",
         "name": "_playAudio",
-        "size": 235,
+        "size": 186,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/6021244",
         "children": [],
@@ -39176,7 +39176,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jr:function(a){var t,s\nif($.pL==null)throw H.c(P.PV(\"Not initialized\"))\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}t=u.m.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
+        "code": "jr:function(a){var t,s\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}t=u.m.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
         "type": "void Function(String)"
       },
       "540949546": {
@@ -43326,7 +43326,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 24,
+        "inlinedCount": 23,
         "code": "",
         "type": "int Function(int,int)"
       },
@@ -44876,7 +44876,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 19,
+        "inlinedCount": 18,
         "code": "",
         "type": "Array2d.T Function(int,int)"
       },
@@ -55061,7 +55061,7 @@
         "id": "function/834381448",
         "kind": "function",
         "name": "getAdjacentCount",
-        "size": 241,
+        "size": 161,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/719265771",
         "children": [],
@@ -55087,7 +55087,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Wz:function(a,b){var t,s,r,q,p,o,n=this,m=n.c\nif(m[a+b*n.a])throw H.c(P.PV(\"Cannot get adjacent count from populated list!\"))\nt=n.e\ns=a+b*t.a\nt=t.c\nr=t[s]\nif(r==null){for(q=n.V5(a,b),p=q.length,r=0,o=0;o<p;++o)if(m[q[o]])++r\nt[s]=r}return r}",
+        "code": "Wz:function(a,b){var t,s,r,q,p,o=this.e,n=a+b*o.a\no=o.c\nt=o[n]\nif(t==null){for(s=this.V5(a,b),r=s.length,q=this.c,t=0,p=0;p<r;++p)if(q[s[p]])++t\no[n]=t}return t}",
         "type": "int Function(int,int)"
       },
       "834530829": {
@@ -108605,10 +108605,6 @@
         "mask": null
       },
       {
-        "id": "function/163889622",
-        "mask": null
-      },
-      {
         "id": "function/17382067",
         "mask": null
       },
@@ -108618,10 +108614,6 @@
       },
       {
         "id": "function/244294290",
-        "mask": null
-      },
-      {
-        "id": "function/271556856",
         "mask": null
       },
       {
@@ -108678,11 +108670,11 @@
       },
       {
         "id": "function/733988997",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/733988997",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/747238964",
@@ -112680,14 +112672,6 @@
       },
       {
         "id": "function/227348255",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/227348255",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/624967491",
         "mask": "inlined"
       },
       {
@@ -121541,10 +121525,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/163889622",
-        "mask": null
-      },
-      {
         "id": "function/17530218",
         "mask": null
       },
@@ -121557,20 +121537,12 @@
         "mask": "inlined"
       },
       {
-        "id": "function/271556856",
-        "mask": null
-      },
-      {
         "id": "function/624967491",
         "mask": null
       },
       {
         "id": "function/652999961",
         "mask": null
-      },
-      {
-        "id": "function/652999961",
-        "mask": "inlined"
       },
       {
         "id": "function/652999961",
@@ -132062,7 +132034,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 223313,
+      "size": 223184,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -132072,11 +132044,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 223313,
+    "size": 223184,
     "dart2jsVersion": "2.8.0-dev.9.0",
-    "compilationMoment": "2020-02-13 08:10:06.548735",
-    "compilationDuration": 3622361,
-    "toJsonDuration": 22000,
+    "compilationMoment": "2020-02-13 11:39:03.604657",
+    "compilationDuration": 3627746,
+    "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
