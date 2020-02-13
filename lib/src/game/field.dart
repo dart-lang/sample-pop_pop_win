@@ -67,9 +67,7 @@ class Field extends Array2d<bool> {
   }
 
   int getAdjacentCount(int x, int y) {
-    if (get(x, y)) {
-      throw StateError('Cannot get adjacent count from populated list!');
-    }
+    assert(!get(x, y), 'Cannot get adjacent count from populated list!');
 
     var val = _adjacents.get(x, y);
 

@@ -38,7 +38,7 @@ void bomb() => _playAudio(_bomb);
 void throwDart() => _playAudio(_throwDart);
 
 void _playAudio(String name) {
-  if (_resourceManager == null) throw StateError('Not initialized');
+  assert(_resourceManager != null, 'Not initialized');
   switch (name) {
     case _pop:
       final i = _rnd.nextInt(8);
