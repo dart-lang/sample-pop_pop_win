@@ -55,7 +55,7 @@ void _testAdjacent() {
       final expected = sampleField[i];
 
       if (expected == null) {
-        expect(() => f.getAdjacentCount(x, y), throwsStateError);
+        expect(() => f.getAdjacentCount(x, y), throwsAssertionError);
       } else {
         expect(f.getAdjacentCount(x, y), expected);
       }

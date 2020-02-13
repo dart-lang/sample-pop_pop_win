@@ -9,7 +9,6 @@ import 'package:test/test.dart';
 
 import 'test_util.dart';
 
-final _throwsAssertionError = throwsA(const TypeMatcher<AssertionError>());
 
 void main() {
   test('initial values', _testInitial);
@@ -127,7 +126,7 @@ void _testNoopChord() {
   expect(g.bombsLeft, equals(12));
   expect(g.revealsLeft, equals(startReveals - 1));
 
-  expect(() => g.reveal(2, 3), _throwsAssertionError);
+  expect(() => g.reveal(2, 3), throwsAssertionError);
 }
 
 void _testGoodChord() {
@@ -225,7 +224,7 @@ void _testCannotRevealFlagged() {
   expect(g.bombsLeft, equals(12));
   expect(g.state, equals(GameState.started));
 
-  expect(() => g.reveal(0, 0), _throwsAssertionError);
+  expect(() => g.reveal(0, 0), throwsAssertionError);
 }
 
 void _testCannotFlagRevealed() {
@@ -236,7 +235,7 @@ void _testCannotFlagRevealed() {
   expect(g.getSquareState(1, 1), equals(SquareState.revealed));
   expect(g.state, equals(GameState.started));
 
-  expect(() => g.setFlag(1, 1, true), _throwsAssertionError);
+  expect(() => g.setFlag(1, 1, true), throwsAssertionError);
 }
 
 void _testLoss() {
