@@ -1,16 +1,14 @@
 import 'dart:collection';
 import 'dart:math' as math;
 
-import 'util.dart';
-
 class Array2d<T> extends ListBase<T> {
   final int width;
   final int height;
   final List<T> _source;
 
   factory Array2d(int width, int height, T Function(int i) generate) {
-    requireArgument(width >= 0, 'width');
-    requireArgument(height >= 0, 'height');
+    assert(width >= 0);
+    assert(height >= 0);
     if (width == 0) {
       return Array2d._skinny(height);
     }
@@ -32,16 +30,13 @@ class Array2d<T> extends ListBase<T> {
         height = (width != null && width > 0 && source != null)
             ? source.length ~/ width
             : 0 {
-    requireArgument(width >= 0, 'width', 'width must be non-zero');
+    assert(width >= 0);
 
     if (width * height == 0) {
-      requireArgument(_source.isEmpty, 'width',
-          'width must be greater than zero if the source is non-empty');
+      assert(_source.isEmpty);
     } else {
-      requireArgument(_source.isNotEmpty, 'source',
-          'if width is non-zero, source must be non-empty');
-      requireArgument(_source.length % width == 0, 'width',
-          'width must evenly divide the source');
+      assert(_source.isNotEmpty);
+      assert(_source.length % width == 0);
     }
   }
 
