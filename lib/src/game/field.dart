@@ -52,10 +52,10 @@ class Field extends Array2d<bool> {
 
   Field._internal(this.bombCount, int cols, List<bool> source)
       : _adjacents = Array2d<int?>(cols, source.length ~/ cols, (i) => null),
+        assert(bombCount > 0),
         super.wrap(cols, source) {
     assert(width > 0);
     assert(height > 0);
-    assert(bombCount > 0);
     assert(bombCount < length);
 
     var count = 0;

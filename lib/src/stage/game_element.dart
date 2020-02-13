@@ -10,7 +10,6 @@ import 'package:stagexl/stagexl.dart' hide Point;
 
 import '../audio.dart' as game_audio;
 import '../game.dart';
-import '../util.dart';
 import 'board_element.dart';
 import 'game_background_element.dart';
 import 'game_root.dart';
@@ -182,7 +181,7 @@ class GameElement extends Sprite {
 
       reveals = Iterable.generate(game.field.length, (i) {
         final c = game.field.getCoordinate(i);
-        return Tuple(c, game.getSquareState(c.x, c.y));
+        return _Tuple(c, game.getSquareState(c.x, c.y));
       })
           .where((t2) =>
               t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
@@ -288,4 +287,11 @@ class _Values {
   final int delay;
 
   _Values(this.point, this.squareOffset, this.delay);
+}
+
+class _Tuple {
+  final Point<int> item1;
+  final SquareState item2;
+
+  _Tuple(this.item1, this.item2);
 }

@@ -7,7 +7,6 @@ import 'dart:async';
 import 'dart:math';
 
 import '../array_2d.dart';
-import '../util.dart';
 import 'field.dart';
 
 enum SquareState { hidden, revealed, flagged, bomb, safe }
@@ -27,12 +26,12 @@ class Game {
 
   Game(this.field)
       : _state = GameState.reset,
+        assert(field != null),
         _states = Array2d<SquareState>(
           field.width,
           field.height,
           (i) => SquareState.hidden,
         ) {
-    assert(field != null);
     _bombsLeft = field.bombCount;
     _revealsLeft = field.length - field.bombCount;
   }
@@ -65,11 +64,11 @@ class Game {
 
     final currentSS = _states.get(x, y);
     if (value) {
-      require(currentSS == SquareState.hidden);
+      assert(currentSS == SquareState.hidden);
       _states.set(x, y, SquareState.flagged);
       _bombsLeft--;
     } else {
-      require(currentSS == SquareState.flagged);
+      assert(currentSS == SquareState.flagged);
       _states.set(x, y, SquareState.hidden);
       _bombsLeft++;
     }
@@ -88,7 +87,7 @@ class Game {
 
   List<Point<int>>? reveal(int x, int y) {
     _ensureStarted();
-    require(canReveal(x, y), 'Item cannot be revealed.');
+    assert(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
     List<Point<int>>? reveals;
