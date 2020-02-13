@@ -9,7 +9,6 @@ import 'package:test/test.dart';
 
 import 'test_util.dart';
 
-
 void main() {
   test('initial values', _testInitial);
   test('setFlag', _testSetFlag);
