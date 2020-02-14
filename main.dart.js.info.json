@@ -945,7 +945,7 @@
         "id": "library/649011167",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 938,
+        "size": 936,
         "children": [
           "class/576855309"
         ],
@@ -1169,7 +1169,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacewvve2M/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacewoYXh1/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -6991,7 +6991,7 @@
         "id": "class/576855309",
         "kind": "class",
         "name": "BoardElement",
-        "size": 837,
+        "size": 835,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/649011167",
         "modifiers": {
@@ -13353,7 +13353,7 @@
         "id": "function/27599893",
         "kind": "function",
         "name": "BoardElement",
-        "size": 627,
+        "size": 625,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/576855309",
         "children": [
@@ -13833,7 +13833,7 @@
         "id": "function/40168804",
         "kind": "function",
         "name": "call",
-        "size": 459,
+        "size": 457,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/984703620",
         "children": [],
@@ -13854,7 +13854,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var t,s,r,q,p=this.a,o=u.q,n=o.a(p.fy).Qt.e.a,m=C.jn.zY(a,n.a),l=C.jn.xG(a,n.b)\nn=A.MB(80,80,16777215)\nt=$.LS\n$.LS=t+1\ns=u.t\nt=new A.jx(n,t,H.K([],s),T.oy())\nn=H.K([],u.r)\nr=$.LS\n$.LS=r+1\nq=new A.LN(m,l,t,n,r,H.K([],s),T.oy())\nq.bS(t)\nt=u.V\ns=q.glh()\nq.Ep(0,\"click\",t).XE(s,!1,0)\nq.Ep(0,\"rightClick\",t).XE(s,!1,0)\nq.r1=\"pointer\"\nn=this.b\nq.c=m*n\nq.id=!0\nq.d=l*n\no=o.a(p.fy).m9\nn=typeof o==\"number\"\nif(n)q.r=o\nif(n)q.x=o\np.bS(q)\nq.Iv()\nreturn q}",
+        "code": "$1:function(a){var t,s,r,q=this.a,p=u.q,o=p.a(q.fy).Qt.e.a,n=C.jn.zY(a,o.a),m=C.jn.xG(a,o.b)\no=A.MB(80,80,16777215)\nt=$.LS\n$.LS=t+1\ns=u.t\nt=new A.jx(o,t,H.K([],s),T.oy())\no=H.K([],u.r)\nr=$.LS\n$.LS=r+1\ns=new A.LN(n,m,t,o,r,H.K([],s),T.oy())\ns.bS(t)\nt=u.V\nr=s.glh()\ns.Ep(0,\"click\",t).XE(r,!1,0)\ns.Ep(0,\"rightClick\",t).XE(r,!1,0)\ns.r1=\"pointer\"\no=this.b\ns.c=n*o\ns.id=!0\ns.d=m*o\np=p.a(q.fy).m9\no=typeof p==\"number\"\nif(o)s.r=p\nif(o)s.x=p\nq.bS(s)\ns.Iv()\nreturn s}",
         "type": "SquareElement Function(int)"
       },
       "40453029": {
@@ -79728,7 +79728,7 @@
         "id": "closure/984703620",
         "kind": "closure",
         "name": "BoardElement_closure",
-        "size": 526,
+        "size": 524,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/27599893",
         "function": "function/40168804"
@@ -132034,7 +132034,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 223184,
+      "size": 223182,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -132044,10 +132044,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 223184,
+    "size": 223182,
     "dart2jsVersion": "2.8.0-dev.9.0",
-    "compilationMoment": "2020-02-13 11:39:03.604657",
-    "compilationDuration": 3627746,
+    "compilationMoment": "2020-02-14 13:59:47.273976",
+    "compilationDuration": 3390226,
     "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
