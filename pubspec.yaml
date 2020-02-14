@@ -2,7 +2,7 @@ name: pop_pop_win
 publish_to: none
 
 environment:
-  sdk: '>=2.2.0 <3.0.0'
+  sdk: '>=2.7.0 <3.0.0'
 
 dependencies:
   js: ^0.6.1
