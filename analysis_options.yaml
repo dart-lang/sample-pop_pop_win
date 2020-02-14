@@ -23,6 +23,7 @@ linter:
     - avoid_implementing_value_types
     - avoid_js_rounded_ints
     - avoid_private_typedef_functions
+    - avoid_redundant_argument_values
     - avoid_renaming_method_parameters
     - avoid_returning_null_for_future
     - avoid_returning_null_for_void
@@ -36,6 +37,7 @@ linter:
     - await_only_futures
     - camel_case_types
     - cancel_subscriptions
+    - cascade_invocations
     - close_sinks
     - comment_references
     - constant_identifier_names
@@ -48,9 +50,12 @@ linter:
     - invariant_booleans
     - iterable_contains_unrelated_type
     - join_return_with_assignment
+    - lines_longer_than_80_chars
     - list_remove_unrelated_type
     - literal_only_boolean_expressions
+    - missing_whitespace_between_adjacent_strings
     - no_adjacent_strings_in_list
+    - no_runtimeType_toString
     - non_constant_identifier_names
     - one_member_abstracts
     - only_throw_errors
@@ -68,9 +73,13 @@ linter:
     - prefer_foreach
     - prefer_function_declarations_over_variables
     - prefer_initializing_formals
+    - prefer_inlined_adds
     - prefer_int_literals
     - prefer_interpolation_to_compose_strings
+    - prefer_is_not_operator
     - prefer_mixin
+    - prefer_null_aware_operators
+    - prefer_relative_imports
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
     - sort_pub_dependencies
@@ -84,6 +93,7 @@ linter:
     - unnecessary_overrides
     - unnecessary_parenthesis
     - unnecessary_statements
+    - unnecessary_string_interpolations
     - use_setters_to_change_properties
     - use_string_buffers
     - use_to_and_as_if_applicable

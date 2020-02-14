@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:pop_pop_win/src/game.dart';
+import 'package:test/test.dart';
 
 // This grid
 // XXXXX2
@@ -12,40 +13,14 @@ import 'package:pop_pop_win/src/game.dart';
 // 110000
 
 const List<int?> sampleField = [
-  null,
-  null,
-  null,
-  null,
-  null,
-  2,
-  null,
-  7,
-  null,
-  8,
-  null,
-  3,
-  null,
-  5,
-  null,
-  null,
-  null,
-  2,
-  null,
-  3,
-  2,
-  3,
-  2,
-  1,
-  1,
-  1,
-  0,
-  0,
-  0,
-  0
+  null, null, null, null, null, 2, // row
+  null, 7, null, 8, null, 3,
+  null, 5, null, null, null, 2,
+  null, 3, 2, 3, 2, 1,
+  1, 1, 0, 0, 0, 0
 ];
 
-Field getSampleField() {
-  final bools = List<bool>.from(sampleField.map((x) => x == null));
+Field getSampleField() =>
+    Field.fromSquares(6, 5, List<bool>.from(sampleField.map((x) => x == null)));
 
-  return Field.fromSquares(6, 5, bools);
-}
+final throwsAssertionError = throwsA(const TypeMatcher<AssertionError>());
