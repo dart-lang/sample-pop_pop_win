@@ -20,15 +20,13 @@ class BoardElement extends Sprite {
         Array2d<SquareElement>(game.field.width, game.field.height, (i) {
       final x = i % game.field.width;
       final y = i ~/ game.field.height;
-      final se = SquareElement(x, y)
+      return SquareElement(x, y)
         ..x = x * scaledSize
         ..y = y * scaledSize
         ..scaleX = _boardScale
         ..scaleY = _boardScale
-        ..addTo(this);
-
-      se.updateState();
-      return se;
+        ..addTo(this)
+        ..updateState();
     });
   }
 

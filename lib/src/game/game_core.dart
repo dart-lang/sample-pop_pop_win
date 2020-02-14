@@ -274,8 +274,9 @@ class Game {
       _state = value;
       if (_state == GameState.started) {
         assert(!_watch.isRunning);
-        _watch.reset();
-        _watch.start();
+        _watch
+          ..reset()
+          ..start();
       } else if (gameEnded) {
         assert(_watch.isRunning);
         _watch.stop();
