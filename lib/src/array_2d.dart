@@ -1,4 +1,3 @@
-// @dart = 2.8
 import 'dart:collection';
 import 'dart:math' as math;
 
