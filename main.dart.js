@@ -2591,28 +2591,27 @@ n=T.oy()
 l=H.K([],l)
 m=$.LS
 $.LS=m+1
-t=new U.Mp(a,C.pr,new A.AE(k,j,s,r),new A.AE(q,p,o,n),l,m,H.K([],t),T.oy())
+t=new U.Mp(a,new A.AE(k,j,s,r),new A.AE(q,p,o,n),l,m,H.K([],t),T.oy())
 t.Fr(a)
 return t},
-Mp:function Mp(a,b,c,d,e,f,g,h){var _=this
+Mp:function Mp(a,b,c,d,e,f,g){var _=this
 _.Qt=a
-_.lN=b
-_.KQ=_.zN=_.rS=null
+_.zN=_.rS=_.lN=null
+_.KQ=b
 _.Na=c
-_.YL=d
-_.VP=_.m9=_.Hs=null
-_.L=e
+_.m9=_.Hs=_.YL=null
+_.L=d
 _.k4=!0
 _.r1="auto"
-_.b=f
+_.b=e
 _.f=_.e=_.d=_.c=0
 _.x=_.r=1
 _.Q=_.z=_.y=0
 _.ch=1
 _.cx=!0
-_.dy=g
+_.dy=f
 _.fy=null
-_.go=h
+_.go=g
 _.id=!0
 _.a=null},
 oB:function oB(a){this.a=a},
@@ -2622,8 +2621,7 @@ cR:function cR(a){this.a=a},
 Pi:function Pi(a){this.a=a},
 CT:function CT(){},
 Ag:function Ag(){},
-Ha:function Ha(a,b){this.a=a
-this.b=b},
+Ha:function Ha(a){this.a=a},
 BJ:function BJ(){},
 df:function df(a){this.a=a},
 La:function La(a,b,c){this.a=a
@@ -4928,7 +4926,7 @@ D.ic.prototype={
 Fr:function(a){var t,s,r=this
 a.bS(r)
 t=u.q.a(r.fy)
-s=t.m9
+s=t.Hs
 t=t.Qt.e.a
 r.Qt=M.iT(t.a,t.b,new D.Az(r,80*s),u.x)}}
 D.Az.prototype={
@@ -4952,7 +4950,7 @@ o=this.b
 s.c=n*o
 s.id=!0
 s.d=m*o
-p=p.a(q.fy).m9
+p=p.a(q.fy).Hs
 o=typeof p=="number"
 if(o)s.r=p
 if(o)s.x=p
@@ -5024,16 +5022,16 @@ a6.bS(i)
 a6.bS(h)
 a6.bS(g)
 t=u.q
-s=t.a(a6.fy).Hs
+s=t.a(a6.fy).YL
 f=A.MB(s,s,0)
 s=u.U
 e=new U.tn(0,0,112,122,s)
 q=u.J
 f.xV(b2.kI("game_board_corner_top_left"),e,new U.tZ(0,0,q))
-f.xV(b2.kI("game_board_corner_top_right"),e,new U.tZ(t.a(a6.fy).Hs-112,0,q))
-f.xV(b2.kI("game_board_corner_bottom_left"),e,new U.tZ(0,t.a(a6.fy).Hs-112,q))
+f.xV(b2.kI("game_board_corner_top_right"),e,new U.tZ(t.a(a6.fy).YL-112,0,q))
+f.xV(b2.kI("game_board_corner_bottom_left"),e,new U.tZ(0,t.a(a6.fy).YL-112,q))
 p=b2.kI("game_board_corner_bottom_right")
-o=t.a(a6.fy).Hs-112
+o=t.a(a6.fy).YL-112
 f.xV(p,e,new U.tZ(o,o,q))
 d=new U.tn(0,0,80,112,s)
 c=new U.tn(0,0,112,80,s)
@@ -5049,7 +5047,7 @@ a2.globalAlpha=1
 new A.Oo(f,new L.p5(a0,a2,a1,C.yK,new L.PT(),new P.DL(a7,a7,p),new P.DL(a7,a7,p)),s.gmH()).hW(n,d,new U.tZ(a,0,q),a7)
 o.Li(0)
 n=b2.kI("game_board_side_bottom")
-a1=t.a(a6.fy).Hs
+a1=t.a(a6.fy).YL
 a2=o.gqN(o)
 a0=T.oy()
 a3=a2.getContext("2d")
@@ -5070,7 +5068,7 @@ a3.globalAlpha=1
 new A.Oo(f,new L.p5(n,a3,a0,C.yK,new L.PT(),new P.DL(a7,a7,p),new P.DL(a7,a7,p)),s.gmH()).hW(a1,c,new U.tZ(0,a,q),a7)
 o.Li(0)
 a1=b2.kI("game_board_side_right")
-a0=t.a(a6.fy).Hs
+a0=t.a(a6.fy).YL
 a3=o.gqN(o)
 n=T.oy()
 a2=a3.getContext("2d")
@@ -5085,17 +5083,17 @@ a5=new A.jx(f,s,H.K([],r),T.oy())
 r=$.Vi()
 a5.c=r.a
 a5.d=r.b
-t=t.a(a6.fy).m9
+t=t.a(a6.fy).Hs
 s=typeof t=="number"
 if(s)a5.r=t
 if(s)a5.x=t
 a6.bS(a5)}}
 U.Mp.prototype={
 Fr:function(a){var t,s,r,q,p,o,n,m,l,k=this,j=null,i="TextureAtlas",h=4278190080,g=k.Qt,f=g.y,e=u.p,d=e.a(f.n9(i,"opaque")),c=e.a(f.n9(i,"static"))
-k.VP=e.a(f.n9(i,"animated"))
+k.m9=e.a(f.n9(i,"animated"))
 f=g.e.a.a*80+64
-k.Hs=f
-k.m9=1344/f
+k.YL=f
+k.Hs=1344/f
 V.AY(k,d)
 f=c.kI("button_new_game")
 e=$.LS
@@ -5117,12 +5115,12 @@ k.bS(r)
 r=D.t5(k)
 e=$.Vi()
 s=e.a
-q=32*k.m9
+q=32*k.Hs
 r.c=s+q
 r.id=!0
 e=e.b
 r.d=e+q
-k.rS=r
+k.lN=r
 n="w"+g.a+"-h"+g.b+"-m"+g.c
 $.fF().toString
 g=M.Yq(window.localStorage.getItem(n),j)
@@ -5138,13 +5136,13 @@ q.c=1400
 q.id=!0
 q.d=20
 k.bS(q)
-k.zN=q
-m=Math.min(Math.max(H.E0(k.m9),1.1),1.5)
+k.rS=q
+m=Math.min(Math.max(H.E0(k.Hs),1.1),1.5)
 g=c.kI("logo_win")
 r=$.LS
 $.LS=r+1
 l=new A.jx(g,r,H.K([],t),T.oy())
-t=k.KQ=A.VK(l,l,l,l)
+t=k.zN=A.VK(l,l,l,l)
 t.d=20
 t.id=!0
 t.r=m
@@ -5153,9 +5151,9 @@ t.c=1024-t.gcl().c/2
 t.id=!0
 t.Ep(0,"click",f).XE(new U.jW(),!1,0)
 k.bS(t)
-g=k.Na
+g=k.KQ
 g.k4=!1
-f=k.m9
+f=k.Hs
 t=32*f
 g.c=s+t
 g.id=!0
@@ -5163,9 +5161,9 @@ g.d=e+t
 g.r=f
 g.x=f
 k.bS(g)
-g=k.YL
+g=k.Na
 g.k4=!1
-f=k.m9
+f=k.Hs
 t=32*f
 g.c=s+t
 g.id=!0
@@ -5185,7 +5183,7 @@ else if(o===C.Bl){s.hM(H.K([new P.hL(b,c,u.M)],u.W))
 t=q.e.tm(b,c)}else t=r
 if(t!=null&&t.length!==0){if(!d)t[0]
 s.zC(new P.hL(b,c,u.D),t)}else if(q.e.f===C.He)s.J1(new P.hL(b,c,u.D))},
-Au:function(a,b){var t,s=this.rS.Qt,r=s.a,q=s.c[a+b*r]
+Au:function(a,b){var t,s=this.lN.Qt,r=s.a,q=s.c[a+b*r]
 r=u.q.a(u.o.a(q.fy).fy).Qt.e
 s=q.Qt
 t=q.lN
@@ -5200,13 +5198,13 @@ R.jr("unflag")
 return!0}return!1},
 zC:function(a0,a1){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this
 if(a1==null)a1=P.pF(a.Qt.e.a.c.length,new U.Pi(a),u.bx).ev(0,new U.CT()).E2(0,new U.Ag(),u.D).br(0)
-t=new H.A8(a1,new U.Ha(a,a0),H.t6(a1).CT("A8<1,tp>")).br(0)
+t=new H.A8(a1,new U.Ha(a0),H.t6(a1).CT("A8<1,tp>")).br(0)
 if(!!t.immutable$list)H.vh(P.L4("sort"))
 H.Qs(t,new U.BJ())
-for(s=t.length,r=a.Na,q=u.e,p=u.o,o=u.q,n=0;n<t.length;t.length===s||(0,H.lk)(t),++n){m=t[n]
+for(s=t.length,r=a.KQ,q=u.e,p=u.o,o=u.q,n=0;n<t.length;t.length===s||(0,H.lk)(t),++n){m=t[n]
 l=m.a
 k=m.b
-j=a.rS.Qt
+j=a.lN.Qt
 i=l.gx(l)
 h=l.gy(l)
 g=j.a
@@ -5217,7 +5215,7 @@ i=f.lN
 g=g.b
 g=g.c[h+i*g.a]
 e=g===C.e5?"balloon_explode":"balloon_pop"
-d=O.u7(a.VP.dF(e),60,!1)
+d=O.u7(a.m9.dF(e),60,!1)
 d.c=k.a
 d.id=!0
 d.d=k.b
@@ -5234,14 +5232,14 @@ j.AN(0,b)}},
 J1:function(a){return this.zC(a,null)},
 hM:function(a){var t,s,r,q,p,o,n,m,l,k,j,i=this,h="complete"
 R.jr("throw")
-for(t=a.length,s=i.YL,r=u.e,q=0;q<a.length;a.length===t||(0,H.lk)(a),++q){p=a[q]
+for(t=a.length,s=i.Na,r=u.e,q=0;q<a.length;a.length===t||(0,H.lk)(a),++q){p=a[q]
 o=$.bD()
 n=J.LX(p)
 m=n.gx(p)
 n=n.gy(p)
 m=o.a+80*m
 n=o.b+80*n
-l=O.u7(i.VP.dF("dart"),60,!1)
+l=O.u7(i.m9.dF("dart"),60,!1)
 l.c=m
 l.id=!0
 l.d=n
@@ -5249,7 +5247,7 @@ l.k4=!1
 if(!l.m){l.m=!0
 l.R=null}s.bS(l)
 l.Ep(0,h,r).XE(new U.m8(l),!1,0)
-k=O.u7(i.VP.dF("shadow"),60,!1)
+k=O.u7(i.m9.dF("shadow"),60,!1)
 k.c=m
 k.id=!0
 k.d=n
@@ -5285,7 +5283,7 @@ U.Ag.prototype={
 $1:function(a){return a.a}}
 U.Ha.prototype={
 $1:function(a){var t=a.gx(a),s=a.gy(a)
-return new U.tp(a,$.f9().M2(0,new U.xy(80*t,80*s)),12+C.CD.yu(a.HN(0,this.b).gwe()*4)+this.a.lN.j1(10))}}
+return new U.tp(a,$.f9().M2(0,new U.xy(80*t,80*s)),12+C.CD.yu(a.HN(0,this.a).gwe()*4)+$.j4().j1(10))}}
 U.BJ.prototype={
 $2:function(a,b){return C.jn.iM(a.c,b.c)}}
 U.df.prototype={
@@ -5309,18 +5307,18 @@ Y.Yy.prototype={
 Zj:function(a){var t=this,s=t.z,r=s.WH(0,a),q=(r==null?0:r)+1
 s.Y5(0,a,q)
 self.gtag("event","game_event",{event_category:"sample-pop_pop_win",event_label:J.A(a).split(".")[1],value:q})
-if(a===C.mV){for(s=t.Q.rS.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()
+if(a===C.mV){for(s=t.Q.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()
 s=t.Q
-if(s.zN.rT!=null){s=t.e
+if(s.rS.rT!=null){s=t.e
 s=C.jn.BU(s.gzo(s).a,1000)
 r=t.Q
-s=s<r.zN.rT}else{r=s
-s=!0}if(s){s=r.zN
+s=s<r.rS.rT}else{r=s
+s=!0}if(s){s=r.rS
 r=t.e
 s.rT=C.jn.BU(r.gzo(r).a,1000)}R.jr("win")}},
 p8:function(){this.PC()
 var t=this.Q
-if(t!=null)for(t=t.rS.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}}
+if(t!=null)for(t=t.lN.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}}
 X.XY.prototype={
 dd:function(a){var t,s,r=this,q=u.q,p=q.a(r.fy).Qt.e
 if(p.gzo(p)==null)t="0"
@@ -6028,8 +6026,8 @@ $1:function(a){return this.a.cq()}}
 A.PK.prototype={
 $1:function(a){return C.jN.Og(a,0,this.a)}}
 A.cZ.prototype={
-$0:function(){var t=this.b,s=this.a.mn.a,r=$.j4
-$.j4=r+1
+$0:function(){var t=this.b,s=this.a.mn.a,r=$.Tq
+$.Tq=r+1
 return new A.oA(r,s===0,t,t)}}
 A.EZ.prototype={
 $1:function(a){return C.jN.Og(a,this.a,this.b)}}
@@ -7753,7 +7751,7 @@ $.xg=[]
 $.N8=null
 $.pL=null
 $.LS=0
-$.j4=1
+$.Tq=1
 $.cU=0
 $.C=[]
 $.jR=17976931348623157e292
@@ -7786,6 +7784,7 @@ t($,"Wc","ut",function(){return P.Oj()})
 t($,"h9","Yj",function(){return P.l9(null,C.NU,u.P)})
 t($,"tN","ov",function(){return P.CF(null)})
 t($,"qO","fF",function(){return D.B0()})
+t($,"tB","j4",function(){return P.CF(null)})
 t($,"YZ","Vi",function(){return U.JH(352,96)})
 t($,"fa","f9",function(){return U.JH(-88,-88)})
 t($,"lL","bD",function(){return U.JH(-472,-348)})
