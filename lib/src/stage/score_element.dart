@@ -41,5 +41,5 @@ class ScoreElement extends TextField {
     return textValue;
   }
 
-  Game get _game => (parent as GameElement).manager.game;
+  Game get _game => (parent as GameElement).game;
 }

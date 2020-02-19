@@ -16,20 +16,19 @@ import 'score_element.dart';
 import 'square_element.dart';
 
 const _frameRate = 60;
+const _edgeOffset = 32;
+const _backgroundSize = Point<int>(2048, 1536);
+const _backgroundHoleSize = 16 * SquareElement.size + 2 * _edgeOffset;
+const _popAnimationHitFrame = 12;
+final Random _rnd = Random();
 
 class GameElement extends Sprite {
-  static const _edgeOffset = 32;
-  static const _backgroundSize = Point<int>(2048, 1536);
-  static const _backgroundHoleSize = 16 * SquareElement.size + 2 * _edgeOffset;
   static final Vector boardOffset = Vector(352, 96);
-  static const _popAnimationHitFrame = 12;
   static final _popExplodeAnimationOffset = Vector(-88, -88);
   static final _dartAnimationOffset =
       Vector(-512 + 0.5 * SquareElement.size, -388 + 0.5 * SquareElement.size);
 
-  final GameRoot manager;
-
-  final Random _rnd = Random();
+  final GameRoot _manager;
 
   late BoardElement _boardElement;
   late ScoreElement _scoreElement;
@@ -41,9 +40,9 @@ class GameElement extends Sprite {
 
   late TextureAtlas _animations;
 
-  Game get game => manager.game;
+  Game get game => _manager.game;
 
-  ResourceManager get resourceManager => manager.resourceManager;
+  ResourceManager get resourceManager => _manager.resourceManager;
 
   int get boardSize => _boardSize;
 
@@ -53,7 +52,7 @@ class GameElement extends Sprite {
 
   BoardElement get boardElement => _boardElement;
 
-  GameElement(this.manager) {
+  GameElement(this._manager) {
     final opa = resourceManager.getTextureAtlas('opaque');
     final sta = resourceManager.getTextureAtlas('static');
     _animations = resourceManager.getTextureAtlas('animated');
@@ -73,7 +72,7 @@ class GameElement extends Sprite {
       ..y = 20
       ..onMouseClick.listen((e) {
         game_audio.click();
-        manager.newGame();
+        _manager.newGame();
       })
       ..addTo(this);
 
@@ -81,7 +80,7 @@ class GameElement extends Sprite {
       ..x = boardOffset.x + _edgeOffset * _boardScale
       ..y = boardOffset.y + _edgeOffset * _boardScale;
 
-    _scoreElement = ScoreElement(manager.bestTimeMilliseconds)..addTo(this);
+    _scoreElement = ScoreElement(_manager.bestTimeMilliseconds)..addTo(this);
 
     final logoScale = min(max(_boardScale, 1.1), 1.5);
     final logo = Bitmap(sta.getBitmapData('logo_win'));
