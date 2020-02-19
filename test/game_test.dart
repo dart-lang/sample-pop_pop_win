@@ -159,7 +159,7 @@ void _testRandomField() {
 
     for (var j = 0; j < 5; j++) {
       final g = Game(f);
-      while (g.revealsLeft > 0) {
+      while (g.revealsLeft! > 0) {
         final x = rnd.nextInt(f.width);
         final y = rnd.nextInt(f.height);
         if (g.getSquareState(x, y) == SquareState.hidden) {
@@ -261,7 +261,7 @@ void _testWin() {
         bombsLeft--;
         expect(g.bombsLeft, equals(bombsLeft));
       } else if (g.getSquareState(x, y) == SquareState.hidden) {
-        revealsLeft -= g.reveal(x, y).length;
+        revealsLeft -= g.reveal(x, y)!.length;
         expect(revealsLeft, equals(g.revealsLeft));
       } else {
         expect(g.getSquareState(x, y), equals(SquareState.revealed));

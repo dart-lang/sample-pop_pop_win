@@ -8,7 +8,7 @@ import '../array_2d.dart';
 
 class Field extends Array2d<bool> {
   final int bombCount;
-  final Array2d<int> _adjacents;
+  final Array2d<int?> _adjacents;
 
   factory Field([int bombCount = 40, int cols = 16, int rows = 16, int seed]) {
     final squares = List<bool>.filled(rows * cols, false);
@@ -50,7 +50,7 @@ class Field extends Array2d<bool> {
   }
 
   Field._internal(this.bombCount, int cols, List<bool> source)
-      : _adjacents = Array2d<int>(cols, source.length ~/ cols, (i) => null),
+      : _adjacents = Array2d<int?>(cols, source.length ~/ cols, (i) => null),
         assert(bombCount > 0),
         super.wrap(cols, source) {
     assert(width > 0);
@@ -66,7 +66,7 @@ class Field extends Array2d<bool> {
     assert(count == bombCount);
   }
 
-  int getAdjacentCount(int x, int y) {
+  int? getAdjacentCount(int x, int y) {
     assert(!get(x, y), 'Cannot get adjacent count from populated list!');
 
     var val = _adjacents.get(x, y);

@@ -36,7 +36,7 @@ class PlatformWeb {
 
   Stream<void> get aboutChanged => _aboutController.stream;
 
-  void toggleAbout([bool value]) {
+  void toggleAbout([bool? value]) {
     final loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later
     final hash = loc.hash.isEmpty ? '#' : loc.hash;

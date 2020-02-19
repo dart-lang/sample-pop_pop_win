@@ -30,35 +30,35 @@ class GameElement extends Sprite {
 
   final GameRoot _manager;
 
-  BoardElement _boardElement;
-  ScoreElement _scoreElement;
-  SimpleButton _logoButton;
+  BoardElement? _boardElement;
+  ScoreElement? _scoreElement;
+  SimpleButton? _logoButton;
   final _popLayer = Sprite(), _dartLayer = Sprite();
 
-  int _boardSize;
-  num _boardScale;
+  int? _boardSize;
+  num? _boardScale;
 
-  TextureAtlas _animations;
+  TextureAtlas? _animations;
 
-  Game get game => _manager.game;
+  Game? get game => _manager.game;
 
   ResourceManager get resourceManager => _manager.resourceManager;
 
-  int get boardSize => _boardSize;
+  int? get boardSize => _boardSize;
 
-  num get boardScale => _boardScale;
+  num? get boardScale => _boardScale;
 
-  ScoreElement get scoreElement => _scoreElement;
+  ScoreElement? get scoreElement => _scoreElement;
 
-  BoardElement get boardElement => _boardElement;
+  BoardElement? get boardElement => _boardElement;
 
   GameElement(this._manager) {
     final opa = resourceManager.getTextureAtlas('opaque');
     final sta = resourceManager.getTextureAtlas('static');
     _animations = resourceManager.getTextureAtlas('animated');
 
-    _boardSize = game.field.width * SquareElement.size + 2 * _edgeOffset;
-    _boardScale = _backgroundHoleSize / _boardSize;
+    _boardSize = game!.field.width * SquareElement.size + 2 * _edgeOffset;
+    _boardScale = _backgroundHoleSize / _boardSize!;
 
     GameBackgroundElement(this, opa);
 
@@ -77,72 +77,72 @@ class GameElement extends Sprite {
       ..addTo(this);
 
     _boardElement = BoardElement(this)
-      ..x = boardOffset.x + _edgeOffset * _boardScale
-      ..y = boardOffset.y + _edgeOffset * _boardScale;
+      ..x = boardOffset.x + _edgeOffset * _boardScale!
+      ..y = boardOffset.y + _edgeOffset * _boardScale!;
 
     _scoreElement = ScoreElement(_manager.bestTimeMilliseconds)..addTo(this);
 
-    final logoScale = min(max(_boardScale, 1.1), 1.5);
+    final logoScale = min(max(_boardScale!, 1.1), 1.5);
     final logo = Bitmap(sta.getBitmapData('logo_win'));
     _logoButton = SimpleButton(logo, logo, logo, logo);
     _logoButton
       ..y = 20
       ..scaleX = logoScale
       ..scaleY = logoScale
-      ..x = _backgroundSize.x / 2 - _logoButton.width / 2
+      ..x = _backgroundSize.x / 2 - _logoButton!.width / 2
       ..onMouseClick.listen((e) => _titleClickedEventHandle.add(null))
       ..addTo(this);
 
     _popLayer
       ..mouseEnabled = false
-      ..x = boardOffset.x + _edgeOffset * _boardScale
-      ..y = boardOffset.y + _edgeOffset * _boardScale
-      ..scaleX = _boardScale
-      ..scaleY = _boardScale
+      ..x = boardOffset.x + _edgeOffset * _boardScale!
+      ..y = boardOffset.y + _edgeOffset * _boardScale!
+      ..scaleX = _boardScale!
+      ..scaleY = _boardScale!
       ..addTo(this);
 
     _dartLayer
       ..mouseEnabled = false
-      ..x = boardOffset.x + _edgeOffset * _boardScale
-      ..y = boardOffset.y + _edgeOffset * _boardScale
-      ..scaleX = _boardScale
-      ..scaleY = _boardScale
+      ..x = boardOffset.x + _edgeOffset * _boardScale!
+      ..y = boardOffset.y + _edgeOffset * _boardScale!
+      ..scaleX = _boardScale!
+      ..scaleY = _boardScale!
       ..addTo(this);
   }
 
   void click(int x, int y, bool alt) {
-    assert(!game.gameEnded);
-    final ss = game.getSquareState(x, y);
+    assert(!game!.gameEnded);
+    final ss = game!.getSquareState(x, y);
 
-    List<Point<int>> reveals;
+    List<Point<int>>? reveals;
 
     if (alt) {
       if (ss == SquareState.hidden || ss == SquareState.flagged) {
         _toggleFlag(x, y);
       } else if (ss == SquareState.revealed) {
-        if (game.canReveal(x, y)) {
+        if (game!.canReveal(x, y)) {
           // get adjacent balloons
-          final adjHidden = game.field
+          final adjHidden = game!.field
               .getAdjacentIndices(x, y)
-              .map((i) => game.field.getCoordinate(i))
-              .where((t) => game.getSquareState(t.x, t.y) == SquareState.hidden)
+              .map((i) => game!.field.getCoordinate(i))
+              .where((t) => game!.getSquareState(t.x, t.y) == SquareState.hidden)
               .toList();
 
           assert(adjHidden.isNotEmpty);
 
           _startDartAnimation(adjHidden);
-          reveals = game.reveal(x, y);
+          reveals = game!.reveal(x, y);
         }
       }
     } else {
       if (ss == SquareState.hidden) {
         _startDartAnimation([Point(x, y)]);
-        reveals = game.reveal(x, y);
+        reveals = game!.reveal(x, y);
       }
     }
 
     if (reveals != null && reveals.isNotEmpty) {
-      assert(game.state != GameState.lost);
+      assert(game!.state != GameState.lost);
       if (!alt) {
         // if it was a normal click, the first item should be the clicked item
         final first = reveals[0];
@@ -150,22 +150,22 @@ class GameElement extends Sprite {
         assert(first.y == y);
       }
       _startPopAnimation(Point(x, y), reveals);
-    } else if (game.state == GameState.lost) {
+    } else if (game!.state == GameState.lost) {
       _startPopAnimation(Point(x, y));
     }
   }
 
   bool _toggleFlag(int x, int y) {
-    assert(!game.gameEnded);
-    final se = _boardElement.squares.get(x, y);
+    assert(!game!.gameEnded);
+    final se = _boardElement!.squares!.get(x, y);
     final ss = se.squareState;
     if (ss == SquareState.hidden) {
-      game.setFlag(x, y, true);
+      game!.setFlag(x, y, true);
       se.updateState();
       game_audio.flag();
       return true;
     } else if (ss == SquareState.flagged) {
-      game.setFlag(x, y, false);
+      game!.setFlag(x, y, false);
       se.updateState();
       game_audio.unFlag();
       return true;
@@ -173,13 +173,13 @@ class GameElement extends Sprite {
     return false;
   }
 
-  void _startPopAnimation(Point<int> start, [Iterable<Point<int>> reveals]) {
+  void _startPopAnimation(Point<int> start, [Iterable<Point<int>>? reveals]) {
     if (reveals == null) {
-      assert(game.state == GameState.lost);
+      assert(game!.state == GameState.lost);
 
-      reveals = Iterable.generate(game.field.length, (i) {
-        final c = game.field.getCoordinate(i);
-        return _Tuple(c, game.getSquareState(c.x, c.y));
+      reveals = Iterable.generate(game!.field.length, (i) {
+        final Point<int> c = game!.field.getCoordinate(i);
+        return _Tuple(c, game!.getSquareState(c.x, c.y));
       })
           .where((t2) =>
               t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
@@ -203,14 +203,14 @@ class GameElement extends Sprite {
       final c = v.point;
       final squareOffset = v.squareOffset;
 
-      final se = _boardElement.squares.get(c.x, c.y);
+      final se = _boardElement!.squares!.get(c.x, c.y);
       final ss = se.squareState;
 
       final texturePrefix =
           ss == SquareState.bomb ? 'balloon_explode' : 'balloon_pop';
 
       final anim =
-          FlipBook(_animations.getBitmapDatas(texturePrefix), _frameRate, false)
+          FlipBook(_animations!.getBitmapDatas(texturePrefix), _frameRate, false)
             ..x = squareOffset.x
             ..y = squareOffset.y
             ..alpha = 0
@@ -233,7 +233,7 @@ class GameElement extends Sprite {
           Vector(SquareElement.size * point.x, SquareElement.size * point.y);
 
       final dart =
-          FlipBook(_animations.getBitmapDatas('dart'), _frameRate, false)
+          FlipBook(_animations!.getBitmapDatas('dart'), _frameRate, false)
             ..x = squareOffset.x
             ..y = squareOffset.y
             ..mouseEnabled = false
@@ -243,7 +243,7 @@ class GameElement extends Sprite {
       dart.onComplete.listen((e) => dart.removeFromParent());
 
       final shadow =
-          FlipBook(_animations.getBitmapDatas('shadow'), _frameRate, false)
+          FlipBook(_animations!.getBitmapDatas('shadow'), _frameRate, false)
             ..x = squareOffset.x
             ..y = squareOffset.y
             ..mouseEnabled = false

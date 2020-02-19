@@ -24,10 +24,10 @@ class GameStorage {
     assert(game != null);
     assert(game.state == GameState.won);
 
-    final w = game.field.width;
-    final h = game.field.height;
+    final int w = game.field.width;
+    final int h = game.field.height;
     final m = game.field.bombCount;
-    final duration = game.duration.inMilliseconds;
+    final duration = game.duration!.inMilliseconds;
 
     final key = _getKey(w, h, m);
 
@@ -50,7 +50,7 @@ class GameStorage {
     targetPlatform.clearValues();
   }
 
-  int _getIntValue(String key, [int defaultValue = 0]) {
+  int _getIntValue(String key, [int? defaultValue = 0]) {
     assert(key != null);
 
     final strValue = targetPlatform.getValue(key);
@@ -59,7 +59,7 @@ class GameStorage {
 
   void _setIntValue(String key, int value) {
     assert(key != null);
-    final val = (value == null) ? null : value.toString();
+    final val = (value == null) ? null! : value.toString();
     targetPlatform.setValue(key, val);
   }
 
@@ -70,11 +70,11 @@ class GameStorage {
 
   static String _getKey(int w, int h, int m) => 'w$w-h$h-m$m';
 
-  static int _parseValue(String value, int defaultValue) {
-    if (value == null) {
+  static int _parseValue(String value, int? defaultValue) {
+    /* if (value == null) {
       return defaultValue;
     } else {
-      return int.parse(value);
-    }
+      */ return int.parse(value); /*
+    } */
   }
 }

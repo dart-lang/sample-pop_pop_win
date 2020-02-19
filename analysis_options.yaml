@@ -5,6 +5,8 @@ analyzer:
     implicit-casts: false
   language:
     strict-raw-types: true
+  enable-experiment:
+    - non-nullable
 
 linter:
   rules:

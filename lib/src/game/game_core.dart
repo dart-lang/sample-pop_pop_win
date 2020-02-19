@@ -20,8 +20,8 @@ class Game {
   final _watch = Stopwatch();
 
   GameState _state;
-  int _bombsLeft;
-  int _revealsLeft;
+  int? _bombsLeft;
+  int? _revealsLeft;
 
   Game(this.field)
       : _state = GameState.reset,
@@ -35,9 +35,9 @@ class Game {
     _revealsLeft = field.length - field.bombCount;
   }
 
-  int get bombsLeft => _bombsLeft;
+  int? get bombsLeft => _bombsLeft;
 
-  int get revealsLeft => _revealsLeft;
+  int? get revealsLeft => _revealsLeft;
 
   GameState get state => _state;
 
@@ -49,7 +49,7 @@ class Game {
 
   bool get gameEnded => _state == GameState.won || _state == GameState.lost;
 
-  Duration get duration =>
+  Duration? get duration =>
       (!_watch.isRunning && _watch.elapsedTicks == 0) ? null : _watch.elapsed;
 
   bool canToggleFlag(int x, int y) {
@@ -84,12 +84,12 @@ class Game {
     return false;
   }
 
-  List<Point<int>> reveal(int x, int y) {
+  List<Point<int>>? reveal(int x, int y) {
     _ensureStarted();
     assert(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
-    List<Point<int>> reveals;
+    List<Point<int>>? reveals;
 
     // normal reveal
     if (currentSS == SquareState.hidden) {
@@ -118,7 +118,7 @@ class Game {
         buffer.write('\n');
       }
       for (var x = -2; x < field.width; x++) {
-        String char;
+        String? char;
         if (y == -2) {
           if (x == -2) {
             char = ' ';
@@ -145,7 +145,7 @@ class Game {
                 break;
               case SquareState.revealed:
                 final count = field.getAdjacentCount(x, y);
-                char = count.toString();
+                char = count!.toString();
                 break;
               case SquareState.hidden:
                 char = '?';
@@ -156,7 +156,7 @@ class Game {
           }
         }
         assert(char != null);
-        buffer.write(char);
+        buffer.write(char!);
       }
     }
     return buffer.toString();
@@ -166,7 +166,7 @@ class Game {
     final currentSS = _states.get(x, y);
     if (currentSS == SquareState.revealed) {
       // might be a 'chord' reveal
-      final adjCount = field.getAdjacentCount(x, y);
+      final adjCount = field.getAdjacentCount(x, y)!;
       if (adjCount > 0) {
         final adjHidden = _getAdjacentCount(x, y, SquareState.hidden);
         if (adjHidden > 0) {
@@ -188,7 +188,7 @@ class Game {
 
     final flagged = <int>[];
     final hidden = <int>[];
-    final adjCount = field.getAdjacentCount(x, y);
+    final adjCount = field.getAdjacentCount(x, y)!;
     assert(adjCount > 0);
 
     var failed = false;
@@ -214,9 +214,9 @@ class Game {
       _setLost();
     } else {
       for (final i in hidden) {
-        final c = field.getCoordinate(i);
+        final Point<int> c = field.getCoordinate(i);
         if (canReveal(c.x, c.y)) {
-          reveals.addAll(reveal(c.x, c.y));
+          reveals.addAll(reveal(c.x, c.y)!);
         }
       }
     }
@@ -228,14 +228,14 @@ class Game {
     assert(_states.get(x, y) == SquareState.hidden);
     _states.set(x, y, SquareState.revealed);
     _revealsLeft--;
-    assert(_revealsLeft >= 0);
+    assert(_revealsLeft! >= 0);
     final reveals = [Point(x, y)];
     if (_revealsLeft == 0) {
       _setWon();
     } else if (field.getAdjacentCount(x, y) == 0) {
       for (final i in field.getAdjacentIndices(x, y)) {
         if (_states[i] == SquareState.hidden) {
-          final c = field.getCoordinate(i);
+          final Point<int> c = field.getCoordinate(i);
           reveals.addAll(_doReveal(c.x, c.y));
           assert(state == GameState.started || state == GameState.won);
         }

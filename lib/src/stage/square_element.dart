@@ -53,7 +53,7 @@ class SquareElement extends Sprite {
         textureName = 'balloon_tagged_frozen';
         break;
       case SquareState.revealed:
-        textureName = _numberMap[_adjacentCount];
+        textureName = _numberMap[_adjacentCount!];
         break;
       case SquareState.bomb:
         textureName = 'crater_b';
@@ -65,7 +65,7 @@ class SquareElement extends Sprite {
         throw StateError('$squareState not supported');
     }
 
-    useHandCursor = !_game.gameEnded &&
+    useHandCursor = !_game!.gameEnded &&
         (squareState == SquareState.hidden ||
             squareState == SquareState.flagged);
 
@@ -76,7 +76,7 @@ class SquareElement extends Sprite {
   }
 
   void _onClick(MouseEvent e) {
-    if (!_game.gameEnded) {
+    if (!_game!.gameEnded) {
       final alt = (e.type == MouseEvent.RIGHT_CLICK) || e.shiftKey;
       _gameElement.click(column, row, alt);
     }
@@ -87,7 +87,7 @@ class SquareElement extends Sprite {
 
   String _getHiddenTexture() {
     assert(squareState == SquareState.hidden);
-    if (_game.state == GameState.lost) {
+    if (_game!.state == GameState.lost) {
       useHandCursor = false;
       final index = (column + row) % _balloonBits.length;
       return _balloonBits[index];
@@ -97,9 +97,9 @@ class SquareElement extends Sprite {
     }
   }
 
-  SquareState get squareState => _game.getSquareState(column, row);
+  SquareState get squareState => _game!.getSquareState(column, row);
 
-  int get _adjacentCount => _game.field.getAdjacentCount(column, row);
+  int? get _adjacentCount => _game!.field.getAdjacentCount(column, row);
 
   BoardElement get _board => parent as BoardElement;
 
@@ -107,5 +107,5 @@ class SquareElement extends Sprite {
 
   TextureAtlas get _opaqueAtlas => _board.opaqueAtlas;
 
-  Game get _game => _board.game;
+  Game? get _game => _board.game;
 }

@@ -17,7 +17,7 @@ const _win = 'win',
     _throwDart = 'throw';
 
 void initialize(ResourceManager resourceManager) {
-  if (_resourceManager != null) throw StateError('already initialized');
+  /* if (_resourceManager != null) */ throw StateError('already initialized');
   _resourceManager = resourceManager;
 }
 

@@ -15,7 +15,7 @@ class GameRoot extends GameManager {
   final ResourceManager resourceManager;
   final _eventCount = <GameState, int>{};
 
-  GameElement _gameElement;
+  GameElement? _gameElement;
 
   GameRoot(
       int width, int height, int bombCount, this.stage, this.resourceManager)
@@ -25,8 +25,8 @@ class GameRoot extends GameManager {
     _gameElement = GameElement(this)..alpha = 0;
 
     stage
-      ..addChild(_gameElement)
-      ..juggler.addTween(_gameElement, .5).animate.alpha.to(1);
+      ..addChild(_gameElement!)
+      ..juggler.addTween(_gameElement!, .5).animate.alpha.to(1);
   }
 
   @override
@@ -41,12 +41,12 @@ class GameRoot extends GameManager {
             event_label: value.toString().split('.')[1],
             value: count));
     if (value == GameState.won) {
-      for (var se in _gameElement.boardElement.squares) {
+      for (var se in _gameElement!.boardElement!.squares!) {
         se.updateState();
       }
-      if (_gameElement.scoreElement.bestTime == null ||
-          game.duration.inMilliseconds < _gameElement.scoreElement.bestTime) {
-        _gameElement.scoreElement.bestTime = game.duration.inMilliseconds;
+      if (_gameElement!.scoreElement!.bestTime == null ||
+          game!.duration!.inMilliseconds < _gameElement!.scoreElement!.bestTime) {
+        _gameElement!.scoreElement!.bestTime = game!.duration!.inMilliseconds;
       }
       game_audio.win();
     }
@@ -56,7 +56,7 @@ class GameRoot extends GameManager {
   void newGame() {
     super.newGame();
     if (_gameElement != null) {
-      for (var se in _gameElement.boardElement.squares) {
+      for (var se in _gameElement!.boardElement!.squares!) {
         se.updateState();
       }
     }
