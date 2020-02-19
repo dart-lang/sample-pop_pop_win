@@ -2,19 +2,17 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'dart:math';
-
 import 'package:stagexl/stagexl.dart';
 
-final Random _rnd = Random();
+import 'util.dart';
 
 late ResourceManager _resourceManager;
 
-const String _win = 'win',
+const _win = 'win',
     _click = 'click',
     _pop = 'Pop',
     _flag = 'flag',
-    _unflag = 'unflag',
+    _unFlag = 'unflag',
     _bomb = 'Bomb',
     _throwDart = 'throw';
 
@@ -30,7 +28,7 @@ void pop() => _playAudio(_pop);
 
 void flag() => _playAudio(_flag);
 
-void unflag() => _playAudio(_unflag);
+void unFlag() => _playAudio(_unFlag);
 
 void bomb() => _playAudio(_bomb);
 
@@ -40,11 +38,11 @@ void _playAudio(String name) {
   assert(_resourceManager != null, 'Not initialized');
   switch (name) {
     case _pop:
-      final i = _rnd.nextInt(8);
+      final i = random.nextInt(8);
       name = '$_pop$i';
       break;
     case _bomb:
-      final i = _rnd.nextInt(4);
+      final i = random.nextInt(4);
       name = '$_bomb$i';
       break;
   }

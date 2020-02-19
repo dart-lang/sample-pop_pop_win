@@ -9,6 +9,7 @@ import 'package:stagexl/stagexl.dart' hide Point;
 
 import '../audio.dart' as game_audio;
 import '../game.dart';
+import '../util.dart';
 import 'board_element.dart';
 import 'game_background_element.dart';
 import 'game_root.dart';
@@ -20,7 +21,6 @@ const _edgeOffset = 32;
 const _backgroundSize = Point<int>(2048, 1536);
 const _backgroundHoleSize = 16 * SquareElement.size + 2 * _edgeOffset;
 const _popAnimationHitFrame = 12;
-final Random _rnd = Random();
 
 class GameElement extends Sprite {
   static final Vector boardOffset = Vector(352, 96);
@@ -167,7 +167,7 @@ class GameElement extends Sprite {
     } else if (ss == SquareState.flagged) {
       game.setFlag(x, y, false);
       se.updateState();
-      game_audio.unflag();
+      game_audio.unFlag();
       return true;
     }
     return false;
@@ -193,7 +193,7 @@ class GameElement extends Sprite {
       final squareOffset = _popExplodeAnimationOffset + initialOffset;
 
       var delay = _popAnimationHitFrame + ((c - start).magnitude * 4).toInt();
-      delay += _rnd.nextInt(10);
+      delay += random.nextInt(10);
 
       return _Values(c, squareOffset, delay);
     }).toList()

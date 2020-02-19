@@ -12,7 +12,7 @@ import 'package:test/test.dart';
 // X32321
 // 110000
 
-const List<int?> sampleField = [
+const sampleField = <int?>[
   null, null, null, null, null, 2, // row
   null, 7, null, 8, null, 3,
   null, 5, null, null, null, 2,
