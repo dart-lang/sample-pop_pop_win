@@ -5,17 +5,16 @@
         "id": "library/6021244",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 239,
+        "size": 195,
         "children": [
           "field/555172581",
-          "field/601802462",
           "function/97379748",
           "function/272426266",
-          "function/487040532",
           "function/540614297",
           "function/571452376",
           "function/654887641",
           "function/681115215",
+          "function/1036036036",
           "function/1058262192",
           "function/1066963434"
         ],
@@ -25,12 +24,11 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 5657,
+        "size": 5613,
         "children": [
           "class/130833286",
           "class/435993532",
           "class/886793970",
-          "field/170839998",
           "field/614847697",
           "function/140675773",
           "function/961983334"
@@ -634,6 +632,16 @@
         ],
         "canonicalUri": "package:pop_pop_win/src/game/game_core.dart"
       },
+      "439666169": {
+        "id": "library/439666169",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 44,
+        "children": [
+          "field/503564739"
+        ],
+        "canonicalUri": "package:pop_pop_win/src/util.dart"
+      },
       "470705070": {
         "id": "library/470705070",
         "kind": "library",
@@ -1170,7 +1178,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacePMwT8X/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceN0MHR7/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -36582,28 +36590,6 @@
         "code": "",
         "type": "bool Function(dynamic)"
       },
-      "487040532": {
-        "id": "function/487040532",
-        "kind": "function",
-        "name": "unflag",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/6021244",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "void",
-        "inferredReturnType": "[null]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "void Function()"
-      },
       "487113782": {
         "id": "function/487113782",
         "kind": "function",
@@ -39176,7 +39162,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jr:function(a){var t,s\nswitch(a){case\"Pop\":a=\"Pop\"+$.ov().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.ov().j1(4)\nbreak}t=u.m.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
+        "code": "jr:function(a){var t,s\nswitch(a){case\"Pop\":a=\"Pop\"+$.XB().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.XB().j1(4)\nbreak}t=u.m.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
         "type": "void Function(String)"
       },
       "540949546": {
@@ -46102,7 +46088,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var t=a.gx(a),s=a.gy(a)\nreturn new U.tp(a,$.f9().M2(0,new U.xy(80*t,80*s)),12+C.CD.yu(a.HN(0,this.a).gwe()*4)+$.j4().j1(10))}",
+        "code": "$1:function(a){var t=a.gx(a),s=a.gy(a)\nreturn new U.tp(a,$.f9().M2(0,new U.xy(80*t,80*s)),12+C.CD.yu(a.HN(0,this.a).gwe()*4)+$.XB().j1(10))}",
         "type": "_Values Function(Point<int>)"
       },
       "675759758": {
@@ -46373,7 +46359,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var t=this.b,s=this.a.mn.a,r=$.Tq\n$.Tq=r+1\nreturn new A.oA(r,s===0,t,t)}",
+        "code": "$0:function(){var t=this.b,s=this.a.mn.a,r=$.j4\n$.j4=r+1\nreturn new A.oA(r,s===0,t,t)}",
         "type": "_TouchPoint Function()"
       },
       "680451397": {
@@ -64951,6 +64937,28 @@
         "code": "bu:function(a){return P.nO(this)}",
         "type": "String Function()"
       },
+      "1036036036": {
+        "id": "function/1036036036",
+        "kind": "function",
+        "name": "unFlag",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/6021244",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "void Function()"
+      },
       "1036180926": {
         "id": "function/1036180926",
         "kind": "function",
@@ -68485,18 +68493,6 @@
         "inferredType": "[exact=RenderTextureWrapping]",
         "code": "",
         "type": "RenderTextureWrapping"
-      },
-      "170839998": {
-        "id": "field/170839998",
-        "kind": "field",
-        "name": "_rnd",
-        "size": 45,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/24548491",
-        "children": [],
-        "inferredType": "Union(null, [exact=_JSRandom], [exact=_Random])",
-        "code": "t($,\"tB\",\"j4\",function(){return P.CF(null)})",
-        "type": "Random"
       },
       "172148876": {
         "id": "field/172148876",
@@ -72194,6 +72190,18 @@
         "code": "",
         "type": "bool"
       },
+      "503564739": {
+        "id": "field/503564739",
+        "kind": "field",
+        "name": "random",
+        "size": 45,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/439666169",
+        "children": [],
+        "inferredType": "Union(null, [exact=_JSRandom], [exact=_Random])",
+        "code": "t($,\"Y4\",\"XB\",function(){return P.CF(null)})",
+        "type": "Random"
+      },
       "503665061": {
         "id": "field/503665061",
         "kind": "field",
@@ -73177,18 +73185,6 @@
         "inferredType": "[exact=JSBool]",
         "code": "",
         "type": "bool"
-      },
-      "601802462": {
-        "id": "field/601802462",
-        "kind": "field",
-        "name": "_rnd",
-        "size": 45,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/6021244",
-        "children": [],
-        "inferredType": "Union(null, [exact=_JSRandom], [exact=_Random])",
-        "code": "t($,\"tN\",\"ov\",function(){return P.CF(null)})",
-        "type": "Random"
       },
       "602456467": {
         "id": "field/602456467",
@@ -75863,7 +75859,7 @@
         "parent": "class/468118933",
         "children": [],
         "inferredType": "[subclass=JSPositiveInt]",
-        "code": "$.Tq=1",
+        "code": "$.j4=1",
         "type": "int"
       },
       "851520667": {
@@ -80417,16 +80413,6 @@
         "mask": null
       }
     ],
-    "field/170839998": [
-      {
-        "id": "function/607940077",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/172148876": [
       {
         "id": "function/788412943",
@@ -81359,6 +81345,16 @@
         "mask": null
       }
     ],
+    "field/503564739": [
+      {
+        "id": "function/607940077",
+        "mask": null
+      },
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
     "field/505549528": [
       {
         "id": "function/788412943",
@@ -81580,16 +81576,6 @@
       }
     ],
     "field/600700548": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/601802462": [
-      {
-        "id": "function/607940077",
-        "mask": null
-      },
       {
         "id": "function/788412943",
         "mask": null
@@ -108557,15 +108543,15 @@
         "mask": null
       },
       {
+        "id": "field/503564739",
+        "mask": null
+      },
+      {
         "id": "field/506614058",
         "mask": null
       },
       {
         "id": "field/555172581",
-        "mask": null
-      },
-      {
-        "id": "field/601802462",
         "mask": null
       },
       {
@@ -113929,12 +113915,12 @@
         "mask": "[null|subtype=Point]"
       },
       {
-        "id": "field/170839998",
-        "mask": null
-      },
-      {
         "id": "field/40378972",
         "mask": "[subtype=Point]"
+      },
+      {
+        "id": "field/503564739",
+        "mask": null
       },
       {
         "id": "field/584542480",
@@ -128673,6 +128659,14 @@
         "mask": null
       },
       {
+        "id": "function/1036036036",
+        "mask": null
+      },
+      {
+        "id": "function/1036036036",
+        "mask": "inlined"
+      },
+      {
         "id": "function/103899378",
         "mask": null
       },
@@ -128734,11 +128728,11 @@
       },
       {
         "id": "function/414740792",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/414740792",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/43614407",
@@ -128750,14 +128744,6 @@
       },
       {
         "id": "function/484773716",
-        "mask": null
-      },
-      {
-        "id": "function/487040532",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/487040532",
         "mask": null
       },
       {
@@ -128818,11 +128804,11 @@
       },
       {
         "id": "function/872137241",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/872137241",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/900664723",
@@ -132046,7 +132032,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 223197,
+      "size": 223152,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -132056,10 +132042,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 223197,
+    "size": 223152,
     "dart2jsVersion": "2.8.0-dev.9.0",
-    "compilationMoment": "2020-02-19 09:25:07.664290",
-    "compilationDuration": 3423366,
+    "compilationMoment": "2020-02-19 13:55:22.865954",
+    "compilationDuration": 3401966,
     "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,

@@ -3194,9 +3194,9 @@ _.e=_.d=null
 _.f=d
 _.r=!1},
 jr:function(a){var t,s
-switch(a){case"Pop":a="Pop"+$.ov().j1(8)
+switch(a){case"Pop":a="Pop"+$.XB().j1(8)
 break
-case"Bomb":a="Bomb"+$.ov().j1(4)
+case"Bomb":a="Bomb"+$.XB().j1(4)
 break}t=u.m.a($.pL.n9("SoundSprite","audio")).yk(a)
 s=t.a.b
 s.uW(t.c,t.d,t.e,null)}},Q={
@@ -5283,7 +5283,7 @@ U.Ag.prototype={
 $1:function(a){return a.a}}
 U.Ha.prototype={
 $1:function(a){var t=a.gx(a),s=a.gy(a)
-return new U.tp(a,$.f9().M2(0,new U.xy(80*t,80*s)),12+C.CD.yu(a.HN(0,this.a).gwe()*4)+$.j4().j1(10))}}
+return new U.tp(a,$.f9().M2(0,new U.xy(80*t,80*s)),12+C.CD.yu(a.HN(0,this.a).gwe()*4)+$.XB().j1(10))}}
 U.BJ.prototype={
 $2:function(a,b){return C.jn.iM(a.c,b.c)}}
 U.df.prototype={
@@ -6026,8 +6026,8 @@ $1:function(a){return this.a.cq()}}
 A.PK.prototype={
 $1:function(a){return C.jN.Og(a,0,this.a)}}
 A.cZ.prototype={
-$0:function(){var t=this.b,s=this.a.mn.a,r=$.Tq
-$.Tq=r+1
+$0:function(){var t=this.b,s=this.a.mn.a,r=$.j4
+$.j4=r+1
 return new A.oA(r,s===0,t,t)}}
 A.EZ.prototype={
 $1:function(a){return C.jN.Og(a,this.a,this.b)}}
@@ -7751,7 +7751,7 @@ $.xg=[]
 $.N8=null
 $.pL=null
 $.LS=0
-$.Tq=1
+$.j4=1
 $.cU=0
 $.C=[]
 $.jR=17976931348623157e292
@@ -7782,13 +7782,12 @@ t($,"dt","HK",function(){return H.cM(H.Mj(void 0))})
 t($,"A7","r1",function(){return H.cM(function(){try{(void 0).$method$}catch(s){return s.message}}())})
 t($,"Wc","ut",function(){return P.Oj()})
 t($,"h9","Yj",function(){return P.l9(null,C.NU,u.P)})
-t($,"tN","ov",function(){return P.CF(null)})
 t($,"qO","fF",function(){return D.B0()})
-t($,"tB","j4",function(){return P.CF(null)})
 t($,"YZ","Vi",function(){return U.JH(352,96)})
 t($,"fa","f9",function(){return U.JH(-88,-88)})
 t($,"lL","bD",function(){return U.JH(-472,-348)})
 t($,"iN","KP",function(){return P.x2(!1,u.H)})
+t($,"Y4","XB",function(){return P.CF(null)})
 t($,"fz","b",function(){return new A.L1(H.K([1,2],H.lR("jd<CP>")))})
 t($,"Ni","IF",function(){var s=u.s,r=H.K([],s),q=W.Lb(),p=H.K(["maybe","probably"],s)
 if(C.Nm.tg(p,q.canPlayType("audio/ogg; codecs=opus")))r.push("opus")
