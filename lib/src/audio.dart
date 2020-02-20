@@ -6,7 +6,7 @@ import 'package:stagexl/stagexl.dart';
 
 import 'util.dart';
 
-late ResourceManager _resourceManager;
+late final ResourceManager _resourceManager;
 
 const _win = 'win',
     _click = 'click',
