@@ -14,12 +14,12 @@ import 'src/stage.dart';
 const String _assetDir = 'packages/pop_pop_win/assets';
 
 Future<void> startGame() async {
-  final options = StageOptions()
-    ..backgroundColor = 0xb4ad7f
-    ..transparent = true;
-
-  final stage = Stage(html.querySelector('#gameCanvas') as html.CanvasElement,
-      options: options);
+  final stage = Stage(
+    html.querySelector('#gameCanvas') as html.CanvasElement,
+    options: StageOptions()
+      ..backgroundColor = 0xb4ad7f
+      ..transparent = true,
+  );
 
   RenderLoop().addStage(stage);
 
@@ -28,7 +28,10 @@ Future<void> startGame() async {
   //have to load the loading bar first...
   final resourceManager = ResourceManager()
     ..addTextureAtlas(
-        'static', '$_assetDir/images/static.json', TextureAtlasFormat.JSON);
+      'static',
+      '$_assetDir/images/static.json',
+      TextureAtlasFormat.JSON,
+    );
 
   final resMan = await resourceManager.load();
   await _initialLoad(resMan, stage);
@@ -58,15 +61,23 @@ Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
 
   resourceManager
     ..addTextureAtlas(
-        'opaque', '$_assetDir/images/opaque.json', TextureAtlasFormat.JSON)
+      'opaque',
+      '$_assetDir/images/opaque.json',
+      TextureAtlasFormat.JSON,
+    )
     ..addTextureAtlas(
-        'animated', '$_assetDir/images/animated.json', TextureAtlasFormat.JSON)
+      'animated',
+      '$_assetDir/images/animated.json',
+      TextureAtlasFormat.JSON,
+    )
     ..addSoundSprite('audio', '$_assetDir/audio/audio.json');
 
-  resourceManager.onProgress.listen((e) {
-    bar.ratio = resourceManager.finishedResources.length /
-        resourceManager.resources.length;
-  });
+  resourceManager.onProgress.listen(
+    (e) {
+      bar.ratio = resourceManager.finishedResources.length /
+          resourceManager.resources.length;
+    },
+  );
 
   await resourceManager.load();
 
@@ -74,7 +85,10 @@ Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
 }
 
 void _secondaryLoad(
-    ResourceManager resourceManager, Stage stage, Sprite loadingSprite) {
+  ResourceManager resourceManager,
+  Stage stage,
+  Sprite loadingSprite,
+) {
   stage.juggler.addTween(loadingSprite, .5)
     ..animate.alpha.to(0)
     ..onComplete = () => stage.removeChild(loadingSprite);

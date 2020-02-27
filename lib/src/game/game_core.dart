@@ -30,10 +30,9 @@ class Game {
           field.width,
           field.height,
           (i) => SquareState.hidden,
-        ) {
-    _bombsLeft = field.bombCount;
-    _revealsLeft = field.length - field.bombCount;
-  }
+        ),
+        _bombsLeft = field.bombCount,
+        _revealsLeft = field.length - field.bombCount;
 
   int get bombsLeft => _bombsLeft;
 
