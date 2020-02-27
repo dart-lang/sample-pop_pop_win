@@ -4960,7 +4960,7 @@ N.li.prototype={
 $1:function(a){return C.Bl},
 $S:19}
 A.k0.prototype={
-p8:function(){this.f.Gv()
+jJ:function(){this.f.Gv()
 this.dO(C.Ns)
 this.jI()},
 jI:function(){var t=this,s=N.vd(F.Xf(t.c,t.a,t.b))
@@ -4971,12 +4971,26 @@ TE:function(){var t=this,s=t.r,r=s==null
 if(r&&t.e.f===C.NA)t.r=P.ww(C.vM,t.gMx())
 else if(!r&&t.e.f!==C.NA){s.Gv()
 t.r=null}},
-dO:function(a){var t=this,s=t.d,r=J.A(a)
+dO:function(a){var t,s,r=this,q=r.d,p=J.i(a),o=p.bu(a)
 $.fF().toString
-s.Wo(r,M.Yq(window.localStorage.getItem(r),0)+1)
-if(a===C.mV)s.uE(t.e)
-t.TE()
-t.Zj(a)}}
+q.Wo(o,M.Yq(window.localStorage.getItem(o),0)+1)
+o=a===C.mV
+if(o)q.uE(r.e)
+r.TE()
+q=r.y
+t=q.WH(0,a)
+s=(t==null?0:t)+1
+q.Y5(0,a,s)
+self.gtag("event","game_event",{event_category:"sample-pop_pop_win",event_label:p.bu(a).split(".")[1],value:s})
+if(o){r.z.lN.ni()
+q=r.z
+if(q.rS.rT!=null){q=r.e
+q=C.jn.BU(q.gzo(q).a,1000)
+p=r.z
+q=q<p.rS.rT}else{p=q
+q=!0}if(q){q=p.rS
+p=r.e
+q.rT=C.jn.BU(p.gzo(p).a,1000)}R.jr("win")}}}
 M.HB.prototype={
 uE:function(a){var t,s=a.a,r=C.jn.BU(a.gzo(a).a,1000),q="w"+s.a+"-h"+s.b+"-m"+s.d
 $.fF().toString
@@ -5011,7 +5025,8 @@ a.bS(r)
 t=u.q.a(r.fy)
 s=t.Hs
 t=t.Qt.e.a
-r.Qt=M.iT(t.a,t.b,new D.Az(r,80*s),u.x)}}
+r.Qt=M.iT(t.a,t.b,new D.Az(r,80*s),u.x)},
+ni:function(){for(var t=this.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}}
 D.Az.prototype={
 $1:function(a){var t,s,r,q=this.a,p=u.q,o=p.a(q.fy).Qt.e.a,n=C.jn.zY(a,o.a),m=C.jn.xG(a,o.b)
 o=A.MB(80,80,16777215)
@@ -5275,12 +5290,13 @@ else if(o===C.Bl){s.hM(H.K([new P.hL(b,c,u.M)],u.W))
 t=q.e.tm(b,c)}else t=r
 if(t!=null&&t.length!==0){if(!d)t[0]
 s.zC(new P.hL(b,c,u.D),t)}else if(q.e.f===C.He)s.J1(new P.hL(b,c,u.D))},
-Au:function(a,b){var t,s=this.lN.Qt,r=s.a,q=s.c[a+b*r]
+Au:function(a,b){var t,s,r=this.lN.Qt,q=r.a
+q=r.c[a+b*q]
 r=u.q.a(u.o.a(q.fy).fy).Qt.e
-s=q.Qt
-t=q.lN
+t=q.Qt
+s=q.lN
 r=r.b
-r=r.c[s+t*r.a]
+r=r.c[t+s*r.a]
 if(r===C.Bl){this.Qt.e.rY(a,b,!0)
 q.Iv()
 R.jr("flag")
@@ -5288,39 +5304,40 @@ return!0}else if(r===C.No){this.Qt.e.rY(a,b,!1)
 q.Iv()
 R.jr("unflag")
 return!0}return!1},
-zC:function(a0,a1){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this
-if(a1==null)a1=P.pF(a.Qt.e.a.c.length,new U.Pi(a),u.bx).ev(0,new U.CT()).E2(0,new U.Ag(),u.D).br(0)
-t=new H.lJ(a1,new U.Ha(a0),H.t6(a1).CT("lJ<1,tp>")).br(0)
+zC:function(a,a0){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this
+if(a0==null)a0=P.pF(b.Qt.e.a.c.length,new U.Pi(b),u.bx).ev(0,new U.CT()).E2(0,new U.Ag(),u.D).br(0)
+t=new H.lJ(a0,new U.Ha(a),H.t6(a0).CT("lJ<1,tp>")).br(0)
 if(!!t.immutable$list)H.vh(P.L4("sort"))
 H.Qs(t,new U.BJ())
-for(s=t.length,r=a.KQ,q=u.e,p=u.o,o=u.q,n=0;n<t.length;t.length===s||(0,H.lk)(t),++n){m=t[n]
+for(s=t.length,r=b.KQ,q=u.e,p=u.o,o=u.q,n=0;n<t.length;t.length===s||(0,H.lk)(t),++n){m=t[n]
 l=m.a
 k=m.b
-j=a.lN.Qt
+j=b.lN
 i=l.gx(l)
 h=l.gy(l)
+j=j.Qt
 g=j.a
-f=j.c[i+h*g]
-g=o.a(p.a(f.fy).fy).Qt.e
-h=f.Qt
-i=f.lN
-g=g.b
-g=g.c[h+i*g.a]
-e=g===C.e5?"balloon_explode":"balloon_pop"
-d=O.u7(a.m9.dF(e),60,!1)
-d.c=k.a
-d.id=!0
-d.d=k.b
-d.ch=0
-d.k4=!1
-r.bS(d)
-d.Ep(0,"complete",q).XE(new U.df(d),!1,0)
-c=a.gYK()
-j=(c instanceof A.mE?c:null).oJ
-j.AN(0,d)
-b=new K.K1(new U.La(d,f,g))
-b.c=Math.max(m.c/60,0.0001)
-j.AN(0,b)}},
+g=j.c[i+h*g]
+h=o.a(p.a(g.fy).fy).Qt.e
+i=g.Qt
+j=g.lN
+h=h.b
+h=h.c[i+j*h.a]
+f=h===C.e5?"balloon_explode":"balloon_pop"
+e=O.u7(b.m9.dF(f),60,!1)
+e.c=k.a
+e.id=!0
+e.d=k.b
+e.ch=0
+e.k4=!1
+r.bS(e)
+e.Ep(0,"complete",q).XE(new U.df(e),!1,0)
+d=b.gYK()
+j=(d instanceof A.mE?d:null).oJ
+j.AN(0,e)
+c=new K.K1(new U.La(e,g,h))
+c.c=Math.max(m.c/60,0.0001)
+j.AN(0,c)}},
 J1:function(a){return this.zC(a,null)},
 hM:function(a){var t,s,r,q,p,o,n,m,l,k,j,i=this,h="complete"
 R.jr("throw")
@@ -5352,8 +5369,12 @@ o=(j instanceof A.mE?j:null).oJ
 o.AN(0,l)
 o.AN(0,k)}}}
 U.oB.prototype={
-$1:function(a){R.jr("click")
-this.a.Qt.p8()}}
+$1:function(a){var t
+R.jr("click")
+t=this.a.Qt
+t.PC()
+t=t.z
+if(t!=null)t.lN.ni()}}
 U.jW.prototype={
 $1:function(a){return $.KP().AN(0,null)}}
 U.BE.prototype={
@@ -5395,22 +5416,7 @@ U.qA.prototype={
 $1:function(a){return this.a.JZ()}}
 U.tp.prototype={}
 U.Nl.prototype={}
-Y.Yy.prototype={
-Zj:function(a){var t=this,s=t.y,r=s.WH(0,a),q=(r==null?0:r)+1
-s.Y5(0,a,q)
-self.gtag("event","game_event",{event_category:"sample-pop_pop_win",event_label:J.A(a).split(".")[1],value:q})
-if(a===C.mV){for(s=t.z.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()
-s=t.z
-if(s.rS.rT!=null){s=t.e
-s=C.jn.BU(s.gzo(s).a,1000)
-r=t.z
-s=s<r.rS.rT}else{r=s
-s=!0}if(s){s=r.rS
-r=t.e
-s.rT=C.jn.BU(r.gzo(r).a,1000)}R.jr("win")}},
-p8:function(){this.PC()
-var t=this.z
-if(t!=null)for(t=t.lN.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}}
+Y.Yy.prototype={}
 X.XY.prototype={
 dd:function(a){var t,s,r=this,q=u.q,p=q.a(r.fy).Qt.e
 if(p.gzo(p)==null)t="0"
@@ -5432,21 +5438,20 @@ case C.e5:t="crater_b"
 break
 case C.fL:t="balloon_tagged_bomb"
 break
-default:throw H.c(P.PV(H.d(r.gF2())+" not supported"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){p=p.a(q.a(r.fy).fy).Qt.e.b
-p=p.c[n+m*p.a]
-p=p===C.Bl||p===C.No}else p=!1
-r.r1=p?"pointer":null
-o=r.rS.k3
-s=A.Jd(o)
-n=s.b
-n.A3(0,s.c)
-m=s.a
-n.e.clearRect(0,0,m.a,m.b)
-m.c.a.Li(0)
-q.a(r.fy).toString
+default:throw H.c(P.PV(H.d(r.gF2())+" not supported"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){q=p.a(q.a(r.fy).fy).Qt.e.b
+q=q.c[n+m*q.a]
+q=q===C.Bl||q===C.No}else q=!1
+r.r1=q?"pointer":null
+p=r.rS.k3
+s=A.Jd(p)
+o=s.b
+o.A3(0,s.c)
+n=s.a
+o.e.clearRect(0,0,n.a,n.b)
+n.c.a.Li(0)
 q=$.pL
 if(q==null)H.vh(P.PV("ResourceManager not initialized"))
-o.xV(u.p.a(q.n9("TextureAtlas","opaque")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))},
+p.xV(u.p.a(q.n9("TextureAtlas","opaque")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))},
 Nu:function(a){var t,s=this,r=u.o,q=u.q
 if(!q.a(r.a(s.fy).fy).Qt.e.gau()){t=a.a==="rightClick"||a.cy
 q.a(r.a(s.fy).fy).wZ(0,s.Qt,s.lN,t)}},
@@ -7485,7 +7490,7 @@ t.tk=t.bu
 t=P.Ly.prototype
 t.GG=t.ev
 t=A.k0.prototype
-t.PC=t.p8
+t.PC=t.jJ
 t=A.fE.prototype
 t.Rd=t.sx
 t=A.my.prototype

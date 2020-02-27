@@ -22,7 +22,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 5747,
+        "size": 5786,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -311,7 +311,7 @@
         "id": "library/152998570",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 1379,
+        "size": 1360,
         "children": [
           "class/394021680"
         ],
@@ -434,7 +434,7 @@
         "id": "library/239566622",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 640,
+        "size": 130,
         "children": [
           "class/81308393"
         ],
@@ -967,7 +967,7 @@
         "id": "library/649011167",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 936,
+        "size": 1010,
         "children": [
           "class/576855309"
         ],
@@ -1136,7 +1136,7 @@
         "id": "library/875107492",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 476,
+        "size": 815,
         "children": [
           "class/1056075311"
         ],
@@ -1191,7 +1191,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceiV7acN/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacenI21iH/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -2175,7 +2175,7 @@
         "id": "class/81308393",
         "kind": "class",
         "name": "GameRoot",
-        "size": 640,
+        "size": 130,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/239566622",
         "modifiers": {
@@ -5146,7 +5146,7 @@
         "id": "class/394021680",
         "kind": "class",
         "name": "SquareElement",
-        "size": 1379,
+        "size": 1360,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/152998570",
         "modifiers": {
@@ -5164,7 +5164,6 @@
           "function/482884199",
           "function/485481119",
           "function/838719084",
-          "function/887472572",
           "function/969710394",
           "function/1006709839"
         ]
@@ -5583,7 +5582,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 5169,
+        "size": 5208,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -5606,11 +5605,11 @@
           "function/262976543",
           "function/329802207",
           "function/415279150",
+          "function/469465234",
           "function/617325576",
           "function/880427273",
           "function/931956644",
           "function/956446518",
-          "function/986526447",
           "function/999176510"
         ]
       },
@@ -7010,7 +7009,7 @@
         "id": "class/576855309",
         "kind": "class",
         "name": "BoardElement",
-        "size": 835,
+        "size": 909,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/649011167",
         "modifiers": {
@@ -7019,11 +7018,11 @@
         "children": [
           "field/949619950",
           "function/27599893",
+          "function/95476059",
           "function/384822666",
           "function/525873447",
           "function/834530829",
-          "function/872137241",
-          "function/1047272623"
+          "function/1043888555"
         ]
       },
       "577121337": {
@@ -11838,7 +11837,7 @@
         "id": "class/1056075311",
         "kind": "class",
         "name": "GameManager",
-        "size": 476,
+        "size": 815,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/875107492",
         "modifiers": {
@@ -15361,7 +15360,7 @@
         "id": "function/68374999",
         "kind": "function",
         "name": "call",
-        "size": 44,
+        "size": 81,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/305821001",
         "children": [],
@@ -15382,7 +15381,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){R.jr(\"click\")\nthis.a.Qt.p8()}",
+        "code": "$1:function(a){var t\nR.jr(\"click\")\nt=this.a.Qt\nt.PC()\nt=t.z\nif(t!=null)t.lN.ni()}",
         "type": "Null Function(MouseEvent)"
       },
       "68375000": {
@@ -15892,7 +15891,7 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 4,
+        "inlinedCount": 3,
         "code": "gRX:function(){return this.d}",
         "type": "ListIterator.E Function()"
       },
@@ -16459,6 +16458,39 @@
         "inlinedCount": 17,
         "code": "",
         "type": "dynamic Function()"
+      },
+      "95476059": {
+        "id": "function/95476059",
+        "kind": "function",
+        "name": "squareAt",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/576855309",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "SquareElement",
+        "inferredReturnType": "[null|exact=SquareElement]",
+        "parameters": [
+          {
+            "name": "x",
+            "type": "[null|subclass=JSInt]",
+            "declaredType": "int"
+          },
+          {
+            "name": "y",
+            "type": "[null|subclass=JSInt]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 2,
+        "code": "",
+        "type": "SquareElement Function(int,int)"
       },
       "95599505": {
         "id": "function/95599505",
@@ -23191,7 +23223,7 @@
         "inferredReturnType": "[null|exact=BoardElement]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 12,
+        "inlinedCount": 11,
         "code": "",
         "type": "BoardElement Function()"
       },
@@ -26319,7 +26351,7 @@
         "inferredReturnType": "[exact=ListIterator]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": "gkz:function(a){return new H.a7(a,this.gkF(a))}",
         "type": "Iterator<ListMixin.E> Function()"
       },
@@ -27026,7 +27058,7 @@
         "id": "function/306721563",
         "kind": "function",
         "name": "onGameStateChanged",
-        "size": 405,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/81308393",
         "children": [],
@@ -27046,8 +27078,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "Zj:function(a){var t=this,s=t.y,r=s.WH(0,a),q=(r==null?0:r)+1\ns.Y5(0,a,q)\nself.gtag(\"event\",\"game_event\",{event_category:\"sample-pop_pop_win\",event_label:J.A(a).split(\".\")[1],value:q})\nif(a===C.mV){for(s=t.z.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()\ns=t.z\nif(s.rS.rT!=null){s=t.e\ns=C.jn.BU(s.gzo(s).a,1000)\nr=t.z\ns=s<r.rS.rT}else{r=s\ns=!0}if(s){s=r.rS\nr=t.e\ns.rT=C.jn.BU(r.gzo(r).a,1000)}R.jr(\"win\")}}",
+        "inlinedCount": 1,
+        "code": "",
         "type": "void Function(GameState)"
       },
       "306861682": {
@@ -28922,7 +28954,7 @@
         "id": "function/340784388",
         "kind": "function",
         "name": "_gameStateChanged",
-        "size": 161,
+        "size": 500,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1056075311",
         "children": [],
@@ -28943,7 +28975,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dO:function(a){var t=this,s=t.d,r=J.A(a)\n$.fF().toString\ns.Wo(r,M.Yq(window.localStorage.getItem(r),0)+1)\nif(a===C.mV)s.uE(t.e)\nt.TE()\nt.Zj(a)}\no(n,\"gpe\",\"dO\",20)",
+        "code": "dO:function(a){var t,s,r=this,q=r.d,p=J.i(a),o=p.bu(a)\n$.fF().toString\nq.Wo(o,M.Yq(window.localStorage.getItem(o),0)+1)\no=a===C.mV\nif(o)q.uE(r.e)\nr.TE()\nq=r.y\nt=q.WH(0,a)\ns=(t==null?0:t)+1\nq.Y5(0,a,s)\nself.gtag(\"event\",\"game_event\",{event_category:\"sample-pop_pop_win\",event_label:p.bu(a).split(\".\")[1],value:s})\nif(o){r.z.lN.ni()\nq=r.z\nif(q.rS.rT!=null){q=r.e\nq=C.jn.BU(q.gzo(q).a,1000)\np=r.z\nq=q<p.rS.rT}else{p=q\nq=!0}if(q){q=p.rS\np=r.e\nq.rT=C.jn.BU(p.gzo(p).a,1000)}R.jr(\"win\")}}\no(n,\"gpe\",\"dO\",20)",
         "type": "void Function(GameState)"
       },
       "340789555": {
@@ -32505,7 +32537,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zC:function(a0,a1){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this\nif(a1==null)a1=P.pF(a.Qt.e.a.c.length,new U.Pi(a),u.bx).ev(0,new U.CT()).E2(0,new U.Ag(),u.D).br(0)\nt=new H.lJ(a1,new U.Ha(a0),H.t6(a1).CT(\"lJ<1,tp>\")).br(0)\nif(!!t.immutable$list)H.vh(P.L4(\"sort\"))\nH.Qs(t,new U.BJ())\nfor(s=t.length,r=a.KQ,q=u.e,p=u.o,o=u.q,n=0;n<t.length;t.length===s||(0,H.lk)(t),++n){m=t[n]\nl=m.a\nk=m.b\nj=a.lN.Qt\ni=l.gx(l)\nh=l.gy(l)\ng=j.a\nf=j.c[i+h*g]\ng=o.a(p.a(f.fy).fy).Qt.e\nh=f.Qt\ni=f.lN\ng=g.b\ng=g.c[h+i*g.a]\ne=g===C.e5?\"balloon_explode\":\"balloon_pop\"\nd=O.u7(a.m9.dF(e),60,!1)\nd.c=k.a\nd.id=!0\nd.d=k.b\nd.ch=0\nd.k4=!1\nr.bS(d)\nd.Ep(0,\"complete\",q).XE(new U.df(d),!1,0)\nc=a.gYK()\nj=(c instanceof A.mE?c:null).oJ\nj.AN(0,d)\nb=new K.K1(new U.La(d,f,g))\nb.c=Math.max(m.c/60,0.0001)\nj.AN(0,b)}}\nJ1:function(a){return this.zC(a,null)}",
+        "code": "zC:function(a,a0){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b=this\nif(a0==null)a0=P.pF(b.Qt.e.a.c.length,new U.Pi(b),u.bx).ev(0,new U.CT()).E2(0,new U.Ag(),u.D).br(0)\nt=new H.lJ(a0,new U.Ha(a),H.t6(a0).CT(\"lJ<1,tp>\")).br(0)\nif(!!t.immutable$list)H.vh(P.L4(\"sort\"))\nH.Qs(t,new U.BJ())\nfor(s=t.length,r=b.KQ,q=u.e,p=u.o,o=u.q,n=0;n<t.length;t.length===s||(0,H.lk)(t),++n){m=t[n]\nl=m.a\nk=m.b\nj=b.lN\ni=l.gx(l)\nh=l.gy(l)\nj=j.Qt\ng=j.a\ng=j.c[i+h*g]\nh=o.a(p.a(g.fy).fy).Qt.e\ni=g.Qt\nj=g.lN\nh=h.b\nh=h.c[i+j*h.a]\nf=h===C.e5?\"balloon_explode\":\"balloon_pop\"\ne=O.u7(b.m9.dF(f),60,!1)\ne.c=k.a\ne.id=!0\ne.d=k.b\ne.ch=0\ne.k4=!1\nr.bS(e)\ne.Ep(0,\"complete\",q).XE(new U.df(e),!1,0)\nd=b.gYK()\nj=(d instanceof A.mE?d:null).oJ\nj.AN(0,e)\nc=new K.K1(new U.La(e,g,h))\nc.c=Math.max(m.c/60,0.0001)\nj.AN(0,c)}}\nJ1:function(a){return this.zC(a,null)}",
         "type": "void Function(Point<int>,[Iterable<Point<int>>])"
       },
       "415315997": {
@@ -35335,6 +35367,28 @@
         "inlinedCount": 9,
         "code": "",
         "type": "dynamic Function()"
+      },
+      "469465234": {
+        "id": "function/469465234",
+        "kind": "function",
+        "name": "updateSquareState",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/435993532",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 2,
+        "code": "",
+        "type": "void Function()"
       },
       "469962639": {
         "id": "function/469962639",
@@ -41101,7 +41155,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 6,
+        "inlinedCount": 5,
         "code": "",
         "type": "dynamic Function(Iterable<ListIterator.E>)"
       },
@@ -41788,7 +41842,7 @@
         "id": "function/598252498",
         "kind": "function",
         "name": "newGame",
-        "size": 102,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/81308393",
         "children": [],
@@ -41802,8 +41856,8 @@
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "p8:function(){this.PC()\nvar t=this.z\nif(t!=null)for(t=t.lN.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}",
+        "inlinedCount": 1,
+        "code": "",
         "type": "void Function()"
       },
       "598784217": {
@@ -50940,7 +50994,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "p8:function(){this.f.Gv()\nthis.dO(C.Ns)\nthis.jI()}\nt=A.k0.prototype\nt.PC=t.p8",
+        "code": "jJ:function(){this.f.Gv()\nthis.dO(C.Ns)\nthis.jI()}\nt=A.k0.prototype\nt.PC=t.jJ",
         "type": "void Function()"
       },
       "751041822": {
@@ -56808,28 +56862,6 @@
         "code": "",
         "type": "ElementStream<MouseEvent> Function()"
       },
-      "872137241": {
-        "id": "function/872137241",
-        "kind": "function",
-        "name": "squares",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/576855309",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "Array2d<SquareElement>",
-        "inferredReturnType": "[null|exact=Array2d]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 4,
-        "code": "",
-        "type": "Array2d<SquareElement> Function()"
-      },
       "872925756": {
         "id": "function/872925756",
         "kind": "function",
@@ -57573,28 +57605,6 @@
         "inlinedCount": 1,
         "code": "xY:function(a){return new P.h(!1,null,null,a)}",
         "type": "dynamic Function([dynamic])"
-      },
-      "887472572": {
-        "id": "function/887472572",
-        "kind": "function",
-        "name": "_opaqueAtlas",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/394021680",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "TextureAtlas",
-        "inferredReturnType": "[null|exact=TextureAtlas]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "TextureAtlas Function()"
       },
       "887679953": {
         "id": "function/887679953",
@@ -58520,7 +58530,7 @@
         "inferredReturnType": "[null|subclass=DisplayObjectContainer]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 60,
+        "inlinedCount": 59,
         "code": "",
         "type": "DisplayObjectParent<DisplayObject> Function()"
       },
@@ -61317,7 +61327,7 @@
         "id": "function/956446518",
         "kind": "function",
         "name": "GameElement",
-        "size": 434,
+        "size": 471,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -62047,7 +62057,7 @@
         "id": "function/969710394",
         "kind": "function",
         "name": "updateState",
-        "size": 720,
+        "size": 701,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/394021680",
         "children": [],
@@ -62062,7 +62072,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Iv:function(){var t,s,r=this,q=u.o,p=u.q,o=p.a(q.a(r.fy).fy).Qt.e,n=r.Qt,m=r.lN,l=o.b\nswitch(l.c[n+m*l.a]){case C.Bl:t=r.cV()\nbreak\ncase C.No:t=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:t=C.Hf[o.a.Wz(n,m)]\nbreak\ncase C.e5:t=\"crater_b\"\nbreak\ncase C.fL:t=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.c(P.PV(H.d(r.gF2())+\" not supported\"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){p=p.a(q.a(r.fy).fy).Qt.e.b\np=p.c[n+m*p.a]\np=p===C.Bl||p===C.No}else p=!1\nr.r1=p?\"pointer\":null\no=r.rS.k3\ns=A.Jd(o)\nn=s.b\nn.A3(0,s.c)\nm=s.a\nn.e.clearRect(0,0,m.a,m.b)\nm.c.a.Li(0)\nq.a(r.fy).toString\nq=$.pL\nif(q==null)H.vh(P.PV(\"ResourceManager not initialized\"))\no.xV(u.p.a(q.n9(\"TextureAtlas\",\"opaque\")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))}",
+        "code": "Iv:function(){var t,s,r=this,q=u.o,p=u.q,o=p.a(q.a(r.fy).fy).Qt.e,n=r.Qt,m=r.lN,l=o.b\nswitch(l.c[n+m*l.a]){case C.Bl:t=r.cV()\nbreak\ncase C.No:t=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:t=C.Hf[o.a.Wz(n,m)]\nbreak\ncase C.e5:t=\"crater_b\"\nbreak\ncase C.fL:t=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.c(P.PV(H.d(r.gF2())+\" not supported\"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){q=p.a(q.a(r.fy).fy).Qt.e.b\nq=q.c[n+m*q.a]\nq=q===C.Bl||q===C.No}else q=!1\nr.r1=q?\"pointer\":null\np=r.rS.k3\ns=A.Jd(p)\no=s.b\no.A3(0,s.c)\nn=s.a\no.e.clearRect(0,0,n.a,n.b)\nn.c.a.Li(0)\nq=$.pL\nif(q==null)H.vh(P.PV(\"ResourceManager not initialized\"))\np.xV(u.p.a(q.n9(\"TextureAtlas\",\"opaque\")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))}",
         "type": "void Function()"
       },
       "970179042": {
@@ -62738,28 +62748,6 @@
         "code": "",
         "type": "double Function()"
       },
-      "986526447": {
-        "id": "function/986526447",
-        "kind": "function",
-        "name": "boardElement",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/435993532",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "BoardElement",
-        "inferredReturnType": "[null|exact=BoardElement]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 2,
-        "code": "",
-        "type": "BoardElement Function()"
-      },
       "986643735": {
         "id": "function/986643735",
         "kind": "function",
@@ -63432,7 +63420,7 @@
         "id": "function/999176510",
         "kind": "function",
         "name": "_toggleFlag",
-        "size": 261,
+        "size": 263,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [],
@@ -63458,7 +63446,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Au:function(a,b){var t,s=this.lN.Qt,r=s.a,q=s.c[a+b*r]\nr=u.q.a(u.o.a(q.fy).fy).Qt.e\ns=q.Qt\nt=q.lN\nr=r.b\nr=r.c[s+t*r.a]\nif(r===C.Bl){this.Qt.e.rY(a,b,!0)\nq.Iv()\nR.jr(\"flag\")\nreturn!0}else if(r===C.No){this.Qt.e.rY(a,b,!1)\nq.Iv()\nR.jr(\"unflag\")\nreturn!0}return!1}",
+        "code": "Au:function(a,b){var t,s,r=this.lN.Qt,q=r.a\nq=r.c[a+b*q]\nr=u.q.a(u.o.a(q.fy).fy).Qt.e\nt=q.Qt\ns=q.lN\nr=r.b\nr=r.c[t+s*r.a]\nif(r===C.Bl){this.Qt.e.rY(a,b,!0)\nq.Iv()\nR.jr(\"flag\")\nreturn!0}else if(r===C.No){this.Qt.e.rY(a,b,!1)\nq.Iv()\nR.jr(\"unflag\")\nreturn!0}return!1}",
         "type": "bool Function(int,int)"
       },
       "999221506": {
@@ -65583,6 +65571,28 @@
         "code": "ie:function(){this.x.ho(this)}",
         "type": "void Function()"
       },
+      "1043888555": {
+        "id": "function/1043888555",
+        "kind": "function",
+        "name": "updateSquareState",
+        "size": 72,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/576855309",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "ni:function(){for(var t=this.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}",
+        "type": "void Function()"
+      },
       "1044092892": {
         "id": "function/1044092892",
         "kind": "function",
@@ -65785,28 +65795,6 @@
         "inlinedCount": 0,
         "code": "eV:function(a,b,c,d){var t,s,r\nif(d){t=b.z\nif(!H.A8(b))s=b.z===6&&b.Q===u.K\nelse s=!0\nif(!s){s=u.K\nif(!(b===s))s=t===6&&b.Q===s\nelse s=!0}else s=!0\nif(s)return b\nelse if(t===1)return H.Q2(a,\"b8\",[b])\nelse if(b===u.P)return u.aQ}r=new H.Jc(null,null,null)\nr.z=8\nr.Q=b\nr.db=c\nreturn H.BD(a,r)}",
         "type": "Rti Function(dynamic,Rti,String,bool)"
-      },
-      "1047272623": {
-        "id": "function/1047272623",
-        "kind": "function",
-        "name": "opaqueAtlas",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/576855309",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "TextureAtlas",
-        "inferredReturnType": "[null|exact=TextureAtlas]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "TextureAtlas Function()"
       },
       "1047605700": {
         "id": "function/1047605700",
@@ -79323,7 +79311,7 @@
         "id": "closure/305821001",
         "kind": "closure",
         "name": "GameElement_closure",
-        "size": 93,
+        "size": 130,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/956446518",
         "function": "function/68374999"
@@ -86759,7 +86747,23 @@
     ],
     "function/68374999": [
       {
+        "id": "field/560549480",
+        "mask": null
+      },
+      {
+        "id": "field/636379937",
+        "mask": null
+      },
+      {
         "id": "field/695665632",
+        "mask": null
+      },
+      {
+        "id": "function/1043888555",
+        "mask": null
+      },
+      {
+        "id": "function/469465234",
         "mask": null
       },
       {
@@ -86771,12 +86775,20 @@
         "mask": null
       },
       {
+        "id": "function/598252498",
+        "mask": "inlined"
+      },
+      {
         "id": "function/654887641",
         "mask": null
       },
       {
         "id": "function/654887641",
         "mask": "inlined"
+      },
+      {
+        "id": "function/750394785",
+        "mask": null
       }
     ],
     "function/68375000": [
@@ -87606,6 +87618,16 @@
       },
       {
         "id": "function/460512542",
+        "mask": "inlined"
+      }
+    ],
+    "function/95476059": [
+      {
+        "id": "function/652999961",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/652999961",
         "mask": "inlined"
       }
     ],
@@ -92827,10 +92849,6 @@
       {
         "id": "function/900664723",
         "mask": "inlined"
-      },
-      {
-        "id": "function/900664723",
-        "mask": "inlined"
       }
     ],
     "function/235447685": [
@@ -96927,10 +96945,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/581270226",
-        "mask": "inlined"
-      },
-      {
         "id": "function/699578922",
         "mask": "[subtype=ListMixin]"
       },
@@ -97579,66 +97593,10 @@
     ],
     "function/306721563": [
       {
-        "id": "field/1039752053",
-        "mask": null
-      },
-      {
-        "id": "field/154746101",
-        "mask": null
-      },
-      {
-        "id": "field/560549480",
-        "mask": null
-      },
-      {
-        "id": "field/636379937",
-        "mask": null
-      },
-      {
-        "id": "field/773145281",
-        "mask": null
-      },
-      {
-        "id": "field/773145281",
-        "mask": null
-      },
-      {
-        "id": "field/909285805",
-        "mask": null
-      },
-      {
-        "id": "field/914591285",
-        "mask": null
-      },
-      {
-        "id": "field/949619950",
-        "mask": null
-      },
-      {
-        "id": "field/980944524",
-        "mask": null
-      },
-      {
-        "id": "function/1047605700",
-        "mask": null
-      },
-      {
         "id": "function/1058262192",
         "mask": "inlined"
       },
       {
-        "id": "function/1058262192",
-        "mask": null
-      },
-      {
-        "id": "function/170831562",
-        "mask": null
-      },
-      {
-        "id": "function/233093575",
-        "mask": null
-      },
-      {
         "id": "function/233093575",
         "mask": "inlined"
       },
@@ -97649,26 +97607,6 @@
       {
         "id": "function/233093575",
         "mask": "inlined"
-      },
-      {
-        "id": "function/288496489",
-        "mask": null
-      },
-      {
-        "id": "function/291238918",
-        "mask": null
-      },
-      {
-        "id": "function/291238918",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/346305693",
-        "mask": null
-      },
-      {
-        "id": "function/357240896",
-        "mask": null
       },
       {
         "id": "function/357240896",
@@ -97679,14 +97617,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/422690638",
-        "mask": "[null|exact=GameState]"
-      },
-      {
-        "id": "function/43614407",
-        "mask": null
-      },
-      {
         "id": "function/43614407",
         "mask": "inlined"
       },
@@ -97695,55 +97625,7 @@
         "mask": "inlined"
       },
       {
-        "id": "function/540614297",
-        "mask": null
-      },
-      {
-        "id": "function/581270226",
-        "mask": null
-      },
-      {
-        "id": "function/665416673",
-        "mask": null
-      },
-      {
-        "id": "function/80270395",
-        "mask": null
-      },
-      {
-        "id": "function/80270395",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/820195095",
-        "mask": null
-      },
-      {
-        "id": "function/872137241",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/872137241",
-        "mask": null
-      },
-      {
-        "id": "function/955690058",
-        "mask": null
-      },
-      {
-        "id": "function/962973203",
-        "mask": "[null|exact=GameState]"
-      },
-      {
-        "id": "function/969710394",
-        "mask": null
-      },
-      {
-        "id": "function/986526447",
-        "mask": null
-      },
-      {
-        "id": "function/986526447",
+        "id": "function/469465234",
         "mask": "inlined"
       }
     ],
@@ -99287,7 +99169,15 @@
         "mask": null
       },
       {
+        "id": "field/1039752053",
+        "mask": null
+      },
+      {
         "id": "field/1040507814",
+        "mask": null
+      },
+      {
+        "id": "field/560549480",
         "mask": null
       },
       {
@@ -99295,15 +99185,55 @@
         "mask": null
       },
       {
+        "id": "field/636379937",
+        "mask": null
+      },
+      {
+        "id": "field/773145281",
+        "mask": null
+      },
+      {
+        "id": "field/773145281",
+        "mask": null
+      },
+      {
         "id": "field/909285805",
         "mask": null
       },
       {
-        "id": "function/193652937",
+        "id": "field/914591285",
+        "mask": null
+      },
+      {
+        "id": "field/980944524",
+        "mask": null
+      },
+      {
+        "id": "function/1043888555",
+        "mask": null
+      },
+      {
+        "id": "function/1058262192",
+        "mask": null
+      },
+      {
+        "id": "function/170831562",
         "mask": null
       },
       {
         "id": "function/193652937",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/193652937",
+        "mask": null
+      },
+      {
+        "id": "function/233093575",
+        "mask": null
+      },
+      {
+        "id": "function/306721563",
         "mask": "inlined"
       },
       {
@@ -99315,6 +99245,10 @@
         "mask": null
       },
       {
+        "id": "function/357240896",
+        "mask": null
+      },
+      {
         "id": "function/422690638",
         "mask": "[null|exact=GameState]"
       },
@@ -99323,7 +99257,23 @@
         "mask": null
       },
       {
+        "id": "function/43614407",
+        "mask": null
+      },
+      {
+        "id": "function/469465234",
+        "mask": null
+      },
+      {
         "id": "function/517503870",
+        "mask": null
+      },
+      {
+        "id": "function/540614297",
+        "mask": null
+      },
+      {
+        "id": "function/665416673",
         "mask": null
       },
       {
@@ -99343,6 +99293,10 @@
         "mask": null
       },
       {
+        "id": "function/820195095",
+        "mask": null
+      },
+      {
         "id": "function/880396435",
         "mask": null
       },
@@ -99352,6 +99306,10 @@
       },
       {
         "id": "function/936301331",
+        "mask": null
+      },
+      {
+        "id": "function/955690058",
         "mask": null
       },
       {
@@ -103020,11 +102978,11 @@
       },
       {
         "id": "function/1023619720",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/1023619720",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/1024234418",
@@ -103040,11 +102998,11 @@
       },
       {
         "id": "function/1036743690",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/1036743690",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/103899378",
@@ -103104,27 +103062,27 @@
       },
       {
         "id": "function/269921077",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/269921077",
-        "mask": null
-      },
-      {
-        "id": "function/286260801",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/286260801",
         "mask": "inlined"
       },
       {
-        "id": "function/288496489",
+        "id": "function/286260801",
         "mask": null
       },
       {
         "id": "function/288496489",
         "mask": "inlined"
+      },
+      {
+        "id": "function/288496489",
+        "mask": null
       },
       {
         "id": "function/30466635",
@@ -103156,11 +103114,11 @@
       },
       {
         "id": "function/414740792",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/414740792",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/418214700",
@@ -103212,11 +103170,11 @@
       },
       {
         "id": "function/566015677",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/566015677",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/583513756",
@@ -103241,10 +103199,6 @@
       {
         "id": "function/652999961",
         "mask": null
-      },
-      {
-        "id": "function/652999961",
-        "mask": "inlined"
       },
       {
         "id": "function/675759754",
@@ -103367,14 +103321,6 @@
         "mask": null
       },
       {
-        "id": "function/872137241",
-        "mask": null
-      },
-      {
-        "id": "function/872137241",
-        "mask": "inlined"
-      },
-      {
         "id": "function/873430447",
         "mask": null
       },
@@ -103400,10 +103346,14 @@
       },
       {
         "id": "function/931956644",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/931956644",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/932957024",
         "mask": null
       },
       {
@@ -103411,7 +103361,11 @@
         "mask": "inlined"
       },
       {
-        "id": "function/932957024",
+        "id": "function/95476059",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/95476059",
         "mask": null
       },
       {
@@ -103420,11 +103374,11 @@
       },
       {
         "id": "function/9680854",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/9680854",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/979933658",
@@ -111239,71 +111193,7 @@
     ],
     "function/598252498": [
       {
-        "id": "field/154746101",
-        "mask": null
-      },
-      {
-        "id": "field/560549480",
-        "mask": null
-      },
-      {
-        "id": "field/636379937",
-        "mask": null
-      },
-      {
-        "id": "field/949619950",
-        "mask": null
-      },
-      {
-        "id": "function/1047605700",
-        "mask": null
-      },
-      {
-        "id": "function/288496489",
-        "mask": null
-      },
-      {
-        "id": "function/291238918",
-        "mask": null
-      },
-      {
-        "id": "function/291238918",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/581270226",
-        "mask": null
-      },
-      {
-        "id": "function/750394785",
-        "mask": null
-      },
-      {
-        "id": "function/80270395",
-        "mask": null
-      },
-      {
-        "id": "function/80270395",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/872137241",
-        "mask": null
-      },
-      {
-        "id": "function/872137241",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/969710394",
-        "mask": null
-      },
-      {
-        "id": "function/986526447",
-        "mask": null
-      },
-      {
-        "id": "function/986526447",
+        "id": "function/469465234",
         "mask": "inlined"
       }
     ],
@@ -124187,16 +124077,6 @@
         "mask": "Union([exact=LinkedHashMapKeyIterable], [exact=_JsonMapKeyIterable])"
       }
     ],
-    "function/887472572": [
-      {
-        "id": "function/1047272623",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/235281992",
-        "mask": "inlined"
-      }
-    ],
     "function/887884267": [
       {
         "id": "field/221913650",
@@ -128377,10 +128257,6 @@
         "mask": null
       },
       {
-        "id": "function/1047272623",
-        "mask": null
-      },
-      {
         "id": "function/128591853",
         "mask": null
       },
@@ -128394,11 +128270,11 @@
       },
       {
         "id": "function/146632492",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/146632492",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/160933185",
@@ -128465,6 +128341,10 @@
         "mask": null
       },
       {
+        "id": "function/340606427",
+        "mask": "inlined"
+      },
+      {
         "id": "function/343590361",
         "mask": null
       },
@@ -128478,19 +128358,19 @@
       },
       {
         "id": "function/414740792",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/414740792",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/414740792",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/414740792",
         "mask": null
+      },
+      {
+        "id": "function/414740792",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/414740792",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/414740792",
+        "mask": "inlined"
       },
       {
         "id": "function/414740792",
@@ -128589,6 +128469,10 @@
         "mask": null
       },
       {
+        "id": "function/817189805",
+        "mask": "inlined"
+      },
+      {
         "id": "function/83342486",
         "mask": null
       },
@@ -128611,14 +128495,6 @@
       {
         "id": "function/865184799",
         "mask": null
-      },
-      {
-        "id": "function/887472572",
-        "mask": null
-      },
-      {
-        "id": "function/887472572",
-        "mask": "inlined"
       },
       {
         "id": "function/900664723",
@@ -129764,11 +129640,11 @@
       },
       {
         "id": "function/1036036036",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/1036036036",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/103899378",
@@ -129880,10 +129756,6 @@
       },
       {
         "id": "function/652999961",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/652999961",
         "mask": null
       },
       {
@@ -129907,14 +129779,6 @@
         "mask": null
       },
       {
-        "id": "function/872137241",
-        "mask": null
-      },
-      {
-        "id": "function/872137241",
-        "mask": "inlined"
-      },
-      {
         "id": "function/900664723",
         "mask": null
       },
@@ -129928,15 +129792,23 @@
       },
       {
         "id": "function/931956644",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/931956644",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/931956644",
         "mask": null
+      },
+      {
+        "id": "function/931956644",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/931956644",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/95476059",
+        "mask": null
+      },
+      {
+        "id": "function/95476059",
+        "mask": "inlined"
       },
       {
         "id": "function/969710394",
@@ -131503,6 +131375,48 @@
         "mask": "Union([subclass=_BroadcastStreamController], [subclass=_StreamController])"
       }
     ],
+    "function/1043888555": [
+      {
+        "id": "field/154746101",
+        "mask": null
+      },
+      {
+        "id": "field/949619950",
+        "mask": null
+      },
+      {
+        "id": "function/1047605700",
+        "mask": null
+      },
+      {
+        "id": "function/288496489",
+        "mask": null
+      },
+      {
+        "id": "function/291238918",
+        "mask": null
+      },
+      {
+        "id": "function/291238918",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/581270226",
+        "mask": null
+      },
+      {
+        "id": "function/80270395",
+        "mask": null
+      },
+      {
+        "id": "function/80270395",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/969710394",
+        "mask": null
+      }
+    ],
     "function/1044092892": [
       {
         "id": "field/314310181",
@@ -131939,16 +131853,6 @@
       {
         "id": "function/986643735",
         "mask": null
-      }
-    ],
-    "function/1047272623": [
-      {
-        "id": "function/340606427",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/817189805",
-        "mask": "inlined"
       }
     ],
     "function/1047605700": [
@@ -133240,7 +133144,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 225423,
+      "size": 225346,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -133250,11 +133154,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 225423,
+    "size": 225346,
     "dart2jsVersion": "2.8.0-dev.10.0",
-    "compilationMoment": "2020-02-27 08:36:40.030281",
-    "compilationDuration": 3390362,
-    "toJsonDuration": 17000,
+    "compilationMoment": "2020-02-27 09:04:10.042509",
+    "compilationDuration": 3621629,
+    "toJsonDuration": 15000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
