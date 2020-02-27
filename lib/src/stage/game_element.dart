@@ -49,8 +49,6 @@ class GameElement extends Sprite {
 
   ScoreElement get scoreElement => _scoreElement;
 
-  BoardElement get boardElement => _boardElement;
-
   GameElement(this._manager) {
     final opa = resourceManager.getTextureAtlas('opaque');
     final sta = resourceManager.getTextureAtlas('static');
@@ -109,6 +107,8 @@ class GameElement extends Sprite {
       ..addTo(this);
   }
 
+  void updateSquareState() => _boardElement.updateSquareState();
+
   void click(int x, int y, bool alt) {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
@@ -156,7 +156,7 @@ class GameElement extends Sprite {
 
   bool _toggleFlag(int x, int y) {
     assert(!game.gameEnded);
-    final se = _boardElement.squares.get(x, y);
+    final se = _boardElement.squareAt(x, y);
     final ss = se.squareState;
     if (ss == SquareState.hidden) {
       game.setFlag(x, y, true);
@@ -202,7 +202,7 @@ class GameElement extends Sprite {
       final c = v.point;
       final squareOffset = v.squareOffset;
 
-      final se = _boardElement.squares.get(c.x, c.y);
+      final se = _boardElement.squareAt(c.x, c.y);
       final ss = se.squareState;
 
       final texturePrefix =

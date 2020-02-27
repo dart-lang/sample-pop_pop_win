@@ -6,7 +6,6 @@ import 'package:stagexl/stagexl.dart';
 
 import '../array_2d.dart';
 import '../game.dart';
-import '../resources.dart';
 import 'game_element.dart';
 import 'square_element.dart';
 
@@ -38,9 +37,13 @@ class BoardElement extends Sprite {
 
   num get _boardScale => gameElement.boardScale;
 
-  Array2d<SquareElement> get squares => _elements;
+  SquareElement squareAt(int x, int y) => _elements.get(x, y);
+
+  void updateSquareState() {
+    for (var squareElement in _elements) {
+      squareElement.updateState();
+    }
+  }
 
   Game get game => gameElement.game;
-
-  TextureAtlas get opaqueAtlas => resourceManager.getTextureAtlas('opaque');
 }

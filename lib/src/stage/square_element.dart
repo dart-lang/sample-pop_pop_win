@@ -5,6 +5,7 @@
 import 'package:stagexl/stagexl.dart';
 
 import '../game.dart';
+import '../resources.dart';
 import 'board_element.dart';
 import 'game_element.dart';
 
@@ -71,8 +72,10 @@ class SquareElement extends Sprite {
 
     _bitmap.bitmapData
       ..clear()
-      ..drawPixels(_opaqueAtlas.getBitmapData(textureName),
-          Rectangle<int>(0, 0, size, size), Point<int>(0, 0));
+      ..drawPixels(
+          resourceManager.getTextureAtlas('opaque').getBitmapData(textureName),
+          Rectangle<int>(0, 0, size, size),
+          Point<int>(0, 0));
   }
 
   void _onClick(MouseEvent e) {
@@ -104,8 +107,6 @@ class SquareElement extends Sprite {
   BoardElement get _board => parent as BoardElement;
 
   GameElement get _gameElement => _board.gameElement;
-
-  TextureAtlas get _opaqueAtlas => _board.opaqueAtlas;
 
   Game get _game => _board.game;
 }

@@ -37,10 +37,7 @@ class GameRoot extends GameManager {
             event_label: value.toString().split('.')[1],
             value: count));
     if (value == GameState.won) {
-      for (var se in _gameElement.boardElement.squares) {
-        se.updateState();
-      }
-
+      _gameElement.updateSquareState();
       if (_gameElement.scoreElement.bestTime == null ||
           game.duration!.inMilliseconds < _gameElement.scoreElement.bestTime!) {
         _gameElement.scoreElement.bestTime = game.duration!.inMilliseconds;
@@ -53,9 +50,7 @@ class GameRoot extends GameManager {
   void newGame() {
     super.newGame();
     if (_gameElement != null) {
-      for (var se in _gameElement.boardElement.squares) {
-        se.updateState();
-      }
+      _gameElement.updateSquareState();
     }
   }
 }
