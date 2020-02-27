@@ -7,8 +7,8 @@ import 'dart:html' as html;
 
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
-import 'src/audio.dart' as game_audio;
 import 'src/platform_web.dart';
+import 'src/resources.dart';
 import 'src/stage.dart';
 
 const String _assetDir = 'packages/pop_pop_win/assets';
@@ -33,8 +33,8 @@ Future<void> startGame() async {
       TextureAtlasFormat.JSON,
     );
 
-  final resMan = await resourceManager.load();
-  await _initialLoad(resMan, stage);
+  await resourceManager.load();
+  await _initialLoad(resourceManager, stage);
 }
 
 Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
@@ -100,8 +100,8 @@ void _secondaryLoad(
   final size = targetPlatform.size;
   final m = (size * size * 0.15625).toInt();
 
-  game_audio.initialize(resourceManager);
-  GameRoot(size, size, m, stage, resourceManager);
+  initializeResources(resourceManager);
+  GameRoot(size, size, m, stage);
 
   // disable touch events
   html.window.onTouchMove.listen((args) => args.preventDefault());

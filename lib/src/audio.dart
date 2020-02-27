@@ -2,11 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-import 'package:stagexl/stagexl.dart';
-
+import 'resources.dart';
 import 'util.dart';
-
-ResourceManager _resourceManager;
 
 const _win = 'win',
     _click = 'click',
@@ -15,11 +12,6 @@ const _win = 'win',
     _unFlag = 'unflag',
     _bomb = 'Bomb',
     _throwDart = 'throw';
-
-void initialize(ResourceManager resourceManager) {
-  if (_resourceManager != null) throw StateError('already initialized');
-  _resourceManager = resourceManager;
-}
 
 void win() => _playAudio(_win);
 
@@ -36,7 +28,6 @@ void bomb() => _playAudio(_bomb);
 void throwDart() => _playAudio(_throwDart);
 
 void _playAudio(String name) {
-  assert(_resourceManager != null, 'Not initialized');
   switch (name) {
     case _pop:
       final i = random.nextInt(8);
@@ -47,5 +38,5 @@ void _playAudio(String name) {
       name = '$_bomb$i';
       break;
   }
-  _resourceManager.getSoundSprite('audio').play(name);
+  resourceManager.getSoundSprite('audio').play(name);
 }

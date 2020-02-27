@@ -9,6 +9,7 @@ import 'package:stagexl/stagexl.dart' hide Point;
 
 import '../audio.dart' as game_audio;
 import '../game.dart';
+import '../resources.dart';
 import '../util.dart';
 import 'board_element.dart';
 import 'game_background_element.dart';
@@ -41,8 +42,6 @@ class GameElement extends Sprite {
   TextureAtlas _animations;
 
   Game get game => _manager.game;
-
-  ResourceManager get resourceManager => _manager.resourceManager;
 
   int get boardSize => _boardSize;
 
