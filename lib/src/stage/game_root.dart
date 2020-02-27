@@ -49,8 +49,6 @@ class GameRoot extends GameManager {
   @override
   void newGame() {
     super.newGame();
-    if (_gameElement != null) {
-      _gameElement.updateSquareState();
-    }
+    _gameElement.updateSquareState();
   }
 }

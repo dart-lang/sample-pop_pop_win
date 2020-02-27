@@ -25,7 +25,6 @@ class Game {
 
   Game(this.field)
       : _state = GameState.reset,
-        assert(field != null),
         _states = Array2d<SquareState>(
           field.width,
           field.height,
@@ -58,7 +57,6 @@ class Game {
 
   void setFlag(int x, int y, bool value) {
     _ensureStarted();
-    assert(value != null);
 
     final currentSS = _states.get(x, y);
     if (value) {
@@ -154,7 +152,6 @@ class Game {
             }
           }
         }
-        assert(char != null);
         buffer.write(char);
       }
     }
@@ -266,8 +263,6 @@ class Game {
   void _update() => _updatedEvent.add(null);
 
   void _setState(GameState value) {
-    assert(value != null);
-    assert(_state != null);
     assert((_state == GameState.reset) == (!_watch.isRunning));
     if (_state != value) {
       _state = value;

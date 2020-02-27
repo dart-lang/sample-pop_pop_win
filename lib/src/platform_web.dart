@@ -27,7 +27,7 @@ class PlatformWeb {
 
   int get size {
     _sizeAccessed = true;
-    var hash = (_urlHash == null) ? '7' : _urlHash;
+    var hash = _urlHash;
     hash = hash.replaceAll('#', '');
     return int.tryParse(hash) ?? 7;
   }

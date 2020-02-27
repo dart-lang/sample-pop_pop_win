@@ -16,12 +16,10 @@ class GameStorage {
   Stream<void> get bestTimeUpdated => _bestTimeUpdated.stream;
 
   void recordState(GameState state) {
-    assert(state != null);
     _incrementIntValue(state.toString());
   }
 
   bool updateBestTime(Game game) {
-    assert(game != null);
     assert(game.state == GameState.won);
 
     final w = game.field.width;
@@ -56,12 +54,7 @@ class GameStorage {
   }
 
   void _setIntValue(String key, int value) {
-    assert(key != null);
-    if (value == null) {
-      throw UnimplementedError();
-    } else {
-      targetPlatform.setValue(key, value.toString());
-    }
+    targetPlatform.setValue(key, value.toString());
   }
 
   void _incrementIntValue(String key) {
