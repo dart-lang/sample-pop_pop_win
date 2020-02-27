@@ -12,16 +12,12 @@ import 'game_element.dart';
 
 class GameRoot extends GameManager {
   final Stage stage;
-  final ResourceManager resourceManager;
   final _eventCount = <GameState, int>{};
 
   late GameElement _gameElement;
 
-  GameRoot(
-      int width, int height, int bombCount, this.stage, this.resourceManager)
+  GameRoot(int width, int height, int bombCount, this.stage)
       : super(width, height, bombCount) {
-    resourceManager..getTextureAtlas('opaque')..getTextureAtlas('static');
-
     _gameElement = GameElement(this)..alpha = 0;
 
     stage
