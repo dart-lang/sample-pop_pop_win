@@ -19,9 +19,9 @@ class Game {
   final _gameStateEvent = StreamController<GameState>();
   final _watch = Stopwatch();
 
-  late GameState _state;
-  late int _bombsLeft;
-  late int _revealsLeft;
+  GameState _state;
+  int _bombsLeft;
+  int _revealsLeft;
 
   Game(this.field)
       : _state = GameState.reset,
@@ -30,10 +30,9 @@ class Game {
           field.width,
           field.height,
           (i) => SquareState.hidden,
-        ) {
-    _bombsLeft = field.bombCount;
-    _revealsLeft = field.length - field.bombCount;
-  }
+        ),
+        _bombsLeft = field.bombCount,
+        _revealsLeft = field.length - field.bombCount;
 
   int get bombsLeft => _bombsLeft;
 
