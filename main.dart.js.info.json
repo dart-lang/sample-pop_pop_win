@@ -5,11 +5,9 @@
         "id": "library/6021244",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 195,
+        "size": 247,
         "children": [
-          "field/555172581",
           "function/97379748",
-          "function/272426266",
           "function/540614297",
           "function/571452376",
           "function/654887641",
@@ -24,7 +22,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 5613,
+        "size": 5747,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -287,6 +285,18 @@
         ],
         "canonicalUri": "dart:html"
       },
+      "91212954": {
+        "id": "library/91212954",
+        "kind": "library",
+        "name": "<unnamed>",
+        "size": 9,
+        "children": [
+          "field/129832290",
+          "function/548683893",
+          "function/817189805"
+        ],
+        "canonicalUri": "package:pop_pop_win/src/resources.dart"
+      },
       "113442615": {
         "id": "library/113442615",
         "kind": "library",
@@ -301,7 +311,7 @@
         "id": "library/152998570",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 1317,
+        "size": 1379,
         "children": [
           "class/394021680"
         ],
@@ -424,7 +434,7 @@
         "id": "library/239566622",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 648,
+        "size": 640,
         "children": [
           "class/81308393"
         ],
@@ -549,7 +559,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3305,
+        "size": 3232,
         "children": [
           "function/14078432",
           "function/443181349",
@@ -624,7 +634,7 @@
         "id": "library/434094828",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 2618,
+        "size": 2611,
         "children": [
           "class/145364753",
           "class/409282140",
@@ -1181,7 +1191,7 @@
         "children": [
           "function/233162298"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space0YgldG/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceiV7acN/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -2165,14 +2175,13 @@
         "id": "class/81308393",
         "kind": "class",
         "name": "GameRoot",
-        "size": 648,
+        "size": 640,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/239566622",
         "modifiers": {
           "abstract": false
         },
         "children": [
-          "field/426368637",
           "field/560549480",
           "field/981769176",
           "field/1039752053",
@@ -5137,7 +5146,7 @@
         "id": "class/394021680",
         "kind": "class",
         "name": "SquareElement",
-        "size": 1317,
+        "size": 1379,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/152998570",
         "modifiers": {
@@ -5208,7 +5217,7 @@
         "id": "class/409282140",
         "kind": "class",
         "name": "Game",
-        "size": 2279,
+        "size": 2282,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/434094828",
         "modifiers": {
@@ -5574,7 +5583,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 5035,
+        "size": 5169,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -5595,7 +5604,6 @@
           "field/980944524",
           "function/233093575",
           "function/262976543",
-          "function/313163592",
           "function/329802207",
           "function/415279150",
           "function/617325576",
@@ -12759,7 +12767,7 @@
         "id": "function/14078432",
         "kind": "function",
         "name": "startGame",
-        "size": 640,
+        "size": 636,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [],
@@ -12774,7 +12782,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "E:function(){var t=0,s=P.I(u.H),r,q,p,o,n,m,l\nvar $async$E=P.M(function(a,b){if(a===1)return P.x(b,s)\nwhile(true)switch(t){case 0:m=new A.J()\nm.f=11840895\nm.r=!0\nr=A.f(u.E.a(document.querySelector(\"#gameCanvas\")),m)\nq=K.L()\np=H.K([],u.gP)\nq=new A.l(q,p,new R.y(\"enterFrame\",!1),new R.v(\"exitFrame\",!1))\nq.a=!0\nL.m()\n$.C.push(q.gE())\no=r.qJ\nif(o!=null)if(C.Nm.Rz(o.c,r))r.qJ=null\nr.qJ=q\np.push(r)\n$.b().c=!0\nn=new O.a(P.F(u.N,u.e1),P.n(u.u))\nn.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",C.kH)\nl=E\nt=3\nreturn P.j(n.xW(0),$async$E)\ncase 3:t=2\nreturn P.j(l.u(b,r),$async$E)\ncase 2:return P.k(null,s)}})\nreturn P.D($async$E,s)}",
+        "code": "E:function(){var t=0,s=P.I(u.H),r,q,p,o,n\nvar $async$E=P.M(function(a,b){if(a===1)return P.x(b,s)\nwhile(true)switch(t){case 0:o=u.E.a(document.querySelector(\"#gameCanvas\"))\nn=new A.J()\nn.f=11840895\nn.r=!0\nr=A.f(o,n)\nn=K.L()\no=H.K([],u.gP)\nn=new A.l(n,o,new R.y(\"enterFrame\",!1),new R.v(\"exitFrame\",!1))\nn.a=!0\nL.m()\n$.C.push(n.gE())\nq=r.qJ\nif(q!=null)if(C.Nm.Rz(q.c,r))r.qJ=null\nr.qJ=n\no.push(r)\n$.b().c=!0\np=new O.a(P.F(u.N,u.e1),P.n(u.u))\np.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",C.kH)\nt=2\nreturn P.j(p.xW(0),$async$E)\ncase 2:t=3\nreturn P.j(E.u(p,r),$async$E)\ncase 3:return P.k(null,s)}})\nreturn P.D($async$E,s)}",
         "type": "Future<void> Function()"
       },
       "14519227": {
@@ -25309,34 +25317,6 @@
         "code": "",
         "type": "double Function()"
       },
-      "272426266": {
-        "id": "function/272426266",
-        "kind": "function",
-        "name": "initialize",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/6021244",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "void",
-        "inferredReturnType": "[null]",
-        "parameters": [
-          {
-            "name": "resourceManager",
-            "type": "[exact=ResourceManager]",
-            "declaredType": "ResourceManager"
-          }
-        ],
-        "sideEffects": "SideEffects(reads static; writes static)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "void Function(ResourceManager)"
-      },
       "272627576": {
         "id": "function/272627576",
         "kind": "function",
@@ -27067,7 +27047,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zj:function(a){var t=this,s=t.z,r=s.WH(0,a),q=(r==null?0:r)+1\ns.Y5(0,a,q)\nself.gtag(\"event\",\"game_event\",{event_category:\"sample-pop_pop_win\",event_label:J.A(a).split(\".\")[1],value:q})\nif(a===C.mV){for(s=t.Q.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()\ns=t.Q\nif(s.rS.rT!=null){s=t.e\ns=C.jn.BU(s.gzo(s).a,1000)\nr=t.Q\ns=s<r.rS.rT}else{r=s\ns=!0}if(s){s=r.rS\nr=t.e\ns.rT=C.jn.BU(r.gzo(r).a,1000)}R.jr(\"win\")}}",
+        "code": "Zj:function(a){var t=this,s=t.y,r=s.WH(0,a),q=(r==null?0:r)+1\ns.Y5(0,a,q)\nself.gtag(\"event\",\"game_event\",{event_category:\"sample-pop_pop_win\",event_label:J.A(a).split(\".\")[1],value:q})\nif(a===C.mV){for(s=t.z.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()\ns=t.z\nif(s.rS.rT!=null){s=t.e\ns=C.jn.BU(s.gzo(s).a,1000)\nr=t.z\ns=s<r.rS.rT}else{r=s\ns=!0}if(s){s=r.rS\nr=t.e\ns.rT=C.jn.BU(r.gzo(r).a,1000)}R.jr(\"win\")}}",
         "type": "void Function(GameState)"
       },
       "306861682": {
@@ -27589,28 +27569,6 @@
         "inlinedCount": 0,
         "code": "bu:function(a){return\"RegExp/\"+this.a+\"/\"+this.b.flags}",
         "type": "String Function()"
-      },
-      "313163592": {
-        "id": "function/313163592",
-        "kind": "function",
-        "name": "resourceManager",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/435993532",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "ResourceManager",
-        "inferredReturnType": "[exact=ResourceManager]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 4,
-        "code": "",
-        "type": "ResourceManager Function()"
       },
       "314157058": {
         "id": "function/314157058",
@@ -28918,7 +28876,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 7,
+        "inlinedCount": 5,
         "code": "",
         "type": "TextureAtlas Function(String)"
       },
@@ -31071,7 +31029,7 @@
         "inferredReturnType": "[null|exact=GameElement]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 19,
+        "inlinedCount": 18,
         "code": "",
         "type": "GameElement Function()"
       },
@@ -34160,7 +34118,7 @@
         "parameters": [
           {
             "name": "resourceManager",
-            "type": "[null|exact=ResourceManager]",
+            "type": "[exact=ResourceManager]",
             "declaredType": "ResourceManager"
           },
           {
@@ -39200,7 +39158,7 @@
         "id": "function/540614297",
         "kind": "function",
         "name": "_playAudio",
-        "size": 186,
+        "size": 247,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/6021244",
         "children": [],
@@ -39221,7 +39179,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jr:function(a){var t,s\nswitch(a){case\"Pop\":a=\"Pop\"+$.XB().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.XB().j1(4)\nbreak}t=u.m.a($.pL.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
+        "code": "jr:function(a){var t,s\nswitch(a){case\"Pop\":a=\"Pop\"+$.XB().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.XB().j1(4)\nbreak}t=$.pL\nif(t==null)H.vh(P.PV(\"ResourceManager not initialized\"))\nt=u.m.a(t.n9(\"SoundSprite\",\"audio\")).yk(a)\ns=t.a.b\ns.uW(t.c,t.d,t.e,null)}",
         "type": "void Function(String)"
       },
       "540949546": {
@@ -39551,6 +39509,34 @@
         "inlinedCount": 0,
         "code": "Y5:function(a,b,c){throw H.c(P.L4(\"Cannot assign element of immutable List.\"))}",
         "type": "void Function(int,Object)"
+      },
+      "548683893": {
+        "id": "function/548683893",
+        "kind": "function",
+        "name": "initializeResources",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/91212954",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "resourceManager",
+            "type": "[exact=ResourceManager]",
+            "declaredType": "ResourceManager"
+          }
+        ],
+        "sideEffects": "SideEffects(reads static; writes static)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "void Function(ResourceManager)"
       },
       "548734216": {
         "id": "function/548734216",
@@ -41817,7 +41803,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "p8:function(){this.PC()\nvar t=this.Q\nif(t!=null)for(t=t.lN.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}",
+        "code": "p8:function(){this.PC()\nvar t=this.z\nif(t!=null)for(t=t.lN.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}",
         "type": "void Function()"
       },
       "598784217": {
@@ -45308,17 +45294,12 @@
             "name": "stage",
             "type": "[exact=Stage]",
             "declaredType": "Stage"
-          },
-          {
-            "name": "resourceManager",
-            "type": "[exact=ResourceManager]",
-            "declaredType": "ResourceManager"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
         "code": "",
-        "type": "dynamic Function(int,int,int,Stage,ResourceManager)"
+        "type": "dynamic Function(int,int,int,Stage)"
       },
       "661708794": {
         "id": "function/661708794",
@@ -54254,6 +54235,28 @@
         "code": "",
         "type": "dynamic Function(dynamic,dynamic)"
       },
+      "817189805": {
+        "id": "function/817189805",
+        "kind": "function",
+        "name": "resourceManager",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/91212954",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "ResourceManager",
+        "inferredReturnType": "[null|exact=ResourceManager]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads static; writes nothing)",
+        "inlinedCount": 5,
+        "code": "",
+        "type": "ResourceManager Function()"
+      },
       "817659995": {
         "id": "function/817659995",
         "kind": "function",
@@ -58517,7 +58520,7 @@
         "inferredReturnType": "[null|subclass=DisplayObjectContainer]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 61,
+        "inlinedCount": 60,
         "code": "",
         "type": "DisplayObjectParent<DisplayObject> Function()"
       },
@@ -60818,7 +60821,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 1110,
+        "size": 1041,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -60854,7 +60857,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var t,s,r,q=\"TextureAtlas\",p=b.oJ,o=p.RY(c,0.5),n=o.gtV(o)\nn.a.HQ(n,9).d=0\no.f=new E.XG(b,c)\nE.z6()\no=$.fF()\nn=o.b\nnew P.u8(n,H.Lh(n).CT(\"u8<1>\")).yI(new E.S5())\no.a=!0\nt=window.location.hash==null?\"7\":window.location.hash\nt.toString\ns=H.Hp(H.ys(t,\"#\",\"\"),null)\nif(s==null)s=7\nr=C.CD.yu(s*s*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\no=new Y.Yy(b,a,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))\no.jI()\nn=u.p\nn.a(a.n9(q,\"opaque\"))\nn.a(a.n9(q,\"static\"))\nn=U.kZ(o)\nn.sVR(0,0)\no.Q=n\nb.bS(n)\no=p.RY(o.Q,0.5)\no=o.gtV(o)\no.a.HQ(o,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\no=J.qF(document.querySelector(\"#popup\"))\nW.JE(o.a,o.b,E.o9(),!1)\no=$.KP()\no.toString\nnew P.u8(o,H.Lh(o).CT(\"u8<1>\")).yI(new E.C8())}",
+        "code": "TI:function(a,b,c){var t,s,r,q=b.oJ,p=q.RY(c,0.5),o=p.gtV(p)\no.a.HQ(o,9).d=0\np.f=new E.XG(b,c)\nE.z6()\np=$.fF()\no=p.b\nnew P.u8(o,H.Lh(o).CT(\"u8<1>\")).yI(new E.S5())\np.a=!0\nt=window.location.hash==null?\"7\":window.location.hash\nt.toString\ns=H.Hp(H.ys(t,\"#\",\"\"),null)\nif(s==null)s=7\nr=C.CD.yu(s*s*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\np=new Y.Yy(b,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))\np.jI()\no=U.kZ(p)\no.sVR(0,0)\np.z=o\nb.bS(o)\np=q.RY(p.z,0.5)\np=p.gtV(p)\np.a.HQ(p,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\np=J.qF(document.querySelector(\"#popup\"))\nW.JE(p.a,p.b,E.o9(),!1)\np=$.KP()\np.toString\nnew P.u8(p,H.Lh(p).CT(\"u8<1>\")).yI(new E.C8())}",
         "type": "void Function(ResourceManager,Stage,Sprite)"
       },
       "949168228": {
@@ -62044,7 +62047,7 @@
         "id": "function/969710394",
         "kind": "function",
         "name": "updateState",
-        "size": 658,
+        "size": 720,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/394021680",
         "children": [],
@@ -62059,7 +62062,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Iv:function(){var t,s,r=this,q=u.o,p=u.q,o=p.a(q.a(r.fy).fy).Qt.e,n=r.Qt,m=r.lN,l=o.b\nswitch(l.c[n+m*l.a]){case C.Bl:t=r.cV()\nbreak\ncase C.No:t=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:t=C.Hf[o.a.Wz(n,m)]\nbreak\ncase C.e5:t=\"crater_b\"\nbreak\ncase C.fL:t=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.c(P.PV(H.d(r.gF2())+\" not supported\"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){o=p.a(q.a(r.fy).fy).Qt.e.b\no=o.c[n+m*o.a]\no=o===C.Bl||o===C.No}else o=!1\nr.r1=o?\"pointer\":null\nn=r.rS.k3\ns=A.Jd(n)\nm=s.b\nm.A3(0,s.c)\nl=s.a\nm.e.clearRect(0,0,l.a,l.b)\nl.c.a.Li(0)\nn.xV(u.p.a(p.a(q.a(r.fy).fy).Qt.y.n9(\"TextureAtlas\",\"opaque\")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))}",
+        "code": "Iv:function(){var t,s,r=this,q=u.o,p=u.q,o=p.a(q.a(r.fy).fy).Qt.e,n=r.Qt,m=r.lN,l=o.b\nswitch(l.c[n+m*l.a]){case C.Bl:t=r.cV()\nbreak\ncase C.No:t=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:t=C.Hf[o.a.Wz(n,m)]\nbreak\ncase C.e5:t=\"crater_b\"\nbreak\ncase C.fL:t=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.c(P.PV(H.d(r.gF2())+\" not supported\"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){p=p.a(q.a(r.fy).fy).Qt.e.b\np=p.c[n+m*p.a]\np=p===C.Bl||p===C.No}else p=!1\nr.r1=p?\"pointer\":null\no=r.rS.k3\ns=A.Jd(o)\nn=s.b\nn.A3(0,s.c)\nm=s.a\nn.e.clearRect(0,0,m.a,m.b)\nm.c.a.Li(0)\nq.a(r.fy).toString\nq=$.pL\nif(q==null)H.vh(P.PV(\"ResourceManager not initialized\"))\no.xV(u.p.a(q.n9(\"TextureAtlas\",\"opaque\")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))}",
         "type": "void Function()"
       },
       "970179042": {
@@ -66333,7 +66336,7 @@
         "id": "function/1062488791",
         "kind": "function",
         "name": "Game",
-        "size": 257,
+        "size": 247,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/409282140",
         "children": [
@@ -66356,7 +66359,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vd:function(a){var t=P.x2(!1,u.H),s=P.x2(!1,u.B)\nif($.N8==null){H.w4()\n$.N8=$.zI}t=new N.fq(a,M.iT(a.a,a.b,new N.li(),u.an),t,s,new P.P1(),C.Ns)\ns=a.d\nt.r=s\nt.x=a.c.length-s\nreturn t}",
+        "code": "vd:function(a){var t,s=P.x2(!1,u.H),r=P.x2(!1,u.B)\nif($.N8==null){H.w4()\n$.N8=$.zI}t=a.d\nreturn new N.fq(a,M.iT(a.a,a.b,new N.li(),u.an),s,r,new P.P1(),C.Ns,t,a.c.length-t)}",
         "type": "dynamic Function(Field)"
       },
       "1062851232": {
@@ -68266,6 +68269,18 @@
         "inferredType": "[null|exact=JSString]",
         "code": "",
         "type": "String"
+      },
+      "129832290": {
+        "id": "field/129832290",
+        "kind": "field",
+        "name": "_resourceManager",
+        "size": 10,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/91212954",
+        "children": [],
+        "inferredType": "[null|exact=ResourceManager]",
+        "code": "$.pL=null",
+        "type": "ResourceManager"
       },
       "130629664": {
         "id": "field/130629664",
@@ -71723,18 +71738,6 @@
         "code": "",
         "type": "int"
       },
-      "426368637": {
-        "id": "field/426368637",
-        "kind": "field",
-        "name": "resourceManager",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/81308393",
-        "children": [],
-        "inferredType": "[exact=ResourceManager]",
-        "code": "",
-        "type": "ResourceManager"
-      },
       "426414771": {
         "id": "field/426414771",
         "kind": "field",
@@ -73030,18 +73033,6 @@
         "inferredType": "Union(null, [exact=JSExtendableArray], [exact=JSFixedArray])",
         "code": "t($,\"Ni\",\"IF\",function(){var s=u.s,r=H.K([],s),q=W.Lb(),p=H.K([\"maybe\",\"probably\"],s)\nif(C.Nm.tg(p,q.canPlayType(\"audio/ogg; codecs=opus\")))r.push(\"opus\")\nif(C.Nm.tg(p,q.canPlayType(\"audio/mpeg\")))r.push(\"mp3\")\nif(C.Nm.tg(p,q.canPlayType(\"audio/mp4\")))r.push(\"mp4\")\nif(C.Nm.tg(p,q.canPlayType(\"audio/ogg\")))r.push(\"ogg\")\nif(C.Nm.tg(p,q.canPlayType(\"audio/ac3\")))r.push(\"ac3\")\nif(C.Nm.tg(p,q.canPlayType(\"audio/wav\")))r.push(\"wav\")\nP.mp(\"StageXL audio types   : \"+H.d(r))\nreturn C.Nm.tt(r,!1)})",
         "type": "List<String>"
-      },
-      "555172581": {
-        "id": "field/555172581",
-        "kind": "field",
-        "name": "_resourceManager",
-        "size": 10,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/6021244",
-        "children": [],
-        "inferredType": "[null|exact=ResourceManager]",
-        "code": "$.pL=null",
-        "type": "ResourceManager"
       },
       "555744927": {
         "id": "field/555744927",
@@ -81452,12 +81443,6 @@
         "mask": null
       }
     ],
-    "field/426368637": [
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/430013269": [
       {
         "id": "function/788412943",
@@ -82037,6 +82022,12 @@
       }
     ],
     "field/672813858": [
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
+    "field/674328075": [
       {
         "id": "function/788412943",
         "mask": null
@@ -82817,6 +82808,12 @@
       }
     ],
     "field/983503173": [
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
+    "field/984429685": [
       {
         "id": "function/788412943",
         "mask": null
@@ -83853,11 +83850,11 @@
       },
       {
         "id": "function/950791599",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/950791599",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/953817195",
@@ -83869,11 +83866,11 @@
       },
       {
         "id": "function/958421942",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/958421942",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/980907524",
@@ -101198,10 +101195,6 @@
       {
         "id": "function/900664723",
         "mask": "inlined"
-      },
-      {
-        "id": "function/900664723",
-        "mask": "inlined"
       }
     ],
     "function/385334287": [
@@ -109158,6 +109151,10 @@
     ],
     "function/540614297": [
       {
+        "id": "field/129832290",
+        "mask": null
+      },
+      {
         "id": "field/146324484",
         "mask": null
       },
@@ -109179,10 +109176,6 @@
       },
       {
         "id": "field/506614058",
-        "mask": null
-      },
-      {
-        "id": "field/555172581",
         "mask": null
       },
       {
@@ -109235,6 +109228,14 @@
       },
       {
         "id": "function/244294290",
+        "mask": null
+      },
+      {
+        "id": "function/271556856",
+        "mask": null
+      },
+      {
+        "id": "function/308590446",
         "mask": null
       },
       {
@@ -109304,6 +109305,14 @@
       {
         "id": "function/791758355",
         "mask": null
+      },
+      {
+        "id": "function/817189805",
+        "mask": null
+      },
+      {
+        "id": "function/817189805",
+        "mask": "inlined"
       },
       {
         "id": "function/83342486",
@@ -126842,15 +126851,15 @@
         "mask": null
       },
       {
+        "id": "field/129832290",
+        "mask": null
+      },
+      {
+        "id": "field/129832290",
+        "mask": null
+      },
+      {
         "id": "field/415808505",
-        "mask": null
-      },
-      {
-        "id": "field/555172581",
-        "mask": null
-      },
-      {
-        "id": "field/555172581",
         "mask": null
       },
       {
@@ -126894,39 +126903,11 @@
         "mask": "[exact=DisplayObject]"
       },
       {
-        "id": "function/1024234418",
-        "mask": null
-      },
-      {
-        "id": "function/102561197",
-        "mask": null
-      },
-      {
-        "id": "function/1029410465",
-        "mask": null
-      },
-      {
-        "id": "function/103899378",
-        "mask": null
-      },
-      {
         "id": "function/10463749",
         "mask": null
       },
       {
         "id": "function/116599339",
-        "mask": null
-      },
-      {
-        "id": "function/128591853",
-        "mask": null
-      },
-      {
-        "id": "function/132742275",
-        "mask": null
-      },
-      {
-        "id": "function/138115619",
         "mask": null
       },
       {
@@ -126978,24 +126959,20 @@
         "mask": null
       },
       {
-        "id": "function/216705978",
-        "mask": null
-      },
-      {
         "id": "function/219985239",
         "mask": "[null|subclass=Element]"
       },
       {
         "id": "function/226045063",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/226045063",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/226045063",
         "mask": null
+      },
+      {
+        "id": "function/226045063",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/226045063",
+        "mask": "inlined"
       },
       {
         "id": "function/226045063",
@@ -127008,10 +126985,6 @@
       {
         "id": "function/239144734",
         "mask": "inlined"
-      },
-      {
-        "id": "function/244294290",
-        "mask": null
       },
       {
         "id": "function/267519106",
@@ -127026,14 +126999,6 @@
         "mask": null
       },
       {
-        "id": "function/272426266",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/272426266",
-        "mask": null
-      },
-      {
         "id": "function/291295234",
         "mask": null
       },
@@ -127042,27 +127007,11 @@
         "mask": null
       },
       {
-        "id": "function/317451330",
-        "mask": null
-      },
-      {
-        "id": "function/331565025",
-        "mask": null
-      },
-      {
-        "id": "function/340606427",
-        "mask": null
-      },
-      {
         "id": "function/340651472",
         "mask": null
       },
       {
         "id": "function/346305693",
-        "mask": null
-      },
-      {
-        "id": "function/37343626",
         "mask": null
       },
       {
@@ -127079,11 +127028,11 @@
       },
       {
         "id": "function/429338371",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/429338371",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/437424329",
@@ -127091,22 +127040,22 @@
       },
       {
         "id": "function/442540373",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/442540373",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/478451597",
         "mask": null
       },
       {
-        "id": "function/502696664",
-        "mask": null
+        "id": "function/548683893",
+        "mask": "inlined"
       },
       {
-        "id": "function/520073200",
+        "id": "function/548683893",
         "mask": null
       },
       {
@@ -127122,19 +127071,7 @@
         "mask": null
       },
       {
-        "id": "function/583513756",
-        "mask": null
-      },
-      {
-        "id": "function/598215859",
-        "mask": null
-      },
-      {
         "id": "function/611864195",
-        "mask": null
-      },
-      {
-        "id": "function/624647930",
         "mask": null
       },
       {
@@ -127143,11 +127080,11 @@
       },
       {
         "id": "function/660696668",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/660696668",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/693403311",
@@ -127155,25 +127092,21 @@
       },
       {
         "id": "function/698629541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/698629541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/698629541",
         "mask": null
+      },
+      {
+        "id": "function/698629541",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/698629541",
+        "mask": "inlined"
       },
       {
         "id": "function/702314761",
         "mask": null
       },
       {
-        "id": "function/726422620",
-        "mask": null
-      },
-      {
         "id": "function/727704475",
         "mask": "inlined"
       },
@@ -127183,11 +127116,11 @@
       },
       {
         "id": "function/740456220",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/740456220",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/770092188",
@@ -127196,10 +127129,6 @@
       {
         "id": "function/789100089",
         "mask": "[exact=_ControllerStream]"
-      },
-      {
-        "id": "function/791758355",
-        "mask": null
       },
       {
         "id": "function/791758355",
@@ -127218,19 +127147,11 @@
         "mask": null
       },
       {
-        "id": "function/83342486",
-        "mask": null
-      },
-      {
         "id": "function/858739159",
         "mask": null
       },
       {
         "id": "function/864673949",
-        "mask": null
-      },
-      {
-        "id": "function/865184799",
         "mask": null
       },
       {
@@ -127242,10 +127163,6 @@
         "mask": null
       },
       {
-        "id": "function/911422554",
-        "mask": null
-      },
-      {
         "id": "function/912529575",
         "mask": null
       },
@@ -127254,20 +127171,16 @@
         "mask": null
       },
       {
-        "id": "function/921906180",
-        "mask": null
-      },
-      {
         "id": "function/946604195",
         "mask": "[null|subclass=Element]"
       },
       {
         "id": "function/950791599",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/950791599",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/956446518",
@@ -127275,18 +127188,14 @@
       },
       {
         "id": "function/961983334",
-        "mask": null
-      },
-      {
-        "id": "function/961983334",
         "mask": "inlined"
       },
       {
-        "id": "function/962567303",
+        "id": "function/961983334",
         "mask": null
       },
       {
-        "id": "function/980907524",
+        "id": "function/962567303",
         "mask": null
       },
       {
@@ -128368,6 +128277,10 @@
     ],
     "function/969710394": [
       {
+        "id": "field/129832290",
+        "mask": null
+      },
+      {
         "id": "field/146946266",
         "mask": null
       },
@@ -128401,10 +128314,6 @@
       },
       {
         "id": "field/385428141",
-        "mask": null
-      },
-      {
-        "id": "field/426368637",
         "mask": null
       },
       {
@@ -128485,11 +128394,11 @@
       },
       {
         "id": "function/146632492",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/146632492",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/160933185",
@@ -128540,7 +128449,7 @@
         "mask": null
       },
       {
-        "id": "function/313163592",
+        "id": "function/308590446",
         "mask": null
       },
       {
@@ -128589,11 +128498,11 @@
       },
       {
         "id": "function/428690704",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/428690704",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/43614407",
@@ -128605,11 +128514,11 @@
       },
       {
         "id": "function/482884199",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/482884199",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/484773716",
@@ -128673,6 +128582,10 @@
       },
       {
         "id": "function/791758355",
+        "mask": null
+      },
+      {
+        "id": "function/817189805",
         "mask": null
       },
       {
@@ -132030,15 +131943,11 @@
     ],
     "function/1047272623": [
       {
-        "id": "function/313163592",
-        "mask": "inlined"
-      },
-      {
         "id": "function/340606427",
         "mask": "inlined"
       },
       {
-        "id": "function/384822666",
+        "id": "function/817189805",
         "mask": "inlined"
       }
     ],
@@ -132456,10 +132365,6 @@
         "mask": null
       },
       {
-        "id": "field/674328075",
-        "mask": null
-      },
-      {
         "id": "field/781327351",
         "mask": null
       },
@@ -132476,10 +132381,6 @@
         "mask": null
       },
       {
-        "id": "field/984429685",
-        "mask": null
-      },
-      {
         "id": "function/146629467",
         "mask": null
       },
@@ -132490,6 +132391,10 @@
       {
         "id": "function/288496489",
         "mask": null
+      },
+      {
+        "id": "function/288496489",
+        "mask": "inlined"
       },
       {
         "id": "function/340651472",
@@ -133335,7 +133240,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 225254,
+      "size": 225423,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -133345,11 +133250,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 225254,
+    "size": 225423,
     "dart2jsVersion": "2.8.0-dev.10.0",
-    "compilationMoment": "2020-02-20 15:03:25.162819",
-    "compilationDuration": 3978858,
-    "toJsonDuration": 21000,
+    "compilationMoment": "2020-02-27 08:36:40.030281",
+    "compilationDuration": 3390362,
+    "toJsonDuration": 17000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

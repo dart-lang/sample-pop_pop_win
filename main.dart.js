@@ -2011,31 +2011,31 @@ HW:function HW(){},
 OX:function OX(){},
 tr:function tr(){},
 Bf:function Bf(){}},E={
-E:function(){var t=0,s=P.I(u.H),r,q,p,o,n,m,l
+E:function(){var t=0,s=P.I(u.H),r,q,p,o,n
 var $async$E=P.M(function(a,b){if(a===1)return P.x(b,s)
-while(true)switch(t){case 0:m=new A.J()
-m.f=11840895
-m.r=!0
-r=A.f(u.E.a(document.querySelector("#gameCanvas")),m)
-q=K.L()
-p=H.K([],u.gP)
-q=new A.l(q,p,new R.y("enterFrame",!1),new R.v("exitFrame",!1))
-q.a=!0
+while(true)switch(t){case 0:o=u.E.a(document.querySelector("#gameCanvas"))
+n=new A.J()
+n.f=11840895
+n.r=!0
+r=A.f(o,n)
+n=K.L()
+o=H.K([],u.gP)
+n=new A.l(n,o,new R.y("enterFrame",!1),new R.v("exitFrame",!1))
+n.a=!0
 L.m()
-$.C.push(q.gE())
-o=r.qJ
-if(o!=null)if(C.Nm.Rz(o.c,r))r.qJ=null
-r.qJ=q
-p.push(r)
+$.C.push(n.gE())
+q=r.qJ
+if(q!=null)if(C.Nm.Rz(q.c,r))r.qJ=null
+r.qJ=n
+o.push(r)
 $.b().c=!0
-n=new O.a(P.F(u.N,u.e1),P.n(u.u))
-n.be("static","packages/pop_pop_win/assets/images/static.json",C.kH)
-l=E
-t=3
-return P.j(n.xW(0),$async$E)
-case 3:t=2
-return P.j(l.u(b,r),$async$E)
-case 2:return P.k(null,s)}})
+p=new O.a(P.F(u.N,u.e1),P.n(u.u))
+p.be("static","packages/pop_pop_win/assets/images/static.json",C.kH)
+t=2
+return P.j(p.xW(0),$async$E)
+case 2:t=3
+return P.j(E.u(p,r),$async$E)
+case 3:return P.k(null,s)}})
 return P.D($async$E,s)},
 u:function(a,b){var t=0,s=P.I(u.H),r,q,p,o,n,m,l
 var $async$u=P.M(function(c,d){if(c===1)return P.x(d,s)
@@ -2080,14 +2080,14 @@ return P.j(a.xW(0),$async$u)
 case 2:E.TI(a,b,o)
 return P.k(null,s)}})
 return P.D($async$u,s)},
-TI:function(a,b,c){var t,s,r,q="TextureAtlas",p=b.oJ,o=p.RY(c,0.5),n=o.gtV(o)
-n.a.HQ(n,9).d=0
-o.f=new E.XG(b,c)
+TI:function(a,b,c){var t,s,r,q=b.oJ,p=q.RY(c,0.5),o=p.gtV(p)
+o.a.HQ(o,9).d=0
+p.f=new E.XG(b,c)
 E.z6()
-o=$.fF()
-n=o.b
-new P.u8(n,H.Lh(n).CT("u8<1>")).yI(new E.S5())
-o.a=!0
+p=$.fF()
+o=p.b
+new P.u8(o,H.Lh(o).CT("u8<1>")).yI(new E.S5())
+p.a=!0
 t=window.location.hash==null?"7":window.location.hash
 t.toString
 s=H.Hp(H.ys(t,"#",""),null)
@@ -2095,25 +2095,22 @@ if(s==null)s=7
 r=C.CD.yu(s*s*0.15625)
 if($.pL!=null)H.vh(P.PV("already initialized"))
 $.pL=a
-o=new Y.Yy(b,a,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))
-o.jI()
-n=u.p
-n.a(a.n9(q,"opaque"))
-n.a(a.n9(q,"static"))
-n=U.kZ(o)
-n.sVR(0,0)
-o.Q=n
-b.bS(n)
-o=p.RY(o.Q,0.5)
-o=o.gtV(o)
-o.a.HQ(o,9).d=1
+p=new Y.Yy(b,P.F(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))
+p.jI()
+o=U.kZ(p)
+o.sVR(0,0)
+p.z=o
+b.bS(o)
+p=q.RY(p.z,0.5)
+p=p.gtV(p)
+p.a.HQ(p,9).d=1
 W.JE(window,"touchmove",new E.PZ(),!1)
 W.JE(window,"keydown",E.py(),!1)
-o=J.qF(document.querySelector("#popup"))
-W.JE(o.a,o.b,E.o9(),!1)
-o=$.KP()
-o.toString
-new P.u8(o,H.Lh(o).CT("u8<1>")).yI(new E.C8())},
+p=J.qF(document.querySelector("#popup"))
+W.JE(p.a,p.b,E.o9(),!1)
+p=$.KP()
+p.toString
+new P.u8(p,H.Lh(p).CT("u8<1>")).yI(new E.C8())},
 OL:function(a){if(!u.a.c(W.qc(a.relatedTarget)))$.fF().S1(!1)},
 px:function(a){var t=a.keyCode
 J.zN(a)
@@ -2291,15 +2288,14 @@ _.r=null
 _.x=!0
 _.y=!1
 _.z=null},
-e5:function e5(){}},Y={aq:function aq(){},Yy:function Yy(a,b,c,d,e,f,g){var _=this
+e5:function e5(){}},Y={aq:function aq(){},Yy:function Yy(a,b,c,d,e,f){var _=this
 _.x=a
 _.y=b
-_.z=c
-_.Q=null
-_.a=d
-_.b=e
-_.c=f
-_.d=g
+_.z=null
+_.a=c
+_.b=d
+_.c=e
+_.d=f
 _.r=_.f=_.e=null},
 us:function(a){return $.E1.to(0,a.gBK(),new Y.AU(a))},
 A6:function(a){var t=new Y.Xv()
@@ -2364,23 +2360,21 @@ _.b=d
 _.c=e},
 Zg:function Zg(){},
 Iq:function(){return E.E()}},N={
-vd:function(a){var t=P.x2(!1,u.H),s=P.x2(!1,u.B)
+vd:function(a){var t,s=P.x2(!1,u.H),r=P.x2(!1,u.B)
 if($.N8==null){H.w4()
-$.N8=$.zI}t=new N.fq(a,M.iT(a.a,a.b,new N.li(),u.an),t,s,new P.P1(),C.Ns)
-s=a.d
-t.r=s
-t.x=a.c.length-s
-return t},
+$.N8=$.zI}t=a.d
+return new N.fq(a,M.iT(a.a,a.b,new N.li(),u.an),s,r,new P.P1(),C.Ns,t,a.c.length-t)},
 Bk:function Bk(a){this.b=a},
 cw:function cw(a){this.b=a},
-fq:function fq(a,b,c,d,e,f){var _=this
+fq:function fq(a,b,c,d,e,f,g,h){var _=this
 _.a=a
 _.b=b
 _.c=c
 _.d=d
 _.e=e
 _.f=f
-_.x=_.r=null},
+_.r=g
+_.x=h},
 li:function li(){},
 y2:function(a,b,c){var t=W.jm(),s=new N.Nn(t,new P.Zf(new P.vs($.X3,u.eH),u.e9),a)
 s.d=W.JE(t,"load",s.gtB(),!1)
@@ -3284,7 +3278,9 @@ jr:function(a){var t,s
 switch(a){case"Pop":a="Pop"+$.XB().j1(8)
 break
 case"Bomb":a="Bomb"+$.XB().j1(4)
-break}t=u.m.a($.pL.n9("SoundSprite","audio")).yk(a)
+break}t=$.pL
+if(t==null)H.vh(P.PV("ResourceManager not initialized"))
+t=u.m.a(t.n9("SoundSprite","audio")).yk(a)
 s=t.a.b
 s.uW(t.c,t.d,t.e,null)}},Q={
 aZ:function(){var t=new P.vs($.X3,u.ek),s=new P.Zf(t,u.co),r=W.jm()
@@ -5176,88 +5172,97 @@ if(s)a5.r=t
 if(s)a5.x=t
 a6.bS(a5)}}
 U.Mp.prototype={
-Fr:function(a){var t,s,r,q,p,o,n,m,l,k=this,j=null,i="TextureAtlas",h=4278190080,g=k.Qt,f=g.y,e=u.p,d=e.a(f.n9(i,"opaque")),c=e.a(f.n9(i,"static"))
-k.m9=e.a(f.n9(i,"animated"))
-f=g.e.a.a*80+64
-k.YL=f
-k.Hs=1344/f
-V.AY(k,d)
-f=c.kI("button_new_game")
-e=$.LS
-$.LS=e+1
-t=u.t
-s=H.K([],t)
-r=T.oy()
-q=c.kI("button_new_game_clicked")
-p=$.LS
-$.LS=p+1
-o=new A.jx(q,p,H.K([],t),T.oy())
-r=A.VK(new A.jx(f,e,s,r),o,o,o)
-r.c=450
-r.id=!0
-r.d=20
-f=u.V
-r.Ep(0,"click",f).XE(new U.oB(k),!1,0)
-k.bS(r)
-r=D.t5(k)
-e=$.Vi()
-s=e.a
-q=32*k.Hs
-r.c=s+q
-r.id=!0
-e=e.b
-r.d=e+q
-k.lN=r
-n="w"+g.a+"-h"+g.b+"-m"+g.c
-$.fF().toString
-g=M.Yq(window.localStorage.getItem(n),j)
-r=H.K([],u.fE)
+Fr:function(a){var t,s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=null,e="ResourceManager not initialized",d="TextureAtlas",c=4278190080,b=$.pL
+if(b==null)H.vh(P.PV(e))
+t=u.p
+s=t.a(b.n9(d,"opaque"))
+b=$.pL
+if(b==null)H.vh(P.PV(e))
+r=t.a(b.n9(d,"static"))
+b=$.pL
+if(b==null)H.vh(P.PV(e))
+g.m9=t.a(b.n9(d,"animated"))
+b=g.Qt
+t=b.e.a.a*80+64
+g.YL=t
+g.Hs=1344/t
+V.AY(g,s)
+t=r.kI("button_new_game")
 q=$.LS
 $.LS=q+1
-q=new X.XY(g,r,q,H.K([],t),T.oy())
-q.EB(j,j)
-q.sJv(Y.Uk("Slackey, cursive",28,h,"left",!1,0,j,0,!1,1,0,0,h,0,0,!1,"top",400))
-q.k="left"
-q.F|=3
-q.c=1400
-q.id=!0
-q.d=20
-k.bS(q)
-k.rS=q
-m=Math.min(Math.max(H.E0(k.Hs),1.1),1.5)
-g=c.kI("logo_win")
-r=$.LS
-$.LS=r+1
-l=new A.jx(g,r,H.K([],t),T.oy())
-t=k.zN=A.VK(l,l,l,l)
-t.d=20
-t.id=!0
-t.r=m
-t.x=m
-t.c=1024-t.gcl().c/2
-t.id=!0
-t.Ep(0,"click",f).XE(new U.jW(),!1,0)
-k.bS(t)
-g=k.KQ
-g.k4=!1
-f=k.Hs
-t=32*f
-g.c=s+t
-g.id=!0
-g.d=e+t
-g.r=f
-g.x=f
-k.bS(g)
-g=k.Na
-g.k4=!1
-f=k.Hs
-t=32*f
-g.c=s+t
-g.id=!0
-g.d=e+t
-g.r=f
-g.x=f
-k.bS(g)},
+p=u.t
+o=H.K([],p)
+n=T.oy()
+m=r.kI("button_new_game_clicked")
+l=$.LS
+$.LS=l+1
+k=new A.jx(m,l,H.K([],p),T.oy())
+n=A.VK(new A.jx(t,q,o,n),k,k,k)
+n.c=450
+n.id=!0
+n.d=20
+t=u.V
+n.Ep(0,"click",t).XE(new U.oB(g),!1,0)
+g.bS(n)
+n=D.t5(g)
+q=$.Vi()
+o=q.a
+m=32*g.Hs
+n.c=o+m
+n.id=!0
+q=q.b
+n.d=q+m
+g.lN=n
+j="w"+b.a+"-h"+b.b+"-m"+b.c
+$.fF().toString
+b=M.Yq(window.localStorage.getItem(j),f)
+n=H.K([],u.fE)
+m=$.LS
+$.LS=m+1
+m=new X.XY(b,n,m,H.K([],p),T.oy())
+m.EB(f,f)
+m.sJv(Y.Uk("Slackey, cursive",28,c,"left",!1,0,f,0,!1,1,0,0,c,0,0,!1,"top",400))
+m.k="left"
+m.F|=3
+m.c=1400
+m.id=!0
+m.d=20
+g.bS(m)
+g.rS=m
+i=Math.min(Math.max(H.E0(g.Hs),1.1),1.5)
+b=r.kI("logo_win")
+n=$.LS
+$.LS=n+1
+h=new A.jx(b,n,H.K([],p),T.oy())
+p=g.zN=A.VK(h,h,h,h)
+p.d=20
+p.id=!0
+p.r=i
+p.x=i
+p.c=1024-p.gcl().c/2
+p.id=!0
+p.Ep(0,"click",t).XE(new U.jW(),!1,0)
+g.bS(p)
+b=g.KQ
+b.k4=!1
+t=g.Hs
+p=32*t
+b.c=o+p
+b.id=!0
+b.d=q+p
+b.r=t
+b.x=t
+g.bS(b)
+b=g.Na
+b.k4=!1
+t=g.Hs
+p=32*t
+b.c=o+p
+b.id=!0
+b.d=q+p
+b.r=t
+b.x=t
+g.bS(b)},
 wZ:function(a,b,c,d){var t,s=this,r=null,q=s.Qt,p=q.e,o=p.b
 o=o.c[b+c*o.a]
 if(d)if(o===C.Bl||o===C.No){s.Au(b,c)
@@ -5391,20 +5396,20 @@ $1:function(a){return this.a.JZ()}}
 U.tp.prototype={}
 U.Nl.prototype={}
 Y.Yy.prototype={
-Zj:function(a){var t=this,s=t.z,r=s.WH(0,a),q=(r==null?0:r)+1
+Zj:function(a){var t=this,s=t.y,r=s.WH(0,a),q=(r==null?0:r)+1
 s.Y5(0,a,q)
 self.gtag("event","game_event",{event_category:"sample-pop_pop_win",event_label:J.A(a).split(".")[1],value:q})
-if(a===C.mV){for(s=t.Q.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()
-s=t.Q
+if(a===C.mV){for(s=t.z.lN.Qt,s=new H.a7(s,s.gkF(s));s.VF();)s.d.Iv()
+s=t.z
 if(s.rS.rT!=null){s=t.e
 s=C.jn.BU(s.gzo(s).a,1000)
-r=t.Q
+r=t.z
 s=s<r.rS.rT}else{r=s
 s=!0}if(s){s=r.rS
 r=t.e
 s.rT=C.jn.BU(r.gzo(r).a,1000)}R.jr("win")}},
 p8:function(){this.PC()
-var t=this.Q
+var t=this.z
 if(t!=null)for(t=t.lN.Qt,t=new H.a7(t,t.gkF(t));t.VF();)t.d.Iv()}}
 X.XY.prototype={
 dd:function(a){var t,s,r=this,q=u.q,p=q.a(r.fy).Qt.e
@@ -5427,18 +5432,21 @@ case C.e5:t="crater_b"
 break
 case C.fL:t="balloon_tagged_bomb"
 break
-default:throw H.c(P.PV(H.d(r.gF2())+" not supported"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){o=p.a(q.a(r.fy).fy).Qt.e.b
-o=o.c[n+m*o.a]
-o=o===C.Bl||o===C.No}else o=!1
-r.r1=o?"pointer":null
-n=r.rS.k3
-s=A.Jd(n)
-m=s.b
-m.A3(0,s.c)
-l=s.a
-m.e.clearRect(0,0,l.a,l.b)
-l.c.a.Li(0)
-n.xV(u.p.a(p.a(q.a(r.fy).fy).Qt.y.n9("TextureAtlas","opaque")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))},
+default:throw H.c(P.PV(H.d(r.gF2())+" not supported"))}if(!p.a(q.a(r.fy).fy).Qt.e.gau()){p=p.a(q.a(r.fy).fy).Qt.e.b
+p=p.c[n+m*p.a]
+p=p===C.Bl||p===C.No}else p=!1
+r.r1=p?"pointer":null
+o=r.rS.k3
+s=A.Jd(o)
+n=s.b
+n.A3(0,s.c)
+m=s.a
+n.e.clearRect(0,0,m.a,m.b)
+m.c.a.Li(0)
+q.a(r.fy).toString
+q=$.pL
+if(q==null)H.vh(P.PV("ResourceManager not initialized"))
+o.xV(u.p.a(q.n9("TextureAtlas","opaque")).kI(t),new U.tn(0,0,80,80,u.U),new U.tZ(0,0,u.J))},
 Nu:function(a){var t,s=this,r=u.o,q=u.q
 if(!q.a(r.a(s.fy).fy).Qt.e.gau()){t=a.a==="rightClick"||a.cy
 q.a(r.a(s.fy).fy).wZ(0,s.Qt,s.lN,t)}},
