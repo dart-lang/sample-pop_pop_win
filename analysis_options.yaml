@@ -49,8 +49,7 @@ linter:
     - iterable_contains_unrelated_type
     - join_return_with_assignment
     - lines_longer_than_80_chars
-    - list_remove_unrelated_type
-    - literal_only_boolean_expressions
+    - list_remove_un- literal_only_boolean_expressions
     - missing_whitespace_between_adjacent_strings
     - no_adjacent_strings_in_list
     - no_runtimeType_toString
@@ -80,6 +79,7 @@ linter:
     - prefer_relative_imports
     - prefer_typing_uninitialized_variables
     - prefer_void_to_null
+    - provide_deprecation_message
     - sort_pub_dependencies
     - test_types_in_equals
     - throw_in_finally
@@ -96,3 +96,4 @@ linter:
     - use_string_buffers
     - use_to_and_as_if_applicable
     - void_checks
+    related_type
