@@ -20,7 +20,7 @@
               'Error object: ' + JSON.stringify(error)
           ].join(' - ');
       }
-      ga('event', 'exception', {
+      gtag('event', 'exception', {
           'description': message,
           'fatal': false
       });
