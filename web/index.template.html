@@ -7,25 +7,21 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'UA-26406144-23');
-    window.onerror = function (msg, url, lineNo, columnNo, error) {
-      var message;
-      if (msg.toLowerCase().indexOf("script error") > -1){
-          message = 'Script Error: ' + msg;
-      } else {
-          message = [
-              'Message: ' + msg,
-              'URL: ' + url,
-              'Line: ' + lineNo,
-              'Column: ' + columnNo,
-              'Error object: ' + JSON.stringify(error)
-          ].join(' - ');
-      }
+    window.addEventListener('error', function (error) {
+      var message = [
+        'Message: ' + error.message,
+        'URL: ' +  error.filename,
+        'Line: ' +  error.lineno,
+        'Column: ' + error.colno,
+        'Error object: ' + JSON.stringify(error.error)
+      ].join(' - ');
+
       gtag('event', 'exception', {
           'description': message,
           'fatal': false
       });
       return false;
-    };
+    });
     </script>
     <meta charset="utf-8">
     <title>Pop, Pop, Win!</title>
