@@ -20,9 +20,9 @@
               'Error object: ' + JSON.stringify(error)
           ].join(' - ');
       }
-      gtag('send', 'exception', {
-          'exDescription': message,
-          'exFatal': false
+      ga('send', 'exception', {
+          'description': message,
+          'fatal': false
       });
       return false;
     };
