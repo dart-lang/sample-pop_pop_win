@@ -30,12 +30,14 @@ class GameRoot extends GameManager {
     final count = _eventCount[value] = (_eventCount[value] ?? 0) + 1;
 
     gtag(
-        'event',
-        'game_event',
-        GTagAnalyticsEventOptions(
-            event_category: 'sample-pop_pop_win',
-            event_label: value.toString().split('.')[1],
-            value: count));
+      'event',
+      'game_event',
+      GTagAnalyticsEventOptions(
+        event_category: 'sample-pop_pop_win',
+        event_label: value.toString().split('.')[1],
+        value: count,
+      ),
+    );
     if (value == GameState.won) {
       _gameElement.updateSquareState();
       if (_gameElement.scoreElement.bestTime == null ||
