@@ -99,6 +99,7 @@
           "class/141197334",
           "class/142210349",
           "class/144812292",
+          "class/155230977",
           "class/155650447",
           "class/162028978",
           "class/162290551",
@@ -558,7 +559,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3251,
+        "size": 3317,
         "children": [
           "function/14078432",
           "function/443181349",
@@ -1056,9 +1057,10 @@
         "id": "library/746986899",
         "kind": "library",
         "name": "analytics",
-        "size": 39,
+        "size": 185,
         "children": [
-          "class/677924827"
+          "class/677924827",
+          "function/137117485"
         ],
         "canonicalUri": "package:pop_pop_win/src/analytics.dart"
       },
@@ -1202,7 +1204,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacebdMOQd/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacey7wdVw/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -3010,6 +3012,18 @@
           "function/650870464",
           "function/728088170"
         ]
+      },
+      "155230977": {
+        "id": "class/155230977",
+        "kind": "class",
+        "name": "Performance",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458",
+        "modifiers": {
+          "abstract": false
+        },
+        "children": []
       },
       "155650447": {
         "id": "class/155650447",
@@ -12672,7 +12686,7 @@
         "id": "function/14078432",
         "kind": "function",
         "name": "startGame",
-        "size": 650,
+        "size": 668,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [],
@@ -12687,7 +12701,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "E:function(){var t=0,s=P.F(u.H),r,q,p,o,n\nvar $async$E=P.l(function(a,b){if(a===1)return P.f(b,s)\nwhile(true)switch(t){case 0:o=u.Z.a(document.querySelector(\"#gameCanvas\"))\nn=new A.Rx()\nn.f=11840895\nn.r=!0\nr=A.fy(o,n)\nn=K.Ty()\no=H.VM([],u.gP)\nn=new A.E7(n,o,new R.ya(\"enterFrame\",!1),new R.XV(\"exitFrame\",!1))\nn.a=!0\nL.mW()\n$.CY.push(n.gL())\nq=r.qJ\nif(q!=null)if(C.Nm.Rz(q.c,r))r.qJ=null\nr.qJ=n\no.push(r)\n$.bs().c=!0\np=new O.fm(P.Fl(u.N,u.e1),P.bK(u.p))\np.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",C.kH)\nt=2\nreturn P.j(p.xW(0),$async$E)\ncase 2:t=3\nreturn P.j(E.uk(p,r),$async$E)\ncase 3:return P.y(null,s)}})\nreturn P.D($async$E,s)}",
+        "code": "E:function(){var t=0,s=P.F(u.H),r,q,p,o,n\nvar $async$E=P.l(function(a,b){if(a===1)return P.f(b,s)\nwhile(true)switch(t){case 0:Y.hA(\"startGame\")\nr=u.Z.a(document.querySelector(\"#gameCanvas\"))\nq=new A.Rx()\nq.f=11840895\nq.r=!0\np=A.fy(r,q)\nq=K.Ty()\nr=H.VM([],u.gP)\nq=new A.E7(q,r,new R.ya(\"enterFrame\",!1),new R.XV(\"exitFrame\",!1))\nq.a=!0\nL.mW()\n$.CY.push(q.gL())\no=p.qJ\nif(o!=null)if(C.Nm.Rz(o.c,p))p.qJ=null\np.qJ=q\nr.push(p)\n$.bs().c=!0\nn=new O.fm(P.Fl(u.N,u.e1),P.bK(u.p))\nn.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",C.kH)\nt=2\nreturn P.j(n.xW(0),$async$E)\ncase 2:t=3\nreturn P.j(E.uk(n,p),$async$E)\ncase 3:return P.y(null,s)}})\nreturn P.D($async$E,s)}",
         "type": "Future<void> Function()"
       },
       "14519227": {
@@ -18519,6 +18533,34 @@
         "inlinedCount": 2,
         "code": "gvq:function(a){return new P.Gm(this,H.Lh(this).C(\"Gm<1>\"))}",
         "type": "Stream<_BroadcastStreamController.T> Function()"
+      },
+      "137117485": {
+        "id": "function/137117485",
+        "kind": "function",
+        "name": "sendTiming",
+        "size": 146,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/746986899",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 0,
+        "code": "hA:function(a){var t=window.performance,s=J.oW(t.now())\nself.gtag(\"send\",\"timing_complete\",{event_category:null,event_label:null,value:s,name:a})}",
+        "type": "void Function(String,{String eventCategory,String eventLabel,int value})"
       },
       "137242777": {
         "id": "function/137242777",
@@ -34293,7 +34335,7 @@
         "id": "function/443181349",
         "kind": "function",
         "name": "_initialLoad",
-        "size": 1215,
+        "size": 1235,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -34321,7 +34363,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uk:function(a,b){var t=0,s=P.F(u.H),r,q,p,o,n,m,l\nvar $async$uk=P.l(function(c,d){if(c===1)return P.f(d,s)\nwhile(true)switch(t){case 0:n=u.E.a(a.n9(\"TextureAtlas\",\"static\"))\nm=n.kI(\"loading_bar\")\nl=$.LS\n$.LS=l+1\nr=u.t\nq=new O.Jq(m,\"DIRECTION_RIGHT\",l,H.VM([],r),T.oy())\nq.c=51\nq.d=8\nq.sA7(0,0)\nm=n.kI(\"loading_text\")\nl=$.LS\n$.LS=l+1\np=new A.jx(m,l,H.VM([],r),T.oy())\np.c=141\np.d=10\nm=H.VM([],u.r)\nl=$.LS\n$.LS=l+1\no=new A.AE(m,l,H.VM([],r),T.oy())\nl=n.kI(\"loading_background\")\nm=$.LS\n$.LS=m+1\no.bS(new A.jx(l,m,H.VM([],r),T.oy()))\no.bS(q)\no.bS(p)\no.c=C.jn.W(b.Yr,2)-504\no.id=!0\no.d=400\no.r=2\no.x=2\nb.bS(o)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",\"packages/pop_pop_win/assets/audio/audio.json\",O.Yw(\"packages/pop_pop_win/assets/audio/audio.json\",null))\nm=a.b\nnew P.Gm(m,H.Lh(m).C(\"Gm<1>\")).yI(new E.y9(q,a))\nt=2\nreturn P.j(a.xW(0),$async$uk)\ncase 2:E.TI(a,b,o)\nreturn P.y(null,s)}})\nreturn P.D($async$uk,s)}",
+        "code": "uk:function(a,b){var t=0,s=P.F(u.H),r,q,p,o,n,m,l\nvar $async$uk=P.l(function(c,d){if(c===1)return P.f(d,s)\nwhile(true)switch(t){case 0:Y.hA(\"initialLoad\")\nr=u.E.a(a.n9(\"TextureAtlas\",\"static\"))\nq=r.kI(\"loading_bar\")\np=$.LS\n$.LS=p+1\no=u.t\nn=new O.Jq(q,\"DIRECTION_RIGHT\",p,H.VM([],o),T.oy())\nn.c=51\nn.d=8\nn.sA7(0,0)\nq=r.kI(\"loading_text\")\np=$.LS\n$.LS=p+1\nm=new A.jx(q,p,H.VM([],o),T.oy())\nm.c=141\nm.d=10\nq=H.VM([],u.r)\np=$.LS\n$.LS=p+1\nl=new A.AE(q,p,H.VM([],o),T.oy())\np=r.kI(\"loading_background\")\nq=$.LS\n$.LS=q+1\nl.bS(new A.jx(p,q,H.VM([],o),T.oy()))\nl.bS(n)\nl.bS(m)\nl.c=C.jn.W(b.Yr,2)-504\nl.id=!0\nl.d=400\nl.r=2\nl.x=2\nb.bS(l)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",\"packages/pop_pop_win/assets/audio/audio.json\",O.Yw(\"packages/pop_pop_win/assets/audio/audio.json\",null))\nq=a.b\nnew P.Gm(q,H.Lh(q).C(\"Gm<1>\")).yI(new E.y9(n,a))\nt=2\nreturn P.j(a.xW(0),$async$uk)\ncase 2:E.TI(a,b,l)\nreturn P.y(null,s)}})\nreturn P.D($async$uk,s)}",
         "type": "Future<void> Function(ResourceManager,Stage)"
       },
       "443784093": {
@@ -47988,7 +48030,7 @@
         "inferredReturnType": "[exact=Window]",
         "parameters": [],
         "sideEffects": "SideEffects(reads static; writes nothing)",
-        "inlinedCount": 17,
+        "inlinedCount": 18,
         "code": "x3:function(){return window}",
         "type": "Window Function()"
       },
@@ -61354,7 +61396,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 1040,
+        "size": 1068,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -61390,7 +61432,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var t,s,r,q=b.oJ,p=q.RY(c,0.5),o=p.gtV(p)\no.a.HQ(o,9).d=0\np.f=new E.XG(b,c)\nE.z6()\np=$.fF()\no=p.b\nnew P.u8(o,H.Lh(o).C(\"u8<1>\")).yI(new E.S5())\np.a=!0\nt=window.location.hash==null?\"7\":window.location.hash\nt.toString\ns=H.Hp(H.ys(t,\"#\",\"\"),null)\nif(s==null)s=7\nr=C.CD.yu(s*s*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\np=new Y.Yy(b,P.Fl(u.B,u.S),s,s,r,new M.HB(P.x2(!1,u.H)))\np.jI()\no=U.kZ(p)\no.sVR(0,0)\np.z=o\nb.bS(o)\np=q.RY(p.z,0.5)\np=p.gtV(p)\np.a.HQ(p,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\np=J.qF(document.querySelector(\"#popup\"))\nW.JE(p.a,p.b,E.o9(),!1)\np=$.KP()\np.toString\nnew P.u8(p,H.Lh(p).C(\"u8<1>\")).yI(new E.C8())}",
+        "code": "TI:function(a,b,c){var t,s,r,q,p,o\nY.hA(\"secondaryLoad\")\nt=b.oJ\ns=t.RY(c,0.5)\nr=s.gtV(s)\nr.a.HQ(r,9).d=0\ns.f=new E.XG(b,c)\nE.z6()\ns=$.fF()\nr=s.b\nnew P.u8(r,H.Lh(r).C(\"u8<1>\")).yI(new E.S5())\ns.a=!0\nq=window.location.hash==null?\"7\":window.location.hash\nq.toString\np=H.Hp(H.ys(q,\"#\",\"\"),null)\nif(p==null)p=7\no=C.CD.yu(p*p*0.15625)\nif($.pL!=null)H.vh(P.PV(\"already initialized\"))\n$.pL=a\ns=new Y.Yy(b,P.Fl(u.B,u.S),p,p,o,new M.HB(P.x2(!1,u.H)))\ns.jI()\nr=U.kZ(s)\nr.sVR(0,0)\ns.z=r\nb.bS(r)\ns=t.RY(s.z,0.5)\ns=s.gtV(s)\ns.a.HQ(s,9).d=1\nW.JE(window,\"touchmove\",new E.PZ(),!1)\nW.JE(window,\"keydown\",E.py(),!1)\ns=J.qF(document.querySelector(\"#popup\"))\nW.JE(s.a,s.b,E.o9(),!1)\ns=$.KP()\ns.toString\nnew P.u8(s,H.Lh(s).C(\"u8<1>\")).yI(new E.C8())}",
         "type": "void Function(ResourceManager,Stage,Sprite)"
       },
       "949168228": {
@@ -83071,6 +83113,10 @@
         "mask": null
       },
       {
+        "id": "function/137117485",
+        "mask": null
+      },
+      {
         "id": "function/146677533",
         "mask": null
       },
@@ -89527,6 +89573,24 @@
       {
         "id": "function/791758355",
         "mask": null
+      }
+    ],
+    "function/137117485": [
+      {
+        "id": "function/15283215",
+        "mask": "[null|subclass=JSNumber]"
+      },
+      {
+        "id": "function/346305693",
+        "mask": null
+      },
+      {
+        "id": "function/698629541",
+        "mask": null
+      },
+      {
+        "id": "function/698629541",
+        "mask": "inlined"
       }
     ],
     "function/137363622": [
@@ -105033,6 +105097,10 @@
         "mask": null
       },
       {
+        "id": "function/137117485",
+        "mask": null
+      },
+      {
         "id": "function/160933185",
         "mask": null
       },
@@ -105074,11 +105142,11 @@
       },
       {
         "id": "function/269921077",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/269921077",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/271854590",
@@ -105090,10 +105158,6 @@
       },
       {
         "id": "function/286260801",
-        "mask": null
-      },
-      {
-        "id": "function/286260801",
         "mask": "inlined"
       },
       {
@@ -105101,12 +105165,16 @@
         "mask": "inlined"
       },
       {
-        "id": "function/308690752",
-        "mask": "inlined"
+        "id": "function/286260801",
+        "mask": null
       },
       {
         "id": "function/308690752",
         "mask": null
+      },
+      {
+        "id": "function/308690752",
+        "mask": "inlined"
       },
       {
         "id": "function/310648840",
@@ -105130,11 +105198,11 @@
       },
       {
         "id": "function/340606427",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/340606427",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/340651472",
@@ -105158,11 +105226,11 @@
       },
       {
         "id": "function/391637908",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/391637908",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/417411809",
@@ -105246,15 +105314,15 @@
       },
       {
         "id": "function/719088908",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/719088908",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/719088908",
         "mask": null
-      },
-      {
-        "id": "function/719088908",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/719088908",
-        "mask": "inlined"
       },
       {
         "id": "function/727886120",
@@ -105314,14 +105382,10 @@
       },
       {
         "id": "function/914822933",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/914822933",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/932957024",
         "mask": null
       },
       {
@@ -105335,6 +105399,10 @@
       {
         "id": "function/932957024",
         "mask": "inlined"
+      },
+      {
+        "id": "function/932957024",
+        "mask": null
       },
       {
         "id": "function/948303177",
@@ -105354,11 +105422,11 @@
       },
       {
         "id": "function/99006791",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/99006791",
-        "mask": null
+        "mask": "inlined"
       }
     ],
     "function/443784093": [
@@ -127581,6 +127649,10 @@
         "mask": null
       },
       {
+        "id": "function/137117485",
+        "mask": null
+      },
+      {
         "id": "function/15283215",
         "mask": null
       },
@@ -127634,14 +127706,6 @@
       },
       {
         "id": "function/226045063",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/226045063",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/226045063",
         "mask": null
       },
       {
@@ -127649,12 +127713,20 @@
         "mask": "inlined"
       },
       {
-        "id": "function/239144734",
+        "id": "function/226045063",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/226045063",
         "mask": "inlined"
       },
       {
         "id": "function/239144734",
         "mask": null
+      },
+      {
+        "id": "function/239144734",
+        "mask": "inlined"
       },
       {
         "id": "function/267519106",
@@ -127686,11 +127758,11 @@
       },
       {
         "id": "function/387073073",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/387073073",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/418214700",
@@ -127698,11 +127770,11 @@
       },
       {
         "id": "function/429338371",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/429338371",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/437424329",
@@ -127710,11 +127782,11 @@
       },
       {
         "id": "function/442540373",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/442540373",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/478451597",
@@ -127762,15 +127834,15 @@
       },
       {
         "id": "function/698629541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/698629541",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/698629541",
         "mask": null
+      },
+      {
+        "id": "function/698629541",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/698629541",
+        "mask": "inlined"
       },
       {
         "id": "function/702314761",
@@ -127778,19 +127850,19 @@
       },
       {
         "id": "function/727704475",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/727704475",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/740456220",
         "mask": null
       },
       {
         "id": "function/740456220",
         "mask": "inlined"
+      },
+      {
+        "id": "function/740456220",
+        "mask": null
       },
       {
         "id": "function/770092188",
@@ -127858,11 +127930,11 @@
       },
       {
         "id": "function/961983334",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/961983334",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/962567303",
@@ -133940,7 +134012,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 227899,
+      "size": 228149,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -133950,11 +134022,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 227899,
+    "size": 228149,
     "dart2jsVersion": "2.9.0-5.0.dev",
-    "compilationMoment": "2020-05-06 11:17:27.087518",
-    "compilationDuration": 3567784,
-    "toJsonDuration": 13000,
+    "compilationMoment": "2020-05-06 17:14:21.362133",
+    "compilationDuration": 3778569,
+    "toJsonDuration": 15000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
