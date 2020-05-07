@@ -491,7 +491,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6485,
+        "size": 6486,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -778,7 +778,7 @@
         "id": "library/579882441",
         "kind": "library",
         "name": "rti",
-        "size": 15592,
+        "size": 15887,
         "children": [
           "class/121755874",
           "class/214521760",
@@ -844,6 +844,7 @@
           "function/848873059",
           "function/864835321",
           "function/865184799",
+          "function/881419002",
           "function/890489632",
           "function/892227919",
           "function/911398026",
@@ -1204,7 +1205,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacey7wdVw/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceyqJGvP/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -12784,7 +12785,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var t,s,r,q,p,o,n=this,m=null\ntry{r=n.c\nm=r.b.b.m(r.d)}catch(q){t=H.Ru(q)\ns=H.ts(q)\nif(n.d){r=n.a.a.c.a\np=t\np=r==null?p==null:r===p\nr=p}else r=!1\np=n.b\nif(r)p.b=n.a.a.c\nelse p.b=P.Tl(t,s)\np.a=!0\nreturn}if(u._.b(m)){if(m instanceof P.vs&&m.a>=4){if(m.a===8){r=n.b\nr.b=m.c\nr.a=!0}return}o=n.a.a\nr=n.b\nr.b=m.Y(new P.jZ(o),u.z)\nr.a=!1}}",
+        "code": "$0:function(){var t,s,r,q,p,o,n=this,m=null\ntry{r=n.c\nm=r.b.b.m(r.d)}catch(q){t=H.Ru(q)\ns=H.ts(q)\nif(n.d){r=n.a.a.c.a\np=t\np=r==null?p==null:r===p\nr=p}else r=!1\np=n.b\nif(r)p.b=n.a.a.c\nelse p.b=P.Tl(t,s)\np.a=!0\nreturn}if(u.c.b(m)){if(m instanceof P.vs&&m.a>=4){if(m.a===8){r=n.b\nr.b=m.c\nr.a=!0}return}o=n.a.a\nr=n.b\nr.b=m.Y(new P.jZ(o),u.z)\nr.a=!1}}",
         "type": "void Function()"
       },
       "15266339": {
@@ -17569,7 +17570,7 @@
         "id": "function/120424305",
         "kind": "function",
         "name": "isTopType",
-        "size": 39,
+        "size": 86,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -17589,8 +17590,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes anything)",
-        "inlinedCount": 5,
-        "code": "cc:function(a){return H.A8(a)||a===u.K}",
+        "inlinedCount": 4,
+        "code": "cc:function(a){var t\nif(!H.A8(a))if(!(a===u._))t=a===u.K\nelse t=!0\nelse t=!0\nreturn t}",
         "type": "bool Function(Rti)"
       },
       "122097752": {
@@ -21794,7 +21795,7 @@
         "id": "function/207792788",
         "kind": "function",
         "name": "_installSpecializedIsTest",
-        "size": 301,
+        "size": 343,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -21815,7 +21816,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "JJ:function(a){var t=this,s=H.YO,r=u.K\nif(t===r){s=H.ke\nt.a=H.Ti}else if(H.A8(t)||t===r){s=H.Iw\nt.a=H.hn}else if(t===u.S)s=H.ok\nelse if(t===u.W)s=H.KH\nelse if(t===u.p)s=H.KH\nelse if(t===u.N)s=H.MM\nelse if(t===u.y)s=H.r\nelse if(t.y===9){r=t.z\nif(t.Q.every(H.cc)){t.r=\"$i\"+r\ns=H.t4}}t.b=s\nreturn t.b(a)}",
+        "code": "JJ:function(a){var t=this,s=H.YO,r=u.K\nif(t===r){s=H.ke\nt.a=H.Ti}else{if(!H.A8(t))if(!(t===u._))r=t===r\nelse r=!0\nelse r=!0\nif(r){s=H.Iw\nt.a=H.hn}else if(t===u.S)s=H.ok\nelse if(t===u.W)s=H.KH\nelse if(t===u.p)s=H.KH\nelse if(t===u.N)s=H.MM\nelse if(t===u.y)s=H.r\nelse if(t.y===9){r=t.z\nif(t.Q.every(H.cc)){t.r=\"$i\"+r\ns=H.t4}}}t.b=s\nreturn t.b(a)}",
         "type": "bool Function(dynamic)"
       },
       "208283907": {
@@ -25311,7 +25312,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "HZ:function(a,b){var t,s,r,q,p,o,n,m,l,k,j,i,h=null,g={},f=g.a=a\nfor(t=u._;!0;){s={}\nr=f.a===8\nif(b==null){if(r){t=f.c\nP.L2(h,h,f.b,t.a,t.b)}return}for(;q=b.a,q!=null;b=q){b.a=null\nP.HZ(g.a,b)}f=g.a\np=f.c\ns.a=r\ns.b=p\no=!r\nif(o){n=b.c\nn=(n&1)!==0||(n&15)===8}else n=!0\nif(n){n=b.b\nm=n.b\nif(r){l=f.b===m\nl=!(l||l)}else l=!1\nif(l){P.L2(h,h,f.b,p.a,p.b)\nreturn}k=$.X3\nif(k!==m)$.X3=m\nelse k=h\nf=b.c\nif((f&15)===8)new P.RT(g,s,b,r).$0()\nelse if(o){if((f&1)!==0)new P.rq(s,b,p).$0()}else if((f&2)!==0)new P.RW(g,s,b).$0()\nif(k!=null)$.X3=k\nf=s.b\nif(t.b(f)){if(f.a>=4){j=n.c\nn.c=null\nb=n.J(j)\nn.a=f.a\nn.c=f.c\ng.a=f\ncontinue}else P.A9(f,n)\nreturn}}i=b.b\nj=i.c\ni.c=null\nb=i.J(j)\nf=s.a\no=s.b\nif(!f){i.a=4\ni.c=o}else{i.a=8\ni.c=o}g.a=i\nf=i}}",
+        "code": "HZ:function(a,b){var t,s,r,q,p,o,n,m,l,k,j,i,h=null,g={},f=g.a=a\nfor(t=u.c;!0;){s={}\nr=f.a===8\nif(b==null){if(r){t=f.c\nP.L2(h,h,f.b,t.a,t.b)}return}for(;q=b.a,q!=null;b=q){b.a=null\nP.HZ(g.a,b)}f=g.a\np=f.c\ns.a=r\ns.b=p\no=!r\nif(o){n=b.c\nn=(n&1)!==0||(n&15)===8}else n=!0\nif(n){n=b.b\nm=n.b\nif(r){l=f.b===m\nl=!(l||l)}else l=!1\nif(l){P.L2(h,h,f.b,p.a,p.b)\nreturn}k=$.X3\nif(k!==m)$.X3=m\nelse k=h\nf=b.c\nif((f&15)===8)new P.RT(g,s,b,r).$0()\nelse if(o){if((f&1)!==0)new P.rq(s,b,p).$0()}else if((f&2)!==0)new P.RW(g,s,b).$0()\nif(k!=null)$.X3=k\nf=s.b\nif(t.b(f)){if(f.a>=4){j=n.c\nn.c=null\nb=n.J(j)\nn.a=f.a\nn.c=f.c\ng.a=f\ncontinue}else P.A9(f,n)\nreturn}}i=b.b\nj=i.c\ni.c=null\nb=i.J(j)\nf=s.a\no=s.b\nif(!f){i.a=4\ni.c=o}else{i.a=8\ni.c=o}g.a=i\nf=i}}",
         "type": "void Function(_Future<dynamic>,_FutureListener<dynamic,dynamic>)"
       },
       "271677720": {
@@ -26575,7 +26576,7 @@
         "id": "function/294207503",
         "kind": "function",
         "name": "_createStarRti",
-        "size": 151,
+        "size": 142,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/769860706",
         "children": [],
@@ -26611,7 +26612,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z7:function(a,b,c,d){var t,s\nif(d){t=b.y\nif(H.A8(b)||b===u.K||b===u.P||t===7||t===6)return b}s=new H.Jc(null,null)\ns.y=6\ns.z=b\ns.cy=c\nreturn H.BD(a,s)}",
+        "code": "Z7:function(a,b,c,d){var t,s\nif(d){t=b.y\nif(H.A8(b)||b===u.P||t===7||t===6)return b}s=new H.Jc(null,null)\ns.y=6\ns.z=b\ns.cy=c\nreturn H.BD(a,s)}",
         "type": "Rti Function(dynamic,Rti,String,bool)"
       },
       "295346116": {
@@ -28895,7 +28896,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Je:function(a,b){var t,s,r=new P.WM(b),q=new P.SX(b)\nif(a instanceof P.vs)a.M(r,q,u.z)\nelse{t=u.z\nif(u._.b(a))a.S(r,q,t)\nelse{s=new P.vs($.X3,u.c)\ns.a=4\ns.c=a\ns.M(r,q,t)}}}",
+        "code": "Je:function(a,b){var t,s,r=new P.WM(b),q=new P.SX(b)\nif(a instanceof P.vs)a.M(r,q,u.z)\nelse{t=u.z\nif(u.c.b(a))a.S(r,q,t)\nelse{s=new P.vs($.X3,u.d)\ns.a=4\ns.c=a\ns.M(r,q,t)}}}",
         "type": "void Function(dynamic,void Function(int,dynamic))"
       },
       "338379080": {
@@ -32005,7 +32006,7 @@
         "id": "function/400204433",
         "kind": "function",
         "name": "_functionRtiToString",
-        "size": 726,
+        "size": 861,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -32036,7 +32037,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bI:function(a0,a1,a2){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=\", \"\nif(a2!=null){t=a2.length\nif(a1==null){a1=H.VM([],u.s)\ns=null}else s=a1.length\nr=a1.length\nfor(q=t;q>0;--q)a1.push(\"T\"+(r+q))\nfor(p=u.K,o=\"<\",n=\"\",q=0;q<t;++q,n=a){o=C.xB.h(o+n,a1[a1.length-1-q])\nm=a2[q]\nif(!(H.A8(m)||m===p))l=!(m===p)\nelse l=!1\nif(l)o+=C.xB.h(\" extends \",H.m(m,a1))}o+=\">\"}else{o=\"\"\ns=null}p=a0.z\nk=a0.Q\nj=k.a\ni=j.length\nh=k.b\ng=h.length\nf=k.c\ne=f.length\nd=H.m(p,a1)\nfor(c=\"\",b=\"\",q=0;q<i;++q,b=a)c+=C.xB.h(b,H.m(j[q],a1))\nif(g>0){c+=b+\"[\"\nfor(b=\"\",q=0;q<g;++q,b=a)c+=C.xB.h(b,H.m(h[q],a1))\nc+=\"]\"}if(e>0){c+=b+\"{\"\nfor(b=\"\",q=0;q<e;q+=2,b=a)c+=C.xB.h(b,H.m(f[q+1],a1))+\" \"+f[q]\nc+=\"}\"}if(s!=null)a1.length=s\nreturn o+\"(\"+c+\") => \"+H.d(d)}",
+        "code": "bI:function(a2,a3,a4){var t,s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1=\", \"\nif(a4!=null){t=a4.length\nif(a3==null){a3=H.VM([],u.s)\ns=null}else s=a3.length\nr=a3.length\nfor(q=t;q>0;--q)a3.push(\"T\"+(r+q))\nfor(p=u.K,o=u._,n=\"<\",m=\"\",q=0;q<t;++q,m=a1){n=C.xB.h(n+m,a3[a3.length-1-q])\nl=a4[q]\nk=l.y\nj=k\nif(j!==2)if(j!==3)if(j!==4)if(j!==5)k=k===7&&l.z===p\nelse k=!0\nelse k=!0\nelse k=!0\nelse k=!0\nif(!k)if(!(l===o))k=l===p\nelse k=!0\nelse k=!0\nif(!k)n+=C.xB.h(\" extends \",H.m(l,a3))}n+=\">\"}else{n=\"\"\ns=null}p=a2.z\ni=a2.Q\nh=i.a\ng=h.length\nf=i.b\ne=f.length\nd=i.c\nc=d.length\nb=H.m(p,a3)\nfor(a=\"\",a0=\"\",q=0;q<g;++q,a0=a1)a+=C.xB.h(a0,H.m(h[q],a3))\nif(e>0){a+=a0+\"[\"\nfor(a0=\"\",q=0;q<e;++q,a0=a1)a+=C.xB.h(a0,H.m(f[q],a3))\na+=\"]\"}if(c>0){a+=a0+\"{\"\nfor(a0=\"\",q=0;q<c;q+=2,a0=a1)a+=C.xB.h(a0,H.m(d[q+1],a3))+\" \"+d[q]\na+=\"}\"}if(s!=null)a3.length=s\nreturn n+\"(\"+a+\") => \"+H.d(b)}",
         "type": "String Function(Rti,List<String>,{Object bounds})"
       },
       "400256876": {
@@ -38452,7 +38453,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 46,
+        "inlinedCount": 47,
         "code": "",
         "type": "Object Function(Rti)"
       },
@@ -39276,7 +39277,7 @@
         "id": "function/535892822",
         "kind": "function",
         "name": "isStrongTopType",
-        "size": 162,
+        "size": 133,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -39296,8 +39297,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes anything)",
-        "inlinedCount": 0,
-        "code": "A8:function(a){var t,s=a.y,r=s\nif(r!==2)if(r!==3)if(r!==4)if(r!==5){t=u.K\nif(!(a===t))s=s===7&&a.z===t\nelse s=!0}else s=!0\nelse s=!0\nelse s=!0\nelse s=!0\nreturn s}",
+        "inlinedCount": 1,
+        "code": "A8:function(a){var t=a.y,s=t\nif(s!==2)if(s!==3)if(s!==4)if(s!==5)t=t===7&&a.z===u.K\nelse t=!0\nelse t=!0\nelse t=!0\nelse t=!0\nreturn t}",
         "type": "bool Function(Rti)"
       },
       "536333412": {
@@ -39412,7 +39413,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 89,
+        "inlinedCount": 90,
         "code": "",
         "type": "Rti Function(dynamic)"
       },
@@ -43306,7 +43307,7 @@
         "id": "function/620456164",
         "kind": "function",
         "name": "_isSubtype",
-        "size": 942,
+        "size": 1008,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "children": [],
@@ -43347,7 +43348,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "We:function(a,b,c,d,e){var t,s,r,q,p,o,n,m,l,k\nif(b===d)return!0\nif(H.A8(d)||d===u.K)return!0\nt=b.y\nif(t===4)return!0\nif(H.A8(b))return!1\nif(b===u.P)return!0\ns=t===13\nif(s)if(H.We(a,c[b.z],c,d,e))return!0\nr=d.y\nif(t===6)return H.We(a,b.z,c,d,e)\nif(r===6){q=d.z\nreturn H.We(a,b,c,q,e)}if(t===8){if(!H.We(a,b.z,c,d,e))return!1\nreturn H.We(a,H.xZ(a,b),c,d,e)}if(t===7){q=H.We(a,b.z,c,d,e)\nreturn q}if(r===8){if(H.We(a,b,c,d.z,e))return!0\nreturn H.We(a,b,c,H.xZ(a,d),e)}if(r===7){q=H.We(a,b,c,d.z,e)\nreturn q}if(s)return!1\nq=t!==11\nif((!q||t===12)&&d===u.b8)return!0\nif(r===12){if(b===u.L)return!0\nif(t!==12)return!1\np=b.Q\no=d.Q\nn=p.length\nif(n!==o.length)return!1\nc=c==null?p:p.concat(c)\ne=e==null?o:o.concat(e)\nfor(m=0;m<n;++m){l=p[m]\nk=o[m]\nif(!H.We(a,l,c,k,e)||!H.We(a,k,e,l,c))return!1}return H.bO(a,b.z,c,d.z,e)}if(r===11){if(b===u.L)return!0\nif(q)return!1\nreturn H.bO(a,b,c,d,e)}if(t===9){if(r!==9)return!1\nreturn H.pG(a,b,c,d,e)}return!1}",
+        "code": "We:function(a,b,c,d,e){var t,s,r,q,p,o,n,m,l,k\nif(b===d)return!0\nif(!H.A8(d))if(!(d===u._))t=d===u.K\nelse t=!0\nelse t=!0\nif(t)return!0\ns=b.y\nif(s===4)return!0\nif(H.A8(b))return!1\nif(b.y!==1)t=b===u.P\nelse t=!0\nif(t)return!0\nr=s===13\nif(r)if(H.We(a,c[b.z],c,d,e))return!0\nq=d.y\nif(s===6)return H.We(a,b.z,c,d,e)\nif(q===6){t=d.z\nreturn H.We(a,b,c,t,e)}if(s===8){if(!H.We(a,b.z,c,d,e))return!1\nreturn H.We(a,H.xZ(a,b),c,d,e)}if(s===7){t=H.We(a,b.z,c,d,e)\nreturn t}if(q===8){if(H.We(a,b,c,d.z,e))return!0\nreturn H.We(a,b,c,H.xZ(a,d),e)}if(q===7){t=H.We(a,b,c,d.z,e)\nreturn t}if(r)return!1\nt=s!==11\nif((!t||s===12)&&d===u.b8)return!0\nif(q===12){if(b===u.L)return!0\nif(s!==12)return!1\np=b.Q\no=d.Q\nn=p.length\nif(n!==o.length)return!1\nc=c==null?p:p.concat(c)\ne=e==null?o:o.concat(e)\nfor(m=0;m<n;++m){l=p[m]\nk=o[m]\nif(!H.We(a,l,c,k,e)||!H.We(a,k,e,l,c))return!1}return H.bO(a,b.z,c,d.z,e)}if(q===11){if(b===u.L)return!0\nif(t)return!1\nreturn H.bO(a,b,c,d,e)}if(s===9){if(q!==9)return!1\nreturn H.pG(a,b,c,d,e)}return!1}",
         "type": "bool Function(dynamic,Rti,dynamic,Rti,dynamic)"
       },
       "620499495": {
@@ -44640,7 +44641,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes anything)",
-        "inlinedCount": 1,
+        "inlinedCount": 2,
         "code": "",
         "type": "bool Function(Rti)"
       },
@@ -48689,7 +48690,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
-        "inlinedCount": 7,
+        "inlinedCount": 11,
         "code": "",
         "type": "bool Function(Rti)"
       },
@@ -55535,7 +55536,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 39,
+        "inlinedCount": 42,
         "code": "",
         "type": "int Function(Object)"
       },
@@ -56247,7 +56248,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
-        "inlinedCount": 6,
+        "inlinedCount": 5,
         "code": "",
         "type": "bool Function(Rti)"
       },
@@ -57789,6 +57790,34 @@
         "inlinedCount": 0,
         "code": "Gv:function(){var t,s,r=this,q=r.b\nif(q==null)return null\nt=r.d\ns=t!=null\nif(s)if(s)J.Yh(q,r.c,t,!1)\nreturn r.d=r.b=null}",
         "type": "Future<dynamic> Function()"
+      },
+      "881419002": {
+        "id": "function/881419002",
+        "kind": "function",
+        "name": "isBottomType",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/579882441",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [
+          {
+            "name": "t",
+            "type": "[null|exact=Rti]",
+            "declaredType": "Rti"
+          }
+        ],
+        "sideEffects": "SideEffects(reads field; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function(Rti)"
       },
       "881865232": {
         "id": "function/881865232",
@@ -61201,7 +61230,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 22,
+        "inlinedCount": 25,
         "code": "",
         "type": "int Function(Rti)"
       },
@@ -61388,7 +61417,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 4,
+        "inlinedCount": 5,
         "code": "",
         "type": "Rti Function(Rti)"
       },
@@ -61677,7 +61706,7 @@
         "id": "function/953514253",
         "kind": "function",
         "name": "load",
-        "size": 792,
+        "size": 793,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/73206098",
         "children": [],
@@ -61703,7 +61732,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nh:function(a1,a2){var t=0,s=P.F(u.w),r,q=2,p,o=[],n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0\nvar $async$Nh=P.l(function(a3,a4){if(a3===1){p=a4\nt=q}while(true)switch(t){case 0:c=a2.hz(a1)\nb=$.Y6()\na=new T.HL(\"Error loading sound.\",H.VM([],u.v))\nh=c.length,g=u.l,f=0\ncase 3:if(!(f<c.length)){t=5\nbreak}n=c[f]\nq=7\nt=10\nreturn P.j(W.lt(n,null,\"arraybuffer\",null),$async$Nh)\ncase 10:m=a4\nl=g.a(W.Z9(m.response))\nt=11\nreturn P.j(J.R7(b,l),$async$Nh)\ncase 11:k=a4\ne=new E.CI(k)\nE.A2()\nr=e\nt=1\nbreak\nq=2\nt=9\nbreak\ncase 7:q=6\na0=p\nj=H.Ru(a0)\ni=new T.Dy(\"Failed to load \"+H.d(n),j)\na.b.push(i)\nt=9\nbreak\ncase 6:t=2\nbreak\ncase 9:case 4:c.length===h||(0,H.lk)(c),++f\nt=3\nbreak\ncase 5:E.A2()\nh=new P.vs($.X3,u.u)\nh.X(new E.RX())\nr=h\nt=1\nbreak\ncase 1:return P.y(r,s)\ncase 2:return P.f(p,s)}})\nreturn P.D($async$Nh,s)}",
+        "code": "Nh:function(a1,a2){var t=0,s=P.F(u.w),r,q=2,p,o=[],n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0\nvar $async$Nh=P.l(function(a3,a4){if(a3===1){p=a4\nt=q}while(true)switch(t){case 0:c=a2.hz(a1)\nb=$.Y6()\na=new T.HL(\"Error loading sound.\",H.VM([],u.v))\nh=c.length,g=u.dI,f=0\ncase 3:if(!(f<c.length)){t=5\nbreak}n=c[f]\nq=7\nt=10\nreturn P.j(W.lt(n,null,\"arraybuffer\",null),$async$Nh)\ncase 10:m=a4\nl=g.a(W.Z9(m.response))\nt=11\nreturn P.j(J.R7(b,l),$async$Nh)\ncase 11:k=a4\ne=new E.CI(k)\nE.A2()\nr=e\nt=1\nbreak\nq=2\nt=9\nbreak\ncase 7:q=6\na0=p\nj=H.Ru(a0)\ni=new T.Dy(\"Failed to load \"+H.d(n),j)\na.b.push(i)\nt=9\nbreak\ncase 6:t=2\nbreak\ncase 9:case 4:c.length===h||(0,H.lk)(c),++f\nt=3\nbreak\ncase 5:E.A2()\nh=new P.vs($.X3,u.u)\nh.X(new E.RX())\nr=h\nt=1\nbreak\ncase 1:return P.y(r,s)\ncase 2:return P.f(p,s)}})\nreturn P.D($async$Nh,s)}",
         "type": "Future<Sound> Function(String,[SoundLoadOptions])"
       },
       "953817195": {
@@ -63370,7 +63399,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 42,
+        "inlinedCount": 45,
         "code": "",
         "type": "bool Function(dynamic,dynamic)"
       },
@@ -65497,7 +65526,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zx:function(a,b,c,d){var t=new O.YY(a,b,c,new P.Zf(new P.vs($.X3,u.c),u.fz))\nt.P(a,b,c,d)\nreturn t}",
+        "code": "Zx:function(a,b,c,d){var t=new O.YY(a,b,c,new P.Zf(new P.vs($.X3,u.d),u.fz))\nt.P(a,b,c,d)\nreturn t}",
         "type": "dynamic Function(String,String,String,Future<dynamic>)"
       },
       "1029061070": {
@@ -66366,7 +66395,7 @@
         "id": "function/1046014704",
         "kind": "function",
         "name": "_createFutureOrRti",
-        "size": 203,
+        "size": 246,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/769860706",
         "children": [],
@@ -66402,7 +66431,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eV:function(a,b,c,d){var t,s\nif(d){t=b.y\nif(H.A8(b)||b===u.K||b===u.K)return b\nelse if(t===1)return H.Q2(a,\"b8\",[b])\nelse if(b===u.P)return u.aQ}s=new H.Jc(null,null)\ns.y=8\ns.z=b\ns.cy=c\nreturn H.BD(a,s)}",
+        "code": "eV:function(a,b,c,d){var t,s,r\nif(d){t=b.y\nif(!H.A8(b))if(!(b===u._))s=b===u.K\nelse s=!0\nelse s=!0\nif(s||b===u.K)return b\nelse if(t===1)return H.Q2(a,\"b8\",[b])\nelse if(b===u.P)return u.aQ}r=new H.Jc(null,null)\nr.y=8\nr.z=b\nr.cy=c\nreturn H.BD(a,r)}",
         "type": "Rti Function(dynamic,Rti,String,bool)"
       },
       "1047605700": {
@@ -88115,12 +88144,36 @@
         "mask": null
       },
       {
-        "id": "function/848873059",
+        "id": "function/535892822",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/713151216",
         "mask": null
       },
       {
-        "id": "function/848873059",
+        "id": "function/713151216",
         "mask": "inlined"
+      },
+      {
+        "id": "function/713151216",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/713151216",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/713151216",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/713151216",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/848873059",
+        "mask": null
       },
       {
         "id": "function/848873059",
@@ -97201,14 +97254,6 @@
         "mask": null
       },
       {
-        "id": "function/120424305",
-        "mask": null
-      },
-      {
-        "id": "function/120424305",
-        "mask": "inlined"
-      },
-      {
         "id": "function/352620724",
         "mask": null
       },
@@ -97250,10 +97295,6 @@
       },
       {
         "id": "function/832692823",
-        "mask": null
-      },
-      {
-        "id": "function/848873059",
         "mask": null
       },
       {
@@ -102175,6 +102216,10 @@
     ],
     "function/400204433": [
       {
+        "id": "field/410674423",
+        "mask": null
+      },
+      {
         "id": "field/430387875",
         "mask": null
       },
@@ -102216,11 +102261,11 @@
       },
       {
         "id": "function/393568742",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/393568742",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/445547062",
@@ -102232,11 +102277,11 @@
       },
       {
         "id": "function/501313936",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/501313936",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/517327012",
@@ -102252,31 +102297,31 @@
       },
       {
         "id": "function/539569943",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/539569943",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/539569943",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/539569943",
         "mask": null
+      },
+      {
+        "id": "function/539569943",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/539569943",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/539569943",
+        "mask": "inlined"
       },
       {
         "id": "function/575664914",
         "mask": null
       },
       {
-        "id": "function/713151216",
+        "id": "function/638672010",
         "mask": null
       },
       {
         "id": "function/713151216",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/726979110",
@@ -102299,27 +102344,15 @@
         "mask": null
       },
       {
+        "id": "function/832692823",
+        "mask": null
+      },
+      {
         "id": "function/848873059",
         "mask": null
       },
       {
         "id": "function/852326327",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/852326327",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/852326327",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/852326327",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/852326327",
         "mask": null
       },
       {
@@ -102327,7 +102360,19 @@
         "mask": "inlined"
       },
       {
-        "id": "function/91691962",
+        "id": "function/852326327",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/852326327",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/852326327",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/852326327",
         "mask": "inlined"
       },
       {
@@ -102347,11 +102392,23 @@
         "mask": "inlined"
       },
       {
+        "id": "function/91691962",
+        "mask": "inlined"
+      },
+      {
         "id": "function/942726385",
         "mask": "inlined"
       },
       {
         "id": "function/942726385",
+        "mask": null
+      },
+      {
+        "id": "function/944782426",
+        "mask": null
+      },
+      {
+        "id": "function/947722698",
         "mask": null
       },
       {
@@ -109399,12 +109456,12 @@
         "mask": "inlined"
       },
       {
-        "id": "function/713151216",
-        "mask": null
+        "id": "function/638672010",
+        "mask": "inlined"
       },
       {
         "id": "function/713151216",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/832692823",
@@ -109413,6 +109470,10 @@
       {
         "id": "function/944782426",
         "mask": null
+      },
+      {
+        "id": "function/944782426",
+        "mask": "inlined"
       },
       {
         "id": "function/944782426",
@@ -112576,7 +112637,7 @@
       },
       {
         "id": "function/104513495",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/104513495",
@@ -112584,7 +112645,7 @@
       },
       {
         "id": "function/104513495",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/1070901287",
@@ -112608,19 +112669,19 @@
       },
       {
         "id": "function/110436482",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/110436482",
         "mask": null
       },
       {
-        "id": "function/120424305",
+        "id": "function/110436482",
         "mask": "inlined"
       },
       {
         "id": "function/120424305",
         "mask": null
+      },
+      {
+        "id": "function/120424305",
+        "mask": "inlined"
       },
       {
         "id": "function/194452894",
@@ -112664,19 +112725,19 @@
       },
       {
         "id": "function/412727111",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/412727111",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/412727111",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/412727111",
         "mask": null
+      },
+      {
+        "id": "function/412727111",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/412727111",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/412727111",
+        "mask": "inlined"
       },
       {
         "id": "function/517327012",
@@ -112688,14 +112749,10 @@
       },
       {
         "id": "function/539569943",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/539569943",
         "mask": null
       },
       {
-        "id": "function/589675001",
+        "id": "function/539569943",
         "mask": "inlined"
       },
       {
@@ -112732,11 +112789,11 @@
       },
       {
         "id": "function/74759397",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/74759397",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/74759397",
@@ -112756,10 +112813,6 @@
       },
       {
         "id": "function/852326327",
-        "mask": null
-      },
-      {
-        "id": "function/852326327",
         "mask": "inlined"
       },
       {
@@ -112767,7 +112820,15 @@
         "mask": "inlined"
       },
       {
-        "id": "function/91691962",
+        "id": "function/852326327",
+        "mask": null
+      },
+      {
+        "id": "function/881419002",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/881419002",
         "mask": null
       },
       {
@@ -112777,6 +112838,10 @@
       {
         "id": "function/91691962",
         "mask": "inlined"
+      },
+      {
+        "id": "function/91691962",
+        "mask": null
       },
       {
         "id": "function/944782426",
@@ -112792,11 +112857,11 @@
       },
       {
         "id": "function/947722698",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/947722698",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/947722698",
@@ -112808,11 +112873,11 @@
       },
       {
         "id": "function/986643735",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/986643735",
-        "mask": "inlined"
+        "mask": null
       }
     ],
     "function/621622289": [
@@ -113505,7 +113570,19 @@
         "mask": "inlined"
       },
       {
+        "id": "function/713151216",
+        "mask": "inlined"
+      },
+      {
         "id": "function/944782426",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/944782426",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/947722698",
         "mask": "inlined"
       },
       {
@@ -116950,6 +117027,22 @@
       }
     ],
     "function/713151216": [
+      {
+        "id": "function/986643735",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/986643735",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/986643735",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/986643735",
+        "mask": "inlined"
+      },
       {
         "id": "function/986643735",
         "mask": "inlined"
@@ -123685,10 +123778,6 @@
       {
         "id": "function/986643735",
         "mask": "inlined"
-      },
-      {
-        "id": "function/986643735",
-        "mask": "inlined"
       }
     ],
     "function/852141617": [
@@ -124769,6 +124858,16 @@
       {
         "id": "function/953175377",
         "mask": null
+      }
+    ],
+    "function/881419002": [
+      {
+        "id": "function/589675001",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/944782426",
+        "mask": "inlined"
       }
     ],
     "function/883302286": [
@@ -127443,6 +127542,18 @@
       {
         "id": "function/832692823",
         "mask": "inlined"
+      },
+      {
+        "id": "function/832692823",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/832692823",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/832692823",
+        "mask": "inlined"
       }
     ],
     "function/945625581": [
@@ -127560,6 +127671,14 @@
       },
       {
         "id": "function/517327012",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/517327012",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/539569943",
         "mask": "inlined"
       },
       {
@@ -134012,7 +134131,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 228149,
+      "size": 228456,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -134022,11 +134141,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 228149,
-    "dart2jsVersion": "2.9.0-5.0.dev",
-    "compilationMoment": "2020-05-06 17:14:21.362133",
-    "compilationDuration": 3778569,
-    "toJsonDuration": 15000,
+    "size": 228456,
+    "dart2jsVersion": "2.9.0-7.0.dev",
+    "compilationMoment": "2020-05-07 08:12:44.503583",
+    "compilationDuration": 3642530,
+    "toJsonDuration": 18000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
