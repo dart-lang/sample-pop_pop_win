@@ -7,19 +7,52 @@
 @JS()
 library analytics;
 
+import 'dart:html';
+
 import 'package:js/js.dart';
 
 @JS('gtag')
-external void gtag(String event, String eventName,
-    [GTagAnalyticsEventOptions? eventParams]);
+external void gtag(
+  String event,
+  String action, [
+  GTagAnalyticsEventOptions? eventParams,
+]);
+
+void sendTiming(
+  String name, {
+  int? value,
+  String? eventCategory,
+  String? eventLabel,
+}) {
+  value ??= window.performance.now().toInt();
+
+  gtag(
+    'send',
+    'timing_complete',
+    GTagAnalyticsEventOptions(
+      name: name,
+      value: value,
+      event_category: eventCategory,
+      event_label: eventLabel,
+    ),
+  );
+}
 
 @JS()
 @anonymous
 class GTagAnalyticsEventOptions {
   external String get event_category;
+
   external String get event_label;
+
   external int get value;
 
-  external factory GTagAnalyticsEventOptions(
-      {String? event_category, String? event_label, int? value});
+  external int get name;
+
+  external factory GTagAnalyticsEventOptions({
+    String? event_category,
+    String? event_label,
+    int value,
+    String name,
+  });
 }

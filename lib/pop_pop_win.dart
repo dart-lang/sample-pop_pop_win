@@ -7,6 +7,7 @@ import 'dart:html' as html;
 
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
+import 'src/analytics.dart';
 import 'src/platform_web.dart';
 import 'src/resources.dart';
 import 'src/stage.dart';
@@ -14,6 +15,7 @@ import 'src/stage.dart';
 const String _assetDir = 'packages/pop_pop_win/assets';
 
 Future<void> startGame() async {
+  sendTiming('startGame');
   final stage = Stage(
     html.querySelector('#gameCanvas') as html.CanvasElement,
     options: StageOptions()
@@ -38,6 +40,7 @@ Future<void> startGame() async {
 }
 
 Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
+  sendTiming('initialLoad');
   final atlas = resourceManager.getTextureAtlas('static');
 
   final bar = Gauge(atlas.getBitmapData('loading_bar'), Gauge.DIRECTION_RIGHT)
@@ -89,6 +92,7 @@ void _secondaryLoad(
   Stage stage,
   Sprite loadingSprite,
 ) {
+  sendTiming('secondaryLoad');
   stage.juggler.addTween(loadingSprite, .5)
     ..animate.alpha.to(0)
     ..onComplete = () => stage.removeChild(loadingSprite);
