@@ -2,7 +2,7 @@ language: dart
 
 dart:
   - dev
-  - 2.7.0
+  - 2.8.4
 
 dart_task:
   - test: -p vm,chrome
