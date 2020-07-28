@@ -22,7 +22,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 5615,
+        "size": 5687,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -70,7 +70,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 8967,
+        "size": 9002,
         "children": [
           "class/6212434",
           "class/6966771",
@@ -341,7 +341,7 @@
         "id": "library/189282297",
         "kind": "library",
         "name": "dart.dom.web_audio",
-        "size": 631,
+        "size": 645,
         "children": [
           "class/126923191",
           "class/132424371",
@@ -466,7 +466,7 @@
         "id": "library/307092771",
         "kind": "library",
         "name": "stagexl.internal.environment",
-        "size": 719,
+        "size": 731,
         "children": [
           "field/460426713",
           "field/570983786",
@@ -560,7 +560,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3083,
+        "size": 3099,
         "children": [
           "function/14078432",
           "function/443181349",
@@ -585,7 +585,7 @@
         "id": "library/409565288",
         "kind": "library",
         "name": "stagexl.errors",
-        "size": 396,
+        "size": 403,
         "children": [
           "class/109507108",
           "class/119948575"
@@ -596,7 +596,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15520,
+        "size": 15521,
         "children": [
           "class/9026159",
           "class/55317202",
@@ -881,7 +881,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 6811,
+        "size": 6863,
         "children": [
           "class/192166",
           "class/14460442",
@@ -900,7 +900,7 @@
         "id": "library/596676313",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 707,
+        "size": 714,
         "children": [
           "class/435622562",
           "field/1006017221"
@@ -911,7 +911,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 5129,
+        "size": 5136,
         "children": [
           "class/364826778",
           "class/372829643",
@@ -939,7 +939,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7995,
+        "size": 7997,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -1206,12 +1206,12 @@
         "id": "library/960322812",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 497,
+        "size": 504,
         "children": [
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space27yerc/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacebuMghd/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1229,7 +1229,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 22588,
+        "size": 22609,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1373,7 +1373,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20343,
+        "size": 20519,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1452,7 +1452,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 18827,
+        "size": 18883,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -1485,7 +1485,7 @@
         "id": "class/192166",
         "kind": "class",
         "name": "TextureAtlas",
-        "size": 501,
+        "size": 515,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -1640,7 +1640,7 @@
         "id": "class/14460442",
         "kind": "class",
         "name": "ResourceManagerResource",
-        "size": 526,
+        "size": 532,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -1780,7 +1780,7 @@
         "id": "class/32494041",
         "kind": "class",
         "name": "_TimerImpl",
-        "size": 442,
+        "size": 448,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -2147,7 +2147,7 @@
         "id": "class/80405414",
         "kind": "class",
         "name": "_FutureListener",
-        "size": 262,
+        "size": 263,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -2574,7 +2574,7 @@
         "id": "class/119948575",
         "kind": "class",
         "name": "AggregateError",
-        "size": 256,
+        "size": 263,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/409565288",
         "modifiers": {
@@ -2994,7 +2994,7 @@
         "id": "class/155088064",
         "kind": "class",
         "name": "AudioContext",
-        "size": 513,
+        "size": 527,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/189282297",
         "modifiers": {
@@ -3167,7 +3167,7 @@
         "id": "class/168793843",
         "kind": "class",
         "name": "HttpRequest",
-        "size": 401,
+        "size": 415,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3377,7 +3377,7 @@
         "id": "class/187781663",
         "kind": "class",
         "name": "Storage",
-        "size": 441,
+        "size": 448,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -3521,7 +3521,7 @@
         "id": "class/207206915",
         "kind": "class",
         "name": "_StreamController",
-        "size": 1388,
+        "size": 1400,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -3709,7 +3709,7 @@
         "id": "class/223916818",
         "kind": "class",
         "name": "_PendingEvents",
-        "size": 308,
+        "size": 314,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -4350,7 +4350,7 @@
         "id": "class/323606306",
         "kind": "class",
         "name": "RenderLoop",
-        "size": 1106,
+        "size": 1120,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -4621,7 +4621,7 @@
         "id": "class/354160010",
         "kind": "class",
         "name": "Primitives",
-        "size": 100,
+        "size": 107,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "modifiers": {
@@ -5525,7 +5525,7 @@
         "id": "class/435622562",
         "kind": "class",
         "name": "PlatformWeb",
-        "size": 609,
+        "size": 616,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/596676313",
         "modifiers": {
@@ -5549,7 +5549,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 5171,
+        "size": 5243,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -5619,7 +5619,7 @@
         "id": "class/438137149",
         "kind": "class",
         "name": "Future",
-        "size": 1105,
+        "size": 1126,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -5664,7 +5664,7 @@
         "id": "class/445899275",
         "kind": "class",
         "name": "BitmapDataLoadInfo",
-        "size": 498,
+        "size": 505,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -6788,7 +6788,7 @@
         "id": "class/562571521",
         "kind": "class",
         "name": "_EventStreamSubscription",
-        "size": 658,
+        "size": 672,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -6828,7 +6828,7 @@
         "id": "class/566341130",
         "kind": "class",
         "name": "_RootZone",
-        "size": 1361,
+        "size": 1383,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -7331,7 +7331,7 @@
         "id": "class/611525899",
         "kind": "class",
         "name": "_AsyncRun",
-        "size": 425,
+        "size": 444,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -8377,7 +8377,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 8547,
+        "size": 8575,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -9053,7 +9053,7 @@
         "id": "class/784178238",
         "kind": "class",
         "name": "_Future",
-        "size": 3467,
+        "size": 3521,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -9311,7 +9311,7 @@
         "id": "class/803883908",
         "kind": "class",
         "name": "Duration",
-        "size": 720,
+        "size": 722,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -9948,7 +9948,7 @@
         "id": "class/887231521",
         "kind": "class",
         "name": "BitmapData",
-        "size": 380,
+        "size": 387,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -10692,7 +10692,7 @@
         "id": "class/961595590",
         "kind": "class",
         "name": "Stream",
-        "size": 856,
+        "size": 868,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -11363,7 +11363,7 @@
         "id": "class/1029103814",
         "kind": "class",
         "name": "SoundSprite",
-        "size": 369,
+        "size": 376,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -11789,7 +11789,7 @@
         "id": "class/1063402080",
         "kind": "class",
         "name": "ResourceManager",
-        "size": 1764,
+        "size": 1789,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -12128,7 +12128,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nu:function(a){var s,r=this,q=t.x,p=t.r\nif(!p.a(q.a(r.fy).fy).Qt.e.gau()){s=a.a===\"rightClick\"||a.cy\np.a(q.a(r.fy).fy).wZ(0,r.Qt,r.lN,s)}}\nm(A.Jf.prototype,\"glh\",\"Nu\",6)",
+        "code": "Nu:function(a){var s,r=this,q=t.x,p=t.r\nif(!p.a(q.a(r.fy).fy).Qt.e.gau()){s=a.a===\"rightClick\"||a.cy\np.a(q.a(r.fy).fy).wZ(0,r.Qt,r.lN,s)}}\nm(A.Jf.prototype,\"glh\",\"Nu\",5)",
         "type": "void Function(MouseEvent*)"
       },
       "2847204": {
@@ -12866,7 +12866,7 @@
         "id": "function/17382067",
         "kind": "function",
         "name": "getSegment",
-        "size": 215,
+        "size": 222,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1029103814",
         "children": [
@@ -12957,7 +12957,7 @@
         "id": "function/18345574",
         "kind": "function",
         "name": "initTicker",
-        "size": 310,
+        "size": 317,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/354160010",
         "children": [
@@ -12981,7 +12981,7 @@
         "id": "function/18599313",
         "kind": "function",
         "name": "_addListener",
-        "size": 248,
+        "size": 254,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -13477,7 +13477,7 @@
         "id": "function/31006852",
         "kind": "function",
         "name": "length",
-        "size": 342,
+        "size": 348,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/961595590",
         "children": [
@@ -13617,7 +13617,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "SZ:function(a,b){P.L2(null,null,$.X3,a,b)}\nq(P,\"Cr\",\"SZ\",5)",
+        "code": "SZ:function(a,b){P.L2(null,null,$.X3,a,b)}\nq(P,\"Cr\",\"SZ\",7)",
         "type": "void Function(Object,StackTrace)"
       },
       "33492639": {
@@ -14648,7 +14648,7 @@
         "id": "function/55764546",
         "kind": "function",
         "name": "_EventStreamSubscription",
-        "size": 179,
+        "size": 186,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [
@@ -15246,7 +15246,7 @@
         "id": "function/66405152",
         "kind": "function",
         "name": "_cancelAndValue",
-        "size": 187,
+        "size": 193,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [
@@ -15286,7 +15286,7 @@
         "id": "function/67489885",
         "kind": "function",
         "name": "_scheduleImmediateJsOverride",
-        "size": 150,
+        "size": 156,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/611525899",
         "children": [
@@ -15309,7 +15309,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ZV:function(a){self.scheduleImmediate(H.tR(new P.Vs(a),0))}\nr(P,\"EX\",\"ZV\",4)",
+        "code": "ZV:function(a){self.scheduleImmediate(H.tR(new P.Vs(a),0))}\nr(P,\"EX\",\"ZV\",6)",
         "type": "void Function(void Function())"
       },
       "67701762": {
@@ -15366,7 +15366,7 @@
         "id": "function/68051831",
         "kind": "function",
         "name": "handleError",
-        "size": 96,
+        "size": 97,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/80405414",
         "children": [],
@@ -15387,7 +15387,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "K:function(a){var s=this.e,r=this.b.b\nif(t.R.b(s))return r.R(s,a.a,a.b)\nelse return r.FI(s,a.a)}",
+        "code": "K:function(a){var s=this.e,r=this.b.b\nif(t.R.b(s))return r.mg(s,a.a,a.b)\nelse return r.FI(s,a.a)}",
         "type": "FutureOr<_FutureListener.T> Function(AsyncError)"
       },
       "68374999": {
@@ -15508,7 +15508,7 @@
         "id": "function/70353884",
         "kind": "function",
         "name": "_globalFrameRequest",
-        "size": 337,
+        "size": 338,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "children": [
@@ -15893,7 +15893,7 @@
         "id": "function/78829423",
         "kind": "function",
         "name": "finishedResources",
-        "size": 190,
+        "size": 196,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1063402080",
         "children": [
@@ -16055,7 +16055,7 @@
         "id": "function/82464416",
         "kind": "function",
         "name": "_subscribe",
-        "size": 355,
+        "size": 361,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/207206915",
         "children": [
@@ -16115,7 +16115,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eN:function(){$.UD=!0\ntry{P.pu()}finally{$.mg=null\n$.UD=!1\nif($.S6!=null)$.ut().$1(P.V9())}}\ns(P,\"V9\",\"eN\",3)",
+        "code": "eN:function(){$.UD=!0\ntry{P.pu()}finally{$.mg=null\n$.UD=!1\nif($.S6!=null)$.ut().$1(P.V9())}}\ns(P,\"V9\",\"eN\",1)",
         "type": "void Function()"
       },
       "83342486": {
@@ -17876,7 +17876,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "QE:function(a){}\nr(P,\"w6\",\"QE\",2)",
+        "code": "QE:function(a){}\nr(P,\"w6\",\"QE\",4)",
         "type": "void Function(dynamic)"
       },
       "123015411": {
@@ -18217,14 +18217,14 @@
         ],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
-        "code": "Z3:function(a){if(a.a===\"mouseOut\")this.TQ=C.So\nelse if(a.k3)this.TQ=C.UK\nelse this.TQ=C.Br}\nm(l=A.QQ.prototype,\"gNT\",\"Z3\",6)",
+        "code": "Z3:function(a){if(a.a===\"mouseOut\")this.TQ=C.So\nelse if(a.k3)this.TQ=C.UK\nelse this.TQ=C.Br}\nm(l=A.QQ.prototype,\"gNT\",\"Z3\",5)",
         "type": "void Function(MouseEvent*)"
       },
       "128686838": {
         "id": "function/128686838",
         "kind": "function",
         "name": "_recordCancel",
-        "size": 361,
+        "size": 367,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/207206915",
         "children": [
@@ -18698,7 +18698,7 @@
         "id": "function/135645840",
         "kind": "function",
         "name": "_onTouchEvent",
-        "size": 1722,
+        "size": 1736,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -18722,7 +18722,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Hj:function(b6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5=this\nb6.preventDefault()\ns=b6.type\nb6.altKey\nb6.ctrlKey\nr=b6.shiftKey\nfor(q=b6.changedTouches,p=q.length,o=s===\"touchmove\",n=s===\"touchcancel\",m=s===\"touchend\",l=s===\"touchstart\",k=b5.mn,j=b5.hi,i=t.n,h=b5.No,g=t.e,f=t.o,e=0;e<q.length;q.length===p||(0,H.lk)(q),++e){d=q[e]\nc=d.identifier\nb=h.Ey(new P.hL(C.CD.zQ(d.clientX),C.CD.zQ(d.clientY),i))\na=new U.tZ(0,0,g)\na0=b5.tJ(b.a,b.b)\nif(a0==null)a0=b5\na1=k.to(0,c,new A.cZ(b5,a0))\na2=a1.a\na3=a1.b\nC.Nm.U(j,new A.EZ(a2,b))\na4=a1.d\nif(a4!==a0){a5=H.VM([],f)\na6=H.VM([],f)\nfor(a7=a4;a7!=null;a7=a7.fy)a5.push(a7)\nfor(a7=a0;a7!=null;a7=a7.fy)a6.push(a7)\nfor(a8=a5.length,a9=a6.length,b0=0;!0;++b0){if(b0===a8)break\nif(b0===a9)break\nif(a5[a8-b0-1]!==a6[a9-b0-1])break}if(a4!=null){a4.TK(b,a)\na4.H2(0,new R.y6(a3,a.a,a.b,r,\"touchOut\",!0))}for(b1=0;b1<a5.length-b0;++b1){b2=a5[b1]\nb2.TK(b,a)\nb2.H2(0,new R.y6(a3,a.a,a.b,r,\"touchRollOut\",!1))}for(b1=a6.length-b0-1;b1>=0;--b1){b2=a6[b1]\nb2.TK(b,a)\nb2.H2(0,new R.y6(a3,a.a,a.b,r,\"touchRollOver\",!1))}a0.TK(b,a)\na0.H2(0,new R.y6(a3,a.a,a.b,r,\"touchOver\",!0))\na1.d=a0}if(l){b5.I6.focus()\nk.Y5(0,c,a1)\nb3=\"touchBegin\"}else b3=null\nif(m){k.Rz(0,c)\nb4=a1.c===a0\nb3=\"touchEnd\"}else b4=!1\nif(n){k.Rz(0,c)\nb3=\"touchCancel\"}if(o)b3=\"touchMove\"\nif(b3!=null&&!0){a0.TK(b,a)\na0.H2(0,new R.y6(a3,a.a,a.b,r,b3,!0))\nif(b4)a0.H2(0,new R.y6(a3,a.a,a.b,r,\"touchTap\",!0))}}}\nm(l,\"gd6\",\"Hj\",40)",
+        "code": "Hj:function(b6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5=this\nb6.preventDefault()\ns=b6.type\nb6.altKey\nb6.ctrlKey\nr=b6.shiftKey\nfor(q=b6.changedTouches,p=q.length,o=s===\"touchmove\",n=s===\"touchcancel\",m=s===\"touchend\",l=s===\"touchstart\",k=b5.mn,j=b5.hi,i=t.n,h=b5.No,g=t.e,f=t.o,e=0;e<q.length;q.length===p||(0,H.lk)(q),++e){d=q[e]\nc=d.identifier\nb=h.Ey(new P.hL(C.CD.zQ(d.clientX),C.CD.zQ(d.clientY),i))\na=new U.tZ(0,0,g)\na0=b5.tJ(b.a,b.b)\nif(a0==null)a0=b5\na1=k.to(0,c,new A.cZ(b5,a0))\na2=a1.a\na3=a1.b\nC.Nm.U(j,new A.EZ(a2,b))\na4=a1.d\nif(a4!==a0){a5=H.VM([],f)\na6=H.VM([],f)\nfor(a7=a4;a7!=null;a7=a7.fy)a5.push(a7)\nfor(a7=a0;a7!=null;a7=a7.fy)a6.push(a7)\nfor(a8=a5.length,a9=a6.length,b0=0;!0;++b0){if(b0===a8)break\nif(b0===a9)break\nif(a5[a8-b0-1]!==a6[a9-b0-1])break}if(a4!=null){a4.TK(b,a)\na4.H2(0,new R.y6(a3,a.a,a.b,r,\"touchOut\",!0))}for(b1=0;b1<a5.length-b0;++b1){b2=a5[b1]\nb2.TK(b,a)\nb2.H2(0,new R.y6(a3,a.a,a.b,r,\"touchRollOut\",!1))}for(b1=a6.length-b0-1;b1>=0;--b1){b2=a6[b1]\nb2.TK(b,a)\nb2.H2(0,new R.y6(a3,a.a,a.b,r,\"touchRollOver\",!1))}a0.TK(b,a)\na0.H2(0,new R.y6(a3,a.a,a.b,r,\"touchOver\",!0))\na1.d=a0}if(l){b5.I6.focus()\nk.Y5(0,c,a1)\nb3=\"touchBegin\"}else b3=null\nif(m){k.Rz(0,c)\nb4=a1.c===a0\nb3=\"touchEnd\"}else b4=!1\nif(n){k.Rz(0,c)\nb3=\"touchCancel\"}if(o)b3=\"touchMove\"\nif(b3!=null&&!0){a0.TK(b,a)\na0.H2(0,new R.y6(a3,a.a,a.b,r,b3,!0))\nif(b4)a0.H2(0,new R.y6(a3,a.a,a.b,r,\"touchTap\",!0))}}}\nm(l,\"gd6\",\"Hj\",15)",
         "type": "void Function(TouchEvent*)"
       },
       "135722261": {
@@ -20111,7 +20111,7 @@
         "id": "function/163884478",
         "kind": "function",
         "name": "_scheduleImmediateWithSetImmediate",
-        "size": 145,
+        "size": 151,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/611525899",
         "children": [
@@ -20134,7 +20134,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jN:function(a){self.setImmediate(H.tR(new P.Ft(a),0))}\nr(P,\"yt\",\"jN\",4)",
+        "code": "jN:function(a){self.setImmediate(H.tR(new P.Ft(a),0))}\nr(P,\"yt\",\"jN\",6)",
         "type": "void Function(void Function())"
       },
       "163889622": {
@@ -20275,7 +20275,7 @@
         "id": "function/165003912",
         "kind": "function",
         "name": "_initializeScheduleImmediate",
-        "size": 643,
+        "size": 650,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/611525899",
         "children": [
@@ -21301,7 +21301,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ve:function(a){if(this.a&&a>=0)if(typeof a==\"number\")this.Gz(a)}\nm(L.TS.prototype,\"gL\",\"Ve\",13)",
+        "code": "Ve:function(a){if(this.a&&a>=0)if(typeof a==\"number\")this.Gz(a)}\nm(L.TS.prototype,\"gL\",\"Ve\",20)",
         "type": "void Function(num*)"
       },
       "193120176": {
@@ -21419,7 +21419,7 @@
         "id": "function/195205650",
         "kind": "function",
         "name": "toString",
-        "size": 196,
+        "size": 203,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/119948575",
         "children": [
@@ -21978,7 +21978,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "AI:function(a){return a}\nr(K,\"XM\",\"AI\",26)",
+        "code": "AI:function(a){return a}\nr(K,\"XM\",\"AI\",51)",
         "type": "num* Function(num*)"
       },
       "206823989": {
@@ -22239,7 +22239,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "mB:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.V(0,s.a)}\nm(l,\"gtB\",\"mB\",0)",
+        "code": "mB:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.V(0,s.a)}\nm(l,\"gtB\",\"mB\",2)",
         "type": "void Function(Event*)"
       },
       "213020144": {
@@ -22311,7 +22311,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "SB:function(){var s=this\nif(!s.y)if(s.z){s.e.currentTime=s.Q\nP.o2(s.e.play(),t.z)\ns.zb(s.ch)}else s.TP(0)}\nn(l,\"gG7\",\"SB\",3)",
+        "code": "SB:function(){var s=this\nif(!s.y)if(s.z){s.e.currentTime=s.Q\nP.o2(s.e.play(),t.z)\ns.zb(s.ch)}else s.TP(0)}\nn(l,\"gG7\",\"SB\",1)",
         "type": "void Function()"
       },
       "214510259": {
@@ -23036,7 +23036,7 @@
         "id": "function/227475046",
         "kind": "function",
         "name": "getString",
-        "size": 159,
+        "size": 166,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/168793843",
         "children": [
@@ -24309,7 +24309,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
-        "code": "J4:function(){return Date.now()}\ns(H,\"nX\",\"J4\",37)",
+        "code": "J4:function(){return Date.now()}\ns(H,\"nX\",\"J4\",12)",
         "type": "int Function()"
       },
       "247154050": {
@@ -25096,7 +25096,7 @@
         "id": "function/262976543",
         "kind": "function",
         "name": "_startDartAnimation",
-        "size": 702,
+        "size": 714,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -25127,7 +25127,7 @@
         "id": "function/263363184",
         "kind": "function",
         "name": "_asyncCompleteError",
-        "size": 178,
+        "size": 184,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -25589,7 +25589,7 @@
         "id": "function/271674536",
         "kind": "function",
         "name": "_propagateToListeners",
-        "size": 1734,
+        "size": 1752,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -26546,7 +26546,7 @@
         "id": "function/288870017",
         "kind": "function",
         "name": "toString",
-        "size": 497,
+        "size": 499,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/803883908",
         "children": [
@@ -26787,7 +26787,7 @@
         "id": "function/292751514",
         "kind": "function",
         "name": "_prependListeners",
-        "size": 353,
+        "size": 359,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -28465,7 +28465,7 @@
         "id": "function/325386239",
         "kind": "function",
         "name": "_chainFuture",
-        "size": 219,
+        "size": 225,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -28532,7 +28532,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Dd:function(){var s,r=this,q=r.b&=4294967293\nif(q>=4)return\nr.b=q|1\ns=r.c\nif(s!=null)r.a.bH(s)}\nn(P.EM.prototype,\"gcv\",\"Dd\",3)",
+        "code": "Dd:function(){var s,r=this,q=r.b&=4294967293\nif(q>=4)return\nr.b=q|1\ns=r.c\nif(s!=null)r.a.bH(s)}\nn(P.EM.prototype,\"gcv\",\"Dd\",1)",
         "type": "void Function()"
       },
       "327357990": {
@@ -28981,7 +28981,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "t3:function(a){var s,r,q,p=a.c\np.a.spP(C.M8)\nfor(s=t.b,r=this.k4,q=0;q<64;++q)r.push(p.FT(new U.tn(q*7,0,7,14,s)))}\nm(A.PC.prototype,\"gXP\",\"t3\",28)",
+        "code": "t3:function(a){var s,r,q,p=a.c\np.a.spP(C.M8)\nfor(s=t.b,r=this.k4,q=0;q<64;++q)r.push(p.FT(new U.tn(q*7,0,7,14,s)))}\nm(A.PC.prototype,\"gXP\",\"t3\",58)",
         "type": "void Function(BitmapData*)"
       },
       "336352070": {
@@ -29265,7 +29265,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wG:function(a){var s,r,q=this,p=q.d,o=J.i(a),n=o.w(a)\n$.fF().toString\np.Wo(n,M.Yq(window.localStorage.getItem(n),0)+1)\nn=a===C.mV\nif(n)p.uE(q.e)\nq.TE()\np=q.y\ns=p.q(0,a)\nr=(s==null?0:s)+1\np.Y5(0,a,r)\nself.gtag(\"event\",\"game_event\",{event_category:\"sample-pop_pop_win\",event_label:o.w(a).split(\".\")[1],value:r})\nif(n){q.z.lN.ni()\np=q.z\nif(p.rS.rT!=null){p=q.e\np=C.jn.W(p.gzo(p).a,1000)\no=q.z\np=p<o.rS.rT}else{o=p\np=!0}if(p){p=o.rS\no=q.e\np.rT=C.jn.W(o.gzo(o).a,1000)}R.jr(\"win\")}}\nm(l,\"gpe\",\"wG\",18)",
+        "code": "wG:function(a){var s,r,q=this,p=q.d,o=J.i(a),n=o.w(a)\n$.fF().toString\np.Wo(n,M.Yq(window.localStorage.getItem(n),0)+1)\nn=a===C.mV\nif(n)p.uE(q.e)\nq.TE()\np=q.y\ns=p.q(0,a)\nr=(s==null?0:s)+1\np.Y5(0,a,r)\nself.gtag(\"event\",\"game_event\",{event_category:\"sample-pop_pop_win\",event_label:o.w(a).split(\".\")[1],value:r})\nif(n){q.z.lN.ni()\np=q.z\nif(p.rS.rT!=null){p=q.e\np=C.jn.W(p.gzo(p).a,1000)\no=q.z\np=p<o.rS.rT}else{o=p\np=!0}if(p){p=o.rS\no=q.e\np.rT=C.jn.W(o.gzo(o).a,1000)}R.jr(\"win\")}}\nm(l,\"gpe\",\"wG\",34)",
         "type": "void Function(GameState*)"
       },
       "340789555": {
@@ -30464,7 +30464,7 @@
         "id": "function/364010339",
         "kind": "function",
         "name": "_rootHandleUncaughtError",
-        "size": 163,
+        "size": 169,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [
@@ -31458,7 +31458,7 @@
         "id": "function/385444888",
         "kind": "function",
         "name": "wait",
-        "size": 1654,
+        "size": 1675,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/438137149",
         "children": [
@@ -31564,7 +31564,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
-        "code": "Hj:function(a){var s,r=this\nif(a.k2){s=a.a\nif(s===\"touchOver\")r.TQ=C.UK\nelse if(s===\"touchOut\")r.TQ=C.So\nelse if(s===\"touchBegin\")r.TQ=C.UK\nelse if(s===\"touchEnd\")r.TQ=C.So}}\nm(l,\"gd6\",\"Hj\",23)",
+        "code": "Hj:function(a){var s,r=this\nif(a.k2){s=a.a\nif(s===\"touchOver\")r.TQ=C.UK\nelse if(s===\"touchOut\")r.TQ=C.So\nelse if(s===\"touchBegin\")r.TQ=C.UK\nelse if(s===\"touchEnd\")r.TQ=C.So}}\nm(l,\"gd6\",\"Hj\",77)",
         "type": "void Function(TouchEvent*)"
       },
       "387073073": {
@@ -31760,7 +31760,7 @@
         "id": "function/390828239",
         "kind": "function",
         "name": "bindCallbackGuarded",
-        "size": 137,
+        "size": 143,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/566341130",
         "children": [
@@ -32032,7 +32032,7 @@
         "id": "function/396617359",
         "kind": "function",
         "name": "initHooks",
-        "size": 696,
+        "size": 710,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [
@@ -32239,7 +32239,7 @@
         "id": "function/400256876",
         "kind": "function",
         "name": "pendingResources",
-        "size": 201,
+        "size": 207,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1063402080",
         "children": [
@@ -32661,7 +32661,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "WO:function(a){a.preventDefault()\nthis.b.AN(0,new L.dZ())}\nm(l=L.IM.prototype,\"gUp\",\"WO\",12)",
+        "code": "WO:function(a){a.preventDefault()\nthis.b.AN(0,new L.dZ())}\nm(l=L.IM.prototype,\"gUp\",\"WO\",19)",
         "type": "void Function(ContextEvent*)"
       },
       "410557072": {
@@ -32872,7 +32872,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aO:function(a){}\nm(l=Y.XN.prototype,\"gpx\",\"aO\",35)",
+        "code": "aO:function(a){}\nm(l=Y.XN.prototype,\"gpx\",\"aO\",72)",
         "type": "void Function(KeyboardEvent*)"
       },
       "414740792": {
@@ -32901,7 +32901,7 @@
         "id": "function/415279150",
         "kind": "function",
         "name": "_startPopAnimation",
-        "size": 1713,
+        "size": 1753,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -34580,7 +34580,7 @@
         "id": "function/443181349",
         "kind": "function",
         "name": "_initialLoad",
-        "size": 1006,
+        "size": 1007,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -35434,7 +35434,7 @@
         "id": "function/464155614",
         "kind": "function",
         "name": "_onMouseEvent",
-        "size": 1646,
+        "size": 1653,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -35457,7 +35457,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z3:function(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this\na0.preventDefault()\ns=Date.now()\nr=a0.button\nq=a.No.Ey(new P.hL(a0.clientX,a0.clientY,t.n))\np=new U.tZ(0,0,t.e)\nif(r<0||r>2)return\nif(a0.type===\"mousemove\"&&a.ZB.eT(0,q))return\no=a.HG[r]\na.ZB=q\nC.Nm.U(a.hi,new A.PK(q))\nif(a0.type!==\"mouseout\")n=a.Fo(q.a,q.b)\nelse{a.H2(0,new R.ea(\"mouseLeave\",!1))\nn=null}m=a.rT\nif(m!=n){l=t.o\nk=H.VM([],l)\nj=H.VM([],l)\nfor(i=m;i!=null;i=i.fy)k.push(i)\nfor(i=n;i!=null;i=i.fy)j.push(i)\nfor(l=k.length,h=j.length,g=0;!0;++g){if(g===l)break\nif(g===h)break\nif(k[l-g-1]!==j[h-g-1])break}if(m!=null){m.TK(q,p)\nm.H2(0,R.Gd(\"mouseOut\",!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}for(f=0;f<k.length-g;++f){e=k[f]\ne.TK(q,p)\nl=p.a\nh=p.b\na0.altKey\na0.ctrlKey\nd=a0.shiftKey\ne.H2(0,new R.Aj(o.f,l,h,d,\"rollOut\",!1))}for(f=j.length-g-1;f>=0;--f){e=j[f]\ne.TK(q,p)\nl=p.a\nh=p.b\na0.altKey\na0.ctrlKey\nd=a0.shiftKey\ne.H2(0,new R.Aj(o.f,l,h,d,\"rollOver\",!1))}if(n!=null){n.TK(q,p)\nn.H2(0,R.Gd(\"mouseOver\",!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}a.rT=n}a.cq()\nif(a0.type===\"mousedown\"){a.I6.focus()\nc=o.a\nif(n!=o.e||s>o.r+500)o.x=0\no.f=!0\no.e=n\no.r=s;++o.x}else c=null\nif(a0.type===\"mouseup\"){c=o.b\no.f=!1\nb=o.e==n\nb}else b=!1\ns=a0.type\nif(s===\"mousemove\")c=\"mouseMove\"\nif(s===\"contextmenu\")c=\"contextMenu\"\nif(c!=null&&n!=null){n.TK(q,p)\nn.H2(0,R.Gd(c,!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,o.x))\nif(b)n.H2(0,R.Gd(o.c,!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}}\nm(l=A.mE.prototype,\"gNT\",\"Z3\",10)",
+        "code": "Z3:function(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this\na0.preventDefault()\ns=Date.now()\nr=a0.button\nq=a.No.Ey(new P.hL(a0.clientX,a0.clientY,t.n))\np=new U.tZ(0,0,t.e)\nif(r<0||r>2)return\nif(a0.type===\"mousemove\"&&a.ZB.eT(0,q))return\no=a.HG[r]\na.ZB=q\nC.Nm.U(a.hi,new A.PK(q))\nif(a0.type!==\"mouseout\")n=a.Fo(q.a,q.b)\nelse{a.H2(0,new R.ea(\"mouseLeave\",!1))\nn=null}m=a.rT\nif(m!=n){l=t.o\nk=H.VM([],l)\nj=H.VM([],l)\nfor(i=m;i!=null;i=i.fy)k.push(i)\nfor(i=n;i!=null;i=i.fy)j.push(i)\nfor(l=k.length,h=j.length,g=0;!0;++g){if(g===l)break\nif(g===h)break\nif(k[l-g-1]!==j[h-g-1])break}if(m!=null){m.TK(q,p)\nm.H2(0,R.Gd(\"mouseOut\",!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}for(f=0;f<k.length-g;++f){e=k[f]\ne.TK(q,p)\nl=p.a\nh=p.b\na0.altKey\na0.ctrlKey\nd=a0.shiftKey\ne.H2(0,new R.Aj(o.f,l,h,d,\"rollOut\",!1))}for(f=j.length-g-1;f>=0;--f){e=j[f]\ne.TK(q,p)\nl=p.a\nh=p.b\na0.altKey\na0.ctrlKey\nd=a0.shiftKey\ne.H2(0,new R.Aj(o.f,l,h,d,\"rollOver\",!1))}if(n!=null){n.TK(q,p)\nn.H2(0,R.Gd(\"mouseOver\",!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}a.rT=n}a.cq()\nif(a0.type===\"mousedown\"){a.I6.focus()\nc=o.a\nif(n!=o.e||s>o.r+500)o.x=0\no.f=!0\no.e=n\no.r=s;++o.x}else c=null\nif(a0.type===\"mouseup\"){c=o.b\no.f=!1\nb=o.e==n\nb}else b=!1\ns=a0.type\nif(s===\"mousemove\")c=\"mouseMove\"\nif(s===\"contextmenu\")c=\"contextMenu\"\nif(c!=null&&n!=null){n.TK(q,p)\nn.H2(0,R.Gd(c,!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,o.x))\nif(b)n.H2(0,R.Gd(o.c,!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}}\nm(l=A.mE.prototype,\"gNT\",\"Z3\",16)",
         "type": "void Function(MouseEvent*)"
       },
       "464290033": {
@@ -36085,7 +36085,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ZZ:function(a){var s=this.b.q(0,J.re(a))\nif(s!=null)if(!s.z)s.TP(0)}\nm(E.za.prototype,\"gtl\",\"ZZ\",0)",
+        "code": "ZZ:function(a){var s=this.b.q(0,J.re(a))\nif(s!=null)if(!s.z)s.TP(0)}\nm(E.za.prototype,\"gtl\",\"ZZ\",2)",
         "type": "void Function(Event*)"
       },
       "474133145": {
@@ -36206,7 +36206,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dv:function(a){}\nm(l,\"gEw\",\"dv\",36)",
+        "code": "dv:function(a){}\nm(l,\"gEw\",\"dv\",73)",
         "type": "void Function(TextEvent*)"
       },
       "476211666": {
@@ -36563,7 +36563,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yx:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.c.V(0,s.a)}\nm(l=R.yk.prototype,\"gyF\",\"Yx\",0)",
+        "code": "Yx:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.c.V(0,s.a)}\nm(l=R.yk.prototype,\"gyF\",\"Yx\",2)",
         "type": "void Function(Event*)"
       },
       "481081724": {
@@ -36935,7 +36935,7 @@
         "id": "function/485024264",
         "kind": "function",
         "name": "_getFontStyleMetrics",
-        "size": 164,
+        "size": 171,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "children": [
@@ -37693,7 +37693,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Z3:function(a){return\"wheel\"}\nr(W,\"Gu\",\"Z3\",39)",
+        "code": "Z3:function(a){return\"wheel\"}\nr(W,\"Gu\",\"Z3\",76)",
         "type": "String Function(EventTarget)"
       },
       "498780890": {
@@ -39105,7 +39105,7 @@
         "id": "function/531174402",
         "kind": "function",
         "name": "_experimentWithAnalyticsErrorReporting",
-        "size": 292,
+        "size": 299,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/960322812",
         "children": [
@@ -40119,7 +40119,7 @@
         "id": "function/553149607",
         "kind": "function",
         "name": "_chainForeignFuture",
-        "size": 417,
+        "size": 423,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -40400,7 +40400,7 @@
         "id": "function/558549428",
         "kind": "function",
         "name": "PlatformWeb._",
-        "size": 365,
+        "size": 372,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435622562",
         "children": [
@@ -40424,7 +40424,7 @@
         "id": "function/559500000",
         "kind": "function",
         "name": "schedule",
-        "size": 268,
+        "size": 274,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/223916818",
         "children": [
@@ -41096,7 +41096,7 @@
         "id": "function/574356143",
         "kind": "function",
         "name": "load",
-        "size": 238,
+        "size": 245,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/887231521",
         "children": [
@@ -41180,7 +41180,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ZL:function(a,b){var s=this,r=s.I(),q=P.Tl(a,b)\ns.a=8\ns.c=q\nP.HZ(s,r)}\no(P.vs.prototype,\"gFa\",\"ZL\",5)",
+        "code": "ZL:function(a,b){var s=this,r=s.I(),q=P.Tl(a,b)\ns.a=8\ns.c=q\nP.HZ(s,r)}\no(P.vs.prototype,\"gFa\",\"ZL\",7)",
         "type": "void Function(Object,StackTrace)"
       },
       "575664914": {
@@ -41846,7 +41846,7 @@
         "id": "function/585801395",
         "kind": "function",
         "name": "BitmapDataLoadInfo",
-        "size": 175,
+        "size": 182,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/445899275",
         "children": [
@@ -42828,7 +42828,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Bz:function(a){P.YF(C.RT,a)}\nr(P,\"qW\",\"Bz\",4)",
+        "code": "Bz:function(a){P.YF(C.RT,a)}\nr(P,\"qW\",\"Bz\",6)",
         "type": "void Function(void Function())"
       },
       "609186179": {
@@ -44323,7 +44323,7 @@
         "id": "function/633677177",
         "kind": "function",
         "name": "bindCallback",
-        "size": 173,
+        "size": 190,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/566341130",
         "children": [
@@ -44346,7 +44346,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "RT:function(a){return new P.hj(this,a)}\ni:function(a){return this.RT(a,t.z)}",
+        "code": "R:function(a,b){return new P.hj(this,a,b)}",
         "type": "#A Function() Function<#A extends Object?>(#A Function())"
       },
       "634513212": {
@@ -44798,7 +44798,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Pr:function(a){return}\nm(l,\"gSf\",\"Pr\",11)",
+        "code": "Pr:function(a){return}\nm(l,\"gSf\",\"Pr\",17)",
         "type": "void Function(KeyboardEvent*)"
       },
       "640394917": {
@@ -45246,7 +45246,7 @@
         "id": "function/650870464",
         "kind": "function",
         "name": "decodeAudioData",
-        "size": 296,
+        "size": 310,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/155088064",
         "children": [
@@ -45717,7 +45717,7 @@
         "id": "function/658921946",
         "kind": "function",
         "name": "_rootScheduleMicrotask",
-        "size": 75,
+        "size": 79,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [],
@@ -45753,7 +45753,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Tk:function(a,b,c,d){var s=C.NU!==c\nif(s)d=!(!s||!1)?c.N(d):c.i(d)\nP.IA(d)}",
+        "code": "Tk:function(a,b,c,d){var s=C.NU!==c\nif(s)d=!(!s||!1)?c.N(d):c.R(d,t.H)\nP.IA(d)}",
         "type": "void Function(Zone?,ZoneDelegate?,Zone,void Function())"
       },
       "660281723": {
@@ -45967,7 +45967,7 @@
         "id": "function/663282901",
         "kind": "function",
         "name": "_wrapJsFunctionForAsync",
-        "size": 213,
+        "size": 220,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [
@@ -46160,7 +46160,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "SN:function(a){var s=this\nif(!s.y&&!s.x&&!s.z){s.cx=s.gbM(s)\ns.y=s.x=!0\ns.J0(new R.ea(\"complete\",!1),s,C.wq)}}\nm(E.bH.prototype,\"gxv\",\"SN\",0)",
+        "code": "SN:function(a){var s=this\nif(!s.y&&!s.x&&!s.z){s.cx=s.gbM(s)\ns.y=s.x=!0\ns.J0(new R.ea(\"complete\",!1),s,C.wq)}}\nm(E.bH.prototype,\"gxv\",\"SN\",2)",
         "type": "void Function(Event*)"
       },
       "666874672": {
@@ -47126,7 +47126,7 @@
         "id": "function/681386379",
         "kind": "function",
         "name": "_checkWebpSupport",
-        "size": 482,
+        "size": 494,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/307092771",
         "children": [
@@ -47207,7 +47207,7 @@
         "id": "function/681882543",
         "kind": "function",
         "name": "Stage",
-        "size": 555,
+        "size": 562,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -47285,7 +47285,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "JN:function(a){var s=this.c,r=P.nu(\"(png|jpg|jpeg)$\",!0,!1).ik(s),q=a&&r!=null,p=this.a\nif(q)p.src=J.ld(s,0,r.b.index)+\"webp\"\nelse p.src=s}\nm(l=N.Nn.prototype,\"gZQ\",\"JN\",32)",
+        "code": "JN:function(a){var s=this.c,r=P.nu(\"(png|jpg|jpeg)$\",!0,!1).ik(s),q=a&&r!=null,p=this.a\nif(q)p.src=J.ld(s,0,r.b.index)+\"webp\"\nelse p.src=s}\nm(l=N.Nn.prototype,\"gZQ\",\"JN\",63)",
         "type": "void Function(bool*)"
       },
       "682592499": {
@@ -49430,7 +49430,7 @@
         "id": "function/721101260",
         "kind": "function",
         "name": "keys",
-        "size": 153,
+        "size": 160,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/187781663",
         "children": [
@@ -49584,7 +49584,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "UK:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.pm(new T.Dy(\"Failed to load \"+H.d(s.a.src)+\".\",null))}\nm(l,\"giW\",\"UK\",0)",
+        "code": "UK:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.pm(new T.Dy(\"Failed to load \"+H.d(s.a.src)+\".\",null))}\nm(l,\"giW\",\"UK\",2)",
         "type": "void Function(Event*)"
       },
       "724580252": {
@@ -51079,7 +51079,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "aZ:function(a){this.cx=$.cU=$.cU+1\nthis.c.AN(0,new L.dZ())}\nm(l,\"gyD\",\"aZ\",12)",
+        "code": "aZ:function(a){this.cx=$.cU=$.cU+1\nthis.c.AN(0,new L.dZ())}\nm(l,\"gyD\",\"aZ\",19)",
         "type": "void Function(ContextEvent*)"
       },
       "745680035": {
@@ -51442,7 +51442,7 @@
         "id": "function/749763418",
         "kind": "function",
         "name": "advanceTime",
-        "size": 1004,
+        "size": 1018,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/323606306",
         "children": [
@@ -52373,7 +52373,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "k:function(a,b){var s\nP.UI(a,\"error\")\ns=this.a\nif(s.a!==0)throw H.b(P.PV(\"Future already completed\"))\nif(b==null)b=P.v0(a)\ns.Nk(a,b)}\npm:function(a){return this.k(a,null)}\np(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"k\",\"pm\"],14,0)",
+        "code": "k:function(a,b){var s\nP.UI(a,\"error\")\ns=this.a\nif(s.a!==0)throw H.b(P.PV(\"Future already completed\"))\nif(b==null)b=P.v0(a)\ns.Nk(a,b)}\npm:function(a){return this.k(a,null)}\np(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"k\",\"pm\"],56,0)",
         "type": "void Function(Object,[StackTrace?])"
       },
       "766601802": {
@@ -52402,7 +52402,7 @@
         "id": "function/766691793",
         "kind": "function",
         "name": "failedResources",
-        "size": 190,
+        "size": 196,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1063402080",
         "children": [
@@ -52703,7 +52703,7 @@
         "id": "function/773230206",
         "kind": "function",
         "name": "_TimerImpl",
-        "size": 152,
+        "size": 158,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/32494041",
         "children": [
@@ -52831,7 +52831,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TE:function(){var s=this,r=s.r,q=r==null\nif(q&&s.e.f===C.NA)s.r=P.ww(C.vM,s.gMx())\nelse if(!q&&s.e.f!==C.NA){r.Gv()\ns.r=null}}\nn(l=A.k0.prototype,\"gMx\",\"TE\",3)",
+        "code": "TE:function(){var s=this,r=s.r,q=r==null\nif(q&&s.e.f===C.NA)s.r=P.ww(C.vM,s.gMx())\nelse if(!q&&s.e.f!==C.NA){r.Gv()\ns.r=null}}\nn(l=A.k0.prototype,\"gMx\",\"TE\",1)",
         "type": "void Function()"
       },
       "777322353": {
@@ -53666,7 +53666,7 @@
         "id": "function/794306718",
         "kind": "function",
         "name": "load",
-        "size": 449,
+        "size": 456,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1063402080",
         "children": [
@@ -54299,7 +54299,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bT:function(a){var s=t.h.a(J.re(a))\nthis.b.b.push(new T.Dy(\"Failed to load \"+H.d(s.src)+\".\",s.error))\nthis.CL()}\nm(l,\"gZz\",\"bT\",0)",
+        "code": "bT:function(a){var s=t.h.a(J.re(a))\nthis.b.b.push(new T.Dy(\"Failed to load \"+H.d(s.src)+\".\",s.error))\nthis.CL()}\nm(l,\"gZz\",\"bT\",2)",
         "type": "void Function(Event*)"
       },
       "803830265": {
@@ -54663,7 +54663,7 @@
         "id": "function/811599940",
         "kind": "function",
         "name": "onData",
-        "size": 220,
+        "size": 227,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [
@@ -55924,7 +55924,7 @@
         "id": "function/835080617",
         "kind": "function",
         "name": "first",
-        "size": 472,
+        "size": 478,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/961595590",
         "children": [
@@ -56771,7 +56771,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cH:function(a){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=a.x,e=a.y,d=$.VD()\nd.setTransform(1,0,0,1,0,0)\nfor(s=g.yn,r=0;r<s.length;++r){q=s[r]\np=q.a\no=q.c\nn=q.d\nm=q.r\nl=q.x\nif(n-m<=e&&n+l>=e){for(n=p.length,k=1/0,j=0,i=0;i<=n;++i){m=d.measureText(C.xB.Nj(p,0,i)).width\nm.toString\nh=Math.abs(o+m-f)\nif(h<k){j=i\nk=h}}g.ij=q.b+j\ng.ca=0\ng.HV|=3}}}\nm(l,\"gO6\",\"cH\",6)",
+        "code": "cH:function(a){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=a.x,e=a.y,d=$.VD()\nd.setTransform(1,0,0,1,0,0)\nfor(s=g.yn,r=0;r<s.length;++r){q=s[r]\np=q.a\no=q.c\nn=q.d\nm=q.r\nl=q.x\nif(n-m<=e&&n+l>=e){for(n=p.length,k=1/0,j=0,i=0;i<=n;++i){m=d.measureText(C.xB.Nj(p,0,i)).width\nm.toString\nh=Math.abs(o+m-f)\nif(h<k){j=i\nk=h}}g.ij=q.b+j\ng.ca=0\ng.HV|=3}}}\nm(l,\"gO6\",\"cH\",5)",
         "type": "void Function(MouseEvent*)"
       },
       "853973218": {
@@ -57460,7 +57460,7 @@
         "id": "function/869894783",
         "kind": "function",
         "name": "getBitmapDatas",
-        "size": 300,
+        "size": 314,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/192166",
         "children": [
@@ -57491,7 +57491,7 @@
         "id": "function/871707959",
         "kind": "function",
         "name": "_asyncCompleteWithValue",
-        "size": 156,
+        "size": 162,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -57875,7 +57875,7 @@
         "id": "function/880427273",
         "kind": "function",
         "name": "click",
-        "size": 720,
+        "size": 727,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -59081,7 +59081,7 @@
         "id": "function/897016617",
         "kind": "function",
         "name": "request",
-        "size": 422,
+        "size": 429,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/168793843",
         "children": [
@@ -59563,7 +59563,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "OL:function(a){if(!t.dd.b(W.qc(a.relatedTarget)))$.fF().S1(!1)}\nr(E,\"o9\",\"OL\",10)",
+        "code": "OL:function(a){if(!t.dd.b(W.qc(a.relatedTarget)))$.fF().S1(!1)}\nr(E,\"o9\",\"OL\",16)",
         "type": "void Function(MouseEvent*)"
       },
       "906797235": {
@@ -59797,7 +59797,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yo:function(a){var s=this.No.Ey(new P.hL(a.clientX,a.clientY,t.n)),r=new U.tZ(0,0,t.e),q=this.Fo(s.a,s.b)\nq.TK(s,r)\nq.H2(0,R.Gd(\"mouseWheel\",!0,r.a,r.b,s.a,s.b,a.altKey,a.ctrlKey,a.shiftKey,C.Kb.gOW(a),C.Kb.gNC(a),!1,0))}\nm(l,\"gUm\",\"Yo\",25)",
+        "code": "Yo:function(a){var s=this.No.Ey(new P.hL(a.clientX,a.clientY,t.n)),r=new U.tZ(0,0,t.e),q=this.Fo(s.a,s.b)\nq.TK(s,r)\nq.H2(0,R.Gd(\"mouseWheel\",!0,r.a,r.b,s.a,s.b,a.altKey,a.ctrlKey,a.shiftKey,C.Kb.gOW(a),C.Kb.gNC(a),!1,0))}\nm(l,\"gUm\",\"Yo\",53)",
         "type": "void Function(WheelEvent*)"
       },
       "911398026": {
@@ -60588,7 +60588,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "px:function(a){var s=a.keyCode\nJ.zN(a)\nswitch(s){case 27:$.fF().S1(!1)\nbreak\ncase 72:$.fF().xy()\nbreak}}\nr(E,\"py\",\"px\",11)",
+        "code": "px:function(a){var s=a.keyCode\nJ.zN(a)\nswitch(s){case 27:$.fF().S1(!1)\nbreak\ncase 72:$.fF().xy()\nbreak}}\nr(E,\"py\",\"px\",17)",
         "type": "void Function(KeyboardEvent*)"
       },
       "924487867": {
@@ -61845,7 +61845,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 1066,
+        "size": 1081,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -62312,7 +62312,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "nR:function(a){var s,r=this,q=$.qu\nif(r.x)r.c.b.Y5(0,a,null)\nelse{r.e=a\nq.toString\na.volume=1\ns=q.b\nr.f=new P.Gm(s,H.Lh(s).C(\"Gm<1>\")).yI(r.gGh())\nif(!r.y){r.e.currentTime=r.Q+r.cx\nP.o2(r.e.play(),t.z)\nr.zb(r.ch-r.cx)}}}\nm(l=E.zo.prototype,\"gAD\",\"nR\",33)",
+        "code": "nR:function(a){var s,r=this,q=$.qu\nif(r.x)r.c.b.Y5(0,a,null)\nelse{r.e=a\nq.toString\na.volume=1\ns=q.b\nr.f=new P.Gm(s,H.Lh(s).C(\"Gm<1>\")).yI(r.gGh())\nif(!r.y){r.e.currentTime=r.Q+r.cx\nP.o2(r.e.play(),t.z)\nr.zb(r.ch-r.cx)}}}\nm(l=E.zo.prototype,\"gAD\",\"nR\",64)",
         "type": "void Function(AudioElement*)"
       },
       "955972197": {
@@ -62341,7 +62341,7 @@
         "id": "function/956446518",
         "kind": "function",
         "name": "GameElement",
-        "size": 337,
+        "size": 350,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -63059,7 +63059,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "rH:function(a){this.e.volume=a}\nm(l,\"gGh\",\"rH\",13)",
+        "code": "rH:function(a){this.e.volume=a}\nm(l,\"gGh\",\"rH\",20)",
         "type": "void Function(num*)"
       },
       "968241519": {
@@ -65970,7 +65970,7 @@
         "id": "function/1028646913",
         "kind": "function",
         "name": "ResourceManagerResource",
-        "size": 348,
+        "size": 354,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/14460442",
         "children": [
@@ -66350,7 +66350,7 @@
         "id": "function/1036675160",
         "kind": "function",
         "name": "runBinary",
-        "size": 137,
+        "size": 138,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/566341130",
         "children": [],
@@ -66381,7 +66381,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "rp:function(a,b,c){if($.X3===C.NU)return a.$2(b,c)\nreturn P.Qx(null,null,this,a,b,c)}\nR:function(a,b,c){return this.rp(a,b,c,t.z,t.z,t.z)}",
+        "code": "rp:function(a,b,c){if($.X3===C.NU)return a.$2(b,c)\nreturn P.Qx(null,null,this,a,b,c)}\nmg:function(a,b,c){return this.rp(a,b,c,t.z,t.z,t.z)}",
         "type": "#A Function<#A extends Object?,#B extends Object?,#C extends Object?>(#A Function(#B,#C),#B,#C)"
       },
       "1036730465": {
@@ -79096,7 +79096,7 @@
         "id": "closure/30023746",
         "kind": "closure",
         "name": "_Future__propagateToListeners_handleValueCallback",
-        "size": 192,
+        "size": 198,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/271674536",
         "function": "function/231669663"
@@ -79105,7 +79105,7 @@
         "id": "closure/34649068",
         "kind": "closure",
         "name": "RenderLoop_advanceTime_closure",
-        "size": 89,
+        "size": 96,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/749763418",
         "function": "function/993503372"
@@ -79114,7 +79114,7 @@
         "id": "closure/34649069",
         "kind": "closure",
         "name": "RenderLoop_advanceTime_closure",
-        "size": 788,
+        "size": 795,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/749763418",
         "function": "function/993503373"
@@ -79123,7 +79123,7 @@
         "id": "closure/35711406",
         "kind": "closure",
         "name": "_rootHandleUncaughtError_closure",
-        "size": 120,
+        "size": 126,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/364010339",
         "function": "function/811310425"
@@ -79132,7 +79132,7 @@
         "id": "closure/53336503",
         "kind": "closure",
         "name": "SoundSprite_getSegment_closure",
-        "size": 84,
+        "size": 91,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/17382067",
         "function": "function/1011792243"
@@ -79150,7 +79150,7 @@
         "id": "closure/127012899",
         "kind": "closure",
         "name": "_getFontStyleMetrics_closure",
-        "size": 111,
+        "size": 118,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/485024264",
         "function": "function/686206063"
@@ -79177,7 +79177,7 @@
         "id": "closure/173464767",
         "kind": "closure",
         "name": "GameElement_click_closure",
-        "size": 135,
+        "size": 142,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/880427273",
         "function": "function/25806305"
@@ -79204,7 +79204,7 @@
         "id": "closure/181809904",
         "kind": "closure",
         "name": "_Future__addListener_closure",
-        "size": 94,
+        "size": 100,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/18599313",
         "function": "function/853169304"
@@ -79213,7 +79213,7 @@
         "id": "closure/183785154",
         "kind": "closure",
         "name": "_StreamController__subscribe_closure",
-        "size": 78,
+        "size": 84,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/82464416",
         "function": "function/835131623"
@@ -79222,7 +79222,7 @@
         "id": "closure/223253600",
         "kind": "closure",
         "name": "_StreamController__recordCancel_complete",
-        "size": 64,
+        "size": 70,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/128686838",
         "function": "function/482740919"
@@ -79231,7 +79231,7 @@
         "id": "closure/231160067",
         "kind": "closure",
         "name": "_AsyncRun__scheduleImmediateJsOverride_internalCallback",
-        "size": 75,
+        "size": 81,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/67489885",
         "function": "function/987295701"
@@ -79240,7 +79240,7 @@
         "id": "closure/235259528",
         "kind": "closure",
         "name": "_Future__asyncCompleteWithValue_closure",
-        "size": 92,
+        "size": 98,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/871707959",
         "function": "function/577244034"
@@ -79249,7 +79249,7 @@
         "id": "closure/291179281",
         "kind": "closure",
         "name": "Stage__onMouseEvent_closure",
-        "size": 91,
+        "size": 98,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/464155614",
         "function": "function/159490969"
@@ -79258,7 +79258,7 @@
         "id": "closure/305821001",
         "kind": "closure",
         "name": "GameElement_closure",
-        "size": 130,
+        "size": 137,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/956446518",
         "function": "function/68374999"
@@ -79267,7 +79267,7 @@
         "id": "closure/305821002",
         "kind": "closure",
         "name": "GameElement_closure",
-        "size": 80,
+        "size": 86,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/956446518",
         "function": "function/68375000"
@@ -79276,7 +79276,7 @@
         "id": "closure/310226650",
         "kind": "closure",
         "name": "_RootZone_bindCallback_closure",
-        "size": 98,
+        "size": 148,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/633677177",
         "function": "function/81057679"
@@ -79312,7 +79312,7 @@
         "id": "closure/330459580",
         "kind": "closure",
         "name": "ResourceManagerResource_closure",
-        "size": 87,
+        "size": 93,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/1028646913",
         "function": "function/767962189"
@@ -79330,7 +79330,7 @@
         "id": "closure/359289138",
         "kind": "closure",
         "name": "Stream_length_closure",
-        "size": 94,
+        "size": 100,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/31006852",
         "function": "function/731961166"
@@ -79339,7 +79339,7 @@
         "id": "closure/378639554",
         "kind": "closure",
         "name": "Duration_toString_sixDigits",
-        "size": 192,
+        "size": 193,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/288870017",
         "function": "function/199520180"
@@ -79348,7 +79348,7 @@
         "id": "closure/379662351",
         "kind": "closure",
         "name": "_PendingEvents_schedule_closure",
-        "size": 172,
+        "size": 178,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/559500000",
         "function": "function/794452327"
@@ -79357,7 +79357,7 @@
         "id": "closure/381925588",
         "kind": "closure",
         "name": "_experimentWithAnalyticsErrorReporting_closure",
-        "size": 224,
+        "size": 231,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/531174402",
         "function": "function/125614781"
@@ -79366,7 +79366,7 @@
         "id": "closure/382107744",
         "kind": "closure",
         "name": "ResourceManager_pendingResources_closure",
-        "size": 83,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/400256876",
         "function": "function/834551786"
@@ -79375,7 +79375,7 @@
         "id": "closure/385965656",
         "kind": "closure",
         "name": "_Future__chainFuture_closure",
-        "size": 94,
+        "size": 100,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/325386239",
         "function": "function/899674954"
@@ -79384,7 +79384,7 @@
         "id": "closure/386143171",
         "kind": "closure",
         "name": "GameElement__startDartAnimation_closure",
-        "size": 83,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/262976543",
         "function": "function/802142053"
@@ -79393,7 +79393,7 @@
         "id": "closure/386143172",
         "kind": "closure",
         "name": "GameElement__startDartAnimation_closure",
-        "size": 83,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/262976543",
         "function": "function/802142054"
@@ -79402,7 +79402,7 @@
         "id": "closure/390887060",
         "kind": "closure",
         "name": "ResourceManager_failedResources_closure",
-        "size": 72,
+        "size": 78,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/766691793",
         "function": "function/865409925"
@@ -79420,7 +79420,7 @@
         "id": "closure/411607690",
         "kind": "closure",
         "name": "_Future__asyncCompleteError_closure",
-        "size": 110,
+        "size": 116,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/263363184",
         "function": "function/341046768"
@@ -79438,7 +79438,7 @@
         "id": "closure/458665195",
         "kind": "closure",
         "name": "Future_wait_#error#get",
-        "size": 149,
+        "size": 156,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/460237833"
@@ -79447,7 +79447,7 @@
         "id": "closure/464380400",
         "kind": "closure",
         "name": "Duration_toString_twoDigits",
-        "size": 93,
+        "size": 94,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/288870017",
         "function": "function/729809409"
@@ -79456,7 +79456,7 @@
         "id": "closure/466649304",
         "kind": "closure",
         "name": "_globalFrameRequest_closure",
-        "size": 228,
+        "size": 229,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/70353884",
         "function": "function/629904327"
@@ -79465,7 +79465,7 @@
         "id": "closure/485957610",
         "kind": "closure",
         "name": "Stream_first_closure",
-        "size": 179,
+        "size": 185,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/835080617",
         "function": "function/932861390"
@@ -79483,7 +79483,7 @@
         "id": "closure/551661905",
         "kind": "closure",
         "name": "Future_wait_#stackTrace#set",
-        "size": 82,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/77903012"
@@ -79492,7 +79492,7 @@
         "id": "closure/558424951",
         "kind": "closure",
         "name": "_RootZone_bindCallbackGuarded_closure",
-        "size": 99,
+        "size": 105,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/390828239",
         "function": "function/726344781"
@@ -79519,7 +79519,7 @@
         "id": "closure/622676131",
         "kind": "closure",
         "name": "AggregateError_toString_closure",
-        "size": 105,
+        "size": 112,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/195205650",
         "function": "function/484393009"
@@ -79528,7 +79528,7 @@
         "id": "closure/629631311",
         "kind": "closure",
         "name": "_wrapJsFunctionForAsync_closure",
-        "size": 78,
+        "size": 85,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/663282901",
         "function": "function/372361659"
@@ -79537,7 +79537,7 @@
         "id": "closure/633079446",
         "kind": "closure",
         "name": "HttpRequest_getString_closure",
-        "size": 96,
+        "size": 103,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/227475046",
         "function": "function/620539768"
@@ -79546,7 +79546,7 @@
         "id": "closure/637416128",
         "kind": "closure",
         "name": "_TimerImpl_internalCallback",
-        "size": 100,
+        "size": 106,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/773230206",
         "function": "function/249771766"
@@ -79564,7 +79564,7 @@
         "id": "closure/656166039",
         "kind": "closure",
         "name": "ResourceManager_finishedResources_closure",
-        "size": 72,
+        "size": 78,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/78829423",
         "function": "function/412679703"
@@ -79582,7 +79582,7 @@
         "id": "closure/669513907",
         "kind": "closure",
         "name": "ResourceManager_load_closure",
-        "size": 68,
+        "size": 75,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/794306718",
         "function": "function/465201978"
@@ -79591,7 +79591,7 @@
         "id": "closure/674668360",
         "kind": "closure",
         "name": "_cancelAndValue_closure",
-        "size": 99,
+        "size": 105,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/66405152",
         "function": "function/240730266"
@@ -79609,7 +79609,7 @@
         "id": "closure/706587788",
         "kind": "closure",
         "name": "GameElement__startPopAnimation_closure",
-        "size": 91,
+        "size": 98,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/415279150",
         "function": "function/675759755"
@@ -79618,7 +79618,7 @@
         "id": "closure/706587789",
         "kind": "closure",
         "name": "GameElement__startPopAnimation_closure",
-        "size": 66,
+        "size": 73,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/415279150",
         "function": "function/675759756"
@@ -79627,7 +79627,7 @@
         "id": "closure/706587790",
         "kind": "closure",
         "name": "GameElement__startPopAnimation_closure",
-        "size": 188,
+        "size": 195,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/415279150",
         "function": "function/675759757"
@@ -79636,7 +79636,7 @@
         "id": "closure/706587791",
         "kind": "closure",
         "name": "GameElement__startPopAnimation_closure",
-        "size": 81,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/415279150",
         "function": "function/675759758"
@@ -79645,7 +79645,7 @@
         "id": "closure/706587792",
         "kind": "closure",
         "name": "GameElement__startPopAnimation_closure",
-        "size": 83,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/415279150",
         "function": "function/675759759"
@@ -79654,7 +79654,7 @@
         "id": "closure/706587793",
         "kind": "closure",
         "name": "GameElement__startPopAnimation_closure",
-        "size": 223,
+        "size": 229,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/415279150",
         "function": "function/675759760"
@@ -79663,7 +79663,7 @@
         "id": "closure/715063277",
         "kind": "closure",
         "name": "_EventStreamSubscription_onData_closure",
-        "size": 84,
+        "size": 91,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/811599940",
         "function": "function/794747752"
@@ -79690,7 +79690,7 @@
         "id": "closure/761270975",
         "kind": "closure",
         "name": "Storage_keys_closure",
-        "size": 88,
+        "size": 95,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/721101260",
         "function": "function/1045689377"
@@ -79708,7 +79708,7 @@
         "id": "closure/817717319",
         "kind": "closure",
         "name": "_AsyncRun__scheduleImmediateWithSetImmediate_internalCallback",
-        "size": 75,
+        "size": 81,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/163884478",
         "function": "function/603355140"
@@ -79717,7 +79717,7 @@
         "id": "closure/820821281",
         "kind": "closure",
         "name": "_EventStreamSubscription_closure",
-        "size": 84,
+        "size": 91,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/55764546",
         "function": "function/176264439"
@@ -79726,7 +79726,7 @@
         "id": "closure/822660987",
         "kind": "closure",
         "name": "BitmapData_load_closure",
-        "size": 138,
+        "size": 145,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/574356143",
         "function": "function/736872264"
@@ -79735,7 +79735,7 @@
         "id": "closure/827328529",
         "kind": "closure",
         "name": "_Future__prependListeners_closure",
-        "size": 96,
+        "size": 102,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/292751514",
         "function": "function/947198569"
@@ -79744,7 +79744,7 @@
         "id": "closure/830531955",
         "kind": "closure",
         "name": "_Future__propagateToListeners_handleError",
-        "size": 282,
+        "size": 288,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/271674536",
         "function": "function/586712659"
@@ -79762,7 +79762,7 @@
         "id": "closure/836903556",
         "kind": "closure",
         "name": "PlatformWeb$__closure",
-        "size": 307,
+        "size": 314,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/558549428",
         "function": "function/918624006"
@@ -79771,7 +79771,7 @@
         "id": "closure/839798059",
         "kind": "closure",
         "name": "_initialLoad_closure",
-        "size": 180,
+        "size": 181,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/443181349",
         "function": "function/220077559"
@@ -79780,7 +79780,7 @@
         "id": "closure/855227484",
         "kind": "closure",
         "name": "Future_wait_#stackTrace#get",
-        "size": 154,
+        "size": 161,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/109564593"
@@ -79789,7 +79789,7 @@
         "id": "closure/860975440",
         "kind": "closure",
         "name": "Stage_closure",
-        "size": 83,
+        "size": 90,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/681882543",
         "function": "function/839172595"
@@ -79798,7 +79798,7 @@
         "id": "closure/892178084",
         "kind": "closure",
         "name": "TextureAtlas_getBitmapDatas_closure",
-        "size": 88,
+        "size": 95,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/869894783",
         "function": "function/1029061070"
@@ -79807,7 +79807,7 @@
         "id": "closure/892178085",
         "kind": "closure",
         "name": "TextureAtlas_getBitmapDatas_closure",
-        "size": 67,
+        "size": 74,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/869894783",
         "function": "function/1029061071"
@@ -79816,7 +79816,7 @@
         "id": "closure/913475889",
         "kind": "closure",
         "name": "_AsyncRun__initializeScheduleImmediate_closure",
-        "size": 170,
+        "size": 177,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/165003912",
         "function": "function/469962639"
@@ -79843,7 +79843,7 @@
         "id": "closure/931793776",
         "kind": "closure",
         "name": "initHooks_closure",
-        "size": 85,
+        "size": 92,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/396617359",
         "function": "function/708189266"
@@ -79852,7 +79852,7 @@
         "id": "closure/931793777",
         "kind": "closure",
         "name": "initHooks_closure",
-        "size": 81,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/396617359",
         "function": "function/708189267"
@@ -79870,7 +79870,7 @@
         "id": "closure/949020009",
         "kind": "closure",
         "name": "HttpRequest_request_closure",
-        "size": 206,
+        "size": 213,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/897016617",
         "function": "function/421170523"
@@ -79897,7 +79897,7 @@
         "id": "closure/953553120",
         "kind": "closure",
         "name": "_Future__chainForeignFuture_closure",
-        "size": 110,
+        "size": 116,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/553149607",
         "function": "function/797212864"
@@ -79906,7 +79906,7 @@
         "id": "closure/963665986",
         "kind": "closure",
         "name": "_Future__propagateToListeners_handleWhenCompleteCallback",
-        "size": 419,
+        "size": 425,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/271674536",
         "function": "function/15204906"
@@ -79924,7 +79924,7 @@
         "id": "closure/990295175",
         "kind": "closure",
         "name": "AudioContext_decodeAudioData_closure",
-        "size": 78,
+        "size": 85,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/650870464",
         "function": "function/713938596"
@@ -79933,7 +79933,7 @@
         "id": "closure/990295176",
         "kind": "closure",
         "name": "AudioContext_decodeAudioData_closure",
-        "size": 110,
+        "size": 117,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/650870464",
         "function": "function/713938597"
@@ -79942,7 +79942,7 @@
         "id": "closure/1018899550",
         "kind": "closure",
         "name": "BitmapDataLoadInfo_closure",
-        "size": 123,
+        "size": 130,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/585801395",
         "function": "function/155843171"
@@ -79951,7 +79951,7 @@
         "id": "closure/1026783287",
         "kind": "closure",
         "name": "Stage__onTouchEvent_closure",
-        "size": 146,
+        "size": 153,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/135645840",
         "function": "function/680451396"
@@ -79960,7 +79960,7 @@
         "id": "closure/1026783288",
         "kind": "closure",
         "name": "Stage__onTouchEvent_closure",
-        "size": 107,
+        "size": 114,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/135645840",
         "function": "function/680451397"
@@ -79969,7 +79969,7 @@
         "id": "closure/1027495893",
         "kind": "closure",
         "name": "_checkWebpSupport_closure",
-        "size": 137,
+        "size": 143,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/681386379",
         "function": "function/463065062"
@@ -79978,7 +79978,7 @@
         "id": "closure/1027495894",
         "kind": "closure",
         "name": "_checkWebpSupport_closure",
-        "size": 86,
+        "size": 92,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/681386379",
         "function": "function/463065063"
@@ -79987,7 +79987,7 @@
         "id": "closure/1036807963",
         "kind": "closure",
         "name": "Primitives_initTicker_closure",
-        "size": 100,
+        "size": 107,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/18345574",
         "function": "function/410557072"
@@ -79996,7 +79996,7 @@
         "id": "closure/1066388386",
         "kind": "closure",
         "name": "_secondaryLoad_closure",
-        "size": 99,
+        "size": 105,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/948303177",
         "function": "function/2138009"
@@ -80005,7 +80005,7 @@
         "id": "closure/1066388387",
         "kind": "closure",
         "name": "_secondaryLoad_closure",
-        "size": 75,
+        "size": 76,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/948303177",
         "function": "function/2138010"
@@ -80014,7 +80014,7 @@
         "id": "closure/1066388388",
         "kind": "closure",
         "name": "_secondaryLoad_closure",
-        "size": 81,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/948303177",
         "function": "function/2138011"
@@ -80023,7 +80023,7 @@
         "id": "closure/1066388389",
         "kind": "closure",
         "name": "_secondaryLoad_closure",
-        "size": 82,
+        "size": 83,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/948303177",
         "function": "function/2138012"
@@ -84480,6 +84480,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/300541235",
         "mask": null
       },
@@ -84638,6 +84642,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/410557072",
         "mask": null
       },
@@ -84681,6 +84689,10 @@
       },
       {
         "id": "function/18599313",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -86540,6 +86552,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/738448951",
         "mask": null
       },
@@ -86838,6 +86854,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/349794930",
         "mask": "Union([exact=EventStreamSubscription], [exact=_DoneStreamSubscription], [exact=_EventStreamSubscription], [subclass=_ControllerSubscription])"
       },
@@ -86861,6 +86881,10 @@
     "function/67489885": [
       {
         "id": "function/263798810",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -87448,6 +87472,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/359145645",
         "mask": null
       },
@@ -87561,6 +87589,10 @@
       },
       {
         "id": "function/271556856",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -89510,6 +89542,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/310648840",
         "mask": null
       },
@@ -90259,11 +90295,11 @@
       },
       {
         "id": "function/1045170782",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/1045170782",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/224498298",
@@ -90279,6 +90315,10 @@
       },
       {
         "id": "function/262898682",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -90303,15 +90343,15 @@
       },
       {
         "id": "function/626905547",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/626905547",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/626905547",
         "mask": null
-      },
-      {
-        "id": "function/626905547",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/626905547",
-        "mask": "inlined"
       },
       {
         "id": "function/626905547",
@@ -91358,6 +91398,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/603355140",
         "mask": null
       },
@@ -92231,6 +92275,10 @@
       },
       {
         "id": "function/1041028498",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -93336,6 +93384,10 @@
       {
         "id": "function/1058735230",
         "mask": "[exact=_Future]"
+      },
+      {
+        "id": "function/280964749",
+        "mask": null
       },
       {
         "id": "function/620539768",
@@ -95897,11 +95949,11 @@
       },
       {
         "id": "function/114234992",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/114234992",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/219257492",
@@ -95918,6 +95970,10 @@
       {
         "id": "function/269921077",
         "mask": "inlined"
+      },
+      {
+        "id": "function/280964749",
+        "mask": null
       },
       {
         "id": "function/286260801",
@@ -95937,11 +95993,11 @@
       },
       {
         "id": "function/372200438",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/372200438",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/372200438",
@@ -95973,11 +96029,11 @@
       },
       {
         "id": "function/777879113",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/777879113",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/802142053",
@@ -96025,11 +96081,11 @@
       },
       {
         "id": "function/932957024",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/932957024",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/9680854",
@@ -96059,6 +96115,10 @@
       },
       {
         "id": "field/978504898",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -96442,6 +96502,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/310648840",
         "mask": null
       },
@@ -96459,11 +96523,11 @@
       },
       {
         "id": "function/343621437",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/343621437",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/352514166",
@@ -96475,19 +96539,19 @@
       },
       {
         "id": "function/373761717",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/373761717",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/39768413",
         "mask": null
       },
       {
         "id": "function/39768413",
         "mask": "inlined"
+      },
+      {
+        "id": "function/39768413",
+        "mask": null
       },
       {
         "id": "function/39768413",
@@ -96507,15 +96571,15 @@
       },
       {
         "id": "function/51167109",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/51167109",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/51167109",
         "mask": null
-      },
-      {
-        "id": "function/51167109",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/51167109",
-        "mask": "inlined"
       },
       {
         "id": "function/519629171",
@@ -96539,11 +96603,11 @@
       },
       {
         "id": "function/556268777",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/556268777",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/57158184",
@@ -96575,11 +96639,11 @@
       },
       {
         "id": "function/613322203",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/613322203",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/613322203",
@@ -97880,6 +97944,10 @@
       {
         "id": "function/1031131035",
         "mask": "inlined"
+      },
+      {
+        "id": "function/280964749",
+        "mask": null
       },
       {
         "id": "function/292751514",
@@ -99185,6 +99253,10 @@
       },
       {
         "id": "function/247461665",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -101644,6 +101716,10 @@
     ],
     "function/364010339": [
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/811310425",
         "mask": null
       },
@@ -102584,6 +102660,10 @@
     ],
     "function/390828239": [
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/726344781",
         "mask": null
       },
@@ -103173,6 +103253,10 @@
       },
       {
         "id": "function/160933185",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -106917,11 +107001,11 @@
       },
       {
         "id": "function/151085746",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/151085746",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/159490969",
@@ -106937,11 +107021,11 @@
       },
       {
         "id": "function/224498298",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/224498298",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/240843067",
@@ -106960,12 +107044,16 @@
         "mask": null
       },
       {
-        "id": "function/609704510",
-        "mask": "inlined"
+        "id": "function/280964749",
+        "mask": null
       },
       {
         "id": "function/609704510",
         "mask": null
+      },
+      {
+        "id": "function/609704510",
+        "mask": "inlined"
       },
       {
         "id": "function/684486736",
@@ -108173,6 +108261,10 @@
     "function/485024264": [
       {
         "id": "field/1018177357",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -109936,6 +110028,10 @@
         "mask": "inlined"
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/55764546",
         "mask": null
       },
@@ -110946,6 +111042,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/336168458",
         "mask": null
       },
@@ -111432,6 +111532,10 @@
       {
         "id": "function/267014070",
         "mask": "inlined"
+      },
+      {
+        "id": "function/280964749",
+        "mask": null
       },
       {
         "id": "function/479539450",
@@ -113996,6 +114100,10 @@
     ],
     "function/633677177": [
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/81057679",
         "mask": null
       },
@@ -114678,6 +114786,10 @@
         "mask": "inlined"
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/532889666",
         "mask": "[exact=AudioContext]"
       },
@@ -115195,10 +115307,14 @@
       },
       {
         "id": "function/633677177",
-        "mask": "[exact=_RootZone]"
+        "mask": null
       },
       {
         "id": "function/835692712",
+        "mask": null
+      },
+      {
+        "id": "function/982751380",
         "mask": null
       }
     ],
@@ -115235,6 +115351,10 @@
     "function/663282901": [
       {
         "id": "field/42778158",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -116952,6 +117072,10 @@
         "mask": "inlined"
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/351273619",
         "mask": null
       },
@@ -118557,6 +118681,10 @@
       },
       {
         "id": "function/1045689377",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -120504,6 +120632,10 @@
         "mask": "inlined"
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/310700980",
         "mask": null
       },
@@ -121257,6 +121389,10 @@
       },
       {
         "id": "function/160933185",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -122632,6 +122768,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/330018012",
         "mask": null
       },
@@ -123641,6 +123781,10 @@
       },
       {
         "id": "function/271556856",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -125618,6 +125762,10 @@
         "mask": null
       },
       {
+        "id": "function/280964749",
+        "mask": null
+      },
+      {
         "id": "function/40453029",
         "mask": null
       },
@@ -125657,6 +125805,10 @@
       },
       {
         "id": "field/978504898",
+        "mask": null
+      },
+      {
+        "id": "function/280964749",
         "mask": null
       },
       {
@@ -126660,6 +126812,10 @@
       {
         "id": "function/226045063",
         "mask": "inlined"
+      },
+      {
+        "id": "function/280964749",
+        "mask": null
       },
       {
         "id": "function/306861682",
@@ -135519,7 +135675,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 229702,
+      "size": 230570,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -135529,11 +135685,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 229702,
-    "dart2jsVersion": "2.10.0-0.0.dev",
-    "compilationMoment": "2020-07-22 13:28:21.969330",
-    "compilationDuration": 4474579,
-    "toJsonDuration": 17000,
+    "size": 230570,
+    "dart2jsVersion": "2.10.0-1.0.dev",
+    "compilationMoment": "2020-07-28 10:35:24.928396",
+    "compilationDuration": 3575632,
+    "toJsonDuration": 16000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
