@@ -18,14 +18,18 @@ if(b!=null){if(z){a.prototype.__proto__=b.prototype
 return}var s=Object.create(b.prototype)
 copyProperties(a.prototype,s)
 a.prototype=s}}function inheritMany(a,b){for(var s=0;s<b.length;s++)inherit(b[s],a)}function mixin(a,b){copyProperties(b.prototype,a.prototype)
-a.prototype.constructor=a}function lazy(a,b,c,d){var s=a
+a.prototype.constructor=a}function lazyOld(a,b,c,d){var s=a
 a[b]=s
 a[c]=function(){a[c]=function(){H.ag(b)}
 var r
 var q=d
 try{if(a[b]===s){r=a[b]=q
 r=a[b]=d()}else r=a[b]}finally{if(r===q)a[b]=null
-a[c]=function(){return this[b]}}return r}}function makeConstList(a){a.immutable$list=Array
+a[c]=function(){return this[b]}}return r}}function lazy(a,b,c,d){var s=a
+a[b]=s
+a[c]=function(){var r
+try{if(a[b]===s)r=a[b]=d()
+else r=a[b]}finally{a[c]=function(){return this[b]}}return r}}function makeConstList(a){a.immutable$list=Array
 a.fixed$length=Array
 return a}function convertToFastObject(a){function t(){}t.prototype=a
 new t()
@@ -55,7 +59,7 @@ var r=s.length
 s.push.apply(s,a)
 return r}function updateHolder(a,b){copyProperties(b,a)
 return a}var hunkHelpers=function(){var s=function(a,b,c,d,e){return function(f,g,h,i){return installInstanceTearOff(f,g,a,b,c,d,[h],i,e)}},r=function(a,b,c,d){return function(e,f,g,h){return installStaticTearOff(e,f,a,b,c,[g],h,d)}}
-return{inherit:inherit,inheritMany:inheritMany,mixin:mixin,installStaticTearOff:installStaticTearOff,installInstanceTearOff:installInstanceTearOff,_instance_0u:s(0,0,null,["$0"],0),_instance_1u:s(0,1,null,["$1"],0),_instance_2u:s(0,2,null,["$2"],0),_instance_0i:s(1,0,null,["$0"],0),_instance_1i:s(1,1,null,["$1"],0),_instance_2i:s(1,2,null,["$2"],0),_static_0:r(0,null,["$0"],0),_static_1:r(1,null,["$1"],0),_static_2:r(2,null,["$2"],0),makeConstList:makeConstList,lazy:lazy,updateHolder:updateHolder,convertToFastObject:convertToFastObject,setFunctionNamesIfNecessary:setFunctionNamesIfNecessary,updateTypes:updateTypes,setOrUpdateInterceptorsByTag:setOrUpdateInterceptorsByTag,setOrUpdateLeafTags:setOrUpdateLeafTags}}()
+return{inherit:inherit,inheritMany:inheritMany,mixin:mixin,installStaticTearOff:installStaticTearOff,installInstanceTearOff:installInstanceTearOff,_instance_0u:s(0,0,null,["$0"],0),_instance_1u:s(0,1,null,["$1"],0),_instance_2u:s(0,2,null,["$2"],0),_instance_0i:s(1,0,null,["$0"],0),_instance_1i:s(1,1,null,["$1"],0),_instance_2i:s(1,2,null,["$2"],0),_static_0:r(0,null,["$0"],0),_static_1:r(1,null,["$1"],0),_static_2:r(2,null,["$2"],0),makeConstList:makeConstList,lazy:lazy,lazyOld:lazyOld,updateHolder:updateHolder,convertToFastObject:convertToFastObject,setFunctionNamesIfNecessary:setFunctionNamesIfNecessary,updateTypes:updateTypes,setOrUpdateInterceptorsByTag:setOrUpdateInterceptorsByTag,setOrUpdateLeafTags:setOrUpdateLeafTags}}()
 function initializeDeferredHunk(a){x=v.types.length
 a(hunkHelpers,v,w,$)}function getGlobalFromName(a){for(var s=0;s<w.length;s++){if(w[s]==C)continue
 if(w[s][a])return w[s][a]}}var C={},H={FK:function FK(){},
@@ -8151,7 +8155,7 @@ $.FS=null
 $.HX=null
 $.qu=null
 $.E1=P.Fl(t.O,H.q7("Xv*"))
-$.br=P.Fl(t.O,H.q7("JW*"))})();(function lazyInitializers(){var s=hunkHelpers.lazy
+$.br=P.Fl(t.O,H.q7("JW*"))})();(function lazyInitializers(){var s=hunkHelpers.lazy,r=hunkHelpers.lazyOld
 s($,"xJ","w",function(){return H.Yg("_$dart_dartClosure")})
 s($,"lm","Sn",function(){return H.cM(H.S7({
 toString:function(){return"$receiver$"}}))})
@@ -8159,46 +8163,46 @@ s($,"xq","lq",function(){return H.cM(H.S7({$method$:null,
 toString:function(){return"$receiver$"}}))})
 s($,"R1","N9",function(){return H.cM(H.S7(null))})
 s($,"fN","iI",function(){return H.cM(function(){var $argumentsExpr$='$arguments$'
-try{null.$method$($argumentsExpr$)}catch(r){return r.message}}())})
+try{null.$method$($argumentsExpr$)}catch(q){return q.message}}())})
 s($,"qi","UN",function(){return H.cM(H.S7(void 0))})
 s($,"rZ","Zh",function(){return H.cM(function(){var $argumentsExpr$='$arguments$'
-try{(void 0).$method$($argumentsExpr$)}catch(r){return r.message}}())})
+try{(void 0).$method$($argumentsExpr$)}catch(q){return q.message}}())})
 s($,"BX","rN",function(){return H.cM(H.Mj(null))})
-s($,"tt","c3",function(){return H.cM(function(){try{null.$method$}catch(r){return r.message}}())})
+s($,"tt","c3",function(){return H.cM(function(){try{null.$method$}catch(q){return q.message}}())})
 s($,"dt","HK",function(){return H.cM(H.Mj(void 0))})
-s($,"A7","r1",function(){return H.cM(function(){try{(void 0).$method$}catch(r){return r.message}}())})
+s($,"A7","r1",function(){return H.cM(function(){try{(void 0).$method$}catch(q){return q.message}}())})
 s($,"Wc","ut",function(){return P.Oj()})
 s($,"h9","Yj",function(){return P.l9(null,C.NU,t.P)})
 s($,"N8","jv",function(){H.w4()
 return $.zI})
-s($,"qO","fF",function(){return D.B0()})
-s($,"YZ","Vi",function(){return U.JH(352,96)})
-s($,"fa","f9",function(){return U.JH(-88,-88)})
-s($,"lL","bD",function(){return U.JH(-472,-348)})
-s($,"iA","KP",function(){return P.x2(!1,t.H)})
-s($,"Y4","XB",function(){return P.CF(null)})
-s($,"fz","bs",function(){return new A.L1(H.VM([1,2],H.q7("jd<CP*>")))})
-s($,"Ni","IF",function(){var r=t.i,q=H.VM([],r),p=W.Lb(),o=H.VM(["maybe","probably"],r)
-if(C.Nm.tg(o,p.canPlayType("audio/ogg; codecs=opus")))q.push("opus")
-if(C.Nm.tg(o,p.canPlayType("audio/mpeg")))q.push("mp3")
-if(C.Nm.tg(o,p.canPlayType("audio/mp4")))q.push("mp4")
-if(C.Nm.tg(o,p.canPlayType("audio/ogg")))q.push("ogg")
-if(C.Nm.tg(o,p.canPlayType("audio/ac3")))q.push("ac3")
-if(C.Nm.tg(o,p.canPlayType("audio/wav")))q.push("wav")
-P.mp("StageXL audio types   : "+H.d(q))
-return C.Nm.tt(q,!1)})
-s($,"KE","XA",function(){var r=W.x3().devicePixelRatio
-return typeof r!="number"?1:r})
-s($,"wR","OO",function(){return Q.aZ()})
-s($,"iu","PR",function(){return Q.wm()})
-s($,"D2","Y6",function(){return new (window.AudioContext||window.webkitAudioContext)()})
-s($,"t3","mX",function(){return new E.ye()})
-s($,"Kp","Re",function(){return W.d9(16,16)})
-s($,"x1","VD",function(){var r=$.Re()
-return(r&&C.p1).gVE(r)})
-s($,"u0","Eh",function(){return P.bK(t.O)})
-s($,"BY","aR",function(){var r=$.Eh()
-return r.gvq(r)})})();(function nativeSupport(){!function(){var s=function(a){var m={}
+r($,"qO","fF",function(){return D.B0()})
+r($,"YZ","Vi",function(){return U.JH(352,96)})
+r($,"fa","f9",function(){return U.JH(-88,-88)})
+r($,"lL","bD",function(){return U.JH(-472,-348)})
+r($,"iA","KP",function(){return P.x2(!1,t.H)})
+r($,"Y4","XB",function(){return P.CF(null)})
+r($,"fz","bs",function(){return new A.L1(H.VM([1,2],H.q7("jd<CP*>")))})
+r($,"Ni","IF",function(){var q=t.i,p=H.VM([],q),o=W.Lb(),n=H.VM(["maybe","probably"],q)
+if(C.Nm.tg(n,o.canPlayType("audio/ogg; codecs=opus")))p.push("opus")
+if(C.Nm.tg(n,o.canPlayType("audio/mpeg")))p.push("mp3")
+if(C.Nm.tg(n,o.canPlayType("audio/mp4")))p.push("mp4")
+if(C.Nm.tg(n,o.canPlayType("audio/ogg")))p.push("ogg")
+if(C.Nm.tg(n,o.canPlayType("audio/ac3")))p.push("ac3")
+if(C.Nm.tg(n,o.canPlayType("audio/wav")))p.push("wav")
+P.mp("StageXL audio types   : "+H.d(p))
+return C.Nm.tt(p,!1)})
+r($,"KE","XA",function(){var q=W.x3().devicePixelRatio
+return typeof q!="number"?1:q})
+r($,"wR","OO",function(){return Q.aZ()})
+r($,"iu","PR",function(){return Q.wm()})
+r($,"D2","Y6",function(){return new (window.AudioContext||window.webkitAudioContext)()})
+r($,"t3","mX",function(){return new E.ye()})
+r($,"Kp","Re",function(){return W.d9(16,16)})
+r($,"x1","VD",function(){var q=$.Re()
+return(q&&C.p1).gVE(q)})
+r($,"u0","Eh",function(){return P.bK(t.O)})
+r($,"BY","aR",function(){var q=$.Eh()
+return q.gvq(q)})})();(function nativeSupport(){!function(){var s=function(a){var m={}
 m[a]=1
 return Object.keys(hunkHelpers.convertToFastObject(m))[0]}
 v.getIsolateTag=function(a){return s("___dart_"+a+v.isolateTag)}

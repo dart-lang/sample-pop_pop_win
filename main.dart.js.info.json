@@ -1211,7 +1211,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacebuMghd/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacelfP0h1/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -68845,7 +68845,7 @@
         "parent": "class/230234314",
         "children": [],
         "inferredType": "[null|exact=_BroadcastStream]",
-        "code": "s($,\"BY\",\"aR\",function(){var r=$.Eh()\nreturn r.gvq(r)})",
+        "code": "r($,\"BY\",\"aR\",function(){var q=$.Eh()\nreturn q.gvq(q)})",
         "type": "Stream<String*>*"
       },
       "78914771": {
@@ -69037,7 +69037,7 @@
         "parent": "library/610572664",
         "children": [],
         "inferredType": "[null|exact=CanvasRenderingContext2D]",
-        "code": "s($,\"x1\",\"VD\",function(){var r=$.Re()\nreturn(r&&C.p1).gVE(r)})",
+        "code": "r($,\"x1\",\"VD\",function(){var q=$.Re()\nreturn(q&&C.p1).gVE(q)})",
         "type": "CanvasRenderingContext2D*"
       },
       "101004759": {
@@ -69061,7 +69061,7 @@
         "parent": "class/887231521",
         "children": [],
         "inferredType": "[null|exact=BitmapDataLoadOptions]",
-        "code": "s($,\"fz\",\"bs\",function(){return new A.L1(H.VM([1,2],H.q7(\"jd<CP*>\")))})",
+        "code": "r($,\"fz\",\"bs\",function(){return new A.L1(H.VM([1,2],H.q7(\"jd<CP*>\")))})",
         "type": "BitmapDataLoadOptions*"
       },
       "101165952": {
@@ -69457,7 +69457,7 @@
         "parent": "class/435993532",
         "children": [],
         "inferredType": "[null|exact=Vector]",
-        "code": "s($,\"lL\",\"bD\",function(){return U.JH(-472,-348)})",
+        "code": "r($,\"lL\",\"bD\",function(){return U.JH(-472,-348)})",
         "type": "Vector*"
       },
       "142402878": {
@@ -71665,7 +71665,7 @@
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"A7\",\"r1\",function(){return H.cM(function(){try{(void 0).$method$}catch(r){return r.message}}())})",
+        "code": "s($,\"A7\",\"r1\",function(){return H.cM(function(){try{(void 0).$method$}catch(q){return q.message}}())})",
         "type": "TypeErrorDecoder"
       },
       "339749490": {
@@ -71737,7 +71737,7 @@
         "parent": "class/230234314",
         "children": [],
         "inferredType": "Union(null, [exact=_AsyncBroadcastStreamController], [exact=_SyncBroadcastStreamController])",
-        "code": "s($,\"u0\",\"Eh\",function(){return P.bK(t.O)})",
+        "code": "r($,\"u0\",\"Eh\",function(){return P.bK(t.O)})",
         "type": "StreamController<String*>*"
       },
       "346735010": {
@@ -71989,7 +71989,7 @@
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"tt\",\"c3\",function(){return H.cM(function(){try{null.$method$}catch(r){return r.message}}())})",
+        "code": "s($,\"tt\",\"c3\",function(){return H.cM(function(){try{null.$method$}catch(q){return q.message}}())})",
         "type": "TypeErrorDecoder"
       },
       "366922862": {
@@ -72049,7 +72049,7 @@
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"fN\",\"iI\",function(){return H.cM(function(){var $argumentsExpr$='$arguments$'\ntry{null.$method$($argumentsExpr$)}catch(r){return r.message}}())})",
+        "code": "s($,\"fN\",\"iI\",function(){return H.cM(function(){var $argumentsExpr$='$arguments$'\ntry{null.$method$($argumentsExpr$)}catch(q){return q.message}}())})",
         "type": "TypeErrorDecoder"
       },
       "370927607": {
@@ -72205,7 +72205,7 @@
         "parent": "library/610572664",
         "children": [],
         "inferredType": "[null|exact=CanvasElement]",
-        "code": "s($,\"Kp\",\"Re\",function(){return W.d9(16,16)})",
+        "code": "r($,\"Kp\",\"Re\",function(){return W.d9(16,16)})",
         "type": "CanvasElement*"
       },
       "390275471": {
@@ -72769,7 +72769,7 @@
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|subclass=JSNumber]",
-        "code": "s($,\"KE\",\"XA\",function(){var r=W.x3().devicePixelRatio\nreturn typeof r!=\"number\"?1:r})",
+        "code": "r($,\"KE\",\"XA\",function(){var q=W.x3().devicePixelRatio\nreturn typeof q!=\"number\"?1:q})",
         "type": "num*"
       },
       "460958077": {
@@ -72925,7 +72925,7 @@
         "parent": "class/348104611",
         "children": [],
         "inferredType": "[null|exact=SoundLoadOptions]",
-        "code": "s($,\"t3\",\"mX\",function(){return new E.ye()})",
+        "code": "r($,\"t3\",\"mX\",function(){return new E.ye()})",
         "type": "SoundLoadOptions*"
       },
       "483473813": {
@@ -73129,7 +73129,7 @@
         "parent": "library/439666169",
         "children": [],
         "inferredType": "Union(null, [exact=_JSRandom], [exact=_Random])",
-        "code": "s($,\"Y4\",\"XB\",function(){return P.CF(null)})",
+        "code": "r($,\"Y4\",\"XB\",function(){return P.CF(null)})",
         "type": "Random*"
       },
       "503665061": {
@@ -73645,7 +73645,7 @@
         "parent": "class/483097323",
         "children": [],
         "inferredType": "Union(null, [exact=JSExtendableArray], [exact=JSFixedArray])",
-        "code": "s($,\"Ni\",\"IF\",function(){var r=t.i,q=H.VM([],r),p=W.Lb(),o=H.VM([\"maybe\",\"probably\"],r)\nif(C.Nm.tg(o,p.canPlayType(\"audio/ogg; codecs=opus\")))q.push(\"opus\")\nif(C.Nm.tg(o,p.canPlayType(\"audio/mpeg\")))q.push(\"mp3\")\nif(C.Nm.tg(o,p.canPlayType(\"audio/mp4\")))q.push(\"mp4\")\nif(C.Nm.tg(o,p.canPlayType(\"audio/ogg\")))q.push(\"ogg\")\nif(C.Nm.tg(o,p.canPlayType(\"audio/ac3\")))q.push(\"ac3\")\nif(C.Nm.tg(o,p.canPlayType(\"audio/wav\")))q.push(\"wav\")\nP.mp(\"StageXL audio types   : \"+H.d(q))\nreturn C.Nm.tt(q,!1)})",
+        "code": "r($,\"Ni\",\"IF\",function(){var q=t.i,p=H.VM([],q),o=W.Lb(),n=H.VM([\"maybe\",\"probably\"],q)\nif(C.Nm.tg(n,o.canPlayType(\"audio/ogg; codecs=opus\")))p.push(\"opus\")\nif(C.Nm.tg(n,o.canPlayType(\"audio/mpeg\")))p.push(\"mp3\")\nif(C.Nm.tg(n,o.canPlayType(\"audio/mp4\")))p.push(\"mp4\")\nif(C.Nm.tg(n,o.canPlayType(\"audio/ogg\")))p.push(\"ogg\")\nif(C.Nm.tg(n,o.canPlayType(\"audio/ac3\")))p.push(\"ac3\")\nif(C.Nm.tg(n,o.canPlayType(\"audio/wav\")))p.push(\"wav\")\nP.mp(\"StageXL audio types   : \"+H.d(p))\nreturn C.Nm.tt(p,!1)})",
         "type": "List<String*>*"
       },
       "558303994": {
@@ -73765,7 +73765,7 @@
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|exact=_Future]",
-        "code": "s($,\"wR\",\"OO\",function(){return Q.aZ()})",
+        "code": "r($,\"wR\",\"OO\",function(){return Q.aZ()})",
         "type": "Future<bool*>*"
       },
       "572431154": {
@@ -74053,7 +74053,7 @@
         "parent": "library/24548491",
         "children": [],
         "inferredType": "Union(null, [exact=_AsyncStreamController], [exact=_SyncStreamController])",
-        "code": "s($,\"iA\",\"KP\",function(){return P.x2(!1,t.H)})",
+        "code": "r($,\"iA\",\"KP\",function(){return P.x2(!1,t.H)})",
         "type": "StreamController<void>*"
       },
       "616066704": {
@@ -74377,7 +74377,7 @@
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"rZ\",\"Zh\",function(){return H.cM(function(){var $argumentsExpr$='$arguments$'\ntry{(void 0).$method$($argumentsExpr$)}catch(r){return r.message}}())})",
+        "code": "s($,\"rZ\",\"Zh\",function(){return H.cM(function(){var $argumentsExpr$='$arguments$'\ntry{(void 0).$method$($argumentsExpr$)}catch(q){return q.message}}())})",
         "type": "TypeErrorDecoder"
       },
       "646807332": {
@@ -74461,7 +74461,7 @@
         "parent": "class/435993532",
         "children": [],
         "inferredType": "[null|exact=Vector]",
-        "code": "s($,\"YZ\",\"Vi\",function(){return U.JH(352,96)})",
+        "code": "r($,\"YZ\",\"Vi\",function(){return U.JH(352,96)})",
         "type": "Vector*"
       },
       "653339731": {
@@ -74737,7 +74737,7 @@
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|exact=JSBool]",
-        "code": "s($,\"iu\",\"PR\",function(){return Q.wm()})",
+        "code": "r($,\"iu\",\"PR\",function(){return Q.wm()})",
         "type": "bool*"
       },
       "686275146": {
@@ -77281,7 +77281,7 @@
         "parent": "class/435993532",
         "children": [],
         "inferredType": "[null|exact=Vector]",
-        "code": "s($,\"fa\",\"f9\",function(){return U.JH(-88,-88)})",
+        "code": "r($,\"fa\",\"f9\",function(){return U.JH(-88,-88)})",
         "type": "Vector*"
       },
       "944881696": {
@@ -77725,7 +77725,7 @@
         "parent": "class/494648908",
         "children": [],
         "inferredType": "[null|exact=AudioContext]",
-        "code": "s($,\"D2\",\"Y6\",function(){return new (window.AudioContext||window.webkitAudioContext)()})",
+        "code": "r($,\"D2\",\"Y6\",function(){return new (window.AudioContext||window.webkitAudioContext)()})",
         "type": "AudioContext*"
       },
       "994743795": {
@@ -77893,7 +77893,7 @@
         "parent": "library/596676313",
         "children": [],
         "inferredType": "[null|exact=PlatformWeb]",
-        "code": "s($,\"qO\",\"fF\",function(){return D.B0()})",
+        "code": "r($,\"qO\",\"fF\",function(){return D.B0()})",
         "type": "PlatformWeb*"
       },
       "1010146372": {
@@ -135675,7 +135675,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230570,
+      "size": 230760,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -135685,11 +135685,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 230570,
-    "dart2jsVersion": "2.10.0-1.0.dev",
-    "compilationMoment": "2020-07-28 10:35:24.928396",
-    "compilationDuration": 3575632,
-    "toJsonDuration": 16000,
+    "size": 230760,
+    "dart2jsVersion": "2.10.0-2.0.dev",
+    "compilationMoment": "2020-07-30 10:29:51.219315",
+    "compilationDuration": 3789030,
+    "toJsonDuration": 14000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
