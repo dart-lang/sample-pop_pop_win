@@ -395,7 +395,7 @@
         "id": "library/219141364",
         "kind": "library",
         "name": "stagexl.ui.mouse",
-        "size": 163,
+        "size": 124,
         "children": [
           "class/230234314",
           "class/600598281"
@@ -596,7 +596,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15521,
+        "size": 15443,
         "children": [
           "class/9026159",
           "class/55317202",
@@ -939,7 +939,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 8036,
+        "size": 7675,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -996,7 +996,7 @@
         "id": "library/668511847",
         "kind": "library",
         "name": "stagexl.events",
-        "size": 2852,
+        "size": 2774,
         "children": [
           "class/7554034",
           "class/74794766",
@@ -1212,7 +1212,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceQLb4EN/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space5gkooK/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1374,7 +1374,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20519,
+        "size": 20480,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1453,7 +1453,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 18883,
+        "size": 18797,
         "children": [
           "class/3601851",
           "class/120606195",
@@ -1919,7 +1919,7 @@
         "id": "class/55317202",
         "kind": "class",
         "name": "_MaskState",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -2592,7 +2592,7 @@
         "id": "class/119971059",
         "kind": "class",
         "name": "KeyboardEvent",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -2614,7 +2614,7 @@
         "id": "class/120606195",
         "kind": "class",
         "name": "_Drag",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -4278,7 +4278,7 @@
         "id": "class/314168330",
         "kind": "class",
         "name": "double",
-        "size": 43,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -4443,7 +4443,7 @@
         "id": "class/335005182",
         "kind": "class",
         "name": "num",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -4551,7 +4551,7 @@
         "id": "class/347664883",
         "kind": "class",
         "name": "StackTrace",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -5620,7 +5620,7 @@
         "id": "class/438137149",
         "kind": "class",
         "name": "Future",
-        "size": 1126,
+        "size": 1087,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -5955,7 +5955,7 @@
         "id": "class/481500691",
         "kind": "class",
         "name": "bool",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -6814,7 +6814,7 @@
         "id": "class/562873772",
         "kind": "class",
         "name": "int",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -7191,7 +7191,7 @@
         "id": "class/600598281",
         "kind": "class",
         "name": "MouseCursorData",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/219141364",
         "modifiers": {
@@ -7203,7 +7203,7 @@
         "id": "class/604077781",
         "kind": "class",
         "name": "TextEvent",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/668511847",
         "modifiers": {
@@ -7539,7 +7539,7 @@
         "id": "class/635685670",
         "kind": "class",
         "name": "String",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -7551,7 +7551,7 @@
         "id": "class/637080366",
         "kind": "class",
         "name": "RenderFilter",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -9300,7 +9300,7 @@
         "id": "class/801355802",
         "kind": "class",
         "name": "RegExpMatch",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -10663,7 +10663,7 @@
         "id": "class/959990109",
         "kind": "class",
         "name": "List",
-        "size": 45,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -10920,7 +10920,7 @@
         "id": "class/992563104",
         "kind": "class",
         "name": "Match",
-        "size": 39,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "modifiers": {
@@ -11410,7 +11410,7 @@
         "id": "class/1029513237",
         "kind": "class",
         "name": "BitmapFilter",
-        "size": 47,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -69074,7 +69074,7 @@
         "parent": "class/887231521",
         "children": [],
         "inferredType": "[null|exact=BitmapDataLoadOptions]",
-        "code": "r($,\"fz\",\"bs\",function(){return new A.L1(H.VM([1,2],H.q7(\"jd<CP*>\")))})",
+        "code": "r($,\"fz\",\"bs\",function(){return new A.L1(H.VM([1,2],H.q7(\"jd<Vf*>\")))})",
         "type": "BitmapDataLoadOptions*"
       },
       "101165952": {
@@ -135616,7 +135616,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230828,
+      "size": 230073,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -135626,10 +135626,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 230828,
-    "dart2jsVersion": "2.10.0-4.0.dev",
-    "compilationMoment": "2020-08-06 09:08:04.457958",
-    "compilationDuration": 3871845,
+    "size": 230073,
+    "dart2jsVersion": "2.10.0-45.0.dev",
+    "compilationMoment": "2020-08-22 22:02:29.516814",
+    "compilationDuration": 3402520,
     "toJsonDuration": 15000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
