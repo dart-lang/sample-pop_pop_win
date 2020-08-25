@@ -397,8 +397,7 @@
         "name": "stagexl.ui.mouse",
         "size": 124,
         "children": [
-          "class/230234314",
-          "class/600598281"
+          "class/230234314"
         ],
         "canonicalUri": "package:stagexl/src/ui/mouse.dart"
       },
@@ -599,7 +598,6 @@
         "size": 15443,
         "children": [
           "class/9026159",
-          "class/55317202",
           "class/56811882",
           "class/71206928",
           "class/102899497",
@@ -617,7 +615,6 @@
           "class/533493661",
           "class/585024760",
           "class/608336944",
-          "class/637080366",
           "class/708752610",
           "class/717185897",
           "class/808641588",
@@ -953,8 +950,6 @@
           "class/274441186",
           "class/293821936",
           "class/314168330",
-          "class/335005182",
-          "class/347664883",
           "class/351911148",
           "class/384231720",
           "class/473273959",
@@ -965,10 +960,8 @@
           "class/627219877",
           "class/631051714",
           "class/632310905",
-          "class/635685670",
           "class/786261494",
           "class/800881942",
-          "class/801355802",
           "class/803883908",
           "class/873344497",
           "class/893386369",
@@ -977,7 +970,6 @@
           "class/959990109",
           "class/974704527",
           "class/991730135",
-          "class/992563104",
           "function/399195151"
         ],
         "canonicalUri": "dart:core"
@@ -1212,7 +1204,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space5gkooK/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_space5KrRAP/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1456,7 +1448,6 @@
         "size": 18797,
         "children": [
           "class/3601851",
-          "class/120606195",
           "class/140329748",
           "class/148181171",
           "class/177230126",
@@ -1473,7 +1464,6 @@
           "class/821466087",
           "class/887231521",
           "class/914963027",
-          "class/1029513237",
           "class/1029728765",
           "class/1030275855",
           "class/1033928205"
@@ -1910,18 +1900,6 @@
         "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": []
-      },
-      "55317202": {
-        "id": "class/55317202",
-        "kind": "class",
-        "name": "_MaskState",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/418037606",
         "modifiers": {
           "abstract": false
         },
@@ -2609,18 +2587,6 @@
           "function/702571625",
           "function/766601802"
         ]
-      },
-      "120606195": {
-        "id": "class/120606195",
-        "kind": "class",
-        "name": "_Drag",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/1057406316",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": []
       },
       "121755874": {
         "id": "class/121755874",
@@ -4439,18 +4405,6 @@
           "function/126827845"
         ]
       },
-      "335005182": {
-        "id": "class/335005182",
-        "kind": "class",
-        "name": "num",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/631335891",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
-      },
       "338679459": {
         "id": "class/338679459",
         "kind": "class",
@@ -4546,18 +4500,6 @@
           "function/221602842",
           "function/940949188"
         ]
-      },
-      "347664883": {
-        "id": "class/347664883",
-        "kind": "class",
-        "name": "StackTrace",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/631335891",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
       },
       "348104611": {
         "id": "class/348104611",
@@ -7187,18 +7129,6 @@
         },
         "children": []
       },
-      "600598281": {
-        "id": "class/600598281",
-        "kind": "class",
-        "name": "MouseCursorData",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/219141364",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": []
-      },
       "604077781": {
         "id": "class/604077781",
         "kind": "class",
@@ -7534,30 +7464,6 @@
           "function/450778526",
           "function/631775433"
         ]
-      },
-      "635685670": {
-        "id": "class/635685670",
-        "kind": "class",
-        "name": "String",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/631335891",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
-      },
-      "637080366": {
-        "id": "class/637080366",
-        "kind": "class",
-        "name": "RenderFilter",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/418037606",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
       },
       "637579110": {
         "id": "class/637579110",
@@ -9296,18 +9202,6 @@
           "function/560446084"
         ]
       },
-      "801355802": {
-        "id": "class/801355802",
-        "kind": "class",
-        "name": "RegExpMatch",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/631335891",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
-      },
       "803883908": {
         "id": "class/803883908",
         "kind": "class",
@@ -10916,18 +10810,6 @@
           "function/1033514292"
         ]
       },
-      "992563104": {
-        "id": "class/992563104",
-        "kind": "class",
-        "name": "Match",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/631335891",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
-      },
       "993880199": {
         "id": "class/993880199",
         "kind": "class",
@@ -11405,18 +11287,6 @@
         "children": [
           "function/611181547"
         ]
-      },
-      "1029513237": {
-        "id": "class/1029513237",
-        "kind": "class",
-        "name": "BitmapFilter",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/1057406316",
-        "modifiers": {
-          "abstract": true
-        },
-        "children": []
       },
       "1029728765": {
         "id": "class/1029728765",
@@ -135627,10 +135497,10 @@
   "program": {
     "entrypoint": "function/233162298",
     "size": 230073,
-    "dart2jsVersion": "2.10.0-45.0.dev",
-    "compilationMoment": "2020-08-22 22:02:29.516814",
-    "compilationDuration": 3402520,
-    "toJsonDuration": 15000,
+    "dart2jsVersion": "2.10.0-56.0.dev",
+    "compilationMoment": "2020-08-25 11:13:11.256411",
+    "compilationDuration": 4698791,
+    "toJsonDuration": 17000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
