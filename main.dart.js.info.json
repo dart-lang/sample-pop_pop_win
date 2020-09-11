@@ -1204,7 +1204,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacekyNei4/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacedtVOlt/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -1366,7 +1366,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20480,
+        "size": 20474,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1445,7 +1445,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 18797,
+        "size": 18788,
         "children": [
           "class/3601851",
           "class/140329748",
@@ -3488,7 +3488,7 @@
         "id": "class/207206915",
         "kind": "class",
         "name": "_StreamController",
-        "size": 1400,
+        "size": 1394,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -8284,7 +8284,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 8575,
+        "size": 8566,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -18581,7 +18581,7 @@
         "id": "function/135645840",
         "kind": "function",
         "name": "_onTouchEvent",
-        "size": 1736,
+        "size": 1733,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -19791,7 +19791,7 @@
         "id": "function/159490969",
         "kind": "function",
         "name": "call",
-        "size": 42,
+        "size": 39,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/291179281",
         "children": [],
@@ -19812,7 +19812,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "$1:function(a){return C.jN.Og(a,0,this.a)}",
+        "code": "$1:function(a){return a.Og(0,0,this.a)}",
         "type": "void Function(_Drag*)"
       },
       "160847293": {
@@ -22339,7 +22339,7 @@
         "id": "function/216003508",
         "kind": "function",
         "name": "_updateMouseCursor",
-        "size": 358,
+        "size": 355,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -22354,7 +22354,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cq:function(){var s,r,q,p,o,n,m,l,k,j=this,i=j.rT\nif(i!=null&&!0){s=i.r1\nr=s!=null&&s!==\"auto\"?s:\"auto\"}else r=\"auto\"\nif(r===\"auto\")r=\"default\"\nif(j.qV!==r){j.qV=r\nq=j.I6.style\nif($.br.x4(0,r)){p=$.br.q(0,r)\no=C.jN.gO3(p)\nn=p.gOh()\nm=n.gx(n)\nn=p.gOh()\nl=n.gy(n)\nk=\"url('\"+H.d(o)+\"') \"+H.d(m)+\" \"+H.d(l)+\", \"+H.d(r)}else k=r\nq.toString\nq.cursor=k==null?\"\":k}}",
+        "code": "cq:function(){var s,r,q,p,o,n,m,l,k,j=this,i=j.rT\nif(i!=null&&!0){s=i.r1\nr=s!=null&&s!==\"auto\"?s:\"auto\"}else r=\"auto\"\nif(r===\"auto\")r=\"default\"\nif(j.qV!==r){j.qV=r\nq=j.I6.style\nif($.br.x4(0,r)){p=$.br.q(0,r)\no=p.gO3(p)\nn=p.gOh()\nm=n.gx(n)\nn=p.gOh()\nl=n.gy(n)\nk=\"url('\"+H.d(o)+\"') \"+H.d(m)+\" \"+H.d(l)+\", \"+H.d(r)}else k=r\nq.toString\nq.cursor=k==null?\"\":k}}",
         "type": "void Function()"
       },
       "216085196": {
@@ -30739,7 +30739,7 @@
         "id": "function/370971319",
         "kind": "function",
         "name": "_recordPause",
-        "size": 62,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/207206915",
         "children": [],
@@ -30760,7 +30760,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Pm:function(a){if((this.b&8)!==0)C.jN.zd(this.a)\nP.ot(this.e)}",
+        "code": "Pm:function(a){if((this.b&8)!==0)this.a.zd(0)\nP.ot(this.e)}",
         "type": "void Function(Object?)"
       },
       "371026210": {
@@ -35317,7 +35317,7 @@
         "id": "function/464155614",
         "kind": "function",
         "name": "_onMouseEvent",
-        "size": 1653,
+        "size": 1650,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [
@@ -46909,7 +46909,7 @@
         "id": "function/680451397",
         "kind": "function",
         "name": "call",
-        "size": 47,
+        "size": 44,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/1026783288",
         "children": [],
@@ -46930,7 +46930,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "$1:function(a){return C.jN.Og(a,this.a,this.b)}",
+        "code": "$1:function(a){return a.Og(0,this.a,this.b)}",
         "type": "void Function(_Drag*)"
       },
       "680779983": {
@@ -65168,7 +65168,7 @@
         "id": "function/1009402965",
         "kind": "function",
         "name": "_recordResume",
-        "size": 62,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/207206915",
         "children": [],
@@ -65189,7 +65189,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ho:function(a){if((this.b&8)!==0)C.jN.QE(this.a)\nP.ot(this.f)}",
+        "code": "ho:function(a){if((this.b&8)!==0)this.a.QE(0)\nP.ot(this.f)}",
         "type": "void Function(Object?)"
       },
       "1009875590": {
@@ -79132,7 +79132,7 @@
         "id": "closure/291179281",
         "kind": "closure",
         "name": "Stage__onMouseEvent_closure",
-        "size": 98,
+        "size": 95,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/464155614",
         "function": "function/159490969"
@@ -79843,7 +79843,7 @@
         "id": "closure/1026783288",
         "kind": "closure",
         "name": "Stage__onTouchEvent_closure",
-        "size": 114,
+        "size": 111,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/135645840",
         "function": "function/680451397"
@@ -135486,7 +135486,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230073,
+      "size": 230058,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -135496,11 +135496,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 230073,
-    "dart2jsVersion": "2.10.0-59.0.dev",
-    "compilationMoment": "2020-09-01 07:24:59.847972",
-    "compilationDuration": 3725833,
-    "toJsonDuration": 13000,
+    "size": 230058,
+    "dart2jsVersion": "2.10.0-105.0.dev",
+    "compilationMoment": "2020-09-11 12:21:19.421628",
+    "compilationDuration": 3919730,
+    "toJsonDuration": 17000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
