@@ -595,7 +595,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15443,
+        "size": 15472,
         "children": [
           "class/9026159",
           "class/56811882",
@@ -1204,7 +1204,7 @@
           "function/233162298",
           "function/531174402"
         ],
-        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spacedtVOlt/web/main.dart"
+        "canonicalUri": "file:///private/var/folders/c0/jv6k5x0j57vcwkdx6rcjgj3w0071_k/T/scratch_spaceJU54u6/web/main.dart"
       },
       "965528565": {
         "id": "library/965528565",
@@ -6022,7 +6022,8 @@
         "children": [
           "field/305855540",
           "field/516471295",
-          "field/950144443"
+          "field/950144443",
+          "function/965310895"
         ]
       },
       "493717425": {
@@ -6978,7 +6979,7 @@
         "id": "class/585024760",
         "kind": "class",
         "name": "RenderContextWebGL",
-        "size": 1907,
+        "size": 1936,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "modifiers": {
@@ -56888,7 +56889,7 @@
         "id": "function/862232855",
         "kind": "function",
         "name": "activateBlendMode",
-        "size": 76,
+        "size": 105,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/585024760",
         "children": [],
@@ -56909,7 +56910,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Cp:function(a){var s=this\nif(a!==s.Q){s.x.fZ(0)\ns.Q=a\ns.e.blendFunc(1,771)}}",
+        "code": "Cp:function(a){var s,r=this\nif(a!==r.Q){r.x.fZ(0)\nr.Q=a\ns=r.e\ns.blendFunc(1,771)\ns.blendEquation(32774)}}",
         "type": "void Function(BlendMode*)"
       },
       "864228238": {
@@ -62866,6 +62867,34 @@
         "inlinedCount": 0,
         "code": "k1:function(a,b){if(a<0)throw H.b(P.TE(a,0,null,b,null))\nreturn a}",
         "type": "int Function(int,[String?,String?])"
+      },
+      "965310895": {
+        "id": "function/965310895",
+        "kind": "function",
+        "name": "blend",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/493678586",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void",
+        "inferredReturnType": "[null]",
+        "parameters": [
+          {
+            "name": "renderingContext",
+            "type": "[null|exact=RenderingContext]",
+            "declaredType": "RenderingContext*"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "void Function(RenderingContext*)"
       },
       "966941645": {
         "id": "function/966941645",
@@ -125265,6 +125294,14 @@
       {
         "id": "function/1045422933",
         "mask": null
+      },
+      {
+        "id": "function/965310895",
+        "mask": null
+      },
+      {
+        "id": "function/965310895",
+        "mask": "inlined"
       }
     ],
     "function/864673949": [
@@ -135486,7 +135523,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230058,
+      "size": 230087,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -135496,11 +135533,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/233162298",
-    "size": 230058,
-    "dart2jsVersion": "2.10.0-105.0.dev",
-    "compilationMoment": "2020-09-11 12:21:19.421628",
-    "compilationDuration": 3919730,
-    "toJsonDuration": 17000,
+    "size": 230087,
+    "dart2jsVersion": "2.10.0-110.0.dev",
+    "compilationMoment": "2020-09-19 07:37:12.540923",
+    "compilationDuration": 3494893,
+    "toJsonDuration": 13000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

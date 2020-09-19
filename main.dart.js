@@ -6577,10 +6577,12 @@ if(a!==r){r.fZ(0)
 s.x=a
 a.W9(s)
 s.x.soL(s.f)}},
-Cp:function(a){var s=this
-if(a!==s.Q){s.x.fZ(0)
-s.Q=a
-s.e.blendFunc(1,771)}},
+Cp:function(a){var s,r=this
+if(a!==r.Q){r.x.fZ(0)
+r.Q=a
+s=r.e
+s.blendFunc(1,771)
+s.blendEquation(32774)}},
 wi:function(a){var s,r,q,p=this,o=3553,n=6408,m=p.fx
 if(a!==m[0]){p.x.fZ(0)
 m[0]=a
