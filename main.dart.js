@@ -1498,7 +1498,8 @@ try{for(j=new H.a7(a1,a1.gA(a1)),i=t.P;j.F();){h=j.d
 n=h
 m=d.b
 n.S(new P.ff(d,m,a0,c,b,s,q,a2),o,i);++d.b}j=d.b
-if(j===0){j=P.iv(C.xD,a2.C("zM<0>"))
+if(j===0){j=a0
+j.X2(H.VM([],a2.C("jd<0>")))
 return j}d.a=P.O8(j,null,!1,a2.C("0?"))}catch(g){l=H.Ru(g)
 k=H.ts(g)
 if(d.b===0||b){f=l
@@ -8075,7 +8076,6 @@ C.O7=new R.vZ("InputEventMode.TouchOnly")
 C.Pr=new R.vZ("InputEventMode.MouseAndTouch")
 C.A3=new P.Mx(null)
 C.ak=H.VM(s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"]),t.i)
-C.xD=H.VM(s([]),H.q7("jd<c8>"))
 C.Hf=H.VM(s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"]),t.i)
 C.XB=new L.aK("RenderEngine.WebGL")
 C.qV=new L.aK("RenderEngine.Canvas2D")
