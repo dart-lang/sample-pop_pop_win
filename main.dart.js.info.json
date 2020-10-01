@@ -1367,7 +1367,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20513,
+        "size": 20510,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -8962,7 +8962,7 @@
         "id": "class/784178238",
         "kind": "class",
         "name": "_Future",
-        "size": 3521,
+        "size": 3518,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -16652,7 +16652,7 @@
           },
           {
             "name": "url",
-            "type": "[exact=JSString]",
+            "type": "Value([exact=JSString], value: \"packages/pop_pop_win/assets/audio/audio.json\")",
             "declaredType": "String*"
           }
         ],
@@ -20590,7 +20590,7 @@
           "external": false
         },
         "returnType": "int",
-        "inferredReturnType": "[subclass=JSPositiveInt]",
+        "inferredReturnType": "[exact=JSUInt31]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
@@ -21857,7 +21857,7 @@
             "declaredType": "Zone"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "VH:function(a,b){if(t.R.b(a))return b.O(a)\nif(t.bI.b(a))return a\nthrow H.b(P.L3(a,\"onError\",\"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a a valid result\"))}",
         "type": "Function Function(Function,Zone)"
@@ -24817,7 +24817,7 @@
         "parameters": [
           {
             "name": "url",
-            "type": "[exact=JSString]",
+            "type": "Value([exact=JSString], value: \"packages/pop_pop_win/assets/audio/audio.json\")",
             "declaredType": "String*"
           },
           {
@@ -30486,7 +30486,7 @@
         "returnType": "List<Element>",
         "inferredReturnType": "[exact=_ChildrenElementList]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "List<Element> Function()"
@@ -41026,7 +41026,7 @@
         "parameters": [
           {
             "name": "url",
-            "type": "[exact=JSString]",
+            "type": "Value([exact=JSString], value: \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcAAAAAOAQAAAACQy/GuAAABsElEQVR4Aa3OMWsTUQDA8f97eV6fEpvT6YZgX4qDYwoOAdE+IQ5OfoXzG7S46KA8HZSC1PQLaNCln8ElFxyaQWg3XZQLBAyi5BqjJDHeE7whoE7i7xP8+He1Wq38WGkLIFmyphryV2JQAQnIhwE6tQCR6Sc3dq80tsBmQVTrHlSeVZvT8flwr3p7u3/Q27va3MnMWKEA2e0oRAjI8uWN1f3rZ9YjhNNU392Ud7bPckGuf9LB62sblQ874E3OqbEEefRyrsNRywFs5sL5FOIuizSqQ0IO2JMApMAA4DQS/77+dZEBgMIhVor/Wi6nkAIgHAvAw0zTCz3fkCDOubJD3IorDgifH+8yydrNvleQsLIaNPDuB1zkMIH+8MjACAknnr564vCf28dOg4n5QrnFAoFu1JmNF70i3MPGQIT1DiTp91h0gAQAbGkfBeRrcjrYwgAImAOMYf7rDUhAKchC7rsgRDyYxYCLO33FoAUWBaTkFD5WgQQkhnzzkqMweTtq+7tMhnin9YTDF4/chDftUsKcoW97B2RQEIC24GDJWsNvDAWRVrjHUgmWhOMPEf/DT5NSmGlKVHTvAAAAAElFTkSuQmCC\")",
             "declaredType": "String*"
           }
         ],
@@ -48039,7 +48039,7 @@
         "returnType": "dynamic",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "dynamic Function()"
@@ -50763,7 +50763,7 @@
         "returnType": "List<Node>",
         "inferredReturnType": "[subclass=HtmlCollection]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "List<Node> Function()"
@@ -51133,7 +51133,7 @@
             "declaredType": "bool"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "ow:function(a,b,c,d){return{u:a,e:b,r:c,s:[],p:0,n:d}}",
         "type": "Object Function(Object?,Object?,String,bool)"
@@ -61094,7 +61094,7 @@
             "declaredType": "Element"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
         "code": "",
         "type": "dynamic Function(Element)"
@@ -64787,7 +64787,7 @@
             "declaredType": "DisplayObject*"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes anything)",
+        "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
         "code": "hu:function(a){var s\nfor(s=this;s!=null;s=s.fy)if(s===a)throw H.b(P.xY(\"An object cannot be added as a child to one of it's children (or children's children, etc.).\"))}",
         "type": "void Function(DisplayObject*)"
@@ -67276,7 +67276,7 @@
         "id": "function/1058735230",
         "kind": "function",
         "name": "then",
-        "size": 180,
+        "size": 177,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -67302,7 +67302,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "S:function(a,b,c){var s,r=$.X3\nif(r!==C.NU)b=b!=null?P.VH(b,r):b\ns=new P.vs($.X3,c.C(\"vs<0>\"))\nthis.B(new P.Fe(s,b==null?1:3,a,b))\nreturn s}\nY:function(a,b){return this.S(a,null,b)}",
+        "code": "S:function(a,b,c){var s,r=$.X3\nif(r!==C.NU)b=b!=null?P.VH(b,r):b\ns=new P.vs(r,c.C(\"vs<0>\"))\nthis.B(new P.Fe(s,b==null?1:3,a,b))\nreturn s}\nY:function(a,b){return this.S(a,null,b)}",
         "type": "Future<#A> Function<#A extends Object?>(FutureOr<#A> Function(_Future.T),{Function? onError})"
       },
       "1060110710": {
@@ -73081,7 +73081,7 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/410218345",
         "children": [],
-        "inferredType": "[exact=JSString]",
+        "inferredType": "Value([exact=JSString], value: \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcAAAAAOAQAAAACQy/GuAAABsElEQVR4Aa3OMWsTUQDA8f97eV6fEpvT6YZgX4qDYwoOAdE+IQ5OfoXzG7S46KA8HZSC1PQLaNCln8ElFxyaQWg3XZQLBAyi5BqjJDHeE7whoE7i7xP8+He1Wq38WGkLIFmyphryV2JQAQnIhwE6tQCR6Sc3dq80tsBmQVTrHlSeVZvT8flwr3p7u3/Q27va3MnMWKEA2e0oRAjI8uWN1f3rZ9YjhNNU392Ud7bPckGuf9LB62sblQ874E3OqbEEefRyrsNRywFs5sL5FOIuizSqQ0IO2JMApMAA4DQS/77+dZEBgMIhVor/Wi6nkAIgHAvAw0zTCz3fkCDOubJD3IorDgifH+8yydrNvleQsLIaNPDuB1zkMIH+8MjACAknnr564vCf28dOg4n5QrnFAoFu1JmNF70i3MPGQIT1DiTp91h0gAQAbGkfBeRrcjrYwgAImAOMYf7rDUhAKchC7rsgRDyYxYCLO33FoAUWBaTkFD5WgQQkhnzzkqMweTtq+7tMhnin9YTDF4/chDftUsKcoW97B2RQEIC24GDJWsNvDAWRVrjHUgmWhOMPEf/DT5NSmGlKVHTvAAAAAElFTkSuQmCC\")",
         "code": "",
         "type": "String*"
       },
@@ -137334,7 +137334,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230363,
+      "size": 230360,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -137344,11 +137344,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 230363,
-    "dart2jsVersion": "2.11.0-176.0.dev",
-    "compilationMoment": "2020-09-29 12:02:55.304917",
-    "compilationDuration": 3949570,
-    "toJsonDuration": 15000,
+    "size": 230360,
+    "dart2jsVersion": "2.11.0-180.0.dev",
+    "compilationMoment": "2020-10-01 09:31:17.030901",
+    "compilationDuration": 3844896,
+    "toJsonDuration": 14000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

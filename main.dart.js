@@ -4174,7 +4174,7 @@ else return r.FI(s,a.a)}}
 P.vs.prototype={
 S:function(a,b,c){var s,r=$.X3
 if(r!==C.NU)b=b!=null?P.VH(b,r):b
-s=new P.vs($.X3,c.C("vs<0>"))
+s=new P.vs(r,c.C("vs<0>"))
 this.B(new P.Fe(s,b==null?1:3,a,b))
 return s},
 Y:function(a,b){return this.S(a,null,b)},
