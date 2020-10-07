@@ -105,7 +105,7 @@ packages:
       name: build_web_compilers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.12.1"
+    version: "2.12.2"
   built_collection:
     dependency: transitive
     description:
@@ -541,4 +541,4 @@ packages:
     source: hosted
     version: "2.2.1"
 sdks:
-  dart: ">=2.10.0-93.0.dev <3.0.0"
+  dart: ">=2.10.0 <3.0.0"
