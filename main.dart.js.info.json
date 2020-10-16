@@ -595,7 +595,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 15468,
+        "size": 15457,
         "children": [
           "class/9026159",
           "class/56811882",
@@ -878,7 +878,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 6863,
+        "size": 6852,
         "children": [
           "class/192166",
           "class/14460442",
@@ -1149,7 +1149,7 @@
         "id": "library/871432775",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 752,
+        "size": 749,
         "children": [
           "class/719265771"
         ],
@@ -4395,7 +4395,7 @@
         "id": "class/328942404",
         "kind": "class",
         "name": "_TextureAtlasFormatJson",
-        "size": 2037,
+        "size": 2026,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -15393,7 +15393,7 @@
         "id": "function/70353884",
         "kind": "function",
         "name": "_globalFrameRequest",
-        "size": 338,
+        "size": 327,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/418037606",
         "children": [
@@ -18005,7 +18005,7 @@
         "id": "function/126827845",
         "kind": "function",
         "name": "_createFrame",
-        "size": 1247,
+        "size": 1236,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/328942404",
         "children": [],
@@ -18046,7 +18046,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zl:function(a9,b0,b1,b2,b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=\"spriteSourceSize\",e=\"sourceSize\",d=\"frame\",c=\"vertices\",b=J.U6(b2),a=V.wJ(H.y8(b.q(b2,\"rotated\")))?1:0,a0=V.YX(J.x9(b.q(b2,f),\"x\")),a1=V.YX(J.x9(b.q(b2,f),\"y\")),a2=V.YX(J.x9(b.q(b2,e),\"w\")),a3=V.YX(J.x9(b.q(b2,e),\"h\")),a4=V.YX(J.x9(b.q(b2,d),\"x\")),a5=V.YX(J.x9(b.q(b2,d),\"y\")),a6=b.q(b2,d),a7=a===0,a8=V.YX(J.x9(a6,a7?\"w\":\"h\"))\na6=b.q(b2,d)\ns=V.YX(J.x9(a6,a7?\"h\":\"w\"))\nif(b.x4(b2,c)){a6=t.w\nr=a6.a(b.q(b2,c))\nq=a6.a(b.q(b2,\"verticesUV\"))\np=a6.a(b.q(b2,\"triangles\"))\nb=J.U6(b3)\no=J.oW(J.x9(b.q(b3,\"size\"),\"w\"))\nn=J.oW(J.x9(b.q(b3,\"size\"),\"h\"))\nb=J.U6(r)\na6=b.gA(r)\nm=new Float32Array(a6*4)\na6=J.U6(p)\na7=a6.gA(p)\nl=new Int16Array(a7*3)\nfor(a7=m.length-4,k=J.U6(q),j=0,i=0;j<=a7;j+=4,++i){m[j]=J.kc(J.x9(b.q(r,i),0),1)\nm[j+1]=J.kc(J.x9(b.q(r,i),1),1)\nm[j+2]=J.hR(J.x9(k.q(q,i),0),o)\nm[j+3]=J.hR(J.x9(k.q(q,i),1),n)}for(b=l.length-3,j=0,i=0;j<=b;j+=3,++i){l[j]=J.x9(a6.q(p,i),0)\nl[j+1]=J.x9(a6.q(p,i),1)\nl[j+2]=J.x9(a6.q(p,i),2)}}else{m=null\nl=null}h=new O.vp(b0,b1,a,a0,a1,a2,a3,a4,a5,a8,s,m,l)\nb=t.b\ng=L.B2(b0,new U.tn(a4,a5,a8,s,b),new U.tn(-a0,-a1,a2,a3,b),a)\nif(m!=null&&l!=null){g.y=m\ng.x=l\ng.z=!0}else{g.y=g.r\ng.x=g.f\ng.z=!1}b=g.c\na6=g.e\nh.db=new A.js(b.c/a6,b.d/a6,g)\na9.a.push(h)}",
+        "code": "zl:function(b0,b1,b2,b3,b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=\"spriteSourceSize\",d=\"sourceSize\",c=\"frame\",b=\"vertices\",a=J.U6(b3),a0=V.wJ(H.y8(a.q(b3,\"rotated\")))?1:0,a1=V.YX(J.x9(a.q(b3,e),\"x\")),a2=V.YX(J.x9(a.q(b3,e),\"y\")),a3=V.YX(J.x9(a.q(b3,d),\"w\")),a4=V.YX(J.x9(a.q(b3,d),\"h\")),a5=V.YX(J.x9(a.q(b3,c),\"x\")),a6=V.YX(J.x9(a.q(b3,c),\"y\")),a7=a.q(b3,c),a8=a0===0,a9=V.YX(J.x9(a7,a8?\"w\":\"h\"))\na7=a.q(b3,c)\ns=V.YX(J.x9(a7,a8?\"h\":\"w\"))\nif(a.x4(b3,b)){a7=t.w\nr=a7.a(a.q(b3,b))\nq=a7.a(a.q(b3,\"verticesUV\"))\np=a7.a(a.q(b3,\"triangles\"))\na=J.U6(b4)\no=J.oW(J.x9(a.q(b4,\"size\"),\"w\"))\nn=J.oW(J.x9(a.q(b4,\"size\"),\"h\"))\na=J.U6(r)\na7=a.gA(r)*4\nm=new Float32Array(a7)\na8=J.U6(p)\nl=a8.gA(p)*3\nk=new Int16Array(l)\nfor(a7-=4,j=J.U6(q),i=0,h=0;i<=a7;i+=4,++h){m[i]=J.kc(J.x9(a.q(r,h),0),1)\nm[i+1]=J.kc(J.x9(a.q(r,h),1),1)\nm[i+2]=J.hR(J.x9(j.q(q,h),0),o)\nm[i+3]=J.hR(J.x9(j.q(q,h),1),n)}for(a=l-3,i=0,h=0;i<=a;i+=3,++h){k[i]=J.x9(a8.q(p,h),0)\nk[i+1]=J.x9(a8.q(p,h),1)\nk[i+2]=J.x9(a8.q(p,h),2)}}else{m=null\nk=null}g=new O.vp(b1,b2,a0,a1,a2,a3,a4,a5,a6,a9,s,m,k)\na=t.b\nf=L.B2(b1,new U.tn(a5,a6,a9,s,a),new U.tn(-a1,-a2,a3,a4,a),a0)\nif(m!=null&&k!=null){f.y=m\nf.x=k\nf.z=!0}else{f.y=f.r\nf.x=f.f\nf.z=!1}a=f.c\na7=f.e\ng.db=new A.js(a.c/a7,a.d/a7,f)\nb0.a.push(g)}",
         "type": "void Function(TextureAtlas*,RenderTextureQuad*,String*,Map<dynamic,dynamic>*,Map<dynamic,dynamic>*)"
       },
       "127290445": {
@@ -43886,7 +43886,7 @@
         "id": "function/629904327",
         "kind": "function",
         "name": "call",
-        "size": 182,
+        "size": 171,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/466649304",
         "children": [],
@@ -43907,7 +43907,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var s,r,q,p=a/1000,o=p-$.jR\n$.jR=p\n$.uU=-1\nL.mW()\ns=$.CY\ns=H.VM(s.slice(0),H.t6(s).C(\"jd<1>\"))\nr=s.length\nq=0\nfor(;q<s.length;s.length===r||(0,H.lk)(s),++q)s[q].$1(o)}",
+        "code": "$1:function(a){var s,r,q,p=a/1000,o=p-$.jR\n$.jR=p\n$.uU=-1\nL.mW()\ns=$.CY\ns=H.VM(s.slice(0),H.t6(s))\nr=s.length\nq=0\nfor(;q<s.length;s.length===r||(0,H.lk)(s),++q)s[q].$1(o)}",
         "type": "Null Function(num*)"
       },
       "630788869": {
@@ -54814,7 +54814,7 @@
         "id": "function/818211217",
         "kind": "function",
         "name": "Field",
-        "size": 128,
+        "size": 125,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/719265771",
         "children": [],
@@ -54845,7 +54845,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Xf:function(a,b,c){var s,r,q=P.O8(c*b,!1,!1,t.u)\nfor(s=0;s<a;++s){do r=C.pr.j1(q.length)\nwhile(q[r])\nq[r]=!0}return F.eu(a,b,q)}",
+        "code": "Xf:function(a,b,c){var s,r,q=c*b,p=P.O8(q,!1,!1,t.u)\nfor(s=0;s<a;++s){do r=C.pr.j1(q)\nwhile(p[r])\np[r]=!0}return F.eu(a,b,p)}",
         "type": "Field* Function([int*,int*,int*,int*])"
       },
       "818212569": {
@@ -79380,7 +79380,7 @@
         "id": "closure/466649304",
         "kind": "closure",
         "name": "_globalFrameRequest_closure",
-        "size": 229,
+        "size": 218,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/70353884",
         "function": "function/629904327"
@@ -115857,10 +115857,6 @@
         "mask": null
       },
       {
-        "id": "function/791758355",
-        "mask": null
-      },
-      {
         "id": "function/9711936",
         "mask": null
       }
@@ -137644,7 +137640,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230360,
+      "size": 230335,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -137654,11 +137650,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 230360,
-    "dart2jsVersion": "2.11.0-189.0.dev",
-    "compilationMoment": "2020-10-07 11:03:13.584068",
-    "compilationDuration": 3829065,
-    "toJsonDuration": 13000,
+    "size": 230335,
+    "dart2jsVersion": "2.11.0-218.0.dev",
+    "compilationMoment": "2020-10-16 16:24:14.122677",
+    "compilationDuration": 4051321,
+    "toJsonDuration": 18000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
