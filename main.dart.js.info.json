@@ -513,7 +513,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 12239,
+        "size": 12238,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -1039,7 +1039,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 5146,
+        "size": 5225,
         "children": [
           "class/60704969",
           "class/202804702",
@@ -1056,6 +1056,7 @@
           "class/667622398",
           "class/693318510",
           "class/737466373",
+          "class/1051357691",
           "class/1071198161",
           "field/908476008",
           "function/203929913",
@@ -1326,9 +1327,8 @@
         "id": "library/979174469",
         "kind": "library",
         "name": "dart.math",
-        "size": 958,
+        "size": 877,
         "children": [
-          "class/124177071",
           "class/165234545",
           "class/510589568",
           "class/679379074",
@@ -2624,22 +2624,6 @@
           "abstract": false
         },
         "children": []
-      },
-      "124177071": {
-        "id": "class/124177071",
-        "kind": "class",
-        "name": "_JenkinsSmiHash",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/979174469",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": [
-          "function/219311721",
-          "function/232565389",
-          "function/1070189535"
-        ]
       },
       "126923191": {
         "id": "class/126923191",
@@ -6158,7 +6142,7 @@
         "id": "class/510589568",
         "kind": "class",
         "name": "Point",
-        "size": 680,
+        "size": 678,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/979174469",
         "modifiers": {
@@ -10914,7 +10898,7 @@
         "id": "class/1003011102",
         "kind": "class",
         "name": "JSNumber",
-        "size": 2277,
+        "size": 2276,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -11539,8 +11523,8 @@
           "abstract": false
         },
         "children": [
-          "field/51249772",
           "field/172148876",
+          "field/173819446",
           "field/305114389",
           "function/188708191"
         ]
@@ -11589,6 +11573,22 @@
         "children": [
           "field/75613013",
           "field/274587204"
+        ]
+      },
+      "1051357691": {
+        "id": "class/1051357691",
+        "kind": "class",
+        "name": "SystemHash",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/689380639",
+        "modifiers": {
+          "abstract": false
+        },
+        "children": [
+          "function/135702021",
+          "function/413308866",
+          "function/672306771"
         ]
       },
       "1054563975": {
@@ -13300,7 +13300,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "E6:function(a,b){a=536870911&a+b\na=536870911&a+((524287&a)<<10)\nreturn a^a>>>6}",
+        "code": "E6:function(a,b){a=a+b&536870911\na=a+((a&524287)<<10)&536870911\nreturn a^a>>>6}",
         "type": "int* Function(int*,int*)"
       },
       "30466635": {
@@ -17118,7 +17118,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "C0:function(a,b){a=536870911&a+b\na=536870911&a+((524287&a)<<10)\nreturn a^a>>>6}",
+        "code": "C0:function(a,b){a=a+b&536870911\na=a+((a&524287)<<10)&536870911\nreturn a^a>>>6}",
         "type": "int Function(int,int)"
       },
       "111998270": {
@@ -18581,6 +18581,39 @@
         "inlinedCount": 0,
         "code": "Hj:function(b6){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3,b4,b5=this\nb6.preventDefault()\ns=b6.type\nb6.altKey\nb6.ctrlKey\nr=b6.shiftKey\nfor(q=b6.changedTouches,p=q.length,o=s===\"touchmove\",n=s===\"touchcancel\",m=s===\"touchend\",l=s===\"touchstart\",k=b5.mn,j=b5.hi,i=t.n,h=b5.No,g=t.e,f=t.o,e=0;e<q.length;q.length===p||(0,H.lk)(q),++e){d=q[e]\nc=d.identifier\nb=h.Ey(new P.hL(C.CD.zQ(d.clientX),C.CD.zQ(d.clientY),i))\na=new U.tZ(0,0,g)\na0=b5.tJ(b.a,b.b)\nif(a0==null)a0=b5\na1=k.to(0,c,new A.cZ(b5,a0))\na2=a1.a\na3=a1.b\nC.Nm.U(j,new A.EZ(a2,b))\na4=a1.d\nif(a4!==a0){a5=H.VM([],f)\na6=H.VM([],f)\nfor(a7=a4;a7!=null;a7=a7.fy)a5.push(a7)\nfor(a7=a0;a7!=null;a7=a7.fy)a6.push(a7)\nfor(a8=a5.length,a9=a6.length,b0=0;!0;++b0){if(b0===a8)break\nif(b0===a9)break\nif(a5[a8-b0-1]!==a6[a9-b0-1])break}if(a4!=null){a4.TK(b,a)\na4.H2(0,new R.y6(a3,a.a,a.b,r,\"touchOut\",!0))}for(b1=0;b1<a5.length-b0;++b1){b2=a5[b1]\nb2.TK(b,a)\nb2.H2(0,new R.y6(a3,a.a,a.b,r,\"touchRollOut\",!1))}for(b1=a6.length-b0-1;b1>=0;--b1){b2=a6[b1]\nb2.TK(b,a)\nb2.H2(0,new R.y6(a3,a.a,a.b,r,\"touchRollOver\",!1))}a0.TK(b,a)\na0.H2(0,new R.y6(a3,a.a,a.b,r,\"touchOver\",!0))\na1.d=a0}if(l){b5.I6.focus()\nk.Y5(0,c,a1)\nb3=\"touchBegin\"}else b3=null\nif(m){k.Rz(0,c)\nb4=a1.c===a0\nb3=\"touchEnd\"}else b4=!1\nif(n){k.Rz(0,c)\nb3=\"touchCancel\"}if(o)b3=\"touchMove\"\nif(b3!=null&&!0){a0.TK(b,a)\na0.H2(0,new R.y6(a3,a.a,a.b,r,b3,!0))\nif(b4)a0.H2(0,new R.y6(a3,a.a,a.b,r,\"touchTap\",!0))}}}\nm(l,\"gd6\",\"Hj\",15)",
         "type": "void Function(TouchEvent*)"
+      },
+      "135702021": {
+        "id": "function/135702021",
+        "kind": "function",
+        "name": "combine",
+        "size": 79,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/1051357691",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "int",
+        "inferredReturnType": "[exact=JSUInt31]",
+        "parameters": [
+          {
+            "name": "hash",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          },
+          {
+            "name": "value",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 0,
+        "code": "yc:function(a,b){a=a+b&536870911\na=a+((a&524287)<<10)&536870911\nreturn a^a>>>6}",
+        "type": "int Function(int,int)"
       },
       "135722261": {
         "id": "function/135722261",
@@ -22538,39 +22571,6 @@
         "code": "",
         "type": "EventStream<EventStreamProvider.T*>* Function(EventDispatcher*)"
       },
-      "219311721": {
-        "id": "function/219311721",
-        "kind": "function",
-        "name": "combine",
-        "size": 79,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/124177071",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "int",
-        "inferredReturnType": "[exact=JSUInt31]",
-        "parameters": [
-          {
-            "name": "hash",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "int"
-          },
-          {
-            "name": "value",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "int"
-          }
-        ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 0,
-        "code": "Zm:function(a,b){a=536870911&a+b\na=536870911&a+((524287&a)<<10)\nreturn a^a>>>6}",
-        "type": "int Function(int,int)"
-      },
       "219348673": {
         "id": "function/219348673",
         "kind": "function",
@@ -23252,39 +23252,6 @@
         "inlinedCount": 1,
         "code": "",
         "type": "bool Function(dynamic)"
-      },
-      "232565389": {
-        "id": "function/232565389",
-        "kind": "function",
-        "name": "hash2",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/124177071",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "int",
-        "inferredReturnType": "[exact=JSUInt31]",
-        "parameters": [
-          {
-            "name": "a",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "int"
-          },
-          {
-            "name": "b",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "int"
-          }
-        ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "int Function(int,int)"
       },
       "232646536": {
         "id": "function/232646536",
@@ -29504,7 +29471,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "giO:function(a){var s,r,q\nfor(s=a.length,r=0,q=0;q<s;++q){r=536870911&r+a.charCodeAt(q)\nr=536870911&r+((524287&r)<<10)\nr^=r>>6}r=536870911&r+((67108863&r)<<3)\nr^=r>>11\nreturn 536870911&r+((16383&r)<<15)}",
+        "code": "giO:function(a){var s,r,q\nfor(s=a.length,r=0,q=0;q<s;++q){r=r+a.charCodeAt(q)&536870911\nr=r+((r&524287)<<10)&536870911\nr^=r>>6}r=r+((r&67108863)<<3)&536870911\nr^=r>>11\nreturn r+((r&16383)<<15)&536870911}",
         "type": "int Function()"
       },
       "348704014": {
@@ -32812,6 +32779,34 @@
         "code": "aO:function(a){}\nm(l=Y.XN.prototype,\"gpx\",\"aO\",72)",
         "type": "void Function(KeyboardEvent*)"
       },
+      "413308866": {
+        "id": "function/413308866",
+        "kind": "function",
+        "name": "finish",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/1051357691",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "int",
+        "inferredReturnType": "[exact=JSUInt31]",
+        "parameters": [
+          {
+            "name": "hash",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "int Function(int)"
+      },
       "414740792": {
         "id": "function/414740792",
         "kind": "function",
@@ -34904,7 +34899,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "h5:function(a){a=536870911&a+((67108863&a)<<3)\na^=a>>>11\nreturn 536870911&a+((16383&a)<<15)}",
+        "code": "h5:function(a){a=a+((a&67108863)<<3)&536870911\na^=a>>>11\nreturn a+((a&16383)<<15)&536870911}",
         "type": "int* Function(int*)"
       },
       "453686242": {
@@ -46424,6 +46419,39 @@
         "code": "",
         "type": "Rti Function(Object?,String,Rti)"
       },
+      "672306771": {
+        "id": "function/672306771",
+        "kind": "function",
+        "name": "hash2",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/1051357691",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "int",
+        "inferredReturnType": "[exact=JSUInt31]",
+        "parameters": [
+          {
+            "name": "v1",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          },
+          {
+            "name": "v2",
+            "type": "[exact=JSUInt31]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "int Function(int,int)"
+      },
       "672634116": {
         "id": "function/672634116",
         "kind": "function",
@@ -56719,7 +56747,7 @@
         "id": "function/854200700",
         "kind": "function",
         "name": "hashCode",
-        "size": 220,
+        "size": 219,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1003011102",
         "children": [],
@@ -56734,7 +56762,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "giO:function(a){var s,r,q,p,o=a|0\nif(a===o)return 536870911&o\ns=Math.abs(a)\nr=Math.log(s)/0.6931471805599453|0\nq=Math.pow(2,r)\np=s<1?s/q:q/s\nreturn 536870911&((p*9007199254740992|0)+(p*3542243181176521|0))*599197+r*1259}",
+        "code": "giO:function(a){var s,r,q,p,o=a|0\nif(a===o)return o&536870911\ns=Math.abs(a)\nr=Math.log(s)/0.6931471805599453|0\nq=Math.pow(2,r)\np=s<1?s/q:q/s\nreturn((p*9007199254740992|0)+(p*3542243181176521|0))*599197+r*1259&536870911}",
         "type": "int Function()"
       },
       "854591669": {
@@ -59075,7 +59103,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "rE:function(a,b,c,d){var s=W.C0(W.C0(W.C0(W.C0(0,a),b),c),d),r=536870911&s+((67108863&s)<<3)\nr^=r>>>11\nreturn 536870911&r+((16383&r)<<15)}",
+        "code": "rE:function(a,b,c,d){var s=W.C0(W.C0(W.C0(W.C0(0,a),b),c),d),r=s+((s&67108863)<<3)&536870911\nr^=r>>>11\nreturn r+((r&16383)<<15)&536870911}",
         "type": "int Function(dynamic,dynamic,dynamic,dynamic)"
       },
       "897413385": {
@@ -67117,7 +67145,7 @@
         "id": "function/1053431651",
         "kind": "function",
         "name": "hashCode",
-        "size": 149,
+        "size": 147,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/510589568",
         "children": [],
@@ -67132,7 +67160,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "giO:function(a){var s,r=J.hf(this.a),q=J.hf(this.b)\nq=P.Zm(P.Zm(0,r),q)\ns=536870911&q+((67108863&q)<<3)\ns^=s>>>11\nreturn 536870911&s+((16383&s)<<15)}",
+        "code": "giO:function(a){var s=J.hf(this.a),r=J.hf(this.b),q=H.yc(H.yc(0,s),r)\nq=q+((q&67108863)<<3)&536870911\nq^=q>>>11\nreturn q+((q&16383)<<15)&536870911}",
         "type": "int Function()"
       },
       "1055095230": {
@@ -67833,34 +67861,6 @@
         "code": "F:function(){var s,r,q,p,o,n=this,m=n.b\nif(m==null)return!1\ns=n.c\nr=m.length\nif(s<=r){q=n.a\np=q.UZ(m,s)\nif(p!=null){n.d=p\no=p.geX()\nif(p.b.index===o){if(q.b.unicode){s=n.c\nq=s+1\nif(q<r){s=C.xB.O2(m,s)\nif(s>=55296&&s<=56319){s=C.xB.O2(m,q)\ns=s>=56320&&s<=57343}else s=!1}else s=!1}else s=!1\no=(s?o+1:o)+1}n.c=o\nreturn!0}}n.b=n.d=null\nreturn!1}",
         "type": "bool Function()"
       },
-      "1070189535": {
-        "id": "function/1070189535",
-        "kind": "function",
-        "name": "finish",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/124177071",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "int",
-        "inferredReturnType": "[exact=JSUInt31]",
-        "parameters": [
-          {
-            "name": "hash",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "int"
-          }
-        ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "int Function(int)"
-      },
       "1070901287": {
         "id": "function/1070901287",
         "kind": "function",
@@ -68440,18 +68440,6 @@
         "inferredType": "[exact=Juggler]",
         "code": "",
         "type": "Juggler*"
-      },
-      "51249772": {
-        "id": "field/51249772",
-        "kind": "field",
-        "name": "_isPaused",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/1040168844",
-        "children": [],
-        "inferredType": "Value([exact=JSBool], value: false)",
-        "code": "",
-        "type": "bool"
       },
       "52345936": {
         "id": "field/52345936",
@@ -69697,9 +69685,21 @@
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1040168844",
         "children": [],
-        "inferredType": "[null|subclass=Stream]",
+        "inferredType": "[subclass=Object]",
         "code": "",
         "type": "Object?"
+      },
+      "173819446": {
+        "id": "field/173819446",
+        "kind": "field",
+        "name": "_hasValue",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/1040168844",
+        "children": [],
+        "inferredType": "Value([exact=JSBool], value: false)",
+        "code": "",
+        "type": "bool"
       },
       "174004425": {
         "id": "field/174004425",
@@ -80189,16 +80189,6 @@
         "mask": null
       }
     ],
-    "field/51249772": [
-      {
-        "id": "function/320177742",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/52345936": [
       {
         "id": "function/320177742",
@@ -80908,6 +80898,16 @@
       }
     ],
     "field/172148876": [
+      {
+        "id": "function/320177742",
+        "mask": null
+      },
+      {
+        "id": "function/788412943",
+        "mask": null
+      }
+    ],
+    "field/173819446": [
       {
         "id": "function/320177742",
         "mask": null
@@ -95355,12 +95355,6 @@
       {
         "id": "function/968241519",
         "mask": "[exact=_RootZone]"
-      }
-    ],
-    "function/232565389": [
-      {
-        "id": "function/1070189535",
-        "mask": "inlined"
       }
     ],
     "function/232646536": [
@@ -118227,6 +118221,12 @@
         "mask": "inlined"
       }
     ],
+    "function/672306771": [
+      {
+        "id": "function/413308866",
+        "mask": "inlined"
+      }
+    ],
     "function/672634116": [
       {
         "id": "function/785332985",
@@ -136615,24 +136615,24 @@
         "mask": null
       },
       {
-        "id": "function/1070189535",
+        "id": "function/135702021",
         "mask": null
-      },
-      {
-        "id": "function/219311721",
-        "mask": null
-      },
-      {
-        "id": "function/232565389",
-        "mask": null
-      },
-      {
-        "id": "function/232565389",
-        "mask": "inlined"
       },
       {
         "id": "function/346305693",
         "mask": null
+      },
+      {
+        "id": "function/413308866",
+        "mask": null
+      },
+      {
+        "id": "function/672306771",
+        "mask": null
+      },
+      {
+        "id": "function/672306771",
+        "mask": "inlined"
       },
       {
         "id": "function/854200700",
@@ -137640,7 +137640,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230335,
+      "size": 230332,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -137650,11 +137650,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 230335,
-    "dart2jsVersion": "2.11.0-218.0.dev",
-    "compilationMoment": "2020-10-16 16:24:14.122677",
-    "compilationDuration": 4051321,
-    "toJsonDuration": 18000,
+    "size": 230332,
+    "dart2jsVersion": "2.11.0-240.0.dev",
+    "compilationMoment": "2020-10-22 07:23:48.364982",
+    "compilationDuration": 5073015,
+    "toJsonDuration": 17000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
