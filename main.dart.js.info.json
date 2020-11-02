@@ -1367,7 +1367,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20510,
+        "size": 20508,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -10585,7 +10585,7 @@
         "id": "class/961595590",
         "kind": "class",
         "name": "Stream",
-        "size": 868,
+        "size": 866,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -12013,7 +12013,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nu:function(a){var s,r=this,q=t.x,p=t.r\nif(!p.a(q.a(r.fy).fy).Qt.e.gau()){s=a.a===\"rightClick\"||a.cy\np.a(q.a(r.fy).fy).wZ(0,r.Qt,r.lN,s)}}\nm(A.Jf.prototype,\"glh\",\"Nu\",5)",
+        "code": "Nu:function(a){var s,r=this,q=t.x,p=t.r\nif(!p.a(q.a(r.fy).fy).Qt.e.gau()){s=a.a===\"rightClick\"||a.cy\np.a(q.a(r.fy).fy).wZ(0,r.Qt,r.lN,s)}}\nm(A.Jf.prototype,\"glh\",\"Nu\",4)",
         "type": "void Function(MouseEvent*)"
       },
       "2847204": {
@@ -13362,7 +13362,7 @@
         "id": "function/31006852",
         "kind": "function",
         "name": "length",
-        "size": 348,
+        "size": 347,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/961595590",
         "children": [
@@ -15194,7 +15194,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ZV:function(a){self.scheduleImmediate(H.tR(new P.Vs(a),0))}\nr(P,\"EX\",\"ZV\",6)",
+        "code": "ZV:function(a){self.scheduleImmediate(H.tR(new P.Vs(a),0))}\nr(P,\"EX\",\"ZV\",5)",
         "type": "void Function(void Function())"
       },
       "67701762": {
@@ -16000,7 +16000,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eN:function(){$.UD=!0\ntry{P.pu()}finally{$.mg=null\n$.UD=!1\nif($.S6!=null)$.ut().$1(P.V9())}}\ns(P,\"V9\",\"eN\",1)",
+        "code": "eN:function(){$.UD=!0\ntry{P.pu()}finally{$.mg=null\n$.UD=!1\nif($.S6!=null)$.ut().$1(P.V9())}}\ns(P,\"V9\",\"eN\",0)",
         "type": "void Function()"
       },
       "83342486": {
@@ -17761,7 +17761,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "QE:function(a){}\nr(P,\"w6\",\"QE\",4)",
+        "code": "QE:function(a){}\nr(P,\"w6\",\"QE\",3)",
         "type": "void Function(dynamic)"
       },
       "123015411": {
@@ -18074,7 +18074,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 0,
-        "code": "Z3:function(a){if(a.a===\"mouseOut\")this.TQ=C.So\nelse if(a.k3)this.TQ=C.UK\nelse this.TQ=C.Br}\nm(l=A.QQ.prototype,\"gNT\",\"Z3\",5)",
+        "code": "Z3:function(a){if(a.a===\"mouseOut\")this.TQ=C.So\nelse if(a.k3)this.TQ=C.UK\nelse this.TQ=C.Br}\nm(l=A.QQ.prototype,\"gNT\",\"Z3\",4)",
         "type": "void Function(MouseEvent*)"
       },
       "128686838": {
@@ -18773,7 +18773,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -18790,7 +18790,7 @@
         "sideEffects": "SideEffects(reads field; writes anything)",
         "inlinedCount": 0,
         "code": "$2:function(a,b){var s,r=this.a\nif(!r.a)this.b.a+=\", \"\nr.a=!1\nr=this.b\ns=r.a+=H.d(a)\nr.a=s+\": \"\nr.a+=H.d(b)}",
-        "type": "Null Function(Object?,Object?)"
+        "type": "void Function(Object?,Object?)"
       },
       "140289549": {
         "id": "function/140289549",
@@ -20052,7 +20052,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jN:function(a){self.setImmediate(H.tR(new P.Ft(a),0))}\nr(P,\"yt\",\"jN\",6)",
+        "code": "jN:function(a){self.setImmediate(H.tR(new P.Ft(a),0))}\nr(P,\"yt\",\"jN\",5)",
         "type": "void Function(void Function())"
       },
       "163889622": {
@@ -20644,7 +20644,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "dynamic",
+        "returnType": "void",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -20656,7 +20656,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){return this.a.$1(a)}",
-        "type": "dynamic Function(Event)"
+        "type": "void Function(Event)"
       },
       "177475617": {
         "id": "function/177475617",
@@ -22181,7 +22181,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "mB:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.V(0,s.a)}\nm(l,\"gtB\",\"mB\",2)",
+        "code": "mB:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.V(0,s.a)}\nm(l,\"gtB\",\"mB\",1)",
         "type": "void Function(Event*)"
       },
       "213020144": {
@@ -22253,7 +22253,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "SB:function(){var s=this\nif(!s.y)if(s.z){s.e.currentTime=s.Q\nP.o2(s.e.play(),t.z)\ns.zb(s.ch)}else s.TP(0)}\nn(l,\"gG7\",\"SB\",1)",
+        "code": "SB:function(){var s=this\nif(!s.y)if(s.z){s.e.currentTime=s.Q\nP.o2(s.e.play(),t.z)\ns.zb(s.ch)}else s.TP(0)}\nn(l,\"gG7\",\"SB\",0)",
         "type": "void Function()"
       },
       "214510259": {
@@ -28436,7 +28436,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Dd:function(){var s,r=this,q=r.b&=4294967293\nif(q>=4)return\nr.b=q|1\ns=r.c\nif(s!=null)r.a.bH(s)}\nn(P.EM.prototype,\"gcv\",\"Dd\",1)",
+        "code": "Dd:function(){var s,r=this,q=r.b&=4294967293\nif(q>=4)return\nr.b=q|1\ns=r.c\nif(s!=null)r.a.bH(s)}\nn(P.EM.prototype,\"gcv\",\"Dd\",0)",
         "type": "void Function()"
       },
       "327357990": {
@@ -29229,13 +29229,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){this.a.ZL(this.b,this.c)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "342712132": {
         "id": "function/342712132",
@@ -30886,7 +30886,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -30903,7 +30903,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$2:function(a,b){this.a(a,b)}",
-        "type": "Null Function(int,dynamic)"
+        "type": "void Function(int,dynamic)"
       },
       "372712379": {
         "id": "function/372712379",
@@ -33082,7 +33082,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -33094,7 +33094,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){var s,r,q,p=this.a,o=p.status\no.toString\ns=o>=200&&o<300\nr=o>307&&o<400\no=s||o===0||o===304||r\nq=this.b\nif(o)q.V(0,p)\nelse q.pm(a)}",
-        "type": "Null Function(ProgressEvent)"
+        "type": "void Function(ProgressEvent)"
       },
       "422605719": {
         "id": "function/422605719",
@@ -36017,7 +36017,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ZZ:function(a){var s=this.b.q(0,J.re(a))\nif(s!=null)if(!s.z)s.TP(0)}\nm(E.za.prototype,\"gtl\",\"ZZ\",2)",
+        "code": "ZZ:function(a){var s=this.b.q(0,J.re(a))\nif(s!=null)if(!s.z)s.TP(0)}\nm(E.za.prototype,\"gtl\",\"ZZ\",1)",
         "type": "void Function(Event*)"
       },
       "474133145": {
@@ -36495,7 +36495,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yx:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.c.V(0,s.a)}\nm(l=R.yk.prototype,\"gyF\",\"Yx\",2)",
+        "code": "Yx:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.c.V(0,s.a)}\nm(l=R.yk.prototype,\"gyF\",\"Yx\",1)",
         "type": "void Function(Event*)"
       },
       "481081724": {
@@ -41160,13 +41160,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){this.a.X2(this.b)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "577717062": {
         "id": "function/577717062",
@@ -42736,7 +42736,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Bz:function(a){P.YF(C.RT,a)}\nr(P,\"qW\",\"Bz\",6)",
+        "code": "Bz:function(a){P.YF(C.RT,a)}\nr(P,\"qW\",\"Bz\",5)",
         "type": "void Function(void Function())"
       },
       "609186179": {
@@ -46068,7 +46068,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "SN:function(a){var s=this\nif(!s.y&&!s.x&&!s.z){s.cx=s.gbM(s)\ns.y=s.x=!0\ns.J0(new R.ea(\"complete\",!1),s,C.wq)}}\nm(E.bH.prototype,\"gxv\",\"SN\",2)",
+        "code": "SN:function(a){var s=this\nif(!s.y&&!s.x&&!s.z){s.cx=s.gbM(s)\ns.y=s.x=!0\ns.J0(new R.ea(\"complete\",!1),s,C.wq)}}\nm(E.bH.prototype,\"gxv\",\"SN\",1)",
         "type": "void Function(Event*)"
       },
       "666874672": {
@@ -47815,7 +47815,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -47832,7 +47832,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$2:function(a,b){this.a[a]=b}",
-        "type": "Null Function(dynamic,dynamic)"
+        "type": "void Function(dynamic,dynamic)"
       },
       "692185405": {
         "id": "function/692185405",
@@ -48817,7 +48817,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -48829,7 +48829,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){this.a.V(0,a)}",
-        "type": "Null Function(AudioBuffer)"
+        "type": "void Function(AudioBuffer)"
       },
       "713938597": {
         "id": "function/713938597",
@@ -48845,7 +48845,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -48857,7 +48857,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){var s=this.a\nif(a==null)s.pm(\"\")\nelse s.pm(a)}",
-        "type": "Null Function(DomException)"
+        "type": "void Function(DomException)"
       },
       "714334025": {
         "id": "function/714334025",
@@ -49525,7 +49525,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "UK:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.pm(new T.Dy(\"Failed to load \"+H.d(s.a.src)+\".\",null))}\nm(l,\"giW\",\"UK\",2)",
+        "code": "UK:function(a){var s=this\ns.d.Gv()\ns.e.Gv()\ns.b.pm(new T.Dy(\"Failed to load \"+H.d(s.a.src)+\".\",null))}\nm(l,\"giW\",\"UK\",1)",
         "type": "void Function(Event*)"
       },
       "724580252": {
@@ -50244,7 +50244,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -50256,7 +50256,7 @@
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "$1:function(a){++this.a.a}",
-        "type": "Null Function(Stream.T)"
+        "type": "void Function(Stream.T)"
       },
       "731961166": {
         "id": "function/731961166",
@@ -50272,13 +50272,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){this.b.HH(this.a.a)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "731989769": {
         "id": "function/731989769",
@@ -52772,7 +52772,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TE:function(){var s=this,r=s.r,q=r==null\nif(q&&s.e.f===C.NA)s.r=P.ww(C.vM,s.gMx())\nelse if(!q&&s.e.f!==C.NA){r.Gv()\ns.r=null}}\nn(l=A.k0.prototype,\"gMx\",\"TE\",1)",
+        "code": "TE:function(){var s=this,r=s.r,q=r==null\nif(q&&s.e.f===C.NA)s.r=P.ww(C.vM,s.gMx())\nelse if(!q&&s.e.f!==C.NA){r.Gv()\ns.r=null}}\nn(l=A.k0.prototype,\"gMx\",\"TE\",0)",
         "type": "void Function()"
       },
       "777322353": {
@@ -53641,13 +53641,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){var s,r,q=this.a,p=q.a\nq.a=0\nif(p===3)return\ns=q.b\nr=s.a\nq.b=r\nif(r==null)q.c=null\nthis.b.MW(s.b)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "794747752": {
         "id": "function/794747752",
@@ -53663,7 +53663,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "dynamic",
+        "returnType": "void",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
@@ -53675,7 +53675,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){return this.a.$1(a)}",
-        "type": "dynamic Function(Event)"
+        "type": "void Function(Event)"
       },
       "795081580": {
         "id": "function/795081580",
@@ -53874,13 +53874,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){this.a.ZL(this.b,this.c)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "797484809": {
         "id": "function/797484809",
@@ -54240,7 +54240,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bT:function(a){var s=t.h.a(J.re(a))\nthis.b.b.push(new T.Dy(\"Failed to load \"+H.d(s.src)+\".\",s.error))\nthis.CL()}\nm(l,\"gZz\",\"bT\",2)",
+        "code": "bT:function(a){var s=t.h.a(J.re(a))\nthis.b.b.push(new T.Dy(\"Failed to load \"+H.d(s.src)+\".\",s.error))\nthis.CL()}\nm(l,\"gZz\",\"bT\",1)",
         "type": "void Function(Event*)"
       },
       "803830265": {
@@ -54592,13 +54592,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){var s=H.b(this.a)\ns.stack=J.A(this.b)\nthrow s}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "811599940": {
         "id": "function/811599940",
@@ -55865,7 +55865,7 @@
         "id": "function/835080617",
         "kind": "function",
         "name": "first",
-        "size": 478,
+        "size": 477,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/961595590",
         "children": [
@@ -55900,13 +55900,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){P.ot(this.a.d)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "835412494": {
         "id": "function/835412494",
@@ -56679,13 +56679,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){P.HZ(this.a,this.b)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "853771899": {
         "id": "function/853771899",
@@ -56712,7 +56712,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cH:function(a){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=a.x,e=a.y,d=$.VD()\nd.setTransform(1,0,0,1,0,0)\nfor(s=g.yn,r=0;r<s.length;++r){q=s[r]\np=q.a\no=q.c\nn=q.d\nm=q.r\nl=q.x\nif(n-m<=e&&n+l>=e){for(n=p.length,k=1/0,j=0,i=0;i<=n;++i){m=d.measureText(C.xB.Nj(p,0,i)).width\nm.toString\nh=Math.abs(o+m-f)\nif(h<k){j=i\nk=h}}g.ij=q.b+j\ng.ca=0\ng.HV|=3}}}\nm(l,\"gO6\",\"cH\",5)",
+        "code": "cH:function(a){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f=a.x,e=a.y,d=$.VD()\nd.setTransform(1,0,0,1,0,0)\nfor(s=g.yn,r=0;r<s.length;++r){q=s[r]\np=q.a\no=q.c\nn=q.d\nm=q.r\nl=q.x\nif(n-m<=e&&n+l>=e){for(n=p.length,k=1/0,j=0,i=0;i<=n;++i){m=d.measureText(C.xB.Nj(p,0,i)).width\nm.toString\nh=Math.abs(o+m-f)\nif(h<k){j=i\nk=h}}g.ij=q.b+j\ng.ca=0\ng.HV|=3}}}\nm(l,\"gO6\",\"cH\",4)",
         "type": "void Function(MouseEvent*)"
       },
       "853973218": {
@@ -59239,13 +59239,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){P.A9(this.b,this.a)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "899914725": {
         "id": "function/899914725",
@@ -60822,13 +60822,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){var s,r,q,p,o,n\ntry{q=H.Wp()\nthrow H.b(q)}catch(p){s=H.Ru(p)\nr=H.ts(p)\no=s\nn=r\nif(n==null)n=P.v0(o)\nthis.a.ZL(o,n)}}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "932861391": {
         "id": "function/932861391",
@@ -60844,7 +60844,7 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [
           {
@@ -60856,7 +60856,7 @@
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$1:function(a){P.Bb(this.b,this.c,a)}",
-        "type": "Null Function(Stream.T)"
+        "type": "void Function(Stream.T)"
       },
       "932957023": {
         "id": "function/932957023",
@@ -61746,13 +61746,13 @@
           "factory": false,
           "external": false
         },
-        "returnType": "Null",
+        "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "$0:function(){P.HZ(this.b,this.a.a)}",
-        "type": "Null Function()"
+        "type": "void Function()"
       },
       "947722698": {
         "id": "function/947722698",
@@ -79254,7 +79254,7 @@
         "id": "closure/359289137",
         "kind": "closure",
         "name": "Stream_length_closure",
-        "size": 136,
+        "size": 135,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/31006852",
         "function": "function/731961165"
@@ -79398,7 +79398,7 @@
         "id": "closure/485957611",
         "kind": "closure",
         "name": "Stream_first_closure",
-        "size": 158,
+        "size": 157,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/835080617",
         "function": "function/932861391"
@@ -137640,7 +137640,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 230332,
+      "size": 230324,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -137650,11 +137650,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 230332,
-    "dart2jsVersion": "2.11.0-240.0.dev",
-    "compilationMoment": "2020-10-22 07:23:48.364982",
-    "compilationDuration": 5073015,
-    "toJsonDuration": 17000,
+    "size": 230324,
+    "dart2jsVersion": "2.12.0-0.0.dev",
+    "compilationMoment": "2020-11-02 10:16:53.262908",
+    "compilationDuration": 4793099,
+    "toJsonDuration": 18000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
