@@ -989,7 +989,7 @@
         "id": "library/649011167",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 975,
+        "size": 965,
         "children": [
           "class/576855309"
         ],
@@ -1039,7 +1039,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 5513,
+        "size": 5497,
         "children": [
           "class/43993131",
           "class/60704969",
@@ -1153,7 +1153,7 @@
         "id": "library/871432775",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 749,
+        "size": 741,
         "children": [
           "class/719265771"
         ],
@@ -1372,7 +1372,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20453,
+        "size": 20442,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -4779,7 +4779,7 @@
         "id": "class/365655194",
         "kind": "class",
         "name": "ListIterator",
-        "size": 261,
+        "size": 253,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "modifiers": {
@@ -6850,7 +6850,7 @@
         "id": "class/571092653",
         "kind": "class",
         "name": "MappedIterator",
-        "size": 200,
+        "size": 192,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "modifiers": {
@@ -6926,7 +6926,7 @@
         "id": "class/576855309",
         "kind": "class",
         "name": "BoardElement",
-        "size": 872,
+        "size": 862,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/649011167",
         "modifiers": {
@@ -8184,7 +8184,7 @@
         "id": "class/719265771",
         "kind": "class",
         "name": "Field",
-        "size": 481,
+        "size": 473,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/871432775",
         "modifiers": {
@@ -15979,7 +15979,7 @@
         "id": "function/80270395",
         "kind": "function",
         "name": "current",
-        "size": 36,
+        "size": 28,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/365655194",
         "children": [],
@@ -15994,7 +15994,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 3,
-        "code": "gl:function(){var s=this.d\nreturn s}",
+        "code": "gl:function(){return this.d}",
         "type": "ListIterator.E Function()"
       },
       "80736041": {
@@ -31514,7 +31514,7 @@
         "id": "function/385444888",
         "kind": "function",
         "name": "wait",
-        "size": 1649,
+        "size": 1638,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/438137149",
         "children": [
@@ -31542,7 +31542,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "pH:function(a1,a2){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d={},c=null,b=!1,a=a2.C(\"vs<zM<0>>\"),a0=new P.vs($.X3,a)\nd.a=null\nd.b=0\nd.c=null\nd.d=!1\ns=new P.Tr(d)\nr=new P.X4(d)\nd.e=null\nd.f=!1\nq=new P.V1(d)\np=new P.EL(d)\no=new P.VN(d,c,b,a0,r,p,s,q)\ntry{for(j=new H.a7(a1,a1.gA(a1)),i=t.P;j.F();){h=j.d\nn=h\nm=d.b\nn.S(new P.ff(d,m,a0,c,b,s,q,a2),o,i);++d.b}j=d.b\nif(j===0){j=a0\nj.X2(H.VM([],a2.C(\"jd<0>\")))\nreturn j}d.a=P.O8(j,null,!1,a2.C(\"0?\"))}catch(g){l=H.Ru(g)\nk=H.ts(g)\nif(d.b===0||b){f=l\ne=k\nH.cb(f,\"error\",t.K)\n$.X3!==C.NU\nif(e==null)e=P.v0(f)\na=new P.vs($.X3,a)\na.Nk(f,e)\nreturn a}else{r.$1(l)\np.$1(k)}}return a0}",
+        "code": "pH:function(a0,a1){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e={},d=null,c=!1,b=a1.C(\"vs<zM<0>>\"),a=new P.vs($.X3,b)\ne.a=null\ne.b=0\ne.c=null\ne.d=!1\ns=new P.Tr(e)\nr=new P.X4(e)\ne.e=null\ne.f=!1\nq=new P.V1(e)\np=new P.EL(e)\no=new P.VN(e,d,c,a,r,p,s,q)\ntry{for(j=new H.a7(a0,a0.gA(a0)),i=t.P;j.F();){n=j.d\nm=e.b\nn.S(new P.ff(e,m,a,d,c,s,q,a1),o,i);++e.b}j=e.b\nif(j===0){j=a\nj.X2(H.VM([],a1.C(\"jd<0>\")))\nreturn j}e.a=P.O8(j,null,!1,a1.C(\"0?\"))}catch(h){l=H.Ru(h)\nk=H.ts(h)\nif(e.b===0||c){g=l\nf=k\nH.cb(g,\"error\",t.K)\n$.X3!==C.NU\nif(f==null)f=P.v0(g)\nb=new P.vs($.X3,b)\nb.Nk(g,f)\nreturn b}else{r.$1(l)\np.$1(k)}}return a}",
         "type": "Future<List<#A>> Function<#A extends Object?>(Iterable<Future<#A>>,{void Function(#A)? cleanUp,bool eagerError})"
       },
       "385791026": {
@@ -48184,7 +48184,7 @@
         "id": "function/695629492",
         "kind": "function",
         "name": "current",
-        "size": 36,
+        "size": 28,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/571092653",
         "children": [],
@@ -48199,7 +48199,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "gl:function(){var s=this.a\nreturn s}",
+        "code": "gl:function(){return this.a}",
         "type": "MappedIterator.T Function()"
       },
       "696584252": {
@@ -66980,7 +66980,7 @@
         "id": "function/1043888555",
         "kind": "function",
         "name": "updateSquareState",
-        "size": 80,
+        "size": 70,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/576855309",
         "children": [],
@@ -66995,7 +66995,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ni:function(){var s,r\nfor(s=this.Qt,s=new H.a7(s,s.gA(s));s.F();){r=s.d\nr.Iv()}}",
+        "code": "ni:function(){for(var s=this.Qt,s=new H.a7(s,s.gA(s));s.F();)s.d.Iv()}",
         "type": "void Function()"
       },
       "1044092892": {
@@ -138262,7 +138262,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 231062,
+      "size": 231017,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -138272,11 +138272,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 231062,
-    "dart2jsVersion": "2.12.0-51.0.dev",
-    "compilationMoment": "2020-11-18 07:47:14.344169",
-    "compilationDuration": 4040592,
-    "toJsonDuration": 13000,
+    "size": 231017,
+    "dart2jsVersion": "2.12.0-69.0.dev",
+    "compilationMoment": "2020-11-24 08:21:12.632989",
+    "compilationDuration": 4105651,
+    "toJsonDuration": 15000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
