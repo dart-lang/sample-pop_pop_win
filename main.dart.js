@@ -1919,9 +1919,11 @@ for(s=J.IT(a);s.F();)r.push(s.gl())
 return r},
 Y1:function(a,b,c){var s=P.ev(a,c)
 return s},
-ev:function(a,b){var s,r=H.VM([],b.C("jd<0>"))
-for(s=a.gkz(a);s.F();)r.push(s.gl())
-return r},
+ev:function(a,b){var s,r
+if(Array.isArray(a))return H.VM(a.slice(0),b.C("jd<0>"))
+s=H.VM([],b.C("jd<0>"))
+for(r=J.IT(a);r.F();)s.push(r.gl())
+return s},
 dH:function(a,b,c){var s,r=J.Kh(a,c)
 for(s=0;s<a;++s)r[s]=b.$1(s)
 return r},

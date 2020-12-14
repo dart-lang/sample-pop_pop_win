@@ -947,7 +947,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7728,
+        "size": 7786,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -22037,7 +22037,7 @@
         "parameters": [
           {
             "name": "elements",
-            "type": "[empty]",
+            "type": "[subclass=JSArray]",
             "declaredType": "Iterable<List.E>"
           }
         ],
@@ -42286,7 +42286,7 @@
         "id": "function/596078060",
         "kind": "function",
         "name": "List._of",
-        "size": 93,
+        "size": 151,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/959990109",
         "children": [],
@@ -42301,13 +42301,13 @@
         "parameters": [
           {
             "name": "elements",
-            "type": "[subclass=Iterable]",
+            "type": "[subtype=Iterable]",
             "declaredType": "Iterable<List.E>"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ev:function(a,b){var s,r=H.VM([],b.C(\"jd<0>\"))\nfor(s=a.gkz(a);s.F();)r.push(s.gl())\nreturn r}",
+        "code": "ev:function(a,b){var s,r\nif(Array.isArray(a))return H.VM(a.slice(0),b.C(\"jd<0>\"))\ns=H.VM([],b.C(\"jd<0>\"))\nfor(r=J.IT(a);r.F();)s.push(r.gl())\nreturn s}",
         "type": "List<#A> Function<#A extends Object?>(Iterable<#A>)"
       },
       "597476575": {
@@ -47981,7 +47981,7 @@
         "parameters": [
           {
             "name": "elements",
-            "type": "[subclass=Iterable]",
+            "type": "[subtype=Iterable]",
             "declaredType": "Iterable<List.E>"
           },
           {
@@ -58885,7 +58885,7 @@
         "parameters": [
           {
             "name": "elements",
-            "type": "[subclass=Iterable]",
+            "type": "[subtype=Iterable]",
             "declaredType": "Iterable<List.E>"
           }
         ],
@@ -115247,7 +115247,7 @@
     "function/596078060": [
       {
         "id": "function/1013713190",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/1024143730",
@@ -115275,15 +115275,19 @@
       },
       {
         "id": "function/205976182",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/205976182",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/280964749",
         "mask": null
+      },
+      {
+        "id": "function/291238918",
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/292915674",
@@ -115291,7 +115295,7 @@
       },
       {
         "id": "function/299972169",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/316836652",
@@ -115302,12 +115306,24 @@
         "mask": "[subtype=Iterator]"
       },
       {
+        "id": "function/346305693",
+        "mask": null
+      },
+      {
         "id": "function/379173991",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
+      },
+      {
+        "id": "function/405266426",
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/444469673",
         "mask": "[subtype=Iterator]"
+      },
+      {
+        "id": "function/448129133",
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/477472733",
@@ -115315,7 +115331,7 @@
       },
       {
         "id": "function/526699367",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/569071578",
@@ -115335,11 +115351,11 @@
       },
       {
         "id": "function/728557802",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/738554230",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/741775692",
@@ -115359,11 +115375,11 @@
       },
       {
         "id": "function/817659995",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/852972506",
-        "mask": "[subclass=Iterable]"
+        "mask": "[subtype=Iterable]"
       },
       {
         "id": "function/950708086",
@@ -138487,7 +138503,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 231100,
+      "size": 231158,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -138497,11 +138513,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 231100,
-    "dart2jsVersion": "2.12.0-114.0.dev",
-    "compilationMoment": "2020-12-08 08:50:53.760704",
-    "compilationDuration": 5776233,
-    "toJsonDuration": 19000,
+    "size": 231158,
+    "dart2jsVersion": "2.12.0-133.0.dev",
+    "compilationMoment": "2020-12-14 07:08:12.683186",
+    "compilationDuration": 3607666,
+    "toJsonDuration": 13000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
