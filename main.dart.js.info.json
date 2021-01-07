@@ -1372,7 +1372,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20697,
+        "size": 20695,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -22018,7 +22018,7 @@
         "id": "function/205154197",
         "kind": "function",
         "name": "_registerErrorHandler",
-        "size": 206,
+        "size": 204,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [],
@@ -22044,7 +22044,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "VH:function(a,b){if(t.R.b(a))return b.O(a)\nif(t.bI.b(a))return a\nthrow H.b(P.L3(a,\"onError\",\"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a a valid result\"))}",
+        "code": "VH:function(a,b){if(t.R.b(a))return b.O(a)\nif(t.bI.b(a))return a\nthrow H.b(P.L3(a,\"onError\",\"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a valid result\"))}",
         "type": "Function Function(Function,Zone)"
       },
       "205976182": {
@@ -138751,7 +138751,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 231627,
+      "size": 231751,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -138761,11 +138761,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 231627,
-    "dart2jsVersion": "2.12.0-162.0.dev",
-    "compilationMoment": "2021-01-05 08:53:33.107594",
-    "compilationDuration": 3808710,
-    "toJsonDuration": 14000,
+    "size": 231751,
+    "dart2jsVersion": "2.12.0-198.0.dev",
+    "compilationMoment": "2021-01-07 07:33:24.505793",
+    "compilationDuration": 3573222,
+    "toJsonDuration": 13000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
