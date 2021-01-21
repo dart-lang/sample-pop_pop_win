@@ -33,7 +33,7 @@ jobs:
         run: dartfmt --output=none --set-exit-if-changed .
         if: always() && steps.install.outcome == 'success'
       - name: Analyze code
-        run: dartanalyze --fatal-infos .
+        run: dartanalyzer --fatal-infos .
         if: always() && steps.install.outcome == 'success'
 
   test:
