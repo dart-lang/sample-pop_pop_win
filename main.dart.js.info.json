@@ -70,7 +70,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 9011,
+        "size": 9002,
         "children": [
           "class/6212434",
           "class/6966771",
@@ -1039,7 +1039,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 5633,
+        "size": 5634,
         "children": [
           "class/43993131",
           "class/60704969",
@@ -1064,7 +1064,9 @@
           "field/908476008",
           "function/53371910",
           "function/203929913",
-          "function/606513838"
+          "function/470004700",
+          "function/606513838",
+          "function/1066888119"
         ],
         "canonicalUri": "dart:_internal"
       },
@@ -1372,7 +1374,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 20695,
+        "size": 20424,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -2149,7 +2151,7 @@
         "id": "class/80405414",
         "kind": "class",
         "name": "_FutureListener",
-        "size": 274,
+        "size": 273,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -5584,7 +5586,7 @@
         "id": "class/438137149",
         "kind": "class",
         "name": "Future",
-        "size": 1035,
+        "size": 1009,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -6755,7 +6757,7 @@
         "id": "class/562571521",
         "kind": "class",
         "name": "_EventStreamSubscription",
-        "size": 681,
+        "size": 672,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
         "modifiers": {
@@ -6795,7 +6797,7 @@
         "id": "class/566341130",
         "kind": "class",
         "name": "_RootZone",
-        "size": 1383,
+        "size": 1191,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -6811,7 +6813,6 @@
           "function/417406426",
           "function/459912602",
           "function/613322203",
-          "function/633677177",
           "function/644221207",
           "function/784298636",
           "function/888466063",
@@ -7501,7 +7502,6 @@
           "function/483050490",
           "function/559652014",
           "function/667617894",
-          "function/714334025",
           "function/1005388313"
         ]
       },
@@ -8984,7 +8984,7 @@
         "id": "class/784178238",
         "kind": "class",
         "name": "_Future",
-        "size": 3855,
+        "size": 3853,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -9794,8 +9794,7 @@
           "function/178767861",
           "function/661708794",
           "function/774880085",
-          "function/816839637",
-          "function/893483927"
+          "function/816839637"
         ]
       },
       "874675784": {
@@ -12675,7 +12674,7 @@
         "id": "function/15204906",
         "kind": "function",
         "name": "call",
-        "size": 348,
+        "size": 349,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/963665986",
         "children": [],
@@ -12690,7 +12689,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var s,r,q,p,o,n,m=this,l=null\ntry{q=m.a.a\nl=q.b.b.m(q.d)}catch(p){s=H.Ru(p)\nr=H.ts(p)\nif(m.c){q=m.b.a.c.a\no=s\no=q==null?o==null:q===o\nq=o}else q=!1\no=m.a\nif(q)o.c=m.b.a.c\nelse o.c=P.Tl(s,r)\no.b=!0\nreturn}if(l instanceof P.vs&&l.a>=4){if(l.a===8){q=m.a\nq.c=l.c\nq.b=!0}return}if(t.c.b(l)){n=m.b.a\nq=m.a\nq.c=l.Y(new P.jZ(n),t.z)\nq.b=!1}}",
+        "code": "$0:function(){var s,r,q,p,o,n,m=this,l=null\ntry{q=m.a.a\nl=q.b.b.Gr(q.d)}catch(p){s=H.Ru(p)\nr=H.ts(p)\nif(m.c){q=m.b.a.c.a\no=s\no=q==null?o==null:q===o\nq=o}else q=!1\no=m.a\nif(q)o.c=m.b.a.c\nelse o.c=P.Tl(s,r)\no.b=!0\nreturn}if(l instanceof P.vs&&l.a>=4){if(l.a===8){q=m.a\nq.c=l.c\nq.b=!0}return}if(t.c.b(l)){n=m.b.a\nq=m.a\nq.c=l.Y(new P.jZ(n),t.z)\nq.b=!1}}",
         "type": "void Function()"
       },
       "15266339": {
@@ -12763,7 +12762,7 @@
         "id": "function/15925204",
         "kind": "function",
         "name": "_complete",
-        "size": 126,
+        "size": 125,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -12784,7 +12783,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "HH:function(a){var s,r=this,q=r.$ti\nif(q.C(\"b8<1>\").b(a))if(q.b(a))P.A9(a,r)\nelse r.ec(a)\nelse{s=r.I()\nr.a=4\nr.c=a\nP.HZ(r,s)}}",
+        "code": "HH:function(a){var s,r=this,q=r.$ti\nif(q.C(\"b8<1>\").b(a))if(q.b(a))P.A9(a,r)\nelse r.m(a)\nelse{s=r.I()\nr.a=4\nr.c=a\nP.HZ(r,s)}}",
         "type": "void Function(Object?)"
       },
       "17382067": {
@@ -15026,7 +15025,7 @@
         "id": "function/63166902",
         "kind": "function",
         "name": "run",
-        "size": 110,
+        "size": 111,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/566341130",
         "children": [],
@@ -15047,7 +15046,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zz:function(a){if($.X3===C.NU)return a.$0()\nreturn P.T8(null,null,this,a)}\nm:function(a){return this.zz(a,t.z)}",
+        "code": "zz:function(a){if($.X3===C.NU)return a.$0()\nreturn P.T8(null,null,this,a)}\nGr:function(a){return this.zz(a,t.z)}",
         "type": "#A Function<#A extends Object?>(#A Function())"
       },
       "63296748": {
@@ -15380,7 +15379,7 @@
         "id": "function/68051831",
         "kind": "function",
         "name": "handleError",
-        "size": 98,
+        "size": 97,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/80405414",
         "children": [],
@@ -15401,7 +15400,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Kw:function(a){var s=this.e,r=this.b.b\nif(t.R.b(s))return r.mg(s,a.a,a.b)\nelse return r.FI(s,a.a)}",
+        "code": "Kw:function(a){var s=this.e,r=this.b.b\nif(t.R.b(s))return r.R(s,a.a,a.b)\nelse return r.FI(s,a.a)}",
         "type": "FutureOr<_FutureListener.T> Function(AsyncError)"
       },
       "68374999": {
@@ -15785,7 +15784,7 @@
         "id": "function/77903012",
         "kind": "function",
         "name": "call",
-        "size": 48,
+        "size": 33,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/551661905",
         "children": [],
@@ -15806,7 +15805,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var s=this.a\ns.f=!0\nreturn s.e=a}",
+        "code": "$1:function(a){return this.a.d=a}",
         "type": "dynamic Function(StackTrace)"
       },
       "77958169": {
@@ -16048,28 +16047,6 @@
         "inlinedCount": 0,
         "code": "giO:function(a){return H.eQ(a)}",
         "type": "int Function()"
-      },
-      "81057679": {
-        "id": "function/81057679",
-        "kind": "function",
-        "name": "call",
-        "size": 38,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "closure/310226650",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "bindCallback.R",
-        "inferredReturnType": "[null|subclass=Object]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "$0:function(){return this.a.m(this.b)}",
-        "type": "bindCallback.R Function()"
       },
       "81184235": {
         "id": "function/81184235",
@@ -17143,7 +17120,7 @@
         "id": "function/109564593",
         "kind": "function",
         "name": "call",
-        "size": 66,
+        "size": 68,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/855227484",
         "children": [],
@@ -17158,7 +17135,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var s=this.a\nreturn s.f?s.e:H.v(H.Wl(\"stackTrace\"))}",
+        "code": "$0:function(){var s=this.a.d\nreturn s===$?H.v(H.Wl(\"stackTrace\")):s}",
         "type": "StackTrace Function()"
       },
       "110436482": {
@@ -25149,13 +25126,13 @@
           {
             "name": "points",
             "type": "Container([subclass=JSMutableArray], element: [null|subclass=Object], length: null)",
-            "declaredType": "List<Point<num>*>*"
+            "declaredType": "List<Point<num*>*>*"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
         "code": "hM:function(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=\"complete\"\nR.jr(\"throw\")\nfor(s=a.length,r=h.Na,q=t.I,p=0;p<a.length;a.length===s||(0,H.lk)(a),++p){o=a[p]\nn=$.bD()\nm=J.LX(o)\nl=m.gx(o)\nm=m.gy(o)\nl=n.a+80*l\nm=n.b+80*m\nk=O.u7(h.m9.dF(\"dart\"),60,!1)\nk.c=l\nk.id=!0\nk.d=m\nk.k4=!1\nif(!k.ij){k.ij=!0\nk.RZ=null}r.bS(k)\nk.Ep(0,g,q).XE(new U.m8(k),!1,0)\nj=O.u7(h.m9.dF(\"shadow\"),60,!1)\nj.c=l\nj.id=!0\nj.d=m\nj.k4=!1\nif(!j.ij){j.ij=!0\nj.RZ=null}r.bS(j)\nj.Ep(0,g,q).XE(new U.qA(j),!1,0)\ni=h.gYK()\nn=(i instanceof A.mE?i:null).oJ\nn.AN(0,k)\nn.AN(0,j)}}",
-        "type": "void Function(List<Point<num>*>*)"
+        "type": "void Function(List<Point<num*>*>*)"
       },
       "263363184": {
         "id": "function/263363184",
@@ -25676,7 +25653,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "HZ:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e={},d=e.a=a\nfor(s=t.c;!0;){r={}\nq=d.a===8\nif(b==null){if(q){s=d.c\nP.L2(f,f,d.b,s.a,s.b)}return}r.a=b\np=b.a\nfor(d=b;p!=null;d=p,p=o){d.a=null\nP.HZ(e.a,d)\nr.a=p\no=p.a}n=e.a\nm=n.c\nr.b=q\nr.c=m\nl=!q\nif(l){k=d.c\nk=(k&1)!==0||(k&15)===8}else k=!0\nif(k){j=d.b.b\nif(q){k=n.b===j\nk=!(k||k)}else k=!1\nif(k){P.L2(f,f,n.b,m.a,m.b)\nreturn}i=$.X3\nif(i!==j)$.X3=j\nelse i=f\nd=d.c\nif((d&15)===8)new P.RT(r,e,q).$0()\nelse if(l){if((d&1)!==0)new P.rq(r,m).$0()}else if((d&2)!==0)new P.RW(e,r).$0()\nif(i!=null)$.X3=i\nd=r.c\nif(s.b(d)){n=r.a.$ti\nn=n.C(\"b8<2>\").b(d)||!n.Q[1].b(d)}else n=!1\nif(n){h=r.a.b\nif(d instanceof P.vs)if(d.a>=4){g=h.c\nh.c=null\nb=h.J(g)\nh.a=d.a\nh.c=d.c\ne.a=d\ncontinue}else P.A9(d,h)\nelse h.ec(d)\nreturn}}h=r.a.b\ng=h.c\nh.c=null\nb=h.J(g)\nd=r.b\nn=r.c\nif(!d){h.a=4\nh.c=n}else{h.a=8\nh.c=n}e.a=h\nd=h}}",
+        "code": "HZ:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=null,e={},d=e.a=a\nfor(s=t.c;!0;){r={}\nq=d.a===8\nif(b==null){if(q){s=d.c\nP.L2(f,f,d.b,s.a,s.b)}return}r.a=b\np=b.a\nfor(d=b;p!=null;d=p,p=o){d.a=null\nP.HZ(e.a,d)\nr.a=p\no=p.a}n=e.a\nm=n.c\nr.b=q\nr.c=m\nl=!q\nif(l){k=d.c\nk=(k&1)!==0||(k&15)===8}else k=!0\nif(k){j=d.b.b\nif(q){k=n.b===j\nk=!(k||k)}else k=!1\nif(k){P.L2(f,f,n.b,m.a,m.b)\nreturn}i=$.X3\nif(i!==j)$.X3=j\nelse i=f\nd=d.c\nif((d&15)===8)new P.RT(r,e,q).$0()\nelse if(l){if((d&1)!==0)new P.rq(r,m).$0()}else if((d&2)!==0)new P.RW(e,r).$0()\nif(i!=null)$.X3=i\nd=r.c\nif(s.b(d)){n=r.a.$ti\nn=n.C(\"b8<2>\").b(d)||!n.Q[1].b(d)}else n=!1\nif(n){h=r.a.b\nif(d instanceof P.vs)if(d.a>=4){g=h.c\nh.c=null\nb=h.J(g)\nh.a=d.a\nh.c=d.c\ne.a=d\ncontinue}else P.A9(d,h)\nelse h.m(d)\nreturn}}h=r.a.b\ng=h.c\nh.c=null\nb=h.J(g)\nd=r.b\nn=r.c\nif(!d){h.a=4\nh.c=n}else{h.a=8\nh.c=n}e.a=h\nd=h}}",
         "type": "void Function(_Future<dynamic>,_FutureListener<dynamic,dynamic>?)"
       },
       "271677720": {
@@ -28579,7 +28556,7 @@
         "id": "function/325386239",
         "kind": "function",
         "name": "_chainFuture",
-        "size": 223,
+        "size": 222,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -28602,7 +28579,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cU:function(a){var s=this\nif(s.$ti.b(a)){if(a.a===8){s.a=1\nP.Tk(null,null,s.b,new P.KF(s,a))}else P.A9(a,s)\nreturn}s.ec(a)}",
+        "code": "cU:function(a){var s=this\nif(s.$ti.b(a)){if(a.a===8){s.a=1\nP.Tk(null,null,s.b,new P.KF(s,a))}else P.A9(a,s)\nreturn}s.m(a)}",
         "type": "void Function(Object?)"
       },
       "325903689": {
@@ -31600,7 +31577,7 @@
         "id": "function/385444888",
         "kind": "function",
         "name": "wait",
-        "size": 1636,
+        "size": 1590,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/438137149",
         "children": [
@@ -31628,7 +31605,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "pH:function(a0,a1){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e={},d=null,c=!1,b=a1.C(\"vs<zM<0>>\"),a=new P.vs($.X3,b)\ne.a=null\ne.b=0\ne.c=null\ne.d=!1\ns=new P.Tr(e)\nr=new P.X4(e)\ne.e=null\ne.f=!1\nq=new P.V1(e)\np=new P.EL(e)\no=new P.VN(e,d,c,a,r,p,s,q)\ntry{for(j=new H.a7(a0,a0.gA(a0)),i=t.P;j.F();){n=j.d\nm=e.b\nn.S(new P.ff(e,m,a,d,c,s,q,a1),o,i);++e.b}j=e.b\nif(j===0){j=a\nj.X(H.VM([],a1.C(\"jd<0>\")))\nreturn j}e.a=P.O8(j,null,!1,a1.C(\"0?\"))}catch(h){l=H.Ru(h)\nk=H.ts(h)\nif(e.b===0||c){g=l\nf=k\nH.cb(g,\"error\",t.K)\n$.X3!==C.NU\nif(f==null)f=P.v0(g)\nb=new P.vs($.X3,b)\nb.Nk(g,f)\nreturn b}else{r.$1(l)\np.$1(k)}}return a}",
+        "code": "pH:function(a0,a1){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e={},d=null,c=!1,b=a1.C(\"vs<zM<0>>\"),a=new P.vs($.X3,b)\ne.a=null\ne.b=0\ne.c=$\ns=new P.Tr(e)\nr=new P.X4(e)\ne.d=$\nq=new P.V1(e)\np=new P.EL(e)\no=new P.VN(e,d,c,a,r,p,s,q)\ntry{for(j=new H.a7(a0,a0.gA(a0)),i=t.P;j.F();){n=j.d\nm=e.b\nn.S(new P.ff(e,m,a,d,c,s,q,a1),o,i);++e.b}j=e.b\nif(j===0){j=a\nj.X(H.VM([],a1.C(\"jd<0>\")))\nreturn j}e.a=P.O8(j,null,!1,a1.C(\"0?\"))}catch(h){l=H.Ru(h)\nk=H.ts(h)\nif(e.b===0||c){g=l\nf=k\nH.cb(g,\"error\",t.K)\n$.X3!==C.NU\nif(f==null)f=P.v0(g)\nb=new P.vs($.X3,b)\nb.Nk(g,f)\nreturn b}else{r.$1(l)\np.$1(k)}}return a}",
         "type": "Future<List<#A>> Function<#A extends Object?>(Iterable<Future<#A>>,{void Function(#A)? cleanUp,bool eagerError})"
       },
       "385791026": {
@@ -35272,7 +35249,7 @@
         "id": "function/456685986",
         "kind": "function",
         "name": "_unlisten",
-        "size": 91,
+        "size": 82,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/562571521",
         "children": [],
@@ -35287,7 +35264,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "EO:function(){var s,r=this.d,q=r!=null\nif(q){s=this.b\ns.toString\nif(q)J.Yh(s,this.c,r,!1)}}",
+        "code": "EO:function(){var s,r=this.d\nif(r!=null){s=this.b\ns.toString\nJ.Yh(s,this.c,r,!1)}}",
         "type": "void Function()"
       },
       "457543033": {
@@ -35399,7 +35376,7 @@
         "id": "function/460237833",
         "kind": "function",
         "name": "call",
-        "size": 61,
+        "size": 63,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/458665195",
         "children": [],
@@ -35414,7 +35391,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var s=this.a\nreturn s.d?s.c:H.v(H.Wl(\"error\"))}",
+        "code": "$0:function(){var s=this.a.c\nreturn s===$?H.v(H.Wl(\"error\")):s}",
         "type": "Object Function()"
       },
       "460481530": {
@@ -36043,6 +36020,28 @@
         "inlinedCount": 0,
         "code": "$1:function(a){var s,r\nthis.a.a=a\ns=this.b\nr=this.c\ns.firstChild?s.removeChild(r):s.appendChild(r)}",
         "type": "Null Function(void Function())"
+      },
+      "470004700": {
+        "id": "function/470004700",
+        "kind": "function",
+        "name": "createSentinel",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/689380639",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "#A/*free*/",
+        "inferredReturnType": "[null|subclass=Object]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "inlinedCount": 2,
+        "code": "",
+        "type": "#A Function<#A extends Object?>()"
       },
       "470412651": {
         "id": "function/470412651",
@@ -40343,7 +40342,7 @@
         "id": "function/553149607",
         "kind": "function",
         "name": "_chainForeignFuture",
-        "size": 488,
+        "size": 487,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -40368,7 +40367,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ec:function(a){var s,r,q,p=this\np.a=1\ntry{a.S(new P.pV(p),new P.U7(p),t.P)}catch(q){s=H.Ru(q)\nr=H.ts(q)\nP.rb(new P.vr(p,s,r))}}",
+        "code": "m:function(a){var s,r,q,p=this\np.a=1\ntry{a.S(new P.pV(p),new P.U7(p),t.P)}catch(q){s=H.Ru(q)\nr=H.ts(q)\nP.rb(new P.vr(p,s,r))}}",
         "type": "void Function(Future<dynamic>)"
       },
       "553278458": {
@@ -44533,36 +44532,6 @@
         "code": "gA:function(a){return a.length}",
         "type": "int? Function()"
       },
-      "633677177": {
-        "id": "function/633677177",
-        "kind": "function",
-        "name": "bindCallback",
-        "size": 190,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/566341130",
-        "children": [
-          "closure/310226650"
-        ],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "#A/*free*/ Function()",
-        "inferredReturnType": "[subtype=Function]",
-        "parameters": [
-          {
-            "name": "f",
-            "type": "[subtype=Function]",
-            "declaredType": "bindCallback.R Function()"
-          }
-        ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 0,
-        "code": "R:function(a,b){return new P.hj(this,a,b)}",
-        "type": "#A Function() Function<#A extends Object?>(#A Function())"
-      },
       "634513212": {
         "id": "function/634513212",
         "kind": "function",
@@ -45931,7 +45900,7 @@
         "id": "function/658921946",
         "kind": "function",
         "name": "_rootScheduleMicrotask",
-        "size": 79,
+        "size": 50,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [],
@@ -45967,7 +45936,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Tk:function(a,b,c,d){var s=C.NU!==c\nif(s)d=!(!s||!1)?c.N(d):c.R(d,t.H)\nP.IA(d)}",
+        "code": "Tk:function(a,b,c,d){if(C.NU!==c)d=c.N(d)\nP.IA(d)}",
         "type": "void Function(Zone?,ZoneDelegate?,Zone,void Function())"
       },
       "660281723": {
@@ -46064,7 +46033,7 @@
           },
           {
             "name": "arg3",
-            "type": "[subclass=JSPositiveInt]",
+            "type": "[subclass=JSInt]",
             "declaredType": "dynamic"
           }
         ],
@@ -49192,39 +49161,6 @@
         "inlinedCount": 0,
         "code": "$1:function(a){var s=this.a\nif(a==null)s.pm(\"\")\nelse s.pm(a)}",
         "type": "void Function(DomException)"
-      },
-      "714334025": {
-        "id": "function/714334025",
-        "kind": "function",
-        "name": "_create2",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/641591578",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "NativeFloat32List",
-        "inferredReturnType": "[exact=NativeFloat32List]",
-        "parameters": [
-          {
-            "name": "arg1",
-            "type": "[exact=NativeByteBuffer]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "arg2",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "NativeFloat32List Function(dynamic,dynamic)"
       },
       "714600619": {
         "id": "function/714600619",
@@ -59044,39 +58980,6 @@
         "code": "",
         "type": "num* Function()"
       },
-      "893483927": {
-        "id": "function/893483927",
-        "kind": "function",
-        "name": "_create2",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/874583101",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "NativeInt16List",
-        "inferredReturnType": "[exact=NativeInt16List]",
-        "parameters": [
-          {
-            "name": "arg1",
-            "type": "[exact=NativeByteBuffer]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "arg2",
-            "type": "[exact=JSUInt31]",
-            "declaredType": "dynamic"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 1,
-        "code": "",
-        "type": "NativeInt16List Function(dynamic,dynamic)"
-      },
       "893513912": {
         "id": "function/893513912",
         "kind": "function",
@@ -61493,7 +61396,7 @@
         "id": "function/939052787",
         "kind": "function",
         "name": "call",
-        "size": 48,
+        "size": 33,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/321640298",
         "children": [],
@@ -61514,7 +61417,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var s=this.a\ns.d=!0\nreturn s.c=a}",
+        "code": "$1:function(a){return this.a.c=a}",
         "type": "dynamic Function(Object)"
       },
       "939485191": {
@@ -65233,7 +65136,7 @@
           },
           {
             "name": "arg3",
-            "type": "[subclass=JSPositiveInt]",
+            "type": "[subclass=JSInt]",
             "declaredType": "dynamic"
           }
         ],
@@ -66681,7 +66584,7 @@
         "id": "function/1036675160",
         "kind": "function",
         "name": "runBinary",
-        "size": 138,
+        "size": 137,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/566341130",
         "children": [],
@@ -66712,7 +66615,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "rp:function(a,b,c){if($.X3===C.NU)return a.$2(b,c)\nreturn P.Qx(null,null,this,a,b,c)}\nmg:function(a,b,c){return this.rp(a,b,c,t.z,t.z,t.z)}",
+        "code": "rp:function(a,b,c){if($.X3===C.NU)return a.$2(b,c)\nreturn P.Qx(null,null,this,a,b,c)}\nR:function(a,b,c){return this.rp(a,b,c,t.z,t.z,t.z)}",
         "type": "#A Function<#A extends Object?,#B extends Object?,#C extends Object?>(#A Function(#B,#C),#B,#C)"
       },
       "1036730465": {
@@ -67967,6 +67870,34 @@
         "inlinedCount": 4,
         "code": "",
         "type": "void Function(int*,int*,Object*)"
+      },
+      "1066888119": {
+        "id": "function/1066888119",
+        "kind": "function",
+        "name": "isSentinel",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/689380639",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[null|subtype=bool]",
+        "parameters": [
+          {
+            "name": "value",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
+        "inlinedCount": 2,
+        "code": "",
+        "type": "bool Function(dynamic)"
       },
       "1066963434": {
         "id": "function/1066963434",
@@ -77162,14 +77093,14 @@
         "id": "field/908361693",
         "kind": "field",
         "name": "nullFuture",
-        "size": 140,
+        "size": 141,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "children": [
           "closure/171904119"
         ],
         "inferredType": "[null|exact=_Future]",
-        "code": "s($,\"Qz\",\"Zo\",function(){return C.NU.m(new H.GR())})",
+        "code": "s($,\"Qz\",\"Zo\",function(){return C.NU.Gr(new H.GR())})",
         "type": "Future<Null>"
       },
       "908476008": {
@@ -79581,20 +79512,11 @@
         "parent": "function/956446518",
         "function": "function/68375000"
       },
-      "310226650": {
-        "id": "closure/310226650",
-        "kind": "closure",
-        "name": "_RootZone_bindCallback_closure",
-        "size": 148,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "function/633677177",
-        "function": "function/81057679"
-      },
       "321640298": {
         "id": "closure/321640298",
         "kind": "closure",
         "name": "Future_wait_#error#set",
-        "size": 104,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/939052787"
@@ -79738,7 +79660,7 @@
         "id": "closure/458665195",
         "kind": "closure",
         "name": "Future_wait_#error#get",
-        "size": 117,
+        "size": 119,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/460237833"
@@ -79783,7 +79705,7 @@
         "id": "closure/551661905",
         "kind": "closure",
         "name": "Future_wait_#stackTrace#set",
-        "size": 104,
+        "size": 89,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/77903012"
@@ -80098,7 +80020,7 @@
         "id": "closure/855227484",
         "kind": "closure",
         "name": "Future_wait_#stackTrace#get",
-        "size": 122,
+        "size": 124,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/385444888",
         "function": "function/109564593"
@@ -80224,7 +80146,7 @@
         "id": "closure/963665986",
         "kind": "closure",
         "name": "_Future__propagateToListeners_handleWhenCompleteCallback",
-        "size": 425,
+        "size": 426,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/271674536",
         "function": "function/15204906"
@@ -89960,12 +89882,6 @@
         "mask": null
       }
     ],
-    "function/81057679": [
-      {
-        "id": "function/63166902",
-        "mask": "[exact=_RootZone]"
-      }
-    ],
     "function/82464416": [
       {
         "id": "field/193576254",
@@ -90641,6 +90557,14 @@
       }
     ],
     "function/109564593": [
+      {
+        "id": "function/1066888119",
+        "mask": null
+      },
+      {
+        "id": "function/1066888119",
+        "mask": "inlined"
+      },
       {
         "id": "function/308590446",
         "mask": null
@@ -104982,6 +104906,18 @@
         "mask": null
       },
       {
+        "id": "function/470004700",
+        "mask": null
+      },
+      {
+        "id": "function/470004700",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/470004700",
+        "mask": "inlined"
+      },
+      {
         "id": "function/528985088",
         "mask": null
       },
@@ -105003,11 +104939,11 @@
       },
       {
         "id": "function/754498726",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/754498726",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/77903012",
@@ -109517,6 +109453,14 @@
       }
     ],
     "function/460237833": [
+      {
+        "id": "function/1066888119",
+        "mask": null
+      },
+      {
+        "id": "function/1066888119",
+        "mask": "inlined"
+      },
       {
         "id": "function/308590446",
         "mask": null
@@ -116876,20 +116820,6 @@
         "mask": "inlined"
       }
     ],
-    "function/633677177": [
-      {
-        "id": "function/280964749",
-        "mask": null
-      },
-      {
-        "id": "function/81057679",
-        "mask": null
-      },
-      {
-        "id": "function/81057679",
-        "mask": null
-      }
-    ],
     "function/635153575": [
       {
         "id": "field/368460625",
@@ -118096,10 +118026,6 @@
         "mask": "inlined"
       },
       {
-        "id": "function/633677177",
-        "mask": null
-      },
-      {
         "id": "function/835692712",
         "mask": null
       },
@@ -118921,10 +118847,6 @@
     "function/667617894": [
       {
         "id": "function/1005388313",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/714334025",
         "mask": "inlined"
       }
     ],
@@ -126963,10 +126885,6 @@
     "function/816839637": [
       {
         "id": "function/661708794",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/893483927",
         "mask": "inlined"
       }
     ],
@@ -137356,15 +137274,7 @@
         "mask": null
       },
       {
-        "id": "function/714334025",
-        "mask": null
-      },
-      {
         "id": "function/816839637",
-        "mask": null
-      },
-      {
-        "id": "function/893483927",
         "mask": null
       }
     ],
@@ -138751,7 +138661,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 231751,
+      "size": 231468,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -138761,10 +138671,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 231751,
-    "dart2jsVersion": "2.12.0-242.0.dev",
-    "compilationMoment": "2021-01-21 09:09:48.938680",
-    "compilationDuration": 3996427,
+    "size": 231468,
+    "dart2jsVersion": "2.13.0-12.0.dev",
+    "compilationMoment": "2021-02-09 14:54:18.975549",
+    "compilationDuration": 3784951,
     "toJsonDuration": 14000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
