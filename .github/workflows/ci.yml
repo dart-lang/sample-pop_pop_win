@@ -23,7 +23,7 @@ jobs:
         sdk: [2.10.5, dev]
     steps:
       - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v0.3
+      - uses: dart-lang/setup-dart@v0.5
         with:
           sdk: ${{ matrix.sdk }}
       - id: install
@@ -56,7 +56,5 @@ jobs:
       - id: install
         name: Install dependencies
         run: dart pub get
-      - run: dart test -x presubmit-only -p vm,chrome
-        if: always() && steps.install.outcome == 'success'
-      - run: dart test --run-skipped -t presubmit-only
+      - run: dart test -p vm,chrome
         if: always() && steps.install.outcome == 'success'
