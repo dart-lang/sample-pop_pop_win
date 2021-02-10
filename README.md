@@ -19,17 +19,14 @@ in [Dart](https://dart.dev/).
 
  * Clone the repository.
  * Run `pub get`.
- * To run locally with DDC:
+ * To run locally with [dartdevc](https://dart.dev/tools/dartdevc):
  
    ```console
    $ pub run build_runner serve
    ```
 
- * To build with dart2js and minified output:
+ * To build with [dart2js](https://dart.dev/tools/dart2js) and minified output:
  
    ```console
    $ pub run build_runner build --release --output web:build
    ```
-   
-   Setting `--config release` tells `build_runner` to use the
-   `build.release.yaml` configuration file.
