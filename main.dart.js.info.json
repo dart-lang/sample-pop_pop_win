@@ -517,7 +517,6 @@
         "children": [
           "class/86936801",
           "class/245082925",
-          "class/359696216",
           "class/418854932",
           "class/506846212",
           "class/523978038",
@@ -526,6 +525,7 @@
           "class/742187779",
           "class/793539876",
           "class/851867060",
+          "class/978801172",
           "class/1003011102",
           "class/1019758482",
           "class/1034266724",
@@ -4706,18 +4706,6 @@
         "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/85591458",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": []
-      },
-      "359696216": {
-        "id": "class/359696216",
-        "kind": "class",
-        "name": "JSDouble",
-        "size": 39,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/325218131",
         "modifiers": {
           "abstract": false
         },
@@ -10740,6 +10728,18 @@
           "field/146649920",
           "function/454254808"
         ]
+      },
+      "978801172": {
+        "id": "class/978801172",
+        "kind": "class",
+        "name": "JSNumNotInt",
+        "size": 39,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/325218131",
+        "modifiers": {
+          "abstract": false
+        },
+        "children": []
       },
       "979050981": {
         "id": "class/979050981",
@@ -32313,7 +32313,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Cg:function(a){var s,r,q=this,p=q.LD,o=p.b,n=C.ON.a3(o/20)\na.save()\na.beginPath()\na.rect(0,0,q.eD,q.jq)\na.clip()\na.font=p.gBK()+\" \"\na.textAlign=\"start\"\na.textBaseline=\"alphabetic\"\na.lineCap=\"round\"\na.lineJoin=\"round\"\no=p.d\nif(o>0){a.lineWidth=o*2\na.strokeStyle=V.Qq(p.e)\nfor(o=q.yn,s=0;s<o.length;++s){r=o[s]\na.strokeText(r.a,r.c,r.d)}}a.lineWidth=n\no=p.c\na.strokeStyle=V.Qq(o)\no=V.Qq(o)\na.fillStyle=o\nfor(o=q.yn,s=0;s<o.length;++s){r=o[s]\na.fillText(r.a,r.c,r.d)}a.restore()}",
+        "code": "Cg:function(a){var s,r,q=this,p=q.LD,o=p.b,n=C.CD.a3(o/20)\na.save()\na.beginPath()\na.rect(0,0,q.eD,q.jq)\na.clip()\na.font=p.gBK()+\" \"\na.textAlign=\"start\"\na.textBaseline=\"alphabetic\"\na.lineCap=\"round\"\na.lineJoin=\"round\"\no=p.d\nif(o>0){a.lineWidth=o*2\na.strokeStyle=V.Qq(p.e)\nfor(o=q.yn,s=0;s<o.length;++s){r=o[s]\na.strokeText(r.a,r.c,r.d)}}a.lineWidth=n\no=p.c\na.strokeStyle=V.Qq(o)\no=V.Qq(o)\na.fillStyle=o\nfor(o=q.yn,s=0;s<o.length;++s){r=o[s]\na.fillText(r.a,r.c,r.d)}a.restore()}",
         "type": "void Function(CanvasRenderingContext2D*)"
       },
       "400204433": {
@@ -43855,7 +43855,7 @@
           "external": false
         },
         "returnType": "num*",
-        "inferredReturnType": "[exact=JSDouble]",
+        "inferredReturnType": "[exact=JSNumNotInt]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
@@ -51504,7 +51504,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dd:function(a){var s,r,q=this,p=t.r,o=p.a(q.fy).Qt.e\nif(o.gzo(o)==null)s=\"0\"\nelse{o=p.a(q.fy).Qt.e\ns=C.ON.Sy(C.jn.W(o.gzo(o).a,1000)/1000,1)}r=\"Bombs Left: \"+H.d(p.a(q.fy).Qt.e.r)+\"\\nTime: \"+s\np=q.rT\nif(p!=null)r=r+\"\\nRecord: \"+C.ON.Sy(p/1000,1)\nif(r!==q.e1)q.sa4(0,r)\nq.VD(a)}",
+        "code": "dd:function(a){var s,r,q=this,p=t.r,o=p.a(q.fy).Qt.e\nif(o.gzo(o)==null)s=\"0\"\nelse{o=p.a(q.fy).Qt.e\ns=C.CD.Sy(C.jn.W(o.gzo(o).a,1000)/1000,1)}r=\"Bombs Left: \"+H.d(p.a(q.fy).Qt.e.r)+\"\\nTime: \"+s\np=q.rT\nif(p!=null)r=r+\"\\nRecord: \"+C.CD.Sy(p/1000,1)\nif(r!==q.e1)q.sa4(0,r)\nq.VD(a)}",
         "type": "void Function(RenderState*)"
       },
       "747795707": {
@@ -52757,7 +52757,7 @@
           },
           {
             "name": "time",
-            "type": "[exact=JSDouble]",
+            "type": "[exact=JSNumNotInt]",
             "declaredType": "num*"
           }
         ],
@@ -54995,7 +54995,7 @@
           },
           {
             "name": "b",
-            "type": "Union([exact=JSDouble], [subclass=JSInt])",
+            "type": "Union([exact=JSNumNotInt], [subclass=JSInt])",
             "declaredType": "min.T"
           }
         ],
@@ -61796,7 +61796,7 @@
           },
           {
             "name": "time",
-            "type": "[exact=JSDouble]",
+            "type": "[exact=JSNumNotInt]",
             "declaredType": "num*"
           },
           {
@@ -78944,14 +78944,6 @@
         "size": 37,
         "outputUnit": "outputUnit/669725655",
         "code": "C.IK=new A.P0(\"StageAlign.TOP_RIGHT\")"
-      },
-      "446138803": {
-        "id": "constant/446138803",
-        "kind": "constant",
-        "name": null,
-        "size": 19,
-        "outputUnit": "outputUnit/669725655",
-        "code": "C.ON=J.VA.prototype"
       },
       "481108566": {
         "id": "constant/481108566",
@@ -138661,7 +138653,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 231468,
+      "size": 231448,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -138671,11 +138663,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 231468,
-    "dart2jsVersion": "2.13.0-12.0.dev",
-    "compilationMoment": "2021-02-09 14:54:18.975549",
-    "compilationDuration": 3784951,
-    "toJsonDuration": 14000,
+    "size": 231448,
+    "dart2jsVersion": "2.13.0-59.0.dev",
+    "compilationMoment": "2021-02-23 07:57:27.868129",
+    "compilationDuration": 5241303,
+    "toJsonDuration": 18000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
