@@ -9,7 +9,7 @@ import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 
 import 'src/analytics.dart';
 import 'src/platform_web.dart';
-import 'src/resources.dart';
+import 'src/resources.dart' as r;
 import 'src/stage.dart';
 
 const String _assetDir = 'packages/pop_pop_win/assets';
@@ -104,7 +104,7 @@ void _secondaryLoad(
   final size = targetPlatform.size;
   final m = (size * size * 0.15625).toInt();
 
-  initializeResources(resourceManager);
+  r.resourceManager = resourceManager;
   GameRoot(size, size, m, stage);
 
   // disable touch events
@@ -112,10 +112,12 @@ void _secondaryLoad(
 
   html.window.onKeyDown.listen(_onKeyDown);
 
-  html.querySelector('#popup').onClick.listen(_onPopupClick);
+  _popup.onClick.listen(_onPopupClick);
 
   titleClickedEvent.listen((args) => targetPlatform.toggleAbout(true));
 }
+
+final _popup = html.querySelector('#popup')!;
 
 void _onPopupClick(html.MouseEvent args) {
   if (args.relatedTarget is! html.AnchorElement) {
@@ -137,5 +139,5 @@ void _onKeyDown(html.KeyboardEvent args) {
 
 void _updateAbout() {
   final popDisplay = targetPlatform.showAbout ? 'inline-block' : 'none';
-  html.querySelector('#popup').style.display = popDisplay;
+  _popup.style.display = popDisplay;
 }

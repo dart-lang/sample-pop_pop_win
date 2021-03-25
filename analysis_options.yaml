@@ -28,12 +28,10 @@ linter:
     - avoid_returning_null_for_void
     - avoid_returning_this
     - avoid_setters_without_getters
-    - avoid_single_cascade_in_expression_statements
     - avoid_slow_async_io
     - avoid_types_on_closure_parameters
     - avoid_unused_constructor_parameters
     - avoid_void_async
-    - await_only_futures
     - camel_case_types
     - cancel_subscriptions
     - cascade_invocations
@@ -72,7 +70,6 @@ linter:
     - prefer_foreach
     - prefer_function_declarations_over_variables
     - prefer_initializing_formals
-    - prefer_inlined_adds
     - prefer_int_literals
     - prefer_interpolation_to_compose_strings
     - prefer_is_not_operator
@@ -87,8 +84,6 @@ linter:
     - throw_in_finally
     - type_annotate_public_apis
     - unnecessary_await_in_return
-    - unnecessary_brace_in_string_interps
-    - unnecessary_getters_setters
     - unnecessary_lambdas
     - unnecessary_null_aware_assignments
     - unnecessary_overrides

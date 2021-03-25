@@ -14,7 +14,7 @@ class GameRoot extends GameManager {
   final Stage stage;
   final _eventCount = <GameState, int>{};
 
-  GameElement _gameElement;
+  late final GameElement _gameElement;
 
   GameRoot(int width, int height, int bombCount, this.stage)
       : super(width, height, bombCount) {
@@ -40,9 +40,10 @@ class GameRoot extends GameManager {
     );
     if (value == GameState.won) {
       _gameElement.updateSquareState();
-      if (_gameElement.scoreElement.bestTime == null ||
-          game.duration.inMilliseconds < _gameElement.scoreElement.bestTime) {
-        _gameElement.scoreElement.bestTime = game.duration.inMilliseconds;
+      if (_gameElement.scoreElement!.bestTime == null ||
+          game.duration!.inMilliseconds <
+              _gameElement.scoreElement!.bestTime!) {
+        _gameElement.scoreElement!.bestTime = game.duration!.inMilliseconds;
       }
       game_audio.win();
     }
@@ -51,8 +52,6 @@ class GameRoot extends GameManager {
   @override
   void newGame() {
     super.newGame();
-    if (_gameElement != null) {
-      _gameElement.updateSquareState();
-    }
+    _gameElement.updateSquareState();
   }
 }

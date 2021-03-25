@@ -4,16 +4,4 @@
 
 import 'package:stagexl/stagexl.dart';
 
-ResourceManager _resourceManager;
-
-ResourceManager get resourceManager {
-  if (_resourceManager == null) {
-    throw StateError('ResourceManager not initialized');
-  }
-  return _resourceManager;
-}
-
-void initializeResources(ResourceManager resourceManager) {
-  if (_resourceManager != null) throw StateError('already initialized');
-  _resourceManager = resourceManager;
-}
+late ResourceManager resourceManager;

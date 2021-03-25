@@ -70,7 +70,7 @@ class SquareElement extends Sprite {
         (squareState == SquareState.hidden ||
             squareState == SquareState.flagged);
 
-    _bitmap.bitmapData
+    _bitmap.bitmapData!
       ..clear()
       ..drawPixels(
           resourceManager.getTextureAtlas('opaque').getBitmapData(textureName),
@@ -80,7 +80,7 @@ class SquareElement extends Sprite {
 
   void _onClick(MouseEvent e) {
     if (!_game.gameEnded) {
-      final alt = (e.type == MouseEvent.RIGHT_CLICK) || e.shiftKey;
+      final alt = (e.type == MouseEvent.RIGHT_CLICK) || e.shiftKey!;
       _gameElement.click(column, row, alt);
     }
   }
@@ -102,7 +102,7 @@ class SquareElement extends Sprite {
 
   SquareState get squareState => _game.getSquareState(column, row);
 
-  int get _adjacentCount => _game.field.getAdjacentCount(column, row);
+  int get _adjacentCount => _game.field.getAdjacentCount(column, row)!;
 
   BoardElement get _board => parent as BoardElement;
 

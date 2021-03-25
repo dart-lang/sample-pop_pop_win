@@ -25,7 +25,6 @@ class Game {
 
   Game(this.field)
       : _state = GameState.reset,
-        assert(field != null),
         _states = Array2d<SquareState>(
           field.width,
           field.height,
@@ -48,7 +47,7 @@ class Game {
 
   bool get gameEnded => _state == GameState.won || _state == GameState.lost;
 
-  Duration get duration =>
+  Duration? get duration =>
       (!_watch.isRunning && _watch.elapsedTicks == 0) ? null : _watch.elapsed;
 
   bool canToggleFlag(int x, int y) {
@@ -58,7 +57,6 @@ class Game {
 
   void setFlag(int x, int y, bool value) {
     _ensureStarted();
-    assert(value != null);
 
     final currentSS = _states.get(x, y);
     if (value) {
@@ -83,12 +81,12 @@ class Game {
     return false;
   }
 
-  List<Point<int>> reveal(int x, int y) {
+  List<Point<int>>? reveal(int x, int y) {
     _ensureStarted();
     assert(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
-    List<Point<int>> reveals;
+    List<Point<int>>? reveals;
 
     // normal reveal
     if (currentSS == SquareState.hidden) {
@@ -117,7 +115,7 @@ class Game {
         buffer.write('\n');
       }
       for (var x = -2; x < field.width; x++) {
-        String char;
+        late String char;
         if (y == -2) {
           if (x == -2) {
             char = ' ';
@@ -154,7 +152,6 @@ class Game {
             }
           }
         }
-        assert(char != null);
         buffer.write(char);
       }
     }
@@ -165,7 +162,7 @@ class Game {
     final currentSS = _states.get(x, y);
     if (currentSS == SquareState.revealed) {
       // might be a 'chord' reveal
-      final adjCount = field.getAdjacentCount(x, y);
+      final adjCount = field.getAdjacentCount(x, y)!;
       if (adjCount > 0) {
         final adjHidden = _getAdjacentCount(x, y, SquareState.hidden);
         if (adjHidden > 0) {
@@ -187,7 +184,7 @@ class Game {
 
     final flagged = <int>[];
     final hidden = <int>[];
-    final adjCount = field.getAdjacentCount(x, y);
+    final adjCount = field.getAdjacentCount(x, y)!;
     assert(adjCount > 0);
 
     var failed = false;
@@ -215,7 +212,7 @@ class Game {
       for (final i in hidden) {
         final c = field.getCoordinate(i);
         if (canReveal(c.x, c.y)) {
-          reveals.addAll(reveal(c.x, c.y));
+          reveals.addAll(reveal(c.x, c.y)!);
         }
       }
     }
@@ -266,8 +263,6 @@ class Game {
   void _update() => _updatedEvent.add(null);
 
   void _setState(GameState value) {
-    assert(value != null);
-    assert(_state != null);
     assert((_state == GameState.reset) == (!_watch.isRunning));
     if (_state != value) {
       _state = value;

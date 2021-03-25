@@ -31,15 +31,15 @@ class GameElement extends Sprite {
 
   final GameRoot _manager;
 
-  BoardElement _boardElement;
-  ScoreElement _scoreElement;
-  SimpleButton _logoButton;
+  late BoardElement _boardElement;
+  ScoreElement? _scoreElement;
+  late SimpleButton _logoButton;
   final _popLayer = Sprite(), _dartLayer = Sprite();
 
-  int _boardSize;
-  num _boardScale;
+  late final int _boardSize;
+  late final num _boardScale;
 
-  TextureAtlas _animations;
+  late TextureAtlas _animations;
 
   Game get game => _manager.game;
 
@@ -47,7 +47,7 @@ class GameElement extends Sprite {
 
   num get boardScale => _boardScale;
 
-  ScoreElement get scoreElement => _scoreElement;
+  ScoreElement? get scoreElement => _scoreElement;
 
   GameElement(this._manager) {
     final opa = resourceManager.getTextureAtlas('opaque');
@@ -113,7 +113,7 @@ class GameElement extends Sprite {
     assert(!game.gameEnded);
     final ss = game.getSquareState(x, y);
 
-    List<Point<int>> reveals;
+    List<Point<int>>? reveals;
 
     if (alt) {
       if (ss == SquareState.hidden || ss == SquareState.flagged) {
@@ -172,7 +172,7 @@ class GameElement extends Sprite {
     return false;
   }
 
-  void _startPopAnimation(Point<int> start, [Iterable<Point<int>> reveals]) {
+  void _startPopAnimation(Point<int> start, [Iterable<Point<int>>? reveals]) {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 
@@ -218,7 +218,7 @@ class GameElement extends Sprite {
 
       anim.onComplete.listen((e) => anim.removeFromParent());
 
-      stage.juggler
+      stage!.juggler
         ..add(anim)
         ..delayCall(() => _animationDelay(anim, se, ss), v.delay / _frameRate);
     }
@@ -251,7 +251,7 @@ class GameElement extends Sprite {
 
       shadow.onComplete.listen((e) => shadow.removeFromParent());
 
-      stage.juggler..add(dart)..add(shadow);
+      stage!.juggler..add(dart)..add(shadow);
     }
   }
 }

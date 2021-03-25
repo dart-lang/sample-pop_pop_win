@@ -27,13 +27,10 @@ jobs:
         with:
           sdk: ${{ matrix.sdk }}
       - id: install
-        name: Install dependencies
         run: dart pub get
-      - name: Check formatting
-        run: dart format --output=none --set-exit-if-changed .
+      - run: dart format --output=none --set-exit-if-changed .
         if: always() && steps.install.outcome == 'success'
-      - name: Analyze code
-        run: dart analyze --fatal-infos
+      - run: dart analyze --fatal-infos
         if: always() && steps.install.outcome == 'success'
 
   # Run tests on a matrix consisting of two dimensions:
@@ -47,14 +44,13 @@ jobs:
       matrix:
         # Add macos-latest and/or windows-latest if relevant for this package.
         os: [ubuntu-latest]
-        sdk: [beta, dev]
+        sdk: [2.12.0, dev]
     steps:
       - uses: actions/checkout@v2
       - uses: dart-lang/setup-dart@v1.0
         with:
           sdk: ${{ matrix.sdk }}
       - id: install
-        name: Install dependencies
         run: dart pub get
       - run: dart test -p vm,chrome
         if: always() && steps.install.outcome == 'success'

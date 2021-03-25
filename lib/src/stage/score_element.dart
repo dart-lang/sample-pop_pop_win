@@ -8,7 +8,7 @@ import '../game.dart';
 import 'game_element.dart';
 
 class ScoreElement extends TextField {
-  int bestTime;
+  int? bestTime;
 
   ScoreElement(this.bestTime) {
     defaultTextFormat =
@@ -28,16 +28,17 @@ class ScoreElement extends TextField {
   }
 
   String _textValue() {
-    final timeInSeconds = (_game.duration == null)
+    final timeInSeconds = (_game!.duration == null)
         ? '0'
-        : (_game.duration.inMilliseconds / 1000).toStringAsFixed(1);
-    var textValue = 'Bombs Left: ${_game.bombsLeft}\nTime: $timeInSeconds';
+        : (_game!.duration!.inMilliseconds / 1000).toStringAsFixed(1);
+    var textValue = 'Bombs Left: ${_game!.bombsLeft}\nTime: $timeInSeconds';
     if (bestTime != null) {
-      textValue = '$textValue\nRecord: ${(bestTime / 1000).toStringAsFixed(1)}';
+      textValue =
+          '$textValue\nRecord: ${(bestTime! / 1000).toStringAsFixed(1)}';
     }
 
     return textValue;
   }
 
-  Game get _game => (parent as GameElement).game;
+  Game? get _game => (parent as GameElement).game;
 }

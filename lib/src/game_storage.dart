@@ -8,26 +8,21 @@ import 'game.dart';
 import 'platform_web.dart';
 
 class GameStorage {
-  static const _gameCountKey = 'gameCount';
   final _bestTimeUpdated = StreamController<void>();
-
-  int get gameCount => _getIntValue(_gameCountKey);
 
   Stream<void> get bestTimeUpdated => _bestTimeUpdated.stream;
 
   void recordState(GameState state) {
-    assert(state != null);
     _incrementIntValue(state.toString());
   }
 
   bool updateBestTime(Game game) {
-    assert(game != null);
     assert(game.state == GameState.won);
 
     final w = game.field.width;
     final h = game.field.height;
     final m = game.field.bombCount;
-    final duration = game.duration.inMilliseconds;
+    final duration = game.duration!.inMilliseconds;
 
     final key = _getKey(w, h, m);
 
@@ -41,7 +36,7 @@ class GameStorage {
     }
   }
 
-  int getBestTimeMilliseconds(int width, int height, int bombCount) {
+  int? getBestTimeMilliseconds(int width, int height, int bombCount) {
     final key = _getKey(width, height, bombCount);
     return _getIntValue(key, null);
   }
@@ -50,27 +45,24 @@ class GameStorage {
     targetPlatform.clearValues();
   }
 
-  int _getIntValue(String key, [int defaultValue = 0]) {
-    assert(key != null);
-
+  int? _getIntValue(String key, [int? defaultValue = 0]) {
     final strValue = targetPlatform.getValue(key);
     return _parseValue(strValue, defaultValue);
   }
 
   void _setIntValue(String key, int value) {
-    assert(key != null);
-    final val = (value == null) ? null : value.toString();
+    final val = value.toString();
     targetPlatform.setValue(key, val);
   }
 
   void _incrementIntValue(String key) {
-    final val = _getIntValue(key);
+    final val = _getIntValue(key)!;
     _setIntValue(key, val + 1);
   }
 
   static String _getKey(int w, int h, int m) => 'w$w-h$h-m$m';
 
-  static int _parseValue(String value, int defaultValue) {
+  static int? _parseValue(String? value, int? defaultValue) {
     if (value == null) {
       return defaultValue;
     } else {

@@ -27,9 +27,7 @@ class Array2d<T> extends ListBase<T> {
   Array2d.wrap(this.width, List<T> source)
       : _source = source,
         assert(width >= 0),
-        height = (width != null && width > 0 && source != null)
-            ? source.length ~/ width
-            : 0 {
+        height = (width > 0) ? source.length ~/ width : 0 {
     if (width * height == 0) {
       assert(_source.isEmpty);
     } else {

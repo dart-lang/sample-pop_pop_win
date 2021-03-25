@@ -15,14 +15,14 @@ import 'package:js/js.dart';
 external void gtag(
   String event,
   String action, [
-  GTagAnalyticsEventOptions eventParams,
+  GTagAnalyticsEventOptions? eventParams,
 ]);
 
 void sendTiming(
   String name, {
-  int value,
-  String eventCategory,
-  String eventLabel,
+  int? value,
+  String? eventCategory,
+  String? eventLabel,
 }) {
   value ??= window.performance.now().toInt();
 
@@ -50,9 +50,9 @@ class GTagAnalyticsEventOptions {
   external int get name;
 
   external factory GTagAnalyticsEventOptions({
-    String event_category,
-    String event_label,
-    int value,
-    String name,
+    String? event_category,
+    String? event_label,
+    int? value,
+    String? name,
   });
 }

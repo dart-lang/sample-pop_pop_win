@@ -19,15 +19,19 @@ class PlatformWeb {
 
   void clearValues() => window.localStorage.clear();
 
-  void setValue(String key, String value) {
-    window.localStorage[key] = value;
+  void setValue(String key, String? value) {
+    if (value == null) {
+      window.localStorage.remove(key);
+    } else {
+      window.localStorage[key] = value;
+    }
   }
 
-  String getValue(String key) => window.localStorage[key];
+  String? getValue(String key) => window.localStorage[key];
 
   int get size {
     _sizeAccessed = true;
-    var hash = (_urlHash == null) ? '7' : _urlHash;
+    var hash = _urlHash;
     hash = hash.replaceAll('#', '');
     return int.tryParse(hash) ?? 7;
   }
@@ -36,7 +40,7 @@ class PlatformWeb {
 
   Stream<void> get aboutChanged => _aboutController.stream;
 
-  void toggleAbout([bool value]) {
+  void toggleAbout([bool? value]) {
     final loc = window.location;
     // ensure we treat empty hash like '#', which makes comparison easy later
     final hash = loc.hash.isEmpty ? '#' : loc.hash;
