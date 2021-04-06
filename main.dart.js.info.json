@@ -16974,7 +16974,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cD:function(a,b){return this.kY(a,b)}",
+        "code": "cD:function(a,b){return this.kY(0,b)}",
         "type": "Future<TextureAtlas> Function(TextureAtlasLoader)"
       },
       "94108092": {
@@ -59205,7 +59205,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "giO:function(a){return P.a.prototype.giO.call(C.jN,this)}",
+        "code": "giO:function(a){return P.a.prototype.giO.call(this,this)}",
         "type": "int Function()"
       },
       "861403074": {
@@ -81500,14 +81500,6 @@
         "size": 119,
         "outputUnit": "outputUnit/669725655",
         "code": "C.O4=function getTagFallback(o) {\n  var s = Object.prototype.toString.call(o);\n  return s.substring(8, s.length - 1);\n}"
-      },
-      "935642812": {
-        "id": "constant/935642812",
-        "kind": "constant",
-        "name": null,
-        "size": 19,
-        "outputUnit": "outputUnit/669725655",
-        "code": "C.jN=J.PE.prototype"
       },
       "936428220": {
         "id": "constant/936428220",
@@ -146632,7 +146624,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 239057,
+      "size": 239037,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146642,11 +146634,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 239057,
-    "dart2jsVersion": "2.13.0-165.0.dev",
-    "compilationMoment": "2021-03-25 11:55:16.626723",
-    "compilationDuration": 5889815,
-    "toJsonDuration": 28000,
+    "size": 239037,
+    "dart2jsVersion": "2.13.0-204.0.dev",
+    "compilationMoment": "2021-04-06 08:48:17.460296",
+    "compilationDuration": 5024741,
+    "toJsonDuration": 20000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
