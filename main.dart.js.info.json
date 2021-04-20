@@ -5,7 +5,7 @@
         "id": "library/6021244",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 242,
+        "size": 240,
         "children": [
           "function/97379748",
           "function/540614297",
@@ -22,7 +22,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 6607,
+        "size": 6609,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -283,7 +283,7 @@
         "id": "library/91212954",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 40,
+        "size": 11,
         "children": [
           "field/817189805"
         ],
@@ -293,7 +293,7 @@
         "id": "library/152998570",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 1471,
+        "size": 1469,
         "children": [
           "class/394021680"
         ],
@@ -552,7 +552,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3188,
+        "size": 3186,
         "children": [
           "field/691310251",
           "function/14078432",
@@ -5151,7 +5151,7 @@
         "id": "class/394021680",
         "kind": "class",
         "name": "SquareElement",
-        "size": 1471,
+        "size": 1469,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/152998570",
         "modifiers": {
@@ -5576,7 +5576,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 6149,
+        "size": 6151,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -40939,7 +40939,7 @@
         "id": "function/540614297",
         "kind": "function",
         "name": "_playAudio",
-        "size": 242,
+        "size": 240,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/6021244",
         "children": [],
@@ -40960,7 +40960,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "jr:function(a){var s,r,q,p\nswitch(a){case\"Pop\":a=\"Pop\"+$.XB().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.XB().j1(4)\nbreak}s=t.b.a($.PH().Ov().n9(\"SoundSprite\",\"audio\")).yk(a)\nr=s.a.b\nif(r==null)r=H.v(H.la(\"_sound\"))\nq=s.c\np=s.d\ns=s.e\nr.uW(q,p,s,null)}",
+        "code": "jr:function(a){var s,r,q,p\nswitch(a){case\"Pop\":a=\"Pop\"+$.XB().j1(8)\nbreak\ncase\"Bomb\":a=\"Bomb\"+$.XB().j1(4)\nbreak}s=t.b.a($.Dz.Ov().n9(\"SoundSprite\",\"audio\")).yk(a)\nr=s.a.b\nif(r==null)r=H.v(H.la(\"_sound\"))\nq=s.c\np=s.d\ns=s.e\nr.uW(q,p,s,null)}",
         "type": "void Function(String)"
       },
       "540949546": {
@@ -64243,7 +64243,7 @@
         "id": "function/948303177",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 1060,
+        "size": 1058,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -64279,7 +64279,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI:function(a,b,c){var s,r,q,p,o\nY.hA(\"secondaryLoad\")\ns=b.oJ\nr=s.RY(c,0.5)\nq=r.gtV(r)\nq.a.HQ(q,9).d=0\nr.f=new E.XG(b,c)\nE.z6()\nr=$.fF()\nq=r.b\nnew P.u8(q,H.Lh(q).C(\"u8<1>\")).yI(new E.S5())\nr.a=!0\nr=window.location.hash\nr.toString\np=H.Hp(H.ys(r,\"#\",\"\"),null)\nif(p==null)p=7\no=C.CD.yu(p*p*0.15625)\n$.PH().a=a\nr=new Y.Yy(b,P.Fl(t.F,t.S),p,p,o,new M.HB(P.x2(!1,t.H)))\nr.jI()\nq=U.kZ(r)\nq.ch=C.jn.IV(0,0,1)\nif(r.z==null)r.z=q\nelse H.v(H.RI(\"_gameElement\"))\nb.bS(r.gTg())\ns=s.RY(r.gTg(),0.5)\ns=s.gtV(s)\ns.a.HQ(s,9).d=1\ns=window\ns.toString\nW.JE(s,\"touchmove\",new E.PZ(),!1)\ns=window\ns.toString\nW.JE(s,\"keydown\",E.py(),!1)\ns=J.qF($.TH())\nW.JE(s.a,s.b,E.o9(),!1)\ns=$.KP()\nnew P.u8(s,H.Lh(s).C(\"u8<1>\")).yI(new E.C8())}",
+        "code": "TI:function(a,b,c){var s,r,q,p,o\nY.hA(\"secondaryLoad\")\ns=b.oJ\nr=s.RY(c,0.5)\nq=r.gtV(r)\nq.a.HQ(q,9).d=0\nr.f=new E.XG(b,c)\nE.z6()\nr=$.fF()\nq=r.b\nnew P.u8(q,H.Lh(q).C(\"u8<1>\")).yI(new E.S5())\nr.a=!0\nr=window.location.hash\nr.toString\np=H.Hp(H.ys(r,\"#\",\"\"),null)\nif(p==null)p=7\no=C.CD.yu(p*p*0.15625)\n$.Dz.a=a\nr=new Y.Yy(b,P.Fl(t.F,t.S),p,p,o,new M.HB(P.x2(!1,t.H)))\nr.jI()\nq=U.kZ(r)\nq.ch=C.jn.IV(0,0,1)\nif(r.z==null)r.z=q\nelse H.v(H.RI(\"_gameElement\"))\nb.bS(r.gTg())\ns=s.RY(r.gTg(),0.5)\ns=s.gtV(s)\ns.a.HQ(s,9).d=1\ns=window\ns.toString\nW.JE(s,\"touchmove\",new E.PZ(),!1)\ns=window\ns.toString\nW.JE(s,\"keydown\",E.py(),!1)\ns=J.qF($.TH())\nW.JE(s.a,s.b,E.o9(),!1)\ns=$.KP()\nnew P.u8(s,H.Lh(s).C(\"u8<1>\")).yI(new E.C8())}",
         "type": "void Function(ResourceManager,Stage,Sprite)"
       },
       "949168228": {
@@ -65575,7 +65575,7 @@
         "id": "function/969710394",
         "kind": "function",
         "name": "updateState",
-        "size": 752,
+        "size": 750,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/394021680",
         "children": [],
@@ -65590,7 +65590,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Iv:function(){var s,r,q=this,p=t.o,o=t.q,n=q.Qt,m=q.lN,l=o.a(p.a(q.fy).fy).Qt.goF().b\nswitch(l.c[n+m*l.a]){case C.Bl:s=q.cV()\nbreak\ncase C.No:s=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:s=C.Hf[o.a(p.a(q.fy).fy).Qt.goF().a.Wz(n,m)]\nbreak\ncase C.e5:s=\"crater_b\"\nbreak\ncase C.fL:s=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.b(P.PV(q.gF2().Z(0)+\" not supported\"))}l=o.a(p.a(q.fy).fy).Qt.goF().f\nif(!(l===C.mV||l===C.He)){l=o.a(p.a(q.fy).fy).Qt.goF().b\nif(l.c[n+m*l.a]!==C.Bl){p=o.a(p.a(q.fy).fy).Qt.goF().b\np=p.c[n+m*p.a]===C.No}else p=!0}else p=!1\nq.r1=p?\"pointer\":\"auto\"\no=q.rS.k3\nr=A.Jd(o)\nn=r.b\nn.A3(0,r.c)\nm=r.a\nn.e.clearRect(0,0,m.a,m.b)\nm.c.a.Li(0)\no.xV(t.E.a($.PH().Ov().n9(\"TextureAtlas\",\"opaque\")).kI(s),new U.tn(0,0,80,80,t.U),new U.tZ(0,0,t.J))}",
+        "code": "Iv:function(){var s,r,q=this,p=t.o,o=t.q,n=q.Qt,m=q.lN,l=o.a(p.a(q.fy).fy).Qt.goF().b\nswitch(l.c[n+m*l.a]){case C.Bl:s=q.cV()\nbreak\ncase C.No:s=\"balloon_tagged_frozen\"\nbreak\ncase C.Ni:s=C.Hf[o.a(p.a(q.fy).fy).Qt.goF().a.Wz(n,m)]\nbreak\ncase C.e5:s=\"crater_b\"\nbreak\ncase C.fL:s=\"balloon_tagged_bomb\"\nbreak\ndefault:throw H.b(P.PV(q.gF2().Z(0)+\" not supported\"))}l=o.a(p.a(q.fy).fy).Qt.goF().f\nif(!(l===C.mV||l===C.He)){l=o.a(p.a(q.fy).fy).Qt.goF().b\nif(l.c[n+m*l.a]!==C.Bl){p=o.a(p.a(q.fy).fy).Qt.goF().b\np=p.c[n+m*p.a]===C.No}else p=!0}else p=!1\nq.r1=p?\"pointer\":\"auto\"\no=q.rS.k3\nr=A.Jd(o)\nn=r.b\nn.A3(0,r.c)\nm=r.a\nn.e.clearRect(0,0,m.a,m.b)\nm.c.a.Li(0)\no.xV(t.E.a($.Dz.Ov().n9(\"TextureAtlas\",\"opaque\")).kI(s),new U.tn(0,0,80,80,t.U),new U.tZ(0,0,t.J))}",
         "type": "void Function()"
       },
       "970179042": {
@@ -78557,12 +78557,12 @@
         "id": "field/817189805",
         "kind": "field",
         "name": "resourceManager",
-        "size": 41,
+        "size": 12,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/91212954",
         "children": [],
         "inferredType": "[null|exact=_Cell]",
-        "code": "s($,\"Dz\",\"PH\",function(){return H.wX()})",
+        "code": "$.Dz=H.wX()",
         "type": "_Cell"
       },
       "817485301": {
@@ -86539,15 +86539,7 @@
     ],
     "field/817189805": [
       {
-        "id": "function/374894045",
-        "mask": null
-      },
-      {
         "id": "function/65625711",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
         "mask": null
       }
     ],
@@ -146696,7 +146688,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 238703,
+      "size": 238670,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146706,11 +146698,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 238703,
-    "dart2jsVersion": "2.14.0-3.0.dev",
-    "compilationMoment": "2021-04-15 17:00:09.030291",
-    "compilationDuration": 3960766,
-    "toJsonDuration": 19000,
+    "size": 238670,
+    "dart2jsVersion": "2.14.0-18.0.dev",
+    "compilationMoment": "2021-04-20 11:21:41.103814",
+    "compilationDuration": 5371429,
+    "toJsonDuration": 31000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

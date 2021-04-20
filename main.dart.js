@@ -2253,7 +2253,7 @@ r.toString
 p=H.Hp(H.ys(r,"#",""),null)
 if(p==null)p=7
 o=C.CD.yu(p*p*0.15625)
-$.PH().a=a
+$.Dz.a=a
 r=new Y.Yy(b,P.Fl(t.F,t.S),p,p,o,new M.HB(P.x2(!1,t.H)))
 r.jI()
 q=U.kZ(r)
@@ -3452,7 +3452,7 @@ jr:function(a){var s,r,q,p
 switch(a){case"Pop":a="Pop"+$.XB().j1(8)
 break
 case"Bomb":a="Bomb"+$.XB().j1(4)
-break}s=t.b.a($.PH().Ov().n9("SoundSprite","audio")).yk(a)
+break}s=t.b.a($.Dz.Ov().n9("SoundSprite","audio")).yk(a)
 r=s.a.b
 if(r==null)r=H.v(H.la("_sound"))
 q=s.c
@@ -5572,89 +5572,89 @@ gR7:function(){var s=this.YL
 return s==null?H.v(H.la("_boardSize")):s},
 gjX:function(){var s=this.Hs
 return s==null?H.v(H.la("_boardScale")):s},
-Fr:function(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g=this,f="TextureAtlas",e=4278190080,d=$.PH(),c=t.E,b=c.a(d.Ov().n9(f,"opaque")),a=c.a(d.Ov().n9(f,"static"))
-g.m9=c.a(d.Ov().n9(f,"animated"))
-d=g.Qt
-c=d.goF()
-if(g.YL==null)g.YL=c.a.a*80+64
+Fr:function(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=this,e="TextureAtlas",d=4278190080,c=t.E,b=c.a($.Dz.Ov().n9(e,"opaque")),a=c.a($.Dz.Ov().n9(e,"static"))
+f.m9=c.a($.Dz.Ov().n9(e,"animated"))
+c=f.Qt
+s=c.goF()
+if(f.YL==null)f.YL=s.a.a*80+64
 else H.v(H.RI("_boardSize"))
-c=g.gR7()
-if(g.Hs==null)g.Hs=1344/c
+s=f.gR7()
+if(f.Hs==null)f.Hs=1344/s
 else H.v(H.RI("_boardScale"))
-c=H.VM([],t.r)
-s=$.LS
-$.LS=s+1
-r=t.t
-q=t.N
-p=t.C
-new V.ce(c,s,H.VM([],r),T.oy(),P.Fl(q,p)).Fr(g,b)
-o=A.Lj(a.kI("button_new_game"))
-n=A.Lj(a.kI("button_new_game_clicked"))
-s=A.VK(o,n,n,n)
-s.c=450
-s.id=!0
-s.d=20
-c=t.V
-s.Ep(0,"click",c).XE(new U.oB(g),!1,0)
-g.bS(s)
-s=D.t5(g)
-m=$.Vi()
-l=m.a
-s.c=l+32*g.gjX()
-s.id=!0
-m=m.b
-s.d=m+32*g.gjX()
-s.id=!0
-g.lN=s
-k="w"+d.a+"-h"+d.b+"-m"+d.c
+s=H.VM([],t.r)
+r=$.LS
+$.LS=r+1
+q=t.t
+p=t.N
+o=t.C
+new V.ce(s,r,H.VM([],q),T.oy(),P.Fl(p,o)).Fr(f,b)
+n=A.Lj(a.kI("button_new_game"))
+m=A.Lj(a.kI("button_new_game_clicked"))
+r=A.VK(n,m,m,m)
+r.c=450
+r.id=!0
+r.d=20
+s=t.V
+r.Ep(0,"click",s).XE(new U.oB(f),!1,0)
+f.bS(r)
+r=D.t5(f)
+l=$.Vi()
+k=l.a
+r.c=k+32*f.gjX()
+r.id=!0
+l=l.b
+r.d=l+32*f.gjX()
+r.id=!0
+f.lN=r
+j="w"+c.a+"-h"+c.b+"-m"+c.c
 $.fF()
-d=M.Yq(window.localStorage.getItem(k),null)
-s=H.VM([],t.fE)
-j=$.LS
-$.LS=j+1
-p=new X.XY(d,s,j,H.VM([],r),T.oy(),P.Fl(q,p))
-p.EB("",null)
-p.sJv(Y.Uk("Slackey, cursive",28,e,"left",!1,0,null,0,!1,1,0,0,e,0,0,!1,"top",400))
-p.kX="left"
-p.HV|=3
-p.c=1400
-p.id=!0
-p.d=20
-g.bS(p)
-g.rS=p
-i=Math.min(Math.max(g.gjX(),1.1),1.5)
-h=A.Lj(a.kI("logo_win"))
-g.zN=A.VK(h,h,h,h)
-p=g.gli()
-p.d=20
-p.id=!0
-p.x=p.r=i
-p.c=1024-g.gli().gcl().c/2
-p.id=!0
-p.Ep(0,"click",c).XE(new U.jW(),!1,0)
-g.bS(p)
-p=g.KQ
-p.k4=!1
-p.c=l+32*g.gjX()
-p.id=!0
-p.d=m+32*g.gjX()
-p.id=!0
-p.r=g.gjX()
-p.id=!0
-p.x=g.gjX()
-p.id=!0
-g.bS(p)
-p=g.Na
-p.k4=!1
-p.c=l+32*g.gjX()
-p.id=!0
-p.d=m+32*g.gjX()
-p.id=!0
-p.r=g.gjX()
-p.id=!0
-p.x=g.gjX()
-p.id=!0
-g.bS(p)},
+c=M.Yq(window.localStorage.getItem(j),null)
+r=H.VM([],t.fE)
+i=$.LS
+$.LS=i+1
+o=new X.XY(c,r,i,H.VM([],q),T.oy(),P.Fl(p,o))
+o.EB("",null)
+o.sJv(Y.Uk("Slackey, cursive",28,d,"left",!1,0,null,0,!1,1,0,0,d,0,0,!1,"top",400))
+o.kX="left"
+o.HV|=3
+o.c=1400
+o.id=!0
+o.d=20
+f.bS(o)
+f.rS=o
+h=Math.min(Math.max(f.gjX(),1.1),1.5)
+g=A.Lj(a.kI("logo_win"))
+f.zN=A.VK(g,g,g,g)
+o=f.gli()
+o.d=20
+o.id=!0
+o.x=o.r=h
+o.c=1024-f.gli().gcl().c/2
+o.id=!0
+o.Ep(0,"click",s).XE(new U.jW(),!1,0)
+f.bS(o)
+o=f.KQ
+o.k4=!1
+o.c=k+32*f.gjX()
+o.id=!0
+o.d=l+32*f.gjX()
+o.id=!0
+o.r=f.gjX()
+o.id=!0
+o.x=f.gjX()
+o.id=!0
+f.bS(o)
+o=f.Na
+o.k4=!1
+o.c=k+32*f.gjX()
+o.id=!0
+o.d=l+32*f.gjX()
+o.id=!0
+o.r=f.gjX()
+o.id=!0
+o.x=f.gjX()
+o.id=!0
+f.bS(o)},
 wZ:function(a,b,c,d){var s,r=this,q=null,p=r.Qt,o=p.goF().b
 o=o.c[b+c*o.a]
 if(d)if(o===C.Bl||o===C.No){r.Au(b,c)
@@ -5841,7 +5841,7 @@ n.A3(0,r.c)
 m=r.a
 n.e.clearRect(0,0,m.a,m.b)
 m.c.a.Li(0)
-o.xV(t.E.a($.PH().Ov().n9("TextureAtlas","opaque")).kI(s),new U.tn(0,0,80,80,t.U),new U.tZ(0,0,t.J))},
+o.xV(t.E.a($.Dz.Ov().n9("TextureAtlas","opaque")).kI(s),new U.tn(0,0,80,80,t.U),new U.tZ(0,0,t.J))},
 Nu:function(a){var s,r=this,q=t.o,p=t.q,o=p.a(q.a(r.fy).fy).Qt.goF().f
 if(!(o===C.mV||o===C.He)){if(a.a!=="rightClick"){o=a.cy
 o.toString
@@ -8547,6 +8547,7 @@ $.mg=null
 $.UD=!1
 $.X3=C.NU
 $.x=H.VM([],H.q7("jd<a>"))
+$.Dz=H.wX()
 $.LS=0
 $.j4=1
 $.cU=0
@@ -8585,7 +8586,6 @@ s($,"Xt","TH",function(){var q=W.Z0("#popup")
 q.toString
 return q})
 s($,"qO","fF",function(){return D.B0()})
-s($,"Dz","PH",function(){return H.wX()})
 s($,"YZ","Vi",function(){return U.JH(352,96)})
 s($,"fa","f9",function(){return U.JH(-88,-88)})
 s($,"lL","bD",function(){return U.JH(-472,-348)})
