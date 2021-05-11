@@ -16438,7 +16438,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ey:function(a){var s=a.a,r=a.b,q=this.a,p=q[0],o=q[2],n=q[4],m=q[1],l=q[3]\nq=q[5]\nreturn new U.tZ(s*p+r*o+n,s*m+r*l+q,t.n)}",
+        "code": "Ey:function(a){var s=a.a,r=a.b,q=this.a,p=q[0],o=q[2],n=q[4],m=q[1],l=q[3]\nq=q[5]\nreturn new U.tZ(s*p+r*o+n,s*m+r*l+q,t.M)}",
         "type": "Point<num> Function(Point<num>,[Point<num>?])"
       },
       "78829423": {
@@ -19425,7 +19425,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Hj:function(b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2=this\nb3.preventDefault()\ns=b3.type\ns.toString\nb3.altKey\nb3.ctrlKey\nr=b3.shiftKey\nq=b3.changedTouches\nif(q==null)return\nfor(q=C.bA.gkz(q),p=new H.vG(q,new A.cZ()),o=s===\"touchmove\",n=s===\"touchcancel\",m=s===\"touchend\",s=s===\"touchstart\",l=b2.mn,k=b2.hi,j=t.M,i=b2.No,h=t.n,g=t.r;p.F();){f=q.gl()\ne=f.identifier\ne.toString\nd=f.clientX\nd.toString\nd=C.CD.zQ(d)\nf=f.clientY\nf.toString\nc=i.Ey(new P.hL(d,C.CD.zQ(f),j))\nb=new U.tZ(0,0,h)\na=b2.tJ(c.a,c.b)\nif(a==null)a=b2\na0=l.to(0,e,new A.EZ(b2,a))\na1=a0.a\na2=a0.b\nC.Nm.U(k,new A.ez(a1,c))\na3=a0.d\nif(a3!==a){a4=H.QI([],g)\na5=H.QI([],g)\nfor(a6=a3;a6!=null;a6=a6.fy)a4.push(a6)\nfor(a6=a;a6!=null;a6=a6.fy)a5.push(a6)\nfor(f=a4.length,d=a5.length,a7=0;!0;++a7){if(a7===f)break\nif(a7===d)break\nif(a4[f-a7-1]!==a5[d-a7-1])break}a3.TK(c,b)\na3.H2(0,new R.y6(a2,b.a,b.b,r,\"touchOut\",!0))\nfor(a8=0;a8<a4.length-a7;++a8){a9=a4[a8]\na9.TK(c,b)\na9.H2(0,new R.y6(a2,b.a,b.b,r,\"touchRollOut\",!1))}for(a8=a5.length-a7-1;a8>=0;--a8){a9=a5[a8]\na9.TK(c,b)\na9.H2(0,new R.y6(a2,b.a,b.b,r,\"touchRollOver\",!1))}a.TK(c,b)\na.H2(0,new R.y6(a2,b.a,b.b,r,\"touchOver\",!0))\na0.d=a}if(s){f=b2.I6;(f==null?H.v(H.la(\"_canvas\")):f).focus()\nl.Y5(0,e,a0)\nb0=\"touchBegin\"}else b0=null\nif(m){l.Rz(0,e)\nb1=a0.c===a\nb0=\"touchEnd\"}else b1=!1\nif(n){l.Rz(0,e)\nb0=\"touchCancel\"}if(o)b0=\"touchMove\"\nif(b0!=null){a.TK(c,b)\na.H2(0,new R.y6(a2,b.a,b.b,r,b0,!0))\nif(b1)a.H2(0,new R.y6(a2,b.a,b.b,r,\"touchTap\",!0))}}}\nm(l,\"gd6\",\"Hj\",15)",
+        "code": "Hj:function(b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2=this\nb3.preventDefault()\ns=b3.type\ns.toString\nb3.altKey\nb3.ctrlKey\nr=b3.shiftKey\nq=b3.changedTouches\nif(q==null)return\nfor(q=C.bA.gkz(q),p=new H.vG(q,new A.cZ()),o=s===\"touchmove\",n=s===\"touchcancel\",m=s===\"touchend\",s=s===\"touchstart\",l=b2.mn,k=b2.hi,j=t.n,i=b2.No,h=t.M,g=t.r;p.F();){f=q.gl()\ne=f.identifier\ne.toString\nd=f.clientX\nd.toString\nd=C.CD.zQ(d)\nf=f.clientY\nf.toString\nc=i.Ey(new P.hL(d,C.CD.zQ(f),j))\nb=new U.tZ(0,0,h)\na=b2.tJ(c.a,c.b)\nif(a==null)a=b2\na0=l.to(0,e,new A.EZ(b2,a))\na1=a0.a\na2=a0.b\nC.Nm.U(k,new A.ez(a1,c))\na3=a0.d\nif(a3!==a){a4=H.QI([],g)\na5=H.QI([],g)\nfor(a6=a3;a6!=null;a6=a6.fy)a4.push(a6)\nfor(a6=a;a6!=null;a6=a6.fy)a5.push(a6)\nfor(f=a4.length,d=a5.length,a7=0;!0;++a7){if(a7===f)break\nif(a7===d)break\nif(a4[f-a7-1]!==a5[d-a7-1])break}a3.TK(c,b)\na3.H2(0,new R.y6(a2,b.a,b.b,r,\"touchOut\",!0))\nfor(a8=0;a8<a4.length-a7;++a8){a9=a4[a8]\na9.TK(c,b)\na9.H2(0,new R.y6(a2,b.a,b.b,r,\"touchRollOut\",!1))}for(a8=a5.length-a7-1;a8>=0;--a8){a9=a5[a8]\na9.TK(c,b)\na9.H2(0,new R.y6(a2,b.a,b.b,r,\"touchRollOver\",!1))}a.TK(c,b)\na.H2(0,new R.y6(a2,b.a,b.b,r,\"touchOver\",!0))\na0.d=a}if(s){f=b2.I6;(f==null?H.v(H.la(\"_canvas\")):f).focus()\nl.Y5(0,e,a0)\nb0=\"touchBegin\"}else b0=null\nif(m){l.Rz(0,e)\nb1=a0.c===a\nb0=\"touchEnd\"}else b1=!1\nif(n){l.Rz(0,e)\nb0=\"touchCancel\"}if(o)b0=\"touchMove\"\nif(b0!=null){a.TK(c,b)\na.H2(0,new R.y6(a2,b.a,b.b,r,b0,!0))\nif(b1)a.H2(0,new R.y6(a2,b.a,b.b,r,\"touchTap\",!0))}}}\nm(l,\"gd6\",\"Hj\",15)",
         "type": "void Function(TouchEvent)"
       },
       "135702021": {
@@ -20993,7 +20993,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn t.M.b(b)&&this.a===b.gx(b)&&this.b===b.gy(b)}",
+        "code": "eT:function(a,b){if(b==null)return!1\nreturn t.n.b(b)&&this.a===b.gx(b)&&this.b===b.gy(b)}",
         "type": "bool Function(Object)"
       },
       "164775669": {
@@ -21927,7 +21927,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Qb:function(a8,a9){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=a8.a,a4=a8.$ti.c,a5=a4.a(a3+a8.c),a6=a8.b,a7=a4.a(a6+a8.d)\na4=this.a\ns=a4[0]\nr=a3*s\nq=a4[2]\np=a6*q\no=r+p\nn=a4[1]\nm=a3*n\nl=a4[3]\nk=a6*l\nj=m+k\ns=a5*s\ni=s+p\nn=a5*n\nh=n+k\nq=a7*q\ng=s+q\nl=a7*l\nf=n+l\ne=r+q\nd=m+l\nc=o>i?i:o\nif(c>g)c=g\nif(c>e)c=e\nb=j>h?h:j\nif(b>f)b=f\nif(b>d)b=d\na=o<i?i:o\nif(a<g)a=g\nif(a<e)a=e\na0=j<h?h:j\nif(a0<f)a0=f\nif(a0<d)a0=d\na1=a-c\na2=a0-b\nif(a9 instanceof U.tn){s=a4[4]\na4=a4[5]\na9.a=s+c\na9.b=a4+b\na9.c=a1\na9.d=a2\nreturn a9}else return new U.tn(a4[4]+c,a4[5]+b,a1,a2,t.I)}",
+        "code": "Qb:function(a8,a9){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=a8.a,a4=a8.$ti.c,a5=a4.a(a3+a8.c),a6=a8.b,a7=a4.a(a6+a8.d)\na4=this.a\ns=a4[0]\nr=a3*s\nq=a4[2]\np=a6*q\no=r+p\nn=a4[1]\nm=a3*n\nl=a4[3]\nk=a6*l\nj=m+k\ns=a5*s\ni=s+p\nn=a5*n\nh=n+k\nq=a7*q\ng=s+q\nl=a7*l\nf=n+l\ne=r+q\nd=m+l\nc=o>i?i:o\nif(c>g)c=g\nif(c>e)c=e\nb=j>h?h:j\nif(b>f)b=f\nif(b>d)b=d\na=o<i?i:o\nif(a<g)a=g\nif(a<e)a=e\na0=j<h?h:j\nif(a0<f)a0=f\nif(a0<d)a0=d\na1=a-c\na2=a0-b\nif(a9 instanceof U.tn){s=a4[4]\na4=a4[5]\na9.a=s+c\na9.b=a4+b\na9.c=a1\na9.d=a2\nreturn a9}else return new U.tn(a4[4]+c,a4[5]+b,a1,a2,t.i)}",
         "type": "Rectangle<num> Function(Rectangle<num>,[Rectangle<num>?])"
       },
       "186767525": {
@@ -24284,7 +24284,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var s=this.k3\nreturn new U.tn(0,0,s.a,s.b,t.I)}",
+        "code": "gBP:function(){var s=this.k3\nreturn new U.tn(0,0,s.a,s.b,t.i)}",
         "type": "Rectangle<num> Function()"
       },
       "235168592": {
@@ -27032,7 +27032,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var s,r,q,p,o,n,m,l,k,j,i,h=this.e1\nif(h.length===0)return A.fE.prototype.gBP.call(this)\nfor(s=1/0,r=1/0,q=-1/0,p=-1/0,o=0;o<h.length;++o){n=h[o]\nm=n.gBP()\nm=n.gwr().Qb(m,m)\nl=m.a\nif(l<s)s=l\nk=m.b\nif(k<r)r=k\nn=m.$ti.c\nj=n.a(l+m.c)\nif(j>q)q=j\ni=n.a(k+m.d)\nif(i>p)p=i}return new U.tn(s,r,q-s,p-r,t.I)}",
+        "code": "gBP:function(){var s,r,q,p,o,n,m,l,k,j,i,h=this.e1\nif(h.length===0)return A.fE.prototype.gBP.call(this)\nfor(s=1/0,r=1/0,q=-1/0,p=-1/0,o=0;o<h.length;++o){n=h[o]\nm=n.gBP()\nm=n.gwr().Qb(m,m)\nl=m.a\nif(l<s)s=l\nk=m.b\nif(k<r)r=k\nn=m.$ti.c\nj=n.a(l+m.c)\nif(j>q)q=j\ni=n.a(k+m.d)\nif(i>p)p=i}return new U.tn(s,r,q-s,p-r,t.i)}",
         "type": "Rectangle<num> Function()"
       },
       "280231148": {
@@ -31867,7 +31867,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var s=this.e1[this.kX]\nreturn new U.tn(0,0,s.a,s.b,t.I)}",
+        "code": "gBP:function(){var s=this.e1[this.kX]\nreturn new U.tn(0,0,s.a,s.b,t.i)}",
         "type": "Rectangle<num> Function()"
       },
       "370971319": {
@@ -34464,7 +34464,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ip:function(a){var s,r,q,p,o=this.fy\nif(o!=null)o.ip(a)\ns=a instanceof U.tZ?a:new U.tZ(0,0,t.n)\nr=a.a\nq=a.b\np=this.gwr()\no=p.a\ns.a=(o[3]*(r-o[4])-o[2]*(q-o[5]))/p.gR9()\ns.b=(o[0]*(q-o[5])-o[1]*(r-o[4]))/p.gR9()}",
+        "code": "ip:function(a){var s,r,q,p,o=this.fy\nif(o!=null)o.ip(a)\ns=a instanceof U.tZ?a:new U.tZ(0,0,t.M)\nr=a.a\nq=a.b\np=this.gwr()\no=p.a\ns.a=(o[3]*(r-o[4])-o[2]*(q-o[5]))/p.gR9()\ns.b=(o[0]*(q-o[5])-o[1]*(r-o[4]))/p.gR9()}",
         "type": "void Function(Point<num>)"
       },
       "425643264": {
@@ -36750,7 +36750,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z3:function(a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2=this\na3.preventDefault()\ns=Date.now()\nr=a3.button\nr.toString\nq=a3.clientX\nq.toString\np=a3.clientY\np.toString\no=a2.No.Ey(new P.hL(q,p,t.M))\nn=new U.tZ(0,0,t.n)\nif(r<0||r>2)return\nq=a3.type\nq.toString\nif(q===\"mousemove\"&&a2.ZB.eT(0,o))return\nm=a2.HG[r]\na2.ZB=o\nC.Nm.U(a2.hi,new A.PK(o))\nr=a3.type\nr.toString\nif(r!==\"mouseout\")l=a2.Fo(o.a,o.b)\nelse{a2.H2(0,new R.ea(\"mouseLeave\",!1))\nl=null}k=a2.rT\nif(k!=l){r=t.r\nj=H.QI([],r)\ni=H.QI([],r)\nfor(h=k;h!=null;h=h.fy)j.push(h)\nfor(h=l;h!=null;h=h.fy)i.push(h)\nfor(r=j.length,q=i.length,g=0;!0;++g){if(g===r)break\nif(g===q)break\nif(j[r-g-1]!==i[q-g-1])break}if(k!=null){k.TK(o,n)\nr=n.a\nq=n.b\np=o.a\nf=o.b\ne=a3.altKey\ne.toString\nd=a3.ctrlKey\nd.toString\nc=a3.shiftKey\nc.toString\nk.H2(0,R.Gd(\"mouseOut\",!0,r,q,p,f,e,d,c,0,0,m.f,0))}for(b=0;b<j.length-g;++b){a=j[b]\na.TK(o,n)\nr=n.a\nq=n.b\na3.altKey.toString\na3.ctrlKey.toString\np=a3.shiftKey\np.toString\na.H2(0,new R.Aj(m.f,r,q,p,\"rollOut\",!1))}for(b=i.length-g-1;b>=0;--b){a=i[b]\na.TK(o,n)\nr=n.a\nq=n.b\na3.altKey.toString\na3.ctrlKey.toString\np=a3.shiftKey\np.toString\na.H2(0,new R.Aj(m.f,r,q,p,\"rollOver\",!1))}if(l!=null){l.TK(o,n)\nr=n.a\nq=n.b\np=o.a\nf=o.b\ne=a3.altKey\ne.toString\nd=a3.ctrlKey\nd.toString\nc=a3.shiftKey\nc.toString\nl.H2(0,R.Gd(\"mouseOver\",!0,r,q,p,f,e,d,c,0,0,m.f,0))}a2.rT=l}a2.cq()\nr=a3.type\nr.toString\nif(r===\"mousedown\"){a2.gKH().focus()\na0=m.a\nif(l!=m.e||s>m.r+500)m.x=0\nm.f=!0\nm.e=l\nm.r=s;++m.x}else a0=null\ns=a3.type\ns.toString\nif(s===\"mouseup\"){a0=m.b\nm.f=!1\na1=m.e==l\na1}else a1=!1\ns=a3.type\ns.toString\nif(s===\"mousemove\")a0=\"mouseMove\"\nif(s===\"contextmenu\")a0=\"contextMenu\"\nif(a0!=null&&l!=null){l.TK(o,n)\ns=n.a\nr=n.b\nq=o.a\np=o.b\nf=a3.altKey\nf.toString\ne=a3.ctrlKey\ne.toString\nd=a3.shiftKey\nd.toString\nl.H2(0,R.Gd(a0,!0,s,r,q,p,f,e,d,0,0,m.f,m.x))\nif(a1){s=n.a\nr=n.b\nq=o.a\np=o.b\nf=a3.altKey\nf.toString\ne=a3.ctrlKey\ne.toString\nd=a3.shiftKey\nd.toString\nl.H2(0,R.Gd(m.c,!0,s,r,q,p,f,e,d,0,0,m.f,0))}}}\nm(l=A.Lz.prototype,\"gNT\",\"Z3\",17)",
+        "code": "Z3:function(a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2=this\na3.preventDefault()\ns=Date.now()\nr=a3.button\nr.toString\nq=a3.clientX\nq.toString\np=a3.clientY\np.toString\no=a2.No.Ey(new P.hL(q,p,t.n))\nn=new U.tZ(0,0,t.M)\nif(r<0||r>2)return\nq=a3.type\nq.toString\nif(q===\"mousemove\"&&a2.ZB.eT(0,o))return\nm=a2.HG[r]\na2.ZB=o\nC.Nm.U(a2.hi,new A.PK(o))\nr=a3.type\nr.toString\nif(r!==\"mouseout\")l=a2.Fo(o.a,o.b)\nelse{a2.H2(0,new R.ea(\"mouseLeave\",!1))\nl=null}k=a2.rT\nif(k!=l){r=t.r\nj=H.QI([],r)\ni=H.QI([],r)\nfor(h=k;h!=null;h=h.fy)j.push(h)\nfor(h=l;h!=null;h=h.fy)i.push(h)\nfor(r=j.length,q=i.length,g=0;!0;++g){if(g===r)break\nif(g===q)break\nif(j[r-g-1]!==i[q-g-1])break}if(k!=null){k.TK(o,n)\nr=n.a\nq=n.b\np=o.a\nf=o.b\ne=a3.altKey\ne.toString\nd=a3.ctrlKey\nd.toString\nc=a3.shiftKey\nc.toString\nk.H2(0,R.Gd(\"mouseOut\",!0,r,q,p,f,e,d,c,0,0,m.f,0))}for(b=0;b<j.length-g;++b){a=j[b]\na.TK(o,n)\nr=n.a\nq=n.b\na3.altKey.toString\na3.ctrlKey.toString\np=a3.shiftKey\np.toString\na.H2(0,new R.Aj(m.f,r,q,p,\"rollOut\",!1))}for(b=i.length-g-1;b>=0;--b){a=i[b]\na.TK(o,n)\nr=n.a\nq=n.b\na3.altKey.toString\na3.ctrlKey.toString\np=a3.shiftKey\np.toString\na.H2(0,new R.Aj(m.f,r,q,p,\"rollOver\",!1))}if(l!=null){l.TK(o,n)\nr=n.a\nq=n.b\np=o.a\nf=o.b\ne=a3.altKey\ne.toString\nd=a3.ctrlKey\nd.toString\nc=a3.shiftKey\nc.toString\nl.H2(0,R.Gd(\"mouseOver\",!0,r,q,p,f,e,d,c,0,0,m.f,0))}a2.rT=l}a2.cq()\nr=a3.type\nr.toString\nif(r===\"mousedown\"){a2.gKH().focus()\na0=m.a\nif(l!=m.e||s>m.r+500)m.x=0\nm.f=!0\nm.e=l\nm.r=s;++m.x}else a0=null\ns=a3.type\ns.toString\nif(s===\"mouseup\"){a0=m.b\nm.f=!1\na1=m.e==l\na1}else a1=!1\ns=a3.type\ns.toString\nif(s===\"mousemove\")a0=\"mouseMove\"\nif(s===\"contextmenu\")a0=\"contextMenu\"\nif(a0!=null&&l!=null){l.TK(o,n)\ns=n.a\nr=n.b\nq=o.a\np=o.b\nf=a3.altKey\nf.toString\ne=a3.ctrlKey\ne.toString\nd=a3.shiftKey\nd.toString\nl.H2(0,R.Gd(a0,!0,s,r,q,p,f,e,d,0,0,m.f,m.x))\nif(a1){s=n.a\nr=n.b\nq=o.a\np=o.b\nf=a3.altKey\nf.toString\ne=a3.ctrlKey\ne.toString\nd=a3.shiftKey\nd.toString\nl.H2(0,R.Gd(m.c,!0,s,r,q,p,f,e,d,0,0,m.f,0))}}}\nm(l=A.Lz.prototype,\"gNT\",\"Z3\",17)",
         "type": "void Function(MouseEvent)"
       },
       "464290033": {
@@ -44052,7 +44052,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var s=this.k3\nreturn new U.tn(0,0,s.a,s.b,t.I)}",
+        "code": "gBP:function(){var s=this.k3\nreturn new U.tn(0,0,s.a,s.b,t.i)}",
         "type": "Rectangle<num> Function()"
       },
       "603807818": {
@@ -44255,7 +44255,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "gBP:function(){var s,r=this\nr.JL()\ns=r.eD\nr.JL()\nreturn new U.tn(0,0,s,r.jq,t.I)}",
+        "code": "gBP:function(){var s,r=this\nr.JL()\ns=r.eD\nr.JL()\nreturn new U.tn(0,0,s,r.jq,t.i)}",
         "type": "Rectangle<num> Function()"
       },
       "607940077": {
@@ -48956,7 +48956,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "gBP:function(){return new U.tn(0,0,0,0,t.I)}",
+        "code": "gBP:function(){return new U.tn(0,0,0,0,t.i)}",
         "type": "Rectangle<num> Function()"
       },
       "680877684": {
@@ -49127,7 +49127,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "fy:function(a,b){var s=\"middleClick\",r=\"rightClick\",q=T.oy(),p=T.oy(),o=T.oy(),n=H.QI([],t.eY),m=H.QI([new A.Bg(\"mouseDown\",\"mouseUp\",\"click\",\"doubleClick\"),new A.Bg(\"middleMouseDown\",\"middleMouseUp\",s,s),new A.Bg(\"rightMouseDown\",\"rightMouseUp\",r,r)],t.dH),l=K.Ty(),k=H.QI([],t.r),j=$.LS\n$.LS=j+1\nj=new A.Lz(new U.tn(0,0,0,0,t.I),q,p,o,new R.b5(\"render\",!1),C.aN,C.vh,C.as,C.eb,new U.tZ(0,0,t.n),n,P.Fl(t.S,t.gm),m,l,k,j,H.QI([],t.t),T.oy(),P.Fl(t.N,t.C))\nj.VB(a,null,b,null)\nreturn j}",
+        "code": "fy:function(a,b){var s=\"middleClick\",r=\"rightClick\",q=T.oy(),p=T.oy(),o=T.oy(),n=H.QI([],t.eY),m=H.QI([new A.Bg(\"mouseDown\",\"mouseUp\",\"click\",\"doubleClick\"),new A.Bg(\"middleMouseDown\",\"middleMouseUp\",s,s),new A.Bg(\"rightMouseDown\",\"rightMouseUp\",r,r)],t.dH),l=K.Ty(),k=H.QI([],t.r),j=$.LS\n$.LS=j+1\nj=new A.Lz(new U.tn(0,0,0,0,t.i),q,p,o,new R.b5(\"render\",!1),C.aN,C.vh,C.as,C.eb,new U.tZ(0,0,t.M),n,P.Fl(t.S,t.gm),m,l,k,j,H.QI([],t.t),T.oy(),P.Fl(t.N,t.C))\nj.VB(a,null,b,null)\nreturn j}",
         "type": "dynamic Function(CanvasElement,{int? height,StageOptions? options,int? width})"
       },
       "682272829": {
@@ -52384,7 +52384,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var s,r\nif(b==null)return!1\nif(t.i.b(b)){s=a.left\ns.toString\nr=J.YE(b)\nif(s===r.gBb(b)){s=a.top\ns.toString\nif(s===r.gG6(b)){s=a.width\ns.toString\nif(s===r.gq9(b)){s=a.height\ns.toString\nr=s===r.gLj(b)\ns=r}else s=!1}else s=!1}else s=!1}else s=!1\nreturn s}",
+        "code": "eT:function(a,b){var s,r\nif(b==null)return!1\nif(t.I.b(b)){s=a.left\ns.toString\nr=J.YE(b)\nif(s===r.gBb(b)){s=a.top\ns.toString\nif(s===r.gG6(b)){s=a.width\ns.toString\nif(s===r.gq9(b)){s=a.height\ns.toString\nr=s===r.gLj(b)\ns=r}else s=!1}else s=!1}else s=!1}else s=!1\nreturn s}",
         "type": "bool Function(Object)"
       },
       "733284854": {
@@ -53636,7 +53636,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){if(b==null)return!1\nreturn t.M.b(b)&&this.a===b.gx(b)&&this.b===b.gy(b)}",
+        "code": "eT:function(a,b){if(b==null)return!1\nreturn t.n.b(b)&&this.a===b.gx(b)&&this.b===b.gy(b)}",
         "type": "bool Function(Object)"
       },
       "752238315": {
@@ -60129,7 +60129,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wZ:function(a,b,c,d){var s,r=this,q=null,p=r.Qt,o=p.goF().b\no=o.c[b+c*o.a]\nif(d)if(o===C.Bl||o===C.No){r.Au(b,c)\ns=q}else if(o===C.Ni)if(p.goF().Km(b,c)){o=p.goF().a.V5(b,c)\no=new H.lJ(o,new U.BE(r),H.t6(o).C(\"lJ<1,hL<KN>>\")).GG(0,new U.yj(r))\nr.hM(P.Y1(o,!0,o.$ti.C(\"Ly.E\")))\ns=p.goF().tm(b,c)}else s=q\nelse s=q\nelse if(o===C.Bl){r.hM(H.QI([new P.hL(b,c,t.M)],t.fP))\ns=p.goF().tm(b,c)}else s=q\nif(s!=null&&s.length!==0){if(!d)s[0]\nr.zC(new P.hL(b,c,t.D),s)}else if(p.goF().f===C.He)r.J1(new P.hL(b,c,t.D))}",
+        "code": "wZ:function(a,b,c,d){var s,r=this,q=null,p=r.Qt,o=p.goF().b\no=o.c[b+c*o.a]\nif(d)if(o===C.Bl||o===C.No){r.Au(b,c)\ns=q}else if(o===C.Ni)if(p.goF().Km(b,c)){o=p.goF().a.V5(b,c)\no=new H.lJ(o,new U.BE(r),H.t6(o).C(\"lJ<1,hL<KN>>\")).GG(0,new U.yj(r))\nr.hM(P.Y1(o,!0,o.$ti.C(\"Ly.E\")))\ns=p.goF().tm(b,c)}else s=q\nelse s=q\nelse if(o===C.Bl){r.hM(H.QI([new P.hL(b,c,t.n)],t.fP))\ns=p.goF().tm(b,c)}else s=q\nif(s!=null&&s.length!==0){if(!d)s[0]\nr.zC(new P.hL(b,c,t.D),s)}else if(p.goF().f===C.He)r.J1(new P.hL(b,c,t.D))}",
         "type": "void Function(int,int,bool)"
       },
       "880772290": {
@@ -62124,7 +62124,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Yo:function(a){var s,r,q,p,o,n,m,l,k,j=a.clientX\nj.toString\ns=a.clientY\ns.toString\nr=this.No.Ey(new P.hL(j,s,t.M))\nq=new U.tZ(0,0,t.n)\np=this.Fo(r.a,r.b)\np.TK(r,q)\ns=q.a\nj=q.b\no=r.a\nn=r.b\nm=a.altKey\nm.toString\nl=a.ctrlKey\nl.toString\nk=a.shiftKey\nk.toString\np.H2(0,R.Gd(\"mouseWheel\",!0,s,j,o,n,m,l,k,C.Kb.gOW(a),C.Kb.gNC(a),!1,0))}\nm(l,\"gUm\",\"Yo\",72)",
+        "code": "Yo:function(a){var s,r,q,p,o,n,m,l,k,j=a.clientX\nj.toString\ns=a.clientY\ns.toString\nr=this.No.Ey(new P.hL(j,s,t.n))\nq=new U.tZ(0,0,t.M)\np=this.Fo(r.a,r.b)\np.TK(r,q)\ns=q.a\nj=q.b\no=r.a\nn=r.b\nm=a.altKey\nm.toString\nl=a.ctrlKey\nl.toString\nk=a.shiftKey\nk.toString\np.H2(0,R.Gd(\"mouseWheel\",!0,s,j,o,n,m,l,k,C.Kb.gOW(a),C.Kb.gNC(a),!1,0))}\nm(l,\"gUm\",\"Yo\",72)",
         "type": "void Function(WheelEvent)"
       },
       "911398026": {
@@ -62628,7 +62628,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var s,r=this\nif(b==null)return!1\nif(t.i.b(b)){s=J.YE(b)\ns=r.a===s.gBb(b)&&r.b===s.gG6(b)&&r.c===s.gq9(b)&&r.d===s.gLj(b)}else s=!1\nreturn s}",
+        "code": "eT:function(a,b){var s,r=this\nif(b==null)return!1\nif(t.I.b(b)){s=J.YE(b)\ns=r.a===s.gBb(b)&&r.b===s.gG6(b)&&r.c===s.gq9(b)&&r.d===s.gLj(b)}else s=!1\nreturn s}",
         "type": "bool Function(Object)"
       },
       "919008289": {
@@ -66811,7 +66811,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TK:function(a,b){var s=b instanceof U.tZ?b:new U.tZ(0,0,t.n)\ns.a=a.a\ns.b=a.b\nthis.ip(s)\nreturn s}",
+        "code": "TK:function(a,b){var s=b instanceof U.tZ?b:new U.tZ(0,0,t.M)\ns.a=a.a\ns.b=a.b\nthis.ip(s)\nreturn s}",
         "type": "Point<num> Function(Point<num>,[Point<num>?])"
       },
       "995182644": {
@@ -70285,7 +70285,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var s,r\nif(b==null)return!1\nif(t.i.b(b)){s=a.left\ns.toString\nr=J.YE(b)\nif(s===r.gBb(b)){s=a.top\ns.toString\nif(s===r.gG6(b)){s=a.width\ns.toString\nif(s===r.gq9(b)){s=a.height\ns.toString\nr=s===r.gLj(b)\ns=r}else s=!1}else s=!1}else s=!1}else s=!1\nreturn s}",
+        "code": "eT:function(a,b){var s,r\nif(b==null)return!1\nif(t.I.b(b)){s=a.left\ns.toString\nr=J.YE(b)\nif(s===r.gBb(b)){s=a.top\ns.toString\nif(s===r.gG6(b)){s=a.width\ns.toString\nif(s===r.gq9(b)){s=a.height\ns.toString\nr=s===r.gLj(b)\ns=r}else s=!1}else s=!1}else s=!1}else s=!1\nreturn s}",
         "type": "bool Function(Object)"
       },
       "1069069567": {
@@ -146725,10 +146725,10 @@
   "program": {
     "entrypoint": "function/270342073",
     "size": 238731,
-    "dart2jsVersion": "2.14.0-72.0.dev",
-    "compilationMoment": "2021-05-04 12:29:28.497050",
-    "compilationDuration": 4770683,
-    "toJsonDuration": 20000,
+    "dart2jsVersion": "2.14.0-90.0.dev",
+    "compilationMoment": "2021-05-11 08:53:59.811827",
+    "compilationDuration": 4084509,
+    "toJsonDuration": 18000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
