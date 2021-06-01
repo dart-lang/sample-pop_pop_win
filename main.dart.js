@@ -1350,6 +1350,7 @@ if(a instanceof P.a)return!!a[s]
 return!!J.ia(a)[s]},
 yM:function(a){var s,r=this
 if(a==null)return H.Qj(r)
+if(typeof a!="object")return!1
 if(Array.isArray(a))return!0
 s=r.r
 if(a instanceof P.a)return!!a[s]
