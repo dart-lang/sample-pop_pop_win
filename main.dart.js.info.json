@@ -1231,7 +1231,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 22480,
+        "size": 22415,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -25595,19 +25595,14 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
-            "name": "receiver",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
             "name": "functions",
             "type": "[subclass=JSArray]",
             "declaredType": "List<dynamic>"
           },
           {
             "name": "applyTrampolineIndex",
-            "type": "[null|subclass=JSInt]",
-            "declaredType": "int?"
+            "type": "[subclass=JSInt]",
+            "declaredType": "int"
           },
           {
             "name": "reflectionInfo",
@@ -25628,12 +25623,17 @@
             "name": "propertyName",
             "type": "[exact=JSString]",
             "declaredType": "String"
+          },
+          {
+            "name": "needsDirectAccess",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "M:function(a,b,c,d,e,f,g){var s,r,q,p,o,n,m,l=b[0],k=l.$callName,j=e?Object.create(new H.z().constructor.prototype):Object.create(new H.u(null,null,null,\"\").constructor.prototype)\nj.$initialize=j.constructor\nif(e)s=function static_tear_off(){this.$initialize()}\nelse{r=$.G\n$.G=r+1\nr=new Function(\"a,b,c,d\"+r,\"this.$initialize(a,b,c,d\"+r+\")\")\ns=r}j.constructor=s\ns.prototype=j\nif(!e){q=H.bx(a,l,f)\nq.$reflectionInfo=d}else{j.$static_name=g\nq=l}j.$S=H.q(d,e,f)\nj[k]=q\nfor(p=q,o=1;o<b.length;++o){n=b[o]\nm=n.$callName\nif(m!=null){n=e?n:H.bx(a,n,f)\nj[m]=n}if(o===c){n.$reflectionInfo=d\np=n}}j.$C=p\nj.$R=l.$R\nj.$D=l.$D\nreturn s}",
-        "type": "dynamic Function(dynamic,List<dynamic>,int?,dynamic,bool,bool,String)"
+        "code": "M:function(a,b,c,d,e,f,g){var s,r,q,p,o,n,m,l=a[0],k=l.$callName,j=d?Object.create(new H.z().constructor.prototype):Object.create(new H.u(null,null,null,\"\").constructor.prototype)\nj.$initialize=j.constructor\nif(d)s=function static_tear_off(){this.$initialize()}\nelse{r=$.G\n$.G=r+1\nr=new Function(\"a,b,c,d\"+r,\"this.$initialize(a,b,c,d\"+r+\")\")\ns=r}j.constructor=s\ns.prototype=j\nif(!d){q=H.bx(l,e,g)\nq.$reflectionInfo=c}else{j.$static_name=f\nq=l}j.$S=H.q(c,d,e)\nj[k]=q\nfor(p=q,o=1;o<a.length;++o){n=a[o]\nm=n.$callName\nif(m!=null){n=d?n:H.bx(n,e,g)\nj[m]=n}if(o===b){n.$reflectionInfo=c\np=n}}j.$C=p\nj.$R=l.$R\nj.$D=l.$D\nreturn s}",
+        "type": "dynamic Function(List<dynamic>,int,dynamic,bool,bool,String,bool)"
       },
       "256810776": {
         "id": "function/256810776",
@@ -26767,7 +26767,7 @@
         "id": "function/273024378",
         "kind": "function",
         "name": "forwardCallTo",
-        "size": 539,
+        "size": 504,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -26781,11 +26781,6 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
-            "name": "receiver",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
             "name": "function",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
@@ -26794,12 +26789,17 @@
             "name": "isIntercepted",
             "type": "[exact=JSBool]",
             "declaredType": "bool"
+          },
+          {
+            "name": "needsDirectAccess",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bx:function(a,b,c){var s,r,q,p,o,n,m\nif(c)return H.Hf(a,b)\ns=b.$stubName\nr=b.length\nq=a[s]\np=b==null?q==null:b===q\no=!p||r>=27\nif(o)return H.vq(r,!p,s,b)\nif(r===0){p=$.G\n$.G=p+1\nn=\"self\"+H.d(p)\np=\"return function(){var \"+n+\" = this.\"\no=$.mJ\nreturn new Function(p+(o==null?$.mJ=H.E2(\"self\"):o)+\";return \"+n+\".\"+H.d(s)+\"();}\")()}m=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,r).join(\",\")\np=$.G\n$.G=p+1\nm+=H.d(p)\np=\"return function(\"+m+\"){return this.\"\no=$.mJ\nreturn new Function(p+(o==null?$.mJ=H.E2(\"self\"):o)+\".\"+H.d(s)+\"(\"+m+\");}\")()}",
-        "type": "dynamic Function(dynamic,dynamic,bool)"
+        "code": "bx:function(a,b,c){var s,r,q,p,o,n\nif(b)return H.Hf(a,c)\ns=a.$stubName\nr=a.length\nq=c||r>=27\nif(q)return H.vq(r,c,s,a)\nif(r===0){q=$.G\n$.G=q+1\np=\"self\"+H.d(q)\nq=\"return function(){var \"+p+\" = this.\"\no=$.mJ\nreturn new Function(q+(o==null?$.mJ=H.E2(\"self\"):o)+\";return \"+p+\".\"+H.d(s)+\"();}\")()}n=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,r).join(\",\")\nq=$.G\n$.G=q+1\nn+=H.d(q)\nq=\"return function(\"+n+\"){return this.\"\no=$.mJ\nreturn new Function(q+(o==null?$.mJ=H.E2(\"self\"):o)+\".\"+H.d(s)+\"(\"+n+\");}\")()}",
+        "type": "dynamic Function(dynamic,bool,bool)"
       },
       "273305353": {
         "id": "function/273305353",
@@ -37617,7 +37617,7 @@
             "declaredType": "int"
           },
           {
-            "name": "isSuperCall",
+            "name": "needsDirectAccess",
             "type": "[exact=JSBool]",
             "declaredType": "bool"
           },
@@ -48193,7 +48193,7 @@
         "id": "function/668300184",
         "kind": "function",
         "name": "closureFromTearOff",
-        "size": 57,
+        "size": 62,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -48206,11 +48206,6 @@
         "returnType": "dynamic",
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
-          {
-            "name": "receiver",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
           {
             "name": "functions",
             "type": "[null|subclass=Object]",
@@ -48240,11 +48235,16 @@
             "name": "name",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
+          },
+          {
+            "name": "needsDirectAccess",
+            "type": "[null|subclass=Object]",
+            "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "U2:function(a,b,c,d,e,f,g){return H.M(a,b,c,d,!!e,!!f,g)}",
+        "code": "U2:function(a,b,c,d,e,f,g){return H.M(a,b||0,c,!!d,!!e,f,!!g)}",
         "type": "dynamic Function(dynamic,dynamic,dynamic,dynamic,dynamic,dynamic,dynamic)"
       },
       "668848422": {
@@ -54470,7 +54470,7 @@
         "id": "function/766396929",
         "kind": "function",
         "name": "completeError",
-        "size": 234,
+        "size": 236,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/770824752",
         "children": [],
@@ -54496,7 +54496,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "w:function(a,b){var s\nH.cb(a,\"error\",t.K)\ns=this.a\nif(s.a!==0)throw H.b(P.PV(\"Future already completed\"))\nif(b==null)b=P.v0(a)\ns.Nk(a,b)}\npm:function(a){return this.w(a,null)}\np(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"w\",\"pm\"],42,0)",
+        "code": "w:function(a,b){var s\nH.cb(a,\"error\",t.K)\ns=this.a\nif(s.a!==0)throw H.b(P.PV(\"Future already completed\"))\nif(b==null)b=P.v0(a)\ns.Nk(a,b)}\npm:function(a){return this.w(a,null)}\np(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"w\",\"pm\"],42,0,0)",
         "type": "void Function(Object,[StackTrace?])"
       },
       "766601802": {
@@ -61507,7 +61507,7 @@
             "declaredType": "int"
           },
           {
-            "name": "isSuperCall",
+            "name": "needsDirectAccess",
             "type": "[exact=JSBool]",
             "declaredType": "bool"
           },
@@ -62887,7 +62887,7 @@
         "id": "function/922840913",
         "kind": "function",
         "name": "forwardInterceptedCallTo",
-        "size": 525,
+        "size": 490,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -62901,20 +62901,20 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
-            "name": "receiver",
+            "name": "function",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
           },
           {
-            "name": "function",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
+            "name": "needsDirectAccess",
+            "type": "[exact=JSBool]",
+            "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Hf:function(a,b){var s,r,q,p,o,n,m,l=$.mJ\nif(l==null)l=$.mJ=H.E2(\"self\")\ns=$.P4\nif(s==null)s=$.P4=H.E2(\"receiver\")\nr=b.$stubName\nq=b.length\np=a[r]\no=b==null?p==null:b===p\nn=!o||q>=28\nif(n)return H.Z4(q,!o,r,b)\nif(q===1){o=\"return function(){return this.\"+l+\".\"+H.d(r)+\"(this.\"+s+\");\"\nn=$.G\n$.G=n+1\nreturn new Function(o+H.d(n)+\"}\")()}m=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,q-1).join(\",\")\no=\"return function(\"+m+\"){return this.\"+l+\".\"+H.d(r)+\"(this.\"+s+\", \"+m+\");\"\nn=$.G\n$.G=n+1\nreturn new Function(o+H.d(n)+\"}\")()}",
-        "type": "dynamic Function(dynamic,dynamic)"
+        "code": "Hf:function(a,b){var s,r,q,p,o,n,m=$.mJ\nif(m==null)m=$.mJ=H.E2(\"self\")\ns=$.P4\nif(s==null)s=$.P4=H.E2(\"receiver\")\nr=a.$stubName\nq=a.length\np=b||q>=28\nif(p)return H.Z4(q,b,r,a)\nif(q===1){p=\"return function(){return this.\"+m+\".\"+H.d(r)+\"(this.\"+s+\");\"\no=$.G\n$.G=o+1\nreturn new Function(p+H.d(o)+\"}\")()}n=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,q-1).join(\",\")\np=\"return function(\"+n+\"){return this.\"+m+\".\"+H.d(r)+\"(this.\"+s+\", \"+n+\");\"\no=$.G\n$.G=o+1\nreturn new Function(p+H.d(o)+\"}\")()}",
+        "type": "dynamic Function(dynamic,bool)"
       },
       "923456660": {
         "id": "function/923456660",
@@ -146729,7 +146729,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 238837,
+      "size": 238903,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146739,10 +146739,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 238837,
-    "dart2jsVersion": "2.14.0-188.0.dev",
-    "compilationMoment": "2021-06-10 09:30:12.489757",
-    "compilationDuration": 4625274,
+    "size": 238903,
+    "dart2jsVersion": "2.14.0-216.0.dev",
+    "compilationMoment": "2021-06-16 07:13:23.714043",
+    "compilationDuration": 4086854,
     "toJsonDuration": 20000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
