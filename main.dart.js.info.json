@@ -2769,22 +2769,22 @@
         },
         "children": [
           "field/125830184",
-          "field/180845508",
           "field/302220255",
-          "field/435101137",
-          "field/709451133",
-          "field/1061931090",
+          "field/636292115",
+          "field/659647228",
           "function/5571021",
           "function/15478302",
+          "function/180845508",
           "function/232646536",
-          "function/292195356",
           "function/393060060",
           "function/564404904",
+          "function/659844135",
           "function/705889064",
           "function/724475372",
           "function/762030080",
           "function/791079680",
-          "function/906797235"
+          "function/906797235",
+          "function/1061931090"
         ]
       },
       "140329748": {
@@ -12377,7 +12377,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "a3:function(a){var s,r\nif(a>=0){if(a<=2147483647){s=a|0\nreturn a===s?s:s+1}}else if(a>=-2147483648)return a|0\nr=Math.ceil(a)\nif(isFinite(r))return r\nthrow H.b(P.L4(\"\"+a+\".ceil()\"))}",
+        "code": "a3:function(a){var s,r\nif(a>=0){if(a<=2147483647){s=a|0\nreturn a===s?s:s+1}}else if(a>=-2147483648)return a|0\nr=Math.ceil(a)\nif(isFinite(r))return r\nthrow H.b(P.u0(\"\"+a+\".ceil()\"))}",
         "type": "int Function()"
       },
       "4829636": {
@@ -13103,7 +13103,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "yu:function(a){var s\nif(a>=-2147483648&&a<=2147483647)return a|0\nif(isFinite(a)){s=a<0?Math.ceil(a):Math.floor(a)\nreturn s+0}throw H.b(P.L4(\"\"+a+\".toInt()\"))}",
+        "code": "yu:function(a){var s\nif(a>=-2147483648&&a<=2147483647)return a|0\nif(isFinite(a)){s=a<0?Math.ceil(a):Math.floor(a)\nreturn s+0}throw H.b(P.u0(\"\"+a+\".toInt()\"))}",
         "type": "int Function()"
       },
       "15478302": {
@@ -13125,7 +13125,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Z:function(a){var s=this.c\nif(s==null)s=this.a\nreturn\"Closure '\"+H.d(this.d)+\"' of \"+(\"Instance of '\"+H.c(s)+\"'\")}",
+        "code": "Z:function(a){var s=this.b\nif(s==null)s=this.a\nreturn\"Closure '\"+this.$_name+\"' of \"+(\"Instance of '\"+H.c(s)+\"'\")}",
         "type": "String Function()"
       },
       "15925204": {
@@ -13382,7 +13382,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "W4:function(a,b){if(!!a.fixed$length)H.v(P.L4(\"removeAt\"))\nif(b<0||b>=a.length)throw H.b(P.O7(b,null))\nreturn a.splice(b,1)[0]}",
+        "code": "W4:function(a,b){if(!!a.fixed$length)H.v(P.u0(\"removeAt\"))\nif(b<0||b>=a.length)throw H.b(P.O7(b,null))\nreturn a.splice(b,1)[0]}",
         "type": "JSArray.E Function(int)"
       },
       "20204391": {
@@ -17839,7 +17839,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "GT:function(a,b){if(!!a.immutable$list)H.v(P.L4(\"sort\"))\nH.Qs(a,b==null?J.NE():b)}",
+        "code": "GT:function(a,b){if(!!a.immutable$list)H.v(P.u0(\"sort\"))\nH.Qs(a,b==null?J.NE():b)}",
         "type": "void Function([int Function(JSArray.E,JSArray.E)?])"
       },
       "111540859": {
@@ -18609,7 +18609,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ap:function(a){var s,r\nif(a>=0){if(a<=2147483647)return a|0}else if(a>=-2147483648){s=a|0\nreturn a===s?s:s-1}r=Math.floor(a)\nif(isFinite(r))return r\nthrow H.b(P.L4(\"\"+a+\".floor()\"))}",
+        "code": "Ap:function(a){var s,r\nif(a>=0){if(a<=2147483647)return a|0}else if(a>=-2147483648){s=a|0\nreturn a===s?s:s-1}r=Math.floor(a)\nif(isFinite(r))return r\nthrow H.b(P.u0(\"\"+a+\".floor()\"))}",
         "type": "int Function()"
       },
       "123209574": {
@@ -19997,7 +19997,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "sA:function(a,b){if(!!a.fixed$length)H.v(P.L4(\"set length\"))\nif(b<0)throw H.b(P.TE(b,0,null,\"newLength\",null))\nif(b>a.length)H.t6(a).c.a(null)\na.length=b}",
+        "code": "sA:function(a,b){if(!!a.fixed$length)H.v(P.u0(\"set length\"))\nif(b<0)throw H.b(P.TE(b,0,null,\"newLength\",null))\nif(b>a.length)H.t6(a).c.a(null)\na.length=b}",
         "type": "void Function(int)"
       },
       "145023862": {
@@ -20183,7 +20183,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Rz:function(a,b){var s\nif(!!a.fixed$length)H.v(P.L4(\"remove\"))\nfor(s=0;s<a.length;++s)if(J.RM(a[s],b)){a.splice(s,1)\nreturn!0}return!1}",
+        "code": "Rz:function(a,b){var s\nif(!!a.fixed$length)H.v(P.u0(\"remove\"))\nfor(s=0;s<a.length;++s)if(J.RM(a[s],b)){a.splice(s,1)\nreturn!0}return!1}",
         "type": "bool Function(Object?)"
       },
       "147176545": {
@@ -20261,7 +20261,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "FV:function(a,b){var s\nif(!!a.fixed$length)H.v(P.L4(\"addAll\"))\nif(Array.isArray(b)){this.Kh(a,b)\nreturn}for(s=J.IT(b);s.F();)a.push(s.gl())}",
+        "code": "FV:function(a,b){var s\nif(!!a.fixed$length)H.v(P.u0(\"addAll\"))\nif(Array.isArray(b)){this.Kh(a,b)\nreturn}for(s=J.IT(b);s.F();)a.push(s.gl())}",
         "type": "void Function(Object?)"
       },
       "148486138": {
@@ -21774,6 +21774,28 @@
         "code": "od:function(a,b,c){if(a>>>0!==a||a>=c)throw H.b(H.HY(b,a))}",
         "type": "void Function(int,List<dynamic>,int)"
       },
+      "180845508": {
+        "id": "function/180845508",
+        "kind": "function",
+        "name": "_target",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/138211367",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "Object",
+        "inferredReturnType": "[null|subclass=Object]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
+        "inlinedCount": 3,
+        "code": "",
+        "type": "Object Function()"
+      },
       "181105898": {
         "id": "function/181105898",
         "kind": "function",
@@ -22992,7 +23014,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "L4:function(a){return new P.ub(a)}",
+        "code": "u0:function(a){return new P.ub(a)}",
         "type": "dynamic Function(String)"
       },
       "210296716": {
@@ -24249,7 +24271,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "PW:function(a,b){return H.cE(v.typeUniverse,H.zK(a.c),b)}",
+        "code": "PW:function(a,b){return H.cE(v.typeUniverse,H.zK(a.b),b)}",
         "type": "dynamic Function(BoundClosure,String)"
       },
       "233093575": {
@@ -24518,7 +24540,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gv:function(){if(self.setTimeout!=null){var s=this.b\nif(s==null)return\nself.clearTimeout(s)\nthis.b=null}else throw H.b(P.L4(\"Canceling a timer.\"))}",
+        "code": "Gv:function(){if(self.setTimeout!=null){var s=this.b\nif(s==null)return\nself.clearTimeout(s)\nthis.b=null}else throw H.b(P.u0(\"Canceling a timer.\"))}",
         "type": "void Function()"
       },
       "237928885": {
@@ -25581,7 +25603,7 @@
         "id": "function/253794122",
         "kind": "function",
         "name": "fromTearOff",
-        "size": 623,
+        "size": 718,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -25595,45 +25617,15 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
-            "name": "functions",
-            "type": "[subclass=JSArray]",
-            "declaredType": "List<dynamic>"
-          },
-          {
-            "name": "applyTrampolineIndex",
-            "type": "[subclass=JSInt]",
-            "declaredType": "int"
-          },
-          {
-            "name": "reflectionInfo",
+            "name": "parameters",
             "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "isStatic",
-            "type": "[exact=JSBool]",
-            "declaredType": "bool"
-          },
-          {
-            "name": "isIntercepted",
-            "type": "[exact=JSBool]",
-            "declaredType": "bool"
-          },
-          {
-            "name": "propertyName",
-            "type": "[exact=JSString]",
-            "declaredType": "String"
-          },
-          {
-            "name": "needsDirectAccess",
-            "type": "[exact=JSBool]",
-            "declaredType": "bool"
+            "declaredType": "Object?"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "M:function(a,b,c,d,e,f,g){var s,r,q,p,o,n,m,l=a[0],k=l.$callName,j=d?Object.create(new H.z().constructor.prototype):Object.create(new H.u(null,null,null,\"\").constructor.prototype)\nj.$initialize=j.constructor\nif(d)s=function static_tear_off(){this.$initialize()}\nelse{r=$.G\n$.G=r+1\nr=new Function(\"a,b,c,d\"+r,\"this.$initialize(a,b,c,d\"+r+\")\")\ns=r}j.constructor=s\ns.prototype=j\nif(!d){q=H.bx(l,e,g)\nq.$reflectionInfo=c}else{j.$static_name=f\nq=l}j.$S=H.q(c,d,e)\nj[k]=q\nfor(p=q,o=1;o<a.length;++o){n=a[o]\nm=n.$callName\nif(m!=null){n=d?n:H.bx(n,e,g)\nj[m]=n}if(o===b){n.$reflectionInfo=c\np=n}}j.$C=p\nj.$R=l.$R\nj.$D=l.$D\nreturn s}",
-        "type": "dynamic Function(List<dynamic>,int,dynamic,bool,bool,String,bool)"
+        "code": "M:function(a2){var s,r,q,p,o,n,m,l,k,j,i=a2.co,h=a2.iS,g=a2.iI,f=a2.nDA,e=a2.aI,d=a2.fs,c=a2.cs,b=d[0],a=c[0],a0=i[b],a1=a2.fT\na1.toString\ns=h?Object.create(new H.z().constructor.prototype):Object.create(new H.u(null,null).constructor.prototype)\ns.$initialize=s.constructor\nif(h)r=function static_tear_off(){this.$initialize()}\nelse{q=$.G\n$.G=q+1\nq=new Function(\"a,b\"+q,\"this.$initialize(a,b\"+q+\")\")\nr=q}s.constructor=r\nr.prototype=s\ns.$_name=b\ns.$_target=a0\nq=!h\nif(q)p=H.bx(b,a0,g,f)\nelse{s.$static_name=b\np=a0}s.$S=H.q(a1,h,g)\ns[a]=p\nfor(o=p,n=1;n<d.length;++n){m=d[n]\nif(typeof m==\"string\"){l=i[m]\nk=m\nm=l}else k=\"\"\nj=c[n]\nif(j!=null){if(q)m=H.bx(k,m,g,f)\ns[j]=m}if(n===e)o=m}s.$C=o\ns.$R=a2.rC\ns.$D=a2.dV\nreturn r}",
+        "type": "dynamic Function(Object?)"
       },
       "256810776": {
         "id": "function/256810776",
@@ -26767,7 +26759,7 @@
         "id": "function/273024378",
         "kind": "function",
         "name": "forwardCallTo",
-        "size": 504,
+        "size": 482,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -26781,25 +26773,30 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
+            "name": "stubName",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          },
+          {
             "name": "function",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
           },
           {
             "name": "isIntercepted",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           },
           {
             "name": "needsDirectAccess",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bx:function(a,b,c){var s,r,q,p,o,n\nif(b)return H.Hf(a,c)\ns=a.$stubName\nr=a.length\nq=c||r>=27\nif(q)return H.vq(r,c,s,a)\nif(r===0){q=$.G\n$.G=q+1\np=\"self\"+H.d(q)\nq=\"return function(){var \"+p+\" = this.\"\no=$.mJ\nreturn new Function(q+(o==null?$.mJ=H.E2(\"self\"):o)+\";return \"+p+\".\"+H.d(s)+\"();}\")()}n=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,r).join(\",\")\nq=$.G\n$.G=q+1\nn+=H.d(q)\nq=\"return function(\"+n+\"){return this.\"\no=$.mJ\nreturn new Function(q+(o==null?$.mJ=H.E2(\"self\"):o)+\".\"+H.d(s)+\"(\"+n+\");}\")()}",
-        "type": "dynamic Function(dynamic,bool,bool)"
+        "code": "bx:function(a,b,c,d){var s,r,q,p,o\nif(c)return H.Hf(a,b,d)\ns=b.length\nr=d||s>=27\nif(r)return H.vq(s,d,a,b)\nif(s===0){r=$.G\n$.G=r+1\nq=\"self\"+H.d(r)\nr=\"return function(){var \"+q+\" = this.\"\np=$.WW\nreturn new Function(r+(p==null?$.WW=H.L4(\"self\"):p)+\";return \"+q+\".\"+a+\"();}\")()}o=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,s).join(\",\")\nr=$.G\n$.G=r+1\no+=H.d(r)\nr=\"return function(\"+o+\"){return this.\"\np=$.WW\nreturn new Function(r+(p==null?$.WW=H.L4(\"self\"):p)+\".\"+a+\"(\"+o+\");}\")()}",
+        "type": "dynamic Function(String,dynamic,bool,bool)"
       },
       "273305353": {
         "id": "function/273305353",
@@ -27642,34 +27639,6 @@
         "code": "",
         "type": "HtmlDocument Function()"
       },
-      "292195356": {
-        "id": "function/292195356",
-        "kind": "function",
-        "name": "computeFieldNamed",
-        "size": 211,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/138211367",
-        "children": [],
-        "modifiers": {
-          "static": true,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "String",
-        "inferredReturnType": "[exact=JSString]",
-        "parameters": [
-          {
-            "name": "fieldName",
-            "type": "[exact=JSString]",
-            "declaredType": "String"
-          }
-        ],
-        "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 0,
-        "code": "E2:function(a){var s,r,q,p=new H.u(\"self\",\"target\",\"receiver\",\"name\"),o=J.Ep(Object.getOwnPropertyNames(p))\nfor(s=o.length,r=0;r<s;++r){q=o[r]\nif(p[q]===a)return q}throw H.b(P.xY(\"Field name \"+a+\" not found.\"))}",
-        "type": "String Function(String)"
-      },
       "292551470": {
         "id": "function/292551470",
         "kind": "function",
@@ -27956,7 +27925,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zQ:function(a){if(a>0){if(a!==1/0)return Math.round(a)}else if(a>-1/0)return 0-Math.round(0-a)\nthrow H.b(P.L4(\"\"+a+\".round()\"))}",
+        "code": "zQ:function(a){if(a>0){if(a!==1/0)return Math.round(a)}else if(a>-1/0)return 0-Math.round(0-a)\nthrow H.b(P.u0(\"\"+a+\".round()\"))}",
         "type": "int Function()"
       },
       "299972169": {
@@ -29836,7 +29805,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
-        "code": "gOW:function(a){var s=a.deltaX\nif(s!=null)return s\nthrow H.b(P.L4(\"deltaX is not supported\"))}",
+        "code": "gOW:function(a){var s=a.deltaX\nif(s!=null)return s\nthrow H.b(P.u0(\"deltaX is not supported\"))}",
         "type": "num Function()"
       },
       "335045122": {
@@ -32948,25 +32917,15 @@
             "declaredType": "dynamic"
           },
           {
-            "name": "_target",
-            "type": "Value([null|exact=JSString], value: \"target\")",
-            "declaredType": "dynamic"
-          },
-          {
             "name": "_receiver",
             "type": "Value([null|exact=JSString], value: \"receiver\")",
             "declaredType": "dynamic"
-          },
-          {
-            "name": "_name",
-            "type": "[exact=JSString]",
-            "declaredType": "String"
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 2,
         "code": "",
-        "type": "dynamic Function(dynamic,dynamic,dynamic,String)"
+        "type": "dynamic Function(dynamic,dynamic)"
       },
       "394885266": {
         "id": "function/394885266",
@@ -37200,7 +37159,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}",
+        "code": "Y5:function(a,b,c){throw H.b(P.u0(\"Cannot assign element of immutable List.\"))}",
         "type": "void Function(int,Object?)"
       },
       "470683202": {
@@ -37563,7 +37522,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Y5:function(a,b,c){if(!!a.immutable$list)H.v(P.L4(\"indexed set\"))\nif(b>=a.length||b<0)throw H.b(H.HY(a,b))\na[b]=c}",
+        "code": "Y5:function(a,b,c){if(!!a.immutable$list)H.v(P.u0(\"indexed set\"))\nif(b>=a.length||b<0)throw H.b(H.HY(a,b))\na[b]=c}",
         "type": "void Function(int,Object?)"
       },
       "476563722": {
@@ -37618,12 +37577,12 @@
           },
           {
             "name": "needsDirectAccess",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           },
           {
             "name": "stubName",
-            "type": "[null|exact=JSString]",
+            "type": "[exact=JSString]",
             "declaredType": "String?"
           },
           {
@@ -41342,7 +41301,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "Y5:function(a,b,c){throw H.b(P.L4(\"Cannot assign element of immutable List.\"))}",
+        "code": "Y5:function(a,b,c){throw H.b(P.u0(\"Cannot assign element of immutable List.\"))}",
         "type": "void Function(int,Object?)"
       },
       "548734216": {
@@ -42171,7 +42130,7 @@
         "id": "function/564404904",
         "kind": "function",
         "name": "hashCode",
-        "size": 127,
+        "size": 134,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/138211367",
         "children": [],
@@ -42186,7 +42145,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "giO:function(a){var s,r=this.c\nif(r==null)s=H.eQ(this.a)\nelse s=typeof r!==\"object\"?J.hf(r):H.eQ(r)\nreturn(s^H.eQ(this.b))>>>0}",
+        "code": "giO:function(a){var s,r=this.b\nif(r==null)s=H.eQ(this.a)\nelse s=typeof r!==\"object\"?J.hf(r):H.eQ(r)\nreturn(s^H.eQ(this.$_target))>>>0}",
         "type": "int Function()"
       },
       "564449621": {
@@ -45221,7 +45180,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
-        "code": "gNC:function(a){var s=a.deltaY\nif(s!=null)return s\nthrow H.b(P.L4(\"deltaY is not supported\"))}",
+        "code": "gNC:function(a){var s=a.deltaY\nif(s!=null)return s\nthrow H.b(P.u0(\"deltaY is not supported\"))}",
         "type": "num Function()"
       },
       "623533787": {
@@ -47535,6 +47494,34 @@
         "code": "Tk:function(a,b,c,d){if(C.NU!==c)d=c.N(d)\nP.IA(d)}",
         "type": "void Function(Zone?,ZoneDelegate?,Zone,void Function())"
       },
+      "659844135": {
+        "id": "function/659844135",
+        "kind": "function",
+        "name": "_computeFieldNamed",
+        "size": 195,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/138211367",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[exact=JSString]",
+        "parameters": [
+          {
+            "name": "fieldName",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 0,
+        "code": "L4:function(a){var s,r,q,p=new H.u(\"self\",\"receiver\"),o=J.Ep(Object.getOwnPropertyNames(p))\nfor(s=o.length,r=0;r<s;++r){q=o[r]\nif(p[q]===a)return q}throw H.b(P.xY(\"Field name \"+a+\" not found.\"))}",
+        "type": "String Function(String)"
+      },
       "660281723": {
         "id": "function/660281723",
         "kind": "function",
@@ -48193,7 +48180,7 @@
         "id": "function/668300184",
         "kind": "function",
         "name": "closureFromTearOff",
-        "size": 62,
+        "size": 29,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [],
@@ -48207,45 +48194,15 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
-            "name": "functions",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "applyTrampolineIndex",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "reflectionInfo",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "isStatic",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "isIntercepted",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "name",
-            "type": "[null|subclass=Object]",
-            "declaredType": "dynamic"
-          },
-          {
-            "name": "needsDirectAccess",
+            "name": "parameters",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "U2:function(a,b,c,d,e,f,g){return H.M(a,b||0,c,!!d,!!e,f,!!g)}",
-        "type": "dynamic Function(dynamic,dynamic,dynamic,dynamic,dynamic,dynamic,dynamic)"
+        "code": "U2:function(a){return H.M(a)}",
+        "type": "dynamic Function(dynamic)"
       },
       "668848422": {
         "id": "function/668848422",
@@ -50351,7 +50308,7 @@
         "id": "function/705889064",
         "kind": "function",
         "name": "==",
-        "size": 137,
+        "size": 151,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/138211367",
         "children": [],
@@ -50370,9 +50327,9 @@
             "declaredType": "Object"
           }
         ],
-        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
         "inlinedCount": 0,
-        "code": "eT:function(a,b){var s=this\nif(b==null)return!1\nif(s===b)return!0\nif(!(b instanceof H.u))return!1\nreturn s.a===b.a&&s.b===b.b&&s.c===b.c}",
+        "code": "eT:function(a,b){var s=this\nif(b==null)return!1\nif(s===b)return!0\nif(!(b instanceof H.u))return!1\nreturn s.a===b.a&&s.$_target===b.$_target&&s.b===b.b}",
         "type": "bool Function(Object)"
       },
       "706497152": {
@@ -56577,12 +56534,12 @@
           },
           {
             "name": "isStatic",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           },
           {
             "name": "isIntercepted",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           }
         ],
@@ -57643,7 +57600,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "gUQ:function(a){var s=H.Lh(this)\nreturn H.fR(new H.i5(this,s.C(\"i5<1>\")),new H.Mw(this),s.c,s.Q[1])}",
+        "code": "gUQ:function(a){var s=H.Lh(this)\nreturn H.fR(new H.i5(this,s.C(\"i5<1>\")),new H.mJ(this),s.c,s.Q[1])}",
         "type": "Iterable<JsLinkedHashMap.V> Function()"
       },
       "825708700": {
@@ -60770,7 +60727,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "D:function(a,b){var s=a/b\nif(s>=-2147483648&&s<=2147483647)return s|0\nif(s>0){if(s!==1/0)return Math.floor(s)}else if(s>-1/0)return Math.ceil(s)\nthrow H.b(P.L4(\"Result of truncating division is \"+H.d(s)+\": \"+H.d(a)+\" ~/ \"+b))}",
+        "code": "D:function(a,b){var s=a/b\nif(s>=-2147483648&&s<=2147483647)return s|0\nif(s>0){if(s!==1/0)return Math.floor(s)}else if(s>-1/0)return Math.ceil(s)\nthrow H.b(P.u0(\"Result of truncating division is \"+H.d(s)+\": \"+H.d(a)+\" ~/ \"+b))}",
         "type": "int Function(num)"
       },
       "889342435": {
@@ -61508,12 +61465,12 @@
           },
           {
             "name": "needsDirectAccess",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           },
           {
             "name": "name",
-            "type": "[null|exact=JSString]",
+            "type": "[exact=JSString]",
             "declaredType": "String?"
           },
           {
@@ -61877,7 +61834,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "yS:function(a){return a.c}",
+        "code": "yS:function(a){return a.b}",
         "type": "dynamic Function(BoundClosure)"
       },
       "906921796": {
@@ -62887,7 +62844,7 @@
         "id": "function/922840913",
         "kind": "function",
         "name": "forwardInterceptedCallTo",
-        "size": 490,
+        "size": 466,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -62901,20 +62858,25 @@
         "inferredReturnType": "[null|subclass=Object]",
         "parameters": [
           {
+            "name": "stubName",
+            "type": "[exact=JSString]",
+            "declaredType": "String"
+          },
+          {
             "name": "function",
             "type": "[null|subclass=Object]",
             "declaredType": "dynamic"
           },
           {
             "name": "needsDirectAccess",
-            "type": "[exact=JSBool]",
+            "type": "[subtype=bool]",
             "declaredType": "bool"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Hf:function(a,b){var s,r,q,p,o,n,m=$.mJ\nif(m==null)m=$.mJ=H.E2(\"self\")\ns=$.P4\nif(s==null)s=$.P4=H.E2(\"receiver\")\nr=a.$stubName\nq=a.length\np=b||q>=28\nif(p)return H.Z4(q,b,r,a)\nif(q===1){p=\"return function(){return this.\"+m+\".\"+H.d(r)+\"(this.\"+s+\");\"\no=$.G\n$.G=o+1\nreturn new Function(p+H.d(o)+\"}\")()}n=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,q-1).join(\",\")\np=\"return function(\"+n+\"){return this.\"+m+\".\"+H.d(r)+\"(this.\"+s+\", \"+n+\");\"\no=$.G\n$.G=o+1\nreturn new Function(p+H.d(o)+\"}\")()}",
-        "type": "dynamic Function(dynamic,bool)"
+        "code": "Hf:function(a,b,c){var s,r,q,p,o,n=$.WW\nif(n==null)n=$.WW=H.L4(\"self\")\ns=$.i0\nif(s==null)s=$.i0=H.L4(\"receiver\")\nr=b.length\nq=c||r>=28\nif(q)return H.Z4(r,c,a,b)\nif(r===1){q=\"return function(){return this.\"+n+\".\"+a+\"(this.\"+s+\");\"\np=$.G\n$.G=p+1\nreturn new Function(q+H.d(p)+\"}\")()}o=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,r-1).join(\",\")\nq=\"return function(\"+o+\"){return this.\"+n+\".\"+a+\"(this.\"+s+\", \"+o+\");\"\np=$.G\n$.G=p+1\nreturn new Function(q+H.d(p)+\"}\")()}",
+        "type": "dynamic Function(String,dynamic,bool)"
       },
       "923456660": {
         "id": "function/923456660",
@@ -69986,6 +69948,28 @@
         "code": "jx:function(a,b){var s=a.appendChild(b)\ns.toString\nreturn s}",
         "type": "Node Function(Node)"
       },
+      "1061931090": {
+        "id": "function/1061931090",
+        "kind": "function",
+        "name": "_name",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/138211367",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[null|exact=JSString]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads anything; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "String Function()"
+      },
       "1061960079": {
         "id": "function/1061960079",
         "kind": "function",
@@ -72310,18 +72294,6 @@
         "code": "",
         "type": "StreamController<num>"
       },
-      "180845508": {
-        "id": "field/180845508",
-        "kind": "field",
-        "name": "_target",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/138211367",
-        "children": [],
-        "inferredType": "[null|subclass=Object]",
-        "code": "",
-        "type": "dynamic"
-      },
       "182488252": {
         "id": "field/182488252",
         "kind": "field",
@@ -74251,7 +74223,7 @@
         "parent": "class/230234314",
         "children": [],
         "inferredType": "Union(null, [exact=_AsyncBroadcastStreamController], [exact=_SyncBroadcastStreamController])",
-        "code": "s($,\"u0\",\"Eh\",function(){return P.bK(t.N)})",
+        "code": "s($,\"kz\",\"Eh\",function(){return P.bK(t.N)})",
         "type": "StreamController<String>"
       },
       "346735010": {
@@ -75057,18 +75029,6 @@
         "inferredType": "Container([exact=JSExtendableArray], element: [exact=SoundSpriteSegment], length: null)",
         "code": "",
         "type": "List<SoundSpriteSegment>"
-      },
-      "435101137": {
-        "id": "field/435101137",
-        "kind": "field",
-        "name": "selfFieldNameCache",
-        "size": 10,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/138211367",
-        "children": [],
-        "inferredType": "[null|exact=JSString]",
-        "code": "$.mJ=null",
-        "type": "String?"
       },
       "436182146": {
         "id": "field/436182146",
@@ -76774,6 +76734,18 @@
         "code": "",
         "type": "LinkedHashMapCell?"
       },
+      "636292115": {
+        "id": "field/636292115",
+        "kind": "field",
+        "name": "_receiverFieldNameCache",
+        "size": 10,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/138211367",
+        "children": [],
+        "inferredType": "[null|exact=JSString]",
+        "code": "$.i0=null",
+        "type": "String?"
+      },
       "636882300": {
         "id": "field/636882300",
         "kind": "field",
@@ -77145,6 +77117,18 @@
         "inferredType": "[exact=JSBool]",
         "code": "",
         "type": "bool"
+      },
+      "659647228": {
+        "id": "field/659647228",
+        "kind": "field",
+        "name": "_selfFieldNameCache",
+        "size": 10,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/138211367",
+        "children": [],
+        "inferredType": "[null|exact=JSString]",
+        "code": "$.WW=null",
+        "type": "String?"
       },
       "661173290": {
         "id": "field/661173290",
@@ -77625,18 +77609,6 @@
         "inferredType": "[null|subclass=Object]",
         "code": "",
         "type": "Object?"
-      },
-      "709451133": {
-        "id": "field/709451133",
-        "kind": "field",
-        "name": "receiverFieldNameCache",
-        "size": 10,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/138211367",
-        "children": [],
-        "inferredType": "[null|exact=JSString]",
-        "code": "$.P4=null",
-        "type": "String?"
       },
       "709723330": {
         "id": "field/709723330",
@@ -81036,18 +81008,6 @@
         "code": "",
         "type": "int"
       },
-      "1061931090": {
-        "id": "field/1061931090",
-        "kind": "field",
-        "name": "_name",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/138211367",
-        "children": [],
-        "inferredType": "[null|exact=JSString]",
-        "code": "",
-        "type": "String"
-      },
       "1069657912": {
         "id": "field/1069657912",
         "kind": "field",
@@ -83651,16 +83611,6 @@
       }
     ],
     "field/180491155": [
-      {
-        "id": "function/374894045",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
-    "field/180845508": [
       {
         "id": "function/374894045",
         "mask": null
@@ -87862,16 +87812,6 @@
         "mask": null
       }
     ],
-    "field/1061931090": [
-      {
-        "id": "function/374894045",
-        "mask": null
-      },
-      {
-        "id": "function/788412943",
-        "mask": null
-      }
-    ],
     "field/1069657912": [
       {
         "id": "function/374894045",
@@ -89410,10 +89350,6 @@
     ],
     "function/15478302": [
       {
-        "id": "field/1061931090",
-        "mask": null
-      },
-      {
         "id": "field/125830184",
         "mask": null
       },
@@ -89422,8 +89358,12 @@
         "mask": null
       },
       {
-        "id": "function/445547062",
+        "id": "function/1061931090",
         "mask": null
+      },
+      {
+        "id": "function/1061931090",
+        "mask": "inlined"
       },
       {
         "id": "function/873863767",
@@ -103162,15 +103102,11 @@
         "mask": null
       },
       {
-        "id": "field/435101137",
+        "id": "field/659647228",
         "mask": null
       },
       {
-        "id": "field/435101137",
-        "mask": null
-      },
-      {
-        "id": "function/292195356",
+        "id": "field/659647228",
         "mask": null
       },
       {
@@ -103187,6 +103123,10 @@
       },
       {
         "id": "function/476860251",
+        "mask": null
+      },
+      {
+        "id": "function/659844135",
         "mask": null
       },
       {
@@ -104552,28 +104492,6 @@
       {
         "id": "function/825039833",
         "mask": "[subtype=ListMixin]"
-      }
-    ],
-    "function/292195356": [
-      {
-        "id": "function/163889622",
-        "mask": null
-      },
-      {
-        "id": "function/393060060",
-        "mask": null
-      },
-      {
-        "id": "function/393060060",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/478486472",
-        "mask": null
-      },
-      {
-        "id": "function/885768717",
-        "mask": null
       }
     ],
     "function/292551470": [
@@ -120252,10 +120170,6 @@
         "mask": null
       },
       {
-        "id": "field/180845508",
-        "mask": null
-      },
-      {
         "id": "field/302220255",
         "mask": null
       },
@@ -120274,6 +120188,14 @@
       {
         "id": "function/175997763",
         "mask": "[subclass=Object]"
+      },
+      {
+        "id": "function/180845508",
+        "mask": null
+      },
+      {
+        "id": "function/180845508",
+        "mask": "inlined"
       },
       {
         "id": "function/346305693",
@@ -124854,6 +124776,28 @@
         "mask": null
       }
     ],
+    "function/659844135": [
+      {
+        "id": "function/163889622",
+        "mask": null
+      },
+      {
+        "id": "function/393060060",
+        "mask": null
+      },
+      {
+        "id": "function/393060060",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/478486472",
+        "mask": null
+      },
+      {
+        "id": "function/885768717",
+        "mask": null
+      }
+    ],
     "function/660696668": [
       {
         "id": "function/437424329",
@@ -127680,12 +127624,20 @@
         "mask": null
       },
       {
-        "id": "field/180845508",
+        "id": "field/302220255",
         "mask": null
       },
       {
-        "id": "field/302220255",
+        "id": "function/180845508",
         "mask": null
+      },
+      {
+        "id": "function/180845508",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/180845508",
+        "mask": "inlined"
       }
     ],
     "function/707502824": [
@@ -138506,27 +138458,27 @@
         "mask": null
       },
       {
-        "id": "field/435101137",
+        "id": "field/636292115",
         "mask": null
       },
       {
-        "id": "field/435101137",
+        "id": "field/636292115",
         "mask": null
       },
       {
-        "id": "field/709451133",
+        "id": "field/659647228",
         "mask": null
       },
       {
-        "id": "field/709451133",
-        "mask": null
-      },
-      {
-        "id": "function/292195356",
+        "id": "field/659647228",
         "mask": null
       },
       {
         "id": "function/445547062",
+        "mask": null
+      },
+      {
+        "id": "function/659844135",
         "mask": null
       },
       {
@@ -146729,7 +146681,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 238903,
+      "size": 238461,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146739,10 +146691,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 238903,
-    "dart2jsVersion": "2.14.0-216.0.dev",
-    "compilationMoment": "2021-06-16 07:13:23.714043",
-    "compilationDuration": 4086854,
+    "size": 238461,
+    "dart2jsVersion": "2.14.0-228.0.dev",
+    "compilationMoment": "2021-06-22 13:32:14.124934",
+    "compilationDuration": 3916693,
     "toJsonDuration": 20000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
