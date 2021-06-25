@@ -22,7 +22,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 6609,
+        "size": 6611,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -506,7 +506,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 11493,
+        "size": 11498,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -590,7 +590,7 @@
         "id": "library/418037606",
         "kind": "library",
         "name": "stagexl.engine",
-        "size": 16699,
+        "size": 16709,
         "children": [
           "class/9026159",
           "class/56811882",
@@ -730,7 +730,7 @@
         "id": "library/521324912",
         "kind": "library",
         "name": "stagexl.display_ex",
-        "size": 1866,
+        "size": 1873,
         "children": [
           "class/20841394",
           "class/767512042"
@@ -771,7 +771,7 @@
         "id": "library/579882441",
         "kind": "library",
         "name": "rti",
-        "size": 17106,
+        "size": 17112,
         "children": [
           "class/121755874",
           "class/214521760",
@@ -874,7 +874,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 7522,
+        "size": 7532,
         "children": [
           "class/192166",
           "class/14460442",
@@ -943,7 +943,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7871,
+        "size": 7870,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -1036,7 +1036,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 6732,
+        "size": 6733,
         "children": [
           "class/43993131",
           "class/56611791",
@@ -1127,7 +1127,7 @@
         "id": "library/811088491",
         "kind": "library",
         "name": "dart.dom.web_gl",
-        "size": 500,
+        "size": 505,
         "children": [
           "class/25833666",
           "class/105592489",
@@ -1187,7 +1187,7 @@
         "id": "library/919163266",
         "kind": "library",
         "name": "html_common",
-        "size": 1885,
+        "size": 1890,
         "children": [
           "class/298797380",
           "class/789731211",
@@ -1231,7 +1231,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 22415,
+        "size": 22529,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1250,6 +1250,7 @@
           "class/466061502",
           "class/500662026",
           "class/518228506",
+          "class/572868957",
           "class/692496355",
           "class/722522722",
           "class/742137989",
@@ -1258,6 +1259,7 @@
           "class/866150578",
           "class/954836234",
           "class/958488954",
+          "class/1030881768",
           "field/49205126",
           "field/61828214",
           "field/193563302",
@@ -1374,7 +1376,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 19764,
+        "size": 20198,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1454,7 +1456,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 20287,
+        "size": 20305,
         "children": [
           "class/3601851",
           "class/140329748",
@@ -1485,7 +1487,7 @@
         "id": "class/192166",
         "kind": "class",
         "name": "TextureAtlas",
-        "size": 559,
+        "size": 564,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -2173,7 +2175,7 @@
         "id": "class/80405414",
         "kind": "class",
         "name": "_FutureListener",
-        "size": 274,
+        "size": 572,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -4232,7 +4234,7 @@
         "id": "class/296172725",
         "kind": "class",
         "name": "DisplayObjectContainer",
-        "size": 1831,
+        "size": 1846,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -4409,7 +4411,7 @@
         "id": "class/324095577",
         "kind": "class",
         "name": "_TypeError",
-        "size": 56,
+        "size": 62,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/579882441",
         "modifiers": {
@@ -5577,7 +5579,7 @@
         "id": "class/435993532",
         "kind": "class",
         "name": "GameElement",
-        "size": 6151,
+        "size": 6153,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "modifiers": {
@@ -6426,7 +6428,7 @@
         "id": "class/526697825",
         "kind": "class",
         "name": "SimpleButton",
-        "size": 915,
+        "size": 917,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -6977,6 +6979,18 @@
           "function/695629492",
           "function/927646884"
         ]
+      },
+      "572868957": {
+        "id": "class/572868957",
+        "kind": "class",
+        "name": "Closure0Args",
+        "size": 54,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "modifiers": {
+          "abstract": true
+        },
+        "children": []
       },
       "573146784": {
         "id": "class/573146784",
@@ -7581,7 +7595,7 @@
         "id": "class/637579110",
         "kind": "class",
         "name": "RenderingContext",
-        "size": 410,
+        "size": 415,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/811088491",
         "modifiers": {
@@ -8211,7 +8225,7 @@
         "id": "class/714718140",
         "kind": "class",
         "name": "_AsyncCompleter",
-        "size": 162,
+        "size": 167,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -8428,7 +8442,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 9910,
+        "size": 9911,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -8798,7 +8812,7 @@
         "id": "class/767512042",
         "kind": "class",
         "name": "FlipBook",
-        "size": 872,
+        "size": 879,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/521324912",
         "modifiers": {
@@ -8964,7 +8978,7 @@
         "id": "class/770824752",
         "kind": "class",
         "name": "_Completer",
-        "size": 216,
+        "size": 221,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -9137,7 +9151,7 @@
         "id": "class/784178238",
         "kind": "class",
         "name": "_Future",
-        "size": 3789,
+        "size": 3968,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -9161,6 +9175,7 @@
           "function/472201782",
           "function/492708773",
           "function/519629171",
+          "function/527450614",
           "function/533906117",
           "function/553149607",
           "function/556268777",
@@ -9215,7 +9230,7 @@
         "id": "class/789731211",
         "kind": "class",
         "name": "_AcceptStructuredClone",
-        "size": 1267,
+        "size": 1272,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/919163266",
         "modifiers": {
@@ -11482,7 +11497,7 @@
         "id": "class/1029103814",
         "kind": "class",
         "name": "SoundSprite",
-        "size": 418,
+        "size": 423,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -11636,6 +11651,18 @@
         "parent": "library/470705070",
         "modifiers": {
           "abstract": false
+        },
+        "children": []
+      },
+      "1030881768": {
+        "id": "class/1030881768",
+        "kind": "class",
+        "name": "Closure2Args",
+        "size": 51,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/966364039",
+        "modifiers": {
+          "abstract": true
         },
         "children": []
       },
@@ -13044,7 +13071,7 @@
         "id": "function/15204906",
         "kind": "function",
         "name": "call",
-        "size": 308,
+        "size": 319,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/963665986",
         "children": [],
@@ -13059,7 +13086,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var s,r,q,p,o,n,m=this,l=null\ntry{q=m.a.a\nl=q.b.b.Gr(q.d)}catch(p){s=H.Ru(p)\nr=H.ts(p)\nq=m.c&&m.b.a.c.a===s\no=m.a\nif(q)o.c=m.b.a.c\nelse o.c=P.Tl(s,r)\no.b=!0\nreturn}if(l instanceof P.vs&&l.a>=4){if(l.a===8){q=m.a\nq.c=l.c\nq.b=!0}return}if(t.c.b(l)){n=m.b.a\nq=m.a\nq.c=l.Y(new P.jZ(n),t.z)\nq.b=!1}}",
+        "code": "$0:function(){var s,r,q,p,o,n,m=this,l=null\ntry{q=m.a.a\nl=q.b.b.Gr(q.d)}catch(p){s=H.Ru(p)\nr=H.ts(p)\nq=m.c&&m.b.a.c.a===s\no=m.a\nif(q)o.c=m.b.a.c\nelse o.c=P.Tl(s,r)\no.b=!0\nreturn}if(l instanceof P.vs&&(l.a&24)!==0){if((l.a&16)!==0){q=m.a\nq.c=l.c\nq.b=!0}return}if(t.c.b(l)){n=m.b.a\nq=m.a\nq.c=l.Y(new P.jZ(n),t.z)\nq.b=!1}}",
         "type": "void Function()"
       },
       "15266339": {
@@ -13153,14 +13180,14 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "HH:function(a){var s,r=this,q=r.$ti\nif(q.C(\"b8<1>\").b(a))if(q.b(a))P.A9(a,r)\nelse r.ec(a)\nelse{s=r.I()\nr.a=4\nr.c=a\nP.HZ(r,s)}}",
+        "code": "HH:function(a){var s,r=this,q=r.$ti\nif(q.C(\"b8<1>\").b(a))if(q.b(a))P.A9(a,r)\nelse r.ec(a)\nelse{s=r.I()\nr.a=8\nr.c=a\nP.HZ(r,s)}}",
         "type": "void Function(Object?)"
       },
       "17382067": {
         "id": "function/17382067",
         "kind": "function",
         "name": "getSegment",
-        "size": 264,
+        "size": 269,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1029103814",
         "children": [
@@ -13183,7 +13210,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "yk:function(a){var s,r\ntry{s=C.Nm.XG(this.a,new O.EQ(a))\nreturn s}catch(r){if(H.Ru(r) instanceof P.lj)throw H.b(P.xY(\"SoundSpriteSegment not found: '\"+a+\"'\"))\nelse throw r}}",
+        "code": "yk:function(a){var s,r\ntry{s=C.Nm.XG(this.a,new O.EQ(a))\nreturn s}catch(r){if(H.Ru(r) instanceof P.lj)throw H.b(P.xY(\"SoundSpriteSegment not found: '\"+a+\"'\",null))\nelse throw r}}",
         "type": "SoundSpriteSegment Function(String)"
       },
       "17530218": {
@@ -13331,7 +13358,7 @@
         "id": "function/18599313",
         "kind": "function",
         "name": "_addListener",
-        "size": 254,
+        "size": 252,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -13354,7 +13381,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "B:function(a){var s,r=this,q=r.a\nif(q<=1){a.a=r.c\nr.c=a}else{if(q===2){q=r.c\ns=q.a\nif(s<4){q.B(a)\nreturn}r.a=s\nr.c=q.c}P.Tk(null,null,r.b,new P.da(r,a))}}",
+        "code": "B:function(a){var s=this,r=s.a\nif(r<=3){a.a=s.c\ns.c=a}else{if((r&4)!==0){r=s.c\nif((r.a&24)===0){r.B(a)\nreturn}s.D(r)}P.Tk(null,null,s.b,new P.da(s,a))}}",
         "type": "void Function(_FutureListener<dynamic,dynamic>)"
       },
       "19466045": {
@@ -14253,7 +14280,7 @@
         "inferredReturnType": "[exact=JSBool]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 2,
+        "inlinedCount": 3,
         "code": "",
         "type": "bool Function()"
       },
@@ -14530,7 +14557,7 @@
         "id": "function/45545643",
         "kind": "function",
         "name": "removeChild",
-        "size": 276,
+        "size": 281,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -14551,7 +14578,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "c1:function(a){var s,r,q,p=this\nif(a.fy!==p)throw H.b(P.xY(\"The supplied DisplayObject must be a child of the caller.\"))\nelse{s=p.e1\nr=C.Nm.OY(s,a)\na.H2(0,new R.ea(\"removed\",!0))\nq=p.gYK()\nif((q instanceof A.Lz?q:null)!=null)p.ul(a,\"removedFromStage\")\na.fy=null\nC.Nm.W4(s,r)}}",
+        "code": "c1:function(a){var s,r,q,p=this\nif(a.fy!==p)throw H.b(P.xY(\"The supplied DisplayObject must be a child of the caller.\",null))\nelse{s=p.e1\nr=C.Nm.OY(s,a)\na.H2(0,new R.ea(\"removed\",!0))\nq=p.gYK()\nif((q instanceof A.Lz?q:null)!=null)p.ul(a,\"removedFromStage\")\na.fy=null\nC.Nm.W4(s,r)}}",
         "type": "void Function(Object?)"
       },
       "46139592": {
@@ -15400,7 +15427,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "A2:function(){if($.FS!=null)return\n$.FS=C.lX\n$.qu=new E.Er(P.bK(t.p))\nvar s=!!(window.AudioContext||window.webkitAudioContext)\ns.toString\nif(s){$.FS=C.QD\ns=new E.W1()\ns.P(null)\n$.HX=s}s=window.navigator.userAgent\ns.toString\nif(C.xB.tg(s,\"IEMobile\"))if(C.xB.tg(s,\"9.0\"))$.FS=C.a1\nif(C.xB.tg(s,\"iPhone\")||C.xB.tg(s,\"iPad\")||C.xB.tg(s,\"iPod\"))if(C.xB.tg(s,\"OS 3\")||C.xB.tg(s,\"OS 4\")||C.xB.tg(s,\"OS 5\"))$.FS=C.a1\nif($.IF().length===0)$.FS=C.a1\nP.mp(\"StageXL sound engine  : \"+E.mh().Z(0))}",
+        "code": "A2:function(){if($.FS!=null)return\n$.FS=C.lX\n$.qu=new E.Er(P.bK(t.p))\nvar s=!!(window.AudioContext||window.webkitAudioContext)\ns.toString\nif(s){$.FS=C.QD\ns=new E.W1()\ns.R(null)\n$.HX=s}s=window.navigator.userAgent\ns.toString\nif(C.xB.tg(s,\"IEMobile\"))if(C.xB.tg(s,\"9.0\"))$.FS=C.a1\nif(C.xB.tg(s,\"iPhone\")||C.xB.tg(s,\"iPad\")||C.xB.tg(s,\"iPod\"))if(C.xB.tg(s,\"OS 3\")||C.xB.tg(s,\"OS 4\")||C.xB.tg(s,\"OS 5\"))$.FS=C.a1\nif($.IF().length===0)$.FS=C.a1\nP.mp(\"StageXL sound engine  : \"+E.mh().Z(0))}",
         "type": "void Function()"
       },
       "57895586": {
@@ -15927,7 +15954,7 @@
         "id": "function/68051831",
         "kind": "function",
         "name": "handleError",
-        "size": 98,
+        "size": 396,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/80405414",
         "children": [],
@@ -15948,7 +15975,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "X:function(a){var s=this.e,r=a.a,q=this.b.b\nif(t.Y.b(s))return q.m(s,r,a.b)\nelse return q.FI(s,r)}",
+        "code": "X:function(a){var s,r=this.e,q=null,p=a.a,o=this.b.b\nif(t.Q.b(r))q=o.m(r,p,a.b)\nelse q=o.FI(r,p)\ntry{p=q\nreturn p}catch(s){if(t.eK.b(H.Ru(s))){if((this.c&1)!==0)throw H.b(P.xY(\"The error handler of Future.then must return a value of the returned future's type\",\"onError\"))\nthrow H.b(P.xY(\"The error handler of Future.catchError must return a value of the future's type\",\"onError\"))}else throw s}}",
         "type": "FutureOr<_FutureListener.T> Function(AsyncError)"
       },
       "68374999": {
@@ -17273,7 +17300,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "X2:function(a){var s=this,r=s.I()\ns.a=4\ns.c=a\nP.HZ(s,r)}",
+        "code": "X2:function(a){var s=this,r=s.I()\ns.a=8\ns.c=a\nP.HZ(s,r)}",
         "type": "void Function(Object?)"
       },
       "97062567": {
@@ -17479,7 +17506,7 @@
         "id": "function/102471615",
         "kind": "function",
         "name": "complete",
-        "size": 92,
+        "size": 97,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/714718140",
         "children": [],
@@ -17500,7 +17527,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "V:function(a,b){var s=this.a\nif(s.a!==0)throw H.b(P.PV(\"Future already completed\"))\ns.Xf(b)}",
+        "code": "V:function(a,b){var s=this.a\nif((s.a&30)!==0)throw H.b(P.PV(\"Future already completed\"))\ns.Xf(b)}",
         "type": "void Function([Object?])"
       },
       "103122920": {
@@ -19204,7 +19231,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "tW:function(a,b){if(t.Q.b(b))if(b.$thrownJsError==null)b.$thrownJsError=a\nreturn b}",
+        "code": "tW:function(a,b){if(t.W.b(b))if(b.$thrownJsError==null)b.$thrownJsError=a\nreturn b}",
         "type": "Object Function(Object,Object)"
       },
       "131709234": {
@@ -21277,7 +21304,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 1,
-        "code": "W:function(a,b){return(a|0)===a?a/b|0:this.D(a,b)}",
+        "code": "W:function(a,b){return(a|0)===a?a/b|0:this.P(a,b)}",
         "type": "int Function(num)"
       },
       "171156881": {
@@ -22826,7 +22853,7 @@
         "id": "function/205154197",
         "kind": "function",
         "name": "_registerErrorHandler",
-        "size": 204,
+        "size": 97,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "children": [],
@@ -22852,7 +22879,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "VH:function(a,b){if(t.Y.b(a))return b.O(a)\nif(t.bI.b(a))return a\nthrow H.b(P.L3(a,\"onError\",\"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a valid result\"))}",
+        "code": "VH:function(a,b){if(t.Q.b(a))return b.O(a)\nif(t.w.b(a))return a\nthrow H.b(P.L3(a,\"onError\",u.c))}",
         "type": "Function Function(Function,Zone)"
       },
       "205976182": {
@@ -23600,7 +23627,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "gVl:function(a){return new W.Cq(a,\"click\",!1,t.W)}",
+        "code": "gVl:function(a){return new W.Cq(a,\"click\",!1,t.Y)}",
         "type": "ElementStream<MouseEvent> Function()"
       },
       "220077559": {
@@ -23844,7 +23871,7 @@
         "id": "function/227303309",
         "kind": "function",
         "name": "_registerErrorHandler",
-        "size": 214,
+        "size": 219,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/604138865",
         "children": [],
@@ -23870,7 +23897,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "pF:function(a,b){if(b==null)b=P.Cr()\nif(t.bl.b(b))return a.O(b)\nif(t.d5.b(b))return b\nthrow H.b(P.xY(\"handleError callback must take either an Object (the error), or both an Object (the error) and a StackTrace.\"))}",
+        "code": "pF:function(a,b){if(b==null)b=P.Cr()\nif(t.bl.b(b))return a.O(b)\nif(t.d5.b(b))return b\nthrow H.b(P.xY(\"handleError callback must take either an Object (the error), or both an Object (the error) and a StackTrace.\",null))}",
         "type": "Function Function(Zone,Function?)"
       },
       "227348255": {
@@ -25742,7 +25769,7 @@
         "id": "function/259235861",
         "kind": "function",
         "name": "hitTestInput",
-        "size": 141,
+        "size": 142,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/526697825",
         "children": [],
@@ -25768,7 +25795,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Fo:function(a,b){var s=this.R,r=s.gwr(),q=r.a,p=a-q[4],o=b-q[5]\nreturn s.Fo((q[3]*p-q[2]*o)/r.gR9(),(q[0]*o-q[1]*p)/r.gR9())!=null?this:null}",
+        "code": "Fo:function(a,b){var s=this.RZ,r=s.gwr(),q=r.a,p=a-q[4],o=b-q[5]\nreturn s.Fo((q[3]*p-q[2]*o)/r.gR9(),(q[0]*o-q[1]*p)/r.gR9())!=null?this:null}",
         "type": "DisplayObject? Function(num,num)"
       },
       "259316864": {
@@ -25958,7 +25985,7 @@
         "id": "function/262976543",
         "kind": "function",
         "name": "_startDartAnimation",
-        "size": 925,
+        "size": 927,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [
@@ -25982,14 +26009,14 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "hM:function(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=\"_animations\",f=\"_lastAnimatableLink\",e=\"complete\"\nR.jr(\"throw\")\nfor(s=a.length,r=h.Na,q=t.e,p=0;p<a.length;a.length===s||(0,H.lk)(a),++p){o=a[p]\nn=$.bD()\nm=J.LX(o)\nl=m.gx(o)\nm=m.gy(o)\nl=n.a+80*l\nm=n.b+80*m\nn=h.m9\nk=O.u7((n==null?H.v(H.la(g)):n).dF(\"dart\"),60,!1)\nk.c=l\nk.id=!0\nk.d=m\nk.k4=!1\nif(!k.ij){k.ij=!0\nk.R=null}r.bS(k)\nk.Ep(0,e,q).XE(new U.m8(k),!1,0)\nn=h.m9\nj=O.u7((n==null?H.v(H.la(g)):n).dF(\"shadow\"),60,!1)\nj.c=l\nj.id=!0\nj.d=m\nj.k4=!1\nif(!j.ij){j.ij=!0\nj.R=null}r.bS(j)\nj.Ep(0,e,q).XE(new U.qA(j),!1,0)\ni=h.gYK()\nn=(i instanceof A.Lz?i:null).oJ\nif(!n.tg(0,k)){m=n.b;(m==null?H.v(H.la(f)):m).a=k\nn.b=m.b=new K.Gn()}if(!n.tg(0,j)){m=n.b;(m==null?H.v(H.la(f)):m).a=j\nn.b=m.b=new K.Gn()}}}",
+        "code": "hM:function(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g=\"_animations\",f=\"_lastAnimatableLink\",e=\"complete\"\nR.jr(\"throw\")\nfor(s=a.length,r=h.Na,q=t.e,p=0;p<a.length;a.length===s||(0,H.lk)(a),++p){o=a[p]\nn=$.bD()\nm=J.LX(o)\nl=m.gx(o)\nm=m.gy(o)\nl=n.a+80*l\nm=n.b+80*m\nn=h.m9\nk=O.u7((n==null?H.v(H.la(g)):n).dF(\"dart\"),60,!1)\nk.c=l\nk.id=!0\nk.d=m\nk.k4=!1\nif(!k.ij){k.ij=!0\nk.RZ=null}r.bS(k)\nk.Ep(0,e,q).XE(new U.m8(k),!1,0)\nn=h.m9\nj=O.u7((n==null?H.v(H.la(g)):n).dF(\"shadow\"),60,!1)\nj.c=l\nj.id=!0\nj.d=m\nj.k4=!1\nif(!j.ij){j.ij=!0\nj.RZ=null}r.bS(j)\nj.Ep(0,e,q).XE(new U.qA(j),!1,0)\ni=h.gYK()\nn=(i instanceof A.Lz?i:null).oJ\nif(!n.tg(0,k)){m=n.b;(m==null?H.v(H.la(f)):m).a=k\nn.b=m.b=new K.Gn()}if(!n.tg(0,j)){m=n.b;(m==null?H.v(H.la(f)):m).a=j\nn.b=m.b=new K.Gn()}}}",
         "type": "void Function(List<Point<num>>)"
       },
       "263363184": {
         "id": "function/263363184",
         "kind": "function",
         "name": "_asyncCompleteError",
-        "size": 184,
+        "size": 185,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -26017,7 +26044,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nk:function(a,b){this.a=1\nP.Tk(null,null,this.b,new P.ZL(this,a,b))}",
+        "code": "Nk:function(a,b){this.a^=2\nP.Tk(null,null,this.b,new P.ZL(this,a,b))}",
         "type": "void Function(Object,StackTrace)"
       },
       "263798810": {
@@ -26467,7 +26494,7 @@
         "id": "function/271354923",
         "kind": "function",
         "name": "advanceTime",
-        "size": 344,
+        "size": 349,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/767512042",
         "children": [],
@@ -26488,7 +26515,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Gz:function(a){var s,r,q,p,o,n,m,l,k,j=this\nif(!j.ij)return!0\ns=j.R\nif(s==null){j.R=0\nj.H2(0,j.ca)}else{j.R=s+a\nfor(s=j.e1,r=j.LD,q=j.ca,p=j.Jc;j.ij;){o=j.kX\nn=r[o]\nm=j.R\nm.toString\nif(n>m)break\nl=s.length-1\nk=o+1\nif(k>l)k=l\nj.kX=k\nj.R=m-n\no=k!==o\nif(o){j.H2(0,q)\nif(j.kX!==k)return!0}o=k===l&&o\nif(o){j.H2(0,p)\nif(j.kX!==k)return!0}}}return!0}",
+        "code": "Gz:function(a){var s,r,q,p,o,n,m,l,k,j=this\nif(!j.ij)return!0\ns=j.RZ\nif(s==null){j.RZ=0\nj.H2(0,j.ca)}else{j.RZ=s+a\nfor(s=j.e1,r=j.LD,q=j.ca,p=j.Jc;j.ij;){o=j.kX\nn=r[o]\nm=j.RZ\nm.toString\nif(n>m)break\nl=s.length-1\nk=o+1\nif(k>l)k=l\nj.kX=k\nj.RZ=m-n\no=k!==o\nif(o){j.H2(0,q)\nif(j.kX!==k)return!0}o=k===l&&o\nif(o){j.H2(0,p)\nif(j.kX!==k)return!0}}}return!0}",
         "type": "bool Function(num)"
       },
       "271556856": {
@@ -26523,7 +26550,7 @@
         "id": "function/271674536",
         "kind": "function",
         "name": "_propagateToListeners",
-        "size": 1724,
+        "size": 1777,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -26554,7 +26581,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "HZ:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f={},e=f.a=a\nfor(s=t.c;!0;){r={}\nq=e.a===8\nif(b==null){if(q){e=e.c\nP.Si(e.a,e.b)}return}r.a=b\np=b.a\nfor(e=b;p!=null;e=p,p=o){e.a=null\nP.HZ(f.a,e)\nr.a=p\no=p.a}n=f.a\nm=n.c\nr.b=q\nr.c=m\nl=!q\nif(l){k=e.c\nk=(k&1)!==0||(k&15)===8}else k=!0\nif(k){j=e.b.b\nif(q){n=n.b===j\nn=!(n||n)}else n=!1\nif(n){P.Si(m.a,m.b)\nreturn}i=$.X3\nif(i!==j)$.X3=j\nelse i=null\ne=e.c\nif((e&15)===8)new P.RT(r,f,q).$0()\nelse if(l){if((e&1)!==0)new P.rq(r,m).$0()}else if((e&2)!==0)new P.RW(f,r).$0()\nif(i!=null)$.X3=i\ne=r.c\nif(s.b(e)){n=r.a.$ti\nn=n.C(\"b8<2>\").b(e)||!n.Q[1].b(e)}else n=!1\nif(n){h=r.a.b\nif(e.a>=4){g=h.c\nh.c=null\nb=h.J(g)\nh.a=e.a\nh.c=e.c\nf.a=e\ncontinue}else P.A9(e,h)\nreturn}}h=r.a.b\ng=h.c\nh.c=null\nb=h.J(g)\ne=r.b\nn=r.c\nif(!e){h.a=4\nh.c=n}else{h.a=8\nh.c=n}f.a=h\ne=h}}",
+        "code": "HZ:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f={},e=f.a=a\nfor(s=t.c;!0;){r={}\nq=e.a\np=(q&16)===0\no=!p\nif(b==null){if(o&&(q&1)===0){e=e.c\nP.Si(e.a,e.b)}return}r.a=b\nn=b.a\nfor(e=b;n!=null;e=n,n=m){e.a=null\nP.HZ(f.a,e)\nr.a=n\nm=n.a}q=f.a\nl=q.c\nr.b=o\nr.c=l\nif(p){k=e.c\nk=(k&1)!==0||(k&15)===8}else k=!0\nif(k){j=e.b.b\nif(o){q=q.b===j\nq=!(q||q)}else q=!1\nif(q){P.Si(l.a,l.b)\nreturn}i=$.X3\nif(i!==j)$.X3=j\nelse i=null\ne=e.c\nif((e&15)===8)new P.RT(r,f,o).$0()\nelse if(p){if((e&1)!==0)new P.rq(r,l).$0()}else if((e&2)!==0)new P.RW(f,r).$0()\nif(i!=null)$.X3=i\ne=r.c\nif(s.b(e)){q=r.a.$ti\nq=q.C(\"b8<2>\").b(e)||!q.Q[1].b(e)}else q=!1\nif(q){h=r.a.b\nif((e.a&24)!==0){g=h.c\nh.c=null\nb=h.J(g)\nh.a=e.a&30|h.a&1\nh.c=e.c\nf.a=e\ncontinue}else P.A9(e,h)\nreturn}}h=r.a.b\ng=h.c\nh.c=null\nb=h.J(g)\ne=r.b\nq=r.c\nif(!e){h.a=8\nh.c=q}else{h.a=h.a&1|16\nh.c=q}f.a=h\ne=h}}",
         "type": "void Function(_Future<dynamic>,_FutureListener<dynamic,dynamic>?)"
       },
       "271677720": {
@@ -26880,7 +26907,7 @@
         "id": "function/274701165",
         "kind": "function",
         "name": "RenderTexture",
-        "size": 226,
+        "size": 236,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/356374571",
         "children": [],
@@ -26911,7 +26938,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "fL:function(a,b,c){var s,r=new L.Gp(0,0,C.Ls)\nif(a<=0)H.v(P.xY(\"width\"))\nif(b<=0)H.v(P.xY(\"height\"))\nr.a=a\nr.b=b\ns=W.d9(b,a)\nr.c=r.d=s\nif(c!==0){s=s.getContext(\"2d\")\ns.toString\ns.fillStyle=V.xH(c)\ns.fillRect(0,0,a,b)}return r}",
+        "code": "fL:function(a,b,c){var s,r=new L.Gp(0,0,C.Ls)\nif(a<=0)H.v(P.xY(\"width\",null))\nif(b<=0)H.v(P.xY(\"height\",null))\nr.a=a\nr.b=b\ns=W.d9(b,a)\nr.c=r.d=s\nif(c!==0){s=s.getContext(\"2d\")\ns.toString\ns.fillStyle=V.xH(c)\ns.fillRect(0,0,a,b)}return r}",
         "type": "dynamic Function(int,int,int)"
       },
       "274709672": {
@@ -27693,7 +27720,7 @@
         "id": "function/292751514",
         "kind": "function",
         "name": "_prependListeners",
-        "size": 359,
+        "size": 357,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -27716,7 +27743,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "H:function(a){var s,r,q,p,o,n,m=this,l={}\nl.a=a\nif(a==null)return\ns=m.a\nif(s<=1){r=m.c\nm.c=a\nif(r!=null){q=a.a\nfor(p=a;q!=null;p=q,q=o)o=q.a\np.a=r}}else{if(s===2){s=m.c\nn=s.a\nif(n<4){s.H(a)\nreturn}m.a=n\nm.c=s.c}l.a=m.J(a)\nP.Tk(null,null,m.b,new P.oQ(l,m))}}",
+        "code": "H:function(a){var s,r,q,p,o,n=this,m={}\nm.a=a\nif(a==null)return\ns=n.a\nif(s<=3){r=n.c\nn.c=a\nif(r!=null){q=a.a\nfor(p=a;q!=null;p=q,q=o)o=q.a\np.a=r}}else{if((s&4)!==0){s=n.c\nif((s.a&24)===0){s.H(a)\nreturn}n.D(s)}m.a=n.J(a)\nP.Tk(null,null,n.b,new P.oQ(m,n))}}",
         "type": "void Function(_FutureListener<dynamic,dynamic>?)"
       },
       "292915674": {
@@ -28638,7 +28665,7 @@
         "id": "function/311086956",
         "kind": "function",
         "name": "walk",
-        "size": 1110,
+        "size": 1115,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/789731211",
         "children": [
@@ -28661,7 +28688,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Pv:function(a){var s,r,q,p,o,n,m,l,k,j=this,i={}\nif(a==null)return a\nif(H.rQ(a))return a\nif(typeof a==\"number\")return a\nif(typeof a==\"string\")return a\ns=a instanceof Date\ns.toString\nif(s){s=a.getTime()\ns.toString\nif(Math.abs(s)<=864e13)r=!1\nelse r=!0\nif(r)H.v(P.xY(\"DateTime is outside valid range: \"+s))\nH.cb(!0,\"isUtc\",t.y)\nreturn new P.iP(s,!0)}s=a instanceof RegExp\ns.toString\nif(s)throw H.b(P.SY(\"structured clone of RegExp\"))\ns=typeof Promise!=\"undefined\"&&a instanceof Promise\ns.toString\nif(s)return P.o2(a,t.z)\nq=Object.getPrototypeOf(a)\ns=q===Object.prototype\ns.toString\nif(!s){s=q===null\ns.toString}else s=!0\nif(s){p=j.VH(a)\ns=j.b\no=i.a=s[p]\nif(o!=null)return o\nr=t.z\no=P.Fl(r,r)\ni.a=o\ns[p]=o\nj.Hp(a,new P.K5(i,j))\nreturn i.a}s=a instanceof Array\ns.toString\nif(s){s=a\ns.toString\np=j.VH(s)\nr=j.b\no=r[p]\nif(o!=null)return o\nn=J.U6(s)\nm=n.gA(s)\nif(j.c){l=new Array(m)\nl.toString\no=l}else o=s\nr[p]=o\nfor(r=J.w1(o),k=0;k<m;++k)r.Y5(o,k,j.Pv(n.q(s,k)))\nreturn o}return a}",
+        "code": "Pv:function(a){var s,r,q,p,o,n,m,l,k,j=this,i={}\nif(a==null)return a\nif(H.rQ(a))return a\nif(typeof a==\"number\")return a\nif(typeof a==\"string\")return a\ns=a instanceof Date\ns.toString\nif(s){s=a.getTime()\ns.toString\nif(Math.abs(s)<=864e13)r=!1\nelse r=!0\nif(r)H.v(P.xY(\"DateTime is outside valid range: \"+s,null))\nH.cb(!0,\"isUtc\",t.y)\nreturn new P.iP(s,!0)}s=a instanceof RegExp\ns.toString\nif(s)throw H.b(P.SY(\"structured clone of RegExp\"))\ns=typeof Promise!=\"undefined\"&&a instanceof Promise\ns.toString\nif(s)return P.o2(a,t.z)\nq=Object.getPrototypeOf(a)\ns=q===Object.prototype\ns.toString\nif(!s){s=q===null\ns.toString}else s=!0\nif(s){p=j.VH(a)\ns=j.b\no=i.a=s[p]\nif(o!=null)return o\nr=t.z\no=P.Fl(r,r)\ni.a=o\ns[p]=o\nj.Hp(a,new P.K5(i,j))\nreturn i.a}s=a instanceof Array\ns.toString\nif(s){s=a\ns.toString\np=j.VH(s)\nr=j.b\no=r[p]\nif(o!=null)return o\nn=J.U6(s)\nm=n.gA(s)\nif(j.c){l=new Array(m)\nl.toString\no=l}else o=s\nr[p]=o\nfor(r=J.w1(o),k=0;k<m;++k)r.Y5(o,k,j.Pv(n.q(s,k)))\nreturn o}return a}",
         "type": "dynamic Function(dynamic)"
       },
       "311306250": {
@@ -29395,7 +29422,7 @@
         "id": "function/325386239",
         "kind": "function",
         "name": "_chainFuture",
-        "size": 223,
+        "size": 229,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -29418,7 +29445,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cU:function(a){var s=this\nif(s.$ti.b(a)){if(a.a===8){s.a=1\nP.Tk(null,null,s.b,new P.KF(s,a))}else P.A9(a,s)\nreturn}s.ec(a)}",
+        "code": "cU:function(a){var s=this\nif(s.$ti.b(a)){if((a.a&16)!==0){s.a^=2\nP.Tk(null,null,s.b,new P.KF(s,a))}else P.A9(a,s)\nreturn}s.ec(a)}",
         "type": "void Function(Object?)"
       },
       "325903689": {
@@ -30028,7 +30055,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Je:function(a,b){var s,r,q=new P.WM(b),p=new P.SX(b)\nif(a instanceof P.vs)a.M(q,p,t.z)\nelse{s=t.z\nif(t.c.b(a))a.S(q,p,s)\nelse{r=new P.vs($.X3,t.d)\nr.a=4\nr.c=a\nr.M(q,p,s)}}}",
+        "code": "Je:function(a,b){var s,r,q=new P.WM(b),p=new P.SX(b)\nif(a instanceof P.vs)a.M(q,p,t.z)\nelse{s=t.z\nif(t.c.b(a))a.S(q,p,s)\nelse{r=new P.vs($.X3,t.d)\nr.a=8\nr.c=a\nr.M(q,p,s)}}}",
         "type": "void Function(dynamic,void Function(int,dynamic))"
       },
       "338379080": {
@@ -30813,7 +30840,7 @@
         "id": "function/352514166",
         "kind": "function",
         "name": "_chainCoreFuture",
-        "size": 123,
+        "size": 130,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -30839,7 +30866,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "A9:function(a,b){var s,r\nfor(;s=a.a,s===2;)a=a.c\nif(s>=4){r=b.I()\nb.a=a.a\nb.c=a.c\nP.HZ(b,r)}else{r=b.c\nb.a=2\nb.c=a\na.H(r)}}",
+        "code": "A9:function(a,b){var s,r\nfor(;s=a.a,(s&4)!==0;)a=a.c\nif((s&24)!==0){r=b.I()\nb.D(a)\nP.HZ(b,r)}else{r=b.c\nb.a=b.a&1|4\nb.c=a\na.H(r)}}",
         "type": "void Function(_Future<dynamic>,_Future<dynamic>)"
       },
       "352620724": {
@@ -31968,7 +31995,7 @@
         "id": "function/372200438",
         "kind": "function",
         "name": "play",
-        "size": 52,
+        "size": 53,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/767512042",
         "children": [],
@@ -31983,7 +32010,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 2,
-        "code": "bY:function(a){if(!this.ij){this.ij=!0\nthis.R=null}}",
+        "code": "bY:function(a){if(!this.ij){this.ij=!0\nthis.RZ=null}}",
         "type": "void Function()"
       },
       "372361659": {
@@ -32464,7 +32491,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "xG:function(a,b){if((a|0)===a)if(b>=1||b<-1)return a/b|0\nreturn this.D(a,b)}",
+        "code": "xG:function(a,b){if((a|0)===a)if(b>=1||b<-1)return a/b|0\nreturn this.P(a,b)}",
         "type": "int Function(num)"
       },
       "384822666": {
@@ -33075,7 +33102,7 @@
         "id": "function/396617359",
         "kind": "function",
         "name": "initHooks",
-        "size": 710,
+        "size": 714,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/966364039",
         "children": [
@@ -34163,7 +34190,7 @@
         "id": "function/418214700",
         "kind": "function",
         "name": "addChild",
-        "size": 268,
+        "size": 273,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -34184,7 +34211,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bS:function(a){var s,r=this\nif(a===r)throw H.b(P.xY(\"An object cannot be added as a child of itself.\"))\nelse if(a.fy===r)r.kW(a)\nelse{a.JZ()\nr.hu(a)\nr.e1.push(a)\na.fy=r\na.H2(0,new R.ea(\"added\",!0))\ns=r.gYK()\nif((s instanceof A.Lz?s:null)!=null)r.ul(a,\"addedToStage\")}}",
+        "code": "bS:function(a){var s,r=this\nif(a===r)throw H.b(P.xY(\"An object cannot be added as a child of itself.\",null))\nelse if(a.fy===r)r.kW(a)\nelse{a.JZ()\nr.hu(a)\nr.e1.push(a)\na.fy=r\na.H2(0,new R.ea(\"added\",!0))\ns=r.gYK()\nif((s instanceof A.Lz?s:null)!=null)r.ul(a,\"addedToStage\")}}",
         "type": "void Function(Object?)"
       },
       "420475672": {
@@ -35891,7 +35918,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uk:function(a,b){var s=0,r=P.F(t.H),q,p,o,n,m,l\nvar $async$uk=P.l(function(c,d){if(c===1)return P.f(d,r)\nwhile(true)switch(s){case 0:Y.hA(\"initialLoad\")\nq=t.E.a(a.n9(\"TextureAtlas\",\"static\"))\np=q.kI(\"loading_bar\")\no=$.LS\n$.LS=o+1\nn=new O.Jq(p,\"DIRECTION_RIGHT\",o,H.QI([],t.t),T.oy(),P.Fl(t.N,t.C))\nn.c=51\nn.d=8\nn.sA7(0,0)\nm=A.Lj(q.kI(\"loading_text\"))\nm.c=141\nm.id=!0\nm.d=10\nl=A.DM()\nl.bS(A.Lj(q.kI(\"loading_background\")))\nl.bS(n)\nl.bS(m)\nl.c=C.jn.W(b.Yr,2)-504\nl.id=!0\nl.d=400\nl.x=l.r=2\nb.bS(l)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",u.d,O.Yw(u.d,null))\np=a.b\nnew P.Gm(p,H.Lh(p).C(\"Gm<1>\")).yI(new E.y9(n,a))\ns=2\nreturn P.j(a.xW(0),$async$uk)\ncase 2:E.TI(a,b,l)\nreturn P.y(null,r)}})\nreturn P.D($async$uk,r)}",
+        "code": "uk:function(a,b){var s=0,r=P.F(t.H),q,p,o,n,m,l\nvar $async$uk=P.l(function(c,d){if(c===1)return P.f(d,r)\nwhile(true)switch(s){case 0:Y.hA(\"initialLoad\")\nq=t.E.a(a.n9(\"TextureAtlas\",\"static\"))\np=q.kI(\"loading_bar\")\no=$.LS\n$.LS=o+1\nn=new O.Jq(p,\"DIRECTION_RIGHT\",o,H.QI([],t.t),T.oy(),P.Fl(t.N,t.C))\nn.c=51\nn.d=8\nn.sA7(0,0)\nm=A.Lj(q.kI(\"loading_text\"))\nm.c=141\nm.id=!0\nm.d=10\nl=A.DM()\nl.bS(A.Lj(q.kI(\"loading_background\")))\nl.bS(n)\nl.bS(m)\nl.c=C.jn.W(b.Yr,2)-504\nl.id=!0\nl.d=400\nl.x=l.r=2\nb.bS(l)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",C.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",C.kH)\na.Fb(\"SoundSprite\",\"audio\",u.h,O.Yw(u.h,null))\np=a.b\nnew P.Gm(p,H.Lh(p).C(\"Gm<1>\")).yI(new E.y9(n,a))\ns=2\nreturn P.j(a.xW(0),$async$uk)\ncase 2:E.TI(a,b,l)\nreturn P.y(null,r)}})\nreturn P.D($async$uk,r)}",
         "type": "Future<void> Function(ResourceManager,Stage)"
       },
       "443784093": {
@@ -39530,7 +39557,7 @@
         "id": "function/511610050",
         "kind": "function",
         "name": "getBitmapData",
-        "size": 189,
+        "size": 194,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/192166",
         "children": [],
@@ -39551,7 +39578,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "kI:function(a){var s,r,q,p\nfor(s=this.a,r=s.length,q=0;q<r;++q){p=s[q]\nif(p.c===a){s=p.db\nreturn s==null?H.v(H.la(\"_bitmapData\")):s}}throw H.b(P.xY(\"TextureAtlasFrame not found: '\"+a+\"'\"))}",
+        "code": "kI:function(a){var s,r,q,p\nfor(s=this.a,r=s.length,q=0;q<r;++q){p=s[q]\nif(p.c===a){s=p.db\nreturn s==null?H.v(H.la(\"_bitmapData\")):s}}throw H.b(P.xY(\"TextureAtlasFrame not found: '\"+a+\"'\",null))}",
         "type": "BitmapData Function(String)"
       },
       "512180782": {
@@ -40384,6 +40411,28 @@
         "code": "",
         "type": "HttpRequest Function()"
       },
+      "527450614": {
+        "id": "function/527450614",
+        "kind": "function",
+        "name": "_ignoreError",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/784178238",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads field; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "bool Function()"
+      },
       "528709086": {
         "id": "function/528709086",
         "kind": "function",
@@ -40683,7 +40732,7 @@
         "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes field)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 4,
         "code": "",
         "type": "void Function()"
@@ -41539,7 +41588,7 @@
         "id": "function/553149607",
         "kind": "function",
         "name": "_chainForeignFuture",
-        "size": 489,
+        "size": 491,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -41564,7 +41613,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ec:function(a){var s,r,q,p=this\np.a=1\ntry{a.S(new P.pV(p),new P.U7(p),t.P)}catch(q){s=H.Ru(q)\nr=H.ts(q)\nP.rb(new P.vr(p,s,r))}}",
+        "code": "ec:function(a){var s,r,q,p=this\np.a^=2\ntry{a.S(new P.pV(p),new P.U7(p),t.P)}catch(q){s=H.Ru(q)\nr=H.ts(q)\nP.rb(new P.vr(p,s,r))}}",
         "type": "void Function(Future<dynamic>)"
       },
       "553278458": {
@@ -41593,7 +41642,7 @@
         "id": "function/554069480",
         "kind": "function",
         "name": "texImage2D",
-        "size": 360,
+        "size": 365,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/637579110",
         "children": [],
@@ -41649,7 +41698,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Fq:function(a,b,c,d,e,f,g,h,i){var s=i==null\nif(!s&&h!=null&&H.ok(g)){a.texImage2D(b,c,d,e,f,g,h,i,null)\nreturn}if(t.R.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}if(t.Z.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}throw H.b(P.xY(\"Incorrect number or type of arguments\"))}\nZE:function(a,b,c,d,e,f,g){return this.Fq(a,b,c,d,e,f,g,null,null)}",
+        "code": "Fq:function(a,b,c,d,e,f,g,h,i){var s=i==null\nif(!s&&h!=null&&H.ok(g)){a.texImage2D(b,c,d,e,f,g,h,i,null)\nreturn}if(t.R.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}if(t.Z.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)\nreturn}throw H.b(P.xY(\"Incorrect number or type of arguments\",null))}\nZE:function(a,b,c,d,e,f,g){return this.Fq(a,b,c,d,e,f,g,null,null)}",
         "type": "void Function(int,int,int,int,int,dynamic,[int?,int?,TypedData?])"
       },
       "554074082": {
@@ -41827,7 +41876,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "B0:function(){var s=new D.Il(P.x2(!0,t.H))\ns.P()\nreturn s}",
+        "code": "B0:function(){var s=new D.Il(P.x2(!0,t.H))\ns.R()\nreturn s}",
         "type": "dynamic Function()"
       },
       "559097830": {
@@ -42614,7 +42663,7 @@
         "id": "function/574550003",
         "kind": "function",
         "name": "_completeError",
-        "size": 100,
+        "size": 94,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -42640,7 +42689,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "ZL:function(a,b){var s=this,r=s.I(),q=P.Tl(a,b)\ns.a=8\ns.c=q\nP.HZ(s,r)}\no(P.vs.prototype,\"gFa\",\"ZL\",8)",
+        "code": "ZL:function(a,b){var s=this.I()\nthis.P9(P.Tl(a,b))\nP.HZ(this,s)}\no(P.vs.prototype,\"gFa\",\"ZL\",8)",
         "type": "void Function(Object,StackTrace)"
       },
       "575664914": {
@@ -43346,7 +43395,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "m6:function(a,b){var s=new A.uX(a,a)\ns.P(a,b)\nreturn s}",
+        "code": "m6:function(a,b){var s=new A.uX(a,a)\ns.R(a,b)\nreturn s}",
         "type": "dynamic Function(String,List<double>)"
       },
       "586531371": {
@@ -43562,7 +43611,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "v0:function(a){var s\nif(t.Q.b(a)){s=a.gn()\nif(s!=null)return s}return C.pd}",
+        "code": "v0:function(a){var s\nif(t.W.b(a)){s=a.gn()\nif(s!=null)return s}return C.pd}",
         "type": "StackTrace Function(Object)"
       },
       "595513492": {
@@ -43820,7 +43869,7 @@
         "returnType": "void",
         "inferredReturnType": "[null]",
         "parameters": [],
-        "sideEffects": "SideEffects(reads nothing; writes field)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 1,
         "code": "",
         "type": "void Function()"
@@ -46307,7 +46356,7 @@
             "declaredType": "_Future<dynamic>"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes field)",
+        "sideEffects": "SideEffects(reads field; writes field)",
         "inlinedCount": 1,
         "code": "",
         "type": "void Function(_Future<dynamic>)"
@@ -47498,7 +47547,7 @@
         "id": "function/659844135",
         "kind": "function",
         "name": "_computeFieldNamed",
-        "size": 195,
+        "size": 200,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/138211367",
         "children": [],
@@ -47519,7 +47568,7 @@
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
-        "code": "L4:function(a){var s,r,q,p=new H.u(\"self\",\"receiver\"),o=J.Ep(Object.getOwnPropertyNames(p))\nfor(s=o.length,r=0;r<s;++r){q=o[r]\nif(p[q]===a)return q}throw H.b(P.xY(\"Field name \"+a+\" not found.\"))}",
+        "code": "L4:function(a){var s,r,q,p=new H.u(\"self\",\"receiver\"),o=J.Ep(Object.getOwnPropertyNames(p))\nfor(s=o.length,r=0;r<s;++r){q=o[r]\nif(p[q]===a)return q}throw H.b(P.xY(\"Field name \"+a+\" not found.\",null))}",
         "type": "String Function(String)"
       },
       "660281723": {
@@ -49435,7 +49484,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$0:function(){var s,r=this.a\nr=r\ns=new Y.Xv()\ns.P(r)\nreturn s}",
+        "code": "$0:function(){var s,r=this.a\nr=r\ns=new Y.Xv()\ns.R(r)\nreturn s}",
         "type": "_FontStyleMetrics Function()"
       },
       "686441854": {
@@ -53245,7 +53294,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uW:function(a,b,c,d){var s,r,q,p,o,n=new E.bH(this,P.Fl(t.N,t.C))\nn.d=new E.e5()\nn.Q=a\nn.ch=b\nn.z=c\ns=new E.W1()\ns.P($.HX.gq5())\nn.e=s\ns=n.gBf()\nif(n.d==null)H.v(H.la(\"_soundTransform\"))\nr=$.Y6()\nq=r.currentTime\nq.toString\np=Math.pow(1,2)\ns.gq5().gain.setValueAtTime(p,q).toString\nif(n.y)if(n.x)n.y=!0\nelse{s=this.a\nif(n.z){n.y=!1\nq=r.createBufferSource()\nq.toString\nn.f=q\nn.gnY().buffer=s\nn.gnY().loop=!0\nn.gnY().loopStart=n.Q\nn.gnY().loopEnd=n.Q+n.ch\nn.gnY().connect(n.gBf().gq5(),0,0).toString\nn.gnY().start(0,n.Q+n.cx)\nr=r.currentTime\nr.toString\nn.cy=r-n.cx}else{n.y=!1\nq=r.createBufferSource()\nq.toString\nn.f=q\nn.gnY().buffer=s\nn.gnY().loop=!1\nn.gnY().connect(n.gBf().gq5(),0,0).toString\ns=n.gnY()\nq=n.Q\no=n.cx\ns.start(0,q+o,n.ch-o)\nn.r=W.JE(n.gnY(),\"ended\",n.gxv(),!1)\nr=r.currentTime\nr.toString\nn.cy=r-n.cx}}return n}",
+        "code": "uW:function(a,b,c,d){var s,r,q,p,o,n=new E.bH(this,P.Fl(t.N,t.C))\nn.d=new E.e5()\nn.Q=a\nn.ch=b\nn.z=c\ns=new E.W1()\ns.R($.HX.gq5())\nn.e=s\ns=n.gBf()\nif(n.d==null)H.v(H.la(\"_soundTransform\"))\nr=$.Y6()\nq=r.currentTime\nq.toString\np=Math.pow(1,2)\ns.gq5().gain.setValueAtTime(p,q).toString\nif(n.y)if(n.x)n.y=!0\nelse{s=this.a\nif(n.z){n.y=!1\nq=r.createBufferSource()\nq.toString\nn.f=q\nn.gnY().buffer=s\nn.gnY().loop=!0\nn.gnY().loopStart=n.Q\nn.gnY().loopEnd=n.Q+n.ch\nn.gnY().connect(n.gBf().gq5(),0,0).toString\nn.gnY().start(0,n.Q+n.cx)\nr=r.currentTime\nr.toString\nn.cy=r-n.cx}else{n.y=!1\nq=r.createBufferSource()\nq.toString\nn.f=q\nn.gnY().buffer=s\nn.gnY().loop=!1\nn.gnY().connect(n.gBf().gq5(),0,0).toString\ns=n.gnY()\nq=n.Q\no=n.cx\ns.start(0,q+o,n.ch-o)\nn.r=W.JE(n.gnY(),\"ended\",n.gxv(),!1)\nr=r.currentTime\nr.toString\nn.cy=r-n.cx}}return n}",
         "type": "SoundChannel Function(num,num,[bool,SoundTransform?])"
       },
       "747368745": {
@@ -54427,7 +54476,7 @@
         "id": "function/766396929",
         "kind": "function",
         "name": "completeError",
-        "size": 236,
+        "size": 241,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/770824752",
         "children": [],
@@ -54453,7 +54502,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "w:function(a,b){var s\nH.cb(a,\"error\",t.K)\ns=this.a\nif(s.a!==0)throw H.b(P.PV(\"Future already completed\"))\nif(b==null)b=P.v0(a)\ns.Nk(a,b)}\npm:function(a){return this.w(a,null)}\np(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"w\",\"pm\"],42,0,0)",
+        "code": "w:function(a,b){var s\nH.cb(a,\"error\",t.K)\ns=this.a\nif((s.a&30)!==0)throw H.b(P.PV(\"Future already completed\"))\nif(b==null)b=P.v0(a)\ns.Nk(a,b)}\npm:function(a){return this.w(a,null)}\np(P.Pf.prototype,\"gYJ\",0,1,null,[\"$2\",\"$1\"],[\"w\",\"pm\"],42,0,0)",
         "type": "void Function(Object,[StackTrace?])"
       },
       "766601802": {
@@ -54811,7 +54860,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "QN:function(a,b){var s=new P.W3()\ns.P(a,b)\nreturn s}",
+        "code": "QN:function(a,b){var s=new P.W3()\ns.R(a,b)\nreturn s}",
         "type": "dynamic Function(int,void Function())"
       },
       "773528822": {
@@ -55964,7 +56013,7 @@
         "id": "function/797212862",
         "kind": "function",
         "name": "call",
-        "size": 103,
+        "size": 104,
         "outputUnit": "outputUnit/669725655",
         "parent": "closure/953553118",
         "children": [],
@@ -55985,7 +56034,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "$1:function(a){var s,r,q,p=this.a\np.a=0\ntry{p.X2(p.$ti.c.a(a))}catch(q){s=H.Ru(q)\nr=H.ts(q)\np.ZL(s,r)}}",
+        "code": "$1:function(a){var s,r,q,p=this.a\np.a^=2\ntry{p.X2(p.$ti.c.a(a))}catch(q){s=H.Ru(q)\nr=H.ts(q)\np.ZL(s,r)}}",
         "type": "Null Function(dynamic)"
       },
       "797212863": {
@@ -59727,7 +59776,7 @@
         "id": "function/871707959",
         "kind": "function",
         "name": "_asyncCompleteWithValue",
-        "size": 162,
+        "size": 163,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [
@@ -59750,7 +59799,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wU:function(a){this.a=1\nP.Tk(null,null,this.b,new P.rt(this,a))}",
+        "code": "wU:function(a){this.a^=2\nP.Tk(null,null,this.b,new P.rt(this,a))}",
         "type": "void Function(Object?)"
       },
       "872112470": {
@@ -60600,7 +60649,7 @@
         "id": "function/885768717",
         "kind": "function",
         "name": "ArgumentError",
-        "size": 47,
+        "size": 46,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/143626168",
         "children": [],
@@ -60617,12 +60666,17 @@
             "name": "message",
             "type": "[null|exact=JSString]",
             "declaredType": "dynamic"
+          },
+          {
+            "name": "name",
+            "type": "Value([null|exact=JSString], value: \"onError\")",
+            "declaredType": "String?"
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 1,
-        "code": "xY:function(a){return new P.AT(!1,null,null,a)}",
-        "type": "dynamic Function([dynamic])"
+        "code": "xY:function(a,b){return new P.AT(!1,null,b,a)}",
+        "type": "dynamic Function([dynamic,String?])"
       },
       "887679953": {
         "id": "function/887679953",
@@ -60727,7 +60781,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "D:function(a,b){var s=a/b\nif(s>=-2147483648&&s<=2147483647)return s|0\nif(s>0){if(s!==1/0)return Math.floor(s)}else if(s>-1/0)return Math.ceil(s)\nthrow H.b(P.u0(\"Result of truncating division is \"+H.d(s)+\": \"+H.d(a)+\" ~/ \"+b))}",
+        "code": "P:function(a,b){var s=a/b\nif(s>=-2147483648&&s<=2147483647)return s|0\nif(s>0){if(s!==1/0)return Math.floor(s)}else if(s>-1/0)return Math.ceil(s)\nthrow H.b(P.u0(\"Result of truncating division is \"+H.d(s)+\": \"+H.d(a)+\" ~/ \"+b))}",
         "type": "int Function(num)"
       },
       "889342435": {
@@ -61597,7 +61651,7 @@
         "id": "function/900729957",
         "kind": "function",
         "name": "_createRenderContext",
-        "size": 1213,
+        "size": 1214,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -61623,7 +61677,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vW:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e\ntry{s=b.r\nr=T.J8()\nq=H.QI([],t.eb)\np=t.N\no=t.S\nn=t.dT\nm=new Int16Array(0)\nm=new L.E3(P.Fl(p,o),P.Fl(p,n),new L.Io(m),new L.O3(new Float32Array(0)),new L.PT())\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(0)\ni=new Float32Array(0)\nh=new Int16Array(16384)\ng=t.G\ng=new L.I6(a,r,q,m,new L.zj(P.Fl(p,o),P.Fl(p,n),new L.Io(l),new L.O3(k),new L.PT()),new L.tf(P.Fl(p,o),P.Fl(p,n),new L.Io(j),new L.O3(i),new L.PT()),new L.Io(h),new L.O3(new Float32Array(32768)),P.O8(8,null,!1,t.fO),H.QI([],t.gg),P.Fl(p,t.w),new L.PT(),P.bK(g),P.bK(g))\nW.JE(a,\"webglcontextlost\",g.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",g.gyD(),!1)\nb=P.EF([\"alpha\",s,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],p,t.z)\nf=C.p1.eW(a,\"webgl\",b)\nif(f==null)f=C.p1.eW(a,\"experimental-webgl\",b)\nt.eV.a(f)\nif(!t.h4.b(f))H.v(P.PV(\"Failed to get WebGL context.\"))\nif(g.e==null)g.e=f\nelse H.v(H.RI(\"_renderingContext\"))\ng.gIj().enable(3042)\ng.gIj().disable(2960)\ng.gIj().disable(2929)\ng.gIj().disable(2884)\ng.gIj().pixelStorei(37441,1)\ng.gIj().blendFunc(1,771)\ng.x=m\ng.gih().Z9(g)\ng.cx=$.cU=$.cU+1\ng.CH(0)\nreturn g}catch(e){H.Ru(e)\ns=L.TF(a)\nreturn s}}",
+        "code": "vW:function(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e\ntry{s=b.r\nr=T.J8()\nq=H.QI([],t.eb)\np=t.N\no=t.S\nn=t.dT\nm=new Int16Array(0)\nm=new L.E3(P.Fl(p,o),P.Fl(p,n),new L.Io(m),new L.O3(new Float32Array(0)),new L.PT())\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(0)\ni=new Float32Array(0)\nh=new Int16Array(16384)\ng=t.G\ng=new L.I6(a,r,q,m,new L.zj(P.Fl(p,o),P.Fl(p,n),new L.Io(l),new L.O3(k),new L.PT()),new L.tf(P.Fl(p,o),P.Fl(p,n),new L.Io(j),new L.O3(i),new L.PT()),new L.Io(h),new L.O3(new Float32Array(32768)),P.O8(8,null,!1,t.fO),H.QI([],t.gg),P.Fl(p,t.cv),new L.PT(),P.bK(g),P.bK(g))\nW.JE(a,\"webglcontextlost\",g.gUp(),!1)\nW.JE(a,\"webglcontextrestored\",g.gyD(),!1)\nb=P.EF([\"alpha\",s,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],p,t.z)\nf=C.p1.eW(a,\"webgl\",b)\nif(f==null)f=C.p1.eW(a,\"experimental-webgl\",b)\nt.eV.a(f)\nif(!t.h4.b(f))H.v(P.PV(\"Failed to get WebGL context.\"))\nif(g.e==null)g.e=f\nelse H.v(H.RI(\"_renderingContext\"))\ng.gIj().enable(3042)\ng.gIj().disable(2960)\ng.gIj().disable(2929)\ng.gIj().disable(2884)\ng.gIj().pixelStorei(37441,1)\ng.gIj().blendFunc(1,771)\ng.x=m\ng.gih().Z9(g)\ng.cx=$.cU=$.cU+1\ng.CH(0)\nreturn g}catch(e){H.Ru(e)\ns=L.TF(a)\nreturn s}}",
         "type": "RenderContext Function(CanvasElement,StageOptions)"
       },
       "901078366": {
@@ -64171,7 +64225,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "gVl:function(a){return new W.Cq(a,\"click\",!1,t.W)}",
+        "code": "gVl:function(a){return new W.Cq(a,\"click\",!1,t.Y)}",
         "type": "ElementStream<MouseEvent> Function()"
       },
       "947102127": {
@@ -65632,7 +65686,7 @@
         "id": "function/971160936",
         "kind": "function",
         "name": "_setErrorObject",
-        "size": 0,
+        "size": 43,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -65651,9 +65705,9 @@
             "declaredType": "AsyncError"
           }
         ],
-        "sideEffects": "SideEffects(reads nothing; writes field)",
-        "inlinedCount": 2,
-        "code": "",
+        "sideEffects": "SideEffects(reads field; writes field)",
+        "inlinedCount": 1,
+        "code": "P9:function(a){this.a=this.a&1|16\nthis.c=a}",
         "type": "void Function(AsyncError)"
       },
       "971942041": {
@@ -66905,7 +66959,7 @@
         "id": "function/997099929",
         "kind": "function",
         "name": "JSArray.growable",
-        "size": 124,
+        "size": 129,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/523978038",
         "children": [],
@@ -66926,7 +66980,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Kh:function(a,b){if(a<0)throw H.b(P.xY(\"Length must be a non-negative integer: \"+a))\nreturn H.QI(new Array(a),b.C(\"jd<0>\"))}",
+        "code": "Kh:function(a,b){if(a<0)throw H.b(P.xY(\"Length must be a non-negative integer: \"+a,null))\nreturn H.QI(new Array(a),b.C(\"jd<0>\"))}",
         "type": "JSArray<#A> Function<#A extends Object?>(int)"
       },
       "999176510": {
@@ -67276,7 +67330,7 @@
         "id": "function/1003188102",
         "kind": "function",
         "name": "_throwIfAncestors",
-        "size": 168,
+        "size": 173,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/296172725",
         "children": [],
@@ -67297,7 +67351,7 @@
         ],
         "sideEffects": "SideEffects(reads field; writes nothing)",
         "inlinedCount": 0,
-        "code": "hu:function(a){var s\nfor(s=this;s!=null;s=s.fy)if(s===a)throw H.b(P.xY(\"An object cannot be added as a child to one of it's children (or children's children, etc.).\"))}",
+        "code": "hu:function(a){var s\nfor(s=this;s!=null;s=s.fy)if(s===a)throw H.b(P.xY(\"An object cannot be added as a child to one of it's children (or children's children, etc.).\",null))}",
         "type": "void Function(DisplayObject)"
       },
       "1005175086": {
@@ -68543,7 +68597,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Zx:function(a,b,c,d){var s=new O.YY(a,b,c,new P.Zf(new P.vs($.X3,t.d),t.fz))\ns.P(a,b,c,d)\nreturn s}",
+        "code": "Zx:function(a,b,c,d){var s=new O.YY(a,b,c,new P.Zf(new P.vs($.X3,t.d),t.fz))\ns.R(a,b,c,d)\nreturn s}",
         "type": "dynamic Function(String,String,String,Future<dynamic>)"
       },
       "1029061070": {
@@ -68656,7 +68710,7 @@
         "id": "function/1031131035",
         "kind": "function",
         "name": "_cloneResult",
-        "size": 0,
+        "size": 48,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -68676,8 +68730,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads field; writes field)",
-        "inlinedCount": 4,
-        "code": "",
+        "inlinedCount": 1,
+        "code": "D:function(a){this.a=a.a&30|this.a&1\nthis.c=a.c}",
         "type": "void Function(_Future<dynamic>)"
       },
       "1031330752": {
@@ -69835,7 +69889,7 @@
         "id": "function/1058735230",
         "kind": "function",
         "name": "then",
-        "size": 220,
+        "size": 293,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -69861,7 +69915,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "S:function(a,b,c){var s,r,q=$.X3\nif(q!==C.NU)b=b!=null?P.VH(b,q):b\ns=new P.vs(q,c.C(\"vs<0>\"))\nr=b==null?1:3\nthis.B(new P.Fe(s,r,a,b,this.$ti.C(\"@<1>\").K(c).C(\"Fe<1,2>\")))\nreturn s}\nY:function(a,b){return this.S(a,null,b)}",
+        "code": "S:function(a,b,c){var s,r,q=$.X3\nif(q===C.NU){if(b!=null&&!t.Q.b(b)&&!t.w.b(b))throw H.b(P.L3(b,\"onError\",u.c))}else if(b!=null)b=P.VH(b,q)\ns=new P.vs(q,c.C(\"vs<0>\"))\nr=b==null?1:3\nthis.B(new P.Fe(s,r,a,b,this.$ti.C(\"@<1>\").K(c).C(\"Fe<1,2>\")))\nreturn s}\nY:function(a,b){return this.S(a,null,b)}",
         "type": "Future<#A> Function<#A extends Object?>(FutureOr<#A> Function(_Future.T),{Function? onError})"
       },
       "1060110710": {
@@ -79474,7 +79528,7 @@
         "id": "field/908361693",
         "kind": "field",
         "name": "nullFuture",
-        "size": 140,
+        "size": 141,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "children": [
@@ -81763,7 +81817,7 @@
         "id": "closure/171904119",
         "kind": "closure",
         "name": "nullFuture_closure",
-        "size": 86,
+        "size": 87,
         "outputUnit": "outputUnit/669725655",
         "parent": "field/908361693",
         "function": "function/987636978"
@@ -82420,7 +82474,7 @@
         "id": "closure/931793776",
         "kind": "closure",
         "name": "initHooks_closure",
-        "size": 92,
+        "size": 96,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/396617359",
         "function": "function/708189266"
@@ -82456,7 +82510,7 @@
         "id": "closure/953553118",
         "kind": "closure",
         "name": "_Future__chainForeignFuture_closure",
-        "size": 158,
+        "size": 159,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/553149607",
         "function": "function/797212862"
@@ -82483,7 +82537,7 @@
         "id": "closure/963665986",
         "kind": "closure",
         "name": "_Future__propagateToListeners_handleWhenCompleteCallback",
-        "size": 385,
+        "size": 396,
         "outputUnit": "outputUnit/669725655",
         "parent": "function/271674536",
         "function": "function/15204906"
@@ -89782,16 +89836,8 @@
         "mask": null
       },
       {
-        "id": "field/978504898",
-        "mask": null
-      },
-      {
         "id": "function/1031131035",
         "mask": null
-      },
-      {
-        "id": "function/1031131035",
-        "mask": "inlined"
       },
       {
         "id": "function/18599313",
@@ -89961,12 +90007,6 @@
       },
       {
         "id": "function/520073200",
-        "mask": "inlined"
-      }
-    ],
-    "function/22227107": [
-      {
-        "id": "function/971160936",
         "mask": "inlined"
       }
     ],
@@ -92292,6 +92332,10 @@
         "mask": null
       },
       {
+        "id": "field/187449514",
+        "mask": null
+      },
+      {
         "id": "field/24026359",
         "mask": null
       },
@@ -92332,6 +92376,10 @@
         "mask": null
       },
       {
+        "id": "function/163889622",
+        "mask": null
+      },
+      {
         "id": "function/167217604",
         "mask": null
       },
@@ -92352,6 +92400,10 @@
         "mask": null
       },
       {
+        "id": "function/265638794",
+        "mask": null
+      },
+      {
         "id": "function/310648840",
         "mask": null
       },
@@ -92369,15 +92421,23 @@
       },
       {
         "id": "function/373761717",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/373761717",
         "mask": null
       },
       {
         "id": "function/373761717",
         "mask": "inlined"
+      },
+      {
+        "id": "function/373761717",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/39768413",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/39768413",
+        "mask": null
       },
       {
         "id": "function/417411809",
@@ -92441,6 +92501,10 @@
       },
       {
         "id": "function/865184799",
+        "mask": null
+      },
+      {
+        "id": "function/885768717",
         "mask": null
       },
       {
@@ -102366,6 +102430,10 @@
         "mask": null
       },
       {
+        "id": "field/978504898",
+        "mask": null
+      },
+      {
         "id": "function/341046768",
         "mask": null
       },
@@ -102839,11 +102907,11 @@
       },
       {
         "id": "function/373761717",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/373761717",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/383496058",
@@ -102855,11 +102923,11 @@
       },
       {
         "id": "function/39768413",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/39768413",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/39768413",
@@ -102879,6 +102947,10 @@
       },
       {
         "id": "function/51167109",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/51167109",
         "mask": null
       },
       {
@@ -102886,16 +102958,12 @@
         "mask": "inlined"
       },
       {
-        "id": "function/51167109",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/519629171",
-        "mask": "inlined"
-      },
-      {
         "id": "function/519629171",
         "mask": null
+      },
+      {
+        "id": "function/519629171",
+        "mask": "inlined"
       },
       {
         "id": "function/519629171",
@@ -102906,16 +102974,24 @@
         "mask": null
       },
       {
+        "id": "function/527450614",
+        "mask": null
+      },
+      {
+        "id": "function/527450614",
+        "mask": "inlined"
+      },
+      {
         "id": "function/550912538",
         "mask": null
       },
       {
         "id": "function/556268777",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/556268777",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/57158184",
@@ -102947,15 +103023,15 @@
       },
       {
         "id": "function/613322203",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/613322203",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/613322203",
         "mask": null
+      },
+      {
+        "id": "function/613322203",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/613322203",
+        "mask": "inlined"
       },
       {
         "id": "function/631550768",
@@ -102983,11 +103059,11 @@
       },
       {
         "id": "function/748173162",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/748173162",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/777322353",
@@ -103051,11 +103127,11 @@
       },
       {
         "id": "function/971160936",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/971160936",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/973238019",
@@ -104754,16 +104830,8 @@
         "mask": null
       },
       {
-        "id": "field/978504898",
-        "mask": null
-      },
-      {
         "id": "function/1031131035",
         "mask": null
-      },
-      {
-        "id": "function/1031131035",
-        "mask": "inlined"
       },
       {
         "id": "function/292751514",
@@ -108178,10 +108246,6 @@
       {
         "id": "function/1031131035",
         "mask": null
-      },
-      {
-        "id": "function/1031131035",
-        "mask": "inlined"
       },
       {
         "id": "function/271674536",
@@ -119722,6 +119786,10 @@
         "mask": null
       },
       {
+        "id": "field/978504898",
+        "mask": null
+      },
+      {
         "id": "function/1058735230",
         "mask": null
       },
@@ -120509,14 +120577,6 @@
       }
     ],
     "function/574550003": [
-      {
-        "id": "field/786919906",
-        "mask": null
-      },
-      {
-        "id": "field/978504898",
-        "mask": null
-      },
       {
         "id": "function/11804710",
         "mask": null
@@ -132542,6 +132602,10 @@
         "mask": null
       },
       {
+        "id": "field/978504898",
+        "mask": null
+      },
+      {
         "id": "function/1032715322",
         "mask": null
       },
@@ -135827,6 +135891,10 @@
     "function/871707959": [
       {
         "id": "field/485816538",
+        "mask": null
+      },
+      {
+        "id": "field/978504898",
         "mask": null
       },
       {
@@ -141758,6 +141826,20 @@
         "mask": null
       }
     ],
+    "function/971160936": [
+      {
+        "id": "field/786919906",
+        "mask": null
+      },
+      {
+        "id": "field/978504898",
+        "mask": null
+      },
+      {
+        "id": "field/978504898",
+        "mask": null
+      }
+    ],
     "function/971942041": [
       {
         "id": "function/291295234",
@@ -144090,6 +144172,24 @@
         "mask": null
       }
     ],
+    "function/1031131035": [
+      {
+        "id": "field/786919906",
+        "mask": null
+      },
+      {
+        "id": "field/786919906",
+        "mask": null
+      },
+      {
+        "id": "field/978504898",
+        "mask": null
+      },
+      {
+        "id": "field/978504898",
+        "mask": null
+      }
+    ],
     "function/1031330752": [
       {
         "id": "field/193563302",
@@ -145706,7 +145806,35 @@
         "mask": null
       },
       {
+        "id": "function/1032715322",
+        "mask": null
+      },
+      {
         "id": "function/103899378",
+        "mask": null
+      },
+      {
+        "id": "function/103899378",
+        "mask": null
+      },
+      {
+        "id": "function/1068396938",
+        "mask": null
+      },
+      {
+        "id": "function/132742275",
+        "mask": null
+      },
+      {
+        "id": "function/160933185",
+        "mask": null
+      },
+      {
+        "id": "function/163889622",
+        "mask": null
+      },
+      {
+        "id": "function/167217604",
         "mask": null
       },
       {
@@ -145718,12 +145846,60 @@
         "mask": null
       },
       {
-        "id": "function/460512542",
+        "id": "function/207792788",
+        "mask": null
+      },
+      {
+        "id": "function/216705978",
+        "mask": null
+      },
+      {
+        "id": "function/21938161",
+        "mask": null
+      },
+      {
+        "id": "function/247461665",
+        "mask": null
+      },
+      {
+        "id": "function/310648840",
+        "mask": null
+      },
+      {
+        "id": "function/317451330",
+        "mask": null
+      },
+      {
+        "id": "function/331565025",
+        "mask": null
+      },
+      {
+        "id": "function/339437005",
+        "mask": null
+      },
+      {
+        "id": "function/417411809",
         "mask": null
       },
       {
         "id": "function/460512542",
         "mask": "inlined"
+      },
+      {
+        "id": "function/460512542",
+        "mask": null
+      },
+      {
+        "id": "function/502696664",
+        "mask": null
+      },
+      {
+        "id": "function/520073200",
+        "mask": null
+      },
+      {
+        "id": "function/550912538",
+        "mask": null
       },
       {
         "id": "function/552271305",
@@ -145732,12 +145908,64 @@
       {
         "id": "function/552271305",
         "mask": "inlined"
+      },
+      {
+        "id": "function/578373084",
+        "mask": null
+      },
+      {
+        "id": "function/583427045",
+        "mask": null
+      },
+      {
+        "id": "function/598215859",
+        "mask": null
+      },
+      {
+        "id": "function/606572177",
+        "mask": null
+      },
+      {
+        "id": "function/631550768",
+        "mask": null
+      },
+      {
+        "id": "function/632397862",
+        "mask": null
+      },
+      {
+        "id": "function/640394917",
+        "mask": null
+      },
+      {
+        "id": "function/70158663",
+        "mask": null
+      },
+      {
+        "id": "function/777322353",
+        "mask": null
       },
       {
         "id": "function/791758355",
         "mask": null
       },
       {
+        "id": "function/791758355",
+        "mask": null
+      },
+      {
+        "id": "function/83342486",
+        "mask": null
+      },
+      {
+        "id": "function/864835321",
+        "mask": null
+      },
+      {
+        "id": "function/865184799",
+        "mask": null
+      },
+      {
         "id": "function/904115316",
         "mask": null
       },
@@ -145746,12 +145974,28 @@
         "mask": "inlined"
       },
       {
+        "id": "function/911398026",
+        "mask": null
+      },
+      {
+        "id": "function/911422554",
+        "mask": null
+      },
+      {
         "id": "function/94108092",
         "mask": null
       },
       {
         "id": "function/94108092",
         "mask": "inlined"
+      },
+      {
+        "id": "function/956458971",
+        "mask": null
+      },
+      {
+        "id": "function/973238019",
+        "mask": null
       },
       {
         "id": "function/982751380",
@@ -146681,7 +146925,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 238461,
+      "size": 239259,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146691,11 +146935,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 238461,
-    "dart2jsVersion": "2.14.0-228.0.dev",
-    "compilationMoment": "2021-06-22 13:32:14.124934",
-    "compilationDuration": 3916693,
-    "toJsonDuration": 20000,
+    "size": 239259,
+    "dart2jsVersion": "2.14.0-241.0.dev",
+    "compilationMoment": "2021-06-24 17:35:09.640113",
+    "compilationDuration": 4623445,
+    "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
