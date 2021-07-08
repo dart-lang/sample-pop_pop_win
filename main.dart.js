@@ -3654,11 +3654,7 @@ return m},
 nC:function(a,b){var s=b.length
 if(s>a.length)return!1
 return b===a.substring(0,s)},
-Nj:function(a,b,c){if(c==null)c=a.length
-if(b<0)throw H.b(P.O7(b,null))
-if(b>c)throw H.b(P.O7(b,null))
-if(c>a.length)throw H.b(P.O7(c,null))
-return a.substring(b,c)},
+Nj:function(a,b,c){return a.substring(b,P.jB(b,c,a.length))},
 GX:function(a,b){return this.Nj(a,b,null)},
 DY:function(a){var s,r,q,p=a.trim(),o=p.length
 if(o===0)return p

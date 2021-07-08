@@ -506,7 +506,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 11498,
+        "size": 11393,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -9281,7 +9281,7 @@
         "id": "class/793539876",
         "kind": "class",
         "name": "JSString",
-        "size": 1937,
+        "size": 1832,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -28816,7 +28816,7 @@
         "id": "function/312768442",
         "kind": "function",
         "name": "substring",
-        "size": 207,
+        "size": 102,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/793539876",
         "children": [],
@@ -28830,19 +28830,19 @@
         "inferredReturnType": "[exact=JSString]",
         "parameters": [
           {
-            "name": "startIndex",
+            "name": "start",
             "type": "[subclass=JSInt]",
             "declaredType": "int"
           },
           {
-            "name": "endIndex",
+            "name": "end",
             "type": "[null|subclass=JSInt]",
             "declaredType": "int?"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Nj:function(a,b,c){if(c==null)c=a.length\nif(b<0)throw H.b(P.O7(b,null))\nif(b>c)throw H.b(P.O7(b,null))\nif(c>a.length)throw H.b(P.O7(c,null))\nreturn a.substring(b,c)}\nGX:function(a,b){return this.Nj(a,b,null)}",
+        "code": "Nj:function(a,b,c){return a.substring(b,P.jB(b,c,a.length))}\nGX:function(a,b){return this.Nj(a,b,null)}",
         "type": "String Function(int,[int?])"
       },
       "312847150": {
@@ -57775,7 +57775,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 8,
+        "inlinedCount": 7,
         "code": "",
         "type": "int Function(dynamic)"
       },
@@ -105904,20 +105904,12 @@
     ],
     "function/312768442": [
       {
-        "id": "function/163889622",
-        "mask": null
-      },
-      {
-        "id": "function/349997389",
+        "id": "function/243489700",
         "mask": null
       },
       {
         "id": "function/827571674",
         "mask": null
-      },
-      {
-        "id": "function/827571674",
-        "mask": "inlined"
       },
       {
         "id": "function/827571674",
@@ -146985,7 +146977,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 239277,
+      "size": 239172,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146995,11 +146987,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 239277,
-    "dart2jsVersion": "2.14.0-281.0.dev",
-    "compilationMoment": "2021-07-06 13:03:20.058550",
-    "compilationDuration": 4065641,
-    "toJsonDuration": 19000,
+    "size": 239172,
+    "dart2jsVersion": "2.14.0-289.0.dev",
+    "compilationMoment": "2021-07-08 11:07:41.504541",
+    "compilationDuration": 4472928,
+    "toJsonDuration": 25000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
