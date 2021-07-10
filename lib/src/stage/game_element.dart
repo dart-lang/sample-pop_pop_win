@@ -251,7 +251,9 @@ class GameElement extends Sprite {
 
       shadow.onComplete.listen((e) => shadow.removeFromParent());
 
-      stage!.juggler..add(dart)..add(shadow);
+      stage!.juggler
+        ..add(dart)
+        ..add(shadow);
     }
   }
 }
