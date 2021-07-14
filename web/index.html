@@ -17,8 +17,8 @@
       ].join(' - ');
 
       gtag('event', 'exception', {
-          'description': message,
-          'fatal': false
+          'exDescription': message,
+          'exFatal': false
       });
       return false;
     });
