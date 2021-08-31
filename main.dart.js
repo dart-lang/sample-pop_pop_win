@@ -3547,10 +3547,10 @@ sA(a,b){if(!!a.fixed$length)H.v(P.u0("set length"))
 if(b<0)throw H.b(P.TE(b,0,null,"newLength",null))
 if(b>a.length)H.t6(a).c.a(null)
 a.length=b},
-q(a,b){if(b>=a.length||b<0)throw H.b(H.HY(a,b))
+q(a,b){if(!(b>=0&&b<a.length))throw H.b(H.HY(a,b))
 return a[b]},
 Y5(a,b,c){if(!!a.immutable$list)H.v(P.u0("indexed set"))
-if(b>=a.length||b<0)throw H.b(H.HY(a,b))
+if(!(b>=0&&b<a.length))throw H.b(H.HY(a,b))
 a[b]=c},
 $ibQ:1,
 $iLy:1,

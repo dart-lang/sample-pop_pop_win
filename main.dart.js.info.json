@@ -506,7 +506,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 10439,
+        "size": 10445,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -6375,7 +6375,7 @@
         "id": "class/523978038",
         "kind": "class",
         "name": "JSArray",
-        "size": 1751,
+        "size": 1757,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "modifiers": {
@@ -37533,7 +37533,7 @@
         "id": "function/476211666",
         "kind": "function",
         "name": "[]=",
-        "size": 105,
+        "size": 108,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/523978038",
         "children": [],
@@ -37559,7 +37559,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Y5(a,b,c){if(!!a.immutable$list)H.v(P.u0(\"indexed set\"))\nif(b>=a.length||b<0)throw H.b(H.HY(a,b))\na[b]=c}",
+        "code": "Y5(a,b,c){if(!!a.immutable$list)H.v(P.u0(\"indexed set\"))\nif(!(b>=0&&b<a.length))throw H.b(H.HY(a,b))\na[b]=c}",
         "type": "void Function(int,Object?)"
       },
       "476563722": {
@@ -41128,7 +41128,7 @@
         "id": "function/543418398",
         "kind": "function",
         "name": "[]",
-        "size": 60,
+        "size": 63,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/523978038",
         "children": [],
@@ -41149,7 +41149,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "q(a,b){if(b>=a.length||b<0)throw H.b(H.HY(a,b))\nreturn a[b]}",
+        "code": "q(a,b){if(!(b>=0&&b<a.length))throw H.b(H.HY(a,b))\nreturn a[b]}",
         "type": "JSArray.E Function(int)"
       },
       "544746737": {
@@ -146977,7 +146977,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 228045,
+      "size": 228051,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -146987,11 +146987,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 228045,
-    "dart2jsVersion": "2.15.0-51.0.dev",
-    "compilationMoment": "2021-08-26 09:14:45.389858",
-    "compilationDuration": 3568109,
-    "toJsonDuration": 21000,
+    "size": 228051,
+    "dart2jsVersion": "2.15.0-65.0.dev",
+    "compilationMoment": "2021-08-31 14:57:51.321833",
+    "compilationDuration": 6522575,
+    "toJsonDuration": 29000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
