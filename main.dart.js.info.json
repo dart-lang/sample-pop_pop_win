@@ -17167,28 +17167,6 @@
         "id": "function/95349383",
         "kind": "function",
         "name": "_renderingContext",
-        "size": 67,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/585024760",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "RenderingContext",
-        "inferredReturnType": "[exact=RenderingContext]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes anything)",
-        "inlinedCount": 0,
-        "code": "gIj(){var s=this.e\nreturn s==null?H.v(H.la(\"_renderingContext\")):s}",
-        "type": "RenderingContext Function()"
-      },
-      "95349384": {
-        "id": "function/95349384",
-        "kind": "function",
-        "name": "_renderingContext",
         "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/585024760",
@@ -17212,6 +17190,28 @@
         "inlinedCount": 1,
         "code": "",
         "type": "void Function(RenderingContext)"
+      },
+      "95349384": {
+        "id": "function/95349384",
+        "kind": "function",
+        "name": "_renderingContext",
+        "size": 67,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/585024760",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "RenderingContext",
+        "inferredReturnType": "[exact=RenderingContext]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads field; writes anything)",
+        "inlinedCount": 0,
+        "code": "gIj(){var s=this.e\nreturn s==null?H.v(H.la(\"_renderingContext\")):s}",
+        "type": "RenderingContext Function()"
       },
       "95476059": {
         "id": "function/95476059",
@@ -46612,28 +46612,6 @@
         "id": "function/643167031",
         "kind": "function",
         "name": "_canvas",
-        "size": 58,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "class/725660157",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "CanvasElement",
-        "inferredReturnType": "[exact=CanvasElement]",
-        "parameters": [],
-        "sideEffects": "SideEffects(reads field; writes anything)",
-        "inlinedCount": 1,
-        "code": "gKH(){var s=this.I6\nreturn s==null?H.v(H.la(\"_canvas\")):s}",
-        "type": "CanvasElement Function()"
-      },
-      "643167032": {
-        "id": "function/643167032",
-        "kind": "function",
-        "name": "_canvas",
         "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
@@ -46657,6 +46635,28 @@
         "inlinedCount": 1,
         "code": "",
         "type": "void Function(CanvasElement)"
+      },
+      "643167032": {
+        "id": "function/643167032",
+        "kind": "function",
+        "name": "_canvas",
+        "size": 58,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "class/725660157",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "CanvasElement",
+        "inferredReturnType": "[exact=CanvasElement]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads field; writes anything)",
+        "inlinedCount": 1,
+        "code": "gKH(){var s=this.I6\nreturn s==null?H.v(H.la(\"_canvas\")):s}",
+        "type": "CanvasElement Function()"
       },
       "643647076": {
         "id": "function/643647076",
@@ -92042,7 +92042,7 @@
     ],
     "function/56298275": [
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       }
     ],
@@ -93646,7 +93646,7 @@
         "mask": "inlined"
       }
     ],
-    "function/95349383": [
+    "function/95349384": [
       {
         "id": "field/439893439",
         "mask": null
@@ -96190,11 +96190,11 @@
         "mask": "inlined"
       },
       {
-        "id": "function/643167031",
+        "id": "function/643167032",
         "mask": null
       },
       {
-        "id": "function/643167031",
+        "id": "function/643167032",
         "mask": "inlined"
       },
       {
@@ -97996,7 +97996,7 @@
         "mask": null
       },
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       }
     ],
@@ -99402,7 +99402,7 @@
         "mask": null
       },
       {
-        "id": "function/643167031",
+        "id": "function/643167032",
         "mask": null
       },
       {
@@ -100564,7 +100564,7 @@
         "mask": "inlined"
       },
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       }
     ],
@@ -115302,7 +115302,7 @@
         "mask": "inlined"
       },
       {
-        "id": "function/643167031",
+        "id": "function/643167032",
         "mask": null
       },
       {
@@ -118920,7 +118920,7 @@
         "mask": null
       },
       {
-        "id": "function/643167031",
+        "id": "function/643167032",
         "mask": null
       },
       {
@@ -123940,7 +123940,7 @@
         "mask": "inlined"
       }
     ],
-    "function/643167031": [
+    "function/643167032": [
       {
         "id": "field/546916304",
         "mask": null
@@ -129464,7 +129464,7 @@
         "mask": null
       },
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       },
       {
@@ -133174,7 +133174,7 @@
         "mask": "inlined"
       },
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       },
       {
@@ -135392,7 +135392,7 @@
         "mask": null
       },
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       },
       {
@@ -141318,7 +141318,7 @@
         "mask": null
       },
       {
-        "id": "function/95349383",
+        "id": "function/95349384",
         "mask": null
       }
     ],
@@ -146988,10 +146988,10 @@
   "program": {
     "entrypoint": "function/270342073",
     "size": 228051,
-    "dart2jsVersion": "2.15.0-65.0.dev",
-    "compilationMoment": "2021-08-31 14:57:51.321833",
-    "compilationDuration": 6522575,
-    "toJsonDuration": 29000,
+    "dart2jsVersion": "2.15.0-68.0.dev",
+    "compilationMoment": "2021-09-02 09:34:33.941849",
+    "compilationDuration": 5013241,
+    "toJsonDuration": 23000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
