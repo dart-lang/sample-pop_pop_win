@@ -64,7 +64,7 @@
         "id": "library/85591458",
         "kind": "library",
         "name": "dart.dom.html",
-        "size": 8782,
+        "size": 8775,
         "children": [
           "class/6212434",
           "class/6966771",
@@ -460,7 +460,7 @@
         "id": "library/307092771",
         "kind": "library",
         "name": "stagexl.internal.environment",
-        "size": 686,
+        "size": 678,
         "children": [
           "field/460426713",
           "field/570983786",
@@ -485,7 +485,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6850,
+        "size": 6842,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -907,7 +907,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 4984,
+        "size": 4976,
         "children": [
           "class/364826778",
           "class/372829643",
@@ -1462,7 +1462,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 19611,
+        "size": 19603,
         "children": [
           "class/3601851",
           "class/140329748",
@@ -6459,7 +6459,7 @@
         "id": "class/526772372",
         "kind": "class",
         "name": "_FontStyleMetrics",
-        "size": 719,
+        "size": 711,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "modifiers": {
@@ -8447,7 +8447,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 9580,
+        "size": 9572,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -14822,7 +14822,7 @@
         "id": "function/49963287",
         "kind": "function",
         "name": "supported",
-        "size": 66,
+        "size": 59,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/825441369",
         "children": [],
@@ -14837,7 +14837,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Vm(){var s\ntry{A.Hy(\"touches\")\nreturn!0}catch(s){A.Ru(s)}return!1}",
+        "code": "Vm(){var s\ntry{A.Hy(\"touches\")\nreturn!0}catch(s){}return!1}",
         "type": "bool Function()"
       },
       "50276906": {
@@ -26192,7 +26192,7 @@
             "declaredType": "Object?"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
         "inlinedCount": 0,
         "code": "Ru(a){if(a==null)return new A.te(a)\nif(a instanceof A.bq)return A.tW(a,a.a)\nif(typeof a!==\"object\")return a\nif(\"dartException\" in a)return A.tW(a,a.dartException)\nreturn A.tl(a)}",
         "type": "Object Function(Object?)"
@@ -41087,7 +41087,7 @@
         "id": "function/542248039",
         "kind": "function",
         "name": "_checkTouchEventSupport",
-        "size": 62,
+        "size": 54,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/307092771",
         "children": [],
@@ -41102,7 +41102,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "wm(){var s,r\ntry{s=A.Vm()\nreturn s}catch(r){A.Ru(r)\nreturn!1}}",
+        "code": "wm(){var s,r\ntry{s=A.Vm()\nreturn s}catch(r){return!1}}",
         "type": "bool Function()"
       },
       "542410034": {
@@ -61714,7 +61714,7 @@
         "id": "function/900729957",
         "kind": "function",
         "name": "_createRenderContext",
-        "size": 1235,
+        "size": 1227,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/725660157",
         "children": [],
@@ -61740,7 +61740,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "vW(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=\"_renderingContext\"\ntry{s=b.r\nr=A.J8()\nq=A.QI([],t.eb)\np=t.N\no=t.S\nn=t.dT\nm=new Int16Array(0)\nm=new A.E3(A.Fl(p,o),A.Fl(p,n),new A.Io(m),new A.O3(new Float32Array(0)),new A.PT())\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(0)\ni=new Float32Array(0)\nh=new Int16Array(16384)\ng=t.G\ng=new A.I6(a,r,q,m,new A.zj(A.Fl(p,o),A.Fl(p,n),new A.Io(l),new A.O3(k),new A.PT()),new A.tf(A.Fl(p,o),A.Fl(p,n),new A.Io(j),new A.O3(i),new A.PT()),new A.Io(h),new A.O3(new Float32Array(32768)),A.O8(8,null,!1,t.fO),A.QI([],t.gg),A.Fl(p,t.cv),new A.PT(),A.bK(g),A.bK(g))\nA.JE(a,\"webglcontextlost\",g.gUp(),!1)\nA.JE(a,\"webglcontextrestored\",g.gyD(),!1)\nb=A.EF([\"alpha\",s,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],p,t.z)\nf=B.p1.eW(a,\"webgl\",b)\nif(f==null)f=B.p1.eW(a,\"experimental-webgl\",b)\nt.eV.a(f)\nif(!t.h4.b(f))A.v(A.PV(\"Failed to get WebGL context.\"))\nA.my(g.e,d)\ng.e=f\nA.mk(f,d).enable(3042)\nA.mk(g.e,d).disable(2960)\nA.mk(g.e,d).disable(2929)\nA.mk(g.e,d).disable(2884)\nA.mk(g.e,d).pixelStorei(37441,1)\nA.mk(g.e,d).blendFunc(1,771)\ng.x=m\nA.mk(m,\"_activeRenderProgram\").W9(g)\ng.cx=$.cU=$.cU+1\ng.CH(0)\nreturn g}catch(e){A.Ru(e)\ns=A.TF(a)\nreturn s}}",
+        "code": "vW(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d=\"_renderingContext\"\ntry{s=b.r\nr=A.J8()\nq=A.QI([],t.eb)\np=t.N\no=t.S\nn=t.dT\nm=new Int16Array(0)\nm=new A.E3(A.Fl(p,o),A.Fl(p,n),new A.Io(m),new A.O3(new Float32Array(0)),new A.PT())\nl=new Int16Array(0)\nk=new Float32Array(0)\nj=new Int16Array(0)\ni=new Float32Array(0)\nh=new Int16Array(16384)\ng=t.G\ng=new A.I6(a,r,q,m,new A.zj(A.Fl(p,o),A.Fl(p,n),new A.Io(l),new A.O3(k),new A.PT()),new A.tf(A.Fl(p,o),A.Fl(p,n),new A.Io(j),new A.O3(i),new A.PT()),new A.Io(h),new A.O3(new Float32Array(32768)),A.O8(8,null,!1,t.fO),A.QI([],t.gg),A.Fl(p,t.cv),new A.PT(),A.bK(g),A.bK(g))\nA.JE(a,\"webglcontextlost\",g.gUp(),!1)\nA.JE(a,\"webglcontextrestored\",g.gyD(),!1)\nb=A.EF([\"alpha\",s,\"depth\",!1,\"stencil\",!0,\"antialias\",!1,\"premultipliedAlpha\",!0,\"preserveDrawingBuffer\",!1],p,t.z)\nf=B.p1.eW(a,\"webgl\",b)\nif(f==null)f=B.p1.eW(a,\"experimental-webgl\",b)\nt.eV.a(f)\nif(!t.h4.b(f))A.v(A.PV(\"Failed to get WebGL context.\"))\nA.my(g.e,d)\ng.e=f\nA.mk(f,d).enable(3042)\nA.mk(g.e,d).disable(2960)\nA.mk(g.e,d).disable(2929)\nA.mk(g.e,d).disable(2884)\nA.mk(g.e,d).pixelStorei(37441,1)\nA.mk(g.e,d).blendFunc(1,771)\ng.x=m\nA.mk(m,\"_activeRenderProgram\").W9(g)\ng.cx=$.cU=$.cU+1\ng.CH(0)\nreturn g}catch(e){s=A.TF(a)\nreturn s}}",
         "type": "RenderContext Function(CanvasElement,StageOptions)"
       },
       "901078366": {
@@ -91647,10 +91647,6 @@
     ],
     "function/49963287": [
       {
-        "id": "function/265638794",
-        "mask": null
-      },
-      {
         "id": "function/674944041",
         "mask": null
       }
@@ -120045,10 +120041,6 @@
     ],
     "function/542248039": [
       {
-        "id": "function/265638794",
-        "mask": null
-      },
-      {
         "id": "function/49963287",
         "mask": null
       }
@@ -137827,10 +137819,6 @@
         "mask": null
       },
       {
-        "id": "function/265638794",
-        "mask": null
-      },
-      {
         "id": "function/271556856",
         "mask": null
       },
@@ -137948,11 +137936,11 @@
       },
       {
         "id": "function/622541814",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/622541814",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/631550768",
@@ -138012,11 +138000,11 @@
       },
       {
         "id": "function/837956997",
-        "mask": null
+        "mask": "inlined"
       },
       {
         "id": "function/837956997",
-        "mask": "inlined"
+        "mask": null
       },
       {
         "id": "function/864835321",
@@ -147648,7 +147636,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 227359,
+      "size": 227320,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -147658,11 +147646,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 227359,
-    "dart2jsVersion": "2.15.0-108.0.dev",
-    "compilationMoment": "2021-09-16 07:15:42.956132",
-    "compilationDuration": 3721536,
-    "toJsonDuration": 19000,
+    "size": 227320,
+    "dart2jsVersion": "2.15.0-116.0.dev",
+    "compilationMoment": "2021-09-21 06:25:16.982459",
+    "compilationDuration": 3863980,
+    "toJsonDuration": 20000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

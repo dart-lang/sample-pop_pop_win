@@ -1917,7 +1917,7 @@ s.toString
 return s},
 Vm(){var s
 try{A.Hy("touches")
-return!0}catch(s){A.Ru(s)}return!1},
+return!0}catch(s){}return!1},
 C0(a,b){a=a+b&536870911
 a=a+((a&524287)<<10)&536870911
 return a^a>>>6},
@@ -3041,8 +3041,7 @@ q.src="data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIi
 return s},
 wm(){var s,r
 try{s=A.Vm()
-return s}catch(r){A.Ru(r)
-return!1}},
+return s}catch(r){return!1}},
 VL:function VL(a,b){this.a=a
 this.b=b},
 vf:function vf(a){this.a=a},
@@ -3096,7 +3095,6 @@ s=6
 break
 case 4:p=3
 a=o
-A.Ru(a)
 h=a1
 h.toString
 A.A2()
@@ -6316,8 +6314,7 @@ g.x=m
 A.mk(m,"_activeRenderProgram").W9(g)
 g.cx=$.cU=$.cU+1
 g.CH(0)
-return g}catch(e){A.Ru(e)
-s=A.TF(a)
+return g}catch(e){s=A.TF(a)
 return s}},
 Vp(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=this,e="_canvas",d=f.Yr,c=f.hx,b=A.mk(f.I6,e).getBoundingClientRect()
 b.toString
@@ -7922,8 +7919,7 @@ s=o.offsetTop
 s.toString
 s=l-B.CD.zQ(s)
 q.c=s
-q.b=s-q.a}catch(r){A.Ru(r)
-l=a.b
+q.b=s-q.a}catch(r){l=a.b
 q.c=B.jn.yu(l)
 q.a=B.jn.W(l*7,8)
 q.b=B.jn.W(l*2,8)}finally{l=m
