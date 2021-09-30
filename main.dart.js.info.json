@@ -948,7 +948,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7061,
+        "size": 7031,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -33967,7 +33967,7 @@
         "id": "function/399195151",
         "kind": "function",
         "name": "print",
-        "size": 44,
+        "size": 14,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "children": [],
@@ -33988,7 +33988,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "mp(a){A.qw(A.cb(a,\"object.toString()\",t.N))}",
+        "code": "mp(a){A.qw(a)}",
         "type": "void Function(Object?)"
       },
       "400191402": {
@@ -42741,7 +42741,7 @@
         "inferredReturnType": "[exact=JSString]",
         "parameters": [],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 1,
+        "inlinedCount": 0,
         "code": "Z(a){return a}",
         "type": "String Function()"
       },
@@ -112106,18 +112106,6 @@
     ],
     "function/399195151": [
       {
-        "id": "function/53371910",
-        "mask": null
-      },
-      {
-        "id": "function/550544609",
-        "mask": null
-      },
-      {
-        "id": "function/550544609",
-        "mask": "inlined"
-      },
-      {
         "id": "function/606513838",
         "mask": null
       },
@@ -112127,10 +112115,6 @@
       },
       {
         "id": "function/864228238",
-        "mask": null
-      },
-      {
-        "id": "function/982751380",
         "mask": null
       }
     ],
@@ -149611,7 +149595,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 227000,
+      "size": 227154,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -149621,11 +149605,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 227000,
-    "dart2jsVersion": "2.15.0-150.0.dev",
-    "compilationMoment": "2021-09-28 08:50:07.365004",
-    "compilationDuration": 5208653,
-    "toJsonDuration": 27000,
+    "size": 227154,
+    "dart2jsVersion": "2.15.0-164.0.dev",
+    "compilationMoment": "2021-09-30 14:17:09.885921",
+    "compilationDuration": 8825627,
+    "toJsonDuration": 35000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
