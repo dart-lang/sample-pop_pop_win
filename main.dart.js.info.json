@@ -27,6 +27,8 @@
           "class/130833286",
           "class/435993532",
           "class/886793970",
+          "classType/130833287",
+          "classType/886793971",
           "field/614847697",
           "function/140675773",
           "function/961983334"
@@ -269,6 +271,20 @@
           "class/1025104807",
           "class/1040104400",
           "class/1046346569",
+          "classType/168793844",
+          "classType/178843314",
+          "classType/347377145",
+          "classType/632137933",
+          "classType/658477023",
+          "classType/661490466",
+          "classType/717878192",
+          "classType/796633143",
+          "classType/825441370",
+          "classType/859163165",
+          "classType/862480556",
+          "classType/897378196",
+          "classType/943724664",
+          "classType/996025281",
           "function/258652222",
           "function/291295234",
           "function/698629541",
@@ -296,7 +312,8 @@
         "name": "<unnamed>",
         "size": 1484,
         "children": [
-          "class/394021680"
+          "class/394021680",
+          "classType/394021681"
         ],
         "canonicalUri": "package:pop_pop_win/src/stage/square_element.dart"
       },
@@ -354,7 +371,8 @@
           "class/1006644664",
           "class/1032314373",
           "class/1038585053",
-          "class/1039034903"
+          "class/1039034903",
+          "classType/1006644665"
         ],
         "canonicalUri": "dart:web_audio"
       },
@@ -370,7 +388,8 @@
           "class/415674392",
           "class/971921467",
           "class/1030127236",
-          "class/1034020683"
+          "class/1034020683",
+          "classType/1034020684"
         ],
         "canonicalUri": "package:stagexl/src/animation.dart"
       },
@@ -380,7 +399,8 @@
         "name": "stagexl.ui.mouse",
         "size": 123,
         "children": [
-          "class/230234314"
+          "class/230234314",
+          "classType/600598281"
         ],
         "canonicalUri": "package:stagexl/src/ui/mouse.dart"
       },
@@ -501,7 +521,9 @@
           "class/816466458",
           "class/918065053",
           "class/976943569",
-          "class/997136026"
+          "class/997136026",
+          "classType/89885052",
+          "classType/348104612"
         ],
         "canonicalUri": "package:stagexl/src/media.dart"
       },
@@ -619,6 +641,12 @@
           "class/837288420",
           "class/927233964",
           "class/998035767",
+          "classType/55317202",
+          "classType/117544112",
+          "classType/343789815",
+          "classType/356374572",
+          "classType/405835566",
+          "classType/808641589",
           "field/84936445",
           "field/366291641",
           "field/1022108137",
@@ -634,7 +662,9 @@
         "children": [
           "class/145364753",
           "class/409282140",
-          "class/422682531"
+          "class/422682531",
+          "classType/145364754",
+          "classType/422682532"
         ],
         "canonicalUri": "package:pop_pop_win/src/game/game_core.dart"
       },
@@ -890,7 +920,13 @@
           "class/795659278",
           "class/936566359",
           "class/1029103814",
-          "class/1063402080"
+          "class/1063402080",
+          "classType/192167",
+          "classType/14460443",
+          "classType/576270527",
+          "classType/795659279",
+          "classType/1029103815",
+          "classType/1063402081"
         ],
         "canonicalUri": "package:stagexl/src/resources.dart"
       },
@@ -915,6 +951,8 @@
           "class/372829643",
           "class/526772372",
           "class/658672196",
+          "classType/364826779",
+          "classType/526772373",
           "field/96182706",
           "field/389319715",
           "field/1018177357",
@@ -984,6 +1022,20 @@
           "class/959990109",
           "class/974704527",
           "class/991730135",
+          "classType/314168331",
+          "classType/335005182",
+          "classType/347664883",
+          "classType/351911149",
+          "classType/384231721",
+          "classType/481500692",
+          "classType/562873773",
+          "classType/627219878",
+          "classType/635685670",
+          "classType/801355802",
+          "classType/803883909",
+          "classType/893386370",
+          "classType/959990110",
+          "classType/992563104",
           "field/16576174",
           "function/359535976",
           "function/399195151"
@@ -1023,6 +1075,17 @@
           "class/820012780",
           "class/1011485870",
           "class/1020311300",
+          "classType/7554035",
+          "classType/74794767",
+          "classType/99550179",
+          "classType/108984100",
+          "classType/119971060",
+          "classType/412877851",
+          "classType/604077782",
+          "classType/696371860",
+          "classType/809287555",
+          "classType/820012781",
+          "classType/1011485871",
           "field/78985547",
           "field/796118848",
           "field/799184287",
@@ -1150,7 +1213,9 @@
           "class/637579110",
           "class/653990215",
           "class/659262112",
-          "class/711177801"
+          "class/711177801",
+          "classType/105592490",
+          "classType/659262113"
         ],
         "canonicalUri": "dart:web_gl"
       },
@@ -1352,6 +1417,7 @@
           "class/510589568",
           "class/679379074",
           "class/907338283",
+          "classType/510589569",
           "function/7819733",
           "function/284477214",
           "function/312590976",
@@ -1429,6 +1495,8 @@
           "class/1040612955",
           "class/1045817757",
           "class/1059755229",
+          "classType/438137150",
+          "classType/784178239",
           "field/29748263",
           "field/639289778",
           "field/931441116",
@@ -1487,7 +1555,14 @@
           "class/914963027",
           "class/1029728765",
           "class/1030275855",
-          "class/1033928205"
+          "class/1033928205",
+          "classType/120606195",
+          "classType/140329749",
+          "classType/468118934",
+          "classType/725660158",
+          "classType/887231522",
+          "classType/1029513237",
+          "classType/1030275856"
         ],
         "canonicalUri": "package:stagexl/src/display.dart"
       }
@@ -12025,6 +12100,608 @@
           "function/398427551",
           "function/652205922"
         ]
+      }
+    },
+    "classType": {
+      "192167": {
+        "id": "classType/192167",
+        "kind": "classType",
+        "name": "TextureAtlas",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/590103242"
+      },
+      "7554035": {
+        "id": "classType/7554035",
+        "kind": "classType",
+        "name": "RenderEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "14460443": {
+        "id": "classType/14460443",
+        "kind": "classType",
+        "name": "ResourceManagerResource",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/590103242"
+      },
+      "55317202": {
+        "id": "classType/55317202",
+        "kind": "classType",
+        "name": "_MaskState",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/418037606"
+      },
+      "74794767": {
+        "id": "classType/74794767",
+        "kind": "classType",
+        "name": "TouchEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "89885052": {
+        "id": "classType/89885052",
+        "kind": "classType",
+        "name": "AudioElementSoundChannel",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/321281581"
+      },
+      "99550179": {
+        "id": "classType/99550179",
+        "kind": "classType",
+        "name": "EventDispatcher",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "105592490": {
+        "id": "classType/105592490",
+        "kind": "classType",
+        "name": "UniformLocation",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/811088491"
+      },
+      "108984100": {
+        "id": "classType/108984100",
+        "kind": "classType",
+        "name": "EnterFrameEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "117544112": {
+        "id": "classType/117544112",
+        "kind": "classType",
+        "name": "RenderTextureQuad",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/418037606"
+      },
+      "119971060": {
+        "id": "classType/119971060",
+        "kind": "classType",
+        "name": "KeyboardEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "120606195": {
+        "id": "classType/120606195",
+        "kind": "classType",
+        "name": "_Drag",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "130833287": {
+        "id": "classType/130833287",
+        "kind": "classType",
+        "name": "_Values",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/24548491"
+      },
+      "140329749": {
+        "id": "classType/140329749",
+        "kind": "classType",
+        "name": "_MouseButton",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "145364754": {
+        "id": "classType/145364754",
+        "kind": "classType",
+        "name": "GameState",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/434094828"
+      },
+      "168793844": {
+        "id": "classType/168793844",
+        "kind": "classType",
+        "name": "HttpRequest",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "178843314": {
+        "id": "classType/178843314",
+        "kind": "classType",
+        "name": "KeyboardEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "314168331": {
+        "id": "classType/314168331",
+        "kind": "classType",
+        "name": "double",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "335005182": {
+        "id": "classType/335005182",
+        "kind": "classType",
+        "name": "num",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "343789815": {
+        "id": "classType/343789815",
+        "kind": "classType",
+        "name": "RenderProgram",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/418037606"
+      },
+      "347377145": {
+        "id": "classType/347377145",
+        "kind": "classType",
+        "name": "AudioElement",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "347664883": {
+        "id": "classType/347664883",
+        "kind": "classType",
+        "name": "StackTrace",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "348104612": {
+        "id": "classType/348104612",
+        "kind": "classType",
+        "name": "Sound",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/321281581"
+      },
+      "351911149": {
+        "id": "classType/351911149",
+        "kind": "classType",
+        "name": "Null",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "356374572": {
+        "id": "classType/356374572",
+        "kind": "classType",
+        "name": "RenderTexture",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/418037606"
+      },
+      "364826779": {
+        "id": "classType/364826779",
+        "kind": "classType",
+        "name": "TextLineMetrics",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/610572664"
+      },
+      "384231721": {
+        "id": "classType/384231721",
+        "kind": "classType",
+        "name": "DateTime",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "394021681": {
+        "id": "classType/394021681",
+        "kind": "classType",
+        "name": "SquareElement",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/152998570"
+      },
+      "405835566": {
+        "id": "classType/405835566",
+        "kind": "classType",
+        "name": "RenderFrameBuffer",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/418037606"
+      },
+      "412877851": {
+        "id": "classType/412877851",
+        "kind": "classType",
+        "name": "MouseEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "422682532": {
+        "id": "classType/422682532",
+        "kind": "classType",
+        "name": "SquareState",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/434094828"
+      },
+      "438137150": {
+        "id": "classType/438137150",
+        "kind": "classType",
+        "name": "Future",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1052666095"
+      },
+      "468118934": {
+        "id": "classType/468118934",
+        "kind": "classType",
+        "name": "_TouchPoint",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "481500692": {
+        "id": "classType/481500692",
+        "kind": "classType",
+        "name": "bool",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "510589569": {
+        "id": "classType/510589569",
+        "kind": "classType",
+        "name": "Point",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/979174469"
+      },
+      "526772373": {
+        "id": "classType/526772373",
+        "kind": "classType",
+        "name": "_FontStyleMetrics",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/610572664"
+      },
+      "562873773": {
+        "id": "classType/562873773",
+        "kind": "classType",
+        "name": "int",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "576270527": {
+        "id": "classType/576270527",
+        "kind": "classType",
+        "name": "TextureAtlasFrame",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/590103242"
+      },
+      "600598281": {
+        "id": "classType/600598281",
+        "kind": "classType",
+        "name": "MouseCursorData",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/219141364"
+      },
+      "604077782": {
+        "id": "classType/604077782",
+        "kind": "classType",
+        "name": "TextEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "627219878": {
+        "id": "classType/627219878",
+        "kind": "classType",
+        "name": "Object",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "632137933": {
+        "id": "classType/632137933",
+        "kind": "classType",
+        "name": "ImageElement",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "635685670": {
+        "id": "classType/635685670",
+        "kind": "classType",
+        "name": "String",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "658477023": {
+        "id": "classType/658477023",
+        "kind": "classType",
+        "name": "DomException",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "659262113": {
+        "id": "classType/659262113",
+        "kind": "classType",
+        "name": "ContextEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/811088491"
+      },
+      "661490466": {
+        "id": "classType/661490466",
+        "kind": "classType",
+        "name": "EventTarget",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "696371860": {
+        "id": "classType/696371860",
+        "kind": "classType",
+        "name": "EventStreamSubscription",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "717878192": {
+        "id": "classType/717878192",
+        "kind": "classType",
+        "name": "Touch",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "725660158": {
+        "id": "classType/725660158",
+        "kind": "classType",
+        "name": "Stage",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "784178239": {
+        "id": "classType/784178239",
+        "kind": "classType",
+        "name": "_Future",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1052666095"
+      },
+      "795659279": {
+        "id": "classType/795659279",
+        "kind": "classType",
+        "name": "SoundSpriteSegment",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/590103242"
+      },
+      "796633143": {
+        "id": "classType/796633143",
+        "kind": "classType",
+        "name": "WheelEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "801355802": {
+        "id": "classType/801355802",
+        "kind": "classType",
+        "name": "RegExpMatch",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "803883909": {
+        "id": "classType/803883909",
+        "kind": "classType",
+        "name": "Duration",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "808641589": {
+        "id": "classType/808641589",
+        "kind": "classType",
+        "name": "RenderContextEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/418037606"
+      },
+      "809287555": {
+        "id": "classType/809287555",
+        "kind": "classType",
+        "name": "ExitFrameEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "820012781": {
+        "id": "classType/820012781",
+        "kind": "classType",
+        "name": "EventStream",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "825441370": {
+        "id": "classType/825441370",
+        "kind": "classType",
+        "name": "TouchEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "859163165": {
+        "id": "classType/859163165",
+        "kind": "classType",
+        "name": "Node",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "862480556": {
+        "id": "classType/862480556",
+        "kind": "classType",
+        "name": "PopStateEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "886793971": {
+        "id": "classType/886793971",
+        "kind": "classType",
+        "name": "_Tuple",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/24548491"
+      },
+      "887231522": {
+        "id": "classType/887231522",
+        "kind": "classType",
+        "name": "BitmapData",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "893386370": {
+        "id": "classType/893386370",
+        "kind": "classType",
+        "name": "Error",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "897378196": {
+        "id": "classType/897378196",
+        "kind": "classType",
+        "name": "MouseEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "943724664": {
+        "id": "classType/943724664",
+        "kind": "classType",
+        "name": "ProgressEvent",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "959990110": {
+        "id": "classType/959990110",
+        "kind": "classType",
+        "name": "List",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "992563104": {
+        "id": "classType/992563104",
+        "kind": "classType",
+        "name": "Match",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/631335891"
+      },
+      "996025281": {
+        "id": "classType/996025281",
+        "kind": "classType",
+        "name": "Event",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/85591458"
+      },
+      "1006644665": {
+        "id": "classType/1006644665",
+        "kind": "classType",
+        "name": "AudioBuffer",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/189282297"
+      },
+      "1011485871": {
+        "id": "classType/1011485871",
+        "kind": "classType",
+        "name": "Event",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/668511847"
+      },
+      "1029103815": {
+        "id": "classType/1029103815",
+        "kind": "classType",
+        "name": "SoundSprite",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/590103242"
+      },
+      "1029513237": {
+        "id": "classType/1029513237",
+        "kind": "classType",
+        "name": "BitmapFilter",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "1030275856": {
+        "id": "classType/1030275856",
+        "kind": "classType",
+        "name": "DisplayObject",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/1057406316"
+      },
+      "1034020684": {
+        "id": "classType/1034020684",
+        "kind": "classType",
+        "name": "TweenProperty",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/216500982"
+      },
+      "1063402081": {
+        "id": "classType/1063402081",
+        "kind": "classType",
+        "name": "ResourceManager",
+        "size": 0,
+        "outputUnit": "outputUnit/669725655",
+        "parent": "library/590103242"
       }
     },
     "function": {
@@ -149606,10 +150283,10 @@
   "program": {
     "entrypoint": "function/270342073",
     "size": 227154,
-    "dart2jsVersion": "2.15.0-178.0.dev",
-    "compilationMoment": "2021-10-12 06:20:24.692152",
-    "compilationDuration": 4220049,
-    "toJsonDuration": 20000,
+    "dart2jsVersion": "2.15.0-208.0.dev",
+    "compilationMoment": "2021-10-14 08:38:44.491419",
+    "compilationDuration": 4990049,
+    "toJsonDuration": 18000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
