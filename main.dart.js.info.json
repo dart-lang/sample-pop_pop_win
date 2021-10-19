@@ -22,7 +22,7 @@
         "id": "library/24548491",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 6241,
+        "size": 6181,
         "children": [
           "class/130833286",
           "class/435993532",
@@ -397,7 +397,7 @@
         "id": "library/219141364",
         "kind": "library",
         "name": "stagexl.ui.mouse",
-        "size": 123,
+        "size": 102,
         "children": [
           "class/230234314",
           "classType/600598281"
@@ -481,7 +481,7 @@
         "id": "library/307092771",
         "kind": "library",
         "name": "stagexl.internal.environment",
-        "size": 678,
+        "size": 642,
         "children": [
           "field/460426713",
           "field/570983786",
@@ -506,7 +506,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6856,
+        "size": 6835,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -531,7 +531,7 @@
         "id": "library/325218131",
         "kind": "library",
         "name": "_interceptors",
-        "size": 10475,
+        "size": 10460,
         "children": [
           "class/86936801",
           "class/245082925",
@@ -577,7 +577,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3078,
+        "size": 3072,
         "children": [
           "field/691310251",
           "function/14078432",
@@ -672,7 +672,7 @@
         "id": "library/439666169",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 44,
+        "size": 29,
         "children": [
           "field/503564739"
         ],
@@ -934,7 +934,7 @@
         "id": "library/596676313",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 766,
+        "size": 751,
         "children": [
           "class/435622562",
           "field/1006017221"
@@ -945,7 +945,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 4976,
+        "size": 4955,
         "children": [
           "class/364826778",
           "class/372829643",
@@ -986,7 +986,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7031,
+        "size": 7010,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -1107,7 +1107,7 @@
         "id": "library/689380639",
         "kind": "library",
         "name": "dart._internal",
-        "size": 6351,
+        "size": 6336,
         "children": [
           "class/43993131",
           "class/56611791",
@@ -1285,7 +1285,7 @@
         "id": "library/921930589",
         "kind": "library",
         "name": "stagexl.internal.audio_loader",
-        "size": 1208,
+        "size": 1202,
         "children": [
           "class/483097323"
         ],
@@ -1305,7 +1305,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 21201,
+        "size": 21051,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -1452,7 +1452,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 18675,
+        "size": 18645,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -1534,7 +1534,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 19671,
+        "size": 19656,
         "children": [
           "class/3601851",
           "class/140329748",
@@ -72949,12 +72949,12 @@
         "id": "field/16576174",
         "kind": "field",
         "name": "_hashSeed",
-        "size": 45,
+        "size": 30,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/631335891",
         "children": [],
         "inferredType": "[null|subclass=JSInt]",
-        "code": "s($,\"X0\",\"t8\",function(){return A.CU(B.Ly)})",
+        "code": "s($,\"X0\",\"t8\",()=>A.CU(B.Ly))",
         "type": "int"
       },
       "16658263": {
@@ -73621,12 +73621,12 @@
         "id": "field/78845885",
         "kind": "field",
         "name": "onCursorChanged",
-        "size": 56,
+        "size": 50,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/230234314",
         "children": [],
         "inferredType": "[null|exact=_BroadcastStream]",
-        "code": "r($,\"BY\",\"V9\",function(){var q=$.Eh()\nreturn q.gvq(q)})",
+        "code": "r($,\"BY\",\"V9\",()=>{var q=$.Eh()\nreturn q.gvq(q)})",
         "type": "Stream<String>"
       },
       "78914771": {
@@ -73657,12 +73657,12 @@
         "id": "field/79943715",
         "kind": "field",
         "name": "nullPropertyPattern",
-        "size": 51,
+        "size": 36,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"BX\",\"rN\",function(){return A.cM(A.Mj(null))})",
+        "code": "s($,\"BX\",\"rN\",()=>A.cM(A.Mj(null)))",
         "type": "TypeErrorDecoder"
       },
       "81307483": {
@@ -73801,12 +73801,12 @@
         "id": "field/96182706",
         "kind": "field",
         "name": "_dummyCanvasContext",
-        "size": 63,
+        "size": 57,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "children": [],
         "inferredType": "[null|exact=CanvasRenderingContext2D]",
-        "code": "s($,\"kc\",\"VD\",function(){var q=$.Re()\nreturn(q&&B.p1).gVE(q)})",
+        "code": "s($,\"kc\",\"VD\",()=>{var q=$.Re()\nreturn(q&&B.p1).gVE(q)})",
         "type": "CanvasRenderingContext2D"
       },
       "101004759": {
@@ -73825,12 +73825,12 @@
         "id": "field/101074446",
         "kind": "field",
         "name": "defaultLoadOptions",
-        "size": 71,
+        "size": 56,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/887231521",
         "children": [],
         "inferredType": "[null|exact=BitmapDataLoadOptions]",
-        "code": "r($,\"fz\",\"bs\",function(){return new A.L1(A.QI([1,2],A.q7(\"jd<CP>\")))})",
+        "code": "r($,\"fz\",\"bs\",()=>new A.L1(A.QI([1,2],A.q7(\"jd<CP>\"))))",
         "type": "BitmapDataLoadOptions"
       },
       "101165952": {
@@ -74185,12 +74185,12 @@
         "id": "field/141529218",
         "kind": "field",
         "name": "_dartAnimationOffset",
-        "size": 50,
+        "size": 35,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [],
         "inferredType": "[null|exact=Vector]",
-        "code": "s($,\"lL\",\"bD\",function(){return A.JH(-472,-348)})",
+        "code": "s($,\"lL\",\"bD\",()=>A.JH(-472,-348))",
         "type": "Vector"
       },
       "142402878": {
@@ -74257,12 +74257,12 @@
         "id": "field/146902950",
         "kind": "field",
         "name": "noSuchMethodPattern",
-        "size": 89,
+        "size": 74,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"lm\",\"Sn\",function(){return A.cM(A.S7({\ntoString:function(){return\"$receiver$\"}}))})",
+        "code": "s($,\"lm\",\"Sn\",()=>A.cM(A.S7({\ntoString:function(){return\"$receiver$\"}})))",
         "type": "TypeErrorDecoder"
       },
       "146946266": {
@@ -74449,12 +74449,12 @@
         "id": "field/169031325",
         "kind": "field",
         "name": "undefinedCallPattern",
-        "size": 53,
+        "size": 38,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"qi\",\"UN\",function(){return A.cM(A.S7(void 0))})",
+        "code": "s($,\"qi\",\"UN\",()=>A.cM(A.S7(void 0)))",
         "type": "TypeErrorDecoder"
       },
       "169158791": {
@@ -74713,12 +74713,12 @@
         "id": "field/189240247",
         "kind": "field",
         "name": "undefinedPropertyPattern",
-        "size": 53,
+        "size": 38,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"dt\",\"HK\",function(){return A.cM(A.Mj(void 0))})",
+        "code": "s($,\"dt\",\"HK\",()=>A.cM(A.Mj(void 0)))",
         "type": "TypeErrorDecoder"
       },
       "190317948": {
@@ -75217,12 +75217,12 @@
         "id": "field/226520886",
         "kind": "field",
         "name": "_frequency",
-        "size": 46,
+        "size": 40,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/167237017",
         "children": [],
         "inferredType": "[null|exact=JSUInt31]",
-        "code": "s($,\"Xs\",\"jv\",function(){A.w4()\nreturn $.zI})",
+        "code": "s($,\"Xs\",\"jv\",()=>{A.w4()\nreturn $.zI})",
         "type": "int"
       },
       "226692655": {
@@ -75889,12 +75889,12 @@
         "id": "field/285204272",
         "kind": "field",
         "name": "DART_CLOSURE_PROPERTY_NAME",
-        "size": 59,
+        "size": 44,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/325218131",
         "children": [],
         "inferredType": "[null|exact=JSString]",
-        "code": "s($,\"fa\",\"w\",function(){return A.e(\"_$dart_dartClosure\")})",
+        "code": "s($,\"fa\",\"w\",()=>A.e(\"_$dart_dartClosure\"))",
         "type": "String"
       },
       "286313355": {
@@ -76393,12 +76393,12 @@
         "id": "field/337959975",
         "kind": "field",
         "name": "undefinedLiteralPropertyPattern",
-        "size": 103,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"Ai\",\"r1\",function(){return A.cM(function(){try{(void 0).$method$}catch(q){return q.message}}())})",
+        "code": "s($,\"Ai\",\"r1\",()=>A.cM(function(){try{(void 0).$method$}catch(q){return q.message}}()))",
         "type": "TypeErrorDecoder"
       },
       "339749490": {
@@ -76465,12 +76465,12 @@
         "id": "field/345820873",
         "kind": "field",
         "name": "_cursorChangedEvent",
-        "size": 44,
+        "size": 29,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/230234314",
         "children": [],
         "inferredType": "Union(null, [exact=_AsyncBroadcastStreamController], [exact=_SyncBroadcastStreamController])",
-        "code": "s($,\"kz\",\"Eh\",function(){return A.bK(t.N)})",
+        "code": "s($,\"kz\",\"Eh\",()=>A.bK(t.N))",
         "type": "StreamController<String>"
       },
       "346735010": {
@@ -76693,12 +76693,12 @@
         "id": "field/366629653",
         "kind": "field",
         "name": "nullLiteralPropertyPattern",
-        "size": 99,
+        "size": 84,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"tt\",\"c3\",function(){return A.cM(function(){try{null.$method$}catch(q){return q.message}}())})",
+        "code": "s($,\"tt\",\"c3\",()=>A.cM(function(){try{null.$method$}catch(q){return q.message}}()))",
         "type": "TypeErrorDecoder"
       },
       "366922862": {
@@ -76741,12 +76741,12 @@
         "id": "field/368849633",
         "kind": "field",
         "name": "nullLiteralCallPattern",
-        "size": 150,
+        "size": 135,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"fN\",\"iI\",function(){return A.cM(function(){var $argumentsExpr$=\"$arguments$\"\ntry{null.$method$($argumentsExpr$)}catch(q){return q.message}}())})",
+        "code": "s($,\"fN\",\"iI\",()=>A.cM(function(){var $argumentsExpr$=\"$arguments$\"\ntry{null.$method$($argumentsExpr$)}catch(q){return q.message}}()))",
         "type": "TypeErrorDecoder"
       },
       "370927607": {
@@ -76813,12 +76813,12 @@
         "id": "field/381082880",
         "kind": "field",
         "name": "nullCallPattern",
-        "size": 51,
+        "size": 36,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"R1\",\"N9\",function(){return A.cM(A.S7(null))})",
+        "code": "s($,\"R1\",\"N9\",()=>A.cM(A.S7(null)))",
         "type": "TypeErrorDecoder"
       },
       "385428141": {
@@ -76897,12 +76897,12 @@
         "id": "field/389319715",
         "kind": "field",
         "name": "_dummyCanvas",
-        "size": 46,
+        "size": 31,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "children": [],
         "inferredType": "[null|exact=CanvasElement]",
-        "code": "s($,\"Kp\",\"Re\",function(){return A.d9(16,16)})",
+        "code": "s($,\"Kp\",\"Re\",()=>A.d9(16,16))",
         "type": "CanvasElement"
       },
       "390275471": {
@@ -77449,12 +77449,12 @@
         "id": "field/460426713",
         "kind": "field",
         "name": "devicePixelRatio",
-        "size": 77,
+        "size": 71,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|subclass=JSNumber]",
-        "code": "s($,\"KE\",\"XA\",function(){var q=A.x3().devicePixelRatio\nq.toString\nreturn q})",
+        "code": "s($,\"KE\",\"XA\",()=>{var q=A.x3().devicePixelRatio\nq.toString\nreturn q})",
         "type": "num"
       },
       "460958077": {
@@ -77641,12 +77641,12 @@
         "id": "field/477820844",
         "kind": "field",
         "name": "defaultLoadOptions",
-        "size": 45,
+        "size": 30,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/348104611",
         "children": [],
         "inferredType": "[null|exact=SoundLoadOptions]",
-        "code": "r($,\"t3\",\"mX\",function(){return new A.ye()})",
+        "code": "r($,\"t3\",\"mX\",()=>new A.ye())",
         "type": "SoundLoadOptions"
       },
       "483473813": {
@@ -77857,12 +77857,12 @@
         "id": "field/503564739",
         "kind": "field",
         "name": "random",
-        "size": 45,
+        "size": 30,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/439666169",
         "children": [],
         "inferredType": "Union(null, [exact=_JSRandom], [exact=_Random])",
-        "code": "s($,\"Y4\",\"XB\",function(){return A.CF(null)})",
+        "code": "s($,\"Y4\",\"XB\",()=>A.CF(null))",
         "type": "Random"
       },
       "503665061": {
@@ -78397,12 +78397,12 @@
         "id": "field/551971461",
         "kind": "field",
         "name": "supportedTypes",
-        "size": 586,
+        "size": 580,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/483097323",
         "children": [],
         "inferredType": "Union(null, [exact=JSExtendableArray], [exact=JSFixedArray])",
-        "code": "s($,\"Ni\",\"IF\",function(){var q=t.s,p=A.QI([],q),o=A.Lb(),n=A.QI([\"maybe\",\"probably\"],q)\nq=o.canPlayType(\"audio/ogg; codecs=opus\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"opus\")\nq=o.canPlayType(\"audio/mpeg\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"mp3\")\nq=o.canPlayType(\"audio/mp4\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"mp4\")\nq=o.canPlayType(\"audio/ogg\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"ogg\")\nq=o.canPlayType(\"audio/ac3\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"ac3\")\nq=o.canPlayType(\"audio/wav\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"wav\")\nA.mp(\"StageXL audio types   : \"+A.d(p))\nreturn B.Nm.tt(p,!1)})",
+        "code": "s($,\"Ni\",\"IF\",()=>{var q=t.s,p=A.QI([],q),o=A.Lb(),n=A.QI([\"maybe\",\"probably\"],q)\nq=o.canPlayType(\"audio/ogg; codecs=opus\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"opus\")\nq=o.canPlayType(\"audio/mpeg\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"mp3\")\nq=o.canPlayType(\"audio/mp4\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"mp4\")\nq=o.canPlayType(\"audio/ogg\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"ogg\")\nq=o.canPlayType(\"audio/ac3\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"ac3\")\nq=o.canPlayType(\"audio/wav\")\nq.toString\nif(B.Nm.tg(n,q))p.push(\"wav\")\nA.mp(\"StageXL audio types   : \"+A.d(p))\nreturn B.Nm.tt(p,!1)})",
         "type": "List<String>"
       },
       "558303994": {
@@ -78517,12 +78517,12 @@
         "id": "field/570983786",
         "kind": "field",
         "name": "isWebpSupported",
-        "size": 41,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|exact=_Future]",
-        "code": "s($,\"wR\",\"OO\",function(){return A.aZ()})",
+        "code": "s($,\"wR\",\"OO\",()=>A.aZ())",
         "type": "Future<bool>"
       },
       "572411965": {
@@ -78805,12 +78805,12 @@
         "id": "field/614847697",
         "kind": "field",
         "name": "_titleClickedEventHandle",
-        "size": 47,
+        "size": 32,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/24548491",
         "children": [],
         "inferredType": "Union(null, [exact=_AsyncStreamController], [exact=_SyncStreamController])",
-        "code": "s($,\"iA\",\"KP\",function(){return A.x2(!1,t.H)})",
+        "code": "s($,\"iA\",\"KP\",()=>A.x2(!1,t.H))",
         "type": "StreamController<void>"
       },
       "616066704": {
@@ -79057,12 +79057,12 @@
         "id": "field/645317327",
         "kind": "field",
         "name": "notClosurePattern",
-        "size": 103,
+        "size": 88,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"Yn\",\"lq\",function(){return A.cM(A.S7({$method$:null,\ntoString:function(){return\"$receiver$\"}}))})",
+        "code": "s($,\"Yn\",\"lq\",()=>A.cM(A.S7({$method$:null,\ntoString:function(){return\"$receiver$\"}})))",
         "type": "TypeErrorDecoder"
       },
       "646267833": {
@@ -79105,12 +79105,12 @@
         "id": "field/646744185",
         "kind": "field",
         "name": "undefinedLiteralCallPattern",
-        "size": 154,
+        "size": 139,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/294355530",
         "children": [],
         "inferredType": "[exact=TypeErrorDecoder]",
-        "code": "s($,\"pv\",\"Zh\",function(){return A.cM(function(){var $argumentsExpr$=\"$arguments$\"\ntry{(void 0).$method$($argumentsExpr$)}catch(q){return q.message}}())})",
+        "code": "s($,\"pv\",\"Zh\",()=>A.cM(function(){var $argumentsExpr$=\"$arguments$\"\ntry{(void 0).$method$($argumentsExpr$)}catch(q){return q.message}}()))",
         "type": "TypeErrorDecoder"
       },
       "646807332": {
@@ -79213,12 +79213,12 @@
         "id": "field/651516298",
         "kind": "field",
         "name": "boardOffset",
-        "size": 47,
+        "size": 32,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [],
         "inferredType": "[null|exact=Vector]",
-        "code": "s($,\"YZ\",\"Vi\",function(){return A.JH(352,96)})",
+        "code": "s($,\"YZ\",\"Vi\",()=>A.JH(352,96))",
         "type": "Vector"
       },
       "653339731": {
@@ -79465,12 +79465,12 @@
         "id": "field/680942977",
         "kind": "field",
         "name": "isTouchEventSupported",
-        "size": 41,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/307092771",
         "children": [],
         "inferredType": "[null|exact=JSBool]",
-        "code": "s($,\"iu\",\"PR\",function(){return A.wm()})",
+        "code": "s($,\"iu\",\"PR\",()=>A.wm())",
         "type": "bool"
       },
       "686275146": {
@@ -79537,12 +79537,12 @@
         "id": "field/691310251",
         "kind": "field",
         "name": "_popup",
-        "size": 68,
+        "size": 62,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [],
         "inferredType": "[subclass=Element]",
-        "code": "s($,\"Xt\",\"TH\",function(){var q=A.Z0(\"#popup\")\nq.toString\nreturn q})",
+        "code": "s($,\"Xt\",\"TH\",()=>{var q=A.Z0(\"#popup\")\nq.toString\nreturn q})",
         "type": "Element"
       },
       "691796403": {
@@ -81565,14 +81565,14 @@
         "id": "field/908361693",
         "kind": "field",
         "name": "nullFuture",
-        "size": 132,
+        "size": 117,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/689380639",
         "children": [
           "closure/171904119"
         ],
         "inferredType": "[null|exact=_Future]",
-        "code": "s($,\"Qz\",\"Zo\",function(){return B.NU.Gr(new A.GR())})",
+        "code": "s($,\"Qz\",\"Zo\",()=>B.NU.Gr(new A.GR()))",
         "type": "Future<Null>"
       },
       "908476008": {
@@ -81855,12 +81855,12 @@
         "id": "field/932611099",
         "kind": "field",
         "name": "_scheduleImmediateClosure",
-        "size": 41,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/611525899",
         "children": [],
         "inferredType": "[null|subtype=Function]",
-        "code": "s($,\"Wc\",\"ut\",function(){return A.xg()})",
+        "code": "s($,\"Wc\",\"ut\",()=>A.xg())",
         "type": "Function"
       },
       "934309582": {
@@ -81939,12 +81939,12 @@
         "id": "field/944819271",
         "kind": "field",
         "name": "_popExplodeAnimationOffset",
-        "size": 48,
+        "size": 33,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435993532",
         "children": [],
         "inferredType": "[null|exact=Vector]",
-        "code": "s($,\"xJ\",\"f9\",function(){return A.JH(-88,-88)})",
+        "code": "s($,\"xJ\",\"f9\",()=>A.JH(-88,-88))",
         "type": "Vector"
       },
       "944881696": {
@@ -82383,12 +82383,12 @@
         "id": "field/992919729",
         "kind": "field",
         "name": "audioContext",
-        "size": 108,
+        "size": 102,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/494648908",
         "children": [],
         "inferredType": "[null|exact=AudioContext]",
-        "code": "s($,\"D2\",\"Y6\",function(){var q=new (window.AudioContext||window.webkitAudioContext)()\nq.toString\nreturn q})",
+        "code": "s($,\"D2\",\"Y6\",()=>{var q=new (window.AudioContext||window.webkitAudioContext)()\nq.toString\nreturn q})",
         "type": "AudioContext"
       },
       "994743795": {
@@ -82575,12 +82575,12 @@
         "id": "field/1006017221",
         "kind": "field",
         "name": "targetPlatform",
-        "size": 41,
+        "size": 26,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/596676313",
         "children": [],
         "inferredType": "[null|exact=PlatformWeb]",
-        "code": "s($,\"qO\",\"fF\",function(){return A.B0()})",
+        "code": "s($,\"qO\",\"fF\",()=>A.B0())",
         "type": "PlatformWeb"
       },
       "1010146372": {
@@ -82695,12 +82695,12 @@
         "id": "field/1022934707",
         "kind": "field",
         "name": "_nullFuture",
-        "size": 59,
+        "size": 44,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/438137149",
         "children": [],
         "inferredType": "[exact=_Future]",
-        "code": "s($,\"au\",\"Yj\",function(){return A.q7(\"vs<c8>\").a($.Zo())})",
+        "code": "s($,\"au\",\"Yj\",()=>A.q7(\"vs<c8>\").a($.Zo()))",
         "type": "_Future<Null>"
       },
       "1023319897": {
@@ -150272,7 +150272,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 227154,
+      "size": 226707,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150282,11 +150282,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 227154,
-    "dart2jsVersion": "2.15.0-208.0.dev",
-    "compilationMoment": "2021-10-14 08:38:44.491419",
-    "compilationDuration": 4990049,
-    "toJsonDuration": 18000,
+    "size": 226707,
+    "dart2jsVersion": "2.15.0-233.0.dev",
+    "compilationMoment": "2021-10-19 13:22:11.053284",
+    "compilationDuration": 7546922,
+    "toJsonDuration": 33000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

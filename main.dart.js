@@ -8490,38 +8490,38 @@ $.HX=null
 $.qu=null
 $.E1=A.Fl(t.N,A.q7("Xv"))
 $.br=A.Fl(t.N,A.q7("JW"))})();(function lazyInitializers(){var s=hunkHelpers.lazyFinal,r=hunkHelpers.lazy
-s($,"fa","w",function(){return A.e("_$dart_dartClosure")})
-s($,"Qz","Zo",function(){return B.NU.Gr(new A.GR())})
-s($,"lm","Sn",function(){return A.cM(A.S7({
-toString:function(){return"$receiver$"}}))})
-s($,"Yn","lq",function(){return A.cM(A.S7({$method$:null,
-toString:function(){return"$receiver$"}}))})
-s($,"R1","N9",function(){return A.cM(A.S7(null))})
-s($,"fN","iI",function(){return A.cM(function(){var $argumentsExpr$="$arguments$"
-try{null.$method$($argumentsExpr$)}catch(q){return q.message}}())})
-s($,"qi","UN",function(){return A.cM(A.S7(void 0))})
-s($,"pv","Zh",function(){return A.cM(function(){var $argumentsExpr$="$arguments$"
-try{(void 0).$method$($argumentsExpr$)}catch(q){return q.message}}())})
-s($,"BX","rN",function(){return A.cM(A.Mj(null))})
-s($,"tt","c3",function(){return A.cM(function(){try{null.$method$}catch(q){return q.message}}())})
-s($,"dt","HK",function(){return A.cM(A.Mj(void 0))})
-s($,"Ai","r1",function(){return A.cM(function(){try{(void 0).$method$}catch(q){return q.message}}())})
-s($,"Wc","ut",function(){return A.xg()})
-s($,"au","Yj",function(){return A.q7("vs<c8>").a($.Zo())})
-s($,"X0","t8",function(){return A.CU(B.Ly)})
-s($,"Xs","jv",function(){A.w4()
+s($,"fa","w",()=>A.e("_$dart_dartClosure"))
+s($,"Qz","Zo",()=>B.NU.Gr(new A.GR()))
+s($,"lm","Sn",()=>A.cM(A.S7({
+toString:function(){return"$receiver$"}})))
+s($,"Yn","lq",()=>A.cM(A.S7({$method$:null,
+toString:function(){return"$receiver$"}})))
+s($,"R1","N9",()=>A.cM(A.S7(null)))
+s($,"fN","iI",()=>A.cM(function(){var $argumentsExpr$="$arguments$"
+try{null.$method$($argumentsExpr$)}catch(q){return q.message}}()))
+s($,"qi","UN",()=>A.cM(A.S7(void 0)))
+s($,"pv","Zh",()=>A.cM(function(){var $argumentsExpr$="$arguments$"
+try{(void 0).$method$($argumentsExpr$)}catch(q){return q.message}}()))
+s($,"BX","rN",()=>A.cM(A.Mj(null)))
+s($,"tt","c3",()=>A.cM(function(){try{null.$method$}catch(q){return q.message}}()))
+s($,"dt","HK",()=>A.cM(A.Mj(void 0)))
+s($,"Ai","r1",()=>A.cM(function(){try{(void 0).$method$}catch(q){return q.message}}()))
+s($,"Wc","ut",()=>A.xg())
+s($,"au","Yj",()=>A.q7("vs<c8>").a($.Zo()))
+s($,"X0","t8",()=>A.CU(B.Ly))
+s($,"Xs","jv",()=>{A.w4()
 return $.zI})
-s($,"Xt","TH",function(){var q=A.Z0("#popup")
+s($,"Xt","TH",()=>{var q=A.Z0("#popup")
 q.toString
 return q})
-s($,"qO","fF",function(){return A.B0()})
-s($,"YZ","Vi",function(){return A.JH(352,96)})
-s($,"xJ","f9",function(){return A.JH(-88,-88)})
-s($,"lL","bD",function(){return A.JH(-472,-348)})
-s($,"iA","KP",function(){return A.x2(!1,t.H)})
-s($,"Y4","XB",function(){return A.CF(null)})
-r($,"fz","bs",function(){return new A.L1(A.QI([1,2],A.q7("jd<CP>")))})
-s($,"Ni","IF",function(){var q=t.s,p=A.QI([],q),o=A.Lb(),n=A.QI(["maybe","probably"],q)
+s($,"qO","fF",()=>A.B0())
+s($,"YZ","Vi",()=>A.JH(352,96))
+s($,"xJ","f9",()=>A.JH(-88,-88))
+s($,"lL","bD",()=>A.JH(-472,-348))
+s($,"iA","KP",()=>A.x2(!1,t.H))
+s($,"Y4","XB",()=>A.CF(null))
+r($,"fz","bs",()=>new A.L1(A.QI([1,2],A.q7("jd<CP>"))))
+s($,"Ni","IF",()=>{var q=t.s,p=A.QI([],q),o=A.Lb(),n=A.QI(["maybe","probably"],q)
 q=o.canPlayType("audio/ogg; codecs=opus")
 q.toString
 if(B.Nm.tg(n,q))p.push("opus")
@@ -8542,20 +8542,20 @@ q.toString
 if(B.Nm.tg(n,q))p.push("wav")
 A.mp("StageXL audio types   : "+A.d(p))
 return B.Nm.tt(p,!1)})
-s($,"KE","XA",function(){var q=A.x3().devicePixelRatio
+s($,"KE","XA",()=>{var q=A.x3().devicePixelRatio
 q.toString
 return q})
-s($,"wR","OO",function(){return A.aZ()})
-s($,"iu","PR",function(){return A.wm()})
-s($,"D2","Y6",function(){var q=new (window.AudioContext||window.webkitAudioContext)()
+s($,"wR","OO",()=>A.aZ())
+s($,"iu","PR",()=>A.wm())
+s($,"D2","Y6",()=>{var q=new (window.AudioContext||window.webkitAudioContext)()
 q.toString
 return q})
-r($,"t3","mX",function(){return new A.ye()})
-s($,"Kp","Re",function(){return A.d9(16,16)})
-s($,"kc","VD",function(){var q=$.Re()
+r($,"t3","mX",()=>new A.ye())
+s($,"Kp","Re",()=>A.d9(16,16))
+s($,"kc","VD",()=>{var q=$.Re()
 return(q&&B.p1).gVE(q)})
-s($,"kz","Eh",function(){return A.bK(t.N)})
-r($,"BY","V9",function(){var q=$.Eh()
+s($,"kz","Eh",()=>A.bK(t.N))
+r($,"BY","V9",()=>{var q=$.Eh()
 return q.gvq(q)})})();(function nativeSupport(){!function(){var s=function(a){var m={}
 m[a]=1
 return Object.keys(hunkHelpers.convertToFastObject(m))[0]}
