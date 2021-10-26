@@ -986,7 +986,7 @@
         "id": "library/631335891",
         "kind": "library",
         "name": "dart.core",
-        "size": 7010,
+        "size": 7008,
         "children": [
           "class/36312556",
           "class/56472591",
@@ -1092,16 +1092,6 @@
           "function/310700980"
         ],
         "canonicalUri": "package:stagexl/src/events.dart"
-      },
-      "686112276": {
-        "id": "library/686112276",
-        "kind": "library",
-        "name": "dart.dom.web_sql",
-        "size": 0,
-        "children": [
-          "class/213422319"
-        ],
-        "canonicalUri": "dart:web_sql"
       },
       "689380639": {
         "id": "library/689380639",
@@ -1305,7 +1295,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 21051,
+        "size": 20304,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -3672,18 +3662,6 @@
           "function/6830234",
           "function/867010491"
         ]
-      },
-      "213422319": {
-        "id": "class/213422319",
-        "kind": "class",
-        "name": "SqlError",
-        "size": 0,
-        "outputUnit": "outputUnit/669725655",
-        "parent": "library/686112276",
-        "modifiers": {
-          "abstract": false
-        },
-        "children": []
       },
       "214521760": {
         "id": "class/214521760",
@@ -26680,7 +26658,7 @@
         "id": "function/253794122",
         "kind": "function",
         "name": "fromTearOff",
-        "size": 709,
+        "size": 690,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -26701,7 +26679,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "M(a2){var s,r,q,p,o,n,m,l,k,j,i=a2.co,h=a2.iS,g=a2.iI,f=a2.nDA,e=a2.aI,d=a2.fs,c=a2.cs,b=d[0],a=c[0],a0=i[b],a1=a2.fT\na1.toString\ns=h?Object.create(new A.z().constructor.prototype):Object.create(new A.u(null,null).constructor.prototype)\ns.$initialize=s.constructor\nif(h)r=function static_tear_off(){this.$initialize()}\nelse{q=$.G\n$.G=q+1\nq=new Function(\"a,b\"+q,\"this.$initialize(a,b\"+q+\")\")\nr=q}s.constructor=r\nr.prototype=s\ns.$_name=b\ns.$_target=a0\nq=!h\nif(q)p=A.bx(b,a0,g,f)\nelse{s.$static_name=b\np=a0}s.$S=A.q(a1,h,g)\ns[a]=p\nfor(o=p,n=1;n<d.length;++n){m=d[n]\nif(typeof m==\"string\"){l=i[m]\nk=m\nm=l}else k=\"\"\nj=c[n]\nif(j!=null){if(q)m=A.bx(k,m,g,f)\ns[j]=m}if(n===e)o=m}s.$C=o\ns.$R=a2.rC\ns.$D=a2.dV\nreturn r}",
+        "code": "M(a2){var s,r,q,p,o,n,m,l,k,j,i=a2.co,h=a2.iS,g=a2.iI,f=a2.nDA,e=a2.aI,d=a2.fs,c=a2.cs,b=d[0],a=c[0],a0=i[b],a1=a2.fT\na1.toString\ns=h?Object.create(new A.z().constructor.prototype):Object.create(new A.u(null,null).constructor.prototype)\ns.$initialize=s.constructor\nif(h)r=function static_tear_off(){this.$initialize()}\nelse r=function tear_off(a3,a4){this.$initialize(a3,a4)}\ns.constructor=r\nr.prototype=s\ns.$_name=b\ns.$_target=a0\nq=!h\nif(q)p=A.bx(b,a0,g,f)\nelse{s.$static_name=b\np=a0}s.$S=A.q(a1,h,g)\ns[a]=p\nfor(o=p,n=1;n<d.length;++n){m=d[n]\nif(typeof m==\"string\"){l=i[m]\nk=m\nm=l}else k=\"\"\nj=c[n]\nif(j!=null){if(q)m=A.bx(k,m,g,f)\ns[j]=m}if(n===e)o=m}s.$C=o\ns.$R=a2.rC\ns.$D=a2.dV\nreturn r}",
         "type": "dynamic Function(Object?)"
       },
       "255124620": {
@@ -27909,7 +27887,7 @@
         "id": "function/273024378",
         "kind": "function",
         "name": "forwardCallTo",
-        "size": 476,
+        "size": 80,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -27945,7 +27923,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bx(a,b,c,d){var s,r,q,p,o,n=\"receiver\"\nif(c)return A.Hf(a,b,d)\ns=b.length\nr=d||s>=27\nif(r)return A.vq(s,d,a,b)\nif(s===0){r=$.G\n$.G=r+1\nq=\"self\"+A.d(r)\nr=\"return function(){var \"+q+\" = this.\"\np=$.i0\nreturn new Function(r+(p==null?$.i0=A.L4(n):p)+\";return \"+q+\".\"+a+\"();}\")()}o=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,s).join(\",\")\nr=$.G\n$.G=r+1\no+=A.d(r)\nr=\"return function(\"+o+\"){return this.\"\np=$.i0\nreturn new Function(r+(p==null?$.i0=A.L4(n):p)+\".\"+a+\"(\"+o+\");}\")()}",
+        "code": "bx(a,b,c,d){var s,r\nif(c)return A.Hf(a,b,d)\ns=b.length\nr=A.vq(s,d,a,b)\nreturn r}",
         "type": "dynamic Function(String,dynamic,bool,bool)"
       },
       "273305353": {
@@ -29498,7 +29476,7 @@
         "id": "function/302617892",
         "kind": "function",
         "name": "_objectToString",
-        "size": 73,
+        "size": 72,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/893386369",
         "children": [],
@@ -29519,7 +29497,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "os(a){if(a instanceof A.t)return a.Z(0)\nreturn\"Instance of '\"+A.c(a)+\"'\"}",
+        "code": "G(a){if(a instanceof A.t)return a.Z(0)\nreturn\"Instance of '\"+A.c(a)+\"'\"}",
         "type": "String Function(Object)"
       },
       "303130347": {
@@ -32363,7 +32341,7 @@
         "id": "function/355012434",
         "kind": "function",
         "name": "safeToString",
-        "size": 121,
+        "size": 120,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/893386369",
         "children": [],
@@ -32384,7 +32362,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "K(a){if(typeof a==\"number\"||A.rQ(a)||a==null)return J.A(a)\nif(typeof a==\"string\")return JSON.stringify(a)\nreturn A.os(a)}",
+        "code": "K(a){if(typeof a==\"number\"||A.rQ(a)||a==null)return J.A(a)\nif(typeof a==\"string\")return JSON.stringify(a)\nreturn A.G(a)}",
         "type": "String Function(Object?)"
       },
       "356756062": {
@@ -65102,7 +65080,7 @@
         "id": "function/922840913",
         "kind": "function",
         "name": "forwardInterceptedCallTo",
-        "size": 464,
+        "size": 137,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -65133,7 +65111,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Hf(a,b,c){var s,r,q,p,o,n=$.Hb\nif(n==null)n=$.Hb=A.L4(\"interceptor\")\ns=$.i0\nif(s==null)s=$.i0=A.L4(\"receiver\")\nr=b.length\nq=c||r>=28\nif(q)return A.Z4(r,c,a,b)\nif(r===1){q=\"return function(){return this.\"+n+\".\"+a+\"(this.\"+s+\");\"\np=$.G\n$.G=p+1\nreturn new Function(q+A.d(p)+\"}\")()}o=\"abcdefghijklmnopqrstuvwxyz\".split(\"\").splice(0,r-1).join(\",\")\nq=\"return function(\"+o+\"){return this.\"+n+\".\"+a+\"(this.\"+s+\", \"+o+\");\"\np=$.G\n$.G=p+1\nreturn new Function(q+A.d(p)+\"}\")()}",
+        "code": "Hf(a,b,c){var s,r,q,p=$.Hb\np==null?$.Hb=A.L4(\"interceptor\"):p\ns=$.i0\ns==null?$.i0=A.L4(\"receiver\"):s\nr=b.length\nq=A.Z4(r,c,a,b)\nreturn q}",
         "type": "dynamic Function(String,dynamic,bool)"
       },
       "923456660": {
@@ -76849,12 +76827,12 @@
         "id": "field/386221903",
         "kind": "field",
         "name": "functionCounter",
-        "size": 6,
+        "size": 0,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
         "inferredType": "[null|subclass=JSInt]",
-        "code": "$.G=0",
+        "code": "",
         "type": "int"
       },
       "386425314": {
@@ -102973,14 +102951,6 @@
     ],
     "function/253794122": [
       {
-        "id": "field/386221903",
-        "mask": null
-      },
-      {
-        "id": "field/386221903",
-        "mask": null
-      },
-      {
         "id": "function/143567266",
         "mask": null
       },
@@ -105301,22 +105271,6 @@
     ],
     "function/273024378": [
       {
-        "id": "field/386221903",
-        "mask": null
-      },
-      {
-        "id": "field/386221903",
-        "mask": null
-      },
-      {
-        "id": "field/636292115",
-        "mask": null
-      },
-      {
-        "id": "field/636292115",
-        "mask": null
-      },
-      {
         "id": "function/320253842",
         "mask": null
       },
@@ -105325,15 +105279,7 @@
         "mask": "inlined"
       },
       {
-        "id": "function/445547062",
-        "mask": null
-      },
-      {
         "id": "function/476860251",
-        "mask": null
-      },
-      {
-        "id": "function/659844135",
         "mask": null
       },
       {
@@ -141731,14 +141677,6 @@
     ],
     "function/922840913": [
       {
-        "id": "field/386221903",
-        "mask": null
-      },
-      {
-        "id": "field/386221903",
-        "mask": null
-      },
-      {
         "id": "field/588058281",
         "mask": null
       },
@@ -141761,10 +141699,6 @@
       {
         "id": "function/293305096",
         "mask": "inlined"
-      },
-      {
-        "id": "function/445547062",
-        "mask": null
       },
       {
         "id": "function/659844135",
@@ -150272,7 +150206,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 226707,
+      "size": 225603,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150282,11 +150216,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 226707,
-    "dart2jsVersion": "2.15.0-233.0.dev",
-    "compilationMoment": "2021-10-19 13:22:11.053284",
-    "compilationDuration": 7546922,
-    "toJsonDuration": 33000,
+    "size": 225603,
+    "dart2jsVersion": "2.15.0-251.0.dev",
+    "compilationMoment": "2021-10-26 08:37:03.616587",
+    "compilationDuration": 5938316,
+    "toJsonDuration": 28000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
