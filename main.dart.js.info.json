@@ -577,7 +577,7 @@
         "id": "library/381108184",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 3073,
+        "size": 3058,
         "children": [
           "field/691310251",
           "function/14078432",
@@ -909,7 +909,7 @@
         "id": "library/590103242",
         "kind": "library",
         "name": "stagexl.resources",
-        "size": 7146,
+        "size": 7147,
         "children": [
           "class/192166",
           "class/14460442",
@@ -11991,7 +11991,7 @@
         "id": "class/1063402080",
         "kind": "class",
         "name": "ResourceManager",
-        "size": 1705,
+        "size": 1706,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/590103242",
         "modifiers": {
@@ -13660,7 +13660,7 @@
         "id": "function/14078432",
         "kind": "function",
         "name": "startGame",
-        "size": 656,
+        "size": 651,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [],
@@ -13675,7 +13675,7 @@
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "E(){var s=0,r=A.F(t.H),q,p,o,n,m\nvar $async$E=A.l(function(a,b){if(a===1)return A.f(b,r)\nwhile(true)switch(s){case 0:A.hA(\"startGame\")\nq=t.Z.a(document.querySelector(\"#gameCanvas\"))\np=A.uf()\np.f=11840895\np.r=!0\no=A.fy(q,p)\np=A.Ty()\nq=A.QI([],t.gP)\np=new A.E7(p,q,new A.ya(\"enterFrame\",!1),new A.XV(\"exitFrame\",!1))\np.a=!0\nA.mW()\n$.CY.push(p.gEh())\nn=o.qJ\nif(n!=null)if(B.Nm.Rz(n.c,o))o.qJ=null\no.qJ=p\nq.push(o)\n$.bs().c=!0\nm=new A.fm(A.Fl(t.N,t.e1),A.bK(t.p))\nm.be(\"static\",\"packages/pop_pop_win/assets/images/static.json\",B.kH)\ns=2\nreturn A.j(m.xW(0),$async$E)\ncase 2:s=3\nreturn A.j(A.uk(m,o),$async$E)\ncase 3:return A.y(null,r)}})\nreturn A.D($async$E,r)}",
+        "code": "E(){var s=0,r=A.F(t.H),q,p,o,n,m\nvar $async$E=A.l(function(a,b){if(a===1)return A.f(b,r)\nwhile(true)switch(s){case 0:A.hA(\"startGame\")\nq=t.Z.a(document.querySelector(\"#gameCanvas\"))\np=A.uf()\np.f=11840895\np.r=!0\no=A.fy(q,p)\np=A.Ty()\nq=A.QI([],t.gP)\np=new A.E7(p,q,new A.ya(\"enterFrame\",!1),new A.XV(\"exitFrame\",!1))\np.a=!0\nA.mW()\n$.CY.push(p.gEh())\nn=o.qJ\nif(n!=null)if(B.Nm.Rz(n.c,o))o.qJ=null\no.qJ=p\nq.push(o)\n$.bs().c=!0\nm=new A.fm(A.Fl(t.N,t.e1),A.bK(t.p))\nm.GU(\"static\",\"packages/pop_pop_win/assets/images/static.json\")\ns=2\nreturn A.j(m.xW(0),$async$E)\ncase 2:s=3\nreturn A.j(A.uk(m,o),$async$E)\ncase 3:return A.y(null,r)}})\nreturn A.D($async$E,r)}",
         "type": "Future<void> Function()"
       },
       "14519227": {
@@ -37403,7 +37403,7 @@
         "id": "function/443181349",
         "kind": "function",
         "name": "_initialLoad",
-        "size": 1000,
+        "size": 990,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/381108184",
         "children": [
@@ -37431,7 +37431,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uk(a,b){var s=0,r=A.F(t.H),q,p,o,n,m,l\nvar $async$uk=A.l(function(c,d){if(c===1)return A.f(d,r)\nwhile(true)switch(s){case 0:A.hA(\"initialLoad\")\nq=t.E.a(a.n9(\"TextureAtlas\",\"static\"))\np=q.kI(\"loading_bar\")\no=$.LS\n$.LS=o+1\nn=new A.Jq(p,\"DIRECTION_RIGHT\",o,A.QI([],t.t),A.oy(),A.Fl(t.N,t.C))\nn.c=51\nn.d=8\nn.sA7(0,0)\nm=A.Lj(q.kI(\"loading_text\"))\nm.c=141\nm.id=!0\nm.d=10\nl=A.DM()\nl.bS(A.Lj(q.kI(\"loading_background\")))\nl.bS(n)\nl.bS(m)\nl.c=B.jn.W(b.Yr,2)-504\nl.id=!0\nl.d=400\nl.x=l.r=2\nb.bS(l)\na.be(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\",B.kH)\na.be(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\",B.kH)\na.Fb(\"SoundSprite\",\"audio\",u.h,A.Yw(u.h,null))\np=a.b\nnew A.Gm(p,A.Lh(p).C(\"Gm<1>\")).yI(new A.y9(n,a))\ns=2\nreturn A.j(a.xW(0),$async$uk)\ncase 2:A.TI(a,b,l)\nreturn A.y(null,r)}})\nreturn A.D($async$uk,r)}",
+        "code": "uk(a,b){var s=0,r=A.F(t.H),q,p,o,n,m,l\nvar $async$uk=A.l(function(c,d){if(c===1)return A.f(d,r)\nwhile(true)switch(s){case 0:A.hA(\"initialLoad\")\nq=t.E.a(a.n9(\"TextureAtlas\",\"static\"))\np=q.kI(\"loading_bar\")\no=$.LS\n$.LS=o+1\nn=new A.Jq(p,\"DIRECTION_RIGHT\",o,A.QI([],t.t),A.oy(),A.Fl(t.N,t.C))\nn.c=51\nn.d=8\nn.sA7(0,0)\nm=A.Lj(q.kI(\"loading_text\"))\nm.c=141\nm.id=!0\nm.d=10\nl=A.DM()\nl.bS(A.Lj(q.kI(\"loading_background\")))\nl.bS(n)\nl.bS(m)\nl.c=B.jn.W(b.Yr,2)-504\nl.id=!0\nl.d=400\nl.x=l.r=2\nb.bS(l)\na.GU(\"opaque\",\"packages/pop_pop_win/assets/images/opaque.json\")\na.GU(\"animated\",\"packages/pop_pop_win/assets/images/animated.json\")\na.Fb(\"SoundSprite\",\"audio\",u.h,A.Yw(u.h,null))\np=a.b\nnew A.Gm(p,A.Lh(p).C(\"Gm<1>\")).yI(new A.y9(n,a))\ns=2\nreturn A.j(a.xW(0),$async$uk)\ncase 2:A.TI(a,b,l)\nreturn A.y(null,r)}})\nreturn A.D($async$uk,r)}",
         "type": "Future<void> Function(ResourceManager,Stage)"
       },
       "443784093": {
@@ -39057,7 +39057,7 @@
         "id": "function/476149970",
         "kind": "function",
         "name": "addTextureAtlas",
-        "size": 117,
+        "size": 118,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/1063402080",
         "children": [],
@@ -39079,16 +39079,11 @@
             "name": "url",
             "type": "[exact=JSString]",
             "declaredType": "String"
-          },
-          {
-            "name": "textureAtlasFormat",
-            "type": "[exact=_TextureAtlasFormatJson]",
-            "declaredType": "TextureAtlasFormat"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "be(a,b,c){var s=new A.na(),r=$.bs()\ns.a=r\ns.b=A.m6(b,A.mk(r,\"_loadOptions\").d)\nthis.Fb(\"TextureAtlas\",a,b,c.cD(0,s))}",
+        "code": "GU(a,b){var s=new A.na(),r=$.bs()\ns.a=r\ns.b=A.m6(b,A.mk(r,\"_loadOptions\").d)\nthis.Fb(\"TextureAtlas\",a,b,B.kH.cD(0,s))}",
         "type": "void Function(String,String,[TextureAtlasFormat,BitmapDataLoadOptions?])"
       },
       "476167360": {
@@ -150254,7 +150249,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 225762,
+      "size": 225748,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150264,11 +150259,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 225762,
+    "size": 225748,
     "dart2jsVersion": "2.16.0-6.0.dev",
-    "compilationMoment": "2021-11-12 15:12:43.827111",
-    "compilationDuration": 8762394,
-    "toJsonDuration": 36000,
+    "compilationMoment": "2021-11-12 15:19:05.843911",
+    "compilationDuration": 8262220,
+    "toJsonDuration": 34000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

@@ -2066,7 +2066,7 @@ o.qJ=p
 q.push(o)
 $.bs().c=!0
 m=new A.fm(A.Fl(t.N,t.e1),A.bK(t.p))
-m.be("static","packages/pop_pop_win/assets/images/static.json",B.kH)
+m.GU("static","packages/pop_pop_win/assets/images/static.json")
 s=2
 return A.j(m.xW(0),$async$E)
 case 2:s=3
@@ -2097,8 +2097,8 @@ l.id=!0
 l.d=400
 l.x=l.r=2
 b.bS(l)
-a.be("opaque","packages/pop_pop_win/assets/images/opaque.json",B.kH)
-a.be("animated","packages/pop_pop_win/assets/images/animated.json",B.kH)
+a.GU("opaque","packages/pop_pop_win/assets/images/opaque.json")
+a.GU("animated","packages/pop_pop_win/assets/images/animated.json")
 a.Fb("SoundSprite","audio",u.h,A.Yw(u.h,null))
 p=a.b
 new A.Gm(p,A.Lh(p).C("Gm<1>")).yI(new A.y9(n,a))
@@ -7690,10 +7690,10 @@ gow(){var s,r=this.a
 r=r.gUQ(r)
 s=A.Lh(r).C("U5<Ly.E>")
 return A.Y1(new A.U5(r,new A.PW(),s),!0,s.C("Ly.E"))},
-be(a,b,c){var s=new A.na(),r=$.bs()
+GU(a,b){var s=new A.na(),r=$.bs()
 s.a=r
 s.b=A.m6(b,A.mk(r,"_loadOptions").d)
-this.Fb("TextureAtlas",a,b,c.cD(0,s))},
+this.Fb("TextureAtlas",a,b,B.kH.cD(0,s))},
 Fb(a,b,c,d){var s=a+"."+b,r=A.Zx(a,b,c,d),q=this.a
 if(q.x4(0,s))throw A.b(A.PV("ResourceManager already contains a resource called '"+b+"'"))
 else q.Y5(0,s,r)
