@@ -32,7 +32,6 @@ Future<void> startGame() async {
     ..addTextureAtlas(
       'static',
       '$_assetDir/images/static.json',
-      TextureAtlasFormat.JSON,
     );
 
   await resourceManager.load();
@@ -66,12 +65,10 @@ Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
     ..addTextureAtlas(
       'opaque',
       '$_assetDir/images/opaque.json',
-      TextureAtlasFormat.JSON,
     )
     ..addTextureAtlas(
       'animated',
       '$_assetDir/images/animated.json',
-      TextureAtlasFormat.JSON,
     )
     ..addSoundSprite('audio', '$_assetDir/audio/audio.json');
 
