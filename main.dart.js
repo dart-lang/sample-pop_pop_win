@@ -229,9 +229,11 @@ else if(!1===a)return"false"
 else if(a==null)return"null"
 s=J.A(a)
 return s},
-eQ(a){var s=a.$identityHash
-if(s==null){s=Math.random()*0x3fffffff|0
-a.$identityHash=s}return s},
+eQ(a){var s,r,q=$.xu
+if(q==null){s=Symbol("identityHashCode")
+q=$.xu=s}r=a[q]
+if(r==null){r=Math.random()*0x3fffffff|0
+a[q]=r}return r},
 Hp(a,b){var s,r=/^\s*[+-]?((0x[a-f0-9]+)|(\d+)|([a-z0-9]+))\s*$/i.exec(a)
 if(r==null)return null
 s=r[3]
@@ -1770,6 +1772,10 @@ if(s!=null)return s
 throw A.b(A.rr("Invalid double",a))},
 G(a){if(a instanceof A.t)return a.Z(0)
 return"Instance of '"+A.c(a)+"'"},
+O1(a,b){a=A.b(a)
+a.stack=b.Z(0)
+throw a
+throw A.b("unreachable")},
 O8(a,b,c,d){var s,r=c?J.Kh(a,d):J.Qi(a,d)
 if(a!==0&&b!=null)for(s=0;s<r.length;++s)r[s]=b
 return r},
@@ -2139,7 +2145,7 @@ r=J.qF($.TH())
 A.JE(r.a,r.b,A.o9(),!1)
 r=$.KP()
 new A.u8(r,A.Lh(r).C("u8<1>")).yI(new A.PZ())},
-OL(a){if(!t.l.b(A.qc(a.relatedTarget)))$.fF().S1(!1)},
+OL(a){if(!t.bq.b(A.qc(a.relatedTarget)))$.fF().S1(!1)},
 px(a){var s
 a.altKey.toString
 a.charCode.toString
@@ -4580,9 +4586,10 @@ $0(){return this.a.HH(this.b)},
 $S:0}
 A.m0.prototype={}
 A.Ev.prototype={
-$0(){var s=A.b(this.a)
-s.stack=this.b.Z(0)
-throw s},
+$0(){var s=this.a,r=this.b
+A.cb(s,"error",t.K)
+A.cb(r,"stackTrace",t.l)
+A.O1(s,r)},
 $S:0}
 A.Ji.prototype={
 k(a){var s,r,q
@@ -8244,7 +8251,7 @@ A.xb(v.typeUniverse,JSON.parse('{"iC":"MF","kd":"MF","c5":"MF","aq":"MF","rx":"p
 A.FF(v.typeUniverse,JSON.parse('{"m1":1,"a7":1,"MH":2,"vG":1,"Fu":1,"SU":1,"QC":2,"N6":1,"b0":1,"MO":1,"kT":2,"VT":1,"of":1,"yU":1,"KA":1,"aN":1,"fI":1,"LV":1,"B3":1,"Qk":1,"EM":1,"xI":1,"qG":1,"ar":1,"il":2,"nY":1,"pW":2,"wI":2,"An":1,"xC":1,"A7":1,"W9":1}'))
 var u={c:"Error handler must accept one Object or one Object and a StackTrace as arguments, and return a value of the returned future's type",h:"packages/pop_pop_win/assets/audio/audio.json"}
 var t=(function rtii(){var s=A.q7
-return{l:s("Gh"),g:s("Mr"),m:s("js"),o:s("ic"),dI:s("I2"),Z:s("Ny"),e5:s("QF"),gw:s("bQ<@>"),W:s("Ge"),B:s("pS"),gE:s("id<ya>"),aU:s("id<XV>"),ga:s("id<b5>"),C:s("q4<ea>"),e:s("ea"),b8:s("EH"),c:s("b8<@>"),x:s("b8<~>"),q:s("Mp"),F:s("cw"),R:s("pA"),O:s("Ly<qU>"),t:s("jd<WO>"),r:s("jd<fE>"),v:s("jd<Ge>"),f6:s("jd<pp>"),A:s("jd<hL<KN>>"),fP:s("jd<hL<lf>>"),gg:s("jd<F7>"),dx:s("jd<RK>"),d6:s("jd<en>"),gP:s("jd<Lz>"),s:s("jd<qU>"),fE:s("jd<EW>"),ey:s("jd<vp>"),fx:s("jd<O2>"),eY:s("jd<ZF>"),eb:s("jd<oM>"),dH:s("jd<Bg>"),gn:s("jd<@>"),X:s("jd<KN>"),T:s("PE"),L:s("c5"),ez:s("Xj<@>"),cf:s("vn"),j:s("zM<@>"),f:s("L8<@,@>"),V:s("Aj"),P:s("c8"),K:s("a"),D:s("hL<KN>"),J:s("tZ<KN>"),n:s("hL<lf>"),M:s("tZ<lf>"),U:s("tn<KN>"),I:s("Vb<lf>"),i:s("tn<lf>"),cz:s("ib"),G:s("dZ"),cv:s("pr"),f4:s("RK"),h4:s("Jo"),bi:s("fm"),e1:s("YY"),u:s("Me"),b:s("lN"),gq:s("Jf"),an:s("Bk"),N:s("qU"),bE:s("R0"),E:s("vx"),cN:s("y6"),eK:s("Ez"),dT:s("SI"),ak:s("kd"),k:s("Zf<r2>"),a_:s("Zf<Mr>"),bj:s("Zf<fJ>"),e9:s("Zf<pA>"),co:s("Zf<a2>"),fz:s("Zf<@>"),cl:s("Cq<pS>"),Y:s("Cq<OK>"),cj:s("vs<r2>"),da:s("vs<Mr>"),ao:s("vs<fJ>"),eH:s("vs<pA>"),ek:s("vs<a2>"),d:s("vs<@>"),fJ:s("vs<KN>"),cd:s("vs<~>"),gm:s("oA"),bx:s("Nl"),y:s("a2"),gR:s("CP"),z:s("@"),w:s("@(a)"),Q:s("@(a,Gz)"),S:s("KN"),a:s("0&*"),_:s("a*"),bY:s("zo?"),bG:s("b8<c8>?"),h:s("a?"),fO:s("Gp?"),eV:s("Jo?"),h6:s("KN?"),p:s("lf"),H:s("~"),d5:s("~(a)"),bl:s("~(a,Gz)")}})();(function constants(){var s=hunkHelpers.makeConstList
+return{bq:s("Gh"),g:s("Mr"),m:s("js"),o:s("ic"),dI:s("I2"),Z:s("Ny"),e5:s("QF"),gw:s("bQ<@>"),W:s("Ge"),B:s("pS"),gE:s("id<ya>"),aU:s("id<XV>"),ga:s("id<b5>"),C:s("q4<ea>"),e:s("ea"),b8:s("EH"),c:s("b8<@>"),x:s("b8<~>"),q:s("Mp"),F:s("cw"),R:s("pA"),O:s("Ly<qU>"),t:s("jd<WO>"),r:s("jd<fE>"),v:s("jd<Ge>"),f6:s("jd<pp>"),A:s("jd<hL<KN>>"),fP:s("jd<hL<lf>>"),gg:s("jd<F7>"),dx:s("jd<RK>"),d6:s("jd<en>"),gP:s("jd<Lz>"),s:s("jd<qU>"),fE:s("jd<EW>"),ey:s("jd<vp>"),fx:s("jd<O2>"),eY:s("jd<ZF>"),eb:s("jd<oM>"),dH:s("jd<Bg>"),gn:s("jd<@>"),X:s("jd<KN>"),T:s("PE"),L:s("c5"),ez:s("Xj<@>"),cf:s("vn"),j:s("zM<@>"),f:s("L8<@,@>"),V:s("Aj"),P:s("c8"),K:s("a"),D:s("hL<KN>"),J:s("tZ<KN>"),n:s("hL<lf>"),M:s("tZ<lf>"),U:s("tn<KN>"),I:s("Vb<lf>"),i:s("tn<lf>"),cz:s("ib"),G:s("dZ"),cv:s("pr"),f4:s("RK"),h4:s("Jo"),bi:s("fm"),e1:s("YY"),u:s("Me"),b:s("lN"),gq:s("Jf"),an:s("Bk"),l:s("Gz"),N:s("qU"),bE:s("R0"),E:s("vx"),cN:s("y6"),eK:s("Ez"),dT:s("SI"),ak:s("kd"),k:s("Zf<r2>"),a_:s("Zf<Mr>"),bj:s("Zf<fJ>"),e9:s("Zf<pA>"),co:s("Zf<a2>"),fz:s("Zf<@>"),cl:s("Cq<pS>"),Y:s("Cq<OK>"),cj:s("vs<r2>"),da:s("vs<Mr>"),ao:s("vs<fJ>"),eH:s("vs<pA>"),ek:s("vs<a2>"),d:s("vs<@>"),fJ:s("vs<KN>"),cd:s("vs<~>"),gm:s("oA"),bx:s("Nl"),y:s("a2"),gR:s("CP"),z:s("@"),w:s("@(a)"),Q:s("@(a,Gz)"),S:s("KN"),a:s("0&*"),_:s("a*"),bY:s("zo?"),bG:s("b8<c8>?"),h:s("a?"),fO:s("Gp?"),eV:s("Jo?"),h6:s("KN?"),p:s("lf"),H:s("~"),d5:s("~(a)"),bl:s("~(a,Gz)")}})();(function constants(){var s=hunkHelpers.makeConstList
 B.Fp=A.WK.prototype
 B.p1=A.Ny.prototype
 B.Dt=A.fJ.prototype
@@ -8437,6 +8444,7 @@ B.o6=new A.IK("NO_BORDER")
 B.bM=new A.IK("NO_SCALE")
 B.as=new A.IK("SHOW_ALL")
 B.Ly=A.xq("a")})();(function staticFields(){$.zm=null
+$.xu=null
 $.zI=0
 $.lE=A.nX()
 $.i0=null
