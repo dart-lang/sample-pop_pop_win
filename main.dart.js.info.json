@@ -934,7 +934,7 @@
         "id": "library/596676313",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 751,
+        "size": 743,
         "children": [
           "class/435622562",
           "field/1006017221"
@@ -945,7 +945,7 @@
         "id": "library/610572664",
         "kind": "library",
         "name": "stagexl.text",
-        "size": 4955,
+        "size": 4951,
         "children": [
           "class/364826778",
           "class/372829643",
@@ -1140,7 +1140,7 @@
         "id": "library/746986899",
         "kind": "library",
         "name": "analytics",
-        "size": 196,
+        "size": 192,
         "children": [
           "class/677924827",
           "function/137117485"
@@ -1522,7 +1522,7 @@
         "id": "library/1057406316",
         "kind": "library",
         "name": "stagexl.display",
-        "size": 19656,
+        "size": 19648,
         "children": [
           "class/3601851",
           "class/140329748",
@@ -4956,7 +4956,7 @@
         "id": "class/372829643",
         "kind": "class",
         "name": "TextField",
-        "size": 3543,
+        "size": 3539,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/610572664",
         "modifiers": {
@@ -5622,7 +5622,7 @@
         "id": "class/435622562",
         "kind": "class",
         "name": "PlatformWeb",
-        "size": 677,
+        "size": 669,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/596676313",
         "modifiers": {
@@ -8493,7 +8493,7 @@
         "id": "class/725660157",
         "kind": "class",
         "name": "Stage",
-        "size": 9572,
+        "size": 9564,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1057406316",
         "modifiers": {
@@ -20497,7 +20497,7 @@
         "id": "function/137117485",
         "kind": "function",
         "name": "sendTiming",
-        "size": 157,
+        "size": 153,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/746986899",
         "children": [],
@@ -20518,7 +20518,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "hA(a){var s,r=window\nr=r.performance.now()\nr.toString\ns=B.CD.yu(r)\nself.gtag(\"send\",\"timing_complete\",{event_category:null,event_label:null,value:s,name:a})}",
+        "code": "hA(a){var s,r=window.performance.now()\nr.toString\ns=B.CD.yu(r)\nself.gtag(\"send\",\"timing_complete\",{event_category:null,event_label:null,value:s,name:a})}",
         "type": "void Function(String,{String? eventCategory,String? eventLabel,int? value})"
       },
       "137242777": {
@@ -50191,7 +50191,7 @@
         "id": "function/667590212",
         "kind": "function",
         "name": "render",
-        "size": 111,
+        "size": 107,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/372829643",
         "children": [],
@@ -50212,7 +50212,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dd(a){var s,r=this\nr.JL()\ns=a.e\nr.xX(s.c)\ns=r.pG\ns.toString\na.c.Fw(a,s)\nr.ca=r.ca+a.b}\ns=A.XN.prototype\ns.VD=s.dd",
+        "code": "dd(a){var s,r=this\nr.JL()\nr.xX(a.e.c)\ns=r.pG\ns.toString\na.c.Fw(a,s)\nr.ca=r.ca+a.b}\ns=A.XN.prototype\ns.VD=s.dd",
         "type": "void Function(RenderState)"
       },
       "667617894": {
@@ -64986,7 +64986,7 @@
         "id": "function/920256762",
         "kind": "function",
         "name": "setValue",
-        "size": 49,
+        "size": 41,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/435622562",
         "children": [],
@@ -65012,7 +65012,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ym(a,b){var s=window\ns.localStorage.setItem(a,b)}",
+        "code": "Ym(a,b){window.localStorage.setItem(a,b)}",
         "type": "void Function(String,String?)"
       },
       "921112320": {
@@ -150249,7 +150249,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 225750,
+      "size": 225726,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150259,11 +150259,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 225750,
-    "dart2jsVersion": "2.16.0-42.0.dev",
-    "compilationMoment": "2021-11-26 14:11:15.864526",
-    "compilationDuration": 5043923,
-    "toJsonDuration": 22000,
+    "size": 225726,
+    "dart2jsVersion": "2.16.0-55.0.dev",
+    "compilationMoment": "2021-11-30 14:52:04.273382",
+    "compilationDuration": 4238105,
+    "toJsonDuration": 19000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,

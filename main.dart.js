@@ -2171,8 +2171,7 @@ this.b=b},
 S5:function S5(){},
 C0:function C0(){},
 PZ:function PZ(){},
-hA(a){var s,r=window
-r=r.performance.now()
+hA(a){var s,r=window.performance.now()
 r.toString
 s=B.CD.yu(r)
 self.gtag("send","timing_complete",{event_category:null,event_label:null,value:s,name:a})},
@@ -5420,8 +5419,7 @@ A.Il.prototype={
 R(){var s=window
 s.toString
 A.JE(s,"popstate",new A.im(this),!1)},
-Ym(a,b){var s=window
-s.localStorage.setItem(a,b)},
+Ym(a,b){window.localStorage.setItem(a,b)},
 S1(a){var s,r=window.location,q=r.hash
 if(q.length===0)q="#"
 s=(a==null?q!=="#about":a)?"#about":"#"
@@ -6211,10 +6209,8 @@ s.toString
 if(s==="")n.outline="none"
 n=a.width
 n.toString
-d=n
-n=a.height
-n.toString
-b=n
+s=a.height
+s.toString
 p.O7=c.f
 p.Qt=p.jr=!0
 p.rS=p.lN=!1
@@ -6223,8 +6219,8 @@ p.bb=B.eb
 p.c4=B.as
 p.ZO=B.vh
 p.q8=B.aN
-p.Yr=d
-p.hx=b
+p.Yr=n
+p.hx=s
 p.iN=Math.min(5,A.E0($.XA()))
 n=p.vW(a,c)
 A.my(p.Jq,o)
@@ -7935,8 +7931,7 @@ if(s)return null
 return r},
 dd(a){var s,r=this
 r.JL()
-s=a.e
-r.xX(s.c)
+r.xX(a.e.c)
 s=r.pG
 s.toString
 a.c.Fw(a,s)
