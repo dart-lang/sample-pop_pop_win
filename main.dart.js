@@ -3851,7 +3851,7 @@ $iGz:1}
 A.t.prototype={
 Z(a){var s=this.constructor,r=s==null?null:s.name
 return"Closure '"+A.NQ(r==null?"unknown":r)+"'"},
-geC(){return this},
+gKu(){return this},
 $C:"$1",
 $R:1,
 $D:null}
@@ -3873,31 +3873,31 @@ A.Eq.prototype={
 Z(a){return"RuntimeError: "+this.a}}
 A.N5.prototype={
 gA(a){return this.a},
-gv(a){return new A.i5(this,A.Lh(this).C("i5<1>"))},
-gUQ(a){var s=A.Lh(this)
+gv(a){return new A.i5(this,this.$ti.C("i5<1>"))},
+gUQ(a){var s=this.$ti
 return A.fR(new A.i5(this,s.C("i5<1>")),new A.mJ(this),s.c,s.Q[1])},
-x4(a,b){var s,r,q=this
-if(typeof b=="string"){s=q.b
+x4(a,b){var s,r
+if(typeof b=="string"){s=this.b
 if(s==null)return!1
-return q.Xu(s,b)}else if(typeof b=="number"&&(b&0x3ffffff)===b){r=q.c
+return s[b]!=null}else if(typeof b=="number"&&(b&0x3ffffff)===b){r=this.c
 if(r==null)return!1
-return q.Xu(r,b)}else return q.CX(b)},
+return r[b]!=null}else return this.CX(b)},
 CX(a){var s=this.d
 if(s==null)return!1
-return this.Fh(this.Bt(s,J.U3(a)&0x3ffffff),a)>=0},
-q(a,b){var s,r,q,p,o=this,n=null
-if(typeof b=="string"){s=o.b
-if(s==null)return n
-r=o.j2(s,b)
-q=r==null?n:r.b
-return q}else if(typeof b=="number"&&(b&0x3ffffff)===b){p=o.c
-if(p==null)return n
-r=o.j2(p,b)
-q=r==null?n:r.b
-return q}else return o.Lr(b)},
+return this.Fh(s[J.U3(a)&0x3ffffff],a)>=0},
+q(a,b){var s,r,q,p,o=null
+if(typeof b=="string"){s=this.b
+if(s==null)return o
+r=s[b]
+q=r==null?o:r.b
+return q}else if(typeof b=="number"&&(b&0x3ffffff)===b){p=this.c
+if(p==null)return o
+r=p[b]
+q=r==null?o:r.b
+return q}else return this.Lr(b)},
 Lr(a){var s,r,q=this.d
 if(q==null)return null
-s=this.Bt(q,J.U3(a)&0x3ffffff)
+s=q[J.U3(a)&0x3ffffff]
 r=this.Fh(s,a)
 if(r<0)return null
 return s[r].b},
@@ -3907,27 +3907,27 @@ m.u9(s==null?m.b=m.zK():s,b,c)}else if(typeof b=="number"&&(b&0x3ffffff)===b){r=
 m.u9(r==null?m.c=m.zK():r,b,c)}else{q=m.d
 if(q==null)q=m.d=m.zK()
 p=J.U3(b)&0x3ffffff
-o=m.Bt(q,p)
-if(o==null)m.EI(q,p,[m.Oz(b,c)])
+o=q[p]
+if(o==null)q[p]=[m.Oz(b,c)]
 else{n=m.Fh(o,b)
 if(n>=0)o[n].b=c
 else o.push(m.Oz(b,c))}}},
 to(a,b,c){var s,r=this
-if(r.x4(0,b))return A.Lh(r).Q[1].a(r.q(0,b))
+if(r.x4(0,b))return r.$ti.Q[1].a(r.q(0,b))
 s=c.$0()
 r.Y5(0,b,s)
 return s},
 Rz(a,b){if((b&0x3ffffff)===b)return this.H4(this.c,b)
 else return this.WM(b)},
-WM(a){var s,r,q,p,o=this,n=o.d
-if(n==null)return null
+WM(a){var s,r,q,p,o=this.d
+if(o==null)return null
 s=B.jn.giO(a)&0x3ffffff
-r=o.Bt(n,s)
-q=o.Fh(r,a)
+r=o[s]
+q=this.Fh(r,a)
 if(q<0)return null
 p=r.splice(q,1)[0]
-o.GS(p)
-if(r.length===0)o.rn(n,s)
+this.GS(p)
+if(r.length===0)delete o[s]
 return p.b},
 V1(a){var s=this
 if(s.a>0){s.b=s.c=s.d=s.e=s.f=null
@@ -3937,15 +3937,15 @@ U(a,b){var s=this,r=s.e,q=s.r
 for(;r!=null;){b.$2(r.a,r.b)
 if(q!==s.r)throw A.b(A.a4(s))
 r=r.c}},
-u9(a,b,c){var s=this.j2(a,b)
-if(s==null)this.EI(a,b,this.Oz(b,c))
+u9(a,b,c){var s=a[b]
+if(s==null)a[b]=this.Oz(b,c)
 else s.b=c},
 H4(a,b){var s
 if(a==null)return null
-s=this.j2(a,b)
+s=a[b]
 if(s==null)return null
 this.GS(s)
-this.rn(a,b)
+delete a[b]
 return s.b},
 GY(){this.r=this.r+1&67108863},
 Oz(a,b){var s,r=this,q=new A.vh(a,b)
@@ -3968,19 +3968,14 @@ s=a.length
 for(r=0;r<s;++r)if(J.RM(a[r].a,b))return r
 return-1},
 Z(a){return A.B(this)},
-j2(a,b){return a[b]},
-Bt(a,b){return a[b]},
-EI(a,b,c){a[b]=c},
-rn(a,b){delete a[b]},
-Xu(a,b){return this.j2(a,b)!=null},
-zK(){var s="<non-identifier-key>",r=Object.create(null)
-this.EI(r,s,r)
-this.rn(r,s)
-return r}}
+zK(){var s=Object.create(null)
+s["<non-identifier-key>"]=s
+delete s["<non-identifier-key>"]
+return s}}
 A.mJ.prototype={
 $1(a){var s=this.a
-return A.Lh(s).Q[1].a(s.q(0,a))},
-$S(){return A.Lh(this.a).C("2(1)")}}
+return s.$ti.Q[1].a(s.q(0,a))},
+$S(){return this.a.$ti.C("2(1)")}}
 A.vh.prototype={}
 A.i5.prototype={
 gA(a){return this.a.a},
@@ -4662,7 +4657,7 @@ return typeof s=="undefined"?this.fb(b):s}},
 gA(a){return this.b==null?this.c.a:this.Cf().length},
 gv(a){var s
 if(this.b==null){s=this.c
-return new A.i5(s,A.Lh(s).C("i5<1>"))}return new A.i8(this)},
+return new A.i5(s,s.$ti.C("i5<1>"))}return new A.i8(this)},
 x4(a,b){if(this.b==null)return this.c.x4(0,b)
 return Object.prototype.hasOwnProperty.call(this.a,b)},
 U(a,b){var s,r,q,p,o=this
@@ -5255,12 +5250,12 @@ $S:24}
 A.fw.prototype={}
 A.Sl.prototype={$iSl:1}
 A.Jo.prototype={
-Fq(a,b,c,d,e,f,g,h,i){var s=i==null
+j2(a,b,c,d,e,f,g,h,i){var s=i==null
 if(!s&&h!=null&&A.ok(g)){a.texImage2D(b,c,d,e,f,g,h,i,null)
 return}if(t.R.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)
 return}if(t.Z.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)
 return}throw A.b(A.xY("Incorrect number or type of arguments",null))},
-ZE(a,b,c,d,e,f,g){return this.Fq(a,b,c,d,e,f,g,null,null)},
+ZE(a,b,c,d,e,f,g){return this.j2(a,b,c,d,e,f,g,null,null)},
 $iJo:1}
 A.SI.prototype={$iSI:1}
 A.y9.prototype={
@@ -6850,7 +6845,7 @@ r=a.c
 if(r!=null){B.mx.ZE(m,o,0,n,n,5121,r)
 r=m.getError()
 r.toString
-a.z=r===1281}else B.mx.Fq(m,o,0,n,a.a,a.b,0,n,5121)
+a.z=r===1281}else B.mx.j2(m,o,0,n,a.a,a.b,0,n,5121)
 if(a.z){r=a.a
 r=A.d9(a.b,r)
 a.d=r
@@ -7161,7 +7156,7 @@ if(s.cx!==r.y)return
 s.wi(r)
 s=r.Q
 s.toString
-B.mx.Fq(s,3553,0,6408,r.a,r.b,0,6408,5121)}else{r.a=b
+B.mx.j2(s,3553,0,6408,r.a,r.b,0,6408,5121)}else{r.a=b
 r.b=c
 r.d=r.c=A.d9(c,b)}},
 Li(a){var s,r,q=this,p=6408,o=q.x
