@@ -528,7 +528,12 @@ ys(a,b,c){var s
 if(typeof b=="string")return A.nM(a,b,c)
 if(b instanceof A.VR){s=b.gHc()
 s.lastIndex=0
-return a.replace(s,A.A4(c))}throw A.b("String.replaceAll(Pattern) UNIMPLEMENTED")},
+return a.replace(s,A.A4(c))}return A.PR(a,b,c)},
+PR(a,b,c){var s,r,q,p
+for(s=J.FL(b,a),s=s.gkz(s),r=0,q="";s.F();){p=s.gl()
+q=q+a.substring(r,p.gYT(p))+c
+r=p.geX()}s=q+a.substring(r)
+return s.charCodeAt(0)==0?s:s},
 nM(a,b,c){var s,r,q,p
 if(b===""){if(a==="")return c
 s=a.length
@@ -6246,7 +6251,7 @@ A.JE(a,"mousemove",n,!1)
 A.JE(a,"mouseout",n,!1)
 A.JE(a,"contextmenu",n,!1)
 A.JE(a,A.Z3(a),p.gUm(),!1)}n=p.q8
-if((n===B.O7||n===B.Pr)&&$.PR()){n=p.gd6()
+if((n===B.O7||n===B.Pr)&&$.JP()){n=p.gd6()
 A.JE(a,"touchstart",n,!1)
 A.JE(a,"touchend",n,!1)
 A.JE(a,"touchmove",n,!1)
@@ -8526,7 +8531,7 @@ s($,"KE","XA",()=>{var q=A.x3().devicePixelRatio
 q.toString
 return q})
 s($,"wR","OO",()=>A.aZ())
-s($,"iu","PR",()=>A.wm())
+s($,"iu","JP",()=>A.wm())
 s($,"D2","Y6",()=>{var q=new (window.AudioContext||window.webkitAudioContext)()
 q.toString
 return q})
