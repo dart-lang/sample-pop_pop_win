@@ -1445,7 +1445,7 @@
         "id": "library/1052666095",
         "kind": "library",
         "name": "dart.async",
-        "size": 18676,
+        "size": 18675,
         "children": [
           "class/32494041",
           "class/80405414",
@@ -9189,7 +9189,7 @@
         "id": "class/784178238",
         "kind": "class",
         "name": "_Future",
-        "size": 3695,
+        "size": 3694,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/1052666095",
         "modifiers": {
@@ -55948,7 +55948,7 @@
         "id": "function/753558090",
         "kind": "function",
         "name": "_thenAwait",
-        "size": 116,
+        "size": 115,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/784178238",
         "children": [],
@@ -55974,7 +55974,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "M(a,b,c){var s=new A.vs($.X3,c.C(\"vs<0>\"))\nthis.B(new A.Fe(s,19,a,b,this.$ti.C(\"@<1>\").K(c).C(\"Fe<1,2>\")))\nreturn s}",
+        "code": "M(a,b,c){var s=new A.vs($.X3,c.C(\"vs<0>\"))\nthis.B(new A.Fe(s,3,a,b,this.$ti.C(\"@<1>\").K(c).C(\"Fe<1,2>\")))\nreturn s}",
         "type": "Future<#A> Function<#A extends Object?>(FutureOr<#A> Function(_Future.T),Function)"
       },
       "753586447": {
@@ -150451,7 +150451,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 225764,
+      "size": 225763,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150461,11 +150461,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 225764,
-    "dart2jsVersion": "2.17.0-49.0.dev",
-    "compilationMoment": "2022-01-25 09:20:18.084950",
-    "compilationDuration": 3858486,
-    "toJsonDuration": 18000,
+    "size": 225763,
+    "dart2jsVersion": "2.17.0-69.0.dev",
+    "compilationMoment": "2022-02-01 15:46:42.105520",
+    "compilationDuration": 4024842,
+    "toJsonDuration": 20000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
