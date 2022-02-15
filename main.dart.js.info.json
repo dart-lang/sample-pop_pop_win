@@ -1297,7 +1297,7 @@
         "id": "library/966364039",
         "kind": "library",
         "name": "_js_helper",
-        "size": 20399,
+        "size": 20391,
         "children": [
           "class/17649844",
           "class/27679401",
@@ -65140,7 +65140,7 @@
         "id": "function/922840913",
         "kind": "function",
         "name": "forwardInterceptedCallTo",
-        "size": 137,
+        "size": 129,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/317291728",
         "children": [],
@@ -65171,7 +65171,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Hf(a,b,c){var s,r,q,p=$.Hb\np==null?$.Hb=A.L4(\"interceptor\"):p\ns=$.i0\ns==null?$.i0=A.L4(\"receiver\"):s\nr=b.length\nq=A.Z4(r,c,a,b)\nreturn q}",
+        "code": "Hf(a,b,c){var s,r\nif($.Hb==null)$.Hb=A.L4(\"interceptor\")\nif($.i0==null)$.i0=A.L4(\"receiver\")\ns=b.length\nr=A.Z4(s,c,a,b)\nreturn r}",
         "type": "dynamic Function(String,dynamic,bool)"
       },
       "923456660": {
@@ -150510,7 +150510,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 226127,
+      "size": 226119,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150520,11 +150520,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 226127,
-    "dart2jsVersion": "2.17.0-91.0.dev",
-    "compilationMoment": "2022-02-10 07:40:23.444024",
-    "compilationDuration": 4006473,
-    "toJsonDuration": 19000,
+    "size": 226119,
+    "dart2jsVersion": "2.17.0-109.0.dev",
+    "compilationMoment": "2022-02-15 09:45:34.429121",
+    "compilationDuration": 4223982,
+    "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
