@@ -150575,7 +150575,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 226049,
+      "size": 225716,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150585,11 +150585,11 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 226049,
-    "dart2jsVersion": "2.17.0-182.0.dev",
-    "compilationMoment": "2022-03-14 09:42:13.817502",
-    "compilationDuration": 5103532,
-    "toJsonDuration": 25000,
+    "size": 225716,
+    "dart2jsVersion": "2.17.0-212.0.dev",
+    "compilationMoment": "2022-03-21 10:50:49.455180",
+    "compilationDuration": 4351883,
+    "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": false,
