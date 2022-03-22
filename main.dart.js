@@ -3111,7 +3111,7 @@ A.my($,r)
 q.b=s
 s=A.mk(s,r)
 p.toString
-s.connect(p,0,0).toString
+s.connect(p,0,0)
 return q},
 Nh(a2,a3){var s=0,r=A.F(t.u),q,p=2,o,n=[],m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1
 var $async$Nh=A.l(function(a4,a5){if(a4===1){o=a5
@@ -7600,7 +7600,7 @@ A.mk(o,l).buffer=r
 A.mk(o,l).loop=!0
 A.mk(o,l).loopStart=a
 A.mk(o,l).loopEnd=a+b
-A.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0).toString
+A.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0)
 A.mk(o,l).start(0,q)
 j=j.currentTime
 j.toString
@@ -7610,7 +7610,7 @@ o.toString
 k.f=o
 A.mk(o,l).buffer=r
 A.mk(o,l).loop=!1
-A.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0).toString
+A.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0)
 A.mk(o,l).start(0,q,b-0)
 k.r=A.JE(A.mk(o,l),"ended",k.gxv(),!1)
 j=j.currentTime

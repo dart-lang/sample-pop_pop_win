@@ -505,7 +505,7 @@
         "id": "library/321281581",
         "kind": "library",
         "name": "stagexl.media",
-        "size": 6831,
+        "size": 6804,
         "children": [
           "class/73206098",
           "class/89885051",
@@ -2166,7 +2166,7 @@
         "id": "class/73206098",
         "kind": "class",
         "name": "WebAudioApiSound",
-        "size": 926,
+        "size": 908,
         "outputUnit": "outputUnit/669725655",
         "parent": "library/321281581",
         "modifiers": {
@@ -48501,7 +48501,7 @@
         "id": "function/643647076",
         "kind": "function",
         "name": "WebAudioApiMixer",
-        "size": 179,
+        "size": 170,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/494648908",
         "children": [],
@@ -48522,7 +48522,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dP(a){var s,r=\"_volumeNode\",q=new A.W1(),p=a==null?$.Y6().destination:a\nq.a=p\ns=$.Y6()\ns=(s&&B.Fp).U5(s)\nA.my($,r)\nq.b=s\ns=A.mk(s,r)\np.toString\ns.connect(p,0,0).toString\nreturn q}",
+        "code": "dP(a){var s,r=\"_volumeNode\",q=new A.W1(),p=a==null?$.Y6().destination:a\nq.a=p\ns=$.Y6()\ns=(s&&B.Fp).U5(s)\nA.my($,r)\nq.b=s\ns=A.mk(s,r)\np.toString\ns.connect(p,0,0)\nreturn q}",
         "type": "dynamic Function([AudioNode?])"
       },
       "643758282": {
@@ -55329,7 +55329,7 @@
         "id": "function/747238964",
         "kind": "function",
         "name": "playSegment",
-        "size": 827,
+        "size": 809,
         "outputUnit": "outputUnit/669725655",
         "parent": "class/73206098",
         "children": [],
@@ -55365,7 +55365,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uW(a,b,c,d){var s,r,q,p,o,n=\"_volumeNode\",m=\"_mixer\",l=\"_sourceNode\",k=new A.bH(this,A.Fl(t.N,t.C)),j=new A.e5()\nk.d=j\nk.z=a\nk.Q=b\nk.y=c\ns=A.dP(A.mk($.HX.b,n))\nA.my($,m)\nk.e=s\nr=A.mk(s,m)\nA.mk(j,\"_soundTransform\")\nj=$.Y6()\nq=j.currentTime\nq.toString\np=Math.pow(1,2)\nA.mk(r.b,n).gain.setValueAtTime(p,q).toString\nr=this.a\nq=a+0\nif(c){k.x=!1\no=j.createBufferSource()\no.toString\nk.f=o\nA.mk(o,l).buffer=r\nA.mk(o,l).loop=!0\nA.mk(o,l).loopStart=a\nA.mk(o,l).loopEnd=a+b\nA.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0).toString\nA.mk(o,l).start(0,q)\nj=j.currentTime\nj.toString\nk.at=j-0}else{k.x=!1\no=j.createBufferSource()\no.toString\nk.f=o\nA.mk(o,l).buffer=r\nA.mk(o,l).loop=!1\nA.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0).toString\nA.mk(o,l).start(0,q,b-0)\nk.r=A.JE(A.mk(o,l),\"ended\",k.gxv(),!1)\nj=j.currentTime\nj.toString\nk.at=j-k.as}return k}",
+        "code": "uW(a,b,c,d){var s,r,q,p,o,n=\"_volumeNode\",m=\"_mixer\",l=\"_sourceNode\",k=new A.bH(this,A.Fl(t.N,t.C)),j=new A.e5()\nk.d=j\nk.z=a\nk.Q=b\nk.y=c\ns=A.dP(A.mk($.HX.b,n))\nA.my($,m)\nk.e=s\nr=A.mk(s,m)\nA.mk(j,\"_soundTransform\")\nj=$.Y6()\nq=j.currentTime\nq.toString\np=Math.pow(1,2)\nA.mk(r.b,n).gain.setValueAtTime(p,q).toString\nr=this.a\nq=a+0\nif(c){k.x=!1\no=j.createBufferSource()\no.toString\nk.f=o\nA.mk(o,l).buffer=r\nA.mk(o,l).loop=!0\nA.mk(o,l).loopStart=a\nA.mk(o,l).loopEnd=a+b\nA.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0)\nA.mk(o,l).start(0,q)\nj=j.currentTime\nj.toString\nk.at=j-0}else{k.x=!1\no=j.createBufferSource()\no.toString\nk.f=o\nA.mk(o,l).buffer=r\nA.mk(o,l).loop=!1\nA.mk(o,l).connect(A.mk(A.mk(s,m).b,n),0,0)\nA.mk(o,l).start(0,q,b-0)\nk.r=A.JE(A.mk(o,l),\"ended\",k.gxv(),!1)\nj=j.currentTime\nj.toString\nk.at=j-k.as}return k}",
         "type": "SoundChannel Function(num,num,[bool,SoundTransform?])"
       },
       "747368745": {
@@ -150575,7 +150575,7 @@
       "id": "outputUnit/669725655",
       "kind": "outputUnit",
       "name": "main",
-      "size": 225716,
+      "size": 225689,
       "filename": "main.dart.js",
       "imports": []
     }
@@ -150585,10 +150585,10 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/270342073",
-    "size": 225716,
-    "dart2jsVersion": "2.17.0-212.0.dev",
-    "compilationMoment": "2022-03-21 10:50:49.455180",
-    "compilationDuration": 4351883,
+    "size": 225689,
+    "dart2jsVersion": "2.17.0-222.0.dev",
+    "compilationMoment": "2022-03-22 12:56:05.274979",
+    "compilationDuration": 4799877,
     "toJsonDuration": 21000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
