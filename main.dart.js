@@ -3837,6 +3837,8 @@ Kh(a,b){var s,r=b.length
 if(r===0)return
 if(a===b)throw A.b(A.a4(a))
 for(s=0;s<r;++s)a.push(b[s])},
+V1(a){if(!!a.fixed$length)A.v(A.u0("clear"))
+a.length=0},
 J(a,b){var s,r=a.length
 for(s=0;s<r;++s){b.$1(a[s])
 if(a.length!==r)throw A.b(A.a4(a))}},
@@ -3865,10 +3867,6 @@ return b?A.QI(a.slice(0),s):J.FD(a.slice(0),s.c)},
 gA(a){return new J.m1(a,a.length)},
 gE(a){return A.eQ(a)},
 gk(a){return a.length},
-sk(a,b){if(!!a.fixed$length)A.v(A.u0("set length"))
-if(b<0)throw A.b(A.TE(b,0,null,"newLength",null))
-if(b>a.length)A.t6(a).c.a(null)
-a.length=b},
 q(a,b){if(!(b>=0&&b<a.length))throw A.b(A.HY(a,b))
 return a[b]},
 t(a,b,c){if(!!a.immutable$list)A.v(A.u0("indexed set"))
@@ -7094,7 +7092,7 @@ a.vv=a.vv*0.75+r.c*0.25
 a.Gt=a.Gt*0.95+q*0.05
 if(A.mk(a.r3,n).as){A.mk(a.r3,n)
 m=!0}if(m){m=A.mk(a.r3,n)
-B.Nm.sk(m.id,0)
+B.Nm.V1(m.id)
 m.k2=m.k1=0
 A.mk(a.r3,n).Ch(0,"FRAMETIME"+B.xB.th(B.jn["["](B.CD.zQ(a.Gt)),6))
 A.mk(a.r3,n).Ch(0,"DRAWCALLS"+B.xB.th(B.jn["["](B.CD.zQ(a.x9)),6))
@@ -7743,7 +7741,7 @@ s.Qh(0,2/o,-2/p,1)
 s.NM(0,-1,1,0)
 A.mk(r.x,"_activeRenderProgram").soL(s)},
 Sl(a,b){var s,r=this,q="_renderingContext"
-B.Nm.sk(r.aN(),0)
+B.Nm.V1(r.aN())
 r.ym(null)
 r.WK(0)
 s=(b>>>24&255)/255
@@ -8980,7 +8978,7 @@ JL(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,
 if((b3&1)===0)return
 else b2.HV=b3&254
 b3=b2.yn
-B.Nm.sk(b3,0)
+B.Nm.V1(b3)
 s=A.mk(b2.LD,"_defaultTextFormat")
 r=s.b
 q=s.d
