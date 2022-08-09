@@ -16,8 +16,7 @@ class GameRoot extends GameManager {
 
   late final GameElement _gameElement;
 
-  GameRoot(int width, int height, int bombCount, this.stage)
-      : super(width, height, bombCount) {
+  GameRoot(super.width, super.height, super.bombCount, this.stage) {
     _gameElement = GameElement(this)..alpha = 0;
 
     stage
