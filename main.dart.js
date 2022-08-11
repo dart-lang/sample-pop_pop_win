@@ -1253,8 +1253,8 @@ if(0===s){b.push(A.mZ(a.u,1,"0&"))
 return}if(1===s){b.push(A.mZ(a.u,4,"1&"))
 return}throw A.b(A.hV("Unexpected extended operation "+A.d(s)))},
 KQ(a,b,c){if(typeof c=="string")return A.Q2(a,c,a.sEA)
-else if(typeof c=="number")return A.TV(a,b,c)
-else return c},
+else if(typeof c=="number"){b.toString
+return A.TV(a,b,c)}else return c},
 rT(a,b,c){var s,r=c.length
 for(s=0;s<r;++s)c[s]=A.KQ(a,b,c[s])},
 Be(a,b,c){var s,r=c.length
