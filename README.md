@@ -13,13 +13,13 @@ in [Dart](https://dart.dev/).
  * Clcik on the 'Pop Pop Win' logo to get additional help, instructions, and set the difficulty. 
 
 ## Win Conditions
-If all balloons other than those with bombs under them are popped, the game is won. The game can then be restarted by clicking 'New Game' or changing the settings through the 'Pop Pop Win' icon at the top of the page. 
+  If all balloons other than those with bombs under them are popped, the game is won. The game can then be restarted by clicking 'New Game' or changing the settings through the 'Pop Pop Win' icon at the top of the page. 
 
 ## Game Difficulties
-Easy: 7x7 Grid with 7 bombs
-Medium: 11x11 Grid with 18 bombs
-Hard: 16x16 Grid with 40 bombs
-Extreme: 24x24 Grid with 90 bombs
+* Easy: 7x7 Grid with 7 bombs
+* Medium: 11x11 Grid with 18 bombs
+* Hard: 16x16 Grid with 40 bombs
+* Extreme: 24x24 Grid with 90 bombs
 
 ## Assets
  * Art - Pete Parisi, [fuzzycube software](http://fuzzycubesoftware.com/)
@@ -47,7 +47,7 @@ Extreme: 24x24 Grid with 90 bombs
    $ pub run build_runner build --release --output web:build
    ```
 
-   ## Changing Code for Expanded Gameplay
+  ## Changing Code for Expanded Gameplay
    Changing aspects of the code may add for a more customize-able experience. Changing the number of bombs or size of the board can make the game easier or more challenging beyond the levels specified in the existing game. 
   * Change Stage Options: StartGame method in lib/pop_pop_win.dart
   * Change keyboard controls: OnKeyDown and OnPopupClick in lib/pop_pop_win.dart
