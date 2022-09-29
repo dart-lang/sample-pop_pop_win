@@ -5920,7 +5920,7 @@ for(s=0;s<q;++s)if(r[s]===a)return s
 r.push(a)
 this.b.push(null)
 return q},
-Pv(a){var s,r,q,p,o,n,m,l,k=this,j={}
+Pv(a){var s,r,q,p,o,n,m,l,k,j=this
 if(a==null)return a
 if(A.rQ(a))return a
 if(typeof a=="number")return a
@@ -5935,37 +5935,36 @@ if(s)throw A.b(A.SY("structured clone of RegExp"))
 s=typeof Promise!="undefined"&&a instanceof Promise
 s.toString
 if(s)return A.o2(a,t.z)
-if(A.hp(a)){r=k.VH(a)
-s=k.b
-q=j.a=s[r]
+if(A.hp(a)){r=j.VH(a)
+s=j.b
+q=s[r]
 if(q!=null)return q
 p=t.z
-q=A.Fl(p,p)
-j.a=q
-s[r]=q
-k.Hp(a,new A.K5(j,k))
-return j.a}s=a instanceof Array
+o=A.Fl(p,p)
+s[r]=o
+j.Hp(a,new A.K5(j,o))
+return o}s=a instanceof Array
 s.toString
 if(s){s=a
 s.toString
-r=k.VH(s)
-p=k.b
+r=j.VH(s)
+p=j.b
 q=p[r]
 if(q!=null)return q
-o=J.U6(s)
-n=o.gk(s)
-if(k.c){m=new Array(n)
-m.toString
-q=m}else q=s
+n=J.U6(s)
+m=n.gk(s)
+if(j.c){l=new Array(m)
+l.toString
+q=l}else q=s
 p[r]=q
-for(p=J.w1(q),l=0;l<n;++l)p.t(q,l,k.Pv(o.q(s,l)))
+for(p=J.w1(q),k=0;k<m;++k)p.t(q,k,j.Pv(n.q(s,k)))
 return q}return a},
 cF(a,b){this.c=b
 return this.Pv(a)}}
 A.K5.prototype={
-$2(a,b){var s=this.a.a,r=this.b.Pv(b)
-J.u9(s,a,r)
-return r},
+$2(a,b){var s=this.a.Pv(b)
+this.b.t(0,a,s)
+return s},
 $S:23}
 A.cg.prototype={
 $1(a){this.a.push(A.mP(a))},
@@ -6017,7 +6016,7 @@ cP(a){var s=this,r=a<0||a>=s.gk(s)
 if(r)throw A.b(A.TE(a,0,s.gk(s),null,null))},
 q(a,b){if(A.ok(b))this.cP(b)
 return this.Ur(0,b)},
-t(a,b,c){if(A.ok(b))this.cP(b)
+t(a,b,c){this.cP(b)
 this.bh(0,b,c)},
 gk(a){var s=this.a.length
 if(typeof s==="number"&&s>>>0===s)return s
