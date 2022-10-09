@@ -7760,7 +7760,6 @@ if(e.x!==k){e.x=k
 q.globalAlpha=k}if(e.w!==j){e.w=j
 q.globalCompositeOperation="source-over"}if(o===0){s=l.a
 q.setTransform(s[0],s[1],s[2],s[3],s[4],s[5])
-p.toString
 s=n.a
 r=n.b
 i=n.c
@@ -7769,10 +7768,8 @@ g=m[0]
 f=m[1]
 A.bX(q,d,[p,s,r,i,h,g,f,m[8]-g,m[9]-f])}else if(o===1){s=l.a
 q.setTransform(-s[2],-s[3],s[0],s[1],s[4],s[5])
-p.toString
 A.bX(q,d,[p,n.a,n.b,n.c,n.d,0-m[13],m[12],m[9]-m[1],m[8]-m[0]])}else if(o===2){s=l.a
 q.setTransform(-s[0],-s[1],-s[2],-s[3],s[4],s[5])
-p.toString
 s=n.a
 r=n.b
 i=n.c
@@ -7781,7 +7778,6 @@ g=m[8]
 f=m[9]
 A.bX(q,d,[p,s,r,i,h,0-g,0-f,g-m[0],f-m[1]])}else if(o===3){s=l.a
 q.setTransform(s[2],s[3],-s[0],-s[1],s[4],s[5])
-p.toString
 A.bX(q,d,[p,n.a,n.b,n.c,n.d,m[5],0-m[4],m[9]-m[1],m[8]-m[0]])}},
 Nv(b1,b2,b3,b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2=this,a3=a2.f,a4=b2.gFF(b2),a5=b1.e,a6=a5.c,a7=a5.a,a8=a5.b,a9=1/b2.a,b0=1/b2.b
 if(a2.x!==a7){a2.x=a7
