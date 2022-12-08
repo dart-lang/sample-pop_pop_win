@@ -3698,17 +3698,14 @@ return}if(typeof console=="object"&&typeof console.log!="undefined"){console.log
 return}if(typeof window=="object")return
 if(typeof print=="function"){print(a)
 return}throw"Unable to print message: "+String(a)},
-jr(a){var s,r,q,p
+jr(a){var s,r
 switch(a){case"Pop":a="Pop"+$.XB().j1(8)
 break
 case"Bomb":a="Bomb"+$.XB().j1(4)
 break}s=t.w.a($.Ar.Ov().n9("SoundSprite","audio")).yk(a)
 r=s.a.b
 r===$&&A.Q4()
-q=s.c
-p=s.d
-s=s.e
-r.uW(q,p,s,null)},
+r.uW(s.c,s.d,s.e,null)},
 E6(a,b){a=a+b&536870911
 a=a+((a&524287)<<10)&536870911
 return a^a>>>6},
@@ -3867,7 +3864,7 @@ J.kd.prototype={}
 J.c5.prototype={
 "["(a){var s=a[$.w()]
 if(s==null)return this.u(a)
-return"JavaScript function for "+A.d(J.K(s))},
+return"JavaScript function for "+J.K(s)},
 $iEH:1}
 J.jd.prototype={
 dr(a,b){return new A.jV(a,A.t6(a).C("@<1>").K(b).C("jV<1,2>"))},
