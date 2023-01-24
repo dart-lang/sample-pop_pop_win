@@ -6859,7 +6859,7 @@ switch(q.c[s+r*q.a]){case B.Bl:p=n.cV()
 break
 case B.No:p="balloon_tagged_frozen"
 break
-case B.Ni:p=B.Hf[k.a.Wz(s,r)]
+case B.Ni:p=B.td[k.a.Wz(s,r)]
 break
 case B.e5:p="crater_b"
 break
@@ -6891,7 +6891,7 @@ r.wZ(0,this.Qt,this.lN,s)}},
 cV(){var s=this,r=t.q.a(t.o.a(s.cy).cy).Qt.e
 r===$&&A.Q4()
 if(r.f===B.He){s.go="auto"
-return B.ak[B.jn.zY(s.Qt+s.lN,4)]}else{s.go="pointer"
+return B.iK[B.jn.zY(s.Qt+s.lN,4)]}else{s.go="pointer"
 return"balloon"}},
 gF2(){var s=t.q.a(t.o.a(this.cy).cy).Qt.e
 s===$&&A.Q4()
@@ -9760,9 +9760,9 @@ B.aN=new A.vZ("MouseOnly")
 B.O7=new A.vZ("TouchOnly")
 B.Pr=new A.vZ("MouseAndTouch")
 B.A3=new A.Mx(null)
-B.ak=A.QI(s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"]),t.s)
+B.td=A.QI(s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"]),t.s)
 B.xD=A.QI(s([]),t.b)
-B.Hf=A.QI(s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"]),t.s)
+B.iK=A.QI(s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"]),t.s)
 B.dn=A.QI(s([]),A.N0("jd<GD>"))
 B.CM=new A.LP(0,{},B.dn,A.N0("LP<GD,@>"))
 B.XB=new A.aK("WebGL")
