@@ -2025,12 +2025,8 @@ a:function a(){},
 Zd:function Zd(){},
 P1:function P1(){this.b=this.a=0},
 C:function C(a){this.a=a},
-x3(){var s=window
-s.toString
-return s},
-rg(a){var s=new Audio()
-s.toString
-return s},
+x3(){return window},
+rg(a){return new Audio()},
 Lb(){return A.rg(null)},
 d9(a,b){var s=document.createElement("canvas")
 s.width=b
@@ -2040,7 +2036,6 @@ Z3(a){return"wheel"},
 r3(a,b){return document.createElement(a)},
 Kn(a){return A.lt(a,null,null,null).W7(new A.fv(),t.N)},
 lt(a,b,c,d){var s=new A.vs($.X3,t.ao),r=new A.Zf(s,t.bj),q=new XMLHttpRequest()
-q.toString
 B.Dt.eo(q,"GET",a,!0)
 if(c!=null)q.responseType=c
 A.JE(q,"load",new A.bU(q,r),!1)
@@ -2048,31 +2043,24 @@ A.JE(q,"error",r.gYJ(),!1)
 q.send()
 return s},
 jm(){var s=document.createElement("img")
-s.toString
 return s},
-Hy(a){var s=new TouchEvent(a)
-s.toString
-return s},
+Hy(a){return new TouchEvent(a)},
 Vm(){var s
 try{A.Hy("touches")
 return!0}catch(s){}return!1},
 JE(a,b,c,d){var s=new A.xC(a,b,c==null?null:A.aF(new A.vN(c),t.B),!1)
 s.DN()
 return s},
-qc(a){var s,r
+qc(a){var s
 if(a==null)return null
-s="postMessage" in a
-s.toString
-if(s){r=A.nI(a)
-return r}else return a},
+if("postMessage" in a){s=A.nI(a)
+return s}else return a},
 Z9(a){var s
 if(t.e5.b(a))return a
 s=new A.zg([],[])
 s.c=!0
 return s.Pv(a)},
-nI(a){var s=window
-s.toString
-if(a===s)return a
+nI(a){if(a===window)return a
 else return new A.dW()},
 aF(a,b){var s=$.X3
 if(s===B.NU)return a
@@ -2232,26 +2220,19 @@ T0:function T0(){},
 QZ:function QZ(){},
 bt:function bt(){},
 SC:function SC(){},
-p6(a){var s,r,q
+p6(a){var s,r
 if(a==null)return a
 if(typeof a=="string"||typeof a=="number"||A.rQ(a))return a
 if(A.hp(a))return A.mR(a)
-s=Array.isArray(a)
-s.toString
-if(s){r=[]
-q=0
-while(!0){s=a.length
-s.toString
-if(!(q<s))break
-r.push(A.p6(a[q]));++q}return r}return a},
-mR(a){var s,r,q,p,o,n
+if(Array.isArray(a)){s=[]
+for(r=0;r<a.length;++r)s.push(A.p6(a[r]))
+return s}return a},
+mR(a){var s,r,q,p,o
 if(a==null)return null
 s=A.Fl(t.N,t.z)
 r=Object.getOwnPropertyNames(a)
 for(q=r.length,p=0;p<r.length;r.length===q||(0,A.lk)(r),++p){o=r[p]
-n=o
-n.toString
-s.t(0,n,A.p6(a[o]))}return s},
+s.t(0,o,A.p6(a[o]))}return s},
 mP(a){var s
 if(a==null)return a
 if(typeof a=="string"||typeof a=="number"||A.rQ(a))return a
@@ -2262,11 +2243,8 @@ a=s}return a},
 ed(a){var s={}
 J.h(a,new A.zW(s))
 return s},
-hp(a){var s=Object.getPrototypeOf(a),r=s===Object.prototype
-r.toString
-if(!r){r=s===null
-r.toString}else r=!0
-return r},
+hp(a){var s=Object.getPrototypeOf(a)
+return s===Object.prototype||s===null},
 e7:function e7(){},
 K5:function K5(a,b){this.a=a
 this.b=b},
@@ -2425,7 +2403,7 @@ return A.j(a.xW(0),$async$uk)
 case 2:A.TI(a,b,l)
 return A.y(null,r)}})
 return A.D($async$uk,r)},
-TI(a,b,c){var s,r,q,p,o
+TI(a,b,c){var s,r,q,p,o,n
 A.hA("secondaryLoad")
 s=b.oJ
 r=s.RY(c,0.5)
@@ -2437,13 +2415,12 @@ r=$.fF()
 q=r.b
 new A.u8(q,A.Lh(q).C("u8<1>")).yI(new A.S5())
 r.a=!0
-r=window.location.hash
-r.toString
-p=A.Hp(A.ys(r,"#",""),null)
-if(p==null)p=7
-o=B.CD.yu(p*p*0.15625)
+p=window.location.hash
+o=A.Hp(A.ys(p,"#",""),null)
+if(o==null)o=7
+n=B.CD.yu(o*o*0.15625)
 $.Ar.b=a
-r=new A.Yy(b,A.Fl(t.L,t.S),p,p,o,new A.HB(A.x2(!1,t.H)))
+r=new A.Yy(b,A.Fl(t.L,t.S),o,o,n,new A.HB(A.x2(!1,t.H)))
 r.jI()
 q=A.kZ(r)
 q.Q=B.jn.IV(0,0,1)
@@ -2453,22 +2430,14 @@ b.bS(q)
 q=s.RY(q,0.5)
 q=q.gtV(q)
 q.a.HQ(q,9).d=1
-q=window
-q.toString
-A.JE(q,"touchmove",new A.C0(),!1)
-q=window
-q.toString
-A.JE(q,"keydown",A.py(),!1)
+A.JE(window,"touchmove",new A.C0(),!1)
+A.JE(window,"keydown",A.py(),!1)
 q=J.qF($.TH())
 A.JE(q.a,q.b,A.o9(),!1)
 q=$.KP()
 new A.u8(q,A.Lh(q).C("u8<1>")).yI(new A.PZ())},
 OL(a){if(!t.bq.b(A.qc(a.relatedTarget)))$.fF().S1(!1)},
-px(a){var s
-a.altKey.toString
-a.charCode.toString
-s=a.keyCode
-s.toString
+px(a){var s=a.keyCode
 J.zN(a)
 switch(s){case 27:$.fF().S1(!1)
 break
@@ -2476,11 +2445,9 @@ case 72:$.fF().xy()
 break}},
 z6(){var s,r
 $.fF()
-s=window.location.hash
-s.toString
-r=s==="#about"?"inline-block":"none"
-s=$.TH().style
-s.display=r},
+s=window.location.hash==="#about"?"inline-block":"none"
+r=$.TH().style
+r.display=s},
 y9:function y9(a,b){this.a=a
 this.b=b},
 XG:function XG(a,b){this.a=a
@@ -2488,9 +2455,7 @@ this.b=b},
 S5:function S5(){},
 C0:function C0(){},
 PZ:function PZ(){},
-hA(a){var s,r=window.performance.now()
-r.toString
-s=B.CD.yu(r)
+hA(a){var s=B.CD.yu(window.performance.now())
 self.gtag("send","timing_complete",{event_category:null,event_label:null,value:s,name:a})},
 aq:function aq(){},
 iT(a,b,c,d){if(a===0)return new A.f7(0,b,A.QI([],d.C("jd<0>")),d.C("f7<0>"))
@@ -2965,15 +2930,12 @@ _.cy=null
 _.db=e
 _.dx=!0
 _.a=f},
-TF(a){var s,r=A.oy(),q=a.getContext("2d")
-q.toString
-s=t.G
-s=new A.p5(a,q,r,B.yK,new A.PT(),A.bK(s),A.bK(s))
-s.CH(0)
-return s},
+TF(a){var s=A.oy(),r=t.G
+r=new A.p5(a,a.getContext("2d"),s,B.yK,new A.PT(),A.bK(r),A.bK(r))
+r.CH(0)
+return r},
 mW(){var s,r
 if($.uU===-1){s=window
-s.toString
 B.ol.y4(s)
 r=A.aF(new A.HD(),t.p)
 r.toString
@@ -2991,7 +2953,6 @@ r.b=b
 s=A.d9(b,a)
 r.c=r.d=s
 if(c!==0){s=s.getContext("2d")
-s.toString
 s.fillStyle=A.xH(c)
 s.fillRect(0,0,a,b)}return r},
 WS(a){var s=new A.Gp(0,0,B.Ls),r=a.width
@@ -3416,9 +3377,7 @@ g=A.QI([],t.v)
 f=$.X3
 e=A.QI([],t.s)
 d=new A.yk(h,new A.HL("Error loading sound.",g),new A.Zf(new A.vs(f,t.da),t.a_),e)
-f=document.body
-f.children.toString
-f.appendChild(h).toString
+document.body.appendChild(h)
 if(l)h.crossOrigin="anonymous"
 B.Nm.FV(e,m)
 d.d=A.JE(h,"canplay",d.gyF(),!1)
@@ -3520,11 +3479,8 @@ return s},
 A2(){if($.FS!=null)return
 $.FS=B.lX
 $.qu=new A.Er(A.bK(t.p))
-var s=!!(window.AudioContext||window.webkitAudioContext)
-s.toString
-if(s){$.FS=B.QD
-$.HX=A.dP(null)}s=window.navigator.userAgent
-s.toString
+if(!!(window.AudioContext||window.webkitAudioContext)){$.FS=B.QD
+$.HX=A.dP(null)}var s=window.navigator.userAgent
 if(B.xB.tg(s,"IEMobile"))if(B.xB.tg(s,"9.0"))$.FS=B.a1
 if(B.xB.tg(s,"iPhone")||B.xB.tg(s,"iPad")||B.xB.tg(s,"iPod"))if(B.xB.tg(s,"OS 3")||B.xB.tg(s,"OS 4")||B.xB.tg(s,"OS 5"))$.FS=B.a1
 if($.IF().length===0)$.FS=B.a1
@@ -3691,11 +3647,9 @@ s=2
 return A.j(A.E(),$async$I)
 case 2:return A.y(null,r)}})
 return A.D($async$I,r)},
-k(){var s,r={}
-r.a=""
-s=window
-s.toString
-A.JE(s,"keypress",new A.CQ(r),!1)},
+k(){var s={}
+s.a=""
+A.JE(window,"keypress",new A.CQ(s),!1)},
 CQ:function CQ(a){this.a=a},
 R9(a){return t.d.b(a)||t.B.b(a)||t.dz.b(a)||t.gb.b(a)||t.a0.b(a)||t.g4.b(a)||t.g2.b(a)},
 qw(a){if(typeof dartPrint=="function"){dartPrint(a)
@@ -5298,22 +5252,16 @@ A.qE.prototype={}
 A.Ye.prototype={
 gk(a){return a.length}}
 A.Gh.prototype={
-"["(a){var s=String(a)
-s.toString
-return s},
+"["(a){return String(a)},
 $iGh:1}
 A.fY.prototype={
-"["(a){var s=String(a)
-s.toString
-return s}}
+"["(a){return String(a)}}
 A.Mr.prototype={$iMr:1}
 A.O4.prototype={$iO4:1}
 A.Ny.prototype={
 eW(a,b,c){var s=a.getContext(b,A.ed(c))
 return s},
-gVE(a){var s=a.getContext("2d")
-s.toString
-return s},
+gVE(a){return a.getContext("2d")},
 $iNy:1,
 $iRc:1}
 A.nx.prototype={
@@ -5322,9 +5270,7 @@ A.Tf.prototype={
 gk(a){return a.length}}
 A.lw.prototype={$ilw:1}
 A.oJ.prototype={
-gk(a){var s=a.length
-s.toString
-return s}}
+gk(a){return a.length}}
 A.P8.prototype={}
 A.Bw.prototype={}
 A.Uv.prototype={}
@@ -5336,19 +5282,12 @@ A.Sb.prototype={
 gk(a){return a.length}}
 A.QF.prototype={$iQF:1}
 A.cA.prototype={
-"["(a){var s=String(a)
-s.toString
-return s}}
+"["(a){return String(a)}}
 A.Fv.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5391,15 +5330,10 @@ s.toString
 return s},
 $iVb:1}
 A.Yl.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5407,13 +5341,9 @@ $iXj:1,
 $iLy:1,
 $izM:1}
 A.zX.prototype={
-gk(a){var s=a.length
-s.toString
-return s}}
+gk(a){return a.length}}
 A.cv.prototype={
-"["(a){var s=a.localName
-s.toString
-return s},
+"["(a){return a.localName},
 gVl(a){return new A.Cq(a,"click",!1,t.x)}}
 A.pS.prototype={
 gCa(a){return A.qc(a.currentTarget)},
@@ -5426,15 +5356,10 @@ Ci(a,b,c,d){return a.removeEventListener(b,A.tR(c,1),!1)},
 $iD0:1}
 A.hH.prototype={$ihH:1}
 A.tm.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5447,19 +5372,12 @@ A.Yu.prototype={
 gk(a){return a.length}}
 A.GO.prototype={$iGO:1}
 A.pl.prototype={
-gk(a){var s=a.length
-s.toString
-return s}}
+gk(a){return a.length}}
 A.xn.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5492,9 +5410,7 @@ A.XF.prototype={
 gG3(a){return a.key},
 $iXF:1}
 A.cS.prototype={
-"["(a){var s=String(a)
-s.toString
-return s}}
+"["(a){return String(a)}}
 A.eL.prototype={}
 A.lr.prototype={
 gk(a){return a.length}}
@@ -5504,20 +5420,14 @@ this.iW(a,b,c,!1)}}
 A.S0.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 q(a,b){return A.mR(a.get(b))},
-J(a,b){var s,r,q=a.entries()
-for(;!0;){s=q.next()
-r=s.done
-r.toString
-if(r)return
-r=s.value[0]
-r.toString
-b.$2(r,A.mR(s.value[1]))}},
+J(a,b){var s,r=a.entries()
+for(;!0;){s=r.next()
+if(s.done)return
+b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
 this.J(a,new A.FA(s))
 return s},
-gk(a){var s=a.size
-s.toString
-return s},
+gk(a){return a.size},
 $iL8:1}
 A.FA.prototype={
 $2(a,b){return this.a.push(a)},
@@ -5525,35 +5435,24 @@ $S:3}
 A.z2.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 q(a,b){return A.mR(a.get(b))},
-J(a,b){var s,r,q=a.entries()
-for(;!0;){s=q.next()
-r=s.done
-r.toString
-if(r)return
-r=s.value[0]
-r.toString
-b.$2(r,A.mR(s.value[1]))}},
+J(a,b){var s,r=a.entries()
+for(;!0;){s=r.next()
+if(s.done)return
+b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
 this.J(a,new A.uq(s))
 return s},
-gk(a){var s=a.size
-s.toString
-return s},
+gk(a){return a.size},
 $iL8:1}
 A.uq.prototype={
 $2(a,b){return this.a.push(a)},
 $S:3}
 A.AW.prototype={$iAW:1}
 A.bw.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5564,20 +5463,13 @@ A.OK.prototype={$iOK:1}
 A.KV.prototype={
 "["(a){var s=a.nodeValue
 return s==null?this.UG(a):s},
-mx(a,b){var s=a.appendChild(b)
-s.toString
-return s},
+mx(a,b){return a.appendChild(b)},
 $iKV:1}
 A.dX.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5588,15 +5480,10 @@ A.qp.prototype={
 gk(a){return a.length},
 $iqp:1}
 A.mw.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5608,20 +5495,14 @@ A.ew.prototype={$iew:1}
 A.Fi.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 q(a,b){return A.mR(a.get(b))},
-J(a,b){var s,r,q=a.entries()
-for(;!0;){s=q.next()
-r=s.done
-r.toString
-if(r)return
-r=s.value[0]
-r.toString
-b.$2(r,A.mR(s.value[1]))}},
+J(a,b){var s,r=a.entries()
+for(;!0;){s=r.next()
+if(s.done)return
+b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
 this.J(a,new A.ii(s))
 return s},
-gk(a){var s=a.size
-s.toString
-return s},
+gk(a){return a.size},
 $iL8:1}
 A.ii.prototype={
 $2(a,b){return this.a.push(a)},
@@ -5630,15 +5511,10 @@ A.lp.prototype={
 gk(a){return a.length}}
 A.SV.prototype={$iSV:1}
 A.Mk.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5647,15 +5523,10 @@ $iLy:1,
 $izM:1}
 A.Y4.prototype={$iY4:1}
 A.Qk.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5677,9 +5548,7 @@ b.$2(r,q)}},
 gv(a){var s=A.QI([],t.s)
 this.J(a,new A.cX(s))
 return s},
-gk(a){var s=a.length
-s.toString
-return s},
+gk(a){return a.length},
 $iL8:1}
 A.cX.prototype={
 $2(a,b){return this.a.push(a)},
@@ -5688,15 +5557,10 @@ A.WW.prototype={$iWW:1}
 A.AI.prototype={$iAI:1}
 A.MN.prototype={$iMN:1}
 A.X0.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5704,15 +5568,10 @@ $iXj:1,
 $iLy:1,
 $izM:1}
 A.nJ.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5720,21 +5579,14 @@ $iXj:1,
 $iLy:1,
 $izM:1}
 A.M0.prototype={
-gk(a){var s=a.length
-s.toString
-return s}}
+gk(a){return a.length}}
 A.a9.prototype={$ia9:1}
 A.yT.prototype={$iyT:1}
 A.o4.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5745,9 +5597,7 @@ A.cn.prototype={
 gk(a){return a.length}}
 A.QG.prototype={}
 A.Fj.prototype={
-"["(a){var s=String(a)
-s.toString
-return s}}
+"["(a){return String(a)}}
 A.aG.prototype={$iRc:1}
 A.vX.prototype={
 gk(a){return a.length}}
@@ -5760,28 +5610,19 @@ if(s!=null)return s
 throw A.b(A.u0("deltaX is not supported"))},
 $iJ6:1}
 A.Oi.prototype={
-ne(a,b){var s=a.requestAnimationFrame(A.tR(b,1))
-s.toString
-return s},
-y4(a){var s=!!(a.requestAnimationFrame&&a.cancelAnimationFrame)
-s.toString
-if(s)return;(function(b){var r=["ms","moz","webkit","o"]
-for(var q=0;q<r.length&&!b.requestAnimationFrame;++q){b.requestAnimationFrame=b[r[q]+"RequestAnimationFrame"]
-b.cancelAnimationFrame=b[r[q]+"CancelAnimationFrame"]||b[r[q]+"CancelRequestAnimationFrame"]}if(b.requestAnimationFrame&&b.cancelAnimationFrame)return
+ne(a,b){return a.requestAnimationFrame(A.tR(b,1))},
+y4(a){if(!!(a.requestAnimationFrame&&a.cancelAnimationFrame))return;(function(b){var s=["ms","moz","webkit","o"]
+for(var r=0;r<s.length&&!b.requestAnimationFrame;++r){b.requestAnimationFrame=b[s[r]+"RequestAnimationFrame"]
+b.cancelAnimationFrame=b[s[r]+"CancelAnimationFrame"]||b[s[r]+"CancelRequestAnimationFrame"]}if(b.requestAnimationFrame&&b.cancelAnimationFrame)return
 b.requestAnimationFrame=function(c){return window.setTimeout(function(){c(Date.now())},16)}
 b.cancelAnimationFrame=function(c){clearTimeout(c)}})(a)},
 $iOi:1}
 A.Cm.prototype={$iCm:1}
 A.O0.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5830,12 +5671,9 @@ gR(a){var s=a.width
 s.toString
 return s}}
 A.F2.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
 return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
@@ -5844,15 +5682,10 @@ $iXj:1,
 $iLy:1,
 $izM:1}
 A.rh.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5860,15 +5693,10 @@ $iXj:1,
 $iLy:1,
 $izM:1}
 A.LO.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5876,15 +5704,10 @@ $iXj:1,
 $iLy:1,
 $izM:1}
 A.b1.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length,r=b>>>0!==b||b>=s
-r.toString
-if(r)throw A.b(A.xF(b,s,a,null,null))
-s=a[b]
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){var s=a.length
+if(b>>>0!==b||b>=s)throw A.b(A.xF(b,s,a,null,null))
+return a[b]},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return a[b]},
 $ibQ:1,
@@ -5979,44 +5802,32 @@ for(s=0;s<q;++s)if(r[s]===a)return s
 r.push(a)
 this.b.push(null)
 return q},
-Pv(a){var s,r,q,p,o,n,m,l,k,j=this
+Pv(a){var s,r,q,p,o,n,m,l,k=this
 if(a==null)return a
 if(A.rQ(a))return a
 if(typeof a=="number")return a
 if(typeof a=="string")return a
-s=a instanceof Date
-s.toString
-if(s){s=a.getTime()
-s.toString
-return A.Wu(s,!0)}s=a instanceof RegExp
-s.toString
-if(s)throw A.b(A.SY("structured clone of RegExp"))
-s=typeof Promise!="undefined"&&a instanceof Promise
-s.toString
-if(s)return A.o2(a,t.z)
-if(A.hp(a)){r=j.VH(a)
-s=j.b
-q=s[r]
+if(a instanceof Date)return A.Wu(a.getTime(),!0)
+if(a instanceof RegExp)throw A.b(A.SY("structured clone of RegExp"))
+if(typeof Promise!="undefined"&&a instanceof Promise)return A.o2(a,t.z)
+if(A.hp(a)){s=k.VH(a)
+r=k.b
+q=r[s]
 if(q!=null)return q
 p=t.z
 o=A.Fl(p,p)
-s[r]=o
-j.Hp(a,new A.K5(j,o))
-return o}s=a instanceof Array
-s.toString
-if(s){s=a
-s.toString
-r=j.VH(s)
-p=j.b
-q=p[r]
+r[s]=o
+k.Hp(a,new A.K5(k,o))
+return o}if(a instanceof Array){n=a
+s=k.VH(n)
+r=k.b
+q=r[s]
 if(q!=null)return q
-n=J.U6(s)
-m=n.gk(s)
-if(j.c){l=new Array(m)
-l.toString
-q=l}else q=s
-p[r]=q
-for(p=J.w1(q),k=0;k<m;++k)p.t(q,k,j.Pv(n.q(s,k)))
+p=J.U6(n)
+m=p.gk(n)
+q=k.c?new Array(m):n
+r[s]=q
+for(r=J.w1(q),l=0;l<m;++l)r.t(q,l,k.Pv(p.q(n,l)))
 return q}return a}}
 A.K5.prototype={
 $2(a,b){var s=this.a.Pv(b)
@@ -6035,9 +5846,7 @@ for(s=Object.keys(a),r=s.length,q=0;q<s.length;s.length===r||(0,A.lk)(s),++q){p=
 b.$2(p,a[p])}}}
 A.hF.prototype={$ihF:1}
 A.yK.prototype={
-gce(a){var s=a.target
-s.toString
-return s}}
+gce(a){return a.target}}
 A.DV.prototype={
 $1(a){var s=function(b,c,d){return function(){return b(c,d,this,Array.prototype.slice.apply(arguments))}}(A.R4,a,!1)
 A.Dm(s,$.w(),a)
@@ -6108,17 +5917,9 @@ gx(a){return this.a},
 gy(a){return this.b}}
 A.x0.prototype={$ix0:1}
 A.NR.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length
-s.toString
-s=b>>>0!==b||b>=s
-s.toString
-if(s)throw A.b(A.xF(b,this.gk(a),a,null,null))
-s=a.getItem(b)
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){if(b>>>0!==b||b>=a.length)throw A.b(A.xF(b,this.gk(a),a,null,null))
+return a.getItem(b)},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return this.q(a,b)},
 $ibQ:1,
@@ -6126,17 +5927,9 @@ $iLy:1,
 $izM:1}
 A.uP.prototype={$iuP:1}
 A.LZ.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length
-s.toString
-s=b>>>0!==b||b>=s
-s.toString
-if(s)throw A.b(A.xF(b,this.gk(a),a,null,null))
-s=a.getItem(b)
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){if(b>>>0!==b||b>=a.length)throw A.b(A.xF(b,this.gk(a),a,null,null))
+return a.getItem(b)},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return this.q(a,b)},
 $ibQ:1,
@@ -6145,17 +5938,9 @@ $izM:1}
 A.ED.prototype={
 gk(a){return a.length}}
 A.Kq.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length
-s.toString
-s=b>>>0!==b||b>=s
-s.toString
-if(s)throw A.b(A.xF(b,this.gk(a),a,null,null))
-s=a.getItem(b)
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){if(b>>>0!==b||b>=a.length)throw A.b(A.xF(b,this.gk(a),a,null,null))
+return a.getItem(b)},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return this.q(a,b)},
 $ibQ:1,
@@ -6165,17 +5950,9 @@ A.d5.prototype={
 gVl(a){return new A.Cq(a,"click",!1,t.x)}}
 A.zY.prototype={$izY:1}
 A.DT.prototype={
-gk(a){var s=a.length
-s.toString
-return s},
-q(a,b){var s=a.length
-s.toString
-s=b>>>0!==b||b>=s
-s.toString
-if(s)throw A.b(A.xF(b,this.gk(a),a,null,null))
-s=a.getItem(b)
-s.toString
-return s},
+gk(a){return a.length},
+q(a,b){if(b>>>0!==b||b>=a.length)throw A.b(A.xF(b,this.gk(a),a,null,null))
+return a.getItem(b)},
 t(a,b,c){throw A.b(A.u0("Cannot assign element of immutable List."))},
 W(a,b){return this.q(a,b)},
 $ibQ:1,
@@ -6193,13 +5970,8 @@ A.r2.prototype={
 gk(a){return a.length},
 $ir2:1}
 A.WK.prototype={
-U5(a){var s=a.createGain!==undefined
-s.toString
-if(s){s=a.createGain()
-s.toString
-return s}else{s=a.createGainNode()
-s.toString
-return s}},
+U5(a){if(a.createGain!==undefined)return a.createGain()
+else return a.createGainNode()},
 Mi(a,b){var s,r={},q=$.X3
 r.a=!1
 s=a.decodeAudioData(b)
@@ -6216,20 +5988,14 @@ $S:29}
 A.DX.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 q(a,b){return A.mR(a.get(b))},
-J(a,b){var s,r,q=a.entries()
-for(;!0;){s=q.next()
-r=s.done
-r.toString
-if(r)return
-r=s.value[0]
-r.toString
-b.$2(r,A.mR(s.value[1]))}},
+J(a,b){var s,r=a.entries()
+for(;!0;){s=r.next()
+if(s.done)return
+b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
 this.J(a,new A.qf(s))
 return s},
-gk(a){var s=a.size
-s.toString
-return s},
+gk(a){return a.size},
 $iL8:1}
 A.qf.prototype={
 $2(a,b){return this.a.push(a)},
@@ -6422,9 +6188,7 @@ if(s==null||s>q){r.Ym(p,B.jn["["](q))
 this.a.AN(0,null)
 return!0}else return!1}}
 A.Il.prototype={
-PJ(){var s=window
-s.toString
-A.JE(s,"popstate",new A.im(this),!1)},
+PJ(){A.JE(window,"popstate",new A.im(this),!1)},
 Ym(a,b){window.localStorage.setItem(a,b)},
 S1(a){var s,r=window.location,q=r.hash
 if(q.length===0)q="#"
@@ -6433,17 +6197,14 @@ if(s!==q)r.assign(s)
 this.b.AN(0,null)},
 xy(){return this.S1(null)}}
 A.im.prototype={
-$1(a){var s,r,q=this.a,p=window.location,o=p.hash
-o.toString
-s=p.href
-s.toString
-switch(o){case"#reset":r=B.xB.Nj(s,0,s.length-o.length)
+$1(a){var s,r=this.a,q=window.location,p=q.hash,o=q.href
+switch(p){case"#reset":s=B.xB.Nj(o,0,o.length-p.length)
 window.localStorage.clear()
-p.replace(r)
+q.replace(s)
 break
-case"#about":q.b.AN(0,null)
+case"#about":r.b.AN(0,null)
 break
-default:if(o.length!==0&&q.a)p.reload()
+default:if(p.length!==0&&r.a)q.reload()
 break}return null},
 $S:36}
 A.ic.prototype={
@@ -7289,9 +7050,7 @@ VB(a,b,c,d){var s,r,q,p,o=this,n=a.tabIndex
 n.toString
 if(n<=0)a.tabIndex=1
 n=a.style
-s=n.outline
-s.toString
-if(s==="")n.outline="none"
+if(n.outline==="")n.outline="none"
 n=a.width
 n.toString
 s=a.height
@@ -7383,84 +7142,76 @@ g.at=$.cU=$.cU+1
 g.CH(0)
 return g}catch(e){s=A.TF(a)
 return s}},
-Vp(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f=this,e=f.Yr,d=f.hx,c=f.I6
-c===$&&A.Q4()
-c=c.getBoundingClientRect()
-c.toString
-s=f.I6
-r=s.clientLeft
+Vp(){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e=this,d=e.Yr,c=e.hx,b=e.I6
+b===$&&A.Q4()
+s=b.getBoundingClientRect()
+b=e.I6
+r=b.clientLeft
 r.toString
-q=c.left
+q=s.left
 q.toString
 q=B.CD.zQ(q)
-p=s.clientTop
+p=b.clientTop
 p.toString
-c=c.top
-c.toString
-c=B.CD.zQ(c)
-o=s.clientWidth
+o=s.top
 o.toString
-s=s.clientHeight
-s.toString
-if(o===0||s===0)return
-n=o/e
-m=s/d
-switch(f.c4){case B.pq:l=m
-k=n
+o=B.CD.zQ(o)
+n=b.clientWidth
+m=b.clientHeight
+if(n===0||m===0)return
+l=n/d
+k=m/c
+switch(e.c4){case B.pq:j=k
+i=l
 break
-case B.o6:l=n>m?n:m
-k=l
+case B.o6:j=l>k?l:k
+i=j
 break
-case B.bM:k=1
-l=1
+case B.bM:i=1
+j=1
 break
-case B.as:l=n<m?n:m
-k=l
+case B.as:j=l<k?l:k
+i=j
 break
-default:k=1
-l=1}j=f.bb
-switch(j){case B.fR:case B.kx:case B.e8:i=0
+default:i=1
+j=1}b=e.bb
+switch(b){case B.fR:case B.kx:case B.e8:h=0
 break
-case B.d4:case B.eb:case B.L6:i=(o-e*k)/2
+case B.d4:case B.eb:case B.L6:h=(n-d*i)/2
 break
-case B.IK:case B.ld:case B.Kq:i=o-e*k
+case B.IK:case B.ld:case B.Kq:h=n-d*i
 break
-default:i=0}switch(j){case B.e8:case B.d4:case B.IK:h=0
+default:h=0}switch(b){case B.e8:case B.d4:case B.IK:g=0
 break
-case B.fR:case B.eb:case B.ld:h=(s-d*l)/2
+case B.fR:case B.eb:case B.ld:g=(m-c*j)/2
 break
-case B.kx:case B.L6:case B.Kq:h=s-d*l
+case B.kx:case B.L6:case B.Kq:g=m-c*j
 break
-default:h=0}j=f.GI
-j.a=-i/k
-j.b=-h/l
-j.c=o/k
-j.d=s/l
-j=f.M4
-j.Vy(k,0,0,l,i,h)
-g=f.iN
-j.Pc(0,g,g)
-g=f.No
-g.Vy(1,0,0,1,-(r+q)-i,-(p+c)-h)
-g.Pc(0,1/k,1/l)
-g=f.V6
-g.c0()
-c=f.iN
-g.Pc(0,c,c)
-if(f.G4!==o||f.hU!==s){f.G4=o
-f.hU=s
-f.I6.width=B.CD.zQ(o*f.iN)
-f.I6.height=B.CD.zQ(s*f.iN)
-c=f.I6
-r=c.clientWidth
-r.toString
-if(r===o){r=c.clientHeight
-r.toString
-r=r!==s}else r=!0
-if(r){c=c.style
-c.width=""+o+"px"
-c=f.I6.style
-c.height=""+s+"px"}f.H2(0,new A.ea("resize",!1))}},
+default:g=0}b=e.GI
+b.a=-h/i
+b.b=-g/j
+b.c=n/i
+b.d=m/j
+b=e.M4
+b.Vy(i,0,0,j,h,g)
+f=e.iN
+b.Pc(0,f,f)
+f=e.No
+f.Vy(1,0,0,1,-(r+q)-h,-(p+o)-g)
+f.Pc(0,1/i,1/j)
+f=e.V6
+f.c0()
+o=e.iN
+f.Pc(0,o,o)
+if(e.G4!==n||e.hU!==m){e.G4=n
+e.hU=m
+e.I6.width=B.CD.zQ(n*e.iN)
+e.I6.height=B.CD.zQ(m*e.iN)
+b=e.I6
+if(b.clientWidth!==n||b.clientHeight!==m){b=b.style
+b.width=""+n+"px"
+b=e.I6.style
+b.height=""+m+"px"}e.H2(0,new A.ea("resize",!1))}},
 cq(){var s,r,q,p,o,n,m,l,k,j=this,i=j.rT
 if(i!=null&&!0){s=i.go
 r=s!=="auto"?s:"auto"}else r="auto"
@@ -7469,7 +7220,6 @@ if(j.qV!==r){j.qV=r
 q=j.I6
 q===$&&A.Q4()
 q=q.style
-q.toString
 if($.br.x4(0,r)){p=$.br.q(0,r)
 o=p.gO3(p)
 n=p.gOh()
@@ -7478,190 +7228,112 @@ n=p.gOh()
 l=n.gy(n)
 k="url('"+A.d(o)+"') "+A.d(m)+" "+A.d(l)+", "+r}else k=r
 q.cursor=k}},
-Z3(a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2=this
-a3.preventDefault()
+Z3(a0){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a=this
+a0.preventDefault()
 s=Date.now()
-r=a3.button
-r.toString
-q=a3.clientX
-q.toString
-p=a3.clientY
-p.toString
-o=a2.No.Ey(0,new A.hL(q,p,t.n))
-n=new A.tZ(0,0,t.M)
+r=a0.button
+q=a.No.Ey(0,new A.hL(a0.clientX,a0.clientY,t.n))
+p=new A.tZ(0,0,t.M)
 if(r<0||r>2)return
-q=a3.type
-q.toString
-if(q==="mousemove"&&a2.ZB.eT(0,o))return
-m=a2.HG[r]
-a2.ZB=o
-B.Nm.J(a2.hi,new A.PK(o))
-r=a3.type
-r.toString
-if(r!=="mouseout")l=a2.Fo(o.a,o.b)
-else{a2.H2(0,new A.ea("mouseLeave",!1))
-l=null}k=a2.rT
-if(k!=l){r=t.r
-j=A.QI([],r)
-i=A.QI([],r)
-for(h=k;h!=null;h=h.cy)j.push(h)
-for(h=l;h!=null;h=h.cy)i.push(h)
-for(r=j.length,q=i.length,g=0;!0;++g){if(g===r)break
-if(g===q)break
-if(j[r-g-1]!==i[q-g-1])break}if(k!=null){k.TK(o,n)
-r=n.a
-q=n.b
-p=o.a
-f=o.b
-e=a3.altKey
-e.toString
-d=a3.ctrlKey
-d.toString
-c=a3.shiftKey
-c.toString
-k.H2(0,A.Gd("mouseOut",!0,r,q,p,f,e,d,c,0,0,m.f,0))}for(b=0;b<j.length-g;++b){a=j[b]
-a.TK(o,n)
-r=n.a
-q=n.b
-a3.altKey.toString
-a3.ctrlKey.toString
-p=a3.shiftKey
-p.toString
-a.H2(0,new A.Aj(m.f,r,q,p,"rollOut",!1))}for(b=i.length-g-1;b>=0;--b){a=i[b]
-a.TK(o,n)
-r=n.a
-q=n.b
-a3.altKey.toString
-a3.ctrlKey.toString
-p=a3.shiftKey
-p.toString
-a.H2(0,new A.Aj(m.f,r,q,p,"rollOver",!1))}if(l!=null){l.TK(o,n)
-r=n.a
-q=n.b
-p=o.a
-f=o.b
-e=a3.altKey
-e.toString
-d=a3.ctrlKey
-d.toString
-c=a3.shiftKey
-c.toString
-l.H2(0,A.Gd("mouseOver",!0,r,q,p,f,e,d,c,0,0,m.f,0))}a2.rT=l}a2.cq()
-r=a3.type
-r.toString
-if(r==="mousedown"){r=a2.I6
-r===$&&A.Q4()
-r.focus()
-a0=m.a
-if(l!=m.e||s>m.r+500)m.w=0
-m.f=!0
-m.e=l
-m.r=s;++m.w}else a0=null
-s=a3.type
-s.toString
-if(s==="mouseup"){a0=m.b
-m.f=!1
-a1=m.e==l
-a1}else a1=!1
-s=a3.type
-s.toString
-if(s==="mousemove")a0="mouseMove"
-if(s==="contextmenu")a0="contextMenu"
-if(a0!=null&&l!=null){l.TK(o,n)
-s=n.a
-r=n.b
-q=o.a
-p=o.b
-f=a3.altKey
-f.toString
-e=a3.ctrlKey
-e.toString
-d=a3.shiftKey
-d.toString
-l.H2(0,A.Gd(a0,!0,s,r,q,p,f,e,d,0,0,m.f,m.w))
-if(a1){s=n.a
-r=n.b
-q=o.a
-p=o.b
-f=a3.altKey
-f.toString
-e=a3.ctrlKey
-e.toString
-d=a3.shiftKey
-d.toString
-l.H2(0,A.Gd(m.c,!0,s,r,q,p,f,e,d,0,0,m.f,0))}}},
-Yo(a){var s,r,q,p,o,n,m,l,k,j=a.clientX
-j.toString
-s=a.clientY
-s.toString
-r=this.No.Ey(0,new A.hL(j,s,t.n))
-q=new A.tZ(0,0,t.M)
-p=this.Fo(r.a,r.b)
-p.TK(r,q)
-s=q.a
-j=q.b
-o=r.a
-n=r.b
-m=a.altKey
-m.toString
-l=a.ctrlKey
-l.toString
-k=a.shiftKey
-k.toString
-p.H2(0,A.Gd("mouseWheel",!0,s,j,o,n,m,l,k,B.Kb.gOW(a),B.Kb.gNC(a),!1,0))},
-Hj(b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2=this
-b3.preventDefault()
-s=b3.type
-s.toString
-b3.altKey
-b3.ctrlKey
-r=b3.shiftKey
-q=b3.changedTouches
+if(a0.type==="mousemove"&&a.ZB.eT(0,q))return
+o=a.HG[r]
+a.ZB=q
+B.Nm.J(a.hi,new A.PK(q))
+if(a0.type!=="mouseout")n=a.Fo(q.a,q.b)
+else{a.H2(0,new A.ea("mouseLeave",!1))
+n=null}m=a.rT
+if(m!=n){l=t.r
+k=A.QI([],l)
+j=A.QI([],l)
+for(i=m;i!=null;i=i.cy)k.push(i)
+for(i=n;i!=null;i=i.cy)j.push(i)
+for(l=k.length,h=j.length,g=0;!0;++g){if(g===l)break
+if(g===h)break
+if(k[l-g-1]!==j[h-g-1])break}if(m!=null){m.TK(q,p)
+m.H2(0,A.Gd("mouseOut",!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}for(f=0;f<k.length-g;++f){e=k[f]
+e.TK(q,p)
+l=p.a
+h=p.b
+a0.altKey
+a0.ctrlKey
+d=a0.shiftKey
+e.H2(0,new A.Aj(o.f,l,h,d,"rollOut",!1))}for(f=j.length-g-1;f>=0;--f){e=j[f]
+e.TK(q,p)
+l=p.a
+h=p.b
+a0.altKey
+a0.ctrlKey
+d=a0.shiftKey
+e.H2(0,new A.Aj(o.f,l,h,d,"rollOver",!1))}if(n!=null){n.TK(q,p)
+n.H2(0,A.Gd("mouseOver",!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}a.rT=n}a.cq()
+if(a0.type==="mousedown"){l=a.I6
+l===$&&A.Q4()
+l.focus()
+c=o.a
+if(n!=o.e||s>o.r+500)o.w=0
+o.f=!0
+o.e=n
+o.r=s;++o.w}else c=null
+if(a0.type==="mouseup"){c=o.b
+o.f=!1
+b=o.e==n
+b}else b=!1
+s=a0.type
+if(s==="mousemove")c="mouseMove"
+if(s==="contextmenu")c="contextMenu"
+if(c!=null&&n!=null){n.TK(q,p)
+n.H2(0,A.Gd(c,!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,o.w))
+if(b)n.H2(0,A.Gd(o.c,!0,p.a,p.b,q.a,q.b,a0.altKey,a0.ctrlKey,a0.shiftKey,0,0,o.f,0))}},
+Yo(a){var s=this.No.Ey(0,new A.hL(a.clientX,a.clientY,t.n)),r=new A.tZ(0,0,t.M),q=this.Fo(s.a,s.b)
+q.TK(s,r)
+q.H2(0,A.Gd("mouseWheel",!0,r.a,r.b,s.a,s.b,a.altKey,a.ctrlKey,a.shiftKey,B.Kb.gOW(a),B.Kb.gNC(a),!1,0))},
+Hj(b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3=this
+b4.preventDefault()
+s=b4.type
+b4.altKey
+b4.ctrlKey
+r=b4.shiftKey
+q=b4.changedTouches
 if(q==null)return
-for(q=B.bA.gM(q),p=new A.vG(q,new A.cZ()),o=s==="touchmove",n=s==="touchcancel",m=s==="touchend",s=s==="touchstart",l=b2.mn,k=b2.hi,j=t.n,i=b2.No,h=t.M,g=t.r;p.V();){f=q.gP(q)
-e=f.identifier
-e.toString
-d=f.clientX
+for(q=B.bA.gM(q),p=new A.vG(q,new A.cZ()),o=s==="touchmove",n=s==="touchcancel",m=s==="touchend",l=s==="touchstart",k=b3.mn,j=b3.hi,i=t.n,h=b3.No,g=t.M,f=t.r;p.V();){e=q.gP(q)
+d=e.identifier
 d.toString
-d=B.CD.zQ(d)
-f=f.clientY
-f.toString
-c=i.Ey(0,new A.hL(d,B.CD.zQ(f),j))
-b=new A.tZ(0,0,h)
-a=b2.tJ(c.a,c.b)
-if(a==null)a=b2
-a0=l.Mq(0,e,new A.EZ(b2,a))
+c=h.Ey(0,new A.hL(B.CD.zQ(e.clientX),B.CD.zQ(e.clientY),i))
+b=new A.tZ(0,0,g)
+a=b3.tJ(c.a,c.b)
+if(a==null)a=b3
+a0=k.Mq(0,d,new A.EZ(b3,a))
 a1=a0.a
 a2=a0.b
-B.Nm.J(k,new A.ez(a1,c))
+B.Nm.J(j,new A.ez(a1,c))
 a3=a0.d
-if(a3!==a){a4=A.QI([],g)
-a5=A.QI([],g)
+if(a3!==a){a4=A.QI([],f)
+a5=A.QI([],f)
 for(a6=a3;a6!=null;a6=a6.cy)a4.push(a6)
 for(a6=a;a6!=null;a6=a6.cy)a5.push(a6)
-for(f=a4.length,d=a5.length,a7=0;!0;++a7){if(a7===f)break
-if(a7===d)break
-if(a4[f-a7-1]!==a5[d-a7-1])break}a3.TK(c,b)
+for(e=a4.length,a7=a5.length,a8=0;!0;++a8){if(a8===e)break
+if(a8===a7)break
+if(a4[e-a8-1]!==a5[a7-a8-1])break}a3.TK(c,b)
 a3.H2(0,new A.y6(a2,b.a,b.b,r,"touchOut",!0))
-for(a8=0;a8<a4.length-a7;++a8){a9=a4[a8]
-a9.TK(c,b)
-a9.H2(0,new A.y6(a2,b.a,b.b,r,"touchRollOut",!1))}for(a8=a5.length-a7-1;a8>=0;--a8){a9=a5[a8]
-a9.TK(c,b)
-a9.H2(0,new A.y6(a2,b.a,b.b,r,"touchRollOver",!1))}a.TK(c,b)
+for(a9=0;a9<a4.length-a8;++a9){b0=a4[a9]
+b0.TK(c,b)
+b0.H2(0,new A.y6(a2,b.a,b.b,r,"touchRollOut",!1))}for(a9=a5.length-a8-1;a9>=0;--a9){b0=a5[a9]
+b0.TK(c,b)
+b0.H2(0,new A.y6(a2,b.a,b.b,r,"touchRollOver",!1))}a.TK(c,b)
 a.H2(0,new A.y6(a2,b.a,b.b,r,"touchOver",!0))
-a0.d=a}if(s){f=b2.I6
-f===$&&A.Q4()
-f.focus()
-l.t(0,e,a0)
-b0="touchBegin"}else b0=null
-if(m){l.Rz(0,e)
-b1=a0.c===a
-b0="touchEnd"}else b1=!1
-if(n){l.Rz(0,e)
-b0="touchCancel"}if(o)b0="touchMove"
-if(b0!=null){a.TK(c,b)
-a.H2(0,new A.y6(a2,b.a,b.b,r,b0,!0))
-if(b1)a.H2(0,new A.y6(a2,b.a,b.b,r,"touchTap",!0))}}},
+a0.d=a}if(l){e=b3.I6
+e===$&&A.Q4()
+e.focus()
+k.t(0,d,a0)
+b1="touchBegin"}else b1=null
+if(m){k.Rz(0,d)
+b2=a0.c===a
+b1="touchEnd"}else b2=!1
+if(n){k.Rz(0,d)
+b1="touchCancel"}if(o)b1="touchMove"
+if(b1!=null){a.TK(c,b)
+a.H2(0,new A.y6(a2,b.a,b.b,r,b1,!0))
+if(b2)a.H2(0,new A.y6(a2,b.a,b.b,r,"touchTap",!0))}}},
 Pr(a){return}}
 A.I0.prototype={
 $1(a){return this.a.cq()},
@@ -7944,31 +7616,25 @@ a.x=s
 m=o.f
 m===$&&A.Q4()
 a.z=m
-s=m.createTexture()
-s.toString
-a.Q=s
+a.Q=m.createTexture()
 m.activeTexture(33984)
 m.bindTexture(n,a.Q)
-s=m.isEnabled(3089)
-s.toString
-if(s)m.disable(3089)
-r=a.c
+r=m.isEnabled(3089)
+if(r)m.disable(3089)
+s=a.c
 q=a.as
 p=a.at
-if(r!=null){B.mx.ZE(m,n,0,q,q,p,r)
-r=m.getError()
-r.toString
-a.y=r===1281}else B.mx.j2(m,n,0,q,a.a,a.b,0,q,p)
-if(a.y){r=a.a
-r=A.d9(a.b,r)
-a.d=r
-r=r.getContext("2d")
-r.toString
+if(s!=null){B.mx.ZE(m,n,0,q,q,p,s)
+a.y=m.getError()===1281}else B.mx.j2(m,n,0,q,a.a,a.b,0,q,p)
+if(a.y){s=a.a
+s=A.d9(a.b,s)
+a.d=s
+s=s.getContext("2d")
 q=a.gFF(a)
 q.toString
-r.drawImage(q,0,0)
+s.drawImage(q,0,0)
 q=a.as
-B.mx.ZE(m,n,0,q,q,a.at,a.d)}if(s)m.enable(3089)
+B.mx.ZE(m,n,0,q,q,a.at,a.d)}if(r)m.enable(3089)
 m.texParameteri(n,10242,33071)
 m.texParameteri(n,10243,33071)
 m.texParameteri(n,10241,a.e.a)
@@ -8017,7 +7683,6 @@ if(r.e!==n){r.e=n
 r.w=s
 r.r=o
 n=o.createBuffer()
-n.toString
 r.f=n
 r.r.bindBuffer(34963,n)
 r.r.bufferData(34963,r.a,35048)}r.r.bindBuffer(34963,r.f)
@@ -8028,7 +7693,6 @@ if(r!==q){n.e=q
 n.w=s
 n.r=o
 o=o.createBuffer()
-o.toString
 n.f=o
 n.r.bindBuffer(34962,o)
 n.r.bufferData(34962,n.a,35048)}n.r.bindBuffer(34962,n.f)
@@ -8064,52 +7728,34 @@ o.d=o.c=0
 o=p.b
 o===$&&A.Q4()
 o.drawElements(4,n,5123,0);++p.w.a}},
-bf(a){var s,r,q,p=this,o=a.createProgram()
-o.toString
-s=p.f9(a,p.gRr(),35633)
-r=p.f9(a,p.gE0(),35632)
-a.attachShader(o,s)
-a.attachShader(o,r)
-a.linkProgram(o)
-if(a.getProgramParameter(o,35714)===!0)return o
-q=a.isContextLost()
-q.toString
-if(q)o="ContextLost"
-else{o=a.getProgramInfoLog(o)
-o.toString}throw A.b(A.PV(o))},
+bf(a){var s,r=this,q=a.createProgram(),p=r.f9(a,r.gRr(),35633),o=r.f9(a,r.gE0(),35632)
+a.attachShader(q,p)
+a.attachShader(q,o)
+a.linkProgram(q)
+if(a.getProgramParameter(q,35714)===!0)return q
+if(a.isContextLost())s="ContextLost"
+else{s=a.getProgramInfoLog(q)
+s.toString}throw A.b(A.PV(s))},
 f9(a,b,c){var s,r=a.createShader(c)
-r.toString
 a.shaderSource(r,b)
 a.compileShader(r)
 if(a.getShaderParameter(r,35713)===!0)return r
-s=a.isContextLost()
-s.toString
-if(s)r="ContextLost"
-else{r=a.getShaderInfoLog(r)
-r.toString}throw A.b(A.PV(r))},
-ET(a,b){var s,r,q,p,o,n=this.d
-n.V1(0)
+if(a.isContextLost())s="ContextLost"
+else{s=a.getShaderInfoLog(r)
+s.toString}throw A.b(A.PV(s))},
+ET(a,b){var s,r,q,p,o=this.d
+o.V1(0)
 s=A.IZ(a.getProgramParameter(b,35721))
 for(r=0;r<s;++r){q=a.getActiveAttrib(b,r)
-p=q.name
-p.toString
-p=a.getAttribLocation(b,p)
-p.toString
+p=a.getAttribLocation(b,q.name)
 a.enableVertexAttribArray(p)
-o=q.name
-o.toString
-n.t(0,o,p)}},
-Bh(a,b){var s,r,q,p,o,n=this.e
-n.V1(0)
+o.t(0,q.name,p)}},
+Bh(a,b){var s,r,q,p,o=this.e
+o.V1(0)
 s=A.IZ(a.getProgramParameter(b,35718))
 for(r=0;r<s;++r){q=a.getActiveUniform(b,r)
-p=q.name
-p.toString
-p=a.getUniformLocation(b,p)
-p.toString
-o=q.name
-o.toString
-n.t(0,o,p)}}}
+p=a.getUniformLocation(b,q.name)
+o.t(0,q.name,p)}}}
 A.E3.prototype={
 gRr(){return"\n    uniform mat4 uProjectionMatrix;\n    attribute vec2 aVertexPosition;\n    attribute vec2 aVertexTextCoord;\n    attribute float aVertexAlpha;\n    varying vec2 vTextCoord;\n    varying float vAlpha;\n\n    void main() {\n      vTextCoord = aVertexTextCoord;\n      vAlpha = aVertexAlpha;\n      gl_Position = vec4(aVertexPosition, 0.0, 1.0) * uProjectionMatrix;\n    }\n    "},
 gE0(){return"\n    precision mediump float;\n    uniform sampler2D uSampler;\n    varying vec2 vTextCoord;\n    varying float vAlpha;\n\n    void main() {\n      gl_FragColor = texture2D(uSampler, vTextCoord) * vAlpha;\n    }\n    "},
@@ -8273,9 +7919,7 @@ q.toString
 return q}else if(t.I.b(q)){s=r.a
 s=A.d9(r.b,s)
 r.d=r.c=s
-s=s.getContext("2d")
-s.toString
-A.bX(s,"drawImage",[q,0,0,r.a,r.b])
+A.bX(s.getContext("2d"),"drawImage",[q,0,0,r.a,r.b])
 q=r.d
 q.toString
 return q}else throw A.b(A.PV("RenderTexture is read only."))},
@@ -8317,21 +7961,19 @@ p=p.x
 p===$&&A.Q4()
 p.fZ(0)
 q.w.wi(q)
-p=q.z.isEnabled(3089)
-p.toString
-if(p)q.z.disable(3089)
-if(q.y){s=q.d.getContext("2d")
-s.toString
+s=q.z.isEnabled(3089)
+if(s)q.z.disable(3089)
+if(q.y){p=q.d.getContext("2d")
 r=q.gFF(q)
 r.toString
-s.drawImage(r,0,0)
+p.drawImage(r,0,0)
 r=q.z
 r.toString
-s=q.as
-B.mx.ZE(r,3553,0,s,s,q.at,q.d)}else{s=q.z
-s.toString
+p=q.as
+B.mx.ZE(r,3553,0,p,p,q.at,q.d)}else{p=q.z
+p.toString
 r=q.as
-B.mx.ZE(s,3553,0,r,r,q.at,q.c)}if(p)q.z.enable(3089)}}
+B.mx.ZE(p,3553,0,r,r,q.at,q.c)}if(s)q.z.enable(3089)}}
 A.jc.prototype={}
 A.RK.prototype={
 gmH(){var s,r,q,p=this,o=p.e,n=p.d
@@ -8616,9 +8258,8 @@ r=s.e
 r===$&&A.Q4()
 r.Gv(0)
 s.c.aM(0,s.a)},
-bT(a){var s=t.g.a(J.re(a)),r=s.src
-r.toString
-this.b.b.push(new A.Dy("Failed to load "+r+".",s.error))
+bT(a){var s=t.g.a(J.re(a))
+this.b.b.push(new A.Dy("Failed to load "+s.src+".",s.error))
 this.CL()},
 CL(){var s,r=this,q=r.f
 if(q.length===0){q=r.d
@@ -8645,7 +8286,6 @@ $1(a){return this.a.aM(0,!1)},
 $S:1}
 A.iG.prototype={
 Ib(a){var s=new XMLHttpRequest()
-s.toString
 A.JE(s,"readystatechange",new A.cR(this,s),!1)
 A.JE(s,"error",this.b.gYJ(),!1)
 B.Dt.eo(s,"GET",a,!0)
@@ -8655,12 +8295,10 @@ uc(a){var s=this.a,r=A.nu("(png|jpg|jpeg)$").ej(s)
 if(a&&r!=null)this.Ib(s)}}
 A.cR.prototype={
 $1(a){return this.nb(a)},
-nb(a){var s=0,r=A.F(t.H),q=1,p,o=this,n,m,l,k,j,i,h,g
+nb(a){var s=0,r=A.F(t.H),q=1,p,o=this,n,m,l,k,j,i,h
 var $async$$1=A.l(function(b,c){if(b===1){p=c
 s=q}while(true)switch(s){case 0:i=o.b
-h=i.readyState
-h.toString
-s=h===4&&i.status===200?2:3
+s=i.readyState===4&&i.status===200?2:3
 break
 case 2:q=5
 n=t.d.a(A.Z9(i.response))
@@ -8675,8 +8313,8 @@ q=1
 s=7
 break
 case 5:q=4
-g=p
-k=A.Ru(g)
+h=p
+k=A.Ru(h)
 o.a.b.rC(k)
 s=7
 break
@@ -8706,9 +8344,7 @@ r.Gv(0)
 s.b.rC(new A.Dy("Failed to load "+A.d(s.a.src)+".",null))}}
 A.Er.prototype={}
 A.za.prototype={
-gk(a){var s=this.a.duration
-s.toString
-return s},
+gk(a){return this.a.duration},
 uW(a,b,c,d){var s=new A.zo(this,A.Fl(t.N,t.C))
 s.d=new A.e5()
 s.z=a
@@ -8717,26 +8353,22 @@ s.y=c
 this.cY(s).W7(s.gAD(),t.H)
 return s},
 cY(a){return this.PE(a)},
-PE(a){var s=0,r=A.F(t.g),q,p=this,o,n,m,l
+PE(a){var s=0,r=A.F(t.g),q,p=this,o,n,m,l,k
 var $async$cY=A.l(function(b,c){if(b===1)return A.f(c,r)
 while(true)$async$outer:switch(s){case 0:for(o=p.b,n=A.vF(o,o.r);n.V();){m=n.d
 if(o.q(0,m)==null){o.t(0,m,a)
 q=m
 s=1
-break $async$outer}}n=p.a.cloneNode(!0)
-n.toString
-t.g.a(n)
-m=new A.Cq(n,"canplay",!1,t.cl)
-l=m.gtH(m)
-m=n.readyState
-m.toString
-s=m===0?3:4
+break $async$outer}}l=t.g.a(p.a.cloneNode(!0))
+n=new A.Cq(l,"canplay",!1,t.cl)
+k=n.gtH(n)
+s=l.readyState===0?3:4
 break
 case 3:s=5
-return A.j(l,$async$cY)
-case 5:case 4:A.JE(n,"ended",p.gtl(),!1)
-o.t(0,n,a)
-q=n
+return A.j(k,$async$cY)
+case 5:case 4:A.JE(l,"ended",p.gtl(),!1)
+o.t(0,l,a)
+q=l
 s=1
 break
 case 1:return A.y(q,r)}})
@@ -8746,11 +8378,9 @@ if(!t.g.b(r))return
 s=this.b.q(0,r)
 if(s!=null)if(!s.y)s.TP(0)}}
 A.zo.prototype={
-gbM(a){var s,r=this
-if(r.x||r.w||r.e==null)return r.as
-else{s=r.e.currentTime
-s.toString
-return B.CD.IV(s-r.z,0,r.Q)}},
+gbM(a){var s=this
+if(s.x||s.w||s.e==null)return s.as
+else return B.CD.IV(s.e.currentTime-s.z,0,s.Q)},
 TP(a){var s,r=this
 if(r.e!=null){r.as=r.gbM(r)
 r.e.pause()
@@ -8774,18 +8404,15 @@ a.volume=1
 s=q.b
 r.f=new A.Gm(s,A.Lh(s).C("Gm<1>")).yI(r.gGh())
 if(!r.x){r.e.currentTime=r.z+r.as
-s=r.e.play()
-s.toString
-A.o2(s,t.z)
+A.o2(r.e.play(),t.z)
 r.zb(r.Q-r.as)}}},
 zb(a){this.r=A.ww(A.k5(0,B.CD.yu(B.CD.IV(a,0,this.Q)*1000)),this.gG7())},
 ak(){var s,r=this
 if(!r.x)if(r.y){s=r.e
 if(s!=null)s.currentTime=r.z
 s=r.e
-if(s!=null){s=s.play()
-s.toString
-A.o2(s,t.z)}r.zb(r.Q)}else r.TP(0)},
+if(s!=null)A.o2(s.play(),t.z)
+r.zb(r.Q)}else r.TP(0)},
 rH(a){var s=this.e
 if(s!=null){this.d===$&&A.Q4()
 s.volume=a}}}
@@ -8812,13 +8439,11 @@ q.toString
 p=Math.pow(1,2)
 o=s.b
 o===$&&A.Q4()
-o.gain.setValueAtTime(p,q).toString
+o.gain.setValueAtTime(p,q)
 q=this.a
 o=a+0
 if(c){m.x=!1
-n=r.createBufferSource()
-n.toString
-m.f=n
+n=m.f=r.createBufferSource()
 n.buffer=q
 n.loop=!0
 n.loopStart=a
@@ -8830,9 +8455,7 @@ n.start(0,o)
 r=r.currentTime
 r.toString
 m.at=r-0}else{m.x=!1
-n=r.createBufferSource()
-n.toString
-m.f=n
+n=m.f=r.createBufferSource()
 n.buffer=q
 n.loop=!1
 s=s.b
@@ -9133,30 +8756,20 @@ l=n.style
 l.height="0px"
 J.Fa(m,n)
 J.Fa(m,o)
-document.body.appendChild(m).toString
+document.body.appendChild(m)
 try{l=n.style
 l.verticalAlign="baseline"
-l=n.offsetTop
-l.toString
-l=B.CD.zQ(l)
-s=o.offsetTop
-s.toString
-q.a=l-B.CD.zQ(s)
-s=n.style
-s.verticalAlign="bottom"
-l=n.offsetTop
-l.toString
-l=B.CD.zQ(l)
-s=o.offsetTop
-s.toString
-s=l-B.CD.zQ(s)
-q.c=s
-q.b=s-q.a}catch(r){l=a.b
+q.a=B.CD.zQ(n.offsetTop)-B.CD.zQ(o.offsetTop)
+l=n.style
+l.verticalAlign="bottom"
+l=B.CD.zQ(n.offsetTop)-B.CD.zQ(o.offsetTop)
+q.c=l
+q.b=l-q.a}catch(s){l=a.b
 q.c=B.jn.yu(l)
 q.a=B.jn.Y(l*7,8)
 q.b=B.jn.Y(l*2,8)}finally{l=m
-s=l.parentNode
-if(s!=null)s.removeChild(l).toString}}}
+r=l.parentNode
+if(r!=null)r.removeChild(l)}}}
 A.XN.prototype={
 EB(a,b){var s=this,r=A.Uk("Arial",12,0,"left",!1,0,null,0,!1,0,0,0,4278190080,0,0,!1,"top",400)
 s.sJv(r)
@@ -9279,11 +8892,11 @@ m=o.pG=A.NA(m.a,m.b,m.c,m.d,n)}else{m.lO(0,s,r)
 m=o.Jz.gff()
 m=o.pG=A.NA(m.a,m.b,m.c,m.d,n)}q=m.gmH()
 m=o.Jz
-p=m.gqN(m).getContext("2d")
-m=q.a
-p.setTransform(m[0],m[1],m[2],m[3],m[4],m[5])
-p.clearRect(0,0,o.eD,o.jq)
-o.Cg(p)
+m=m.gqN(m).getContext("2d")
+p=q.a
+m.setTransform(p[0],p[1],p[2],p[3],p[4],p[5])
+m.clearRect(0,0,o.eD,o.jq)
+o.Cg(m)
 o.Jz.Li(0)},
 Cg(a){var s,r,q,p,o=this,n=o.LD
 n===$&&A.Q4()
@@ -9872,34 +9485,18 @@ s($,"qx","KP",()=>A.x2(!1,t.H))
 s($,"Fr","XB",()=>A.CF(null))
 r($,"fz","bs",()=>new A.L1(A.QI([1,2],A.N0("jd<CP>"))))
 s($,"Ni","IF",()=>{var q=t.s,p=A.QI([],q),o=A.Lb(),n=A.QI(["maybe","probably"],q)
-q=o.canPlayType("audio/ogg; codecs=opus")
-q.toString
-if(B.Nm.tg(n,q))p.push("opus")
-q=o.canPlayType("audio/mpeg")
-q.toString
-if(B.Nm.tg(n,q))p.push("mp3")
-q=o.canPlayType("audio/mp4")
-q.toString
-if(B.Nm.tg(n,q))p.push("mp4")
-q=o.canPlayType("audio/ogg")
-q.toString
-if(B.Nm.tg(n,q))p.push("ogg")
-q=o.canPlayType("audio/ac3")
-q.toString
-if(B.Nm.tg(n,q))p.push("ac3")
-q=o.canPlayType("audio/wav")
-q.toString
-if(B.Nm.tg(n,q))p.push("wav")
+if(B.Nm.tg(n,o.canPlayType("audio/ogg; codecs=opus")))p.push("opus")
+if(B.Nm.tg(n,o.canPlayType("audio/mpeg")))p.push("mp3")
+if(B.Nm.tg(n,o.canPlayType("audio/mp4")))p.push("mp4")
+if(B.Nm.tg(n,o.canPlayType("audio/ogg")))p.push("ogg")
+if(B.Nm.tg(n,o.canPlayType("audio/ac3")))p.push("ac3")
+if(B.Nm.tg(n,o.canPlayType("audio/wav")))p.push("wav")
 A.mp("StageXL audio types   : "+A.d(p))
 return B.Nm.tt(p,!1)})
-s($,"KE","XA",()=>{var q=A.x3().devicePixelRatio
-q.toString
-return q})
+s($,"KE","XA",()=>A.x3().devicePixelRatio)
 s($,"wR","OO",()=>A.aZ())
 s($,"Tc","JP",()=>A.wm())
-s($,"mq","Y6",()=>{var q=new (window.AudioContext||window.webkitAudioContext)()
-q.toString
-return q})
+s($,"mq","Y6",()=>new (window.AudioContext||window.webkitAudioContext)())
 r($,"Zj","mX",()=>new A.ye())
 s($,"Kp","Re",()=>A.d9(16,16))
 s($,"x1","VD",()=>{var q=$.Re()
