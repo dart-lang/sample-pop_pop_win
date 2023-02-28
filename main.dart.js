@@ -259,6 +259,7 @@ $.zI=1000
 if(typeof window=="undefined")return
 s=window
 if(s==null)return
+if(!!s.dartUseDateNowForTicks)return
 r=s.performance
 if(r==null)return
 if(typeof r.now!="function")return
@@ -3654,8 +3655,7 @@ CQ:function CQ(a){this.a=a},
 R9(a){return t.d.b(a)||t.B.b(a)||t.dz.b(a)||t.gb.b(a)||t.a0.b(a)||t.g4.b(a)||t.g2.b(a)},
 qw(a){if(typeof dartPrint=="function"){dartPrint(a)
 return}if(typeof console=="object"&&typeof console.log!="undefined"){console.log(a)
-return}if(typeof window=="object")return
-if(typeof print=="function"){print(a)
+return}if(typeof print=="function"){print(a)
 return}throw"Unable to print message: "+String(a)},
 jr(a){var s,r
 switch(a){case"Pop":a="Pop"+$.XB().j1(8)
