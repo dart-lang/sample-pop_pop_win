@@ -185,6 +185,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  dart_flutter_team_lints:
+    dependency: "direct dev"
+    description:
+      name: dart_flutter_team_lints
+      sha256: e2f4fcafdaf0797e5af1c5c162d0b6c5025e9228ab3f95174340ed35c85dccd6
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   dart_style:
     dependency: transitive
     description:
@@ -274,7 +282,7 @@ packages:
     source: hosted
     version: "4.8.0"
   lints:
-    dependency: "direct dev"
+    dependency: transitive
     description:
       name: lints
       sha256: "5e4a9cd06d447758280a8ac2405101e0e2094d2a1dbdd3756aec3fe7775ba593"
