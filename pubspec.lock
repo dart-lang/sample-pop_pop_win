@@ -85,10 +85,10 @@ packages:
     dependency: transitive
     description:
       name: build_modules
-      sha256: "8b5fa848cb29b2a726d75b473af6359d8ab6223d6bd943e8a01d16a7bf63e2b7"
+      sha256: a4daf6540ae757bfea41937a6f7297e97e4a52ce1345e43a735fe3da60043af3
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.0"
+    version: "5.0.1"
   build_resolvers:
     dependency: transitive
     description:
