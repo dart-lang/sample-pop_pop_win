@@ -45,26 +45,13 @@ class SquareElement extends Sprite {
   }
 
   void updateState() {
-    String textureName;
-    switch (squareState) {
-      case SquareState.hidden:
-        textureName = _getHiddenTexture();
-        break;
-      case SquareState.flagged:
-        textureName = 'balloon_tagged_frozen';
-        break;
-      case SquareState.revealed:
-        textureName = _numberMap[_adjacentCount];
-        break;
-      case SquareState.bomb:
-        textureName = 'crater_b';
-        break;
-      case SquareState.safe:
-        textureName = 'balloon_tagged_bomb';
-        break;
-      default:
-        throw StateError('$squareState not supported');
-    }
+    final textureName = switch (squareState) {
+      SquareState.hidden => _getHiddenTexture(),
+      SquareState.flagged => 'balloon_tagged_frozen',
+      SquareState.revealed => _numberMap[_adjacentCount],
+      SquareState.bomb => 'crater_b',
+      SquareState.safe => 'balloon_tagged_bomb'
+    };
 
     useHandCursor = !_game.gameEnded &&
         (squareState == SquareState.hidden ||

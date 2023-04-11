@@ -70,10 +70,8 @@ class PlatformWeb {
         window.localStorage.clear();
 
         loc.replace(newLoc);
-        break;
       case _aboutHash:
         _aboutController.add(null);
-        break;
       default:
         if (hash.isNotEmpty && _sizeAccessed) {
           loc.reload();

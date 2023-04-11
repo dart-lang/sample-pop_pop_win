@@ -50,6 +50,7 @@ linter:
     - prefer_relative_imports
     - test_types_in_equals
     - unnecessary_await_in_return
+    - unnecessary_breaks
     - use_setters_to_change_properties
     - use_string_buffers
     - use_super_parameters
