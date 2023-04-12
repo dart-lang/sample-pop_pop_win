@@ -136,20 +136,12 @@ class Game {
           } else if (x == -1) {
             char = '|';
           } else {
-            switch (getSquareState(x, y)) {
-              case SquareState.flagged:
-                char = '\u2611';
-                break;
-              case SquareState.revealed:
-                final count = field.getAdjacentCount(x, y);
-                char = count.toString();
-                break;
-              case SquareState.hidden:
-                char = '?';
-                break;
-              default:
-              // noop;
-            }
+            char = switch (getSquareState(x, y)) {
+              SquareState.flagged => '\u2611',
+              SquareState.revealed => field.getAdjacentCount(x, y).toString(),
+              SquareState.hidden => '?',
+              _ => throw UnsupportedError('should not be needed'),
+            };
           }
         }
         buffer.write(char);

@@ -32,11 +32,9 @@ void _playAudio(String name) {
     case _pop:
       final i = random.nextInt(8);
       name = '$_pop$i';
-      break;
     case _bomb:
       final i = random.nextInt(4);
       name = '$_bomb$i';
-      break;
   }
   resourceManager.getSoundSprite('audio').play(name);
 }

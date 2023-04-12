@@ -178,11 +178,11 @@ class GameElement extends Sprite {
 
       reveals = Iterable.generate(game.field.length, (i) {
         final c = game.field.getCoordinate(i);
-        return _Tuple(c, game.getSquareState(c.x, c.y));
+        return (coordinate: c, state: game.getSquareState(c.x, c.y));
       })
           .where((t2) =>
-              t2.item2 == SquareState.bomb || t2.item2 == SquareState.hidden)
-          .map((t2) => t2.item1)
+              t2.state == SquareState.bomb || t2.state == SquareState.hidden)
+          .map((t2) => t2.coordinate)
           .toList();
     }
 
@@ -194,7 +194,7 @@ class GameElement extends Sprite {
       var delay = _popAnimationHitFrame + ((c - start).magnitude * 4).toInt();
       delay += random.nextInt(10);
 
-      return _Values(c, squareOffset, delay);
+      return (point: c, squareOffset: squareOffset, delay: delay);
     }).toList()
       ..sort((a, b) => a.delay.compareTo(b.delay));
 
@@ -267,10 +267,8 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
     case SquareState.revealed:
     case SquareState.hidden:
       game_audio.pop();
-      break;
     case SquareState.bomb:
       game_audio.bomb();
-      break;
     default:
     // noop
   }
@@ -279,18 +277,3 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
 final _titleClickedEventHandle = StreamController<void>();
 
 Stream<void> get titleClickedEvent => _titleClickedEventHandle.stream;
-
-class _Values {
-  final Point<int> point;
-  final Vector squareOffset;
-  final int delay;
-
-  _Values(this.point, this.squareOffset, this.delay);
-}
-
-class _Tuple {
-  final Point<int> item1;
-  final SquareState item2;
-
-  _Tuple(this.item1, this.item2);
-}

@@ -127,10 +127,8 @@ void _onKeyDown(html.KeyboardEvent args) {
   switch (keyEvent.keyCode) {
     case html.KeyCode.ESC: // esc
       targetPlatform.toggleAbout(false);
-      break;
     case html.KeyCode.H: // h
       targetPlatform.toggleAbout();
-      break;
   }
 }
 
