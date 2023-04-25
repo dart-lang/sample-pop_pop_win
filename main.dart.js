@@ -549,7 +549,7 @@ kO(){var s,r,q,p,o,n,m=B.Yq()
 m=A.ud(B.KU,A.ud(B.fQ,A.ud(B.i7,A.ud(B.i7,A.ud(B.xi,A.ud(B.dk,A.ud(B.wb(B.O4),m)))))))
 if(typeof dartNativeDispatchHooksTransformer!="undefined"){s=dartNativeDispatchHooksTransformer
 if(typeof s=="function")s=[s]
-if(s.constructor==Array)for(r=0;r<s.length;++r){q=s[r]
+if(Array.isArray(s))for(r=0;r<s.length;++r){q=s[r]
 if(typeof q=="function")m=q(m)||m}}p=m.getTag
 o=m.getUnknownTag
 n=m.prototypeForTag
@@ -3758,7 +3758,7 @@ if(!(a instanceof A.a))return J.kd.prototype
 return a},
 U6(a){if(typeof a=="string")return J.Dr.prototype
 if(a==null)return a
-if(a.constructor==Array)return J.jd.prototype
+if(Array.isArray(a))return J.jd.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.c5.prototype
 return a}if(a instanceof A.a)return a
 return J.ks(a)},
@@ -3770,12 +3770,12 @@ c(a){if(typeof a=="number"){if(Math.floor(a)==a)return J.L7.prototype
 return J.kD.prototype}if(typeof a=="string")return J.Dr.prototype
 if(a==null)return J.PE.prototype
 if(typeof a=="boolean")return J.yE.prototype
-if(a.constructor==Array)return J.jd.prototype
+if(Array.isArray(a))return J.jd.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.c5.prototype
 return a}if(a instanceof A.a)return a
 return J.ks(a)},
 w1(a){if(a==null)return a
-if(a.constructor==Array)return J.jd.prototype
+if(Array.isArray(a))return J.jd.prototype
 if(typeof a!="object"){if(typeof a=="function")return J.c5.prototype
 return a}if(a instanceof A.a)return a
 return J.ks(a)},
@@ -3801,9 +3801,9 @@ dZ(a,b,c,d){return J.YE(a).On(a,b,c,d)},
 h(a,b){return J.w1(a).U(a,b)},
 qF(a){return J.YE(a).gVl(a)},
 re(a){return J.YE(a).gce(a)},
-u9(a,b,c){if(typeof b==="number")if((a.constructor==Array||A.Xt(a,a[v.dispatchPropertyName]))&&!a.immutable$list&&b>>>0===b&&b<a.length)return a[b]=c
+u9(a,b,c){if(typeof b==="number")if((Array.isArray(a)||A.Xt(a,a[v.dispatchPropertyName]))&&!a.immutable$list&&b>>>0===b&&b<a.length)return a[b]=c
 return J.w1(a).Y(a,b,c)},
-x9(a,b){if(typeof b==="number")if(a.constructor==Array||typeof a=="string"||A.Xt(a,a[v.dispatchPropertyName]))if(b>>>0===b&&b<a.length)return a[b]
+x9(a,b){if(typeof b==="number")if(Array.isArray(a)||typeof a=="string"||A.Xt(a,a[v.dispatchPropertyName]))if(b>>>0===b&&b<a.length)return a[b]
 return J.U6(a).q(a,b)},
 zN(a){return J.YE(a).gCa(a)},
 zl(a,b){return J.U6(a).tg(a,b)},
