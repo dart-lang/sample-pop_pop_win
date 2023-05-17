@@ -808,7 +808,7 @@ return s!=null?s:A.VU(a)},
 VU(a){var s=a.constructor,r=s.$ccache
 if(r!=null)return r
 return A.r9(a,s)},
-r9(a,b){var s=a instanceof A.Tp?a.__proto__.__proto__.constructor:b,r=A.ai(v.typeUniverse,s.name)
+r9(a,b){var s=a instanceof A.Tp?Object.getPrototypeOf(Object.getPrototypeOf(a)).constructor:b,r=A.ai(v.typeUniverse,s.name)
 b.$ccache=r
 return r},
 Bp(a){var s,r=v.types,q=r[a]
