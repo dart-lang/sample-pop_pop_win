@@ -314,7 +314,9 @@ if(a instanceof A.bq)return a.b
 if(a==null)return new A.XO(a)
 s=a.$cachedTrace
 if(s!=null)return s
-return a.$cachedTrace=new A.XO(a)},
+s=new A.XO(a)
+if(typeof a==="object")a.$cachedTrace=s
+return s},
 CU(a){if(a==null)return J.uX(a)
 if(typeof a=="object")return A.eQ(a)
 return J.uX(a)},
@@ -1757,9 +1759,9 @@ B3:function B3(){this.a=0
 this.c=this.b=null},
 lg:function lg(a,b){this.a=a
 this.b=b},
-EM:function EM(a,b){this.a=a
-this.b=0
-this.c=b},
+EM:function EM(a){this.a=1
+this.b=a
+this.c=null},
 xI:function xI(){},
 QX:function QX(a,b){this.a=a
 this.b=b},
@@ -4641,8 +4643,9 @@ else r.CW=s
 a.CW=a
 a.ch=a},
 MI(a,b,c,d){var s,r,q,p,o,n=this
-if((n.c&4)!==0){s=new A.EM($.X3,c)
-s.q1()
+if((n.c&4)!==0){s=new A.EM($.X3)
+A.rb(s.gts())
+if(c!=null)s.c=c
 return s}s=$.X3
 r=d?1:0
 q=A.AM(s,a)
@@ -5025,17 +5028,17 @@ if(r==null)q.c=null
 this.b.MW(s.b)},
 $S:0}
 A.EM.prototype={
-q1(){var s=this
-if((s.b&2)!==0)return
-A.Tk(null,null,s.a,s.gcv())
-s.b|=2},
 fe(a){},
-Gv(a){return $.Yj()},
-Dd(){var s,r=this,q=r.b&=4294967293
-if(q>=4)return
-r.b=q|1
-s=r.c
-if(s!=null)r.a.bH(s)}}
+Gv(a){this.a=-1
+this.c=null
+return $.Yj()},
+lJ(){var s,r,q,p=this,o=p.a-1
+if(o===0){p.a=-1
+s=p.c
+if(s!=null){r=s
+q=!0}else{r=null
+q=!1}if(q){p.c=null
+p.b.bH(r)}}else p.a=o}}
 A.xI.prototype={}
 A.QX.prototype={
 $0(){return this.a.HH(this.b)},
@@ -9055,7 +9058,7 @@ q(A,"w6","QE",4)
 s(A,"Cr","SZ",10)
 p(A.Pf.prototype,"gYJ",0,1,null,["$2","$1"],["w0","rC"],55,0,0)
 o(A.vs.prototype,"gFa","ZL",10)
-n(A.EM.prototype,"gcv","Dd",0)
+n(A.EM.prototype,"gts","lJ",0)
 q(A,"Gu","Z3",77)
 q(A,"w0","dU",78)
 q(A,"o9","OL",17)
