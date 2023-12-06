@@ -1582,7 +1582,7 @@ g.b=0
 s=A.j9("error")
 r=A.j9("stackTrace")
 q=new A.VN(g,f,e,c,s,r)
-try{for(l=new A.a7(a,a.gB(a)),k=t.P,j=A.Lh(l).c;l.G();){i=l.d
+try{for(l=new A.a7(a,a.gB(0)),k=t.P,j=A.Lh(l).c;l.G();){i=l.d
 p=i==null?j.a(i):i
 o=g.b
 p.Sq(new A.ff(g,o,c,f,e,s,r,b),q,k);++g.b}l=g.b
@@ -2489,7 +2489,7 @@ TI(a,b,c){var s,r,q,p,o,n
 A.hA("secondaryLoad")
 s=b.oJ
 r=s.RY(c,0.5)
-q=r.gtV(r)
+q=r.gtV(0)
 q.a.HQ(q,9).d=0
 r.f=new A.XG(b,c)
 A.z6()
@@ -2509,8 +2509,7 @@ q.Q=B.jn.IV(0,0,1)
 r.y!==$&&A.SQ()
 r.y=q
 b.bS(q)
-q=s.RY(q,0.5)
-q=q.gtV(q)
+q=s.RY(q,0.5).gtV(0)
 q.a.HQ(q,9).d=1
 A.JE(window,"touchmove",new A.PZ(),!1)
 A.JE(window,"keydown",A.py(),!1)
@@ -2789,8 +2788,8 @@ return A.D($async$tF,r)},
 m6(a,b){var s=new A.GH(a,a)
 s.PJ(a,b)
 return s},
-Jd(a){var s=a.c,r=s.a
-return new A.Oo(a,A.TF(r.gqN(r)),s.gmH())},
+Jd(a){var s=a.c
+return new A.Oo(a,A.TF(s.a.gqN(0)),s.gmH())},
 VK(a,b,c,d){var s,r,q=$.LS
 $.LS=q+1
 q=new A.QQ(a,b,c,d,B.So,q,A.QI([],t.t),A.oy(),A.Fl(t.N,t.C))
@@ -4049,7 +4048,7 @@ s=this.c
 if(s==null||s>=r)return r-q
 return s-q},
 F(a,b){var s=this,r=s.gAs()+b
-if(b<0||r>=s.gKN())throw A.Og(A.xF(b,s.gB(s),s,null,"index"))
+if(b<0||r>=s.gKN())throw A.Og(A.xF(b,s.gB(0),s,null,"index"))
 return J.GA(s.a,r)},
 br(a){var s,r,q,p=this,o=p.b,n=p.a,m=J.U6(n),l=m.gB(n),k=p.c
 if(k!=null&&k<l)l=k
@@ -4438,7 +4437,7 @@ r=m.length
 if(s<=r){q=n.a
 p=q.UZ(m,s)
 if(p!=null){n.d=p
-o=p.geX(p)
+o=p.geX(0)
 if(p.b.index===o){if(q.b.unicode){s=n.c
 q=s+1
 if(q<r){s=m.charCodeAt(s)
@@ -5127,12 +5126,11 @@ if(!Object.prototype.hasOwnProperty.call(this.a,a))return null
 s=A.Qe(this.a[a])
 return this.b[a]=s}}
 A.i8.prototype={
-gB(a){var s=this.a
-return s.gB(s)},
+gB(a){return this.a.gB(0)},
 F(a,b){var s=this.a
-return s.b==null?s.gv(s).F(0,b):s.Cf()[b]},
+return s.b==null?s.gv(0).F(0,b):s.Cf()[b]},
 gkz(a){var s=this.a
-if(s.b==null){s=s.gv(s)
+if(s.b==null){s=s.gv(0)
 s=s.gkz(s)}else{s=s.Cf()
 s=new J.m1(s,s.length)}return s},
 tg(a,b){return this.a.x4(0,b)}}
@@ -5266,7 +5264,7 @@ if(0>b||b>=s)A.vh(A.xF(b,s,this,null,"index"))
 return this.b.$1(b)},
 gB(a){return this.a}}
 A.c8.prototype={
-gM(a){return A.a.prototype.gM.call(this,this)},
+gM(a){return A.a.prototype.gM.call(this,0)},
 "["(a){return"null"}}
 A.a.prototype={$ia:1,
 eT(a,b){return this===b},
@@ -5925,8 +5923,8 @@ return s}},
 gM(a){return 0}}
 A.r7.prototype={}
 A.Tz.prototype={
-cP(a){var s=this,r=a<0||a>=s.gB(s)
-if(r)throw A.Og(A.TE(a,0,s.gB(s),null,null))},
+cP(a){var s=a<0||a>=this.gB(0)
+if(s)throw A.Og(A.TE(a,0,this.gB(0),null,null))},
 q(a,b){if(A.ok(b))this.cP(b)
 return this.Ur(0,b)},
 Y(a,b,c){this.cP(b)
@@ -6066,8 +6064,7 @@ $iJo:1}
 A.Iq.prototype={$iIq:1}
 A.y9.prototype={
 $1(a){var s=this.b,r=s.gLx().length
-s=s.a
-s=s.gUQ(s)
+s=s.a.gUQ(0)
 this.a.sA7(0,r/A.Y1(s,!0,A.Lh(s).C("Ly.E")).length)},
 $S:6}
 A.XG.prototype={
@@ -6094,7 +6091,7 @@ YW(a){var s=this.a
 return new A.hL(B.jn.zY(a,s),B.jn.xG(a,s),t.D)}}
 A.xB.prototype={
 VB(a,b,c){var s,r,q,p
-for(s=new A.a7(this,this.gB(this)),r=A.Lh(s).c,q=0;s.G();){p=s.d
+for(s=new A.a7(this,this.gB(0)),r=A.Lh(s).c,q=0;s.G();){p=s.d
 if(p==null?r.a(p):p)++q}},
 Wz(a,b){var s,r,q,p,o,n=this.e,m=a+b*n.a
 n=n.c
@@ -6216,7 +6213,7 @@ p===$&&A.Q4()
 p.ni()
 if(q.rS.rT!=null){p=r.e
 p===$&&A.Q4()
-p=B.jn.BU(p.gzo(p).a,1000)
+p=B.jn.BU(p.gzo(0).a,1000)
 o=q.rS.rT
 o.toString
 o=p<o
@@ -6225,9 +6222,9 @@ if(p){q=q.rS
 q.toString
 p=r.e
 p===$&&A.Q4()
-q.rT=B.jn.BU(p.gzo(p).a,1000)}A.jr("win")}}}
+q.rT=B.jn.BU(p.gzo(0).a,1000)}A.jr("win")}}}
 A.HB.prototype={
-uE(a){var s,r=a.a,q=B.jn.BU(a.gzo(a).a,1000),p="w"+r.a+"-h"+r.b+"-m"+r.d
+uE(a){var s,r=a.a,q=B.jn.BU(a.gzo(0).a,1000),p="w"+r.a+"-h"+r.b+"-m"+r.d
 r=$.fF()
 s=A.Yq(window.localStorage.getItem(p),null)
 if(s==null||s>q){r.Ym(p,B.jn["["](q))
@@ -6266,7 +6263,7 @@ s=s.a
 q.Qt=A.iT(s.a,s.b,new A.Az(q,80*r),t.gq)},
 ni(){var s,r,q=this.Qt
 q===$&&A.Q4()
-q=new A.a7(q,q.gB(q))
+q=new A.a7(q,q.gB(0))
 s=A.Lh(q).c
 for(;q.G();){r=q.d;(r==null?s.a(r):r).Iv()}}}
 A.Az.prototype={
@@ -6373,20 +6370,20 @@ a===$&&A.Q4()
 if(!(b<a.a.a-2))break
 e=a7.kI("game_board_side_top")
 a=112+b*80
-new A.Oo(i,A.TF(f.gqN(f)),j.gmH()).hW(e,d,new A.tZ(a,0,g),a3)
+new A.Oo(i,A.TF(f.gqN(0)),j.gmH()).hW(e,d,new A.tZ(a,0,g),a3)
 f.Li(0)
 e=a7.kI("game_board_side_bottom")
 a0=k.a(a2.cy).YL
 a0===$&&A.Q4()
-new A.Oo(i,A.TF(f.gqN(f)),j.gmH()).hW(e,d,new A.tZ(a,a0-112,g),a3)
+new A.Oo(i,A.TF(f.gqN(0)),j.gmH()).hW(e,d,new A.tZ(a,a0-112,g),a3)
 f.Li(0)
 a0=a7.kI("game_board_side_left")
-new A.Oo(i,A.TF(f.gqN(f)),j.gmH()).hW(a0,c,new A.tZ(0,a,g),a3)
+new A.Oo(i,A.TF(f.gqN(0)),j.gmH()).hW(a0,c,new A.tZ(0,a,g),a3)
 f.Li(0)
 a0=a7.kI("game_board_side_right")
 e=k.a(a2.cy).YL
 e===$&&A.Q4()
-new A.Oo(i,A.TF(f.gqN(f)),j.gmH()).hW(a0,c,new A.tZ(e-112,a,g),a3)
+new A.Oo(i,A.TF(f.gqN(0)),j.gmH()).hW(a0,c,new A.tZ(e-112,a,g),a3)
 f.Li(0);++b}a1=A.Lj(i)
 k=$.Vi()
 a1.c=k.a
@@ -6534,7 +6531,7 @@ e.Q=B.jn.IV(0,0,1)
 e.fy=!1
 q.bS(e)
 e.Ep(0,"complete",p).XE(new A.df(e),!1,0)
-d=a.gYK(a)
+d=a.gYK(0)
 h=(d instanceof A.Lz?d:null).oJ
 if(!h.tg(0,e)){c=h.b
 c===$&&A.Q4()
@@ -6571,7 +6568,7 @@ j.fy=!1
 if(!j.ij){j.ij=!0
 j.RZ=null}r.bS(j)
 j.Ep(0,g,q).XE(new A.qA(j),!1,0)
-i=h.gYK(h)
+i=h.gYK(0)
 n=(i instanceof A.Lz?i:null).oJ
 if(!n.tg(0,k)){m=n.b
 m===$&&A.Q4()
@@ -6642,10 +6639,10 @@ A.Yy.prototype={}
 A.XY.prototype={
 dd(a){var s,r,q=this,p=t.q,o=p.a(q.cy).Qt.e
 o===$&&A.Q4()
-if(o.gzo(o)==null)s="0"
+if(o.gzo(0)==null)s="0"
 else{o=p.a(q.cy).Qt.e
 o===$&&A.Q4()
-s=B.CD.Sy(B.jn.BU(o.gzo(o).a,1000)/1000,1)}p=p.a(q.cy).Qt.e
+s=B.CD.Sy(B.jn.BU(o.gzo(0).a,1000)/1000,1)}p=p.a(q.cy).Qt.e
 p===$&&A.Q4()
 r="Bombs Left: "+p.r+"\nTime: "+s
 p=q.rT
@@ -6837,7 +6834,7 @@ p=A.Lg(q)
 o=B.Nm.iD(b,0,new A.BV($.XA()))
 n=B.CD.Sy(o,r.length-1)
 s=s.index+1
-r=l.geX(l)
+r=l.geX(0)
 m=A.jB(s,r-1,a.length)
 this.b=a.substring(0,s)+n+a.substring(m)
 this.c=o/p}}}
@@ -6930,19 +6927,19 @@ r.hu(a)
 r.e1.push(a)
 a.cy=r
 a.H2(0,new A.ea("added",!0))
-s=r.gYK(r)
+s=r.gYK(0)
 if((s instanceof A.Lz?s:null)!=null)r.ul(a,"addedToStage")}},
 q9(a){var s,r,q,p=this
 if(a.cy!==p)throw A.Og(A.xY("The supplied DisplayObject must be a child of the caller.",null))
 else{s=p.e1
 r=B.Nm.OY(s,a)
 a.H2(0,new A.ea("removed",!0))
-q=p.gYK(p)
+q=p.gYK(0)
 if((q instanceof A.Lz?q:null)!=null)p.ul(a,"removedFromStage")
 a.cy=null
 B.Nm.W4(s,r)}},
 gBP(a){var s,r,q,p,o,n,m,l,k,j,i,h=this.e1
-if(h.length===0)return A.fE.prototype.gBP.call(this,this)
+if(h.length===0)return A.fE.prototype.gBP.call(this,0)
 for(s=1/0,r=1/0,q=-1/0,p=-1/0,o=0;o<h.length;++o){n=h[o]
 m=n.gBP(n)
 m=n.gwr().Qb(m,m)
@@ -7047,7 +7044,7 @@ A.vc.prototype={
 pm(){return"SimpleButtonState."+this.b}}
 A.QQ.prototype={
 gBP(a){var s=this.IJ(),r=s==null?null:s.gcl()
-return r==null?A.fE.prototype.gBP.call(this,this):r},
+return r==null?A.fE.prototype.gBP.call(this,0):r},
 Fo(a,b){var s=this.RZ,r=s.gwr(),q=r.a,p=a-q[4],o=b-q[5]
 return s.Fo((q[3]*p-q[2]*o)/r.gR9(),(q[0]*o-q[1]*p)/r.gR9())!=null?this:null},
 dd(a){var s=this.IJ()
@@ -7067,7 +7064,7 @@ else if(s==="touchOut")r.TQ=B.So
 else if(s==="touchBegin")r.TQ=B.UK
 else if(s==="touchEnd")r.TQ=B.So}}}
 A.AE.prototype={
-gBP(a){var s=A.my.prototype.gBP.call(this,this)
+gBP(a){var s=A.my.prototype.gBP.call(this,0)
 return s},
 Fo(a,b){var s=this.tJ(a,b)
 return s},
@@ -7347,7 +7344,7 @@ b4.ctrlKey
 r=b4.shiftKey
 q=b4.changedTouches
 if(q==null)return
-for(q=B.bA.gkz(q),p=new A.vG(q,new A.cZ()),o=s==="touchmove",n=s==="touchcancel",m=s==="touchend",l=s==="touchstart",k=b3.mn,j=b3.hi,i=t.o,h=b3.No,g=t.M,f=t.r;p.G();){e=q.gl(q)
+for(q=B.bA.gkz(q),p=new A.vG(q,new A.cZ()),o=s==="touchmove",n=s==="touchcancel",m=s==="touchend",l=s==="touchstart",k=b3.mn,j=b3.hi,i=t.o,h=b3.No,g=t.M,f=t.r;p.G();){e=q.gl(0)
 d=e.identifier
 d.toString
 c=h.Ey(0,new A.hL(B.CD.zQ(e.clientX),B.CD.zQ(e.clientY),i))
@@ -7527,7 +7524,7 @@ r===$&&A.Q4()
 e.Nv(a,b.a,s,r)
 return}q=e.f
 s=b.a
-p=s.gFF(s)
+p=s.gFF(0)
 if(p==null)p=s.gxe()
 o=b.d
 n=b.b
@@ -7559,7 +7556,7 @@ f=m[9]
 A.bX(q,d,[p,s,r,i,h,0-g,0-f,g-m[0],f-m[1]])}else if(o===3){s=l.a
 q.setTransform(s[2],s[3],-s[0],-s[1],s[4],s[5])
 A.bX(q,d,[p,n.a,n.b,n.c,n.d,m[5],0-m[4],m[9]-m[1],m[8]-m[0]])}},
-Nv(b1,b2,b3,b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2=this,a3=a2.f,a4=b2.gFF(b2),a5=b1.e,a6=a5.c,a7=a5.a,a8=a5.b,a9=1/b2.a,b0=1/b2.b
+Nv(b1,b2,b3,b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2=this,a3=a2.f,a4=b2.gFF(0),a5=b1.e,a6=a5.c,a7=a5.a,a8=a5.b,a9=1/b2.a,b0=1/b2.b
 if(a2.x!==a7){a2.x=a7
 a3.globalAlpha=a7}if(a2.w!==a8){a2.w=a8
 a3.globalCompositeOperation="source-over"}a5=a6.a
@@ -7682,7 +7679,7 @@ if(a.y){s=a.a
 s=A.d9(a.b,s)
 a.d=s
 s=s.getContext("2d")
-q=a.gFF(a)
+q=a.gFF(0)
 q.toString
 s.drawImage(q,0,0)
 q=a.as
@@ -8016,7 +8013,7 @@ q.w.wi(q)
 s=q.z.isEnabled(3089)
 if(s)q.z.disable(3089)
 if(q.y){p=q.d.getContext("2d")
-r=q.gFF(q)
+r=q.gFF(0)
 r.toString
 p.drawImage(r,0,0)
 r=q.z
@@ -8412,8 +8409,7 @@ if(o.q(0,m)==null){o.Y(0,m,a)
 q=m
 s=1
 break $async$outer}}l=t.g.a(p.a.cloneNode(!0))
-n=new A.Cq(l,"canplay",!1,t.cl)
-k=n.gtH(n)
+k=new A.Cq(l,"canplay",!1,t.cl).gtH(0)
 s=l.readyState===0?3:4
 break
 case 3:s=5
@@ -8434,7 +8430,7 @@ gbM(a){var s=this
 if(s.x||s.w||s.e==null)return s.as
 else return B.CD.IV(s.e.currentTime-s.z,0,s.Q)},
 TP(a){var s,r=this
-if(r.e!=null){r.as=r.gbM(r)
+if(r.e!=null){r.as=r.gbM(0)
 r.e.pause()
 r.e.currentTime=0
 s=r.e
@@ -8528,7 +8524,7 @@ s=p.y
 q=p.Q
 return s?B.CD.zY(r,q):B.CD.IV(r,0,q)}},
 SN(a){var s=this
-if(!s.x&&!s.w&&!s.y){s.as=s.gbM(s)
+if(!s.x&&!s.w&&!s.y){s.as=s.gbM(0)
 s.x=s.w=!0
 s.J0(new A.ea("complete",!1),s,B.wq)}}}
 A.dt.prototype={}
@@ -8562,18 +8558,12 @@ else{q=p
 s=1
 break}case 1:return A.y(q,r)}})
 return A.D($async$xW,r)},
-gLx(){var s,r=this.a
-r=r.gUQ(r)
-s=A.Lh(r).C("U5<Ly.E>")
-return A.Y1(new A.U5(r,new A.AX(),s),!0,s.C("Ly.E"))},
-gPb(){var s,r=this.a
-r=r.gUQ(r)
-s=A.Lh(r).C("U5<Ly.E>")
-return A.Y1(new A.U5(r,new A.BH(),s),!0,s.C("Ly.E"))},
-gow(){var s,r=this.a
-r=r.gUQ(r)
-s=A.Lh(r).C("U5<Ly.E>")
-return A.Y1(new A.U5(r,new A.f8(),s),!0,s.C("Ly.E"))},
+gLx(){var s=this.a.gUQ(0),r=A.Lh(s).C("U5<Ly.E>")
+return A.Y1(new A.U5(s,new A.AX(),r),!0,r.C("Ly.E"))},
+gPb(){var s=this.a.gUQ(0),r=A.Lh(s).C("U5<Ly.E>")
+return A.Y1(new A.U5(s,new A.BH(),r),!0,r.C("Ly.E"))},
+gow(){var s=this.a.gUQ(0),r=A.Lh(s).C("U5<Ly.E>")
+return A.Y1(new A.U5(s,new A.f8(),r),!0,r.C("Ly.E"))},
 GU(a,b){var s=new A.na(),r=$.bs()
 s.a=r
 s.b=A.m6(b,r.d)
@@ -8909,12 +8899,12 @@ if(a0!==a8||b2.jq!==a9)switch(b2.kX){case"left":b2.eD=a8
 b2.jq=a9
 a0=a8
 break
-case"right":b2.Rd(0,A.fE.prototype.gx.call(b2,b2)-(a8-b2.eD))
+case"right":b2.Rd(0,A.fE.prototype.gx.call(b2,0)-(a8-b2.eD))
 b2.eD=a8
 b2.jq=a9
 a0=a8
 break
-case"center":b2.Rd(0,A.fE.prototype.gx.call(b2,b2)-(a8-b2.eD)/2)
+case"center":b2.Rd(0,A.fE.prototype.gx.call(b2,0)-(a8-b2.eD)/2)
 b2.eD=a8
 b2.jq=a9
 a0=a8
@@ -8945,8 +8935,7 @@ m=m.gff()
 m=o.pG=A.NA(m.a,m.b,m.c,m.d,n)}else{m.lO(0,s,r)
 m=o.Jz.gff()
 m=o.pG=A.NA(m.a,m.b,m.c,m.d,n)}q=m.gmH()
-m=o.Jz
-m=m.gqN(m).getContext("2d")
+m=o.Jz.gqN(0).getContext("2d")
 p=q.a
 m.setTransform(p[0],p[1],p[2],p[3],p[4],p[5])
 m.clearRect(0,0,o.eD,o.jq)
@@ -9569,8 +9558,7 @@ r($,"Zj","mX",()=>new A.ye())
 s($,"Kp","Re",()=>A.d9(16,16))
 s($,"Tx","VD",()=>B.p1.gVE($.Re()))
 s($,"kz","Eh",()=>A.bK(t.N))
-r($,"BY","V9",()=>{var q=$.Eh()
-return q.gvq(q)})})();(function nativeSupport(){!function(){var s=function(a){var m={}
+r($,"BY","V9",()=>$.Eh().gvq(0))})();(function nativeSupport(){!function(){var s=function(a){var m={}
 m[a]=1
 return Object.keys(hunkHelpers.convertToFastObject(m))[0]}
 v.getIsolateTag=function(a){return s("___dart_"+a+v.isolateTag)}
