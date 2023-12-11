@@ -2136,7 +2136,7 @@ qc(a){var s
 if(a==null)return null
 if("postMessage" in a){s=A.nI(a)
 return s}else return a},
-Z9(a){var s
+DA(a){var s
 if(t.e5.b(a))return a
 s=new A.zg([],[])
 s.c=!0
@@ -2535,8 +2535,15 @@ this.b=b},
 C0:function C0(){},
 PZ:function PZ(){},
 C8:function C8(){},
+Z9(a,b,c){var s,r,q
+try{self.gtag(a,b,c)}catch(q){s=A.Ru(q)
+r=A.ts(q)
+window
+if(typeof console!="undefined")window.console.error(s)
+window
+if(typeof console!="undefined")window.console.error(r)}},
 hA(a){var s=B.CD.yu(window.performance.now())
-self.gtag("send","timing_complete",{event_category:null,event_label:null,value:s,name:a})},
+A.Z9("send","timing_complete",{event_category:null,event_label:null,value:s,name:a})},
 aq:function aq(){},
 iT(a,b,c,d){if(a===0)return new A.f7(0,b,A.QI([],d.C("jd<0>")),d.C("f7<0>"))
 return A.ZR(a,A.dH(a*b,c,d),d)},
@@ -3516,7 +3523,7 @@ p=7
 s=10
 return A.j(A.lt(n,null,"arraybuffer",null),$async$Nh)
 case 10:m=a4
-l=g.a(A.Z9(m.response))
+l=g.a(A.DA(m.response))
 s=11
 return A.j(J.R7(b,l),$async$Nh)
 case 11:k=a4
@@ -6202,7 +6209,7 @@ p=r.x
 o=p.q(0,a)
 s=(o==null?0:o)+1
 p.Y(0,a,s)
-self.gtag("event","game_event",{event_category:"sample-pop_pop_win",event_label:a.pm().split(".")[1],value:s})
+A.Z9("event","game_event",{event_category:"sample-pop_pop_win",event_label:a.pm().split(".")[1],value:s})
 if(q){q=r.y
 q===$&&A.Q4()
 p=q.lN
@@ -8346,7 +8353,7 @@ s=q}while(true)switch(s){case 0:i=o.b
 s=i.readyState===4&&i.status===200?2:3
 break
 case 2:q=5
-n=t.d.a(A.Z9(i.response))
+n=t.d.a(A.DA(i.response))
 m=window.createImageBitmap(n)
 i=m
 if(i==null)i=t.K.a(i)
