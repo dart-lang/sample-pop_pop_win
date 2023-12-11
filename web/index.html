@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHQ85Q1HNL"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MHQ85Q1HNL');
-    window.addEventListener('error', function (error) {
-      const message = [
-        'Message: ' + error.message,
-        'URL: ' +  error.filename,
-        'Line: ' +  error.lineno,
-        'Column: ' + error.colno,
-        'Error object: ' + JSON.stringify(error.error)
-      ].join(' - ');
-
-      gtag('event', 'exception', {
-          'description': message,
-          'fatal': false
-      });
-      return false;
-    });
-    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MT8RWKH8');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <title>Pop, Pop, Win!</title>
     <link rel="shortcut icon" href="favicon.ico" />
@@ -39,6 +24,10 @@
     <script defer type="application/javascript" src="main.dart.js"></script>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MT8RWKH8"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <canvas id='gameCanvas' width='2048' height='1536' style="width:100%; height:100%; top:0; left:0;"></canvas>
     <div id='popup'>
       <div id='about'>
