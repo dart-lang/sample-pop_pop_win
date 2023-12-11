@@ -11,8 +11,22 @@ import 'dart:html';
 
 import 'package:js/js.dart';
 
+void gtag(
+  String event,
+  String action, [
+  GTagAnalyticsEventOptions? eventParams,
+]) {
+  try {
+    _gtag(event, action, eventParams);
+    // ignore: avoid_catches_without_on_clauses
+  } catch (e, stack) {
+    window.console.error(e);
+    window.console.error(stack);
+  }
+}
+
 @JS('gtag')
-external void gtag(
+external void _gtag(
   String event,
   String action, [
   GTagAnalyticsEventOptions? eventParams,
