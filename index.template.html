@@ -6,7 +6,8 @@
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      w.gtag = function(){w[l].push(arguments)};
+      let dataLayer = w[l];
+      w.gtag = function(){dataLayer.push(arguments)};
     })(window,document,'script','dataLayer','GTM-MT8RWKH8');</script>
     <!-- End Google Tag Manager -->
     <meta charset="utf-8">
