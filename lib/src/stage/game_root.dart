@@ -33,7 +33,7 @@ class GameRoot extends GameManager {
       'game_event',
       GTagAnalyticsEventOptions(
         event_category: 'sample-pop_pop_win',
-        event_label: value.toString().split('.')[1],
+        event_label: value.name,
         value: count,
       ),
     );
