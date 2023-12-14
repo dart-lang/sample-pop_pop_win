@@ -6209,7 +6209,7 @@ p=r.x
 o=p.q(0,a)
 s=(o==null?0:o)+1
 p.Y(0,a,s)
-A.Z9("event","game_event",{event_category:"sample-pop_pop_win",event_label:a.pm().split(".")[1],value:s})
+A.Z9("event","game_event",{event_category:"sample-pop_pop_win",event_label:a.b,value:s})
 if(q){q=r.y
 q===$&&A.Q4()
 p=q.lN
