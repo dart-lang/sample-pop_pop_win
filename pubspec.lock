@@ -149,10 +149,10 @@ packages:
     dependency: transitive
     description:
       name: code_builder
-      sha256: b2151ce26a06171005b379ecff6e08d34c470180ffe16b8e14b6d52be292b55f
+      sha256: feee43a5c05e7b3199bb375a86430b8ada1b04104f2923d0e03cc01ca87b6d84
       url: "https://pub.dev"
     source: hosted
-    version: "4.8.0"
+    version: "4.9.0"
   collection:
     dependency: transitive
     description:
@@ -569,14 +569,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.1.0"
+  web:
+    dependency: transitive
+    description:
+      name: web
+      sha256: edc8a9573dd8c5a83a183dae1af2b6fd4131377404706ca4e5420474784906fa
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.4.0"
   web_socket_channel:
     dependency: transitive
     description:
       name: web_socket_channel
-      sha256: d88238e5eac9a42bb43ca4e721edba3c08c6354d4a53063afaa568516217621b
+      sha256: "045ec2137c27bf1a32e6ffa0e734d532a6677bf9016a0d1a406c54e499ff945b"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.0"
+    version: "2.4.1"
   webkit_inspection_protocol:
     dependency: transitive
     description:
