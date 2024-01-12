@@ -5,7 +5,7 @@ environment:
   sdk: ^3.2.0
 
 dependencies:
-  js: ^0.6.1
+  js: ^0.7.0
   stagexl: ^2.1.1
 
 dev_dependencies:
