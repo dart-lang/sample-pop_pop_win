@@ -5,18 +5,18 @@ packages:
     dependency: transitive
     description:
       name: _fe_analyzer_shared
-      sha256: "0f7b1783ddb1e4600580b8c00d0ddae5b06ae7f0382bd4fcce5db4df97b618e1"
+      sha256: "0b2f2bd91ba804e53a61d757b986f89f1f9eaed5b11e4b2f5a2468d86d6c9fc7"
       url: "https://pub.dev"
     source: hosted
-    version: "66.0.0"
+    version: "67.0.0"
   analyzer:
     dependency: transitive
     description:
       name: analyzer
-      sha256: "5e8bdcda061d91da6b034d64d8e4026f355bcb8c3e7a0ac2da1523205a91a737"
+      sha256: "37577842a27e4338429a1cbc32679d508836510b056f1eedf0c8d20e39c1383d"
       url: "https://pub.dev"
     source: hosted
-    version: "6.4.0"
+    version: "6.4.1"
   archive:
     dependency: transitive
     description:
@@ -109,10 +109,10 @@ packages:
     dependency: transitive
     description:
       name: build_runner_core
-      sha256: c9e32d21dd6626b5c163d48b037ce906bbe428bc23ab77bcd77bb21e593b6185
+      sha256: "4ae8ffe5ac758da294ecf1802f2aff01558d8b1b00616aa7538ea9a8a5d50799"
       url: "https://pub.dev"
     source: hosted
-    version: "7.2.11"
+    version: "7.3.0"
   build_web_compilers:
     dependency: "direct dev"
     description:
