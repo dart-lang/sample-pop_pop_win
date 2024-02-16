@@ -890,8 +890,7 @@ return A.cE(v.typeUniverse,s,a)},
 xq(a){return A.Kx(A.Ew(v.typeUniverse,a,!1))},
 JJ(a){var s,r,q,p,o,n,m=this
 if(m===t.K)return A.RE(m,a,A.ke)
-if(!A.Z4(m))if(!(m===t._))s=!1
-else s=!0
+if(!A.Z4(m))s=m===t._
 else s=!0
 if(s)return A.RE(m,a,A.Iw)
 s=m.w
@@ -913,8 +912,7 @@ return A.RE(m,a,n==null?A.JY:n)}return A.RE(m,a,A.YO)},
 RE(a,b,c){a.b=c
 return a.b(b)},
 Au(a){var s,r=this,q=A.Oz
-if(!A.Z4(r))if(!(r===t._))s=!1
-else s=!0
+if(!A.Z4(r))s=r===t._
 else s=!0
 if(s)q=A.hn
 else if(r===t.K)q=A.Ti
@@ -1033,8 +1031,7 @@ for(p=s;p>0;--p)a4.push("T"+(q+p))
 for(o=t.cK,n=t._,m="<",l="",p=0;p<s;++p,l=a2){m=B.xB.h(m+l,a4[a4.length-1-p])
 k=a5[p]
 j=k.w
-if(!(j===2||j===3||j===4||j===5||k===o))if(!(k===n))i=!1
-else i=!0
+if(!(j===2||j===3||j===4||j===5||k===o))i=k===n
 else i=!0
 if(!i)m+=" extends "+A.m(k,a4)}m+=">"}else{m=""
 r=null}o=a3.x
@@ -1411,16 +1408,14 @@ if(1===s)return!0
 return!0},
 We(a,b,c,d,e,f){var s,r,q,p,o,n,m,l,k,j,i
 if(b===d)return!0
-if(!A.Z4(d))if(!(d===t._))s=!1
-else s=!0
+if(!A.Z4(d))s=d===t._
 else s=!0
 if(s)return!0
 r=b.w
 if(r===4)return!0
 if(A.Z4(b))return!1
-if(b.w!==1)s=!1
-else s=!0
-if(s)return!0
+s=b.w
+if(s===1)return!0
 q=r===14
 if(q)if(A.We(a,c[b.x],c,d,e,!1))return!0
 p=d.w
@@ -1515,8 +1510,7 @@ else s=!0
 else s=!0
 return s},
 BU(a){var s
-if(!A.Z4(a))if(!(a===t._))s=!1
-else s=!0
+if(!A.Z4(a))s=a===t._
 else s=!0
 return s},
 Z4(a){var s=a.w
@@ -1689,11 +1683,9 @@ $.S6=$.mg=s}else{q=r.b
 s.b=q
 $.mg=r.b=s
 if(q==null)$.k8=s}},
-rb(a){var s,r=null,q=$.X3
-if(B.NU===q){A.Tk(r,r,B.NU,a)
-return}s=!1
-if(s){A.Tk(r,r,q,a)
-return}A.Tk(r,r,q,q.GY(a))},
+rb(a){var s=null,r=$.X3
+if(B.NU===r){A.Tk(s,s,B.NU,a)
+return}A.Tk(s,s,r,r.GY(a))},
 Qw(a){A.cb(a,"stream",t.K)
 return new A.xI()},
 x2(a,b){var s=null
@@ -1935,10 +1927,7 @@ O1(a,b){a=A.Og(a)
 a.stack=b["["](0)
 throw a
 throw A.Og("unreachable")},
-Wu(a,b){var s
-if(Math.abs(a)<=864e13)s=!1
-else s=!0
-if(s)A.vh(A.xY("DateTime is outside valid range: "+a,null))
+Wu(a,b){if(Math.abs(a)>864e13)A.vh(A.xY("DateTime is outside valid range: "+a,null))
 A.cb(b,"isUtc",t.v)
 return new A.iP(a,b)},
 O8(a,b,c,d){var s,r=c?J.Kh(a,d):J.Qi(a,d)
@@ -3966,9 +3955,9 @@ if(q===0&&r===o)continue
 m.push(this.Nj(a,r,o))
 r=n}if(r<a.length||q>0)m.push(this.GX(a,r))
 return m},
-nC(a,b){var s=a.length,r=b.length
-if(r>s)return!1
-return b===a.substring(0,r)},
+nC(a,b){var s=b.length
+if(s>a.length)return!1
+return b===a.substring(0,s)},
 Nj(a,b,c){return a.substring(b,A.jB(b,c,a.length))},
 GX(a,b){return this.Nj(a,b,null)},
 DY(a){var s,r,q,p=a.trim(),o=p.length
@@ -5802,7 +5791,7 @@ s=A.aF(new A.pI(a),t.B)
 r.d=s
 r.DN()},
 DN(){var s,r=this.d
-if(r!=null&&!0){s=this.b
+if(r!=null){s=this.b
 s.toString
 J.dZ(s,this.c,r,!1)}},
 EO(){var s,r=this.d
@@ -6079,11 +6068,18 @@ gj(a){return a.length}}
 A.UG.prototype={}
 A.Ck.prototype={$iCk:1}
 A.Jo.prototype={
-j2(a,b,c,d,e,f,g,h,i){var s=i==null
-if(!s&&h!=null&&A.ok(g)){a.texImage2D(b,c,d,e,f,g,h,i,null)
-return}if(t.R.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)
-return}if(t.E.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)
-return}if(t.I.b(g)&&h==null&&s&&!0){a.texImage2D(b,c,d,e,f,g)
+j2(a,b,c,d,e,f,g,h,i){var s,r=i==null
+if(!r&&h!=null&&A.ok(g)){a.texImage2D(b,c,d,e,f,g,h,i,null)
+return}if(t.R.b(g))if(h==null)s=r
+else s=!1
+else s=!1
+if(s){a.texImage2D(b,c,d,e,f,g)
+return}if(t.E.b(g))if(h==null)s=r
+else s=!1
+else s=!1
+if(s){a.texImage2D(b,c,d,e,f,g)
+return}if(t.I.b(g)){if(!(h==null))r=!1}else r=!1
+if(r){a.texImage2D(b,c,d,e,f,g)
 return}throw A.Og(A.xY("Incorrect number or type of arguments",null))},
 ZE(a,b,c,d,e,f,g){return this.j2(a,b,c,d,e,f,g,null,null)},
 $iJo:1}
@@ -6982,7 +6978,8 @@ if(i>p)p=i}return new A.tn(s,r,q-s,p-r,t.i)},
 Fo(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g
 for(s=this.e1,r=s.length-1,q=null;r>=0;--r){p=s[r]
 o=p.gwr()
-if(p.as&&!0){n=o.a
+n=p.as
+if(n){n=o.a
 m=a-n[4]
 l=b-n[5]
 k=n[3]
@@ -6994,9 +6991,10 @@ g=p.Fo((k*m-j*l)/h,(i*l-n*m)/h)
 if(g==null)continue
 if(g instanceof A.HV&&g.fy)return g
 q=this}}return q},
-dd(a){var s,r,q
+dd(a){var s,r,q,p
 for(s=this.e1,r=0;r<s.length;++r){q=s[r]
-if(q.as&&!0)a.zs(q)}},
+p=q.as
+if(p)a.zs(q)}},
 hu(a){var s
 for(s=this;s!=null;s=s.cy)if(s===a)throw A.Og(A.xY("An object cannot be added as a child to one of it's children (or children's children, etc.).",null))},
 kW(a){var s,r,q,p=this.e1
@@ -7048,22 +7046,23 @@ p=a.Xs
 p.b=this.b
 p.zs(a)
 a.Xs.c.fZ(0)
-p=a.fg=!1
+a.fg=!1
 q=s.gTt()
 a.x9=a.x9*0.75+r.a*0.25
 a.wP=a.wP*0.75+r.b*0.25
 a.vv=a.vv*0.75+r.c*0.25
 a.Gt=a.Gt*0.95+q*0.05
-r=a.r3
-r===$&&A.Q4()
-if(r.as?!0:p){B.Nm.V1(r.id)
-r.k2=r.k1=0
-r.Ch(0,"FRAMETIME"+B.xB.th(B.jn["["](B.CD.zQ(a.Gt)),6))
-r.Ch(0,"DRAWCALLS"+B.xB.th(B.jn["["](B.CD.zQ(a.x9)),6))
-r.Ch(0,"VERTICES"+B.xB.th(B.jn["["](B.CD.zQ(a.wP)),7))
-r.Ch(0,"INDICES"+B.xB.th(B.jn["["](B.CD.zQ(a.vv)),8))
+p=a.r3
+p===$&&A.Q4()
+r=p.as
+if(r){B.Nm.V1(p.id)
+p.k2=p.k1=0
+p.Ch(0,"FRAMETIME"+B.xB.th(B.jn["["](B.CD.zQ(a.Gt)),6))
+p.Ch(0,"DRAWCALLS"+B.xB.th(B.jn["["](B.CD.zQ(a.x9)),6))
+p.Ch(0,"VERTICES"+B.xB.th(B.jn["["](B.CD.zQ(a.wP)),7))
+p.Ch(0,"INDICES"+B.xB.th(B.jn["["](B.CD.zQ(a.vv)),8))
 a.Xs.Z0(0,a.V6)
-a.Xs.zs(r)
+a.Xs.zs(p)
 a.Xs.c.fZ(0)}}if(a.ZO===B.lU)a.ZO=B.Ed
 return null},
 $S:18}
@@ -7274,7 +7273,7 @@ b.width=""+n+"px"
 b=e.I6.style
 b.height=""+m+"px"}e.H2(0,new A.ea("resize",!1))}},
 cq(){var s,r,q,p,o,n,m,l,k,j=this,i=j.rT
-if(i!=null&&!0){s=i.go
+if(i!=null){s=i.go
 r=s!=="auto"?s:"auto"}else r="auto"
 if(r==="auto")r="default"
 if(j.qV!==r){j.qV=r
