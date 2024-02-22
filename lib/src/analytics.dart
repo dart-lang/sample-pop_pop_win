@@ -5,11 +5,10 @@
 // ignore_for_file: non_constant_identifier_names
 
 @JS()
-library analytics;
+library;
 
 import 'dart:html';
-
-import 'package:js/js.dart';
+import 'dart:js_interop';
 
 void gtag(
   String event,
@@ -52,9 +51,7 @@ void sendTiming(
   );
 }
 
-@JS()
-@anonymous
-class GTagAnalyticsEventOptions {
+extension type GTagAnalyticsEventOptions._(JSObject _) {
   external String get event_category;
 
   external String get event_label;
