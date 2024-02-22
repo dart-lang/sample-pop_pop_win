@@ -1595,6 +1595,8 @@ return e}else{h.d=p
 h.c=o}}return d},
 af(a,b){var s,r
 for(;s=a.a,(s&4)!==0;)a=a.c
+s|=b.a&1
+a.a=s
 if((s&24)!==0){r=b.ah()
 b.ug(a)
 A.HZ(b,r)}else{r=b.c
