@@ -45,10 +45,10 @@ packages:
     dependency: transitive
     description:
       name: bazel_worker
-      sha256: "6f306845d941808bed2fdbd7db3a39de273a8248a9303cfebf0cfa861372616e"
+      sha256: "4eef19cc486c289e4b06c69d0f6f3192e85cc93c25d4d15d02afb205e388d2f0"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   boolean_selector:
     dependency: transitive
     description:
