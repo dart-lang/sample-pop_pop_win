@@ -85,10 +85,10 @@ packages:
     dependency: transitive
     description:
       name: build_modules
-      sha256: "66f0f746a239ff6cceba9d235a679ec70a6d9037ddddb36a24a0791a639a8486"
+      sha256: "9987d67a29081872e730468295fc565e9a2b377ca3673337c1d4e41d57c6cd7c"
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.7"
+    version: "5.0.8"
   build_resolvers:
     dependency: transitive
     description:
@@ -101,10 +101,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_runner
-      sha256: "581bacf68f89ec8792f5e5a0b2c4decd1c948e97ce659dc783688c8a88fbec21"
+      sha256: "3ac61a79bfb6f6cc11f693591063a7f19a7af628dc52f141743edac5c16e8c22"
       url: "https://pub.dev"
     source: hosted
-    version: "2.4.8"
+    version: "2.4.9"
   build_runner_core:
     dependency: transitive
     description:
@@ -117,10 +117,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_web_compilers
-      sha256: aad1d705faa53d060e7ccb7855ee74705a8e3d9ea1634e63e362cc2c1bd47afa
+      sha256: "9071a94aa67787cebdd9e76837c9d2af61fb5242db541244f6a0b6249afafb46"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.9"
+    version: "4.0.10"
   built_collection:
     dependency: transitive
     description:
@@ -221,10 +221,10 @@ packages:
     dependency: transitive
     description:
       name: frontend_server_client
-      sha256: "408e3ca148b31c20282ad6f37ebfa6f4bdc8fede5b74bc2f08d9d92b55db3612"
+      sha256: f64a0333a82f30b0cca061bc3d143813a486dc086b574bfb233b7c1372427694
       url: "https://pub.dev"
     source: hosted
-    version: "3.2.0"
+    version: "4.0.0"
   glob:
     dependency: transitive
     description:
@@ -610,4 +610,4 @@ packages:
     source: hosted
     version: "3.1.2"
 sdks:
-  dart: ">=3.3.0 <3.5.0"
+  dart: ">=3.3.0 <3.6.0"
