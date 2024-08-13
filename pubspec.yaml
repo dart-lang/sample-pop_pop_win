@@ -2,7 +2,7 @@ name: pop_pop_win
 publish_to: none
 
 environment:
-  sdk: ^3.4.0
+  sdk: ^3.5.0
 
 dependencies:
   stagexl: ^2.1.1
