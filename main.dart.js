@@ -97,6 +97,9 @@ if(typeof a=="string")return J.Dr.prototype
 if(a==null)return a
 if(!(a instanceof A.a))return J.kd.prototype
 return a},
+LX(a){if(a==null)return a
+if(!(a instanceof A.a))return J.kd.prototype
+return a},
 NH(a){if(typeof a=="string")return J.Dr.prototype
 if(a==null)return a
 if(!(a instanceof A.a))return J.kd.prototype
@@ -1047,7 +1050,7 @@ if(a4==null)a4=A.QI([],t.s)
 else a2=a4.length
 r=a4.length
 for(q=s;q>0;--q)a4.push("T"+(r+q))
-for(p=t.cK,o=t._,n="<",m="",q=0;q<s;++q,m=a1){n=n+m+a4[a4.length-1-q]
+for(p=t.cK,o=t._,n="<",m="",q=0;q<s;++q,m=a1){n=B.xB.h(n+m,a4[a4.length-1-q])
 l=a5[q]
 k=l.w
 if(!(k===2||k===3||k===4||k===5||l===p))j=l===o
@@ -1559,7 +1562,7 @@ b.b=!0
 return b.a},
 j(a,b){A.Je(a,b)},
 y(a,b){b.V(0,a)},
-f(a,b){b.h(A.Ru(a),A.ts(a))},
+f(a,b){b.w0(A.Ru(a),A.ts(a))},
 Je(a,b){var s,r,q=new A.WM(b),p=new A.SX(b)
 if(a instanceof A.vs)a.Qd(q,p,t.z)
 else{s=t.z
@@ -3959,6 +3962,7 @@ gbx(a){return A.Kx(t.gR)},
 $iy5:1}
 J.Dr.prototype={
 pj(a,b){return new A.un(b,a,0)},
+h(a,b){return a+b},
 LE(a,b){if(typeof b=="string")return A.QI(a.split(b),t.s)
 else if(b instanceof A.VR&&b.gIa().exec("").length-2===0)return A.QI(a.split(b.b),t.s)
 else return this.V8(a,b)},
@@ -4622,7 +4626,7 @@ if(!r.b)r.a.Xf(b)
 else{s=r.a
 if(r.$ti.C("b8<1>").b(b))s.cU(b)
 else s.X2(b)}},
-h(a,b){var s=this.a
+w0(a,b){var s=this.a
 if(this.b)s.ZL(a,b)
 else s.Nk(a,b)}}
 A.WM.prototype={
@@ -4717,13 +4721,13 @@ l.toString
 m.c.ZL(s,l)}},
 $S(){return this.d.C("c8(0)")}}
 A.Pf.prototype={
-h(a,b){var s
+w0(a,b){var s
 A.cb(a,"error",t.K)
 s=this.a
 if((s.a&30)!==0)throw A.Og(A.PV("Future already completed"))
 if(b==null)b=A.v0(a)
 s.Nk(a,b)},
-rC(a){return this.h(a,null)}}
+rC(a){return this.w0(a,null)}}
 A.Zf.prototype={
 V(a,b){var s=this.a
 if((s.a&30)!==0)throw A.Og(A.PV("Future already completed"))
@@ -6602,22 +6606,23 @@ hM(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g="complete"
 A.jr("throw")
 for(s=a.length,r=h.Na,q=t.e,p=0;p<a.length;a.length===s||(0,A.lk)(a),++p){o=a[p]
 n=$.bD()
-m=n.a+80*o.gx(o)
-n=n.b+80*o.gy(o)
-l=h.m9
-l===$&&A.Q4()
-k=A.u7(l.dF("dart"),60,!1)
-k.c=m
+m=J.LX(o)
+l=n.a+80*m.gx(o)
+m=n.b+80*m.gy(o)
+n=h.m9
+n===$&&A.Q4()
+k=A.u7(n.dF("dart"),60,!1)
+k.c=l
 k.dx=!0
-k.d=n
+k.d=m
 k.fy=!1
 if(!k.ij){k.ij=!0
 k.RZ=null}r.bS(k)
 k.Ep(0,g,q).XE(new A.m8(k),!1,0)
 j=A.u7(h.m9.dF("shadow"),60,!1)
-j.c=m
+j.c=l
 j.dx=!0
-j.d=n
+j.d=m
 j.fy=!1
 if(!j.ij){j.ij=!0
 j.RZ=null}r.bS(j)
@@ -6671,7 +6676,7 @@ A.Ag.prototype={
 $1(a){return a.a},
 $S:43}
 A.Ha.prototype={
-$1(a){var s=a.gx(a),r=a.gy(a),q=$.f9().M2(0,new A.xy(80*s,80*r))
+$1(a){var s=a.gx(a),r=a.gy(a),q=$.f9().h(0,new A.xy(80*s,80*r))
 return new A.Zl(12+B.CD.yu(a.HN(0,this.a).gwe()*4)+$.XB().j1(10),a,q)},
 $S:44}
 A.BJ.prototype={
@@ -7396,52 +7401,53 @@ if(b)n.H2(0,A.Gd(o.c,!0,p.a,p.b,q.a,q.b,a9.altKey,a9.ctrlKey,a9.shiftKey,0,0,o.f
 Yo(a){var s=this.No.Ey(0,new A.hL(a.clientX,a.clientY,t.o)),r=new A.tZ(0,0,t.M),q=this.Fo(s.a,s.b)
 q.TK(s,r)
 q.H2(0,A.Gd("mouseWheel",!0,r.a,r.b,s.a,s.b,a.altKey,a.ctrlKey,a.shiftKey,B.Kb.gOW(a),B.Kb.gNC(a),!1,0,null))},
-Hj(b3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2=this
-b3.preventDefault()
-s=b3.type
-b3.altKey
-b3.ctrlKey
-r=b3.shiftKey
-q=b3.changedTouches
+Hj(b4){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3,a4,a5,a6,a7,a8,a9,b0,b1,b2,b3=this
+b4.preventDefault()
+s=b4.type
+b4.altKey
+b4.ctrlKey
+r=b4.shiftKey
+q=b4.changedTouches
 if(q==null)return
-for(q=B.bA.gkz(q),p=new A.vG(q,new A.cZ()),o=s==="touchmove",n=s==="touchcancel",m=s==="touchend",l=s==="touchstart",k=b2.mn,j=b2.hi,i=t.o,h=b2.No,g=t.M,f=t.r;p.G();){e=q.gl(0)
+for(q=B.bA.gkz(q),p=new A.vG(q,new A.cZ()),o=s==="touchmove",n=s==="touchcancel",m=s==="touchend",l=s==="touchstart",k=b3.mn,j=b3.hi,i=t.o,h=b3.No,g=t.M,f=t.r;p.G();){e=q.gl(0)
 d=e.identifier
 d.toString
 c=h.Ey(0,new A.hL(B.CD.zQ(e.clientX),B.CD.zQ(e.clientY),i))
 b=new A.tZ(0,0,g)
-a=b2.tJ(c.a,c.b)
-if(a==null)a=b2
-a0=k.Mq(0,d,new A.EZ(b2,a))
-a1=a0.b
-B.Nm.J(j,new A.ez(a0.a,c))
-a2=a0.d
-if(a2!==a){a3=A.QI([],f)
-a4=A.QI([],f)
-for(a5=a2;a5!=null;a5=a5.cy)a3.push(a5)
-for(a5=a;a5!=null;a5=a5.cy)a4.push(a5)
-for(e=a3.length,a6=a4.length,a7=0;!0;++a7){if(a7===e)break
-if(a7===a6)break
-if(a3[e-a7-1]!==a4[a6-a7-1])break}a2.TK(c,b)
-a2.H2(0,new A.y6(a1,b.a,b.b,r,"touchOut",!0))
-for(a8=0;a8<a3.length-a7;++a8){a9=a3[a8]
-a9.TK(c,b)
-a9.H2(0,new A.y6(a1,b.a,b.b,r,"touchRollOut",!1))}for(a8=a4.length-a7-1;a8>=0;--a8){a9=a4[a8]
-a9.TK(c,b)
-a9.H2(0,new A.y6(a1,b.a,b.b,r,"touchRollOver",!1))}a.TK(c,b)
-a.H2(0,new A.y6(a1,b.a,b.b,r,"touchOver",!0))
-a0.d=a}if(l){e=b2.I6
+a=b3.tJ(c.a,c.b)
+if(a==null)a=b3
+a0=k.Mq(0,d,new A.EZ(b3,a))
+a1=a0.a
+a2=a0.b
+B.Nm.J(j,new A.ez(a1,c))
+a3=a0.d
+if(a3!==a){a4=A.QI([],f)
+a5=A.QI([],f)
+for(a6=a3;a6!=null;a6=a6.cy)a4.push(a6)
+for(a6=a;a6!=null;a6=a6.cy)a5.push(a6)
+for(e=a4.length,a7=a5.length,a8=0;!0;++a8){if(a8===e)break
+if(a8===a7)break
+if(a4[e-a8-1]!==a5[a7-a8-1])break}a3.TK(c,b)
+a3.H2(0,new A.y6(a2,b.a,b.b,r,"touchOut",!0))
+for(a9=0;a9<a4.length-a8;++a9){b0=a4[a9]
+b0.TK(c,b)
+b0.H2(0,new A.y6(a2,b.a,b.b,r,"touchRollOut",!1))}for(a9=a5.length-a8-1;a9>=0;--a9){b0=a5[a9]
+b0.TK(c,b)
+b0.H2(0,new A.y6(a2,b.a,b.b,r,"touchRollOver",!1))}a.TK(c,b)
+a.H2(0,new A.y6(a2,b.a,b.b,r,"touchOver",!0))
+a0.d=a}if(l){e=b3.I6
 e===$&&A.Q4()
 e.focus()
 k.Y(0,d,a0)
-b0="touchBegin"}else b0=null
+b1="touchBegin"}else b1=null
 if(m){k.Rz(0,d)
-b1=a0.c===a
-b0="touchEnd"}else b1=!1
+b2=a0.c===a
+b1="touchEnd"}else b2=!1
 if(n){k.Rz(0,d)
-b0="touchCancel"}if(o)b0="touchMove"
-if(b0!=null){a.TK(c,b)
-a.H2(0,new A.y6(a1,b.a,b.b,r,b0,!0))
-if(b1)a.H2(0,new A.y6(a1,b.a,b.b,r,"touchTap",!0))}}},
+b1="touchCancel"}if(o)b1="touchMove"
+if(b1!=null){a.TK(c,b)
+a.H2(0,new A.y6(a2,b.a,b.b,r,b1,!0))
+if(b2)a.H2(0,new A.y6(a2,b.a,b.b,r,"touchTap",!0))}}},
 Pr(a){return}}
 A.I0.prototype={
 $1(a){return this.a.cq()},
@@ -8359,7 +8365,7 @@ gR(a){return this.c},
 gL(a){return this.d}}
 A.xy.prototype={
 "["(a){return"Vector [x="+A.d(this.a)+", y="+A.d(this.b)+"]"},
-M2(a,b){return new A.xy(this.a+b.a,this.b+b.b)},
+h(a,b){return new A.xy(this.a+b.a,this.b+b.b)},
 eT(a,b){if(b==null)return!1
 return b instanceof A.xy&&this.a===b.a&&this.b===b.b},
 gM(a){var s=B.CD.gM(this.a),r=B.CD.gM(this.b)
@@ -9089,7 +9095,7 @@ q(A,"qW","Bz",10)
 r(A,"UI","eN",0)
 q(A,"w6","QE",4)
 s(A,"Cr","SZ",9)
-p(A.Pf.prototype,"gYJ",0,1,null,["$2","$1"],["h","rC"],59,0,0)
+p(A.Pf.prototype,"gYJ",0,1,null,["$2","$1"],["w0","rC"],59,0,0)
 o(A.vs.prototype,"gFa","ZL",9)
 n(A.EM.prototype,"gts","lJ",0)
 q(A,"Gu","Z3",78)
