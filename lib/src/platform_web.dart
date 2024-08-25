@@ -76,7 +76,6 @@ class PlatformWeb {
         if (hash.isNotEmpty && _sizeAccessed) {
           loc.reload();
         }
-        break;
     }
   }
 }
