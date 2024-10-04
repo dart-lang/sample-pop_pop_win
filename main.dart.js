@@ -3966,9 +3966,13 @@ gbx(a){return A.Kx(t.gR)},
 $iy5:1}
 J.Dr.prototype={
 pj(a,b){return new A.un(b,a,0)},
-LE(a,b){if(typeof b=="string")return A.QI(a.split(b),t.s)
-else if(b instanceof A.VR&&b.gIa().exec("").length-2===0)return A.QI(a.split(b.b),t.s)
-else return this.V8(a,b)},
+LE(a,b){var s,r
+if(typeof b=="string")return A.QI(a.split(b),t.s)
+else{if(b instanceof A.VR){s=b.gIa()
+s.lastIndex=0
+r=s.exec("").length-2===0}else r=!1
+if(r)return A.QI(a.split(b.b),t.s)
+else return this.V8(a,b)}},
 V8(a,b){var s,r,q,p,o,n,m=A.QI([],t.s)
 for(s=J.FL(b,a),s=s.gkz(s),r=0,q=1;s.G();){p=s.gl(s)
 o=p.gYT(p)
