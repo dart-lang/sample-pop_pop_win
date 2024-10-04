@@ -15,7 +15,7 @@ targets:
         - web/**.dart
         options:
           dart2js_args:
-            - --dump-info
+            - --stage=dump-info-all
             - --no-frequency-based-minification
             - --no-source-maps
             - --show-package-warnings
