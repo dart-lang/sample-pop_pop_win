@@ -3456,8 +3456,8 @@ _.b=b
 _.c=c
 _.e=_.d=$},
 Ds(a,b){return A.jw(a,b)},
-jw(a,a0){var s=0,r=A.F(t.u),q,p=2,o,n,m,l,k,j,i,h,g,f,e,d,c,b
-var $async$Ds=A.l(function(a1,a2){if(a1===1){o=a2
+jw(a,a0){var s=0,r=A.F(t.u),q,p=2,o=[],n,m,l,k,j,i,h,g,f,e,d,c,b
+var $async$Ds=A.l(function(a1,a2){if(a1===1){o.push(a2)
 s=p}while(true)switch(s){case 0:p=4
 n=a0
 m=n.hz(a)
@@ -3491,7 +3491,7 @@ p=2
 s=6
 break
 case 4:p=3
-b=o
+b=o.pop()
 i=a0
 i.toString
 A.A2()
@@ -3504,7 +3504,7 @@ break
 case 3:s=2
 break
 case 6:case 1:return A.y(q,r)
-case 2:return A.f(o,r)}})
+case 2:return A.f(o.at(-1),r)}})
 return A.D($async$Ds,r)},
 dP(a){var s,r=new A.W1(),q=a==null?$.Y6().destination:a
 r.a=q
@@ -3513,8 +3513,8 @@ r.b=s
 q.toString
 s.connect(q,0,0)
 return r},
-Nh(a1,a2){var s=0,r=A.F(t.u),q,p=2,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0
-var $async$Nh=A.l(function(a3,a4){if(a3===1){o=a4
+Nh(a1,a2){var s=0,r=A.F(t.u),q,p=2,o=[],n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0
+var $async$Nh=A.l(function(a3,a4){if(a3===1){o.push(a4)
 s=p}while(true)switch(s){case 0:c=a2.hz(a1)
 b=$.Y6()
 a=new A.HL("Error loading sound.",A.QI([],t.w))
@@ -3538,7 +3538,7 @@ p=2
 s=9
 break
 case 7:p=6
-a0=o
+a0=o.pop()
 j=A.Ru(a0)
 i=new A.Dy("Failed to load "+A.d(n),j)
 a.b.push(i)
@@ -3555,7 +3555,7 @@ q=h
 s=1
 break
 case 1:return A.y(q,r)
-case 2:return A.f(o,r)}})
+case 2:return A.f(o.at(-1),r)}})
 return A.D($async$Nh,r)},
 Kk(a,b){var s=A.mh()
 switch(s){case B.QD:return A.Nh(a,b)
@@ -8438,8 +8438,8 @@ uc(a){var s=this.a,r=A.nu("(png|jpg|jpeg)$").ej(s)
 if(a&&r!=null)this.Ib(s)}}
 A.cR.prototype={
 $1(a){return this.nb(a)},
-nb(a){var s=0,r=A.F(t.H),q=1,p,o=this,n,m,l,k,j,i,h
-var $async$$1=A.l(function(b,c){if(b===1){p=c
+nb(a){var s=0,r=A.F(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
+var $async$$1=A.l(function(b,c){if(b===1){p.push(c)
 s=q}while(true)switch(s){case 0:i=o.b
 s=i.readyState===4&&i.status===200?2:3
 break
@@ -8454,7 +8454,7 @@ q=1
 s=7
 break
 case 5:q=4
-h=p
+h=p.pop()
 k=A.Ru(h)
 o.a.b.rC(k)
 s=7
@@ -8462,7 +8462,7 @@ break
 case 4:s=1
 break
 case 7:case 3:return A.y(null,r)
-case 1:return A.f(p,r)}})
+case 1:return A.f(p.at(-1),r)}})
 return A.D($async$$1,r)},
 $S:61}
 A.Nn.prototype={
