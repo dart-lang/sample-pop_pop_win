@@ -13,18 +13,18 @@ packages:
     dependency: transitive
     description:
       name: analyzer
-      sha256: "7c8416f91308ced2f7ac1e4fe59d1fb2f6cee25d6b015584505ea286f98a904a"
+      sha256: "13c1e6c6fd460522ea840abec3f677cc226f5fec7872c04ad7b425517ccf54f7"
       url: "https://pub.dev"
     source: hosted
-    version: "7.4.3"
+    version: "7.4.4"
   archive:
     dependency: transitive
     description:
       name: archive
-      sha256: a7f37ff061d7abc2fcf213554b9dcaca713c5853afa5c065c44888bc9ccaf813
+      sha256: "2fde1607386ab523f7a36bb3e7edb43bd58e6edaf2ffb29d8a6d578b297fdbbd"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.6"
+    version: "4.0.7"
   args:
     dependency: transitive
     description:
