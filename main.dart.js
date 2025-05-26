@@ -24,7 +24,8 @@ a[b]=s
 a[c]=function(){if(a[b]===s){var r=d()
 if(a[b]!==s){A.pR(b)}a[b]=r}var q=a[b]
 a[c]=function(){return q}
-return q}}function makeConstList(a){a.$flags=7
+return q}}function makeConstList(a,b){if(b!=null)A.QI(a,b)
+a.$flags=7
 return a}function convertToFastObject(a){function t(){}t.prototype=a
 new t()
 return a}function convertAllToFastObject(a){for(var s=0;s<a.length;++s){convertToFastObject(a[s])}}var y=0
@@ -1729,8 +1730,8 @@ $.X3=c
 s=r
 try{r=d.$2(e,f)
 return r}finally{$.X3=s}},
-Tk(a,b,c,d){if(B.NU!==c)d=c.GY(d)
-A.IA(d)},
+Tk(a,b,c,d){if(B.NU!==c){d=c.GY(d)
+d=d}A.IA(d)},
 th:function th(a){this.a=a},
 ha:function ha(a,b,c){this.a=a
 this.b=b
@@ -9501,9 +9502,9 @@ B.aN=new A.vZ("MouseOnly")
 B.O7=new A.vZ("TouchOnly")
 B.Pr=new A.vZ("MouseAndTouch")
 B.A3=new A.QM(null)
-B.lp=A.QI(s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"]),t.s)
-B.YC=A.QI(s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"]),t.s)
-B.xD=A.QI(s([]),t.b)
+B.lp=s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"],t.s)
+B.YC=s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"],t.s)
+B.xD=s([],t.b)
 B.p6={}
 B.CM=new A.LP(B.p6,[],A.N0("LP<GD,@>"))
 B.XB=new A.aK("WebGL")
