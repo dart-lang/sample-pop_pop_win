@@ -17,17 +17,16 @@ class Array2d<T> extends ListBase<T> {
   }
 
   factory Array2d.readonlyFrom(int width, Iterable<T> source) => Array2d.wrap(
-      width, UnmodifiableListView<T>(source.toList(growable: false)));
+    width,
+    UnmodifiableListView<T>(source.toList(growable: false)),
+  );
 
-  Array2d._skinny(this.height)
-      : width = 0,
-        _source = [],
-        assert(height >= 0);
+  Array2d._skinny(this.height) : width = 0, _source = [], assert(height >= 0);
 
   Array2d.wrap(this.width, List<T> source)
-      : _source = source,
-        assert(width >= 0),
-        height = (width > 0) ? source.length ~/ width : 0 {
+    : _source = source,
+      assert(width >= 0),
+      height = (width > 0) ? source.length ~/ width : 0 {
     if (width * height == 0) {
       assert(_source.isEmpty);
     } else {

@@ -2,14 +2,14 @@ name: pop_pop_win
 publish_to: none
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.9.0
 
 dependencies:
-  stagexl: ^2.1.1
+  stagexl: '>=2.1.1 <2.3.0'
 
 dev_dependencies:
   build_runner: ^2.2.1
-  build_web_compilers: ^4.0.10
+  build_web_compilers: ^4.1.6
   dart_flutter_team_lints: ^3.0.0
   preload: ^2.0.0
   test: ^1.21.6

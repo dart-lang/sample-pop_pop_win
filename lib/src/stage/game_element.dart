@@ -26,8 +26,10 @@ const _popAnimationHitFrame = 12;
 class GameElement extends Sprite {
   static final Vector boardOffset = Vector(352, 96);
   static final _popExplodeAnimationOffset = Vector(-88, -88);
-  static final _dartAnimationOffset =
-      Vector(-512 + 0.5 * SquareElement.size, -388 + 0.5 * SquareElement.size);
+  static final _dartAnimationOffset = Vector(
+    -512 + 0.5 * SquareElement.size,
+    -388 + 0.5 * SquareElement.size,
+  );
 
   final GameRoot _manager;
 
@@ -60,11 +62,16 @@ class GameElement extends Sprite {
     GameBackgroundElement(this, opa);
 
     final newButtonNormal = Bitmap(sta.getBitmapData('button_new_game'));
-    final newButtonPressed =
-        Bitmap(sta.getBitmapData('button_new_game_clicked'));
+    final newButtonPressed = Bitmap(
+      sta.getBitmapData('button_new_game_clicked'),
+    );
 
     SimpleButton(
-        newButtonNormal, newButtonPressed, newButtonPressed, newButtonPressed)
+        newButtonNormal,
+        newButtonPressed,
+        newButtonPressed,
+        newButtonPressed,
+      )
       ..x = 450
       ..y = 20
       ..onMouseClick.listen((e) {
@@ -176,27 +183,32 @@ class GameElement extends Sprite {
     if (reveals == null) {
       assert(game.state == GameState.lost);
 
-      reveals = Iterable.generate(game.field.length, (i) {
-        final c = game.field.getCoordinate(i);
-        return (coordinate: c, state: game.getSquareState(c.x, c.y));
-      })
-          .where((t2) =>
-              t2.state == SquareState.bomb || t2.state == SquareState.hidden)
-          .map((t2) => t2.coordinate)
-          .toList();
+      reveals =
+          Iterable.generate(game.field.length, (i) {
+                final c = game.field.getCoordinate(i);
+                return (coordinate: c, state: game.getSquareState(c.x, c.y));
+              })
+              .where(
+                (t2) =>
+                    t2.state == SquareState.bomb ||
+                    t2.state == SquareState.hidden,
+              )
+              .map((t2) => t2.coordinate)
+              .toList();
     }
 
     final values = reveals.map((c) {
-      final initialOffset =
-          Vector(SquareElement.size * c.x, SquareElement.size * c.y);
+      final initialOffset = Vector(
+        SquareElement.size * c.x,
+        SquareElement.size * c.y,
+      );
       final squareOffset = _popExplodeAnimationOffset + initialOffset;
 
       var delay = _popAnimationHitFrame + ((c - start).magnitude * 4).toInt();
       delay += random.nextInt(10);
 
       return (point: c, squareOffset: squareOffset, delay: delay);
-    }).toList()
-      ..sort((a, b) => a.delay.compareTo(b.delay));
+    }).toList()..sort((a, b) => a.delay.compareTo(b.delay));
 
     for (var v in values) {
       final c = v.point;
@@ -205,8 +217,9 @@ class GameElement extends Sprite {
       final se = _boardElement.squareAt(c.x, c.y);
       final ss = se.squareState;
 
-      final texturePrefix =
-          ss == SquareState.bomb ? 'balloon_explode' : 'balloon_pop';
+      final texturePrefix = ss == SquareState.bomb
+          ? 'balloon_explode'
+          : 'balloon_pop';
 
       final anim =
           FlipBook(_animations.getBitmapDatas(texturePrefix), _frameRate, false)
@@ -228,7 +241,8 @@ class GameElement extends Sprite {
     assert(points.isNotEmpty);
     game_audio.throwDart();
     for (var point in points) {
-      final squareOffset = _dartAnimationOffset +
+      final squareOffset =
+          _dartAnimationOffset +
           Vector(SquareElement.size * point.x, SquareElement.size * point.y);
 
       final dart =

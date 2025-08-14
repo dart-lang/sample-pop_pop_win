@@ -17,7 +17,7 @@ const sampleField = <int?>[
   null, 7, null, 8, null, 3,
   null, 5, null, null, null, 2,
   null, 3, 2, 3, 2, 1,
-  1, 1, 0, 0, 0, 0
+  1, 1, 0, 0, 0, 0,
 ];
 
 Field getSampleField() =>

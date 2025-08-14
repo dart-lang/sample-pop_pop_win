@@ -11,8 +11,12 @@ class ScoreElement extends TextField {
   int? bestTime;
 
   ScoreElement(this.bestTime) {
-    defaultTextFormat =
-        TextFormat('Slackey, cursive', 28, Color.Black, leading: 1);
+    defaultTextFormat = TextFormat(
+      'Slackey, cursive',
+      28,
+      Color.Black,
+      leading: 1,
+    );
     autoSize = TextFieldAutoSize.LEFT;
     x = 1400;
     y = 20;
