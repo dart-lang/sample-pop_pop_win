@@ -1119,7 +1119,7 @@ o3(a){var s=v.mangledGlobalNames[a]
 if(s!=null)return s
 return"minified:"+a},
 Qo(a,b){var s=a.tR[b]
-for(;typeof s=="string";)s=a.tR[s]
+while(typeof s=="string")s=a.tR[s]
 return s},
 ai(a,b){var s,r,q,p,o,n=a.eT,m=n[b]
 if(m==null)return A.Ew(a,b,!1)
@@ -1483,7 +1483,7 @@ e=r.c
 d=f.length
 c=e.length
 for(b=0,a=0;a<c;a+=3){a0=e[a]
-for(;!0;){if(b>=d)return!1
+for(;;){if(b>=d)return!1
 a1=f[b]
 b+=3
 if(a0<a1)return!1
@@ -1493,10 +1493,10 @@ continue}g=e[a+1]
 if(a2&&!g)return!1
 g=f[b-1]
 if(!A.We(a3,e[a+2],a7,g,a5))return!1
-break}}for(;b<d;){if(f[b+1])return!1
+break}}while(b<d){if(f[b+1])return!1
 b+=3}return!0},
 pG(a,b,c,d,e){var s,r,q,p,o,n=b.x,m=d.x
-for(;n!==m;){s=a.tR[n]
+while(n!==m){s=a.tR[n]
 if(s==null)return!1
 if(typeof s=="string"){n=s
 continue}r=s[m]
@@ -1604,7 +1604,7 @@ b=B.pd}}else b=B.pd
 else if(t.Q.b(a))A.mj(a,b)
 return new A.OH(a,b)},
 A9(a,b,c){var s,r,q,p={},o=p.a=a
-for(;s=o.a,(s&4)!==0;){o=o.c
+while(s=o.a,(s&4)!==0){o=o.c
 p.a=o}if(o===b){s=A.Zb()
 b.Gd(new A.OH(new A.AT(!0,o,null,"Cannot complete a future with itself"),s))
 return}r=b.a&1
@@ -1622,7 +1622,7 @@ A.HZ(b,q)
 return}b.a^=2
 A.Tk(null,null,b.b,new A.fG(p,b))},
 HZ(a,b){var s,r,q,p,o,n,m,l,k,j,i,h,g={},f=g.a=a
-for(;!0;){s={}
+for(;;){s={}
 r=f.a
 q=(r&16)===0
 p=!q
@@ -1957,7 +1957,7 @@ vg(a,b,c){var s=J.IT(b)
 if(!s.G())return a
 if(c.length===0){do a+=A.d(s.gl(s))
 while(s.G())}else{a+=A.d(s.gl(s))
-for(;s.G();)a=a+c+A.d(s.gl(s))}return a},
+while(s.G())a=a+c+A.d(s.gl(s))}return a},
 Wi(a,b){return new A.MC(a,b.gWa(),b.gnd(),b.gVm())},
 Zb(){return A.ts(new Error())},
 tG(a,b,c){var s="microsecond"
@@ -2018,7 +2018,7 @@ r.a=A.vg(r.a,a,", ")}finally{$.p.pop()}s.a+=c
 r=s.a
 return r.charCodeAt(0)==0?r:r},
 Vr(a,b){var s,r,q,p,o,n,m,l=a.gkz(a),k=0,j=0
-while(!0){if(!(k<80||j<3))break
+for(;;){if(!(k<80||j<3))break
 if(!l.G())return
 s=A.d(l.gl(l))
 b.push(s)
@@ -2030,13 +2030,13 @@ return}r=A.d(p)
 q=b.pop()
 k+=r.length+2}else{o=l.gl(l);++j
 for(;l.G();p=o,o=n){n=l.gl(l);++j
-if(j>100){while(!0){if(!(k>75&&j>3))break
+if(j>100){for(;;){if(!(k>75&&j>3))break
 k-=b.pop().length+2;--j}b.push("...")
 return}}q=A.d(p)
 r=A.d(o)
 k+=r.length+q.length+4}}if(j>b.length+2){k+=5
 m="..."}else m=null
-while(!0){if(!(k>80&&b.length>3))break
+for(;;){if(!(k>80&&b.length>3))break
 k-=b.pop().length+2
 if(m==null){k+=5
 m="..."}}if(m!=null)b.push(m)
@@ -2426,7 +2426,7 @@ Jo:function Jo(){},
 Iq:function Iq(){},
 E(){var s=0,r=A.F(t.H),q,p,o,n,m
 var $async$E=A.l(function(a,b){if(a===1)return A.f(b,r)
-while(true)switch(s){case 0:A.hA("startGame")
+for(;;)switch(s){case 0:A.hA("startGame")
 q=t.E.a(document.querySelector("#gameCanvas"))
 p=A.uf()
 p.f=11840895
@@ -2453,7 +2453,7 @@ case 3:return A.y(null,r)}})
 return A.D($async$E,r)},
 uk(a,b){var s=0,r=A.F(t.H),q,p,o,n,m,l
 var $async$uk=A.l(function(c,d){if(c===1)return A.f(d,r)
-while(true)switch(s){case 0:A.hA("initialLoad")
+for(;;)switch(s){case 0:A.hA("initialLoad")
 q=t.p.a(a.n9("TextureAtlas","static"))
 p=q.kI("loading_bar")
 o=$.LS
@@ -2564,8 +2564,10 @@ vd(a){var s,r=A.x2(!1,t.H),q=A.x2(!1,t.L)
 $.jv()
 s=a.d
 return new A.fq(a,A.iT(a.a,a.b,new A.li(),t.an),r,q,new A.P1(),B.Ns,s,a.c.length-s)},
-Bk:function Bk(a){this.b=a},
-cw:function cw(a){this.b=a},
+Bk:function Bk(a,b){this.a=a
+this.b=b},
+cw:function cw(a,b){this.a=a
+this.b=b},
 fq:function fq(a,b,c,d,e,f,g,h){var _=this
 _.a=a
 _.b=b
@@ -2632,9 +2634,9 @@ return p},
 T4(a,b,c){a.Q=B.jn.IV(1,0,1)
 a.bY(0)
 b.Iv()
-switch(c){case B.Ni:case B.Bl:A.jr("Pop")
+switch(c.a){case 1:case 0:A.jr("Pop")
 break
-case B.e5:A.jr("Bomb")
+case 3:A.jr("Bomb")
 break}},
 Mp:function Mp(a,b,c,d,e,f,g,h){var _=this
 _.Qt=a
@@ -2761,7 +2763,7 @@ s=q.e
 return new A.js(r.c/s,r.d/s,q)},
 tF(a){var s=0,r=A.F(t.J),q,p,o,n,m,l,k,j,i
 var $async$tF=A.l(function(b,c){if(b===1)return A.f(c,r)
-while(true)switch(s){case 0:m=$.bs()
+for(;;)switch(s){case 0:m=$.bs()
 l=A.m6(a,m.d)
 k=l.b
 j=l.c
@@ -2852,7 +2854,8 @@ _.a=!1},
 D5:function D5(a){this.a=a},
 HR:function HR(a,b){this.a=a
 this.b=b},
-vc:function vc(a){this.b=a},
+vc:function vc(a,b){this.a=a
+this.b=b},
 QQ:function QQ(a,b,c,d,e,f,g,h,i){var _=this
 _.e1=a
 _.LD=b
@@ -2887,9 +2890,12 @@ _.cy=null
 _.db=d
 _.dx=!0
 _.a=e},
-dG:function dG(a){this.b=a},
-mf:function mf(a){this.b=a},
-P0:function P0(a){this.b=a},
+dG:function dG(a,b){this.a=a
+this.b=b},
+mf:function mf(a,b){this.a=a
+this.b=b},
+P0:function P0(a,b){this.a=a
+this.b=b},
 Lz:function Lz(a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s){var _=this
 _.Jq=_.I6=$
 _.qJ=null
@@ -3217,7 +3223,8 @@ _.d=_.c=0
 _.e=-1
 _.r=_.f=null
 _.w=$},
-aK:function aK(a){this.b=a},
+aK:function aK(a,b){this.a=a
+this.b=b},
 ph:function ph(){},
 UE:function UE(){},
 p5:function p5(a,b,c,d,e,f,g){var _=this
@@ -3341,7 +3348,8 @@ _.a=a
 _.b=b
 _.r=_.f=!1},
 NC:function NC(){},
-oq:function oq(a){this.b=a},
+oq:function oq(a,b){this.a=a
+this.b=b},
 q4:function q4(a,b,c){var _=this
 _.a=a
 _.c=b
@@ -3356,7 +3364,8 @@ _.d=b
 _.e=c
 _.f=d
 _.$ti=e},
-vZ:function vZ(a){this.b=a},
+vZ:function vZ(a,b){this.a=a
+this.b=b},
 Cv:function Cv(){},
 Aj:function Aj(a,b,c,d,e,f){var _=this
 _.fx=a
@@ -3447,7 +3456,7 @@ _.e=_.d=$},
 Ds(a,b){return A.jw(a,b)},
 jw(a,a0){var s=0,r=A.F(t.u),q,p=2,o=[],n,m,l,k,j,i,h,g,f,e,d,c,b
 var $async$Ds=A.l(function(a1,a2){if(a1===1){o.push(a2)
-s=p}while(true)switch(s){case 0:p=4
+s=p}for(;;)switch(s){case 0:p=4
 n=a0
 m=n.hz(a)
 n.toString
@@ -3504,7 +3513,7 @@ s.connect(q,0,0)
 return r},
 Nh(a1,a2){var s=0,r=A.F(t.u),q,p=2,o=[],n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0
 var $async$Nh=A.l(function(a3,a4){if(a3===1){o.push(a4)
-s=p}while(true)switch(s){case 0:c=a2.hz(a1)
+s=p}for(;;)switch(s){case 0:c=a2.hz(a1)
 b=$.Y6()
 a=new A.HL("Error loading sound.",A.QI([],t.Y))
 h=c.length,g=t.dI,f=0
@@ -3547,8 +3556,8 @@ case 1:return A.y(q,r)
 case 2:return A.f(o.at(-1),r)}})
 return A.D($async$Nh,r)},
 Kk(a,b){var s=A.mh()
-switch(s){case B.QD:return A.Nh(a,b)
-case B.lX:return A.Ds(a,b)
+switch(s.a){case 0:return A.Nh(a,b)
+case 1:return A.Ds(a,b)
 default:A.A2()
 return A.iv(new A.RX(),t.u)}},
 mh(){A.A2()
@@ -3590,7 +3599,8 @@ _.at=_.as=_.Q=_.z=0
 _.a=b},
 dt:function dt(){},
 rG:function rG(){},
-N2:function N2(a){this.b=a},
+N2:function N2(a,b){this.a=a
+this.b=b},
 ye:function ye(){var _=this
 _.c=_.b=_.a=!0
 _.d=!1
@@ -3605,7 +3615,7 @@ s.PJ(a,b,c,d)
 return s},
 Yw(a2,a3){var s=0,r=A.F(t.dT),q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1
 var $async$Yw=A.l(function(a4,a5){if(a4===1)return A.f(a5,r)
-while(true)switch(s){case 0:j=A.QI([],t.d6)
+for(;;)switch(s){case 0:j=A.QI([],t.d6)
 i=new A.lN(j)
 h=t.f
 a0=h
@@ -3722,7 +3732,7 @@ _.b=b
 _.w=_.r=_.e=_.d=_.c=0},
 I(){var s=0,r=A.F(t.H)
 var $async$I=A.l(function(a,b){if(a===1)return A.f(b,r)
-while(true)switch(s){case 0:A.k()
+for(;;)switch(s){case 0:A.k()
 s=2
 return A.j(A.E(),$async$I)
 case 2:return A.y(null,r)}})
@@ -3997,7 +4007,7 @@ Ix(a,b){var s,r
 if(0>=b)return""
 if(b===1||a.length===0)return a
 if(b!==b>>>0)throw A.Og(B.Eq)
-for(s=a,r="";!0;){if((b&1)===1)r=s+r
+for(s=a,r="";;){if((b&1)===1)r=s+r
 b=b>>>1
 if(b===0)break
 s+=s}return r},
@@ -4322,7 +4332,7 @@ if(s.a>0){s.b=s.c=s.d=s.e=s.f=null
 s.a=0
 s.S()}},
 J(a,b){var s=this,r=s.e,q=s.r
-for(;r!=null;){b.$2(r.a,r.b)
+while(r!=null){b.$2(r.a,r.b)
 if(q!==s.r)throw A.Og(A.a4(s))
 r=r.c}},
 m(a,b,c){var s=a[b]
@@ -4408,7 +4418,7 @@ o=m[q]
 l=a?l+A.ik(o):l+A.d(o)}l+=")"
 return l.charCodeAt(0)==0?l:l},
 D(){var s,r=this.$s
-for(;$.Bi.length<=r;)$.Bi.push(null)
+while($.Bi.length<=r)$.Bi.push(null)
 s=$.Bi[r]
 if(s==null){s=this.t()
 $.Bi[r]=s}return s},
@@ -5026,7 +5036,7 @@ s=!1
 if((p&4)!==0)if(p<256){s=q.r
 s=s==null?null:s.c==null
 s=s!==!1}if(s){p&=4294967291
-q.e=p}}for(;!0;a=r){if((p&8)!==0){q.r=null
+q.e=p}}for(;;a=r){if((p&8)!==0){q.r=null
 return}r=(p&4)!==0
 if(a===r)break
 q.e=p^64
@@ -5524,7 +5534,7 @@ A.S0.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 W(a,b){return A.mR(a.get(b))},
 J(a,b){var s,r=a.entries()
-for(;!0;){s=r.next()
+for(;;){s=r.next()
 if(s.done)return
 b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
@@ -5539,7 +5549,7 @@ A.z2.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 W(a,b){return A.mR(a.get(b))},
 J(a,b){var s,r=a.entries()
-for(;!0;){s=r.next()
+for(;;){s=r.next()
 if(s.done)return
 b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
@@ -5599,7 +5609,7 @@ A.Fi.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 W(a,b){return A.mR(a.get(b))},
 J(a,b){var s,r=a.entries()
-for(;!0;){s=r.next()
+for(;;){s=r.next()
 if(s.done)return
 b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
@@ -5643,7 +5653,7 @@ A.As.prototype={
 x4(a,b){return a.getItem(b)!=null},
 W(a,b){return a.getItem(A.Bt(b))},
 J(a,b){var s,r,q
-for(s=0;!0;++s){r=a.key(s)
+for(s=0;;++s){r=a.key(s)
 if(r==null)return
 q=a.getItem(r)
 q.toString
@@ -6103,7 +6113,7 @@ A.z8.prototype={
 x4(a,b){return A.mR(a.get(b))!=null},
 W(a,b){return A.mR(a.get(b))},
 J(a,b){var s,r=a.entries()
-for(;!0;){s=r.next()
+for(;;){s=r.next()
 if(s.done)return
 b.$2(s.value[0],A.mR(s.value[1]))}},
 gv(a){var s=A.QI([],t.s)
@@ -6341,7 +6351,7 @@ q===$&&A.Q4()
 s=q.$ti
 q=new A.a7(q,q.gj(0),s.C("a7<ar.E>"))
 s=s.C("ar.E")
-for(;q.G();){r=q.d;(r==null?s.a(r):r).Iv()}}}
+while(q.G()){r=q.d;(r==null?s.a(r):r).Iv()}}}
 A.Az.prototype={
 $1(a){var s,r,q,p,o=this.a,n=t.q,m=n.a(o.cy).Qt.e
 m===$&&A.Q4()
@@ -6440,7 +6450,7 @@ c=new A.tn(0,0,112,80,j)
 j=i.c
 f=j.a
 b=0
-while(!0){e=k.a(a2.cy)
+for(;;){e=k.a(a2.cy)
 a=e.Qt.e
 a===$&&A.Q4()
 if(!(b<a.a.a-2))break
@@ -6730,15 +6740,15 @@ l===$&&A.Q4()
 s=o.Qt
 r=o.lN
 q=l.b
-switch(q.c[s+r*q.a]){case B.Bl:l=o.cV()
+switch(q.c[s+r*q.a].a){case 0:l=o.cV()
 break
-case B.No:l="balloon_tagged_frozen"
+case 2:l="balloon_tagged_frozen"
 break
-case B.Ni:l=B.lp[l.a.Wz(s,r)]
+case 1:l=B.lp[l.a.Wz(s,r)]
 break
-case B.e5:l="crater_b"
+case 3:l="crater_b"
 break
-case B.fL:l="balloon_tagged_bomb"
+case 4:l="balloon_tagged_bomb"
 break
 default:l=null}n=m.a(n.a(o.cy).cy).Qt.e
 n===$&&A.Q4()
@@ -6770,7 +6780,7 @@ return B.YC[B.jn.zY(s.Qt+s.lN,4)]}else{s.go="pointer"
 return"balloon"}}}
 A.K1.prototype={
 Gz(a){var s,r=this,q=r.b+a,p=r.a
-while(!0){s=r.c
+for(;;){s=r.c
 if(!(q>=s&&r.d>0))break
 r.b=s;--r.d
 p.$0()
@@ -6785,7 +6795,7 @@ s.a=b
 this.b=s.b=new A.Gn()}},
 tg(a,b){var s,r=this.a,q=this.b
 q===$&&A.Q4()
-for(;r!==q;){s=r==null
+while(r!==q){s=r==null
 if((s?null:r.a)===b)return!0
 r=s?null:r.b}return!1},
 RY(a,b){var s=new A.J3(a,A.XM(),A.QI([],t.fx))
@@ -6991,11 +7001,11 @@ a.b=(p[0]*(r-p[5])-p[1]*(s-p[4]))/q.gR9()},
 H2(a,b){var s,r,q,p=this,o=A.QI([],t.f6)
 for(s=p.cy;s!=null;s=s.cy)o.push(s)
 r=o.length-1
-while(!0){if(!(r>=0&&b.gH9()))break
+for(;;){if(!(r>=0&&b.gH9()))break
 o[r].J0(b,p,B.b7);--r}p.J0(b,p,B.wq)
 q=b.b
 r=0
-while(!0){if(!(r<o.length&&q))break
+for(;;){if(!(r<o.length&&q))break
 o[r].J0(b,p,B.V6);++r}},
 dd(a){}}
 A.my.prototype={
@@ -7059,7 +7069,7 @@ for(s=p.length-1,r=a;s>=0;--s,r=q){q=p[s]
 p[s]=r
 if(a===q)break}},
 ul(a,b){var s=!1,r=this
-while(!0){if(!(r!=null&&!s))break
+for(;;){if(!(r!=null&&!s))break
 if(r.jQ(b,!0))s=!0
 r=r.cy}this.CI(a,new A.ea(b,!1),s)},
 CI(a,b,c){var s,r,q=!c
@@ -7133,9 +7143,9 @@ return s.Fo((q[3]*p-q[2]*o)/r.gR9(),(q[0]*o-q[1]*p)/r.gR9())!=null?this:null},
 dd(a){var s=this.IJ()
 if(s!=null)a.zs(s)},
 IJ(){var s=this
-switch(s.TQ){case B.So:return s.e1
-case B.Br:return s.LD
-case B.UK:return s.kX
+switch(s.TQ.a){case 0:return s.e1
+case 1:return s.LD
+case 2:return s.kX
 default:return null}},
 Z3(a){if(a.a==="mouseOut")this.TQ=B.So
 else if(a.fx)this.TQ=B.UK
@@ -7280,26 +7290,26 @@ l=n/d
 k=m/c
 j=1
 i=1
-switch(e.c4){case B.pq:i=k
+switch(e.c4.a){case 0:i=k
 j=l
 break
-case B.o6:i=l>k?l:k
+case 1:i=l>k?l:k
 j=i
 break
-case B.bM:break
-case B.as:i=l<k?l:k
+case 2:break
+case 3:i=l<k?l:k
 j=i
-break}b=e.bb
+break}b=e.bb.a
 h=0
-switch(b){case B.fR:case B.kx:case B.e8:break
-case B.d4:case B.eb:case B.L6:h=(n-d*j)/2
+switch(b){case 3:case 6:case 0:break
+case 1:case 4:case 7:h=(n-d*j)/2
 break
-case B.IK:case B.ld:case B.Kq:h=n-d*j
+case 2:case 5:case 8:h=n-d*j
 break}g=0
-switch(b){case B.e8:case B.d4:case B.IK:break
-case B.fR:case B.eb:case B.ld:g=(m-c*i)/2
+switch(b){case 0:case 1:case 2:break
+case 3:case 4:case 5:g=(m-c*i)/2
 break
-case B.kx:case B.L6:case B.Kq:g=m-c*i
+case 6:case 7:case 8:g=m-c*i
 break}b=e.GI
 b.a=-h/j
 b.b=-g/i
@@ -7362,7 +7372,7 @@ j=A.QI([],m)
 i=A.QI([],m)
 for(h=k;h!=null;h=h.cy)j.push(h)
 for(h=n;h!=null;h=h.cy)i.push(h)
-for(m=j.length,g=i.length,f=0;!0;++f){if(f===m)break
+for(m=j.length,g=i.length,f=0;;++f){if(f===m)break
 if(f===g)break
 if(j[m-f-1]!==i[g-f-1])break}if(k!=null){k.TK(q,p)
 k.H2(0,A.Gd("mouseOut",!0,p.a,p.b,q.a,q.b,b0.altKey,b0.ctrlKey,b0.shiftKey,0,0,o.f,0,a7))
@@ -7437,7 +7447,7 @@ if(a1!==b){a2=A.QI([],g)
 a3=A.QI([],g)
 for(a4=a1;a4!=null;a4=a4.cy)a2.push(a4)
 for(a4=b;a4!=null;a4=a4.cy)a3.push(a4)
-for(f=a2.length,a5=a3.length,a6=0;!0;++a6){if(a6===f)break
+for(f=a2.length,a5=a3.length,a6=0;;++a6){if(a6===f)break
 if(a6===a5)break
 if(a2[f-a6-1]!==a3[a5-a6-1])break}a1.TK(d,c)
 a1.H2(0,new A.y6(a0,c.a,c.b,r,"touchOut",!0))
@@ -8194,7 +8204,7 @@ A.id.prototype={
 fe(a){this.f=a},
 Gv(a){var s=0,r=A.F(t.H),q=this
 var $async$Gv=A.l(function(b,c){if(b===1)return A.f(c,r)
-while(true)switch(s){case 0:if(!q.c){q.e.Px(q)
+for(;;)switch(s){case 0:if(!q.c){q.e.Px(q)
 q.c=!0}return A.y(null,r)}})
 return A.D($async$Gv,r)}}
 A.vZ.prototype={
@@ -8429,7 +8439,7 @@ A.cR.prototype={
 $1(a){return this.nb(a)},
 nb(a){var s=0,r=A.F(t.H),q=1,p=[],o=this,n,m,l,k,j,i,h
 var $async$$1=A.l(function(b,c){if(b===1){p.push(c)
-s=q}while(true)switch(s){case 0:i=o.b
+s=q}for(;;)switch(s){case 0:i=o.b
 s=i.readyState===4&&i.status===200?2:3
 break
 case 2:q=5
@@ -8485,7 +8495,7 @@ return s},
 cY(a){return this.PE(a)},
 PE(a){var s=0,r=A.F(t.g),q,p=this,o,n,m,l,k
 var $async$cY=A.l(function(b,c){if(b===1)return A.f(c,r)
-while(true)$async$outer:switch(s){case 0:for(o=p.b,n=new A.N6(o,o.r,o.e);n.G();){m=n.d
+for(;;)$async$outer:switch(s){case 0:for(o=p.b,n=new A.N6(o,o.r,o.e);n.G();){m=n.d
 if(o.W(0,m)==null){o.Y(0,m,a)
 q=m
 s=1
@@ -8630,7 +8640,7 @@ A.e5.prototype={}
 A.fm.prototype={
 xW(a){var s=0,r=A.F(t.bi),q,p=this,o,n
 var $async$xW=A.l(function(b,c){if(b===1)return A.f(c,r)
-while(true)switch(s){case 0:n=p.gPb()
+for(;;)switch(s){case 0:n=p.gPb()
 s=3
 return A.j(A.pH(new A.A8(n,new A.Gr(),A.t6(n).C("A8<1,b8<YY>>")),t.h),$async$xW)
 case 3:o=p.gow().length
@@ -8726,7 +8736,7 @@ A.eC.prototype={
 cD(a,b){return this.kY(0,b)},
 kY(a,a0){var s=0,r=A.F(t.p),q,p=this,o,n,m,l,k,j,i,h,g,f,e,d,c,b
 var $async$cD=A.l(function(a1,a2){if(a1===1)return A.f(a2,r)
-while(true)switch(s){case 0:b=a0.b
+for(;;)switch(s){case 0:b=a0.b
 b===$&&A.Q4()
 s=3
 return A.j(A.Kn(b.b),$async$cD)
@@ -8838,7 +8848,7 @@ A.na.prototype={
 Tm(a){return this.QH(a)},
 QH(a){var s=0,r=A.F(t.f4),q,p=this,o,n,m,l,k,j,i
 var $async$Tm=A.l(function(b,c){if(b===1)return A.f(c,r)
-while(true)switch(s){case 0:j=p.b
+for(;;)switch(s){case 0:j=p.b
 j===$&&A.Q4()
 o=j.b
 j=p.a
@@ -9501,53 +9511,42 @@ B.pd=new A.Zd()
 B.kH=new A.eC()
 B.RT=new A.a6(0)
 B.vM=new A.a6(1e6)
-B.b7=new A.oq("CAPTURING_PHASE")
-B.wq=new A.oq("AT_TARGET")
-B.V6=new A.oq("BUBBLING_PHASE")
-B.Ns=new A.cw("reset")
-B.NA=new A.cw("started")
-B.mV=new A.cw("won")
-B.He=new A.cw("lost")
-B.aN=new A.vZ("MouseOnly")
-B.O7=new A.vZ("TouchOnly")
-B.Pr=new A.vZ("MouseAndTouch")
+B.b7=new A.oq(0,"CAPTURING_PHASE")
+B.wq=new A.oq(1,"AT_TARGET")
+B.V6=new A.oq(2,"BUBBLING_PHASE")
+B.Ns=new A.cw(0,"reset")
+B.NA=new A.cw(1,"started")
+B.mV=new A.cw(2,"won")
+B.He=new A.cw(3,"lost")
+B.aN=new A.vZ(0,"MouseOnly")
+B.O7=new A.vZ(1,"TouchOnly")
+B.Pr=new A.vZ(2,"MouseAndTouch")
 B.A3=new A.QM(null)
 B.lp=s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"],t.s)
 B.YC=s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"],t.s)
 B.xD=s([],t.b)
 B.p6={}
 B.CM=new A.LP(B.p6,[],A.N0("LP<GD,@>"))
-B.XB=new A.aK("WebGL")
-B.qV=new A.aK("Canvas2D")
+B.XB=new A.aK(0,"WebGL")
+B.qV=new A.aK(1,"Canvas2D")
 B.M8=new A.jc(9728)
 B.Ls=new A.jc(9729)
-B.So=new A.vc("Up")
-B.Br=new A.vc("Over")
-B.UK=new A.vc("Down")
-B.QD=new A.N2("WebAudioApi")
-B.lX=new A.N2("AudioElement")
-B.a1=new A.N2("Mockup")
-B.Bl=new A.Bk("hidden")
-B.Ni=new A.Bk("revealed")
-B.No=new A.Bk("flagged")
-B.e5=new A.Bk("bomb")
-B.fL=new A.Bk("safe")
-B.e8=new A.P0("TOP_LEFT")
-B.d4=new A.P0("TOP")
-B.IK=new A.P0("TOP_RIGHT")
-B.fR=new A.P0("LEFT")
-B.eb=new A.P0("NONE")
-B.ld=new A.P0("RIGHT")
-B.kx=new A.P0("BOTTOM_LEFT")
-B.L6=new A.P0("BOTTOM")
-B.Kq=new A.P0("BOTTOM_RIGHT")
-B.vh=new A.dG("AUTO")
-B.lU=new A.dG("ONCE")
-B.Ed=new A.dG("STOP")
-B.pq=new A.mf("EXACT_FIT")
-B.o6=new A.mf("NO_BORDER")
-B.bM=new A.mf("NO_SCALE")
-B.as=new A.mf("SHOW_ALL")
+B.So=new A.vc(0,"Up")
+B.Br=new A.vc(1,"Over")
+B.UK=new A.vc(2,"Down")
+B.QD=new A.N2(0,"WebAudioApi")
+B.lX=new A.N2(1,"AudioElement")
+B.a1=new A.N2(2,"Mockup")
+B.Bl=new A.Bk(0,"hidden")
+B.Ni=new A.Bk(1,"revealed")
+B.No=new A.Bk(2,"flagged")
+B.e5=new A.Bk(3,"bomb")
+B.fL=new A.Bk(4,"safe")
+B.eb=new A.P0(4,"NONE")
+B.vh=new A.dG(0,"AUTO")
+B.lU=new A.dG(2,"ONCE")
+B.Ed=new A.dG(3,"STOP")
+B.as=new A.mf(3,"SHOW_ALL")
 B.Te=new A.wv("call")
 B.lb=A.xq("I2")
 B.LV=A.xq("V2")
