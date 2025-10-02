@@ -3,6 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
+import 'dart:js_interop';
 
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
 import 'package:web/web.dart' as html;
@@ -107,8 +108,7 @@ void _secondaryLoad(
 final _popup = html.document.querySelector('#popup')! as html.HTMLDivElement;
 
 void _onPopupClick(html.MouseEvent event) {
-  print(event.relatedTarget);
-  if (event.relatedTarget is! html.HTMLAnchorElement) {
+  if (!event.target.isA<html.HTMLAnchorElement>()) {
     targetPlatform.toggleAbout(false);
   }
 }
