@@ -3,8 +3,8 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
-// ignore: deprecated_member_use
-import 'dart:html';
+
+import 'package:web/web.dart';
 
 final PlatformWeb targetPlatform = PlatformWeb._();
 
@@ -22,13 +22,13 @@ class PlatformWeb {
 
   void setValue(String key, String? value) {
     if (value == null) {
-      window.localStorage.remove(key);
+      window.localStorage.removeItem(key);
     } else {
-      window.localStorage[key] = value;
+      window.localStorage.setItem(key, value);
     }
   }
 
-  String? getValue(String key) => window.localStorage[key];
+  String? getValue(String key) => window.localStorage.getItem(key);
 
   int get size {
     _sizeAccessed = true;

@@ -2,10 +2,8 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
-// ignore: deprecated_member_use
-import 'dart:html';
-
 import 'package:pop_pop_win/pop_pop_win.dart';
+import 'package:web/web.dart';
 
 Future<void> main() async {
   _experimentWithAnalyticsErrorReporting();

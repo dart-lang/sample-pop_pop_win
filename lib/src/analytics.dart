@@ -7,9 +7,9 @@
 @JS()
 library;
 
-// ignore: deprecated_member_use
-import 'dart:html';
 import 'dart:js_interop';
+
+import 'package:web/web.dart';
 
 void gtag(
   String event,
@@ -20,8 +20,9 @@ void gtag(
     _gtag(event, action, eventParams);
     // ignore: avoid_catches_without_on_clauses
   } catch (e, stack) {
-    window.console.error(e);
-    window.console.error(stack);
+    console
+      ..error(e.toString().toJS)
+      ..error(stack.toString().toJS);
   }
 }
 

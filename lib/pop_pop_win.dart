@@ -3,10 +3,9 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'dart:async';
-// ignore: deprecated_member_use
-import 'dart:html' as html;
 
 import 'package:stagexl/stagexl.dart' hide KeyboardEvent;
+import 'package:web/web.dart' as html;
 
 import 'src/analytics.dart';
 import 'src/platform_web.dart';
@@ -18,7 +17,7 @@ const String _assetDir = 'packages/pop_pop_win/assets';
 Future<void> startGame() async {
   sendTiming('startGame');
   final stage = Stage(
-    html.querySelector('#gameCanvas') as html.CanvasElement,
+    html.document.querySelector('#gameCanvas') as html.HTMLCanvasElement,
     options: StageOptions()
       ..backgroundColor = 0xb4ad7f
       ..transparent = true,
@@ -105,17 +104,17 @@ void _secondaryLoad(
   titleClickedEvent.listen((args) => targetPlatform.toggleAbout(true));
 }
 
-final _popup = html.querySelector('#popup')!;
+final _popup = html.document.querySelector('#popup')! as html.HTMLDivElement;
 
-void _onPopupClick(html.MouseEvent args) {
-  if (args.relatedTarget is! html.AnchorElement) {
+void _onPopupClick(html.MouseEvent event) {
+  print(event.relatedTarget);
+  if (event.relatedTarget is! html.HTMLAnchorElement) {
     targetPlatform.toggleAbout(false);
   }
 }
 
-void _onKeyDown(html.KeyboardEvent args) {
-  final keyEvent = html.KeyEvent.wrap(args);
-  switch (keyEvent.keyCode) {
+void _onKeyDown(html.KeyboardEvent event) {
+  switch (event.keyCode) {
     case html.KeyCode.ESC: // esc
       targetPlatform.toggleAbout(false);
     case html.KeyCode.H: // h

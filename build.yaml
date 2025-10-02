@@ -14,9 +14,19 @@ targets:
         generate_for:
         - web/**.dart
         options:
-          dart2js_args:
-            - --stage=dump-info-all
-            - --no-frequency-based-minification
-            - --no-source-maps
-            - --show-package-warnings
-            - -O4
+          compilers:
+            # Currently broken
+            #dart2wasm:
+            #  args:
+            #    # For debugging
+            #    - -O0
+            #    # For shipping
+            #    #- -O2
+            #    - --no-strip-wasm
+            dart2js:
+              args:
+                - --stage=dump-info-all
+                - --no-frequency-based-minification
+                - --no-source-maps
+                - --show-package-warnings
+                - -O4
