@@ -2360,7 +2360,7 @@ c=J.Nu(c)
 d=J.Nu(d)
 d=A.qL(A.yc(A.yc(A.yc(A.yc($.t8(),s),b),c),d))
 return d},
-mp(a){A.qw(A.d(a))},
+mp(a){A.qw(a)},
 hK(a5){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1,a2,a3=null,a4=a5.length
 if(a4>=5){s=((a5.charCodeAt(4)^58)*3|a5.charCodeAt(0)^100|a5.charCodeAt(1)^97|a5.charCodeAt(2)^116|a5.charCodeAt(3)^97)>>>0
 if(s===0)return A.KD(a4<a4?B.xB.Nj(a5,0,a4):a5,5,a3).glR()
@@ -3228,8 +3228,8 @@ A.JE(r.window,"keydown",A.py(),!1)
 A.JE($.TH(),"click",A.o9(),!1)
 r=$.KP()
 new A.u8(r,A.Lh(r).C("u8<1>")).yI(new A.PZ())},
-Rn(a){A.mp(a.relatedTarget)
-if(!t.m.b(a.relatedTarget))$.fF().S1(!1)},
+Rn(a){var s=a.target
+if(!(s!=null&&A.P6(s,"HTMLAnchorElement")))$.fF().S1(!1)},
 px(a){switch(a.keyCode){case 27:$.fF().S1(!1)
 break
 case 72:$.fF().xy()
