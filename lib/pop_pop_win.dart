@@ -30,10 +30,7 @@ Future<void> startGame() async {
 
   //have to load the loading bar first...
   final resourceManager = ResourceManager()
-    ..addTextureAtlas(
-      'static',
-      '$_assetDir/images/static.json',
-    );
+    ..addTextureAtlas('static', '$_assetDir/images/static.json');
 
   await resourceManager.load();
   await _initialLoad(resourceManager, stage);
@@ -63,22 +60,15 @@ Future<void> _initialLoad(ResourceManager resourceManager, Stage stage) async {
     ..addTo(stage);
 
   resourceManager
-    ..addTextureAtlas(
-      'opaque',
-      '$_assetDir/images/opaque.json',
-    )
-    ..addTextureAtlas(
-      'animated',
-      '$_assetDir/images/animated.json',
-    )
+    ..addTextureAtlas('opaque', '$_assetDir/images/opaque.json')
+    ..addTextureAtlas('animated', '$_assetDir/images/animated.json')
     ..addSoundSprite('audio', '$_assetDir/audio/audio.json');
 
-  resourceManager.onProgress.listen(
-    (e) {
-      bar.ratio = resourceManager.finishedResources.length /
-          resourceManager.resources.length;
-    },
-  );
+  resourceManager.onProgress.listen((e) {
+    bar.ratio =
+        resourceManager.finishedResources.length /
+        resourceManager.resources.length;
+  });
 
   await resourceManager.load();
 

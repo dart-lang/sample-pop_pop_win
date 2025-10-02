@@ -61,25 +61,49 @@ class GameBackgroundElement extends Sprite {
     final cr = Rectangle<int>(0, 0, 112, 122);
     boardData
       ..drawPixels(
-          op.getBitmapData('game_board_corner_top_left'), cr, Point<int>(0, 0))
-      ..drawPixels(op.getBitmapData('game_board_corner_top_right'), cr,
-          Point<int>(_boardSize - 112, 0))
-      ..drawPixels(op.getBitmapData('game_board_corner_bottom_left'), cr,
-          Point<int>(0, _boardSize - 112))
-      ..drawPixels(op.getBitmapData('game_board_corner_bottom_right'), cr,
-          Point<int>(_boardSize - 112, _boardSize - 112));
+        op.getBitmapData('game_board_corner_top_left'),
+        cr,
+        Point<int>(0, 0),
+      )
+      ..drawPixels(
+        op.getBitmapData('game_board_corner_top_right'),
+        cr,
+        Point<int>(_boardSize - 112, 0),
+      )
+      ..drawPixels(
+        op.getBitmapData('game_board_corner_bottom_left'),
+        cr,
+        Point<int>(0, _boardSize - 112),
+      )
+      ..drawPixels(
+        op.getBitmapData('game_board_corner_bottom_right'),
+        cr,
+        Point<int>(_boardSize - 112, _boardSize - 112),
+      );
     final tbr = Rectangle<int>(0, 0, 80, 112);
     final lrr = Rectangle<int>(0, 0, 112, 80);
     for (var i = 0; i < _game.field.width - 2; i++) {
       boardData
-        ..drawPixels(op.getBitmapData('game_board_side_top'), tbr,
-            Point<int>(112 + i * 80, 0))
-        ..drawPixels(op.getBitmapData('game_board_side_bottom'), tbr,
-            Point<int>(112 + i * 80, _boardSize - 112))
-        ..drawPixels(op.getBitmapData('game_board_side_left'), lrr,
-            Point<int>(0, 112 + i * 80))
-        ..drawPixels(op.getBitmapData('game_board_side_right'), lrr,
-            Point<int>(_boardSize - 112, 112 + i * 80));
+        ..drawPixels(
+          op.getBitmapData('game_board_side_top'),
+          tbr,
+          Point<int>(112 + i * 80, 0),
+        )
+        ..drawPixels(
+          op.getBitmapData('game_board_side_bottom'),
+          tbr,
+          Point<int>(112 + i * 80, _boardSize - 112),
+        )
+        ..drawPixels(
+          op.getBitmapData('game_board_side_left'),
+          lrr,
+          Point<int>(0, 112 + i * 80),
+        )
+        ..drawPixels(
+          op.getBitmapData('game_board_side_right'),
+          lrr,
+          Point<int>(_boardSize - 112, 112 + i * 80),
+        );
     }
 
     final board = Bitmap(boardData)

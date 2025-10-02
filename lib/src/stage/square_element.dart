@@ -16,7 +16,7 @@ class SquareElement extends Sprite {
     'balloon_pieces_a',
     'balloon_pieces_b',
     'balloon_pieces_c',
-    'balloon_pieces_d'
+    'balloon_pieces_d',
   ];
 
   static const List<String> _numberMap = [
@@ -28,7 +28,7 @@ class SquareElement extends Sprite {
     'number_five',
     'number_six',
     'number_seven',
-    'number_eigh'
+    'number_eigh',
   ];
 
   final int column, row;
@@ -50,19 +50,21 @@ class SquareElement extends Sprite {
       SquareState.flagged => 'balloon_tagged_frozen',
       SquareState.revealed => _numberMap[_adjacentCount],
       SquareState.bomb => 'crater_b',
-      SquareState.safe => 'balloon_tagged_bomb'
+      SquareState.safe => 'balloon_tagged_bomb',
     };
 
-    useHandCursor = !_game.gameEnded &&
+    useHandCursor =
+        !_game.gameEnded &&
         (squareState == SquareState.hidden ||
             squareState == SquareState.flagged);
 
     _bitmap.bitmapData!
       ..clear()
       ..drawPixels(
-          resourceManager.getTextureAtlas('opaque').getBitmapData(textureName),
-          Rectangle<int>(0, 0, size, size),
-          Point<int>(0, 0));
+        resourceManager.getTextureAtlas('opaque').getBitmapData(textureName),
+        Rectangle<int>(0, 0, size, size),
+        Point<int>(0, 0),
+      );
   }
 
   void _onClick(MouseEvent e) {

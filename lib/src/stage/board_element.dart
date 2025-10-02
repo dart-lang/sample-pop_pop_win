@@ -16,21 +16,19 @@ class BoardElement extends Sprite {
     addTo(gameElement);
 
     final scaledSize = SquareElement.size * _boardScale;
-    _elements = Array2d<SquareElement>(
-      game.field.width,
-      game.field.height,
-      (i) {
-        final x = i % game.field.width;
-        final y = i ~/ game.field.height;
-        return SquareElement(x, y)
-          ..x = x * scaledSize
-          ..y = y * scaledSize
-          ..scaleX = _boardScale
-          ..scaleY = _boardScale
-          ..addTo(this)
-          ..updateState();
-      },
-    );
+    _elements = Array2d<SquareElement>(game.field.width, game.field.height, (
+      i,
+    ) {
+      final x = i % game.field.width;
+      final y = i ~/ game.field.height;
+      return SquareElement(x, y)
+        ..x = x * scaledSize
+        ..y = y * scaledSize
+        ..scaleX = _boardScale
+        ..scaleY = _boardScale
+        ..addTo(this)
+        ..updateState();
+    });
   }
 
   GameElement get gameElement => parent as GameElement;

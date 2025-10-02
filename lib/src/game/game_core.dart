@@ -24,14 +24,14 @@ class Game {
   int _revealsLeft;
 
   Game(this.field)
-      : _state = GameState.reset,
-        _states = Array2d<SquareState>(
-          field.width,
-          field.height,
-          (i) => SquareState.hidden,
-        ),
-        _bombsLeft = field.bombCount,
-        _revealsLeft = field.length - field.bombCount;
+    : _state = GameState.reset,
+      _states = Array2d<SquareState>(
+        field.width,
+        field.height,
+        (i) => SquareState.hidden,
+      ),
+      _bombsLeft = field.bombCount,
+      _revealsLeft = field.length - field.bombCount;
 
   int get bombsLeft => _bombsLeft;
 
