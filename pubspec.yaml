@@ -5,7 +5,7 @@ environment:
   sdk: ^3.9.0
 
 dependencies:
-  stagexl: ^2.3.0
+  stagexl: ^2.3.1
   web: ^1.1.1
 
 dev_dependencies:
