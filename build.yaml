@@ -16,13 +16,10 @@ targets:
         options:
           compilers:
             # Currently broken
-            #dart2wasm:
-            #  args:
-            #    # For debugging
-            #    - -O0
-            #    # For shipping
-            #    #- -O2
-            #    - --no-strip-wasm
+            dart2wasm:
+              args:
+                - -O2
+                - --no-strip-wasm
             dart2js:
               args:
                 - --stage=dump-info-all
