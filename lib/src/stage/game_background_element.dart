@@ -82,7 +82,7 @@ class GameBackgroundElement extends Sprite {
       );
     final tbr = Rectangle<int>(0, 0, 80, 112);
     final lrr = Rectangle<int>(0, 0, 112, 80);
-    for (var i = 0; i < _game.field.width - 2; i++) {
+    for (var i = 0; i < _game.width - 2; i++) {
       boardData
         ..drawPixels(
           op.getBitmapData('game_board_side_top'),

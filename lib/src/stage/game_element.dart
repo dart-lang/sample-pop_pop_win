@@ -56,7 +56,7 @@ class GameElement extends Sprite {
     final sta = resourceManager.getTextureAtlas('static');
     _animations = resourceManager.getTextureAtlas('animated');
 
-    _boardSize = game.field.width * SquareElement.size + 2 * _edgeOffset;
+    _boardSize = game.width * SquareElement.size + 2 * _edgeOffset;
     _boardScale = _backgroundHoleSize / _boardSize;
 
     GameBackgroundElement(this, opa);
