@@ -37,8 +37,8 @@ abstract class GameManager {
   }
 
   void _newGame() {
-    final f = Field(_bombCount, _width, _height);
-    _game = Game(f);
+    // Pass dimensions - let Game handle field creation lazily
+    _game = Game(_width, _height, _bombCount);
     _gameStateChangedSub = _game.stateChanged.listen(_gameStateChanged);
   }
 

@@ -13,7 +13,8 @@ enum SquareState { hidden, revealed, flagged, bomb, safe }
 enum GameState { reset, started, won, lost }
 
 class Game {
-  final Field field;
+  Field? _field; // Now nullable - will be created on first click
+  final int width, height, bombCount; // Store dimensions instead
   final Array2d<SquareState> _states;
   final _updatedEvent = StreamController<void>();
   final _gameStateEvent = StreamController<GameState>();
@@ -23,8 +24,20 @@ class Game {
   int _bombsLeft;
   int _revealsLeft;
 
-  Game(this.field)
+  // Constructor takes dimensions instead of Field
+  Game(this.width, this.height, this.bombCount)
     : _state = GameState.reset,
+      _states = Array2d<SquareState>(width, height, (i) => SquareState.hidden),
+      _bombsLeft = bombCount,
+      _revealsLeft = width * height - bombCount;
+
+  // Legacy constructor for backward compatibility with existing Field
+  Game.fromField(Field field)
+    : _field = field,
+      width = field.width,
+      height = field.height,
+      bombCount = field.bombCount,
+      _state = GameState.reset,
       _states = Array2d<SquareState>(
         field.width,
         field.height,
@@ -32,6 +45,16 @@ class Game {
       ),
       _bombsLeft = field.bombCount,
       _revealsLeft = field.length - field.bombCount;
+
+  // Getter: Access field safely - will be generated on first reveal
+  Field get field {
+    if (_field == null) {
+      // For UI that needs field before first click, create a temporary empty field
+      // This won't be used for actual gameplay logic
+      return Field(bombCount, width, height);
+    }
+    return _field!;
+  }
 
   int get bombsLeft => _bombsLeft;
 
@@ -56,7 +79,7 @@ class Game {
   }
 
   void setFlag(int x, int y, bool value) {
-    _ensureStarted();
+    _ensureStarted(); // Don't pass coordinates for flag - use fallback field generation
 
     final currentSS = _states.get(x, y);
     if (value) {
@@ -82,7 +105,7 @@ class Game {
   }
 
   List<Point<int>>? reveal(int x, int y) {
-    _ensureStarted();
+    _ensureStarted(x, y); // Pass coordinates for safe first click
     assert(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
@@ -271,8 +294,25 @@ class Game {
     }
   }
 
-  void _ensureStarted() {
+  void _ensureStarted([int? firstClickX, int? firstClickY]) {
     if (state == GameState.reset) {
+      // LAZY FIELD GENERATION: Create field on first click
+      if (_field == null) {
+        if (firstClickX != null && firstClickY != null) {
+          // Generate field with the first click position guaranteed safe
+          _field = Field.withSafePosition(
+            bombCount,
+            width,
+            height,
+            firstClickX,
+            firstClickY,
+          );
+        } else {
+          // Fallback: generate normal field (shouldn't happen in normal gameplay)
+          _field = Field(bombCount, width, height);
+        }
+      }
+
       assert(!_watch.isRunning);
       _setState(GameState.started);
     }

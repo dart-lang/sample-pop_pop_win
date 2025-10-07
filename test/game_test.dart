@@ -5,6 +5,7 @@
 import 'dart:math';
 
 import 'package:pop_pop_win/src/game.dart';
+import 'package:pop_pop_win/src/game/game_core.dart';
 import 'package:test/test.dart';
 
 import 'test_util.dart';
@@ -24,11 +25,13 @@ void main() {
   test('canReveal', _testCanReveal);
   test('canFlag', _testCanFlag);
   test('cannot re-reveal', _testCannotReReveal);
+
+  _testSafeFirstClick();
 }
 
 void _testCannotReReveal() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.canReveal(5, 3), isTrue);
   g
@@ -43,7 +46,7 @@ void _testCannotReReveal() {
 
 void _testCanFlag() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.canToggleFlag(0, 0), isTrue);
   expect(g.state, GameState.reset);
@@ -60,7 +63,7 @@ void _testCanFlag() {
 
 void _testCanReveal() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.canReveal(0, 0), isTrue);
   expect(g.state, GameState.reset);
@@ -86,7 +89,7 @@ void _testCanReveal() {
 
 void _testBadChord() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.bombsLeft, equals(13));
   final startReveals = f.length - 13;
@@ -110,7 +113,7 @@ void _testBadChord() {
 // so nothing happens
 void _testNoopChord() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.bombsLeft, equals(13));
   final startReveals = f.length - 13;
@@ -130,7 +133,7 @@ void _testNoopChord() {
 
 void _testGoodChord() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.bombsLeft, equals(13));
   final startReveals = f.length - 13;
@@ -158,7 +161,7 @@ void _testRandomField() {
     final f = Field();
 
     for (var j = 0; j < 5; j++) {
-      final g = Game(f);
+      final g = Game.fromField(f);
       while (g.revealsLeft > 0) {
         final x = rnd.nextInt(f.width);
         final y = rnd.nextInt(f.height);
@@ -177,7 +180,7 @@ void _testRandomField() {
 
 void _testRevealZero() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.bombsLeft, equals(13));
   final startReveals = f.length - 13;
@@ -190,7 +193,7 @@ void _testRevealZero() {
 
 void _testInitial() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   expect(g.bombsLeft, equals(13));
   expect(g.revealsLeft, equals(f.length - 13));
@@ -205,7 +208,7 @@ void _testInitial() {
 }
 
 void _testSetFlag() {
-  final g = Game(getSampleField());
+  final g = Game.fromField(getSampleField());
 
   expect(g.getSquareState(0, 0), equals(SquareState.hidden));
   g.setFlag(0, 0, true);
@@ -215,7 +218,7 @@ void _testSetFlag() {
 }
 
 void _testCannotRevealFlagged() {
-  final g = Game(getSampleField());
+  final g = Game.fromField(getSampleField());
 
   expect(g.getSquareState(0, 0), equals(SquareState.hidden));
   g.setFlag(0, 0, true);
@@ -227,7 +230,7 @@ void _testCannotRevealFlagged() {
 }
 
 void _testCannotFlagRevealed() {
-  final g = Game(getSampleField());
+  final g = Game.fromField(getSampleField());
 
   expect(g.getSquareState(1, 1), equals(SquareState.hidden));
   g.reveal(1, 1);
@@ -238,7 +241,7 @@ void _testCannotFlagRevealed() {
 }
 
 void _testLoss() {
-  final g = Game(getSampleField());
+  final g = Game.fromField(getSampleField());
 
   expect(g.getSquareState(0, 0), equals(SquareState.hidden));
   final revealed = g.reveal(0, 0);
@@ -249,7 +252,7 @@ void _testLoss() {
 
 void _testWin() {
   final f = getSampleField();
-  final g = Game(f);
+  final g = Game.fromField(f);
 
   var bombsLeft = f.bombCount;
   expect(g.revealsLeft, equals(f.length - 13));
@@ -272,4 +275,89 @@ void _testWin() {
   }
 
   expect(g.state, equals(GameState.won));
+}
+
+// Test to verify that the first click is never a bomb
+void _testSafeFirstClick() {
+  group('Safe First Click Tests', () {
+    test('first click is never a bomb - multiple positions', () {
+      for (int testRun = 0; testRun < 10; testRun++) {
+        for (int x = 0; x < 8; x++) {
+          for (int y = 0; y < 8; y++) {
+            final game = Game(8, 8, 10); // 8x8 grid with 10 bombs
+
+            // First click at position (x, y)
+            final reveals = game.reveal(x, y);
+
+            // Should never be null (which indicates hitting a bomb)
+            expect(
+              reveals,
+              isNotNull,
+              reason: 'First click at ($x, $y) hit a bomb on test run $testRun',
+            );
+
+            // Game should be started, not lost
+            expect(
+              game.state,
+              equals(GameState.started),
+              reason: 'Game should be started after first click at ($x, $y)',
+            );
+          }
+        }
+      }
+    });
+
+    test('field generation is lazy', () {
+      final game = Game(8, 8, 10);
+
+      // Before any click, field returns a temporary field for UI purposes
+      final tempField = game.field;
+      expect(tempField.bombCount, equals(10));
+      expect(tempField.width, equals(8));
+      expect(tempField.height, equals(8));
+
+      // After first click, field should be the actual generated field
+      game.reveal(4, 4);
+      final gameField = game.field;
+
+      // The clicked position should be safe
+      expect(gameField.get(4, 4), isFalse);
+
+      // And it should be a different field instance (the real one)
+      expect(identical(tempField, gameField), isFalse);
+    });
+
+    test('bomb count is correct after lazy generation', () {
+      final game = Game(8, 8, 10);
+
+      // Make first click
+      game.reveal(3, 3);
+
+      // Count actual bombs in field
+      var actualBombs = 0;
+      for (int x = 0; x < 8; x++) {
+        for (int y = 0; y < 8; y++) {
+          if (game.field.get(x, y)) {
+            actualBombs++;
+          }
+        }
+      }
+
+      expect(actualBombs, equals(10));
+      expect(game.bombsLeft, equals(10));
+    });
+
+    test('legacy Game.fromField constructor still works', () {
+      // This ensures backward compatibility
+      final game = Game(4, 4, 3);
+      game.reveal(2, 2); // Generate the field
+      final field = game.field; // Get a field from lazy generation
+      final game2 = Game.fromField(field);
+
+      expect(game2.field, equals(field));
+      expect(game2.bombCount, equals(field.bombCount));
+      expect(game2.width, equals(field.width));
+      expect(game2.height, equals(field.height));
+    });
+  });
 }

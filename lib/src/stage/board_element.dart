@@ -16,11 +16,9 @@ class BoardElement extends Sprite {
     addTo(gameElement);
 
     final scaledSize = SquareElement.size * _boardScale;
-    _elements = Array2d<SquareElement>(game.field.width, game.field.height, (
-      i,
-    ) {
-      final x = i % game.field.width;
-      final y = i ~/ game.field.height;
+    _elements = Array2d<SquareElement>(game.width, game.height, (i) {
+      final x = i % game.width;
+      final y = i ~/ game.width;
       return SquareElement(x, y)
         ..x = x * scaledSize
         ..y = y * scaledSize
