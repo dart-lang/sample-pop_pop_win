@@ -46,11 +46,8 @@ class Game {
       _bombsLeft = field.bombCount,
       _revealsLeft = field.length - field.bombCount;
 
-  // Getter: Access field safely - will be generated on first reveal
   Field get field {
     if (_field == null) {
-      // For UI that needs field before first click, create a temporary empty field
-      // This won't be used for actual gameplay logic
       return Field(bombCount, width, height);
     }
     return _field!;
@@ -79,7 +76,7 @@ class Game {
   }
 
   void setFlag(int x, int y, bool value) {
-    _ensureStarted(); // Don't pass coordinates for flag - use fallback field generation
+    _ensureStarted();
 
     final currentSS = _states.get(x, y);
     if (value) {
@@ -296,10 +293,8 @@ class Game {
 
   void _ensureStarted([int? firstClickX, int? firstClickY]) {
     if (state == GameState.reset) {
-      // LAZY FIELD GENERATION: Create field on first click
       if (_field == null) {
         if (firstClickX != null && firstClickY != null) {
-          // Generate field with the first click position guaranteed safe
           _field = Field.withSafePosition(
             bombCount,
             width,
@@ -308,7 +303,6 @@ class Game {
             firstClickY,
           );
         } else {
-          // Fallback: generate normal field (shouldn't happen in normal gameplay)
           _field = Field(bombCount, width, height);
         }
       }

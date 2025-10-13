@@ -51,9 +51,8 @@ class Field extends Array2d<bool> {
     final rnd = Random(seed);
     final safeIndex = safeY * cols + safeX;
 
-    // create a list of all valid positions (excluding safe position)
     final availablePositions = <int>[];
-    for (int i = 0; i < squares.length; i++) {
+    for (var i = 0; i < squares.length; i++) {
       if (i != safeIndex) {
         availablePositions.add(i);
       }
@@ -61,7 +60,7 @@ class Field extends Array2d<bool> {
 
     // Shuffle the available positions and place bombs in first X positions
     availablePositions.shuffle(rnd);
-    for (int i = 0; i < bombCount; i++) {
+    for (var i = 0; i < bombCount; i++) {
       squares[availablePositions[i]] = true;
     }
 

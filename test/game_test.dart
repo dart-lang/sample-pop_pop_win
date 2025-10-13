@@ -5,7 +5,6 @@
 import 'dart:math';
 
 import 'package:pop_pop_win/src/game.dart';
-import 'package:pop_pop_win/src/game/game_core.dart';
 import 'package:test/test.dart';
 
 import 'test_util.dart';
@@ -281,9 +280,9 @@ void _testWin() {
 void _testSafeFirstClick() {
   group('Safe First Click Tests', () {
     test('first click is never a bomb - multiple positions', () {
-      for (int testRun = 0; testRun < 10; testRun++) {
-        for (int x = 0; x < 8; x++) {
-          for (int y = 0; y < 8; y++) {
+      for (var testRun = 0; testRun < 10; testRun++) {
+        for (var x = 0; x < 8; x++) {
+          for (var y = 0; y < 8; y++) {
             final game = Game(8, 8, 10); // 8x8 grid with 10 bombs
 
             // First click at position (x, y)
@@ -328,15 +327,12 @@ void _testSafeFirstClick() {
     });
 
     test('bomb count is correct after lazy generation', () {
-      final game = Game(8, 8, 10);
-
-      // Make first click
-      game.reveal(3, 3);
+      final game = Game(8, 8, 10)..reveal(3, 3);
 
       // Count actual bombs in field
       var actualBombs = 0;
-      for (int x = 0; x < 8; x++) {
-        for (int y = 0; y < 8; y++) {
+      for (var x = 0; x < 8; x++) {
+        for (var y = 0; y < 8; y++) {
           if (game.field.get(x, y)) {
             actualBombs++;
           }
@@ -349,8 +345,7 @@ void _testSafeFirstClick() {
 
     test('legacy Game.fromField constructor still works', () {
       // This ensures backward compatibility
-      final game = Game(4, 4, 3);
-      game.reveal(2, 2); // Generate the field
+      final game = Game(4, 4, 3)..reveal(2, 2); // Generate the field
       final field = game.field; // Get a field from lazy generation
       final game2 = Game.fromField(field);
 
