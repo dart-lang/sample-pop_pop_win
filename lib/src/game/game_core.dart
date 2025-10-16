@@ -13,7 +13,8 @@ enum SquareState { hidden, revealed, flagged, bomb, safe }
 enum GameState { reset, started, won, lost }
 
 class Game {
-  final Field field;
+  Field? _field; // Now nullable - will be created on first click
+  final int width, height, bombCount; // Store dimensions instead
   final Array2d<SquareState> _states;
   final _updatedEvent = StreamController<void>();
   final _gameStateEvent = StreamController<GameState>();
@@ -23,8 +24,20 @@ class Game {
   int _bombsLeft;
   int _revealsLeft;
 
-  Game(this.field)
+  // Constructor takes dimensions instead of Field
+  Game(this.width, this.height, this.bombCount)
     : _state = GameState.reset,
+      _states = Array2d<SquareState>(width, height, (i) => SquareState.hidden),
+      _bombsLeft = bombCount,
+      _revealsLeft = width * height - bombCount;
+
+  // Legacy constructor for backward compatibility with existing Field
+  Game.fromField(Field field)
+    : _field = field,
+      width = field.width,
+      height = field.height,
+      bombCount = field.bombCount,
+      _state = GameState.reset,
       _states = Array2d<SquareState>(
         field.width,
         field.height,
@@ -32,6 +45,13 @@ class Game {
       ),
       _bombsLeft = field.bombCount,
       _revealsLeft = field.length - field.bombCount;
+
+  Field get field {
+    if (_field == null) {
+      return Field(bombCount: bombCount, cols: width, rows: height);
+    }
+    return _field!;
+  }
 
   int get bombsLeft => _bombsLeft;
 
@@ -82,7 +102,9 @@ class Game {
   }
 
   List<Point<int>>? reveal(int x, int y) {
-    _ensureStarted();
+    _ensureStarted(
+      firstClick: Point<int>(x, y),
+    ); // Pass coordinates for safe first click
     assert(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
@@ -271,8 +293,15 @@ class Game {
     }
   }
 
-  void _ensureStarted() {
+  void _ensureStarted({Point<int>? firstClick}) {
     if (state == GameState.reset) {
+      _field ??= Field(
+        bombCount: bombCount,
+        cols: width,
+        rows: height,
+        noBomb: firstClick,
+      );
+
       assert(!_watch.isRunning);
       _setState(GameState.started);
     }

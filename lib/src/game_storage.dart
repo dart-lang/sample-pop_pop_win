@@ -19,9 +19,9 @@ class GameStorage {
   bool updateBestTime(Game game) {
     assert(game.state == GameState.won);
 
-    final w = game.field.width;
-    final h = game.field.height;
-    final m = game.field.bombCount;
+    final w = game.width;
+    final h = game.height;
+    final m = game.bombCount;
     final duration = game.duration!.inMilliseconds;
 
     final key = _getKey(w, h, m);
