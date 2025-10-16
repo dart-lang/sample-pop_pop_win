@@ -48,7 +48,7 @@ class Game {
 
   Field get field {
     if (_field == null) {
-      return Field(bombCount, width, height);
+      return Field(bombCount: bombCount, cols: width, rows: height);
     }
     return _field!;
   }
@@ -102,7 +102,9 @@ class Game {
   }
 
   List<Point<int>>? reveal(int x, int y) {
-    _ensureStarted(x, y); // Pass coordinates for safe first click
+    _ensureStarted(
+      firstClick: Point<int>(x, y),
+    ); // Pass coordinates for safe first click
     assert(canReveal(x, y), 'Item cannot be revealed.');
     final currentSS = _states.get(x, y);
 
@@ -291,21 +293,14 @@ class Game {
     }
   }
 
-  void _ensureStarted([int? firstClickX, int? firstClickY]) {
+  void _ensureStarted({Point<int>? firstClick}) {
     if (state == GameState.reset) {
-      if (_field == null) {
-        if (firstClickX != null && firstClickY != null) {
-          _field = Field.withSafePosition(
-            bombCount,
-            width,
-            height,
-            firstClickX,
-            firstClickY,
-          );
-        } else {
-          _field = Field(bombCount, width, height);
-        }
-      }
+      _field ??= Field(
+        bombCount: bombCount,
+        cols: width,
+        rows: height,
+        noBomb: firstClick,
+      );
 
       assert(!_watch.isRunning);
       _setState(GameState.started);

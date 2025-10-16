@@ -10,46 +10,25 @@ class Field extends Array2d<bool> {
   final int bombCount;
   final Array2d<int?> _adjacents;
 
-  factory Field([int bombCount = 40, int cols = 16, int rows = 16, int? seed]) {
-    final squares = List<bool>.filled(rows * cols, false);
-    assert(bombCount < squares.length);
-    assert(bombCount > 0);
-
-    final rnd = Random(seed);
-
-    // This is the most simple code, but it'll get slow as
-    // bombCount approaches the square count.
-    // But more efficient if bombCount << square count
-    // which is expected.
-    for (var i = 0; i < bombCount; i++) {
-      int index;
-      do {
-        index = rnd.nextInt(squares.length);
-      } while (squares[index]);
-      squares[index] = true;
-    }
-
-    return Field._internal(bombCount, cols, squares);
-  }
-
   /// Creates a field with a guaranteed safe position at (safeX, safeY)
   /// This ensures the first click in Minesweeper is never a bomb
-  factory Field.withSafePosition(
-    int bombCount,
-    int cols,
-    int rows,
-    int safeX,
-    int safeY, [
+  factory Field({
+    int bombCount = 40,
+    int cols = 16,
+    int rows = 16,
+    Point<int>? noBomb,
     int? seed,
-  ]) {
+  }) {
     final squares = List<bool>.filled(rows * cols, false);
     assert(bombCount < squares.length);
     assert(bombCount > 0);
-    assert(safeX >= 0 && safeX < cols);
-    assert(safeY >= 0 && safeY < rows);
+    if (noBomb != null) {
+      assert(noBomb.x >= 0 && noBomb.x < cols);
+      assert(noBomb.y >= 0 && noBomb.y < rows);
+    }
 
     final rnd = Random(seed);
-    final safeIndex = safeY * cols + safeX;
+    final safeIndex = noBomb == null ? null : noBomb.y * cols + noBomb.x;
 
     final availablePositions = <int>[];
     for (var i = 0; i < squares.length; i++) {
