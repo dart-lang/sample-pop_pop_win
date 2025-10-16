@@ -1,0 +1,2 @@
+# https://pub.dev/packages/peanut
+post-build-dart-script: tool/peanut.dart
