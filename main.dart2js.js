@@ -2477,12 +2477,12 @@ q=1}else{a0.$2("invalid start colon",a2)
 p=a2
 o=p}else{p=a2
 o=p}for(n=0,m=!0;;){l=p>=a3?0:a1.charCodeAt(p)
-$label0$0:{k=l^48
+A:{k=l^48
 j=!1
 if(k<=9)i=k
 else{h=l|32
 if(h>=97&&h<=102)i=h-87
-else break $label0$0
+else break A
 m=j}if(p<o+4){n=n*16+i;++p
 continue}a0.$2("an IPv6 part can contain a maximum of 4 hex digits",o)}if(p>o){if(l===46){if(m){if(q<=6){A.Hh(a1,o,a3,s,q*2)
 q+=2
@@ -6856,12 +6856,12 @@ r=q.ZT(a,b,s,!1)
 if((q.b&1)!==0)return r
 return r+q.ZT(a,s,c,d)}return q.Wj(a,b,c,d)},
 Wj(a,b,c,d){var s,r,q,p,o,n,m,l=this,k=65533,j=l.b,i=l.c,h=new A.v(""),g=b+1,f=a[b]
-$label0$0:for(s=l.a;;){for(;;g=p){r="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFFFFFFFFFFFFFFFFGGGGGGGGGGGGGGGGHHHHHHHHHHHHHHHHHHHHHHHHHHHIHHHJEEBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBKCCCCCCCCCCCCDCLONNNMEEEEEEEEEEE".charCodeAt(f)&31
+A:for(s=l.a;;){for(;;g=p){r="AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFFFFFFFFFFFFFFFFGGGGGGGGGGGGGGGGHHHHHHHHHHHHHHHHHHHHHHHHHHHIHHHJEEBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBKCCCCCCCCCCCCDCLONNNMEEEEEEEEEEE".charCodeAt(f)&31
 i=j<=32?f&61694>>>r:(f&63|i<<6)>>>0
 j=" \x000:XECCCCCN:lDb \x000:XECCCCCNvlDb \x000:XECCCCCN:lDb AAAAA\x00\x00\x00\x00\x00AAAAA00000AAAAA:::::AAAAAGG000AAAAA00KKKAAAAAG::::AAAAA:IIIIAAAAA000\x800AAAAA\x00\x00\x00\x00 AAAAA".charCodeAt(j+r)
 if(j===0){q=A.Lw(i)
 h.a+=q
-if(g===c)break $label0$0
+if(g===c)break A
 break}else if((j&1)!==0){if(s)switch(j){case 69:case 67:q=A.Lw(k)
 h.a+=q
 break
@@ -6872,7 +6872,7 @@ default:q=A.Lw(k)
 h.a=(h.a+=q)+q
 break}else{l.b=j
 l.c=g-1
-return""}j=0}if(g===c)break $label0$0
+return""}j=0}if(g===c)break A
 p=g+1
 f=a[g]}p=g+1
 f=a[g]
@@ -6883,7 +6883,7 @@ if(f>=128){o=n-1
 p=n
 break}p=n}if(o-g<20)for(m=g;m<o;++m){q=A.Lw(a[m])
 h.a+=q}else{q=A.HM(a,g,o)
-h.a+=q}if(o===c)break $label0$0
+h.a+=q}if(o===c)break A
 g=p}else g=p}if(d&&j>32)if(s){s=A.Lw(k)
 h.a+=s}else{l.b=77
 l.c=c
@@ -10527,11 +10527,11 @@ return s},
 cY(a){return this.PE(a)},
 PE(a){var s=0,r=A.F(t.m),q,p=this,o,n,m,l,k
 var $async$cY=A.l(function(b,c){if(b===1)return A.f(c,r)
-for(;;)$async$outer:switch(s){case 0:for(o=p.b,n=new A.N6(o,o.r,o.e);n.G();){m=n.d
+for(;;)A:switch(s){case 0:for(o=p.b,n=new A.N6(o,o.r,o.e);n.G();){m=n.d
 if(o.q(0,m)==null){o.Y5(0,m,a)
 q=m
 s=1
-break $async$outer}}l=p.a.cloneNode(!0)
+break A}}l=p.a.cloneNode(!0)
 k=new A.Cq(l,"canplay",!1,t.ca).gtH(0)
 s=J.cf(l.readyState,0)?3:4
 break
