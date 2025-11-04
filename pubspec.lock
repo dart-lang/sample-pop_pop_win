@@ -85,10 +85,10 @@ packages:
     dependency: transitive
     description:
       name: build_modules
-      sha256: "0126ba5111c4b8f5b1f557beb23eb0bd9266f9114199ff42d9270c29c997b1be"
+      sha256: d7088898b59b2a6d839854a1f46e8c6b656f4a367bba98164f4389d2ee1ea0b0
       url: "https://pub.dev"
     source: hosted
-    version: "5.0.18"
+    version: "5.1.0"
   build_runner:
     dependency: "direct dev"
     description:
@@ -101,10 +101,10 @@ packages:
     dependency: "direct dev"
     description:
       name: build_web_compilers
-      sha256: e98e8f19f73b08ba778347c50800941c62f71e20fe46ac7ec070cf5462e866e3
+      sha256: "599f7f2908e428dd3d42970c28a102fd3bad17e509d3792aab460a4b34f727d8"
       url: "https://pub.dev"
     source: hosted
-    version: "4.3.1"
+    version: "4.4.0"
   built_collection:
     dependency: transitive
     description:
@@ -173,10 +173,10 @@ packages:
     dependency: transitive
     description:
       name: crypto
-      sha256: "1e445881f28f22d6140f181e07737b22f1e099a5e1ff94b0af2f9e4a463f4855"
+      sha256: c8ea0233063ba03258fbcf2ca4d6dadfefe14f02fab57702265467a19f27fadf
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.6"
+    version: "3.0.7"
   dart_flutter_team_lints:
     dependency: "direct dev"
     description:
@@ -413,10 +413,10 @@ packages:
     dependency: transitive
     description:
       name: scratch_space
-      sha256: efe807ddf27b148b500465957ceee4255deb4a8558575530b6398840436300ce
+      sha256: "3417e014d20b12cebc5bfb1c0b1f63806054177158596cc31cc4d9aaca767a60"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.1"
+    version: "1.2.0"
   shelf:
     dependency: transitive
     description:
@@ -553,6 +553,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
+  uuid:
+    dependency: transitive
+    description:
+      name: uuid
+      sha256: a11b666489b1954e01d992f3d601b1804a33937b5a8fe677bd26b8a9f96f96e8
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.5.2"
   vm_service:
     dependency: transitive
     description:
