@@ -5,27 +5,23 @@
 import 'resources.dart';
 import 'util.dart';
 
-enum _Sounds { win, click, pop, flag, unflag, bomb, throwDart }
+enum Sounds {
+  win,
+  click,
+  pop(count: 9),
+  flag,
+  unflag,
+  bomb(count: 5),
+  throwDart;
 
-void win() => _playAudio(.win);
+  const Sounds({this.count = 1});
 
-void click() => _playAudio(.click);
+  final int count;
 
-void pop() => _playAudio(.pop);
+  void play() => _playAudio(this);
+}
 
-void flag() => _playAudio(.flag);
-
-void unFlag() => _playAudio(.unflag);
-
-void bomb() => _playAudio(.bomb);
-
-void throwDart() => _playAudio(.throwDart);
-
-void _playAudio(_Sounds sound) {
-  final name = switch (sound) {
-    .pop => '${sound.name}${random.nextInt(8)}',
-    .bomb => '${sound.name}${random.nextInt(4)}',
-    _ => sound.name,
-  };
-  resourceManager.getSoundSprite('audio').play(name);
+void _playAudio(Sounds sound) {
+  final count = sound.count == 1 ? '' : random.nextInt(sound.count).toString();
+  resourceManager.getSoundSprite('audio').play('${sound.name}$count');
 }

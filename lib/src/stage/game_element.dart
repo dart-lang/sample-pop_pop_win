@@ -7,7 +7,7 @@ import 'dart:math';
 
 import 'package:stagexl/stagexl.dart' hide Point;
 
-import '../audio.dart' as game_audio;
+import '../audio.dart';
 import '../game.dart';
 import '../resources.dart';
 import '../util.dart';
@@ -75,7 +75,7 @@ class GameElement extends Sprite {
       ..x = 450
       ..y = 20
       ..onMouseClick.listen((e) {
-        game_audio.click();
+        Sounds.click.play();
         _manager.newGame();
       })
       ..addTo(this);
@@ -168,12 +168,12 @@ class GameElement extends Sprite {
     if (ss == SquareState.hidden) {
       game.setFlag(x, y, true);
       se.updateState();
-      game_audio.flag();
+      Sounds.flag.play();
       return true;
     } else if (ss == SquareState.flagged) {
       game.setFlag(x, y, false);
       se.updateState();
-      game_audio.unFlag();
+      Sounds.unflag.play();
       return true;
     }
     return false;
@@ -239,7 +239,7 @@ class GameElement extends Sprite {
 
   void _startDartAnimation(List<Point> points) {
     assert(points.isNotEmpty);
-    game_audio.throwDart();
+    Sounds.throwDart.play();
     for (var point in points) {
       final squareOffset =
           _dartAnimationOffset +
@@ -280,9 +280,9 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
   switch (ss) {
     case SquareState.revealed:
     case SquareState.hidden:
-      game_audio.pop();
+      Sounds.pop.play();
     case SquareState.bomb:
-      game_audio.bomb();
+      Sounds.bomb.play();
     default:
     // noop
   }

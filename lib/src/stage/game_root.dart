@@ -5,7 +5,7 @@
 import 'package:stagexl/stagexl.dart';
 
 import '../analytics.dart';
-import '../audio.dart' as game_audio;
+import '../audio.dart';
 import '../game.dart';
 import '../game_manager.dart';
 import 'game_element.dart';
@@ -44,7 +44,7 @@ class GameRoot extends GameManager {
               _gameElement.scoreElement!.bestTime!) {
         _gameElement.scoreElement!.bestTime = game.duration!.inMilliseconds;
       }
-      game_audio.win();
+      Sounds.win.play();
     }
   }
 
