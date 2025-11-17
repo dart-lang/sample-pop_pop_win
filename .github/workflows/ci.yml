@@ -45,7 +45,7 @@ jobs:
         # Add macos-latest and/or windows-latest if relevant for this package.
         os: [ubuntu-latest]
         sdk:
-          - 3.10
+          - 3.10.0
           - dev
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8
