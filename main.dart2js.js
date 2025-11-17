@@ -3215,6 +3215,14 @@ _.a=a
 _.b=b
 _.c=c
 _.$ti=d},
+jr(a){var s,r=a.c,q=r===1?"":B.jn["["]($.XB().j1(r))
+r=t.b.a($.Ar.Ov().n9("SoundSprite","audio")).yk(a.b+q)
+s=r.a.b
+s===$&&A.Q4()
+s.uW(r.c,r.d,r.e,null)},
+K3:function K3(a,b,c){this.c=a
+this.a=b
+this.b=c},
 Kj(a,b,c,d){var s,r=d*b,q=A.O8(r,!1,!1,t.y),p=c==null?null:c.b*b+c.a,o=A.QI([],t.X)
 for(s=0;s<r;++s)if(s!==p)o.push(s)
 B.Nm.Ka(o,B.pr)
@@ -3307,9 +3315,9 @@ return p},
 T4(a,b,c){a.Q=B.jn.IV(1,0,1)
 a.bY()
 b.Iv()
-switch(c.a){case 1:case 0:A.jr("Pop")
+switch(c.a){case 1:case 0:A.jr(B.YF)
 break
-case 3:A.jr("Bomb")
+case 3:A.jr(B.BJ)
 break}},
 Mp:function Mp(a,b,c,d,e,f,g,h){var _=this
 _.Qt=a
@@ -4679,14 +4687,6 @@ p.error(o)
 p.error(J.C(r))}},
 hA(a){var s=v.G.window,r=J.oW(s.performance.now())
 A.Z9("send","timing_complete",{event_category:null,event_label:null,value:r,name:a})},
-jr(a){var s,r
-switch(a){case"Pop":a="Pop"+$.XB().j1(8)
-break
-case"Bomb":a="Bomb"+$.XB().j1(4)
-break}s=t.b.a($.Ar.Ov().n9("SoundSprite","audio")).yk(a)
-r=s.a.b
-r===$&&A.Q4()
-r.uW(s.c,s.d,s.e,null)},
 Ji(a){var s,r,q,p
 if(a.gB(0)===0)return!0
 s=a.gtH(0)
@@ -7723,6 +7723,8 @@ for(s=Math.max(0,b-1),r=Math.min(this.b,b+2),q=a-1,p=this.a,o=a+2;s<r;++s)for(n=
 return j},
 YW(a){var s=this.a
 return new A.hL(B.jn.zY(a,s),B.jn.xG(a,s),t.D)}}
+A.K3.prototype={
+qS(){return"Sounds."+this.b}}
 A.xB.prototype={
 VB(a,b,c){var s,r,q,p
 for(s=A.Lh(this),r=new A.a7(this,this.gB(0),s.C("a7<ar.E>")),s=s.C("ar.E"),q=0;r.G();){p=r.d
@@ -7863,7 +7865,7 @@ if(p){q=q.rS
 q.toString
 p=r.e
 p===$&&A.Q4()
-q.rT=B.jn.W(p.gzo().a,1000)}A.jr("win")}}}
+q.rT=B.jn.W(p.gzo().a,1000)}A.jr(B.w4)}}}
 A.HB.prototype={
 uE(a){var s=B.jn.W(a.gzo().a,1000),r="w"+a.b+"-h"+a.c+"-m"+a.d,q=$.fF(),p=A.Yq(v.G.window.localStorage.getItem(r),null)
 if(p==null||p>s){q.Ym(r,B.jn["["](s))
@@ -8129,12 +8131,12 @@ if(s===B.Bl){s=this.Qt.e
 s===$&&A.Q4()
 s.rY(a,b,!0)
 r.Iv()
-A.jr("flag")
+A.jr(B.o6)
 return!0}else if(s===B.No){s=this.Qt.e
 s===$&&A.Q4()
 s.rY(a,b,!1)
 r.Iv()
-A.jr("unflag")
+A.jr(B.qs)
 return!0}return!1},
 zC(a2,a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1=this
 if(a3==null){s=a1.Qt.e
@@ -8180,7 +8182,7 @@ g.a=a0
 f.b=g.b=new A.Gn()}}},
 J1(a){return this.zC(a,null)},
 hM(a){var s,r,q,p,o,n,m,l,k,j,i,h=this,g="complete"
-A.jr("throw")
+A.jr(B.f8)
 for(s=a.length,r=h.Na,q=t.B,p=0;p<a.length;a.length===s||(0,A.q)(a),++p){o=a[p]
 n=$.bD()
 m=n.a+80*o.gx()
@@ -8214,7 +8216,7 @@ m.a=j
 n.b=m.b=new A.Gn()}}}}
 A.oB.prototype={
 $1(a){var s
-A.jr("click")
+A.jr(B.tP)
 s=this.a.Qt
 s.PC()
 s=s.y
@@ -11211,8 +11213,8 @@ r(A.JV,A.PX)
 r(A.cs,A.lQ)
 r(A.fv,A.zL)
 q(A.fv,[A.OF,A.ru,A.IV])
+q(A.ck,[A.K3,A.Bk,A.cw,A.Sq,A.dG,A.IK,A.P0,A.aK,A.jf,A.Z5,A.N2])
 r(A.xB,A.f7)
-q(A.ck,[A.Bk,A.cw,A.Sq,A.dG,A.IK,A.P0,A.aK,A.jf,A.Z5,A.N2])
 q(A.NC,[A.fE,A.Yz])
 q(A.fE,[A.HV,A.jx,A.PC,A.Jq])
 q(A.HV,[A.IT,A.JF,A.QQ,A.l7])
@@ -11438,6 +11440,13 @@ B.UK=new A.Sq(2,"Down")
 B.QD=new A.N2(0,"WebAudioApi")
 B.lX=new A.N2(1,"AudioElement")
 B.a1=new A.N2(2,"Mockup")
+B.w4=new A.K3(1,0,"win")
+B.tP=new A.K3(1,1,"click")
+B.o6=new A.K3(1,3,"flag")
+B.qs=new A.K3(1,4,"unflag")
+B.f8=new A.K3(1,6,"throwDart")
+B.BJ=new A.K3(5,5,"bomb")
+B.YF=new A.K3(9,2,"pop")
 B.Bl=new A.Bk(0,"hidden")
 B.Ni=new A.Bk(1,"revealed")
 B.No=new A.Bk(2,"flagged")
