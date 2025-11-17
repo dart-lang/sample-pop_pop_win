@@ -556,7 +556,7 @@ class CompiledApp {
       Object: Object,
       Array: Array,
       Reflect: Reflect,
-      "": new Proxy({}, { get(_, prop) { return prop; } }),
+      S: new Proxy({}, { get(_, prop) { return prop; } }),
 
     };
 
