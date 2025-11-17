@@ -5,36 +5,27 @@
 import 'resources.dart';
 import 'util.dart';
 
-const _win = 'win',
-    _click = 'click',
-    _pop = 'Pop',
-    _flag = 'flag',
-    _unFlag = 'unflag',
-    _bomb = 'Bomb',
-    _throwDart = 'throw';
+enum _Sounds { win, click, pop, flag, unflag, bomb, throwDart }
 
-void win() => _playAudio(_win);
+void win() => _playAudio(.win);
 
-void click() => _playAudio(_click);
+void click() => _playAudio(.click);
 
-void pop() => _playAudio(_pop);
+void pop() => _playAudio(.pop);
 
-void flag() => _playAudio(_flag);
+void flag() => _playAudio(.flag);
 
-void unFlag() => _playAudio(_unFlag);
+void unFlag() => _playAudio(.unflag);
 
-void bomb() => _playAudio(_bomb);
+void bomb() => _playAudio(.bomb);
 
-void throwDart() => _playAudio(_throwDart);
+void throwDart() => _playAudio(.throwDart);
 
-void _playAudio(String name) {
-  switch (name) {
-    case _pop:
-      final i = random.nextInt(8);
-      name = '$_pop$i';
-    case _bomb:
-      final i = random.nextInt(4);
-      name = '$_bomb$i';
-  }
+void _playAudio(_Sounds sound) {
+  final name = switch (sound) {
+    .pop => '${sound.name}${random.nextInt(8)}',
+    .bomb => '${sound.name}${random.nextInt(4)}',
+    _ => sound.name,
+  };
   resourceManager.getSoundSprite('audio').play(name);
 }
