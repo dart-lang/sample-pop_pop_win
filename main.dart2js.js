@@ -2132,7 +2132,7 @@ return s}catch(r){}return null},
 xM(a,b,c,d,e,f){if(B.jn.zY(f,4)!==0)throw A.b(A.rr("Invalid base64 padding, padded length must be multiple of four, is "+f,a,c))
 if(d+e!==f)throw A.b(A.rr("Invalid base64 padding, '=' not at the end",a,b))
 if(e>2)throw A.b(A.rr("Invalid base64 padding, more than two '=' characters",a,b))},
-AB(a){return $.ix().q(0,a.toLowerCase())},
+AB(a){return B.en.q(0,a.toLowerCase())},
 j4(a){switch(a){case 65:return"Missing extension byte"
 case 67:return"Unexpected extension byte"
 case 69:return"Invalid UTF-8 byte"
@@ -11270,7 +11270,6 @@ B.nt=new A.G8(!1,127)
 B.q4=new A.qb(A.N0("qb<zM<KN>>"))
 B.M1=new A.E5(B.q4)
 B.NY=new A.GZ(A.Zv(),A.N0("GZ<KN>"))
-B.Ur=new A.GM()
 B.y8=new A.U8()
 B.h9=new A.CV()
 B.yK=new A.ui()
@@ -11428,6 +11427,9 @@ B.bR=new A.ZD(!1,255)
 B.lp=s(["game_board_center","number_one","number_two","number_three","number_four","number_five","number_six","number_seven","number_eigh"],t.s)
 B.YC=s(["balloon_pieces_a","balloon_pieces_b","balloon_pieces_c","balloon_pieces_d"],t.s)
 B.xD=s([],t.s)
+B.Cv={"iso_8859-1:1987":0,"iso-ir-100":1,"iso_8859-1":2,"iso-8859-1":3,latin1:4,l1:5,ibm819:6,cp819:7,csisolatin1:8,"iso-ir-6":9,"ansi_x3.4-1968":10,"ansi_x3.4-1986":11,"iso_646.irv:1991":12,"iso646-us":13,"us-ascii":14,us:15,ibm367:16,cp367:17,csascii:18,ascii:19,csutf8:20,"utf-8":21}
+B.Ur=new A.GM()
+B.en=new A.LP(B.Cv,[B.jA,B.jA,B.jA,B.jA,B.jA,B.jA,B.jA,B.jA,B.jA,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.Ur,B.xM,B.xM],A.N0("LP<qU,vw>"))
 B.p6={}
 B.CM=new A.LP(B.p6,[],A.N0("LP<qU,qU>"))
 B.XB=new A.aK(0,"WebGL")
@@ -11530,7 +11532,6 @@ s($,"pL","rA",()=>A.V6(4096))
 s($,"Qn","pE",()=>new A.Dn().$0())
 s($,"dN","SS",()=>new A.NR().$0())
 s($,"hj","V7",()=>A.DQ(A.XF(A.QI([-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-2,-1,-2,-2,-2,-2,-2,62,-2,62,-2,63,52,53,54,55,56,57,58,59,60,61,-2,-2,-2,-1,-2,-2,-2,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-2,-2,-2,-2,63,-2,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-2,-2,-2,-2,-2],t.X))))
-s($,"Gt","ix",()=>A.EF(["iso_8859-1:1987",B.jA,"iso-ir-100",B.jA,"iso_8859-1",B.jA,"iso-8859-1",B.jA,"latin1",B.jA,"l1",B.jA,"ibm819",B.jA,"cp819",B.jA,"csisolatin1",B.jA,"iso-ir-6",B.Ur,"ansi_x3.4-1968",B.Ur,"ansi_x3.4-1986",B.Ur,"iso_646.irv:1991",B.Ur,"iso646-us",B.Ur,"us-ascii",B.Ur,"us",B.Ur,"ibm367",B.Ur,"cp367",B.Ur,"csascii",B.Ur,"ascii",B.Ur,"csutf8",B.xM,"utf-8",B.xM],t.N,A.N0("vw")))
 s($,"oz","t8",()=>A.CU(B.h0))
 s($,"N8","jv",()=>{A.w4()
 return $.zI})

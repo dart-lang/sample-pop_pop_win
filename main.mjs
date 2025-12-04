@@ -192,8 +192,8 @@ class CompiledApp {
       _163: (o, m, a) => o[m].apply(o, a),
       _165: o => String(o),
       _166: (p, s, f) => p.then(s, (e) => f(e, e === undefined)),
-      _167: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._167(f,arguments.length,x0) }),
-      _168: f => finalizeWrapper(f, function(x0,x1) { return dartInstance.exports._168(f,arguments.length,x0,x1) }),
+      _167: (module,f) => finalizeWrapper(f, function(x0) { return module.exports._167(f,arguments.length,x0) }),
+      _168: (module,f) => finalizeWrapper(f, function(x0,x1) { return module.exports._168(f,arguments.length,x0,x1) }),
       _169: o => {
         if (o === undefined) return 1;
         var type = typeof o;
@@ -268,8 +268,8 @@ class CompiledApp {
       _196: (o, p) => o[p],
       _205: (x0,x1) => x0.createElement(x1),
       _207: (x0,x1) => x0.querySelector(x1),
-      _208: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._208(f,arguments.length,x0) }),
-      _209: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._209(f,arguments.length,x0) }),
+      _208: (module,f) => finalizeWrapper(f, function(x0) { return module.exports._208(f,arguments.length,x0) }),
+      _209: (module,f) => finalizeWrapper(f, function(x0) { return module.exports._209(f,arguments.length,x0) }),
       _210: (x0,x1,x2,x3) => x0.addEventListener(x1,x2,x3),
       _211: (x0,x1,x2,x3) => x0.removeEventListener(x1,x2,x3),
       _212: x0 => x0.preventDefault(),
@@ -278,7 +278,7 @@ class CompiledApp {
       _219: (x0,x1,x2,x3,x4,x5) => ({method: x0,headers: x1,body: x2,credentials: x3,redirect: x4,signal: x5}),
       _220: (x0,x1) => globalThis.fetch(x0,x1),
       _221: (x0,x1) => x0.get(x1),
-      _222: f => finalizeWrapper(f, function(x0,x1,x2) { return dartInstance.exports._222(f,arguments.length,x0,x1,x2) }),
+      _222: (module,f) => finalizeWrapper(f, function(x0,x1,x2) { return module.exports._222(f,arguments.length,x0,x1,x2) }),
       _223: (x0,x1) => x0.forEach(x1),
       _224: x0 => x0.getReader(),
       _225: x0 => x0.cancel(),
@@ -374,7 +374,7 @@ class CompiledApp {
       _346: (x0,x1,x2,x3,x4,x5,x6) => x0.texImage2D(x1,x2,x3,x4,x5,x6),
       _347: x0 => x0.createTexture(),
       _348: x0 => x0.getError(),
-      _352: f => finalizeWrapper(f, function(x0) { return dartInstance.exports._352(f,arguments.length,x0) }),
+      _352: (module,f) => finalizeWrapper(f, function(x0) { return module.exports._352(f,arguments.length,x0) }),
       _353: (x0,x1) => x0.requestAnimationFrame(x1),
       _354: x0 => new TouchEvent(x0),
       _355: x0 => x0.clear(),
@@ -612,6 +612,7 @@ class CompiledApp {
       ...additionalImports,
       
       "wasm:js-string": jsStringPolyfill,
+      "$moduleHelpers": {"this": () => dartInstance},
     });
 
     return new InstantiatedApp(this, dartInstance);
