@@ -612,8 +612,8 @@ class CompiledApp {
       ...additionalImports,
       
       "wasm:js-string": jsStringPolyfill,
-      "$moduleHelpers": {"this": () => dartInstance},
     });
+    dartInstance.exports.$setThisModule(dartInstance);
 
     return new InstantiatedApp(this, dartInstance);
   }
