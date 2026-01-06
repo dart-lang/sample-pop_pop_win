@@ -19,7 +19,8 @@ targets:
             dart2wasm:
               args:
                 - -O2
-                - --no-strip-wasm
+                # Add this back to improve debugging.
+                #- --no-strip-wasm
             dart2js:
               args:
                 - --stage=dump-info-all
