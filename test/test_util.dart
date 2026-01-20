@@ -3,7 +3,6 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:pop_pop_win/src/game.dart';
-import 'package:test/test.dart';
 
 // This grid
 // XXXXX2
@@ -22,5 +21,3 @@ const sampleField = <int?>[
 
 Field getSampleField() =>
     Field.fromSquares(6, 5, List<bool>.from(sampleField.map((x) => x == null)));
-
-final throwsAssertionError = throwsA(const TypeMatcher<AssertionError>());
