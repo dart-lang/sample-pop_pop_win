@@ -6,7 +6,7 @@ import 'dart:math';
 
 import 'package:checks/checks.dart';
 import 'package:pop_pop_win/src/game.dart';
-import 'package:test/test.dart' show group, test;
+import 'package:test/scaffolding.dart';
 
 import 'test_util.dart';
 

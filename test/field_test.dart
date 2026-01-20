@@ -4,7 +4,7 @@
 
 import 'package:checks/checks.dart';
 import 'package:pop_pop_win/src/game.dart';
-import 'package:test/test.dart' show test;
+import 'package:test/scaffolding.dart';
 
 import 'test_util.dart';
 
