@@ -2,8 +2,9 @@
 // for details. All rights reserved. Use of this source code is governed by a
 // BSD-style license that can be found in the LICENSE file.
 
+import 'package:checks/checks.dart';
 import 'package:pop_pop_win/src/game.dart';
-import 'package:test/test.dart';
+import 'package:test/test.dart' show test;
 
 import 'test_util.dart';
 
@@ -17,9 +18,9 @@ void main() {
 void _testDefaults() {
   final f = Field();
 
-  expect(f.bombCount, equals(40));
-  expect(f.height, equals(16));
-  expect(f.width, equals(16));
+  check(f.bombCount).equals(40);
+  check(f.height).equals(16);
+  check(f.width).equals(16);
 }
 
 void _testBombCount() {
@@ -33,20 +34,20 @@ void _testBombCount() {
       }
     }
   }
-  expect(bombCount, equals(f.bombCount));
+  check(bombCount).equals(f.bombCount);
 }
 
 void _testFromSquares() {
   final f = Field.fromSquares(2, 2, [true, true, true, false]);
-  expect(f.height, equals(2));
-  expect(f.width, equals(2));
-  expect(f.bombCount, equals(3));
+  check(f.height).equals(2);
+  check(f.width).equals(2);
+  check(f.bombCount).equals(3);
 }
 
 void _testAdjacent() {
   final f = getSampleField();
 
-  expect(f.bombCount, equals(13));
+  check(f.bombCount).equals(13);
 
   for (var x = 0; x < f.width; x++) {
     for (var y = 0; y < f.height; y++) {
@@ -55,9 +56,9 @@ void _testAdjacent() {
       final expected = sampleField[i];
 
       if (expected == null) {
-        expect(() => f.getAdjacentCount(x, y), throwsAssertionError);
+        check(() => f.getAdjacentCount(x, y)).throws<AssertionError>();
       } else {
-        expect(f.getAdjacentCount(x, y), expected);
+        check(f.getAdjacentCount(x, y)).equals(expected);
       }
     }
   }
