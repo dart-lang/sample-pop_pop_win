@@ -37,11 +37,11 @@ in [Dart](https://dart.dev/).
  * To run locally with [dartdevc](https://dart.dev/tools/dartdevc):
  
    ```console
-   dart pub run build_runner serve
+   dart run build_runner serve
    ```
 
  * To build with [dart2js](https://dart.dev/tools/dart2js) and minified output:
  
    ```console
-   dart pub run build_runner build --release --output web:build
+   dart run build_runner build --release --output web:build
    ```
