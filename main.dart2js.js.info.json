@@ -3,12 +3,12 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/org-dartlang-app:///web/main.dart::main",
-    "size": 303836,
+    "size": 303739,
     "ramUsage": "N/A MB",
-    "dart2jsVersion": "3.12.0-51.0.dev",
-    "compilationMoment": "2026-01-22 08:44:13.935050",
-    "compilationDuration": 1630635,
-    "toJsonDuration": 9000,
+    "dart2jsVersion": "3.12.0-162.0.dev",
+    "compilationMoment": "2026-02-23 12:09:04.871923",
+    "compilationDuration": 1739729,
+    "toJsonDuration": 6000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": true,
@@ -116,9 +116,9 @@
           "class/dart:_internal::_CastIterableBase",
           "class/dart:_internal::_CastListBase",
           "class/dart:_internal::_EfficientLengthCastIterable",
+          "field/dart:_internal::_printToZone",
           "field/dart:_internal::_toStringVisiting",
           "field/dart:_internal::nullFuture",
-          "field/dart:_internal::printToZone",
           "function/dart:_internal::_checkCount",
           "function/dart:_internal::checkNotNullable",
           "function/dart:_internal::createSentinel",
@@ -130,6 +130,7 @@
           "function/dart:_internal::makeListFixedLength",
           "function/dart:_internal::parseHexByte",
           "function/dart:_internal::printToConsole",
+          "function/dart:_internal::printToZone",
           "function/dart:_internal::toStringVisiting",
           "function/dart:_internal::unsafeCast"
         ],
@@ -295,6 +296,20 @@
           "function/dart:_js_primitives::printString"
         ],
         "canonicalUri": "dart:_js_primitives"
+      },
+      "dart:_js_types::": {
+        "id": "library/dart:_js_types::",
+        "kind": "library",
+        "name": "_js_types",
+        "size": 0,
+        "children": [
+          "function/dart:_js_types::JSBooleanTypeExtension|get#self",
+          "function/dart:_js_types::JSBooleanType|constructor#",
+          "function/dart:_js_types::JSNumberType|constructor#",
+          "function/dart:_js_types::JSStringType|constructor#",
+          "function/dart:_js_types::JSUint8ArrayTypeExtension|get#self"
+        ],
+        "canonicalUri": "dart:_js_types"
       },
       "dart:_late_helper::": {
         "id": "library/dart:_late_helper::",
@@ -560,7 +575,7 @@
         "id": "library/dart:collection::",
         "kind": "library",
         "name": "dart.collection",
-        "size": 5982,
+        "size": 5781,
         "children": [
           "class/dart:collection::LinkedHashMap",
           "class/dart:collection::ListBase",
@@ -1341,7 +1356,7 @@
         "id": "library/package:source_span/src/file.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 2612,
+        "size": 2690,
         "children": [
           "class/package:source_span/src/file.dart::FileLocation",
           "class/package:source_span/src/file.dart::SourceFile",
@@ -1693,7 +1708,7 @@
         "id": "library/package:stagexl/src/internal/image_bitmap_loader.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 505,
+        "size": 549,
         "children": [
           "class/package:stagexl/src/internal/image_bitmap_loader.dart::ImageBitmapLoader"
         ],
@@ -1830,7 +1845,7 @@
         "id": "library/package:string_scanner/src/string_scanner.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 1076,
+        "size": 1058,
         "children": [
           "class/package:string_scanner/src/string_scanner.dart::StringScanner"
         ],
@@ -4552,9 +4567,10 @@
           "abstract": false
         },
         "children": [
-          "function/dart:_native_typed_data::NativeUint32List.NativeUint32List.fromList",
+          "function/dart:_native_typed_data::NativeUint32List.NativeUint32List",
           "function/dart:_native_typed_data::NativeUint32List.[]",
           "function/dart:_native_typed_data::NativeUint32List._create1",
+          "function/dart:_native_typed_data::NativeUint32List._createLength",
           "function/dart:_native_typed_data::NativeUint32List.runtimeType",
           "function/dart:_native_typed_data::NativeUint32List.sublist"
         ],
@@ -5952,7 +5968,7 @@
         "id": "class/dart:collection::ListBase",
         "kind": "class",
         "name": "ListBase",
-        "size": 1260,
+        "size": 1059,
         "outputUnit": "outputUnit/main",
         "parent": "library/dart:collection::",
         "modifiers": {
@@ -5974,7 +5990,6 @@
           "function/dart:collection::ListBase.skip",
           "function/dart:collection::ListBase.sort",
           "function/dart:collection::ListBase.take",
-          "function/dart:collection::ListBase.toList",
           "function/dart:collection::ListBase.toString"
         ],
         "supers": [
@@ -6851,6 +6866,7 @@
           "field/dart:core::ArgumentError.message",
           "field/dart:core::ArgumentError.name",
           "function/dart:core::ArgumentError.ArgumentError",
+          "function/dart:core::ArgumentError.ArgumentError.notNull",
           "function/dart:core::ArgumentError.ArgumentError.value",
           "function/dart:core::ArgumentError._errorExplanation",
           "function/dart:core::ArgumentError._errorName",
@@ -8820,7 +8836,7 @@
         "id": "class/package:source_span/src/file.dart::SourceFile",
         "kind": "class",
         "name": "SourceFile",
-        "size": 1480,
+        "size": 1558,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:source_span/src/file.dart::",
         "modifiers": {
@@ -11074,7 +11090,7 @@
         "id": "class/package:stagexl/src/internal/image_bitmap_loader.dart::ImageBitmapLoader",
         "kind": "class",
         "name": "ImageBitmapLoader",
-        "size": 396,
+        "size": 440,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:stagexl/src/internal/image_bitmap_loader.dart::",
         "modifiers": {
@@ -11869,7 +11885,7 @@
         "id": "class/package:string_scanner/src/string_scanner.dart::StringScanner",
         "kind": "class",
         "name": "StringScanner",
-        "size": 1076,
+        "size": 1058,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:string_scanner/src/string_scanner.dart::",
         "modifiers": {
@@ -17068,7 +17084,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 4,
         "code": "q(a,b){return this.a.charCodeAt(b)}",
         "type": "int Function(int)",
         "functionKind": 2
@@ -17091,7 +17107,7 @@
         "inferredReturnType": "[subclass=JSInt|powerset={I}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
-        "inlinedCount": 1,
+        "inlinedCount": 3,
         "code": "gB(a){return this.a.length}",
         "type": "int Function()",
         "functionKind": 2
@@ -22189,6 +22205,29 @@
         "inlinedCount": 1,
         "code": "",
         "type": "void Function(String)",
+        "functionKind": 0
+      },
+      "dart:_internal::printToZone": {
+        "id": "function/dart:_internal::printToZone",
+        "kind": "function",
+        "name": "printToZone",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_internal::",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "void Function(String)?",
+        "inferredReturnType": "[null|powerset={null}]",
+        "parameters": [],
+        "sideEffects": "SideEffects(reads static; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "void Function(String)? Function()",
         "functionKind": 0
       },
       "dart:_internal::toStringVisiting": {
@@ -27315,7 +27354,7 @@
         "inferredReturnType": "[subclass=JSInt|powerset={I}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 6,
+        "inlinedCount": 7,
         "code": "gYT(){return this.b.index}",
         "type": "int Function()",
         "functionKind": 2
@@ -30603,6 +30642,151 @@
         "type": "void Function(String)",
         "functionKind": 0
       },
+      "dart:_js_types::JSBooleanTypeExtension|get#self": {
+        "id": "function/dart:_js_types::JSBooleanTypeExtension|get#self",
+        "kind": "function",
+        "name": "JSBooleanTypeExtension|get#self",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_js_types::",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[subtype=bool|powerset={IN}{O}{N}]",
+        "parameters": [
+          {
+            "name": "#this",
+            "type": "[subtype=bool|powerset={IN}{O}{N}]",
+            "declaredType": "bool"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 5,
+        "code": "",
+        "type": "bool Function(bool)",
+        "functionKind": 0
+      },
+      "dart:_js_types::JSBooleanType|constructor#": {
+        "id": "function/dart:_js_types::JSBooleanType|constructor#",
+        "kind": "function",
+        "name": "JSBooleanType|constructor#",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_js_types::",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "bool",
+        "inferredReturnType": "[exact=JSBool|powerset={I}{O}{N}]",
+        "parameters": [
+          {
+            "name": "_jsBooleanType",
+            "type": "[exact=JSBool|powerset={I}{O}{N}]",
+            "declaredType": "bool"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 5,
+        "code": "",
+        "type": "bool Function(bool)",
+        "functionKind": 0
+      },
+      "dart:_js_types::JSNumberType|constructor#": {
+        "id": "function/dart:_js_types::JSNumberType|constructor#",
+        "kind": "function",
+        "name": "JSNumberType|constructor#",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_js_types::",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "double",
+        "inferredReturnType": "[subclass=JSNumber|powerset={I}{O}{N}]",
+        "parameters": [
+          {
+            "name": "_jsNumberType",
+            "type": "[subclass=JSNumber|powerset={I}{O}{N}]",
+            "declaredType": "double"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 23,
+        "code": "",
+        "type": "double Function(double)",
+        "functionKind": 0
+      },
+      "dart:_js_types::JSStringType|constructor#": {
+        "id": "function/dart:_js_types::JSStringType|constructor#",
+        "kind": "function",
+        "name": "JSStringType|constructor#",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_js_types::",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "String",
+        "inferredReturnType": "[exact=JSString|powerset={I}{O}{I}]",
+        "parameters": [
+          {
+            "name": "_jsStringType",
+            "type": "[exact=JSString|powerset={I}{O}{I}]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 14,
+        "code": "",
+        "type": "String Function(String)",
+        "functionKind": 0
+      },
+      "dart:_js_types::JSUint8ArrayTypeExtension|get#self": {
+        "id": "function/dart:_js_types::JSUint8ArrayTypeExtension|get#self",
+        "kind": "function",
+        "name": "JSUint8ArrayTypeExtension|get#self",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_js_types::",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "NativeUint8List",
+        "inferredReturnType": "[exact=NativeUint8List|powerset={I}{O}{M}]",
+        "parameters": [
+          {
+            "name": "#this",
+            "type": "[exact=NativeUint8List|powerset={I}{O}{M}]",
+            "declaredType": "NativeUint8List"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "NativeUint8List Function(NativeUint8List)",
+        "functionKind": 0
+      },
       "dart:_late_helper::_Cell._Cell": {
         "id": "function/dart:_late_helper::_Cell._Cell",
         "kind": "function",
@@ -31195,7 +31379,7 @@
         "parameters": [
           {
             "name": "arg",
-            "type": "Union([exact=NativeInt8List|powerset={I}{O}{M}], [exact=NativeUint8List|powerset={I}{O}{M}], [subclass=JSMutableArray|powerset={I}{GF}{M}], powerset: {I}{GFO}{M})",
+            "type": "Union([exact=JSExtendableArray|powerset={I}{G}{M}], [exact=JSFixedArray|powerset={I}{F}{M}], [exact=NativeInt8List|powerset={I}{O}{M}], [exact=NativeUint8List|powerset={I}{O}{M}], powerset: {I}{GFO}{M})",
             "declaredType": "dynamic"
           }
         ],
@@ -32010,7 +32194,7 @@
         "parameters": [
           {
             "name": "arg",
-            "type": "Union([exact=NativeUint8List|powerset={I}{O}{M}], [subclass=JSMutableArray|powerset={I}{GF}{M}], powerset: {I}{GFO}{M})",
+            "type": "Union([exact=JSExtendableArray|powerset={I}{G}{M}], [exact=JSFixedArray|powerset={I}{F}{M}], [exact=NativeUint8List|powerset={I}{O}{M}], powerset: {I}{GFO}{M})",
             "declaredType": "dynamic"
           }
         ],
@@ -32181,10 +32365,10 @@
         "type": "Type Function()",
         "functionKind": 2
       },
-      "dart:_native_typed_data::NativeUint32List.NativeUint32List.fromList": {
-        "id": "function/dart:_native_typed_data::NativeUint32List.NativeUint32List.fromList",
+      "dart:_native_typed_data::NativeUint32List.NativeUint32List": {
+        "id": "function/dart:_native_typed_data::NativeUint32List.NativeUint32List",
         "kind": "function",
-        "name": "NativeUint32List.fromList",
+        "name": "NativeUint32List",
         "size": 0,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_native_typed_data::NativeUint32List",
@@ -32199,15 +32383,15 @@
         "inferredReturnType": "[exact=NativeUint32List|powerset={I}{O}{M}]",
         "parameters": [
           {
-            "name": "elements",
-            "type": "Container([subclass=JSMutableArray|powerset={I}{GF}{M}], element: [null|subclass=Object|powerset={null}{IN}{GFUO}{IMN}], length: null, powerset: {I}{GF}{M})",
-            "declaredType": "List<int>"
+            "name": "length",
+            "type": "[subclass=JSInt|powerset={I}{O}{N}]",
+            "declaredType": "int"
           }
         ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "sideEffects": "SideEffects(reads nothing; writes anything)",
         "inlinedCount": 1,
         "code": "",
-        "type": "NativeUint32List Function(List<int>)",
+        "type": "NativeUint32List Function(int)",
         "functionKind": 3
       },
       "dart:_native_typed_data::NativeUint32List.[]": {
@@ -32258,14 +32442,43 @@
         "parameters": [
           {
             "name": "arg",
-            "type": "Union([exact=NativeUint32List|powerset={I}{O}{M}], [exact=NativeUint8List|powerset={I}{O}{M}], [subclass=JSMutableArray|powerset={I}{GF}{M}], powerset: {I}{GFO}{M})",
+            "type": "[exact=NativeUint32List|powerset={I}{O}{M}]",
             "declaredType": "dynamic"
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 1,
         "code": "",
         "type": "NativeUint32List Function(dynamic)",
+        "functionKind": 0
+      },
+      "dart:_native_typed_data::NativeUint32List._createLength": {
+        "id": "function/dart:_native_typed_data::NativeUint32List._createLength",
+        "kind": "function",
+        "name": "_createLength",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "class/dart:_native_typed_data::NativeUint32List",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "NativeUint32List",
+        "inferredReturnType": "[exact=NativeUint32List|powerset={I}{O}{M}]",
+        "parameters": [
+          {
+            "name": "arg",
+            "type": "[subclass=JSInt|powerset={I}{O}{N}]",
+            "declaredType": "int"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "NativeUint32List Function(int)",
         "functionKind": 0
       },
       "dart:_native_typed_data::NativeUint32List.runtimeType": {
@@ -32446,7 +32659,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes anything)",
-        "inlinedCount": 25,
+        "inlinedCount": 26,
         "code": "",
         "type": "int Function(dynamic)",
         "functionKind": 0
@@ -32583,11 +32796,11 @@
           "external": false
         },
         "returnType": "List<dynamic>",
-        "inferredReturnType": "Union([exact=NativeUint8List|powerset={I}{O}{M}], [subclass=JSMutableArray|powerset={I}{GF}{M}], powerset: {I}{GFO}{M})",
+        "inferredReturnType": "Union([exact=JSExtendableArray|powerset={I}{G}{M}], [exact=JSFixedArray|powerset={I}{F}{M}], [exact=NativeUint8List|powerset={I}{O}{M}], powerset: {I}{GFO}{M})",
         "parameters": [
           {
             "name": "list",
-            "type": "Union([exact=NativeUint8List|powerset={I}{O}{M}], [subclass=JSMutableArray|powerset={I}{GF}{M}], powerset: {I}{GFO}{M})",
+            "type": "Union([exact=JSExtendableArray|powerset={I}{G}{M}], [exact=NativeUint8List|powerset={I}{O}{M}], powerset: {I}{GO}{M})",
             "declaredType": "List<dynamic>"
           }
         ],
@@ -50445,35 +50658,6 @@
         "type": "Iterable<ListBase.E> Function(int)",
         "functionKind": 2
       },
-      "dart:collection::ListBase.toList": {
-        "id": "function/dart:collection::ListBase.toList",
-        "kind": "function",
-        "name": "toList",
-        "size": 197,
-        "outputUnit": "outputUnit/main",
-        "parent": "class/dart:collection::ListBase",
-        "children": [],
-        "modifiers": {
-          "static": false,
-          "const": false,
-          "factory": false,
-          "external": false
-        },
-        "returnType": "List<ListBase.E>",
-        "inferredReturnType": "Container([subclass=JSMutableArray|powerset={I}{GF}{M}], element: [null|subclass=Object|powerset={null}{IN}{GFUO}{IMN}], length: null, powerset: {I}{GF}{M})",
-        "parameters": [
-          {
-            "name": "growable",
-            "type": "Value([exact=JSBool|powerset={I}{O}{N}], value: true, powerset: {I}{O}{N})",
-            "declaredType": "bool"
-          }
-        ],
-        "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 0,
-        "code": "tt(a,b){var s,r,q,p,o=this\nif(o.gl0(a)){s=J.Kh(0,A.z(a).C(\"ar.E\"))\nreturn s}r=o.q(a,0)\nq=A.O8(o.gB(a),r,!0,A.z(a).C(\"ar.E\"))\nfor(p=1;p<o.gB(a);++p)q[p]=o.q(a,p)\nreturn q}\nbr(a){return this.tt(a,!0)}",
-        "type": "List<ListBase.E> Function({bool growable})",
-        "functionKind": 2
-      },
       "dart:collection::ListBase.toString": {
         "id": "function/dart:collection::ListBase.toString",
         "kind": "function",
@@ -53697,6 +53881,35 @@
         "type": "dynamic Function([dynamic,String?])",
         "functionKind": 3
       },
+      "dart:core::ArgumentError.ArgumentError.notNull": {
+        "id": "function/dart:core::ArgumentError.ArgumentError.notNull",
+        "kind": "function",
+        "name": "ArgumentError.notNull",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "class/dart:core::ArgumentError",
+        "children": [],
+        "modifiers": {
+          "static": false,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "dynamic",
+        "inferredReturnType": "[exact=ArgumentError|powerset={N}{O}{N}]",
+        "parameters": [
+          {
+            "name": "name",
+            "type": "[exact=JSString|powerset={I}{O}{I}]",
+            "declaredType": "String?"
+          }
+        ],
+        "sideEffects": "SideEffects(reads nothing; writes nothing)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "dynamic Function([String?])",
+        "functionKind": 3
+      },
       "dart:core::ArgumentError.ArgumentError.value": {
         "id": "function/dart:core::ArgumentError.ArgumentError.value",
         "kind": "function",
@@ -55226,7 +55439,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 3,
+        "inlinedCount": 2,
         "code": "",
         "type": "List<#A> Function<#A extends Object?>({bool growable})",
         "functionKind": 3
@@ -87202,7 +87415,7 @@
         "id": "function/package:stagexl/src/internal/image_bitmap_loader.dart::ImageBitmapLoader._onWebpSupported",
         "kind": "function",
         "name": "_onWebpSupported",
-        "size": 107,
+        "size": 151,
         "outputUnit": "outputUnit/main",
         "parent": "class/package:stagexl/src/internal/image_bitmap_loader.dart::ImageBitmapLoader",
         "children": [],
@@ -87223,7 +87436,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "uc(a){var s=this.a,r=A.nu(\"(png|jpg|jpeg)$\").ej(s)\nif(a&&r!=null)this.Ib(s)}\nk(A.iG.prototype,\"gA8\",\"uc\",22)",
+        "code": "uc(a){var s=this.a,r=A.nu(\"(png|jpg|jpeg)$\").ej(s)\nif(a&&r!=null)this.Ib(B.xB.Nj(s,0,r.b.index)+\"webp\")\nelse this.Ib(s)}\nk(A.iG.prototype,\"gA8\",\"uc\",22)",
         "type": "void Function(bool)",
         "functionKind": 2
       },
@@ -92297,7 +92510,7 @@
         "id": "function/package:string_scanner/src/string_scanner.dart::StringScanner.error",
         "kind": "function",
         "name": "error",
-        "size": 551,
+        "size": 533,
         "outputUnit": "outputUnit/main",
         "parent": "class/package:string_scanner/src/string_scanner.dart::StringScanner",
         "children": [],
@@ -92328,7 +92541,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Fx(a,b,c){var s,r,q,p,o,n,m=this.b\nif(c<0)A.vh(A.C3(\"position must be greater than or equal to 0.\"))\nelse if(c>m.length)A.vh(A.C3(\"position must be less than or equal to the string length.\"))\ns=c+b>m.length\nif(s)A.vh(A.C3(\"position plus length must not go beyond the end of the string.\"))\ns=this.a\nr=new A.qj(m)\nq=A.QI([0],t.X)\np=new Uint32Array(A.XF(r.br(r)))\no=new A.xT(s,q,p)\no.Y9(r,s)\nn=c+b\nif(n>p.length)A.vh(A.C3(\"End \"+n+u.s+o.gB(0)+\".\"))\nelse if(c<0)A.vh(A.C3(\"Start may not be negative, was \"+c+\".\"))\nthrow A.b(new A.Vx(m,a,new A.n4(o,c,n)))}",
+        "code": "Fx(a,b,c){var s,r,q,p,o,n=this.b\nif(c<0)A.vh(A.C3(\"position must be greater than or equal to 0.\"))\nelse if(c>n.length)A.vh(A.C3(\"position must be less than or equal to the string length.\"))\ns=c+b>n.length\nif(s)A.vh(A.C3(\"position plus length must not go beyond the end of the string.\"))\ns=this.a\nr=A.QI([0],t.X)\nq=n.length\np=new A.xT(s,r,new Uint32Array(q))\np.Y9(new A.qj(n),s)\no=c+b\nif(o>q)A.vh(A.C3(\"End \"+o+u.s+p.gB(0)+\".\"))\nelse if(c<0)A.vh(A.C3(\"Start may not be negative, was \"+c+\".\"))\nthrow A.b(new A.Vx(n,a,new A.n4(p,c,o)))}",
         "type": "Never Function(String,{int? length,Match? match,int? position})",
         "functionKind": 2
       },
@@ -95260,6 +95473,18 @@
         "code": "",
         "type": "Iterator<Object?>"
       },
+      "dart:_internal::_printToZone": {
+        "id": "field/dart:_internal::_printToZone",
+        "kind": "field",
+        "name": "_printToZone",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "library/dart:_internal::",
+        "children": [],
+        "inferredType": "[null|powerset={null}]",
+        "code": "",
+        "type": "void Function(String)?"
+      },
       "dart:_internal::_toStringVisiting": {
         "id": "field/dart:_internal::_toStringVisiting",
         "kind": "field",
@@ -95285,18 +95510,6 @@
         "inferredType": "[exact=_Future|powerset={N}{O}{N}]",
         "code": "s($,\"Qz\",\"Zo\",()=>B.NU.Gr(new A.GR()))",
         "type": "Future<void>"
-      },
-      "dart:_internal::printToZone": {
-        "id": "field/dart:_internal::printToZone",
-        "kind": "field",
-        "name": "printToZone",
-        "size": 0,
-        "outputUnit": "outputUnit/main",
-        "parent": "library/dart:_internal::",
-        "children": [],
-        "inferredType": "[null|powerset={null}]",
-        "code": "",
-        "type": "void Function(String)?"
       },
       "dart:_js_helper::BoundClosure._interceptor": {
         "id": "field/dart:_js_helper::BoundClosure._interceptor",
@@ -101142,7 +101355,7 @@
         "outputUnit": "outputUnit/main",
         "parent": "class/package:source_span/src/file.dart::SourceFile",
         "children": [],
-        "inferredType": "[exact=NativeUint32List|powerset={I}{O}{M}]",
+        "inferredType": "Container([exact=NativeUint32List|powerset={I}{O}{M}], element: [subclass=JSUInt32|powerset={I}{O}{N}], length: null, powerset: {I}{O}{M})",
         "code": "",
         "type": "Uint32List"
       },
@@ -127299,9 +127512,13 @@
         "id": "function/dart:_native_typed_data::_checkValidIndex"
       }
     ],
-    "function/dart:_native_typed_data::NativeUint32List.NativeUint32List.fromList": [
+    "function/dart:_native_typed_data::NativeUint32List.NativeUint32List": [
       {
-        "id": "function/dart:_native_typed_data::NativeUint32List._create1",
+        "id": "function/dart:_native_typed_data::NativeUint32List._createLength",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:_native_typed_data::_checkLength",
         "mask": "inlined"
       }
     ],
@@ -139865,111 +140082,6 @@
         "id": "function/dart:_rti::instanceType"
       }
     ],
-    "function/dart:collection::ListBase.toList": [
-      {
-        "id": "function/dart:_interceptors::JSArray.JSArray.growable"
-      },
-      {
-        "id": "function/dart:_internal::CodeUnits.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_internal::CodeUnits.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_internal::_CastIterableBase.isEmpty",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_internal::_CastIterableBase.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_internal::_CastListBase.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeInt16List.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeInt32List.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeInt8List.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeTypedArray.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeTypedArrayOfDouble.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeUint16List.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeUint32List.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeUint8ClampedList.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeUint8ClampedList.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeUint8List.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_native_typed_data::NativeUint8List.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:_rti::Rti._eval"
-      },
-      {
-        "id": "function/dart:_rti::instanceType"
-      },
-      {
-        "id": "function/dart:collection::ListBase.isEmpty",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:core::Iterable.isEmpty",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:core::Iterable.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/dart:core::List.List.empty",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/dart:core::List.List.empty"
-      },
-      {
-        "id": "function/dart:core::List.List.filled"
-      },
-      {
-        "id": "function/package:pop_pop_win/src/array_2d.dart::Array2d.[]",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      },
-      {
-        "id": "function/package:pop_pop_win/src/array_2d.dart::Array2d.length",
-        "mask": "[subtype=ListBase|powerset={IN}{O}{MN}]"
-      }
-    ],
     "function/dart:collection::ListBase.toString": [
       {
         "id": "function/dart:collection::ListBase.listToString",
@@ -142259,6 +142371,15 @@
     "function/dart:core::ArgumentError._errorName": [
       {
         "id": "field/dart:core::ArgumentError._hasValue"
+      }
+    ],
+    "function/dart:core::ArgumentError.checkNotNull": [
+      {
+        "id": "function/dart:core::ArgumentError.ArgumentError.notNull",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:core::ArgumentError.ArgumentError.notNull"
       }
     ],
     "function/dart:core::ArgumentError.toString": [
@@ -147473,16 +147594,31 @@
         "id": "function/dart:_internal::printToConsole"
       },
       {
+        "id": "function/dart:_internal::printToZone",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:_internal::printToZone"
+      },
+      {
         "id": "function/dart:_js_primitives::printString"
       }
     ],
     "function/dart:js_interop::BoolToJSBoolean|get#toJS": [
+      {
+        "id": "function/dart:_js_types::JSBooleanType|constructor#",
+        "mask": "inlined"
+      },
       {
         "id": "function/dart:js_interop::JSBoolean|constructor#_",
         "mask": "inlined"
       }
     ],
     "function/dart:js_interop::DoubleToJSNumber|get#toJS": [
+      {
+        "id": "function/dart:_js_types::JSNumberType|constructor#",
+        "mask": "inlined"
+      },
       {
         "id": "function/dart:js_interop::JSNumber|constructor#_",
         "mask": "inlined"
@@ -147498,6 +147634,9 @@
       },
       {
         "id": "function/dart:_js_helper::staticInteropGlobalContext"
+      },
+      {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
       },
       {
         "id": "function/dart:_rti::Rti._bind"
@@ -147623,6 +147762,18 @@
         "id": "function/dart:js_interop_unsafe::JSObjectUnsafeUtilExtension|getProperty"
       }
     ],
+    "function/dart:js_interop::JSBooleanToBool|get#toDart": [
+      {
+        "id": "function/dart:_js_types::JSBooleanTypeExtension|get#self",
+        "mask": "inlined"
+      }
+    ],
+    "function/dart:js_interop::JSUint8ArrayToUint8List|get#toDart": [
+      {
+        "id": "function/dart:_js_types::JSUint8ArrayTypeExtension|get#self",
+        "mask": "inlined"
+      }
+    ],
     "function/dart:js_interop::NullRejectionException.toString": [
       {
         "id": "field/dart:js_interop::NullRejectionException.isUndefined"
@@ -147639,6 +147790,10 @@
       }
     ],
     "function/dart:js_interop::StringToJSString|get#toJS": [
+      {
+        "id": "function/dart:_js_types::JSStringType|constructor#",
+        "mask": "inlined"
+      },
       {
         "id": "function/dart:js_interop::JSString|constructor#_",
         "mask": "inlined"
@@ -153382,6 +153537,9 @@
         "id": "function/dart:_js_helper::unwrapException"
       },
       {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
+      },
+      {
         "id": "function/dart:_rti::_Error.toString",
         "mask": "[subclass=Object|powerset={IN}{GFUO}{IMN}]"
       },
@@ -158437,7 +158595,11 @@
         "mask": "inlined"
       },
       {
-        "id": "function/dart:_native_typed_data::NativeUint32List.NativeUint32List.fromList",
+        "id": "function/dart:_internal::CodeUnits.length",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:_native_typed_data::NativeUint32List.NativeUint32List",
         "mask": "inlined"
       }
     ],
@@ -164269,6 +164431,15 @@
         "id": "function/dart:_js_helper::staticInteropGlobalContext"
       },
       {
+        "id": "function/dart:_js_types::JSBooleanTypeExtension|get#self"
+      },
+      {
+        "id": "function/dart:_js_types::JSBooleanType|constructor#"
+      },
+      {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
+      },
+      {
         "id": "function/dart:_rti::_setArrayType"
       },
       {
@@ -167735,6 +167906,9 @@
         "id": "field/package:stagexl/src/engine.dart::RenderContextCanvas._renderingContext"
       },
       {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
+      },
+      {
         "id": "function/dart:_rti::findType"
       },
       {
@@ -167830,6 +168004,9 @@
       },
       {
         "id": "function/dart:_js_helper::assertInteropArgs"
+      },
+      {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
       },
       {
         "id": "function/dart:core::Object.==",
@@ -168023,6 +168200,9 @@
         "id": "field/package:stagexl/src/geom/rectangle.dart::Rectangle.width"
       },
       {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
+      },
+      {
         "id": "function/dart:_late_helper::throwUnnamedLateFieldNI"
       },
       {
@@ -168209,6 +168389,9 @@
       },
       {
         "id": "field/package:stagexl/src/geom/matrix.dart::Matrix._data"
+      },
+      {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
       },
       {
         "id": "function/dart:js_interop::DoubleToJSNumber|get#toJS",
@@ -168568,6 +168751,9 @@
         "id": "function/dart:_js_helper::staticInteropGlobalContext"
       },
       {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
+      },
+      {
         "id": "function/dart:_late_helper::throwUnnamedLateFieldNI"
       },
       {
@@ -168871,6 +169057,9 @@
         "id": "function/dart:_js_helper::wrapException"
       },
       {
+        "id": "function/dart:_js_types::JSBooleanTypeExtension|get#self"
+      },
+      {
         "id": "function/dart:_rti::_asBool"
       },
       {
@@ -168935,6 +169124,9 @@
     "function/package:stagexl/src/engine.dart::RenderProgram._createShader": [
       {
         "id": "function/dart:_js_helper::wrapException"
+      },
+      {
+        "id": "function/dart:_js_types::JSBooleanTypeExtension|get#self"
       },
       {
         "id": "function/dart:_rti::_asBool"
@@ -170235,6 +170427,9 @@
         "id": "function/dart:_js_helper::throwExpression"
       },
       {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
+      },
+      {
         "id": "function/dart:_rti::_asJSObject"
       },
       {
@@ -170583,6 +170778,9 @@
         "id": "function/dart:_js_helper::wrapException"
       },
       {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
+      },
+      {
         "id": "function/dart:core::StateError.StateError"
       },
       {
@@ -170787,6 +170985,9 @@
       },
       {
         "id": "function/dart:_interceptors::JSNumber.toDouble"
+      },
+      {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
       },
       {
         "id": "function/dart:_late_helper::throwUnnamedLateFieldNI"
@@ -173992,10 +174193,23 @@
     ],
     "function/package:stagexl/src/internal/image_bitmap_loader.dart::ImageBitmapLoader._onWebpSupported": [
       {
+        "id": "field/dart:_js_helper::_MatchImplementation._match"
+      },
+      {
         "id": "field/package:stagexl/src/internal/image_bitmap_loader.dart::ImageBitmapLoader._url"
       },
       {
+        "id": "function/dart:_interceptors::JSString.substring"
+      },
+      {
         "id": "function/dart:_js_helper::JSSyntaxRegExp.firstMatch"
+      },
+      {
+        "id": "function/dart:_js_helper::_MatchImplementation.start",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:_js_helper::_MatchImplementation.start"
       },
       {
         "id": "function/dart:core::RegExp.RegExp"
@@ -175024,6 +175238,15 @@
       },
       {
         "id": "function/dart:_js_helper::staticInteropGlobalContext"
+      },
+      {
+        "id": "function/dart:_js_types::JSBooleanTypeExtension|get#self"
+      },
+      {
+        "id": "function/dart:_js_types::JSBooleanType|constructor#"
+      },
+      {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
       },
       {
         "id": "function/dart:_rti::findType"
@@ -177571,6 +177794,9 @@
         "id": "function/dart:_interceptors::JSString.substring"
       },
       {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
+      },
+      {
         "id": "function/dart:js_interop::DoubleToJSNumber|get#toJS",
         "mask": "inlined"
       },
@@ -177671,6 +177897,9 @@
       },
       {
         "id": "function/dart:_interceptors::JSNumber.ceil"
+      },
+      {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
       },
       {
         "id": "function/dart:_rti::_asJSObject"
@@ -177894,6 +178123,9 @@
         "id": "function/dart:_interceptors::JSString.split"
       },
       {
+        "id": "function/dart:_js_types::JSNumberType|constructor#"
+      },
+      {
         "id": "function/dart:_late_helper::throwUnnamedLateFieldNI"
       },
       {
@@ -178033,6 +178265,9 @@
       },
       {
         "id": "function/dart:_interceptors::JSNumber.ceil"
+      },
+      {
+        "id": "function/dart:_js_types::JSStringType|constructor#"
       },
       {
         "id": "function/dart:_late_helper::throwUnnamedLateFieldNI"
@@ -178429,29 +178664,28 @@
         "id": "function/dart:_internal::CodeUnits.CodeUnits"
       },
       {
+        "id": "function/dart:_internal::CodeUnits.length"
+      },
+      {
         "id": "function/dart:_js_helper::throwExpression"
       },
       {
         "id": "function/dart:_js_helper::wrapException"
       },
       {
-        "id": "function/dart:_native_typed_data::NativeUint32List.NativeUint32List.fromList"
+        "id": "function/dart:_native_typed_data::NativeUint32List.NativeUint32List"
       },
       {
-        "id": "function/dart:_native_typed_data::NativeUint32List._create1"
+        "id": "function/dart:_native_typed_data::NativeUint32List._createLength"
       },
       {
-        "id": "function/dart:_native_typed_data::_ensureNativeList"
+        "id": "function/dart:_native_typed_data::_checkLength"
       },
       {
         "id": "function/dart:_rti::_setArrayType"
       },
       {
         "id": "function/dart:_rti::findType"
-      },
-      {
-        "id": "function/dart:collection::ListBase.toList",
-        "mask": "[exact=CodeUnits|powerset={N}{O}{N}]"
       },
       {
         "id": "function/dart:core::RangeError.RangeError"
@@ -179044,6 +179278,9 @@
         "id": "field/package:web/src/helpers/events/streams.dart::_EventStreamSubscription._target"
       },
       {
+        "id": "function/dart:_js_types::JSBooleanType|constructor#"
+      },
+      {
         "id": "function/dart:js_interop::BoolToJSBoolean|get#toJS",
         "mask": "inlined"
       },
@@ -179077,6 +179314,9 @@
       },
       {
         "id": "field/package:web/src/helpers/events/streams.dart::_EventStreamSubscription._target"
+      },
+      {
+        "id": "function/dart:_js_types::JSBooleanType|constructor#"
       },
       {
         "id": "function/dart:js_interop::BoolToJSBoolean|get#toJS",
@@ -179216,7 +179456,7 @@
       "id": "outputUnit/main",
       "kind": "outputUnit",
       "name": "main",
-      "size": 303836,
+      "size": 303739,
       "filename": "main.dart2js.js",
       "imports": []
     }

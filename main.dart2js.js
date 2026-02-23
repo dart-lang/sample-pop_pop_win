@@ -6504,13 +6504,6 @@ if(r!==this.gB(a))throw A.b(A.a(a))}return!1},
 E2(a,b,c){return new A.A8(a,b,A.z(a).C("@<ar.E>").K(c).C("A8<1,2>"))},
 eR(a,b){return A.qC(a,b,null,A.z(a).C("ar.E"))},
 qZ(a,b){return A.qC(a,0,A.cb(b,"count",t.S),A.z(a).C("ar.E"))},
-tt(a,b){var s,r,q,p,o=this
-if(o.gl0(a)){s=J.Kh(0,A.z(a).C("ar.E"))
-return s}r=o.q(a,0)
-q=A.O8(o.gB(a),r,!0,A.z(a).C("ar.E"))
-for(p=1;p<o.gB(a);++p)q[p]=o.q(a,p)
-return q},
-br(a){return this.tt(a,!0)},
 AN(a,b){var s=this.gB(a)
 this.sB(a,s+1)
 this.Y5(a,s,b)},
@@ -8332,10 +8325,12 @@ return"balloon"}}}
 A.xT.prototype={
 gB(a){return this.c.length},
 gGd(){return this.b.length},
-Y9(a,b){var s,r,q,p,o,n
-for(s=this.c,r=s.length,q=this.b,p=0;p<r;++p){o=s[p]
-if(o===13){n=p+1
-if(n>=r||s[n]!==10)o=10}if(o===10)q.push(p+1)}},
+Y9(a,b){var s,r,q,p,o,n,m,l,k
+for(s=this.c,r=s.length,q=a.a,p=s.$flags|0,o=q.length,n=this.b,m=0;m<r;++m){l=q.charCodeAt(m)
+p&2&&A.cW(s)
+s[m]=l
+if(l===13){k=m+1
+if(k>=o||q.charCodeAt(k)!==10)l=10}if(l===10)n.push(m+1)}},
 rK(a){var s,r=this
 if(a<0)throw A.b(A.C3("Offset may not be negative, was "+a+"."))
 else if(a>r.c.length)throw A.b(A.C3("Offset "+a+u.s+r.gB(0)+"."))
@@ -10375,7 +10370,8 @@ $S:1}
 A.iG.prototype={
 Ib(a){A.jh(A.hK(a)).W7(new A.cR(this),t.P)},
 uc(a){var s=this.a,r=A.nu("(png|jpg|jpeg)$").ej(s)
-if(a&&r!=null)this.Ib(s)}}
+if(a&&r!=null)this.Ib(B.xB.Nj(s,0,r.b.index)+"webp")
+else this.Ib(s)}}
 A.cR.prototype={
 $1(a){var s,r,q,p
 if(a.b===200)try{q=v.G
@@ -11010,21 +11006,20 @@ b='"'+A.ys(s,'"','\\"')+'"'}this.Lb(b)},
 kq(a){return this.w1(a,null)},
 c3(){if(this.c===this.b.length)return
 this.Lb("no more input")},
-Fx(a,b,c){var s,r,q,p,o,n,m=this.b
+Fx(a,b,c){var s,r,q,p,o,n=this.b
 if(c<0)A.vh(A.C3("position must be greater than or equal to 0."))
-else if(c>m.length)A.vh(A.C3("position must be less than or equal to the string length."))
-s=c+b>m.length
+else if(c>n.length)A.vh(A.C3("position must be less than or equal to the string length."))
+s=c+b>n.length
 if(s)A.vh(A.C3("position plus length must not go beyond the end of the string."))
 s=this.a
-r=new A.qj(m)
-q=A.QI([0],t.X)
-p=new Uint32Array(A.XF(r.br(r)))
-o=new A.xT(s,q,p)
-o.Y9(r,s)
-n=c+b
-if(n>p.length)A.vh(A.C3("End "+n+u.s+o.gB(0)+"."))
+r=A.QI([0],t.X)
+q=n.length
+p=new A.xT(s,r,new Uint32Array(q))
+p.Y9(new A.qj(n),s)
+o=c+b
+if(o>q)A.vh(A.C3("End "+o+u.s+p.gB(0)+"."))
 else if(c<0)A.vh(A.C3("Start may not be negative, was "+c+"."))
-throw A.b(new A.Vx(m,a,new A.n4(o,c,n)))},
+throw A.b(new A.Vx(n,a,new A.n4(p,c,o)))},
 Lb(a){this.Fx("expected "+a+".",0,this.c)}}
 A.e0.prototype={}
 A.vG.prototype={
