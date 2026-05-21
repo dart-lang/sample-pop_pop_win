@@ -42,6 +42,7 @@ linter:
     - prefer_foreach
     - prefer_int_literals
     - prefer_mixin
+    - simple_directive_paths
     - unnecessary_await_in_return
     - unnecessary_breaks
     - unnecessary_ignore
