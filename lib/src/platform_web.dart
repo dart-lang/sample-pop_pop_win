@@ -6,9 +6,11 @@ import 'dart:async';
 
 import 'package:web/web.dart';
 
+import 'game_storage.dart';
+
 final PlatformWeb targetPlatform = PlatformWeb._();
 
-class PlatformWeb {
+class PlatformWeb implements GameStorageLocation {
   static const String _aboutHash = '#about';
   bool _sizeAccessed = false;
 
@@ -18,8 +20,12 @@ class PlatformWeb {
     window.onPopState.listen((args) => _processUrlHash());
   }
 
-  void clearValues() => window.localStorage.clear();
+  @override
+  void clear() => window.localStorage.clear();
 
+  void clearValues() => clear();
+
+  @override
   void setValue(String key, String? value) {
     if (value == null) {
       window.localStorage.removeItem(key);
@@ -28,6 +34,7 @@ class PlatformWeb {
     }
   }
 
+  @override
   String? getValue(String key) => window.localStorage.getItem(key);
 
   int get size {

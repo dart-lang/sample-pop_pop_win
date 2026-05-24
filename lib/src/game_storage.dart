@@ -7,8 +7,18 @@ import 'dart:async';
 import 'game.dart';
 import 'platform_web.dart';
 
+abstract interface class GameStorageLocation {
+  void clear();
+  void setValue(String key, String? value);
+  String? getValue(String key);
+}
+
 class GameStorage {
+  final GameStorageLocation _storage;
   final _bestTimeUpdated = StreamController<void>();
+
+  GameStorage([GameStorageLocation? storage])
+    : _storage = storage ?? targetPlatform;
 
   Stream<void> get bestTimeUpdated => _bestTimeUpdated.stream;
 
@@ -42,17 +52,17 @@ class GameStorage {
   }
 
   void reset() {
-    targetPlatform.clearValues();
+    _storage.clear();
   }
 
   int? _getIntValue(String key, [int? defaultValue = 0]) {
-    final strValue = targetPlatform.getValue(key);
+    final strValue = _storage.getValue(key);
     return _parseValue(strValue, defaultValue);
   }
 
   void _setIntValue(String key, int value) {
     final val = value.toString();
-    targetPlatform.setValue(key, val);
+    _storage.setValue(key, val);
   }
 
   void _incrementIntValue(String key) {
