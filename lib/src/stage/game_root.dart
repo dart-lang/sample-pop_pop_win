@@ -19,6 +19,8 @@ class GameRoot extends GameManager {
   GameRoot(super.width, super.height, super.bombCount, this.stage) {
     _gameElement = GameElement(this)..alpha = 0;
 
+    audioEvent.listen((sound) => sound.play());
+
     stage
       ..addChild(_gameElement)
       ..juggler.addTween(_gameElement, .5).animate.alpha.to(1);
@@ -44,7 +46,7 @@ class GameRoot extends GameManager {
               _gameElement.scoreElement!.bestTime!) {
         _gameElement.scoreElement!.bestTime = game.duration!.inMilliseconds;
       }
-      Sounds.win.play();
+      playAudio(Sounds.win);
     }
   }
 

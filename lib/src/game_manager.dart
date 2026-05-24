@@ -4,12 +4,14 @@
 
 import 'dart:async';
 
+import 'audio.dart';
 import 'game.dart';
 import 'game_storage.dart';
 
 abstract class GameManager {
   final int _width, _height, _bombCount;
   final GameStorage _gameStorage;
+  final _audioController = StreamController<Sounds>.broadcast();
 
   late Game _game;
   late StreamSubscription<void> _gameStateChangedSub;
@@ -22,6 +24,12 @@ abstract class GameManager {
     GameStorageLocation? storage,
   ]) : _gameStorage = GameStorage(storage) {
     _newGame();
+  }
+
+  Stream<Sounds> get audioEvent => _audioController.stream;
+
+  void playAudio(Sounds sound) {
+    _audioController.add(sound);
   }
 
   Game get game => _game;
