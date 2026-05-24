@@ -3,6 +3,8 @@
 // BSD-style license that can be found in the LICENSE file.
 
 @TestOn('browser')
+library;
+
 import 'package:checks/checks.dart';
 import 'package:pop_pop_win/src/platform_web.dart';
 import 'package:test/scaffolding.dart';
