@@ -30,11 +30,15 @@ class PlatformWeb {
 
   String? getValue(String key) => window.localStorage.getItem(key);
 
+  static int clampSize(String hash) {
+    final cleanHash = hash.replaceAll('#', '');
+    final parsed = int.tryParse(cleanHash) ?? 7;
+    return parsed.clamp(5, 40);
+  }
+
   int get size {
     _sizeAccessed = true;
-    var hash = _urlHash;
-    hash = hash.replaceAll('#', '');
-    return int.tryParse(hash) ?? 7;
+    return clampSize(_urlHash);
   }
 
   bool get showAbout => _urlHash == _aboutHash;
