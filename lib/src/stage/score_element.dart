@@ -32,13 +32,15 @@ class ScoreElement extends TextField {
   }
 
   String _textValue() {
-    final timeInSeconds = (_game!.duration == null)
+    final game = _game!;
+    final duration = game.duration;
+    final timeInSeconds = duration == null
         ? '0'
-        : (_game!.duration!.inMilliseconds / 1000).toStringAsFixed(1);
-    var textValue = 'Bombs Left: ${_game!.bombsLeft}\nTime: $timeInSeconds';
-    if (bestTime != null) {
+        : (duration.inMilliseconds / 1000).toStringAsFixed(1);
+    var textValue = 'Bombs Left: ${game.bombsLeft}\nTime: $timeInSeconds';
+    if (bestTime case final recordTime?) {
       textValue =
-          '$textValue\nRecord: ${(bestTime! / 1000).toStringAsFixed(1)}';
+          '$textValue\nRecord: ${(recordTime / 1000).toStringAsFixed(1)}';
     }
 
     return textValue;

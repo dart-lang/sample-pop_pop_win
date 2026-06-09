@@ -32,7 +32,9 @@ linter:
     - literal_only_boolean_expressions
     - missing_whitespace_between_adjacent_strings
     - no_adjacent_strings_in_list
+    - no_literal_bool_comparisons
     - no_runtimeType_toString
+    - no_self_assignments
     - one_member_abstracts
     - prefer_const_constructors_in_immutables
     - prefer_const_declarations
@@ -42,10 +44,15 @@ linter:
     - prefer_foreach
     - prefer_int_literals
     - prefer_mixin
+    - require_trailing_commas
     - simple_directive_paths
     - unnecessary_await_in_return
     - unnecessary_breaks
     - unnecessary_ignore
+    - unnecessary_raw_strings
+    - use_enums
+    - use_named_constants
+    - use_raw_strings
     - use_setters_to_change_properties
     - use_string_buffers
     - use_to_and_as_if_applicable

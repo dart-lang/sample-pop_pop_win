@@ -210,11 +210,8 @@ class GameElement extends Sprite {
       return (point: c, squareOffset: squareOffset, delay: delay);
     }).toList()..sort((a, b) => a.delay.compareTo(b.delay));
 
-    for (var v in values) {
-      final c = v.point;
-      final squareOffset = v.squareOffset;
-
-      final se = _boardElement.squareAt(c.x, c.y);
+    for (final (:point, :squareOffset, :delay) in values) {
+      final se = _boardElement.squareAt(point.x, point.y);
       final ss = se.squareState;
 
       final texturePrefix = ss == SquareState.bomb
@@ -233,7 +230,7 @@ class GameElement extends Sprite {
 
       stage!.juggler
         ..add(anim)
-        ..delayCall(() => _animationDelay(anim, se, ss), v.delay / _frameRate);
+        ..delayCall(() => _animationDelay(anim, se, ss), delay / _frameRate);
     }
   }
 
@@ -278,8 +275,7 @@ void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
     ..play();
   se.updateState();
   switch (ss) {
-    case SquareState.revealed:
-    case SquareState.hidden:
+    case SquareState.revealed || SquareState.hidden:
       Sounds.pop.play();
     case SquareState.bomb:
       Sounds.bomb.play();
