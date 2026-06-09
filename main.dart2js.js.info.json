@@ -3,12 +3,12 @@
   "dump_minor_version": 1,
   "program": {
     "entrypoint": "function/org-dartlang-app:///web/main.dart::main",
-    "size": 303548,
+    "size": 303530,
     "ramUsage": "N/A MB",
-    "dart2jsVersion": "3.13.0-126.0.dev",
-    "compilationMoment": "2026-05-21 12:34:09.886812",
-    "compilationDuration": 1502738,
-    "toJsonDuration": 8000,
+    "dart2jsVersion": "3.13.0-180.0.dev",
+    "compilationMoment": "2026-06-09 11:14:29.025675",
+    "compilationDuration": 1607408,
+    "toJsonDuration": 7000,
     "dumpInfoDuration": 0,
     "noSuchMethodEnabled": false,
     "isRuntimeTypeUsed": true,
@@ -33,7 +33,7 @@
         "id": "library/dart:_interceptors::",
         "kind": "library",
         "name": "_interceptors",
-        "size": 14465,
+        "size": 14435,
         "children": [
           "class/dart:_interceptors::ArrayIterator",
           "class/dart:_interceptors::Interceptor",
@@ -141,7 +141,7 @@
         "id": "library/dart:_js_helper::",
         "kind": "library",
         "name": "_js_helper",
-        "size": 26931,
+        "size": 26944,
         "children": [
           "class/dart:_js_helper::BoundClosure",
           "class/dart:_js_helper::Closure",
@@ -282,7 +282,7 @@
         "id": "library/dart:_js_names::",
         "kind": "library",
         "name": "dart._js_names",
-        "size": 0,
+        "size": 37,
         "children": [
           "function/dart:_js_names::unmangleGlobalNameIfPreservedAnyways"
         ],
@@ -374,7 +374,7 @@
         "id": "library/dart:_rti::",
         "kind": "library",
         "name": "rti",
-        "size": 17247,
+        "size": 17258,
         "children": [
           "class/dart:_rti::Rti",
           "class/dart:_rti::TypeRule",
@@ -1168,7 +1168,7 @@
         "id": "library/package:pop_pop_win/pop_pop_win.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 2984,
+        "size": 2999,
         "children": [
           "field/package:pop_pop_win/pop_pop_win.dart::_popup",
           "function/package:pop_pop_win/pop_pop_win.dart::_initialLoad",
@@ -1303,7 +1303,7 @@
         "id": "library/package:pop_pop_win/src/stage/game_element.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 5682,
+        "size": 5693,
         "children": [
           "class/package:pop_pop_win/src/stage/game_element.dart::GameElement",
           "field/package:pop_pop_win/src/stage/game_element.dart::_titleClickedEventHandle",
@@ -1326,7 +1326,7 @@
         "id": "library/package:pop_pop_win/src/stage/score_element.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 641,
+        "size": 567,
         "children": [
           "class/package:pop_pop_win/src/stage/score_element.dart::ScoreElement"
         ],
@@ -1479,7 +1479,7 @@
         "id": "library/package:stagexl/src/display.dart::",
         "kind": "library",
         "name": "<unnamed>",
-        "size": 19305,
+        "size": 19300,
         "children": [
           "class/package:stagexl/src/display.dart::Bitmap",
           "class/package:stagexl/src/display.dart::BitmapData",
@@ -3517,7 +3517,7 @@
         "id": "class/dart:_js_helper::JsLinkedHashMap",
         "kind": "class",
         "name": "JsLinkedHashMap",
-        "size": 2439,
+        "size": 2468,
         "outputUnit": "outputUnit/main",
         "parent": "library/dart:_js_helper::",
         "modifiers": {
@@ -8634,6 +8634,7 @@
           "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb._processUrlHash",
           "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb._urlHash",
           "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.aboutChanged",
+          "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.clampSize",
           "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.getValue",
           "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.setValue",
           "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.showAbout",
@@ -8763,7 +8764,7 @@
         "id": "class/package:pop_pop_win/src/stage/score_element.dart::ScoreElement",
         "kind": "class",
         "name": "ScoreElement",
-        "size": 641,
+        "size": 567,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:pop_pop_win/src/stage/score_element.dart::",
         "modifiers": {
@@ -9388,7 +9389,7 @@
         "id": "class/package:stagexl/src/display.dart::DisplayObject",
         "kind": "class",
         "name": "DisplayObject",
-        "size": 1377,
+        "size": 1434,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:stagexl/src/display.dart::",
         "modifiers": {
@@ -9466,7 +9467,7 @@
         "id": "class/package:stagexl/src/display.dart::DisplayObjectContainer",
         "kind": "class",
         "name": "DisplayObjectContainer",
-        "size": 1759,
+        "size": 1697,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:stagexl/src/display.dart::",
         "modifiers": {
@@ -16714,7 +16715,7 @@
         "id": "function/dart:_interceptors::getNativeInterceptor",
         "kind": "function",
         "name": "getNativeInterceptor",
-        "size": 744,
+        "size": 714,
         "outputUnit": "outputUnit/main",
         "parent": "library/dart:_interceptors::",
         "children": [],
@@ -16735,7 +16736,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "M3(a){var s,r,q,p,o,n=a[v.dispatchPropertyName]\nif(n==null)if($.Bv==null){A.XD()\nn=a[v.dispatchPropertyName]}if(n!=null){s=n.p\nif(!1===s)return n.i\nif(!0===s)return a\nr=Object.getPrototypeOf(a)\nif(s===r)return n.i\nif(n.e===r)throw A.b(A.SY(\"Return interceptor for \"+A.L(s(a,n))))}q=a.constructor\nif(q==null)p=null\nelse{o=$.zm\nif(o==null)o=$.zm=v.getIsolateTag(\"_$dart_js\")\np=q[o]}if(p!=null)return p\np=A.w3(a)\nif(p!=null)return p\nif(typeof a==\"function\")return B.DG\ns=Object.getPrototypeOf(a)\nif(s==null)return B.ZQ\nif(s===Object.prototype)return B.ZQ\nif(typeof q==\"function\"){o=$.zm\nif(o==null)o=$.zm=v.getIsolateTag(\"_$dart_js\")\nObject.defineProperty(q,o,{value:B.vB,enumerable:false,writable:true,configurable:true})\nreturn B.vB}return B.vB}",
+        "code": "M3(a){var s,r,q,p,o,n=\"_$dart_js\",m=a[v.dispatchPropertyName]\nif(m==null)if($.Bv==null){A.XD()\nm=a[v.dispatchPropertyName]}if(m!=null){s=m.p\nif(!1===s)return m.i\nif(!0===s)return a\nr=Object.getPrototypeOf(a)\nif(s===r)return m.i\nif(m.e===r)throw A.b(A.SY(\"Return interceptor for \"+A.L(s(a,m))))}q=a.constructor\nif(q==null)p=null\nelse{o=$.zm\nif(o==null)o=$.zm=A.e(n)\np=q[o]}if(p!=null)return p\np=A.w3(a)\nif(p!=null)return p\nif(typeof a==\"function\")return B.DG\ns=Object.getPrototypeOf(a)\nif(s==null)return B.ZQ\nif(s===Object.prototype)return B.ZQ\nif(typeof q==\"function\"){o=$.zm\nif(o==null)o=$.zm=A.e(n)\nObject.defineProperty(q,o,{value:B.vB,enumerable:false,writable:true,configurable:true})\nreturn B.vB}return B.vB}",
         "type": "dynamic Function(dynamic)",
         "functionKind": 0
       },
@@ -24039,7 +24040,7 @@
         "id": "function/dart:_js_helper::JsLinkedHashMap._getBucket",
         "kind": "function",
         "name": "_getBucket",
-        "size": 0,
+        "size": 29,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_js_helper::JsLinkedHashMap",
         "children": [],
@@ -24064,8 +24065,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
-        "code": "",
+        "inlinedCount": 0,
+        "code": "L8(a,b){return a[this.xi(b)]}",
         "type": "List<LinkedHashMapCell>? Function(dynamic,dynamic)",
         "functionKind": 2
       },
@@ -24098,7 +24099,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
-        "inlinedCount": 4,
+        "inlinedCount": 3,
         "code": "",
         "type": "List<LinkedHashMapCell>? Function(dynamic,dynamic)",
         "functionKind": 2
@@ -24514,7 +24515,7 @@
         "id": "function/dart:_js_helper::JsLinkedHashMap.internalContainsKey",
         "kind": "function",
         "name": "internalContainsKey",
-        "size": 99,
+        "size": 98,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_js_helper::JsLinkedHashMap",
         "children": [],
@@ -24535,7 +24536,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "CX(a){var s=this.d\nif(s==null)return!1\nreturn this.Fh(s[this.xi(a)],a)>=0}\ns=A.N5.prototype\ns.PA=s.CX",
+        "code": "CX(a){var s=this.d\nif(s==null)return!1\nreturn this.Fh(this.L8(s,a),a)>=0}\ns=A.N5.prototype\ns.PA=s.CX",
         "type": "bool Function(Object?)",
         "functionKind": 2
       },
@@ -24577,7 +24578,7 @@
         "id": "function/dart:_js_helper::JsLinkedHashMap.internalGet",
         "kind": "function",
         "name": "internalGet",
-        "size": 119,
+        "size": 118,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_js_helper::JsLinkedHashMap",
         "children": [],
@@ -24598,7 +24599,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Lr(a){var s,r,q=this.d\nif(q==null)return null\ns=q[this.xi(a)]\nr=this.Fh(s,a)\nif(r<0)return null\nreturn s[r].b}\ns.FQ=s.Lr",
+        "code": "Lr(a){var s,r,q=this.d\nif(q==null)return null\ns=this.L8(q,a)\nr=this.Fh(s,a)\nif(r<0)return null\nreturn s[r].b}\ns.FQ=s.Lr",
         "type": "JsLinkedHashMap.V? Function(Object?)",
         "functionKind": 2
       },
@@ -28735,7 +28736,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
+        "inlinedCount": 0,
         "code": "e(a){return v.getIsolateTag(a)}",
         "type": "String Function(String)",
         "functionKind": 0
@@ -30472,7 +30473,7 @@
         "id": "function/dart:_js_helper::unminifyOrTag",
         "kind": "function",
         "name": "unminifyOrTag",
-        "size": 76,
+        "size": 60,
         "outputUnit": "outputUnit/main",
         "parent": "library/dart:_js_helper::",
         "children": [],
@@ -30493,7 +30494,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "NQ(a){var s=v.mangledGlobalNames[a]\nif(s!=null)return s\nreturn\"minified:\"+a}",
+        "code": "NQ(a){var s=A.Jg(a)\nif(s!=null)return s\nreturn\"minified:\"+a}",
         "type": "String Function(String)",
         "functionKind": 0
       },
@@ -30559,7 +30560,7 @@
         "id": "function/dart:_js_names::unmangleGlobalNameIfPreservedAnyways",
         "kind": "function",
         "name": "unmangleGlobalNameIfPreservedAnyways",
-        "size": 0,
+        "size": 37,
         "outputUnit": "outputUnit/main",
         "parent": "library/dart:_js_names::",
         "children": [],
@@ -30579,8 +30580,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes nothing)",
-        "inlinedCount": 2,
-        "code": "",
+        "inlinedCount": 0,
+        "code": "Jg(a){return v.mangledGlobalNames[a]}",
         "type": "String? Function(String)",
         "functionKind": 0
       },
@@ -37116,7 +37117,7 @@
         "id": "function/dart:_rti::_Universe._parseRecipe",
         "kind": "function",
         "name": "_parseRecipe",
-        "size": 0,
+        "size": 39,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_rti::_Universe",
         "children": [],
@@ -37151,8 +37152,8 @@
           }
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
-        "inlinedCount": 2,
-        "code": "",
+        "inlinedCount": 0,
+        "code": "z1(a,b,c,d){return A.eT(A.ow(a,b,c,d))}",
         "type": "Rti Function(Object?,Object?,String,bool)",
         "functionKind": 0
       },
@@ -37462,7 +37463,7 @@
         "id": "function/dart:_rti::_Universe.eval",
         "kind": "function",
         "name": "eval",
-        "size": 100,
+        "size": 94,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_rti::_Universe",
         "children": [],
@@ -37493,7 +37494,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "Ew(a,b,c){var s,r=a.eC,q=r.get(b)\nif(q!=null)return q\ns=A.eT(A.ow(a,null,b,!1))\nr.set(b,s)\nreturn s}",
+        "code": "Ew(a,b,c){var s,r=a.eC,q=r.get(b)\nif(q!=null)return q\ns=A.z1(a,null,b,!1)\nr.set(b,s)\nreturn s}",
         "type": "Rti Function(Object?,String,bool)",
         "functionKind": 0
       },
@@ -37530,7 +37531,7 @@
         "id": "function/dart:_rti::_Universe.evalInEnvironment",
         "kind": "function",
         "name": "evalInEnvironment",
-        "size": 125,
+        "size": 119,
         "outputUnit": "outputUnit/main",
         "parent": "class/dart:_rti::_Universe",
         "children": [],
@@ -37561,7 +37562,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "cE(a,b,c){var s,r,q=b.z\nif(q==null)q=b.z=new Map()\ns=q.get(c)\nif(s!=null)return s\nr=A.eT(A.ow(a,b,c,!0))\nq.set(c,r)\nreturn r}",
+        "code": "cE(a,b,c){var s,r,q=b.z\nif(q==null)q=b.z=new Map()\ns=q.get(c)\nif(s!=null)return s\nr=A.z1(a,b,c,!0)\nq.set(c,r)\nreturn r}",
         "type": "Rti Function(Object?,Rti,String)",
         "functionKind": 0
       },
@@ -40817,7 +40818,7 @@
         "id": "function/dart:_rti::_unminifyOrTag",
         "kind": "function",
         "name": "_unminifyOrTag",
-        "size": 76,
+        "size": 60,
         "outputUnit": "outputUnit/main",
         "parent": "library/dart:_rti::",
         "children": [],
@@ -40838,7 +40839,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "o3(a){var s=v.mangledGlobalNames[a]\nif(s!=null)return s\nreturn\"minified:\"+a}",
+        "code": "o3(a){var s=A.Jg(a)\nif(s!=null)return s\nreturn\"minified:\"+a}",
         "type": "String Function(String)",
         "functionKind": 0
       },
@@ -51156,7 +51157,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "KY(a){var s=this.d\nif(s==null)return!1\nreturn this.DF(this.L8(s,a),a)>=0}",
+        "code": "KY(a){var s=this.d\nif(s==null)return!1\nreturn this.DF(this.nu(s,a),a)>=0}",
         "type": "bool Function(Object?)",
         "functionKind": 2
       },
@@ -51219,7 +51220,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "c8(a){var s,r,q=this.d\nif(q==null)return null\ns=this.L8(q,a)\nr=this.DF(s,a)\nreturn r<0?null:s[r+1]}",
+        "code": "c8(a){var s,r,q=this.d\nif(q==null)return null\ns=this.nu(q,a)\nr=this.DF(s,a)\nreturn r<0?null:s[r+1]}",
         "type": "_HashMap.V? Function(Object?)",
         "functionKind": 2
       },
@@ -51253,7 +51254,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "L8(a,b){return a[A.CU(b)&1073741823]}",
+        "code": "nu(a,b){return a[A.CU(b)&1073741823]}",
         "type": "List<dynamic>? Function(dynamic,dynamic)",
         "functionKind": 2
       },
@@ -55741,7 +55742,7 @@
           }
         ],
         "sideEffects": "SideEffects(reads nothing; writes nothing)",
-        "inlinedCount": 78,
+        "inlinedCount": 81,
         "code": "eT(a,b){return this===b}",
         "type": "bool Function(Object)",
         "functionKind": 2
@@ -67613,7 +67614,7 @@
         "id": "function/package:pop_pop_win/pop_pop_win.dart::_secondaryLoad",
         "kind": "function",
         "name": "_secondaryLoad",
-        "size": 930,
+        "size": 945,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:pop_pop_win/pop_pop_win.dart::",
         "children": [
@@ -67649,7 +67650,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "TI(a,b,c){var s,r,q,p,o,n\nA.hA(\"secondaryLoad\")\ns=b.oJ\nr=s.RY(c,0.5)\nq=r.gtV()\nq.a.HQ(q,9).d=0\nr.f=new A.XG(b,c)\nA.z6()\nr=$.fF()\nq=r.b\nnew A.u8(q,A.Lh(q).C(\"u8<1>\")).yI(new A.S5())\nr.a=!0\nr=v.G\nq=r.window.location.hash\np=A.Hp(A.ys(q,\"#\",\"\"),null)\nif(p==null)p=7\no=B.CD.yu(p*p*0.15625)\n$.Ar.b=a\nq=new A.Yy(b,A.Fl(t.L,t.S),p,p,o,new A.HB(A.x2(!1,t.H)))\nq.jI()\nn=A.kZ(q)\nn.Q=B.jn.IV(0,0,1)\nq.y!==$&&A.SQ()\nq.y=n\nb.bS(n)\nn=s.RY(n,0.5).gtV()\nn.a.HQ(n,9).d=1\nA.JE(r.window,\"touchmove\",new A.C0(),!1)\nA.JE(r.window,\"keydown\",A.py(),!1)\nA.JE($.TH(),\"click\",A.o9(),!1)\nr=$.KP()\nnew A.u8(r,A.Lh(r).C(\"u8<1>\")).yI(new A.PZ())}",
+        "code": "TI(a,b,c){var s,r,q,p,o,n,m\nA.hA(\"secondaryLoad\")\ns=b.oJ\nr=s.RY(c,0.5)\nq=r.gtV()\nq.a.HQ(q,9).d=0\nr.f=new A.XG(b,c)\nA.z6()\nr=$.fF()\nq=r.b\nnew A.u8(q,A.Lh(q).C(\"u8<1>\")).yI(new A.S5())\nr.a=!0\nr=v.G\nq=r.window.location.hash\np=A.Hp(A.ys(q,\"#\",\"\"),null)\no=B.jn.IV(p==null?7:p,5,40)\nn=B.CD.yu(o*o*0.15625)\n$.Ar.b=a\nq=new A.Yy(b,A.Fl(t.L,t.S),o,o,n,new A.HB(A.x2(!1,t.H)))\nq.jI()\nm=A.kZ(q)\nm.Q=B.jn.IV(0,0,1)\nq.y!==$&&A.SQ()\nq.y=m\nb.bS(m)\nm=s.RY(m,0.5).gtV()\nm.a.HQ(m,9).d=1\nA.JE(r.window,\"touchmove\",new A.C0(),!1)\nA.JE(r.window,\"keydown\",A.py(),!1)\nA.JE($.TH(),\"click\",A.o9(),!1)\nr=$.KP()\nnew A.u8(r,A.Lh(r).C(\"u8<1>\")).yI(new A.PZ())}",
         "type": "void Function(ResourceManager,Stage,Sprite)",
         "functionKind": 0
       },
@@ -69214,7 +69215,7 @@
         "inferredReturnType": "[exact=Game|powerset={N}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 37,
+        "inlinedCount": 35,
         "code": "",
         "type": "Game Function()",
         "functionKind": 2
@@ -69393,7 +69394,7 @@
         "inferredReturnType": "[exact=Game|powerset={N}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 33,
+        "inlinedCount": 31,
         "code": "",
         "type": "Game Function()",
         "functionKind": 2
@@ -69856,6 +69857,35 @@
         "code": "",
         "type": "Stream<void> Function()",
         "functionKind": 2
+      },
+      "package:pop_pop_win/src/platform_web.dart::PlatformWeb.clampSize": {
+        "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.clampSize",
+        "kind": "function",
+        "name": "clampSize",
+        "size": 0,
+        "outputUnit": "outputUnit/main",
+        "parent": "class/package:pop_pop_win/src/platform_web.dart::PlatformWeb",
+        "children": [],
+        "modifiers": {
+          "static": true,
+          "const": false,
+          "factory": false,
+          "external": false
+        },
+        "returnType": "int",
+        "inferredReturnType": "[subclass=JSInt|powerset={I}{O}{N}]",
+        "parameters": [
+          {
+            "name": "hash",
+            "type": "[exact=JSString|powerset={I}{O}{I}]",
+            "declaredType": "String"
+          }
+        ],
+        "sideEffects": "SideEffects(reads anything; writes anything)",
+        "inlinedCount": 1,
+        "code": "",
+        "type": "int Function(String)",
+        "functionKind": 0
       },
       "package:pop_pop_win/src/platform_web.dart::PlatformWeb.getValue": {
         "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.getValue",
@@ -70866,7 +70896,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "zC(a2,a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1=this\nif(a3==null){s=a1.Qt.e\ns===$&&A.Q4()\na3=A.pF(s.gt0().c.length,new A.Pi(a1),t.cO).ev(0,new A.CT()).E2(0,new A.Ag(),t.D).br(0)}s=A.c(a3).C(\"A8<1,+delay,point,squareOffset(KN,hL<KN>,xy)>\")\nr=A.ev(new A.A8(a3,new A.Ha(a2),s),s.C(\"aL.E\"))\nB.Nm.GT(r,new A.BJ())\nfor(s=r.length,q=t.V,p=t.h,o=a1.KQ,n=t.B,m=t.o,l=t.q,k=0;k<r.length;r.length===s||(0,A.p)(r),++k){j=r[k]\ni=j.b\nh=j.c\ng=a1.lN\ng===$&&A.Q4()\nf=i.gx()\ne=i.gy()\ng=g.Qt\ng===$&&A.Q4()\ng=g.c[f+e*g.a]\ne=l.a(m.a(g.cy).cy).Qt.e\ne===$&&A.Q4()\ne=e.e\ne=e.c[g.Qt+g.lN*e.a]\nd=e===B.e5?\"balloon_explode\":\"balloon_pop\"\nf=a1.m9\nf===$&&A.Q4()\nc=A.u7(f.dF(d),60,!1)\nc.c=h.a\nc.dx=!0\nc.d=h.b\nc.Q=B.jn.IV(0,0,1)\nc.fy=!1\no.bS(c)\nc.Ep(\"complete\",n).XE(new A.df(c),!1,0)\nb=a1.gYK()\nf=(b instanceof A.a4?b:null).oJ\nif(!f.tg(0,c)){a=f.b\na===$&&A.Q4()\na.a=c\nf.b=a.b=new A.Gn()}a0=new A.K1(new A.La(c,g,e),new A.Zf(new A.vs($.X3,q),p))\na0.c=Math.max(j.a/60,0.0001)\nif(!f.tg(0,a0)){g=f.b\ng===$&&A.Q4()\ng.a=a0\nf.b=g.b=new A.Gn()}}}\nJ1(a){return this.zC(a,null)}",
+        "code": "zC(a2,a3){var s,r,q,p,o,n,m,l,k,j,i,h,g,f,e,d,c,b,a,a0,a1=this\nif(a3==null){s=a1.Qt.e\ns===$&&A.Q4()\na3=A.pF(s.gt0().c.length,new A.Pi(a1),t.cO).ev(0,new A.CT()).E2(0,new A.Ag(),t.D).br(0)}s=A.c(a3).C(\"A8<1,+delay,point,squareOffset(KN,hL<KN>,xy)>\")\nr=A.ev(new A.A8(a3,new A.Ha(a2),s),s.C(\"aL.E\"))\nB.Nm.GT(r,new A.BJ())\nfor(s=r.length,q=t.V,p=t.h,o=a1.KQ,n=t.B,m=t.o,l=t.q,k=0;k<r.length;r.length===s||(0,A.p)(r),++k){j=r[k]\ni=j.b\nh=j.c\ng=a1.lN\ng===$&&A.Q4()\nf=i.gx()\ne=i.gy()\ng=g.Qt\ng===$&&A.Q4()\ng=g.c[f+e*g.a]\ne=l.a(m.a(g.cy).cy).Qt.e\ne===$&&A.Q4()\ne=e.e\ne=e.c[g.Qt+g.lN*e.a]\nd=e===B.e5?\"balloon_explode\":\"balloon_pop\"\nf=a1.m9\nf===$&&A.Q4()\nc=A.u7(f.dF(d),60,!1)\nc.c=h.a\nc.dx=!0\nc.d=h.b\nc.Q=B.jn.IV(0,0,1)\nc.fy=!1\no.bS(c)\nc.Ep(\"complete\",n).XE(new A.df(c),!1,0)\nb=a1.gYK()\nf=(b instanceof A.a4?b:null).oJ\nif(!f.tg(0,c)){a=f.b\na===$&&A.Q4()\na.a=c\nf.b=a.b=new A.Gn()}a0=new A.K1(new A.La(c,g,e),new A.Zf(new A.vs($.X3,q),p))\na0.c=Math.max(j.a/60,0.0001)\nif(!f.tg(0,a0)){j=f.b\nj===$&&A.Q4()\nj.a=a0\nf.b=j.b=new A.Gn()}}}\nJ1(a){return this.zC(a,null)}",
         "type": "void Function(Point<int>,[Iterable<Point<int>>?])",
         "functionKind": 2
       },
@@ -71270,7 +71300,7 @@
         "inferredReturnType": "[exact=Game|powerset={N}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 31,
+        "inlinedCount": 29,
         "code": "",
         "type": "Game Function()",
         "functionKind": 2
@@ -71325,7 +71355,7 @@
         "id": "function/package:pop_pop_win/src/stage/game_element.dart::_animationDelay",
         "kind": "function",
         "name": "_animationDelay",
-        "size": 111,
+        "size": 122,
         "outputUnit": "outputUnit/main",
         "parent": "library/package:pop_pop_win/src/stage/game_element.dart::",
         "children": [],
@@ -71356,7 +71386,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "T4(a,b,c){a.Q=B.jn.IV(1,0,1)\na.bY()\nb.Iv()\nswitch(c.a){case 1:case 0:A.jr(B.YF)\nbreak\ncase 3:A.jr(B.BJ)\nbreak}}",
+        "code": "T4(a,b,c){a.Q=B.jn.IV(1,0,1)\na.bY()\nb.Iv()\nA:{if(B.Ni===c||B.Bl===c){A.jr(B.YF)\nbreak A}if(B.e5===c){A.jr(B.BJ)\nbreak A}}}",
         "type": "void Function(FlipBook,SquareElement,SquareState)",
         "functionKind": 0
       },
@@ -71578,7 +71608,7 @@
         "inferredReturnType": "[exact=Game|powerset={N}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 3,
+        "inlinedCount": 1,
         "code": "",
         "type": "Game? Function()",
         "functionKind": 2
@@ -71610,7 +71640,7 @@
         "id": "function/package:pop_pop_win/src/stage/score_element.dart::ScoreElement.render",
         "kind": "function",
         "name": "render",
-        "size": 326,
+        "size": 252,
         "outputUnit": "outputUnit/main",
         "parent": "class/package:pop_pop_win/src/stage/score_element.dart::ScoreElement",
         "children": [],
@@ -71631,7 +71661,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "dd(a){var s,r,q=this,p=t.q,o=p.a(q.cy).Qt.e\no===$&&A.Q4()\nif(o.gzo()==null)s=\"0\"\nelse{o=p.a(q.cy).Qt.e\no===$&&A.Q4()\ns=B.CD.Sy(B.jn.W(o.gzo().a,1000)/1000,1)}p=p.a(q.cy).Qt.e\np===$&&A.Q4()\nr=\"Bombs Left: \"+p.y+\"\\nTime: \"+s\np=q.rT\nif(p!=null)r=r+\"\\nRecord: \"+B.CD.Sy(p/1000,1)\nif(r!==q.e1){q.e1=r\nq.ij=r.length\nq.HV|=3}q.VD(a)}",
+        "code": "dd(a){var s,r,q,p,o=this,n=t.q.a(o.cy).Qt.e\nn===$&&A.Q4()\ns=n.gzo()\nr=s==null?\"0\":B.CD.Sy(B.jn.W(s.a,1000)/1000,1)\nq=\"Bombs Left: \"+n.y+\"\\nTime: \"+r\np=o.rT\nif(p!=null)q=q+\"\\nRecord: \"+B.CD.Sy(p/1000,1)\nif(q!==o.e1){o.e1=q\no.ij=q.length\no.HV|=3}o.VD(a)}",
         "type": "void Function(RenderState)",
         "functionKind": 2
       },
@@ -76646,7 +76676,7 @@
         "inferredReturnType": "[null|subclass=DisplayObjectContainer|powerset={null}{N}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 55,
+        "inlinedCount": 53,
         "code": "",
         "type": "DisplayObjectParent<DisplayObject>? Function()",
         "functionKind": 2
@@ -77128,7 +77158,7 @@
         "id": "function/package:stagexl/src/display.dart::DisplayObject.stage",
         "kind": "function",
         "name": "stage",
-        "size": 0,
+        "size": 55,
         "outputUnit": "outputUnit/main",
         "parent": "class/package:stagexl/src/display.dart::DisplayObject",
         "children": [],
@@ -77142,8 +77172,8 @@
         "inferredReturnType": "[null|exact=Stage|powerset={null}{N}{O}{N}]",
         "parameters": [],
         "sideEffects": "SideEffects(reads field; writes nothing)",
-        "inlinedCount": 5,
-        "code": "",
+        "inlinedCount": 2,
+        "code": "gDA(){var s=this.gYK()\nreturn s instanceof A.a4?s:null}",
         "type": "Stage? Function()",
         "functionKind": 2
       },
@@ -77490,7 +77520,7 @@
         "id": "function/package:stagexl/src/display.dart::DisplayObjectContainer.addChild",
         "kind": "function",
         "name": "addChild",
-        "size": 262,
+        "size": 231,
         "outputUnit": "outputUnit/main",
         "parent": "class/package:stagexl/src/display.dart::DisplayObjectContainer",
         "children": [],
@@ -77511,7 +77541,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "bS(a){var s,r=this\nif(a===r)throw A.b(A.xY(\"An object cannot be added as a child of itself.\",null))\nelse if(a.cy===r)r.kW(a)\nelse{a.JZ()\nr.hu(a)\nr.e1.push(a)\na.cy=r\na.H2(new A.ea(\"added\",!0))\ns=r.gYK()\nif((s instanceof A.a4?s:null)!=null)r.ul(a,\"addedToStage\")}}",
+        "code": "bS(a){var s=this\nif(a===s)throw A.b(A.xY(\"An object cannot be added as a child of itself.\",null))\nelse if(a.cy===s)s.kW(a)\nelse{a.JZ()\ns.hu(a)\ns.e1.push(a)\na.cy=s\na.H2(new A.ea(\"added\",!0))\nif(s.gDA()!=null)s.ul(a,\"addedToStage\")}}",
         "type": "void Function(Object?)",
         "functionKind": 2
       },
@@ -77599,7 +77629,7 @@
         "id": "function/package:stagexl/src/display.dart::DisplayObjectContainer.removeChild",
         "kind": "function",
         "name": "removeChild",
-        "size": 270,
+        "size": 239,
         "outputUnit": "outputUnit/main",
         "parent": "class/package:stagexl/src/display.dart::DisplayObjectContainer",
         "children": [],
@@ -77620,7 +77650,7 @@
         ],
         "sideEffects": "SideEffects(reads anything; writes anything)",
         "inlinedCount": 0,
-        "code": "q9(a){var s,r,q,p=this\nif(a.cy!==p)throw A.b(A.xY(\"The supplied DisplayObject must be a child of the caller.\",null))\nelse{s=p.e1\nr=B.Nm.OY(s,a)\na.H2(new A.ea(\"removed\",!0))\nq=p.gYK()\nif((q instanceof A.a4?q:null)!=null)p.ul(a,\"removedFromStage\")\na.cy=null\nB.Nm.W4(s,r)}}",
+        "code": "q9(a){var s,r,q=this\nif(a.cy!==q)throw A.b(A.xY(\"The supplied DisplayObject must be a child of the caller.\",null))\nelse{s=q.e1\nr=B.Nm.OY(s,a)\na.H2(new A.ea(\"removed\",!0))\nif(q.gDA()!=null)q.ul(a,\"removedFromStage\")\na.cy=null\nB.Nm.W4(s,r)}}",
         "type": "void Function(Object?)",
         "functionKind": 2
       },
@@ -116117,12 +116147,6 @@
         "id": "function/dart:_interceptors::JSString._skipTrailingWhitespace"
       }
     ],
-    "function/dart:_interceptors::JS_INTEROP_INTERCEPTOR_TAG": [
-      {
-        "id": "function/dart:_js_helper::getIsolateAffinityTag",
-        "mask": "inlined"
-      }
-    ],
     "function/dart:_interceptors::JavaScriptFunction.toString": [
       {
         "id": "field/dart:_interceptors::DART_CLOSURE_DART_JSINTEROP_PROPERTY_NAME"
@@ -122653,8 +122677,23 @@
     ],
     "function/dart:_js_helper::JsLinkedHashMap._getBucket": [
       {
+        "id": "function/dart:_js_helper::JsIdentityLinkedHashMap.internalComputeHashCode",
+        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
+      },
+      {
         "id": "function/dart:_js_helper::JsLinkedHashMap._getTableBucket",
         "mask": "inlined"
+      },
+      {
+        "id": "function/dart:_js_helper::JsLinkedHashMap._getTableBucket"
+      },
+      {
+        "id": "function/dart:_js_helper::JsLinkedHashMap.internalComputeHashCode",
+        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
+      },
+      {
+        "id": "function/dart:collection::_LinkedCustomHashMap.internalComputeHashCode",
+        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
       }
     ],
     "function/dart:_js_helper::JsLinkedHashMap._modified": [
@@ -122956,33 +122995,14 @@
         "id": "field/dart:_js_helper::JsLinkedHashMap._rest"
       },
       {
-        "id": "function/dart:_js_helper::JsIdentityLinkedHashMap.internalComputeHashCode",
-        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
         "id": "function/dart:_js_helper::JsIdentityLinkedHashMap.internalFindBucketIndex",
         "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
-        "id": "function/dart:_js_helper::JsLinkedHashMap._getBucket",
-        "mask": "inlined"
       },
       {
         "id": "function/dart:_js_helper::JsLinkedHashMap._getBucket"
       },
       {
-        "id": "function/dart:_js_helper::JsLinkedHashMap._getTableBucket"
-      },
-      {
-        "id": "function/dart:_js_helper::JsLinkedHashMap.internalComputeHashCode",
-        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
         "id": "function/dart:_js_helper::JsLinkedHashMap.internalFindBucketIndex",
-        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
-        "id": "function/dart:collection::_LinkedCustomHashMap.internalComputeHashCode",
         "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
       },
       {
@@ -123082,33 +123102,14 @@
         "id": "field/dart:_js_helper::LinkedHashMapCell.hashMapCellValue"
       },
       {
-        "id": "function/dart:_js_helper::JsIdentityLinkedHashMap.internalComputeHashCode",
-        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
         "id": "function/dart:_js_helper::JsIdentityLinkedHashMap.internalFindBucketIndex",
         "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
-        "id": "function/dart:_js_helper::JsLinkedHashMap._getBucket",
-        "mask": "inlined"
       },
       {
         "id": "function/dart:_js_helper::JsLinkedHashMap._getBucket"
       },
       {
-        "id": "function/dart:_js_helper::JsLinkedHashMap._getTableBucket"
-      },
-      {
-        "id": "function/dart:_js_helper::JsLinkedHashMap.internalComputeHashCode",
-        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
         "id": "function/dart:_js_helper::JsLinkedHashMap.internalFindBucketIndex",
-        "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
-      },
-      {
-        "id": "function/dart:collection::_LinkedCustomHashMap.internalComputeHashCode",
         "mask": "[subclass=JsLinkedHashMap|powerset={N}{O}{N}]"
       },
       {
@@ -127073,10 +127074,6 @@
     ],
     "function/dart:_js_helper::unminifyOrTag": [
       {
-        "id": "function/dart:_js_names::unmangleGlobalNameIfPreservedAnyways",
-        "mask": "inlined"
-      },
-      {
         "id": "function/dart:_js_names::unmangleGlobalNameIfPreservedAnyways"
       }
     ],
@@ -130283,6 +130280,14 @@
         "mask": "inlined"
       }
     ],
+    "function/dart:_rti::_Universe._parseRecipe": [
+      {
+        "id": "function/dart:_rti::_Parser.create"
+      },
+      {
+        "id": "function/dart:_rti::_Parser.parse"
+      }
+    ],
     "function/dart:_rti::_Universe.addErasedTypes": [
       {
         "id": "function/dart:_rti::_Universe.erasedTypes",
@@ -130391,16 +130396,6 @@
     ],
     "function/dart:_rti::_Universe.eval": [
       {
-        "id": "function/dart:_rti::_Parser.create"
-      },
-      {
-        "id": "function/dart:_rti::_Parser.parse"
-      },
-      {
-        "id": "function/dart:_rti::_Universe._parseRecipe",
-        "mask": "inlined"
-      },
-      {
         "id": "function/dart:_rti::_Universe._parseRecipe"
       },
       {
@@ -130449,16 +130444,6 @@
       },
       {
         "id": "function/dart:_rti::Rti._setEvalCache"
-      },
-      {
-        "id": "function/dart:_rti::_Parser.create"
-      },
-      {
-        "id": "function/dart:_rti::_Parser.parse"
-      },
-      {
-        "id": "function/dart:_rti::_Universe._parseRecipe",
-        "mask": "inlined"
       },
       {
         "id": "function/dart:_rti::_Universe._parseRecipe"
@@ -133017,10 +133002,6 @@
       }
     ],
     "function/dart:_rti::_unminifyOrTag": [
-      {
-        "id": "function/dart:_js_names::unmangleGlobalNameIfPreservedAnyways",
-        "mask": "inlined"
-      },
       {
         "id": "function/dart:_js_names::unmangleGlobalNameIfPreservedAnyways"
       }
@@ -153064,6 +153045,9 @@
         "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.aboutChanged"
       },
       {
+        "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.clampSize"
+      },
+      {
         "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.size",
         "mask": "inlined"
       },
@@ -155457,6 +155441,16 @@
         "mask": "inlined"
       }
     ],
+    "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.clampSize": [
+      {
+        "id": "function/dart:_interceptors::JSString.replaceAll",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:core::int.tryParse",
+        "mask": "inlined"
+      }
+    ],
     "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.getValue": [
       {
         "id": "function/dart:_js_helper::staticInteropGlobalContext",
@@ -155509,15 +155503,11 @@
     ],
     "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.size": [
       {
-        "id": "function/dart:_interceptors::JSString.replaceAll",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/dart:core::int.tryParse",
-        "mask": "inlined"
-      },
-      {
         "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb._urlHash",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/package:pop_pop_win/src/platform_web.dart::PlatformWeb.clampSize",
         "mask": "inlined"
       }
     ],
@@ -157500,9 +157490,6 @@
     ],
     "function/package:pop_pop_win/src/stage/game_element.dart::_animationDelay": [
       {
-        "id": "field/dart:core::_Enum.index"
-      },
-      {
         "id": "field/package:stagexl/src/display.dart::DisplayObject._alpha"
       },
       {
@@ -157510,6 +157497,13 @@
       },
       {
         "id": "function/dart:_rti::findType"
+      },
+      {
+        "id": "function/dart:core::Object.==",
+        "mask": "inlined"
+      },
+      {
+        "id": "function/dart:core::Object.=="
       },
       {
         "id": "function/package:pop_pop_win/src/audio.dart::Sounds.play",
@@ -165133,6 +165127,11 @@
         "id": "function/package:stagexl/src/display.dart::DisplayObject.parent"
       }
     ],
+    "function/package:stagexl/src/display.dart::DisplayObject.stage": [
+      {
+        "id": "function/package:stagexl/src/display.dart::DisplayObject.root"
+      }
+    ],
     "function/package:stagexl/src/display.dart::DisplayObject.transformationMatrix": [
       {
         "id": "field/package:stagexl/src/display.dart::DisplayObject._pivotX"
@@ -165212,10 +165211,6 @@
     ],
     "function/package:stagexl/src/display.dart::DisplayObjectContainer._clearChildParent": [
       {
-        "id": "function/package:stagexl/src/display.dart::DisplayObject.stage",
-        "mask": "inlined"
-      },
-      {
         "id": "function/package:stagexl/src/events.dart::Event.Event",
         "mask": "inlined"
       }
@@ -165275,10 +165270,6 @@
     ],
     "function/package:stagexl/src/display.dart::DisplayObjectContainer._setChildParent": [
       {
-        "id": "function/package:stagexl/src/display.dart::DisplayObject.stage",
-        "mask": "inlined"
-      },
-      {
         "id": "function/package:stagexl/src/events.dart::Event.Event",
         "mask": "inlined"
       }
@@ -165333,9 +165324,6 @@
       },
       {
         "id": "function/package:stagexl/src/display.dart::DisplayObject.removeFromParent"
-      },
-      {
-        "id": "function/package:stagexl/src/display.dart::DisplayObject.root"
       },
       {
         "id": "function/package:stagexl/src/display.dart::DisplayObject.stage"
@@ -165707,9 +165695,6 @@
       },
       {
         "id": "function/package:stagexl/src/display.dart::DisplayObject.parent"
-      },
-      {
-        "id": "function/package:stagexl/src/display.dart::DisplayObject.root"
       },
       {
         "id": "function/package:stagexl/src/display.dart::DisplayObject.stage"
@@ -178416,13 +178401,6 @@
         "id": "function/dart:js_util::_setPropertyUnchecked"
       },
       {
-        "id": "function/package:stagexl/src/display.dart::DisplayObject.stage",
-        "mask": "inlined"
-      },
-      {
-        "id": "function/package:stagexl/src/display.dart::DisplayObject.stage"
-      },
-      {
         "id": "function/package:stagexl/src/engine.dart::RenderContextCanvas.rawContext",
         "mask": "inlined"
       },
@@ -179385,7 +179363,7 @@
       "id": "outputUnit/main",
       "kind": "outputUnit",
       "name": "main",
-      "size": 303548,
+      "size": 303530,
       "filename": "main.dart2js.js",
       "imports": []
     }
