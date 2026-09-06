@@ -75,8 +75,9 @@ class GameElement extends Sprite {
       ..x = 450
       ..y = 20
       ..onMouseClick.listen((e) {
-        Sounds.click.play();
-        _manager.newGame();
+        _manager
+          ..playAudio(Sounds.click)
+          ..newGame();
       })
       ..addTo(this);
 
@@ -168,12 +169,12 @@ class GameElement extends Sprite {
     if (ss == SquareState.hidden) {
       game.setFlag(x, y, true);
       se.updateState();
-      Sounds.flag.play();
+      _manager.playAudio(Sounds.flag);
       return true;
     } else if (ss == SquareState.flagged) {
       game.setFlag(x, y, false);
       se.updateState();
-      Sounds.unflag.play();
+      _manager.playAudio(Sounds.unflag);
       return true;
     }
     return false;
@@ -230,13 +231,16 @@ class GameElement extends Sprite {
 
       stage!.juggler
         ..add(anim)
-        ..delayCall(() => _animationDelay(anim, se, ss), delay / _frameRate);
+        ..delayCall(
+          () => _animationDelay(anim, se, ss, _manager.playAudio),
+          delay / _frameRate,
+        );
     }
   }
 
   void _startDartAnimation(List<Point> points) {
     assert(points.isNotEmpty);
-    Sounds.throwDart.play();
+    _manager.playAudio(Sounds.throwDart);
     for (var point in points) {
       final squareOffset =
           _dartAnimationOffset +
@@ -269,16 +273,21 @@ class GameElement extends Sprite {
   }
 }
 
-void _animationDelay(FlipBook anim, SquareElement se, SquareState ss) {
+void _animationDelay(
+  FlipBook anim,
+  SquareElement se,
+  SquareState ss,
+  void Function(Sounds) playAudio,
+) {
   anim
     ..alpha = 1
     ..play();
   se.updateState();
   switch (ss) {
     case SquareState.revealed || SquareState.hidden:
-      Sounds.pop.play();
+      playAudio(Sounds.pop);
     case SquareState.bomb:
-      Sounds.bomb.play();
+      playAudio(Sounds.bomb);
     default:
     // noop
   }
