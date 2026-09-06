@@ -45,21 +45,24 @@ void main() {
     });
 
     test('state updates won/lost trigger expected audio events', () async {
-      final manager = TestGameManager(4, 4, 2);
+      final manager = TestGameManager(6, 6, 10);
       final events = <Sounds>[];
       final sub = manager.audioEvent.listen(events.add);
 
-      // First click starts stopwatch and sets started state
-      manager.game.reveal(0, 0);
+      // First click starts stopwatch and sets started state.
+      // Guard against a rare random board where the initial zero-cascade
+      // reveals all safe squares on the very first click.
+      do {
+        manager.newGame();
+        events.clear();
+        manager.game.reveal(0, 0);
+      } while (manager.game.state != GameState.started);
 
-      // Trigger win state manually for coverage or lost state by hitting a
-      // bomb.
-      // The first click is guaranteed safe. Let's find a bomb and reveal it
-      // to trigger lost.
+      // Find a bomb and reveal it to trigger lost.
       var bombX = -1;
       var bombY = -1;
-      for (var x = 0; x < 4; x++) {
-        for (var y = 0; y < 4; y++) {
+      for (var x = 0; x < 6; x++) {
+        for (var y = 0; y < 6; y++) {
           if (manager.game.field.get(x, y)) {
             bombX = x;
             bombY = y;
